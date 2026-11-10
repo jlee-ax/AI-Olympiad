@@ -318,9 +318,6 @@ def inspect_times(check, bundle, weeks, class_minutes):
         inside = check.integer(item.get('in_class_minutes', MISSING), path + '.in_class_minutes', 0, 1000000)
         check.integer(item.get('outside_class_minutes', MISSING), path + '.outside_class_minutes', 0, 1000000)
         check.string(item.get('locator', MISSING), path + '.locator')
-        format_result, format_gaps = inspect_assessment_format(check, item, path, week)
-        formats.append(format_result)
-        generated_gaps.extend(format_gaps)
         if week is not None and week not in weeks and weeks:
             check.error(path + '.week', 'outside_target', 'The allocation week must belong to target.weeks.')
         if inside is not None and class_minutes is not None and inside != class_minutes:
@@ -329,12 +326,16 @@ def inspect_times(check, bundle, weeks, class_minutes):
                                    'origin': 'time_allocation', 'week': week, 'priority': None,
                                    'difference': f'Recorded class time is {inside} minutes, expected {class_minutes}.',
                                    'rationale': 'Arithmetic comparison of the recorded number only.'})
+        time_complete = not check.changed(start)
+        format_result, format_gaps = inspect_assessment_format(check, item, path, week)
+        formats.append(format_result)
+        generated_gaps.extend(format_gaps)
         if week is not None:
             if week in by_week:
                 check.error(path + '.week', 'duplicate_week', 'Provide one allocation per target week.')
                 by_week[week] = False
             else:
-                by_week[week] = not check.changed(start)
+                by_week[week] = time_complete
     for week in weeks:
         if week not in by_week:
             check.uncertain('time_allocations', 'missing_week', f'No time allocation is recorded for week {week}.')
@@ -376,7 +377,7 @@ def inspect_theory(check, value, path):
         check.uncertain(path, 'theory_contradiction', 'Theory is marked inapplicable but a claim or evidence is recorded.')
 
 
-def inspect_comparisons(check, bundle, catalogs, weeks, goals, target_ready, time_ready, unknowns_clear):
+def inspect_comparisons(check, bundle, catalogs, weeks, goals, target_ready, time_ready, format_ready, unknowns_clear):
     entries = check.array(bundle.get('comparisons', MISSING), 'comparisons', nonempty=True)
     results, gaps, seen_ids, covered_weeks, covered_goals = [], [], set(), set(), set()
     for i, raw in enumerate(entries):
@@ -430,6 +431,8 @@ def inspect_comparisons(check, bundle, catalogs, weeks, goals, target_ready, tim
             check.uncertain(path, 'incomplete_target', 'The target, artifact, weeks, or prerequisite assumptions are incomplete.')
         if week is not None and not time_ready.get(week, False):
             check.uncertain(path, 'incomplete_time', 'A complete allocation consistent with target.class_minutes is unavailable for this week.')
+        if week is not None and not format_ready.get(week, False):
+            check.uncertain(path, 'assessment_format_unresolved', 'The recorded assessment format is incomplete or differs from its requirement.')
         if not unknowns_clear:
             check.uncertain(path, 'unresolved_unknowns', 'The bundle has missing or unresolved unknowns with no per-item scope.')
         issue_paths = [x['path'] for x in check.findings[start[0]:]] + [x['path'] for x in check.errors[start[1]:]]
@@ -461,7 +464,8 @@ def inspect(bundle):
     weeks, goals, class_minutes, target_ready = inspect_target(check, bundle)
     time_ready, generated_gaps, formats = inspect_times(check, bundle, weeks, class_minutes)
     unknowns_clear = inspect_unknowns(check, bundle)
-    comparisons, gaps = inspect_comparisons(check, bundle, catalogs, weeks, goals, target_ready, time_ready, unknowns_clear)
+    format_ready = {item['week']: item['status'] in ('matched', 'not_required') for item in formats}
+    comparisons, gaps = inspect_comparisons(check, bundle, catalogs, weeks, goals, target_ready, time_ready, format_ready, unknowns_clear)
     gaps.extend(generated_gaps)
     gaps.sort(key=lambda item: (PRIORITY.get(item['priority'], 3), item['id']))
     status = ('invalid' if check.errors else 'gap' if gaps else

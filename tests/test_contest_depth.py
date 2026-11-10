@@ -223,6 +223,37 @@ class ContestDepthTest(unittest.TestCase):
         self.assertEqual(result['status'], 'uncertain')
         self.assertIn('missing_format_kind', codes(result['findings']))
 
+    def test_assessment_mismatch_does_not_misreport_valid_class_time(self):
+        allocation = self.bundle['time_allocations'][0]
+        self.assertEqual(allocation['in_class_minutes'], 120)
+        allocation['observed_assessment_format']['counts'] = {'multiple_choice': 0, 'written': 4}
+        result = depth.inspect(self.bundle)
+        self.assertEqual(result['status'], 'gap')
+        self.assertEqual(result['assessment_formats'][0]['status'], 'gap')
+        kinds = {item['kind']: item for item in result['assessment_formats'][0]['kinds']}
+        self.assertEqual(kinds['multiple_choice']['difference'], -2)
+        self.assertEqual(kinds['written']['difference'], 3)
+        self.assertIn('assessment_format_unresolved', codes(result['findings']))
+        self.assertNotIn('incomplete_time', codes(result['findings']))
+        self.assertNotIn('class_time_mismatch', codes(result['findings']))
+        self.assertEqual(result['comparisons'][0]['status'], 'uncertain')
+
+        # The adjacent time-only defect must be attributed to time, not format.
+        allocation['in_class_minutes'] = 119
+        allocation['observed_assessment_format']['counts'] = {'multiple_choice': 2, 'written': 1}
+        result = depth.inspect(self.bundle)
+        self.assertEqual(result['status'], 'gap')
+        self.assertIn('incomplete_time', codes(result['findings']))
+        self.assertIn('class_time_mismatch', codes(result['findings']))
+        self.assertNotIn('assessment_format_unresolved', codes(result['findings']))
+        self.assertEqual(result['assessment_formats'][0]['status'], 'matched')
+
+        allocation['in_class_minutes'] = 120
+        result = depth.inspect(self.bundle)
+        self.assertEqual(result['status'], 'recorded_met')
+        self.assertNotIn('incomplete_time', codes(result['findings']))
+        self.assertNotIn('assessment_format_unresolved', codes(result['findings']))
+
     def test_additional_unrequired_assessment_kind_is_not_called_matched(self):
         observed = self.bundle['time_allocations'][0]['observed_assessment_format']['counts']
         observed['additional_essays'] = 12
