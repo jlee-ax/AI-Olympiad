@@ -1,0 +1,83 @@
+{
+  "base_commit": "434fe5ad5d2300dba741c755bca8928177a2e098",
+  "baseline_sha256": "96deb5e5e781bf39cc6bb5effe34d6d04a01ac65e13a3811c37f5a825714f7a9",
+  "class_blocks": [
+    {
+      "start": 0,
+      "end": 5,
+      "type": "theory"
+    },
+    {
+      "start": 5,
+      "end": 12,
+      "type": "theory"
+    },
+    {
+      "start": 12,
+      "end": 20,
+      "type": "theory"
+    },
+    {
+      "start": 20,
+      "end": 30,
+      "type": "noncoding"
+    },
+    {
+      "start": 30,
+      "end": 40,
+      "type": "noncoding",
+      "written": true
+    },
+    {
+      "start": 40,
+      "end": 60,
+      "type": "coding",
+      "topic": "python"
+    },
+    {
+      "start": 60,
+      "end": 100,
+      "type": "coding",
+      "topic": "csv"
+    },
+    {
+      "start": 100,
+      "end": 120,
+      "type": "coding",
+      "topic": "numpy_matplotlib"
+    }
+  ],
+  "homework_ranges_minutes": [
+    [
+      120,
+      180
+    ],
+    [
+      60,
+      90
+    ],
+    [
+      60,
+      90
+    ],
+    [
+      60,
+      60
+    ]
+  ],
+  "source_files_preserved": true,
+  "learner_evidence": "not_collected",
+  "timing": "estimated_not_observed",
+  "scope": {
+    "KOAI-01": "class_and_required_homework",
+    "KOAI-02": "class_and_required_homework",
+    "KOAI-03": "Matplotlib_in_class;Seaborn_required_homework",
+    "KOAI-06": "NumPy_prerequisite_only;PyTorch_device_week6"
+  },
+  "open_limitations": [
+    "Classroom time and learner outcomes unobserved",
+    "Student answer and new-input tasks remain for the learner",
+    "Current syllabus page is labeled IOAI 2026 while competition announcement is 2027"
+  ],
+  "schedules_created": false
+}

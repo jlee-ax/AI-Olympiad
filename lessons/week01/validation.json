@@ -1,0 +1,60 @@
+{
+  "checked_at_utc": "2026-11-10T21:56:13.691307+00:00",
+  "notebook": "week01_python_tables.ipynb",
+  "base_commit": "434fe5ad5d2300dba741c755bca8928177a2e098",
+  "nbformat_validation": "passed",
+  "top_to_bottom_execution": "passed",
+  "execution_method": "fresh IPython InProcessKernelManager per complete run",
+  "separate_nbclient_kernel": "blocked in authoring cloud: environment prohibits ZMQ TCP and IPC sockets; kernel died before cell execution",
+  "code_cells": 24,
+  "executed_code_cells": 24,
+  "error_outputs": 0,
+  "execution_seconds": 1.745,
+  "plot_output_cells": [
+    48,
+    62,
+    64,
+    66,
+    67
+  ],
+  "plot_output_count": 5,
+  "embedded_diagrams": 1,
+  "independent_arithmetic_checks": "passed",
+  "csv_checks": "passed",
+  "histogram_counts": [
+    1,
+    3,
+    1,
+    1
+  ],
+  "time_minutes": {
+    "theory": 20,
+    "noncoding": 20,
+    "coding": 80
+  },
+  "class_total": 120,
+  "required_homework_minutes": [
+    300,
+    420
+  ],
+  "standalone_without_csv_files": "passed",
+  "student_answers": "blank_not_assessed",
+  "student_mastery": "not_observed",
+  "classroom_timing": "estimated_not_observed",
+  "visual_inspection": "All 5 executed figure outputs and embedded axis diagram viewed at reading size; axis-label collision fixed",
+  "browser_jupyterlab": "Server started in cloud workspace; cloud browser HTTP 127.0.0.1:8888 returned ERR_CONNECTION_REFUSED. No live JupyterLab browser run claimed.",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2",
+    "jupyterlab": "4.6.6",
+    "nbclient": "0.11.0",
+    "nbformat": "5.11.1",
+    "ipykernel": "7.4.0"
+  },
+  "notebook_sha256": "6f925e6b6a3f103bed8430773b0f83ebf810f25f378b80f6c2d3f1b0e6db90d9",
+  "source_baseline_sha256": "96deb5e5e781bf39cc6bb5effe34d6d04a01ac65e13a3811c37f5a825714f7a9",
+  "schedules_created": false,
+  "browser_github_notebook": "pending_after_remote_save"
+}
