@@ -1,6 +1,6 @@
-# AI Olympiad: Research and Design Foundation
+# AI Olympiad
 
-Status: **draft for discussion**. This repository provides the evidence and working structure for a future KOAI 2027 preparation course for middle-school students with basic coding experience, planned as 10 weeks of two-hour classes. Creating the week 1–2 lesson materials, running repeated work, and setting up an automated schedule have not yet been authorized. The competition scope and learner level will be confirmed against official announcements and through discussion with the user.
+**draft for discussion**. This repository provides the evidence and working structure for a future KOAI 2027 preparation course for middle-school students with basic coding experience, planned as 10 weeks of two-hour classes. Creating the week 1–2 lesson materials, running repeated work, and setting up an automated schedule have not yet been authorized. The competition scope and learner level will be confirmed against official announcements and through discussion with the user.
 
 ## Getting started
 
