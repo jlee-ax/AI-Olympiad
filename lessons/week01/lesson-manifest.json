@@ -65,7 +65,6 @@
       60
     ]
   ],
-  "source_files_preserved": true,
   "learner_evidence": "not_collected",
   "timing": "estimated_not_observed",
   "scope": {
@@ -79,5 +78,13 @@
     "Student answer and new-input tasks remain for the learner",
     "Current syllabus page is labeled IOAI 2026 while competition announcement is 2027"
   ],
-  "schedules_created": false
+  "schedules_created": false,
+  "provenance_snapshot_preserved": true,
+  "curriculum_learning_material_link": {
+    "week": 1,
+    "url": "https://github.com/jlee-ax/AI-Olympiad/blob/codex/week01-jupyter-lesson/lessons/week01/week01_python_tables.ipynb",
+    "updated_html_sha256": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254",
+    "changed_cells": 1,
+    "other_weeks_unchanged": true
+  }
 }

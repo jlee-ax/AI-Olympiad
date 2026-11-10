@@ -6,7 +6,7 @@
   "artifact": {
     "id": "student-plan",
     "revision": "full-scope-baseline",
-    "path": "curriculum/student-plan.html",
+    "path": "lessons/week01/provenance/student-plan.html",
     "sha256": "96deb5e5e781bf39cc6bb5effe34d6d04a01ac65e13a3811c37f5a825714f7a9"
   },
   "target": {

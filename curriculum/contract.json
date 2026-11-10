@@ -6,9 +6,9 @@
   "syllabus_label": "IOAI 2026",
   "baseline": {
     "path": "curriculum/student-plan.html",
-    "sha256": "96deb5e5e781bf39cc6bb5effe34d6d04a01ac65e13a3811c37f5a825714f7a9",
+    "sha256": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254",
     "origin_name": "curriculum-full-scope.html",
-    "designation": "Latest full-scope recalibration referenced by the current task; retained byte-for-byte.",
+    "designation": "Full-scope teaching content retained; the Week 1 learning-material link was added. Original bytes are preserved in lessons/week01/provenance/student-plan.html.",
     "history_refs": [
       "Sentinel_c6acc22670dc8191aa79ad3e68cf0ebc",
       "Sentinel_0604c18c70608191b15e3ce55f584653"

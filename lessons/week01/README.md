@@ -41,4 +41,6 @@ python validate_week01.py --inprocess
 
 교안 수정은 codex/week01-jupyter-lesson 브랜치의 lessons/week01/에서 이어갑니다. 회차마다 같은 브랜치에 변경 이유와 검증 결과를 커밋으로 남기고, 실패한 결과로 확인된 교안을 덮어쓰지 않습니다. 다른 작업이 진행 중이면 먼저 완료 상태를 확인하며, 강제 푸시는 하지 않습니다. 반복 실행 스케줄은 아직 만들지 않았습니다.
 
-기존 skills/와 curriculum/의 원본은 수정하지 않았습니다. 한국어 문장 편집에는 [Humanizer-KO](https://github.com/IsaacEryn/humanizer-ko/blob/main/SKILL.md)의 사실·불확실성 보존과 상투적·장황한 표현 제거 원칙을 참고했습니다. 외부 스킬 설치나 AI 탐지 점수는 사용하지 않았습니다.
+기존 skills/는 수정하지 않았습니다. curriculum/student-plan.html에서는 1주차 학습 자료 셀에 노트북 링크만 추가하고 contract.json의 기준 해시를 동기화했습니다. 원래 HTML은 provenance/에 바이트 그대로 보존했습니다. 한국어 문장 편집에는 [Humanizer-KO](https://github.com/IsaacEryn/humanizer-ko/blob/main/SKILL.md)의 사실·불확실성 보존과 상투적·장황한 표현 제거 원칙을 참고했습니다. 외부 스킬 설치나 AI 탐지 점수는 사용하지 않았습니다.
+
+원본 HTML을 가리키던 합성 평가 예시는 내용이 같은 provenance/student-plan.html 보존본으로 연결했습니다. 예시의 옛 내용 해시는 유지했습니다. 현행 기본 평가 템플릿의 해시는 링크가 추가된 학생 HTML과 맞췄으며, 저장소 회귀 검사 89개가 통과했습니다.

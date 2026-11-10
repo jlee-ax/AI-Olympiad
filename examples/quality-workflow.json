@@ -23,7 +23,7 @@
       {
         "id": "quality:bundle",
         "revision": "synthetic-v1",
-        "sha256": "63f5ea8c80822b1b2eef6954ab1b8ab9278f8f454b4c359e02570b0d4f8fe465"
+        "sha256": "567a224bef2a238fac07cc8a00b1bcff9b1d67bbe780587fe0b55923d4505f24"
       },
       {
         "id": "quality:criteria",
@@ -140,7 +140,7 @@
   "reviews": [
     {
       "id": "review:synthetic-1",
-      "context_fingerprint": "07711fa51be82c8bc4ef4dca1756b731775a2af5df8762232ab5cbfaba100946",
+      "context_fingerprint": "781a1b8c40e1445240d0af491e1d51882d08fc6211f9eb287ee05c0fa85856ec",
       "author_id": "synthetic-author",
       "reviewer": {
         "id": "synthetic-reviewer",

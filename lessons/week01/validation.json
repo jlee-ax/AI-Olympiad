@@ -53,8 +53,23 @@
     "nbformat": "5.11.1",
     "ipykernel": "7.4.0"
   },
-  "notebook_sha256": "6f925e6b6a3f103bed8430773b0f83ebf810f25f378b80f6c2d3f1b0e6db90d9",
+  "notebook_sha256": "8ffda0c1d5ec1c5ca765fb892a09c64c3920bca6f840dfdf5a481a8da5a7cff2",
   "source_baseline_sha256": "96deb5e5e781bf39cc6bb5effe34d6d04a01ac65e13a3811c37f5a825714f7a9",
   "schedules_created": false,
-  "browser_github_notebook": "pending_after_remote_save"
+  "browser_github_notebook": "Verified saved notebook preview, formula rendering, source tables, 6 decoded images and saved execution outputs on the actual branch URL",
+  "curriculum_link": {
+    "url": "https://github.com/jlee-ax/AI-Olympiad/blob/codex/week01-jupyter-lesson/lessons/week01/week01_python_tables.ipynb",
+    "one_learning_material_cell_only": true,
+    "other_weeks_and_styles_preserved": true,
+    "contract_hash_matches": true,
+    "updated_html_sha256": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254"
+  },
+  "post_execution_prose_changes": "Removed literal bold markers around target and math styling around Korean axis words; code cells and execution outputs unchanged",
+  "repository_regression": {
+    "tests_run": 89,
+    "failures": 0,
+    "command": "python -m unittest discover -s tests -q",
+    "baseline_validator": "passed; 60 topics and ten 120-minute weeks preserved"
+  },
+  "historical_examples": "Synthetic example keeps its old artifact digest and is pointed to the byte-identical provenance snapshot; workflow bundle binding refreshed. No real review evidence invented."
 }
