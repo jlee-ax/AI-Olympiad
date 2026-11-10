@@ -1,0 +1,15 @@
+{
+  "record_type": "review",
+  "id": "replace-with-unique-id",
+  "baseline_version": "",
+  "changed_node_ids": [],
+  "affected_node_ids": [],
+  "checks_run": [],
+  "checks_failed": [],
+  "checks_not_run": [],
+  "residual_risks": [],
+  "decision": "pause",
+  "reason": "Criteria not yet agreed",
+  "next_action_proposed": "",
+  "approval_needed": ""
+}
