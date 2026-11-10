@@ -1,0 +1,4 @@
+interface:
+  display_name: "KOAI Grounding"
+  short_description: "Bind lesson work to current sources and scope"
+  default_prompt: "Use $koai-ground to establish the source and scope brief for the requested KOAI task."

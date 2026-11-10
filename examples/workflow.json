@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "scope": {
+    "task_kind": "design",
+    "lesson_production_allowed": false,
+    "recurring_allowed": false
+  },
+  "agreement": {
+    "operator_agreed": true,
+    "operator_id": "synthetic-operator",
+    "criteria_agreed": true,
+    "criteria_fingerprint": "cc3e268435cfc60ff30212612a5e3a355156bf224fd2cda46982c7f373dc2129",
+    "budget_fingerprint": "f22cd154e3224cc854ef42e197f60a640991d95138a584aa4183340034e94216"
+  },
+  "context": {
+    "inputs": [
+      {
+        "id": "input:synthetic-design",
+        "revision": "synthetic-v1",
+        "sha256": "39b3902899ec6f821dc061cd3b279c4eb19a1487a8690ca66640d03b2b9d06f8"
+      }
+    ],
+    "skills": [
+      {
+        "id": "skill:synthetic-check",
+        "revision": "synthetic-v1",
+        "sha256": "03ed700a510a275757a8500a1465153174c16ce6bfa6fae714119f2b731f619f"
+      }
+    ],
+    "rubric": {
+      "id": "rubric:synthetic-structure",
+      "revision": "synthetic-v1",
+      "sha256": "6c526c79c8c11176a0d37a42c4761b530ebe8de042025dbeb099499280739ddf"
+    },
+    "evaluator": {
+      "id": "evaluator:synthetic-reference-checker",
+      "revision": "synthetic-v1",
+      "sha256": "e3c472d4b48515cd0170aae7f8705c4be4ba8d8dce57e38e3693fafa6470e4e0"
+    },
+    "references": [
+      {
+        "id": "source:synthetic-fixture",
+        "revision": "synthetic-v1",
+        "sha256": "64b79e85704c70f4564d57d8641b6435f9fc8989f281ef0515c3219a2468c76d"
+      }
+    ],
+    "artifact": {
+      "id": "artifact:synthetic-design",
+      "revision": "synthetic-v1",
+      "sha256": "a0d1de82d98d11b1c0d435b21937bbdce97ee0f493477bdf0113f56819db6b4d"
+    },
+    "author": {
+      "id": "synthetic-author",
+      "model_family": "synthetic-family-a"
+    },
+    "required_checks": [
+      "synthetic-reference-integrity"
+    ],
+    "finish_condition": "Synthetic example only: record the declared structural check and an independent review."
+  },
+  "frozen": {
+    "rubric": {
+      "id": "rubric:synthetic-structure",
+      "revision": "synthetic-v1",
+      "sha256": "6c526c79c8c11176a0d37a42c4761b530ebe8de042025dbeb099499280739ddf"
+    },
+    "evaluator": {
+      "id": "evaluator:synthetic-reference-checker",
+      "revision": "synthetic-v1",
+      "sha256": "e3c472d4b48515cd0170aae7f8705c4be4ba8d8dce57e38e3693fafa6470e4e0"
+    },
+    "references": [
+      {
+        "id": "source:synthetic-fixture",
+        "revision": "synthetic-v1",
+        "sha256": "64b79e85704c70f4564d57d8641b6435f9fc8989f281ef0515c3219a2468c76d"
+      }
+    ],
+    "required_checks": [
+      "synthetic-reference-integrity"
+    ],
+    "finish_condition": "Synthetic example only: record the declared structural check and an independent review."
+  },
+  "limits": {
+    "checkpoint_minutes": 30,
+    "max_iterations": 3,
+    "max_elapsed_minutes": 90,
+    "max_no_progress": 2
+  },
+  "usage": {
+    "iterations_used": 0,
+    "elapsed_minutes": 0,
+    "no_progress_count": 0,
+    "minutes_since_checkpoint": 0
+  },
+  "stop": {
+    "requested": false,
+    "reason": null,
+    "goal_claimed": false
+  },
+  "sources": [
+    {
+      "id": "source:synthetic-fixture",
+      "revision": "synthetic-v1",
+      "sha256": "64b79e85704c70f4564d57d8641b6435f9fc8989f281ef0515c3219a2468c76d",
+      "uri": "synthetic://workflow/fixture-v1"
+    }
+  ],
+  "records": [
+    {
+      "id": "evidence:synthetic-fixture",
+      "kind": "evidence",
+      "text": "Synthetic evidence only: a declared reference-integrity check is represented in this fixture; no real workflow was executed.",
+      "created_at": "2026-11-10T00:00:00Z",
+      "source_refs": [
+        {
+          "source_id": "source:synthetic-fixture",
+          "locator": "fixture declaration"
+        }
+      ],
+      "supersedes": []
+    }
+  ],
+  "reviews": [
+    {
+      "id": "review:synthetic-1",
+      "context_fingerprint": "9d8dd772b8729bc7dd1617027adaf8ebc5959baa43af1c690896ad1c9c025644",
+      "author_id": "synthetic-author",
+      "reviewer": {
+        "id": "synthetic-reviewer",
+        "model_family": "synthetic-family-b"
+      },
+      "checks": [
+        {
+          "id": "synthetic-reference-integrity",
+          "status": "passed",
+          "evidence_record_ids": [
+            "evidence:synthetic-fixture"
+          ]
+        }
+      ],
+      "conclusion": "accepted",
+      "reason": "Synthetic passing record for exercising the contract; not an attestation of real work."
+    }
+  ],
+  "history": []
+}

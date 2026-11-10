@@ -1,0 +1,4 @@
+interface:
+  display_name: "KOAI Orchestration"
+  short_description: "Coordinate bounded, evidence-checked lesson work"
+  default_prompt: "Use $koai-orchestrate to plan the next authorized lesson-production unit and its checks."

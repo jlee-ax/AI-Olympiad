@@ -1,0 +1,4 @@
+interface:
+  display_name: "KOAI Reflection"
+  short_description: "Turn repeated failures into tested skill proposals"
+  default_prompt: "Use $koai-reflect to propose a bounded improvement from the recorded failures and checks."
