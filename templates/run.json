@@ -1,0 +1,16 @@
+{
+  "record_type": "run",
+  "id": "replace-with-unique-id",
+  "status": "planned",
+  "request_ids": [],
+  "scope": "",
+  "inputs_and_versions": [],
+  "authorized_actions": [],
+  "actions_taken": [],
+  "artifact_ids": [],
+  "evidence_ids": [],
+  "decisions": [],
+  "uncertainties": [],
+  "next_action_proposed": "",
+  "approval_needed": ""
+}
