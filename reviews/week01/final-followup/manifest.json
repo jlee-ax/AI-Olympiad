@@ -1,0 +1,247 @@
+{
+  "artifact": {
+    "id": "week01-notebook",
+    "revision": "final",
+    "path": "lessons/week01/week01_python_tables.ipynb",
+    "sha256": "602c0c4e04e7208b0b082d9e4e7d4be384e1371f67c5f211d931911367d02eb0"
+  },
+  "supersedes": "reviews/week01/final/manifest.json",
+  "source_ref": "787079f4870068106500e5184ce457e95e6aa3f2",
+  "reproduce": "Create an isolated QA root. Copy tools/, skills/ and curriculum/ from the pinned main revision, then copy the published lessons/ and reviews/ trees into that root at identical relative paths. Run the nine recorded commands from the QA root, replacing original absolute bundle/state paths with the corresponding copied paths. workflow --quality resolves its quality root from the copied tools directory. No network writes, notebook execution or publication is performed by these commands.",
+  "limits": "Participant performance/readiness and educator calibration unavailable; numerical diagnostic/homework/calibration/priority policies unagreed. Explicit branch-publication scope does not set criteria_agreed or aggregate acceptance.",
+  "checks": [
+    {
+      "id": "K01",
+      "status": "passed"
+    },
+    {
+      "id": "K02",
+      "status": "not_run"
+    },
+    {
+      "id": "K03",
+      "status": "passed"
+    },
+    {
+      "id": "K04",
+      "status": "not_run"
+    },
+    {
+      "id": "K05",
+      "status": "passed"
+    },
+    {
+      "id": "K06",
+      "status": "passed"
+    },
+    {
+      "id": "K07",
+      "status": "passed"
+    },
+    {
+      "id": "K08",
+      "status": "passed"
+    },
+    {
+      "id": "K09",
+      "status": "passed"
+    },
+    {
+      "id": "K10",
+      "status": "passed"
+    },
+    {
+      "id": "K11",
+      "status": "passed"
+    },
+    {
+      "id": "K12",
+      "status": "passed"
+    },
+    {
+      "id": "K13",
+      "status": "passed"
+    },
+    {
+      "id": "K14",
+      "status": "uncertain"
+    },
+    {
+      "id": "K15",
+      "status": "not_run"
+    },
+    {
+      "id": "K16",
+      "status": "passed"
+    }
+  ],
+  "ready_for_review": false,
+  "source_files": [
+    {
+      "path": "tools/quality.py",
+      "sha256": "2b8ad68a46899cbe533cf0900f0b3b7d4956edf990c9847459d75ac72ac499c5"
+    },
+    {
+      "path": "tools/README.md",
+      "sha256": "08fad6004fba51f41479de063d76b7e61bd1a2e01e86e9bfd2476bc99e8e7a91"
+    },
+    {
+      "path": "tools/validate.py",
+      "sha256": "6dc5409584030cf0154eac8b0022c2c17520e64d486f8e5e73be86be03f50e62"
+    },
+    {
+      "path": "tools/workflow.py",
+      "sha256": "c0db0561724068282855fb11c9592cb50346470cc6e5cf6a6bd320839d0973fa"
+    },
+    {
+      "path": "skills/README.md",
+      "sha256": "d09d8ea83a6fbd8d738ddad17a54be8138855076cea627ffdad22cff1aa9223d"
+    },
+    {
+      "path": "skills/koai-evaluate/SKILL.md",
+      "sha256": "51de2391e310d5b7c8f610114cbf4022d3c80cb9651f76fce64986b2b38bc97b"
+    },
+    {
+      "path": "skills/koai-reflect/SKILL.md",
+      "sha256": "dfbdada629f43261fa69da68730b75bedfe6f995086f9cb135ba7994fba1da67"
+    },
+    {
+      "path": "skills/koai-recall/SKILL.md",
+      "sha256": "e2ce471177e0631291033fceeca3dbaa94fa0796e0e9c3875f073c6c8fc355fa"
+    },
+    {
+      "path": "skills/koai-ground/SKILL.md",
+      "sha256": "5aea78bc9236414e04b7f52910e74d0c4dc90eb1ad267b72ceec8145eba8acb4"
+    },
+    {
+      "path": "skills/references/quality-specification.md",
+      "sha256": "38eb6626e140660877f09b7b93ff862df4e714c0e87b77964fb6124770733dba"
+    },
+    {
+      "path": "skills/references/workflow.md",
+      "sha256": "7ba4aca53550f7ef3011c79350a95587edbb2951335a556dcc4f41a34dc4c56b"
+    },
+    {
+      "path": "skills/references/criteria.json",
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "skills/references/source-readings.json",
+      "sha256": "4286e62768534312c6b68ab2ea183fc837959824821278317ea9bf2a138d4c8d"
+    },
+    {
+      "path": "skills/references/evidence.md",
+      "sha256": "4932d404146ec2b4932f6529c96cb7de1969b9cd19450fe3673042011ec96c11"
+    },
+    {
+      "path": "skills/koai-orchestrate/SKILL.md",
+      "sha256": "c163dc61cc00ee3f2f729f6cba72793ddfc40276c080379178011dcdbaca6643"
+    },
+    {
+      "path": "skills/koai-evaluate/agents/openai.yaml",
+      "sha256": "ae16d087a1981fd894df5512c2d302cf82908846c62c62e1e3063f3d585f1391"
+    },
+    {
+      "path": "skills/koai-evaluate/references/evaluation.md",
+      "sha256": "433e988af901e50e84b00d7b0282ea11a1dfa2888565599fb7083eee5f0ff747"
+    },
+    {
+      "path": "skills/koai-evaluate/references/theory-explanation.json",
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "skills/koai-evaluate/references/unit-specifications.json",
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "skills/koai-reflect/agents/openai.yaml",
+      "sha256": "0b6022a3e2f2a2e0767897e8fa15207144af911ed8332006db0c1fdab51ca1dd"
+    },
+    {
+      "path": "skills/koai-recall/agents/openai.yaml",
+      "sha256": "e91259f000f525e8afc0a3ca036f03f1be56c18ceb88bfffe714c589b15f4688"
+    },
+    {
+      "path": "skills/koai-ground/agents/openai.yaml",
+      "sha256": "5842b3a1193e307382524586dc29f85a429eca11805d2899f4407cff2599f797"
+    },
+    {
+      "path": "skills/koai-orchestrate/agents/openai.yaml",
+      "sha256": "4c14dd9928b20ef099ba1c986851c003a79c1ec782482d1c3c2d052a5383d29b"
+    },
+    {
+      "path": "curriculum/student-plan.html",
+      "sha256": "96deb5e5e781bf39cc6bb5effe34d6d04a01ac65e13a3811c37f5a825714f7a9"
+    },
+    {
+      "path": "curriculum/contract.json",
+      "sha256": "7e16f0278bc55042228b42e1f819603efea41b2582f8057e889b5dd84a29298c"
+    }
+  ],
+  "files": [
+    {
+      "path": "reviews/week01/final-followup/quality.json",
+      "sha256": "b39ac2dd54ecd2bd68f48e6464bef0fd231f9a9f9523e116c3938a69e386cc77"
+    },
+    {
+      "path": "reviews/week01/final-followup/workflow.json",
+      "sha256": "cf05b1297e8f2c70e90e61f50b41c1eb51dfe889693682f15e4f549356f20b42"
+    },
+    {
+      "path": "reviews/week01/final-followup/command-08.json",
+      "sha256": "9555e939fecca3e5cde7bce8aee83561796633b01220d8023f70327754145311"
+    },
+    {
+      "path": "reviews/week01/final-followup/quality-evaluate-api.json",
+      "sha256": "ad6f0073088edea4c0a6338b279445c479494371b0f0618ef9456b3b0e18a315"
+    },
+    {
+      "path": "reviews/week01/final-followup/command-01.json",
+      "sha256": "e1d3f8d754c5cea73fe7783cfe2d9d71659b9a96e49a7595094a9154f6d96e86"
+    },
+    {
+      "path": "reviews/week01/final-followup/graph.json",
+      "sha256": "d267b37bcd47442342efa0e9084d3012401a7d09e6729361b09941ac1394b119"
+    },
+    {
+      "path": "reviews/week01/final-followup/independent-final-rebind.json",
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "reviews/week01/final-followup/command-05.json",
+      "sha256": "4d8786b3215638acdb44a631e24aab56689775a0d60279d43aa089bd068d556b"
+    },
+    {
+      "path": "reviews/week01/final-followup/command-00.json",
+      "sha256": "7a692921d25dee13d7dec1210fab86e9599a4ad64e4eb03a581fc4783266eda5"
+    },
+    {
+      "path": "reviews/week01/final-followup/command-07.json",
+      "sha256": "238b9dd6834ca44280ca1c28fe4a7288e1f11c223fa47191a491346abc798454"
+    },
+    {
+      "path": "reviews/week01/final-followup/command-02.json",
+      "sha256": "3abad75666b03783ddb43d0ad6219410c131c4b7266987035a9e8fd4ece94838"
+    },
+    {
+      "path": "reviews/week01/final-followup/command-04.json",
+      "sha256": "9ad10dadad4164345eed7e397bcddc7ae7d095bda7f68fdb10c11b18885d3c54"
+    },
+    {
+      "path": "reviews/week01/final-followup/publication-scope.json",
+      "sha256": "542d9cd63b54650e66261158e9779f25a99d5a0cc6d85acd9057d2c6b5ba23b6"
+    },
+    {
+      "path": "reviews/week01/final-followup/command-06.json",
+      "sha256": "1b6727e86348f8cb1f39eef08b380862c2d27903e8913bfb60283353ccc2a845"
+    },
+    {
+      "path": "reviews/week01/final-followup/command-03.json",
+      "sha256": "7b07ae70bcd55b12d368d2a66e77a4fae2be21b2f4dd266a8b00f84bfe83e633"
+    },
+    {
+      "path": "reviews/week01/final-followup/independent-supplement.json",
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    }
+  ]
+}

@@ -1,0 +1,317 @@
+{
+  "schema": "independent-final-rebind-v1",
+  "reviewed_at_utc": "2026-11-10T22:48:51.100027+00:00",
+  "reviewer": {
+    "id": "independent-material-reviewer",
+    "independence": "Separate reviewing agent, same model family as author; no independent educator calibration or learner validation.",
+    "model_family": "Same family as author as specified in the review assignment; exact runtime model identifier unavailable."
+  },
+  "artifact_sha256": "602c0c4e04e7208b0b082d9e4e7d4be384e1371f67c5f211d931911367d02eb0",
+  "teacher_notes_sha256": "3622f179b0b5f748a785437c3da86b7a6652fa54aa5468123c11edd52d618384",
+  "quality_record_path": "reviews/week01/final-followup/quality.json",
+  "quality_record_sha256": "08cc4f5bd50ae35eb10517c950f4c3c686993030de285cd4c51c3ad258632a46",
+  "binding_history": [
+    {
+      "criterion": "K05",
+      "object_id": "W1-visualise:registered-chain-binding",
+      "status": "failed",
+      "artifact_locators": [
+        "reviews/week01/final/quality.json:units[W1-visualise].chain.assessment",
+        "cell:b5362bd2",
+        "cell:5d9473df"
+      ],
+      "evidence": "Registered locator cell:d60c3acd is array/CSV/function assessment, not graph change. Actual appropriate graph assessment is b5362bd2, response5d9473df. Notebook material is aligned; record binding must be corrected.",
+      "limitation": "This status concerns current record, not a student or notebook content failure."
+    },
+    {
+      "criterion": "K05",
+      "object_id": "W1-visualise:registered-chain-binding",
+      "status": "passed",
+      "artifact_locators": [
+        "cell:b5362bd2",
+        "cell:5d9473df",
+        "reviews/week01/final-followup/quality.json:units[W1-visualise].chain.assessment"
+      ],
+      "context_fingerprint": null,
+      "evidence": "Directly inspected corrected locator and response_locator. b5362bd2 asks prediction and redraw after all sunlight values increase1h; 5d9473df asks result/reason/help. This is the same graph assessment inspected in original content review. Earlier d60c3acd binding failure is preserved below."
+    }
+  ],
+  "fresh_scoped_reviews": [
+    {
+      "criterion_id": "K06",
+      "object_id": "claim:python",
+      "status": "passed",
+      "context_fingerprint": null,
+      "artifact_locators": [
+        "cell:b17df2fe"
+      ],
+      "reason": "Exact numeric function/state explanation unchanged. Previously extracted actual function passed ordinary/singleton/empty inputs. Newly bound original Python return/assignment and function-fallthrough reads directly support the same semantics; no new behavior or broader language claim introduced.",
+      "evidence_refs": [
+        "week01-independent-review.json:executed_checks",
+        "week01-independent-supplement.json:K10/claim:python"
+      ],
+      "source_ids": [
+        "read-followup:PYTHON_RETURN",
+        "read-followup:PYTHON_FUNCTIONS"
+      ]
+    },
+    {
+      "criterion_id": "K06",
+      "object_id": "claim:table",
+      "status": "passed",
+      "context_fingerprint": null,
+      "artifact_locators": [
+        "cell:08e374f4"
+      ],
+      "reason": "Exact dictionary, missing-water rows and mean140/5=28 unchanged. Prior independent arithmetic and actual CSV/missingness checks remain applicable. Newly bound isna/Series.mean reads directly support missing flag and skipped-NA semantics; unknown entire-population mean remains unclaimed.",
+      "evidence_refs": [
+        "week01-independent-review.json:executed_checks",
+        "week01-independent-supplement.json:K10/claim:table"
+      ],
+      "source_ids": [
+        "read-followup:3",
+        "read-followup:10"
+      ]
+    },
+    {
+      "criterion_id": "K06",
+      "object_id": "claim:array",
+      "status": "passed",
+      "context_fingerprint": null,
+      "artifact_locators": [
+        "cell:ebbfd3db"
+      ],
+      "reason": "Exact rectangular A, formulas and axis settings unchanged. Prior standard-library arithmetic, actual NumPy reductions and pinned axis oracle agree. Bound NumPy mean original read supports same finite 2D reduction; no extrapolation to arbitrary dimensions/nonfinite data.",
+      "evidence_refs": [
+        "week01-independent-review.json:executed_checks",
+        "week01-independent-supplement.json:K10/claim:array"
+      ],
+      "source_ids": [
+        "read-followup:0"
+      ]
+    },
+    {
+      "criterion_id": "K06",
+      "object_id": "claim:visualise",
+      "status": "passed",
+      "context_fingerprint": null,
+      "artifact_locators": [
+        "cell:fa10c459"
+      ],
+      "reason": "Exact x/y arguments and six synthetic records unchanged. New scatter source explicitly defines x/y as positions; mapping still reconciles P03=(5,12). No causal conclusion is inferred from API manual; causal restraint follows synthetic, nonexperimental example. Corrected assessment binding changes the record, not the plotted claim.",
+      "evidence_refs": [
+        "week01-independent-review.json:executed_checks",
+        "week01-independent-supplement.json:K10/claim:visualise"
+      ],
+      "source_ids": [
+        "read-followup:MATPLOTLIB_SCATTER"
+      ]
+    },
+    {
+      "criterion_id": "K16",
+      "object_id": "W1-python",
+      "status": "passed",
+      "context_fingerprint": null,
+      "subchecks": [
+        {
+          "id": "T04",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:b17df2fe",
+            "cell:7208718e",
+            "cell:e2a6be88",
+            "cell:92534730",
+            "cell:d96a754b",
+            "cell:81129230",
+            "cell:c6d01f13",
+            "cell:fb78da30",
+            "cell:14425637"
+          ],
+          "evidence": "Input/output and empty-input contracts precede mean pseudocode. Trace now separates total 12 from return 4 and supplies before/after sums. Singleton and empty paths explained. Diagnostic branch syntax matches execution. mean_of_numbers and require_columns extracted from candidate and independently executed on ordinary, changed and failing cases; results agree. Missing-column trace accumulates only absent names before raising. Changed shifted_mean task requires real code modification and returned-value reuse."
+        },
+        {
+          "id": "T05",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:7208718e",
+            "cell:c6d01f13",
+            "cell:modify-mean-function",
+            "cell:d60c3acd",
+            "cell:3aea0e50",
+            "cell:guided-feedback-and-support"
+          ],
+          "evidence": "Entry assumptions name prior basic coding; short-list tracing is an available bridge. Learners predict branch, loop states, return/print, slice and file/column errors. Help reporting is explicit. Changed-input modification requires total 3->8->18, returned 6, reused 18; teacher key independently checked. Feedback distinguishes variable state and screen output and directs a smaller input when confused."
+        }
+      ],
+      "reason": "Fresh scoped applicability judgment: exact notebook bytes, diagrams, outputs and teacher key match reviewed final; all actual explanation regions and their prompts/keys remain unchanged. New original source records were actually read and support rather than alter the taught claims. No teaching-content or assessment-demand change identified for this unit.",
+      "limits": "Same-family independent material review only, not educator calibration, observed understanding or global quality gate."
+    },
+    {
+      "criterion_id": "K16",
+      "object_id": "W1-table",
+      "status": "passed",
+      "context_fingerprint": null,
+      "subchecks": [
+        {
+          "id": "T03",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:1ab9cd79",
+            "cell:876b91b7",
+            "cell:b428c6f1",
+            "cell:0eaa5024",
+            "cell:30a2a103",
+            "cell:b6788dc5",
+            "cell:9b766e3e",
+            "cell:08e374f4",
+            "cell:d60c3acd"
+          ],
+          "evidence": "Synthetic population, record/column meanings, units and feature/target roles are explicit in both dictionaries. Boolean mask maps P03/P04/P06 to selected rows; shape distinction Series versus DataFrame and missing slots is explained. isna counts flags rather than raw measurements; missing P03 differs from zero P01. Recorded-water denominator 5 and unknown full-population mean are distinguished. Changed-name task and missing-column contract preserve meanings."
+        },
+        {
+          "id": "T05",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:b38de2c6",
+            "cell:d60c3acd",
+            "cell:dff8752b",
+            "cell:3aea0e50",
+            "cell:guided-feedback-and-support"
+          ],
+          "evidence": "Changed conditions and column names require predictions of selected IDs and shape, missing-versus-zero interpretation, and error explanation. New dictionary eliminates English-name guessing. Teacher key matches Q03/Q04 selection, shape (2,2), recorded average 20 ml excluding Q02. Feedback returns learner to actual columns/dictionary or separate zero/missing rows; assistance is recorded rather than inferred absent."
+        }
+      ],
+      "reason": "Fresh scoped applicability judgment: exact notebook bytes, diagrams, outputs and teacher key match reviewed final; all actual explanation regions and their prompts/keys remain unchanged. New original source records were actually read and support rather than alter the taught claims. No teaching-content or assessment-demand change identified for this unit.",
+      "limits": "Same-family independent material review only, not educator calibration, observed understanding or global quality gate."
+    },
+    {
+      "criterion_id": "K16",
+      "object_id": "W1-array",
+      "status": "passed",
+      "context_fingerprint": null,
+      "subchecks": [
+        {
+          "id": "T01",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:409e1675",
+            "cell:82e8a039",
+            "cell:e594ea69",
+            "cell:ebbfd3db",
+            "cell:08bf506c",
+            "cell:d60c3acd"
+          ],
+          "evidence": "Mean and variance symbols, finite same-unit values, n>=1, indices, units and empty-domain exclusion are stated. Generic a_ij, m, p, c_j and r_i definitions/ranges appear with formula. Rectangular 2D, keepdims=False, mathematical 1-based versus Python 0-based indexing, and output shapes are explicit. n versus n-1 convention and ddof are distinguished."
+        },
+        {
+          "id": "T02",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:409e1675",
+            "cell:82e8a039",
+            "cell:ebbfd3db",
+            "cell:guided-feedback-and-support"
+          ],
+          "evidence": "Equal-share equation derives mean from sum preservation. Sum of deviations is derived as sum(x)-n*mean=0. Variance is correctly identified as a definition, not uniquely forced by cancellation; repeated-data example motivates normalization. Worked 8/3 cm2 and zero spread agree. Generic column/row denominator follows actual summand count. Wrong denominator counterexample 18/2=9 exposes error. Translation invariance is explained by cancelling equal shifts."
+        },
+        {
+          "id": "T03",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:mean-variance-mapping",
+            "cell:b9a324f5",
+            "cell:e594ea69",
+            "cell:ebbfd3db",
+            "cell:guided-feedback-and-support"
+          ],
+          "evidence": "Variance figure pixels directly inspected: common cm x-scale, ordered-record y-label, vertical mean=4 line, signed arrows -2/0/+2 and square labels 4/0/4 map consistently to formula and caption. Axis attachment pixels inspected in baseline; candidate attachment equality verified. Axis diagram groups, averages, remaining counts and arrows match text. Interpretation prompts ask mapping marks back to inputs and formula; feedback supplies reasoning."
+        },
+        {
+          "id": "T04",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:b17df2fe",
+            "cell:ebbfd3db",
+            "cell:81129230",
+            "cell:3468f4e4",
+            "cell:ea9aba74"
+          ],
+          "evidence": "Mean state trace, finite-loop stopping and empty error correspond to implementation. Column-mean pseudocode resets each column total; explicit traces 0->2->8->18 and 0->4->12->24 yield [6,8]. Positive rectangular dimensions exclude empty axes. Mapping to NumPy reductions and retained dimensions is explicit. Independent pinned quality oracle matched A/B both axes and singleton, rejecting empty/ragged cases; independent actual NumPy results match."
+        },
+        {
+          "id": "T05",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:ffb294df",
+            "cell:71068cea",
+            "cell:d60c3acd",
+            "cell:3aea0e50",
+            "cell:guided-feedback-and-support"
+          ],
+          "evidence": "Predict-before-run hand tasks, 4x3 changed-shape questions, shifted-value variance probe and new B assessment require explanation of denominator and shape. Teacher B key checked: columns [2,6,10] /2, rows [5,7] /3, first row variance 32/3 cm2. Support returns to circling inputs making one output; feedback addresses sum-as-mean and bigger-value-as-bigger-variance misconceptions. Actual learning not inferred."
+        }
+      ],
+      "reason": "Fresh scoped applicability judgment: exact notebook bytes, diagrams, outputs and teacher key match reviewed final; all actual explanation regions and their prompts/keys remain unchanged. New original source records were actually read and support rather than alter the taught claims. No teaching-content or assessment-demand change identified for this unit.",
+      "limits": "Same-family independent material review only, not educator calibration, observed understanding or global quality gate."
+    },
+    {
+      "criterion_id": "K16",
+      "object_id": "W1-visualise",
+      "status": "passed",
+      "context_fingerprint": null,
+      "subchecks": [
+        {
+          "id": "T03",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:fa10c459",
+            "cell:48d931b0",
+            "cell:b5362bd2",
+            "cell:9ce91662",
+            "cell:c6ef56e6",
+            "cell:777a590f",
+            "cell:33384c16",
+            "cell:6a64bcb2",
+            "cell:8d3421bb",
+            "cell:d7b8c3d2",
+            "cell:6075b8e8"
+          ],
+          "evidence": "Scatter mapping P03=(5h,12cm), six synthetic records and noncausal limitation are explicit; source code labels axes/units. Extension distribution record-order axis is distinguished from measurement; mean bars aggregate named groups with counts and zero baseline. Histogram bins/count semantics and final endpoint are correct; sum of bar heights=6 now unambiguous. Stripplot overlap is explained, not treated as missing rows. Plot source reviewed; final regenerated plot pixels are outside this reviewer execution scope."
+        },
+        {
+          "id": "T05",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:b5362bd2",
+            "cell:5d9473df",
+            "cell:9ce91662",
+            "cell:777a590f",
+            "cell:6075b8e8",
+            "cell:guided-feedback-and-support"
+          ],
+          "evidence": "Learners predict shifted x-values in a preserved-copy plot, explain one mark and a limit, change group data, and distinguish aggregated bars from individual points. Feedback correctly states right shift by 1h with heights unchanged. Teacher key includes 28/3 and 44/3 cm group means and histogram counts 1,3,1,1. Support maps a confusing mark back to table records. Material suitability only; no learner performance claim."
+        }
+      ],
+      "reason": "Fresh scoped applicability judgment: exact notebook bytes, diagrams, outputs and teacher key match reviewed final; all actual explanation regions and their prompts/keys remain unchanged. New original source records were actually read and support rather than alter the taught claims. Corrected graph assessment now points to the already directly reviewed shift-and-redraw task and its response cell; it supplies the intended mapping without changing difficulty or learner evidence.",
+      "limits": "Same-family independent material review only, not educator calibration, observed understanding or global quality gate."
+    }
+  ],
+  "mode_evidence_check": {
+    "status": "passed",
+    "observed": "All four units retain theory:not_run and practical:not_run. No learner execution or guided achievement invented."
+  },
+  "basis": "Not automatic reuse of stale passes: exact-byte comparison establishes unchanged teaching objects; current record differences directly inspected; actual new source contents previously read; applicability reason written per claim/unit; current context fingerprints intentionally not asserted: this publish checkout has older criterion/tool files that reject K16; the pinned787079f harness must compute and bind these fresh substantive judgments. No stale serialized fingerprint is reused. Prior failed binding remains historical evidence.",
+  "fingerprint_binding": {
+    "status": "not_run",
+    "reason": "Local publish checkout criterion/tool files lack K16. Current pinned-harness fingerprint binding remains the harness responsibility; no unknown or stale fingerprint fabricated."
+  },
+  "not_claimed": [
+    "Observed readiness",
+    "Learner mastery or transfer success",
+    "Educator calibration",
+    "Learning effectiveness",
+    "Final whole-workflow approval",
+    "Any external publication"
+  ],
+  "stop": "Review complete; no lesson/repository changes and no new research."
+}

@@ -1,0 +1,685 @@
+{
+  "schema": "independent-supplement-v1",
+  "reviewed_at_utc": "2026-11-10T22:46:34.938087+00:00",
+  "reviewer": {
+    "id": "independent-material-reviewer",
+    "independence": "Separate reviewing agent, same model family as author; no independent educator calibration or learner validation.",
+    "model_family": "Same family as author as specified in the review assignment; exact runtime model identifier unavailable."
+  },
+  "scope": "K02 scoped material/depth honesty, K05 substantive alignment and actual locator bindings, K09 assessment design/help conditions, K10 directly read primary-source support. No student, educator or outcome observations.",
+  "artifact": {
+    "path": "lessons/week01/week01_python_tables.ipynb",
+    "sha256": "602c0c4e04e7208b0b082d9e4e7d4be384e1371f67c5f211d931911367d02eb0",
+    "teacher_notes_sha256": "3622f179b0b5f748a785437c3da86b7a6652fa54aa5468123c11edd52d618384",
+    "criteria_sha256": "18523cddf3760b29101beca80f36c59ae83a8feb7f8c0a9634ad17aebf1a4db1",
+    "quality_record_sha256_at_review": "dd9d446e853727818c4cc28435471928994b0ae6b7827348bdef22fa6ccb6213",
+    "prior_independent_report_sha256": "14fda9331866702cd120cf6573457bb52252412d84b247daaedb075f6be5c795"
+  },
+  "checks": [
+    {
+      "criterion": "K02",
+      "object_id": "W1-python",
+      "status": "passed",
+      "artifact_locators": [
+        "cell:b17df2fe",
+        "cell:7208718e",
+        "cell:81129230",
+        "cell:c6d01f13",
+        "cell:modify-mean-function",
+        "teacher-notes.txt:수업 편성/실행·검토 경계"
+      ],
+      "evidence": "program_state/control_flow/function_return: input contract and mean trace -> manual branch/loop/return predictions -> actual mean and column-check functions -> shifted_mean changed input, empty failure and returned-value reuse. Teacher key gives [3,5,10], total18, average6, reuse18 and None multiplication failure. Guided material is supplied, changed-input work is assigned, and learner work remains blank/not observed. No official-topic mastery or full-course completion claim is made.",
+      "limitation": "Material/design review only; no observed learner achievement."
+    },
+    {
+      "criterion": "K05",
+      "object_id": "W1-python",
+      "status": "passed",
+      "artifact_locators": [
+        "cell:b17df2fe",
+        "cell:7208718e",
+        "cell:81129230",
+        "cell:c6d01f13",
+        "cell:modify-mean-function"
+      ],
+      "evidence": "program_state/control_flow/function_return: input contract and mean trace -> manual branch/loop/return predictions -> actual mean and column-check functions -> shifted_mean changed input, empty failure and returned-value reuse. Teacher key gives [3,5,10], total18, average6, reuse18 and None multiplication failure. Explanation, hand prediction, implementation and changed-input demand address the same substantive relation. Graph-record locator accuracy is separately checked below.",
+      "limitation": "Material/design review only; no observed learner achievement."
+    },
+    {
+      "criterion": "K09",
+      "object_id": "W1-python",
+      "status": "passed",
+      "artifact_locators": [
+        "cell:b17df2fe",
+        "cell:7208718e",
+        "cell:81129230",
+        "cell:c6d01f13",
+        "cell:modify-mean-function",
+        "cell:guided-feedback-and-support",
+        "cell:3aea0e50",
+        "teacher-notes.txt:새 입력 학습 확인 답"
+      ],
+      "evidence": "program_state/control_flow/function_return: input contract and mean trace -> manual branch/loop/return predictions -> actual mean and column-check functions -> shifted_mean changed input, empty failure and returned-value reuse. Teacher key gives [3,5,10], total18, average6, reuse18 and None multiplication failure. Learners must hide completed examples/key, answer before running and record actual help. Rationale requires quantities, units/state/shape and error reasoning, not only matching output. Keys independently checked in prior bound review. This is suitability and honest interpretation, not observed independence.",
+      "limitation": "Material/design review only; no observed learner achievement."
+    },
+    {
+      "criterion": "K02",
+      "object_id": "W1-table",
+      "status": "passed",
+      "artifact_locators": [
+        "cell:1ab9cd79",
+        "cell:876b91b7",
+        "cell:b428c6f1",
+        "cell:0eaa5024",
+        "cell:9b766e3e",
+        "cell:b38de2c6",
+        "cell:d60c3acd",
+        "teacher-notes.txt:수업 편성/실행·검토 경계"
+      ],
+      "evidence": "row_column/feature_target/missingness: original dictionary and synthetic rows -> predict boolean selection and counts -> CSV read/mask/shape/dtype/isna -> renamed-column task and separate Q CSV with own dictionary. Teacher key identifies Q03/Q04, shape(2,2), water missingQ02 versus zeroQ01, recorded mean20 and missing-column error. Guided material is supplied, changed-input work is assigned, and learner work remains blank/not observed. No official-topic mastery or full-course completion claim is made.",
+      "limitation": "Material/design review only; no observed learner achievement."
+    },
+    {
+      "criterion": "K05",
+      "object_id": "W1-table",
+      "status": "passed",
+      "artifact_locators": [
+        "cell:1ab9cd79",
+        "cell:876b91b7",
+        "cell:b428c6f1",
+        "cell:0eaa5024",
+        "cell:9b766e3e",
+        "cell:b38de2c6",
+        "cell:d60c3acd"
+      ],
+      "evidence": "row_column/feature_target/missingness: original dictionary and synthetic rows -> predict boolean selection and counts -> CSV read/mask/shape/dtype/isna -> renamed-column task and separate Q CSV with own dictionary. Teacher key identifies Q03/Q04, shape(2,2), water missingQ02 versus zeroQ01, recorded mean20 and missing-column error. Explanation, hand prediction, implementation and changed-input demand address the same substantive relation. Graph-record locator accuracy is separately checked below.",
+      "limitation": "Material/design review only; no observed learner achievement."
+    },
+    {
+      "criterion": "K09",
+      "object_id": "W1-table",
+      "status": "passed",
+      "artifact_locators": [
+        "cell:1ab9cd79",
+        "cell:876b91b7",
+        "cell:b428c6f1",
+        "cell:0eaa5024",
+        "cell:9b766e3e",
+        "cell:b38de2c6",
+        "cell:d60c3acd",
+        "cell:guided-feedback-and-support",
+        "cell:3aea0e50",
+        "teacher-notes.txt:새 입력 학습 확인 답"
+      ],
+      "evidence": "row_column/feature_target/missingness: original dictionary and synthetic rows -> predict boolean selection and counts -> CSV read/mask/shape/dtype/isna -> renamed-column task and separate Q CSV with own dictionary. Teacher key identifies Q03/Q04, shape(2,2), water missingQ02 versus zeroQ01, recorded mean20 and missing-column error. Learners must hide completed examples/key, answer before running and record actual help. Rationale requires quantities, units/state/shape and error reasoning, not only matching output. Keys independently checked in prior bound review. This is suitability and honest interpretation, not observed independence.",
+      "limitation": "Material/design review only; no observed learner achievement."
+    },
+    {
+      "criterion": "K02",
+      "object_id": "W1-array",
+      "status": "passed",
+      "artifact_locators": [
+        "cell:ebbfd3db",
+        "cell:ffb294df",
+        "cell:3468f4e4",
+        "cell:71068cea",
+        "cell:d60c3acd",
+        "teacher-notes.txt:수업 편성/실행·검토 경계"
+      ],
+      "evidence": "shape/axis/arithmetic_mean: explicit finite rectangular 2D reduction -> A hand calculation before execution -> actual both-axis NumPy output and shape -> 4x3 shape probe and changed 2x3 B. Independently checked B means [2,6,10] and [5,7], denominator2/3; variance32/3. Matching concept IDs appear throughout recorded chain. Guided material is supplied, changed-input work is assigned, and learner work remains blank/not observed. No official-topic mastery or full-course completion claim is made.",
+      "limitation": "Material/design review only; no observed learner achievement."
+    },
+    {
+      "criterion": "K05",
+      "object_id": "W1-array",
+      "status": "passed",
+      "artifact_locators": [
+        "cell:ebbfd3db",
+        "cell:ffb294df",
+        "cell:3468f4e4",
+        "cell:71068cea",
+        "cell:d60c3acd"
+      ],
+      "evidence": "shape/axis/arithmetic_mean: explicit finite rectangular 2D reduction -> A hand calculation before execution -> actual both-axis NumPy output and shape -> 4x3 shape probe and changed 2x3 B. Independently checked B means [2,6,10] and [5,7], denominator2/3; variance32/3. Matching concept IDs appear throughout recorded chain. Explanation, hand prediction, implementation and changed-input demand address the same substantive relation. Graph-record locator accuracy is separately checked below.",
+      "limitation": "Material/design review only; no observed learner achievement."
+    },
+    {
+      "criterion": "K09",
+      "object_id": "W1-array",
+      "status": "passed",
+      "artifact_locators": [
+        "cell:ebbfd3db",
+        "cell:ffb294df",
+        "cell:3468f4e4",
+        "cell:71068cea",
+        "cell:d60c3acd",
+        "cell:guided-feedback-and-support",
+        "cell:3aea0e50",
+        "teacher-notes.txt:새 입력 학습 확인 답"
+      ],
+      "evidence": "shape/axis/arithmetic_mean: explicit finite rectangular 2D reduction -> A hand calculation before execution -> actual both-axis NumPy output and shape -> 4x3 shape probe and changed 2x3 B. Independently checked B means [2,6,10] and [5,7], denominator2/3; variance32/3. Matching concept IDs appear throughout recorded chain. Learners must hide completed examples/key, answer before running and record actual help. Rationale requires quantities, units/state/shape and error reasoning, not only matching output. Keys independently checked in prior bound review. This is suitability and honest interpretation, not observed independence.",
+      "limitation": "Material/design review only; no observed learner achievement."
+    },
+    {
+      "criterion": "K02",
+      "object_id": "W1-visualise",
+      "status": "passed",
+      "artifact_locators": [
+        "cell:fa10c459",
+        "cell:48d931b0",
+        "cell:b5362bd2",
+        "cell:5d9473df",
+        "cell:777a590f",
+        "cell:8d3421bb",
+        "cell:d7b8c3d2",
+        "teacher-notes.txt:수업 편성/실행·검토 경계"
+      ],
+      "evidence": "variable/aggregation/axis_label: explain and predict P03=(5h,12cm) -> read/execute labeled scatter -> change light by1h in copied data and predict/redraw right shift with fixed heights -> explain marks and limitation. Outside work separately implements Matplotlib means/distribution and Seaborn histogram/stripplot with counts and overlap semantics. Guided material is supplied, changed-input work is assigned, and learner work remains blank/not observed. No official-topic mastery or full-course completion claim is made.",
+      "limitation": "Material/design review only; no observed learner achievement."
+    },
+    {
+      "criterion": "K05",
+      "object_id": "W1-visualise",
+      "status": "passed",
+      "artifact_locators": [
+        "cell:fa10c459",
+        "cell:48d931b0",
+        "cell:b5362bd2",
+        "cell:5d9473df",
+        "cell:777a590f",
+        "cell:8d3421bb",
+        "cell:d7b8c3d2"
+      ],
+      "evidence": "variable/aggregation/axis_label: explain and predict P03=(5h,12cm) -> read/execute labeled scatter -> change light by1h in copied data and predict/redraw right shift with fixed heights -> explain marks and limitation. Outside work separately implements Matplotlib means/distribution and Seaborn histogram/stripplot with counts and overlap semantics. Explanation, hand prediction, implementation and changed-input demand address the same substantive relation. Graph-record locator accuracy is separately checked below.",
+      "limitation": "Material/design review only; no observed learner achievement."
+    },
+    {
+      "criterion": "K09",
+      "object_id": "W1-visualise",
+      "status": "passed",
+      "artifact_locators": [
+        "cell:fa10c459",
+        "cell:48d931b0",
+        "cell:b5362bd2",
+        "cell:5d9473df",
+        "cell:777a590f",
+        "cell:8d3421bb",
+        "cell:d7b8c3d2",
+        "cell:guided-feedback-and-support",
+        "cell:3aea0e50",
+        "teacher-notes.txt:새 입력 학습 확인 답"
+      ],
+      "evidence": "variable/aggregation/axis_label: explain and predict P03=(5h,12cm) -> read/execute labeled scatter -> change light by1h in copied data and predict/redraw right shift with fixed heights -> explain marks and limitation. Outside work separately implements Matplotlib means/distribution and Seaborn histogram/stripplot with counts and overlap semantics. Learners must hide completed examples/key, answer before running and record actual help. Rationale requires quantities, units/state/shape and error reasoning, not only matching output. Keys independently checked in prior bound review. This is suitability and honest interpretation, not observed independence.",
+      "limitation": "Material/design review only; no observed learner achievement."
+    },
+    {
+      "criterion": "K02",
+      "object_id": "KOAI-01",
+      "status": "passed",
+      "artifact_locators": [
+        "lesson-manifest.json:scope",
+        "teacher-notes.txt:수업 편성/실행·검토 경계",
+        "cell:5973e123"
+      ],
+      "evidence": "Python class diagnosis plus outside practice; no learner practical completion claimed. Official programming rows are practical O/theory X; extra explanatory material does not change official flags.",
+      "limitation": "Material/design review only; no observed learner achievement."
+    },
+    {
+      "criterion": "K02",
+      "object_id": "KOAI-02",
+      "status": "passed",
+      "artifact_locators": [
+        "lesson-manifest.json:scope",
+        "teacher-notes.txt:수업 편성/실행·검토 경계",
+        "cell:5973e123"
+      ],
+      "evidence": "NumPy/pandas examples and changed-input tasks in class/outside work; no learner mastery claimed. Official programming rows are practical O/theory X; extra explanatory material does not change official flags.",
+      "limitation": "Material/design review only; no observed learner achievement."
+    },
+    {
+      "criterion": "K02",
+      "object_id": "KOAI-03",
+      "status": "passed",
+      "artifact_locators": [
+        "lesson-manifest.json:scope",
+        "teacher-notes.txt:수업 편성/실행·검토 경계",
+        "cell:5973e123"
+      ],
+      "evidence": "Matplotlib in class; both libraries with separate plotting code in required outside work; library execution is not learner completion. Official programming rows are practical O/theory X; extra explanatory material does not change official flags.",
+      "limitation": "Material/design review only; no observed learner achievement."
+    },
+    {
+      "criterion": "K02",
+      "object_id": "KOAI-06",
+      "status": "passed",
+      "artifact_locators": [
+        "lesson-manifest.json:scope",
+        "teacher-notes.txt:수업 편성/실행·검토 경계",
+        "cell:5973e123"
+      ],
+      "evidence": "NumPy array prerequisite only; PyTorch dtype/device/GPU explicitly excluded from completion claim. Official programming rows are practical O/theory X; extra explanatory material does not change official flags.",
+      "limitation": "Material/design review only; no observed learner achievement."
+    },
+    {
+      "criterion": "K05",
+      "object_id": "W1-visualise:registered-chain-binding",
+      "status": "failed",
+      "artifact_locators": [
+        "reviews/week01/final/quality.json:units[W1-visualise].chain.assessment",
+        "cell:b5362bd2",
+        "cell:5d9473df"
+      ],
+      "evidence": "Registered locator cell:d60c3acd is array/CSV/function assessment, not graph change. Actual appropriate graph assessment is b5362bd2, response5d9473df. Notebook material is aligned; record binding must be corrected.",
+      "limitation": "This status concerns current record, not a student or notebook content failure."
+    },
+    {
+      "criterion": "K10",
+      "object_id": "claim:python",
+      "status": "passed",
+      "artifact_locators": [
+        "cell:b17df2fe",
+        "cell:92534730",
+        "cell:81129230"
+      ],
+      "evidence": "Direct return/assignment docs, function fall-through tutorial and print stream docs support state/return distinction; numerical result12/3=4 and total states independently executed. Applicable original-source reads are listed in source_read_ids.",
+      "limitation": "Claim-specific semantic support only; graph source_ids/evidence bindings must be populated separately.",
+      "source_read_ids": [
+        "PYTHON_RETURN",
+        "PYTHON_PRINT",
+        "PYTHON_FUNCTIONS"
+      ]
+    },
+    {
+      "criterion": "K10",
+      "object_id": "claim:table",
+      "status": "passed",
+      "artifact_locators": [
+        "cell:08e374f4",
+        "cell:876b91b7"
+      ],
+      "evidence": "Default CSV empty-field parsing, NA detection and skipna=True mean support notebook semantics; data dictionary defines true0 versus unknown and independent arithmetic establishes140/5=28. Applicable original-source reads are listed in source_read_ids.",
+      "limitation": "Claim-specific semantic support only; graph source_ids/evidence bindings must be populated separately.",
+      "source_read_ids": [
+        "https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html",
+        "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isna.html",
+        "https://pandas.pydata.org/docs/reference/api/pandas.Series.mean.html"
+      ]
+    },
+    {
+      "criterion": "K10",
+      "object_id": "claim:array",
+      "status": "passed",
+      "artifact_locators": [
+        "cell:ebbfd3db",
+        "cell:3468f4e4"
+      ],
+      "evidence": "API axis/keepdims/mean semantics read directly; exact A numerical claims independently recomputed and oracle-checked. Applicable original-source reads are listed in source_read_ids.",
+      "limitation": "Claim-specific semantic support only; graph source_ids/evidence bindings must be populated separately.",
+      "source_read_ids": [
+        "https://numpy.org/doc/stable/reference/generated/numpy.mean.html",
+        "https://numpy.org/doc/stable/reference/generated/numpy.var.html"
+      ]
+    },
+    {
+      "criterion": "K10",
+      "object_id": "claim:visualise",
+      "status": "passed",
+      "artifact_locators": [
+        "cell:fa10c459",
+        "cell:48d931b0",
+        "cell:b5362bd2"
+      ],
+      "evidence": "x/y data-position semantics read directly; actual column arguments and dictionary establish one point per supplied pot. Synthetic example contains no real intervention or population evidence; lesson appropriately declines causal/general-law conclusion. This limitation is not attributed to an API manual as empirical evidence. Applicable original-source reads are listed in source_read_ids.",
+      "limitation": "Claim-specific semantic support only; graph source_ids/evidence bindings must be populated separately.",
+      "source_read_ids": [
+        "MATPLOTLIB_SCATTER"
+      ]
+    },
+    {
+      "criterion": "K10",
+      "object_id": "https://numpy.org/doc/stable/reference/generated/numpy.mean.html",
+      "status": "passed",
+      "artifact_locators": [
+        "https://numpy.org/doc/stable/reference/generated/numpy.mean.html : Parameters axis/keepdims; Notes; Examples (web lines 80-150)"
+      ],
+      "evidence": "Mean reduces selected axis, default flattens; keepdims=True retains unit dimensions; arithmetic mean is sum divided by included element count.",
+      "limitation": "Only the stated read extent and claim supported; no full-methods review or learning-effect claim."
+    },
+    {
+      "criterion": "K10",
+      "object_id": "https://numpy.org/doc/stable/reference/generated/numpy.var.html",
+      "status": "passed",
+      "artifact_locators": [
+        "https://numpy.org/doc/stable/reference/generated/numpy.var.html : ddof and Notes (103-160)"
+      ],
+      "evidence": "Default ddof=0; divisor N-ddof; squared-deviation sum; N versus N-1 distinction.",
+      "limitation": "Only the stated read extent and claim supported; no full-methods review or learning-effect claim."
+    },
+    {
+      "criterion": "K10",
+      "object_id": "https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html",
+      "status": "passed",
+      "artifact_locators": [
+        "https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html : header (122-131), na_values/keep_default_na (197-216), quotechar (281-288)"
+      ],
+      "evidence": "Default inferred header is first data row absent names; empty field interpreted as missing by default; quoted delimiters supported.",
+      "limitation": "Only the stated read extent and claim supported; no full-methods review or learning-effect claim."
+    },
+    {
+      "criterion": "K10",
+      "object_id": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isna.html",
+      "status": "passed",
+      "artifact_locators": [
+        "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isna.html : Definition (245-247)"
+      ],
+      "evidence": "Same-sized boolean result marks NA True and other values False; an empty string already in a DataFrame is not itself automatically NA, distinct from CSV parsing.",
+      "limitation": "Only the stated read extent and claim supported; no full-methods review or learning-effect claim."
+    },
+    {
+      "criterion": "K10",
+      "object_id": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.var.html",
+      "status": "passed",
+      "artifact_locators": [
+        "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.var.html : Signature/ddof (242-268); example (329-333)"
+      ],
+      "evidence": "Default ddof=1; N-ddof denominator; explicit ddof=0 uses N.",
+      "limitation": "Only the stated read extent and claim supported; no full-methods review or learning-effect claim."
+    },
+    {
+      "criterion": "K10",
+      "object_id": "https://seaborn.pydata.org/generated/seaborn.histplot.html",
+      "status": "passed",
+      "artifact_locators": [
+        "https://seaborn.pydata.org/generated/seaborn.histplot.html : Signature/stat/bins (171,200-217)"
+      ],
+      "evidence": "Default count statistic counts observations per bin; explicit bin break vector accepted.",
+      "limitation": "Only the stated read extent and claim supported; no full-methods review or learning-effect claim."
+    },
+    {
+      "criterion": "K10",
+      "object_id": "https://seaborn.pydata.org/generated/seaborn.stripplot.html",
+      "status": "passed",
+      "artifact_locators": [
+        "https://seaborn.pydata.org/generated/seaborn.stripplot.html : Definition/jitter (175,200-201); disabled jitter example (351-353)"
+      ],
+      "evidence": "Categorical scatterplot; jitter can reveal overlaps and jitter=False disables it.",
+      "limitation": "Only the stated read extent and claim supported; no full-methods review or learning-effect claim."
+    },
+    {
+      "criterion": "K10",
+      "object_id": "https://kitpa.org/koai/2027",
+      "status": "passed",
+      "artifact_locators": [
+        "https://kitpa.org/koai/2027 : Competition guide links (94-96)"
+      ],
+      "evidence": "Reachable current KOAI 2027 page links official syllabus; no inference that syllabus heading itself changed to 2027.",
+      "limitation": "Only the stated read extent and claim supported; no full-methods review or learning-effect claim."
+    },
+    {
+      "criterion": "K10",
+      "object_id": "https://kitpa.org/koai/syllabus",
+      "status": "passed",
+      "artifact_locators": [
+        "https://kitpa.org/koai/syllabus : Heading (72-74); programming table (87-98)"
+      ],
+      "evidence": "Currently headed IOAI 2026 기준; Python, NumPy/Pandas, Matplotlib/Seaborn and tensor manipulation listed practical O, theory X. Does not establish this lesson alone completes all tensor/PyTorch topics.",
+      "limitation": "Only the stated read extent and claim supported; no full-methods review or learning-effect claim."
+    },
+    {
+      "criterion": "K10",
+      "object_id": "https://numpy.org/doc/stable/reference/generated/numpy.histogram.html",
+      "status": "passed",
+      "artifact_locators": [
+        "https://numpy.org/doc/stable/reference/generated/numpy.histogram.html : Notes (120-125)"
+      ],
+      "evidence": "All bins except final are half-open; last includes right endpoint.",
+      "limitation": "Only the stated read extent and claim supported; no full-methods review or learning-effect claim."
+    },
+    {
+      "criterion": "K10",
+      "object_id": "https://pandas.pydata.org/docs/reference/api/pandas.Series.mean.html",
+      "status": "passed",
+      "artifact_locators": [
+        "https://pandas.pydata.org/docs/reference/api/pandas.Series.mean.html : Signature/skipna (370-391)"
+      ],
+      "evidence": "Arithmetic mean skips missing values by default (skipna=True).",
+      "limitation": "Only the stated read extent and claim supported; no full-methods review or learning-effect claim."
+    },
+    {
+      "criterion": "K10",
+      "object_id": "PYTHON_RETURN",
+      "status": "passed",
+      "artifact_locators": [
+        "https://docs.python.org/3/reference/simple_stmts.html#the-return-statement : 7.2 Assignment lines29-46; 7.6 return lines174-184"
+      ],
+      "evidence": "return evaluates its expression and exits with that value; assignment separately binds names. For numeric total/count in this code, returning quotient does not reassign total.",
+      "limitation": "Only the stated read extent and claim supported; no full-methods review or learning-effect claim."
+    },
+    {
+      "criterion": "K10",
+      "object_id": "PYTHON_PRINT",
+      "status": "passed",
+      "artifact_locators": [
+        "https://docs.python.org/3/library/functions.html#print : print lines798-805"
+      ],
+      "evidence": "print converts values to text and writes to a stream, default stdout. This is output, not a replacement for the enclosing function returning its arithmetic result.",
+      "limitation": "Only the stated read extent and claim supported; no full-methods review or learning-effect claim."
+    },
+    {
+      "criterion": "K10",
+      "object_id": "PYTHON_FUNCTIONS",
+      "status": "passed",
+      "artifact_locators": [
+        "https://docs.python.org/3/tutorial/controlflow.html#defining-functions : 4.8 Defining Functions lines300-350"
+      ],
+      "evidence": "A function ending without return supplies None; return expression supplies a reusable value. Thus show_twice displays6 but stores None, unlike twice.",
+      "limitation": "Only the stated read extent and claim supported; no full-methods review or learning-effect claim."
+    },
+    {
+      "criterion": "K10",
+      "object_id": "MATPLOTLIB_SCATTER",
+      "status": "passed",
+      "artifact_locators": [
+        "https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.scatter.html : Definition and x,y parameter lines261-274"
+      ],
+      "evidence": "scatter plots y versus x, with x,y arrays giving data positions. Together with actual paired notebook columns and dictionary, this supports pot-row to point mapping.",
+      "limitation": "Only the stated read extent and claim supported; no full-methods review or learning-effect claim."
+    }
+  ],
+  "primary_source_reads": [
+    {
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.mean.html",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "Parameters axis/keepdims; Notes; Examples (web lines 80-150)",
+      "observed_support": "Mean reduces selected axis, default flattens; keepdims=True retains unit dimensions; arithmetic mean is sum divided by included element count.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review.",
+      "discovery_route": "Directly opened the exact primary URL, then used within-page find/open for relevant text. No search-query discovery claimed.",
+      "accessed_at": "2026-11-10 (UTC date of actual earlier reads; exact per-call clock not recorded)",
+      "extent": "Relevant documentation/official-page sections, not entire manuals or empirical methods.",
+      "limitation": "Supports scoped API or official-page statement only; no evidence of this lesson improving learning."
+    },
+    {
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.var.html",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "ddof and Notes (103-160)",
+      "observed_support": "Default ddof=0; divisor N-ddof; squared-deviation sum; N versus N-1 distinction.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review.",
+      "discovery_route": "Directly opened the exact primary URL, then used within-page find/open for relevant text. No search-query discovery claimed.",
+      "accessed_at": "2026-11-10 (UTC date of actual earlier reads; exact per-call clock not recorded)",
+      "extent": "Relevant documentation/official-page sections, not entire manuals or empirical methods.",
+      "limitation": "Supports scoped API or official-page statement only; no evidence of this lesson improving learning."
+    },
+    {
+      "url": "https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "header (122-131), na_values/keep_default_na (197-216), quotechar (281-288)",
+      "observed_support": "Default inferred header is first data row absent names; empty field interpreted as missing by default; quoted delimiters supported.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review.",
+      "discovery_route": "Directly opened the exact primary URL, then used within-page find/open for relevant text. No search-query discovery claimed.",
+      "accessed_at": "2026-11-10 (UTC date of actual earlier reads; exact per-call clock not recorded)",
+      "extent": "Relevant documentation/official-page sections, not entire manuals or empirical methods.",
+      "limitation": "Supports scoped API or official-page statement only; no evidence of this lesson improving learning."
+    },
+    {
+      "url": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isna.html",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "Definition (245-247)",
+      "observed_support": "Same-sized boolean result marks NA True and other values False; an empty string already in a DataFrame is not itself automatically NA, distinct from CSV parsing.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review.",
+      "discovery_route": "Directly opened the exact primary URL, then used within-page find/open for relevant text. No search-query discovery claimed.",
+      "accessed_at": "2026-11-10 (UTC date of actual earlier reads; exact per-call clock not recorded)",
+      "extent": "Relevant documentation/official-page sections, not entire manuals or empirical methods.",
+      "limitation": "Supports scoped API or official-page statement only; no evidence of this lesson improving learning."
+    },
+    {
+      "url": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.var.html",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "Signature/ddof (242-268); example (329-333)",
+      "observed_support": "Default ddof=1; N-ddof denominator; explicit ddof=0 uses N.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review.",
+      "discovery_route": "Directly opened the exact primary URL, then used within-page find/open for relevant text. No search-query discovery claimed.",
+      "accessed_at": "2026-11-10 (UTC date of actual earlier reads; exact per-call clock not recorded)",
+      "extent": "Relevant documentation/official-page sections, not entire manuals or empirical methods.",
+      "limitation": "Supports scoped API or official-page statement only; no evidence of this lesson improving learning."
+    },
+    {
+      "url": "https://seaborn.pydata.org/generated/seaborn.histplot.html",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "Signature/stat/bins (171,200-217)",
+      "observed_support": "Default count statistic counts observations per bin; explicit bin break vector accepted.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review.",
+      "discovery_route": "Directly opened the exact primary URL, then used within-page find/open for relevant text. No search-query discovery claimed.",
+      "accessed_at": "2026-11-10 (UTC date of actual earlier reads; exact per-call clock not recorded)",
+      "extent": "Relevant documentation/official-page sections, not entire manuals or empirical methods.",
+      "limitation": "Supports scoped API or official-page statement only; no evidence of this lesson improving learning."
+    },
+    {
+      "url": "https://seaborn.pydata.org/generated/seaborn.stripplot.html",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "Definition/jitter (175,200-201); disabled jitter example (351-353)",
+      "observed_support": "Categorical scatterplot; jitter can reveal overlaps and jitter=False disables it.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review.",
+      "discovery_route": "Directly opened the exact primary URL, then used within-page find/open for relevant text. No search-query discovery claimed.",
+      "accessed_at": "2026-11-10 (UTC date of actual earlier reads; exact per-call clock not recorded)",
+      "extent": "Relevant documentation/official-page sections, not entire manuals or empirical methods.",
+      "limitation": "Supports scoped API or official-page statement only; no evidence of this lesson improving learning."
+    },
+    {
+      "url": "https://kitpa.org/koai/2027",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "Competition guide links (94-96)",
+      "observed_support": "Reachable current KOAI 2027 page links official syllabus; no inference that syllabus heading itself changed to 2027.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review.",
+      "discovery_route": "Directly opened the exact primary URL, then used within-page find/open for relevant text. No search-query discovery claimed.",
+      "accessed_at": "2026-11-10 (UTC date of actual earlier reads; exact per-call clock not recorded)",
+      "extent": "Relevant documentation/official-page sections, not entire manuals or empirical methods.",
+      "limitation": "Supports scoped API or official-page statement only; no evidence of this lesson improving learning."
+    },
+    {
+      "url": "https://kitpa.org/koai/syllabus",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "Heading (72-74); programming table (87-98)",
+      "observed_support": "Currently headed IOAI 2026 기준; Python, NumPy/Pandas, Matplotlib/Seaborn and tensor manipulation listed practical O, theory X. Does not establish this lesson alone completes all tensor/PyTorch topics.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review.",
+      "discovery_route": "Directly opened the exact primary URL, then used within-page find/open for relevant text. No search-query discovery claimed.",
+      "accessed_at": "2026-11-10 (UTC date of actual earlier reads; exact per-call clock not recorded)",
+      "extent": "Relevant documentation/official-page sections, not entire manuals or empirical methods.",
+      "limitation": "Supports scoped API or official-page statement only; no evidence of this lesson improving learning."
+    },
+    {
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.histogram.html",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "Notes (120-125)",
+      "observed_support": "All bins except final are half-open; last includes right endpoint.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review.",
+      "discovery_route": "Directly opened the exact primary URL, then used within-page find/open for relevant text. No search-query discovery claimed.",
+      "accessed_at": "2026-11-10 (UTC date of actual earlier reads; exact per-call clock not recorded)",
+      "extent": "Relevant documentation/official-page sections, not entire manuals or empirical methods.",
+      "limitation": "Supports scoped API or official-page statement only; no evidence of this lesson improving learning."
+    },
+    {
+      "url": "https://pandas.pydata.org/docs/reference/api/pandas.Series.mean.html",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "Signature/skipna (370-391)",
+      "observed_support": "Arithmetic mean skips missing values by default (skipna=True).",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review.",
+      "discovery_route": "Directly opened the exact primary URL, then used within-page find/open for relevant text. No search-query discovery claimed.",
+      "accessed_at": "2026-11-10 (UTC date of actual earlier reads; exact per-call clock not recorded)",
+      "extent": "Relevant documentation/official-page sections, not entire manuals or empirical methods.",
+      "limitation": "Supports scoped API or official-page statement only; no evidence of this lesson improving learning."
+    },
+    {
+      "id": "PYTHON_RETURN",
+      "url": "https://docs.python.org/3/reference/simple_stmts.html#the-return-statement",
+      "version": "Python 3.15.2 rendered documentation",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "7.2 Assignment lines29-46; 7.6 return lines174-184",
+      "observed_support": "return evaluates its expression and exits with that value; assignment separately binds names. For numeric total/count in this code, returning quotient does not reassign total.",
+      "discovery_route": "open exact URL; find pattern return leaves",
+      "accessed_at": "2026-11-10T22:46:34.938059+00:00",
+      "extent": "Relevant sections directly returned and read in web tool.",
+      "limitation": "API/language semantics only. Matplotlib docs do not themselves prove causal or noncausal relationships; synthetic design provides no real experimental causal evidence."
+    },
+    {
+      "id": "PYTHON_PRINT",
+      "url": "https://docs.python.org/3/library/functions.html#print",
+      "version": "Python 3.15.2 rendered documentation; redirected to https://docs.python.org/3/builtins/functions.html",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "print lines798-805",
+      "observed_support": "print converts values to text and writes to a stream, default stdout. This is output, not a replacement for the enclosing function returning its arithmetic result.",
+      "discovery_route": "open exact URL; find pattern Print objects",
+      "accessed_at": "2026-11-10T22:46:34.938068+00:00",
+      "extent": "Relevant sections directly returned and read in web tool.",
+      "limitation": "API/language semantics only. Matplotlib docs do not themselves prove causal or noncausal relationships; synthetic design provides no real experimental causal evidence."
+    },
+    {
+      "id": "PYTHON_FUNCTIONS",
+      "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions",
+      "version": "Python 3.15.2 rendered documentation",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "4.8 Defining Functions lines300-350",
+      "observed_support": "A function ending without return supplies None; return expression supplies a reusable value. Thus show_twice displays6 but stores None, unlike twice.",
+      "discovery_route": "open exact URL; find pattern Falling off",
+      "accessed_at": "2026-11-10T22:46:34.938071+00:00",
+      "extent": "Relevant sections directly returned and read in web tool.",
+      "limitation": "API/language semantics only. Matplotlib docs do not themselves prove causal or noncausal relationships; synthetic design provides no real experimental causal evidence."
+    },
+    {
+      "id": "MATPLOTLIB_SCATTER",
+      "url": "https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.scatter.html",
+      "version": "Matplotlib 3.11.2 rendered documentation",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "Definition and x,y parameter lines261-274",
+      "observed_support": "scatter plots y versus x, with x,y arrays giving data positions. Together with actual paired notebook columns and dictionary, this supports pot-row to point mapping.",
+      "discovery_route": "open exact URL; find pattern The data positions",
+      "accessed_at": "2026-11-10T22:46:34.938072+00:00",
+      "extent": "Relevant sections directly returned and read in web tool.",
+      "limitation": "API/language semantics only. Matplotlib docs do not themselves prove causal or noncausal relationships; synthetic design provides no real experimental causal evidence."
+    }
+  ],
+  "source_read_claim_boundary": "These records attest only to actual reads by this reviewer. Existing quality.json source_reads for unrelated research papers, full syllabus/plan or exam composition are NOT authenticated by this supplement. No search queries invented; direct URL opens/finds used.",
+  "known_uncertainties": [
+    "Observed readiness, independent transfer, student mastery, learning gains, educator calibration and classroom timing remain not_run/unobserved.",
+    "K02 passed refers only to truthful guided-material scope and planned obligations. Theory/practical learner mode_evidence must remain not_run.",
+    "No full-syllabus, entire PyTorch/tensor completion or official contest equivalence claim warranted.",
+    "Any changed content or bindings require current fingerprints; this supplement does not manufacture graph/schema validation."
+  ],
+  "record_corrections_needed": [
+    "Set W1-visualise chain.assessment locator to cell:b5362bd2 and associate response cell:5d9473df; refresh affected fingerprints."
+  ]
+}

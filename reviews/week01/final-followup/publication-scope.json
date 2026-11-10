@@ -1,0 +1,10 @@
+{
+  "authorization": "One manual publication to the existing review branch is authorized with participant validation incomplete.",
+  "not_authorized_by_this_record": [
+    "Aggregate pedagogical approval",
+    "Main-branch merge",
+    "Recurring execution"
+  ],
+  "artifact_sha256": "602c0c4e04e7208b0b082d9e4e7d4be384e1371f67c5f211d931911367d02eb0",
+  "remaining_policies": "Diagnostic cutoff, individual homework cap, calibration tolerance and priority policy remain unagreed."
+}

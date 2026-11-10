@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "tools/validate.py",
+    "/workspace/scratch/d500e5cb2076/olympiad-week1-publish/reviews/week01/final-followup/graph.json"
+  ],
+  "cwd": "/workspace/scratch/d500e5cb2076/olympiad-week1-publish/reviews/week01/final-followup/.qa",
+  "exit_code": 0,
+  "stdout": "0 error(s), 0 warning(s)\n",
+  "stderr": ""
+}

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "tools/quality.py",
+    "impact",
+    "/workspace/scratch/d500e5cb2076/olympiad-week1-publish/reviews/week01/final-followup/quality.json",
+    "--changed",
+    "claim:python"
+  ],
+  "cwd": "/workspace/scratch/d500e5cb2076/olympiad-week1-publish/reviews/week01/final-followup/.qa",
+  "exit_code": 0,
+  "stdout": "{\n  \"affected\": [\n    \"W1-python\",\n    \"claim:python\"\n  ],\n  \"authority\": \"advisory_only\",\n  \"changed\": [\n    \"claim:python\"\n  ],\n  \"limit\": \"Only declared dependency edges are covered; no file is modified.\",\n  \"unaffected\": [\n    \"ALCE\",\n    \"BIGGS\",\n    \"CHEN\",\n    \"DEFT\",\n    \"HUANG\",\n    \"KARPICKE\",\n    \"KOAI27\",\n    \"LONGMEM\",\n    \"METRICS\",\n    \"NUMPY\",\n    \"PLAN\",\n    \"PRIMM\",\n    \"SKLEARN\",\n    \"SYLLABUS\",\n    \"W1-array\",\n    \"W1-table\",\n    \"W1-visualise\",\n    \"claim:array\",\n    \"claim:table\",\n    \"claim:visualise\",\n    \"read-followup:0\",\n    \"read-followup:1\",\n    \"read-followup:10\",\n    \"read-followup:2\",\n    \"read-followup:3\",\n    \"read-followup:4\",\n    \"read-followup:5\",\n    \"read-followup:6\",\n    \"read-followup:7\",\n    \"read-followup:8\",\n    \"read-followup:9\",\n    \"read-followup:MATPLOTLIB_SCATTER\",\n    \"read-followup:PYTHON_FUNCTIONS\",\n    \"read-followup:PYTHON_PRINT\",\n    \"read-followup:PYTHON_RETURN\"\n  ]\n}\n",
+  "stderr": ""
+}

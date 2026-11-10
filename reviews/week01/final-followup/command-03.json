@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "tools/quality.py",
+    "review-context",
+    "/workspace/scratch/d500e5cb2076/olympiad-week1-publish/reviews/week01/final-followup/quality.json",
+    "--criterion",
+    "K16",
+    "--object",
+    "W1-visualise"
+  ],
+  "cwd": "/workspace/scratch/d500e5cb2076/olympiad-week1-publish/reviews/week01/final-followup/.qa",
+  "exit_code": 0,
+  "stdout": "{\n  \"authority\": \"advisory_only\",\n  \"context_fingerprint\": \"f00ede7c2ec19b606faf017c0ba29e104b68dbfd97ec2adea270c37874efba4f\"\n}\n",
+  "stderr": ""
+}
