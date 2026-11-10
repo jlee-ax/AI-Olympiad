@@ -1,5 +1,7 @@
 # AI Olympiad
 
+![Towards the International AI Olympiad](assets/readme/towards-international-ai-olympiad.png)
+
 A workflow prototype for preparing KOAI teaching materials, with repository-local skills, concrete quality criteria, source-linked records and deterministic inspection/planning tools.
 
 ## Confirmed course inputs
