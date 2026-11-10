@@ -523,7 +523,7 @@ def decide(state, quality_report=None):
         checks = quality_report['checks']
         if (quality_report['ready_for_review'] is not True or not isinstance(checks, list) or
                 {item.get('id') for item in checks if isinstance(item, dict)} !=
-                {'K' + str(n).zfill(2) for n in range(1, 16)} or len(checks) != 15 or
+                {'K' + str(n).zfill(2) for n in range(1, 17)} or len(checks) != 16 or
                 any(not isinstance(item, dict) or item.get('status') != 'passed' for item in checks)):
             return finish('blocked', 'quality_checks_not_passed')
     verification = _verification(state, fingerprint)

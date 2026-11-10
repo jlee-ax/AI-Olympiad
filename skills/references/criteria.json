@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": "criteria-v1",
+  "revision": "criteria-v2",
   "status": "proposed_for_agreement",
   "decision_required": [
     "Priority tie-break policy",
@@ -63,9 +63,9 @@
       "name": "Time and workload accounting",
       "definition": "Class time includes all activities performed during the class; required and optional outside work are separate.",
       "object": "Each 120-minute lesson and outside-work allocation",
-      "measurement": "Sum theory, noncoding and coding blocks; count written practice inside noncoding; list setup, support, execution, feedback and retry time without double counting.",
-      "pass": "Every class totals 120 minutes and current plan allocations are preserved; required outside work is disclosed separately.",
-      "fail": "A class totals 240 minutes, adds written practice on top of 120, or relabels required syllabus work as optional.",
+      "measurement": "Sum theory, noncoding and coding blocks; count written practice inside noncoding; list setup, support, execution, feedback and retry time without double counting. Apply maximum_required_homework_minutes per selected week to both the pinned required range upper bound and the current required-work ledger; optional minutes cannot offset required work.",
+      "pass": "Class accounting is consistent, all required outside work is disclosed, and any configured weekly cap contains both the pinned upper estimate and the current required ledger. A null cap leaves acceptability explicitly unassessed.",
+      "fail": "A class totals 240 minutes, adds written practice on top of 120, or relabels required syllabus work as optional. Required outside work exceeds a configured cap or the ledger omits the pinned required minimum.",
       "uncertainty": "Arithmetic can pass while actual completion time remains unobserved; workload acceptability awaits a user decision.",
       "severity": "major",
       "priority": "P1",
@@ -156,10 +156,10 @@
       "name": "Independent numerical and structural checks",
       "definition": "A worked result is independently recomputed from declared inputs and conventions.",
       "object": "Axis reductions, binary metrics, weighted sums and split/fit records",
-      "measurement": "Use fixed reference functions, explicit zero-denominator handling, exact fractions where possible and declared tolerances. Test a neighboring valid case as well as an injected fault.",
+      "measurement": "Use fixed reference functions, explicit zero-denominator handling, exact fractions where possible and declared tolerances. Test a neighboring valid case as well as an injected fault. Bind each selected unit to the oracle kinds in the versioned unit specification and check only that unit's referenced claims for coverage. Unknown synthetic units declare explicit oracle_kinds, possibly empty.",
       "pass": "Reported and independently computed results agree under the same conventions.",
       "fail": "Wrong axis/shape, denominator, value, overlapping split ID or preprocessing fit contamination.",
-      "uncertainty": "Undefined ratios without an explicit convention are uncertain, never silently zero.",
+      "uncertainty": "Undefined ratios without an explicit convention are uncertain, never silently zero. A missing required kind is not_run; a unit with an explicitly empty requirement does not need an unrelated numerical example.",
       "severity": "critical",
       "priority": "P0",
       "examples": {
@@ -251,10 +251,10 @@
       "name": "Research refresh and refinement",
       "definition": "Research repeats when a relevant question, source version, contradiction or failed check changes, and may conclude unchanged or unresolved.",
       "object": "A bounded research cycle",
-      "measurement": "Log trigger, focused queries, discovered originals, direct reads, extracted claims, counterevidence, changed/unchanged disposition, and affected IDs. Recheck official sources before production and after relevant notices.",
-      "pass": "The current trigger is resolved by scoped evidence or explicitly remains unresolved; unchanged sources preserve applicable results.",
+      "measurement": "Log trigger, focused queries, discovered originals, direct reads, extracted claims, counterevidence, changed/unchanged disposition, and affected IDs. Recheck official sources before production and after relevant notices. Preserve the full append-ordered history; select the last matching cycle per current claim or review per current criterion/object. A newer failed, abstaining or stale record never falls back to an older pass.",
+      "pass": "The latest covering cycle for each current claim has current context and cited support, with an updated or unchanged disposition.",
       "fail": "A changed relevant source is ignored, or an unchanged search is described as a verified substantive improvement.",
-      "uncertainty": "No result or inaccessible source produces an abstention and a next query, not a fabricated conclusion.",
+      "uncertainty": "Abstention, inaccessible sources, stale context or missing support remains uncertain. An honest unresolved outcome is valid research history but is not a readiness pass.",
       "severity": "major",
       "priority": "P1",
       "examples": {
@@ -275,8 +275,8 @@
       "name": "Change impact and current review",
       "definition": "A review is reusable only while its artifact, criterion, source and declared dependency versions match.",
       "object": "Dependency graph and per-object reviews",
-      "measurement": "Traverse reverse dependencies from changed IDs; recompute dependency fingerprints; mark affected reviews stale and keep unrelated valid reviews.",
-      "pass": "Every required review is current for its object and dependency closure.",
+      "measurement": "Traverse reverse dependencies from changed IDs; recompute dependency fingerprints; mark affected reviews stale and keep unrelated valid reviews. Preserve the full append-ordered history; select the last matching cycle per current claim or review per current criterion/object. A newer failed, abstaining or stale record never falls back to an older pass.",
+      "pass": "Every selected last matching review is current for its actual regions and declared dependency closure. Missing required reviews remain blocking in their own criteria.",
       "fail": "A changed answer key/source retains an old pass, or known affected work is omitted.",
       "uncertainty": "Unrecorded dependencies remain a documented completeness risk; uncertainty is not a current pass.",
       "severity": "major",
@@ -361,6 +361,32 @@
       "expected_effect": "Reduce false confidence in automated judgment.",
       "limits": "Reviewer identity/model-family differences do not ensure independent errors.",
       "implementation": "See tools/quality.py and the implementation table in quality-specification.md; semantic judgments remain reviewed records."
+    },
+    {
+      "id": "K16",
+      "name": "Theoretical explanation and representation",
+      "definition": "Theory is explained through scoped notation, justified reasoning, meaningful representations, algorithm mechanisms and a novice understanding check.",
+      "object": "Each selected unit and its actual explanation regions",
+      "measurement": "Apply the versioned T01-T05 rubric in theory-explanation.json and the unit-specific required checks. Inspect real locators, independent review subchecks, answer rationales and actual region fingerprints.",
+      "pass": "Every applicable explanation check has current independent evidence-bearing review support at its registered regions; material readiness is kept distinct from observed learner understanding.",
+      "fail": "A registered explanation region does not exist, or a current review records a concrete explanation/representation failure. Reproduced false mathematical content additionally fails K06/K07.",
+      "uncertainty": "Missing registrations, reviews or subchecks are not_run; stale, unsupported or conflicting support is uncertain. The tool cannot infer meaning from a picture or prose.",
+      "severity": "major",
+      "priority": "P1",
+      "examples": {
+        "normal": "A mean formula defines row/column indices, shows the counted population, maps a visual and traces a small case with an explanation prompt.",
+        "fault_or_boundary": "A notebook with runnable code but no reviewable reason for its formula or trace cannot satisfy the required explanation checks."
+      },
+      "sources": [
+        "DEFT",
+        "PRIMM",
+        "BIGGS",
+        "NUMPY",
+        "METRICS"
+      ],
+      "expected_effect": "Prevent execution success from substituting for theoretical explanation.",
+      "limits": "This rubric is a local operationalization, not a validated learner assessment or an automatic correctness proof.",
+      "implementation": "tools/quality.py checks bindings and recorded subcheck outcomes; substantive meaning remains independently reviewed."
     }
   ]
 }

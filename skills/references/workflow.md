@@ -26,7 +26,7 @@ The linked [syllabus](https://kitpa.org/koai/syllabus) still carries an IOAI 202
 
 Syllabus coverage does not establish that the full scope can be mastered in 20 hours. The meeting count/duration and target are confirmed; production specifications do not constitute completed teaching materials.
 
-The [concrete specification](quality-specification.md), [15-criterion catalog](criteria.json), [unit behaviors](../koai-evaluate/references/unit-specifications.json), and [pinned student plan](../../curriculum/student-plan.html) make these requirements inspectable. No new lesson or learner observation is implied.
+The [concrete specification](quality-specification.md), [16-criterion catalog](criteria.json), [unit behaviors](../koai-evaluate/references/unit-specifications.json), and [pinned student plan](../../curriculum/student-plan.html) make these requirements inspectable. No new lesson or learner observation is implied.
 
 ## Contract for one production unit
 

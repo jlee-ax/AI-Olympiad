@@ -42,6 +42,7 @@ def normal_bundle(root):
     bundle['target']['objective_ids'] = ['unit:axis']
     bundle['budget'] = {'max_attempts': 8, 'max_elapsed_minutes': 90, 'max_no_progress': 3}
     bundle['policy']['calibration_tolerance'] = {'false_rejects': 0, 'missed_faults': 0}
+    bundle['policy']['maximum_required_homework_minutes'] = 420
     bundle['artifact']['sha256'] = artifact['sha256']
     claim = {'id': 'claim:axis', 'statement': 'Synthetic axis=0 mean result.',
              'domain': 'Rectangular finite two-dimensional input', 'quantity': 'arithmetic_mean',
@@ -50,6 +51,9 @@ def normal_bundle(root):
                         'expected': [2.5, 3.5, 4.5]}}
     unit = {'id': 'unit:axis', 'week': 1, 'locator': '#week-1', 'syllabus_ids': ['KOAI-02', 'KOAI-06'],
             'concept_ids': ['axis_mean'], 'claim_ids': ['claim:axis'], 'claimed_depth': 'independent',
+            'oracle_kinds': ['axis_mean'],
+            'explanation_checks': ['T01', 'T02', 'T03', 'T04', 'T05'],
+            'explanation_regions': {tid: ['#week-1'] for tid in ('T01', 'T02', 'T03', 'T04', 'T05')},
             'mode_evidence': {'theory': 'passed', 'practical': 'passed'},
             'prerequisites': [{'id': 'synthetic-list', 'task': 'Trace a small list.',
                                'expected': 'State selected values.', 'observed': 'Synthetic matching response.',
@@ -65,7 +69,8 @@ def normal_bundle(root):
                           'assertions': [{'name': 'synthetic expected output', 'status': 'passed'}], 'evidence': receipt},
             'calibration': [{'case_id': 'synthetic-good', 'expected': 'passed', 'observed': 'passed', 'evidence': receipt},
                             {'case_id': 'synthetic-fault', 'expected': 'failed', 'observed': 'failed', 'evidence': receipt}]}
-    bundle['lesson_allocations'] = [{'week': 1, 'blocks': [
+    bundle['lesson_allocations'] = [{'week': 1,
+        'outside_work': [{'id': 'required-week-1', 'required': True, 'minutes': 420}], 'blocks': [
         {'id': 'class:theory', 'kind': 'theory', 'minutes': 20, 'written_minutes': 0},
         {'id': 'class:noncoding', 'kind': 'noncoding', 'minutes': 20, 'written_minutes': 10},
         {'id': 'class:coding', 'kind': 'coding', 'minutes': 80, 'written_minutes': 0}]}]
@@ -87,7 +92,9 @@ def normal_bundle(root):
                           'status': 'passed', 'reviewer_id': 'synthetic-independent-reviewer',
                           'evidence': receipt, 'reason': 'Synthetic fixture review, not educator calibration.'}
                          for cid, oid in [('K02', 'unit:axis'), ('K05', 'unit:axis'), ('K06', 'claim:axis'),
-                                          ('K09', 'unit:axis'), ('K15', 'unit:axis')]]
+                                          ('K09', 'unit:axis'), ('K15', 'unit:axis'), ('K16', 'unit:axis')]]
+    bundle['reviews'][-1]['subchecks'] = {tid: {'status': 'passed', 'artifact_locators': ['#week-1'], 'evidence': receipt}
+                                        for tid in ('T01', 'T02', 'T03', 'T04', 'T05')}
     agree(bundle, root)
     refresh_reviews(bundle, root)
     bundle['research_cycles'][0]['object_contexts'] = {'claim:axis': quality.object_fingerprint(bundle, 'K10', 'claim:axis', root)}
@@ -103,7 +110,7 @@ class QualityTest(unittest.TestCase):
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
         self.root = Path(self.tmp.name)
-        for relative in (quality.CATALOG, quality.CONTRACT, 'curriculum/student-plan.html', 'skills/koai-evaluate/references/unit-specifications.json'):
+        for relative in (quality.CATALOG, quality.CONTRACT, 'curriculum/student-plan.html', quality.UNIT_SPECIFICATIONS, quality.THEORY_SPECIFICATION):
             target = self.root / relative
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(ROOT / relative, target)

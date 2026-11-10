@@ -150,6 +150,13 @@ One month later, unannounced-test scores are 61% versus 38%; an accessible [pape
 **Proposed transfer:** Consider mixed retrieval practice and delayed assessment when lesson work is separately authorized.
 **Local test needed:** Confirm learner prerequisites and competition scope, then measure learning rather than treating artifact scores or simulated students as learner outcomes.
 
+## E13 — Explaining theory requires more than executable output
+
+[Ainsworth's DeFT framework](https://doi.org/10.1016/j.learninstruc.2006.03.001) examines representation interpretation and translation; additional representations can also burden learners. [Sentance, Waite and Kallia's PRIMM study](https://doi.org/10.1080/08993408.2019.1608781) used a non-randomized school comparison of a bundled teaching approach, with teachers reporting excessive volume and difficult questions.
+
+**Proposed transfer:** Review the meaning and purpose of formulas, diagrams and state traces, with concrete comprehension prompts. The [T01–T05 rubric](../koai-evaluate/references/theory-explanation.json) is our local operationalization; neither source validates its exact fields, numerical cutoffs or autonomous generation.
+**Local test needed:** Use independent content/educator review, appropriate known-good/fault cases and observed learner explanations under stated help. Successful binding tests establish only the finite harness behavior. See [reading extents and limits](source-readings.json).
+
 ## Local investigation priorities
 
 | Question | Comparator and observation needed |

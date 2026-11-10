@@ -23,3 +23,5 @@ Return a reviewable improvement proposal, provenance, bounded evaluation results
 ## Concrete decision contract
 
 Use the [criterion catalog](../references/criteria.json) to identify the exact failure mechanism and [effect-testing contract](../references/quality-specification.md#expected-effects-counterevidence-and-open-decisions). A better schema, caught fault or model review does not establish learner benefit. Compare with an equal-resource baseline, known-good/error controls, untouched related tasks, regressions and no-change outcomes. Treat priority rules, diagnostic cutoffs and calibration tolerances as explicit decisions; do not invent them from a generic age label.
+
+Include the [theory rubric](../koai-evaluate/references/theory-explanation.json) when a failure concerns explanation rather than execution. Test missing or misleading notation, unsupported derivation, diagram mapping, state tracing and comprehension prompts separately. Preserve a neighboring valid explanation and test the actual binding/selection behavior; a passed gate still does not establish learner benefit.
