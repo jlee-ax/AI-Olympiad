@@ -1,0 +1,384 @@
+{
+  "schema_version": 1,
+  "revision": "synthetic-v1",
+  "synthetic": true,
+  "author_id": "synthetic-author",
+  "artifact": {
+    "id": "student-plan",
+    "revision": "full-scope-baseline",
+    "path": "curriculum/student-plan.html",
+    "sha256": "96deb5e5e781bf39cc6bb5effe34d6d04a01ac65e13a3811c37f5a825714f7a9"
+  },
+  "target": {
+    "competition_year": 2027,
+    "division": "middle_school",
+    "coverage_claim": "selected_scope",
+    "objective_ids": [
+      "unit:axis"
+    ],
+    "learning_outcomes": "untested"
+  },
+  "policy": {
+    "agreed": true,
+    "decision_ref": "synthetic decision, not user consent",
+    "agreement_fingerprint": "3bb71d04e599e4fbd3eebbfd2b766ddb656d390e7a29960de34ade6be46deff7",
+    "stop_requested": false,
+    "diagnostic_cutoff": null,
+    "maximum_required_homework_minutes": null,
+    "calibration_tolerance": {
+      "false_rejects": 0,
+      "missed_faults": 0
+    }
+  },
+  "budget": {
+    "max_attempts": 8,
+    "max_elapsed_minutes": 90,
+    "max_no_progress": 3
+  },
+  "checkpoint": {
+    "minutes_since": 0,
+    "elapsed_total": 0,
+    "no_progress_count": 0,
+    "record": null
+  },
+  "units": [
+    {
+      "id": "unit:axis",
+      "week": 1,
+      "locator": "#week-1",
+      "syllabus_ids": [
+        "KOAI-02",
+        "KOAI-06"
+      ],
+      "concept_ids": [
+        "axis_mean"
+      ],
+      "claim_ids": [
+        "claim:axis"
+      ],
+      "claimed_depth": "independent",
+      "mode_evidence": {
+        "theory": "passed",
+        "practical": "passed"
+      },
+      "prerequisites": [
+        {
+          "id": "synthetic-list",
+          "task": "Trace a small list.",
+          "expected": "State selected values.",
+          "observed": "Synthetic matching response.",
+          "help": "none",
+          "status": "passed",
+          "evidence": [
+            {
+              "locator": "synthetic control receipt",
+              "observation": "Synthetic normal/fault control, not a learner result.",
+              "path": "examples/quality-receipt.json",
+              "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+            }
+          ]
+        }
+      ],
+      "chain": {
+        "theory": {
+          "concept_ids": [
+            "axis_mean"
+          ],
+          "locator": "#week-1",
+          "expected_behavior": "Synthetic corresponding behavior.",
+          "activity_id": "class:theory",
+          "help": "none",
+          "new_input": true
+        },
+        "noncoding": {
+          "concept_ids": [
+            "axis_mean"
+          ],
+          "locator": "#week-1",
+          "expected_behavior": "Synthetic corresponding behavior.",
+          "activity_id": "class:noncoding",
+          "help": "none",
+          "new_input": true
+        },
+        "coding": {
+          "concept_ids": [
+            "axis_mean"
+          ],
+          "locator": "#week-1",
+          "expected_behavior": "Synthetic corresponding behavior.",
+          "activity_id": "class:coding",
+          "help": "none",
+          "new_input": true
+        },
+        "assessment": {
+          "concept_ids": [
+            "axis_mean"
+          ],
+          "locator": "#week-1",
+          "expected_behavior": "Synthetic corresponding behavior.",
+          "activity_id": "class:noncoding",
+          "help": "none",
+          "new_input": true
+        }
+      },
+      "execution": {
+        "status": "passed",
+        "artifact_sha256": "96deb5e5e781bf39cc6bb5effe34d6d04a01ac65e13a3811c37f5a825714f7a9",
+        "command": "synthetic fixture; no external worker executed",
+        "environment": "synthetic",
+        "exit_code": 0,
+        "clean_run": true,
+        "new_input": true,
+        "assertions": [
+          {
+            "name": "synthetic expected output",
+            "status": "passed"
+          }
+        ],
+        "evidence": [
+          {
+            "locator": "synthetic control receipt",
+            "observation": "Synthetic normal/fault control, not a learner result.",
+            "path": "examples/quality-receipt.json",
+            "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+          }
+        ]
+      },
+      "calibration": [
+        {
+          "case_id": "synthetic-good",
+          "expected": "passed",
+          "observed": "passed",
+          "evidence": [
+            {
+              "locator": "synthetic control receipt",
+              "observation": "Synthetic normal/fault control, not a learner result.",
+              "path": "examples/quality-receipt.json",
+              "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+            }
+          ]
+        },
+        {
+          "case_id": "synthetic-fault",
+          "expected": "failed",
+          "observed": "failed",
+          "evidence": [
+            {
+              "locator": "synthetic control receipt",
+              "observation": "Synthetic normal/fault control, not a learner result.",
+              "path": "examples/quality-receipt.json",
+              "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim:axis",
+      "statement": "Synthetic axis=0 mean result.",
+      "domain": "Rectangular finite two-dimensional input",
+      "quantity": "arithmetic_mean",
+      "assumptions": [
+        "keepdims=False"
+      ],
+      "source_ids": [
+        "source:numpy"
+      ],
+      "locator": "#week-1",
+      "oracle": {
+        "kind": "axis_mean",
+        "input": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6
+          ]
+        ],
+        "axis": 0,
+        "expected": [
+          2.5,
+          3.5,
+          4.5
+        ]
+      }
+    }
+  ],
+  "source_reads": [
+    {
+      "id": "source:numpy",
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.mean.html",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "version": "synthetic-v1",
+      "accessed_at": "2026-11-10",
+      "locator": "axis parameter",
+      "finding": "Synthetic source-reading declaration.",
+      "limitation": "Not a real reading receipt."
+    }
+  ],
+  "research_cycles": [
+    {
+      "id": "cycle:synthetic",
+      "trigger": "synthetic case",
+      "queries": [
+        "synthetic axis question"
+      ],
+      "source_ids": [
+        "source:numpy"
+      ],
+      "object_ids": [
+        "claim:axis"
+      ],
+      "disposition": "unchanged",
+      "reason": "Synthetic fixture.",
+      "object_contexts": {
+        "claim:axis": "9d0d8117b1584e93503f05aa693f85eb7904de8637818f4d8dc8b524b123240c"
+      }
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "source:numpy",
+      "revision": "synthetic-v1",
+      "sha256": "e29986d6824397baf09d331c6ad367d7a5b60d540fd505d5979cbb2e63d7fdad",
+      "depends_on": []
+    },
+    {
+      "id": "claim:axis",
+      "revision": "synthetic-v1",
+      "sha256": "723947274217670b37a4acb3eae7dfc626cecbf6814db6bcc8a926b8c6784754",
+      "depends_on": [
+        "source:numpy"
+      ]
+    },
+    {
+      "id": "unit:axis",
+      "revision": "synthetic-v1",
+      "sha256": "72bce4bca9473ef0d054f17fcc078348c242c0240a8ab02c88150ab5adc017a7",
+      "depends_on": [
+        "claim:axis"
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "review:K02",
+      "criterion_id": "K02",
+      "object_id": "unit:axis",
+      "status": "passed",
+      "reviewer_id": "synthetic-independent-reviewer",
+      "evidence": [
+        {
+          "locator": "synthetic control receipt",
+          "observation": "Synthetic normal/fault control, not a learner result.",
+          "path": "examples/quality-receipt.json",
+          "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+        }
+      ],
+      "reason": "Synthetic fixture review, not educator calibration.",
+      "context_fingerprint": "79d0ed9c494aa019d20f01f0cd1e955f4d877d24324984bd83de33a00794673c"
+    },
+    {
+      "id": "review:K05",
+      "criterion_id": "K05",
+      "object_id": "unit:axis",
+      "status": "passed",
+      "reviewer_id": "synthetic-independent-reviewer",
+      "evidence": [
+        {
+          "locator": "synthetic control receipt",
+          "observation": "Synthetic normal/fault control, not a learner result.",
+          "path": "examples/quality-receipt.json",
+          "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+        }
+      ],
+      "reason": "Synthetic fixture review, not educator calibration.",
+      "context_fingerprint": "6f2a41f9784ac976956fbeff51e31c0ce92ec0a37efbc4e583227da918b3849a"
+    },
+    {
+      "id": "review:K06",
+      "criterion_id": "K06",
+      "object_id": "claim:axis",
+      "status": "passed",
+      "reviewer_id": "synthetic-independent-reviewer",
+      "evidence": [
+        {
+          "locator": "synthetic control receipt",
+          "observation": "Synthetic normal/fault control, not a learner result.",
+          "path": "examples/quality-receipt.json",
+          "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+        }
+      ],
+      "reason": "Synthetic fixture review, not educator calibration.",
+      "context_fingerprint": "0bc60bcf009cee2dc03e75a9243742e434a5cec78058937c12ad4230db5dc338"
+    },
+    {
+      "id": "review:K09",
+      "criterion_id": "K09",
+      "object_id": "unit:axis",
+      "status": "passed",
+      "reviewer_id": "synthetic-independent-reviewer",
+      "evidence": [
+        {
+          "locator": "synthetic control receipt",
+          "observation": "Synthetic normal/fault control, not a learner result.",
+          "path": "examples/quality-receipt.json",
+          "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+        }
+      ],
+      "reason": "Synthetic fixture review, not educator calibration.",
+      "context_fingerprint": "f77748ccb54ea52ed2f53903e3ec16fc04a9ce7eff1707806a24302e9fc19dab"
+    },
+    {
+      "id": "review:K15",
+      "criterion_id": "K15",
+      "object_id": "unit:axis",
+      "status": "passed",
+      "reviewer_id": "synthetic-independent-reviewer",
+      "evidence": [
+        {
+          "locator": "synthetic control receipt",
+          "observation": "Synthetic normal/fault control, not a learner result.",
+          "path": "examples/quality-receipt.json",
+          "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+        }
+      ],
+      "reason": "Synthetic fixture review, not educator calibration.",
+      "context_fingerprint": "d69f412927be903ba0f1e5bc82bf282aeb643c21240579a51be87bee0f6fef79"
+    }
+  ],
+  "candidates": [],
+  "attempts": [],
+  "lesson_allocations": [
+    {
+      "week": 1,
+      "blocks": [
+        {
+          "id": "class:theory",
+          "kind": "theory",
+          "minutes": 20,
+          "written_minutes": 0
+        },
+        {
+          "id": "class:noncoding",
+          "kind": "noncoding",
+          "minutes": 20,
+          "written_minutes": 10
+        },
+        {
+          "id": "class:coding",
+          "kind": "coding",
+          "minutes": 80,
+          "written_minutes": 0
+        }
+      ]
+    }
+  ]
+}

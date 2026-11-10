@@ -298,10 +298,10 @@ class WorkflowTest(unittest.TestCase):
             state['scope'][flag] = True
             self.assertEqual(workflow.decide(state)['reason'], 'budget_agreement_required')
             state['agreement']['budget_fingerprint'] = workflow.budget_fingerprint(state)
-            self.assertEqual(workflow.decide(state)['reason'], 'stale_verification')
+            self.assertEqual(workflow.decide(state)['reason'], 'quality_assessment_required')
             reviewed(state)
             result = workflow.decide(state)
-            self.assertEqual((result['status'], result['authority']), ('continue', 'advisory_only'))
+            self.assertEqual((result['status'], result['reason']), ('pause', 'quality_assessment_required'))
 
     def test_fingerprints_ignore_list_order_but_bind_declared_content(self):
         state = load()

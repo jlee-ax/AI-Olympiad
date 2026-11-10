@@ -27,3 +27,7 @@ Read [the workflow and pending decisions](../references/workflow.md), [evaluatio
 ## Handoff
 
 Return current state, accepted/reverted changes, unverified checks, budget used, next permitted action, and blocking decisions. Report “no useful change” when supported. Do not describe artifact quality as learner effectiveness without learner evidence.
+
+## Concrete decision contract
+
+Use [the priority/checkpoint contract](../references/quality-specification.md#priority-checkpoint-and-completion). Evaluate the quality bundle, then run its plan command. A reproduced wrong claim/key precedes presentation work; unresolved evidence stays a research task. Preserve the confirmed 120-minute class accounting and separate outside work. Record the actual policy decision, current agreement fingerprint and finite budgets. Bind the quality bundle, criteria and evaluator manifests in workflow inputs before lesson/recurring decisions. A pause/no-op can leave material incomplete.

@@ -20,3 +20,7 @@ Read [the workflow contract](../../tools/README.md). Scope retrieval to the requ
 Every reused conclusion traces to its source and current scope. Missing or unavailable evidence is marked as such. A retrieved memory does not authorize lesson generation, recurring execution, or publication.
 
 Compare supersession and fingerprint-based reuse with simpler records before expanding storage; their local benefit remains unverified.
+
+## Concrete decision contract
+
+Use [selective impact and duplicate-work rules](../references/quality-specification.md#selective-impact-and-duplicate-work). Run the quality impact query for changed source/claim IDs. Reuse current per-object content reviews when their actual region and relevant source meaning/version are unchanged; an access-time-only refresh is not a reason for global rewriting. Preserve rejected/no-change attempt keys. New action, hypothesis or evidence is an explicit change, not a paraphrase-based automatic merge.

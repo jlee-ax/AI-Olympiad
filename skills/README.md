@@ -14,6 +14,8 @@ Ask an agent to read the relevant SKILL.md. Keep its relative references intact.
 
 The usual path is ground → recall → orchestrate → evaluate. Reflect runs when recurring evidence warrants a workflow change. Read the references needed for that task rather than loading the whole library.
 
+Use the [concrete quality specification](references/quality-specification.md) and relevant [catalog entries](references/criteria.json) for definitions, measurements, failures, uncertainty, priority and effect hypotheses. The [week 1–2 unit specifications](koai-evaluate/references/unit-specifications.json) define actual production objects and prerequisite tasks.
+
 Shared references contain [the workflow and pending decisions](references/workflow.md) and [research evidence](references/evidence.md). Detailed [evaluation guidance](koai-evaluate/references/evaluation.md) belongs to the evaluation skill; [state and CLI documentation](../tools/README.md) lives beside the tool. The [template](../templates/workflow.json) is inactive until configured from real decisions.
 
 Educational benefit and reduced human effort remain hypotheses. Source and license information is retained in [third-party notices](../THIRD_PARTY_NOTICES.md).

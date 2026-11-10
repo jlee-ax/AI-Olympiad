@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-10",
+  "receipt_limit": "These are direct-reading notes, not authenticated proof of reading or a complete downloaded-source archive. Read extents are explicit. No raw-source digest is inferred from a URL.",
+  "sources": [
+    {
+      "id": "KOAI27",
+      "url": "https://kitpa.org/koai/2027",
+      "version": "KOAI 2027; observed 2026-11-10",
+      "kind": "official",
+      "extent": "relevant_sections",
+      "locations": [
+        "Middle-school division",
+        "Online written examination and coding test: problem composition"
+      ],
+      "finding": "Both divisions cover sections 1\u20134. Written: 180 minutes, 80 multiple-choice and 10 written responses. Coding: 180 minutes, two tasks.",
+      "limitation": "Exam composition does not specify course workload, age-based prerequisites, or permitted software for a particular future sitting."
+    },
+    {
+      "id": "SYLLABUS",
+      "url": "https://kitpa.org/koai/syllabus",
+      "version": "Page labeled IOAI 2026; observed 2026-11-10",
+      "kind": "official",
+      "extent": "relevant_sections",
+      "locations": [
+        "Topic classification",
+        "Sections 1\u20134 and both preprocessing footnotes"
+      ],
+      "finding": "The page distinguishes principles from actual appropriate library use, data application and output interpretation; 60 grouped rows carry separate theory/practical flags.",
+      "limitation": "The displayed syllabus version differs from the governing competition year. Example names and the plan's expanded obligations must remain distinguishable."
+    },
+    {
+      "id": "PLAN",
+      "url": "curriculum/student-plan.html",
+      "version": "Full-scope recalibration; SHA256 pinned in contract.json",
+      "kind": "user_artifact",
+      "extent": "full_text",
+      "locations": [
+        "Ten week rows",
+        "scope-01 through scope-60",
+        "Time and starting-preparation rows"
+      ],
+      "finding": "The later recalibration retains 120-minute classes, schedules all 60 rows with required outside work and separates optional extensions.",
+      "limitation": "A schedule is not an execution or mastery record. Prior numeric diagnostic targets and time estimates are not scientifically calibrated thresholds."
+    },
+    {
+      "id": "BIGGS",
+      "url": "https://doi.org/10.1007/BF00138871",
+      "version": "1996",
+      "kind": "academic_primary",
+      "extent": "relevant_sections",
+      "locations": [
+        "https://teaching.helsinki.fi/system/files/inline-files/Biggs1996_Article_EnhancingTeachingThroughConstr.pdf; pp. 351\u2013357: performances, activities and assessment"
+      ],
+      "finding": "The paper operationalizes intended performances and aligns activities and assessment; its teacher-development example distinguishes naming information from applying and relating it.",
+      "limitation": "A conceptual framework and illustrated teacher-development setting do not establish a randomized KOAI effect; activity choice still needs situated judgment and local testing."
+    },
+    {
+      "id": "CHEN",
+      "url": "https://doi.org/10.1037/edu0000018",
+      "version": "2015; author repository record",
+      "kind": "academic_primary",
+      "extent": "abstract",
+      "locations": [
+        "https://repository.lboro.ac.uk/articles/journal_contribution/The_worked_example_effect_the_generation_effect_and_element_interactivity/12053721"
+      ],
+      "finding": "The authors report different effects of example study and generation by element interactivity and prior knowledge.",
+      "limitation": "This reading obtained the author-repository abstract; do not cite unseen methods or use its results to set local numeric diagnostic cutoffs."
+    },
+    {
+      "id": "KARPICKE",
+      "url": "https://learninglab.psych.purdue.edu/downloads/2011/2011_Karpicke_Blunt_Science.pdf",
+      "version": "Science 331, 772\u2013775 (2011)",
+      "kind": "academic_primary",
+      "extent": "relevant_sections",
+      "locations": [
+        "Experiments 1\u20132, article pp. 772\u2013775"
+      ],
+      "finding": "Undergraduates studied science texts with matched initial time; retrieval was compared with elaborative concept mapping and evaluated after a week, including inference questions.",
+      "limitation": "Science-text learning in that sample does not validate a programming diagnostic, a 10-minute local exercise or 30-minute agent cadence."
+    },
+    {
+      "id": "NUMPY",
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.mean.html",
+      "version": "NumPy 2.5 documentation observed 2026-11-10",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locations": [
+        "Parameters: axis and keepdims",
+        "Examples"
+      ],
+      "finding": "The arithmetic mean is computed over the selected axes; default reduction flattens the input, and keepdims changes retained dimensions.",
+      "limitation": "The built-in reference check below covers rectangular finite two-dimensional inputs with axis 0 or 1 and keepdims false."
+    },
+    {
+      "id": "SKLEARN",
+      "url": "https://scikit-learn.org/stable/common_pitfalls.html",
+      "version": "scikit-learn 1.9.1 documentation observed 2026-11-10",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locations": [
+        "12.2 Data leakage",
+        "12.2.1 How to avoid data leakage"
+      ],
+      "finding": "Preprocessing is learned on training data. Validation can select settings; final test information must not select them.",
+      "limitation": "Disjoint row IDs alone do not exclude group, temporal or target leakage. The declared split audit cannot prove absence of all contamination."
+    },
+    {
+      "id": "METRICS",
+      "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html",
+      "version": "scikit-learn 1.9.1 documentation observed 2026-11-10",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locations": [
+        "Definition",
+        "zero_division parameter"
+      ],
+      "finding": "Binary precision uses TP/(TP+FP); an absent predicted-positive denominator requires an explicit undefined-value convention.",
+      "limitation": "Different averaging and positive-label conventions require a separate specification; the reference check is binary counts only."
+    },
+    {
+      "id": "HUANG",
+      "url": "https://arxiv.org/html/2310.01798v2",
+      "version": "v2, ICLR 2024",
+      "kind": "academic_primary",
+      "extent": "relevant_sections",
+      "locations": [
+        "Experimental setup and results",
+        "Prompt design issues",
+        "Limitations"
+      ],
+      "finding": "The study distinguishes intrinsic revision from external feedback and identifies inference-budget and prompt confounds.",
+      "limitation": "Its older models and reasoning tasks do not establish a permanent inability of later models or outcomes for lesson production."
+    },
+    {
+      "id": "ALCE",
+      "url": "https://aclanthology.org/2023.emnlp-main.398/",
+      "version": "EMNLP 2023",
+      "kind": "academic_primary",
+      "extent": "abstract",
+      "locations": [
+        "Anthology abstract"
+      ],
+      "finding": "The work evaluates citation quality separately from other answer properties.",
+      "limitation": "The paper is a rationale for checking actual support, not evidence that recording a URL authenticates a claim."
+    },
+    {
+      "id": "LONGMEM",
+      "url": "https://arxiv.org/html/2410.10813v2",
+      "version": "v2, ICLR 2025",
+      "kind": "academic_primary",
+      "extent": "relevant_sections",
+      "locations": [
+        "Benchmark task categories",
+        "Memory indexing and retrieval experiments"
+      ],
+      "finding": "The benchmark explicitly includes updated information, temporal reasoning and abstention; preserving original evidence and retrieval keys can matter.",
+      "limitation": "Conversational memory experiments do not prove that this local dependency graph or deduplication policy is complete."
+    }
+  ]
+}

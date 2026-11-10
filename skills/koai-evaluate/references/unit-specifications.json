@@ -1,0 +1,255 @@
+{
+  "schema_version": 1,
+  "revision": "unit-specifications-v1",
+  "status": "production_specifications_not_completed_lessons",
+  "constraints": {
+    "weeks": 10,
+    "class_minutes_per_week": 120,
+    "target": "middle_school",
+    "entry": "Basic coding; AI prelearning is not required"
+  },
+  "diagnostics": {
+    "PY-VARIABLES": {
+      "task": "Trace assignment and distinguish a stored value from a displayed string.",
+      "expected": "Predict and justify the value used by the next statement."
+    },
+    "PY-CONTROL": {
+      "task": "Trace a conditional and a bounded loop on a short list.",
+      "expected": "Give the selected branch, iteration count and resulting values."
+    },
+    "PY-FUNCTION": {
+      "task": "Use a parameter and return a computed value to a caller.",
+      "expected": "Distinguish return from print and reuse the returned value."
+    },
+    "PY-LIST": {
+      "task": "Select an indexed list element and a slice without changing the original accidentally.",
+      "expected": "Identify index boundaries and the selected values."
+    },
+    "PY-FILE": {
+      "task": "Open a supplied local CSV and identify its header and rows.",
+      "expected": "Resolve the stated path and distinguish missing file from missing column."
+    },
+    "PY-ERROR": {
+      "task": "Read a short traceback and locate the first relevant error.",
+      "expected": "Name the failing operation and propose a testable correction."
+    },
+    "MATH-MEAN": {
+      "task": "Compute the arithmetic mean of a short finite list.",
+      "expected": "State the sum, count and resulting quantity; bridge before axis reductions."
+    },
+    "MATH-RATIO": {
+      "task": "Interpret counts as a fraction with an explicitly named denominator.",
+      "expected": "Explain the counted population and detect an absent denominator."
+    },
+    "ARRAY-AXIS": {
+      "task": "Predict the output shape of a 2D reduction over each axis.",
+      "expected": "Distinguish the removed axis from the retained output dimensions."
+    }
+  },
+  "units": [
+    {
+      "id": "W1-python",
+      "week": 1,
+      "syllabus_ids": [
+        "KOAI-01"
+      ],
+      "concept_ids": [
+        "program_state",
+        "control_flow",
+        "function_return"
+      ],
+      "prerequisite_ids": [
+        "PY-VARIABLES",
+        "PY-CONTROL",
+        "PY-FUNCTION",
+        "PY-LIST",
+        "PY-FILE",
+        "PY-ERROR"
+      ],
+      "theory": "Explain state changes, control flow and return values needed by the supplied data procedure.",
+      "noncoding": "Predict a short procedure before running it and identify a counterexample to the mistaken return/print equivalence.",
+      "coding": "Modify a small supplied procedure and check its returned value and stated error behavior.",
+      "assessment": "Use changed inputs without the completed solution visible; state assistance and explain a failed case.",
+      "oracle_kinds": [],
+      "time_location": "Week 1 coding block: the existing 20-minute Python diagnosis; prior support remains outside class."
+    },
+    {
+      "id": "W1-table",
+      "week": 1,
+      "syllabus_ids": [
+        "KOAI-02"
+      ],
+      "concept_ids": [
+        "row_column",
+        "feature_target",
+        "missingness"
+      ],
+      "prerequisite_ids": [
+        "PY-FUNCTION",
+        "PY-LIST",
+        "PY-FILE",
+        "PY-ERROR"
+      ],
+      "theory": "Define a record, column, feature and target in the same data dictionary; distinguish missing from zero.",
+      "noncoding": "Predict selected rows/columns and missing-value counts from a small table.",
+      "coding": "Read the stated CSV, select the requested subset, inspect dtype/shape and count missing values; do not silently impute in week 1.",
+      "assessment": "Apply the same stated contract to changed column names and a documented missing-column case.",
+      "oracle_kinds": [],
+      "time_location": "Week 1 coding: CSV selection and missing-value inspection in the existing 40-minute block."
+    },
+    {
+      "id": "W1-array",
+      "week": 1,
+      "syllabus_ids": [
+        "KOAI-02",
+        "KOAI-06"
+      ],
+      "concept_ids": [
+        "shape",
+        "axis",
+        "arithmetic_mean"
+      ],
+      "prerequisite_ids": [
+        "PY-LIST",
+        "MATH-MEAN"
+      ],
+      "theory": "Define shape and reduction axis; explicitly state that this check uses rectangular 2D arrays with keepdims false.",
+      "noncoding": "Predict the retained dimensions and independently calculate column and row means.",
+      "coding": "Run both axis reductions on the same array and reconcile values and output shape with the prediction.",
+      "assessment": "Use a new rectangular array and explain why the output length changes with the selected axis.",
+      "oracle_kinds": [
+        "axis_mean"
+      ],
+      "time_location": "Week 1 theory/noncoding/NumPy blocks; no extra class time is appended."
+    },
+    {
+      "id": "W1-visualise",
+      "week": 1,
+      "syllabus_ids": [
+        "KOAI-03"
+      ],
+      "concept_ids": [
+        "variable",
+        "aggregation",
+        "axis_label"
+      ],
+      "prerequisite_ids": [
+        "PY-FILE",
+        "MATH-MEAN"
+      ],
+      "theory": "Distinguish the plotted quantity, aggregation and axis units from the underlying raw records.",
+      "noncoding": "Read a graph and match its axes and aggregation to a stated table quantity.",
+      "coding": "Create the required labeled graph and interpret it; record Matplotlib and Seaborn evidence separately when claiming the full grouped item.",
+      "assessment": "Change an input condition and explain the resulting graph rather than merely displaying an image.",
+      "oracle_kinds": [],
+      "time_location": "Matplotlib belongs to the existing week 1 class; the plan's Seaborn obligation is required outside work."
+    },
+    {
+      "id": "W2-split",
+      "week": 2,
+      "syllabus_ids": [
+        "KOAI-25"
+      ],
+      "concept_ids": [
+        "training",
+        "validation",
+        "test",
+        "evaluation_independence"
+      ],
+      "prerequisite_ids": [
+        "PY-LIST",
+        "PY-FILE",
+        "PY-FUNCTION"
+      ],
+      "theory": "Distinguish learning from training data, choosing settings with validation, and final test estimation; state group/time assumptions.",
+      "noncoding": "Assign source IDs to splits and identify which operations would expose held-out information.",
+      "coding": "Split before fitting learned transformations and check row/group/time constraints appropriate to the stated data.",
+      "assessment": "Identify a counterexample with disjoint row IDs but shared subjects or future information.",
+      "oracle_kinds": [
+        "split_fit"
+      ],
+      "time_location": "Week 2 split block; preserve the test embargo through final week 4 selection and required outside work."
+    },
+    {
+      "id": "W2-preprocess",
+      "week": 2,
+      "syllabus_ids": [
+        "KOAI-24",
+        "KOAI-25"
+      ],
+      "concept_ids": [
+        "fit",
+        "transform",
+        "training_statistics"
+      ],
+      "prerequisite_ids": [
+        "PY-FUNCTION",
+        "MATH-MEAN",
+        "ARRAY-AXIS"
+      ],
+      "theory": "Define fitted statistics and distinguish fit from applying a fixed transform; name the statistic and its training population.",
+      "noncoding": "Predict how a held-out outlier would incorrectly change a statistic if fitted on all rows.",
+      "coding": "Fit the stated imputer/scaler in the training pipeline and transform validation without refitting; keep required component evidence separate.",
+      "assessment": "Audit a changed pipeline and identify the specific information path causing or avoiding leakage.",
+      "oracle_kinds": [
+        "split_fit"
+      ],
+      "time_location": "Week 2 existing 20-minute pipeline block plus separately accounted required outside preprocessing work."
+    },
+    {
+      "id": "W2-metrics",
+      "week": 2,
+      "syllabus_ids": [
+        "KOAI-19",
+        "KOAI-23"
+      ],
+      "concept_ids": [
+        "positive_label",
+        "confusion_counts",
+        "denominator"
+      ],
+      "prerequisite_ids": [
+        "MATH-RATIO"
+      ],
+      "theory": "Define TP/FP/FN/TN using the positive label and give the population counted by each denominator.",
+      "noncoding": "Compute accuracy, precision and recall independently from a confusion table; distinguish undefined ratios from zero.",
+      "coding": "Reconcile library and hand results under the same label and zero-division conventions; F1/ROC outside work stays separate.",
+      "assessment": "Use changed counts and an undefined case; explain which error affects precision versus recall.",
+      "oracle_kinds": [
+        "binary_metrics"
+      ],
+      "time_location": "Week 2 noncoding 20-minute calculation within 30 minutes, which already includes 10 minutes of written practice."
+    },
+    {
+      "id": "W2-baseline-model",
+      "week": 2,
+      "syllabus_ids": [
+        "KOAI-19",
+        "KOAI-25"
+      ],
+      "concept_ids": [
+        "baseline",
+        "validation_selection",
+        "heldout_test"
+      ],
+      "prerequisite_ids": [
+        "PY-FUNCTION",
+        "MATH-RATIO",
+        "ARRAY-AXIS"
+      ],
+      "theory": "Define a baseline predictor and distinguish its validation result from final generalization evidence.",
+      "noncoding": "Predict a dummy strategy's behavior on a stated class distribution and name the comparison condition.",
+      "coding": "Fit and evaluate the declared DummyClassifier baseline on validation data with the fixed split and pipeline.",
+      "assessment": "Explain a model choice using validation evidence while keeping test labels/results unavailable through final week 4 selection.",
+      "oracle_kinds": [
+        "split_fit"
+      ],
+      "time_location": "Week 2 existing 20-minute dummy-model block; no test-driven tuning or added class period."
+    }
+  ],
+  "unresolved": {
+    "diagnostic_cutoff": "The HTML's 4/5 and 3/4 targets are retained as source proposals; numeric readiness policy needs agreement and calibration.",
+    "outside_work_limit": "Required outside-work schedule is recorded separately; acceptable individual limit and support allocation are not inferred.",
+    "evidence": "No student responses, notebooks, classroom timings or learning outcomes are created by this specification."
+  }
+}

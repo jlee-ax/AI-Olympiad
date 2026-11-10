@@ -21,3 +21,7 @@ Read [the evaluation protocol](references/evaluation.md) and [workflow contract]
 Return the exact revision, check-by-check outcomes, evidence pointers, reviewer identity/model, baseline/candidate differences, uncertainty, and the strongest warranted claim. Keep pedagogical approval and student-facing publication separate.
 
 Consult the [research evidence](../references/evidence.md) when proposing evaluator changes or generalizing a result.
+
+## Concrete decision contract
+
+Use [the concrete specification](../references/quality-specification.md), relevant [catalog entries](../references/criteria.json), and [unit behaviors](references/unit-specifications.json). Check named prerequisites under recorded assistance; link theory, hand-work, code and assessment to the same concept. Independently recompute supported cases with the quality tool; directly review other theoretical claims, conventions and counterexamples. Record current per-object fingerprints, actual source/receipt support and good/fault calibration results. Scheduled topics, guided code and independent transfer are separate claims.

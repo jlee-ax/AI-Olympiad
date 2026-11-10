@@ -115,3 +115,50 @@ The following observations come from an inspected unofficial Codex port at revis
 [ledger]: https://github.com/ScriptedAlchemy/pstack-codex/blob/7f3b75256df824ca84a9b76b6bc202b967a221c2/plugins/pstack/automations/benny/scripts/ledger.mjs
 [polling]: https://github.com/ScriptedAlchemy/pstack-codex/blob/7f3b75256df824ca84a9b76b6bc202b967a221c2/plugins/pstack/automations/benny/POLLING.md
 [integration]: https://github.com/ScriptedAlchemy/pstack-codex/blob/7f3b75256df824ca84a9b76b6bc202b967a221c2/INTEGRATION-TESTS.md
+
+## Concrete quality assessment
+
+The [quality specification](../skills/references/quality-specification.md), [criterion catalog](../skills/references/criteria.json), and [unit specifications](../skills/koai-evaluate/references/unit-specifications.json) define concrete objects, observations, severity, pass/fail/uncertainty and pending choices. The confirmed course is ten 120-minute classes; its [existing HTML](../curriculum/student-plan.html) and [60-topic contract](../curriculum/contract.json) are version-bound.
+
+Run these read-only commands from the repository root:
+
+    python3 -B tools/quality.py baseline
+    python3 -B tools/quality.py evaluate templates/quality.json
+    python3 -B tools/quality.py plan templates/quality.json
+    python3 -B tools/quality.py agreement-context templates/quality.json
+    python3 -B tools/quality.py impact BUNDLE --changed SOURCE_ID
+    python3 -B tools/quality.py review-context BUNDLE --criterion K10 --object CLAIM_ID
+    python3 -B tools/workflow.py decide STATE --quality BUNDLE
+
+Use the quality bundle contract in the specification. For real objects, populate actual artifacts, diagnoses, activity links, claims, source reads, execution receipts and independent reviews; do not copy synthetic passes.
+
+The default quality bundle remains incomplete. A baseline pass verifies pinned schedule/scope consistency, not current material readiness. The evaluate output lists K01–K15 measurements and findings. Plan suppresses exact earlier attempts, gives a reproduced defect a priority floor, and pauses for missing agreement, finite limits, an unscoped higher-priority blocker or the reported 30-minute checkpoint. It cannot execute the recommendation.
+
+Quality commands return structured JSON with authority advisory_only. Exit 2 means unreadable/invalid input or baseline errors; other decisions can exit 0. Inspect status and ready_for_review. A zero exit alone does not establish readiness.
+
+### Binding quality into the existing workflow
+
+Lesson-production and recurring decisions now require a quality report. Existing design decisions can still use the earlier state contract without one. An optional quality bundle on a design decision is also checked.
+
+The API accepts decide(state, quality_report=None). A supplied report must come from evaluating the actual current bundle/root. Public CLI --quality performs that evaluation itself. The report is a recorded preflight, not authenticated truth.
+
+Bind these exact manifests in context.inputs:
+
+| Manifest ID | Revision | SHA256 |
+|---|---|---|
+| quality:bundle | The quality bundle revision | Report bundle_sha256: canonical JSON, not pretty-printed raw file bytes |
+| quality:criteria | Report specification_revision | Actual criterion-catalog file bytes |
+| quality:evaluator | quality-v1 | Actual quality.py file bytes |
+
+The workflow artifact digest must match the quality report's actual artifact digest. A synthetic quality report cannot validate non-synthetic workflow state. Every K01–K15 check must pass and ready_for_review must be true. The existing independent current-context verification and completion predicate still apply.
+
+Quality is checked after scope, agreement, frozen baseline, finite budgets and checkpoint conditions, before the existing verification step. Missing quality pauses; missing bindings, artifact mismatch, failed/uncertain/unrun checks or a synthetic/real mismatch block. Adding the manifests changes the workflow context, so refresh the aggregate review explicitly. Current unit content reviews may be reused only according to their own actual region/dependency bindings.
+
+The workflow input validation/fingerprint/recall commands keep their structural meanings. Only the decision gate gains this concrete preflight. No scheduler, Jupyter executor, web source reader, state writer or publisher is added.
+
+### Synthetic end-to-end example
+
+    python3 -B tools/quality.py evaluate examples/quality.json
+    python3 -B tools/workflow.py decide examples/quality-workflow.json --quality examples/quality.json
+
+The first reports a synthetic passed fixture; the second reports an advisory synthetic continue decision. No actual lesson execution, learner result or user approval is established. The real template remains incomplete, and a synthetic report cannot validate real state.
