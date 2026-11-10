@@ -161,3 +161,7 @@ Biggs supplies an alignment design framework illustrated in teacher education, n
 Still unset: diagnostic cutoffs/help policy, acceptable outside workload/support allocation, calibration sample/tolerances, minimum useful improvement and total attempt/time/no-progress budgets. The default bundle stays incomplete. This work creates no student responses, new lesson notebooks, learner study or recurring worker run.
 
 Registered HTML row regions include nested markup/attributes, so an SVG shape or image reference change affects the fingerprint. Notebook regions include source, attachments and displayed outputs; execution counters are excluded. A declared dependency may also supply a root-relative `path`; its actual file bytes then enter the fingerprint, including local diagram assets. Unregistered external assets remain outside the guarantee. The CLI neither executes nor semantically interprets those representations.
+
+## Supplementary competition-depth comparison
+
+Apply the [competition-depth procedure](../koai-evaluate/references/contest-depth.md) alongside K01–K16. It compares exact official problem/example demands against actual lesson and assessment regions, identifies staged gaps and unresolved source evidence, and preserves the distinction between task design and observed learner performance. The separate contest-depth report checks explicit review records only; it cannot automatically infer meaning, validate provenance or prove competition equivalence. Earlier frozen K01–K16 reports are not rewritten by this additional procedure.
