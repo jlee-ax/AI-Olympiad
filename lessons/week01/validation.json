@@ -1,48 +1,46 @@
 {
-  "checked_at_utc": "2026-11-10T21:56:13.691307+00:00",
+  "checked_at_utc": "2026-11-10T22:37:11.695512+00:00",
   "notebook": "week01_python_tables.ipynb",
-  "base_commit": "434fe5ad5d2300dba741c755bca8928177a2e098",
+  "revision": "week1-basic-v2",
+  "skills_reference_commit": "787079f4870068106500e5184ce457e95e6aa3f2",
   "nbformat_validation": "passed",
   "top_to_bottom_execution": "passed",
-  "execution_method": "fresh IPython InProcessKernelManager per complete run",
-  "separate_nbclient_kernel": "blocked in authoring cloud: environment prohibits ZMQ TCP and IPC sockets; kernel died before cell execution",
-  "code_cells": 24,
-  "executed_code_cells": 24,
+  "execution_method": "fresh IPython InProcessKernelManager per run",
+  "execution_seconds": 1.792,
+  "cells": 81,
+  "code_cells": 25,
+  "executed_code_cells": 25,
   "error_outputs": 0,
-  "execution_seconds": 1.745,
+  "actual_function_and_state_assertions": "passed",
+  "teacher_modification_key_tests": "passed",
+  "independent_fraction_arithmetic": "passed",
+  "csv_mask_shape_missing_and_merge_checks": "passed",
   "plot_output_cells": [
-    48,
-    62,
+    50,
     64,
     66,
-    67
+    68,
+    69
   ],
   "plot_output_count": 5,
-  "embedded_diagrams": 1,
-  "independent_arithmetic_checks": "passed",
-  "csv_checks": "passed",
-  "histogram_counts": [
-    1,
-    3,
-    1,
-    1
-  ],
-  "time_minutes": {
+  "embedded_diagrams": 2,
+  "student_text_meta_removal": "passed",
+  "student_answers": "blank_not_assessed",
+  "student_mastery": "not_observed",
+  "classroom_timing": "estimated_not_observed",
+  "teacher_only_class_total": 120,
+  "teacher_only_time_minutes": {
     "theory": 20,
     "noncoding": 20,
     "coding": 80
   },
-  "class_total": 120,
   "required_homework_minutes": [
     300,
     420
   ],
   "standalone_without_csv_files": "passed",
-  "student_answers": "blank_not_assessed",
-  "student_mastery": "not_observed",
-  "classroom_timing": "estimated_not_observed",
-  "visual_inspection": "All 5 executed figure outputs and embedded axis diagram viewed at reading size; axis-label collision fixed",
-  "browser_jupyterlab": "Server started in cloud workspace; cloud browser HTTP 127.0.0.1:8888 returned ERR_CONNECTION_REFUSED. No live JupyterLab browser run claimed.",
+  "visual_inspection": "Viewed all five saved plots and both embedded diagrams at reading size; labels, units and mappings checked",
+  "browser_preview": "not_performed_by_script",
   "packages": {
     "numpy": "2.5.4",
     "pandas": "3.1.1",
@@ -53,23 +51,13 @@
     "nbformat": "5.11.1",
     "ipykernel": "7.4.0"
   },
-  "notebook_sha256": "8ffda0c1d5ec1c5ca765fb892a09c64c3920bca6f840dfdf5a481a8da5a7cff2",
-  "source_baseline_sha256": "96deb5e5e781bf39cc6bb5effe34d6d04a01ac65e13a3811c37f5a825714f7a9",
+  "notebook_sha256": "602c0c4e04e7208b0b082d9e4e7d4be384e1371f67c5f211d931911367d02eb0",
+  "source_attachment_projection_sha256": "9d9558bcb9de1b41a83ba89665e9430a0b5578383772019f6faee376a608e450",
+  "source_projection_unchanged_by_execution": true,
   "schedules_created": false,
-  "browser_github_notebook": "Verified saved notebook preview, formula rendering, source tables, 6 decoded images and saved execution outputs on the actual branch URL",
-  "curriculum_link": {
-    "url": "https://github.com/jlee-ax/AI-Olympiad/blob/codex/week01-jupyter-lesson/lessons/week01/week01_python_tables.ipynb",
-    "one_learning_material_cell_only": true,
-    "other_weeks_and_styles_preserved": true,
-    "contract_hash_matches": true,
-    "updated_html_sha256": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254"
-  },
-  "post_execution_prose_changes": "Removed literal bold markers around target and math styling around Korean axis words; code cells and execution outputs unchanged",
-  "repository_regression": {
-    "tests_run": 89,
-    "failures": 0,
-    "command": "python -m unittest discover -s tests -q",
-    "baseline_validator": "passed; 60 topics and ten 120-minute weeks preserved"
-  },
-  "historical_examples": "Synthetic example keeps its old artifact digest and is pointed to the byte-identical provenance snapshot; workflow bundle binding refreshed. No real review evidence invented."
+  "separate_kernel_attempt": {
+    "status": "failed_before_cell_execution",
+    "receipt": "../../reviews/week01/separate-kernel-startup.log",
+    "reason": "ZMQ/network interface operation not permitted; kernel died before kernel_info"
+  }
 }

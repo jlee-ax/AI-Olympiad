@@ -1,0 +1,16 @@
+{
+  "kind": "independent_arithmetic_counterexample",
+  "baseline_sha256": "8ffda0c1d5ec1c5ca765fb892a09c64c3920bca6f840dfdf5a481a8da5a7cff2",
+  "locator": "cell:b17df2fe",
+  "observed_row": "| 결과 반환 | 개수 3으로 나눔 | 4 |",
+  "header": "누적 합계",
+  "trace": [
+    2,
+    6,
+    12
+  ],
+  "final_accumulator": 12,
+  "returned_quotient": 4.0,
+  "finding": "The baseline places quotient 4 under cumulative total; final accumulator is 12.",
+  "scope_limit": "This reproduces one content defect, not learner benefit or full notebook correctness."
+}

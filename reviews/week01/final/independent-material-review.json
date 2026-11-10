@@ -1,0 +1,378 @@
+{
+  "review_schema": "independent-material-review-v1",
+  "reviewed_at_utc": "2026-11-10T22:37:50.476387+00:00",
+  "reviewer": {
+    "id": "independent-material-reviewer",
+    "independence": "Separate reviewing agent, same model family as author; no independent educator calibration or learner validation.",
+    "model_family": "Same family as author as specified in the review assignment; exact runtime model identifier unavailable."
+  },
+  "artifacts": {
+    "candidate_path": "lessons/week01/week01_python_tables.ipynb",
+    "candidate_sha256_at_review": "602c0c4e04e7208b0b082d9e4e7d4be384e1371f67c5f211d931911367d02eb0",
+    "source_attachment_projection_sha256": "eec8cd694cb351fee2fd1bec691717db017dcb81a7534d626bc850dbc9663ee7",
+    "projection_definition": "UTF-8 SHA256 of Python json.dumps([{id: c[id], cell_type: c[cell_type], source: c[source], attachments: c.get(attachments, {})} for c in notebook[cells]], ensure_ascii=False, sort_keys=True), with default json separators. source is preserved as stored (not joined). Missing attachments become {}, not null. Excludes outputs, metadata and execution_count.",
+    "cell_count": 81,
+    "teacher_notes_path": "lessons/week01/teacher-notes.txt",
+    "teacher_notes_sha256": "3622f179b0b5f748a785437c3da86b7a6652fa54aa5468123c11edd52d618384",
+    "baseline_sha256": "8ffda0c1d5ec1c5ca765fb892a09c64c3920bca6f840dfdf5a481a8da5a7cff2",
+    "context_files": {
+      "ai-olympiad-quality-spec/skills/koai-evaluate/SKILL.md": "51de2391e310d5b7c8f610114cbf4022d3c80cb9651f76fce64986b2b38bc97b",
+      "ai-olympiad-quality-spec/skills/koai-evaluate/references/theory-explanation.json": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "ai-olympiad-quality-spec/skills/koai-evaluate/references/unit-specifications.json": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "ai-olympiad-quality-spec/tools/quality.py": "2b8ad68a46899cbe533cf0900f0b3b7d4956edf990c9847459d75ac72ac499c5"
+    }
+  },
+  "conclusion": "accepted_for_scoped_material_review",
+  "strongest_warranted_claim": "Candidate repairs the demonstrated state/return error and improves definition-to-calculation-to-representation-to-assessment alignment for the reviewed W1 material. Content checks and selected executions support suitability for a teacher-guided trial, not measured learning gains or guaranteed 120-minute completion.",
+  "units": [
+    {
+      "id": "W1-python",
+      "subchecks": [
+        {
+          "id": "T04",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:b17df2fe",
+            "cell:7208718e",
+            "cell:e2a6be88",
+            "cell:92534730",
+            "cell:d96a754b",
+            "cell:81129230",
+            "cell:c6d01f13",
+            "cell:fb78da30",
+            "cell:14425637"
+          ],
+          "evidence": "Input/output and empty-input contracts precede mean pseudocode. Trace now separates total 12 from return 4 and supplies before/after sums. Singleton and empty paths explained. Diagnostic branch syntax matches execution. mean_of_numbers and require_columns extracted from candidate and independently executed on ordinary, changed and failing cases; results agree. Missing-column trace accumulates only absent names before raising. Changed shifted_mean task requires real code modification and returned-value reuse."
+        },
+        {
+          "id": "T05",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:7208718e",
+            "cell:c6d01f13",
+            "cell:modify-mean-function",
+            "cell:d60c3acd",
+            "cell:3aea0e50",
+            "cell:guided-feedback-and-support"
+          ],
+          "evidence": "Entry assumptions name prior basic coding; short-list tracing is an available bridge. Learners predict branch, loop states, return/print, slice and file/column errors. Help reporting is explicit. Changed-input modification requires total 3->8->18, returned 6, reused 18; teacher key independently checked. Feedback distinguishes variable state and screen output and directs a smaller input when confused."
+        }
+      ]
+    },
+    {
+      "id": "W1-table",
+      "subchecks": [
+        {
+          "id": "T03",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:1ab9cd79",
+            "cell:876b91b7",
+            "cell:b428c6f1",
+            "cell:0eaa5024",
+            "cell:30a2a103",
+            "cell:b6788dc5",
+            "cell:9b766e3e",
+            "cell:08e374f4",
+            "cell:d60c3acd"
+          ],
+          "evidence": "Synthetic population, record/column meanings, units and feature/target roles are explicit in both dictionaries. Boolean mask maps P03/P04/P06 to selected rows; shape distinction Series versus DataFrame and missing slots is explained. isna counts flags rather than raw measurements; missing P03 differs from zero P01. Recorded-water denominator 5 and unknown full-population mean are distinguished. Changed-name task and missing-column contract preserve meanings."
+        },
+        {
+          "id": "T05",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:b38de2c6",
+            "cell:d60c3acd",
+            "cell:dff8752b",
+            "cell:3aea0e50",
+            "cell:guided-feedback-and-support"
+          ],
+          "evidence": "Changed conditions and column names require predictions of selected IDs and shape, missing-versus-zero interpretation, and error explanation. New dictionary eliminates English-name guessing. Teacher key matches Q03/Q04 selection, shape (2,2), recorded average 20 ml excluding Q02. Feedback returns learner to actual columns/dictionary or separate zero/missing rows; assistance is recorded rather than inferred absent."
+        }
+      ]
+    },
+    {
+      "id": "W1-array",
+      "subchecks": [
+        {
+          "id": "T01",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:409e1675",
+            "cell:82e8a039",
+            "cell:e594ea69",
+            "cell:ebbfd3db",
+            "cell:08bf506c",
+            "cell:d60c3acd"
+          ],
+          "evidence": "Mean and variance symbols, finite same-unit values, n>=1, indices, units and empty-domain exclusion are stated. Generic a_ij, m, p, c_j and r_i definitions/ranges appear with formula. Rectangular 2D, keepdims=False, mathematical 1-based versus Python 0-based indexing, and output shapes are explicit. n versus n-1 convention and ddof are distinguished."
+        },
+        {
+          "id": "T02",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:409e1675",
+            "cell:82e8a039",
+            "cell:ebbfd3db",
+            "cell:guided-feedback-and-support"
+          ],
+          "evidence": "Equal-share equation derives mean from sum preservation. Sum of deviations is derived as sum(x)-n*mean=0. Variance is correctly identified as a definition, not uniquely forced by cancellation; repeated-data example motivates normalization. Worked 8/3 cm2 and zero spread agree. Generic column/row denominator follows actual summand count. Wrong denominator counterexample 18/2=9 exposes error. Translation invariance is explained by cancelling equal shifts."
+        },
+        {
+          "id": "T03",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:mean-variance-mapping",
+            "cell:b9a324f5",
+            "cell:e594ea69",
+            "cell:ebbfd3db",
+            "cell:guided-feedback-and-support"
+          ],
+          "evidence": "Variance figure pixels directly inspected: common cm x-scale, ordered-record y-label, vertical mean=4 line, signed arrows -2/0/+2 and square labels 4/0/4 map consistently to formula and caption. Axis attachment pixels inspected in baseline; candidate attachment equality verified. Axis diagram groups, averages, remaining counts and arrows match text. Interpretation prompts ask mapping marks back to inputs and formula; feedback supplies reasoning."
+        },
+        {
+          "id": "T04",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:b17df2fe",
+            "cell:ebbfd3db",
+            "cell:81129230",
+            "cell:3468f4e4",
+            "cell:ea9aba74"
+          ],
+          "evidence": "Mean state trace, finite-loop stopping and empty error correspond to implementation. Column-mean pseudocode resets each column total; explicit traces 0->2->8->18 and 0->4->12->24 yield [6,8]. Positive rectangular dimensions exclude empty axes. Mapping to NumPy reductions and retained dimensions is explicit. Independent pinned quality oracle matched A/B both axes and singleton, rejecting empty/ragged cases; independent actual NumPy results match."
+        },
+        {
+          "id": "T05",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:ffb294df",
+            "cell:71068cea",
+            "cell:d60c3acd",
+            "cell:3aea0e50",
+            "cell:guided-feedback-and-support"
+          ],
+          "evidence": "Predict-before-run hand tasks, 4x3 changed-shape questions, shifted-value variance probe and new B assessment require explanation of denominator and shape. Teacher B key checked: columns [2,6,10] /2, rows [5,7] /3, first row variance 32/3 cm2. Support returns to circling inputs making one output; feedback addresses sum-as-mean and bigger-value-as-bigger-variance misconceptions. Actual learning not inferred."
+        }
+      ]
+    },
+    {
+      "id": "W1-visualise",
+      "subchecks": [
+        {
+          "id": "T03",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:fa10c459",
+            "cell:48d931b0",
+            "cell:b5362bd2",
+            "cell:9ce91662",
+            "cell:c6ef56e6",
+            "cell:777a590f",
+            "cell:33384c16",
+            "cell:6a64bcb2",
+            "cell:8d3421bb",
+            "cell:d7b8c3d2",
+            "cell:6075b8e8"
+          ],
+          "evidence": "Scatter mapping P03=(5h,12cm), six synthetic records and noncausal limitation are explicit; source code labels axes/units. Extension distribution record-order axis is distinguished from measurement; mean bars aggregate named groups with counts and zero baseline. Histogram bins/count semantics and final endpoint are correct; sum of bar heights=6 now unambiguous. Stripplot overlap is explained, not treated as missing rows. Plot source reviewed; final regenerated plot pixels are outside this reviewer execution scope."
+        },
+        {
+          "id": "T05",
+          "status": "passed",
+          "artifact_locators": [
+            "cell:b5362bd2",
+            "cell:5d9473df",
+            "cell:9ce91662",
+            "cell:777a590f",
+            "cell:6075b8e8",
+            "cell:guided-feedback-and-support"
+          ],
+          "evidence": "Learners predict shifted x-values in a preserved-copy plot, explain one mark and a limit, change group data, and distinguish aggregated bars from individual points. Feedback correctly states right shift by 1h with heights unchanged. Teacher key includes 28/3 and 44/3 cm group means and histogram counts 1,3,1,1. Support maps a confusing mark back to table records. Material suitability only; no learner performance claim."
+        }
+      ]
+    }
+  ],
+  "baseline_candidate_differences": [
+    "Corrected total-versus-return trace.",
+    "Added mean derivation and variance cancellation/normalization reasoning.",
+    "Added mapped variance figure and interpretation prompt.",
+    "Expanded generic axis definitions and column algorithm trace.",
+    "Added genuine function modification and returned-value reuse.",
+    "Added new CSV dictionary, boolean mask mapping and missing-shape clarification.",
+    "Added concrete feedback/support and teacher keys for changed cases.",
+    "Removed student-facing timings, learner time requests, internal hash/contract/Humanizer metadata."
+  ],
+  "primary_source_checks": [
+    {
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.mean.html",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "Parameters axis/keepdims; Notes; Examples (web lines 80-150)",
+      "observed_support": "Mean reduces selected axis, default flattens; keepdims=True retains unit dimensions; arithmetic mean is sum divided by included element count.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review."
+    },
+    {
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.var.html",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "ddof and Notes (103-160)",
+      "observed_support": "Default ddof=0; divisor N-ddof; squared-deviation sum; N versus N-1 distinction.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review."
+    },
+    {
+      "url": "https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "header (122-131), na_values/keep_default_na (197-216), quotechar (281-288)",
+      "observed_support": "Default inferred header is first data row absent names; empty field interpreted as missing by default; quoted delimiters supported.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review."
+    },
+    {
+      "url": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isna.html",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "Definition (245-247)",
+      "observed_support": "Same-sized boolean result marks NA True and other values False; an empty string already in a DataFrame is not itself automatically NA, distinct from CSV parsing.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review."
+    },
+    {
+      "url": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.var.html",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "Signature/ddof (242-268); example (329-333)",
+      "observed_support": "Default ddof=1; N-ddof denominator; explicit ddof=0 uses N.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review."
+    },
+    {
+      "url": "https://seaborn.pydata.org/generated/seaborn.histplot.html",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "Signature/stat/bins (171,200-217)",
+      "observed_support": "Default count statistic counts observations per bin; explicit bin break vector accepted.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review."
+    },
+    {
+      "url": "https://seaborn.pydata.org/generated/seaborn.stripplot.html",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "Definition/jitter (175,200-201); disabled jitter example (351-353)",
+      "observed_support": "Categorical scatterplot; jitter can reveal overlaps and jitter=False disables it.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review."
+    },
+    {
+      "url": "https://kitpa.org/koai/2027",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "Competition guide links (94-96)",
+      "observed_support": "Reachable current KOAI 2027 page links official syllabus; no inference that syllabus heading itself changed to 2027.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review."
+    },
+    {
+      "url": "https://kitpa.org/koai/syllabus",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "Heading (72-74); programming table (87-98)",
+      "observed_support": "Currently headed IOAI 2026 기준; Python, NumPy/Pandas, Matplotlib/Seaborn and tensor manipulation listed practical O, theory X. Does not establish this lesson alone completes all tensor/PyTorch topics.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review."
+    },
+    {
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.histogram.html",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "Notes (120-125)",
+      "observed_support": "All bins except final are half-open; last includes right endpoint.",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review."
+    },
+    {
+      "url": "https://pandas.pydata.org/docs/reference/api/pandas.Series.mean.html",
+      "reachability": "passed",
+      "semantic_support": "passed",
+      "locator": "Signature/skipna (370-391)",
+      "observed_support": "Arithmetic mean skips missing values by default (skipna=True).",
+      "method": "Direct web open followed by find/open of relevant text; checked during this review."
+    }
+  ],
+  "executed_checks": [
+    {
+      "id": "independent-arithmetic",
+      "status": "passed",
+      "method": "Python standard-library Fraction/statistics independent recalculation",
+      "observed": "A columns 6,8; rows 3,7,11; B columns 2,6,10; rows 5,7; B first-row variance 32/3; group means 28/3,44/3; histogram 1,3,1,1; shift variance 8/3; extension variances 32/3,2/3; dot total 5200."
+    },
+    {
+      "id": "candidate-functions-and-array-cases",
+      "status": "passed",
+      "method": "AST-extracted mean_of_numbers and require_columns from candidate executed in fresh Python namespace; NumPy 2.3.5 and pandas 2.2.3.",
+      "observed": "Mean changed/singleton inputs and empty ValueError; missing-column KeyError, requested order and original preservation; A/B reductions; matching explicit ddof=0. Supplied CSVs have shapes (6,5)/(4,5), exactly one water missing each."
+    },
+    {
+      "id": "pinned-axis-oracle",
+      "status": "passed",
+      "method": "Imported pinned-main/tools/quality.py oracle directly using python -B",
+      "observed": "A and B both axes matched; [[5]] returns [5] for each axis; [], [[]], and [[1,2],[3]] rejected with ValueError."
+    },
+    {
+      "id": "figure-inspection",
+      "status": "passed",
+      "method": "Direct image display of embedded mean-variance and axis attachments; local view_image for variance; candidate axis attachment equality compared with baseline.",
+      "observed": "Signed deviation arrows, marks, labels, same x-scale and units agree. Axis diagram outputs and shapes correct."
+    },
+    {
+      "id": "student-meta-removal",
+      "status": "passed",
+      "method": "All Markdown read; supplementary regex scan",
+      "observed": "No observed student timing/logging, repository hash, contract or Humanizer references. Learner questions and normal notebook use instructions retained."
+    },
+    {
+      "id": "full-notebook-final-execution",
+      "status": "not_run",
+      "reason": "Parent is running final execution. This review executed selected extracted functions independently, not the full notebook or final regenerated outputs."
+    },
+    {
+      "id": "workflow-validate-and-decide",
+      "status": "not_run",
+      "reason": "No current completed workflow-state bundle assigned for this independent review; no structural or aggregate quality pass claimed."
+    },
+    {
+      "id": "educator-calibration-and-learner-outcomes",
+      "status": "not_run",
+      "reason": "No educator judgments, classroom observations, student responses or outcome study available."
+    },
+    {
+      "id": "final-parent-execution-evidence-inspection",
+      "status": "passed",
+      "method": "Read actual validation.json and reviews/week01/final/inprocess-execution.log; inspected final saved notebook cell counters/error outputs; read separate-startup failure log.",
+      "observed": "Receipt full hash matches candidate; 25/25 code cells and zero errors corroborated in saved outputs. Parent receipt reports fresh InProcessKernelManager runs including standalone-without-CSV, function/mask/merge/array and teacher-key assertions. Separate nbclient startup failed before cells with environment socket restriction. Reviewer did not independently rerun full notebook; successful fallback is not separate-process kernel validation."
+    }
+  ],
+  "uncertainty": [
+    "Teacher-guided workload remains an estimate; added explanatory material need not all be read aloud, but actual 120-minute feasibility is unobserved.",
+    "Outside required work remains substantial; teacher notes preserve original allocation and do not establish appropriate individual workload.",
+    "Same-family agent agreement is not educator validation or evaluator calibration.",
+    "No student independence, retention, transfer success or learning gain inferred from material or code checks.",
+    "Final bytes rebound after output regeneration. Final plot source and two explanatory diagrams reviewed; full saved plot pixel review and live Jupyter/browser execution are outside this reviewer scope."
+  ],
+  "resolved_findings": [
+    {
+      "severity": "minor",
+      "locator": "cell:guided-feedback-and-support",
+      "finding": "Calls mean_of_numbers a 합계 함수 although it returns a mean. Surrounding sentence correctly distinguishes total12 from return4; not a mathematical error.",
+      "suggestion": "At next editorial opportunity use 평균 함수; avoid reopening frozen substantive review for wording alone.",
+      "resolution": "Final candidate changed label to 평균 함수. Directly read corrected cell; reversing only that substring reproduces previous source/attachment hash, proving all other projected sources/attachments unchanged."
+    }
+  ],
+  "remaining_findings": [],
+  "final_rebind": {
+    "previous_full_sha256": "20bbc50c7c2ac092f7c1dba3e5d854296e4bbfcd0bbd8864f065bb18f377ccd5",
+    "previous_projection_sha256": "01c3a0e4138f4121a51c567e3938868d6ff944ddc387acde4c057f5cbddcf221",
+    "verification": "Reversing only the corrected function-label substring reproduces previous projected hash. Teacher key hash unchanged. Saved final notebook full hash matches validation.json. Directly counted 25 code cells with execution_count 1..25 and no error outputs.",
+    "receipt_path": "lessons/week01/validation.json",
+    "receipt_sha256": "0e9cf05cd8a50601d1b9ac12272627e658f8b7350289889ddeb360a4612c51d2",
+    "inprocess_log_sha256": "af345639d0f48786f7286bc82ada0f11f59e175465903bbf02357de75075fbc7",
+    "separate_startup_log_sha256": "0169a96bd5fe700aeb88bb64872a0d3dacf02339bf966cc5959cc82720026ca3",
+    "validator_projection": "Different projection scheme; validator hash recorded but not equated to reviewer hash.",
+    "validator_reported_projection_sha256": "9d9558bcb9de1b41a83ba89665e9430a0b5578383772019f6faee376a608e450"
+  }
+}

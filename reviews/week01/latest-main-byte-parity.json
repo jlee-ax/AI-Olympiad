@@ -1,0 +1,170 @@
+{
+  "checked_at_utc": "2026-11-10T22:36:15.372055+00:00",
+  "remote_tree_source": "https://api.github.com/repos/jlee-ax/AI-Olympiad/git/trees/787079f4870068106500e5184ce457e95e6aa3f2?recursive=1",
+  "main_commit": "787079f4870068106500e5184ce457e95e6aa3f2",
+  "local_git_head_is_not_claimed_to_equal_remote": true,
+  "files_checked": 23,
+  "files": [
+    {
+      "path": "skills/README.md",
+      "remote_git_blob_sha1": "0032b4b24de572f4b0fe8d08421ec6b46b6918bf",
+      "local_git_blob_sha1": "0032b4b24de572f4b0fe8d08421ec6b46b6918bf",
+      "local_sha256": "d09d8ea83a6fbd8d738ddad17a54be8138855076cea627ffdad22cff1aa9223d",
+      "match": true
+    },
+    {
+      "path": "skills/koai-evaluate/SKILL.md",
+      "remote_git_blob_sha1": "5061cb24da0f8ae84ff568ffe33dbfc4b3cd39dc",
+      "local_git_blob_sha1": "5061cb24da0f8ae84ff568ffe33dbfc4b3cd39dc",
+      "local_sha256": "51de2391e310d5b7c8f610114cbf4022d3c80cb9651f76fce64986b2b38bc97b",
+      "match": true
+    },
+    {
+      "path": "skills/koai-evaluate/agents/openai.yaml",
+      "remote_git_blob_sha1": "d037305f3c64fb01757ec8920d3756d6ca3896b4",
+      "local_git_blob_sha1": "d037305f3c64fb01757ec8920d3756d6ca3896b4",
+      "local_sha256": "ae16d087a1981fd894df5512c2d302cf82908846c62c62e1e3063f3d585f1391",
+      "match": true
+    },
+    {
+      "path": "skills/koai-evaluate/references/evaluation.md",
+      "remote_git_blob_sha1": "b73d6e179db452f43a1e0cebbd0b7031aab41fc0",
+      "local_git_blob_sha1": "b73d6e179db452f43a1e0cebbd0b7031aab41fc0",
+      "local_sha256": "433e988af901e50e84b00d7b0282ea11a1dfa2888565599fb7083eee5f0ff747",
+      "match": true
+    },
+    {
+      "path": "skills/koai-evaluate/references/theory-explanation.json",
+      "remote_git_blob_sha1": "3e0561fe2b49415edd62056f869abc0826ed9656",
+      "local_git_blob_sha1": "3e0561fe2b49415edd62056f869abc0826ed9656",
+      "local_sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "match": true
+    },
+    {
+      "path": "skills/koai-evaluate/references/unit-specifications.json",
+      "remote_git_blob_sha1": "0b94f8103538ed1a1aa10af16efb1ff34e9bdac4",
+      "local_git_blob_sha1": "0b94f8103538ed1a1aa10af16efb1ff34e9bdac4",
+      "local_sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "match": true
+    },
+    {
+      "path": "skills/koai-ground/SKILL.md",
+      "remote_git_blob_sha1": "1da7862f86b5bb1ab068d8593719ed95d5d75ebf",
+      "local_git_blob_sha1": "1da7862f86b5bb1ab068d8593719ed95d5d75ebf",
+      "local_sha256": "5aea78bc9236414e04b7f52910e74d0c4dc90eb1ad267b72ceec8145eba8acb4",
+      "match": true
+    },
+    {
+      "path": "skills/koai-ground/agents/openai.yaml",
+      "remote_git_blob_sha1": "e6d5d775a3c6a65e78e77de9895a4e15783beec3",
+      "local_git_blob_sha1": "e6d5d775a3c6a65e78e77de9895a4e15783beec3",
+      "local_sha256": "5842b3a1193e307382524586dc29f85a429eca11805d2899f4407cff2599f797",
+      "match": true
+    },
+    {
+      "path": "skills/koai-orchestrate/SKILL.md",
+      "remote_git_blob_sha1": "89c73076b209e11822fac2215b23d67afa35b1bd",
+      "local_git_blob_sha1": "89c73076b209e11822fac2215b23d67afa35b1bd",
+      "local_sha256": "c163dc61cc00ee3f2f729f6cba72793ddfc40276c080379178011dcdbaca6643",
+      "match": true
+    },
+    {
+      "path": "skills/koai-orchestrate/agents/openai.yaml",
+      "remote_git_blob_sha1": "91f6ad9ec798b84b26fb16c1035000cebfb392d2",
+      "local_git_blob_sha1": "91f6ad9ec798b84b26fb16c1035000cebfb392d2",
+      "local_sha256": "4c14dd9928b20ef099ba1c986851c003a79c1ec782482d1c3c2d052a5383d29b",
+      "match": true
+    },
+    {
+      "path": "skills/koai-recall/SKILL.md",
+      "remote_git_blob_sha1": "7c39dd3b099680ecf29cc7a704f96770fb67af36",
+      "local_git_blob_sha1": "7c39dd3b099680ecf29cc7a704f96770fb67af36",
+      "local_sha256": "e2ce471177e0631291033fceeca3dbaa94fa0796e0e9c3875f073c6c8fc355fa",
+      "match": true
+    },
+    {
+      "path": "skills/koai-recall/agents/openai.yaml",
+      "remote_git_blob_sha1": "4c886a5ea38975045c338e4a57e4f8282248864f",
+      "local_git_blob_sha1": "4c886a5ea38975045c338e4a57e4f8282248864f",
+      "local_sha256": "e91259f000f525e8afc0a3ca036f03f1be56c18ceb88bfffe714c589b15f4688",
+      "match": true
+    },
+    {
+      "path": "skills/koai-reflect/SKILL.md",
+      "remote_git_blob_sha1": "52c404a8f8c700620bf49c439cfce2ac89d04153",
+      "local_git_blob_sha1": "52c404a8f8c700620bf49c439cfce2ac89d04153",
+      "local_sha256": "dfbdada629f43261fa69da68730b75bedfe6f995086f9cb135ba7994fba1da67",
+      "match": true
+    },
+    {
+      "path": "skills/koai-reflect/agents/openai.yaml",
+      "remote_git_blob_sha1": "dde3923263183517e99ef6f539adf1bde2863522",
+      "local_git_blob_sha1": "dde3923263183517e99ef6f539adf1bde2863522",
+      "local_sha256": "0b6022a3e2f2a2e0767897e8fa15207144af911ed8332006db0c1fdab51ca1dd",
+      "match": true
+    },
+    {
+      "path": "skills/references/criteria.json",
+      "remote_git_blob_sha1": "8d99012c6de89d5fbeb0ddea9a6fd1934a35e899",
+      "local_git_blob_sha1": "8d99012c6de89d5fbeb0ddea9a6fd1934a35e899",
+      "local_sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "match": true
+    },
+    {
+      "path": "skills/references/evidence.md",
+      "remote_git_blob_sha1": "83c5c746a80eae13f0e05240d906768854c71fe5",
+      "local_git_blob_sha1": "83c5c746a80eae13f0e05240d906768854c71fe5",
+      "local_sha256": "4932d404146ec2b4932f6529c96cb7de1969b9cd19450fe3673042011ec96c11",
+      "match": true
+    },
+    {
+      "path": "skills/references/quality-specification.md",
+      "remote_git_blob_sha1": "c03803fd9f98809e314c2fa60944a5226e8d499e",
+      "local_git_blob_sha1": "c03803fd9f98809e314c2fa60944a5226e8d499e",
+      "local_sha256": "38eb6626e140660877f09b7b93ff862df4e714c0e87b77964fb6124770733dba",
+      "match": true
+    },
+    {
+      "path": "skills/references/source-readings.json",
+      "remote_git_blob_sha1": "f4e1ac506f0771736bb647251ff659d9fef453f4",
+      "local_git_blob_sha1": "f4e1ac506f0771736bb647251ff659d9fef453f4",
+      "local_sha256": "4286e62768534312c6b68ab2ea183fc837959824821278317ea9bf2a138d4c8d",
+      "match": true
+    },
+    {
+      "path": "skills/references/workflow.md",
+      "remote_git_blob_sha1": "c25587e8a5d4c5b95cd3d5ce4277e5a48dbe2596",
+      "local_git_blob_sha1": "c25587e8a5d4c5b95cd3d5ce4277e5a48dbe2596",
+      "local_sha256": "7ba4aca53550f7ef3011c79350a95587edbb2951335a556dcc4f41a34dc4c56b",
+      "match": true
+    },
+    {
+      "path": "tools/README.md",
+      "remote_git_blob_sha1": "103fb0d90a34e19306b0094faf7577c5acd8d2fe",
+      "local_git_blob_sha1": "103fb0d90a34e19306b0094faf7577c5acd8d2fe",
+      "local_sha256": "08fad6004fba51f41479de063d76b7e61bd1a2e01e86e9bfd2476bc99e8e7a91",
+      "match": true
+    },
+    {
+      "path": "tools/quality.py",
+      "remote_git_blob_sha1": "2fc1fb83c1e3d510868a5791c11a063c3c396431",
+      "local_git_blob_sha1": "2fc1fb83c1e3d510868a5791c11a063c3c396431",
+      "local_sha256": "2b8ad68a46899cbe533cf0900f0b3b7d4956edf990c9847459d75ac72ac499c5",
+      "match": true
+    },
+    {
+      "path": "tools/validate.py",
+      "remote_git_blob_sha1": "4cb34a0e2c44117f2fab02419fa5d6d6ea1260f2",
+      "local_git_blob_sha1": "4cb34a0e2c44117f2fab02419fa5d6d6ea1260f2",
+      "local_sha256": "6dc5409584030cf0154eac8b0022c2c17520e64d486f8e5e73be86be03f50e62",
+      "match": true
+    },
+    {
+      "path": "tools/workflow.py",
+      "remote_git_blob_sha1": "de5836a56094c3b69a84357a38f85370ab92d861",
+      "local_git_blob_sha1": "de5836a56094c3b69a84357a38f85370ab92d861",
+      "local_sha256": "c0db0561724068282855fb11c9592cb50346470cc6e5cf6a6bd320839d0973fa",
+      "match": true
+    }
+  ]
+}

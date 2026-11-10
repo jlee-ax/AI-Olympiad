@@ -1,0 +1,94 @@
+{
+  "files": [
+    {
+      "path": "skills/README.md",
+      "sha256": "d09d8ea83a6fbd8d738ddad17a54be8138855076cea627ffdad22cff1aa9223d"
+    },
+    {
+      "path": "skills/koai-evaluate/SKILL.md",
+      "sha256": "51de2391e310d5b7c8f610114cbf4022d3c80cb9651f76fce64986b2b38bc97b"
+    },
+    {
+      "path": "skills/koai-reflect/SKILL.md",
+      "sha256": "dfbdada629f43261fa69da68730b75bedfe6f995086f9cb135ba7994fba1da67"
+    },
+    {
+      "path": "skills/koai-recall/SKILL.md",
+      "sha256": "e2ce471177e0631291033fceeca3dbaa94fa0796e0e9c3875f073c6c8fc355fa"
+    },
+    {
+      "path": "skills/koai-ground/SKILL.md",
+      "sha256": "5aea78bc9236414e04b7f52910e74d0c4dc90eb1ad267b72ceec8145eba8acb4"
+    },
+    {
+      "path": "skills/references/quality-specification.md",
+      "sha256": "38eb6626e140660877f09b7b93ff862df4e714c0e87b77964fb6124770733dba"
+    },
+    {
+      "path": "skills/references/workflow.md",
+      "sha256": "7ba4aca53550f7ef3011c79350a95587edbb2951335a556dcc4f41a34dc4c56b"
+    },
+    {
+      "path": "skills/references/criteria.json",
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "skills/references/source-readings.json",
+      "sha256": "4286e62768534312c6b68ab2ea183fc837959824821278317ea9bf2a138d4c8d"
+    },
+    {
+      "path": "skills/references/evidence.md",
+      "sha256": "4932d404146ec2b4932f6529c96cb7de1969b9cd19450fe3673042011ec96c11"
+    },
+    {
+      "path": "skills/koai-orchestrate/SKILL.md",
+      "sha256": "c163dc61cc00ee3f2f729f6cba72793ddfc40276c080379178011dcdbaca6643"
+    },
+    {
+      "path": "skills/koai-evaluate/agents/openai.yaml",
+      "sha256": "ae16d087a1981fd894df5512c2d302cf82908846c62c62e1e3063f3d585f1391"
+    },
+    {
+      "path": "skills/koai-evaluate/references/evaluation.md",
+      "sha256": "433e988af901e50e84b00d7b0282ea11a1dfa2888565599fb7083eee5f0ff747"
+    },
+    {
+      "path": "skills/koai-evaluate/references/theory-explanation.json",
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "skills/koai-evaluate/references/unit-specifications.json",
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "skills/koai-reflect/agents/openai.yaml",
+      "sha256": "0b6022a3e2f2a2e0767897e8fa15207144af911ed8332006db0c1fdab51ca1dd"
+    },
+    {
+      "path": "skills/koai-recall/agents/openai.yaml",
+      "sha256": "e91259f000f525e8afc0a3ca036f03f1be56c18ceb88bfffe714c589b15f4688"
+    },
+    {
+      "path": "skills/koai-ground/agents/openai.yaml",
+      "sha256": "5842b3a1193e307382524586dc29f85a429eca11805d2899f4407cff2599f797"
+    },
+    {
+      "path": "skills/koai-orchestrate/agents/openai.yaml",
+      "sha256": "4c14dd9928b20ef099ba1c986851c003a79c1ec782482d1c3c2d052a5383d29b"
+    },
+    {
+      "path": "tools/quality.py",
+      "sha256": "2b8ad68a46899cbe533cf0900f0b3b7d4956edf990c9847459d75ac72ac499c5"
+    },
+    {
+      "path": "tools/validate.py",
+      "sha256": "6dc5409584030cf0154eac8b0022c2c17520e64d486f8e5e73be86be03f50e62"
+    },
+    {
+      "path": "tools/workflow.py",
+      "sha256": "c0db0561724068282855fb11c9592cb50346470cc6e5cf6a6bd320839d0973fa"
+    }
+  ],
+  "limit": "File parity establishes loaded bytes, not behavioral compliance.",
+  "verification_status": "Local SHA256 measured; parent reports Git blob verification against 787079f. That object is unavailable in this checkout, so this worker cannot independently repeat that Git comparison."
+}

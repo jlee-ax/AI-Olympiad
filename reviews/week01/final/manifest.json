@@ -1,0 +1,174 @@
+{
+  "stage": "final",
+  "candidate_sha256": "602c0c4e04e7208b0b082d9e4e7d4be384e1371f67c5f211d931911367d02eb0",
+  "baseline_sha256": "8ffda0c1d5ec1c5ca765fb892a09c64c3920bca6f840dfdf5a481a8da5a7cff2",
+  "tools": [
+    {
+      "id": "quality.py",
+      "revision": "final",
+      "sha256": "2b8ad68a46899cbe533cf0900f0b3b7d4956edf990c9847459d75ac72ac499c5"
+    },
+    {
+      "id": "validate.py",
+      "revision": "final",
+      "sha256": "6dc5409584030cf0154eac8b0022c2c17520e64d486f8e5e73be86be03f50e62"
+    },
+    {
+      "id": "workflow.py",
+      "revision": "final",
+      "sha256": "c0db0561724068282855fb11c9592cb50346470cc6e5cf6a6bd320839d0973fa"
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill:koai-evaluate",
+      "revision": "787079f",
+      "sha256": "51de2391e310d5b7c8f610114cbf4022d3c80cb9651f76fce64986b2b38bc97b"
+    },
+    {
+      "id": "skill:koai-ground",
+      "revision": "787079f",
+      "sha256": "5aea78bc9236414e04b7f52910e74d0c4dc90eb1ad267b72ceec8145eba8acb4"
+    },
+    {
+      "id": "skill:koai-orchestrate",
+      "revision": "787079f",
+      "sha256": "c163dc61cc00ee3f2f729f6cba72793ddfc40276c080379178011dcdbaca6643"
+    },
+    {
+      "id": "skill:koai-recall",
+      "revision": "787079f",
+      "sha256": "e2ce471177e0631291033fceeca3dbaa94fa0796e0e9c3875f073c6c8fc355fa"
+    },
+    {
+      "id": "skill:koai-reflect",
+      "revision": "787079f",
+      "sha256": "dfbdada629f43261fa69da68730b75bedfe6f995086f9cb135ba7994fba1da67"
+    }
+  ],
+  "receipts": [
+    {
+      "path": "reviews/week01/final/command-00.json",
+      "sha256": "88c01e8fd822a3aa8363968a29c1580e0d3286e614f52977edf6f45ac645167a",
+      "exit_code": 0
+    },
+    {
+      "path": "reviews/week01/final/command-01.json",
+      "sha256": "5135c30ac39326042bb385f2eb309248b81e27ae53c765a85535105d4fa6ae6f",
+      "exit_code": 0
+    },
+    {
+      "path": "reviews/week01/final/command-02.json",
+      "sha256": "d5c2695378e1d5d13fe2139fa88c8bc6231c4eba7445be09beb73027105e94dc",
+      "exit_code": 0
+    },
+    {
+      "path": "reviews/week01/final/command-03.json",
+      "sha256": "199af43ef36e8b1f8ff90a2291d6d7e2b13898dd36476d05a4f71fa574f553f1",
+      "exit_code": 0
+    },
+    {
+      "path": "reviews/week01/final/command-04.json",
+      "sha256": "cdcb87ee8fa2b3d877931304482d5d941c9fd056dd9f648f3816914a83822bb1",
+      "exit_code": 0
+    },
+    {
+      "path": "reviews/week01/final/command-05.json",
+      "sha256": "6c164c3ffaf89a5caf8d354a60024e7f88d06ebe174f45272f263861b43d6ccb",
+      "exit_code": 0
+    },
+    {
+      "path": "reviews/week01/final/command-06.json",
+      "sha256": "9c10908066b28c1e28685369094a6177b03d4f35f8c860de65eee2ea3846a401",
+      "exit_code": 0
+    },
+    {
+      "path": "reviews/week01/final/command-07.json",
+      "sha256": "0ae6bbd3293a482fe21bbd5fb137ae68d91177b785d954a93f1e8b03cb8d410a",
+      "exit_code": 0
+    },
+    {
+      "path": "reviews/week01/final/command-08.json",
+      "sha256": "bb38007cb31e54fe6182c65ea9b3ebdd031765f25ed17c97f7a80b66b8a658be",
+      "exit_code": 0
+    }
+  ],
+  "limits": "Scoped content and execution review passed. Coverage, prerequisite diagnosis, source-cycle gate, calibration and aggregate workflow acceptance are not supplied; no policy agreement invented.",
+  "reproduction": {
+    "root": "Isolated QA directory; copy tools, skills and curriculum from remote main 787079f4870068106500e5184ce457e95e6aa3f2. Copy final lesson notebook and teacher notes plus reviews/week01 into identical relative paths. Run recorded commands after substituting this QA root for original absolute paths. workflow --quality uses its tool-directory parent as root.",
+    "source_verification": "reviews/week01/latest-main-byte-parity.json",
+    "artifact": "lessons/week01/week01_python_tables.ipynb",
+    "baseline_snapshot": "reviews/week01/provisional/baseline.ipynb",
+    "pending": "No standalone-process kernel validation, educator calibration, learner responses, agreed numerical policies, complete source cycles or aggregate workflow approval."
+  },
+  "evidence_files": [
+    {
+      "path": "reviews/week01/final/quality.json",
+      "sha256": "dd9d446e853727818c4cc28435471928994b0ae6b7827348bdef22fa6ccb6213"
+    },
+    {
+      "path": "reviews/week01/final/independent-material-review.json",
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "reviews/week01/final/workflow.json",
+      "sha256": "46df6bf66d56660df0156d1d2643c609028eab01f06a1e4ab6065e2d31099d7b"
+    },
+    {
+      "path": "reviews/week01/final/command-08.json",
+      "sha256": "bb38007cb31e54fe6182c65ea9b3ebdd031765f25ed17c97f7a80b66b8a658be"
+    },
+    {
+      "path": "reviews/week01/final/quality-evaluate-api.json",
+      "sha256": "f11ff8d707bccf0405dd76ce359b0eef5172ccf12d1e2f1ed87967ee443ff184"
+    },
+    {
+      "path": "reviews/week01/final/command-01.json",
+      "sha256": "5135c30ac39326042bb385f2eb309248b81e27ae53c765a85535105d4fa6ae6f"
+    },
+    {
+      "path": "reviews/week01/final/inprocess-execution.log",
+      "sha256": "af345639d0f48786f7286bc82ada0f11f59e175465903bbf02357de75075fbc7"
+    },
+    {
+      "path": "reviews/week01/final/separate-kernel-startup.log",
+      "sha256": "0169a96bd5fe700aeb88bb64872a0d3dacf02339bf966cc5959cc82720026ca3"
+    },
+    {
+      "path": "reviews/week01/final/graph.json",
+      "sha256": "3d86dfc787cb96f3041f770f47dbcfc903052973e118dcf3b7468bf1fb9f7e81"
+    },
+    {
+      "path": "reviews/week01/final/command-05.json",
+      "sha256": "6c164c3ffaf89a5caf8d354a60024e7f88d06ebe174f45272f263861b43d6ccb"
+    },
+    {
+      "path": "reviews/week01/final/execution-receipt.json",
+      "sha256": "c1b7f4c8d8c5f4040584951fc8166a4aa05c476af64251fe02242749ab7e0d83"
+    },
+    {
+      "path": "reviews/week01/final/command-00.json",
+      "sha256": "88c01e8fd822a3aa8363968a29c1580e0d3286e614f52977edf6f45ac645167a"
+    },
+    {
+      "path": "reviews/week01/final/command-07.json",
+      "sha256": "0ae6bbd3293a482fe21bbd5fb137ae68d91177b785d954a93f1e8b03cb8d410a"
+    },
+    {
+      "path": "reviews/week01/final/command-02.json",
+      "sha256": "d5c2695378e1d5d13fe2139fa88c8bc6231c4eba7445be09beb73027105e94dc"
+    },
+    {
+      "path": "reviews/week01/final/command-04.json",
+      "sha256": "cdcb87ee8fa2b3d877931304482d5d941c9fd056dd9f648f3816914a83822bb1"
+    },
+    {
+      "path": "reviews/week01/final/command-06.json",
+      "sha256": "9c10908066b28c1e28685369094a6177b03d4f35f8c860de65eee2ea3846a401"
+    },
+    {
+      "path": "reviews/week01/final/command-03.json",
+      "sha256": "199af43ef36e8b1f8ff90a2291d6d7e2b13898dd36476d05a4f71fa574f553f1"
+    }
+  ]
+}

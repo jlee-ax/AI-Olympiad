@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "scope": {
+    "task_kind": "lesson_production",
+    "lesson_production_allowed": true,
+    "recurring_allowed": false
+  },
+  "agreement": {
+    "operator_agreed": true,
+    "operator_id": "user-via-parent-task",
+    "criteria_agreed": false,
+    "criteria_fingerprint": null,
+    "budget_fingerprint": null
+  },
+  "context": {
+    "inputs": [
+      {
+        "id": "baseline",
+        "revision": "provisional",
+        "sha256": "8ffda0c1d5ec1c5ca765fb892a09c64c3920bca6f840dfdf5a481a8da5a7cff2"
+      },
+      {
+        "id": "quality:bundle",
+        "revision": "week01-provisional",
+        "sha256": "7bab3e2d9ca96a81a011a80d498e265b3f79e4cdc8b14305e9404ab2ffffa6df"
+      },
+      {
+        "id": "quality:criteria",
+        "revision": "criteria-v2",
+        "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+      },
+      {
+        "id": "quality:evaluator",
+        "revision": "quality-v1",
+        "sha256": "2b8ad68a46899cbe533cf0900f0b3b7d4956edf990c9847459d75ac72ac499c5"
+      }
+    ],
+    "skills": [
+      {
+        "id": "skill:koai-evaluate",
+        "revision": "787079f",
+        "sha256": "51de2391e310d5b7c8f610114cbf4022d3c80cb9651f76fce64986b2b38bc97b"
+      },
+      {
+        "id": "skill:koai-ground",
+        "revision": "787079f",
+        "sha256": "5aea78bc9236414e04b7f52910e74d0c4dc90eb1ad267b72ceec8145eba8acb4"
+      },
+      {
+        "id": "skill:koai-orchestrate",
+        "revision": "787079f",
+        "sha256": "c163dc61cc00ee3f2f729f6cba72793ddfc40276c080379178011dcdbaca6643"
+      },
+      {
+        "id": "skill:koai-recall",
+        "revision": "787079f",
+        "sha256": "e2ce471177e0631291033fceeca3dbaa94fa0796e0e9c3875f073c6c8fc355fa"
+      },
+      {
+        "id": "skill:koai-reflect",
+        "revision": "787079f",
+        "sha256": "dfbdada629f43261fa69da68730b75bedfe6f995086f9cb135ba7994fba1da67"
+      }
+    ],
+    "rubric": {
+      "id": "criteria",
+      "revision": "787079f",
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    "evaluator": {
+      "id": "quality-evaluator",
+      "revision": "provisional",
+      "sha256": "2b8ad68a46899cbe533cf0900f0b3b7d4956edf990c9847459d75ac72ac499c5"
+    },
+    "references": [
+      {
+        "id": "source-register",
+        "revision": "787079f",
+        "sha256": "4286e62768534312c6b68ab2ea183fc837959824821278317ea9bf2a138d4c8d"
+      },
+      {
+        "id": "baseline",
+        "revision": "provisional",
+        "sha256": "8ffda0c1d5ec1c5ca765fb892a09c64c3920bca6f840dfdf5a481a8da5a7cff2"
+      }
+    ],
+    "artifact": {
+      "id": "week01-notebook",
+      "revision": "provisional",
+      "sha256": "6b41c487ffde4db5b9d1e6df44edd2c72b4f96f5efe5e7dbea11a10fcbb634d9"
+    },
+    "author": {
+      "id": "week01-notebook-author",
+      "model_family": "not independently recorded"
+    },
+    "required_checks": [
+      "K01",
+      "K02",
+      "K03",
+      "K04",
+      "K05",
+      "K06",
+      "K07",
+      "K08",
+      "K09",
+      "K10",
+      "K11",
+      "K12",
+      "K13",
+      "K14",
+      "K15",
+      "K16"
+    ],
+    "finish_condition": "All current required checks plus independent exact-artifact review and agreed policy; learner outcomes remain untested."
+  },
+  "frozen": {
+    "rubric": {
+      "id": "criteria",
+      "revision": "787079f",
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    "evaluator": {
+      "id": "quality-evaluator",
+      "revision": "provisional",
+      "sha256": "2b8ad68a46899cbe533cf0900f0b3b7d4956edf990c9847459d75ac72ac499c5"
+    },
+    "references": [
+      {
+        "id": "baseline",
+        "revision": "provisional",
+        "sha256": "8ffda0c1d5ec1c5ca765fb892a09c64c3920bca6f840dfdf5a481a8da5a7cff2"
+      },
+      {
+        "id": "source-register",
+        "revision": "787079f",
+        "sha256": "4286e62768534312c6b68ab2ea183fc837959824821278317ea9bf2a138d4c8d"
+      }
+    ],
+    "required_checks": [
+      "K01",
+      "K02",
+      "K03",
+      "K04",
+      "K05",
+      "K06",
+      "K07",
+      "K08",
+      "K09",
+      "K10",
+      "K11",
+      "K12",
+      "K13",
+      "K14",
+      "K15",
+      "K16"
+    ],
+    "finish_condition": "All current required checks plus independent exact-artifact review and agreed policy; learner outcomes remain untested."
+  },
+  "limits": {
+    "checkpoint_minutes": 30,
+    "max_iterations": 1,
+    "max_elapsed_minutes": null,
+    "max_no_progress": null
+  },
+  "usage": {
+    "iterations_used": 0,
+    "elapsed_minutes": 0,
+    "no_progress_count": 0,
+    "minutes_since_checkpoint": 0
+  },
+  "stop": {
+    "requested": false,
+    "reason": null,
+    "goal_claimed": false
+  },
+  "sources": [
+    {
+      "id": "source-register",
+      "revision": "787079f",
+      "sha256": "4286e62768534312c6b68ab2ea183fc837959824821278317ea9bf2a138d4c8d",
+      "uri": "/workspace/scratch/d500e5cb2076/olympiad-week1-harness/skills/references/source-readings.json"
+    },
+    {
+      "id": "baseline",
+      "revision": "provisional",
+      "sha256": "8ffda0c1d5ec1c5ca765fb892a09c64c3920bca6f840dfdf5a481a8da5a7cff2",
+      "uri": "/workspace/scratch/d500e5cb2076/olympiad-week1-revision/reviews/week01/provisional/baseline.ipynb"
+    }
+  ],
+  "records": [
+    {
+      "id": "record-baseline-defect",
+      "kind": "observation",
+      "text": "Parent identified baseline mean trace total cell conflating returned mean with final accumulator. Candidate correction awaits independent review; no learner outcomes observed.",
+      "created_at": "2026-11-10T22:33:45.996145+00:00",
+      "source_refs": [
+        {
+          "source_id": "baseline",
+          "locator": "mean algorithm trace table"
+        }
+      ],
+      "supersedes": []
+    }
+  ],
+  "reviews": [],
+  "history": []
+}

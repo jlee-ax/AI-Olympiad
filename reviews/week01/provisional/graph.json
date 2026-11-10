@@ -1,0 +1,200 @@
+{
+  "nodes": [
+    {
+      "id": "KOAI27",
+      "type": "evidence",
+      "status": "proposed",
+      "label": "KOAI27"
+    },
+    {
+      "id": "SYLLABUS",
+      "type": "evidence",
+      "status": "proposed",
+      "label": "SYLLABUS"
+    },
+    {
+      "id": "PLAN",
+      "type": "evidence",
+      "status": "proposed",
+      "label": "PLAN"
+    },
+    {
+      "id": "BIGGS",
+      "type": "evidence",
+      "status": "proposed",
+      "label": "BIGGS"
+    },
+    {
+      "id": "CHEN",
+      "type": "evidence",
+      "status": "proposed",
+      "label": "CHEN"
+    },
+    {
+      "id": "KARPICKE",
+      "type": "evidence",
+      "status": "proposed",
+      "label": "KARPICKE"
+    },
+    {
+      "id": "NUMPY",
+      "type": "evidence",
+      "status": "proposed",
+      "label": "NUMPY"
+    },
+    {
+      "id": "SKLEARN",
+      "type": "evidence",
+      "status": "proposed",
+      "label": "SKLEARN"
+    },
+    {
+      "id": "METRICS",
+      "type": "evidence",
+      "status": "proposed",
+      "label": "METRICS"
+    },
+    {
+      "id": "HUANG",
+      "type": "evidence",
+      "status": "proposed",
+      "label": "HUANG"
+    },
+    {
+      "id": "ALCE",
+      "type": "evidence",
+      "status": "proposed",
+      "label": "ALCE"
+    },
+    {
+      "id": "LONGMEM",
+      "type": "evidence",
+      "status": "proposed",
+      "label": "LONGMEM"
+    },
+    {
+      "id": "DEFT",
+      "type": "evidence",
+      "status": "proposed",
+      "label": "DEFT"
+    },
+    {
+      "id": "PRIMM",
+      "type": "evidence",
+      "status": "proposed",
+      "label": "PRIMM"
+    },
+    {
+      "id": "claim:python",
+      "type": "evidence",
+      "status": "proposed",
+      "label": "claim:python"
+    },
+    {
+      "id": "claim:table",
+      "type": "evidence",
+      "status": "proposed",
+      "label": "claim:table"
+    },
+    {
+      "id": "claim:array",
+      "type": "evidence",
+      "status": "proposed",
+      "label": "claim:array"
+    },
+    {
+      "id": "claim:visualise",
+      "type": "evidence",
+      "status": "proposed",
+      "label": "claim:visualise"
+    },
+    {
+      "id": "W1-python",
+      "type": "artifact",
+      "status": "proposed",
+      "label": "W1-python"
+    },
+    {
+      "id": "W1-table",
+      "type": "artifact",
+      "status": "proposed",
+      "label": "W1-table"
+    },
+    {
+      "id": "W1-array",
+      "type": "artifact",
+      "status": "proposed",
+      "label": "W1-array"
+    },
+    {
+      "id": "W1-visualise",
+      "type": "artifact",
+      "status": "proposed",
+      "label": "W1-visualise"
+    },
+    {
+      "id": "notebook",
+      "type": "artifact",
+      "status": "in_progress",
+      "label": "Exact candidate 6b41c487ffde4db5b9d1e6df44edd2c72b4f96f5efe5e7dbea11a10fcbb634d9"
+    },
+    {
+      "id": "review-pending",
+      "type": "review",
+      "status": "blocked",
+      "label": "Independent exact-artifact review pending"
+    }
+  ],
+  "edges": [
+    {
+      "from": "claim:array",
+      "to": "NUMPY",
+      "type": "depends_on"
+    },
+    {
+      "from": "W1-python",
+      "to": "claim:python",
+      "type": "depends_on"
+    },
+    {
+      "from": "W1-table",
+      "to": "claim:table",
+      "type": "depends_on"
+    },
+    {
+      "from": "W1-array",
+      "to": "claim:array",
+      "type": "depends_on"
+    },
+    {
+      "from": "W1-visualise",
+      "to": "claim:visualise",
+      "type": "depends_on"
+    },
+    {
+      "from": "notebook",
+      "to": "W1-python",
+      "type": "depends_on"
+    },
+    {
+      "from": "notebook",
+      "to": "W1-table",
+      "type": "depends_on"
+    },
+    {
+      "from": "notebook",
+      "to": "W1-array",
+      "type": "depends_on"
+    },
+    {
+      "from": "notebook",
+      "to": "W1-visualise",
+      "type": "depends_on"
+    },
+    {
+      "from": "review-pending",
+      "to": "notebook",
+      "type": "depends_on"
+    }
+  ]
+}

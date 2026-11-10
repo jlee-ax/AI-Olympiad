@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "tools/workflow.py",
+    "fingerprint",
+    "/workspace/scratch/d500e5cb2076/olympiad-week1-revision/reviews/week01/final/workflow.json"
+  ],
+  "cwd": "/workspace/scratch/d500e5cb2076/olympiad-week1-harness",
+  "exit_code": 0,
+  "stdout": "{\n  \"authority\": \"advisory_only\",\n  \"budget_fingerprint\": \"7b35162e9035f332a4c6e9c79b8ded3bf33c25258a83286b773ac1cddea84eae\",\n  \"context_fingerprint\": \"8380ba81c010b85bfc6b28c9b0fcd13b459b54bd755ee33c0d410c3fac783110\",\n  \"criteria_fingerprint\": \"08278d86e30fb2ce9079bc7b8f874b3da552c4eac2fc6b5b5cb3197f02c71a7c\",\n  \"errors\": [],\n  \"reason\": \"structural_checks_only\",\n  \"status\": \"valid\",\n  \"synthetic\": false,\n  \"warnings\": [\n    \"scope.lesson_production_allowed is a recorded claim, not an execution capability or authenticated permission\"\n  ]\n}\n",
+  "stderr": ""
+}

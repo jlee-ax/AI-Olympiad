@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "tools/quality.py",
+    "baseline"
+  ],
+  "cwd": "/workspace/scratch/d500e5cb2076/olympiad-week1-harness",
+  "exit_code": 0,
+  "stdout": "{\n  \"authority\": \"advisory_only\",\n  \"baseline_sha256\": \"96deb5e5e781bf39cc6bb5effe34d6d04a01ac65e13a3811c37f5a825714f7a9\",\n  \"coverage\": \"scheduled_only\",\n  \"errors\": [],\n  \"status\": \"passed\",\n  \"topic_count\": 60,\n  \"weeks\": [\n    {\n      \"class_minutes\": 120,\n      \"required_self_study_hours\": [\n        5,\n        7\n      ],\n      \"week\": 1\n    },\n    {\n      \"class_minutes\": 120,\n      \"required_self_study_hours\": [\n        6,\n        8\n      ],\n      \"week\": 2\n    },\n    {\n      \"class_minutes\": 120,\n      \"required_self_study_hours\": [\n        7,\n        9\n      ],\n      \"week\": 3\n    },\n    {\n      \"class_minutes\": 120,\n      \"required_self_study_hours\": [\n        8,\n        10\n      ],\n      \"week\": 4\n    },\n    {\n      \"class_minutes\": 120,\n      \"required_self_study_hours\": [\n        8,\n        10\n      ],\n      \"week\": 5\n    },\n    {\n      \"class_minutes\": 120,\n      \"required_self_study_hours\": [\n        10,\n        14\n      ],\n      \"week\": 6\n    },\n    {\n      \"class_minutes\": 120,\n      \"required_self_study_hours\": [\n        14,\n        18\n      ],\n      \"week\": 7\n    },\n    {\n      \"class_minutes\": 120,\n      \"required_self_study_hours\": [\n        16,\n        20\n      ],\n      \"week\": 8\n    },\n    {\n      \"class_minutes\": 120,\n      \"required_self_study_hours\": [\n        16,\n        20\n      ],\n      \"week\": 9\n    },\n    {\n      \"class_minutes\": 120,\n      \"required_self_study_hours\": [\n        10,\n        14\n      ],\n      \"week\": 10\n    }\n  ]\n}\n",
+  "stderr": ""
+}

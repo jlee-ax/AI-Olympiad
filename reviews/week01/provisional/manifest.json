@@ -1,0 +1,97 @@
+{
+  "stage": "provisional",
+  "candidate_sha256": "6b41c487ffde4db5b9d1e6df44edd2c72b4f96f5efe5e7dbea11a10fcbb634d9",
+  "baseline_sha256": "8ffda0c1d5ec1c5ca765fb892a09c64c3920bca6f840dfdf5a481a8da5a7cff2",
+  "tools": [
+    {
+      "id": "quality.py",
+      "revision": "provisional",
+      "sha256": "2b8ad68a46899cbe533cf0900f0b3b7d4956edf990c9847459d75ac72ac499c5"
+    },
+    {
+      "id": "validate.py",
+      "revision": "provisional",
+      "sha256": "6dc5409584030cf0154eac8b0022c2c17520e64d486f8e5e73be86be03f50e62"
+    },
+    {
+      "id": "workflow.py",
+      "revision": "provisional",
+      "sha256": "c0db0561724068282855fb11c9592cb50346470cc6e5cf6a6bd320839d0973fa"
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill:koai-evaluate",
+      "revision": "787079f",
+      "sha256": "51de2391e310d5b7c8f610114cbf4022d3c80cb9651f76fce64986b2b38bc97b"
+    },
+    {
+      "id": "skill:koai-ground",
+      "revision": "787079f",
+      "sha256": "5aea78bc9236414e04b7f52910e74d0c4dc90eb1ad267b72ceec8145eba8acb4"
+    },
+    {
+      "id": "skill:koai-orchestrate",
+      "revision": "787079f",
+      "sha256": "c163dc61cc00ee3f2f729f6cba72793ddfc40276c080379178011dcdbaca6643"
+    },
+    {
+      "id": "skill:koai-recall",
+      "revision": "787079f",
+      "sha256": "e2ce471177e0631291033fceeca3dbaa94fa0796e0e9c3875f073c6c8fc355fa"
+    },
+    {
+      "id": "skill:koai-reflect",
+      "revision": "787079f",
+      "sha256": "dfbdada629f43261fa69da68730b75bedfe6f995086f9cb135ba7994fba1da67"
+    }
+  ],
+  "receipts": [
+    {
+      "path": "provisional/command-00.json",
+      "sha256": "88c01e8fd822a3aa8363968a29c1580e0d3286e614f52977edf6f45ac645167a",
+      "exit_code": 0
+    },
+    {
+      "path": "provisional/command-01.json",
+      "sha256": "8a24daa36601e42bae21505dc2e28374e4dd015fabaeb64f5fea4491816461f8",
+      "exit_code": 0
+    },
+    {
+      "path": "provisional/command-02.json",
+      "sha256": "56c130ac1e86801d02c03799846e84d369335cbd723b517b0bb8e00066389ef6",
+      "exit_code": 0
+    },
+    {
+      "path": "provisional/command-03.json",
+      "sha256": "bc0345e8e064dd89eb330363e989941f88ced66ec0c3be8c8f9a2b9352c07f08",
+      "exit_code": 0
+    },
+    {
+      "path": "provisional/command-04.json",
+      "sha256": "10b15d69b98483b622141faaa60a5f1e5677ae2ca304d1268fef8b0103c95ce6",
+      "exit_code": 0
+    },
+    {
+      "path": "provisional/command-05.json",
+      "sha256": "713b21088c5b761c3222aead8c565006357afee1bf78446e518bd035dbc241da",
+      "exit_code": 0
+    },
+    {
+      "path": "provisional/command-06.json",
+      "sha256": "d0154770df52d7e43ca3a4a7c4fdd85fcb72f6b84f20492b75538c37a7839588",
+      "exit_code": 0
+    },
+    {
+      "path": "provisional/command-07.json",
+      "sha256": "e333380f3807ca046e27aec67ea6a07d26cc289e5ef4695132aea81f7599da42",
+      "exit_code": 0
+    },
+    {
+      "path": "provisional/command-08.json",
+      "sha256": "b4dd1af487c84890e64fc44c39c8df3e583a94419f2ca94700b2092468bc0e8a",
+      "exit_code": 0
+    }
+  ],
+  "limits": "Real records; no synthetic fixture reviews; policies unagreed; no learner observations; final review pending."
+}

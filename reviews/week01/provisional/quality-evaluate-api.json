@@ -1,0 +1,1187 @@
+{
+  "schema_version": 1,
+  "authority": "advisory_only",
+  "synthetic": false,
+  "revision": "week01-provisional",
+  "bundle_sha256": "7bab3e2d9ca96a81a011a80d498e265b3f79e4cdc8b14305e9404ab2ffffa6df",
+  "artifact_sha256": "6b41c487ffde4db5b9d1e6df44edd2c72b4f96f5efe5e7dbea11a10fcbb634d9",
+  "specification_sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+  "specification_revision": "criteria-v2",
+  "evaluator_sha256": "2b8ad68a46899cbe533cf0900f0b3b7d4956edf990c9847459d75ac72ac499c5",
+  "ready_for_review": false,
+  "status": "uncertain",
+  "checks": [
+    {
+      "id": "K01",
+      "status": "passed",
+      "measurement": {
+        "baseline": "passed",
+        "artifact_digest_matches": true,
+        "target_matches": true
+      }
+    },
+    {
+      "id": "K02",
+      "status": "not_run",
+      "measurement": {
+        "requested_objectives": 4,
+        "present": 4,
+        "missing": [],
+        "planned_topics": [
+          "KOAI-01",
+          "KOAI-02",
+          "KOAI-03",
+          "KOAI-06"
+        ],
+        "full_claim_missing_topics": [],
+        "scheduled_topics_in_plan": 60,
+        "scheduled_is_not_achieved": true
+      }
+    },
+    {
+      "id": "K03",
+      "status": "not_run",
+      "measurement": {
+        "baseline_weeks": [
+          {
+            "week": 1,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              5,
+              7
+            ]
+          },
+          {
+            "week": 2,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              6,
+              8
+            ]
+          },
+          {
+            "week": 3,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              7,
+              9
+            ]
+          },
+          {
+            "week": 4,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              8,
+              10
+            ]
+          },
+          {
+            "week": 5,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              8,
+              10
+            ]
+          },
+          {
+            "week": 6,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              10,
+              14
+            ]
+          },
+          {
+            "week": 7,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              14,
+              18
+            ]
+          },
+          {
+            "week": 8,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              16,
+              20
+            ]
+          },
+          {
+            "week": 9,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              16,
+              20
+            ]
+          },
+          {
+            "week": 10,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              10,
+              14
+            ]
+          }
+        ],
+        "material_allocations": [],
+        "errors": [],
+        "actual_completion_time": "unobserved",
+        "outside_work_is_separate": true,
+        "homework_cap_period": "each_selected_week",
+        "outside_work": [
+          {
+            "week": 1,
+            "baseline_required_minutes": [
+              300,
+              420
+            ],
+            "weekly_cap_minutes": null,
+            "required_minutes": null,
+            "optional_minutes": null,
+            "ledger_status": "not_recorded",
+            "cap_status": "not_agreed_not_assessed"
+          }
+        ]
+      }
+    },
+    {
+      "id": "K04",
+      "status": "not_run",
+      "measurement": {
+        "diagnosed_units": 4,
+        "missing_units": []
+      }
+    },
+    {
+      "id": "K05",
+      "status": "not_run",
+      "measurement": {
+        "linked_units": 4,
+        "semantic_review_required": true
+      }
+    },
+    {
+      "id": "K06",
+      "status": "not_run",
+      "measurement": {
+        "claims": [
+          "claim:array",
+          "claim:python",
+          "claim:table",
+          "claim:visualise"
+        ],
+        "reviewed_records_only": true
+      }
+    },
+    {
+      "id": "K07",
+      "status": "passed",
+      "measurement": {
+        "reference_checks": [
+          {
+            "claim_id": "claim:array",
+            "status": "passed",
+            "actual": [
+              6.0,
+              8.0
+            ]
+          }
+        ],
+        "unit_requirements": [
+          {
+            "unit_id": "W1-array",
+            "required_kinds": [
+              "axis_mean"
+            ],
+            "present_kinds": [
+              "axis_mean"
+            ],
+            "missing_kinds": [],
+            "status": "passed",
+            "basis": "versioned_unit_specification"
+          },
+          {
+            "unit_id": "W1-python",
+            "required_kinds": [],
+            "present_kinds": [],
+            "missing_kinds": [],
+            "status": "passed",
+            "basis": "versioned_unit_specification"
+          },
+          {
+            "unit_id": "W1-table",
+            "required_kinds": [],
+            "present_kinds": [],
+            "missing_kinds": [],
+            "status": "passed",
+            "basis": "versioned_unit_specification"
+          },
+          {
+            "unit_id": "W1-visualise",
+            "required_kinds": [],
+            "present_kinds": [],
+            "missing_kinds": [],
+            "status": "passed",
+            "basis": "versioned_unit_specification"
+          }
+        ],
+        "empty_requirement": "No numerical oracle is required; semantic and execution checks still apply."
+      }
+    },
+    {
+      "id": "K08",
+      "status": "not_run",
+      "measurement": {
+        "receipts_checked": 4,
+        "does_not_authenticate_execution": true
+      }
+    },
+    {
+      "id": "K09",
+      "status": "not_run",
+      "measurement": {
+        "assessments_checked": 4,
+        "learning_outcomes": "untested"
+      }
+    },
+    {
+      "id": "K10",
+      "status": "not_run",
+      "measurement": {
+        "claim_count": 4,
+        "read_receipts": 14,
+        "reading_authenticity": "not_authenticated"
+      }
+    },
+    {
+      "id": "K11",
+      "status": "not_run",
+      "measurement": {
+        "cycles": 0,
+        "active_by_object": [
+          {
+            "object_id": "claim:array",
+            "cycle_id": null,
+            "status": "not_run"
+          },
+          {
+            "object_id": "claim:python",
+            "cycle_id": null,
+            "status": "not_run"
+          },
+          {
+            "object_id": "claim:table",
+            "cycle_id": null,
+            "status": "not_run"
+          },
+          {
+            "object_id": "claim:visualise",
+            "cycle_id": null,
+            "status": "not_run"
+          }
+        ],
+        "selection": "last_appended_cycle_per_current_claim",
+        "automatic_search": false
+      }
+    },
+    {
+      "id": "K12",
+      "status": "passed",
+      "measurement": {
+        "stale_review_ids": [],
+        "active_review_ids": [],
+        "historical_review_ids": [],
+        "selection": "last_appended_review_per_criterion_and_current_object",
+        "dependency_nodes": 22
+      }
+    },
+    {
+      "id": "K13",
+      "status": "passed",
+      "measurement": {
+        "exact_duplicate_proposals": 0,
+        "action": "suppress_duplicates",
+        "semantic_merge": false
+      }
+    },
+    {
+      "id": "K14",
+      "status": "uncertain",
+      "measurement": {
+        "priority_policy": "proposal",
+        "checkpoint_due": false,
+        "thresholds_not_invented": true,
+        "agreement_fingerprint": "965e5d47dc9f3709098a614801608d8307ca29d8c251be07b19bd8284815e2b5"
+      }
+    },
+    {
+      "id": "K15",
+      "status": "not_run",
+      "measurement": {
+        "educator_calibration": "requires_actual_evidence",
+        "learning_outcomes": "untested",
+        "tool_tests_are_not_learner_results": true,
+        "controls": [
+          {
+            "unit": "W1-array",
+            "known_good": 0,
+            "known_fault": 0,
+            "false_rejects": 0,
+            "missed_faults": 0
+          },
+          {
+            "unit": "W1-python",
+            "known_good": 0,
+            "known_fault": 0,
+            "false_rejects": 0,
+            "missed_faults": 0
+          },
+          {
+            "unit": "W1-table",
+            "known_good": 0,
+            "known_fault": 0,
+            "false_rejects": 0,
+            "missed_faults": 0
+          },
+          {
+            "unit": "W1-visualise",
+            "known_good": 0,
+            "known_fault": 0,
+            "false_rejects": 0,
+            "missed_faults": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "K16",
+      "status": "not_run",
+      "measurement": {
+        "units": [
+          {
+            "unit_id": "W1-array",
+            "status": "not_run",
+            "checks": [
+              {
+                "id": "T01",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:409e1675",
+                  "cell:82e8a039",
+                  "cell:mean-variance-mapping",
+                  "cell:b17df2fe",
+                  "cell:e594ea69",
+                  "cell:b9a324f5",
+                  "cell:ebbfd3db",
+                  "cell:ffb294df",
+                  "cell:ea9460e8",
+                  "cell:3468f4e4",
+                  "cell:08bf506c",
+                  "cell:ea9aba74",
+                  "cell:d60c3acd"
+                ]
+              },
+              {
+                "id": "T02",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:409e1675",
+                  "cell:82e8a039",
+                  "cell:mean-variance-mapping",
+                  "cell:b17df2fe",
+                  "cell:e594ea69",
+                  "cell:b9a324f5",
+                  "cell:ebbfd3db",
+                  "cell:ffb294df",
+                  "cell:ea9460e8",
+                  "cell:3468f4e4",
+                  "cell:08bf506c",
+                  "cell:ea9aba74",
+                  "cell:d60c3acd"
+                ]
+              },
+              {
+                "id": "T03",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:409e1675",
+                  "cell:82e8a039",
+                  "cell:mean-variance-mapping",
+                  "cell:b17df2fe",
+                  "cell:e594ea69",
+                  "cell:b9a324f5",
+                  "cell:ebbfd3db",
+                  "cell:ffb294df",
+                  "cell:ea9460e8",
+                  "cell:3468f4e4",
+                  "cell:08bf506c",
+                  "cell:ea9aba74",
+                  "cell:d60c3acd"
+                ]
+              },
+              {
+                "id": "T04",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:409e1675",
+                  "cell:82e8a039",
+                  "cell:mean-variance-mapping",
+                  "cell:b17df2fe",
+                  "cell:e594ea69",
+                  "cell:b9a324f5",
+                  "cell:ebbfd3db",
+                  "cell:ffb294df",
+                  "cell:ea9460e8",
+                  "cell:3468f4e4",
+                  "cell:08bf506c",
+                  "cell:ea9aba74",
+                  "cell:d60c3acd"
+                ]
+              },
+              {
+                "id": "T05",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:409e1675",
+                  "cell:82e8a039",
+                  "cell:mean-variance-mapping",
+                  "cell:b17df2fe",
+                  "cell:e594ea69",
+                  "cell:b9a324f5",
+                  "cell:ebbfd3db",
+                  "cell:ffb294df",
+                  "cell:ea9460e8",
+                  "cell:3468f4e4",
+                  "cell:08bf506c",
+                  "cell:ea9aba74",
+                  "cell:d60c3acd"
+                ]
+              }
+            ],
+            "review_id": null
+          },
+          {
+            "unit_id": "W1-python",
+            "status": "not_run",
+            "checks": [
+              {
+                "id": "T04",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:b17df2fe",
+                  "cell:7208718e",
+                  "cell:0d557f44",
+                  "cell:e2a6be88",
+                  "cell:92534730",
+                  "cell:d96a754b",
+                  "cell:81129230",
+                  "cell:c6d01f13",
+                  "cell:modify-mean-function"
+                ]
+              },
+              {
+                "id": "T05",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:b17df2fe",
+                  "cell:7208718e",
+                  "cell:0d557f44",
+                  "cell:e2a6be88",
+                  "cell:92534730",
+                  "cell:d96a754b",
+                  "cell:81129230",
+                  "cell:c6d01f13",
+                  "cell:modify-mean-function"
+                ]
+              }
+            ],
+            "review_id": null
+          },
+          {
+            "unit_id": "W1-table",
+            "status": "not_run",
+            "checks": [
+              {
+                "id": "T03",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:1ab9cd79",
+                  "cell:876b91b7",
+                  "cell:e8168b40",
+                  "cell:b428c6f1",
+                  "cell:30a2a103",
+                  "cell:b6788dc5",
+                  "cell:08e374f4",
+                  "cell:fb78da30",
+                  "cell:14425637",
+                  "cell:b7675d2b",
+                  "cell:27bb4bea",
+                  "cell:b38de2c6",
+                  "cell:d7c7b7c4"
+                ]
+              },
+              {
+                "id": "T05",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:1ab9cd79",
+                  "cell:876b91b7",
+                  "cell:e8168b40",
+                  "cell:b428c6f1",
+                  "cell:30a2a103",
+                  "cell:b6788dc5",
+                  "cell:08e374f4",
+                  "cell:fb78da30",
+                  "cell:14425637",
+                  "cell:b7675d2b",
+                  "cell:27bb4bea",
+                  "cell:b38de2c6",
+                  "cell:d7c7b7c4"
+                ]
+              }
+            ],
+            "review_id": null
+          },
+          {
+            "unit_id": "W1-visualise",
+            "status": "not_run",
+            "checks": [
+              {
+                "id": "T03",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:fa10c459",
+                  "cell:48d931b0",
+                  "cell:b5362bd2",
+                  "cell:9ce91662",
+                  "cell:c6ef56e6",
+                  "cell:777a590f",
+                  "cell:33384c16",
+                  "cell:6a64bcb2",
+                  "cell:8d3421bb",
+                  "cell:d7b8c3d2",
+                  "cell:6075b8e8"
+                ]
+              },
+              {
+                "id": "T05",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:fa10c459",
+                  "cell:48d931b0",
+                  "cell:b5362bd2",
+                  "cell:9ce91662",
+                  "cell:c6ef56e6",
+                  "cell:777a590f",
+                  "cell:33384c16",
+                  "cell:6a64bcb2",
+                  "cell:8d3421bb",
+                  "cell:d7b8c3d2",
+                  "cell:6075b8e8"
+                ]
+              }
+            ],
+            "review_id": null
+          }
+        ],
+        "rubric_revision": "theory-explanation-v1",
+        "semantic_understanding": "not_automated",
+        "learner_understanding": "unobserved_without_actual_learner_evidence"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "criterion_id": "K02",
+      "status": "not_run",
+      "severity": "major",
+      "objects": [],
+      "measurement": {
+        "requested_objectives": 4,
+        "present": 4,
+        "missing": [],
+        "planned_topics": [
+          "KOAI-01",
+          "KOAI-02",
+          "KOAI-03",
+          "KOAI-06"
+        ],
+        "full_claim_missing_topics": [],
+        "scheduled_topics_in_plan": 60,
+        "scheduled_is_not_achieved": true
+      }
+    },
+    {
+      "criterion_id": "K03",
+      "status": "not_run",
+      "severity": "major",
+      "objects": [],
+      "measurement": {
+        "baseline_weeks": [
+          {
+            "week": 1,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              5,
+              7
+            ]
+          },
+          {
+            "week": 2,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              6,
+              8
+            ]
+          },
+          {
+            "week": 3,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              7,
+              9
+            ]
+          },
+          {
+            "week": 4,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              8,
+              10
+            ]
+          },
+          {
+            "week": 5,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              8,
+              10
+            ]
+          },
+          {
+            "week": 6,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              10,
+              14
+            ]
+          },
+          {
+            "week": 7,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              14,
+              18
+            ]
+          },
+          {
+            "week": 8,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              16,
+              20
+            ]
+          },
+          {
+            "week": 9,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              16,
+              20
+            ]
+          },
+          {
+            "week": 10,
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              10,
+              14
+            ]
+          }
+        ],
+        "material_allocations": [],
+        "errors": [],
+        "actual_completion_time": "unobserved",
+        "outside_work_is_separate": true,
+        "homework_cap_period": "each_selected_week",
+        "outside_work": [
+          {
+            "week": 1,
+            "baseline_required_minutes": [
+              300,
+              420
+            ],
+            "weekly_cap_minutes": null,
+            "required_minutes": null,
+            "optional_minutes": null,
+            "ledger_status": "not_recorded",
+            "cap_status": "not_agreed_not_assessed"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_id": "K04",
+      "status": "not_run",
+      "severity": "major",
+      "objects": [
+        "W1-array",
+        "W1-python",
+        "W1-table",
+        "W1-visualise"
+      ],
+      "measurement": {
+        "diagnosed_units": 4,
+        "missing_units": []
+      }
+    },
+    {
+      "criterion_id": "K05",
+      "status": "not_run",
+      "severity": "moderate",
+      "objects": [
+        "W1-array",
+        "W1-python",
+        "W1-table",
+        "W1-visualise"
+      ],
+      "measurement": {
+        "linked_units": 4,
+        "semantic_review_required": true
+      }
+    },
+    {
+      "criterion_id": "K06",
+      "status": "not_run",
+      "severity": "critical",
+      "objects": [
+        "claim:array",
+        "claim:python",
+        "claim:table",
+        "claim:visualise"
+      ],
+      "measurement": {
+        "claims": [
+          "claim:array",
+          "claim:python",
+          "claim:table",
+          "claim:visualise"
+        ],
+        "reviewed_records_only": true
+      }
+    },
+    {
+      "criterion_id": "K08",
+      "status": "not_run",
+      "severity": "major",
+      "objects": [
+        "W1-array",
+        "W1-python",
+        "W1-table",
+        "W1-visualise"
+      ],
+      "measurement": {
+        "receipts_checked": 4,
+        "does_not_authenticate_execution": true
+      }
+    },
+    {
+      "criterion_id": "K09",
+      "status": "not_run",
+      "severity": "major",
+      "objects": [
+        "W1-array",
+        "W1-python",
+        "W1-table",
+        "W1-visualise"
+      ],
+      "measurement": {
+        "assessments_checked": 4,
+        "learning_outcomes": "untested"
+      }
+    },
+    {
+      "criterion_id": "K10",
+      "status": "not_run",
+      "severity": "major",
+      "objects": [
+        "claim:array",
+        "claim:python",
+        "claim:table",
+        "claim:visualise"
+      ],
+      "measurement": {
+        "claim_count": 4,
+        "read_receipts": 14,
+        "reading_authenticity": "not_authenticated"
+      }
+    },
+    {
+      "criterion_id": "K11",
+      "status": "not_run",
+      "severity": "major",
+      "objects": [
+        "claim:array",
+        "claim:python",
+        "claim:table",
+        "claim:visualise"
+      ],
+      "measurement": {
+        "cycles": 0,
+        "active_by_object": [
+          {
+            "object_id": "claim:array",
+            "cycle_id": null,
+            "status": "not_run"
+          },
+          {
+            "object_id": "claim:python",
+            "cycle_id": null,
+            "status": "not_run"
+          },
+          {
+            "object_id": "claim:table",
+            "cycle_id": null,
+            "status": "not_run"
+          },
+          {
+            "object_id": "claim:visualise",
+            "cycle_id": null,
+            "status": "not_run"
+          }
+        ],
+        "selection": "last_appended_cycle_per_current_claim",
+        "automatic_search": false
+      }
+    },
+    {
+      "criterion_id": "K14",
+      "status": "uncertain",
+      "severity": "critical",
+      "objects": [],
+      "measurement": {
+        "priority_policy": "proposal",
+        "checkpoint_due": false,
+        "thresholds_not_invented": true,
+        "agreement_fingerprint": "965e5d47dc9f3709098a614801608d8307ca29d8c251be07b19bd8284815e2b5"
+      }
+    },
+    {
+      "criterion_id": "K15",
+      "status": "not_run",
+      "severity": "major",
+      "objects": [
+        "W1-array",
+        "W1-python",
+        "W1-table",
+        "W1-visualise"
+      ],
+      "measurement": {
+        "educator_calibration": "requires_actual_evidence",
+        "learning_outcomes": "untested",
+        "tool_tests_are_not_learner_results": true,
+        "controls": [
+          {
+            "unit": "W1-array",
+            "known_good": 0,
+            "known_fault": 0,
+            "false_rejects": 0,
+            "missed_faults": 0
+          },
+          {
+            "unit": "W1-python",
+            "known_good": 0,
+            "known_fault": 0,
+            "false_rejects": 0,
+            "missed_faults": 0
+          },
+          {
+            "unit": "W1-table",
+            "known_good": 0,
+            "known_fault": 0,
+            "false_rejects": 0,
+            "missed_faults": 0
+          },
+          {
+            "unit": "W1-visualise",
+            "known_good": 0,
+            "known_fault": 0,
+            "false_rejects": 0,
+            "missed_faults": 0
+          }
+        ]
+      }
+    },
+    {
+      "criterion_id": "K16",
+      "status": "not_run",
+      "severity": "major",
+      "objects": [
+        "W1-array",
+        "W1-python",
+        "W1-table",
+        "W1-visualise"
+      ],
+      "measurement": {
+        "units": [
+          {
+            "unit_id": "W1-array",
+            "status": "not_run",
+            "checks": [
+              {
+                "id": "T01",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:409e1675",
+                  "cell:82e8a039",
+                  "cell:mean-variance-mapping",
+                  "cell:b17df2fe",
+                  "cell:e594ea69",
+                  "cell:b9a324f5",
+                  "cell:ebbfd3db",
+                  "cell:ffb294df",
+                  "cell:ea9460e8",
+                  "cell:3468f4e4",
+                  "cell:08bf506c",
+                  "cell:ea9aba74",
+                  "cell:d60c3acd"
+                ]
+              },
+              {
+                "id": "T02",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:409e1675",
+                  "cell:82e8a039",
+                  "cell:mean-variance-mapping",
+                  "cell:b17df2fe",
+                  "cell:e594ea69",
+                  "cell:b9a324f5",
+                  "cell:ebbfd3db",
+                  "cell:ffb294df",
+                  "cell:ea9460e8",
+                  "cell:3468f4e4",
+                  "cell:08bf506c",
+                  "cell:ea9aba74",
+                  "cell:d60c3acd"
+                ]
+              },
+              {
+                "id": "T03",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:409e1675",
+                  "cell:82e8a039",
+                  "cell:mean-variance-mapping",
+                  "cell:b17df2fe",
+                  "cell:e594ea69",
+                  "cell:b9a324f5",
+                  "cell:ebbfd3db",
+                  "cell:ffb294df",
+                  "cell:ea9460e8",
+                  "cell:3468f4e4",
+                  "cell:08bf506c",
+                  "cell:ea9aba74",
+                  "cell:d60c3acd"
+                ]
+              },
+              {
+                "id": "T04",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:409e1675",
+                  "cell:82e8a039",
+                  "cell:mean-variance-mapping",
+                  "cell:b17df2fe",
+                  "cell:e594ea69",
+                  "cell:b9a324f5",
+                  "cell:ebbfd3db",
+                  "cell:ffb294df",
+                  "cell:ea9460e8",
+                  "cell:3468f4e4",
+                  "cell:08bf506c",
+                  "cell:ea9aba74",
+                  "cell:d60c3acd"
+                ]
+              },
+              {
+                "id": "T05",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:409e1675",
+                  "cell:82e8a039",
+                  "cell:mean-variance-mapping",
+                  "cell:b17df2fe",
+                  "cell:e594ea69",
+                  "cell:b9a324f5",
+                  "cell:ebbfd3db",
+                  "cell:ffb294df",
+                  "cell:ea9460e8",
+                  "cell:3468f4e4",
+                  "cell:08bf506c",
+                  "cell:ea9aba74",
+                  "cell:d60c3acd"
+                ]
+              }
+            ],
+            "review_id": null
+          },
+          {
+            "unit_id": "W1-python",
+            "status": "not_run",
+            "checks": [
+              {
+                "id": "T04",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:b17df2fe",
+                  "cell:7208718e",
+                  "cell:0d557f44",
+                  "cell:e2a6be88",
+                  "cell:92534730",
+                  "cell:d96a754b",
+                  "cell:81129230",
+                  "cell:c6d01f13",
+                  "cell:modify-mean-function"
+                ]
+              },
+              {
+                "id": "T05",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:b17df2fe",
+                  "cell:7208718e",
+                  "cell:0d557f44",
+                  "cell:e2a6be88",
+                  "cell:92534730",
+                  "cell:d96a754b",
+                  "cell:81129230",
+                  "cell:c6d01f13",
+                  "cell:modify-mean-function"
+                ]
+              }
+            ],
+            "review_id": null
+          },
+          {
+            "unit_id": "W1-table",
+            "status": "not_run",
+            "checks": [
+              {
+                "id": "T03",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:1ab9cd79",
+                  "cell:876b91b7",
+                  "cell:e8168b40",
+                  "cell:b428c6f1",
+                  "cell:30a2a103",
+                  "cell:b6788dc5",
+                  "cell:08e374f4",
+                  "cell:fb78da30",
+                  "cell:14425637",
+                  "cell:b7675d2b",
+                  "cell:27bb4bea",
+                  "cell:b38de2c6",
+                  "cell:d7c7b7c4"
+                ]
+              },
+              {
+                "id": "T05",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:1ab9cd79",
+                  "cell:876b91b7",
+                  "cell:e8168b40",
+                  "cell:b428c6f1",
+                  "cell:30a2a103",
+                  "cell:b6788dc5",
+                  "cell:08e374f4",
+                  "cell:fb78da30",
+                  "cell:14425637",
+                  "cell:b7675d2b",
+                  "cell:27bb4bea",
+                  "cell:b38de2c6",
+                  "cell:d7c7b7c4"
+                ]
+              }
+            ],
+            "review_id": null
+          },
+          {
+            "unit_id": "W1-visualise",
+            "status": "not_run",
+            "checks": [
+              {
+                "id": "T03",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:fa10c459",
+                  "cell:48d931b0",
+                  "cell:b5362bd2",
+                  "cell:9ce91662",
+                  "cell:c6ef56e6",
+                  "cell:777a590f",
+                  "cell:33384c16",
+                  "cell:6a64bcb2",
+                  "cell:8d3421bb",
+                  "cell:d7b8c3d2",
+                  "cell:6075b8e8"
+                ]
+              },
+              {
+                "id": "T05",
+                "status": "not_run",
+                "reason": "independent_subcheck_missing",
+                "artifact_locators": [
+                  "cell:fa10c459",
+                  "cell:48d931b0",
+                  "cell:b5362bd2",
+                  "cell:9ce91662",
+                  "cell:c6ef56e6",
+                  "cell:777a590f",
+                  "cell:33384c16",
+                  "cell:6a64bcb2",
+                  "cell:8d3421bb",
+                  "cell:d7b8c3d2",
+                  "cell:6075b8e8"
+                ]
+              }
+            ],
+            "review_id": null
+          }
+        ],
+        "rubric_revision": "theory-explanation-v1",
+        "semantic_understanding": "not_automated",
+        "learner_understanding": "unobserved_without_actual_learner_evidence"
+      }
+    }
+  ],
+  "limits": [
+    "Semantic judgments and source reading are recorded claims, not authenticated facts.",
+    "Synthetic success is not real material readiness.",
+    "No worker, scheduler, writer or publisher is executed."
+  ]
+}

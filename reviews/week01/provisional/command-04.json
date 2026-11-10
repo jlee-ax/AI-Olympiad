@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "tools/quality.py",
+    "impact",
+    "/workspace/scratch/d500e5cb2076/olympiad-week1-revision/reviews/week01/provisional/quality.json",
+    "--changed",
+    "claim:python"
+  ],
+  "cwd": "/workspace/scratch/d500e5cb2076/olympiad-week1-harness",
+  "exit_code": 0,
+  "stdout": "{\n  \"affected\": [\n    \"W1-python\",\n    \"claim:python\"\n  ],\n  \"authority\": \"advisory_only\",\n  \"changed\": [\n    \"claim:python\"\n  ],\n  \"limit\": \"Only declared dependency edges are covered; no file is modified.\",\n  \"unaffected\": [\n    \"ALCE\",\n    \"BIGGS\",\n    \"CHEN\",\n    \"DEFT\",\n    \"HUANG\",\n    \"KARPICKE\",\n    \"KOAI27\",\n    \"LONGMEM\",\n    \"METRICS\",\n    \"NUMPY\",\n    \"PLAN\",\n    \"PRIMM\",\n    \"SKLEARN\",\n    \"SYLLABUS\",\n    \"W1-array\",\n    \"W1-table\",\n    \"W1-visualise\",\n    \"claim:array\",\n    \"claim:table\",\n    \"claim:visualise\"\n  ]\n}\n",
+  "stderr": ""
+}

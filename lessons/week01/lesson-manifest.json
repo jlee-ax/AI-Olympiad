@@ -86,5 +86,10 @@
     "updated_html_sha256": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254",
     "changed_cells": 1,
     "other_weeks_unchanged": true
-  }
+  },
+  "revision": "week1-basic-v2",
+  "skills_reference_commit": "787079f4870068106500e5184ce457e95e6aa3f2",
+  "parent_lesson_commit": "a5e518009b216fc7746ddf7e8fd5529708a279de",
+  "student_schedule": "Teacher-only ledger; no minute allocations in student notebook",
+  "revision_scope": "one manual revision; no recurring execution"
 }

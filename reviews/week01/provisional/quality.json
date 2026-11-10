@@ -1,0 +1,1086 @@
+{
+  "schema_version": 1,
+  "revision": "week01-provisional",
+  "synthetic": false,
+  "author_id": "week01-notebook-author",
+  "artifact": {
+    "id": "week01-notebook",
+    "revision": "provisional",
+    "path": "lessons/week01/week01_python_tables.ipynb",
+    "sha256": "6b41c487ffde4db5b9d1e6df44edd2c72b4f96f5efe5e7dbea11a10fcbb634d9"
+  },
+  "target": {
+    "competition_year": 2027,
+    "division": "middle_school",
+    "coverage_claim": "selected_scope",
+    "objective_ids": [
+      "W1-python",
+      "W1-table",
+      "W1-array",
+      "W1-visualise"
+    ],
+    "learning_outcomes": "untested"
+  },
+  "policy": {
+    "agreed": false,
+    "decision_ref": null,
+    "agreement_fingerprint": null,
+    "stop_requested": false,
+    "diagnostic_cutoff": null,
+    "maximum_required_homework_minutes": null,
+    "calibration_tolerance": null
+  },
+  "budget": {
+    "max_attempts": 1,
+    "max_elapsed_minutes": null,
+    "max_no_progress": null
+  },
+  "checkpoint": {
+    "minutes_since": 0,
+    "elapsed_total": 0,
+    "no_progress_count": 0,
+    "record": null
+  },
+  "units": [
+    {
+      "id": "W1-python",
+      "week": 1,
+      "syllabus_ids": [
+        "KOAI-01"
+      ],
+      "concept_ids": [
+        "program_state",
+        "control_flow",
+        "function_return"
+      ],
+      "locator": "cell:b17df2fe",
+      "claim_ids": [
+        "claim:python"
+      ],
+      "claimed_depth": "guided",
+      "mode_evidence": {
+        "theory": "not_run",
+        "practical": "not_run"
+      },
+      "prerequisites": [
+        {
+          "id": "PY-VARIABLES",
+          "task": "Trace assignment and distinguish a stored value from a displayed string.",
+          "expected": "Predict and justify the value used by the next statement.",
+          "observed": null,
+          "help": "not observed",
+          "status": "not_run",
+          "evidence": []
+        },
+        {
+          "id": "PY-CONTROL",
+          "task": "Trace a conditional and a bounded loop on a short list.",
+          "expected": "Give the selected branch, iteration count and resulting values.",
+          "observed": null,
+          "help": "not observed",
+          "status": "not_run",
+          "evidence": []
+        },
+        {
+          "id": "PY-FUNCTION",
+          "task": "Use a parameter and return a computed value to a caller.",
+          "expected": "Distinguish return from print and reuse the returned value.",
+          "observed": null,
+          "help": "not observed",
+          "status": "not_run",
+          "evidence": []
+        },
+        {
+          "id": "PY-LIST",
+          "task": "Select an indexed list element and a slice without changing the original accidentally.",
+          "expected": "Identify index boundaries and the selected values.",
+          "observed": null,
+          "help": "not observed",
+          "status": "not_run",
+          "evidence": []
+        },
+        {
+          "id": "PY-FILE",
+          "task": "Open a supplied local CSV and identify its header and rows.",
+          "expected": "Resolve the stated path and distinguish missing file from missing column.",
+          "observed": null,
+          "help": "not observed",
+          "status": "not_run",
+          "evidence": []
+        },
+        {
+          "id": "PY-ERROR",
+          "task": "Read a short traceback and locate the first relevant error.",
+          "expected": "Name the failing operation and propose a testable correction.",
+          "observed": null,
+          "help": "not observed",
+          "status": "not_run",
+          "evidence": []
+        }
+      ],
+      "chain": {
+        "theory": {
+          "concept_ids": [
+            "program_state",
+            "control_flow",
+            "function_return"
+          ],
+          "locator": "cell:b17df2fe",
+          "expected_behavior": "Explain state changes, control flow and return values needed by the supplied data procedure.",
+          "activity_id": "unallocated:python:theory",
+          "help": "record actual assistance at teaching; not yet observed",
+          "new_input": false
+        },
+        "noncoding": {
+          "concept_ids": [
+            "program_state",
+            "control_flow",
+            "function_return"
+          ],
+          "locator": "cell:7208718e",
+          "expected_behavior": "Predict a short procedure before running it and identify a counterexample to the mistaken return/print equivalence.",
+          "activity_id": "unallocated:python:noncoding",
+          "help": "record actual assistance at teaching; not yet observed",
+          "new_input": false
+        },
+        "coding": {
+          "concept_ids": [
+            "program_state",
+            "control_flow",
+            "function_return"
+          ],
+          "locator": "cell:81129230",
+          "expected_behavior": "Modify a small supplied procedure and check its returned value and stated error behavior.",
+          "activity_id": "unallocated:python:coding",
+          "help": "record actual assistance at teaching; not yet observed",
+          "new_input": false
+        },
+        "assessment": {
+          "concept_ids": [
+            "program_state",
+            "control_flow",
+            "function_return"
+          ],
+          "locator": "cell:c6d01f13",
+          "expected_behavior": "Use changed inputs without the completed solution visible; state assistance and explain a failed case.",
+          "activity_id": "unallocated:python:assessment",
+          "help": "record actual assistance at teaching; not yet observed",
+          "new_input": true
+        }
+      },
+      "execution": {
+        "status": "not_run"
+      },
+      "calibration": [],
+      "explanation_regions": {
+        "T04": [
+          "cell:b17df2fe",
+          "cell:7208718e",
+          "cell:0d557f44",
+          "cell:e2a6be88",
+          "cell:92534730",
+          "cell:d96a754b",
+          "cell:81129230",
+          "cell:c6d01f13",
+          "cell:modify-mean-function"
+        ],
+        "T05": [
+          "cell:b17df2fe",
+          "cell:7208718e",
+          "cell:0d557f44",
+          "cell:e2a6be88",
+          "cell:92534730",
+          "cell:d96a754b",
+          "cell:81129230",
+          "cell:c6d01f13",
+          "cell:modify-mean-function"
+        ]
+      }
+    },
+    {
+      "id": "W1-table",
+      "week": 1,
+      "syllabus_ids": [
+        "KOAI-02"
+      ],
+      "concept_ids": [
+        "row_column",
+        "feature_target",
+        "missingness"
+      ],
+      "locator": "cell:1ab9cd79",
+      "claim_ids": [
+        "claim:table"
+      ],
+      "claimed_depth": "guided",
+      "mode_evidence": {
+        "theory": "not_run",
+        "practical": "not_run"
+      },
+      "prerequisites": [
+        {
+          "id": "PY-FUNCTION",
+          "task": "Use a parameter and return a computed value to a caller.",
+          "expected": "Distinguish return from print and reuse the returned value.",
+          "observed": null,
+          "help": "not observed",
+          "status": "not_run",
+          "evidence": []
+        },
+        {
+          "id": "PY-LIST",
+          "task": "Select an indexed list element and a slice without changing the original accidentally.",
+          "expected": "Identify index boundaries and the selected values.",
+          "observed": null,
+          "help": "not observed",
+          "status": "not_run",
+          "evidence": []
+        },
+        {
+          "id": "PY-FILE",
+          "task": "Open a supplied local CSV and identify its header and rows.",
+          "expected": "Resolve the stated path and distinguish missing file from missing column.",
+          "observed": null,
+          "help": "not observed",
+          "status": "not_run",
+          "evidence": []
+        },
+        {
+          "id": "PY-ERROR",
+          "task": "Read a short traceback and locate the first relevant error.",
+          "expected": "Name the failing operation and propose a testable correction.",
+          "observed": null,
+          "help": "not observed",
+          "status": "not_run",
+          "evidence": []
+        }
+      ],
+      "chain": {
+        "theory": {
+          "concept_ids": [
+            "row_column",
+            "feature_target",
+            "missingness"
+          ],
+          "locator": "cell:1ab9cd79",
+          "expected_behavior": "Define a record, column, feature and target in the same data dictionary; distinguish missing from zero.",
+          "activity_id": "unallocated:table:theory",
+          "help": "record actual assistance at teaching; not yet observed",
+          "new_input": false
+        },
+        "noncoding": {
+          "concept_ids": [
+            "row_column",
+            "feature_target",
+            "missingness"
+          ],
+          "locator": "cell:b428c6f1",
+          "expected_behavior": "Predict selected rows/columns and missing-value counts from a small table.",
+          "activity_id": "unallocated:table:noncoding",
+          "help": "record actual assistance at teaching; not yet observed",
+          "new_input": false
+        },
+        "coding": {
+          "concept_ids": [
+            "row_column",
+            "feature_target",
+            "missingness"
+          ],
+          "locator": "cell:0eaa5024",
+          "expected_behavior": "Read the stated CSV, select the requested subset, inspect dtype/shape and count missing values; do not silently impute in week 1.",
+          "activity_id": "unallocated:table:coding",
+          "help": "record actual assistance at teaching; not yet observed",
+          "new_input": false
+        },
+        "assessment": {
+          "concept_ids": [
+            "row_column",
+            "feature_target",
+            "missingness"
+          ],
+          "locator": "cell:b38de2c6",
+          "expected_behavior": "Apply the same stated contract to changed column names and a documented missing-column case.",
+          "activity_id": "unallocated:table:assessment",
+          "help": "record actual assistance at teaching; not yet observed",
+          "new_input": true
+        }
+      },
+      "execution": {
+        "status": "not_run"
+      },
+      "calibration": [],
+      "explanation_regions": {
+        "T03": [
+          "cell:1ab9cd79",
+          "cell:876b91b7",
+          "cell:e8168b40",
+          "cell:b428c6f1",
+          "cell:30a2a103",
+          "cell:b6788dc5",
+          "cell:08e374f4",
+          "cell:fb78da30",
+          "cell:14425637",
+          "cell:b7675d2b",
+          "cell:27bb4bea",
+          "cell:b38de2c6",
+          "cell:d7c7b7c4"
+        ],
+        "T05": [
+          "cell:1ab9cd79",
+          "cell:876b91b7",
+          "cell:e8168b40",
+          "cell:b428c6f1",
+          "cell:30a2a103",
+          "cell:b6788dc5",
+          "cell:08e374f4",
+          "cell:fb78da30",
+          "cell:14425637",
+          "cell:b7675d2b",
+          "cell:27bb4bea",
+          "cell:b38de2c6",
+          "cell:d7c7b7c4"
+        ]
+      }
+    },
+    {
+      "id": "W1-array",
+      "week": 1,
+      "syllabus_ids": [
+        "KOAI-02",
+        "KOAI-06"
+      ],
+      "concept_ids": [
+        "shape",
+        "axis",
+        "arithmetic_mean"
+      ],
+      "locator": "cell:ebbfd3db",
+      "claim_ids": [
+        "claim:array"
+      ],
+      "claimed_depth": "guided",
+      "mode_evidence": {
+        "theory": "not_run",
+        "practical": "not_run"
+      },
+      "prerequisites": [
+        {
+          "id": "PY-LIST",
+          "task": "Select an indexed list element and a slice without changing the original accidentally.",
+          "expected": "Identify index boundaries and the selected values.",
+          "observed": null,
+          "help": "not observed",
+          "status": "not_run",
+          "evidence": []
+        },
+        {
+          "id": "MATH-MEAN",
+          "task": "Compute the arithmetic mean of a short finite list.",
+          "expected": "State the sum, count and resulting quantity; bridge before axis reductions.",
+          "observed": null,
+          "help": "not observed",
+          "status": "not_run",
+          "evidence": []
+        }
+      ],
+      "chain": {
+        "theory": {
+          "concept_ids": [
+            "shape",
+            "axis",
+            "arithmetic_mean"
+          ],
+          "locator": "cell:ebbfd3db",
+          "expected_behavior": "Define shape and reduction axis; explicitly state that this check uses rectangular 2D arrays with keepdims false.",
+          "activity_id": "unallocated:array:theory",
+          "help": "record actual assistance at teaching; not yet observed",
+          "new_input": false
+        },
+        "noncoding": {
+          "concept_ids": [
+            "shape",
+            "axis",
+            "arithmetic_mean"
+          ],
+          "locator": "cell:ffb294df",
+          "expected_behavior": "Predict the retained dimensions and independently calculate column and row means.",
+          "activity_id": "unallocated:array:noncoding",
+          "help": "record actual assistance at teaching; not yet observed",
+          "new_input": false
+        },
+        "coding": {
+          "concept_ids": [
+            "shape",
+            "axis",
+            "arithmetic_mean"
+          ],
+          "locator": "cell:3468f4e4",
+          "expected_behavior": "Run both axis reductions on the same array and reconcile values and output shape with the prediction.",
+          "activity_id": "unallocated:array:coding",
+          "help": "record actual assistance at teaching; not yet observed",
+          "new_input": false
+        },
+        "assessment": {
+          "concept_ids": [
+            "shape",
+            "axis",
+            "arithmetic_mean"
+          ],
+          "locator": "cell:d60c3acd",
+          "expected_behavior": "Use a new rectangular array and explain why the output length changes with the selected axis.",
+          "activity_id": "unallocated:array:assessment",
+          "help": "record actual assistance at teaching; not yet observed",
+          "new_input": true
+        }
+      },
+      "execution": {
+        "status": "not_run"
+      },
+      "calibration": [],
+      "explanation_regions": {
+        "T01": [
+          "cell:409e1675",
+          "cell:82e8a039",
+          "cell:mean-variance-mapping",
+          "cell:b17df2fe",
+          "cell:e594ea69",
+          "cell:b9a324f5",
+          "cell:ebbfd3db",
+          "cell:ffb294df",
+          "cell:ea9460e8",
+          "cell:3468f4e4",
+          "cell:08bf506c",
+          "cell:ea9aba74",
+          "cell:d60c3acd"
+        ],
+        "T02": [
+          "cell:409e1675",
+          "cell:82e8a039",
+          "cell:mean-variance-mapping",
+          "cell:b17df2fe",
+          "cell:e594ea69",
+          "cell:b9a324f5",
+          "cell:ebbfd3db",
+          "cell:ffb294df",
+          "cell:ea9460e8",
+          "cell:3468f4e4",
+          "cell:08bf506c",
+          "cell:ea9aba74",
+          "cell:d60c3acd"
+        ],
+        "T03": [
+          "cell:409e1675",
+          "cell:82e8a039",
+          "cell:mean-variance-mapping",
+          "cell:b17df2fe",
+          "cell:e594ea69",
+          "cell:b9a324f5",
+          "cell:ebbfd3db",
+          "cell:ffb294df",
+          "cell:ea9460e8",
+          "cell:3468f4e4",
+          "cell:08bf506c",
+          "cell:ea9aba74",
+          "cell:d60c3acd"
+        ],
+        "T04": [
+          "cell:409e1675",
+          "cell:82e8a039",
+          "cell:mean-variance-mapping",
+          "cell:b17df2fe",
+          "cell:e594ea69",
+          "cell:b9a324f5",
+          "cell:ebbfd3db",
+          "cell:ffb294df",
+          "cell:ea9460e8",
+          "cell:3468f4e4",
+          "cell:08bf506c",
+          "cell:ea9aba74",
+          "cell:d60c3acd"
+        ],
+        "T05": [
+          "cell:409e1675",
+          "cell:82e8a039",
+          "cell:mean-variance-mapping",
+          "cell:b17df2fe",
+          "cell:e594ea69",
+          "cell:b9a324f5",
+          "cell:ebbfd3db",
+          "cell:ffb294df",
+          "cell:ea9460e8",
+          "cell:3468f4e4",
+          "cell:08bf506c",
+          "cell:ea9aba74",
+          "cell:d60c3acd"
+        ]
+      }
+    },
+    {
+      "id": "W1-visualise",
+      "week": 1,
+      "syllabus_ids": [
+        "KOAI-03"
+      ],
+      "concept_ids": [
+        "variable",
+        "aggregation",
+        "axis_label"
+      ],
+      "locator": "cell:fa10c459",
+      "claim_ids": [
+        "claim:visualise"
+      ],
+      "claimed_depth": "guided",
+      "mode_evidence": {
+        "theory": "not_run",
+        "practical": "not_run"
+      },
+      "prerequisites": [
+        {
+          "id": "PY-FILE",
+          "task": "Open a supplied local CSV and identify its header and rows.",
+          "expected": "Resolve the stated path and distinguish missing file from missing column.",
+          "observed": null,
+          "help": "not observed",
+          "status": "not_run",
+          "evidence": []
+        },
+        {
+          "id": "MATH-MEAN",
+          "task": "Compute the arithmetic mean of a short finite list.",
+          "expected": "State the sum, count and resulting quantity; bridge before axis reductions.",
+          "observed": null,
+          "help": "not observed",
+          "status": "not_run",
+          "evidence": []
+        }
+      ],
+      "chain": {
+        "theory": {
+          "concept_ids": [
+            "variable",
+            "aggregation",
+            "axis_label"
+          ],
+          "locator": "cell:fa10c459",
+          "expected_behavior": "Distinguish the plotted quantity, aggregation and axis units from the underlying raw records.",
+          "activity_id": "unallocated:visualise:theory",
+          "help": "record actual assistance at teaching; not yet observed",
+          "new_input": false
+        },
+        "noncoding": {
+          "concept_ids": [
+            "variable",
+            "aggregation",
+            "axis_label"
+          ],
+          "locator": "cell:b5362bd2",
+          "expected_behavior": "Read a graph and match its axes and aggregation to a stated table quantity.",
+          "activity_id": "unallocated:visualise:noncoding",
+          "help": "record actual assistance at teaching; not yet observed",
+          "new_input": false
+        },
+        "coding": {
+          "concept_ids": [
+            "variable",
+            "aggregation",
+            "axis_label"
+          ],
+          "locator": "cell:48d931b0",
+          "expected_behavior": "Create the required labeled graph and interpret it; record Matplotlib and Seaborn evidence separately when claiming the full grouped item.",
+          "activity_id": "unallocated:visualise:coding",
+          "help": "record actual assistance at teaching; not yet observed",
+          "new_input": false
+        },
+        "assessment": {
+          "concept_ids": [
+            "variable",
+            "aggregation",
+            "axis_label"
+          ],
+          "locator": "cell:d60c3acd",
+          "expected_behavior": "Change an input condition and explain the resulting graph rather than merely displaying an image.",
+          "activity_id": "unallocated:visualise:assessment",
+          "help": "record actual assistance at teaching; not yet observed",
+          "new_input": true
+        }
+      },
+      "execution": {
+        "status": "not_run"
+      },
+      "calibration": [],
+      "explanation_regions": {
+        "T03": [
+          "cell:fa10c459",
+          "cell:48d931b0",
+          "cell:b5362bd2",
+          "cell:9ce91662",
+          "cell:c6ef56e6",
+          "cell:777a590f",
+          "cell:33384c16",
+          "cell:6a64bcb2",
+          "cell:8d3421bb",
+          "cell:d7b8c3d2",
+          "cell:6075b8e8"
+        ],
+        "T05": [
+          "cell:fa10c459",
+          "cell:48d931b0",
+          "cell:b5362bd2",
+          "cell:9ce91662",
+          "cell:c6ef56e6",
+          "cell:777a590f",
+          "cell:33384c16",
+          "cell:6a64bcb2",
+          "cell:8d3421bb",
+          "cell:d7b8c3d2",
+          "cell:6075b8e8"
+        ]
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim:python",
+      "statement": "The final total remains 12 while the returned mean is 4 for [2,4,6].",
+      "domain": "Stated synthetic teaching data in the week 1 notebook",
+      "quantity": "return_and_accumulator",
+      "assumptions": [
+        "Values are classroom examples, not learner or experimental observations."
+      ],
+      "locator": "cell:b17df2fe",
+      "source_ids": []
+    },
+    {
+      "id": "claim:table",
+      "statement": "Missing water is not zero; the five recorded water values have mean 28 ml.",
+      "domain": "Stated synthetic teaching data in the week 1 notebook",
+      "quantity": "missingness",
+      "assumptions": [
+        "Values are classroom examples, not learner or experimental observations."
+      ],
+      "locator": "cell:08e374f4",
+      "source_ids": []
+    },
+    {
+      "id": "claim:array",
+      "statement": "For A=[[2,4],[6,8],[10,12]], axis=0 gives [6,8] and axis=1 gives [3,7,11].",
+      "domain": "Stated synthetic teaching data in the week 1 notebook",
+      "quantity": "axis_mean",
+      "assumptions": [
+        "Values are classroom examples, not learner or experimental observations."
+      ],
+      "locator": "cell:ebbfd3db",
+      "source_ids": [
+        "NUMPY"
+      ],
+      "oracle": {
+        "kind": "axis_mean",
+        "input": [
+          [
+            2,
+            4
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            10,
+            12
+          ]
+        ],
+        "axis": 0,
+        "expected": [
+          6,
+          8
+        ]
+      }
+    },
+    {
+      "id": "claim:visualise",
+      "statement": "A scatter point maps one pot to sunlight hours and height in cm; it does not establish causation.",
+      "domain": "Stated synthetic teaching data in the week 1 notebook",
+      "quantity": "row_to_point",
+      "assumptions": [
+        "Values are classroom examples, not learner or experimental observations."
+      ],
+      "locator": "cell:fa10c459",
+      "source_ids": []
+    }
+  ],
+  "source_reads": [
+    {
+      "id": "KOAI27",
+      "url": "https://kitpa.org/koai/2027",
+      "version": "KOAI 2027; observed 2026-11-10",
+      "kind": "official",
+      "extent": "relevant_sections",
+      "locations": [
+        "Middle-school division",
+        "Online written examination and coding test: problem composition"
+      ],
+      "finding": "Both divisions cover sections 1–4. Written: 180 minutes, 80 multiple-choice and 10 written responses. Coding: 180 minutes, two tasks.",
+      "limitation": "Exam composition does not specify course workload, age-based prerequisites, or permitted software for a particular future sitting.",
+      "locator": "Middle-school division; Online written examination and coding test: problem composition",
+      "accessed_at": "2026-11-10"
+    },
+    {
+      "id": "SYLLABUS",
+      "url": "https://kitpa.org/koai/syllabus",
+      "version": "Page labeled IOAI 2026; observed 2026-11-10",
+      "kind": "official",
+      "extent": "relevant_sections",
+      "locations": [
+        "Topic classification",
+        "Sections 1–4 and both preprocessing footnotes"
+      ],
+      "finding": "The page distinguishes principles from actual appropriate library use, data application and output interpretation; 60 grouped rows carry separate theory/practical flags.",
+      "limitation": "The displayed syllabus version differs from the governing competition year. Example names and the plan's expanded obligations must remain distinguishable.",
+      "locator": "Topic classification; Sections 1–4 and both preprocessing footnotes",
+      "accessed_at": "2026-11-10"
+    },
+    {
+      "id": "PLAN",
+      "url": "curriculum/student-plan.html",
+      "version": "Full-scope recalibration; SHA256 pinned in contract.json",
+      "kind": "user_artifact",
+      "extent": "full_text",
+      "locations": [
+        "Ten week rows",
+        "scope-01 through scope-60",
+        "Time and starting-preparation rows"
+      ],
+      "finding": "The later recalibration retains 120-minute classes, schedules all 60 rows with required outside work and separates optional extensions.",
+      "limitation": "A schedule is not an execution or mastery record. Prior numeric diagnostic targets and time estimates are not scientifically calibrated thresholds.",
+      "locator": "Ten week rows; scope-01 through scope-60; Time and starting-preparation rows",
+      "accessed_at": "2026-11-10"
+    },
+    {
+      "id": "BIGGS",
+      "url": "https://doi.org/10.1007/BF00138871",
+      "version": "1996",
+      "kind": "academic_primary",
+      "extent": "relevant_sections",
+      "locations": [
+        "https://teaching.helsinki.fi/system/files/inline-files/Biggs1996_Article_EnhancingTeachingThroughConstr.pdf; pp. 351–357: performances, activities and assessment"
+      ],
+      "finding": "The paper operationalizes intended performances and aligns activities and assessment; its teacher-development example distinguishes naming information from applying and relating it.",
+      "limitation": "A conceptual framework and illustrated teacher-development setting do not establish a randomized KOAI effect; activity choice still needs situated judgment and local testing.",
+      "locator": "https://teaching.helsinki.fi/system/files/inline-files/Biggs1996_Article_EnhancingTeachingThroughConstr.pdf; pp. 351–357: performances, activities and assessment",
+      "accessed_at": "2026-11-10"
+    },
+    {
+      "id": "CHEN",
+      "url": "https://doi.org/10.1037/edu0000018",
+      "version": "2015; author repository record",
+      "kind": "academic_primary",
+      "extent": "abstract",
+      "locations": [
+        "https://repository.lboro.ac.uk/articles/journal_contribution/The_worked_example_effect_the_generation_effect_and_element_interactivity/12053721"
+      ],
+      "finding": "The authors report different effects of example study and generation by element interactivity and prior knowledge.",
+      "limitation": "This reading obtained the author-repository abstract; do not cite unseen methods or use its results to set local numeric diagnostic cutoffs.",
+      "locator": "https://repository.lboro.ac.uk/articles/journal_contribution/The_worked_example_effect_the_generation_effect_and_element_interactivity/12053721",
+      "accessed_at": "2026-11-10"
+    },
+    {
+      "id": "KARPICKE",
+      "url": "https://learninglab.psych.purdue.edu/downloads/2011/2011_Karpicke_Blunt_Science.pdf",
+      "version": "Science 331, 772–775 (2011)",
+      "kind": "academic_primary",
+      "extent": "relevant_sections",
+      "locations": [
+        "Experiments 1–2, article pp. 772–775"
+      ],
+      "finding": "Undergraduates studied science texts with matched initial time; retrieval was compared with elaborative concept mapping and evaluated after a week, including inference questions.",
+      "limitation": "Science-text learning in that sample does not validate a programming diagnostic, a 10-minute local exercise or 30-minute agent cadence.",
+      "locator": "Experiments 1–2, article pp. 772–775",
+      "accessed_at": "2026-11-10"
+    },
+    {
+      "id": "NUMPY",
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.mean.html",
+      "version": "NumPy 2.5 documentation observed 2026-11-10",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locations": [
+        "Parameters: axis and keepdims",
+        "Examples"
+      ],
+      "finding": "The arithmetic mean is computed over the selected axes; default reduction flattens the input, and keepdims changes retained dimensions.",
+      "limitation": "The built-in reference check below covers rectangular finite two-dimensional inputs with axis 0 or 1 and keepdims false.",
+      "locator": "Parameters: axis and keepdims; Examples",
+      "accessed_at": "2026-11-10"
+    },
+    {
+      "id": "SKLEARN",
+      "url": "https://scikit-learn.org/stable/common_pitfalls.html",
+      "version": "scikit-learn 1.9.1 documentation observed 2026-11-10",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locations": [
+        "12.2 Data leakage",
+        "12.2.1 How to avoid data leakage"
+      ],
+      "finding": "Preprocessing is learned on training data. Validation can select settings; final test information must not select them.",
+      "limitation": "Disjoint row IDs alone do not exclude group, temporal or target leakage. The declared split audit cannot prove absence of all contamination.",
+      "locator": "12.2 Data leakage; 12.2.1 How to avoid data leakage",
+      "accessed_at": "2026-11-10"
+    },
+    {
+      "id": "METRICS",
+      "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html",
+      "version": "scikit-learn 1.9.1 documentation observed 2026-11-10",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locations": [
+        "Definition",
+        "zero_division parameter"
+      ],
+      "finding": "Binary precision uses TP/(TP+FP); an absent predicted-positive denominator requires an explicit undefined-value convention.",
+      "limitation": "Different averaging and positive-label conventions require a separate specification; the reference check is binary counts only.",
+      "locator": "Definition; zero_division parameter",
+      "accessed_at": "2026-11-10"
+    },
+    {
+      "id": "HUANG",
+      "url": "https://arxiv.org/html/2310.01798v2",
+      "version": "v2, ICLR 2024",
+      "kind": "academic_primary",
+      "extent": "relevant_sections",
+      "locations": [
+        "Experimental setup and results",
+        "Prompt design issues",
+        "Limitations"
+      ],
+      "finding": "The study distinguishes intrinsic revision from external feedback and identifies inference-budget and prompt confounds.",
+      "limitation": "Its older models and reasoning tasks do not establish a permanent inability of later models or outcomes for lesson production.",
+      "locator": "Experimental setup and results; Prompt design issues; Limitations",
+      "accessed_at": "2026-11-10"
+    },
+    {
+      "id": "ALCE",
+      "url": "https://aclanthology.org/2023.emnlp-main.398/",
+      "version": "EMNLP 2023",
+      "kind": "academic_primary",
+      "extent": "abstract",
+      "locations": [
+        "Anthology abstract"
+      ],
+      "finding": "The work evaluates citation quality separately from other answer properties.",
+      "limitation": "The paper is a rationale for checking actual support, not evidence that recording a URL authenticates a claim.",
+      "locator": "Anthology abstract",
+      "accessed_at": "2026-11-10"
+    },
+    {
+      "id": "LONGMEM",
+      "url": "https://arxiv.org/html/2410.10813v2",
+      "version": "v2, ICLR 2025",
+      "kind": "academic_primary",
+      "extent": "relevant_sections",
+      "locations": [
+        "Benchmark task categories",
+        "Memory indexing and retrieval experiments"
+      ],
+      "finding": "The benchmark explicitly includes updated information, temporal reasoning and abstention; preserving original evidence and retrieval keys can matter.",
+      "limitation": "Conversational memory experiments do not prove that this local dependency graph or deduplication policy is complete.",
+      "locator": "Benchmark task categories; Memory indexing and retrieval experiments",
+      "accessed_at": "2026-11-10"
+    },
+    {
+      "id": "DEFT",
+      "url": "https://doi.org/10.1016/j.learninstruc.2006.03.001",
+      "version": "Ainsworth (2006), Learning and Instruction 16, 183-198",
+      "kind": "academic_primary",
+      "extent": "relevant_sections",
+      "locations": [
+        "https://www.inf.ufpr.br/alexd/REPRESENTACOES_EXTERNAS/Ainsworth_2006.pdf; sections 2, 3.2, 4, 5.2 and 6.1-6.3 (article pp.184-191)"
+      ],
+      "finding": "Representation format, domain interpretation and translation impose learning demands. This conceptual synthesis supports reviewing the purpose and correspondence of formulas, plots and diagrams.",
+      "limitation": "It does not validate these local T-checks. Adding representations can increase the demands on novices; more visuals are not automatically better.",
+      "locator": "https://www.inf.ufpr.br/alexd/REPRESENTACOES_EXTERNAS/Ainsworth_2006.pdf; sections 2, 3.2, 4, 5.2 and 6.1-6.3 (article pp.184-191)",
+      "accessed_at": "2026-11-10"
+    },
+    {
+      "id": "PRIMM",
+      "url": "https://doi.org/10.1080/08993408.2019.1608781",
+      "version": "Sentance, Waite and Kallia (2019), author preprint, 34 PDF pages",
+      "kind": "academic_primary",
+      "extent": "relevant_sections",
+      "locations": [
+        "https://suesentance.net/wp-content/uploads/2020/02/teaching_computer_programming_with_primm__a_sociocultural_perspective_author_copy.pdf; sections 4.1-5.4, quantitative results 7.1 and discussion 8.1-8.2"
+      ],
+      "finding": "The non-randomized school study compared a bundled reading/prediction/discussion approach with usual instruction. It motivates explicit explanation and tracing.",
+      "limitation": "Schools and teachers were not randomly assigned; some controls were unavailable, and teachers reported excessive volume/difficult questions. It does not isolate our pseudocode gate or establish a KOAI effect.",
+      "locator": "https://suesentance.net/wp-content/uploads/2020/02/teaching_computer_programming_with_primm__a_sociocultural_perspective_author_copy.pdf; sections 4.1-5.4, quantitative results 7.1 and discussion 8.1-8.2",
+      "accessed_at": "2026-11-10"
+    }
+  ],
+  "research_cycles": [],
+  "dependencies": [
+    {
+      "id": "KOAI27",
+      "revision": "KOAI 2027; observed 2026-11-10",
+      "sha256": "f01bd11c2025ea51acc91299c69a74c088d6583841874a5cd0c9d41e2569090f",
+      "depends_on": []
+    },
+    {
+      "id": "SYLLABUS",
+      "revision": "Page labeled IOAI 2026; observed 2026-11-10",
+      "sha256": "a2b697ca18b6643193174637b8e992e5f337c53378f942990c2944b7013ac0c7",
+      "depends_on": []
+    },
+    {
+      "id": "PLAN",
+      "revision": "Full-scope recalibration; SHA256 pinned in contract.json",
+      "sha256": "04c4d3f2ebe100eb488ca0713a1f2f5bf8da81ba6ce55a374740a4cdd2a183af",
+      "depends_on": []
+    },
+    {
+      "id": "BIGGS",
+      "revision": "1996",
+      "sha256": "ab5524bb049af24c0548cf06304fccf9f8398acaa418145e0826756a2feee0d5",
+      "depends_on": []
+    },
+    {
+      "id": "CHEN",
+      "revision": "2015; author repository record",
+      "sha256": "4ff1544c0969d00a72436d3c96a38d31d71369335d88ab40bb44246c8ac19f4f",
+      "depends_on": []
+    },
+    {
+      "id": "KARPICKE",
+      "revision": "Science 331, 772–775 (2011)",
+      "sha256": "e57bd996e0c672fb8104ec3cf21a5c4f8a418cf7bec83308b54d2aac1b24faa4",
+      "depends_on": []
+    },
+    {
+      "id": "NUMPY",
+      "revision": "NumPy 2.5 documentation observed 2026-11-10",
+      "sha256": "4fac9d71c188b99ab449a0e12d032779e46769c3fa545473219c834c5a71bc8a",
+      "depends_on": []
+    },
+    {
+      "id": "SKLEARN",
+      "revision": "scikit-learn 1.9.1 documentation observed 2026-11-10",
+      "sha256": "5c34542ed64990838c3f7466d4959a5ae85da284597b6f21ac7fa8c5417ddb77",
+      "depends_on": []
+    },
+    {
+      "id": "METRICS",
+      "revision": "scikit-learn 1.9.1 documentation observed 2026-11-10",
+      "sha256": "7c9a10705e18b27e4cbbbc18e5cac04a02a988fcc0ebc11cc77a76d695ef3830",
+      "depends_on": []
+    },
+    {
+      "id": "HUANG",
+      "revision": "v2, ICLR 2024",
+      "sha256": "381242eb14996849d8d184e8bd159094d7d49698995020656e172d525a329002",
+      "depends_on": []
+    },
+    {
+      "id": "ALCE",
+      "revision": "EMNLP 2023",
+      "sha256": "13f6686747ff2da6d5076cd2f4da74574652109a0bf7f79df7edd588e34336ed",
+      "depends_on": []
+    },
+    {
+      "id": "LONGMEM",
+      "revision": "v2, ICLR 2025",
+      "sha256": "4996b7206d6cf3ddf3c5cd5b01c78d274dab5d545a86330300b236328e1d9360",
+      "depends_on": []
+    },
+    {
+      "id": "DEFT",
+      "revision": "Ainsworth (2006), Learning and Instruction 16, 183-198",
+      "sha256": "5cd770d7e9609470b6f72ba0c15a86d19dcf281bb4eab282a88fba1a323d46b8",
+      "depends_on": []
+    },
+    {
+      "id": "PRIMM",
+      "revision": "Sentance, Waite and Kallia (2019), author preprint, 34 PDF pages",
+      "sha256": "7ae4ebc9923c1073031b7696abc0e2d760763a50aab78dbe30b0bc84aa6fa47f",
+      "depends_on": []
+    },
+    {
+      "id": "claim:python",
+      "revision": "provisional",
+      "sha256": "380a791a775bf32fff69f67c19a0d31a625bc4d0c6265f98efb9a0c3d4623721",
+      "depends_on": []
+    },
+    {
+      "id": "claim:table",
+      "revision": "provisional",
+      "sha256": "d87215eaf6696244d104a1416a9a58fb54b14f0a69caa9b06588734f51755671",
+      "depends_on": []
+    },
+    {
+      "id": "claim:array",
+      "revision": "provisional",
+      "sha256": "1eef1b945cd0900362e95cd715508c8979dd547578c6d8c027520526708a0b9d",
+      "depends_on": [
+        "NUMPY"
+      ]
+    },
+    {
+      "id": "claim:visualise",
+      "revision": "provisional",
+      "sha256": "42a82c919b9bafacc4e76f984a60762fb69d9d0ea497b282ff0f91b7961c3a24",
+      "depends_on": []
+    },
+    {
+      "id": "W1-python",
+      "revision": "provisional",
+      "sha256": "aa7c1ca6f1a36b012f7e4ef68efc105dadd6e9a02cc2fd4b2ba8f6d23f6c6851",
+      "depends_on": [
+        "claim:python"
+      ]
+    },
+    {
+      "id": "W1-table",
+      "revision": "provisional",
+      "sha256": "f547736b047a546ec53ec3f365a6e7e9f9a66f5e90bb69bd44ee23a70d5d6d70",
+      "depends_on": [
+        "claim:table"
+      ]
+    },
+    {
+      "id": "W1-array",
+      "revision": "provisional",
+      "sha256": "29c91e3f0d045b4fa631fb166b6c3ebe05b4fbadc6f81cafc8612502c7db2db8",
+      "depends_on": [
+        "claim:array"
+      ]
+    },
+    {
+      "id": "W1-visualise",
+      "revision": "provisional",
+      "sha256": "27f5c0b38a8e0d248431dd1e985b8a8900ac9147f28d4e26d4c1464b718870ab",
+      "depends_on": [
+        "claim:visualise"
+      ]
+    }
+  ],
+  "reviews": [],
+  "candidates": [
+    {
+      "id": "correct-return-trace",
+      "object_id": "claim:python",
+      "criterion_id": "K06",
+      "severity": "critical",
+      "confidence": "confirmed",
+      "hypothesis": "Separating the final accumulator and returned quotient removes the baseline trace-table contradiction.",
+      "action": "Keep final total 12 and show returned value 4 separately; independent final review pending."
+    }
+  ],
+  "attempts": [],
+  "lesson_allocations": [],
+  "operator_notes": {
+    "budget_basis": "Operator-chosen single authoring attempt; not a user-agreed scientific policy. Other budgets and numerical policies remain null.",
+    "scope": "One manual revision only; no recurrence, merge or student release.",
+    "snapshot": "provisional",
+    "read_limit": "Source register imported verbatim with its claimed extents, not newly authenticated website reading.",
+    "time": "Counters start at snapshot creation; not historical task elapsed-time claims."
+  }
+}

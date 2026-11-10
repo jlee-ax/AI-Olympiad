@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "tools/quality.py",
+    "review-context",
+    "/workspace/scratch/d500e5cb2076/olympiad-week1-revision/reviews/week01/provisional/quality.json",
+    "--criterion",
+    "K10",
+    "--object",
+    "claim:array"
+  ],
+  "cwd": "/workspace/scratch/d500e5cb2076/olympiad-week1-harness",
+  "exit_code": 0,
+  "stdout": "{\n  \"authority\": \"advisory_only\",\n  \"context_fingerprint\": \"42a85ac3454b3f6c2bb956d748a96d788e78ea81da5fb30c899d066ec016c71b\"\n}\n",
+  "stderr": ""
+}
