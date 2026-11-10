@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {"id": "request:example", "type": "request", "status": "proposed", "label": "가상 요청 예시"},
+    {"id": "skill:example", "type": "skill", "status": "proposed", "label": "가상 스킬 예시"},
+    {"id": "review:example", "type": "review", "status": "proposed", "label": "가상 검토 예시"}
+  ],
+  "edges": [
+    {"from": "skill:example", "to": "request:example", "type": "informs"},
+    {"from": "review:example", "to": "skill:example", "type": "informs"},
+    {"from": "skill:example", "to": "review:example", "type": "informs"}
+  ]
+}
