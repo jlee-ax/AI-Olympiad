@@ -24,3 +24,5 @@ Compare supersession and fingerprint-based reuse with simpler records before exp
 ## Concrete decision contract
 
 Use [selective impact and duplicate-work rules](../references/quality-specification.md#selective-impact-and-duplicate-work). Run the quality impact query for changed source/claim IDs. Reuse current per-object content reviews when their actual region and relevant source meaning/version are unchanged; an access-time-only refresh is not a reason for global rewriting. Preserve rejected/no-change attempt keys. New action, hypothesis or evidence is an explicit change, not a paraphrase-based automatic merge.
+
+Quality bundles use last-appended selection per criterion/object review and per claim research cycle, while workflow records retain their separate explicit supersession rules. Report historical records without letting them veto a current replacement, and never search backward for a pass after a newer failed, abstaining or stale record. Compare actual linked theory/practice/code/assessment and explanation regions, including declared upstream content, before reusing a fingerprint.

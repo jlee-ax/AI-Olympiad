@@ -132,7 +132,7 @@ Run these read-only commands from the repository root:
 
 Use the quality bundle contract in the specification. For real objects, populate actual artifacts, diagnoses, activity links, claims, source reads, execution receipts and independent reviews; do not copy synthetic passes.
 
-The default quality bundle remains incomplete. A baseline pass verifies pinned schedule/scope consistency, not current material readiness. The evaluate output lists K01–K15 measurements and findings. Plan suppresses exact earlier attempts, gives a reproduced defect a priority floor, and pauses for missing agreement, finite limits, an unscoped higher-priority blocker or the reported 30-minute checkpoint. It cannot execute the recommendation.
+The default quality bundle remains incomplete. A baseline pass verifies pinned schedule/scope consistency, not current material readiness. The evaluate output lists K01–K16 measurements and findings. Plan suppresses exact earlier attempts, gives a reproduced defect a priority floor, and pauses for missing agreement, finite limits, an unscoped higher-priority blocker or the reported 30-minute checkpoint. It cannot execute the recommendation.
 
 Quality commands return structured JSON with authority advisory_only. Exit 2 means unreadable/invalid input or baseline errors; other decisions can exit 0. Inspect status and ready_for_review. A zero exit alone does not establish readiness.
 
@@ -150,7 +150,7 @@ Bind these exact manifests in context.inputs:
 | quality:criteria | Report specification_revision | Actual criterion-catalog file bytes |
 | quality:evaluator | quality-v1 | Actual quality.py file bytes |
 
-The workflow artifact digest must match the quality report's actual artifact digest. A synthetic quality report cannot validate non-synthetic workflow state. Every K01–K15 check must pass and ready_for_review must be true. The existing independent current-context verification and completion predicate still apply.
+The workflow artifact digest must match the quality report's actual artifact digest. A synthetic quality report cannot validate non-synthetic workflow state. Every K01–K16 check must pass and ready_for_review must be true. The existing independent current-context verification and completion predicate still apply.
 
 Quality is checked after scope, agreement, frozen baseline, finite budgets and checkpoint conditions, before the existing verification step. Missing quality pauses; missing bindings, artifact mismatch, failed/uncertain/unrun checks or a synthetic/real mismatch block. Adding the manifests changes the workflow context, so refresh the aggregate review explicitly. Current unit content reviews may be reused only according to their own actual region/dependency bindings.
 
@@ -162,3 +162,16 @@ The workflow input validation/fingerprint/recall commands keep their structural 
     python3 -B tools/workflow.py decide examples/quality-workflow.json --quality examples/quality.json
 
 The first reports a synthetic passed fixture; the second reports an advisory synthetic continue decision. No actual lesson execution, learner result or user approval is established. The real template remains incomplete, and a synthetic report cannot validate real state.
+
+
+### Current evidence, unit requirements and theory review
+
+The quality history is append-ordered. K11 uses the last cycle per current claim; K12 inspects the last review per current criterion/object. Old cycles and reviews remain available as history and cannot override a newer failure or abstention. This is distinct from the earlier workflow record log's explicit `supersedes` contract.
+
+K07 reads required oracle kinds from the versioned unit specifications, then finds coverage only among that unit's `claim_ids`. A valid but unrelated calculation cannot replace a missing required kind. Explicitly empty requirements pass the numerical applicability check while semantic/execution checks remain necessary. Custom synthetic units declare `oracle_kinds`; this does not authorize new real units.
+
+`maximum_required_homework_minutes` applies to each selected week. The pinned required range upper estimate and the current `outside_work` required sum must fit; optional work never offsets required work. A configured cap needs the current ledger. No cap means acceptability is explicitly unassessed. This records estimates, not measured learner time.
+
+For K16, read [the theory rubric](../skills/koai-evaluate/references/theory-explanation.json). Register `unit.explanation_regions` as T-check IDs mapped to artifact locator lists. The independent K16 review supplies `subchecks` with each applicable ID's status, `artifact_locators` covering that entry, and evidence. Obtain a current fingerprint with `review-context BUNDLE --criterion K16 --object UNIT_ID` after registering all regions. The fingerprint includes linked role/explanation and upstream object regions; K16 also includes the rubric. Editing code or an assessment cell outside the unit's primary cell can therefore invalidate its review. Only declared regions and dependencies are covered. No semantic understanding or learner result is inferred.
+
+Registered HTML row regions include nested markup/attributes, so an SVG shape or image reference change affects the fingerprint. Notebook regions include source, attachments and displayed outputs; execution counters are excluded. A declared dependency may also supply a root-relative `path`; its actual file bytes then enter the fingerprint, including local diagram assets. Unregistered external assets remain outside the guarantee. The CLI neither executes nor semantically interprets those representations.
