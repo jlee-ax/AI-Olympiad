@@ -1,7 +1,7 @@
 # Evidence review
 
 Reviewed 2026-11-10. This document distinguishes published observations from proposed transfers and local tests.
-The starting point is Lauren Tan's pstack at the revision recorded in [pstack traceability](pstack-traceability.md).
+Workflow scope and pending decisions are recorded in [the workflow reference](workflow.md); source attribution is retained in [third-party notices](../../THIRD_PARTY_NOTICES.md).
 No local experiment has established improved agent performance, better teaching, or an effective recurring cadence.
 Repository validation checks structure and decision records; it does not validate research claims or educational quality.
 Real lesson production and recurring execution remain outside the current implementation scope.
@@ -24,8 +24,8 @@ A separate self-generated condition scores 8.1–11.5 points below no-skills bas
 **Limit:** This is an optimistic, high-quality curated sample; low-signal tasks were filtered during construction.
 The self-generated audit identifies discovery failures, creator/solver interference and incorrect assumptions; it does not isolate experience-derived skill quality.
 The association between smaller bundles and better results is not a universal causal limit on skill count.
-**Proposed transfer:** Preserve pstack's curated workflows and evaluate additions individually; do not reward the number of new skill files.
-**Local test needed:** Compare pinned pstack with and without each candidate skill on matched unseen tasks; verify actual skill use in traces and include authoring cost.
+**Proposed transfer:** Preserve curated workflows and evaluate additions individually; do not reward the number of new skill files.
+**Local test needed:** Compare the pinned baseline with and without each candidate skill on matched unseen tasks; verify actual skill use in traces and include authoring cost.
 
 ## E02 — More repository instructions can add effort without useful improvement
 
@@ -35,7 +35,7 @@ Generated context files change success by -0.5 and -2 percentage points on avera
 Developer files average +2.4 points versus no context (p = .21), but outperform generated files.
 **Limit:** Single completion per agent/task and coding-focused benchmarks; this is not evidence that every instruction is harmful.
 The revised paper is more qualified than the earlier claim that context files generally reduce performance.
-**Proposed transfer:** Keep only useful, non-redundant guidance; favor pstack's enforcement-first approach for mechanically checkable mistakes.
+**Proposed transfer:** Keep only useful, non-redundant guidance; favor structural enforcement for mechanically checkable mistakes.
 **Local test needed:** Compare a reminder, a reusable procedure and an executable check on a real prior failure plus neighboring valid cases.
 
 ## E03 — Reflection needs task-specific evidence and a fair comparator
@@ -49,7 +49,7 @@ They identify unequal inference budgets and stronger revision prompts as evaluat
 [SCoRe v2, ICLR 2025](https://arxiv.org/abs/2409.12917v2) reports improved self-correction after multi-turn reinforcement learning on Gemini models.
 **Limit:** Huang's older-model results do not establish a permanent inability of current models to self-correct.
 SCoRe changes training; its results cannot be attributed to adding a reflection prompt or memory file.
-**Proposed transfer:** Keep pstack's evidence-led critique; distinguish an improved artifact from a reusable lesson.
+**Proposed transfer:** Keep evidence-led critique; distinguish an improved artifact from a reusable lesson.
 **Local test needed:** Compare reflection with equal-budget fresh attempts and tool-grounded correction, measuring regressions as well as fixes.
 
 ## E04 — Executable reuse and feedback can help in observable environments
@@ -71,7 +71,7 @@ Neither study establishes learner understanding or indefinite improvement across
 With DeepSeek-V3.1 in all roles, offline AppWorld adaptation raises the paper's aggregate metric from 42.4 to 59.4.
 A full-rewriting case collapses from 18,282 context tokens to 122 and loses accuracy; harmful updates every iteration also drive a FiNER experiment below baseline.
 **Limit:** Reported deduplication sensitivity is on FiNER; it does not establish a universal merge threshold or safe automatic deletion policy.
-**Proposed transfer:** Test small, source-linked revisions to pstack knowledge instead of repeatedly replacing the entire record.
+**Proposed transfer:** Test small, source-linked revisions to recorded knowledge instead of repeatedly replacing the entire record.
 **Local test needed:** Measure lost evidence, false merges, stale guidance, negative transfer and maintenance cost under successive corrections.
 
 ## E06 — Memory has accuracy, efficiency and maintenance tradeoffs
@@ -98,7 +98,7 @@ Of plausible patches, 29.6% behave differently from references; 28.6% of that di
 [The Reusable Holdout, 2015](https://www.cis.upenn.edu/~aaroth/reusable.html) explains the statistical risk of adaptively reusing evaluation data.
 **Limit:** Different behavior alone is not incorrectness; different model families do not guarantee independent judgments.
 A rubric hidden from candidates can still become an optimization target through repeated feedback.
-**Proposed transfer:** Extend pstack's existing blinded evaluation with calibrated judgments and fresh transfer cases.
+**Proposed transfer:** Extend the existing blinded evaluation with calibrated judgments and fresh transfer cases.
 **Local test needed:** Reverse output order, seed known errors, compare educator ratings, record evaluator versions and reserve untouched assessment cases.
 
 ## E08 — Self-modification is demonstrated under bounded conditions
@@ -154,7 +154,7 @@ One month later, unannounced-test scores are 61% versus 38%; an accessible [pape
 
 | Question | Comparator and observation needed |
 | --- | --- |
-| Does a change help? | Pinned pstack versus pstack plus one candidate; same model, inputs, tools and resource allowance. |
+| Does a change help? | Pinned baseline versus baseline plus one candidate; same model, inputs, tools and resource allowance. |
 | Is the benefit durable? | Original failure plus unseen related and unrelated tasks; retain regressions and inconclusive results. |
 | Does memory earn its cost? | Raw search versus notes versus linked notes; include writing, retrieval, review and recovery costs. |
 | Is “no change” valid? | Seed duplicate/rejected proposals; check that existing evidence can justify no new edit or PR. |

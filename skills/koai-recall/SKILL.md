@@ -5,7 +5,7 @@ description: Recover the current KOAI task state from source-linked records and 
 
 # Reconstruct current state
 
-Read [the workflow contract](../../docs/workflow-contract.md). Scope retrieval to the requested project, topic, and period. Use the user's supplied state capsule when it is sufficient; do not mine unrelated conversations.
+Read [the workflow contract](../../tools/README.md). Scope retrieval to the requested project, topic, and period. Use the user's supplied state capsule when it is sufficient; do not mine unrelated conversations.
 
 1. Validate the state and run `python3 tools/workflow.py recall PATH --query "TOPIC"`. This is lexical retrieval of active records, not semantic deduplication, truth verification, or a complete search of external history.
 2. Read each consequential source pointer and the current artifact. Distinguish a past decision, an observed result, a proposed rule, and a learner observation. Do not turn a past agent assertion into a verified fact.
@@ -19,6 +19,4 @@ Read [the workflow contract](../../docs/workflow-contract.md). Scope retrieval t
 
 Every reused conclusion traces to its source and current scope. Missing or unavailable evidence is marked as such. A retrieved memory does not authorize lesson generation, recurring execution, or publication.
 
-## Origin
-
-Retain pstack [Recall](https://github.com/cursor/plugins/blob/c742dd61706fbacc1b95f1a20b7b988cf096ce6c/pstack/skills/recall/SKILL.md) and [Session pickup](https://github.com/cursor/plugins/blob/c742dd61706fbacc1b95f1a20b7b988cf096ce6c/pstack/skills/poteto-mode/playbooks/session-pickup.md). Explicit supersession and fingerprint-based reuse are local candidate mechanisms; compare them with simpler records before expanding storage. See [traceability](../../docs/pstack-traceability.md) and [attribution](../../THIRD_PARTY_NOTICES.md).
+Compare supersession and fingerprint-based reuse with simpler records before expanding storage; their local benefit remains unverified.

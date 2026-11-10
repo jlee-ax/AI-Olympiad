@@ -5,7 +5,7 @@ description: Evaluate an exact KOAI artifact revision with frozen criteria and i
 
 # Evaluate the artifact and the measurement
 
-Read [the evaluation protocol](../../docs/evaluation-protocol.md) and [workflow contract](../../docs/workflow-contract.md). Use agreed criteria; when criteria are unresolved, report the evidence needed instead of inventing a pass score.
+Read [the evaluation protocol](references/evaluation.md) and [workflow contract](../../tools/README.md). Use agreed criteria; when criteria are unresolved, report the evidence needed instead of inventing a pass score.
 
 1. Bind the review to the actual artifact digest and the complete input/skill/rubric/evaluator/reference context. Establish baseline and candidate before inspecting comparative outcomes.
 2. Keep four claims distinct: structural/provenance validity; technical/content correctness; pedagogical suitability; observed learner outcomes. A stronger claim needs its own evidence. Leave learning effectiveness untested without an appropriate learner study.
@@ -20,6 +20,4 @@ Read [the evaluation protocol](../../docs/evaluation-protocol.md) and [workflow 
 
 Return the exact revision, check-by-check outcomes, evidence pointers, reviewer identity/model, baseline/candidate differences, uncertainty, and the strongest warranted claim. Keep pedagogical approval and student-facing publication separate.
 
-## Origin
-
-Retain pstack [Eval](https://github.com/cursor/plugins/blob/c742dd61706fbacc1b95f1a20b7b988cf096ce6c/pstack/skills/poteto-mode/playbooks/eval.md) and current-head verification from [Shipping](https://github.com/cursor/plugins/blob/c742dd61706fbacc1b95f1a20b7b988cf096ce6c/pstack/skills/poteto-mode/playbooks/shipping.md). Add education-specific evaluator calibration and held-out transfer checks as research-backed candidates. See [evidence](../../docs/evidence.md) and [attribution](../../THIRD_PARTY_NOTICES.md).
+Consult the [research evidence](../references/evidence.md) when proposing evaluator changes or generalizing a result.

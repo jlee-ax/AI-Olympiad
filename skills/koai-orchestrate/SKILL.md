@@ -1,11 +1,11 @@
 ---
 name: koai-orchestrate
-description: Coordinate a bounded KOAI week 1–2 lesson-production unit using pstack ownership, verification, and checkpoints. Use to plan or resume authorized material work, allocate independent tasks, or decide the next work unit.
+description: Coordinate a bounded KOAI week 1–2 lesson-production unit using explicit ownership, verification, and checkpoints. Use to plan or resume authorized material work, allocate independent tasks, or decide the next work unit.
 ---
 
 # Coordinate one verifiable unit
 
-Read [the design](../../docs/design.md), [evaluation protocol](../../docs/evaluation-protocol.md), and [workflow contract](../../docs/workflow-contract.md). Invoke koai-ground for source/scope uncertainty and koai-recall before resuming.
+Read [the workflow and pending decisions](../references/workflow.md), [evaluation protocol](../koai-evaluate/references/evaluation.md), and [state contract](../../tools/README.md). Invoke koai-ground for source/scope uncertainty and koai-recall before resuming.
 
 ## Establish the contract
 
@@ -27,7 +27,3 @@ Read [the design](../../docs/design.md), [evaluation protocol](../../docs/evalua
 ## Handoff
 
 Return current state, accepted/reverted changes, unverified checks, budget used, next permitted action, and blocking decisions. Report “no useful change” when supported. Do not describe artifact quality as learner effectiveness without learner evidence.
-
-## Origin
-
-Retain pstack [Orchestrate](https://github.com/cursor/plugins/blob/c742dd61706fbacc1b95f1a20b7b988cf096ce6c/pstack/skills/poteto-mode/playbooks/orchestrate.md), [Hillclimb](https://github.com/cursor/plugins/blob/c742dd61706fbacc1b95f1a20b7b988cf096ce6c/pstack/skills/poteto-mode/playbooks/hillclimb.md), and [Autonomous run](https://github.com/cursor/plugins/blob/c742dd61706fbacc1b95f1a20b7b988cf096ce6c/pstack/skills/poteto-mode/playbooks/autonomous-run.md) responsibilities. Adapt their host and task assumptions to the local read-only planner. See [traceability](../../docs/pstack-traceability.md) and [attribution](../../THIRD_PARTY_NOTICES.md).

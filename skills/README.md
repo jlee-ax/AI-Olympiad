@@ -1,6 +1,6 @@
 # KOAI repository skills
 
-These five repository-local skills adapt Lauren Tan's pstack. They are authored skill files, not an installed personal plugin, a scheduler, or authorization to act.
+These five skills describe task procedures. They are repository-local files, not an installed personal plugin or an automatic execution system.
 
 | Task | Skill |
 |---|---|
@@ -10,10 +10,10 @@ These five repository-local skills adapt Lauren Tan's pstack. They are authored 
 | Review exact revisions and calibrate evaluation | [koai-evaluate](koai-evaluate/SKILL.md) |
 | Propose measured improvements to tools or skills | [koai-reflect](koai-reflect/SKILL.md) |
 
-Ask an agent to read the relevant SKILL.md in this repository. A host that supports repository skills may load them through its own configuration; no automatic discovery or cross-model orchestration is assumed here. Keep the repository-relative references intact when using them. The `agents/openai.yaml` files provide display metadata, not installation.
+Ask an agent to read the relevant SKILL.md. Keep its relative references intact. A compatible host may load repository skills through its own configuration; the `agents/openai.yaml` files are display metadata, not installation. There is no automatic document injection or proof-of-reading mechanism.
 
-The ordinary path is ground → recall → orchestrate → evaluate. Reflect runs when recurring evidence warrants a workflow change, not automatically after every checkpoint. Read only the relevant skill and linked contract/protocol.
+The usual path is ground → recall → orchestrate → evaluate. Reflect runs when recurring evidence warrants a workflow change. Read the references needed for that task rather than loading the whole library.
 
-The [workflow CLI](../tools/workflow.py) validates recorded state and recommends a decision. It cannot establish semantic truth, authenticate approvals, execute a worker, create PRs, or schedule another run. Start with [the contract](../docs/workflow-contract.md) and [disabled template](../templates/workflow.json).
+Shared references contain [the workflow and pending decisions](references/workflow.md) and [research evidence](references/evidence.md). Detailed [evaluation guidance](koai-evaluate/references/evaluation.md) belongs to the evaluation skill; [state and CLI documentation](../tools/README.md) lives beside the tool. The [template](../templates/workflow.json) is inactive until configured from real decisions.
 
-See [pstack traceability](../docs/pstack-traceability.md) for retained/adapted/supplemented/unverified choices and [third-party attribution](../THIRD_PARTY_NOTICES.md). Educational benefit and reduced human effort remain hypotheses until locally evaluated.
+Educational benefit and reduced human effort remain hypotheses. Source and license information is retained in [third-party notices](../THIRD_PARTY_NOTICES.md).
