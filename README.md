@@ -1,40 +1,43 @@
 # AI Olympiad
 
-A workflow prototype for preparing KOAI week 1–2 materials, with repository-local skills, source-linked records, and a read-only state planner.
+A workflow prototype for preparing KOAI teaching materials, with repository-local skills, concrete quality criteria, source-linked records and deterministic inspection/planning tools.
+
+## Confirmed course inputs
+
+Middle-school learners with basic coding; **ten weeks, one 120-minute class each week**. These are user-specified inputs. Required and optional outside work remain separate. The earlier 240-minute schedule is superseded.
+
+The [existing student HTML](curriculum/student-plan.html) is preserved in Korean without content changes. The [curriculum contract](curriculum/contract.json) records its weekly allocations and all 60 official syllabus rows. Planned coverage does not establish completed material or student mastery.
 
 ## Start here
 
-- Choose a [skill](skills/README.md) for the task.
-- Read the [workflow and pending decisions](skills/references/workflow.md).
-- Use the [tool contract](tools/README.md) and [state template](templates/workflow.json).
-- Consult the [evaluation protocol](skills/koai-evaluate/references/evaluation.md) and [research evidence](skills/references/evidence.md) when making or reviewing a substantive change.
+- Choose a [skill](skills/README.md).
+- Read the [concrete specification](skills/references/quality-specification.md) and relevant entries in the [15-criterion catalog](skills/references/criteria.json).
+- Use the [eight week 1–2 unit specifications](skills/koai-evaluate/references/unit-specifications.json) for prerequisite tasks, theory/noncoding/coding/assessment behaviors and existing time placement.
+- Inspect the [source-reading register](skills/references/source-readings.json), [research evidence](skills/references/evidence.md), and [evaluation protocol](skills/koai-evaluate/references/evaluation.md) for substantive decisions.
+- Read the [state and CLI contract](tools/README.md) before recording decisions.
 
-References live beside the skills and tools that use them. Skill instructions identify what to read; the CLI does not load Markdown or attest that an agent read it.
+Skill references are read instructions. The CLI does not automatically load every Markdown file or prove that an agent read it.
 
-## Inspect state
+## Inspect and plan
 
-Python 3.10+; the tools and tests use the standard library.
+Python 3.10+; tools and tests use the standard library.
 
-```sh
-python3 tools/workflow.py validate templates/workflow.json
-python3 tools/workflow.py decide templates/workflow.json
-python3 tools/workflow.py fingerprint templates/workflow.json
-python3 tools/workflow.py recall examples/workflow.json --query synthetic
-PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v
-```
+    python3 -B tools/quality.py baseline
+    python3 -B tools/quality.py evaluate templates/quality.json
+    python3 -B tools/quality.py plan templates/quality.json
+    python3 -B tools/workflow.py decide templates/workflow.json
+    python3 -B -m unittest discover -s tests -q
 
-The template pauses because its criteria and budget are unset. The example is synthetic. The CLI checks record structure, version-bound reviews, source references, supersession, exact duplicates, budget limits, and checkpoint conditions. It reads JSON and prints an advisory result; it does not execute agents, write records, schedule work, create lessons, or operate GitHub.
+The baseline command reads actual student HTML bytes, visible time allocations and scope rows. The quality tool independently calculates supported finite math cases, binds reviews to actual regions and dependencies, inspects source/research receipts, reports impact and suppresses exact repeated proposals. Its planner applies explicit priorities, finite budgets and the requested 30-minute checkpoint.
 
-A 30-minute checkpoint is a requested review interval recorded in state, not a running timer or a demonstrated optimum. Actual lesson production and recurring execution remain disabled until their concrete criteria are agreed.
+For a runnable schema demonstration, use the explicitly [synthetic quality bundle](examples/quality.json), its [bound workflow state](examples/quality-workflow.json), and [fixture receipt](examples/quality-receipt.json). These are not actual lesson or learner records.
 
-A valid record cannot establish source truth, approval authenticity, independent judgment, or student learning. Digests and execution receipts must come from the real work; this tool does not authenticate them. It supplies no append-only storage enforcement or concurrent writer locking.
+The default quality bundle has no learner responses, lesson executions, semantic reviews or agreed numeric policy. It remains incomplete. Non-design workflow decisions additionally require a current bound quality assessment; see the tool contract.
 
-## Course scope
+## Evidence and operating limits
 
-The draft target is KOAI 2027 middle-school preparation, with basic coding assumed and ten two-hour classes proposed. Learner prerequisites, week 1–2 objectives, and workload still need agreement. The [scope reference](skills/references/workflow.md#competition-scope-and-course-assumptions) distinguishes official rules from those draft choices.
+A current source/review record is an accountable claim, not authenticated truth. Semantic correctness, educational suitability and learning effectiveness need their own evidence. The implementation does not run Jupyter, browse sources automatically, execute a worker or schedule another invocation. A 30-minute checkpoint is a reported review condition, not a running timer.
 
-## Earlier examples
+Current work implements specifications and checks. Actual lesson production and recurring execution require their concrete criteria and applicable authorization. No locally measured teaching gain is claimed. Diagnostic cutoffs, acceptable outside workload, calibration tolerances and total campaign budgets remain unset.
 
-`tools/validate.py` and `examples/graph.json` demonstrate graph-format checks. They cannot justify a verified claim or establish scholarly support. The older `templates/run.json` and `templates/review.json` are illustrative placeholders, not the workflow state contract.
-
-No improvement in teaching quality, memory accuracy, unattended reliability, or human effort has been measured locally. See [third-party notices](THIRD_PARTY_NOTICES.md) for retained source and license information.
+The earlier graph validator and illustrative graph/run/review files remain available for compatibility. They cannot justify a verified educational claim. See [third-party notices](THIRD_PARTY_NOTICES.md) for retained source/license information.

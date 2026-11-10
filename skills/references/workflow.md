@@ -10,21 +10,23 @@ Prevent repeatable errors through tools or checks before adding more instruction
 
 These procedures and their adaptations have not demonstrated local educational benefit. The [evidence register](evidence.md) separates published results, counterevidence, proposed transfers, and local tests. Source provenance is retained in [third-party notices](../../THIRD_PARTY_NOTICES.md).
 
-## Competition scope and course assumptions
+## Competition scope and confirmed course inputs
 
 Checked on 2026-11-10: the [KOAI 2027 announcement](https://kitpa.org/notice/89) and [official rules](https://kitpa.org/storage/6df0e67a-48d7-4255-ba4f-7d86b2bd2824.pdf) specify syllabus sections 1–4 for both middle- and high-school divisions (p. 7, §11). Both have a three-hour written examination with 80 multiple-choice and 10 written-response questions, and a three-hour coding examination with two tasks (p. 8, §12). The [2027 details](https://kitpa.org/koai/2027) agree; read the detailed rules even if a schedule heading omits coding.
 
 The linked [syllabus](https://kitpa.org/koai/syllabus) still carries an IOAI 2026 label. Record both the governing competition year and the referenced syllabus version. The middle-school sections 1–2 restriction in the [2026 sample notice](https://kitpa.org/files/36) does not define 2027 scope. That sample release has no published official answers; agent solutions must not be labeled official. Recheck current sources before production.
 
-| Item | Draft assumption | Decision needed |
+| Item | Confirmed input or current specification | Remaining evidence/decision |
 |---|---|---|
-| Learners | KOAI 2027 middle-school students with basic coding; ten two-hour classes | Actual population, Python/mathematics/statistics prerequisites, diagnostic approach |
-| Week 1 | Python, CSV, NumPy | Observable objectives, prerequisites, included and excluded content |
-| Week 2 | Data splitting, preprocessing, evaluation metrics | Relationship to week 1 and expected understanding, implementation, and explanation |
-| Workload | Earlier records mix 120/240-minute classes and different homework times | Separate class, practical work, homework, and review limits and totals |
+| Learners and meetings | Middle-school students with basic coding; ten weeks, one 120-minute class per week, as explicitly specified by the user | Actual diagnostic responses, support allocation and cutoff policy |
+| Week 1 | Current student HTML plus named Python/table/array/visualization production specifications | Actual materials, diagnosis, execution and current reviews |
+| Week 2 | Current student HTML plus split/preprocessing/metrics/baseline-model production specifications | Actual materials and evidence under the stated help/depth conditions |
+| Workload | Confirmed 120-minute classes; earlier 240-minute version superseded; required and optional outside work separate | Actual feasibility, acceptable outside workload and support limits |
 | Deliverables | Student explanations/practice, teacher guidance/solutions, code/data, assessments/review records | Required formats, environment, access, and intended audience |
 
-Syllabus coverage does not establish that the full scope can be mastered in 20 hours. These are proposed course choices, not completed teaching materials.
+Syllabus coverage does not establish that the full scope can be mastered in 20 hours. The meeting count/duration and target are confirmed; production specifications do not constitute completed teaching materials.
+
+The [concrete specification](quality-specification.md), [15-criterion catalog](criteria.json), [unit behaviors](../koai-evaluate/references/unit-specifications.json), and [pinned student plan](../../curriculum/student-plan.html) make these requirements inspectable. No new lesson or learner observation is implied.
 
 ## Contract for one production unit
 

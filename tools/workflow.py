@@ -442,7 +442,7 @@ def _verification(state, fingerprint):
     return {'passed': passed, 'reason': reason, 'review_id': review['id'], 'checks': checks, 'warnings': warnings}
 
 
-def decide(state):
+def decide(state, quality_report=None):
     errors, warnings = validate_state(state)
     result = {'status': 'blocked', 'reason': 'invalid_state', 'authority': 'advisory_only',
               'synthetic': state.get('synthetic') if isinstance(state, dict) and type(state.get('synthetic')) is bool else None,
@@ -500,6 +500,32 @@ def decide(state):
             return finish('stop', reason)
     if usage['minutes_since_checkpoint'] >= limits['checkpoint_minutes']:
         return finish('pause', 'checkpoint_due')
+    if scope['task_kind'] != 'design' or quality_report is not None:
+        if quality_report is None:
+            return finish('pause', 'quality_assessment_required')
+        required = {'schema_version', 'authority', 'synthetic', 'revision', 'bundle_sha256',
+                    'artifact_sha256', 'specification_sha256', 'specification_revision',
+                    'evaluator_sha256', 'ready_for_review', 'checks'}
+        if not isinstance(quality_report, dict) or not required <= quality_report.keys():
+            return finish('blocked', 'invalid_quality_report')
+        result['quality_assessment'] = quality_report
+        if quality_report['synthetic'] and not state['synthetic']:
+            return finish('blocked', 'synthetic_quality_cannot_validate_real_work')
+        if quality_report['artifact_sha256'] != context['artifact']['sha256']:
+            return finish('blocked', 'quality_artifact_mismatch')
+        required_inputs = [
+            {'id': 'quality:bundle', 'revision': quality_report['revision'], 'sha256': quality_report['bundle_sha256']},
+            {'id': 'quality:criteria', 'revision': quality_report['specification_revision'], 'sha256': quality_report['specification_sha256']},
+            {'id': 'quality:evaluator', 'revision': 'quality-v1', 'sha256': quality_report['evaluator_sha256']},
+        ]
+        if any(item not in context['inputs'] for item in required_inputs):
+            return finish('blocked', 'quality_context_not_bound')
+        checks = quality_report['checks']
+        if (quality_report['ready_for_review'] is not True or not isinstance(checks, list) or
+                {item.get('id') for item in checks if isinstance(item, dict)} !=
+                {'K' + str(n).zfill(2) for n in range(1, 16)} or len(checks) != 15 or
+                any(not isinstance(item, dict) or item.get('status') != 'passed' for item in checks)):
+            return finish('blocked', 'quality_checks_not_passed')
     verification = _verification(state, fingerprint)
     result['verification'] = verification
     result['warnings'] = warnings + verification['warnings']
@@ -517,7 +543,10 @@ def main(argv=None):
     parser.add_argument('command', choices=('validate', 'decide', 'fingerprint', 'recall'))
     parser.add_argument('state', type=Path)
     parser.add_argument('--query', default='', help='AND substring terms for recall only')
+    parser.add_argument('--quality', type=Path, help='Quality bundle for decide; required for lesson/recurring scope')
     args = parser.parse_args(argv)
+    if args.quality and args.command != 'decide':
+        parser.error('--quality applies only to decide')
     if args.query and args.command != 'recall':
         parser.error('--query applies only to recall')
     try:
@@ -528,7 +557,16 @@ def main(argv=None):
         return 2
     errors, warnings = validate_state(state)
     if args.command == 'decide':
-        output = decide(state)
+        quality_report = None
+        if args.quality and not errors:
+            import quality
+            try:
+                quality_report = quality.evaluate(quality.load(args.quality))
+            except (OSError, UnicodeError, ValueError, TypeError, KeyError, AttributeError, RecursionError, OverflowError) as exc:
+                print(json.dumps({'status': 'blocked', 'reason': 'invalid_quality_input', 'authority': 'advisory_only',
+                                  'errors': [ascii(str(exc))]}))
+                return 2
+        output = decide(state, quality_report)
     else:
         output = {'status': 'invalid' if errors else 'valid', 'reason': 'invalid_state' if errors else 'structural_checks_only',
                   'authority': 'advisory_only', 'errors': errors, 'warnings': warnings,

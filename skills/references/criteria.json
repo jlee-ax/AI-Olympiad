@@ -1,0 +1,366 @@
+{
+  "schema_version": 1,
+  "revision": "criteria-v1",
+  "status": "proposed_for_agreement",
+  "decision_required": [
+    "Priority tie-break policy",
+    "Diagnostic cutoffs and acceptable help",
+    "Required/optional checks per production unit",
+    "Homework limit and support time",
+    "Evaluator calibration sample and tolerated errors",
+    "Total run/attempt/cost budgets"
+  ],
+  "criteria": [
+    {
+      "id": "K01",
+      "name": "Baseline identity and official scope",
+      "definition": "The current student plan, competition year, division and linked syllabus version must be explicit and content-bound.",
+      "object": "Student HTML and curriculum contract",
+      "measurement": "Read actual bytes; compare SHA256; enumerate ten week rows and all 60 syllabus rows; compare official theory/practical flags.",
+      "pass": "Pinned bytes and all expected IDs/flags agree.",
+      "fail": "Hash, year, division, topic or flag mismatch.",
+      "uncertainty": "Unavailable baseline or unresolved version conflict remains uncertain.",
+      "severity": "critical",
+      "priority": "P0",
+      "examples": {
+        "normal": "Earlier 240-minute HTML cannot replace the current 120-minute baseline.",
+        "fault_or_boundary": "Changing the file while keeping an old digest fails."
+      },
+      "sources": [
+        "KOAI27",
+        "SYLLABUS",
+        "PLAN"
+      ],
+      "expected_effect": "Detect silent baseline or scope substitution.",
+      "limits": "A pinned copy does not prove the live official page stayed unchanged.",
+      "implementation": "See tools/quality.py and the implementation table in quality-specification.md; semantic judgments remain reviewed records."
+    },
+    {
+      "id": "K02",
+      "name": "Planned coverage and achieved depth",
+      "definition": "Scheduled exposure, explanation, guided application and independent transfer are different claims.",
+      "object": "Every official topic and each selected objective",
+      "measurement": "Record official modes, placement, required components, evidence and help level separately. A full-syllabus completion claim needs evidence for every required mode/component.",
+      "pass": "All selected obligations have matching evidence at the claimed depth; no omitted official obligations in a full claim.",
+      "fail": "A practical requirement is claimed complete using only a concept description, cached output, or a different named model.",
+      "uncertainty": "Scheduled but unperformed work is not_run, not failure of a student.",
+      "severity": "major",
+      "priority": "P1",
+      "examples": {
+        "normal": "Running Random Forest does not establish that Bagging and Gradient Boosting were run.",
+        "fault_or_boundary": "A theory-only topic does not acquire a practical obligation just because code is available."
+      },
+      "sources": [
+        "SYLLABUS",
+        "PLAN"
+      ],
+      "expected_effect": "Expose gaps without turning a topic mention into mastery.",
+      "limits": "Official grouping and the plan's expanded obligations must be distinguished; a course completion is not exam success.",
+      "implementation": "See tools/quality.py and the implementation table in quality-specification.md; semantic judgments remain reviewed records."
+    },
+    {
+      "id": "K03",
+      "name": "Time and workload accounting",
+      "definition": "Class time includes all activities performed during the class; required and optional outside work are separate.",
+      "object": "Each 120-minute lesson and outside-work allocation",
+      "measurement": "Sum theory, noncoding and coding blocks; count written practice inside noncoding; list setup, support, execution, feedback and retry time without double counting.",
+      "pass": "Every class totals 120 minutes and current plan allocations are preserved; required outside work is disclosed separately.",
+      "fail": "A class totals 240 minutes, adds written practice on top of 120, or relabels required syllabus work as optional.",
+      "uncertainty": "Arithmetic can pass while actual completion time remains unobserved; workload acceptability awaits a user decision.",
+      "severity": "major",
+      "priority": "P1",
+      "examples": {
+        "normal": "Week 1 is 20 + 20 + 80; its written practice is inside the 20.",
+        "fault_or_boundary": "A six-hour mock exam cannot be counted inside a two-hour class."
+      },
+      "sources": [
+        "PLAN"
+      ],
+      "expected_effect": "Catch hidden or inconsistent workload.",
+      "limits": "An estimate cannot establish feasibility; no universal acceptable homework limit is inferred.",
+      "implementation": "See tools/quality.py and the implementation table in quality-specification.md; semantic judgments remain reviewed records."
+    },
+    {
+      "id": "K04",
+      "name": "Prerequisite diagnosis and support",
+      "definition": "Readiness is demonstrated prerequisite behavior or an explicit support route before its first use, not an age label.",
+      "object": "Python and mathematical prerequisites of each objective",
+      "measurement": "Record a concrete task, expected behavior, actual response, help used, diagnosis and support placement. Diagnose variables/control flow, functions/return, lists/indexing, files/errors; ratios before metrics and axes before reduction.",
+      "pass": "Every dependency is demonstrated under stated help or bridged by a scheduled support activity before use, according to the agreed readiness policy.",
+      "fail": "The material depends on an unintroduced or diagnosed-missing skill with no prior support.",
+      "uncertainty": "No learner response means unknown readiness. Cutoffs such as 4/5 in the HTML are proposals until their use is agreed and calibrated.",
+      "severity": "major",
+      "priority": "P1",
+      "examples": {
+        "normal": "Printing a value does not demonstrate returning it from a function.",
+        "fault_or_boundary": "A student who needs help is routed to support rather than silently labeled ready."
+      },
+      "sources": [
+        "PLAN",
+        "CHEN"
+      ],
+      "expected_effect": "Make missing prerequisites actionable.",
+      "limits": "This diagnoses named tasks, not general intelligence or all middle-school learners.",
+      "implementation": "See tools/quality.py and the implementation table in quality-specification.md; semantic judgments remain reviewed records."
+    },
+    {
+      "id": "K05",
+      "name": "Theory, noncoding, coding and assessment linkage",
+      "definition": "An objective is aligned when explanation, a prediction or hand-work activity, code application and assessment address the same conceptual relation.",
+      "object": "Each selected learning objective",
+      "measurement": "Bind activity IDs, locators and concept IDs; require prediction before observation, output interpretation, and an assessment matching the intended performance.",
+      "pass": "All required links exist, have matching concept IDs, and substantive review confirms they test the same relation.",
+      "fail": "An axis explanation is paired only with unrelated plotting, or an implementation objective is assessed only by terminology recognition.",
+      "uncertainty": "Missing artifact or semantic review is uncertain; matching IDs alone does not prove alignment.",
+      "severity": "moderate",
+      "priority": "P2",
+      "examples": {
+        "normal": "Predict axis=0 output length, calculate it, execute the reduction, then explain the agreement.",
+        "fault_or_boundary": "Running code with the answer visible is guided performance, not independent transfer."
+      },
+      "sources": [
+        "BIGGS",
+        "PLAN"
+      ],
+      "expected_effect": "Expose disconnected activities and unjustified depth claims.",
+      "limits": "The link structure is a local operationalization; effectiveness needs learner evidence.",
+      "implementation": "See tools/quality.py and the implementation table in quality-specification.md; semantic judgments remain reviewed records."
+    },
+    {
+      "id": "K06",
+      "name": "Theoretical correctness and permissible simplification",
+      "definition": "A claim must preserve its quantity, assumptions, domain, mechanism and inferential limits; simplification must not reverse a prediction or decision.",
+      "object": "Definitions, explanations, formulas, examples and answer keys",
+      "measurement": "Atomize claims; name assumptions and units; compare a primary source or independent derivation; seek a counterexample. Classify false statement, dimensional error, invalid generalization, missing prerequisite step, ambiguity or source conflict.",
+      "pass": "Current independent evidence supports the exact scoped claim, including exceptions needed for the intended task.",
+      "fail": "A reproducible counterexample or derivation contradicts a material claim or key.",
+      "uncertainty": "A source disagreement or unsupported assertion stays uncertain and triggers research; it is not automatically an error.",
+      "severity": "critical",
+      "priority": "P0",
+      "examples": {
+        "normal": "Precision divides TP by predicted positives, not actual positives.",
+        "fault_or_boundary": "Validation-based model selection is permitted; fitting preprocessing on validation data is a different operation."
+      },
+      "sources": [
+        "NUMPY",
+        "SKLEARN",
+        "METRICS",
+        "HUANG"
+      ],
+      "expected_effect": "Prevent teaching a false rule or wrong answer.",
+      "limits": "An oracle covers only its declared mathematical case; arbitrary prose still needs expert review.",
+      "implementation": "See tools/quality.py and the implementation table in quality-specification.md; semantic judgments remain reviewed records."
+    },
+    {
+      "id": "K07",
+      "name": "Independent numerical and structural checks",
+      "definition": "A worked result is independently recomputed from declared inputs and conventions.",
+      "object": "Axis reductions, binary metrics, weighted sums and split/fit records",
+      "measurement": "Use fixed reference functions, explicit zero-denominator handling, exact fractions where possible and declared tolerances. Test a neighboring valid case as well as an injected fault.",
+      "pass": "Reported and independently computed results agree under the same conventions.",
+      "fail": "Wrong axis/shape, denominator, value, overlapping split ID or preprocessing fit contamination.",
+      "uncertainty": "Undefined ratios without an explicit convention are uncertain, never silently zero.",
+      "severity": "critical",
+      "priority": "P0",
+      "examples": {
+        "normal": "TP=5 FP=10 FN=5 gives precision 1/3 and recall 1/2.",
+        "fault_or_boundary": "TP=FP=0 needs a declared undefined-value policy."
+      },
+      "sources": [
+        "NUMPY",
+        "METRICS",
+        "SKLEARN"
+      ],
+      "expected_effect": "Catch concrete errors without relying on a second self-score.",
+      "limits": "Passing these checks does not prove a whole lesson correct or a whole pipeline leakage-free.",
+      "implementation": "See tools/quality.py and the implementation table in quality-specification.md; semantic judgments remain reviewed records."
+    },
+    {
+      "id": "K08",
+      "name": "Executable and reproducible material",
+      "definition": "A coding claim needs execution of the exact artifact in a recorded environment with meaningful checks.",
+      "object": "Notebook/code/data and execution receipts",
+      "measurement": "Bind artifact/data digests, command, environment, exit code and result checks; rerun from a clean state and test new input and at least the stated edge cases.",
+      "pass": "Current receipts show successful execution and required assertions under the intended environment.",
+      "fail": "Nonzero exit, failed assertion, missing input, hidden-state dependence or reported output inconsistent with the receipt.",
+      "uncertainty": "No current execution receipt is not_run; a screenshot or copied log alone does not establish execution.",
+      "severity": "major",
+      "priority": "P1",
+      "examples": {
+        "normal": "An empty CSV or renamed required column must get its specified outcome.",
+        "fault_or_boundary": "A successful earlier notebook revision does not validate an edited revision."
+      },
+      "sources": [
+        "PLAN",
+        "SKLEARN"
+      ],
+      "expected_effect": "Reduce unusable or misleading exercises.",
+      "limits": "The harness checks receipt bindings, not remote execution authenticity or all possible inputs.",
+      "implementation": "See tools/quality.py and the implementation table in quality-specification.md; semantic judgments remain reviewed records."
+    },
+    {
+      "id": "K09",
+      "name": "Assessment meaning and help conditions",
+      "definition": "An assessment establishes only the behavior and assistance conditions actually observed.",
+      "object": "Written, noncoding and coding evidence",
+      "measurement": "Specify action, input, expected result, scoring rationale, help/answer visibility and a new input where transfer is claimed; independently check keys.",
+      "pass": "Assessment demand matches the objective and the reported independence/transfer claim.",
+      "fail": "Copied solutions are reported as independent, or a key contradicts an independent calculation.",
+      "uncertainty": "Missing observations leave mastery untested; a correct artifact is not learner success.",
+      "severity": "major",
+      "priority": "P1",
+      "examples": {
+        "normal": "An unseen confusion matrix with an explanation can assess denominator understanding.",
+        "fault_or_boundary": "A timed task with hints is not equivalent to an unaided contest task."
+      },
+      "sources": [
+        "BIGGS",
+        "KARPICKE",
+        "PLAN"
+      ],
+      "expected_effect": "Prevent inflated learning and independence claims.",
+      "limits": "Task scores do not establish stable mastery or official exam equivalence.",
+      "implementation": "See tools/quality.py and the implementation table in quality-specification.md; semantic judgments remain reviewed records."
+    },
+    {
+      "id": "K10",
+      "name": "Claim-specific direct source support",
+      "definition": "A citation supports a claim only when the relevant original content has been read at an adequate extent and scoped correctly.",
+      "object": "Each consequential claim and its cited sources",
+      "measurement": "Record discovery route, original URL/version, access time, precise location, read extent, finding, limitation and relation to the claim. Empirical effect claims require methods/results/limits, not a search snippet.",
+      "pass": "The relevant primary material was read and its scope supports the claim; contradictory evidence is addressed.",
+      "fail": "A source is misrepresented, or a search result/abstract is reported as a full-methods review.",
+      "uncertainty": "Inaccessible or partially read sources remain uncertain for claims needing the missing sections.",
+      "severity": "major",
+      "priority": "P1",
+      "examples": {
+        "normal": "An abstract can support what its abstract says, not an unexamined sample size.",
+        "fault_or_boundary": "A secondary summary is a discovery lead, not a substitute for the original experiment."
+      },
+      "sources": [
+        "ALCE",
+        "BIGGS",
+        "CHEN"
+      ],
+      "expected_effect": "Make evidence errors and incomplete reading visible.",
+      "limits": "Recorded reading is an accountable declaration; the tool cannot authenticate comprehension.",
+      "implementation": "See tools/quality.py and the implementation table in quality-specification.md; semantic judgments remain reviewed records."
+    },
+    {
+      "id": "K11",
+      "name": "Research refresh and refinement",
+      "definition": "Research repeats when a relevant question, source version, contradiction or failed check changes, and may conclude unchanged or unresolved.",
+      "object": "A bounded research cycle",
+      "measurement": "Log trigger, focused queries, discovered originals, direct reads, extracted claims, counterevidence, changed/unchanged disposition, and affected IDs. Recheck official sources before production and after relevant notices.",
+      "pass": "The current trigger is resolved by scoped evidence or explicitly remains unresolved; unchanged sources preserve applicable results.",
+      "fail": "A changed relevant source is ignored, or an unchanged search is described as a verified substantive improvement.",
+      "uncertainty": "No result or inaccessible source produces an abstention and a next query, not a fabricated conclusion.",
+      "severity": "major",
+      "priority": "P1",
+      "examples": {
+        "normal": "An updated syllabus triggers affected scope/objective reviews.",
+        "fault_or_boundary": "A spelling change outside a claim does not force every unit to be rewritten."
+      },
+      "sources": [
+        "HUANG",
+        "ALCE",
+        "LONGMEM"
+      ],
+      "expected_effect": "Focus repeated investigation on actual uncertainty and change.",
+      "limits": "No paper establishes that a fixed 30-minute search schedule is optimal.",
+      "implementation": "See tools/quality.py and the implementation table in quality-specification.md; semantic judgments remain reviewed records."
+    },
+    {
+      "id": "K12",
+      "name": "Change impact and current review",
+      "definition": "A review is reusable only while its artifact, criterion, source and declared dependency versions match.",
+      "object": "Dependency graph and per-object reviews",
+      "measurement": "Traverse reverse dependencies from changed IDs; recompute dependency fingerprints; mark affected reviews stale and keep unrelated valid reviews.",
+      "pass": "Every required review is current for its object and dependency closure.",
+      "fail": "A changed answer key/source retains an old pass, or known affected work is omitted.",
+      "uncertainty": "Unrecorded dependencies remain a documented completeness risk; uncertainty is not a current pass.",
+      "severity": "major",
+      "priority": "P1",
+      "examples": {
+        "normal": "Changing the precision definition affects its example, code assertion and assessment key.",
+        "fault_or_boundary": "Updating an audio-only source should not invalidate an unrelated CSV review."
+      },
+      "sources": [
+        "LONGMEM"
+      ],
+      "expected_effect": "Avoid both stale approvals and unnecessary global rework.",
+      "limits": "Graph traversal is complete only for the declared edges.",
+      "implementation": "See tools/quality.py and the implementation table in quality-specification.md; semantic judgments remain reviewed records."
+    },
+    {
+      "id": "K13",
+      "name": "Duplicate and rejected-work handling",
+      "definition": "An unchanged proposal under the same object, criterion, hypothesis and dependency versions is the same attempt; semantic similarity alone is insufficient.",
+      "object": "Work candidates and attempt history",
+      "measurement": "Canonicalize exact structured keys; retain accepted, rejected and no-change receipts. Reopen only for a changed dependency, new counterevidence or a different explicit hypothesis.",
+      "pass": "Exact duplicates are skipped with their earlier reason; distinct quantities, units and hypotheses remain separate.",
+      "fail": "A retired failed proposal is repeated without a new basis, or different meanings are merged because their wording resembles.",
+      "uncertainty": "Paraphrases are review candidates, not automatic merges.",
+      "severity": "moderate",
+      "priority": "P2",
+      "examples": {
+        "normal": "Precision and recall share counts but have different denominators and must remain separate.",
+        "fault_or_boundary": "A new source version permits a new attempt while the old receipt is preserved."
+      },
+      "sources": [
+        "LONGMEM"
+      ],
+      "expected_effect": "Reduce repeated work and accidental loss of distinctions.",
+      "limits": "The current mechanism does not solve semantic deduplication.",
+      "implementation": "See tools/quality.py and the implementation table in quality-specification.md; semantic judgments remain reviewed records."
+    },
+    {
+      "id": "K14",
+      "name": "Severity, priority and bounded completion",
+      "definition": "Repair order follows the consequence and certainty of a defect; completion requires the agreed current evidence, not a high average score.",
+      "object": "Findings, work queue and 30-minute checkpoint",
+      "measurement": "Use proposed P0 confirmed false claims/keys or invalid evaluation; P1 required scope, missing prerequisite, missing execution or unresolved blocking evidence; P2 alignment/support improvements; P3 presentation. Within a tier prefer dependency blockers, then broader declared impact, then stable ID. Record checkpoint and finite stop limits.",
+      "pass": "A selected action addresses the first eligible nonduplicate blocker; completion has every required current check and no unresolved blocking finding.",
+      "fail": "Style is chosen ahead of a confirmed wrong key without a documented dependency reason, or a goal boolean overrides missing evidence.",
+      "uncertainty": "Priority policy, thresholds and budgets requiring user choice remain proposed/unset; no automatic execution starts.",
+      "severity": "critical",
+      "priority": "P0",
+      "examples": {
+        "normal": "Fix a wrong denominator before improving typography.",
+        "fault_or_boundary": "At 30 minutes report work, evidence, failures, remaining budget and next action; no useful change is valid."
+      },
+      "sources": [
+        "PLAN",
+        "HUANG"
+      ],
+      "expected_effect": "Make work selection and stopping auditable.",
+      "limits": "Priority ordering is a local proposed policy, not an experimentally proven optimum.",
+      "implementation": "See tools/quality.py and the implementation table in quality-specification.md; semantic judgments remain reviewed records."
+    },
+    {
+      "id": "K15",
+      "name": "Evaluator calibration and outcome claims",
+      "definition": "A reviewer is calibrated only against independently established correct/error cases; educational benefit needs learner evidence.",
+      "object": "Human/model judgments and improvement claims",
+      "measurement": "Separate author and reviewer; test known-good and seeded-error controls, reverse order, retain disagreements and untouched cases; distinguish tool tests, content review, suitability and learner outcomes.",
+      "pass": "The strength of the conclusion matches actually collected evidence and current independent review.",
+      "fail": "Tool tests or a model preference win are presented as learning improvement, or evaluator changes are tested only on their training cases.",
+      "uncertainty": "Absent educator calibration or learner data remains untested; tolerances/sample sizes require agreement.",
+      "severity": "major",
+      "priority": "P1",
+      "examples": {
+        "normal": "A seeded denominator error tests detection; it is not a student experiment.",
+        "fault_or_boundary": "No learner study means no claim that students learned more."
+      },
+      "sources": [
+        "BIGGS",
+        "CHEN",
+        "KARPICKE",
+        "HUANG"
+      ],
+      "expected_effect": "Reduce false confidence in automated judgment.",
+      "limits": "Reviewer identity/model-family differences do not ensure independent errors.",
+      "implementation": "See tools/quality.py and the implementation table in quality-specification.md; semantic judgments remain reviewed records."
+    }
+  ]
+}

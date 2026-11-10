@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KOAI 2027 중등부 전범위 10주 학습 계획</title>
+<style>* { box-sizing: border-box; }
+body { margin: 16px; background: #fff; color: #000; font-family: Arial, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; font-size: 15px; line-height: 1.5; }
+.table-scroll { overflow-x: auto; }
+table { width: 100%; min-width: 1200px; border-collapse: collapse; table-layout: fixed; background: #fff; }
+th, td { padding: 8px; border: 1px solid #000; text-align: left; vertical-align: top; overflow-wrap: anywhere; background: #fff; }
+th { font-weight: bold; }
+p, ul { margin: 0 0 10px; }
+p:last-child, ul:last-child { margin-bottom: 0; }
+ul { padding-left: 18px; }
+li + li { margin-top: 6px; }
+a, a:visited { color: #000; text-decoration: underline; }
+@page { size: A4 landscape; margin: 10mm; }
+@media print {
+ body { margin: 0; font-size: 9pt; }
+ .table-scroll { overflow: visible; }
+ table { min-width: 0; }
+ th, td { padding: 5px; }
+ a { text-decoration: none; }
+}</style></head><body><main>
+<div class="table-scroll" role="region" aria-label="KOAI 2027 중등부 전범위 10주 학습 계획" tabindex="0"><table>
+<colgroup><col style="width: 8%"><col style="width: 28%"><col style="width: 28%"><col style="width: 21%"><col style="width: 10%"><col style="width: 5%"></colgroup><tbody>
+<tr><th scope="row">학습 계획</th><td colspan="5"><p><strong>KOAI 2027 중등부 전범위 10주 학습 계획</strong></p><p>주 1회 120분 수업과 필수 자기주도 학습을 함께 진행한다. 공식 60개 주제를 모두 일정에 놓되, 수업은 대표 예제와 피드백에 집중한다. 공식 범위 안의 주제는 선택 과제로 빼지 않는다.</p></td></tr>
+<tr><th scope="row">시간과 목표</th><td colspan="5"><p><strong>수업 20시간:</strong> 이론 4시간 · 비코딩 실습 4시간 · 코딩 12시간. 매주 비코딩 실습에 필기 연습·해설 10분을 포함하며 120분에 추가하지 않는다.</p><p><strong>필수 자기주도 100~130시간:</strong> 주 2시간 수업만으로 끝나는 과정이 아니다. 8~9주차에는 주 16~20시간의 필수 자기주도 시간이 필요하며, 이를 확보하기 어렵다면 10주보다 기간을 늘린다. 10주차의 전체 모의시험 6시간을 포함한다. 수업과 합계는 120~150시간이다. 선택 심화와 시작 전 기초 보충은 이 합계에 포함하지 않는다.</p><p>이 시간은 준비된 소형 예제·데이터·실행 환경을 쓰는 편성 추정치이며 실제 학생 수행으로 검증하기 전이다. 읽기·실행 점검·코드 수정·새 입력 적용·오류 수정·결과 설명을 포함한다. 전범위 입문·적용 경험을 만드는 계획이며, 처음 AI를 배우는 학생의 전범위 독립 해결·숙달·합격을 보장하지 않는다.</p></td></tr>
+<tr><th scope="row">시작 전 준비</th><td colspan="5"><p>Python의 변수·조건문·반복문·함수·리스트·파일 읽기와 기본 오류 메시지를 다룰 수 있어야 한다. 낯설다면 시작 전 6~12시간을 잡아 보충하고 진단 결과에 따라 더 연습한다. 평균·분산·좌표·벡터 내적은 1주차, 미분·연쇄법칙의 작은 예는 3·6주차에 익힌다. AI 선행학습은 필수 조건이 아니다.</p><p>GPU와 대형 모델이 필요한 과제는 준비된 공유 환경을 사용한다. 첫 수업 전 노트북·데이터·모델 파일·실행 권한·API 이용 환경이 마련되어야 한다. 모델별 버전·정밀도·최소 메모리·실행 시간을 과제 제작 시 사전 점검해야 하며, GPU가 있다는 것만으로 모든 모델 실행이 보장되지는 않는다. 개인 유료 가입을 전제로 하지 않으며, API에는 허용된 공개·합성 입력만 쓴다. 학습 자료 칸에는 확정된 자료를 나중에 연결한다.</p><p>최초 장비·소프트웨어 설치와 대용량 모델 준비는 위 자습 시간 밖의 준비 작업이다. 일반적인 실행 점검·오류 수정은 자습에 포함하지만 장시간 다운로드·접속 대기·심한 기초 부족은 추가 시간이 든다. 환경이 없거나 실제 실행을 못 한 항목은 미완료로 남기고 보충 시간·장비를 확보한다.</p></td></tr>
+<tr><th scope="row">배우는 깊이</th><td colspan="5"><p><strong>공식 이론 O:</strong> 핵심 작동 원리를 자기 말로 설명하고 작은 계산·그림·필기 문제로 확인한다. <strong>공식 실전 O:</strong> 실제 라이브러리·모델을 데이터에 적용하고 입력·설정을 바꿔 재실행하며 출력을 해석한다. 공식 이론 O는 25개, 실전 O는 59개다. 과소·과대적합은 이론 O·실전 X다.</p><p><strong>수업</strong>과 <strong>필수 자습</strong>은 배우는 장소의 구분이다. 이론 O·실전 O는 필요한 깊이의 구분이며, 필수 자습으로 옮겨도 요구가 낮아지지 않는다. 이론 X는 별도 이론 요구가 없다는 뜻이며 실전에서 필요한 사용법 설명은 배운다.</p><p>아래 60항목에서 O로 적힌 확인 과제를 모두 수행한다. 예제를 실행한 뒤 새 입력이나 설정 하나 이상을 바꾸어 결과를 설명하고, 도움 없이 다시 해볼 부분을 기록한다. 영상 시청·도식 설명·미리 계산한 캐시만으로 실제 모델 실행을 대신하지 않는다. 한 번의 짧은 실행은 숙달의 증거가 아니므로 막히는 항목은 반복한다.</p></td></tr>
+<tr><th scope="row">평가 원칙</th><td colspan="5"><p>훈련 데이터로 학습하고 검증 데이터로 모델·설정을 고른다. 같은 자료로 수업 후 자습에서 실험을 계속한다면 테스트 공개는 필수 자습의 선택까지 모두 끝낸 뒤로 미룬다. 테스트는 선택을 끝낸 뒤 최종 평가에 쓴다. 검증 결과로 설정을 고르는 것은 정상이며, 전처리 fit은 훈련 데이터에만 한다. 테스트 정답·결과를 보고 고친 모델은 새로운 테스트로 평가해야 한다.</p><p>같은 개체·문장 생성 틀·원본 오디오·비디오의 파생 입력이 분할을 넘나들지 않게 한다. 시계열은 미래값을 쓰지 않고, 윈도·증강 등 파생 데이터는 원본의 분할을 유지한다.</p></td></tr>
+<tr><th scope="col">주차 · 주제</th><th scope="col">수업 · 120분</th><th scope="col">필수 자기주도 · 수업 밖</th><th scope="col">결과물 · 완료 확인</th><th scope="col">참고 링크</th><th scope="col">학습 자료</th></tr></tbody>
+<tbody><tr id="week-1" data-theory-minutes="20" data-noncoding-minutes="20" data-coding-minutes="80" data-self-min-hours="5" data-self-max-hours="7">
+<th scope="row"><p>1주차</p><p>Python과 표 데이터</p></th>
+<td><ul><li>이론 20분: 특성·정답, 평균·분산과 배열의 모양(shape).</li><li>비코딩 20분: axis별 평균 계산 10분 · 필기 연습·해설 10분.</li><li>코딩 80분: Python 진단 20분 · CSV 선택·결측 탐지 40분 · NumPy 계산·Matplotlib 그래프 20분.</li></ul><p><strong>공식 항목:</strong> 01~03 · 06의 배열 선수학습. 아래 번호 목록에서 깊이를 확인한다.</p></td>
+<td><p><strong>필수 5~7시간</strong></p><ul><li><strong>문법·배열 2~3시간:</strong> 함수·반복문을 보충하고, 인덱싱·브로드캐스팅·reshape·transpose를 새 배열에 적용한다.</li><li><strong>시각화 1~1.5시간:</strong> Matplotlib과 Seaborn을 각각 써서 분포·범주별 차이를 그린다.</li><li><strong>새 CSV 1~1.5시간:</strong> 파일 읽기·집계·병합부터 통계·그래프까지 다시 작성한다. 누락값·dtype·shape를 검사한다.</li><li><strong>수학·실행 점검 1시간:</strong> 평균·분산·벡터 내적을 복습하고 새 세션에서 전체 재실행한다.</li></ul></td>
+<td><p>노트북, 자료사전, 두 라이브러리로 만든 그래프. 함수·배열·열의 의미를 설명하고 열 이름이 바뀐 CSV에도 적용한다.</p><p>Python 진단 5문제 중 4개, shape·axis 4문제 중 3개를 목표로 한다. 미달하면 다음 주 전에 보충하고 추가 시간을 기록한다.</p></td>
+<td><ul><li><a href="https://docs.python.org/ko/3/tutorial/" target="_blank" rel="noopener noreferrer">Python</a></li><li><a href="https://numpy.org/doc/stable/user/absolute_beginners.html" target="_blank" rel="noopener noreferrer">NumPy</a></li><li><a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html" target="_blank" rel="noopener noreferrer">pandas</a></li><li><a href="https://seaborn.pydata.org/tutorial.html" target="_blank" rel="noopener noreferrer">Seaborn</a></li></ul></td><td></td></tr></tbody>
+<tbody><tr id="week-2" data-theory-minutes="30" data-noncoding-minutes="30" data-coding-minutes="60" data-self-min-hours="6" data-self-max-hours="8">
+<th scope="row"><p>2주차</p><p>분할·전처리·평가</p></th>
+<td><ul><li>이론 30분: 훈련·검증·테스트, 데이터 누수, 분류 지표.</li><li>비코딩 30분: 혼동행렬·정밀도·재현율 계산 20분 · 필기 연습·해설 10분.</li><li>코딩 60분: 분할 20분 · 평균 대체·표준화 파이프라인 20분 · DummyClassifier 검증 평가 20분.</li></ul><p><strong>공식 항목:</strong> 19 · 23~25. 아래 번호 목록에서 깊이를 확인한다.</p></td>
+<td><p><strong>필수 6~8시간</strong></p><ul><li><strong>지표·ROC 2~2.5시간:</strong> 정확도·정밀도·재현율·F1을 계산한다. 별도의 비상수 확률 예측표를 사용해 임계값·ROC를 코드와 손계산으로 비교한다.</li><li><strong>전처리 2~2.5시간:</strong> 평균·중앙값 대체, one-hot, 정규화·표준화를 적용한다. 시계열의 forward-fill은 시간순·개체별로 하고 미래값을 쓰지 않는다.</li><li><strong>피처 1~1.5시간:</strong> 시계열 sliding window·평균·표준편차와 범주형 피처를 만든다. 윈도 생성 전에 원본·시간 기준으로 분할한다.</li><li><strong>분할·실행 점검 1~1.5시간:</strong> 같은 개체의 여러 행을 함께 묶어 나누고 파이프라인을 새 입력으로 재실행한다.</li></ul></td>
+<td><p>분할 ID, 전처리 파이프라인, 지표·ROC와 피처표. 각 지표의 분모와 임계값의 효과를 설명한다.</p><p>2·4주차는 같은 분류 자료를 쓴다. 테스트 정답·결과는 4주차의 필수 자습까지 끝내고 모델·설정을 고정할 때까지 보류한다. 전처리 fit은 훈련 데이터에만 한다.</p></td>
+<td><ul><li><a href="https://scikit-learn.org/stable/common_pitfalls.html" target="_blank" rel="noopener noreferrer">누수 방지</a></li><li><a href="https://scikit-learn.org/stable/modules/preprocessing.html" target="_blank" rel="noopener noreferrer">전처리</a></li><li><a href="https://scikit-learn.org/stable/modules/model_evaluation.html" target="_blank" rel="noopener noreferrer">평가 지표</a></li></ul></td><td></td></tr></tbody>
+<tbody><tr id="week-3" data-theory-minutes="30" data-noncoding-minutes="20" data-coding-minutes="70" data-self-min-hours="7" data-self-max-hours="9">
+<th scope="row"><p>3주차</p><p>회귀·손실·학습 원리</p></th>
+<td><ul><li>이론 30분: 선형회귀, 과소·과대적합, 손실과 L1/L2 정규화.</li><li>비코딩 20분: MAE·MSE 계산 10분 · 필기 연습·해설 10분.</li><li>코딩 70분: 평균 예측 기준 모델 15분 · 선형회귀 35분 · 검증 비교·오류 분석 20분.</li></ul><p><strong>공식 항목:</strong> 08 · 10 · 20 · 27 · 30. 아래 번호 목록에서 깊이를 확인한다.</p></td>
+<td><p><strong>필수 7~9시간</strong></p><ul><li><strong>손실·경사 2~2.5시간:</strong> MAE·MSE와 작은 함수의 미분·가중치 갱신을 계산하고 NumPy 결과와 맞춘다.</li><li><strong>회귀·정규화 2~2.5시간:</strong> LinearRegression·Ridge·Lasso를 적용하고 검증 성능과 계수를 비교한다.</li><li><strong>적합 상태 1~1.5시간:</strong> 훈련·검증 곡선으로 과소·과대적합을 설명하고 정규화가 필요한 상황을 적는다.</li><li><strong>새 회귀 자료 2~2.5시간:</strong> 독립된 자료에서 분할·기준 모델·검증 선택까지 구현하고 오류를 고친다. 마지막에 선택을 고정한 뒤 테스트를 한 번 평가한다.</li></ul></td>
+<td><p>예측 그래프, 회귀·정규화 비교표, 작은 경사하강 계산. 실제 [1,3], 예측 [1,1]이면 MAE=1, MSE=2.</p><p>L=(w−3)², w=1, 학습률 0.1이면 기울기 −4, 다음 w=1.4. 2·4주차와 별도의 회귀 자료에서 수업과 필수 자습의 설정 선택을 모두 마친 뒤 테스트를 한 번 평가한다.</p></td>
+<td><ul><li><a href="https://scikit-learn.org/stable/modules/linear_model.html" target="_blank" rel="noopener noreferrer">선형 모델</a></li><li><a href="https://inria.github.io/scikit-learn-mooc/" target="_blank" rel="noopener noreferrer">ML 학습</a></li></ul></td><td></td></tr></tbody>
+<tbody><tr id="week-4" data-theory-minutes="20" data-noncoding-minutes="20" data-coding-minutes="80" data-self-min-hours="8" data-self-max-hours="10">
+<th scope="row"><p>4주차</p><p>지도학습·교차검증</p></th>
+<td><ul><li>이론 20분: 로지스틱 회귀·kNN·결정트리의 예측 방식.</li><li>비코딩 20분: 이웃·다수결 계산 10분 · 필기 연습·해설 10분.</li><li>코딩 80분: 세 모델의 같은 조건 검증 비교 50분 · 검증 오분류 분석·튜닝 계획 30분.</li></ul><p><strong>공식 항목:</strong> 04 · 09 · 11~14 · 21~22. 아래 번호 목록에서 깊이를 확인한다.</p></td>
+<td><p><strong>필수 8~10시간</strong></p><ul><li><strong>모델·원리 3~4시간:</strong> 로지스틱 회귀·kNN·트리·SVM을 설명하고 적용한다. NumPy로 작은 kNN의 거리·다수결을 작성해 동률·잘못된 k도 검사한다.</li><li><strong>앙상블 2~2.5시간:</strong> Gradient Boosting·Bagging·Random Forest를 각각 실행하고 단일 트리와 비교한다.</li><li><strong>교차검증·튜닝 2~2.5시간:</strong> 전처리를 포함한 Pipeline에 교차검증·작은 GridSearch를 적용한다. 개체가 반복되면 그룹 분할을 유지한다.</li><li><strong>재검사 1시간:</strong> 수업과 필수 자습의 모든 모델·설정 비교를 마치고 최종 모델을 고정한 뒤 테스트를 한 번 평가한다. 테스트로 설정을 다시 고르지 않는다.</li></ul></td>
+<td><p>모델별 검증표, 교차검증·튜닝 기록, kNN 테스트. 새 질의에 대한 예측과 스케일·k·트리 깊이·SVM 마진의 역할을 설명한다.</p><p>2주차의 테스트는 4주차 필수 자습 전체의 최종 선택 후 한 번 평가한다. 수업에서는 공개하지 않는다. 모델 비교 조건이 다르면 다시 맞춘다.</p></td>
+<td><ul><li><a href="https://scikit-learn.org/stable/getting_started.html" target="_blank" rel="noopener noreferrer">scikit-learn</a></li><li><a href="https://scikit-learn.org/stable/modules/cross_validation.html" target="_blank" rel="noopener noreferrer">교차검증</a></li><li><a href="https://scikit-learn.org/stable/modules/ensemble.html" target="_blank" rel="noopener noreferrer">앙상블</a></li></ul></td><td></td></tr></tbody>
+<tbody><tr id="week-5" data-theory-minutes="30" data-noncoding-minutes="30" data-coding-minutes="60" data-self-min-hours="8" data-self-max-hours="10">
+<th scope="row"><p>5주차</p><p>군집·차원 축소</p></th>
+<td><ul><li>이론 30분: 거리·KMeans·PCA의 목적과 원리.</li><li>비코딩 30분: KMeans 중심 갱신 15분 · 투영 읽기 5분 · 필기 연습·해설 10분.</li><li>코딩 60분: KMeans 35분 · PCA 25분.</li></ul><p><strong>공식 항목:</strong> 15~18 · 24의 PCA. 아래 번호 목록에서 깊이를 확인한다.</p></td>
+<td><p><strong>필수 8~10시간</strong></p><ul><li><strong>KMeans·PCA 2~2.5시간:</strong> 새 데이터에서 스케일·초기값·성분 수를 바꾸고 중심·설명분산을 해석한다.</li><li><strong>시각화 축소 2~2.5시간:</strong> t-SNE와 UMAP을 각각 적용한다. 가까운 점·군집 간 거리의 해석 한계를 기록한다.</li><li><strong>군집 세 방법 2~2.5시간:</strong> DBSCAN·계층적·스펙트럼 군집화를 각각 실행하고 데이터 모양·잡음에 따른 차이를 비교한다.</li><li><strong>선택·재실행 2~2.5시간:</strong> 원리 설명·필기 문항·파라미터 변경·오류 수정을 하고 새 데이터로 방법을 고른다.</li></ul></td>
+<td><p>각 방법의 군집·축소 그림, 선택 근거, KMeans 갱신·PCA 투영 설명. 단순히 예쁜 그림이나 실제 클래스와의 일치를 목표로 삼지 않는다.</p><p>군집 번호는 클래스 이름이 아니다. PCA 누적 설명분산 0.9는 분류 정확도 90%가 아니다.</p></td>
+<td><ul><li><a href="https://scikit-learn.org/stable/modules/clustering.html" target="_blank" rel="noopener noreferrer">군집</a></li><li><a href="https://scikit-learn.org/stable/modules/manifold.html" target="_blank" rel="noopener noreferrer">차원 축소</a></li><li><a href="https://umap-learn.readthedocs.io/en/latest/basic_usage.html" target="_blank" rel="noopener noreferrer">UMAP</a></li></ul></td><td></td></tr></tbody>
+<tbody><tr id="week-6" data-theory-minutes="30" data-noncoding-minutes="20" data-coding-minutes="70" data-self-min-hours="10" data-self-max-hours="14">
+<th scope="row"><p>6주차</p><p>신경망·학습 루프</p></th>
+<td><ul><li>이론 30분: 퍼셉트론·MLP·활성화·경사하강·역전파의 연결.</li><li>비코딩 20분: 텐서 shape와 순전파 추적 10분 · 필기 연습·해설 10분.</li><li>코딩 70분: CPU에서 digits MLP·SGD 실행 40분 · 학습률 변경·검증 손실 비교 30분.</li></ul><p><strong>공식 항목:</strong> 05~07 · 26~31 · 36~42. 아래 번호 목록에서 깊이를 확인한다.</p></td>
+<td><p><strong>필수 10~14시간</strong></p><ul><li><strong>텐서·CPU/GPU 2~3시간:</strong> dtype·device·reshape·인덱싱을 익히고 같은 작은 모델을 CPU와 실제 GPU에서 각각 학습한다.</li><li><strong>원리·활성화 2~3시간:</strong> 작은 퍼셉트론과 연쇄미분을 계산한다. autograd와 비교하고 ReLU·Sigmoid·Tanh를 각각 적용한다.</li><li><strong>MLP·미니배치 2~2.5시간:</strong> MSE·MAE·CrossEntropy 사용 조건을 비교하고, SGD·미니배치 학습·평가 루프를 수정한다.</li><li><strong>옵티마이저·초기화·BN 1.5~2시간:</strong> Adam·AdamW, 가중치 초기화, BatchNorm을 각각 적용하고 모드를 확인한다.</li><li><strong>학습 제어 1.5~2.5시간:</strong> 학습률, Dropout·Early Stopping·Weight Decay를 한 번에 하나씩 바꾸어 검증 곡선을 비교한다.</li><li><strong>오토인코더 1시간:</strong> 작은 모델을 학습해 압축·복원과 재구성 오차를 확인한다.</li></ul></td>
+<td><p>CPU·GPU 실행 기록, 순전파·역전파 계산, 학습·검증 곡선, 오토인코더 복원. zero_grad → 순전파 → 손실 → backward → step을 설명한다.</p><p>출력 (N,10), 유한한 손실, 평가 중 파라미터 불변을 확인한다. CrossEntropyLoss에는 softmax 전 점수와 정수형 정답을 넣는다. 테스트는 7주차의 필수 자습 전체가 끝날 때까지 보류한다.</p></td>
+<td><ul><li><a href="https://docs.pytorch.org/tutorials/beginner/basics/intro.html" target="_blank" rel="noopener noreferrer">PyTorch 기초</a></li><li><a href="https://docs.pytorch.org/tutorials/beginner/basics/optimization_tutorial.html" target="_blank" rel="noopener noreferrer">학습 루프</a></li><li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html" target="_blank" rel="noopener noreferrer">digits</a></li></ul></td><td></td></tr></tbody>
+<tbody><tr id="week-7" data-theory-minutes="20" data-noncoding-minutes="20" data-coding-minutes="80" data-self-min-hours="14" data-self-max-hours="18">
+<th scope="row"><p>7주차</p><p>이미지·비전 모델</p></th>
+<td><ul><li>이론 20분: 합성곱·Max/Average 풀링·이미지 증강.</li><li>비코딩 20분: 필터·중간 shape 계산 10분 · 필기 연습·해설 10분.</li><li>코딩 80분: digits CNN 수정·학습 60분 · 같은 검증 조건의 MLP/CNN 비교·오분류 분석 20분.</li></ul><p><strong>공식 항목:</strong> 25 · 32~33 · 35의 이미지 · 44~49. 아래 번호 목록에서 깊이를 확인한다.</p></td>
+<td><p><strong>필수 14~18시간</strong></p><ul><li><strong>CNN·풀링 2~2.5시간:</strong> Max/Average 풀링을 모두 적용하고 shape를 계산한다. 새 이미지의 분류·오분류를 해석한다.</li><li><strong>인코더·ViT 3~3.5시간:</strong> 실제 ResNet으로 이미지 임베딩을 추출해 head를 학습한다. patch·위치정보·self-attention의 간단한 사전 설명을 먼저 본 뒤 이미지 patching과 ViT 추론을 실행한다. 8주차에 어텐션 계산을 확장한다.</li><li><strong>객체 탐지 3~4시간:</strong> 사전학습 YOLO·SSD·DETR를 각각 실제 이미지에 적용한다. 박스·점수·라벨·중복/누락을 비교한다.</li><li><strong>분할 2~2.5시간:</strong> U-Net을 실제 입력에 적용해 픽셀 마스크를 해석한다. 분류·탐지와의 차이를 적는다.</li><li><strong>증강·비디오 2~2.5시간:</strong> flip·crop·noise를 라벨에 맞게 적용한다. 짧은 공개 비디오에서 프레임을 뽑아 비전 모델에 적용하되 원본 비디오 단위로 분할한다.</li><li><strong>새 입력·재실행 2~3시간:</strong> 모델 입출력·실패 사례를 기록하고 입력·설정 하나를 바꾸어 다시 실행한다. 모든 필수 실험·검증 선택을 마치고 MLP/CNN 설정을 고정한 뒤 digits 테스트를 한 번 평가한다.</li></ul></td>
+<td><p>CNN·ResNet·ViT·세 탐지기·U-Net의 실제 실행 기록과 비교 설명, 이미지·비디오 결과. 한 모델을 실행한 것을 다른 모델을 다룬 것으로 세지 않는다.</p><p>입력 1×8×8, 출력 채널 4, kernel=3, stride=1, padding=0 → 4×6×6. 숫자 6·9의 의미를 바꾸는 증강은 피한다. 증강은 훈련에만 적용한다. 7주차 수업에서는 테스트를 공개하지 않는다.</p></td>
+<td><ul><li><a href="https://docs.pytorch.org/vision/stable/models.html" target="_blank" rel="noopener noreferrer">비전 모델</a></li><li><a href="https://docs.pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html" target="_blank" rel="noopener noreferrer">이미지 분류</a></li><li><a href="https://docs.ultralytics.com/modes/predict/" target="_blank" rel="noopener noreferrer">YOLO</a></li></ul></td><td></td></tr></tbody>
+<tbody><tr id="week-8" data-theory-minutes="30" data-noncoding-minutes="20" data-coding-minutes="70" data-self-min-hours="16" data-self-max-hours="20">
+<th scope="row"><p>8주차</p><p>텍스트·Transformer·미세조정</p></th>
+<td><ul><li>이론 30분: 토큰·임베딩·어텐션·Transformer·언어 모델링.</li><li>비코딩 20분: 가중합·padding·mask 읽기 10분 · 필기 연습·해설 10분.</li><li>코딩 70분: TF-IDF 텍스트 분류 45분 · 사전학습 BERT 계열 인코더의 실제 입출력 확인 25분.</li></ul><p><strong>공식 항목:</strong> 25 · 32 · 34~35 · 43 · 54~58. 아래 번호 목록에서 깊이를 확인한다.</p></td>
+<td><p><strong>필수 16~20시간</strong></p><ul><li><strong>토큰·BERT 3~3.5시간:</strong> 훈련 문장으로 어휘·TF-IDF를 만들고, 토큰화·패딩·mask·BERT 임베딩 분류를 새 문장에 적용한다.</li><li><strong>어텐션·Transformer 3~3.5시간:</strong> 7주차 개관을 바탕으로 작은 Q/K/V와 softmax·가중합을 계산하고, 마스크·위치정보를 코드에서 확인한다. 텍스트와 이미지 구조를 설명한다.</li><li><strong>언어 모델·인코더–디코더 2~3시간:</strong> 다음 토큰 확률·손실을 해석하고, 사전학습 번역 모델의 생성과 길이 설정을 시험한다.</li><li><strong>오픈소스·API 2~2.5시간:</strong> 소형 오픈소스 언어모델 추론과 기관이 허용한 API 호출을 모두 실제 실행한다. 같은 공개·합성 입력으로 출력·비용·한계를 기록한다.</li><li><strong>full·PEFT 4~5시간:</strong> 같은 소형 모델·소량 데이터로 전체 파인튜닝과 LoRA 등 PEFT를 각각 수행한다. 학습 파라미터·가중치 변화·검증 결과를 비교한다.</li><li><strong>새 입력·오류 수정 2~2.5시간:</strong> 문장 길이·mask·라벨 오류를 고치고 재실행한다. 텍스트·이미지 임베딩을 비교해 설명한다.</li></ul></td>
+<td><p>TF-IDF·BERT 분류, 어텐션 계산, 번역·언어모델·API 실행, full/PEFT 학습 기록. 코드 복사에서 끝내지 않고 입력을 바꾸고 결과를 해석한다.</p><p>동일 문장·생성 틀은 함께 분할한다. BERT의 마스킹 예측과 자기회귀 다음 토큰 예측을 구분한다. 생성 내용의 사실성은 별도로 확인한다.</p></td>
+<td><ul><li><a href="https://huggingface.co/learn/llm-course/chapter2/1" target="_blank" rel="noopener noreferrer">토크나이저</a></li><li><a href="https://huggingface.co/docs/transformers/en/tasks/sequence_classification" target="_blank" rel="noopener noreferrer">Transformers</a></li><li><a href="https://huggingface.co/docs/peft/en/quicktour" target="_blank" rel="noopener noreferrer">PEFT</a></li></ul></td><td></td></tr></tbody>
+<tbody><tr id="week-9" data-theory-minutes="20" data-noncoding-minutes="40" data-coding-minutes="60" data-self-min-hours="16" data-self-max-hours="20">
+<th scope="row"><p>9주차</p><p>오디오·멀티모달·생성</p></th>
+<td><ul><li>이론 20분: 파형·샘플링·오디오 임베딩·멀티모달 입력.</li><li>비코딩 40분: 파형 읽기 10분 · 음성 전사/이미지–텍스트 검색 입출력 비교 20분 · 필기 연습·해설 10분.</li><li>코딩 60분: WAV 특징·작은 분류기 40분 · 실제 CLIP 인코더로 이미지–텍스트 검색 20분.</li></ul><p><strong>공식 항목:</strong> 24~25 · 32 · 50~53 · 57의 비전–언어 · 59~60. 아래 번호 목록에서 깊이를 확인한다.</p></td>
+<td><p><strong>필수 16~20시간</strong></p><ul><li><strong>오디오 전처리 2~2.5시간:</strong> 샘플링·RMS·영교차율·구간 특징·패딩을 적용한다. 훈련 오디오 특징에만 작은 KMeans 코드북을 학습해 오디오 단위 ID와 어휘를 만든다. 프레임·연속 특징·전사 텍스트 토큰과 구분한다.</li><li><strong>HuBERT 2~2.5시간:</strong> 실제 오디오 인코더로 특징을 추출하고 pooling·작은 분류 head·출력을 확인한다.</li><li><strong>세 오디오 모델 4~5시간:</strong> Qwen-Audio·Whisper·Voxtral을 각각 허용된 실제 환경에서 실행한다. 같은 짧은 공개 음성에 대한 전사·응답·실패를 비교한다.</li><li><strong>CLIP·비전–언어 2~2.5시간:</strong> 실제 인코더의 유사도 검색과 이미지→텍스트 인코더–디코더 생성을 실행한다. 전사·검색·생성을 구분한다.</li><li><strong>GAN·디퓨전 3~4시간:</strong> 각각 실제 모델로 소형 이미지를 생성한다. seed·잠재값·생성 설정을 바꾸고 결과·한계를 해석한다.</li><li><strong>비전 자기지도 2~2.5시간:</strong> 작은 자기지도 학습 예제를 실제 학습하고 인코더 특징을 추출한다. 정답 없이 쓰는 학습 신호와 결과를 확인한다.</li><li><strong>새 입력·재실행 1시간:</strong> 세 모달리티의 임베딩 shape·분할·원본 ID를 점검하고 오류를 고친다.</li></ul></td>
+<td><p>오디오 특징·HuBERT·Qwen-Audio·Whisper·Voxtral·CLIP·비전–언어 생성·GAN·디퓨전·자기지도 학습의 실행 및 해석 기록.</p><p>오디오를 먼저 원본 클립 단위로 분할한 뒤 구간을 만든다. 16,000Hz 모노 파형 32,000샘플은 2초다. 미리 계산한 특징·그림 읽기만으로 해당 모델 실전을 완료하지 않는다.</p></td>
+<td><ul><li><a href="https://huggingface.co/learn/audio-course/chapter0/introduction" target="_blank" rel="noopener noreferrer">오디오 과정</a></li><li><a href="https://huggingface.co/docs/transformers/en/model_doc/clip" target="_blank" rel="noopener noreferrer">CLIP</a></li><li><a href="https://huggingface.co/docs/diffusers/en/using-diffusers/conditional_image_generation" target="_blank" rel="noopener noreferrer">Diffusers</a></li></ul></td><td></td></tr></tbody>
+<tbody><tr id="week-10" data-theory-minutes="10" data-noncoding-minutes="20" data-coding-minutes="90" data-self-min-hours="10" data-self-max-hours="14">
+<th scope="row"><p>10주차</p><p>새 문제 해결·최종 점검</p></th>
+<td><ul><li>이론 10분: 핵심 개념·오답 원인 정리.</li><li>비코딩 20분: 새 문제의 입력·출력·평가 설계 10분 · 필기 연습·해설 10분.</li><li>코딩 90분: 새 CSV의 분할·전처리·모델·검증 60분 · 오류 수정·모델 고정·최종 테스트·설명 30분. 핵심 완성 코드는 주지 않고 API 요약을 참고한다.</li></ul><p><strong>공식 항목:</strong> 01~60 종합 확인. 아래 번호 목록에서 깊이를 확인한다.</p></td>
+<td><p><strong>필수 10~14시간</strong></p><ul><li><strong>전체 시간 연습 6시간:</strong> 필기 3시간(선택형 80·서술형 10), 코딩 3시간(코드작성형 2)을 별도 세션으로 치른다. 120분 수업 안에 넣지 않는다.</li><li><strong>오답·재구현 2~4시간:</strong> 틀린 원리와 실패한 코드를 고친다. 수정 후에는 새 검증·테스트 조건을 사용한다.</li><li><strong>60항목 확인 2~4시간:</strong> 아래 목록에서 이론 설명·실제 실행 증거·도움을 받은 부분을 점검한다. 취약한 모달리티의 새 입력 과제를 다시 하고 남은 보충 일정을 정한다.</li></ul></td>
+<td><p>열 이름·분포·결측 양상이 달라진 새 CSV의 실행 가능한 코드·결과표, 전범위 모의시험·오답, 60항목 학습 기록.</p><p>매주 필기 10분과 이 수업 활동은 6시간 전체 모의시험을 대신하지 않는다. 한 번의 예제 실행이나 항목 체크만으로 숙달·합격을 보장하지 않는다.</p></td>
+<td><ul><li><a href="https://kitpa.org/koai/2027" target="_blank" rel="noopener noreferrer">대회 안내</a></li><li><a href="https://kitpa.org/koai/syllabus" target="_blank" rel="noopener noreferrer">공식 범위</a></li></ul></td><td></td></tr></tbody>
+<tbody>
+<tr><th scope="row">진도 조정</th><td colspan="5"><p>매주 실제 사용 시간과 막힌 항목을 적는다. 1~2주차 기록으로 이후 자습 시간을 다시 잡는다. 6주차까지 분할·전처리·텐서·학습 루프가 불안정하면 7~9주차의 무거운 과제 전에 보충한다. 시간이 부족하면 공식 항목을 선택으로 돌리지 않고 기간을 늘리거나 자습·지도 시간을 더 확보한다.</p><p>실행 권한·장비가 없거나 원리·코드 적용을 설명하지 못한 항목은 미완료로 표시한다. 10주에 모두 끝내지 못하면 남은 필수 학습을 계속한다.</p></td></tr>
+<tr><th scope="row">범위 밖 선택 심화</th><td colspan="5"><p>아래는 공식 60항목의 기본 요구를 넘는 선택 활동이다. 선택 시간은 필수 100~130시간과 별도다.</p><ul><li>CUDA/C++로 연산 커널을 직접 작성·최적화하기.</li><li>대형 언어모델·디퓨전 모델을 처음부터 대규모 데이터로 사전학습하기.</li><li>Adam의 수렴 증명이나 자동미분 엔진의 내부 전체 구현을 깊게 연구하기.</li><li>모델을 서비스로 배포하고 대규모 운영·분산 학습 시스템을 구축하기.</li></ul><p>SVM·앙상블·t-SNE/UMAP·GPU·실제 인코더·full/PEFT·고급 비전·오디오 모델은 선택 심화가 아니라 위 일정의 필수 범위다.</p></td></tr>
+<tr><th scope="row">공식 범위와 시험</th><td colspan="5"><p><a href="https://kitpa.org/koai/2027" target="_blank" rel="noopener noreferrer">KOAI 2027 공식 안내</a>는 중등부도 1~4과목 전범위를 출제하며, 필기 3시간(선택형 80·서술형 10), 코딩 3시간(코드작성형 2)으로 안내한다. 매주의 10분 필기 연습은 선택형 2문항 3분 · 짧은 서술형 1문항 4분 · 해설 3분으로 구성한다.</p><p><a href="https://kitpa.org/koai/syllabus" target="_blank" rel="noopener noreferrer">공식 실라버스</a>는 현재 IOAI 2026 기준으로 표기되어 있고 2027 안내에서 연결한다. 아래 번호 01~60은 이 학습표에서 찾기 쉽게 붙인 번호이며 공식 문항 번호가 아니다. 과목별 25·18·10·7개 행의 O/X를 그대로 대응했다. 시험 전 최신 공지를 다시 확인한다.</p></td></tr>
+<tr><th scope="row">공식 범위 60항목</th><td colspan="5"><p><strong>주차별로 끝낼 내용과 확인 과제</strong></p><p>각 행의 이론·실전 O는 모두 필수다. 해당 주차의 수업과 필수 자습을 합쳐 수행한다. 모델 이름이 여러 개 적힌 경우 이 계획에서는 각각 짧게 실제 실행해 차이를 확인한다. 참고 링크는 입문 자료이며, 그 링크 하나가 행 전체를 다루거나 실행 환경을 제공한다는 뜻은 아니다.</p></td></tr>
+<tr><th scope="col">번호 · 과목</th><th scope="col">공식 세부 주제</th><th scope="col">이론 요구 · 확인</th><th scope="col">실전 요구 · 확인</th><th scope="col">해당 주차</th><th scope="col">학습 자료</th></tr>
+<tr id="scope-01" data-subject="1" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>01</p><p>1과목</p></th><td>Python 기초: 반복문·함수 등</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>함수·반복문으로 새 CSV 처리 코드를 작성·수정한다.</p></td>
+<td><p><a href="#week-1">1주</a></p><p>수업·필수 자습</p></td><td></td></tr>
+<tr id="scope-02" data-subject="1" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>02</p><p>1과목</p></th><td>데이터 처리용 NumPy·pandas</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>인덱싱·집계·병합·결측 탐지를 새 표에 적용하고 shape·dtype을 확인한다.</p></td>
+<td><p><a href="#week-1">1주</a></p><p>수업·필수 자습</p></td><td></td></tr>
+<tr id="scope-03" data-subject="1" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>03</p><p>1과목</p></th><td>시각화용 Matplotlib·Seaborn</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>두 라이브러리로 분포·범주 비교 그래프를 각각 만들고 축·통계를 해석한다.</p></td>
+<td><p><a href="#week-1">1주</a></p><p>Matplotlib은 수업·자습, Seaborn은 필수 자습</p></td><td></td></tr>
+<tr id="scope-04" data-subject="1" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>04</p><p>1과목</p></th><td>머신러닝용 scikit-learn</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>fit/predict·Pipeline을 새 데이터에 적용하고 평가·예측 개수를 확인한다.</p></td>
+<td><p><a href="#week-2">2주</a> · <a href="#week-3">3주</a> · <a href="#week-4">4주</a> · <a href="#week-5">5주</a></p><p>수업·필수 자습</p></td><td></td></tr>
+<tr id="scope-05" data-subject="1" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>05</p><p>1과목</p></th><td>PyTorch 기초</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>모델·Dataset/DataLoader·학습·평가 코드를 수정하고 전체 재실행한다.</p></td>
+<td><p><a href="#week-6">6주</a></p><p>수업·필수 자습</p></td><td></td></tr>
+<tr id="scope-06" data-subject="1" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>06</p><p>1과목</p></th><td>텐서 조작</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>인덱싱·reshape·transpose·브로드캐스팅·dtype·device를 적용하고 shape를 검사한다.</p></td>
+<td><p><a href="#week-1">1주</a> · <a href="#week-6">6주</a></p><p>수업·필수 자습</p></td><td></td></tr>
+<tr id="scope-07" data-subject="1" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>07</p><p>1과목</p></th><td>CPU/GPU에서의 모델 학습</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>같은 작은 모델을 CPU와 실제 GPU에서 각각 학습한다. 데이터·모델 device와 가중치 변화를 기록한다.</p></td>
+<td><p><a href="#week-6">6주</a></p><p>CPU는 수업·자습, GPU는 필수 자습</p></td><td></td></tr>
+<tr id="scope-08" data-subject="1" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>08</p><p>1과목</p></th><td>선형회귀</td>
+<td><p><strong>이론 O</strong></p><p>입력·계수·예측·제곱오차의 관계를 식과 작은 예로 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>새 연속형 자료에서 선형회귀와 평균 기준 모델을 검증 지표로 비교한다.</p></td>
+<td><p><a href="#week-3">3주</a></p><p>수업·필수 자습</p></td><td></td></tr>
+<tr id="scope-09" data-subject="1" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>09</p><p>1과목</p></th><td>로지스틱 회귀</td>
+<td><p><strong>이론 O</strong></p><p>선형 점수·Sigmoid 확률·분류 임계값의 관계를 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>로지스틱 회귀를 적용하고 확률·임계값 변화에 따른 예측을 해석한다.</p></td>
+<td><p><a href="#week-4">4주</a></p><p>수업·필수 자습</p></td><td></td></tr>
+<tr id="scope-10" data-subject="1" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>10</p><p>1과목</p></th><td>L1·L2 정규화</td>
+<td><p><strong>이론 O</strong></p><p>손실에 더하는 패널티와 계수·과적합에 미치는 차이를 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>Lasso·Ridge의 세기를 바꾸어 계수·검증 오차를 비교한다.</p></td>
+<td><p><a href="#week-3">3주</a></p><p>개념은 수업, Ridge/Lasso는 필수 자습</p></td><td></td></tr>
+<tr id="scope-11" data-subject="1" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>11</p><p>1과목</p></th><td>K-최근접 이웃(kNN)</td>
+<td><p><strong>이론 O</strong></p><p>작은 점 집합에서 거리·이웃·다수결을 계산하고 k·스케일의 영향을 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>라이브러리 kNN과 작은 NumPy kNN을 적용한다. 동률·새 질의·잘못된 k를 검사한다.</p></td>
+<td><p><a href="#week-4">4주</a></p><p>예제는 수업·자습, NumPy 구현은 필수 자습</p></td><td></td></tr>
+<tr id="scope-12" data-subject="1" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>12</p><p>1과목</p></th><td>의사결정 트리</td>
+<td><p><strong>이론 O</strong></p><p>분할 기준·순도·깊이에 따른 예측과 과적합을 작은 트리로 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>깊이를 바꾸어 트리를 학습하고 새 입력의 예측 경로·검증 결과를 해석한다.</p></td>
+<td><p><a href="#week-4">4주</a></p><p>수업·필수 자습</p></td><td></td></tr>
+<tr id="scope-13" data-subject="1" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>13</p><p>1과목</p></th><td>앙상블: Gradient Boosting·Bagging·Random Forest</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>세 방법을 각각 새 입력에 적용하고 단일 트리 대비 결과·설정의 차이를 기록한다.</p></td>
+<td><p><a href="#week-4">4주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-14" data-subject="1" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>14</p><p>1과목</p></th><td>서포트 벡터 머신(SVM)</td>
+<td><p><strong>이론 O</strong></p><p>결정경계·마진·서포트 벡터와 커널의 역할을 그림으로 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>스케일링을 포함한 SVM을 적용하고 C·커널 변화와 결과를 비교한다.</p></td>
+<td><p><a href="#week-4">4주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-15" data-subject="1" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>15</p><p>1과목</p></th><td>K-평균 군집화</td>
+<td><p><strong>이론 O</strong></p><p>거리 기반 할당·평균 중심 갱신을 한 회 계산하고 초기값의 영향을 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>KMeans를 새 자료에 적용하고 중심·군집·초기값의 차이를 해석한다.</p></td>
+<td><p><a href="#week-5">5주</a></p><p>수업·필수 자습</p></td><td></td></tr>
+<tr id="scope-16" data-subject="1" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>16</p><p>1과목</p></th><td>주성분 분석(PCA)</td>
+<td><p><strong>이론 O</strong></p><p>중심화·분산 최대 방향·투영·설명분산과 정보 손실을 그림으로 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>PCA로 차원을 줄이고 성분 수·설명분산·전처리 효과를 해석한다.</p></td>
+<td><p><a href="#week-5">5주</a></p><p>수업·필수 자습</p></td><td></td></tr>
+<tr id="scope-17" data-subject="1" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>17</p><p>1과목</p></th><td>t-SNE·UMAP</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>두 방법을 각각 실행하고 파라미터·seed를 바꾼 시각화와 해석 한계를 기록한다.</p></td>
+<td><p><a href="#week-5">5주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-18" data-subject="1" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>18</p><p>1과목</p></th><td>DBSCAN·계층적·스펙트럼 군집화</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>세 방법을 각각 적용해 잡음·군집 모양·설정 변화에 따른 결과를 비교한다.</p></td>
+<td><p><a href="#week-5">5주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-19" data-subject="1" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>19</p><p>1과목</p></th><td>모델 평가: 정확도·정밀도·재현율·F1 등</td>
+<td><p><strong>이론 O</strong></p><p>혼동행렬에서 네 지표를 계산하고 불균형 자료에서의 차이를 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>각 지표를 코드로 구해 손계산과 대조하고 문제 목적에 맞는 지표를 고른다.</p></td>
+<td><p><a href="#week-2">2주</a></p><p>기본 지표는 수업·자습, F1은 필수 자습</p></td><td></td></tr>
+<tr id="scope-20" data-subject="1" data-official-theory="1" data-official-practical="0">
+<th scope="row"><p>20</p><p>1과목</p></th><td>과소적합·과대적합</td>
+<td><p><strong>이론 O</strong></p><p>훈련·검증 곡선으로 두 상태를 구별하고 원인·대응을 설명한다.</p></td>
+<td><p><strong>실전 X</strong></p><p>공식 별도 실전 요구 없음. 이론은 필수.</p></td>
+<td><p><a href="#week-3">3주</a></p><p>개념은 수업, 곡선 확인은 필수 자습</p></td><td></td></tr>
+<tr id="scope-21" data-subject="1" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>21</p><p>1과목</p></th><td>하이퍼파라미터 튜닝</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>작은 탐색 범위로 검증·GridSearch를 실행한다. 테스트를 보지 않고 설정을 고른다.</p></td>
+<td><p><a href="#week-4">4주</a></p><p>실행은 필수 자습</p></td><td></td></tr>
+<tr id="scope-22" data-subject="1" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>22</p><p>1과목</p></th><td>교차검증</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>Pipeline과 교차검증을 적용한다. 그룹·시간순 분할 조건을 지키고 fold별 점수를 해석한다.</p></td>
+<td><p><a href="#week-4">4주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-23" data-subject="1" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>23</p><p>1과목</p></th><td>혼동행렬·ROC 곡선</td>
+<td><p><strong>이론 O</strong></p><p>TP/FP/FN/TN과 TPR/FPR, 임계값 변화의 의미를 계산·설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>예측표로 혼동행렬을 만들고 별도의 비상수 확률표로 ROC를 그린다. 임계값 변화와 오류 종류를 해석한다.</p></td>
+<td><p><a href="#week-2">2주</a></p><p>혼동행렬은 수업·자습, ROC는 필수 자습</p></td><td></td></tr>
+<tr id="scope-24" data-subject="1" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>24</p><p>1과목</p></th><td>피처 엔지니어링</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>sliding window·평균/표준편차·one-hot·pooling·PCA·신경망 임베딩을 실제 적용해 원시 입력을 피처로 바꾼다.</p></td>
+<td><p><a href="#week-2">2주</a> · <a href="#week-5">5주</a> · <a href="#week-7">7주</a> · <a href="#week-8">8주</a> · <a href="#week-9">9주</a></p><p>기초 피처는 수업, 전체 방법 적용은 필수 자습</p></td><td></td></tr>
+<tr id="scope-25" data-subject="1" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>25</p><p>1과목</p></th><td>데이터 전처리</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>평균/중앙값/forward-fill, 정규화/표준화, 분할, 패딩, flip/crop/noise, 텍스트 토큰화/어휘·훈련 특징 코드북의 오디오 단위 ID/어휘·이미지 patching을 각각 적용한다. 오디오 ID와 단순 프레임·전사 텍스트 토큰을 구별한다.</p></td>
+<td><p><a href="#week-2">2주</a> · <a href="#week-7">7주</a> · <a href="#week-8">8주</a> · <a href="#week-9">9주</a></p><p>분할·평균 대체·표준화는 수업·자습, 나머지는 필수 자습</p></td><td></td></tr>
+<tr id="scope-26" data-subject="2" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>26</p><p>2과목</p></th><td>퍼셉트론 기초</td>
+<td><p><strong>이론 O</strong></p><p>가중합·편향·활성화와 간단한 결정경계를 계산·설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>작은 퍼셉트론을 학습하고 새 점의 예측·가중치 변화를 확인한다.</p></td>
+<td><p><a href="#week-6">6주</a></p><p>개념은 수업, 단층 모델 학습은 필수 자습</p></td><td></td></tr>
+<tr id="scope-27" data-subject="2" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>27</p><p>2과목</p></th><td>경사하강법</td>
+<td><p><strong>이론 O</strong></p><p>작은 함수에서 기울기·학습률·갱신을 계산하고 손실 변화의 방향을 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>NumPy의 작은 갱신과 PyTorch 학습을 실행하고 학습률의 효과를 비교한다.</p></td>
+<td><p><a href="#week-3">3주</a> · <a href="#week-6">6주</a></p><p>개념은 6주 수업, 계산·갱신은 3·6주 필수 자습</p></td><td></td></tr>
+<tr id="scope-28" data-subject="2" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>28</p><p>2과목</p></th><td>역전파</td>
+<td><p><strong>이론 O</strong></p><p>작은 연쇄함수의 연쇄미분과 계산 그래프를 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>autograd/backward를 적용해 손계산과 맞추고 기울기 누적·갱신 순서 오류를 고친다.</p></td>
+<td><p><a href="#week-6">6주</a></p><p>개념은 수업, 연쇄미분·autograd 확인은 필수 자습</p></td><td></td></tr>
+<tr id="scope-29" data-subject="2" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>29</p><p>2과목</p></th><td>활성화: ReLU·Sigmoid·Tanh</td>
+<td><p><strong>이론 O</strong></p><p>세 함수의 출력 범위·기울기·포화와 쓰임을 그림·값으로 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>세 함수를 각각 적용하고 출력·기울기·학습 결과 차이를 확인한다.</p></td>
+<td><p><a href="#week-6">6주</a></p><p>ReLU는 수업·자습, 세 함수 비교는 필수 자습</p></td><td></td></tr>
+<tr id="scope-30" data-subject="2" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>30</p><p>2과목</p></th><td>손실: MSE·MAE·Cross Entropy 등</td>
+<td><p><strong>이론 O</strong></p><p>각 손실의 계산과 회귀·분류에서의 선택, 입력·정답 조건을 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>세 손실을 각각 코드에 적용하고 logits·정답 dtype/shape·손실값을 점검한다.</p></td>
+<td><p><a href="#week-2">2주</a> · <a href="#week-3">3주</a> · <a href="#week-6">6주</a></p><p>기본 손실은 수업, 전체 조건 비교는 필수 자습</p></td><td></td></tr>
+<tr id="scope-31" data-subject="2" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>31</p><p>2과목</p></th><td>다층 퍼셉트론(MLP)</td>
+<td><p><strong>이론 O</strong></p><p>층별 선형변환·활성화·shape와 선형 모델과의 차이를 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>작은 MLP를 학습하고 층·폭을 수정해 검증 곡선·새 입력 예측을 해석한다.</p></td>
+<td><p><a href="#week-6">6주</a></p><p>수업·필수 자습</p></td><td></td></tr>
+<tr id="scope-32" data-subject="2" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>32</p><p>2과목</p></th><td>데이터 임베딩: 텍스트·이미지·오디오</td>
+<td><p><strong>이론 O</strong></p><p>세 모달리티의 원시 입력→벡터, 거리·유사도·학습된 표현의 의미를 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>실제 텍스트·이미지·오디오 인코더를 각각 실행하고 임베딩 shape·pooling·후속 분류/검색을 확인한다.</p></td>
+<td><p><a href="#week-7">7주</a> · <a href="#week-8">8주</a> · <a href="#week-9">9주</a></p><p>텍스트·오디오 개념은 수업, 세 모달리티 실행은 필수 자습</p></td><td></td></tr>
+<tr id="scope-33" data-subject="2" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>33</p><p>2과목</p></th><td>풀링: Max·Average</td>
+<td><p><strong>이론 O</strong></p><p>두 연산을 손계산하고 축·shape·정보 손실을 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>Max/Average 풀링을 각각 적용한다. 가변 길이 입력은 mask를 고려해 평균을 계산한다.</p></td>
+<td><p><a href="#week-7">7주</a> · <a href="#week-9">9주</a></p><p>개념은 수업, 두 풀링의 비교 실습은 필수 자습</p></td><td></td></tr>
+<tr id="scope-34" data-subject="2" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>34</p><p>2과목</p></th><td>어텐션 메커니즘</td>
+<td><p><strong>이론 O</strong></p><p>작은 Q/K/V·점수·softmax·가중합과 mask의 역할을 계산·설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>작은 어텐션을 실행하고 길이·mask를 바꾼 출력·가중치·shape를 해석한다.</p></td>
+<td><p><a href="#week-8">8주</a></p><p>개념은 수업, Q/K/V 실습은 필수 자습</p></td><td></td></tr>
+<tr id="scope-35" data-subject="2" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>35</p><p>2과목</p></th><td>Transformer: 이론은 텍스트·이미지</td>
+<td><p><strong>이론 O</strong></p><p>텍스트·이미지의 토큰/patch·위치정보·self-attention·층 구조를 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>텍스트 Transformer와 비전 Transformer를 각각 실제 실행하고 토큰·patch·mask·출력을 확인한다.</p></td>
+<td><p><a href="#week-7">7주</a> · <a href="#week-8">8주</a></p><p>텍스트 기초는 수업, 텍스트·비전 비교 실행은 필수 자습</p></td><td></td></tr>
+<tr id="scope-36" data-subject="2" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>36</p><p>2과목</p></th><td>오토인코더</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>소형 오토인코더를 실제 학습해 압축 벡터·복원과 재구성 오차를 해석한다.</p></td>
+<td><p><a href="#week-6">6주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-37" data-subject="2" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>37</p><p>2과목</p></th><td>SGD·미니배치 경사하강법</td>
+<td><p><strong>이론 O</strong></p><p>전체배치·미니배치·샘플 기반 갱신, batch 크기의 영향을 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>DataLoader·SGD로 학습하고 batch 크기·shuffle·학습/평가 루프를 점검한다.</p></td>
+<td><p><a href="#week-6">6주</a></p><p>SGD는 수업·자습, 미니배치 비교는 필수 자습</p></td><td></td></tr>
+<tr id="scope-38" data-subject="2" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>38</p><p>2과목</p></th><td>모멘텀 기반 기법: Adam·AdamW</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>Adam과 AdamW를 각각 적용하고 학습률·weight decay·학습 곡선을 비교한다.</p></td>
+<td><p><a href="#week-6">6주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-39" data-subject="2" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>39</p><p>2과목</p></th><td>수렴성과 학습률</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>학습률이 다른 실험에서 손실·발산·진동·느린 수렴을 확인하고 검증으로 설정을 고른다.</p></td>
+<td><p><a href="#week-6">6주</a></p><p>수업·필수 자습</p></td><td></td></tr>
+<tr id="scope-40" data-subject="2" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>40</p><p>2과목</p></th><td>정규화: Dropout·Early Stopping·Weight Decay</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>세 방법을 각각 적용한다. train/eval, 검증 기준 정지·최적 가중치 복원, 패널티 설정을 확인한다.</p></td>
+<td><p><a href="#week-6">6주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-41" data-subject="2" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>41</p><p>2과목</p></th><td>가중치 초기화</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>초기화 API를 적용해 가중치·출력·초기 손실과 재현성을 확인한다.</p></td>
+<td><p><a href="#week-6">6주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-42" data-subject="2" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>42</p><p>2과목</p></th><td>배치 정규화</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>BatchNorm을 적용하고 train/eval 및 이동통계에 따른 출력 차이를 확인한다.</p></td>
+<td><p><a href="#week-6">6주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-43" data-subject="2" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>43</p><p>2과목</p></th><td>모델 파인튜닝: full·PEFT</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>전체 파인튜닝과 LoRA 등 PEFT를 각각 실제 학습한다. 학습 파라미터 수·가중치 변화·검증 결과를 비교한다.</p></td>
+<td><p><a href="#week-8">8주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-44" data-subject="3" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>44</p><p>3과목</p></th><td>합성곱 레이어</td>
+<td><p><strong>이론 O</strong></p><p>필터·stride·padding·채널·출력 shape를 작은 예로 계산·설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>합성곱을 적용하고 kernel/채널을 바꾸어 중간 shape·특징·결과를 확인한다.</p></td>
+<td><p><a href="#week-7">7주</a></p><p>수업·필수 자습</p></td><td></td></tr>
+<tr id="scope-45" data-subject="3" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>45</p><p>3과목</p></th><td>이미지 분류</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>CNN을 학습하고 새 이미지의 클래스 점수·예측·오분류를 해석한다.</p></td>
+<td><p><a href="#week-7">7주</a></p><p>수업·필수 자습</p></td><td></td></tr>
+<tr id="scope-46" data-subject="3" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>46</p><p>3과목</p></th><td>객체 탐지: YOLO·SSD·DETR</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>세 탐지기를 각각 실제 실행한다. 박스 좌표·점수·라벨·누락·중복과 입력 전처리를 비교한다.</p></td>
+<td><p><a href="#week-7">7주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-47" data-subject="3" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>47</p><p>3과목</p></th><td>이미지 분할: U-Net</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>U-Net으로 실제 이미지의 픽셀 마스크를 얻어 시각화하고 입력·출력 크기와 오류를 해석한다.</p></td>
+<td><p><a href="#week-7">7주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-48" data-subject="3" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>48</p><p>3과목</p></th><td>사전학습 비전 인코더: ResNet 등</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>실제 ResNet으로 새 이미지 특징을 추출한다. 전처리·버전·shape를 기록하고 작은 head를 학습한다.</p></td>
+<td><p><a href="#week-7">7주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-49" data-subject="3" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>49</p><p>3과목</p></th><td>이미지 증강</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>flip·crop·noise를 라벨에 맞게 적용하고 전후 이미지를 비교한다. 훈련에만 적용하고 의미를 바꾸는 증강을 구별한다.</p></td>
+<td><p><a href="#week-7">7주</a></p><p>개념은 수업, 실제 증강은 필수 자습</p></td><td></td></tr>
+<tr id="scope-50" data-subject="3" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>50</p><p>3과목</p></th><td>GAN을 이용한 이미지 생성</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>실제 GAN으로 이미지를 생성하고 잠재값·seed를 바꾸어 결과를 비교한다. 대규모 처음부터 학습은 요구하지 않는다.</p></td>
+<td><p><a href="#week-9">9주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-51" data-subject="3" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>51</p><p>3과목</p></th><td>비전 자기지도학습</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>작은 자기지도 학습 코드를 실제 학습하고 특징을 추출한다. 학습 신호·증강·후속 과제 결과를 확인한다.</p></td>
+<td><p><a href="#week-9">9주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-52" data-subject="3" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>52</p><p>3과목</p></th><td>비전–텍스트 인코더: CLIP 등</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>실제 이미지·텍스트 인코더로 임베딩·유사도·검색 순위를 만들고 새 입력의 실패 사례를 설명한다.</p></td>
+<td><p><a href="#week-9">9주</a></p><p>수업·필수 자습</p></td><td></td></tr>
+<tr id="scope-53" data-subject="3" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>53</p><p>3과목</p></th><td>디퓨전 모델</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>실제 모델로 이미지를 생성한다. seed·샘플링 단계 등 설정을 바꾸어 출력·시간·한계를 해석한다.</p></td>
+<td><p><a href="#week-9">9주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-54" data-subject="4" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>54</p><p>4과목</p></th><td>텍스트 분류</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>TF-IDF와 사전학습 인코더 분류를 새 문장에 적용하고 오분류·길이 효과를 해석한다.</p></td>
+<td><p><a href="#week-8">8주</a></p><p>수업·필수 자습</p></td><td></td></tr>
+<tr id="scope-55" data-subject="4" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>55</p><p>4과목</p></th><td>사전학습 텍스트 인코더: BERT 등</td>
+<td><p><strong>이론 O</strong></p><p>문맥적 임베딩·양방향 인코딩·마스킹 학습의 목적을 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>실제 BERT 계열 모델로 토큰화·mask·임베딩을 얻고 분류 등 후속 과제에 적용한다.</p></td>
+<td><p><a href="#week-8">8주</a></p><p>수업·필수 자습</p></td><td></td></tr>
+<tr id="scope-56" data-subject="4" data-official-theory="1" data-official-practical="1">
+<th scope="row"><p>56</p><p>4과목</p></th><td>언어 모델링</td>
+<td><p><strong>이론 O</strong></p><p>조건부 다음 토큰 확률·손실과 마스킹 기반 학습의 차이를 작은 예로 설명한다.</p></td>
+<td><p><strong>실전 O</strong></p><p>소형 언어모델로 토큰 확률·손실·생성을 확인하고 문맥·생성 설정을 바꾼 결과를 해석한다.</p></td>
+<td><p><a href="#week-8">8주</a></p><p>개념은 수업, 실제 모델 적용은 필수 자습</p></td><td></td></tr>
+<tr id="scope-57" data-subject="4" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>57</p><p>4과목</p></th><td>인코더–디코더: 기계번역·비전–언어 등</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>사전학습 번역 및 이미지→텍스트 모델을 각각 실제 실행해 입력·인코더 표현·출력 시퀀스·생성 설정을 확인한다.</p></td>
+<td><p><a href="#week-8">8주</a> · <a href="#week-9">9주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-58" data-subject="4" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>58</p><p>4과목</p></th><td>사전학습 언어모델: 오픈소스·API</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>소형 오픈소스 모델과 허용된 API를 모두 실제 사용한다. 공개·합성 입력으로 출력·제한·비용을 비교한다.</p></td>
+<td><p><a href="#week-8">8주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-59" data-subject="4" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>59</p><p>4과목</p></th><td>사전학습 오디오 인코더: HuBERT</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>실제 HuBERT로 파형에서 특징을 추출하고 길이·mask·pooling·후속 분류 결과를 해석한다.</p></td>
+<td><p><a href="#week-9">9주</a></p><p>필수 자습</p></td><td></td></tr>
+<tr id="scope-60" data-subject="4" data-official-theory="0" data-official-practical="1">
+<th scope="row"><p>60</p><p>4과목</p></th><td>오디오 모델: Qwen-Audio·Whisper·Voxtral</td>
+<td><p><strong>이론 X</strong></p><p>공식 별도 이론 요구 없음.</p></td>
+<td><p><strong>실전 O</strong></p><p>세 모델을 각각 허용된 실제 환경에서 실행하고 같은 짧은 음성의 전사·응답·실패·입출력을 비교한다.</p></td>
+<td><p><a href="#week-9">9주</a></p><p>필수 자습</p></td><td></td></tr>
+</tbody></table></div></main></body></html>

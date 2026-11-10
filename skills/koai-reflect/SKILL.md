@@ -19,3 +19,7 @@ Read [the relevant research evidence](../references/evidence.md) and [evaluation
 ## Result
 
 Return a reviewable improvement proposal, provenance, bounded evaluation results or an explicit “not evaluated,” and the decision needed for activation. Never claim the underlying model learned new weights.
+
+## Concrete decision contract
+
+Use the [criterion catalog](../references/criteria.json) to identify the exact failure mechanism and [effect-testing contract](../references/quality-specification.md#expected-effects-counterevidence-and-open-decisions). A better schema, caught fault or model review does not establish learner benefit. Compare with an equal-resource baseline, known-good/error controls, untouched related tasks, regressions and no-change outcomes. Treat priority rules, diagnostic cutoffs and calibration tolerances as explicit decisions; do not invent them from a generic age label.

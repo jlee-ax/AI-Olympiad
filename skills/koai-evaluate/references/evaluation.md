@@ -1,5 +1,7 @@
 # Evaluation protocol
 
+For operational definitions, exact objects and pass/fail/uncertainty handling, use the [quality specification](../../references/quality-specification.md), [criterion catalog](../../references/criteria.json), and [unit specifications](unit-specifications.json). Ten weeks and 120-minute classes are confirmed; keep diagnostic/calibration thresholds distinct from those fixed inputs.
+
 This is a proposed check contract and comparison plan for future week 1–2 material production. It contains no lesson content, exercises, solutions, actual review scores, or learner results. Pass thresholds, experimental budgets, sample sizes, and stagnation counts remain unagreed. The [tool contract](../../../tools/README.md) defines the serialized state; [workflow decisions](../../references/workflow.md) define the pending scope.
 
 ## Four levels of evidence

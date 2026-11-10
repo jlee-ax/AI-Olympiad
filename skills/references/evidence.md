@@ -5,7 +5,7 @@ Workflow scope and pending decisions are recorded in [the workflow reference](wo
 No local experiment has established improved agent performance, better teaching, or an effective recurring cadence.
 Repository validation checks structure and decision records; it does not validate research claims or educational quality.
 Real lesson production and recurring execution remain outside the current implementation scope.
-Official KOAI 2027 scope and learner prerequisites require separate confirmation.
+The user confirmed middle-school basic-coding entry, ten weeks and 120-minute classes. Recheck official-source versions; actual learner diagnosis remains unobserved.
 
 ## How to read the evidence
 
@@ -164,3 +164,7 @@ One month later, unannounced-test scores are 61% versus 38%; an accessible [pape
 The requested 30-minute interval is a preference for future investigation, not a demonstrated optimum or an active schedule.
 Quality thresholds, stagnation counts, retention periods and promotion rules remain unset until justified for local use.
 A decision record is a recommendation about work; it does not execute work or grant authority.
+
+## Concrete local implementation
+
+The [quality specification](quality-specification.md) and [criterion catalog](criteria.json) operationalize selected checks, with [direct-reading notes](source-readings.json) preserving actual read extents. Fault tests exercise baseline substitution, reference calculations, missing evidence, stale contexts, selective impact, duplicate suppression and priority. These tests do not establish pedagogical efficacy or the quantitative benefits of the cited studies.
