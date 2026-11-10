@@ -1,28 +1,33 @@
-# 에이전트 스킬 계약 (논의용 초안)
+# Agent Skill Contracts (Draft for Discussion)
 
-이 파일은 재사용 가능한 작업 절차의 제안이다. 플랫폼에 자동 설치되는 스킬이 아니며, 도구 호출 권한이나 반복 실행 권한을 부여하지 않는다.
+This file proposes reusable work procedures. These are not automatically installed platform skills, and they do not grant permission to invoke tools or run repeated work.
 
-## 1. 근거 조사와 대조
-- 입력: 질문, 적용 맥락, 기존 자료. 출력: 서지 정보, 확인한 원문 링크, 해당 주장, 근거가 지원하지 않는 부분, 불확실성.
-- 절차: 원문 또는 신뢰할 수 있는 1차 출처를 우선 확인하고, 연구 설계와 대상이 우리 수업과 다른 점을 기록한다. 공식 대회 공지는 논문과 별도 관리한다.
-- 완료: 핵심 주장마다 출처 및 한계를 연결하고, 확인하지 못한 사항을 미확인으로 남긴다.
+## 1. Research and Cross-Check Evidence
 
-## 2. 학습 스킬 그래프 구성
-- 입력: 확인된 범위, 대상, 선행 지식, 근거. 출력: 목표·스킬·선수 관계·평가 증거의 초안.
-- 절차: 스킬을 관찰 가능한 행동으로 나누고 선수 관계와 근거를 명시한다. 관련성은 인과성이나 선수 조건을 자동으로 의미하지 않는다. 의존성 순환은 검토한다.
-- 완료: 각 스킬의 목표, 선수 조건, 평가 증거 및 미결정이 식별된다. 사용자와 논의하기 전 확정하지 않는다.
+- **Inputs:** Question, application context, and existing materials. **Outputs:** Bibliographic information, verified original-source links, the claims they support, what they do not support, and uncertainties.
+- **Procedure:** Prefer the original work or a reliable primary source. Record differences between the study design or population and this course. Keep official competition announcements separate from research papers.
+- **Completion:** Link each key claim to its sources and limitations; mark anything that could not be verified as unverified.
 
-## 3. 범위 제한 검토 및 변경 영향 분석
-- 입력: 기준 버전, 변경된 항목, 의존 그래프, 평가 기준. 출력: 영향 범위, 수행·실패·미실행 검사, 변경 이유, 잔여 위험.
-- 절차: 변경된 노드부터 의존 관계의 역방향을 따라 영향을 받는 노드를 살피되 누락된 관계 가능성을 명시한다. 검사를 생략한 이유를 기록한다.
-- 완료: 수행한 검사만 통과로 표시하고 오류 및 미검증 영역을 남긴다.
+## 2. Build the Learning Skill Graph
 
-## 4. 반복 검토와 중단 판단
-- 입력: 직전 기록, 현재 결과, 합의된 평가·중단 기준. 출력: 판단(continue/pause/stop/blocked), 이유, 차기 제안 및 권한 상태.
-- 절차: 이전 결정과 비교하고 변화의 원인과 근거를 적는다. 정체·상충·안전·권한 문제를 식별한다. 숫자 기준이 합의되지 않았다면 임의로 판정하지 않는다.
-- 완료: 이력 보존, 다음 행동과 사용자 결정 필요 사항이 명확하다. `continue`는 자동 실행을 허가하지 않는다.
+- **Inputs:** Confirmed scope, learners, prior knowledge, and evidence. **Outputs:** A draft of learning objectives, skills, prerequisite relationships, and assessment evidence.
+- **Procedure:** Break skills into observable behaviors and state prerequisites and supporting evidence. Relatedness does not automatically imply causation or a prerequisite. Review dependency cycles.
+- **Completion:** Identify the objective, prerequisites, assessment evidence, and open questions for each skill. Do not finalize them before discussion with the user.
 
-## 5. 인계 및 기록
-- 입력: 사용자 요청, 수행과 검증 결과, 산출물, 근거, 결정. 출력: 사실과 제안이 구별된 구조화 기록.
-- 절차: 민감정보와 비밀은 기재하지 않고 참조 및 버전을 남긴다. 기록 정리와 삭제는 구별한다.
-- 완료: 다른 에이전트가 현재 상태, 미결정, 다음 단계 및 권한 범위를 이해할 수 있다.
+## 3. Scoped Review and Change Impact Analysis
+
+- **Inputs:** Baseline version, changed items, dependency graph, and assessment criteria. **Outputs:** Impact scope, checks run, failed, or not run, reasons for changes, and residual risks.
+- **Procedure:** Starting with changed nodes, follow dependency relationships in reverse to identify affected nodes, while acknowledging that relationships may be missing. Record why any checks were omitted.
+- **Completion:** Mark only checks actually performed as passed, and retain errors and unverified areas.
+
+## 4. Iterative Review and Stop Decision
+
+- **Inputs:** Previous record, current results, and agreed assessment and stopping criteria. **Outputs:** A decision (`continue`, `pause`, `stop`, or `blocked`), its reason, the proposed next step, and authorization status.
+- **Procedure:** Compare with previous decisions and record the reasons and evidence for changes. Identify stagnation, conflicts, safety concerns, and authorization issues. Do not invent a numerical judgment if thresholds have not been agreed.
+- **Completion:** Preserve the history and make the next action and any decision needed from the user clear. `continue` does not authorize automatic execution.
+
+## 5. Handoff and Records
+
+- **Inputs:** User requests, work and verification results, artifacts, evidence, and decisions. **Output:** A structured record distinguishing facts from proposals.
+- **Procedure:** Do not record sensitive information or secrets; retain references and versions. Distinguish organizing records from deleting them.
+- **Completion:** Another agent can understand the current state, open questions, next steps, and scope of authorization.
