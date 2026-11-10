@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "scope": {
+    "task_kind": "design",
+    "lesson_production_allowed": false,
+    "recurring_allowed": false
+  },
+  "agreement": {
+    "operator_agreed": false,
+    "operator_id": null,
+    "criteria_agreed": false,
+    "criteria_fingerprint": null,
+    "budget_fingerprint": null
+  },
+  "context": {
+    "inputs": [],
+    "skills": [],
+    "rubric": null,
+    "evaluator": null,
+    "references": [],
+    "artifact": null,
+    "author": null,
+    "required_checks": [],
+    "finish_condition": null
+  },
+  "frozen": null,
+  "limits": {
+    "checkpoint_minutes": 30,
+    "max_iterations": null,
+    "max_elapsed_minutes": null,
+    "max_no_progress": null
+  },
+  "usage": {
+    "iterations_used": 0,
+    "elapsed_minutes": 0,
+    "no_progress_count": 0,
+    "minutes_since_checkpoint": 0
+  },
+  "stop": {
+    "requested": false,
+    "reason": null,
+    "goal_claimed": false
+  },
+  "sources": [],
+  "records": [],
+  "reviews": [],
+  "history": []
+}

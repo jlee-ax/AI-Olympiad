@@ -1,0 +1,4 @@
+interface:
+  display_name: "KOAI Recall"
+  short_description: "Resume work from source-linked current records"
+  default_prompt: "Use $koai-recall to reconstruct the current task state and explain what needs rechecking."

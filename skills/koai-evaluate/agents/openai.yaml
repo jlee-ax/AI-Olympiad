@@ -1,0 +1,4 @@
+interface:
+  display_name: "KOAI Evaluation"
+  short_description: "Review exact revisions with independent evidence"
+  default_prompt: "Use $koai-evaluate to assess this artifact against the agreed criteria and report evidence gaps."
