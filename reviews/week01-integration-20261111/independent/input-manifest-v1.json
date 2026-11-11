@@ -1,0 +1,135 @@
+{
+  "frozen_at_utc": "2026-11-11T09:57:52.217336+00:00",
+  "candidate_content_read": false,
+  "candidate_paths_present_but_not_opened": [],
+  "candidate_expected_location": "lessons/week01/*integrated*; exact name and author SHA pending",
+  "git_head": "0f24dc3a58281341e296a1e5c661dfa3d1a0a5a9",
+  "current_worktree_status_file": "inputs/current-git-status.txt",
+  "preserved_user_worktree": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration",
+  "preserved_user_git_head": "cefa941036fb0573f3b7bde94f8a04cb7f3c73c7",
+  "files": [
+    {
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "bytes": 462307,
+      "cells": 89,
+      "code_cells": 28,
+      "snapshot": "inputs/week01_python_tables.ipynb",
+      "snapshot_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "lessons/week01/week01_python_tables.html",
+      "sha256": "0ee9668f102756c47c666d12e145bdd6c7c89709d625dcd07533bc3291cfda24",
+      "bytes": 814322
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+      "bytes": 27787,
+      "cells": 29,
+      "code_cells": 13,
+      "snapshot": "inputs/week01_axes_linear_bridge.ipynb",
+      "snapshot_sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f"
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.html",
+      "sha256": "45bc5fe99f90b7bd4dd39ef67557b87c227f263e59e20c54fa1d44764a07239b",
+      "bytes": 347763
+    },
+    {
+      "path": "lessons/week01/week01_problem_pipeline.ipynb",
+      "sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+      "bytes": 39034,
+      "cells": 27,
+      "code_cells": 12,
+      "snapshot": "inputs/week01_problem_pipeline.ipynb",
+      "snapshot_sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a"
+    },
+    {
+      "path": "lessons/week01/week01_problem_pipeline.html",
+      "sha256": "28308deb024292977cd22a2931801ff242f010e5b6e8b4de01fa4e01e3a4bfd3",
+      "bytes": 378068
+    },
+    {
+      "path": "lessons/week01/teacher-notes.txt",
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "bytes": 16503
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge_teacher.md",
+      "sha256": "651038f80b4800f8efb72094823e497cfe5168985bc882e586b1c4dc12fcf9c0",
+      "bytes": 5928
+    },
+    {
+      "path": "lessons/week01/week01_problem_pipeline_teacher.md",
+      "sha256": "646c9e4bbd6b631864f2e802b3cfb9f38da39ee6b7db79cef6a431ee6a7eb589",
+      "bytes": 9489
+    },
+    {
+      "path": "lessons/week01/lesson-manifest.json",
+      "sha256": "188028f489df650554bddbd21a08771aa809e6aa01c97e499eaad445ee7d877c",
+      "bytes": 2935
+    },
+    {
+      "path": "curriculum/student-plan.html",
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "bytes": 66956
+    },
+    {
+      "path": "curriculum/contract.json",
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "bytes": 23110
+    },
+    {
+      "path": "lessons/week02/week02_prediction_evaluation.ipynb",
+      "sha256": "9bb1ea5110b74ea1cf32fbc9ee9e9a5aadbceba2f750c2dfc2d6587e18954bdf",
+      "bytes": 34579
+    },
+    {
+      "path": "lessons/week02/week02_temporal_preprocessing.ipynb",
+      "sha256": "a830a15e8d2bf2cb91e17cd2e8b14172390fc7cea3a07539add3fe52a05b5865",
+      "bytes": 56497
+    }
+  ],
+  "preserved_files": [
+    {
+      "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/lesson-manifest.json",
+      "sha256": "06ac05f087e7123efcac06782735ad923040e48f062996b28f5b90c9b41c2d07",
+      "bytes": 3113,
+      "matches_prior_preservation": true
+    },
+    {
+      "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/teacher-notes.txt",
+      "sha256": "23c4195940e0da732f70d97383af440f0913d066f1f72844f5198a9558cb1a38",
+      "bytes": 18277,
+      "matches_prior_preservation": true
+    },
+    {
+      "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/validation.json",
+      "sha256": "574d75c158af6218aea44394e01829b95fb992593c2c59773b17728d0ec7869c",
+      "bytes": 1856,
+      "matches_prior_preservation": true
+    },
+    {
+      "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.html",
+      "sha256": "ee3ca9f9ebf491a6e768b3dd99264415d11a384f48f7311b51d5711d48b79f0c",
+      "bytes": 824298,
+      "matches_prior_preservation": true
+    },
+    {
+      "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+      "sha256": "733c0093b44f30d31354567331c2c39ee325ed074e7a6368bb1f2e96f0c174c0",
+      "bytes": 469917,
+      "matches_prior_preservation": true
+    },
+    {
+      "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/reviews/week01/model-link-20261111/notebook-execution.log",
+      "sha256": "64f9bcc3d14a5342c8e58fa036589723c653a00818de88bbd4fc8696087cbc54",
+      "bytes": 2410,
+      "matches_prior_preservation": true
+    }
+  ],
+  "criteria_sha256": "405ba02653f5890d091ef3161a42a9f89dc8ecac44522e880b2be971bea06634",
+  "scope": "Existing core goals plus one coherent path to actual fit/evaluation/new-contract transfer. Link-only fourth supplement fails. Student performance/time unobserved.",
+  "rule": "Never overwrite frozen v1; later changes need a separate dated addendum."
+}

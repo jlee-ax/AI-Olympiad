@@ -1,0 +1,40 @@
+{
+  "case": "preflight-existing-pipeline",
+  "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_problem_pipeline.ipynb",
+  "source_sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+  "worker_sha256": "65665ce2a0b1490842e7f6303870e13ca10aa5e6ff62bde1f5173ce16fe683aa",
+  "checked_at_utc": "2026-11-11T10:00:20.894134+00:00",
+  "status": "passed",
+  "execution": "single fresh InProcessKernelManager in a new subprocess",
+  "cells": 27,
+  "executed_code_cells": [
+    3,
+    5,
+    7,
+    9,
+    11,
+    13,
+    15,
+    17,
+    19,
+    21,
+    23,
+    25
+  ],
+  "oracle": {
+    "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/preflight-oracle.py",
+    "sha256": "6375760359edb9bc2c77ee88678e9db61dcab5ff881d08918122e5217bb53ae9",
+    "status": "ok",
+    "outputs": [
+      {
+        "output_type": "stream",
+        "name": "stdout",
+        "text": "preflight reviewer oracle passed; existing pipeline only, not the integration candidate\n"
+      }
+    ]
+  },
+  "student_performance": "not_observed",
+  "elapsed_seconds": 1.5118,
+  "source_unchanged": true,
+  "runtime_removed": true
+}

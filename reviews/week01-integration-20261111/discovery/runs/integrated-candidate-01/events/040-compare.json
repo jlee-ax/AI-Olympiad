@@ -1,0 +1,55 @@
+{
+  "id": "rebind-integrated-candidate-01-040-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D01",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "Row/day axes, axis means, reshaping versus transpose with differing coordinates, and right-axis broadcasting receive predictions and executable checks. Mandatory new-array exercises are explicitly routed to a different original notebook, not included in this projection. Radar input/target axes and later high-dimensional context remain absent. Guided small-array progress does not close the complete original demand.",
+    "start_line": 121,
+    "end_line": 457,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Row/day axes, axis means, reshaping versus transpose with differing coordinates, and right-axis broadcasting receive predictions and executable checks. Mandatory new-array exercises are explicitly routed to a different original notebook, not included in this projection. Radar input/target axes and later high-dimensional context remain absent. Guided small-array progress does not close the complete original demand.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 121,
+        "end_line": 457
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "Row/day axes, axis means, reshaping versus transpose with differing coordinates, and right-axis broadcasting receive predictions and executable checks. Mandatory new-array exercises are explicitly routed to a different original notebook, not included in this projection. Radar input/target axes and later high-dimensional context remain absent. Guided small-array progress does not close the complete original demand.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 121,
+        "end_line": 457
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "Row/day axes, axis means, reshaping versus transpose with differing coordinates, and right-axis broadcasting receive predictions and executable checks. Mandatory new-array exercises are explicitly routed to a different original notebook, not included in this projection. Radar input/target axes and later high-dimensional context remain absent. Guided small-array progress does not close the complete original demand.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 121,
+        "end_line": 457
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "Row/day axes, axis means, reshaping versus transpose with differing coordinates, and right-axis broadcasting receive predictions and executable checks. Mandatory new-array exercises are explicitly routed to a different original notebook, not included in this projection. Radar input/target axes and later high-dimensional context remain absent. Guided small-array progress does not close the complete original demand.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 121,
+        "end_line": 457
+      },
+      {
+        "id": "practice",
+        "judgment": "met",
+        "observed_behavior": "Row/day axes, axis means, reshaping versus transpose with differing coordinates, and right-axis broadcasting receive predictions and executable checks. Mandatory new-array exercises are explicitly routed to a different original notebook, not included in this projection. Radar input/target axes and later high-dimensional context remain absent. Guided small-array progress does not close the complete original demand.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 121,
+        "end_line": 457
+      }
+    ]
+  }
+}

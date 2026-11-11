@@ -1,0 +1,45 @@
+{
+  "case": "candidate-09da-baseline",
+  "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_integrated.ipynb",
+  "source_sha256": "09da87fd69d9a5c479c8e84e4e48f08b5d878b6830034f976dc0f8ca69f494f8",
+  "worker_sha256": "dc1788ddd0c77739f7ef3fad450fdf658e545ebcea322b78b9e2054ce0b473c9",
+  "checked_at_utc": "2026-11-11T10:05:56.537899+00:00",
+  "status": "passed",
+  "execution": "single fresh InProcessKernelManager in a new subprocess",
+  "cells": 34,
+  "executed_code_cells": [
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28,
+    30,
+    32
+  ],
+  "oracle": null,
+  "student_performance": "not_observed",
+  "elapsed_seconds": 2.9213,
+  "source_unchanged": true,
+  "file_io_events": [
+    {
+      "path": "runtime/tmpdir/plant-result-x0abg_y1/result.csv",
+      "operation": "write",
+      "physical_file_api": true
+    },
+    {
+      "path": "runtime/tmpdir/plant-result-x0abg_y1/result.csv",
+      "operation": "read",
+      "physical_file_api": true
+    }
+  ],
+  "runtime_removed": true
+}

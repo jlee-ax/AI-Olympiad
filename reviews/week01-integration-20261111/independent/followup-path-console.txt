@@ -1,0 +1,184 @@
+{
+  "integration_candidate_sha256": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+  "reference": "candidate cell33 title/first-code instructions; teacher exact 0-based indices",
+  "cases": [
+    {
+      "name": "followup-python",
+      "source": "lessons/week01/week01_python_tables.ipynb",
+      "source_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "indices": [
+        3,
+        27,
+        54,
+        19,
+        20,
+        22,
+        24
+      ],
+      "student_blank_cells": [
+        24
+      ],
+      "input_sha256": "cdb81938d3b64f0966b7b70f0685a9fecd03889032772bfc625961c45b5786bb",
+      "process_exit": 0,
+      "status": "passed",
+      "student_answers_completed": false,
+      "student_learning_observed": false
+    },
+    {
+      "name": "followup-statistics",
+      "source": "lessons/week01/week01_python_tables.ipynb",
+      "source_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "indices": [
+        3,
+        27,
+        54,
+        46,
+        48
+      ],
+      "student_blank_cells": [],
+      "input_sha256": "798abc43bd8ee0c6a71f140a89c5f0d7590fb2be3cac9324dbc45dbbe8ca88b5",
+      "process_exit": 0,
+      "status": "passed",
+      "student_answers_completed": false,
+      "student_learning_observed": false
+    },
+    {
+      "name": "followup-dirty-csv",
+      "source": "lessons/week01/week01_python_tables.ipynb",
+      "source_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "indices": [
+        3,
+        27,
+        54,
+        39,
+        41,
+        43
+      ],
+      "student_blank_cells": [],
+      "input_sha256": "9a91e43f441f38907198e404fcdba68eed1947d7379a93c89e6836d6693ca36c",
+      "process_exit": 0,
+      "status": "passed",
+      "student_answers_completed": false,
+      "student_learning_observed": false
+    },
+    {
+      "name": "followup-array-A",
+      "source": "lessons/week01/week01_python_tables.ipynb",
+      "source_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "indices": [
+        3,
+        27,
+        54,
+        59,
+        61,
+        64,
+        66
+      ],
+      "student_blank_cells": [
+        61,
+        66
+      ],
+      "input_sha256": "e193872aae12389ac437892539ff80b1b1e8bb777392983fa949bf63d6bb4716",
+      "process_exit": 0,
+      "status": "passed",
+      "student_answers_completed": false,
+      "student_learning_observed": false
+    },
+    {
+      "name": "followup-viz-B",
+      "source": "lessons/week01/week01_python_tables.ipynb",
+      "source_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "indices": [
+        3,
+        27,
+        54,
+        69,
+        71,
+        73,
+        74
+      ],
+      "student_blank_cells": [],
+      "input_sha256": "c2b62106a143dfd0a0a7519b1a88e17ddfd39b2aa27380de0fc0560d5a02fc6f",
+      "process_exit": 0,
+      "status": "passed",
+      "student_answers_completed": false,
+      "student_learning_observed": false
+    },
+    {
+      "name": "followup-merge-C",
+      "source": "lessons/week01/week01_python_tables.ipynb",
+      "source_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "indices": [
+        3,
+        27,
+        54,
+        78
+      ],
+      "student_blank_cells": [],
+      "input_sha256": "82d996d5d659d867e3f9776468ad2a3418d45abb2ae0b54298e87ced7b256581",
+      "process_exit": 0,
+      "status": "passed",
+      "student_answers_completed": false,
+      "student_learning_observed": false
+    },
+    {
+      "name": "followup-function-dot-DE",
+      "source": "lessons/week01/week01_python_tables.ipynb",
+      "source_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "indices": [
+        3,
+        27,
+        54,
+        81,
+        84
+      ],
+      "student_blank_cells": [
+        81
+      ],
+      "input_sha256": "d7d338ec7789ebd43af05069ddef19ac44cffd23ca35d75c1c7457c99f6b9515",
+      "process_exit": 0,
+      "status": "passed",
+      "student_answers_completed": false,
+      "student_learning_observed": false
+    },
+    {
+      "name": "followup-bridge-A",
+      "source": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "source_sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+      "indices": [
+        2,
+        21,
+        23
+      ],
+      "student_blank_cells": [
+        23
+      ],
+      "input_sha256": "995a8c8d74f0a94cca61a582b3f0b885e25bf29b2c1c043a00ffcce536d0d039",
+      "process_exit": 0,
+      "status": "passed",
+      "student_answers_completed": false,
+      "student_learning_observed": false
+    },
+    {
+      "name": "followup-bridge-B",
+      "source": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "source_sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+      "indices": [
+        2,
+        25,
+        27
+      ],
+      "student_blank_cells": [
+        27
+      ],
+      "input_sha256": "258de0d8c3fd60298f4da092927290e2aa4ff6e5e8ef1280f7fd71eeef3ec5b8",
+      "process_exit": 0,
+      "status": "passed",
+      "student_answers_completed": false,
+      "student_learning_observed": false
+    }
+  ],
+  "all_provided_paths_runnable": true,
+  "student_independent_answers_completed": false,
+  "each_case_new_subprocess_and_kernel": true
+}

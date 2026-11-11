@@ -1,0 +1,45 @@
+{
+  "case": "followup-statistics",
+  "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/followup-inputs/followup-statistics.ipynb",
+  "source_sha256": "798abc43bd8ee0c6a71f140a89c5f0d7590fb2be3cac9324dbc45dbbe8ca88b5",
+  "worker_sha256": "2f09ea79a1f68e2e401eaa348ae4ed1d11f6c95dc6d4568bdcdc8c0f2e6f4723",
+  "checked_at_utc": "2026-11-11T10:15:38.019133+00:00",
+  "status": "passed",
+  "execution": "single fresh InProcessKernelManager in a new subprocess",
+  "cells": 5,
+  "executed_code_cells": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "oracle": {
+    "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/followup-inputs/followup-statistics-oracle.py",
+    "sha256": "65255cc59a2063f58ae2c9347df6ac5e28b4c089149d895ccfcf4b65322bc028",
+    "status": "ok",
+    "outputs": [
+      {
+        "output_type": "stream",
+        "name": "stdout",
+        "text": "original data re-created in a separate fresh kernel; not integration plants\n"
+      }
+    ]
+  },
+  "student_performance": "not_observed",
+  "elapsed_seconds": 1.6537,
+  "source_unchanged": true,
+  "file_io_events": [
+    {
+      "path": "data/week1_plants.csv",
+      "operation": "read",
+      "physical_file_api": true
+    },
+    {
+      "path": "data/week1_plants_new.csv",
+      "operation": "read",
+      "physical_file_api": true
+    }
+  ],
+  "runtime_removed": true
+}

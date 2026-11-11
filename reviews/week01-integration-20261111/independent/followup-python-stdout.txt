@@ -1,0 +1,1 @@
+{"case": "followup-python", "status": "passed", "source_sha256": "cdb81938d3b64f0966b7b70f0685a9fecd03889032772bfc625961c45b5786bb", "executed_code_cells": [0, 1, 2, 3, 4, 5, 6], "source_unchanged": true, "runtime_removed": true}

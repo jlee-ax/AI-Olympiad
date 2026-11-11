@@ -1,0 +1,55 @@
+{
+  "id": "rebind-integrated-candidate-01-052-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "H02",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "Available inputs, model use and a temporary local CSV are distinguished. No development-only unavailable inference API is diagnosed and removed, and no local learned-artifact offline reconstruction is assessed.",
+    "start_line": 12,
+    "end_line": 388,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Available inputs, model use and a temporary local CSV are distinguished. No development-only unavailable inference API is diagnosed and removed, and no local learned-artifact offline reconstruction is assessed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 388
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "Available inputs, model use and a temporary local CSV are distinguished. No development-only unavailable inference API is diagnosed and removed, and no local learned-artifact offline reconstruction is assessed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 388
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Available inputs, model use and a temporary local CSV are distinguished. No development-only unavailable inference API is diagnosed and removed, and no local learned-artifact offline reconstruction is assessed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 388
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "Available inputs, model use and a temporary local CSV are distinguished. No development-only unavailable inference API is diagnosed and removed, and no local learned-artifact offline reconstruction is assessed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 388
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "Available inputs, model use and a temporary local CSV are distinguished. No development-only unavailable inference API is diagnosed and removed, and no local learned-artifact offline reconstruction is assessed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 388
+      }
+    ]
+  }
+}

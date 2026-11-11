@@ -1,0 +1,23 @@
+{
+  "id": "rebind-integrated-candidate-01-037-trace",
+  "op": "trace",
+  "data": {
+    "frontier_id": "problems",
+    "read_ids": [
+      "rebind-integrated-candidate-01-006-read",
+      "rebind-integrated-candidate-01-007-read",
+      "rebind-integrated-candidate-01-008-read",
+      "rebind-integrated-candidate-01-009-read",
+      "rebind-integrated-candidate-01-010-read"
+    ],
+    "actor": "/root/discovery_resume",
+    "reason": "Preserve exact additional open-question text from the separate bridge review. No new web search, no demand narrowing, and no assertion that this question is newly source-derived.",
+    "rationale": "Manual carryover of prior bridge uncertainty associated with retained source-linked D01/D05/D07. The same demand payloads already exist here and are not duplicated.",
+    "counterevidence": "A local bridge exercise or new integrated worked example does not establish later high-dimensional/model transfer, official matching constraints or learner success.",
+    "uninvestigated": [
+      "High-dimensional/model-context axis tracking and reshape-versus-transpose still require actual later material.",
+      "Normalization, identity/gender matching constraints and real encoder/submission performance remain separate from synthetic maximum-dot-product lookup."
+    ],
+    "demands": []
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "rebind-integrated-candidate-01-045-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D12",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "A training copy protects the original model example. Repeated-call mutable-default and returned-list alias diagnostics are absent.",
+    "start_line": 312,
+    "end_line": 326,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "A training copy protects the original model example. Repeated-call mutable-default and returned-list alias diagnostics are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 312,
+        "end_line": 326
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "A training copy protects the original model example. Repeated-call mutable-default and returned-list alias diagnostics are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 312,
+        "end_line": 326
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "A training copy protects the original model example. Repeated-call mutable-default and returned-list alias diagnostics are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 312,
+        "end_line": 326
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "A training copy protects the original model example. Repeated-call mutable-default and returned-list alias diagnostics are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 312,
+        "end_line": 326
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "A training copy protects the original model example. Repeated-call mutable-default and returned-list alias diagnostics are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 312,
+        "end_line": 326
+      }
+    ]
+  }
+}

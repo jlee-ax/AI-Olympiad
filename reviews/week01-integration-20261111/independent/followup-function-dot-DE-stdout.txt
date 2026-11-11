@@ -1,0 +1,1 @@
+{"case": "followup-function-dot-DE", "status": "passed", "source_sha256": "d7d338ec7789ebd43af05069ddef19ac44cffd23ca35d75c1c7457c99f6b9515", "executed_code_cells": [0, 1, 2, 3, 4], "source_unchanged": true, "runtime_removed": true}

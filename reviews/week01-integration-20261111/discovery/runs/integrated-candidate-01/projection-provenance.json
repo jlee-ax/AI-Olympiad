@@ -1,0 +1,151 @@
+{
+  "artifact_path": "lessons/week01/week01_integrated.ipynb",
+  "artifact_sha256": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+  "exact_snapshot_path": "reviews/week01-integration-20261111/discovery/runs/integrated-candidate-01/artifact-exact.ipynb",
+  "exact_snapshot_sha256": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+  "projection_path": "reviews/week01-integration-20261111/discovery/runs/integrated-candidate-01/lesson-source.md",
+  "projection_sha256": "c056a89a62bc799f3a4d2741725948f2062e5f137f54083d655337b7918dfc60",
+  "method": "Every cell source in original order with explicit cell index, ID and type; outputs and metadata omitted from projection but preserved in exact notebook snapshot.",
+  "cell_count": 34,
+  "cell_spans": {
+    "0": [
+      1,
+      11
+    ],
+    "1": [
+      12,
+      32
+    ],
+    "2": [
+      33,
+      52
+    ],
+    "3": [
+      53,
+      59
+    ],
+    "4": [
+      60,
+      70
+    ],
+    "5": [
+      71,
+      81
+    ],
+    "6": [
+      82,
+      103
+    ],
+    "7": [
+      104,
+      110
+    ],
+    "8": [
+      111,
+      120
+    ],
+    "9": [
+      121,
+      137
+    ],
+    "10": [
+      138,
+      147
+    ],
+    "11": [
+      148,
+      156
+    ],
+    "12": [
+      157,
+      171
+    ],
+    "13": [
+      172,
+      180
+    ],
+    "14": [
+      181,
+      208
+    ],
+    "15": [
+      209,
+      223
+    ],
+    "16": [
+      224,
+      234
+    ],
+    "17": [
+      235,
+      245
+    ],
+    "18": [
+      246,
+      266
+    ],
+    "19": [
+      267,
+      273
+    ],
+    "20": [
+      274,
+      282
+    ],
+    "21": [
+      283,
+      289
+    ],
+    "22": [
+      290,
+      304
+    ],
+    "23": [
+      305,
+      311
+    ],
+    "24": [
+      312,
+      326
+    ],
+    "25": [
+      327,
+      333
+    ],
+    "26": [
+      334,
+      346
+    ],
+    "27": [
+      347,
+      353
+    ],
+    "28": [
+      354,
+      369
+    ],
+    "29": [
+      370,
+      388
+    ],
+    "30": [
+      389,
+      404
+    ],
+    "31": [
+      405,
+      415
+    ],
+    "32": [
+      416,
+      420
+    ],
+    "33": [
+      421,
+      457
+    ]
+  },
+  "semantic_correspondence_review": "All cell sources directly read by reviewer. Projection correspondence is a manual review declaration; the projector only concatenates the cell source text.",
+  "author": "/root/week01_bridge",
+  "reviewer": "/root/discovery_resume"
+}

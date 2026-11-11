@@ -1,0 +1,7 @@
+ M lessons/week01/lesson-manifest.json
+ M lessons/week01/teacher-notes.txt
+ M lessons/week01/validation.json
+ M lessons/week01/week01_python_tables.html
+ M lessons/week01/week01_python_tables.ipynb
+?? lessons/week01/.validation/
+?? reviews/week01/model-link-20261111/

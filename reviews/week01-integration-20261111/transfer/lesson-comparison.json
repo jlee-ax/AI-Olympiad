@@ -1,0 +1,132 @@
+{
+  "review_kind": "Manual source-to-lesson semantic comparison; not lesson execution or learner assessment",
+  "reviewer": "/root/gap_prioritization",
+  "candidate": {
+    "path": "lessons/week01/week01_integrated.ipynb",
+    "sha256": "e39e609d3354f20ca5518b652be39f3b31ec0b16154d37651e33309b42a39a6b",
+    "cells": 34,
+    "read_extent": "All 34 cell sources read",
+    "initial_read_sha256": "09da87fd69d9a5c479c8e84e4e48f08b5d878b6830034f976dc0f8ca69f494f8",
+    "version_note": "Reread after a concurrent edit. The tested Robot fixtures and expectations were fixed before the first integrated-lesson read."
+  },
+  "source_revision": {
+    "read_at_utc": "2026-11-11T10:00:28Z",
+    "repository": "IOAI-official/IOAI-2026",
+    "commit": "e1963801aa4cf33a5a03520b39fa6620a7894c54",
+    "path": "Individual-Contest/2_Robot_Chasing/statement.md",
+    "blob_sha": "f45b6bee1620d337eeaded43798df34a8413f2bd",
+    "main_url": "https://raw.githubusercontent.com/IOAI-official/IOAI-2026/main/Individual-Contest/2_Robot_Chasing/statement.md",
+    "pinned_url": "https://github.com/IOAI-official/IOAI-2026/blob/e1963801aa4cf33a5a03520b39fa6620a7894c54/Individual-Contest/2_Robot_Chasing/statement.md",
+    "read_ranges_1_based": [
+      "1-134"
+    ],
+    "authority": "Official IOAI 2026 international individual-contest statement; not a KOAI middle-school past paper",
+    "scope": "Schema, spatial axes, categorical meanings, prediction-time input availability, and output contract only",
+    "excluded": [
+      "No movement policy learned or guessed",
+      "No official dataset/model execution",
+      "No official performance/submit acceptance",
+      "No learner-performance observation"
+    ],
+    "locations": {
+      "sample_fields": "27-37",
+      "grid_channels": "41-61",
+      "actions": "63-79",
+      "dataset_availability": "83-101",
+      "output": "103-114",
+      "score": "116-120"
+    },
+    "provenance_note": "Read the live raw main URL with the web tool, then resolved main via the connected GitHub API and reread the file at the pinned commit. Web presentation collapses blank lines; locations here refer to the pinned raw file.",
+    "case_design_frozen_before_integrated_lesson_read": true
+  },
+  "synthetic_execution": {
+    "path": "robot-contract-results.json",
+    "cases": 25,
+    "expectations_matched": 25,
+    "failures": 0,
+    "meaning": "The reviewer's synthetic checks behaved as expected. This is not a student score, action-policy accuracy, or integrated-lesson execution result."
+  },
+  "comparisons": [
+    {
+      "id": "roles_and_prediction_time",
+      "lesson_cells": [
+        1,
+        3,
+        4,
+        17,
+        29
+      ],
+      "observed": "A local data dictionary, feature/target/ID selection, prediction-time availability and new label semantics are explicit.",
+      "judgment": "Local prerequisite present; Robot-specific transfer not assessed",
+      "remaining": "The Robot fields robot_id, mission, carrying and direction require fresh role decisions. A row identifier excluded in the plant example does not imply that robot_id must be excluded in this different task."
+    },
+    {
+      "id": "spatial_axes_and_channels",
+      "lesson_cells": [
+        9,
+        10,
+        11,
+        12,
+        33
+      ],
+      "observed": "Two-dimensional axis reduction and same-shape reshape/transpose differences are taught, with further array work linked.",
+      "judgment": "Local axis prerequisite present; third semantic axis and Robot coordinate oracle absent",
+      "remaining": "There is no explicit row/column/channel explanation for 8x8x2 or an independent test of a square-grid transpose preserving shape."
+    },
+    {
+      "id": "channel_and_category_meaning",
+      "lesson_cells": [
+        5,
+        7,
+        9,
+        15
+      ],
+      "observed": "The lesson interprets quantities, units and ordered feature pairs; it does not describe Robot categories.",
+      "judgment": "Useful general foundation; Robot channel/category counterexamples not assessed",
+      "remaining": "Facing is a top-level field, not an image channel. Empty/wall colours have no semantic meaning. Valid numbers and shape alone do not certify either fact."
+    },
+    {
+      "id": "observation_independence",
+      "lesson_cells": [
+        1,
+        17,
+        23
+      ],
+      "observed": "Input availability and separate plant train/validation roles are explicit.",
+      "judgment": "General availability principle present; random independent-snapshot transfer not assessed",
+      "remaining": "The preceding row is not a previous state or action in Robot Chasing. Do not copy the later temporal-window example into this task without reading its contract."
+    },
+    {
+      "id": "output_and_lineage",
+      "lesson_cells": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "observed": "The lesson demonstrates CSV read-back and asks for new string labels in a required ID order.",
+      "judgment": "Local output/lineage foundation present; integer JSON-list contract not assessed",
+      "remaining": "Robot requires one integer action 0..5 per observation in original order. Reversed arbitrary markers can pass a format check; external lineage is still required."
+    },
+    {
+      "id": "policy_and_scope",
+      "lesson_cells": [
+        17,
+        19,
+        23,
+        33
+      ],
+      "observed": "A small learned classifier and limits on real-world/contest claims are explicit.",
+      "judgment": "Appropriate local scope; no Robot policy inference claimed",
+      "remaining": "No Robot training, policy, action correctness, official submission, learner response, or workload can be inferred from this audit."
+    }
+  ],
+  "recommendation": "Keep the integrated local pathway. Use a short teacher-led contract/axis transfer probe from this separate source family, or record it as later assessment. Do not require the entire international task or infer that students fail from missing explicit lesson content.",
+  "limits": [
+    "The synthetic guard validates only the stated subset of the observation contract.",
+    "Robot fixtures are newly authored and do not represent the official distribution.",
+    "No action policy was guessed. Output values are arbitrary format/lineage markers.",
+    "Later artifact edits require a fresh manual comparison."
+  ]
+}

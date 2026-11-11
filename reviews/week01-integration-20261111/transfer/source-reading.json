@@ -1,0 +1,30 @@
+{
+  "read_at_utc": "2026-11-11T10:00:28Z",
+  "repository": "IOAI-official/IOAI-2026",
+  "commit": "e1963801aa4cf33a5a03520b39fa6620a7894c54",
+  "path": "Individual-Contest/2_Robot_Chasing/statement.md",
+  "blob_sha": "f45b6bee1620d337eeaded43798df34a8413f2bd",
+  "main_url": "https://raw.githubusercontent.com/IOAI-official/IOAI-2026/main/Individual-Contest/2_Robot_Chasing/statement.md",
+  "pinned_url": "https://github.com/IOAI-official/IOAI-2026/blob/e1963801aa4cf33a5a03520b39fa6620a7894c54/Individual-Contest/2_Robot_Chasing/statement.md",
+  "read_ranges_1_based": [
+    "1-134"
+  ],
+  "authority": "Official IOAI 2026 international individual-contest statement; not a KOAI middle-school past paper",
+  "scope": "Schema, spatial axes, categorical meanings, prediction-time input availability, and output contract only",
+  "excluded": [
+    "No movement policy learned or guessed",
+    "No official dataset/model execution",
+    "No official performance/submit acceptance",
+    "No learner-performance observation"
+  ],
+  "locations": {
+    "sample_fields": "27-37",
+    "grid_channels": "41-61",
+    "actions": "63-79",
+    "dataset_availability": "83-101",
+    "output": "103-114",
+    "score": "116-120"
+  },
+  "provenance_note": "Read the live raw main URL with the web tool, then resolved main via the connected GitHub API and reread the file at the pinned commit. Web presentation collapses blank lines; locations here refer to the pinned raw file.",
+  "case_design_frozen_before_integrated_lesson_read": true
+}

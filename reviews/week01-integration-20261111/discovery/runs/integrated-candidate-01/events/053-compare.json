@@ -1,0 +1,47 @@
+{
+  "id": "rebind-integrated-candidate-01-053-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "N01",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "covered",
+    "rationale": "The separate device contract requires reasons/hand mean, independently chosen learned classifier, learned values, validation prediction/accuracy, ordered CSV, error reasoning and help reporting. A blank code answer is preserved. Both written and coding assessment modalities are present as material design; student answers or independence are not observed.",
+    "start_line": 370,
+    "end_line": 420,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The separate device contract requires reasons/hand mean, independently chosen learned classifier, learned values, validation prediction/accuracy, ordered CSV, error reasoning and help reporting. A blank code answer is preserved. Both written and coding assessment modalities are present as material design; student answers or independence are not observed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 370,
+        "end_line": 420
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "The separate device contract requires reasons/hand mean, independently chosen learned classifier, learned values, validation prediction/accuracy, ordered CSV, error reasoning and help reporting. A blank code answer is preserved. Both written and coding assessment modalities are present as material design; student answers or independence are not observed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 370,
+        "end_line": 420
+      },
+      {
+        "id": "assessment",
+        "judgment": "met",
+        "observed_behavior": "The separate device contract requires reasons/hand mean, independently chosen learned classifier, learned values, validation prediction/accuracy, ordered CSV, error reasoning and help reporting. A blank code answer is preserved. Both written and coding assessment modalities are present as material design; student answers or independence are not observed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 370,
+        "end_line": 420
+      },
+      {
+        "id": "modality",
+        "judgment": "met",
+        "observed_behavior": "The separate device contract requires reasons/hand mean, independently chosen learned classifier, learned values, validation prediction/accuracy, ordered CSV, error reasoning and help reporting. A blank code answer is preserved. Both written and coding assessment modalities are present as material design; student answers or independence are not observed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 370,
+        "end_line": 420
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "scope": {
+    "id": "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01-rebound-integrated-candidate-01",
+    "lesson_path": "reviews/week01-integration-20261111/discovery/runs/integrated-candidate-01/lesson-source.md",
+    "artifact_path": "lessons/week01/week01_integrated.ipynb",
+    "artifact_sha256": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+    "lesson_revision": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+    "readiness": "course",
+    "boundary": "New standalone integrated Week1 material, with an actual problem-to-fixed-rule-to-learned-classifier-to-validation-to-ID-CSV route. Preserve nineteen original/source-linked requirements and five pipeline open questions, plus three exact bridge open questions. Other notebooks are explicitly linked required or optional follow-up dependencies and are not merged into this source projection. This new artifact review does not supersede old quality criteria/agreement, revoke previous separate-artifact judgments, establish whole Antique implementation, measure student mastery or infer full-course readiness."
+  },
+  "frontier": [
+    {
+      "id": "scope",
+      "question": "Which target scope and source-version applicability issues are outside the current lesson?",
+      "required_kinds": [
+        "official_scope"
+      ]
+    },
+    {
+      "id": "problems",
+      "question": "What operations do actual official problems require beyond named lesson examples?",
+      "required_kinds": [
+        "official_problem"
+      ]
+    },
+    {
+      "id": "mechanisms",
+      "question": "What prerequisites, formulas and assessment operations do primary technical references expose?",
+      "required_kinds": [
+        "research"
+      ]
+    },
+    {
+      "id": "heldout",
+      "question": "Revisit original scoring and runtime-contract requirements on actual Week2 without narrowing them.",
+      "required_kinds": [
+        "official_problem"
+      ]
+    },
+    {
+      "id": "next-wave",
+      "question": "Compare new national modality and Pixel/Antique/CS229 requirements with actual Week2.",
+      "required_kinds": [
+        "official_scope",
+        "official_problem",
+        "research"
+      ]
+    },
+    {
+      "id": "week01-pipeline-transfer",
+      "question": "What observable interpretation, learned-model application, evaluation and output-contract operations do current domestic practice scope and official Antique require?",
+      "required_kinds": [
+        "official_scope",
+        "official_problem"
+      ]
+    }
+  ],
+  "policy": {
+    "max_events": 100,
+    "max_rounds": 20,
+    "max_no_progress": 8,
+    "max_elapsed_minutes": 180
+  }
+}

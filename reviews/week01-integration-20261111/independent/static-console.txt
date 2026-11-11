@@ -1,0 +1,1 @@
+{"html_equal": true, "links": ["week01_python_tables.ipynb", "week01_axes_linear_bridge.ipynb", "week01_problem_pipeline.ipynb"], "plots": [{"source_cell": 14, "png": "candidate-15ab-scatter-14-0.png", "sha256": "4eec28935929e3f0dbf5d04919eabc152eb9226a083eb90bb1cc5cd47c6ca280", "saved_matches_new": true}], "source_characters": 16804, "mapping_goals": 10}

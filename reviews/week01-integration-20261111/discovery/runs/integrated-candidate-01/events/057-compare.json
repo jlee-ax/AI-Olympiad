@@ -1,0 +1,47 @@
+{
+  "id": "rebind-integrated-candidate-01-057-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "P02",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "A single headered ID/prediction CSV is actually saved/read on disk, preserving count/order/allowed labels. The new device task changes order and output strings and asks bad-input diagnosis. The closing note correctly states Antique needs two headerless CSVs in a ZIP, but the full operation is not implemented here: the older detailed pipeline is optional navigation. The old pipeline remains separately covered in its own scope; this new standalone projection does not inherit that implementation.",
+    "start_line": 327,
+    "end_line": 457,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "A single headered ID/prediction CSV is actually saved/read on disk, preserving count/order/allowed labels. The new device task changes order and output strings and asks bad-input diagnosis. The closing note correctly states Antique needs two headerless CSVs in a ZIP, but the full operation is not implemented here: the older detailed pipeline is optional navigation. The old pipeline remains separately covered in its own scope; this new standalone projection does not inherit that implementation.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 327,
+        "end_line": 457
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "A single headered ID/prediction CSV is actually saved/read on disk, preserving count/order/allowed labels. The new device task changes order and output strings and asks bad-input diagnosis. The closing note correctly states Antique needs two headerless CSVs in a ZIP, but the full operation is not implemented here: the older detailed pipeline is optional navigation. The old pipeline remains separately covered in its own scope; this new standalone projection does not inherit that implementation.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 327,
+        "end_line": 457
+      },
+      {
+        "id": "assessment",
+        "judgment": "met",
+        "observed_behavior": "A single headered ID/prediction CSV is actually saved/read on disk, preserving count/order/allowed labels. The new device task changes order and output strings and asks bad-input diagnosis. The closing note correctly states Antique needs two headerless CSVs in a ZIP, but the full operation is not implemented here: the older detailed pipeline is optional navigation. The old pipeline remains separately covered in its own scope; this new standalone projection does not inherit that implementation.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 327,
+        "end_line": 457
+      },
+      {
+        "id": "submission_contract",
+        "judgment": "gap",
+        "observed_behavior": "A single headered ID/prediction CSV is actually saved/read on disk, preserving count/order/allowed labels. The new device task changes order and output strings and asks bad-input diagnosis. The closing note correctly states Antique needs two headerless CSVs in a ZIP, but the full operation is not implemented here: the older detailed pipeline is optional navigation. The old pipeline remains separately covered in its own scope; this new standalone projection does not inherit that implementation.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 327,
+        "end_line": 457
+      }
+    ]
+  }
+}

@@ -1,0 +1,302 @@
+{
+  "D11": {
+    "judgment": "uncertain",
+    "cells": [
+      "4042bdda"
+    ],
+    "observed_behavior": "The closing source boundary distinguishes the 2027 domestic announcement, its still IOAI2026-labelled syllabus and older international Antique. It does not settle international2027 adoption or provide the retained independent URL/year/scope assessment. No future-exam scope or hours equivalence is inferred.",
+    "dimensions": {
+      "principle": {
+        "judgment": "met"
+      }
+    }
+  },
+  "D01": {
+    "judgment": "gap",
+    "cells": [
+      "a3f9c114",
+      "9d537595",
+      "38fa5085",
+      "32ed7e09",
+      "4042bdda"
+    ],
+    "observed_behavior": "Row/day axes, axis means, reshaping versus transpose with differing coordinates, and right-axis broadcasting receive predictions and executable checks. Mandatory new-array exercises are explicitly routed to a different original notebook, not included in this projection. Radar input/target axes and later high-dimensional context remain absent. Guided small-array progress does not close the complete original demand.",
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      },
+      "learning": {
+        "judgment": "met"
+      },
+      "assessment": {
+        "judgment": "uncertain"
+      },
+      "practice": {
+        "judgment": "met"
+      },
+      "principle": {
+        "judgment": "gap"
+      }
+    }
+  },
+  "D02": {
+    "judgment": "gap",
+    "cells": [
+      "28086cfc",
+      "ae89f4b6",
+      "303c6117"
+    ],
+    "observed_behavior": "The classifier learns class centroids and compares one-dimensional distances. NearestCentroid is not kNN: no test-by-training distance matrix, neighbor selection, k/tie voting or noncontiguous neighbor-label assessment occurs.",
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "uncertain"
+      }
+    }
+  },
+  "D03": {
+    "judgment": "gap",
+    "cells": [
+      "5a7a14b7",
+      "484f22ba",
+      "a4f8e26d",
+      "ce3f374d",
+      "303c6117"
+    ],
+    "observed_behavior": "The timing paragraph separates completed light/water records just before height measurement from unavailable actual future records at sowing. Target/derived label/ID are excluded from model features, and the new device task requires an independent input/label explanation. Two faulty but shape-valid code paths using target height and future actual water are not independently diagnosed here; the original practice/assessment remains open.",
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      },
+      "learning": {
+        "judgment": "met"
+      },
+      "assessment": {
+        "judgment": "uncertain"
+      },
+      "principle": {
+        "judgment": "met"
+      },
+      "practice": {
+        "judgment": "gap"
+      }
+    }
+  },
+  "D04": {
+    "judgment": "gap",
+    "cells": [
+      "ae89f4b6",
+      "303c6117",
+      "4042bdda"
+    ],
+    "observed_behavior": "Learned class labels 0/1 and new output strings are distinguished from IDs and unknown ?. There is no contiguous class-index encoding, class-axis argmax and inverse decoding implementation or new {-3,4,12} assessment.",
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "uncertain"
+      }
+    }
+  },
+  "D05": {
+    "judgment": "gap",
+    "cells": [
+      "4bbb0c87",
+      "f40633df",
+      "303c6117",
+      "4042bdda"
+    ],
+    "observed_behavior": "The actual CSV keeps predictions attached to IDs and restores required order; a new task requires N7/N3/N1 rather than input order. The bridge is an explicit external required exercise, not merged body. Q/G normalized scores, vector norm/cosine and official identity/gender matching constraints are absent.",
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "uncertain"
+      }
+    }
+  },
+  "D12": {
+    "judgment": "gap",
+    "cells": [
+      "3512f7de"
+    ],
+    "observed_behavior": "A training copy protects the original model example. Repeated-call mutable-default and returned-list alias diagnostics are absent."
+  },
+  "D06": {
+    "judgment": "gap",
+    "cells": [
+      "ce3f374d",
+      "4d60619c",
+      "683a7ca2",
+      "3512f7de",
+      "303c6117"
+    ],
+    "observed_behavior": "The imputer fits training rows only: worked mean20 differs from all-observed24. Validation uses transform; the new device task fits known training labels only. Validation selection overfitting is explained. The original z standardization, train[0,2]/test[100] mean-centering operation, validation-change learned-statistics stress and independent leakage-versus-overfitting repair are not all posed in this notebook.",
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      },
+      "learning": {
+        "judgment": "met"
+      },
+      "assessment": {
+        "judgment": "uncertain"
+      },
+      "principle": {
+        "judgment": "gap"
+      },
+      "practice": {
+        "judgment": "gap"
+      }
+    }
+  },
+  "D07": {
+    "judgment": "gap",
+    "cells": [
+      "4042bdda"
+    ],
+    "observed_behavior": "Lookup and stack are explicitly optional external bridge activities. This notebook contains no embedding lookup table with repeated IDs and B/L/V/H value-and-shape transfer."
+  },
+  "D08": {
+    "judgment": "gap",
+    "cells": null,
+    "observed_behavior": "No attention Q/K axes, mask participation API, blocked-probability renormalization or causal-versus-padding assessment appears."
+  },
+  "D09": {
+    "judgment": "gap",
+    "cells": null,
+    "observed_behavior": "The fixed linear formula and centroid classifier do not teach class-axis softmax, correct-class negative-log loss, shift invariance or stable large-logit calculations."
+  },
+  "D10": {
+    "judgment": "gap",
+    "cells": [
+      "683a7ca2",
+      "3512f7de",
+      "303c6117"
+    ],
+    "observed_behavior": "A changed training record changes learned centers and a prediction; small validation accuracy is explicitly insufficient for generalization. A new problem asks independent code and error cases. Numerical gradients, relative-error denominators and the corresponding prerequisites remain absent; the retained full independent verification demand is not established.",
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "gap"
+      },
+      "learning": {
+        "judgment": "met"
+      },
+      "assessment": {
+        "judgment": "uncertain"
+      },
+      "principle": {
+        "judgment": "gap"
+      },
+      "practice": {
+        "judgment": "met"
+      }
+    }
+  },
+  "H01": {
+    "judgment": "gap",
+    "cells": [
+      "5ba7e603",
+      "8e809e64",
+      "303c6117"
+    ],
+    "observed_behavior": "Worked accuracy is ordinary correct-count over two validation rows. The original truth-dependent Radar weights1/50 and ranking reversal are absent.",
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      }
+    }
+  },
+  "H02": {
+    "judgment": "gap",
+    "cells": [
+      "5a7a14b7",
+      "f9e7d348",
+      "213dcc44",
+      "303c6117"
+    ],
+    "observed_behavior": "Available inputs, model use and a temporary local CSV are distinguished. No development-only unavailable inference API is diagnosed and removed, and no local learned-artifact offline reconstruction is assessed.",
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      }
+    }
+  },
+  "N01": {
+    "judgment": "covered",
+    "cells": [
+      "303c6117",
+      "9462ed76",
+      "97f45dbb",
+      "e49ac1c2"
+    ],
+    "observed_behavior": "The separate device contract requires reasons/hand mean, independently chosen learned classifier, learned values, validation prediction/accuracy, ordered CSV, error reasoning and help reporting. A blank code answer is preserved. Both written and coding assessment modalities are present as material design; student answers or independence are not observed."
+  },
+  "N02": {
+    "judgment": "gap",
+    "cells": null,
+    "observed_behavior": "No half-open image rectangle, pixel-area budget/boundary case or image JSONL contract occurs. This task family remains future course work."
+  },
+  "N03": {
+    "judgment": "uncertain",
+    "cells": [
+      "303c6117",
+      "9462ed76",
+      "4042bdda"
+    ],
+    "observed_behavior": "The device contract distinguishes unknown ? from normal/inspection, excludes label from features and fits only known training rows. Antique unknown0 versus negative-1 and the known-label-only exercise boundary are explicit. The retained PU constant-alpha observation-assumption contrast is not taught or independently assessed.",
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      },
+      "learning": {
+        "judgment": "met"
+      },
+      "assessment": {
+        "judgment": "met"
+      },
+      "assumptions": {
+        "judgment": "uncertain"
+      }
+    }
+  },
+  "P01": {
+    "judgment": "covered",
+    "cells": [
+      "9529029d",
+      "1d316bff",
+      "ce3f374d",
+      "4d60619c",
+      "28086cfc",
+      "ae89f4b6",
+      "683a7ca2",
+      "3512f7de",
+      "303c6117",
+      "9462ed76",
+      "97f45dbb",
+      "e49ac1c2"
+    ],
+    "observed_behavior": "A hand-fixed formula is explicitly separated from a real train-only imputer and fitted NearestCentroid. Learned statistics/classes/centroids and changed-state prediction are observable. The distinct new device contract changes column/ID/label meanings and row order, requires a chosen fitted classifier, learned-state explanation, independent evaluation and ordered output. This supports bounded material-design transfer, not complete Antique, measured learner success or full-course readiness."
+  },
+  "P02": {
+    "judgment": "gap",
+    "cells": [
+      "4bbb0c87",
+      "f40633df",
+      "f9e7d348",
+      "213dcc44",
+      "303c6117",
+      "4042bdda"
+    ],
+    "observed_behavior": "A single headered ID/prediction CSV is actually saved/read on disk, preserving count/order/allowed labels. The new device task changes order and output strings and asks bad-input diagnosis. The closing note correctly states Antique needs two headerless CSVs in a ZIP, but the full operation is not implemented here: the older detailed pipeline is optional navigation. The old pipeline remains separately covered in its own scope; this new standalone projection does not inherit that implementation.",
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      },
+      "learning": {
+        "judgment": "met"
+      },
+      "assessment": {
+        "judgment": "met"
+      },
+      "submission_contract": {
+        "judgment": "gap"
+      }
+    }
+  }
+}

@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "revision": "quality-unconfigured-v1",
+  "revision": "quality-unconfigured-v2",
   "synthetic": false,
   "author_id": "unassigned",
   "artifact": {
     "id": "student-plan",
-    "revision": "full-scope-baseline",
+    "revision": "full-scope-baseline-v2",
     "path": "curriculum/student-plan.html",
-    "sha256": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254"
+    "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5"
   },
   "target": {
     "competition_year": 2027,

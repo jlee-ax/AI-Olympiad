@@ -1,0 +1,625 @@
+{
+  "authority": "advisory_only",
+  "all_protected_history_unchanged": true,
+  "protected_history_files": [
+    {
+      "path": "reviews/discovery-loop-20261111/runs/session.json",
+      "initial_sha256": "81d71bca932382b67c280daabc32cd3bcbfb6fd14ffa87a712679b8e5b85bdf2",
+      "current_sha256": "81d71bca932382b67c280daabc32cd3bcbfb6fd14ffa87a712679b8e5b85bdf2",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/course-discovery-20261111/runs/baseline-wave-01/session.json",
+      "initial_sha256": "e4af0f4adcb1efe6bb92b895b2b09ecd6c2c7e561d7dd3c132a5a08ceba140bf",
+      "current_sha256": "e4af0f4adcb1efe6bb92b895b2b09ecd6c2c7e561d7dd3c132a5a08ceba140bf",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/course-discovery-20261111/runs/plan-wave-01/session.json",
+      "initial_sha256": "91b69c804e1081450598eb74e0bbaed157b5132ec5d60c400939a68681ab3ffe",
+      "current_sha256": "91b69c804e1081450598eb74e0bbaed157b5132ec5d60c400939a68681ab3ffe",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/course-discovery-20261111/runs/week02-candidate-02/session.json",
+      "initial_sha256": "d24adf9f72beb4db2dfa0c75a2051a91104c20321ac9ca773b02be06b4c53c7f",
+      "current_sha256": "d24adf9f72beb4db2dfa0c75a2051a91104c20321ac9ca773b02be06b4c53c7f",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/course-discovery-20261111/runs/week01-bridge-02/session.json",
+      "initial_sha256": "d785ed42afddb1d652b3b87cffc2b9ea312c1f35c4f98ce2535ccab3b90c3c87",
+      "current_sha256": "d785ed42afddb1d652b3b87cffc2b9ea312c1f35c4f98ce2535ccab3b90c3c87",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/current-run-selection.json",
+      "initial_sha256": "0b7241882b3793d97e94140a9f7da514b6345da0194d7ac610d8679f9001409a",
+      "current_sha256": "0b7241882b3793d97e94140a9f7da514b6345da0194d7ac610d8679f9001409a",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/session.json",
+      "initial_sha256": "3bca5d2c71643cd02549c55ac133229799b7b9f2c2e1859130a99d28dbe2582f",
+      "current_sha256": "3bca5d2c71643cd02549c55ac133229799b7b9f2c2e1859130a99d28dbe2582f",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/report.json",
+      "initial_sha256": "0724210c299286dac7267d75cbe8ca87accdc56f516979382288d6922be4e5c2",
+      "current_sha256": "0724210c299286dac7267d75cbe8ca87accdc56f516979382288d6922be4e5c2",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/projection-provenance.json",
+      "initial_sha256": "594f55c6f8305292c7443b69192ab2ff6877f9bcae1eb84a968e1207e51f088f",
+      "current_sha256": "594f55c6f8305292c7443b69192ab2ff6877f9bcae1eb84a968e1207e51f088f",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/origin.json",
+      "initial_sha256": "631f004219217c3f1fbd9186d46aeaaaed18f0a5ef53d59454c7a6716de5da24",
+      "current_sha256": "631f004219217c3f1fbd9186d46aeaaaed18f0a5ef53d59454c7a6716de5da24",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-main-time-cleanup-01/session.json",
+      "initial_sha256": "eb2aaa9bde90fbfd9889e39276d578bddd0937ce40c26ceb0e8430fcaedfc9ed",
+      "current_sha256": "eb2aaa9bde90fbfd9889e39276d578bddd0937ce40c26ceb0e8430fcaedfc9ed",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-main-time-cleanup-01/report.json",
+      "initial_sha256": "6716828ecdbb9570f53b0d15ef6618c030baf7141f12c0d78a6c949d187a4720",
+      "current_sha256": "6716828ecdbb9570f53b0d15ef6618c030baf7141f12c0d78a6c949d187a4720",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-main-time-cleanup-01/projection-provenance.json",
+      "initial_sha256": "35981b47c202a7c246fa43d6dfe200097ab7d70eb640bcd62c0f6ab1464299c1",
+      "current_sha256": "35981b47c202a7c246fa43d6dfe200097ab7d70eb640bcd62c0f6ab1464299c1",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-main-time-cleanup-01/origin.json",
+      "initial_sha256": "9314e12987e76996dea4556b49d9145a14d1f3e4db6d4f715ff6e7250c1c4cec",
+      "current_sha256": "9314e12987e76996dea4556b49d9145a14d1f3e4db6d4f715ff6e7250c1c4cec",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-02/session.json",
+      "initial_sha256": "54d55c36015f501e569622ee9b3f1d3f5d6d2d9a0bec82880e662c929d921b41",
+      "current_sha256": "54d55c36015f501e569622ee9b3f1d3f5d6d2d9a0bec82880e662c929d921b41",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-02/report.json",
+      "initial_sha256": "51556f2e517bfb180647ac4152cd30031b38d01906b8340e1cc747fb34def343",
+      "current_sha256": "51556f2e517bfb180647ac4152cd30031b38d01906b8340e1cc747fb34def343",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-02/projection-provenance.json",
+      "initial_sha256": "07c89550b245a7a1c4a40e26f830be8ba706f5bb9a199c0d2587fd49629bc10f",
+      "current_sha256": "07c89550b245a7a1c4a40e26f830be8ba706f5bb9a199c0d2587fd49629bc10f",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-02/origin.json",
+      "initial_sha256": "2695be320ea3b4e671c845327894dae939f0a052b8e5feeb3dc4cb2682bea09b",
+      "current_sha256": "2695be320ea3b4e671c845327894dae939f0a052b8e5feeb3dc4cb2682bea09b",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-01/session.json",
+      "initial_sha256": "967f7c2c208bdc22de30ec6d9f41d3dedd1938d43c6fa64d2fc7830efe40873b",
+      "current_sha256": "967f7c2c208bdc22de30ec6d9f41d3dedd1938d43c6fa64d2fc7830efe40873b",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-01/report.json",
+      "initial_sha256": "92aaaeb0deb973dfa60117ebbf488edb0280a374c3430e5fc8ab05b81a504e21",
+      "current_sha256": "92aaaeb0deb973dfa60117ebbf488edb0280a374c3430e5fc8ab05b81a504e21",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-01/projection-provenance.json",
+      "initial_sha256": "4d0d14c3cf6b38a1127ce5fdd0caf0312b5e3c2993025b073ebb18430161bed0",
+      "current_sha256": "4d0d14c3cf6b38a1127ce5fdd0caf0312b5e3c2993025b073ebb18430161bed0",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-01/origin.json",
+      "initial_sha256": "69bade9fb676637c8d0c947a31c2e3be7cc6768fe23f6195f06083a2e0c4516f",
+      "current_sha256": "69bade9fb676637c8d0c947a31c2e3be7cc6768fe23f6195f06083a2e0c4516f",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-pipeline-20261111/discovery/current-run-selection.json",
+      "initial_sha256": "da9e8e0812173a6965e95357112f34566056538895770d1a9a93915e7efcb470",
+      "current_sha256": "da9e8e0812173a6965e95357112f34566056538895770d1a9a93915e7efcb470",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/session.json",
+      "initial_sha256": "75ac4108f14505e5cd147e9c0754f9ed979e969372c8d2860c2295c1b84251bf",
+      "current_sha256": "75ac4108f14505e5cd147e9c0754f9ed979e969372c8d2860c2295c1b84251bf",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/report.json",
+      "initial_sha256": "692a39d6e16612cb62d43633e107439260de70acbe92ccd590e25764efc1307d",
+      "current_sha256": "692a39d6e16612cb62d43633e107439260de70acbe92ccd590e25764efc1307d",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/projection-provenance.json",
+      "initial_sha256": "778768eeb3791bd4cd209280453a7a054d927e5908bf99c0c2e11b3f40d8f82b",
+      "current_sha256": "778768eeb3791bd4cd209280453a7a054d927e5908bf99c0c2e11b3f40d8f82b",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/origin.json",
+      "initial_sha256": "7bef30eddeb616052e9103bcc70a3a5ca6653829880ac68cb313137fc850da86",
+      "current_sha256": "7bef30eddeb616052e9103bcc70a3a5ca6653829880ac68cb313137fc850da86",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-pipeline-20261111/discovery/runs/pipeline-final-01/session.json",
+      "initial_sha256": "dc5f4269f4564a6937dadead1c286692ae45404c88f8a12299865165bda21553",
+      "current_sha256": "dc5f4269f4564a6937dadead1c286692ae45404c88f8a12299865165bda21553",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-pipeline-20261111/discovery/runs/pipeline-final-01/report.json",
+      "initial_sha256": "4da7c056a62115d3468f99850469dab6c914daa988d661fddb330e5a7519ca9b",
+      "current_sha256": "4da7c056a62115d3468f99850469dab6c914daa988d661fddb330e5a7519ca9b",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-pipeline-20261111/discovery/runs/pipeline-final-01/projection-provenance.json",
+      "initial_sha256": "8199d1d9fb5a6b71c1c18fe25e17c1dcb2ed335f05cae22a22299203e309e18a",
+      "current_sha256": "8199d1d9fb5a6b71c1c18fe25e17c1dcb2ed335f05cae22a22299203e309e18a",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-pipeline-20261111/discovery/runs/pipeline-final-01/origin.json",
+      "initial_sha256": "c848dacb658b81b10c7fa8ee7d1faeeb4577e2daf2cdbc5a0698303b0bb75aa7",
+      "current_sha256": "c848dacb658b81b10c7fa8ee7d1faeeb4577e2daf2cdbc5a0698303b0bb75aa7",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-pipeline-20261111/discovery/runs/pipeline-candidate-01/session.json",
+      "initial_sha256": "6c4cf35ed13f6248ec561789fceb0645c4526ccd3154afa54a995e70298ee0bc",
+      "current_sha256": "6c4cf35ed13f6248ec561789fceb0645c4526ccd3154afa54a995e70298ee0bc",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-pipeline-20261111/discovery/runs/pipeline-candidate-01/report.json",
+      "initial_sha256": "82143c42669b721a4c08405c61674fe28811b1b6d0aee23caab0ad3223ac0400",
+      "current_sha256": "82143c42669b721a4c08405c61674fe28811b1b6d0aee23caab0ad3223ac0400",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-pipeline-20261111/discovery/runs/pipeline-candidate-01/projection-provenance.json",
+      "initial_sha256": "8f236d5946cda7af093d586b429127992e266507c1c63162d05f1a450082db3e",
+      "current_sha256": "8f236d5946cda7af093d586b429127992e266507c1c63162d05f1a450082db3e",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-pipeline-20261111/discovery/runs/pipeline-candidate-01/origin.json",
+      "initial_sha256": "bea18c8a80e11ce084349fa3c84dfb5b4fae67cdbe86e8b222e5ea33c6224b84",
+      "current_sha256": "bea18c8a80e11ce084349fa3c84dfb5b4fae67cdbe86e8b222e5ea33c6224b84",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/quality.json",
+      "initial_sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "current_sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/workflow.json",
+      "initial_sha256": "21f999d6cfbc17a01c64d885e7c27cd0879e4794cbf405d253193bd02c7d131f",
+      "current_sha256": "21f999d6cfbc17a01c64d885e7c27cd0879e4794cbf405d253193bd02c7d131f",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/depth.json",
+      "initial_sha256": "252644772fb7422757e5f68ace544223aac90d95f3347b95c929750e173bfe3a",
+      "current_sha256": "252644772fb7422757e5f68ace544223aac90d95f3347b95c929750e173bfe3a",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/graph.json",
+      "initial_sha256": "de4c9556a2b93a30205f290062c668dca4a82871a32fe9b05960dd067265403d",
+      "current_sha256": "de4c9556a2b93a30205f290062c668dca4a82871a32fe9b05960dd067265403d",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/paths.json",
+      "initial_sha256": "ae5f2cf2a01dce72005a063d8bcb91badb80d5d11b836971c13edf77b497b4b8",
+      "current_sha256": "ae5f2cf2a01dce72005a063d8bcb91badb80d5d11b836971c13edf77b497b4b8",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/semantic-review.json",
+      "initial_sha256": "609abbee31e01581f3bafdf705ed8acba2b78d10f48ac5b229f696734a92e2e6",
+      "current_sha256": "609abbee31e01581f3bafdf705ed8acba2b78d10f48ac5b229f696734a92e2e6",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-integration-20261111/plan-revision/contract-v1.json",
+      "initial_sha256": "0d7d65d1151941ebdd8a3f2807893f75eb423d889d0a8eb0ee5dda74b31b34ac",
+      "current_sha256": "0d7d65d1151941ebdd8a3f2807893f75eb423d889d0a8eb0ee5dda74b31b34ac",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-integration-20261111/plan-revision/student-plan-v1.html",
+      "initial_sha256": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254",
+      "current_sha256": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-integration-20261111/plan-revision/before-rebind.json",
+      "initial_sha256": "b5366825c805856738e3f730df6840976fc7e88ef10f2a0ec7be60b58000b605",
+      "current_sha256": "b5366825c805856738e3f730df6840976fc7e88ef10f2a0ec7be60b58000b605",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-integration-20261111/plan-revision/after-rebind.json",
+      "initial_sha256": "7861252bae06d8ad216f148a7ac55c058e3e5daacd6ac5e342c3e04882fb5886",
+      "current_sha256": "7861252bae06d8ad216f148a7ac55c058e3e5daacd6ac5e342c3e04882fb5886",
+      "unchanged": true
+    }
+  ],
+  "context_binding_current": true,
+  "context_files": [
+    {
+      "path": "curriculum/student-plan.html",
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "role": "current revised student entry and workload qualification; structural context, not learner evidence",
+      "current_sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "unchanged": true
+    },
+    {
+      "path": "curriculum/contract.json",
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "role": "explicit v2 plan supersession; unchanged weeks/topics and governing criteria",
+      "current_sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "unchanged": true
+    },
+    {
+      "path": "templates/quality.json",
+      "sha256": "0b74c8fb3f3e5e71fa776535230e3d6fa980d828b9a57195343cb25f6d729097",
+      "role": "unconfigured v2 template; policy remains unagreed",
+      "current_sha256": "0b74c8fb3f3e5e71fa776535230e3d6fa980d828b9a57195343cb25f6d729097",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-integration-20261111/plan-revision/student-plan-v1.html",
+      "sha256": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254",
+      "role": "byte-preserved old plan baseline",
+      "current_sha256": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-integration-20261111/plan-revision/contract-v1.json",
+      "sha256": "0d7d65d1151941ebdd8a3f2807893f75eb423d889d0a8eb0ee5dda74b31b34ac",
+      "role": "byte-preserved old contract baseline",
+      "current_sha256": "0d7d65d1151941ebdd8a3f2807893f75eb423d889d0a8eb0ee5dda74b31b34ac",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-integration-20261111/plan-revision/quality-template-v1.json",
+      "sha256": "965cb7b165f81cb4cfd045830ba347c2644b571a26b510d286deee8a825ca402",
+      "role": "byte-preserved old template baseline",
+      "current_sha256": "965cb7b165f81cb4cfd045830ba347c2644b571a26b510d286deee8a825ca402",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-integration-20261111/plan-revision/before-rebind.json",
+      "sha256": "b5366825c805856738e3f730df6840976fc7e88ef10f2a0ec7be60b58000b605",
+      "role": "intended new-plan/old-pin failure",
+      "current_sha256": "b5366825c805856738e3f730df6840976fc7e88ef10f2a0ec7be60b58000b605",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-integration-20261111/plan-revision/after-rebind.json",
+      "sha256": "7861252bae06d8ad216f148a7ac55c058e3e5daacd6ac5e342c3e04882fb5886",
+      "role": "new plan structural validation only",
+      "current_sha256": "7861252bae06d8ad216f148a7ac55c058e3e5daacd6ac5e342c3e04882fb5886",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-integration-20261111/plan-revision/functional.json",
+      "sha256": "916206c97cd7808dad535b9b13ebd64ffbf87f4cc962fcbbdea0c5db3d31d267",
+      "role": "parent-owned plan/template transition test result",
+      "current_sha256": "916206c97cd7808dad535b9b13ebd64ffbf87f4cc962fcbbdea0c5db3d31d267",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-integration-20261111/plan-revision/verify_plan_revision.py",
+      "sha256": "28ca9c43f59b2094a5719b70d3342728580f837e6cf739198f92e4603bfa1cd6",
+      "role": "parent-owned actual transition verifier source",
+      "current_sha256": "28ca9c43f59b2094a5719b70d3342728580f837e6cf739198f92e4603bfa1cd6",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "role": "required external exercises and preparation, not inline integrated content",
+      "current_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+      "role": "required A/B and optional lookup exercises, not inline integrated content",
+      "current_sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_problem_pipeline.ipynb",
+      "sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+      "role": "optional detailed error and ZIP example, separately reviewed",
+      "current_sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/course-reconstruction-20261111/independent-ten-week-source-audit.md",
+      "sha256": "b59f2dc092d2a006bf9502d49b2c5fa3940c267a25d136cdccaa6e8cc7ecb60c",
+      "role": "historical proposed prerequisite route, not delivery proof",
+      "current_sha256": "b59f2dc092d2a006bf9502d49b2c5fa3940c267a25d136cdccaa6e8cc7ecb60c",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/workflow.json",
+      "sha256": "21f999d6cfbc17a01c64d885e7c27cd0879e4794cbf405d253193bd02c7d131f",
+      "role": "unchanged earlier workflow and criteria agreement history",
+      "current_sha256": "21f999d6cfbc17a01c64d885e7c27cd0879e4794cbf405d253193bd02c7d131f",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/quality.json",
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "role": "unchanged original-notebook quality bundle; does not bind new integrated notebook",
+      "current_sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01-integration-20261111/discovery/official-source-corroboration.md",
+      "sha256": "a4f0d80047323f20c9d5152ff88c31ce9f415fba560cfe36e56b5e3a14a873e9",
+      "role": "fresh manual official-source check; not independent new demand extraction",
+      "current_sha256": "a4f0d80047323f20c9d5152ff88c31ce9f415fba560cfe36e56b5e3a14a873e9",
+      "unchanged": true
+    },
+    {
+      "path": "tools/discovery_loop.py",
+      "sha256": "2273d1e9a47aff0dc038f0379837c908cb84a559d3e31e3a026f5a7c189d0914",
+      "role": "transition, receipt, replay, freshness and queue implementation",
+      "current_sha256": "2273d1e9a47aff0dc038f0379837c908cb84a559d3e31e3a026f5a7c189d0914",
+      "unchanged": true
+    },
+    {
+      "path": "tools/quality.py",
+      "sha256": "bb7ee10c793aa9916429a1dd77900fc59238738eb49632ba7ec44935e0770b30",
+      "role": "baseline and agreement-fingerprint implementation",
+      "current_sha256": "bb7ee10c793aa9916429a1dd77900fc59238738eb49632ba7ec44935e0770b30",
+      "unchanged": true
+    },
+    {
+      "path": "tools/workflow.py",
+      "sha256": "2a337ed8c7cf8c871eba2c461c66a883a42bb53257c62688a99d0f5477809cf2",
+      "role": "read-only recall and workflow decisions",
+      "current_sha256": "2a337ed8c7cf8c871eba2c461c66a883a42bb53257c62688a99d0f5477809cf2",
+      "unchanged": true
+    },
+    {
+      "path": "tools/review_preflight.py",
+      "sha256": "f0b1692cab3644d67592027a441ad4c676b303661b0fb0814e1870a68958fc0d",
+      "role": "joined readiness gates",
+      "current_sha256": "f0b1692cab3644d67592027a441ad4c676b303661b0fb0814e1870a68958fc0d",
+      "unchanged": true
+    }
+  ],
+  "context_cli_rechecks": [
+    {
+      "name": "workflow-validate",
+      "exit_code": 0,
+      "result_matches_recorded": true,
+      "status": "valid",
+      "reason": "structural_checks_only"
+    },
+    {
+      "name": "workflow-recall-default",
+      "exit_code": 0,
+      "result_matches_recorded": true,
+      "status": "valid",
+      "reason": "structural_checks_only"
+    },
+    {
+      "name": "workflow-recall-query",
+      "exit_code": 0,
+      "result_matches_recorded": true,
+      "status": "valid",
+      "reason": "structural_checks_only"
+    },
+    {
+      "name": "workflow-decide",
+      "exit_code": 0,
+      "result_matches_recorded": true,
+      "status": "pause",
+      "reason": "criteria_agreement_required"
+    },
+    {
+      "name": "quality-evaluate",
+      "exit_code": 0,
+      "result_matches_recorded": true,
+      "status": "uncertain",
+      "reason": null
+    },
+    {
+      "name": "quality-plan",
+      "exit_code": 0,
+      "result_matches_recorded": true,
+      "status": "pause",
+      "reason": "priority_policy_requires_agreement"
+    },
+    {
+      "name": "plan-baseline",
+      "exit_code": 0,
+      "result_matches_recorded": true,
+      "status": "passed",
+      "reason": null
+    },
+    {
+      "name": "template-plan",
+      "exit_code": 0,
+      "result_matches_recorded": true,
+      "status": "pause",
+      "reason": "priority_policy_requires_agreement"
+    }
+  ],
+  "runs": [
+    {
+      "run": "integrated-candidate-01",
+      "current": true,
+      "session_path": "reviews/week01-integration-20261111/discovery/runs/integrated-candidate-01/session.json",
+      "session_file_sha256": "9c4ceb26c18bb2a2c9e0b912036bff2fb9aff8dfaf3adf0fdc3e08e9bafe9145",
+      "artifact_sha256": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+      "bound_artifact_sha256": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+      "projection_sha256": "c056a89a62bc799f3a4d2741725948f2062e5f137f54083d655337b7918dfc60",
+      "status": "needs_work",
+      "ready_for_review": false,
+      "demand_count": 19,
+      "question_count": 8,
+      "queue_count": 17,
+      "covered": [
+        "N01",
+        "P01"
+      ],
+      "usage": {
+        "events": 57,
+        "rounds": 6,
+        "elapsed_minutes": 0,
+        "no_progress": 2
+      },
+      "next_action": "expand_frontier",
+      "static_checks": {
+        "prior_session_file_unchanged": true,
+        "all_nineteen_demand_payloads_exactly_preserved": true,
+        "bridge_demands_exact_subsets_no_duplicates": true,
+        "all_eight_original_question_texts_preserved": true,
+        "bridge_question_source_session_unchanged": true,
+        "bridge_question_mapping_exact": true,
+        "snapshot_matches_bound_sha": true,
+        "projection_matches_every_snapshot_cell": true,
+        "projection_sha_matches_record": true,
+        "findings_sha_matches_record": true,
+        "events_match_saved_hash_chain": false,
+        "saved_manifest_matches_replay": true
+      },
+      "freshness_checks": {
+        "actual_artifact_matches_binding": true,
+        "snapshot_matches_current_raw_bytes": true,
+        "saved_report_matches_current_inspection": true,
+        "no_artifact_source_or_projection_freshness_failure": true
+      },
+      "cli_checks": [
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "tools/discovery_loop.py",
+            "report",
+            "reviews/week01-integration-20261111/discovery/runs/integrated-candidate-01/session.json",
+            "--root",
+            "."
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "afab16b438d33830eeae9b1d51ccd610a041980c25afbcb8d577a545e0c44ead",
+          "equals_API_result": true
+        },
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "tools/discovery_loop.py",
+            "next",
+            "reviews/week01-integration-20261111/discovery/runs/integrated-candidate-01/session.json",
+            "--root",
+            "."
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "c713c8155ee7c1fdfbf0c90e3ec761036ddf7576cb7ad169bb0d2079aab91682",
+          "equals_API_result": true
+        },
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "tools/discovery_loop.py",
+            "manifest",
+            "reviews/week01-integration-20261111/discovery/runs/integrated-candidate-01/session.json",
+            "--root",
+            "."
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "31f99a9f045d0e055552b900959739235364610aa1b0c562d5666fc3a52a27fe",
+          "equals_API_result": true
+        }
+      ],
+      "blank_answer_cells": [
+        {
+          "cell_index": 32,
+          "cell_id": "e49ac1c2",
+          "ast_statement_count": 0
+        }
+      ],
+      "freshness_blockers": []
+    }
+  ],
+  "previous_artifact_scopes_still_separate": [
+    {
+      "run": "pipeline-final-01",
+      "status": "needs_work",
+      "ready_for_review": false,
+      "bound_sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+      "actual_sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+      "queue_count": 16,
+      "covered": [
+        "N01",
+        "P01",
+        "P02"
+      ],
+      "freshness_blockers": []
+    },
+    {
+      "run": "bridge-navigation-01",
+      "status": "needs_work",
+      "ready_for_review": false,
+      "bound_sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+      "actual_sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+      "queue_count": 3,
+      "covered": [],
+      "freshness_blockers": []
+    }
+  ],
+  "compressed_build_attempt_integrity": [
+    {
+      "manifest": "reviews/week01-integration-20261111/discovery/build-attempts/integrated-candidate-01-invalid-counterevidence.manifest.json",
+      "archive_sha_matches": true,
+      "every_member_bytes_and_sha_match": true
+    }
+  ],
+  "git_index_matches_initial": true,
+  "git_index_sha256": "9b06078af4b8180e11306f2f4cc5ff91e0dfb8901c1fb4b2815b1568dee163b8",
+  "all_current_mechanical_checks_passed": false,
+  "limits": [
+    "This script checks bytes, event replay, receipts, declared payloads/question text and deterministic CLI/API agreement. It neither browses primary sources nor decides semantic sufficiency.",
+    "The independent reviewer manually read all cell sources and authored nineteen findings. Distinct actor strings are structural declarations, not authenticated independence.",
+    "The extra context manifest is checked by this verifier, not automatically by the core discovery state.",
+    "No aggregate graph/path/semantic-preflight acceptance or quality/workflow agreement is created. Student learning and completion duration remain unobserved."
+  ]
+}

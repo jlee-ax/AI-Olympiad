@@ -1,0 +1,55 @@
+{
+  "id": "rebind-integrated-candidate-01-039-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D11",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "uncertain",
+    "rationale": "The closing source boundary distinguishes the 2027 domestic announcement, its still IOAI2026-labelled syllabus and older international Antique. It does not settle international2027 adoption or provide the retained independent URL/year/scope assessment. No future-exam scope or hours equivalence is inferred.",
+    "start_line": 421,
+    "end_line": 457,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "The closing source boundary distinguishes the 2027 domestic announcement, its still IOAI2026-labelled syllabus and older international Antique. It does not settle international2027 adoption or provide the retained independent URL/year/scope assessment. No future-exam scope or hours equivalence is inferred.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 421,
+        "end_line": 457
+      },
+      {
+        "id": "learning",
+        "judgment": "uncertain",
+        "observed_behavior": "The closing source boundary distinguishes the 2027 domestic announcement, its still IOAI2026-labelled syllabus and older international Antique. It does not settle international2027 adoption or provide the retained independent URL/year/scope assessment. No future-exam scope or hours equivalence is inferred.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 421,
+        "end_line": 457
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "The closing source boundary distinguishes the 2027 domestic announcement, its still IOAI2026-labelled syllabus and older international Antique. It does not settle international2027 adoption or provide the retained independent URL/year/scope assessment. No future-exam scope or hours equivalence is inferred.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 421,
+        "end_line": 457
+      },
+      {
+        "id": "principle",
+        "judgment": "met",
+        "observed_behavior": "The closing source boundary distinguishes the 2027 domestic announcement, its still IOAI2026-labelled syllabus and older international Antique. It does not settle international2027 adoption or provide the retained independent URL/year/scope assessment. No future-exam scope or hours equivalence is inferred.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 421,
+        "end_line": 457
+      },
+      {
+        "id": "practice",
+        "judgment": "uncertain",
+        "observed_behavior": "The closing source boundary distinguishes the 2027 domestic announcement, its still IOAI2026-labelled syllabus and older international Antique. It does not settle international2027 adoption or provide the retained independent URL/year/scope assessment. No future-exam scope or hours equivalence is inferred.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 421,
+        "end_line": 457
+      }
+    ]
+  }
+}

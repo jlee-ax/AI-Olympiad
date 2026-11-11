@@ -1,0 +1,29 @@
+{
+  "recorded_at_utc": "2026-11-11T10:09:50.842865+00:00",
+  "reason": "Parent requested that existing user uncommitted notebook/diff/cell text not be newly published with this review. Retain only path/hash and relevant scope summary.",
+  "removed_new_review_copies": [
+    {
+      "new_review_copy": "inputs/preserved-user-week01.ipynb",
+      "sha256": "733c0093b44f30d31354567331c2c39ee325ed074e7a6368bb1f2e96f0c174c0",
+      "bytes": 469917,
+      "status": "removed_new_review_copy_only"
+    },
+    {
+      "new_review_copy": "inputs/preserved-user-git-diff.txt",
+      "sha256": "4c4b6e45ad0dba032f74a074f27b048f2da5515be345997a49783feb410f7ed6",
+      "bytes": 210797,
+      "status": "removed_new_review_copy_only"
+    },
+    {
+      "new_review_copy": "inputs/preserved-user-changed-cells.json",
+      "sha256": "26abf848c59fbb2c1d42a7acd60ddd617132ff3160e70e36dde2e17fbc53391a",
+      "bytes": 13629,
+      "status": "removed_new_review_copy_only"
+    }
+  ],
+  "preserved_original_worktree": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration",
+  "existing_preservation_register": "reviews/discovery-loop-20261111/preserved-inputs.json",
+  "originals_or_existing_preservation_modified": false,
+  "use_removed_copies_in_future_work": false,
+  "scope_summary": "Preserved uncommitted changes add prediction-time availability and an arbitrary untrained height formula, distinguish place/marker/confounding in the scatterplot, and expand right-aligned broadcasting explanation. They are context, not an approved integrated candidate."
+}

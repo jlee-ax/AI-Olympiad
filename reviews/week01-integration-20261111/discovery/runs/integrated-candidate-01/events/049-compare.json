@@ -1,0 +1,55 @@
+{
+  "id": "rebind-integrated-candidate-01-049-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D09",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The fixed linear formula and centroid classifier do not teach class-axis softmax, correct-class negative-log loss, shift invariance or stable large-logit calculations.",
+    "start_line": 1,
+    "end_line": 457,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "The fixed linear formula and centroid classifier do not teach class-axis softmax, correct-class negative-log loss, shift invariance or stable large-logit calculations.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 457
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "The fixed linear formula and centroid classifier do not teach class-axis softmax, correct-class negative-log loss, shift invariance or stable large-logit calculations.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 457
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "The fixed linear formula and centroid classifier do not teach class-axis softmax, correct-class negative-log loss, shift invariance or stable large-logit calculations.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 457
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The fixed linear formula and centroid classifier do not teach class-axis softmax, correct-class negative-log loss, shift invariance or stable large-logit calculations.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 457
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "The fixed linear formula and centroid classifier do not teach class-axis softmax, correct-class negative-log loss, shift invariance or stable large-logit calculations.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 457
+      }
+    ]
+  }
+}

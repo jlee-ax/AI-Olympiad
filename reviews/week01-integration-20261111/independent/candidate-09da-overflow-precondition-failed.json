@@ -1,0 +1,7 @@
+{
+  "status": "not_executed",
+  "stage": "source_SHA_precondition",
+  "expected_original_sha256": "09da87fd69d9a5c479c8e84e4e48f08b5d878b6830034f976dc0f8ca69f494f8",
+  "current_author_file_sha256": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+  "reason": "Author source had changed before this repro started. Did not execute the changed file as the old candidate. Reproduce from already captured 09da executed notebook cells instead."
+}

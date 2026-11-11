@@ -1,0 +1,46 @@
+{
+  "case": "followup-dirty-csv",
+  "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/followup-inputs/followup-dirty-csv.ipynb",
+  "source_sha256": "9a91e43f441f38907198e404fcdba68eed1947d7379a93c89e6836d6693ca36c",
+  "worker_sha256": "2f09ea79a1f68e2e401eaa348ae4ed1d11f6c95dc6d4568bdcdc8c0f2e6f4723",
+  "checked_at_utc": "2026-11-11T10:15:41.539918+00:00",
+  "status": "passed",
+  "execution": "single fresh InProcessKernelManager in a new subprocess",
+  "cells": 6,
+  "executed_code_cells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "oracle": {
+    "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/followup-inputs/followup-dirty-csv-oracle.py",
+    "sha256": "dd75af85dd6037049c3dbe0a673bb573729bcf231458fa14f3bc14859440ef5c",
+    "status": "ok",
+    "outputs": [
+      {
+        "output_type": "stream",
+        "name": "stdout",
+        "text": "original data re-created in a separate fresh kernel; not integration plants\ndirty input provided; student cleaning not completed\n"
+      }
+    ]
+  },
+  "student_performance": "not_observed",
+  "elapsed_seconds": 2.1753,
+  "source_unchanged": true,
+  "file_io_events": [
+    {
+      "path": "data/week1_plants.csv",
+      "operation": "read",
+      "physical_file_api": true
+    },
+    {
+      "path": "data/week1_plants_new.csv",
+      "operation": "read",
+      "physical_file_api": true
+    }
+  ],
+  "runtime_removed": true
+}

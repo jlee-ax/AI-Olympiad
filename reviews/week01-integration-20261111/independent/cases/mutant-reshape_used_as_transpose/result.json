@@ -1,0 +1,35 @@
+{
+  "case": "mutant-reshape_used_as_transpose",
+  "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/mutation-inputs/reshape_used_as_transpose.ipynb",
+  "source_sha256": "6f2b21a60f3f6a05b5962b62f106e09e2a6b34e437701956556b8b1ca52c59b0",
+  "worker_sha256": "2f09ea79a1f68e2e401eaa348ae4ed1d11f6c95dc6d4568bdcdc8c0f2e6f4723",
+  "checked_at_utc": "2026-11-11T10:17:38.135505+00:00",
+  "status": "notebook_error",
+  "execution": "single fresh InProcessKernelManager in a new subprocess",
+  "cells": 34,
+  "executed_code_cells": [
+    2,
+    4,
+    6,
+    8,
+    10,
+    12
+  ],
+  "oracle": null,
+  "student_performance": "not_observed",
+  "elapsed_seconds": 0.5497,
+  "failed_cell": 12,
+  "error": {
+    "ename": "AssertionError",
+    "evalue": "",
+    "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[6]\u001b[39m\u001b[32m, line 11\u001b[39m\n\u001b[32m      7\u001b[39m \u001b[38;5;28;01mtry\u001b[39;00m:\n\u001b[32m      8\u001b[39m     light_by_day + np.array([\u001b[32m1\u001b[39m, \u001b[32m2\u001b[39m, \u001b[32m3\u001b[39m])\n\u001b[32m      9\u001b[39m \u001b[38;5;28;01mexcept\u001b[39;00m ValueError:\n\u001b[32m     10\u001b[39m     print(\u001b[33m\"길이 3인 보정은 오른쪽 축 2와 달라 오류\"\u001b[39m)\n\u001b[32m---> \u001b[39m\u001b[32m11\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m reshaped[\u001b[32m0\u001b[39m, \u001b[32m1\u001b[39m] != transposed[\u001b[32m0\u001b[39m, \u001b[32m1\u001b[39m]\n",
+      "\u001b[31mAssertionError\u001b[39m: "
+    ]
+  },
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

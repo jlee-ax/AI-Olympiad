@@ -1,0 +1,55 @@
+{
+  "id": "rebind-integrated-candidate-01-050-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D10",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "A changed training record changes learned centers and a prediction; small validation accuracy is explicitly insufficient for generalization. A new problem asks independent code and error cases. Numerical gradients, relative-error denominators and the corresponding prerequisites remain absent; the retained full independent verification demand is not established.",
+    "start_line": 305,
+    "end_line": 388,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "A changed training record changes learned centers and a prediction; small validation accuracy is explicitly insufficient for generalization. A new problem asks independent code and error cases. Numerical gradients, relative-error denominators and the corresponding prerequisites remain absent; the retained full independent verification demand is not established.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 305,
+        "end_line": 388
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "A changed training record changes learned centers and a prediction; small validation accuracy is explicitly insufficient for generalization. A new problem asks independent code and error cases. Numerical gradients, relative-error denominators and the corresponding prerequisites remain absent; the retained full independent verification demand is not established.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 305,
+        "end_line": 388
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "A changed training record changes learned centers and a prediction; small validation accuracy is explicitly insufficient for generalization. A new problem asks independent code and error cases. Numerical gradients, relative-error denominators and the corresponding prerequisites remain absent; the retained full independent verification demand is not established.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 305,
+        "end_line": 388
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "A changed training record changes learned centers and a prediction; small validation accuracy is explicitly insufficient for generalization. A new problem asks independent code and error cases. Numerical gradients, relative-error denominators and the corresponding prerequisites remain absent; the retained full independent verification demand is not established.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 305,
+        "end_line": 388
+      },
+      {
+        "id": "practice",
+        "judgment": "met",
+        "observed_behavior": "A changed training record changes learned centers and a prediction; small validation accuracy is explicitly insufficient for generalization. A new problem asks independent code and error cases. Numerical gradients, relative-error denominators and the corresponding prerequisites remain absent; the retained full independent verification demand is not established.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 305,
+        "end_line": 388
+      }
+    ]
+  }
+}

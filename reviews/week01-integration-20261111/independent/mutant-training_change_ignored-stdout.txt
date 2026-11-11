@@ -1,0 +1,1 @@
+{"case": "mutant-training_change_ignored", "status": "notebook_error", "source_sha256": "66211403a4c1e49efbbb580f117cf925e6a7f2835b5ec82deaf17db4eaa0ea97", "executed_code_cells": [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24], "source_unchanged": true, "runtime_removed": true}

@@ -1,0 +1,11 @@
+{
+  "current_runs": [
+    "integrated-candidate-01"
+  ],
+  "historical_runs": {},
+  "selection_basis": "Latest authorized actual integrated artifact 15ab0101…; candidate naming is retained while independent review completes. New changes require a separate new run, never replacement of this session.",
+  "build_attempts": [
+    "build-attempts/integrated-candidate-01-invalid-counterevidence"
+  ],
+  "authority": "advisory_only"
+}

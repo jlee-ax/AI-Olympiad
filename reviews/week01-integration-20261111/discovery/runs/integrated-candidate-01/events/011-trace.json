@@ -1,0 +1,195 @@
+{
+  "id": "rebind-integrated-candidate-01-011-trace",
+  "op": "trace",
+  "data": {
+    "reason": "Separate new actual-artifact baseline; preserve historical external requirements and open questions. Local receipts only; no original-source search or source authentication.",
+    "frontier_id": "problems",
+    "read_ids": [
+      "rebind-integrated-candidate-01-006-read",
+      "rebind-integrated-candidate-01-007-read",
+      "rebind-integrated-candidate-01-008-read",
+      "rebind-integrated-candidate-01-009-read",
+      "rebind-integrated-candidate-01-010-read"
+    ],
+    "actor": "source-research-sol",
+    "rationale": "Historical extracted requirement payloads imported unchanged; not a fresh source extraction. Historical extracted requirement payloads imported unchanged; not a fresh source extraction. Historical extracted requirement payloads imported unchanged; not a fresh source extraction. Historical extracted requirement payloads imported unchanged; not a fresh source extraction. Unchanged historical demand payloads copied from original source extractor; not a claim of a fresh extraction or current web-source verification.",
+    "counterevidence": "Original source notes are agent-authored paraphrases. Original broad course demand does not imply all of it belongs in Week2.",
+    "uninvestigated": [],
+    "demands": [
+      {
+        "id": "D01",
+        "statement": "배열의 축 의미와 데이터 배치를 보존하기",
+        "prerequisites": [
+          "인덱싱",
+          "축 번호",
+          "곱으로 세는 원소 수"
+        ],
+        "learning_demand": "축 이름을 shape에 대응; 축 교환과 원소 재배치를 구별; 입력/정답 축 추적",
+        "assessment_demand": "숫자별 좌표 예측; 축 의미 설명; 틀린 reshape 주장에 반례; 새 입력 직접 구현",
+        "dimensions": [
+          {
+            "id": "principle",
+            "required_behavior": "reshape는 원소 수를 보존하나 축 의미 교환은 별도; Radar 입력 (6,50,181), target (50,181)."
+          },
+          {
+            "id": "practice",
+            "required_behavior": "작은 2×3 배열에서 reshape(3,2)와 transpose의 특정 좌표를 실행 전에 예측한다."
+          }
+        ],
+        "stage_proposal": {
+          "decision": "now",
+          "rationale": "현재 1주차에는 이미 있는 의미 보존 평가를 유지. 4차원 모델 맥락은 later로 연결."
+        },
+        "source_locations": [
+          "S02 p1 Q2, p2 Q6",
+          "S04 raw L49–91, L337–340"
+        ]
+      },
+      {
+        "id": "D02",
+        "statement": "거리·이웃·투표를 명세에서 구성하기",
+        "prerequisites": [
+          "차와 제곱·제곱근",
+          "우측 축 비교",
+          "정수 인덱싱",
+          "정렬·빈도"
+        ],
+        "learning_demand": "두 표의 각 행 쌍을 비교; feature 축을 합산해 거리 생성; 이웃 label을 모아 동률 규칙 적용",
+        "assessment_demand": "중간 거리표의 축·shape; feature 축 합산 이유; 비연속 label 처리; 투표 동률·k 변경 전이",
+        "dimensions": [
+          {
+            "id": "principle",
+            "required_behavior": "D[i,j]=sqrt(sum_k((X_test[i,k]-X_train[j,k])**2)); shapes (m,1,d)-(1,n,d)→(m,n,d)→(m,n)."
+          },
+          {
+            "id": "practice",
+            "required_behavior": "새 작은 좌표 세트에서 거리표와 이웃 label을 손으로 만든 뒤 NumPy로 구현한다."
+          }
+        ],
+        "stage_proposal": {
+          "decision": "later",
+          "rationale": "1주차 전체 KNN 강제 근거는 없다. 현재 우측 축 규칙을 선수로 연결하고 거리/분류 단원에서 완성한다."
+        },
+        "source_locations": [
+          "S02 p17 서술2 raw L564–600",
+          "S07 General broadcasting rules L73–106"
+        ]
+      },
+      {
+        "id": "D03",
+        "statement": "입력과 정답의 역할 및 사용 시점을 분리하기",
+        "prerequisites": [
+          "행/열 선택",
+          "식별자와 값 구별",
+          "예측값과 관측 정답"
+        ],
+        "learning_demand": "관측값의 역할 분류; 예측 시점 가용성을 판단; 정답 채널을 입력에서 제외",
+        "assessment_demand": "feature/target 역할; prediction-time availability; shape 통과와 의미 오류 구별",
+        "dimensions": [
+          {
+            "id": "principle",
+            "required_behavior": "x=data[:6], y=data[6]; y가 x에 들어가는지와 t_predict에 x가 알려지는지를 별도로 검사."
+          },
+          {
+            "id": "practice",
+            "required_behavior": "현재 화분 예측에서 목표 높이를 입력에 추가한 코드와 미래 실제 물 기록을 사용하는 코드를 각각 진단한다."
+          }
+        ],
+        "stage_proposal": {
+          "decision": "now",
+          "rationale": "이미 존재하는 입력/정답 토대를 강화한 current 내용은 적절한 국소 연결. 모델 training은 later."
+        },
+        "source_locations": [
+          "S04 raw L67–91,L220–255",
+          "S10 §12.2 L120–134"
+        ]
+      },
+      {
+        "id": "D04",
+        "statement": "클래스 label을 내부 index로 바꾸고 정확히 복원하기",
+        "prerequisites": [
+          "정수 인덱싱",
+          "dtype",
+          "대응 함수",
+          "역함수"
+        ],
+        "learning_demand": "의미 label↔연속 클래스 index 대응; class 축 argmax; 내부표현 역변환",
+        "assessment_demand": "모든 label의 round-trip; class 축 선택; 비연속 label 새 입력; 제출 label 의미",
+        "dimensions": [
+          {
+            "id": "principle",
+            "required_behavior": "이 baseline의 encode(y)=y+1, decode(c)=c-1; decode(encode(y))=y. 이 +1 규칙은 임의 label 집합의 보편 해법은 아님."
+          },
+          {
+            "id": "practice",
+            "required_behavior": "새 label 집합 {-3,4,12}에는 명시적 사전 대응을 만들고 배경도 round-trip 검사한다."
+          }
+        ],
+        "stage_proposal": {
+          "decision": "later",
+          "rationale": "신규 외부 요구로 추출. 1주차에는 순서/대응만 선수로 표시하고 분류 loss 단원에서 구현한다."
+        },
+        "source_locations": [
+          "S04 raw L69–73,L223–228,L312–314,L435–438"
+        ]
+      },
+      {
+        "id": "D05",
+        "statement": "유사도 행렬의 위치를 실제 식별자로 돌려주기",
+        "prerequisites": [
+          "내적",
+          "norm",
+          "transpose",
+          "인덱스와 ID 구별"
+        ],
+        "learning_demand": "query·gallery 축 해석; 벡터 정규화 후 pairwise 점수; 정렬된 경로와 결과 index 연결; 같은 identity와 다른 gender 제약 확인",
+        "assessment_demand": "모든 쌍 점수 shape; 임의 ID/파일순서 변경 전이; 행과 열 의미; 문제 제약과 heuristic 구별",
+        "dimensions": [
+          {
+            "id": "principle",
+            "required_behavior": "Q∈R^(q×d), G∈R^(g×d), S=QG^T∈R^(q×g); unit norm일 때 S_ij는 cosine similarity."
+          },
+          {
+            "id": "practice",
+            "required_behavior": "작은 query/gallery 벡터와 섞인 gallery ID [20,7,42]로 점수표를 만들고 최댓값의 위치를 ID로 바꾼다."
+          }
+        ],
+        "stage_proposal": {
+          "decision": "later",
+          "rationale": "현재는 짝 대응 토대를 유지. 모델과 pairwise 검색은 후속. 같은 identity의 여러 view를 무작위로 나눌 때 일반화가 달라진다는 것은 교육적 분할 추론이며 원문이 group split을 명령한 것은 아니다."
+        },
+        "source_locations": [
+          "S05 raw L46–75,L91,L153–162,L210–277"
+        ]
+      },
+      {
+        "id": "D12",
+        "statement": "mutable default는 Python 진단의 별도 경계로 남기기",
+        "prerequisites": [
+          "리스트 변경",
+          "함수 인수",
+          "참조/객체 공유"
+        ],
+        "learning_demand": "여러 호출 사이 객체 상태를 추적; return 값과 alias를 구별",
+        "assessment_demand": "호출 간 상태; alias 반례; 직접 설명",
+        "dimensions": [
+          {
+            "id": "principle",
+            "required_behavior": "기본 인수 객체의 생명주기는 함수 호출마다 새 리스트를 만드는 것과 다르다."
+          },
+          {
+            "id": "practice",
+            "required_behavior": "두 함수 호출 이후 이전 반환 리스트가 바뀌는 새 사례를 추적한다."
+          }
+        ],
+        "stage_proposal": {
+          "decision": "defer",
+          "rationale": "실제 문항에서 찾은 요구이나 초보 1주차 핵심을 침식할 수 있다. Python 함수 심화 또는 별도 진단에서 후속 처리."
+        },
+        "source_locations": [
+          "S02 p1 Q1"
+        ]
+      }
+    ]
+  }
+}

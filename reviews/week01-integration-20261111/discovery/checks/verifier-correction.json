@@ -1,0 +1,7 @@
+{
+  "initial_check": "integrity-01.json",
+  "failed_check": "events_match_saved_hash_chain",
+  "cause": "Compared caller event inputs directly to enriched stored events containing generated receipts and hash-chain fields. This was a verifier assertion error; session replay/CLI checks already passed.",
+  "corrected_check": "Initialize saved config and execute every saved input event through loop.step; compare complete regenerated state to saved session.",
+  "session_report_events_changed": false
+}

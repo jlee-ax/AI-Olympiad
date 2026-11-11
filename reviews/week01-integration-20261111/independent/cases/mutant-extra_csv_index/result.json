@@ -1,0 +1,72 @@
+{
+  "case": "mutant-extra_csv_index",
+  "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/mutation-inputs/extra_csv_index.ipynb",
+  "source_sha256": "fc3d9a3be07187b2b33ca1ae8ec76af5cbd781d6a14391ade65d82219503d27f",
+  "worker_sha256": "2f09ea79a1f68e2e401eaa348ae4ed1d11f6c95dc6d4568bdcdc8c0f2e6f4723",
+  "checked_at_utc": "2026-11-11T10:17:32.042339+00:00",
+  "status": "oracle_error",
+  "execution": "single fresh InProcessKernelManager in a new subprocess",
+  "cells": 34,
+  "executed_code_cells": [
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28,
+    30,
+    32
+  ],
+  "oracle": {
+    "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/oracle-integration.py",
+    "sha256": "f85e938c7984c2741341c834d23598dc81722ce479cbba456bcaeac5cfcbd218",
+    "status": "error",
+    "outputs": [
+      {
+        "output_type": "error",
+        "ename": "AssertionError",
+        "evalue": "",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[17]\u001b[39m\u001b[32m, line 56\u001b[39m\n\u001b[32m     52\u001b[39m qa_checks.append(\u001b[33m'train X and y change learned state/prediction; validation cannot refit; consistent one-feature units invariant'\u001b[39m)\n\u001b[32m     53\u001b[39m qa_expected_ids={\u001b[33m'P05'\u001b[39m:\u001b[32m0\u001b[39m,\u001b[33m'P06'\u001b[39m:\u001b[32m1\u001b[39m}\n\u001b[32m     54\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m dict(zip(result.pot_id,result.prediction))==qa_expected_ids,\u001b[33m'ID-to-model prediction mismatch'\u001b[39m\n\u001b[32m     55\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m restored.pot_id.tolist()==[\u001b[33m'P05'\u001b[39m,\u001b[33m'P06'\u001b[39m] \u001b[38;5;28;01mand\u001b[39;00m restored.prediction.tolist()==[\u001b[32m0\u001b[39m,\u001b[32m1\u001b[39m]\n\u001b[32m---> \u001b[39m\u001b[32m56\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m checked.columns.tolist()==[\u001b[33m'pot_id'\u001b[39m,\u001b[33m'prediction'\u001b[39m] \u001b[38;5;28;01mand\u001b[39;00m file_check.columns.tolist()==[\u001b[33m'pot_id'\u001b[39m,\u001b[33m'prediction'\u001b[39m]\n\u001b[32m     57\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m \u001b[38;5;28;01mnot\u001b[39;00m result_path.exists() \u001b[38;5;28;01mand\u001b[39;00m \u001b[38;5;28;01mnot\u001b[39;00m result_path.parent.exists()\n\u001b[32m     58\u001b[39m \u001b[38;5;28;01mfor\u001b[39;00m qa_perm \u001b[38;5;28;01min\u001b[39;00m itertools.permutations(range(\u001b[32m2\u001b[39m)):\n\u001b[32m     59\u001b[39m     qa_frame=validation.iloc[list(qa_perm)]\n",
+          "\u001b[31mAssertionError\u001b[39m: "
+        ]
+      }
+    ]
+  },
+  "student_performance": "not_observed",
+  "elapsed_seconds": 3.7693,
+  "error": {
+    "ename": "AssertionError",
+    "evalue": "",
+    "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[17]\u001b[39m\u001b[32m, line 56\u001b[39m\n\u001b[32m     52\u001b[39m qa_checks.append(\u001b[33m'train X and y change learned state/prediction; validation cannot refit; consistent one-feature units invariant'\u001b[39m)\n\u001b[32m     53\u001b[39m qa_expected_ids={\u001b[33m'P05'\u001b[39m:\u001b[32m0\u001b[39m,\u001b[33m'P06'\u001b[39m:\u001b[32m1\u001b[39m}\n\u001b[32m     54\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m dict(zip(result.pot_id,result.prediction))==qa_expected_ids,\u001b[33m'ID-to-model prediction mismatch'\u001b[39m\n\u001b[32m     55\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m restored.pot_id.tolist()==[\u001b[33m'P05'\u001b[39m,\u001b[33m'P06'\u001b[39m] \u001b[38;5;28;01mand\u001b[39;00m restored.prediction.tolist()==[\u001b[32m0\u001b[39m,\u001b[32m1\u001b[39m]\n\u001b[32m---> \u001b[39m\u001b[32m56\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m checked.columns.tolist()==[\u001b[33m'pot_id'\u001b[39m,\u001b[33m'prediction'\u001b[39m] \u001b[38;5;28;01mand\u001b[39;00m file_check.columns.tolist()==[\u001b[33m'pot_id'\u001b[39m,\u001b[33m'prediction'\u001b[39m]\n\u001b[32m     57\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m \u001b[38;5;28;01mnot\u001b[39;00m result_path.exists() \u001b[38;5;28;01mand\u001b[39;00m \u001b[38;5;28;01mnot\u001b[39;00m result_path.parent.exists()\n\u001b[32m     58\u001b[39m \u001b[38;5;28;01mfor\u001b[39;00m qa_perm \u001b[38;5;28;01min\u001b[39;00m itertools.permutations(range(\u001b[32m2\u001b[39m)):\n\u001b[32m     59\u001b[39m     qa_frame=validation.iloc[list(qa_perm)]\n",
+      "\u001b[31mAssertionError\u001b[39m: "
+    ]
+  },
+  "source_unchanged": true,
+  "file_io_events": [
+    {
+      "path": "runtime/tmpdir/plant-result-q8muoenh/result.csv",
+      "operation": "write",
+      "physical_file_api": true
+    },
+    {
+      "path": "runtime/tmpdir/plant-result-q8muoenh/result.csv",
+      "operation": "read",
+      "physical_file_api": true
+    }
+  ],
+  "runtime_removed": true
+}

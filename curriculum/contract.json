@@ -1,14 +1,15 @@
 {
   "schema_version": 1,
-  "revision": "curriculum-v1",
+  "revision": "curriculum-v2-week01-integrated",
+  "supersedes": {"revision": "curriculum-v1", "contract_snapshot": "reviews/week01-integration-20261111/plan-revision/contract-v1.json", "plan_snapshot": "reviews/week01-integration-20261111/plan-revision/student-plan-v1.html", "reason": "Week 1 student entry and prior workload-estimate qualification updated; historical evaluations are not promoted."},
   "competition_year": 2027,
   "division": "middle_school",
   "syllabus_label": "IOAI 2026",
   "baseline": {
     "path": "curriculum/student-plan.html",
-    "sha256": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254",
+    "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
     "origin_name": "curriculum-full-scope.html",
-    "designation": "Full-scope teaching content retained; the Week 1 learning-material link was added. Original bytes are preserved in lessons/week01/provenance/student-plan.html.",
+    "designation": "Full-scope teaching content retained; the Week 1 learning-material entry now points to the integrated notebook, and the earlier time estimate is identified as unverified for it. The immediately prior plan and contract are separately preserved in the supersedes snapshots.",
     "history_refs": [
       "Sentinel_c6acc22670dc8191aa79ad3e68cf0ebc",
       "Sentinel_0604c18c70608191b15e3ce55f584653"

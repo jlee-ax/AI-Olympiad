@@ -1,0 +1,1 @@
+{"case": "followup-bridge-B", "status": "passed", "source_sha256": "258de0d8c3fd60298f4da092927290e2aa4ff6e5e8ef1280f7fd71eeef3ec5b8", "executed_code_cells": [0, 1, 2], "source_unchanged": true, "runtime_removed": true}

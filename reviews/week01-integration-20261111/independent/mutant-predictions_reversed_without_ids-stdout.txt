@@ -1,0 +1,1 @@
+{"case": "mutant-predictions_reversed_without_ids", "status": "oracle_error", "source_sha256": "8353e09697dacdffcf3285d952a3a2b36c40424c1c98df484a29cd4aa8a30102", "executed_code_cells": [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32], "source_unchanged": true, "runtime_removed": true}

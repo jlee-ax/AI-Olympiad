@@ -1,0 +1,92 @@
+{
+  "status": "physical_mutation_detected_by_external_phase_aware_audit",
+  "source_notebook_raw_execution_passed": true,
+  "numeric_oracle_passed": true,
+  "result_csv_physical_requirement_passes_control": true,
+  "result_csv_physical_requirement_fails_memory_only_mutant": true,
+  "reviewer_answer_csv_is_not_student_notebook_IO_evidence": true,
+  "original_raw_result_preserved": "cases/mutant-physical_csv_replaced_with_memory/result.json",
+  "original_raw_sha256_before_after": "51644b134ab2062d1872f999070d283673132dd71478ca9146c588c3d2d92beb",
+  "followup_cases": [
+    {
+      "case": "physical-phased-control",
+      "raw_status": "passed",
+      "raw_process_exit": 0,
+      "source_sha256": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+      "notebook_result_csv_events": [
+        {
+          "path": "runtime/tmpdir/plant-result-xdesdkg5/result.csv",
+          "operation": "write",
+          "physical_file_api": true,
+          "phase": "notebook"
+        },
+        {
+          "path": "runtime/tmpdir/plant-result-xdesdkg5/result.csv",
+          "operation": "read",
+          "physical_file_api": true,
+          "phase": "notebook"
+        }
+      ],
+      "reviewer_oracle_events_excluded_from_notebook_proof": [
+        {
+          "path": "runtime/tmpdir/reviewer-independent-csv-2q7fr5fc/reviewer-answer.csv",
+          "operation": "write",
+          "physical_file_api": true,
+          "phase": "reviewer_oracle"
+        },
+        {
+          "path": "runtime/tmpdir/reviewer-independent-csv-2q7fr5fc/reviewer-answer.csv",
+          "operation": "read",
+          "physical_file_api": true,
+          "phase": "reviewer_oracle"
+        },
+        {
+          "path": "runtime/tmpdir/reviewer-independent-csv-jogczq0e/reviewer-answer.csv",
+          "operation": "write",
+          "physical_file_api": true,
+          "phase": "reviewer_oracle"
+        },
+        {
+          "path": "runtime/tmpdir/reviewer-independent-csv-jogczq0e/reviewer-answer.csv",
+          "operation": "read",
+          "physical_file_api": true,
+          "phase": "reviewer_oracle"
+        }
+      ]
+    },
+    {
+      "case": "physical-phased-mutant",
+      "raw_status": "passed",
+      "raw_process_exit": 0,
+      "source_sha256": "46876eb0e235f32e3111d804fc5409e95e032dd0f73713998bd0c8f71e307b19",
+      "notebook_result_csv_events": [],
+      "reviewer_oracle_events_excluded_from_notebook_proof": [
+        {
+          "path": "runtime/tmpdir/reviewer-independent-csv-9cliuuzq/reviewer-answer.csv",
+          "operation": "write",
+          "physical_file_api": true,
+          "phase": "reviewer_oracle"
+        },
+        {
+          "path": "runtime/tmpdir/reviewer-independent-csv-9cliuuzq/reviewer-answer.csv",
+          "operation": "read",
+          "physical_file_api": true,
+          "phase": "reviewer_oracle"
+        },
+        {
+          "path": "runtime/tmpdir/reviewer-independent-csv-o2ta4hm3/reviewer-answer.csv",
+          "operation": "write",
+          "physical_file_api": true,
+          "phase": "reviewer_oracle"
+        },
+        {
+          "path": "runtime/tmpdir/reviewer-independent-csv-o2ta4hm3/reviewer-answer.csv",
+          "operation": "read",
+          "physical_file_api": true,
+          "phase": "reviewer_oracle"
+        }
+      ]
+    }
+  ],
+  "scope": "Only filename=result.csv AND phase=notebook proves the candidate file write/read. reviewer-answer.csv in phase=reviewer_oracle is explicitly excluded."
+}

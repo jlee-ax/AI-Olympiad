@@ -1,0 +1,72 @@
+{
+  "case": "mutant-predictions_reversed_without_ids",
+  "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/mutation-inputs/predictions_reversed_without_ids.ipynb",
+  "source_sha256": "8353e09697dacdffcf3285d952a3a2b36c40424c1c98df484a29cd4aa8a30102",
+  "worker_sha256": "2f09ea79a1f68e2e401eaa348ae4ed1d11f6c95dc6d4568bdcdc8c0f2e6f4723",
+  "checked_at_utc": "2026-11-11T10:17:26.462885+00:00",
+  "status": "oracle_error",
+  "execution": "single fresh InProcessKernelManager in a new subprocess",
+  "cells": 34,
+  "executed_code_cells": [
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28,
+    30,
+    32
+  ],
+  "oracle": {
+    "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/oracle-integration.py",
+    "sha256": "f85e938c7984c2741341c834d23598dc81722ce479cbba456bcaeac5cfcbd218",
+    "status": "error",
+    "outputs": [
+      {
+        "output_type": "error",
+        "ename": "AssertionError",
+        "evalue": "ID-to-model prediction mismatch",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[17]\u001b[39m\u001b[32m, line 54\u001b[39m\n\u001b[32m     50\u001b[39m qa_scaled_model=NearestCentroid().fit(qa_scaled_x,y_train)\n\u001b[32m     51\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m qa_scaled_model.predict(qa_scaled_fill.transform(probe*\u001b[32m0.001\u001b[39m)).tolist()==model.predict(fill.transform(probe)).tolist()\n\u001b[32m     52\u001b[39m qa_checks.append(\u001b[33m'train X and y change learned state/prediction; validation cannot refit; consistent one-feature units invariant'\u001b[39m)\n\u001b[32m     53\u001b[39m qa_expected_ids={\u001b[33m'P05'\u001b[39m:\u001b[32m0\u001b[39m,\u001b[33m'P06'\u001b[39m:\u001b[32m1\u001b[39m}\n\u001b[32m---> \u001b[39m\u001b[32m54\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m dict(zip(result.pot_id,result.prediction))==qa_expected_ids,\u001b[33m'ID-to-model prediction mismatch'\u001b[39m\n\u001b[32m     55\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m restored.pot_id.tolist()==[\u001b[33m'P05'\u001b[39m,\u001b[33m'P06'\u001b[39m] \u001b[38;5;28;01mand\u001b[39;00m restored.prediction.tolist()==[\u001b[32m0\u001b[39m,\u001b[32m1\u001b[39m]\n\u001b[32m     56\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m checked.columns.tolist()==[\u001b[33m'pot_id'\u001b[39m,\u001b[33m'prediction'\u001b[39m] \u001b[38;5;28;01mand\u001b[39;00m file_check.columns.tolist()==[\u001b[33m'pot_id'\u001b[39m,\u001b[33m'prediction'\u001b[39m]\n\u001b[32m     57\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m \u001b[38;5;28;01mnot\u001b[39;00m result_path.exists() \u001b[38;5;28;01mand\u001b[39;00m \u001b[38;5;28;01mnot\u001b[39;00m result_path.parent.exists()\n",
+          "\u001b[31mAssertionError\u001b[39m: ID-to-model prediction mismatch"
+        ]
+      }
+    ]
+  },
+  "student_performance": "not_observed",
+  "elapsed_seconds": 3.3333,
+  "error": {
+    "ename": "AssertionError",
+    "evalue": "ID-to-model prediction mismatch",
+    "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[17]\u001b[39m\u001b[32m, line 54\u001b[39m\n\u001b[32m     50\u001b[39m qa_scaled_model=NearestCentroid().fit(qa_scaled_x,y_train)\n\u001b[32m     51\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m qa_scaled_model.predict(qa_scaled_fill.transform(probe*\u001b[32m0.001\u001b[39m)).tolist()==model.predict(fill.transform(probe)).tolist()\n\u001b[32m     52\u001b[39m qa_checks.append(\u001b[33m'train X and y change learned state/prediction; validation cannot refit; consistent one-feature units invariant'\u001b[39m)\n\u001b[32m     53\u001b[39m qa_expected_ids={\u001b[33m'P05'\u001b[39m:\u001b[32m0\u001b[39m,\u001b[33m'P06'\u001b[39m:\u001b[32m1\u001b[39m}\n\u001b[32m---> \u001b[39m\u001b[32m54\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m dict(zip(result.pot_id,result.prediction))==qa_expected_ids,\u001b[33m'ID-to-model prediction mismatch'\u001b[39m\n\u001b[32m     55\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m restored.pot_id.tolist()==[\u001b[33m'P05'\u001b[39m,\u001b[33m'P06'\u001b[39m] \u001b[38;5;28;01mand\u001b[39;00m restored.prediction.tolist()==[\u001b[32m0\u001b[39m,\u001b[32m1\u001b[39m]\n\u001b[32m     56\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m checked.columns.tolist()==[\u001b[33m'pot_id'\u001b[39m,\u001b[33m'prediction'\u001b[39m] \u001b[38;5;28;01mand\u001b[39;00m file_check.columns.tolist()==[\u001b[33m'pot_id'\u001b[39m,\u001b[33m'prediction'\u001b[39m]\n\u001b[32m     57\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m \u001b[38;5;28;01mnot\u001b[39;00m result_path.exists() \u001b[38;5;28;01mand\u001b[39;00m \u001b[38;5;28;01mnot\u001b[39;00m result_path.parent.exists()\n",
+      "\u001b[31mAssertionError\u001b[39m: ID-to-model prediction mismatch"
+    ]
+  },
+  "source_unchanged": true,
+  "file_io_events": [
+    {
+      "path": "runtime/tmpdir/plant-result-ju2nnfcd/result.csv",
+      "operation": "write",
+      "physical_file_api": true
+    },
+    {
+      "path": "runtime/tmpdir/plant-result-ju2nnfcd/result.csv",
+      "operation": "read",
+      "physical_file_api": true
+    }
+  ],
+  "runtime_removed": true
+}

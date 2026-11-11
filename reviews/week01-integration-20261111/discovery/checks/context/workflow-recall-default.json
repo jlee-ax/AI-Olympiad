@@ -1,0 +1,190 @@
+{
+  "authority": "advisory_only",
+  "errors": [],
+  "reason": "structural_checks_only",
+  "records": [
+    {
+      "created_at": "2026-11-10T22:38:38.128510+00:00",
+      "id": "record-baseline-defect",
+      "kind": "observation",
+      "source_details": [
+        {
+          "id": "baseline",
+          "locator": "mean algorithm trace table",
+          "revision": "final",
+          "sha256": "8ffda0c1d5ec1c5ca765fb892a09c64c3920bca6f840dfdf5a481a8da5a7cff2",
+          "uri": "reviews/week01/provisional/baseline.ipynb"
+        }
+      ],
+      "source_refs": [
+        {
+          "locator": "mean algorithm trace table",
+          "source_id": "baseline"
+        }
+      ],
+      "supersedes": [],
+      "text": "Baseline mean trace total cell conflated returned mean with final accumulator. Independent arithmetic reproduced the defect; final scoped material review confirms correction. No learner outcomes observed."
+    },
+    {
+      "created_at": "2026-11-10T22:37:50.476387+00:00",
+      "id": "record-execution-receipt",
+      "kind": "evidence",
+      "source_details": [
+        {
+          "id": "execution-receipt",
+          "locator": "whole receipt",
+          "revision": "final",
+          "sha256": "c1b7f4c8d8c5f4040584951fc8166a4aa05c476af64251fe02242749ab7e0d83",
+          "uri": "reviews/week01/final/execution-receipt.json"
+        }
+      ],
+      "source_refs": [
+        {
+          "locator": "whole receipt",
+          "source_id": "execution-receipt"
+        }
+      ],
+      "supersedes": [],
+      "text": "Exact-artifact execution-receipt received and inspected; limited to the outcomes recorded therein, not aggregate acceptance."
+    },
+    {
+      "created_at": "2026-11-10T22:46:34.938087+00:00",
+      "id": "record-independent-supplement",
+      "kind": "evidence",
+      "source_details": [
+        {
+          "id": "independent-supplement",
+          "locator": "complete scoped report",
+          "revision": "followup",
+          "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+          "uri": "reviews/week01/final-followup/independent-supplement.json"
+        }
+      ],
+      "source_refs": [
+        {
+          "locator": "complete scoped report",
+          "source_id": "independent-supplement"
+        }
+      ],
+      "supersedes": [],
+      "text": "Current exact-artifact scoped supplemental source/material review; no participant or educator observations."
+    },
+    {
+      "created_at": "2026-11-10T22:46:34.938087+00:00",
+      "id": "record-independent-final-rebind",
+      "kind": "evidence",
+      "source_details": [
+        {
+          "id": "independent-final-rebind",
+          "locator": "complete scoped report",
+          "revision": "followup",
+          "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+          "uri": "reviews/week01/final-followup/independent-final-rebind.json"
+        }
+      ],
+      "source_refs": [
+        {
+          "locator": "complete scoped report",
+          "source_id": "independent-final-rebind"
+        }
+      ],
+      "supersedes": [
+        "record-independent-material-review"
+      ],
+      "text": "Current exact-artifact scoped supplemental source/material review; no participant or educator observations."
+    },
+    {
+      "created_at": "2026-11-10T22:46:34.938087+00:00",
+      "id": "record-binding-correction",
+      "kind": "observation",
+      "source_details": [
+        {
+          "id": "independent-supplement",
+          "locator": "record_corrections_needed",
+          "revision": "followup",
+          "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+          "uri": "reviews/week01/final-followup/independent-supplement.json"
+        },
+        {
+          "id": "independent-final-rebind",
+          "locator": "corrected binding verification",
+          "revision": "followup",
+          "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+          "uri": "reviews/week01/final-followup/independent-final-rebind.json"
+        }
+      ],
+      "source_refs": [
+        {
+          "locator": "record_corrections_needed",
+          "source_id": "independent-supplement"
+        },
+        {
+          "locator": "corrected binding verification",
+          "source_id": "independent-final-rebind"
+        }
+      ],
+      "supersedes": [],
+      "text": "Earlier visual assessment locator d60c3acd did not contain the graph-change task. Current binding is b5362bd2 with response5d9473df. Notebook bytes unchanged. Earlier failed finding retained in supplemental report."
+    },
+    {
+      "created_at": "2026-11-11T02:32:09.236369+00:00",
+      "id": "record:week1-independent-transfer-v2",
+      "kind": "evidence",
+      "source_details": [
+        {
+          "id": "followup:source-brief",
+          "locator": "complete current record",
+          "revision": "week1-independent-transfer-v2",
+          "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+          "uri": "reviews/week01/independent-transfer-20261111/source-brief.md"
+        },
+        {
+          "id": "followup:execution",
+          "locator": "complete current record",
+          "revision": "week1-independent-transfer-v2",
+          "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+          "uri": "lessons/week01/validation.json"
+        },
+        {
+          "id": "followup:content-check",
+          "locator": "complete current record",
+          "revision": "week1-independent-transfer-v2",
+          "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+          "uri": "reviews/week01/independent-transfer-20261111/content-check.json"
+        },
+        {
+          "id": "followup:independent-review",
+          "locator": "complete current record",
+          "revision": "week1-independent-transfer-v2",
+          "sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+          "uri": "reviews/week01/independent-transfer-20261111/independent-review.md"
+        }
+      ],
+      "source_refs": [
+        {
+          "locator": "complete current record",
+          "source_id": "followup:source-brief"
+        },
+        {
+          "locator": "complete current record",
+          "source_id": "followup:execution"
+        },
+        {
+          "locator": "complete current record",
+          "source_id": "followup:content-check"
+        },
+        {
+          "locator": "complete current record",
+          "source_id": "followup:independent-review"
+        }
+      ],
+      "supersedes": [],
+      "text": "One manually executed revision: fresh notebook and changed-input checks, official source brief, and a separate scoped review. Learner performance remains unobserved."
+    }
+  ],
+  "status": "valid",
+  "synthetic": false,
+  "warnings": [
+    "scope.lesson_production_allowed is a recorded claim, not an execution capability or authenticated permission"
+  ]
+}

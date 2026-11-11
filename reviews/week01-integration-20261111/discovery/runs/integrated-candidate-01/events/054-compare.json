@@ -1,0 +1,47 @@
+{
+  "id": "rebind-integrated-candidate-01-054-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "N02",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "No half-open image rectangle, pixel-area budget/boundary case or image JSONL contract occurs. This task family remains future course work.",
+    "start_line": 1,
+    "end_line": 457,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "No half-open image rectangle, pixel-area budget/boundary case or image JSONL contract occurs. This task family remains future course work.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 457
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "No half-open image rectangle, pixel-area budget/boundary case or image JSONL contract occurs. This task family remains future course work.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 457
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "No half-open image rectangle, pixel-area budget/boundary case or image JSONL contract occurs. This task family remains future course work.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 457
+      },
+      {
+        "id": "contract",
+        "judgment": "gap",
+        "observed_behavior": "No half-open image rectangle, pixel-area budget/boundary case or image JSONL contract occurs. This task family remains future course work.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 457
+      }
+    ]
+  }
+}

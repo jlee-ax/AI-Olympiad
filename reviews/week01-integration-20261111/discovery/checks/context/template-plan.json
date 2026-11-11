@@ -1,0 +1,22 @@
+{
+  "authority": "advisory_only",
+  "checkpoint_required_fields": [
+    "artifact version",
+    "changed sources",
+    "checks and uncertainty",
+    "accepted/rejected/no-change work",
+    "usage and remaining finite budget",
+    "in-flight work",
+    "next action and unresolved decisions"
+  ],
+  "discovery": null,
+  "limit": "Proposal ranking does not authorize execution or establish completion.",
+  "next_candidate": null,
+  "next_discovery_action": "seed_external_frontier",
+  "quality_status": "uncertain",
+  "ranked": [],
+  "reason": "priority_policy_requires_agreement",
+  "skipped": [],
+  "status": "pause",
+  "synthetic": false
+}

@@ -1,0 +1,11 @@
+{
+  "authority": "advisory_only",
+  "context_fingerprint": "76de10e4b99c2623db076081bc09a378428b803f7052409ffcea5077f6db92df",
+  "errors": [],
+  "reason": "criteria_agreement_required",
+  "status": "pause",
+  "synthetic": false,
+  "warnings": [
+    "scope.lesson_production_allowed is a recorded claim, not an execution capability or authenticated permission"
+  ]
+}

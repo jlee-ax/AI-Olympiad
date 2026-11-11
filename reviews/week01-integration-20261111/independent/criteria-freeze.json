@@ -1,0 +1,7 @@
+{
+  "frozen_at_utc": "2026-11-11T09:57:52.217336+00:00",
+  "candidate_content_read": false,
+  "criteria_sha256": "405ba02653f5890d091ef3161a42a9f89dc8ecac44522e880b2be971bea06634",
+  "input_manifest_sha256": "4ac9ea156f8b765cd035c52a3b506a3a365acbd910c044873d7fd5849e67fc7e",
+  "candidate_paths_present_but_not_opened": []
+}

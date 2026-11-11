@@ -1,0 +1,5 @@
+sample_id,site,light_hours,water_amount_ml,final_height_cm
+Q01,실내,1,0,7
+Q02,실내,2,,9
+Q03,창가,4,20,12
+Q04,창가,5,40,14

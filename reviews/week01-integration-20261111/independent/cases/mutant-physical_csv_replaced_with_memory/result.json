@@ -1,0 +1,66 @@
+{
+  "case": "mutant-physical_csv_replaced_with_memory",
+  "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/mutation-inputs/physical_csv_replaced_with_memory.ipynb",
+  "source_sha256": "46876eb0e235f32e3111d804fc5409e95e032dd0f73713998bd0c8f71e307b19",
+  "worker_sha256": "2f09ea79a1f68e2e401eaa348ae4ed1d11f6c95dc6d4568bdcdc8c0f2e6f4723",
+  "checked_at_utc": "2026-11-11T10:17:35.107788+00:00",
+  "status": "passed",
+  "execution": "single fresh InProcessKernelManager in a new subprocess",
+  "cells": 34,
+  "executed_code_cells": [
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28,
+    30,
+    32
+  ],
+  "oracle": {
+    "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/oracle-integration.py",
+    "sha256": "f85e938c7984c2741341c834d23598dc81722ce479cbba456bcaeac5cfcbd218",
+    "status": "ok",
+    "outputs": [
+      {
+        "output_type": "stream",
+        "name": "stdout",
+        "text": "{\"independent_checks\": [\"bounded mean None/NaN/zero/extremes; Fraction variance; new axis/reshape/broadcast inputs\", \"train X and y change learned state/prediction; validation cannot refit; consistent one-feature units invariant\", \"baseline CSV exact header and ID/model provenance; physical CSV cleaned\", \"new string-label/unknown contract; real reviewer CSV; 2 valid classifiers; 5 malformed outputs; format vs model provenance\"], \"models\": [{\"model\": \"nearest_centroid\", \"validation_predictions\": [\"정상\", \"점검\", \"정상\"], \"accuracy\": 0.6666666666666666, \"probe_1_5_prediction\": \"정상\", \"ordered_csv\": \"sample_id,prediction\\nN7,정상\\nN3,점검\\nN1,정상\\n\", \"physical_csv_reopened\": true}, {\"model\": \"decision_tree\", \"validation_predictions\": [\"정상\", \"점검\", \"정상\"], \"accuracy\": 0.6666666666666666, \"probe_1_5_prediction\": \"점검\", \"ordered_csv\": \"sample_id,prediction\\nN7,정상\\nN3,점검\\nN1,정상\\n\", \"physical_csv_reopened\": true}], \"student_answer_completed\": false, \"student_learning_or_time_observed\": false}\n"
+      }
+    ]
+  },
+  "student_performance": "not_observed",
+  "elapsed_seconds": 3.2175,
+  "source_unchanged": true,
+  "file_io_events": [
+    {
+      "path": "runtime/tmpdir/reviewer-independent-csv-xmmpaol_/reviewer-answer.csv",
+      "operation": "write",
+      "physical_file_api": true
+    },
+    {
+      "path": "runtime/tmpdir/reviewer-independent-csv-xmmpaol_/reviewer-answer.csv",
+      "operation": "read",
+      "physical_file_api": true
+    },
+    {
+      "path": "runtime/tmpdir/reviewer-independent-csv-6nevcr3c/reviewer-answer.csv",
+      "operation": "write",
+      "physical_file_api": true
+    },
+    {
+      "path": "runtime/tmpdir/reviewer-independent-csv-6nevcr3c/reviewer-answer.csv",
+      "operation": "read",
+      "physical_file_api": true
+    }
+  ],
+  "runtime_removed": true
+}

@@ -1,0 +1,55 @@
+{
+  "id": "rebind-integrated-candidate-01-046-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D06",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The imputer fits training rows only: worked mean20 differs from all-observed24. Validation uses transform; the new device task fits known training labels only. Validation selection overfitting is explained. The original z standardization, train[0,2]/test[100] mean-centering operation, validation-change learned-statistics stress and independent leakage-versus-overfitting repair are not all posed in this notebook.",
+    "start_line": 235,
+    "end_line": 388,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The imputer fits training rows only: worked mean20 differs from all-observed24. Validation uses transform; the new device task fits known training labels only. Validation selection overfitting is explained. The original z standardization, train[0,2]/test[100] mean-centering operation, validation-change learned-statistics stress and independent leakage-versus-overfitting repair are not all posed in this notebook.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 235,
+        "end_line": 388
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "The imputer fits training rows only: worked mean20 differs from all-observed24. Validation uses transform; the new device task fits known training labels only. Validation selection overfitting is explained. The original z standardization, train[0,2]/test[100] mean-centering operation, validation-change learned-statistics stress and independent leakage-versus-overfitting repair are not all posed in this notebook.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 235,
+        "end_line": 388
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "The imputer fits training rows only: worked mean20 differs from all-observed24. Validation uses transform; the new device task fits known training labels only. Validation selection overfitting is explained. The original z standardization, train[0,2]/test[100] mean-centering operation, validation-change learned-statistics stress and independent leakage-versus-overfitting repair are not all posed in this notebook.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 235,
+        "end_line": 388
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The imputer fits training rows only: worked mean20 differs from all-observed24. Validation uses transform; the new device task fits known training labels only. Validation selection overfitting is explained. The original z standardization, train[0,2]/test[100] mean-centering operation, validation-change learned-statistics stress and independent leakage-versus-overfitting repair are not all posed in this notebook.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 235,
+        "end_line": 388
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "The imputer fits training rows only: worked mean20 differs from all-observed24. Validation uses transform; the new device task fits known training labels only. Validation selection overfitting is explained. The original z standardization, train[0,2]/test[100] mean-centering operation, validation-change learned-statistics stress and independent leakage-versus-overfitting repair are not all posed in this notebook.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 235,
+        "end_line": 388
+      }
+    ]
+  }
+}

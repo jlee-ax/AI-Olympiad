@@ -1,0 +1,55 @@
+{
+  "id": "rebind-integrated-candidate-01-042-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D03",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The timing paragraph separates completed light/water records just before height measurement from unavailable actual future records at sowing. Target/derived label/ID are excluded from model features, and the new device task requires an independent input/label explanation. Two faulty but shape-valid code paths using target height and future actual water are not independently diagnosed here; the original practice/assessment remains open.",
+    "start_line": 12,
+    "end_line": 388,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The timing paragraph separates completed light/water records just before height measurement from unavailable actual future records at sowing. Target/derived label/ID are excluded from model features, and the new device task requires an independent input/label explanation. Two faulty but shape-valid code paths using target height and future actual water are not independently diagnosed here; the original practice/assessment remains open.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 388
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "The timing paragraph separates completed light/water records just before height measurement from unavailable actual future records at sowing. Target/derived label/ID are excluded from model features, and the new device task requires an independent input/label explanation. Two faulty but shape-valid code paths using target height and future actual water are not independently diagnosed here; the original practice/assessment remains open.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 388
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "The timing paragraph separates completed light/water records just before height measurement from unavailable actual future records at sowing. Target/derived label/ID are excluded from model features, and the new device task requires an independent input/label explanation. Two faulty but shape-valid code paths using target height and future actual water are not independently diagnosed here; the original practice/assessment remains open.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 388
+      },
+      {
+        "id": "principle",
+        "judgment": "met",
+        "observed_behavior": "The timing paragraph separates completed light/water records just before height measurement from unavailable actual future records at sowing. Target/derived label/ID are excluded from model features, and the new device task requires an independent input/label explanation. Two faulty but shape-valid code paths using target height and future actual water are not independently diagnosed here; the original practice/assessment remains open.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 388
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "The timing paragraph separates completed light/water records just before height measurement from unavailable actual future records at sowing. Target/derived label/ID are excluded from model features, and the new device task requires an independent input/label explanation. Two faulty but shape-valid code paths using target height and future actual water are not independently diagnosed here; the original practice/assessment remains open.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 388
+      }
+    ]
+  }
+}

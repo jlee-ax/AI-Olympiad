@@ -1,0 +1,55 @@
+{
+  "id": "rebind-integrated-candidate-01-041-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D02",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The classifier learns class centroids and compares one-dimensional distances. NearestCentroid is not kNN: no test-by-training distance matrix, neighbor selection, k/tie voting or noncontiguous neighbor-label assessment occurs.",
+    "start_line": 267,
+    "end_line": 388,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "The classifier learns class centroids and compares one-dimensional distances. NearestCentroid is not kNN: no test-by-training distance matrix, neighbor selection, k/tie voting or noncontiguous neighbor-label assessment occurs.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 267,
+        "end_line": 388
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "The classifier learns class centroids and compares one-dimensional distances. NearestCentroid is not kNN: no test-by-training distance matrix, neighbor selection, k/tie voting or noncontiguous neighbor-label assessment occurs.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 267,
+        "end_line": 388
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "The classifier learns class centroids and compares one-dimensional distances. NearestCentroid is not kNN: no test-by-training distance matrix, neighbor selection, k/tie voting or noncontiguous neighbor-label assessment occurs.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 267,
+        "end_line": 388
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The classifier learns class centroids and compares one-dimensional distances. NearestCentroid is not kNN: no test-by-training distance matrix, neighbor selection, k/tie voting or noncontiguous neighbor-label assessment occurs.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 267,
+        "end_line": 388
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "The classifier learns class centroids and compares one-dimensional distances. NearestCentroid is not kNN: no test-by-training distance matrix, neighbor selection, k/tie voting or noncontiguous neighbor-label assessment occurs.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 267,
+        "end_line": 388
+      }
+    ]
+  }
+}

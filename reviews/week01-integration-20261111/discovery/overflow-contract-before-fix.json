@@ -1,0 +1,20 @@
+{
+  "recorded_at_utc": "2026-11-11T10:08:54.403799+00:00",
+  "observed_bug_artifact_sha256": "09da87fd69d9a5c479c8e84e4e48f08b5d878b6830034f976dc0f8ca69f494f8",
+  "actual_input": [
+    1e+308,
+    1e+308
+  ],
+  "all_input_values_finite": true,
+  "expected_real_mean": "1e308",
+  "observed_actual_output": "inf",
+  "advertised_input_contract": "finite numeric values or None/NaN in a list, without magnitude/length bounds",
+  "source_function_cell_id": "d942743f",
+  "method": "Parsed actual code cell AST; executed only the observed_mean function with pandas bound; no notebook cell sequence or file writes performed in reproduction.",
+  "status": "author_fix_requested; no final discovery comparison recorded",
+  "current_artifact_sha256_at_preservation": "e39e609d3354f20ca5518b652be39f3b31ec0b16154d37651e33309b42a39a6b",
+  "snapshot_limit": "Artifact changed before this exact raw copy; preserve only the direct reading and execution observation, not a falsely claimed raw snapshot.",
+  "directly_read_pre_fix_function_source": "def observed_mean(values):\n    total = 0\n    count = 0\n    for value in values:\n        if not pd.isna(value):\n            total = total + value\n            count = count + 1\n    if count == 0:\n        return None\n    return total / count",
+  "function_fragment_sha256": "7d86954fe85f087b6d3e5fa0397034458d11a3f97bc90da31722987dedf29274",
+  "fragment_provenance": "The identical function body was directly read in candidate 09da87fd and executed before correction. This fragment is captured from the unchanged definition; no full pre-fix notebook raw copy was captured before the author revised it."
+}

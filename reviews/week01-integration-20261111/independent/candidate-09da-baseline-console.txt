@@ -1,0 +1,3 @@
+/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/jupyter_client/localinterfaces.py:58: UserWarning: Unexpected error discovering local network interfaces: [Errno 1] Operation not permitted
+  ret = f(**kwargs)
+{"case": "candidate-09da-baseline", "status": "passed", "source_sha256": "09da87fd69d9a5c479c8e84e4e48f08b5d878b6830034f976dc0f8ca69f494f8", "executed_code_cells": [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32], "source_unchanged": true, "runtime_removed": true}

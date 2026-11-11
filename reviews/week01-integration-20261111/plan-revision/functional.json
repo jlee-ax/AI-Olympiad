@@ -1,0 +1,13 @@
+{
+  "old_snapshot": "passed",
+  "changed_plan_old_pin": "failed",
+  "new_revision": "passed",
+  "later_drift": "failed",
+  "previous_plan_sha256": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254",
+  "new_plan_sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+  "weeks_and_topics_unchanged": true,
+  "old_template_with_current_plan": "baseline_or_artifact_binding_failed",
+  "new_template_unagreed": "priority_policy_requires_agreement",
+  "template_policy_and_budget_unchanged": true,
+  "scope": "Plan binding and schedule structure only; no historical review or learner outcome is promoted."
+}

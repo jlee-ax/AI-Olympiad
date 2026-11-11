@@ -1,0 +1,25 @@
+{
+  "id": "rebind-integrated-candidate-01-038-trace",
+  "op": "trace",
+  "data": {
+    "frontier_id": "mechanisms",
+    "read_ids": [
+      "rebind-integrated-candidate-01-013-read",
+      "rebind-integrated-candidate-01-014-read",
+      "rebind-integrated-candidate-01-015-read",
+      "rebind-integrated-candidate-01-016-read",
+      "rebind-integrated-candidate-01-017-read",
+      "rebind-integrated-candidate-01-018-read",
+      "rebind-integrated-candidate-01-019-read",
+      "rebind-integrated-candidate-01-020-read"
+    ],
+    "actor": "/root/discovery_resume",
+    "reason": "Preserve exact additional open-question text from the separate bridge review. No new web search, no demand narrowing, and no assertion that this question is newly source-derived.",
+    "rationale": "Manual carryover of prior bridge uncertainty associated with retained source-linked D01/D05/D07. The same demand payloads already exist here and are not duplicated.",
+    "counterevidence": "A local bridge exercise or new integrated worked example does not establish later high-dimensional/model transfer, official matching constraints or learner success.",
+    "uninvestigated": [
+      "Vocabulary-versus-sequence axes and independent new lookup B/L/H assessment remain future teaching; student transfer and time are unobserved."
+    ],
+    "demands": []
+  }
+}

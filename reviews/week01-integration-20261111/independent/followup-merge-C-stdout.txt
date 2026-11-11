@@ -1,0 +1,1 @@
+{"case": "followup-merge-C", "status": "passed", "source_sha256": "82d996d5d659d867e3f9776468ad2a3418d45abb2ae0b54298e87ced7b256581", "executed_code_cells": [0, 1, 2, 3], "source_unchanged": true, "runtime_removed": true}

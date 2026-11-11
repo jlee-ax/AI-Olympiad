@@ -1,0 +1,39 @@
+{
+  "candidate_sha256": "09da87fd69d9a5c479c8e84e4e48f08b5d878b6830034f976dc0f8ca69f494f8",
+  "cell": 6,
+  "function_source": "def observed_mean(values):\n    total = 0\n    count = 0\n    for value in values:\n        if not pd.isna(value):\n            total = total + value\n            count = count + 1\n    if count == 0:\n        return None\n    return total / count",
+  "cases": [
+    {
+      "case": "CSV column",
+      "expected": 24,
+      "actual": 24.0,
+      "passed": true
+    },
+    {
+      "case": "zero and two missing types",
+      "expected": 3,
+      "actual": 3.0,
+      "passed": true
+    },
+    {
+      "case": "zero only",
+      "expected": 0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "case": "only missing",
+      "expected": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "case": "empty",
+      "expected": null,
+      "actual": null,
+      "passed": true
+    }
+  ],
+  "status": "passed",
+  "interpretation": "Same CSV input now returns the observed mean; this is an execution check, not student understanding."
+}

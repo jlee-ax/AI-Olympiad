@@ -1,0 +1,52 @@
+{
+  "checked_at_utc": "2026-11-11T10:13:39.573676+00:00",
+  "validator_sha256": "e332e36939d60e61e1e923a4ab54d8c227f1636e69b1677e52c2b86d38a97ba0",
+  "source_sha256_before_and_after": {
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_python_tables.ipynb": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge.ipynb": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/data/week1_plants.csv": "fece0473e50b097afa7c2b3e2647c9a6e623bd3d8e009e6ef620151887227639",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/data/week1_plants_new.csv": "869db97ef7c5f6ccf1020bc435fe831f180e9b9548d722c41c91b63af44d7290"
+  },
+  "method": "two separate fresh Python processes, each with an in-process IPython kernel",
+  "results": [
+    {
+      "notebook": "original",
+      "executed_cell_indices_zero_based": [
+        3,
+        27,
+        54,
+        19,
+        20,
+        22,
+        43,
+        46,
+        48,
+        59,
+        64,
+        69,
+        71,
+        73,
+        74,
+        78,
+        84
+      ],
+      "status": "passed"
+    },
+    {
+      "notebook": "bridge",
+      "executed_cell_indices_zero_based": [
+        2,
+        21,
+        23,
+        25,
+        27
+      ],
+      "status": "passed"
+    }
+  ],
+  "limits": [
+    "Student answer cells are empty and no learner completed the exercises",
+    "Only the stated preparation and supporting examples were executed",
+    "No ordinary socket kernel or full HTML browser rendering was tested"
+  ]
+}

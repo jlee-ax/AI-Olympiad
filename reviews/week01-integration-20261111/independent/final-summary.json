@@ -1,0 +1,31 @@
+{
+  "checked_at_utc": "2026-11-11T10:23:45.041285+00:00",
+  "source_notebook_sha256": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+  "criteria_frozen_sha256": "405ba02653f5890d091ef3161a42a9f89dc8ecac44522e880b2be971bea06634",
+  "report_sha256": "7ec559760d8994b4d29317243a6fd3adb1877247294ed23ff0546db6bcef60d9",
+  "blocking_defects": [],
+  "whole_notebook_execution": "passed 34 cells / 16 code cells in fresh subprocess kernel; stored outputs and PNG match",
+  "followup_paths_provided_cells_passed": 9,
+  "source_mutations_detected": 13,
+  "source_own_checks": 9,
+  "reviewer_numeric_or_semantic_oracles": 3,
+  "external_phase_aware_physical_io_oracle": 1,
+  "physical_mutant_raw_execution_status": "passed",
+  "physical_mutant_external_contract_status": "rejected; result.csv notebook phase absent; reviewer-answer.csv explicitly excluded",
+  "student_independent_work": "not_observed; blank answer cells remain unfilled",
+  "student_time_and_learning": "not_observed",
+  "protected_hidden_final_tests": "not_created_or_executed",
+  "ordinary_jupyter_colab_full_html_browser": "unverified",
+  "temporary_cache_paths_remaining": [],
+  "private_user_copy_removal": "3 newly created copies removed; originals/existing preservation unchanged; paths/hashes/summary retained",
+  "scope_only_this_independent_folder_written": true,
+  "evidence": {
+    "baseline": "cases/candidate-15ab-main-oracles/result.json",
+    "followups": "followup-path-results.json",
+    "mutations": "mutation-results.json",
+    "physical_followup": "physical-io-followup.json",
+    "content_mapping": "static-and-goal-mapping.json",
+    "old_candidate_defect": "candidate-09da-defect-record.json",
+    "privacy": "privacy-copy-removal.json"
+  }
+}

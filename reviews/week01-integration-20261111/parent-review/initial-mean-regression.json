@@ -1,0 +1,10 @@
+{
+  "candidate_sha256": "41cecc776e8225dfd0cd8df93f0dfc30bae73ad31832fd3d63b091d6a0494db7",
+  "cell": 6,
+  "function_source": "def observed_mean(values):\n    total = 0\n    count = 0\n    for value in values:\n        if value is not None:\n            total = total + value\n            count = count + 1\n    if count == 0:\n        return None\n    return total / count",
+  "input": "CSV water column read by pandas: 0, 20, NaN, 40, 10, 50",
+  "expected": 24,
+  "actual": "NaN",
+  "detected_before_correction": true,
+  "interpretation": "This records the current candidate input before author correction, not student performance."
+}

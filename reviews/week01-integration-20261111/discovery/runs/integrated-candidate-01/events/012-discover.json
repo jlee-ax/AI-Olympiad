@@ -1,0 +1,77 @@
+{
+  "id": "rebind-integrated-candidate-01-012-discover",
+  "op": "discover",
+  "data": {
+    "reason": "Separate new actual-artifact baseline; preserve historical external requirements and open questions. Local receipts only; no original-source search or source authentication.",
+    "frontier_id": "mechanisms",
+    "query": "Historical provenance import for a new actual artifact; no new web search: Historical provenance import for a new actual artifact; no new web search: Historical provenance import for a new actual artifact; no new web search: Historical provenance import for a new actual artifact; no new web search: Replay prior declared source notes for retained demand semantics; not a new web search: reviews/discovery-loop-20261111/runs/session.json",
+    "actor": "source-research-sol",
+    "outcome": "found",
+    "candidates": [
+      {
+        "id": "S01",
+        "uri": "https://kitpa.org/koai/syllabus",
+        "path": "reviews/discovery-loop-20261111/inputs/reading-note-S01.md",
+        "revision": "2026 기준이라는 본문 표시; KOAI 2027 페이지가 연결",
+        "kind": "official_scope",
+        "attribution": "Source-research Sol agent directly read the original at recorded extent. Program reads this note only; official status/entailment are not authenticated."
+      },
+      {
+        "id": "S02",
+        "uri": "https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf",
+        "path": "reviews/discovery-loop-20261111/inputs/reading-note-S02.md",
+        "revision": "2026 고등부 학습 참고 예시; 정답 미공개; 난도 순 아님",
+        "kind": "official_problem",
+        "attribution": "Source-research Sol agent directly read the original at recorded extent. Program reads this note only; official status/entailment are not authenticated."
+      },
+      {
+        "id": "S07",
+        "uri": "https://numpy.org/doc/stable/user/basics.broadcasting.html",
+        "path": "reviews/discovery-loop-20261111/inputs/reading-note-S07.md",
+        "revision": "stable 조회 시 NumPy v2.5 Manual",
+        "kind": "research",
+        "attribution": "Source-research Sol agent directly read the original at recorded extent. Program reads this note only; official status/entailment are not authenticated."
+      },
+      {
+        "id": "S08",
+        "uri": "https://docs.pytorch.org/docs/2.15/generated/torch.nn.Embedding.html",
+        "path": "reviews/discovery-loop-20261111/inputs/reading-note-S08.md",
+        "revision": "stable redirect → 2.15, 조회일 2026-11-11",
+        "kind": "research",
+        "attribution": "Source-research Sol agent directly read the original at recorded extent. Program reads this note only; official status/entailment are not authenticated."
+      },
+      {
+        "id": "S09",
+        "uri": "https://docs.pytorch.org/docs/2.15/generated/torch.nn.functional.scaled_dot_product_attention.html",
+        "path": "reviews/discovery-loop-20261111/inputs/reading-note-S09.md",
+        "revision": "stable redirect → 2.15; beta API",
+        "kind": "research",
+        "attribution": "Source-research Sol agent directly read the original at recorded extent. Program reads this note only; official status/entailment are not authenticated."
+      },
+      {
+        "id": "S10",
+        "uri": "https://scikit-learn.org/stable/common_pitfalls.html",
+        "path": "reviews/discovery-loop-20261111/inputs/reading-note-S10.md",
+        "revision": "조회 시 1.9.1 documentation",
+        "kind": "research",
+        "attribution": "Source-research Sol agent directly read the original at recorded extent. Program reads this note only; official status/entailment are not authenticated."
+      },
+      {
+        "id": "S11",
+        "uri": "https://cs231n.github.io/linear-classify/",
+        "path": "reviews/discovery-loop-20261111/inputs/reading-note-S11.md",
+        "revision": "정적 course notes; 현재 optimizer 권고로 전용 안 함",
+        "kind": "research",
+        "attribution": "Source-research Sol agent directly read the original at recorded extent. Program reads this note only; official status/entailment are not authenticated."
+      },
+      {
+        "id": "S12",
+        "uri": "https://cs231n.github.io/neural-networks-3/",
+        "path": "reviews/discovery-loop-20261111/inputs/reading-note-S12.md",
+        "revision": "정적 course notes; 임계값을 보편 채점 기준으로 복사하지 않음",
+        "kind": "research",
+        "attribution": "Source-research Sol agent directly read the original at recorded extent. Program reads this note only; official status/entailment are not authenticated."
+      }
+    ]
+  }
+}

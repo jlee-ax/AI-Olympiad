@@ -1,0 +1,248 @@
+{
+  "created_at_utc": "2026-11-11T10:02:58.329105+00:00",
+  "integration_candidate_content_read": false,
+  "method": "built-in lists, sums and Fraction only; no numpy/sklearn model implementation",
+  "scope": "Independent reviewer synthetic finite inputs. Apply only where the candidate contract permits; not a required algorithm or unique free-model answer.",
+  "array": {
+    "input": [
+      [
+        0,
+        4,
+        8
+      ],
+      [
+        6,
+        10,
+        14
+      ]
+    ],
+    "shape": [
+      2,
+      3
+    ],
+    "column_means": [
+      "3",
+      "7",
+      "11"
+    ],
+    "row_means": [
+      "4",
+      "10"
+    ],
+    "reshape_3_2": [
+      [
+        0,
+        4
+      ],
+      [
+        8,
+        6
+      ],
+      [
+        10,
+        14
+      ]
+    ],
+    "transpose_3_2": [
+      [
+        0,
+        6
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        8,
+        14
+      ]
+    ],
+    "same_shape_different_values": true,
+    "column_offsets": [
+      1,
+      10,
+      100
+    ],
+    "column_result": [
+      [
+        1,
+        14,
+        108
+      ],
+      [
+        7,
+        20,
+        114
+      ]
+    ],
+    "row_offsets": [
+      [
+        1000
+      ],
+      [
+        2000
+      ]
+    ],
+    "row_result": [
+      [
+        1000,
+        1004,
+        1008
+      ],
+      [
+        2006,
+        2010,
+        2014
+      ]
+    ],
+    "invalid_broadcast_offset_shape": [
+      2
+    ]
+  },
+  "variance": {
+    "input": [
+      1,
+      4,
+      10
+    ],
+    "mean": "5",
+    "variance_population": "14",
+    "mean_shift_plus_3": "8",
+    "variance_shift_plus_3": "14",
+    "mean_times_2": "10",
+    "variance_times_2": "56"
+  },
+  "observed_mean": {
+    "input": [
+      0,
+      null,
+      4,
+      8
+    ],
+    "count": 3,
+    "mean": "4",
+    "all_missing_and_empty_result": [
+      0,
+      null
+    ]
+  },
+  "optional_classification_contract": {
+    "columns": [
+      "sensor_a",
+      "sensor_b",
+      "sensor_c"
+    ],
+    "known_labels": [
+      0,
+      1
+    ],
+    "unknown_label": -1,
+    "known_train_rows": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        2,
+        null,
+        1
+      ],
+      [
+        8,
+        5,
+        3
+      ],
+      [
+        10,
+        7,
+        3
+      ]
+    ],
+    "labels": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "unknown_train_row": [
+      100,
+      100,
+      100
+    ],
+    "unknown_feature_row_excluded_by_this_contract": true,
+    "train_means": [
+      "5",
+      "13/3",
+      "2"
+    ],
+    "optional_nearest_centroid_centers": {
+      "0": [
+        "1",
+        "8/3",
+        "1"
+      ],
+      "1": [
+        "9",
+        "6",
+        "3"
+      ]
+    },
+    "validation_X": [
+      [
+        2,
+        3,
+        1
+      ],
+      [
+        7,
+        5,
+        3
+      ],
+      [
+        7,
+        4,
+        1
+      ]
+    ],
+    "validation_truth": [
+      0,
+      1,
+      0
+    ],
+    "optional_centroid_validation_predictions": [
+      0,
+      1,
+      1
+    ],
+    "optional_centroid_accuracy": "2/3",
+    "input_ids": [
+      "zz9",
+      "a2",
+      "m5"
+    ],
+    "input_X": [
+      [
+        9,
+        6,
+        3
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        2,
+        null,
+        1
+      ]
+    ],
+    "optional_centroid_input_predictions": [
+      1,
+      0,
+      0
+    ],
+    "free_model_predictions_may_differ": true
+  }
+}

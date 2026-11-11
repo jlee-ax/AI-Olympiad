@@ -1,0 +1,55 @@
+{
+  "id": "rebind-integrated-candidate-01-044-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D05",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The actual CSV keeps predictions attached to IDs and restores required order; a new task requires N7/N3/N1 rather than input order. The bridge is an explicit external required exercise, not merged body. Q/G normalized scores, vector norm/cosine and official identity/gender matching constraints are absent.",
+    "start_line": 327,
+    "end_line": 457,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "The actual CSV keeps predictions attached to IDs and restores required order; a new task requires N7/N3/N1 rather than input order. The bridge is an explicit external required exercise, not merged body. Q/G normalized scores, vector norm/cosine and official identity/gender matching constraints are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 327,
+        "end_line": 457
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "The actual CSV keeps predictions attached to IDs and restores required order; a new task requires N7/N3/N1 rather than input order. The bridge is an explicit external required exercise, not merged body. Q/G normalized scores, vector norm/cosine and official identity/gender matching constraints are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 327,
+        "end_line": 457
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "The actual CSV keeps predictions attached to IDs and restores required order; a new task requires N7/N3/N1 rather than input order. The bridge is an explicit external required exercise, not merged body. Q/G normalized scores, vector norm/cosine and official identity/gender matching constraints are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 327,
+        "end_line": 457
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The actual CSV keeps predictions attached to IDs and restores required order; a new task requires N7/N3/N1 rather than input order. The bridge is an explicit external required exercise, not merged body. Q/G normalized scores, vector norm/cosine and official identity/gender matching constraints are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 327,
+        "end_line": 457
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "The actual CSV keeps predictions attached to IDs and restores required order; a new task requires N7/N3/N1 rather than input order. The bridge is an explicit external required exercise, not merged body. Q/G normalized scores, vector norm/cosine and official identity/gender matching constraints are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 327,
+        "end_line": 457
+      }
+    ]
+  }
+}

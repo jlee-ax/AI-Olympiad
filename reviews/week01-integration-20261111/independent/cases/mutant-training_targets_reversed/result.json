@@ -1,0 +1,39 @@
+{
+  "case": "mutant-training_targets_reversed",
+  "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/mutation-inputs/training_targets_reversed.ipynb",
+  "source_sha256": "969f120522eb338f8265f2fcbf66574e9abed2bd17899c40001c971b303f7d40",
+  "worker_sha256": "2f09ea79a1f68e2e401eaa348ae4ed1d11f6c95dc6d4568bdcdc8c0f2e6f4723",
+  "checked_at_utc": "2026-11-11T10:17:21.491203+00:00",
+  "status": "notebook_error",
+  "execution": "single fresh InProcessKernelManager in a new subprocess",
+  "cells": 34,
+  "executed_code_cells": [
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20
+  ],
+  "oracle": null,
+  "student_performance": "not_observed",
+  "elapsed_seconds": 2.9227,
+  "failed_cell": 20,
+  "error": {
+    "ename": "AssertionError",
+    "evalue": "",
+    "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[10]\u001b[39m\u001b[32m, line 5\u001b[39m\n\u001b[32m      1\u001b[39m model = NearestCentroid()\n\u001b[32m      2\u001b[39m model.fit(filled_train, \u001b[32m1\u001b[39m - y_train)\n\u001b[32m      3\u001b[39m print(\u001b[33m\"중심에 대응하는 정답:\"\u001b[39m, model.classes_)\n\u001b[32m      4\u001b[39m print(\u001b[33m\"훈련에서 배운 중심(ml):\"\u001b[39m, model.centroids_.ravel())\n\u001b[32m----> \u001b[39m\u001b[32m5\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.allclose(model.centroids_.ravel(), [\u001b[32m10\u001b[39m, \u001b[32m30\u001b[39m])\n",
+      "\u001b[31mAssertionError\u001b[39m: "
+    ]
+  },
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

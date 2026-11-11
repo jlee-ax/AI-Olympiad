@@ -1,0 +1,21 @@
+{
+  "recorded_at_utc": "2026-11-11T10:26:07.143970+00:00",
+  "authority": "advisory_only",
+  "run": "integrated-candidate-01",
+  "bound_final_notebook_sha256": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+  "current_notebook_sha256": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+  "run_name_preserved": "Candidate name is a historical recording label; the final independent result now binds the same unchanged bytes. Session/report/events are not rewritten.",
+  "independent_final_summary_path": "reviews/week01-integration-20261111/independent/final-summary.json",
+  "independent_final_summary_sha256": "db1ab3a14c41024e5148ccdf3a5fdf54275ccf884f33d8f57b0e2b9bd6603ce3",
+  "independent_report_path": "reviews/week01-integration-20261111/independent/independent-review.md",
+  "independent_report_sha256": "7ec559760d8994b4d29317243a6fd3adb1877247294ed23ff0546db6bcef60d9",
+  "independent_execution_result": "34 cells/16 code; nine provided follow-up paths; thirteen detected source mutations, of which one memory-only physical-CSV mutation passed notebook/numeric checks and was rejected only by a distinct phase-aware external I/O oracle. No new student answers observed.",
+  "independent_blocking_defects": [],
+  "discovery_status": "needs_work",
+  "ready_for_review": false,
+  "open_question_count": 8,
+  "queue_count": 17,
+  "criteria_agreement_created": false,
+  "aggregate_preflight_acceptance_created": false,
+  "learner_mastery_observed": false
+}

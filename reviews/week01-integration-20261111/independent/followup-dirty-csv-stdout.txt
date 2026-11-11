@@ -1,0 +1,1 @@
+{"case": "followup-dirty-csv", "status": "passed", "source_sha256": "9a91e43f441f38907198e404fcdba68eed1947d7379a93c89e6836d6693ca36c", "executed_code_cells": [0, 1, 2, 3, 4, 5], "source_unchanged": true, "runtime_removed": true}

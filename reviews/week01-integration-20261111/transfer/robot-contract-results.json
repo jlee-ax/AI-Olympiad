@@ -1,0 +1,700 @@
+{
+  "checked_at_utc": "2026-11-11T10:06:17.636111+00:00",
+  "purpose": "Independent synthetic contract transfer and counterexamples only",
+  "source": {
+    "read_at_utc": "2026-11-11T10:00:28Z",
+    "repository": "IOAI-official/IOAI-2026",
+    "commit": "e1963801aa4cf33a5a03520b39fa6620a7894c54",
+    "path": "Individual-Contest/2_Robot_Chasing/statement.md",
+    "blob_sha": "f45b6bee1620d337eeaded43798df34a8413f2bd",
+    "main_url": "https://raw.githubusercontent.com/IOAI-official/IOAI-2026/main/Individual-Contest/2_Robot_Chasing/statement.md",
+    "pinned_url": "https://github.com/IOAI-official/IOAI-2026/blob/e1963801aa4cf33a5a03520b39fa6620a7894c54/Individual-Contest/2_Robot_Chasing/statement.md",
+    "read_ranges_1_based": [
+      "1-134"
+    ],
+    "authority": "Official IOAI 2026 international individual-contest statement; not a KOAI middle-school past paper",
+    "scope": "Schema, spatial axes, categorical meanings, prediction-time input availability, and output contract only",
+    "excluded": [
+      "No movement policy learned or guessed",
+      "No official dataset/model execution",
+      "No official performance/submit acceptance",
+      "No learner-performance observation"
+    ],
+    "locations": {
+      "sample_fields": "27-37",
+      "grid_channels": "41-61",
+      "actions": "63-79",
+      "dataset_availability": "83-101",
+      "output": "103-114",
+      "score": "116-120"
+    },
+    "provenance_note": "Read the live raw main URL with the web tool, then resolved main via the connected GitHub API and reread the file at the pinned commit. Web presentation collapses blank lines; locations here refer to the pinned raw file.",
+    "case_design_frozen_before_integrated_lesson_read": true
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41"
+  },
+  "fixture": {
+    "robot_id": 4,
+    "image": [
+      [
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      [
+        [
+          2,
+          5
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      [
+        [
+          2,
+          5
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      [
+        [
+          2,
+          5
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      [
+        [
+          2,
+          5
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      [
+        [
+          2,
+          5
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      [
+        [
+          2,
+          5
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      [
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          5
+        ]
+      ]
+    ],
+    "direction": 3,
+    "mission": "approach the red ball",
+    "carrying": null
+  },
+  "fixture_sha256": "0c06b76b356c90a11647dd089c4533e677170966223d698636d30f9787809c4e",
+  "script_sha256": "04a026713aec45a391ef83d280b78742f24c2326df37f2a12e7c66b8731ffb98",
+  "cases": [
+    {
+      "name": "valid_schema_and_axis_roles",
+      "expected": [
+        8,
+        8,
+        2
+      ],
+      "observed": [
+        8,
+        8,
+        2
+      ],
+      "passed": true,
+      "source_lines": "27-43",
+      "meaning": "Asymmetric fixture: rows, columns, then object/colour."
+    },
+    {
+      "name": "known_row_column_cell",
+      "expected": [
+        10,
+        2
+      ],
+      "observed": [
+        10,
+        2
+      ],
+      "passed": true,
+      "source_lines": "43-61",
+      "meaning": "The two cell values are categorical channels, not spatial positions."
+    },
+    {
+      "name": "wall_border_and_interior",
+      "expected": [
+        [
+          2,
+          5
+        ],
+        [
+          6,
+          6,
+          2
+        ]
+      ],
+      "observed": [
+        [
+          2,
+          5
+        ],
+        [
+          6,
+          6,
+          2
+        ]
+      ],
+      "passed": true,
+      "source_lines": "10,43",
+      "meaning": "The full grid includes walls; the interior slice is smaller."
+    },
+    {
+      "name": "transpose_passes_shape_schema",
+      "expected": "accepted",
+      "observed": "accepted",
+      "passed": true,
+      "source_lines": "32,43",
+      "meaning": "A square-grid transpose preserves shape; the guard cannot certify meaning."
+    },
+    {
+      "name": "transpose_fails_frozen_spatial_oracle",
+      "expected": [
+        [
+          6,
+          0
+        ],
+        false
+      ],
+      "observed": [
+        [
+          6,
+          0
+        ],
+        false
+      ],
+      "passed": true,
+      "source_lines": "43",
+      "meaning": "The frozen coordinate oracle reveals the row/column exchange."
+    },
+    {
+      "name": "direction_changes_without_image_change",
+      "expected": [
+        true,
+        3,
+        0
+      ],
+      "observed": [
+        true,
+        3,
+        0
+      ],
+      "passed": true,
+      "source_lines": "32-35,61",
+      "meaning": "Facing is separately available; the next action is not inferred."
+    },
+    {
+      "name": "reading_direction_from_colour_is_wrong",
+      "expected": [
+        2,
+        false
+      ],
+      "observed": [
+        2,
+        false
+      ],
+      "passed": true,
+      "source_lines": "59-61",
+      "meaning": "The colour at the robot cell is not top-level facing."
+    },
+    {
+      "name": "appended_direction_channel_rejected",
+      "expected": "ValueError",
+      "observed": "ValueError",
+      "passed": true,
+      "source_lines": "32,61",
+      "meaning": "Adding facing creates 8x8x3, outside the image contract."
+    },
+    {
+      "name": "direction_overwrite_can_pass_schema",
+      "expected": "accepted",
+      "observed": "accepted",
+      "passed": true,
+      "source_lines": "32,59-61",
+      "meaning": "In-range values and matching shape still cannot certify channel meaning."
+    },
+    {
+      "name": "direction_overwrite_fails_cell_oracle",
+      "expected": [
+        [
+          10,
+          3
+        ],
+        false
+      ],
+      "observed": [
+        [
+          10,
+          3
+        ],
+        false
+      ],
+      "passed": true,
+      "source_lines": "59-61",
+      "meaning": "A channel overwrite changes the independently specified fixture cell."
+    },
+    {
+      "name": "wall_empty_colour_semantics_invariant",
+      "expected": true,
+      "observed": true,
+      "passed": true,
+      "source_lines": "59",
+      "meaning": "Declared meaningless colours changed; no action invariance is claimed."
+    },
+    {
+      "name": "red_ball_query_ignores_wall_colours",
+      "expected": [
+        [
+          [
+            5,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            2
+          ]
+        ],
+        1,
+        61
+      ],
+      "observed": [
+        [
+          [
+            5,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            2
+          ]
+        ],
+        1,
+        61
+      ],
+      "passed": true,
+      "source_lines": "43-59",
+      "meaning": "Colour-only counting spuriously includes empty cells and walls."
+    },
+    {
+      "name": "carrying_is_separate_available_input",
+      "expected": [
+        true,
+        [
+          5,
+          2
+        ]
+      ],
+      "observed": [
+        true,
+        [
+          5,
+          2
+        ]
+      ],
+      "passed": true,
+      "source_lines": "27-37",
+      "meaning": "Carrying is available separately and need not add an image channel."
+    },
+    {
+      "name": "no_label_or_previous_action_available",
+      "expected": [
+        "KeyError",
+        "KeyError"
+      ],
+      "observed": [
+        "KeyError",
+        "KeyError"
+      ],
+      "passed": true,
+      "source_lines": "37,97-101",
+      "meaning": "The evaluation observation has neither hidden action nor history."
+    },
+    {
+      "name": "rowwise_probe_survives_order_change",
+      "expected": [
+        [
+          4,
+          3,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "observed": [
+        [
+          4,
+          3,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "passed": true,
+      "source_lines": "37,105-107",
+      "meaning": "Per-row schema probes retain observation identity under a joint permutation."
+    },
+    {
+      "name": "previous_row_is_not_observed_history",
+      "expected": [
+        null,
+        1
+      ],
+      "observed": [
+        null,
+        1
+      ],
+      "passed": true,
+      "source_lines": "37",
+      "meaning": "Reordering rows changes fabricated history for the same observation."
+    },
+    {
+      "name": "normal_output_json_roundtrip",
+      "expected": [
+        0,
+        5,
+        2
+      ],
+      "observed": [
+        0,
+        5,
+        2
+      ],
+      "passed": true,
+      "source_lines": "105-114",
+      "meaning": "Format only: the values are not a guessed movement policy."
+    },
+    {
+      "name": "output_reject_wrong_count",
+      "expected": "ValueError",
+      "observed": "ValueError",
+      "passed": true,
+      "source_lines": "105-114",
+      "meaning": "This contract differs from labels and containers in the first toy classifier."
+    },
+    {
+      "name": "output_reject_float_action",
+      "expected": "ValueError",
+      "observed": "ValueError",
+      "passed": true,
+      "source_lines": "105-114",
+      "meaning": "This contract differs from labels and containers in the first toy classifier."
+    },
+    {
+      "name": "output_reject_boolean_action",
+      "expected": "ValueError",
+      "observed": "ValueError",
+      "passed": true,
+      "source_lines": "105-114",
+      "meaning": "This contract differs from labels and containers in the first toy classifier."
+    },
+    {
+      "name": "output_reject_out_of_range",
+      "expected": "ValueError",
+      "observed": "ValueError",
+      "passed": true,
+      "source_lines": "105-114",
+      "meaning": "This contract differs from labels and containers in the first toy classifier."
+    },
+    {
+      "name": "output_reject_negative_action",
+      "expected": "ValueError",
+      "observed": "ValueError",
+      "passed": true,
+      "source_lines": "105-114",
+      "meaning": "This contract differs from labels and containers in the first toy classifier."
+    },
+    {
+      "name": "output_reject_object_instead_of_list",
+      "expected": "ValueError",
+      "observed": "ValueError",
+      "passed": true,
+      "source_lines": "105-114",
+      "meaning": "This contract differs from labels and containers in the first toy classifier."
+    },
+    {
+      "name": "reversed_output_can_pass_format",
+      "expected": [
+        2,
+        5,
+        0
+      ],
+      "observed": [
+        2,
+        5,
+        0
+      ],
+      "passed": true,
+      "source_lines": "105-107",
+      "meaning": "Format validity alone cannot certify row correspondence."
+    },
+    {
+      "name": "reversed_output_fails_external_order_oracle",
+      "expected": false,
+      "observed": false,
+      "passed": true,
+      "source_lines": "105-107",
+      "meaning": "Arbitrary-marker lineage check, not an action-correctness score."
+    }
+  ],
+  "summary": {
+    "cases": 25,
+    "passed": 25,
+    "failed": 0
+  },
+  "limits": [
+    "No official data or robot policy was used, learned, guessed, or scored.",
+    "Output actions are arbitrary format markers, not policy labels.",
+    "No learner answer, mastery, classroom timing, or contest solution was observed.",
+    "The observation guard checks this declared subset, not all official input constraints.",
+    "These tests check source semantics, not execution of the integrated lesson."
+  ]
+}

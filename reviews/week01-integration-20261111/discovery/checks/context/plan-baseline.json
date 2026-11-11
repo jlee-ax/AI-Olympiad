@@ -1,0 +1,90 @@
+{
+  "authority": "advisory_only",
+  "baseline_sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+  "coverage": "scheduled_only",
+  "errors": [],
+  "status": "passed",
+  "topic_count": 60,
+  "weeks": [
+    {
+      "class_minutes": 120,
+      "required_self_study_hours": [
+        5,
+        7
+      ],
+      "week": 1
+    },
+    {
+      "class_minutes": 120,
+      "required_self_study_hours": [
+        6,
+        8
+      ],
+      "week": 2
+    },
+    {
+      "class_minutes": 120,
+      "required_self_study_hours": [
+        7,
+        9
+      ],
+      "week": 3
+    },
+    {
+      "class_minutes": 120,
+      "required_self_study_hours": [
+        8,
+        10
+      ],
+      "week": 4
+    },
+    {
+      "class_minutes": 120,
+      "required_self_study_hours": [
+        8,
+        10
+      ],
+      "week": 5
+    },
+    {
+      "class_minutes": 120,
+      "required_self_study_hours": [
+        10,
+        14
+      ],
+      "week": 6
+    },
+    {
+      "class_minutes": 120,
+      "required_self_study_hours": [
+        14,
+        18
+      ],
+      "week": 7
+    },
+    {
+      "class_minutes": 120,
+      "required_self_study_hours": [
+        16,
+        20
+      ],
+      "week": 8
+    },
+    {
+      "class_minutes": 120,
+      "required_self_study_hours": [
+        16,
+        20
+      ],
+      "week": 9
+    },
+    {
+      "class_minutes": 120,
+      "required_self_study_hours": [
+        10,
+        14
+      ],
+      "week": 10
+    }
+  ]
+}

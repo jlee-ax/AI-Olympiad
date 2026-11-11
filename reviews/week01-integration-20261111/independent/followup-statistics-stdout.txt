@@ -1,0 +1,1 @@
+{"case": "followup-statistics", "status": "passed", "source_sha256": "798abc43bd8ee0c6a71f140a89c5f0d7590fb2be3cac9324dbc45dbbe8ca88b5", "executed_code_cells": [0, 1, 2, 3, 4], "source_unchanged": true, "runtime_removed": true}

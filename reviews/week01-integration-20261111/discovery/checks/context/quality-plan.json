@@ -1,0 +1,465 @@
+{
+  "authority": "advisory_only",
+  "checkpoint_required_fields": [
+    "artifact version",
+    "changed sources",
+    "checks and uncertainty",
+    "accepted/rejected/no-change work",
+    "usage and remaining finite budget",
+    "in-flight work",
+    "next action and unresolved decisions"
+  ],
+  "discovery": null,
+  "limit": "Proposal ranking does not authorize execution or establish completion.",
+  "next_candidate": null,
+  "next_discovery_action": "seed_external_frontier",
+  "quality_status": "uncertain",
+  "ranked": [
+    {
+      "action": "Keep final total 12 and show returned value 4 separately; independent final review pending.",
+      "affected_ids": [
+        "W1-python",
+        "claim:python"
+      ],
+      "confidence": "confirmed",
+      "criterion_id": "K06",
+      "hypothesis": "Separating the final accumulator and returned quotient removes the baseline trace-table contradiction.",
+      "id": "correct-return-trace",
+      "key": "da20139d49c9a917860881a6fa8aeb625786d22fc7d0e1bc9a92a5def0d69f2d",
+      "object_id": "claim:python",
+      "priority": "P0",
+      "severity": "critical"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-python",
+        "claim:python"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K11",
+      "hypothesis": "Resolve uncertain K11 evidence for claim:python",
+      "id": "finding:K11:claim:python",
+      "key": "a3cba90377082ffe10004b29d326307ce5b19d2e7805f24b6c3d1725e9d92a86",
+      "object_id": "claim:python",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-python",
+        "claim:python"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K12",
+      "hypothesis": "Resolve uncertain K12 evidence for claim:python",
+      "id": "finding:K12:claim:python",
+      "key": "8f2814d4b529b9420a349b071aa797d00d935110a6da920bf4b4dc7ce291913e",
+      "object_id": "claim:python",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-array"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K04",
+      "hypothesis": "Resolve not_run K04 evidence for W1-array",
+      "id": "finding:K04:W1-array",
+      "key": "f43241998cfa6df8714e826a4e34e3400a06a4bd8ca6e5495b5b0bcea108b384",
+      "object_id": "W1-array",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-python"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K04",
+      "hypothesis": "Resolve not_run K04 evidence for W1-python",
+      "id": "finding:K04:W1-python",
+      "key": "f04230a36dfce50c969e4951414e59bb1f8eb444398371ddc39160179fe76de1",
+      "object_id": "W1-python",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-table"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K04",
+      "hypothesis": "Resolve not_run K04 evidence for W1-table",
+      "id": "finding:K04:W1-table",
+      "key": "ba145ab0c64cff4009d2e323f35f05087b96d1f1a5666bbd5fb4eb2b5028d897",
+      "object_id": "W1-table",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-visualise"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K04",
+      "hypothesis": "Resolve not_run K04 evidence for W1-visualise",
+      "id": "finding:K04:W1-visualise",
+      "key": "e84dde096d8df0c77e440bfec4839f838459f4daa85cf2f619e778451d961c1f",
+      "object_id": "W1-visualise",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-array"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K09",
+      "hypothesis": "Resolve uncertain K09 evidence for W1-array",
+      "id": "finding:K09:W1-array",
+      "key": "31773b1aa445fb66c2b778df28045f77e040a9b5fa54394d6e3dad4213c7e2d3",
+      "object_id": "W1-array",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-python"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K09",
+      "hypothesis": "Resolve uncertain K09 evidence for W1-python",
+      "id": "finding:K09:W1-python",
+      "key": "9e779885123106da5b254fcec17c4b7aa6a68b8794a24eaa82813ecc0e2e5ebc",
+      "object_id": "W1-python",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-table"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K09",
+      "hypothesis": "Resolve uncertain K09 evidence for W1-table",
+      "id": "finding:K09:W1-table",
+      "key": "82321235f1c6081ac385ead5e670421230879412f8b0783bf493669344892b50",
+      "object_id": "W1-table",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-visualise"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K09",
+      "hypothesis": "Resolve uncertain K09 evidence for W1-visualise",
+      "id": "finding:K09:W1-visualise",
+      "key": "87d1b698ca8d529eda488ece85880d122fb4c6534af95b66bbf4439c2747752d",
+      "object_id": "W1-visualise",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-array"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K12",
+      "hypothesis": "Resolve uncertain K12 evidence for W1-array",
+      "id": "finding:K12:W1-array",
+      "key": "f7769a1c4a079873acb87ca3fdbe56b942901abaf38319ca0fd807790c6ee74d",
+      "object_id": "W1-array",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-python"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K12",
+      "hypothesis": "Resolve uncertain K12 evidence for W1-python",
+      "id": "finding:K12:W1-python",
+      "key": "82cc3e76103695d9bca43f865bb0ae9f74037c6e007c1a1877508cbe88be2de9",
+      "object_id": "W1-python",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-table"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K12",
+      "hypothesis": "Resolve uncertain K12 evidence for W1-table",
+      "id": "finding:K12:W1-table",
+      "key": "fade02d893a84594af7a59841108397198ea034cad7c4497bf0b964c245c2bdb",
+      "object_id": "W1-table",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-visualise"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K12",
+      "hypothesis": "Resolve uncertain K12 evidence for W1-visualise",
+      "id": "finding:K12:W1-visualise",
+      "key": "11d522b05e416a2d42f4b07eb965ce9e1c6bb4220769a10d73436394247e02bf",
+      "object_id": "W1-visualise",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-array"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K15",
+      "hypothesis": "Resolve not_run K15 evidence for W1-array",
+      "id": "finding:K15:W1-array",
+      "key": "c1c005df84e3caba244ed7712c297377df887142ff2891cb2e2cb57305d1ef7c",
+      "object_id": "W1-array",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-python"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K15",
+      "hypothesis": "Resolve not_run K15 evidence for W1-python",
+      "id": "finding:K15:W1-python",
+      "key": "a7201d7682379c6a050184d62cde34122fda79561b9b9f59aaa619a8e641cbe1",
+      "object_id": "W1-python",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-table"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K15",
+      "hypothesis": "Resolve not_run K15 evidence for W1-table",
+      "id": "finding:K15:W1-table",
+      "key": "fe81fcf9e677b1132a5b32994039e25018619db8ca041f30427f81d136de5bf7",
+      "object_id": "W1-table",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-visualise"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K15",
+      "hypothesis": "Resolve not_run K15 evidence for W1-visualise",
+      "id": "finding:K15:W1-visualise",
+      "key": "cc1df0400b63c8aa76e7df805032cc3fa81050686bf7f89f13418911b47c126a",
+      "object_id": "W1-visualise",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-array"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K16",
+      "hypothesis": "Resolve uncertain K16 evidence for W1-array",
+      "id": "finding:K16:W1-array",
+      "key": "dd01916ab9ad844f15e84b20e272674102a01c221f82d094c966b14e2c8d06f7",
+      "object_id": "W1-array",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-python"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K16",
+      "hypothesis": "Resolve uncertain K16 evidence for W1-python",
+      "id": "finding:K16:W1-python",
+      "key": "b25343ed567d6fa1c4c545c0fbc6dcd3e37bf6d083c33ac0cffec1d38f43850c",
+      "object_id": "W1-python",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-table"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K16",
+      "hypothesis": "Resolve uncertain K16 evidence for W1-table",
+      "id": "finding:K16:W1-table",
+      "key": "fe7ae65afdb7df78cf587c1865bdf58452edb8be3347d49f8e2e79ee20e1aee9",
+      "object_id": "W1-table",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-visualise"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K16",
+      "hypothesis": "Resolve uncertain K16 evidence for W1-visualise",
+      "id": "finding:K16:W1-visualise",
+      "key": "109c4a2148bfa51d2bee36de36aba25817d87b570a07bb096f3b2c88b75ad0e2",
+      "object_id": "W1-visualise",
+      "priority": "P1",
+      "severity": "major"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-array"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K05",
+      "hypothesis": "Resolve uncertain K05 evidence for W1-array",
+      "id": "finding:K05:W1-array",
+      "key": "e5abf066ef16a89b01c1e59b03ace18850b74fb5c42f7771bfcf2697261164c1",
+      "object_id": "W1-array",
+      "priority": "P2",
+      "severity": "moderate"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-python"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K05",
+      "hypothesis": "Resolve uncertain K05 evidence for W1-python",
+      "id": "finding:K05:W1-python",
+      "key": "6a7bed791c9eb0f91c62436fe7c731444258519fdae3df7f3325c09ba5cab6e5",
+      "object_id": "W1-python",
+      "priority": "P2",
+      "severity": "moderate"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-table"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K05",
+      "hypothesis": "Resolve uncertain K05 evidence for W1-table",
+      "id": "finding:K05:W1-table",
+      "key": "7ff20e04542472d999f238921e0bf2415c8a7af21435ca483989719b22348c81",
+      "object_id": "W1-table",
+      "priority": "P2",
+      "severity": "moderate"
+    },
+    {
+      "action": "Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.",
+      "affected_ids": [
+        "W1-visualise"
+      ],
+      "confidence": "unresolved",
+      "criterion_id": "K05",
+      "hypothesis": "Resolve uncertain K05 evidence for W1-visualise",
+      "id": "finding:K05:W1-visualise",
+      "key": "0c804d675ce609c1c65dff35871f77d8dfb80f383acd9825703b8ef70e4580e0",
+      "object_id": "W1-visualise",
+      "priority": "P2",
+      "severity": "moderate"
+    }
+  ],
+  "reason": "priority_policy_requires_agreement",
+  "skipped": [
+    {
+      "id": "finding:K12:W1-array",
+      "key": "f7769a1c4a079873acb87ca3fdbe56b942901abaf38319ca0fd807790c6ee74d",
+      "reason": "exact_duplicate"
+    },
+    {
+      "id": "finding:K12:W1-array",
+      "key": "f7769a1c4a079873acb87ca3fdbe56b942901abaf38319ca0fd807790c6ee74d",
+      "reason": "exact_duplicate"
+    },
+    {
+      "id": "finding:K12:W1-array",
+      "key": "f7769a1c4a079873acb87ca3fdbe56b942901abaf38319ca0fd807790c6ee74d",
+      "reason": "exact_duplicate"
+    },
+    {
+      "id": "finding:K12:W1-python",
+      "key": "82cc3e76103695d9bca43f865bb0ae9f74037c6e007c1a1877508cbe88be2de9",
+      "reason": "exact_duplicate"
+    },
+    {
+      "id": "finding:K12:W1-python",
+      "key": "82cc3e76103695d9bca43f865bb0ae9f74037c6e007c1a1877508cbe88be2de9",
+      "reason": "exact_duplicate"
+    },
+    {
+      "id": "finding:K12:W1-python",
+      "key": "82cc3e76103695d9bca43f865bb0ae9f74037c6e007c1a1877508cbe88be2de9",
+      "reason": "exact_duplicate"
+    },
+    {
+      "id": "finding:K12:W1-table",
+      "key": "fade02d893a84594af7a59841108397198ea034cad7c4497bf0b964c245c2bdb",
+      "reason": "exact_duplicate"
+    },
+    {
+      "id": "finding:K12:W1-table",
+      "key": "fade02d893a84594af7a59841108397198ea034cad7c4497bf0b964c245c2bdb",
+      "reason": "exact_duplicate"
+    },
+    {
+      "id": "finding:K12:W1-table",
+      "key": "fade02d893a84594af7a59841108397198ea034cad7c4497bf0b964c245c2bdb",
+      "reason": "exact_duplicate"
+    },
+    {
+      "id": "finding:K12:W1-visualise",
+      "key": "11d522b05e416a2d42f4b07eb965ce9e1c6bb4220769a10d73436394247e02bf",
+      "reason": "exact_duplicate"
+    },
+    {
+      "id": "finding:K12:W1-visualise",
+      "key": "11d522b05e416a2d42f4b07eb965ce9e1c6bb4220769a10d73436394247e02bf",
+      "reason": "exact_duplicate"
+    },
+    {
+      "id": "finding:K12:W1-visualise",
+      "key": "11d522b05e416a2d42f4b07eb965ce9e1c6bb4220769a10d73436394247e02bf",
+      "reason": "exact_duplicate"
+    }
+  ],
+  "status": "pause",
+  "synthetic": false
+}

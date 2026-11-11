@@ -1,0 +1,32 @@
+{
+  "case": "followup-bridge-B",
+  "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/followup-inputs/followup-bridge-B.ipynb",
+  "source_sha256": "258de0d8c3fd60298f4da092927290e2aa4ff6e5e8ef1280f7fd71eeef3ec5b8",
+  "worker_sha256": "2f09ea79a1f68e2e401eaa348ae4ed1d11f6c95dc6d4568bdcdc8c0f2e6f4723",
+  "checked_at_utc": "2026-11-11T10:15:52.856438+00:00",
+  "status": "passed",
+  "execution": "single fresh InProcessKernelManager in a new subprocess",
+  "cells": 3,
+  "executed_code_cells": [
+    0,
+    1,
+    2
+  ],
+  "oracle": {
+    "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/followup-inputs/followup-bridge-B-oracle.py",
+    "sha256": "a688daec6ed07434a5c2d4357e03578995381ae3a89031dd89e0e345797dcc51",
+    "status": "ok",
+    "outputs": [
+      {
+        "output_type": "stream",
+        "name": "stdout",
+        "text": "bridge B inputs only; empty student code not completed\n"
+      }
+    ]
+  },
+  "student_performance": "not_observed",
+  "elapsed_seconds": 0.1533,
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

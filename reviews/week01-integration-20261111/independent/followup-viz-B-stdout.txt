@@ -1,0 +1,1 @@
+{"case": "followup-viz-B", "status": "passed", "source_sha256": "c2b62106a143dfd0a0a7519b1a88e17ddfd39b2aa27380de0fc0560d5a02fc6f", "executed_code_cells": [0, 1, 2, 3, 4, 5, 6], "source_unchanged": true, "runtime_removed": true}

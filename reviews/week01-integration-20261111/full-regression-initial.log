@@ -1,0 +1,16 @@
+..............................................................................................................................................F................................................................................................................
+======================================================================
+FAIL: test_unconfigured_template_does_not_pass_or_invent_thresholds (test_quality.QualityTest.test_unconfigured_template_does_not_pass_or_invent_thresholds)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/tests/test_quality.py", line 137, in test_unconfigured_template_does_not_pass_or_invent_thresholds
+    self.assertEqual(quality.plan_work(bundle)['reason'], 'priority_policy_requires_agreement')
+AssertionError: 'baseline_or_artifact_binding_failed' != 'priority_policy_requires_agreement'
+- baseline_or_artifact_binding_failed
++ priority_policy_requires_agreement
+
+
+----------------------------------------------------------------------
+Ran 255 tests in 31.313s
+
+FAILED (failures=1)

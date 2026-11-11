@@ -1,0 +1,11 @@
+{
+  "original_candidate_sha256": "09da87fd69d9a5c479c8e84e4e48f08b5d878b6830034f976dc0f8ca69f494f8",
+  "captured_original_execution": "cases/candidate-09da-baseline/executed.ipynb",
+  "reproduction_cells_original_indices": [
+    2,
+    5,
+    6
+  ],
+  "reproduction_notebook_sha256": "2a9a541607c0baddf8f1c8a0ea6f6b292a12c58fca05c846d7ec23d1bc73083f",
+  "scope": "Source cells captured by original whole-notebook baseline. The execution worker never edits cell source. Derivative is not byte-identical to original candidate."
+}

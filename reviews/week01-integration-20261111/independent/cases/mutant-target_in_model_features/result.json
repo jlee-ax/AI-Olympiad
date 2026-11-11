@@ -1,0 +1,38 @@
+{
+  "case": "mutant-target_in_model_features",
+  "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/mutation-inputs/target_in_model_features.ipynb",
+  "source_sha256": "e4609b359556f4133374ecc2137b6dce182b9234485377d0a03ebd61a652e49e",
+  "worker_sha256": "2f09ea79a1f68e2e401eaa348ae4ed1d11f6c95dc6d4568bdcdc8c0f2e6f4723",
+  "checked_at_utc": "2026-11-11T10:17:19.092854+00:00",
+  "status": "notebook_error",
+  "execution": "single fresh InProcessKernelManager in a new subprocess",
+  "cells": 34,
+  "executed_code_cells": [
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18
+  ],
+  "oracle": null,
+  "student_performance": "not_observed",
+  "elapsed_seconds": 2.8953,
+  "failed_cell": 18,
+  "error": {
+    "ename": "AssertionError",
+    "evalue": "",
+    "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[9]\u001b[39m\u001b[32m, line 17\u001b[39m\n\u001b[32m     13\u001b[39m print(\u001b[33m\"훈련 ID:\"\u001b[39m, training[\u001b[33m\"pot_id\"\u001b[39m].tolist())\n\u001b[32m     14\u001b[39m print(\u001b[33m\"훈련 X / y shape:\"\u001b[39m, x_train.shape, \u001b[33m\"/\"\u001b[39m, y_train.shape)\n\u001b[32m     15\u001b[39m print(\u001b[33m\"훈련에서 배운 대체값(ml):\"\u001b[39m, fill.statistics_)\n\u001b[32m     16\u001b[39m print(\u001b[33m\"대체 후 훈련 물:\"\u001b[39m, filled_train.ravel())\n\u001b[32m---> \u001b[39m\u001b[32m17\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.allclose(fill.statistics_, [\u001b[32m20\u001b[39m])\n",
+      "\u001b[31mAssertionError\u001b[39m: "
+    ]
+  },
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

@@ -1,0 +1,55 @@
+{
+  "id": "rebind-integrated-candidate-01-051-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "H01",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "Worked accuracy is ordinary correct-count over two validation rows. The original truth-dependent Radar weights1/50 and ranking reversal are absent.",
+    "start_line": 283,
+    "end_line": 388,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Worked accuracy is ordinary correct-count over two validation rows. The original truth-dependent Radar weights1/50 and ranking reversal are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 283,
+        "end_line": 388
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "Worked accuracy is ordinary correct-count over two validation rows. The original truth-dependent Radar weights1/50 and ranking reversal are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 283,
+        "end_line": 388
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Worked accuracy is ordinary correct-count over two validation rows. The original truth-dependent Radar weights1/50 and ranking reversal are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 283,
+        "end_line": 388
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "Worked accuracy is ordinary correct-count over two validation rows. The original truth-dependent Radar weights1/50 and ranking reversal are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 283,
+        "end_line": 388
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "Worked accuracy is ordinary correct-count over two validation rows. The original truth-dependent Radar weights1/50 and ranking reversal are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 283,
+        "end_line": 388
+      }
+    ]
+  }
+}

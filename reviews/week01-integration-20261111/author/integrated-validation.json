@@ -1,0 +1,80 @@
+{
+  "checked_at_utc": "2026-11-11T10:12:19.589104+00:00",
+  "validator_sha256": "15973554cf808bf832441276d7c2d9d8e1d8f56c1b4b56407700266bef35257b",
+  "source_sha256": {
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_integrated.ipynb": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_integrated.html": "53b48bf8370cff4f97ace9f78cbf8c5b838f7c758a56b86ef82d474003470596",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_integrated_teacher.md": "aafa8f3bbd6cc7b88131157d85a9ffa5d99d5e1b53db6abe2f021eaa2096bcdd",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_python_tables.ipynb": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge.ipynb": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_problem_pipeline.ipynb": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb": "733c0093b44f30d31354567331c2c39ee325ed074e7a6368bb1f2e96f0c174c0",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.html": "ee3ca9f9ebf491a6e768b3dd99264415d11a384f48f7311b51d5711d48b79f0c",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/lesson-manifest.json": "06ac05f087e7123efcac06782735ad923040e48f062996b28f5b90c9b41c2d07",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/teacher-notes.txt": "23c4195940e0da732f70d97383af440f0913d066f1f72844f5198a9558cb1a38",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/validation.json": "574d75c158af6218aea44394e01829b95fb992593c2c59773b17728d0ec7869c"
+  },
+  "python": "3.12.14",
+  "numpy": "2.5.4",
+  "pandas": "3.1.1",
+  "scikit_learn": "1.8.0",
+  "method": "fresh in-process IPython kernel; sequential cells; saved outputs and chart compared",
+  "total_cells": 34,
+  "code_cells": 16,
+  "checks": [
+    "fresh_inprocess_all_cells_and_saved_text_outputs",
+    "student_answer_blank",
+    "real_csv_nan_none_zero_empty_and_no_input_mutation",
+    "mean_variance_axis_reshape_transpose_and_broadcast",
+    "stored_png_reproduces_and_scatter_matches_each_id_and_unit",
+    "fixed_formula_and_actual_fit_are_distinct_and_correct",
+    "validation_extreme_does_not_refit_and_full_mean_differs",
+    "24_train_row_and_label_permutations_preserve_state_but_wrong_alignment_does_not",
+    "in_memory_and_physical_csv_roundtrip_order_and_cleanup",
+    "new_specification_optional_centroid_and_alternative_classifier",
+    "student_operational_text_and_responsible_followup_links",
+    "existing_lessons_and_preserved_workspace_bytes_unchanged"
+  ],
+  "example": {
+    "observed_water_mean": 24,
+    "training_fill": 20,
+    "class_centers": [
+      10,
+      30
+    ],
+    "validation_predictions": [
+      0,
+      1
+    ],
+    "validation_truth": [
+      1,
+      1
+    ],
+    "validation_accuracy": 0.5,
+    "training_change_probe": [
+      1,
+      0
+    ],
+    "temporary_csv_removed": true
+  },
+  "independent_centroid_example_only": {
+    "training_mean": 2,
+    "centers": {
+      "정상": 1,
+      "점검": 3
+    },
+    "validation_predictions": [
+      "정상",
+      "점검",
+      "정상"
+    ],
+    "validation_accuracy": 0.6666666666666666
+  },
+  "visual_check": "Stored scatter PNG was viewed separately; labels, units, shapes, legend visible.",
+  "limits": [
+    "No actual student work, learning outcome or time observed",
+    "Main path does not automatically complete linked mandatory exercises",
+    "No official Antique or Robot dataset/model submission executed",
+    "Ordinary socket Jupyter/Colab and full HTML browser rendering unverified"
+  ]
+}

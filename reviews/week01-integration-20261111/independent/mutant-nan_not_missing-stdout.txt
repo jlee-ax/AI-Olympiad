@@ -1,0 +1,1 @@
+{"case": "mutant-nan_not_missing", "status": "notebook_error", "source_sha256": "fc83ec60f887e60e21e6d1b8d903358e030a1d2499234cf60c9a64bfd0dd8d0b", "executed_code_cells": [2, 4, 6], "source_unchanged": true, "runtime_removed": true}

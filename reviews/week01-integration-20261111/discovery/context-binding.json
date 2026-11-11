@@ -1,0 +1,267 @@
+{
+  "recorded_at_utc": "2026-11-11T10:22:37.493231+00:00",
+  "authority": "advisory_only",
+  "files": [
+    {
+      "path": "curriculum/student-plan.html",
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "role": "current revised student entry and workload qualification; structural context, not learner evidence"
+    },
+    {
+      "path": "curriculum/contract.json",
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "role": "explicit v2 plan supersession; unchanged weeks/topics and governing criteria"
+    },
+    {
+      "path": "templates/quality.json",
+      "sha256": "0b74c8fb3f3e5e71fa776535230e3d6fa980d828b9a57195343cb25f6d729097",
+      "role": "unconfigured v2 template; policy remains unagreed"
+    },
+    {
+      "path": "reviews/week01-integration-20261111/plan-revision/student-plan-v1.html",
+      "sha256": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254",
+      "role": "byte-preserved old plan baseline"
+    },
+    {
+      "path": "reviews/week01-integration-20261111/plan-revision/contract-v1.json",
+      "sha256": "0d7d65d1151941ebdd8a3f2807893f75eb423d889d0a8eb0ee5dda74b31b34ac",
+      "role": "byte-preserved old contract baseline"
+    },
+    {
+      "path": "reviews/week01-integration-20261111/plan-revision/quality-template-v1.json",
+      "sha256": "965cb7b165f81cb4cfd045830ba347c2644b571a26b510d286deee8a825ca402",
+      "role": "byte-preserved old template baseline"
+    },
+    {
+      "path": "reviews/week01-integration-20261111/plan-revision/before-rebind.json",
+      "sha256": "b5366825c805856738e3f730df6840976fc7e88ef10f2a0ec7be60b58000b605",
+      "role": "intended new-plan/old-pin failure"
+    },
+    {
+      "path": "reviews/week01-integration-20261111/plan-revision/after-rebind.json",
+      "sha256": "7861252bae06d8ad216f148a7ac55c058e3e5daacd6ac5e342c3e04882fb5886",
+      "role": "new plan structural validation only"
+    },
+    {
+      "path": "reviews/week01-integration-20261111/plan-revision/functional.json",
+      "sha256": "916206c97cd7808dad535b9b13ebd64ffbf87f4cc962fcbbdea0c5db3d31d267",
+      "role": "parent-owned plan/template transition test result"
+    },
+    {
+      "path": "reviews/week01-integration-20261111/plan-revision/verify_plan_revision.py",
+      "sha256": "28ca9c43f59b2094a5719b70d3342728580f837e6cf739198f92e4603bfa1cd6",
+      "role": "parent-owned actual transition verifier source"
+    },
+    {
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "role": "required external exercises and preparation, not inline integrated content"
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+      "role": "required A/B and optional lookup exercises, not inline integrated content"
+    },
+    {
+      "path": "lessons/week01/week01_problem_pipeline.ipynb",
+      "sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+      "role": "optional detailed error and ZIP example, separately reviewed"
+    },
+    {
+      "path": "reviews/course-reconstruction-20261111/independent-ten-week-source-audit.md",
+      "sha256": "b59f2dc092d2a006bf9502d49b2c5fa3940c267a25d136cdccaa6e8cc7ecb60c",
+      "role": "historical proposed prerequisite route, not delivery proof"
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/workflow.json",
+      "sha256": "21f999d6cfbc17a01c64d885e7c27cd0879e4794cbf405d253193bd02c7d131f",
+      "role": "unchanged earlier workflow and criteria agreement history"
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/quality.json",
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "role": "unchanged original-notebook quality bundle; does not bind new integrated notebook"
+    },
+    {
+      "path": "reviews/week01-integration-20261111/discovery/official-source-corroboration.md",
+      "sha256": "a4f0d80047323f20c9d5152ff88c31ce9f415fba560cfe36e56b5e3a14a873e9",
+      "role": "fresh manual official-source check; not independent new demand extraction"
+    },
+    {
+      "path": "tools/discovery_loop.py",
+      "sha256": "2273d1e9a47aff0dc038f0379837c908cb84a559d3e31e3a026f5a7c189d0914",
+      "role": "transition, receipt, replay, freshness and queue implementation"
+    },
+    {
+      "path": "tools/quality.py",
+      "sha256": "bb7ee10c793aa9916429a1dd77900fc59238738eb49632ba7ec44935e0770b30",
+      "role": "baseline and agreement-fingerprint implementation"
+    },
+    {
+      "path": "tools/workflow.py",
+      "sha256": "2a337ed8c7cf8c871eba2c461c66a883a42bb53257c62688a99d0f5477809cf2",
+      "role": "read-only recall and workflow decisions"
+    },
+    {
+      "path": "tools/review_preflight.py",
+      "sha256": "f0b1692cab3644d67592027a441ad4c676b303661b0fb0814e1870a68958fc0d",
+      "role": "joined readiness gates"
+    }
+  ],
+  "old_snapshots_match_git_HEAD_bytes": {
+    "curriculum/student-plan.html": true,
+    "curriculum/contract.json": true,
+    "templates/quality.json": true
+  },
+  "old_plan_pin_matches_exact_snapshot": true,
+  "current_plan_pin_matches_current_bytes": true,
+  "all_old_contract_fields_except_revision_and_baseline_unchanged": true,
+  "new_supersedes_record": {
+    "revision": "curriculum-v1",
+    "contract_snapshot": "reviews/week01-integration-20261111/plan-revision/contract-v1.json",
+    "plan_snapshot": "reviews/week01-integration-20261111/plan-revision/student-plan-v1.html",
+    "reason": "Week 1 student entry and prior workload-estimate qualification updated; historical evaluations are not promoted."
+  },
+  "template_only_revision_artifact_revision_and_sha_changed": true,
+  "template_policy_unagreed": true,
+  "ten_week_prerequisite_route": [
+    {
+      "week": 1,
+      "requires": "row/feature/target/ID; means/variance/axes/inner product; actual fit and output",
+      "actual_delivery_status": "introduced_and_external_required_exercises_remain"
+    },
+    {
+      "week": 2,
+      "requires": "split, train-only statistics and metrics",
+      "actual_delivery_status": "actual_main_and_supplement_exist_separate_reviews"
+    },
+    {
+      "week": 3,
+      "requires": "functions/regression/loss",
+      "actual_delivery_status": "planned_no_week03_notebook"
+    },
+    {
+      "week": 4,
+      "requires": "distance/kNN/label encoding/CV",
+      "actual_delivery_status": "planned_no_week04_notebook"
+    },
+    {
+      "week": 5,
+      "requires": "distance/means/variance/projection",
+      "actual_delivery_status": "planned_no_week05_notebook"
+    },
+    {
+      "week": 6,
+      "requires": "tensor axes/loss/learning loops",
+      "actual_delivery_status": "planned_no_week06_notebook"
+    },
+    {
+      "week": 7,
+      "requires": "vision basics; attention overview before later calculation",
+      "actual_delivery_status": "planned_no_week07_notebook"
+    },
+    {
+      "week": 8,
+      "requires": "lookup/mask/softmax/NLP",
+      "actual_delivery_status": "planned_no_week08_notebook"
+    },
+    {
+      "week": 9,
+      "requires": "modality/retrieval position-to-ID",
+      "actual_delivery_status": "planned_no_week09_notebook"
+    },
+    {
+      "week": 10,
+      "requires": "unfamiliar problem constraints/output/environment",
+      "actual_delivery_status": "planned_no_week10_notebook"
+    }
+  ],
+  "current_lesson_notebook_paths": [
+    "lessons/week01/week01_axes_linear_bridge.ipynb",
+    "lessons/week01/week01_integrated.ipynb",
+    "lessons/week01/week01_problem_pipeline.ipynb",
+    "lessons/week01/week01_python_tables.ipynb",
+    "lessons/week02/week02_prediction_evaluation.ipynb",
+    "lessons/week02/week02_temporal_preprocessing.ipynb"
+  ],
+  "referenced_artifact_navigation": [
+    {
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "cell_count": 89,
+      "not_merged_into_projection": true,
+      "matching_preparation_or_assignment_cells": [
+        {
+          "index": 3,
+          "id": "d2be9ce3",
+          "first_line": "from pathlib import Path"
+        },
+        {
+          "index": 27,
+          "id": "eb304b96",
+          "first_line": "csv_text = 'pot_id,place,sunlight_hours,water_ml,height_cm\\nP01,실내,2,0,8\\nP02,실내,3,20,10\\nP03,창가,5,,12\\nP04,창가,6,40,14\\nP05,실내,4,20,10\\nP06,창가,7,60,18\\n'"
+        },
+        {
+          "index": 54,
+          "id": "5c37fc90",
+          "first_line": "new_csv_text = 'sample_id,site,light_hours,water_amount_ml,final_height_cm\\nQ01,실내,1,0,7\\nQ02,실내,2,,9\\nQ03,창가,4,20,12\\nQ04,창가,5,40,14\\n'"
+        },
+        {
+          "index": 58,
+          "id": "145c6754",
+          "first_line": "### 과제 A · 배열을 다른 모양으로 놓기"
+        },
+        {
+          "index": 67,
+          "id": "9ce91662",
+          "first_line": "### 과제 B · 같은 평균과 다른 분포를 그림으로 보기"
+        },
+        {
+          "index": 77,
+          "id": "0fd965eb",
+          "first_line": "### 과제 C · 새 CSV를 읽고, 집계하고, 병합하기"
+        },
+        {
+          "index": 80,
+          "id": "depth-function-spec",
+          "first_line": "### 과제 D · 명세를 보고 함수 만들기"
+        },
+        {
+          "index": 83,
+          "id": "d0ddef13",
+          "first_line": "### 과제 E · 벡터와 내적, 다시 실행하기"
+        }
+      ]
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+      "cell_count": 29,
+      "not_merged_into_projection": true,
+      "matching_preparation_or_assignment_cells": [
+        {
+          "index": 2,
+          "id": "ba428b91",
+          "first_line": "import numpy as np"
+        },
+        {
+          "index": 21,
+          "id": "ec433d3b",
+          "first_line": "# 독립 문제 입력: 각 행은 학생 한 명, 열 순서는 a, b입니다."
+        },
+        {
+          "index": 25,
+          "id": "07c93362",
+          "first_line": "q_ids_new = np.array([61, 22])"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "The core discovery scope binds only the integrated notebook and projection. This separately verified context manifest tracks plan/contract/template/reference bytes; core discovery inspect does not automatically check these extra dependencies.",
+    "A new plan pin can pass structure while old notebook quality remains stale or uncertain. It supplies no new semantic review or criteria agreement.",
+    "Agreement fingerprint excludes plan SHA and contract revision; unchanged fingerprint is not evidence that changed material was accepted.",
+    "No old workflow, quality bundle, criteria or history is modified by this review.",
+    "Weeks3–10 were not delivered notebooks at this query time. The scheduled sixty topics are not claimed taught or mastered."
+  ]
+}

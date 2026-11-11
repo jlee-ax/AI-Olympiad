@@ -1,0 +1,41 @@
+{
+  "case": "mutant-training_change_ignored",
+  "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/mutation-inputs/training_change_ignored.ipynb",
+  "source_sha256": "66211403a4c1e49efbbb580f117cf925e6a7f2835b5ec82deaf17db4eaa0ea97",
+  "worker_sha256": "2f09ea79a1f68e2e401eaa348ae4ed1d11f6c95dc6d4568bdcdc8c0f2e6f4723",
+  "checked_at_utc": "2026-11-11T10:17:24.117843+00:00",
+  "status": "notebook_error",
+  "execution": "single fresh InProcessKernelManager in a new subprocess",
+  "cells": 34,
+  "executed_code_cells": [
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24
+  ],
+  "oracle": null,
+  "student_performance": "not_observed",
+  "elapsed_seconds": 2.9481,
+  "failed_cell": 24,
+  "error": {
+    "ename": "AssertionError",
+    "evalue": "",
+    "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[12]\u001b[39m\u001b[32m, line 11\u001b[39m\n\u001b[32m      7\u001b[39m original_prediction = int(model.predict(fill.transform(probe))[\u001b[32m0\u001b[39m])\n\u001b[32m      8\u001b[39m changed_prediction = int(changed_model.predict(changed_fill.transform(probe))[\u001b[32m0\u001b[39m])\n\u001b[32m      9\u001b[39m print(\u001b[33m\"같은 물 25ml의 원래 / 새 모델 예측:\"\u001b[39m, original_prediction, \u001b[33m\"/\"\u001b[39m, changed_prediction)\n\u001b[32m     10\u001b[39m print(\u001b[33m\"원래 / 새 모델 중심:\"\u001b[39m, model.centroids_.ravel(), \u001b[33m\"/\"\u001b[39m, changed_model.centroids_.ravel())\n\u001b[32m---> \u001b[39m\u001b[32m11\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m (original_prediction, changed_prediction) == (\u001b[32m1\u001b[39m, \u001b[32m0\u001b[39m)\n",
+      "\u001b[31mAssertionError\u001b[39m: "
+    ]
+  },
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

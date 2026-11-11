@@ -1,0 +1,24 @@
+{
+  "reviewed_original_sha256": "09da87fd69d9a5c479c8e84e4e48f08b5d878b6830034f976dc0f8ca69f494f8",
+  "execution_input_derivative_sha256": "2a9a541607c0baddf8f1c8a0ea6f6b292a12c58fca05c846d7ec23d1bc73083f",
+  "source_binding": "candidate-09da-overflow-source-binding.json",
+  "baseline_passed": true,
+  "finite_input_contract_failure": {
+    "status": "reproduced",
+    "input": [
+      1e+308,
+      1e+308
+    ],
+    "expected_finite_mean": "1e308",
+    "actual": "inf",
+    "raw_process_exit": 1,
+    "evidence": "cases/candidate-09da-overflow/result.json"
+  },
+  "content_issues_reported": [
+    "missing precise dirty20ml / mean-variance principle-ddof / prerequisites path mapping",
+    "old notebook preparation dependencies and changed column names not specified",
+    "weak explicit 2–10 week prerequisite connection"
+  ],
+  "candidate_approval": "not_approved_pending_revision",
+  "student_work_not_observed": true
+}

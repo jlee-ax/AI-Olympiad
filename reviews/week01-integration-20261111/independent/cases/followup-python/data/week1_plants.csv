@@ -1,0 +1,7 @@
+pot_id,place,sunlight_hours,water_ml,height_cm
+P01,실내,2,0,8
+P02,실내,3,20,10
+P03,창가,5,,12
+P04,창가,6,40,14
+P05,실내,4,20,10
+P06,창가,7,60,18

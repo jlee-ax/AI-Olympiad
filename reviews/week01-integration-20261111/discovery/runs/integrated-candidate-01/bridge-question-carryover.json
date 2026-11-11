@@ -1,0 +1,32 @@
+{
+  "prior_session_path": "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/session.json",
+  "prior_session_file_sha256": "75ac4108f14505e5cd147e9c0754f9ed979e969372c8d2860c2295c1b84251bf",
+  "prior_bridge_demand_payloads_are_exact_subsets": true,
+  "mapping": [
+    {
+      "prior_session_path": "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/session.json",
+      "prior_question_id": "question:eade388b57a8f2ee",
+      "question": "High-dimensional/model-context axis tracking and reshape-versus-transpose still require actual later material.",
+      "new_question_id": "question:9d6fc8fbc23e6385",
+      "new_frontier_id": "problems",
+      "new_trace_event_id": "rebind-integrated-candidate-01-037-trace"
+    },
+    {
+      "prior_session_path": "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/session.json",
+      "prior_question_id": "question:495a6112320397c0",
+      "question": "Normalization, identity/gender matching constraints and real encoder/submission performance remain separate from synthetic maximum-dot-product lookup.",
+      "new_question_id": "question:99f99aae9dd3cc49",
+      "new_frontier_id": "problems",
+      "new_trace_event_id": "rebind-integrated-candidate-01-037-trace"
+    },
+    {
+      "prior_session_path": "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/session.json",
+      "prior_question_id": "question:d878296854874d47",
+      "question": "Vocabulary-versus-sequence axes and independent new lookup B/L/H assessment remain future teaching; student transfer and time are unobserved.",
+      "new_question_id": "question:270e67aac401f606",
+      "new_frontier_id": "mechanisms",
+      "new_trace_event_id": "rebind-integrated-candidate-01-038-trace"
+    }
+  ],
+  "scope_limit": "Original bridge question IDs remain in its untouched session. This new integrated baseline retains their exact texts under already source-traced frontiers, without adding duplicate educational demands or declaring the questions resolved."
+}

@@ -1,0 +1,42 @@
+{
+  "case": "mutant-output_row_order_wrong",
+  "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/mutation-inputs/output_row_order_wrong.ipynb",
+  "source_sha256": "8b1704d806f5b2a4775f2eb0e5c66767c6c6e70f8eadc3952c6fc9f9e6575f69",
+  "worker_sha256": "2f09ea79a1f68e2e401eaa348ae4ed1d11f6c95dc6d4568bdcdc8c0f2e6f4723",
+  "checked_at_utc": "2026-11-11T10:17:29.105741+00:00",
+  "status": "notebook_error",
+  "execution": "single fresh InProcessKernelManager in a new subprocess",
+  "cells": 34,
+  "executed_code_cells": [
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26
+  ],
+  "oracle": null,
+  "student_performance": "not_observed",
+  "elapsed_seconds": 3.4734,
+  "failed_cell": 26,
+  "error": {
+    "ename": "AssertionError",
+    "evalue": "",
+    "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[13]\u001b[39m\u001b[32m, line 8\u001b[39m\n\u001b[32m      4\u001b[39m restored = shuffled.reset_index(drop=\u001b[38;5;28;01mTrue\u001b[39;00m)\n\u001b[32m      5\u001b[39m output_csv = restored.to_csv(index=\u001b[38;5;28;01mFalse\u001b[39;00m, lineterminator=\u001b[33m\"\\n\"\u001b[39m)\n\u001b[32m      6\u001b[39m print(\u001b[33m\"다시 읽을 CSV:\\n\"\u001b[39m + output_csv)\n\u001b[32m      7\u001b[39m checked = pd.read_csv(StringIO(output_csv))\n\u001b[32m----> \u001b[39m\u001b[32m8\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m checked[\u001b[33m\"pot_id\"\u001b[39m].tolist() == required_order\n\u001b[32m      9\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m len(checked) == len(validation) \u001b[38;5;28;01mand\u001b[39;00m set(checked[\u001b[33m\"prediction\"\u001b[39m]).issubset({\u001b[32m0\u001b[39m, \u001b[32m1\u001b[39m})\n",
+      "\u001b[31mAssertionError\u001b[39m: "
+    ]
+  },
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

@@ -1,0 +1,55 @@
+{
+  "id": "rebind-integrated-candidate-01-056-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "P01",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "covered",
+    "rationale": "A hand-fixed formula is explicitly separated from a real train-only imputer and fitted NearestCentroid. Learned statistics/classes/centroids and changed-state prediction are observable. The distinct new device contract changes column/ID/label meanings and row order, requires a chosen fitted classifier, learned-state explanation, independent evaluation and ordered output. This supports bounded material-design transfer, not complete Antique, measured learner success or full-course readiness.",
+    "start_line": 209,
+    "end_line": 420,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "A hand-fixed formula is explicitly separated from a real train-only imputer and fitted NearestCentroid. Learned statistics/classes/centroids and changed-state prediction are observable. The distinct new device contract changes column/ID/label meanings and row order, requires a chosen fitted classifier, learned-state explanation, independent evaluation and ordered output. This supports bounded material-design transfer, not complete Antique, measured learner success or full-course readiness.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 209,
+        "end_line": 420
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "A hand-fixed formula is explicitly separated from a real train-only imputer and fitted NearestCentroid. Learned statistics/classes/centroids and changed-state prediction are observable. The distinct new device contract changes column/ID/label meanings and row order, requires a chosen fitted classifier, learned-state explanation, independent evaluation and ordered output. This supports bounded material-design transfer, not complete Antique, measured learner success or full-course readiness.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 209,
+        "end_line": 420
+      },
+      {
+        "id": "assessment",
+        "judgment": "met",
+        "observed_behavior": "A hand-fixed formula is explicitly separated from a real train-only imputer and fitted NearestCentroid. Learned statistics/classes/centroids and changed-state prediction are observable. The distinct new device contract changes column/ID/label meanings and row order, requires a chosen fitted classifier, learned-state explanation, independent evaluation and ordered output. This supports bounded material-design transfer, not complete Antique, measured learner success or full-course readiness.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 209,
+        "end_line": 420
+      },
+      {
+        "id": "learned_state",
+        "judgment": "met",
+        "observed_behavior": "A hand-fixed formula is explicitly separated from a real train-only imputer and fitted NearestCentroid. Learned statistics/classes/centroids and changed-state prediction are observable. The distinct new device contract changes column/ID/label meanings and row order, requires a chosen fitted classifier, learned-state explanation, independent evaluation and ordered output. This supports bounded material-design transfer, not complete Antique, measured learner success or full-course readiness.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 209,
+        "end_line": 420
+      },
+      {
+        "id": "contract_transfer",
+        "judgment": "met",
+        "observed_behavior": "A hand-fixed formula is explicitly separated from a real train-only imputer and fitted NearestCentroid. Learned statistics/classes/centroids and changed-state prediction are observable. The distinct new device contract changes column/ID/label meanings and row order, requires a chosen fitted classifier, learned-state explanation, independent evaluation and ordered output. This supports bounded material-design transfer, not complete Antique, measured learner success or full-course readiness.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 209,
+        "end_line": 420
+      }
+    ]
+  }
+}

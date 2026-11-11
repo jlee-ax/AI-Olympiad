@@ -1,0 +1,45 @@
+{
+  "id": "rebind-integrated-candidate-01-026-discover",
+  "op": "discover",
+  "data": {
+    "reason": "Separate new actual-artifact baseline; preserve historical external requirements and open questions. Local receipts only; no original-source search or source authentication.",
+    "frontier_id": "next-wave",
+    "query": "Historical provenance import for a new actual artifact; no new web search: Historical provenance import for a new actual artifact; no new web search: Historical provenance import for a new actual artifact; no new web search: Historical provenance import for a new actual artifact; no new web search: New national 2027 modality and previously unreviewed Pixel/Antique task families plus original CS229 positive-only theory; direct web read 2026-11-11",
+    "actor": "/root/course_discovery/verify_new_scope",
+    "outcome": "found",
+    "candidates": [
+      {
+        "id": "C01",
+        "uri": "https://kitpa.org/koai/2027",
+        "revision": "2026-11-11 direct web read; mutable national 2027 announcement",
+        "kind": "official_scope",
+        "path": "reviews/course-discovery-20261111/inputs/reading-note-C01.md",
+        "attribution": "Direct web reading/extraction by /root/course_discovery/verify_new_scope; reviewer independently re-read selected original spans. Program opens this paraphrased note only; no source authentication."
+      },
+      {
+        "id": "C02",
+        "uri": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Pixel/Pixel.ipynb",
+        "revision": "2025 individual contest; mutable main read 2026-11-11; no upstream commit pin",
+        "kind": "official_problem",
+        "path": "reviews/course-discovery-20261111/inputs/reading-note-C02.md",
+        "attribution": "Direct web reading/extraction by /root/course_discovery/verify_new_scope; reviewer independently re-read selected original spans. Program opens this paraphrased note only; no source authentication."
+      },
+      {
+        "id": "C03",
+        "uri": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb",
+        "revision": "2025 individual contest; mutable main read 2026-11-11; no upstream commit pin",
+        "kind": "official_problem",
+        "path": "reviews/course-discovery-20261111/inputs/reading-note-C03.md",
+        "attribution": "Direct web reading/extraction by /root/course_discovery/verify_new_scope; reviewer independently re-read selected original spans. Program opens this paraphrased note only; no source authentication."
+      },
+      {
+        "id": "C04",
+        "uri": "https://cs229.stanford.edu/summer2019/ps1.pdf",
+        "revision": "CS229 Summer 2019 PS1; problem 2; direct web read 2026-11-11",
+        "kind": "research",
+        "path": "reviews/course-discovery-20261111/inputs/reading-note-C04.md",
+        "attribution": "Direct web reading/extraction by /root/course_discovery/verify_new_scope; reviewer independently re-read selected original spans. Program opens this paraphrased note only; no source authentication."
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "case": "candidate-09da-overflow",
+  "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/inputs/candidate-09da-observed-mean-cells.ipynb",
+  "source_sha256": "2a9a541607c0baddf8f1c8a0ea6f6b292a12c58fca05c846d7ec23d1bc73083f",
+  "worker_sha256": "2f09ea79a1f68e2e401eaa348ae4ed1d11f6c95dc6d4568bdcdc8c0f2e6f4723",
+  "checked_at_utc": "2026-11-11T10:11:42.864684+00:00",
+  "status": "oracle_error",
+  "execution": "single fresh InProcessKernelManager in a new subprocess",
+  "cells": 3,
+  "executed_code_cells": [
+    0,
+    2
+  ],
+  "oracle": {
+    "source": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-integration-20261111/independent/oracle-09da-overflow.py",
+    "sha256": "d546fee5f778f9b3b2fffa85bbe7c2e38e658ce29214e256cc3b37f57b6cf5f5",
+    "status": "error",
+    "outputs": [
+      {
+        "output_type": "stream",
+        "name": "stdout",
+        "text": "All input values are finite; exact mean is 1e308; returned: inf\n"
+      },
+      {
+        "output_type": "error",
+        "ename": "AssertionError",
+        "evalue": "09da contract violation: finite inputs produce infinite mean",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[3]\u001b[39m\u001b[32m, line 4\u001b[39m\n\u001b[32m      1\u001b[39m \u001b[38;5;28;01mimport\u001b[39;00m math\n\u001b[32m      2\u001b[39m value = observed_mean([\u001b[32m1e308\u001b[39m, \u001b[32m1e308\u001b[39m])\n\u001b[32m      3\u001b[39m print(\u001b[33m'All input values are finite; exact mean is 1e308; returned:'\u001b[39m, value)\n\u001b[32m----> \u001b[39m\u001b[32m4\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m math.isfinite(value), \u001b[33m'09da contract violation: finite inputs produce infinite mean'\u001b[39m\n",
+          "\u001b[31mAssertionError\u001b[39m: 09da contract violation: finite inputs produce infinite mean"
+        ]
+      }
+    ]
+  },
+  "student_performance": "not_observed",
+  "elapsed_seconds": 0.4876,
+  "error": {
+    "ename": "AssertionError",
+    "evalue": "09da contract violation: finite inputs produce infinite mean",
+    "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[3]\u001b[39m\u001b[32m, line 4\u001b[39m\n\u001b[32m      1\u001b[39m \u001b[38;5;28;01mimport\u001b[39;00m math\n\u001b[32m      2\u001b[39m value = observed_mean([\u001b[32m1e308\u001b[39m, \u001b[32m1e308\u001b[39m])\n\u001b[32m      3\u001b[39m print(\u001b[33m'All input values are finite; exact mean is 1e308; returned:'\u001b[39m, value)\n\u001b[32m----> \u001b[39m\u001b[32m4\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m math.isfinite(value), \u001b[33m'09da contract violation: finite inputs produce infinite mean'\u001b[39m\n",
+      "\u001b[31mAssertionError\u001b[39m: 09da contract violation: finite inputs produce infinite mean"
+    ]
+  },
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

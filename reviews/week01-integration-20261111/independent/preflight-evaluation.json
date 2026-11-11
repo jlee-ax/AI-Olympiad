@@ -1,0 +1,18 @@
+{
+  "candidate_content_read": false,
+  "normal_control": {
+    "case": "preflight-existing-pipeline",
+    "status": "passed"
+  },
+  "negative_control": {
+    "case": "preflight-negative-positional",
+    "raw_process_exit": 1,
+    "raw_status": "notebook_error",
+    "raw_failure_cell": 15,
+    "mutation_source_cell": 15,
+    "expected_notebook_rejection_observed": true,
+    "harness_error": false
+  },
+  "cases_use_separate_subprocesses": true,
+  "scope": "Preflight of reviewer worker using frozen EXISTING pipeline. Does not evaluate integration candidate or students."
+}

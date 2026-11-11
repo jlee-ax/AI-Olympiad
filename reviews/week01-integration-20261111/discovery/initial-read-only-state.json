@@ -1,0 +1,1049 @@
+{
+  "recorded_at_utc": "2026-11-11T10:03:42.699017+00:00",
+  "phase": "read_only_after_parent_explicit_plan_rebind_before_integrated_artifact",
+  "git_head": "0f24dc3a58281341e296a1e5c661dfa3d1a0a5a9",
+  "git_index_sha256": "9b06078af4b8180e11306f2f4cc5ff91e0dfb8901c1fb4b2815b1568dee163b8",
+  "protected_history_files": {
+    "reviews/discovery-loop-20261111/runs/session.json": "81d71bca932382b67c280daabc32cd3bcbfb6fd14ffa87a712679b8e5b85bdf2",
+    "reviews/course-discovery-20261111/runs/baseline-wave-01/session.json": "e4af0f4adcb1efe6bb92b895b2b09ecd6c2c7e561d7dd3c132a5a08ceba140bf",
+    "reviews/course-discovery-20261111/runs/plan-wave-01/session.json": "91b69c804e1081450598eb74e0bbaed157b5132ec5d60c400939a68681ab3ffe",
+    "reviews/course-discovery-20261111/runs/week02-candidate-02/session.json": "d24adf9f72beb4db2dfa0c75a2051a91104c20321ac9ca773b02be06b4c53c7f",
+    "reviews/course-discovery-20261111/runs/week01-bridge-02/session.json": "d785ed42afddb1d652b3b87cffc2b9ea312c1f35c4f98ce2535ccab3b90c3c87",
+    "reviews/week02-expansion-20261111/discovery/current-run-selection.json": "0b7241882b3793d97e94140a9f7da514b6345da0194d7ac610d8679f9001409a",
+    "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/session.json": "3bca5d2c71643cd02549c55ac133229799b7b9f2c2e1859130a99d28dbe2582f",
+    "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/report.json": "0724210c299286dac7267d75cbe8ca87accdc56f516979382288d6922be4e5c2",
+    "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/projection-provenance.json": "594f55c6f8305292c7443b69192ab2ff6877f9bcae1eb84a968e1207e51f088f",
+    "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/origin.json": "631f004219217c3f1fbd9186d46aeaaaed18f0a5ef53d59454c7a6716de5da24",
+    "reviews/week02-expansion-20261111/discovery/runs/week02-main-time-cleanup-01/session.json": "eb2aaa9bde90fbfd9889e39276d578bddd0937ce40c26ceb0e8430fcaedfc9ed",
+    "reviews/week02-expansion-20261111/discovery/runs/week02-main-time-cleanup-01/report.json": "6716828ecdbb9570f53b0d15ef6618c030baf7141f12c0d78a6c949d187a4720",
+    "reviews/week02-expansion-20261111/discovery/runs/week02-main-time-cleanup-01/projection-provenance.json": "35981b47c202a7c246fa43d6dfe200097ab7d70eb640bcd62c0f6ab1464299c1",
+    "reviews/week02-expansion-20261111/discovery/runs/week02-main-time-cleanup-01/origin.json": "9314e12987e76996dea4556b49d9145a14d1f3e4db6d4f715ff6e7250c1c4cec",
+    "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-02/session.json": "54d55c36015f501e569622ee9b3f1d3f5d6d2d9a0bec82880e662c929d921b41",
+    "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-02/report.json": "51556f2e517bfb180647ac4152cd30031b38d01906b8340e1cc747fb34def343",
+    "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-02/projection-provenance.json": "07c89550b245a7a1c4a40e26f830be8ba706f5bb9a199c0d2587fd49629bc10f",
+    "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-02/origin.json": "2695be320ea3b4e671c845327894dae939f0a052b8e5feeb3dc4cb2682bea09b",
+    "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-01/session.json": "967f7c2c208bdc22de30ec6d9f41d3dedd1938d43c6fa64d2fc7830efe40873b",
+    "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-01/report.json": "92aaaeb0deb973dfa60117ebbf488edb0280a374c3430e5fc8ab05b81a504e21",
+    "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-01/projection-provenance.json": "4d0d14c3cf6b38a1127ce5fdd0caf0312b5e3c2993025b073ebb18430161bed0",
+    "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-01/origin.json": "69bade9fb676637c8d0c947a31c2e3be7cc6768fe23f6195f06083a2e0c4516f",
+    "reviews/week01-pipeline-20261111/discovery/current-run-selection.json": "da9e8e0812173a6965e95357112f34566056538895770d1a9a93915e7efcb470",
+    "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/session.json": "75ac4108f14505e5cd147e9c0754f9ed979e969372c8d2860c2295c1b84251bf",
+    "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/report.json": "692a39d6e16612cb62d43633e107439260de70acbe92ccd590e25764efc1307d",
+    "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/projection-provenance.json": "778768eeb3791bd4cd209280453a7a054d927e5908bf99c0c2e11b3f40d8f82b",
+    "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/origin.json": "7bef30eddeb616052e9103bcc70a3a5ca6653829880ac68cb313137fc850da86",
+    "reviews/week01-pipeline-20261111/discovery/runs/pipeline-final-01/session.json": "dc5f4269f4564a6937dadead1c286692ae45404c88f8a12299865165bda21553",
+    "reviews/week01-pipeline-20261111/discovery/runs/pipeline-final-01/report.json": "4da7c056a62115d3468f99850469dab6c914daa988d661fddb330e5a7519ca9b",
+    "reviews/week01-pipeline-20261111/discovery/runs/pipeline-final-01/projection-provenance.json": "8199d1d9fb5a6b71c1c18fe25e17c1dcb2ed335f05cae22a22299203e309e18a",
+    "reviews/week01-pipeline-20261111/discovery/runs/pipeline-final-01/origin.json": "c848dacb658b81b10c7fa8ee7d1faeeb4577e2daf2cdbc5a0698303b0bb75aa7",
+    "reviews/week01-pipeline-20261111/discovery/runs/pipeline-candidate-01/session.json": "6c4cf35ed13f6248ec561789fceb0645c4526ccd3154afa54a995e70298ee0bc",
+    "reviews/week01-pipeline-20261111/discovery/runs/pipeline-candidate-01/report.json": "82143c42669b721a4c08405c61674fe28811b1b6d0aee23caab0ad3223ac0400",
+    "reviews/week01-pipeline-20261111/discovery/runs/pipeline-candidate-01/projection-provenance.json": "8f236d5946cda7af093d586b429127992e266507c1c63162d05f1a450082db3e",
+    "reviews/week01-pipeline-20261111/discovery/runs/pipeline-candidate-01/origin.json": "bea18c8a80e11ce084349fa3c84dfb5b4fae67cdbe86e8b222e5ea33c6224b84",
+    "reviews/week01/independent-transfer-20261111/quality.json": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+    "reviews/week01/independent-transfer-20261111/workflow.json": "21f999d6cfbc17a01c64d885e7c27cd0879e4794cbf405d253193bd02c7d131f",
+    "reviews/week01/independent-transfer-20261111/depth.json": "252644772fb7422757e5f68ace544223aac90d95f3347b95c929750e173bfe3a",
+    "reviews/week01/independent-transfer-20261111/graph.json": "de4c9556a2b93a30205f290062c668dca4a82871a32fe9b05960dd067265403d",
+    "reviews/week01/independent-transfer-20261111/paths.json": "ae5f2cf2a01dce72005a063d8bcb91badb80d5d11b836971c13edf77b497b4b8",
+    "reviews/week01/independent-transfer-20261111/semantic-review.json": "609abbee31e01581f3bafdf705ed8acba2b78d10f48ac5b229f696734a92e2e6",
+    "reviews/week01-integration-20261111/plan-revision/contract-v1.json": "0d7d65d1151941ebdd8a3f2807893f75eb423d889d0a8eb0ee5dda74b31b34ac",
+    "reviews/week01-integration-20261111/plan-revision/student-plan-v1.html": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254",
+    "reviews/week01-integration-20261111/plan-revision/before-rebind.json": "b5366825c805856738e3f730df6840976fc7e88ef10f2a0ec7be60b58000b605",
+    "reviews/week01-integration-20261111/plan-revision/after-rebind.json": "7861252bae06d8ad216f148a7ac55c058e3e5daacd6ac5e342c3e04882fb5886"
+  },
+  "initial_artifacts": {
+    "lessons/week01/week01_python_tables.ipynb": {
+      "initial_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "available_exact_snapshot_path": "reviews/week01-pipeline-20261111/discovery/initial-week01-original.ipynb",
+      "snapshot_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    "lessons/week01/week01_axes_linear_bridge.ipynb": {
+      "initial_sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+      "available_exact_snapshot_path": "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/artifact-exact.ipynb",
+      "snapshot_sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f"
+    },
+    "lessons/week01/week01_problem_pipeline.ipynb": {
+      "initial_sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+      "available_exact_snapshot_path": "reviews/week01-pipeline-20261111/discovery/runs/pipeline-final-01/artifact-exact.ipynb",
+      "snapshot_sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a"
+    }
+  },
+  "plan_context": {
+    "head_plan_sha256": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254",
+    "head_contract_sha256": "0d7d65d1151941ebdd8a3f2807893f75eb423d889d0a8eb0ee5dda74b31b34ac",
+    "current_plan_sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+    "current_contract_sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+    "current_contract_revision": "curriculum-v2-week01-integrated"
+  },
+  "prior_current_sessions": [
+    {
+      "path": "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/session.json",
+      "scope": {
+        "id": "week01-supplement-retained-demands-rebound-week01-bridge-time-cleanup-01-rebound-bridge-navigation-01",
+        "lesson_path": "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/lesson-source.md",
+        "artifact_path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+        "artifact_sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+        "lesson_revision": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+        "readiness": "course",
+        "boundary": "Standalone Week1 axes/linear bridge after adding one forward navigation link to a separate problem-pipeline notebook. Preserve all original D01/D05/D07 requirements and three open questions. No code or saved output changed; a navigation route does not merge the linked notebook into this artifact or close its broad learning demands."
+      },
+      "status": "needs_work",
+      "ready_for_review": false,
+      "usage": {
+        "events": 15,
+        "rounds": 1,
+        "elapsed_minutes": 0,
+        "no_progress": 0
+      },
+      "queue": [
+        {
+          "demand_id": "D01",
+          "statement": "배열의 축 의미와 데이터 배치를 보존하기",
+          "reasons": [
+            "dimension_learning_uncertain",
+            "dimension_assessment_gap",
+            "dimension_principle_gap",
+            "dimension_practice_gap",
+            "gap"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "D01",
+            "retained-three",
+            "week01-supplement-retained-demands-rebound-week01-bridge-time-cleanup-01-rebound-bridge-navigation-01"
+          ]
+        },
+        {
+          "demand_id": "D05",
+          "statement": "유사도 행렬의 위치를 실제 식별자로 돌려주기",
+          "reasons": [
+            "dimension_prerequisites_gap",
+            "dimension_learning_gap",
+            "dimension_assessment_uncertain",
+            "dimension_principle_gap",
+            "gap"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "D05",
+            "retained-three",
+            "week01-supplement-retained-demands-rebound-week01-bridge-time-cleanup-01-rebound-bridge-navigation-01"
+          ]
+        },
+        {
+          "demand_id": "D07",
+          "statement": "embedding lookup의 새 축과 어휘 축을 구별하기",
+          "reasons": [
+            "dimension_assessment_gap",
+            "dimension_principle_uncertain",
+            "gap"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "D07",
+            "retained-three",
+            "week01-supplement-retained-demands-rebound-week01-bridge-time-cleanup-01-rebound-bridge-navigation-01"
+          ]
+        }
+      ],
+      "open_questions": [
+        {
+          "id": "question:eade388b57a8f2ee",
+          "frontier_id": "retained-three",
+          "question": "High-dimensional/model-context axis tracking and reshape-versus-transpose still require actual later material.",
+          "trace_id": "rebind-bridge-navigation-01-012-trace",
+          "resolved_by": null
+        },
+        {
+          "id": "question:495a6112320397c0",
+          "frontier_id": "retained-three",
+          "question": "Normalization, identity/gender matching constraints and real encoder/submission performance remain separate from synthetic maximum-dot-product lookup.",
+          "trace_id": "rebind-bridge-navigation-01-012-trace",
+          "resolved_by": null
+        },
+        {
+          "id": "question:d878296854874d47",
+          "frontier_id": "retained-three",
+          "question": "Vocabulary-versus-sequence axes and independent new lookup B/L/H assessment remain future teaching; student transfer and time are unobserved.",
+          "trace_id": "rebind-bridge-navigation-01-012-trace",
+          "resolved_by": null
+        }
+      ],
+      "blockers": [
+        {
+          "code": "uninvestigated_requirement",
+          "id": "question:eade388b57a8f2ee"
+        },
+        {
+          "code": "uninvestigated_requirement",
+          "id": "question:495a6112320397c0"
+        },
+        {
+          "code": "uninvestigated_requirement",
+          "id": "question:d878296854874d47"
+        },
+        {
+          "code": "frontier_unresolved",
+          "id": "retained-three"
+        },
+        {
+          "code": "demand_unresolved",
+          "id": "D01"
+        },
+        {
+          "code": "demand_unresolved",
+          "id": "D05"
+        },
+        {
+          "code": "demand_unresolved",
+          "id": "D07"
+        }
+      ],
+      "next_action": "expand_frontier"
+    },
+    {
+      "path": "reviews/week01-pipeline-20261111/discovery/runs/pipeline-final-01/session.json",
+      "scope": {
+        "id": "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+        "lesson_path": "reviews/week01-pipeline-20261111/discovery/runs/pipeline-final-01/lesson-source.md",
+        "artifact_path": "lessons/week01/week01_problem_pipeline.ipynb",
+        "artifact_sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+        "lesson_revision": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+        "readiness": "course",
+        "boundary": "Standalone final Week1 problem-to-learned-model-to-evaluation/output notebook after correcting the ID-order preservation instruction. Preserve all nineteen source-linked demands and five open questions from candidate-01, including the seventeen original requirements plus independently extracted P01/P02. The candidate session remains immutable stale history. Other Week1/Week2 notebooks are prerequisites or navigation only and are not merged into this projection. Material-design judgments establish neither complete Antique solution, actual learner independence, criterion acceptance nor full-course readiness."
+      },
+      "status": "needs_work",
+      "ready_for_review": false,
+      "usage": {
+        "events": 55,
+        "rounds": 6,
+        "elapsed_minutes": 0,
+        "no_progress": 0
+      },
+      "queue": [
+        {
+          "demand_id": "D11",
+          "statement": "현재 국내 적용 범위와 국제 최신 범위를 분리하기",
+          "reasons": [
+            "dimension_prerequisites_uncertain",
+            "dimension_learning_uncertain",
+            "dimension_assessment_uncertain",
+            "dimension_principle_uncertain",
+            "dimension_practice_uncertain",
+            "uncertain"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "D11",
+            "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+            "scope"
+          ]
+        },
+        {
+          "demand_id": "D01",
+          "statement": "배열의 축 의미와 데이터 배치를 보존하기",
+          "reasons": [
+            "dimension_learning_gap",
+            "dimension_assessment_gap",
+            "dimension_principle_gap",
+            "dimension_practice_gap",
+            "gap"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "D01",
+            "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+            "problems"
+          ]
+        },
+        {
+          "demand_id": "D02",
+          "statement": "거리·이웃·투표를 명세에서 구성하기",
+          "reasons": [
+            "dimension_prerequisites_uncertain",
+            "dimension_learning_gap",
+            "dimension_assessment_gap",
+            "dimension_principle_gap",
+            "dimension_practice_gap",
+            "gap"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "D02",
+            "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+            "problems"
+          ]
+        },
+        {
+          "demand_id": "D03",
+          "statement": "입력과 정답의 역할 및 사용 시점을 분리하기",
+          "reasons": [
+            "dimension_assessment_uncertain",
+            "uncertain"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "D03",
+            "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+            "problems"
+          ]
+        },
+        {
+          "demand_id": "D04",
+          "statement": "클래스 label을 내부 index로 바꾸고 정확히 복원하기",
+          "reasons": [
+            "dimension_learning_uncertain",
+            "dimension_assessment_uncertain",
+            "dimension_principle_gap",
+            "dimension_practice_gap",
+            "gap"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "D04",
+            "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+            "problems"
+          ]
+        },
+        {
+          "demand_id": "D05",
+          "statement": "유사도 행렬의 위치를 실제 식별자로 돌려주기",
+          "reasons": [
+            "dimension_prerequisites_uncertain",
+            "dimension_learning_gap",
+            "dimension_assessment_gap",
+            "dimension_principle_gap",
+            "dimension_practice_gap",
+            "gap"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "D05",
+            "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+            "problems"
+          ]
+        },
+        {
+          "demand_id": "D12",
+          "statement": "mutable default는 Python 진단의 별도 경계로 남기기",
+          "reasons": [
+            "dimension_prerequisites_gap",
+            "dimension_learning_gap",
+            "dimension_assessment_gap",
+            "dimension_principle_gap",
+            "dimension_practice_gap",
+            "gap"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "D12",
+            "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+            "problems"
+          ]
+        },
+        {
+          "demand_id": "D06",
+          "statement": "전처리 통계의 fit 경계를 분할 안에 두기",
+          "reasons": [
+            "dimension_assessment_uncertain",
+            "dimension_principle_gap",
+            "dimension_practice_gap",
+            "gap"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "D06",
+            "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+            "mechanisms"
+          ]
+        },
+        {
+          "demand_id": "D07",
+          "statement": "embedding lookup의 새 축과 어휘 축을 구별하기",
+          "reasons": [
+            "dimension_prerequisites_gap",
+            "dimension_learning_gap",
+            "dimension_assessment_gap",
+            "dimension_principle_gap",
+            "dimension_practice_gap",
+            "gap"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "D07",
+            "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+            "mechanisms"
+          ]
+        },
+        {
+          "demand_id": "D08",
+          "statement": "mask의 shape뿐 아니라 참여 의미를 검증하기",
+          "reasons": [
+            "dimension_prerequisites_gap",
+            "dimension_learning_gap",
+            "dimension_assessment_gap",
+            "dimension_principle_gap",
+            "dimension_practice_gap",
+            "gap"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "D08",
+            "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+            "mechanisms"
+          ]
+        },
+        {
+          "demand_id": "D09",
+          "statement": "정답 확률·손실·안정화의 계산을 구별하기",
+          "reasons": [
+            "dimension_prerequisites_gap",
+            "dimension_learning_gap",
+            "dimension_assessment_gap",
+            "dimension_principle_gap",
+            "dimension_practice_gap",
+            "gap"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "D09",
+            "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+            "mechanisms"
+          ]
+        },
+        {
+          "demand_id": "D10",
+          "statement": "작은 성공과 전체 올바름을 구별하는 검증 설계",
+          "reasons": [
+            "dimension_prerequisites_gap",
+            "dimension_assessment_uncertain",
+            "dimension_principle_gap",
+            "gap"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "D10",
+            "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+            "mechanisms"
+          ]
+        },
+        {
+          "demand_id": "H01",
+          "statement": "weighted score의 분모를 평가 대상 전체에서 세기",
+          "reasons": [
+            "dimension_learning_gap",
+            "dimension_assessment_gap",
+            "dimension_principle_gap",
+            "dimension_practice_gap",
+            "gap"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "H01",
+            "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+            "heldout"
+          ]
+        },
+        {
+          "demand_id": "H02",
+          "statement": "개발에서 사용한 도구가 추론에도 있는지 검증하기",
+          "reasons": [
+            "dimension_learning_gap",
+            "dimension_assessment_gap",
+            "dimension_principle_gap",
+            "dimension_practice_gap",
+            "gap"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "H02",
+            "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+            "heldout"
+          ]
+        },
+        {
+          "demand_id": "N02",
+          "statement": "반열린 이미지 사각형·면적 예산·제출 계약을 함께 점검하기",
+          "reasons": [
+            "dimension_prerequisites_gap",
+            "dimension_learning_gap",
+            "dimension_assessment_gap",
+            "dimension_contract_gap",
+            "gap"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "N02",
+            "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+            "next-wave"
+          ]
+        },
+        {
+          "demand_id": "N03",
+          "statement": "미상 라벨을 확정 음성과 구분하고 특성·출력 라벨 경계를 보존하기",
+          "reasons": [
+            "dimension_assumptions_uncertain",
+            "uncertain"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "N03",
+            "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+            "next-wave"
+          ]
+        }
+      ],
+      "open_questions": [
+        {
+          "id": "question:56f4cd2e520467f2",
+          "frontier_id": "next-wave",
+          "question": "Domestic 2027 syllabus body still says IOAI 2026; applicability of the international 2027 changes and full PDF difference remain unverified after HTTP 429.",
+          "trace_id": "rebind-pipeline-final-01-031-trace",
+          "resolved_by": null
+        },
+        {
+          "id": "question:e70b5658df5e5219",
+          "frontier_id": "next-wave",
+          "question": "Pixel empty-rectangle/dtype rules, full CLIP quality, runtime and actual submission environment remain untested.",
+          "trace_id": "rebind-pipeline-final-01-031-trace",
+          "resolved_by": null
+        },
+        {
+          "id": "question:945fdb55281a968c",
+          "frontier_id": "next-wave",
+          "question": "The new label-semantics unit does not establish complete semi-supervised learning or the positive-only probability derivation; actual later teaching remains to be read.",
+          "trace_id": "rebind-pipeline-final-01-031-trace",
+          "resolved_by": null
+        },
+        {
+          "id": "question:48d60d61369ba391",
+          "frontier_id": "next-wave",
+          "question": "Student independent transfer, help received, completion time and learning effects remain unobserved.",
+          "trace_id": "rebind-pipeline-final-01-031-trace",
+          "resolved_by": null
+        },
+        {
+          "id": "question:dfc74aebf5362656",
+          "frontier_id": "week01-pipeline-transfer",
+          "question": "실제 Antique 전체 반지도 학습·숨은 자료 실행·제출 수락과 대회 성능은 실행으로 확인하지 않았다.",
+          "trace_id": "rebind-pipeline-final-01-036-trace",
+          "resolved_by": null
+        }
+      ],
+      "blockers": [
+        {
+          "code": "uninvestigated_requirement",
+          "id": "question:56f4cd2e520467f2"
+        },
+        {
+          "code": "uninvestigated_requirement",
+          "id": "question:e70b5658df5e5219"
+        },
+        {
+          "code": "uninvestigated_requirement",
+          "id": "question:945fdb55281a968c"
+        },
+        {
+          "code": "uninvestigated_requirement",
+          "id": "question:48d60d61369ba391"
+        },
+        {
+          "code": "uninvestigated_requirement",
+          "id": "question:dfc74aebf5362656"
+        },
+        {
+          "code": "frontier_unresolved",
+          "id": "next-wave"
+        },
+        {
+          "code": "frontier_unresolved",
+          "id": "week01-pipeline-transfer"
+        },
+        {
+          "code": "demand_unresolved",
+          "id": "D11"
+        },
+        {
+          "code": "demand_unresolved",
+          "id": "D01"
+        },
+        {
+          "code": "demand_unresolved",
+          "id": "D02"
+        },
+        {
+          "code": "demand_unresolved",
+          "id": "D03"
+        },
+        {
+          "code": "demand_unresolved",
+          "id": "D04"
+        },
+        {
+          "code": "demand_unresolved",
+          "id": "D05"
+        },
+        {
+          "code": "demand_unresolved",
+          "id": "D12"
+        },
+        {
+          "code": "demand_unresolved",
+          "id": "D06"
+        },
+        {
+          "code": "demand_unresolved",
+          "id": "D07"
+        },
+        {
+          "code": "demand_unresolved",
+          "id": "D08"
+        },
+        {
+          "code": "demand_unresolved",
+          "id": "D09"
+        },
+        {
+          "code": "demand_unresolved",
+          "id": "D10"
+        },
+        {
+          "code": "demand_unresolved",
+          "id": "H01"
+        },
+        {
+          "code": "demand_unresolved",
+          "id": "H02"
+        },
+        {
+          "code": "demand_unresolved",
+          "id": "N02"
+        },
+        {
+          "code": "demand_unresolved",
+          "id": "N03"
+        }
+      ],
+      "next_action": "expand_frontier"
+    }
+  ],
+  "read_only_calls": [
+    {
+      "name": "workflow-validate",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/workflow.py",
+        "validate",
+        "reviews/week01/independent-transfer-20261111/workflow.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9c3b419a4f419a4c92c9234bbf3a34c0044b786df04608d1ef395baa7bcb7bab",
+      "stdout_bytes": 268,
+      "parsed_subset": {
+        "authority": "advisory_only",
+        "status": "valid",
+        "reason": "structural_checks_only",
+        "errors": []
+      }
+    },
+    {
+      "name": "workflow-recall",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/workflow.py",
+        "recall",
+        "reviews/week01/independent-transfer-20261111/workflow.json",
+        "--query",
+        "week1 pipeline",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a280a368415a13fd2031c637414d513256b61fb0d7ccc14913b9b3d5332d79ab",
+      "stdout_bytes": 285,
+      "parsed_subset": {
+        "authority": "advisory_only",
+        "status": "valid",
+        "reason": "structural_checks_only",
+        "errors": [],
+        "records": []
+      }
+    },
+    {
+      "name": "workflow-decide",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/workflow.py",
+        "decide",
+        "reviews/week01/independent-transfer-20261111/workflow.json",
+        "--quality",
+        "reviews/week01/independent-transfer-20261111/quality.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "42579b26d1ed532c2378e9a2ed0ca0c455932f121a25e6abed4d41c3edd46e49",
+      "stdout_bytes": 366,
+      "parsed_subset": {
+        "authority": "advisory_only",
+        "status": "pause",
+        "reason": "criteria_agreement_required",
+        "context_fingerprint": "76de10e4b99c2623db076081bc09a378428b803f7052409ffcea5077f6db92df",
+        "errors": []
+      }
+    },
+    {
+      "name": "quality-evaluate",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/quality.py",
+        "evaluate",
+        "reviews/week01/independent-transfer-20261111/quality.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a9d52e50f56e4c96ac3ce9c63c52bc42b13cfbe45c3b8276e8288bab566a1439",
+      "stdout_bytes": 31502,
+      "parsed_subset": {
+        "authority": "advisory_only",
+        "status": "uncertain",
+        "ready_for_review": false,
+        "discovery_gate": "discovery_missing",
+        "checks": [
+          {
+            "id": "K01",
+            "measurement": {
+              "artifact_digest_matches": true,
+              "baseline": "passed",
+              "target_matches": true
+            },
+            "status": "passed"
+          },
+          {
+            "id": "K03",
+            "measurement": {
+              "actual_completion_time": "unobserved",
+              "baseline_weeks": [
+                {
+                  "class_minutes": 120,
+                  "required_self_study_hours": [
+                    5,
+                    7
+                  ],
+                  "week": 1
+                },
+                {
+                  "class_minutes": 120,
+                  "required_self_study_hours": [
+                    6,
+                    8
+                  ],
+                  "week": 2
+                },
+                {
+                  "class_minutes": 120,
+                  "required_self_study_hours": [
+                    7,
+                    9
+                  ],
+                  "week": 3
+                },
+                {
+                  "class_minutes": 120,
+                  "required_self_study_hours": [
+                    8,
+                    10
+                  ],
+                  "week": 4
+                },
+                {
+                  "class_minutes": 120,
+                  "required_self_study_hours": [
+                    8,
+                    10
+                  ],
+                  "week": 5
+                },
+                {
+                  "class_minutes": 120,
+                  "required_self_study_hours": [
+                    10,
+                    14
+                  ],
+                  "week": 6
+                },
+                {
+                  "class_minutes": 120,
+                  "required_self_study_hours": [
+                    14,
+                    18
+                  ],
+                  "week": 7
+                },
+                {
+                  "class_minutes": 120,
+                  "required_self_study_hours": [
+                    16,
+                    20
+                  ],
+                  "week": 8
+                },
+                {
+                  "class_minutes": 120,
+                  "required_self_study_hours": [
+                    16,
+                    20
+                  ],
+                  "week": 9
+                },
+                {
+                  "class_minutes": 120,
+                  "required_self_study_hours": [
+                    10,
+                    14
+                  ],
+                  "week": 10
+                }
+              ],
+              "errors": [],
+              "homework_cap_period": "each_selected_week",
+              "material_allocations": [
+                {
+                  "totals": {
+                    "coding": 80,
+                    "noncoding": 20,
+                    "theory": 20
+                  },
+                  "week": 1,
+                  "written_minutes_inside_blocks": 10
+                }
+              ],
+              "outside_work": [
+                {
+                  "baseline_required_minutes": [
+                    300,
+                    420
+                  ],
+                  "cap_status": "not_agreed_not_assessed",
+                  "ledger_status": "recorded_estimate_not_observed_time",
+                  "optional_minutes": 0,
+                  "required_minutes": 420,
+                  "week": 1,
+                  "weekly_cap_minutes": null
+                }
+              ],
+              "outside_work_is_separate": true
+            },
+            "status": "passed"
+          },
+          {
+            "id": "K12",
+            "measurement": {
+              "active_review_ids": [
+                "corrected-visual-binding-current",
+                "fresh-rebind-K06-claim:array",
+                "fresh-rebind-K06-claim:python",
+                "fresh-rebind-K06-claim:table",
+                "fresh-rebind-K06-claim:visualise",
+                "fresh-rebind-K16-W1-array",
+                "fresh-rebind-K16-W1-python",
+                "fresh-rebind-K16-W1-table",
+                "fresh-rebind-K16-W1-visualise",
+                "supplement-K02-W1-array",
+                "supplement-K02-W1-python",
+                "supplement-K02-W1-table",
+                "supplement-K02-W1-visualise",
+                "supplement-K05-W1-array",
+                "supplement-K05-W1-python",
+                "supplement-K05-W1-table",
+                "supplement-K09-W1-array",
+                "supplement-K09-W1-python",
+                "supplement-K09-W1-table",
+                "supplement-K09-W1-visualise"
+              ],
+              "dependency_nodes": 39,
+              "historical_review_ids": [
+                "material-K16-W1-python",
+                "material-K16-W1-table",
+                "material-K16-W1-array",
+                "material-K16-W1-visualise",
+                "material-K06-claim:python",
+                "material-K06-claim:table",
+                "material-K06-claim:array",
+                "material-K06-claim:visualise",
+                "supplement-K05-W1-visualise",
+                "supplement-K10-claim:python",
+                "supplement-K10-claim:table",
+                "supplement-K10-claim:array",
+                "supplement-K10-claim:visualise",
+                "historical-visual-binding-failure"
+              ],
+              "selection": "last_appended_review_per_criterion_and_current_object",
+              "stale_review_ids": [
+                "fresh-rebind-K16-W1-python",
+                "fresh-rebind-K16-W1-table",
+                "fresh-rebind-K16-W1-array",
+                "fresh-rebind-K16-W1-visualise",
+                "fresh-rebind-K06-claim:python",
+                "supplement-K02-W1-python",
+                "supplement-K05-W1-python",
+                "supplement-K09-W1-python",
+                "supplement-K02-W1-table",
+                "supplement-K05-W1-table",
+                "supplement-K09-W1-table",
+                "supplement-K02-W1-array",
+                "supplement-K05-W1-array",
+                "supplement-K09-W1-array",
+                "supplement-K02-W1-visualise",
+                "corrected-visual-binding-current",
+                "supplement-K09-W1-visualise"
+              ]
+            },
+            "status": "uncertain"
+          },
+          {
+            "id": "K14",
+            "measurement": {
+              "agreement_fingerprint": "965e5d47dc9f3709098a614801608d8307ca29d8c251be07b19bd8284815e2b5",
+              "checkpoint_due": false,
+              "priority_policy": "proposal",
+              "thresholds_not_invented": true
+            },
+            "status": "uncertain"
+          }
+        ]
+      }
+    },
+    {
+      "name": "quality-plan",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/quality.py",
+        "plan",
+        "reviews/week01/independent-transfer-20261111/quality.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "82780e443e3dfa9f5ad0b73c2481518f345dc01bacd4edbeba977e5294eca881",
+      "stdout_bytes": 16880,
+      "parsed_subset": {
+        "authority": "advisory_only",
+        "status": "pause",
+        "reason": "priority_policy_requires_agreement"
+      }
+    },
+    {
+      "name": "plan-baseline",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/quality.py",
+        "baseline",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "7861252bae06d8ad216f148a7ac55c058e3e5daacd6ac5e342c3e04882fb5886",
+      "stdout_bytes": 1485,
+      "parsed_subset": {
+        "authority": "advisory_only",
+        "baseline_sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+        "coverage": "scheduled_only",
+        "errors": [],
+        "status": "passed",
+        "topic_count": 60,
+        "weeks": [
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              5,
+              7
+            ],
+            "week": 1
+          },
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              6,
+              8
+            ],
+            "week": 2
+          },
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              7,
+              9
+            ],
+            "week": 3
+          },
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              8,
+              10
+            ],
+            "week": 4
+          },
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              8,
+              10
+            ],
+            "week": 5
+          },
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              10,
+              14
+            ],
+            "week": 6
+          },
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              14,
+              18
+            ],
+            "week": 7
+          },
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              16,
+              20
+            ],
+            "week": 8
+          },
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              16,
+              20
+            ],
+            "week": 9
+          },
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              10,
+              14
+            ],
+            "week": 10
+          }
+        ]
+      }
+    }
+  ],
+  "initial_writes_performed": false
+}

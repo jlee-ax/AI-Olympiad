@@ -1,0 +1,141 @@
+[
+  {
+    "name": "workflow-validate",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "tools/workflow.py",
+      "validate",
+      "reviews/week01/independent-transfer-20261111/workflow.json",
+      "--root",
+      "."
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "9c3b419a4f419a4c92c9234bbf3a34c0044b786df04608d1ef395baa7bcb7bab",
+    "status": "valid",
+    "reason": "structural_checks_only",
+    "record_count": null
+  },
+  {
+    "name": "workflow-recall-default",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "tools/workflow.py",
+      "recall",
+      "reviews/week01/independent-transfer-20261111/workflow.json",
+      "--root",
+      "."
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "396252c4c6f160e8425f4d50d4e9ef40f49f5ef9560449e5df63ce3436b0cb1c",
+    "status": "valid",
+    "reason": "structural_checks_only",
+    "record_count": 6
+  },
+  {
+    "name": "workflow-recall-query",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "tools/workflow.py",
+      "recall",
+      "reviews/week01/independent-transfer-20261111/workflow.json",
+      "--query",
+      "week1 pipeline",
+      "--root",
+      "."
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "a280a368415a13fd2031c637414d513256b61fb0d7ccc14913b9b3d5332d79ab",
+    "status": "valid",
+    "reason": "structural_checks_only",
+    "record_count": 0
+  },
+  {
+    "name": "workflow-decide",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "tools/workflow.py",
+      "decide",
+      "reviews/week01/independent-transfer-20261111/workflow.json",
+      "--quality",
+      "reviews/week01/independent-transfer-20261111/quality.json",
+      "--root",
+      "."
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "42579b26d1ed532c2378e9a2ed0ca0c455932f121a25e6abed4d41c3edd46e49",
+    "status": "pause",
+    "reason": "criteria_agreement_required",
+    "record_count": null
+  },
+  {
+    "name": "quality-evaluate",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "tools/quality.py",
+      "evaluate",
+      "reviews/week01/independent-transfer-20261111/quality.json",
+      "--root",
+      "."
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "a9d52e50f56e4c96ac3ce9c63c52bc42b13cfbe45c3b8276e8288bab566a1439",
+    "status": "uncertain",
+    "reason": null,
+    "record_count": null
+  },
+  {
+    "name": "quality-plan",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "tools/quality.py",
+      "plan",
+      "reviews/week01/independent-transfer-20261111/quality.json",
+      "--root",
+      "."
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "82780e443e3dfa9f5ad0b73c2481518f345dc01bacd4edbeba977e5294eca881",
+    "status": "pause",
+    "reason": "priority_policy_requires_agreement",
+    "record_count": null
+  },
+  {
+    "name": "plan-baseline",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "tools/quality.py",
+      "baseline",
+      "--root",
+      "."
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "7861252bae06d8ad216f148a7ac55c058e3e5daacd6ac5e342c3e04882fb5886",
+    "status": "passed",
+    "reason": null,
+    "record_count": null
+  },
+  {
+    "name": "template-plan",
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "tools/quality.py",
+      "plan",
+      "templates/quality.json",
+      "--root",
+      "."
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "b983f962a1f70a70c6152ba35dc495cb276c4ee8d3184dfcc7f915ff7d3ebaad",
+    "status": "pause",
+    "reason": "priority_policy_requires_agreement",
+    "record_count": null
+  }
+]

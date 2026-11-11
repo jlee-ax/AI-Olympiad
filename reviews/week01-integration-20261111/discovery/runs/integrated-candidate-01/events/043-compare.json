@@ -1,0 +1,55 @@
+{
+  "id": "rebind-integrated-candidate-01-043-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D04",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "Learned class labels 0/1 and new output strings are distinguished from IDs and unknown ?. There is no contiguous class-index encoding, class-axis argmax and inverse decoding implementation or new {-3,4,12} assessment.",
+    "start_line": 274,
+    "end_line": 457,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "Learned class labels 0/1 and new output strings are distinguished from IDs and unknown ?. There is no contiguous class-index encoding, class-axis argmax and inverse decoding implementation or new {-3,4,12} assessment.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 274,
+        "end_line": 457
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "Learned class labels 0/1 and new output strings are distinguished from IDs and unknown ?. There is no contiguous class-index encoding, class-axis argmax and inverse decoding implementation or new {-3,4,12} assessment.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 274,
+        "end_line": 457
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Learned class labels 0/1 and new output strings are distinguished from IDs and unknown ?. There is no contiguous class-index encoding, class-axis argmax and inverse decoding implementation or new {-3,4,12} assessment.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 274,
+        "end_line": 457
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "Learned class labels 0/1 and new output strings are distinguished from IDs and unknown ?. There is no contiguous class-index encoding, class-axis argmax and inverse decoding implementation or new {-3,4,12} assessment.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 274,
+        "end_line": 457
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "Learned class labels 0/1 and new output strings are distinguished from IDs and unknown ?. There is no contiguous class-index encoding, class-axis argmax and inverse decoding implementation or new {-3,4,12} assessment.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 274,
+        "end_line": 457
+      }
+    ]
+  }
+}
