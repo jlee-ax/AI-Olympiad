@@ -1,0 +1,63 @@
+{
+  "inputs": [
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "sha256": "16b797de3935af5e25d6e297cdd8b4c72d7dbb32667ab36b9fb9df36965cd84d",
+      "bytes": 44247
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.html",
+      "sha256": "86ca70620ded9e592a84fba218ab1fed635a6c6f3c451bad1c808fb89fc16030",
+      "bytes": 388014
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge_teacher.md",
+      "sha256": "298b385f2cb7dbd4cf2e1bc2aaaac61567638d67ef887eb4e533fbd2aa8eecc7",
+      "bytes": 10274
+    },
+    {
+      "path": "lessons/week01/week01_integrated.ipynb",
+      "sha256": "487379bf0c9c5fae5877d1eb5ec1414dedabbe2f2634a3827ae224f6e31bc568",
+      "bytes": 91470
+    },
+    {
+      "path": "lessons/week01/week01_integrated.html",
+      "sha256": "87ef29ccb2362ed6e9a5347d1deefe45d2dafe20537f926f6764ae1cfd567195",
+      "bytes": 440140
+    },
+    {
+      "path": "lessons/week01/week01_integrated_teacher.md",
+      "sha256": "5004166eabc9231f46ce1c85aac6b08adb602a7d94b6376330101d23f15e4a12",
+      "bytes": 13461
+    }
+  ],
+  "draft_record_preserved": "candidate-input-manifest.json",
+  "final_bridge_change": "Markdown23 reading scaffold only, final code/output hashes checked in content audit",
+  "final_run_ids": [
+    "final-full-bridge",
+    "final-mutant-all-PAD-as-observed-zero",
+    "final-mutant-allow-negative-index",
+    "final-mutant-deduplicate-repeats",
+    "final-mutant-denominator-cosine-hidden-control",
+    "final-mutant-drop-real-zero-token",
+    "final-mutant-include-nonzero-PAD",
+    "final-mutant-reject-valid-zero-mean",
+    "final-mutant-wrong-T-denominator",
+    "final-mutant-wrong-reduction-axis",
+    "final-native-PAD-vector-change",
+    "final-native-all-PAD",
+    "final-native-base",
+    "final-native-downstream-cosine",
+    "final-native-invalid-bool-ID",
+    "final-native-invalid-float-ID",
+    "final-native-invalid-high-ID",
+    "final-native-invalid-negative-ID",
+    "final-native-padding-extension",
+    "final-native-position-permutation",
+    "final-native-real-zero-token",
+    "final-native-repeated-token",
+    "final-native-wrong-axis-input",
+    "final-route-bridge-A",
+    "final-route-bridge-B"
+  ]
+}

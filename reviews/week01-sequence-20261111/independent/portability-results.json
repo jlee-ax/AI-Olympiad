@@ -1,0 +1,80 @@
+{
+  "status": "passed",
+  "scope": "two representative paths from relocated exact-byte minimal checkout; shared existing venv, not fresh dependency installation or full repo regression",
+  "copied_inputs": [
+    {
+      "relative_path": "execute_sequence_case.py",
+      "sha256": "3fea58cf45f4cbf1a1b082b36932753d18695f23344c57dccb8162fda6fd0300",
+      "bytes": 7726
+    },
+    {
+      "relative_path": "rebase-case-configs.py",
+      "sha256": "0a11c283415566022e44f687f58616edba701761e4b2eee99e48295267e56c66",
+      "bytes": 1837
+    },
+    {
+      "relative_path": "baseline-manifest.json",
+      "sha256": "7b6f91167398fbc32b9dc1e8037795facf7d954f0b879baf239bf13f509e3edb",
+      "bytes": 17430
+    },
+    {
+      "relative_path": "native_sequence_checks.py",
+      "sha256": "23d1ced2be66eecd2c576711fb1542fca856dce95269ea04e2398e767d3309aa",
+      "bytes": 6420
+    },
+    {
+      "relative_path": "independent-inputs-and-expectations.json",
+      "sha256": "246cbc64f5be837ecccf5f08725b18e3daeab0282f9a6db5949c1744570fd370",
+      "bytes": 9283
+    },
+    {
+      "relative_path": "oracle-native-base.py",
+      "sha256": "b2125723980218c5a0e24683f49929ae5efe0e2a18b382afaa212f092fde86d3",
+      "bytes": 108
+    },
+    {
+      "relative_path": "oracle-mutant-wrong-T-denominator.py",
+      "sha256": "b2125723980218c5a0e24683f49929ae5efe0e2a18b382afaa212f092fde86d3",
+      "bytes": 108
+    },
+    {
+      "relative_path": "case-configs/final-native-base.json",
+      "sha256": "fac54b20a17563e65818120da592160884a34e44803cd37a4415924b6dd5b9f3",
+      "bytes": 524
+    },
+    {
+      "relative_path": "case-configs/final-mutant-wrong-T-denominator.json",
+      "sha256": "8787b7c4f6628b3a330d85752163e70ae1945ae6b5e8bcd5a3f817cc0d4a9dca",
+      "bytes": 732
+    },
+    {
+      "relative_path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "sha256": "16b797de3935af5e25d6e297cdd8b4c72d7dbb32667ab36b9fb9df36965cd84d",
+      "bytes": 44247
+    }
+  ],
+  "cases": [
+    {
+      "id": "final-native-base",
+      "expected_status": "passed",
+      "actual_status": "passed",
+      "returncode": 0,
+      "raw_result": "portability-raw/final-native-base.json",
+      "sha256": "96bb8ee3c0b235cc62eb5f219ab66091151fdfe097d80d6ae3552fee79a26148",
+      "new_candidate_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-sequence-20261111/independent/portability-work-final/minimal-checkout/lessons/week01/week01_axes_linear_bridge.ipynb"
+    },
+    {
+      "id": "final-mutant-wrong-T-denominator",
+      "expected_status": "oracle_error",
+      "actual_status": "oracle_error",
+      "returncode": 1,
+      "raw_result": "portability-raw/final-mutant-wrong-T-denominator.json",
+      "sha256": "32b00120df5e7f493c664ee594e7cd86763a33b18c5cafdb149ababf1b5602d5",
+      "new_candidate_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-sequence-20261111/independent/portability-work-final/minimal-checkout/lessons/week01/week01_axes_linear_bridge.ipynb"
+    }
+  ],
+  "new_config_only": true,
+  "original_frozen_and_config_bytes_unchanged": true,
+  "temporary_copy_removed": true,
+  "student_time_and_achievement": "unobserved"
+}

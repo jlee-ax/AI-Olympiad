@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+    "-B",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-sequence-20261111/independent/portability-work-final/minimal-checkout/reviews/week01-sequence-20261111/independent/rebase-case-configs.py",
+    "--repo-root",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-sequence-20261111/independent/portability-work-final/minimal-checkout",
+    "--run-prefix",
+    "portable",
+    "--case",
+    "final-native-base",
+    "--case",
+    "final-mutant-wrong-T-denominator"
+  ],
+  "returncode": 0,
+  "stdout": "{\"method\": \"new config path fields rebased from frozen old repo to explicit repo-root; unique output IDs; exact candidate SHA required\", \"original_files_unchanged\": true, \"old_repo\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision\", \"new_repo\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-sequence-20261111/independent/portability-work-final/minimal-checkout\", \"configs\": [{\"original_config\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-sequence-20261111/independent/portability-work-final/minimal-checkout/reviews/week01-sequence-20261111/independent/case-configs/final-native-base.json\", \"original_sha256\": \"fac54b20a17563e65818120da592160884a34e44803cd37a4415924b6dd5b9f3\", \"new_config\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-sequence-20261111/independent/portability-work-final/minimal-checkout/reviews/week01-sequence-20261111/independent/rebased-configs/portable/final-native-base.json\", \"new_id\": \"portable-final-native-base\", \"candidate_sha256\": \"16b797de3935af5e25d6e297cdd8b4c72d7dbb32667ab36b9fb9df36965cd84d\"}, {\"original_config\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-sequence-20261111/independent/portability-work-final/minimal-checkout/reviews/week01-sequence-20261111/independent/case-configs/final-mutant-wrong-T-denominator.json\", \"original_sha256\": \"8787b7c4f6628b3a330d85752163e70ae1945ae6b5e8bcd5a3f817cc0d4a9dca\", \"new_config\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-sequence-20261111/independent/portability-work-final/minimal-checkout/reviews/week01-sequence-20261111/independent/rebased-configs/portable/final-mutant-wrong-T-denominator.json\", \"new_id\": \"portable-final-mutant-wrong-T-denominator\", \"candidate_sha256\": \"16b797de3935af5e25d6e297cdd8b4c72d7dbb32667ab36b9fb9df36965cd84d\"}]}\n",
+  "stderr": ""
+}

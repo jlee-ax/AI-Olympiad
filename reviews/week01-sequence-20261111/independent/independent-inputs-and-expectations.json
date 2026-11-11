@@ -1,0 +1,509 @@
+{
+  "schema": "sequence-independent-expectations-v1",
+  "prepared_before_candidate": true,
+  "reference_scope": "Reviewer hand-derived new input; actual candidate helper tests and reviewer reference implementation must remain separate.",
+  "contract": {
+    "table_axes": [
+      "vocabulary_ID",
+      "embedding_coordinate"
+    ],
+    "input_axes": [
+      "sentence",
+      "padded_position"
+    ],
+    "lookup_axes": [
+      "sentence",
+      "padded_position",
+      "embedding_coordinate"
+    ],
+    "valid_mask": "token_ID != PAD_ID; numeric zero embedding is still a real token",
+    "PAD_ID": 0,
+    "ID_domain": "integer token IDs 0<=ID<V; reject negative and >=V before indexing",
+    "pool_formula": "sum_t mask[b,t]*lookup[b,t,j] / sum_t mask[b,t] for positive count",
+    "all_PAD": "mean mathematically undefined; allow clear error or documented placeholder with zero count/invalid status; no silent claim that placeholder is an observed average",
+    "model_scope": "provided fixed vectors, not trained embeddings or a full text model"
+  },
+  "base": {
+    "V": 7,
+    "B": 2,
+    "T": 4,
+    "d": 3,
+    "table": [
+      [
+        9,
+        9,
+        9
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        4
+      ],
+      [
+        0,
+        4,
+        2
+      ],
+      [
+        -2,
+        2,
+        0
+      ],
+      [
+        1,
+        -1,
+        3
+      ],
+      [
+        5,
+        1,
+        -2
+      ]
+    ],
+    "sentence_ids": [
+      "s-91",
+      "s-04"
+    ],
+    "token_ids": [
+      [
+        2,
+        3,
+        2,
+        0
+      ],
+      [
+        1,
+        5,
+        0,
+        0
+      ]
+    ],
+    "mask": [
+      [
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        0
+      ]
+    ],
+    "lookup": [
+      [
+        [
+          2,
+          0,
+          4
+        ],
+        [
+          0,
+          4,
+          2
+        ],
+        [
+          2,
+          0,
+          4
+        ],
+        [
+          9,
+          9,
+          9
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          -1,
+          3
+        ],
+        [
+          9,
+          9,
+          9
+        ],
+        [
+          9,
+          9,
+          9
+        ]
+      ]
+    ],
+    "valid_counts": [
+      3,
+      2
+    ],
+    "masked_sums": [
+      [
+        4,
+        4,
+        10
+      ],
+      [
+        1,
+        -1,
+        3
+      ]
+    ],
+    "pooled_exact_fractions": [
+      [
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          10,
+          3
+        ]
+      ],
+      [
+        [
+          1,
+          2
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ]
+    ],
+    "expected_shapes": {
+      "table": [
+        7,
+        3
+      ],
+      "token_ids": [
+        2,
+        4
+      ],
+      "lookup": [
+        2,
+        4,
+        3
+      ],
+      "mask_for_coordinate_broadcast": [
+        2,
+        4,
+        1
+      ],
+      "counts_keepdims": [
+        2,
+        1
+      ],
+      "pooled": [
+        2,
+        3
+      ]
+    }
+  },
+  "cases": [
+    {
+      "id": "padding-extension",
+      "token_ids": [
+        [
+          2,
+          3,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          5,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "expected_counts": [
+        3,
+        2
+      ],
+      "expected_pool": "same base fractions despite T changing4->6; raw lookup contains extra PAD vectors"
+    },
+    {
+      "id": "PAD-vector-change",
+      "change": "replace row0 [9,9,9] with [100,-50,7]",
+      "expected_pool": "same base fractions; raw lookup PAD locations change, masked sums/counts do not"
+    },
+    {
+      "id": "real-zero-token",
+      "token_ids": [
+        [
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "expected_count": 1,
+      "expected_sum": [
+        0,
+        0,
+        0
+      ],
+      "expected_mean": [
+        0,
+        0,
+        0
+      ],
+      "valid_mean": true,
+      "retrieval_boundary": "zero mean is valid here but direction/cosine is undefined; apply separately declared retrieval rejection/status policy"
+    },
+    {
+      "id": "all-PAD",
+      "token_ids": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "expected_count": 0,
+      "expected_masked_sum": [
+        0,
+        0,
+        0
+      ],
+      "mean": "undefined; explicit error or documented invalid placeholder",
+      "must_distinguish_from_real_zero_token": true
+    },
+    {
+      "id": "repeated-token",
+      "token_ids": [
+        [
+          2,
+          3,
+          2,
+          0
+        ]
+      ],
+      "expected_count": 3,
+      "expected_mean_fractions": [
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          10,
+          3
+        ]
+      ],
+      "wrong_deduplicate_mean": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "wrong-denominator-only",
+      "expected_correct_counts": [
+        3,
+        2
+      ],
+      "wrong_divide_masked_sum_by_T": [
+        [
+          1,
+          1,
+          2.5
+        ],
+        [
+          0.25,
+          -0.25,
+          0.75
+        ]
+      ],
+      "reason": "excluding PAD from numerator alone is insufficient"
+    },
+    {
+      "id": "wrong-PAD-inclusion",
+      "wrong_unmasked_sum": [
+        [
+          13,
+          13,
+          19
+        ],
+        [
+          19,
+          17,
+          21
+        ]
+      ],
+      "reason": "PAD vectors intentionally nonzero; ID mask must decide validity"
+    },
+    {
+      "id": "valid-zero-dropped",
+      "wrong_nonzero-vector-filter_counts": [
+        3,
+        1
+      ],
+      "wrong_second_sentence_mean": [
+        1,
+        -1,
+        3
+      ],
+      "reason": "cannot derive token validity from embedding magnitude"
+    },
+    {
+      "id": "position-permutation",
+      "token_ids": [
+        [
+          0,
+          2,
+          3,
+          2
+        ],
+        [
+          0,
+          5,
+          0,
+          1
+        ]
+      ],
+      "expected_pool": "same base fractions",
+      "expected_lookup": "position order changes",
+      "meaning": "unordered mean pooling loses position/order; cannot recover conversation chronology or general sentence meaning"
+    },
+    {
+      "id": "invalid-negative-ID",
+      "token_ids": [
+        [
+          -1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "expected": "reject before lookup; NumPy -1 would otherwise choose final vocabulary row"
+    },
+    {
+      "id": "invalid-high-ID",
+      "token_ids": [
+        [
+          7,
+          2,
+          0,
+          0
+        ]
+      ],
+      "expected": "reject ID>=V, not clip or modulo"
+    },
+    {
+      "id": "wrong-axis",
+      "reason": "B=2,V=7,T=4,d=3 all different; compare all lookup/pool coordinates and counts, not shape alone; reduce position T, retain B and d"
+    },
+    {
+      "id": "lookup-is-not-matmul",
+      "reason": "IDs select vocabulary rows; do not multiply numeric IDs by table or confuse vocabulary V with sequence T"
+    },
+    {
+      "id": "downstream-cosine",
+      "gallery_ids": [
+        80,
+        17,
+        65
+      ],
+      "gallery": [
+        [
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          -1,
+          3
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "raw_dot_matrix_exact_fractions": [
+        [
+          [
+            28,
+            3
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            -4,
+            3
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            -1,
+            2
+          ]
+        ]
+      ],
+      "raw_best_ids": [
+        17,
+        17
+      ],
+      "cosine_entries_exact": [
+        "28/sqrt(792)",
+        "30/sqrt(1452)",
+        "-4/sqrt(132)",
+        "6/sqrt(66)",
+        "1",
+        "-1/sqrt(11)"
+      ],
+      "cosine_best_ids": [
+        80,
+        17
+      ],
+      "scope": "optional independent full-chain probe; no claim of learning/genuine language semantics"
+    },
+    {
+      "id": "declared-native-B-route",
+      "expected": "actual final setup instructions prepare lookup/pool/query then preserve original raw-dot/cosine/ID/permutation tasks; student answers remain blank until learner work"
+    }
+  ],
+  "numeric_domain": "Small finite fixed real vectors and nonempty rectangular integer-ID batches; optional T=0 handling follows actual declared contract. No arbitrary overflow domain required.",
+  "float_tolerance": "1e-12 absolute for derived bounded ordinary values; counts/IDs/shapes exact.",
+  "attention_scope": "This is padding exclusion for an arithmetic mean, not attention softmax renormalization, causal masking, or a general assertion about API bool polarity.",
+  "student_status": "No student response, help, runtime or mastery observed."
+}

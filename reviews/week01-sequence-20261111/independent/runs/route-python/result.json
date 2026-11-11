@@ -1,0 +1,127 @@
+{
+  "id": "route-python",
+  "candidate_sha": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_python_tables.ipynb",
+  "config_sha": "760d777d0014a05f9e7980ee79970c09c0541e054c34e0447bb5df84287a7363",
+  "status": "passed",
+  "scope": "unchanged original mandatory preparation/example cells; blank work not completed",
+  "execution": "new subprocess / fresh in-process kernel",
+  "cells": [
+    {
+      "index": 3,
+      "definitions_only": false,
+      "full_source_sha": "2045e2bca3a89afd0a30e80fe654e6c712c21e9526390c22180746897892a040",
+      "source_sha": "2045e2bca3a89afd0a30e80fe654e6c712c21e9526390c22180746897892a040",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "준비 완료. 이후 셀은 위에서 아래 순서로 실행합니다.\n"
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "definitions_only": false,
+      "full_source_sha": "e622a039066a87f247270c47c2bb99c3e12b1fc831582b67637a8c151e7d3c3a",
+      "source_sha": "e622a039066a87f247270c47c2bb99c3e12b1fc831582b67637a8c151e7d3c3a",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "읽은 자료: 노트북에 포함된 동일한 CSV\n"
+        },
+        {
+          "output_type": "display_data",
+          "metadata": {},
+          "data": {
+            "text/plain": "  pot_id place  sunlight_hours  water_ml  height_cm\n0    P01    실내               2       0.0          8\n1    P02    실내               3      20.0         10\n2    P03    창가               5       NaN         12\n3    P04    창가               6      40.0         14\n4    P05    실내               4      20.0         10\n5    P06    창가               7      60.0         18",
+            "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>pot_id</th>\n      <th>place</th>\n      <th>sunlight_hours</th>\n      <th>water_ml</th>\n      <th>height_cm</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>P01</td>\n      <td>실내</td>\n      <td>2</td>\n      <td>0.0</td>\n      <td>8</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>P02</td>\n      <td>실내</td>\n      <td>3</td>\n      <td>20.0</td>\n      <td>10</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>P03</td>\n      <td>창가</td>\n      <td>5</td>\n      <td>NaN</td>\n      <td>12</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>P04</td>\n      <td>창가</td>\n      <td>6</td>\n      <td>40.0</td>\n      <td>14</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>P05</td>\n      <td>실내</td>\n      <td>4</td>\n      <td>20.0</td>\n      <td>10</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>P06</td>\n      <td>창가</td>\n      <td>7</td>\n      <td>60.0</td>\n      <td>18</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+          }
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "definitions_only": false,
+      "full_source_sha": "4e871aa0c46d9cd256f7570943b37c690095a8222a31e6de48e97ced9a93276f",
+      "source_sha": "4e871aa0c46d9cd256f7570943b37c690095a8222a31e6de48e97ced9a93276f",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "metadata": {},
+          "data": {
+            "text/plain": "  sample_id site  light_hours  water_amount_ml  final_height_cm\n0       Q01   실내            1              0.0                7\n1       Q02   실내            2              NaN                9\n2       Q03   창가            4             20.0               12\n3       Q04   창가            5             40.0               14",
+            "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>sample_id</th>\n      <th>site</th>\n      <th>light_hours</th>\n      <th>water_amount_ml</th>\n      <th>final_height_cm</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>Q01</td>\n      <td>실내</td>\n      <td>1</td>\n      <td>0.0</td>\n      <td>7</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>Q02</td>\n      <td>실내</td>\n      <td>2</td>\n      <td>NaN</td>\n      <td>9</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>Q03</td>\n      <td>창가</td>\n      <td>4</td>\n      <td>20.0</td>\n      <td>12</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>Q04</td>\n      <td>창가</td>\n      <td>5</td>\n      <td>40.0</td>\n      <td>14</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+          }
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "definitions_only": false,
+      "full_source_sha": "b316a9a6313dacd324e68d0b7049f1ae2db8d66bab4f3c777c92e5c3cc66ca81",
+      "source_sha": "b316a9a6313dacd324e68d0b7049f1ae2db8d66bab4f3c777c92e5c3cc66ca81",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "진단 1: 15 충분\n읽은 값과 누적 합계: 2 2\n읽은 값과 누적 합계: 4 6\n읽은 값과 누적 합계: 6 12\n"
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "definitions_only": false,
+      "full_source_sha": "79cca7175dda756f3324201cf35eb59ebe87f327621b0a7c6020e7639b65cd0e",
+      "source_sha": "79cca7175dda756f3324201cf35eb59ebe87f327621b0a7c6020e7639b65cd0e",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "6\nreturn으로 받은 값: 6\nprint만 한 함수에서 받은 값: None\n첫 값: 8 / 선택: [10, 12] / 원본: [8, 10, 12, 14]\n"
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "definitions_only": false,
+      "full_source_sha": "d6cbd1fa6381abf861bc5b690fc269ac242b1763f05232f463ced8203791487f",
+      "source_sha": "d6cbd1fa6381abf861bc5b690fc269ac242b1763f05232f463ced8203791487f",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "돌려받은 평균: 4.0\n평균으로 다시 구한 합계: 12.0\n빈 목록을 넣었을 때: 평균을 구할 값이 하나 이상 필요합니다.\n"
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "definitions_only": false,
+      "full_source_sha": "f62a6a8e9cec46f18fad2919baca12449d78ae7fda71ec59cc10d5b4a1bc95a8",
+      "source_sha": "f62a6a8e9cec46f18fad2919baca12449d78ae7fda71ec59cc10d5b4a1bc95a8",
+      "blank_ast": true,
+      "status": "ok",
+      "outputs": []
+    }
+  ],
+  "student_achievement": "not_observed",
+  "learning_time": "not_observed",
+  "elapsed_seconds": 2.3511,
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

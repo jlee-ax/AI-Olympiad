@@ -1,0 +1,5 @@
+{
+  "returncode": 0,
+  "stdout": "{\"id\": \"final-native-PAD-vector-change\", \"status\": \"passed\", \"scope\": \"actual candidate helper / independent frozen input; not student achievement\", \"source_unchanged\": true, \"runtime_removed\": true}\n",
+  "stderr": "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/jupyter_client/localinterfaces.py:58: UserWarning: Unexpected error discovering local network interfaces: [Errno 1] Operation not permitted\n  ret = f(**kwargs)\n"
+}

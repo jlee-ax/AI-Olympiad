@@ -1,0 +1,122 @@
+{
+  "id": "portable-final-mutant-wrong-T-denominator",
+  "candidate_sha": "16b797de3935af5e25d6e297cdd8b4c72d7dbb32667ab36b9fb9df36965cd84d",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-sequence-20261111/independent/portability-work-final/minimal-checkout/lessons/week01/week01_axes_linear_bridge.ipynb",
+  "config_sha": "35aa4a1b8620b90931274cdaac9d60581aad8641c71ff48d94d87369dc4004fb",
+  "status": "oracle_error",
+  "scope": "actual candidate helper / independent frozen input; not student achievement",
+  "execution": "new subprocess / fresh in-process kernel",
+  "cells": [
+    {
+      "index": 2,
+      "definitions_only": false,
+      "full_source_sha": "0ef3cdab4806b707912c9b423b52d11a945c7a03df05d73e74e5a26b7d690514",
+      "source_sha": "0ef3cdab4806b707912c9b423b52d11a945c7a03df05d73e74e5a26b7d690514",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "X =\n [[2 1]\n [1 3]\n [3 2]]\nshape: (3, 2) / 첫 행: [2 1]\n위치 1의 ID: P24\n"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "definitions_only": false,
+      "full_source_sha": "bf88ee4a3442156b8073a3cb1bd096c0201263151a68a11c13114aa6048c696b",
+      "source_sha": "bf88ee4a3442156b8073a3cb1bd096c0201263151a68a11c13114aa6048c696b",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "Q/G shape: (2, 2) (4, 2)\n원시 내적 점수표:\n [[3.  0.  2.  1. ]\n [4.  2.  0.  0.5]]\n원시 내적 최댓값의 후보 ID: [42 42]\n후보 행별 L2 길이: [5.         2.         2.         1.11803399]\n"
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "definitions_only": false,
+      "full_source_sha": "7ae26a9b838f17d09923cc37e5561c8982abe66b8789b63eac53e28b412f471e",
+      "source_sha": "7ae26a9b838f17d09923cc37e5561c8982abe66b8789b63eac53e28b412f471e",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "길이 분모 shape: (2, 1) (4, 1)\n각 후보 정규화 후 길이: [1. 1. 1. 1.]\n코사인 점수표: [[0.6   0.    1.    0.894]\n [0.8   1.    0.    0.447]] / shape: (2, 4)\n질문 ID → 코사인 최댓값 후보 ID: {103: 19, 109: 7}\n"
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "definitions_only": false,
+      "full_source_sha": "be1700f79c15f1483488964248c5954fc538bbbd249ee6091318d28e0c7fe66d",
+      "source_sha": "be1700f79c15f1483488964248c5954fc538bbbd249ee6091318d28e0c7fe66d",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "표 / 토큰 ID / 조회 shape: (6, 3) (2, 4) (2, 4, 3)\n조회한 벡터:\n [[[2. 0. 1.]\n  [0. 2. 1.]\n  [8. 8. 8.]\n  [8. 8. 8.]]\n\n [[2. 2. 0.]\n  [0. 0. 0.]\n  [2. 2. 0.]\n  [8. 8. 8.]]]\n외부 ID 41 → 표 행: 3 → [2. 2. 0.]\n"
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "definitions_only": true,
+      "full_source_sha": "514a512297e5b7cf040e620bac5d58e97785185cdaca71a3fc0bd75ebd4ceb9b",
+      "source_sha": "b48b6219962742daf4fb3ef83bfe905b596c38941a603b28ab6f4fc2071f4ac0",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": []
+    }
+  ],
+  "student_achievement": "not_observed",
+  "learning_time": "not_observed",
+  "oracle": {
+    "sha256": "b2125723980218c5a0e24683f49929ae5efe0e2a18b382afaa212f092fde86d3",
+    "status": "error",
+    "outputs": [
+      {
+        "output_type": "stream",
+        "name": "stdout",
+        "text": "{\"scope\": \"actual_candidate_helper_on_frozen_new_input\", \"case\": \"base\", \"expected\": [[[[2.0, 0.0, 4.0], [0.0, 4.0, 2.0], [2.0, 0.0, 4.0], [9.0, 9.0, 9.0]], [[0.0, 0.0, 0.0], [1.0, -1.0, 3.0], [9.0, 9.0, 9.0], [9.0, 9.0, 9.0]]], [[true, true, true, false], [true, true, false, false]], [[4.0, 4.0, 10.0], [1.0, -1.0, 3.0]], [[3], [2]], [[1.3333333333333333, 1.3333333333333333, 3.3333333333333335], [0.5, -0.5, 1.5]]], \"actual\": [[[[2.0, 0.0, 4.0], [0.0, 4.0, 2.0], [2.0, 0.0, 4.0], [9.0, 9.0, 9.0]], [[0.0, 0.0, 0.0], [1.0, -1.0, 3.0], [9.0, 9.0, 9.0], [9.0, 9.0, 9.0]]], [[true, true, true, false], [true, true, false, false]], [[4.0, 4.0, 10.0], [1.0, -1.0, 3.0]], [[3], [2]], [[1.0, 1.0, 2.5], [0.25, -0.25, 0.75]]]}\n"
+      },
+      {
+        "output_type": "error",
+        "ename": "AssertionError",
+        "evalue": "('values', 4)",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[6]\u001b[39m\u001b[32m, line 3\u001b[39m\n\u001b[32m      1\u001b[39m _CASE=\u001b[33m'base'\u001b[39m\n\u001b[32m      2\u001b[39m \u001b[38;5;28;01mfrom\u001b[39;00m pathlib \u001b[38;5;28;01mimport\u001b[39;00m Path\n\u001b[32m----> \u001b[39m\u001b[32m3\u001b[39m exec((Path.cwd().parents[\u001b[32m1\u001b[39m]/\u001b[33m'native_sequence_checks.py'\u001b[39m).read_text())\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:36\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:24\u001b[39m, in \u001b[36m_check\u001b[39m\u001b[34m(table, ids)\u001b[39m\n",
+          "\u001b[31mAssertionError\u001b[39m: ('values', 4)"
+        ]
+      }
+    ]
+  },
+  "error": {
+    "ename": "AssertionError",
+    "evalue": "('values', 4)",
+    "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[6]\u001b[39m\u001b[32m, line 3\u001b[39m\n\u001b[32m      1\u001b[39m _CASE=\u001b[33m'base'\u001b[39m\n\u001b[32m      2\u001b[39m \u001b[38;5;28;01mfrom\u001b[39;00m pathlib \u001b[38;5;28;01mimport\u001b[39;00m Path\n\u001b[32m----> \u001b[39m\u001b[32m3\u001b[39m exec((Path.cwd().parents[\u001b[32m1\u001b[39m]/\u001b[33m'native_sequence_checks.py'\u001b[39m).read_text())\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m<string>:36\u001b[39m\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m<string>:24\u001b[39m, in \u001b[36m_check\u001b[39m\u001b[34m(table, ids)\u001b[39m\n",
+      "\u001b[31mAssertionError\u001b[39m: ('values', 4)"
+    ]
+  },
+  "elapsed_seconds": 0.2806,
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

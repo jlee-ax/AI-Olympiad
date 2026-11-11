@@ -1,0 +1,9 @@
+{
+  "original_result": "runs/route-bridge-A/result.json",
+  "validity": "invalid_reviewer_harness_failure",
+  "reason": "copied earlier oracle inspected cell27 as blank; current27 is input and current29 is blank. Computed matrix matched expected.",
+  "original_preserved": true,
+  "corrected_oracle": "oracle-bridge-A-v2.py",
+  "replacement_case": "final-route-bridge-A",
+  "not_candidate_failure": true
+}

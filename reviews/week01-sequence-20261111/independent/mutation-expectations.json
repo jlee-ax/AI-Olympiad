@@ -1,0 +1,90 @@
+{
+  "scope": "single mutations to actual candidate FunctionDef; definitions-only excludes demo assertions deliberately so independent new-input oracle is the detector",
+  "cases": [
+    {
+      "id": "mutant-wrong-T-denominator",
+      "expected_status": "oracle_error",
+      "fault": [
+        "means = sums / counts",
+        "means = sums / ids.shape[1]"
+      ],
+      "probe": "base",
+      "expected_detector": "reviewer independent coordinate/contract oracle"
+    },
+    {
+      "id": "mutant-include-nonzero-PAD",
+      "expected_status": "oracle_error",
+      "fault": [
+        "np.where(valid[:, :, None], vectors, 0).sum(axis=1, dtype=float)",
+        "vectors.sum(axis=1, dtype=float)"
+      ],
+      "probe": "base",
+      "expected_detector": "reviewer independent coordinate/contract oracle"
+    },
+    {
+      "id": "mutant-drop-real-zero-token",
+      "expected_status": "oracle_error",
+      "fault": [
+        "valid = ids != 0",
+        "valid = (ids != 0) & np.any(table[ids] != 0, axis=-1)"
+      ],
+      "probe": "base",
+      "expected_detector": "reviewer independent coordinate/contract oracle"
+    },
+    {
+      "id": "mutant-deduplicate-repeats",
+      "expected_status": "oracle_error",
+      "fault": [
+        "valid = ids != 0",
+        "valid = (ids != 0) & np.array([[list(row).index(k) == pos for pos, k in enumerate(row)] for row in ids])"
+      ],
+      "probe": "repeated-token",
+      "expected_detector": "reviewer independent coordinate/contract oracle"
+    },
+    {
+      "id": "mutant-allow-negative-index",
+      "expected_status": "oracle_error",
+      "fault": [
+        "i < 0 or i >= table.shape[0]",
+        "i >= table.shape[0]"
+      ],
+      "probe": "invalid-negative-ID",
+      "expected_detector": "reviewer independent coordinate/contract oracle"
+    },
+    {
+      "id": "mutant-wrong-reduction-axis",
+      "expected_status": "oracle_error",
+      "fault": [
+        ".sum(axis=1, dtype=float)",
+        ".sum(axis=0, dtype=float)"
+      ],
+      "probe": "base",
+      "expected_detector": "reviewer independent coordinate/contract oracle"
+    },
+    {
+      "id": "mutant-all-PAD-as-observed-zero",
+      "expected_status": "oracle_error",
+      "fault": [
+        "if (counts == 0).any():\n        raise ValueError(\"전부 PAD이면 평균이 없습니다\")",
+        "counts = np.maximum(counts, 1)"
+      ],
+      "probe": "all-PAD",
+      "expected_detector": "reviewer independent coordinate/contract oracle"
+    },
+    {
+      "id": "mutant-reject-valid-zero-mean",
+      "expected_status": "oracle_error",
+      "fault": [
+        "if not np.isfinite(means).all():",
+        "if not np.isfinite(means).all() or not np.any(means, axis=1).all():"
+      ],
+      "probe": "real-zero-token",
+      "expected_detector": "reviewer independent coordinate/contract oracle"
+    }
+  ],
+  "positive_control": {
+    "id": "mutant-denominator-cosine-hidden-control",
+    "expected_status": "passed",
+    "meaning": "wrong mean deliberately survives cosine-only check; passing control is not mutant acceptance"
+  }
+}

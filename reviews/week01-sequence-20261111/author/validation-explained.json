@@ -1,0 +1,144 @@
+{
+  "checked_at_utc": "2026-11-11T13:48:37.987251+00:00",
+  "method": "four separate processes, each with a fresh in-process kernel",
+  "results": [
+    {
+      "kind": "bridge",
+      "status": "passed",
+      "cells": 35,
+      "executed_code_cells_zero_based": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        27,
+        29,
+        31,
+        33
+      ],
+      "checks": [
+        "candidate_native_dot_cosine_distance_and_ids",
+        "native_functions_unseen_three_features_and_positive_negative_scaling",
+        "same_shape_wrong_axis_broadcast_feature_order_and_rejected_invalids",
+        "tie_first_position_and_24_unique_winner_id_permutations",
+        "actual_lookup_helper_unseen_V6_B2_T3_d4_and_boundaries",
+        "reference_B_actual_helper_counts_sums_mean_cosine_ID_and_teacher"
+      ]
+    },
+    {
+      "kind": "main",
+      "status": "passed",
+      "cells": 38,
+      "executed_code_cells_zero_based": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+        34,
+        36
+      ],
+      "checks": [
+        "main_fit_zero_valid_and_physical_csv_roundtrip",
+        "student_blank_and_precise_function_reuse_instructions",
+        "teacher_reference_new_X_mean_models_csv_ID_and_error_cases"
+      ]
+    },
+    {
+      "kind": "bridge-route",
+      "status": "passed",
+      "cells": 35,
+      "executed_code_cells_zero_based": [
+        2,
+        14,
+        16,
+        22,
+        24,
+        27,
+        29,
+        31,
+        33
+      ],
+      "checks": [
+        "fresh_kernel_2_14_16_22_24_27_29_31_33_prepares_reuse"
+      ]
+    },
+    {
+      "kind": "original-route",
+      "status": "passed",
+      "cells": 89,
+      "executed_code_cells_zero_based": [
+        3,
+        27,
+        54,
+        19,
+        20,
+        22,
+        43,
+        46,
+        48,
+        59,
+        64,
+        69,
+        71,
+        73,
+        74,
+        78,
+        84
+      ],
+      "checks": [
+        "fresh_original_preparation_and_provided_examples"
+      ]
+    }
+  ],
+  "source_sha256_before_and_after": {
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge.ipynb": "16b797de3935af5e25d6e297cdd8b4c72d7dbb32667ab36b9fb9df36965cd84d",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge.html": "86ca70620ded9e592a84fba218ab1fed635a6c6f3c451bad1c808fb89fc16030",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge_teacher.md": "298b385f2cb7dbd4cf2e1bc2aaaac61567638d67ef887eb4e533fbd2aa8eecc7",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_integrated.ipynb": "487379bf0c9c5fae5877d1eb5ec1414dedabbe2f2634a3827ae224f6e31bc568",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_integrated.html": "87ef29ccb2362ed6e9a5347d1deefe45d2dafe20537f926f6764ae1cfd567195",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_integrated_teacher.md": "5004166eabc9231f46ce1c85aac6b08adb602a7d94b6376330101d23f15e4a12",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_python_tables.ipynb": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_problem_pipeline.ipynb": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/data/week1_plants.csv": "fece0473e50b097afa7c2b3e2647c9a6e623bd3d8e009e6ef620151887227639",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/data/week1_plants_new.csv": "869db97ef7c5f6ccf1020bc435fe831f180e9b9548d722c41c91b63af44d7290",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb": "733c0093b44f30d31354567331c2c39ee325ed074e7a6368bb1f2e96f0c174c0",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.html": "ee3ca9f9ebf491a6e768b3dd99264415d11a384f48f7311b51d5711d48b79f0c",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/lesson-manifest.json": "06ac05f087e7123efcac06782735ad923040e48f062996b28f5b90c9b41c2d07",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/teacher-notes.txt": "23c4195940e0da732f70d97383af440f0913d066f1f72844f5198a9558cb1a38",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/validation.json": "574d75c158af6218aea44394e01829b95fb992593c2c59773b17728d0ec7869c",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/data/week1_plants.csv": "fece0473e50b097afa7c2b3e2647c9a6e623bd3d8e009e6ef620151887227639",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/data/week1_plants_new.csv": "869db97ef7c5f6ccf1020bc435fe831f180e9b9548d722c41c91b63af44d7290"
+  },
+  "validator_sha256": "0aab1bd5c5037c30ac06748c07187e96c200b89f171c98818b74c9b5cab2cbfc",
+  "protected_worktree": {
+    "status": "checked",
+    "files_compared": 7
+  },
+  "limitations": [
+    "student answers were not completed by a learner",
+    "device exercise model/CSV checks are a teacher reference, not student execution",
+    "normalizer tests use small finite vectors; not a universal floating-point proof",
+    "ordinary socket Jupyter/Colab and full browser rendering not tested",
+    "student workload, learning, and international contest success unobserved"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "method": "Remove only the added paragraph from final cell 23; serialize and match its SHA to the recorded initial candidate; compare all cells and both candidate validation source manifests.",
+  "initial_notebook_sha256": "f3f739cf8fdd90a68550e3b1b093bedaeb3fc7ce1a310bcf4303b6feb29de544",
+  "final_notebook_sha256": "16b797de3935af5e25d6e297cdd8b4c72d7dbb32667ab36b9fb9df36965cd84d",
+  "differing_cell_indices_zero_based": [
+    23
+  ],
+  "all_code_cells_and_stored_outputs_identical": true,
+  "other_source_hashes_identical_across_validations": true,
+  "changed_files": {
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge.ipynb": {
+      "initial": "f3f739cf8fdd90a68550e3b1b093bedaeb3fc7ce1a310bcf4303b6feb29de544",
+      "final": "16b797de3935af5e25d6e297cdd8b4c72d7dbb32667ab36b9fb9df36965cd84d"
+    },
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge.html": {
+      "initial": "21b146a325a11c3cf33e431d6d6060ce89d4c237a358c890ec9d2960427d6825",
+      "final": "86ca70620ded9e592a84fba218ab1fed635a6c6f3c451bad1c808fb89fc16030"
+    }
+  }
+}

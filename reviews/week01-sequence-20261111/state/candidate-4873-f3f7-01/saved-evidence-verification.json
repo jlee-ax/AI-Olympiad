@@ -1,0 +1,29 @@
+{
+  "verification_type": "captured_bytes_and_state_only",
+  "candidate_hashes_still_match": true,
+  "prior_record_files_still_match": true,
+  "prior_record_count": 15,
+  "all_captured_stdout_bytes_match": true,
+  "stdout_checks": {
+    "integrated-discovery": true,
+    "bridge-discovery": true,
+    "historical-workflow": true
+  },
+  "capture_checks": {
+    "requested_candidate_bytes_stable": true,
+    "prior_review_files_unchanged": true,
+    "git_index_unchanged_during_capture": true,
+    "prior_retrieval_main_binding_stale": true,
+    "prior_retrieval_bridge_binding_stale": true,
+    "old_integrated_artifact_changed": true,
+    "old_bridge_artifact_changed": true,
+    "nineteen_demand_payloads_retained": true,
+    "eight_open_questions_retained": true,
+    "seventeen_queue_entries_retained": true,
+    "bridge_three_demand_queue_retained": true,
+    "old_criteria_agreement_pause_retained": true
+  },
+  "new_content_judgment": "not_performed",
+  "new_quality_graph_approval_or_discovery_session": false,
+  "report_sha256": "5557ec63c9dd530b66aeecf4458076f52de35bc8464ac4ebe6b69e95fe0b91e6"
+}

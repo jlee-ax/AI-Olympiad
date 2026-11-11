@@ -1,0 +1,14 @@
+{
+  "id": "native-padding-extension",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge.ipynb",
+  "sha256": "f3f739cf8fdd90a68550e3b1b093bedaeb3fc7ce1a310bcf4303b6feb29de544",
+  "scope": "actual candidate helper / independent frozen input; not student achievement",
+  "cells": [
+    2,
+    14,
+    16,
+    22,
+    24
+  ],
+  "oracle": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-sequence-20261111/independent/oracle-native-padding-extension.py"
+}

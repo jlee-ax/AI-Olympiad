@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+    "-B",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-sequence-20261111/independent/portability-work-final/minimal-checkout/reviews/week01-sequence-20261111/independent/execute_sequence_case.py",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-sequence-20261111/independent/portability-work-final/minimal-checkout/reviews/week01-sequence-20261111/independent/rebased-configs/portable/final-native-base.json"
+  ],
+  "returncode": 0,
+  "stdout": "{\"id\": \"portable-final-native-base\", \"status\": \"passed\", \"scope\": \"actual candidate helper / independent frozen input; not student achievement\", \"source_unchanged\": true, \"runtime_removed\": true}\n",
+  "stderr": "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/jupyter_client/localinterfaces.py:58: UserWarning: Unexpected error discovering local network interfaces: [Errno 1] Operation not permitted\n  ret = f(**kwargs)\n"
+}

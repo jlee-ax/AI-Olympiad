@@ -1,0 +1,112 @@
+{
+  "final_input_hashes": [
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "sha256": "16b797de3935af5e25d6e297cdd8b4c72d7dbb32667ab36b9fb9df36965cd84d",
+      "bytes": 44247,
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.html",
+      "sha256": "86ca70620ded9e592a84fba218ab1fed635a6c6f3c451bad1c808fb89fc16030",
+      "bytes": 388014,
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge_teacher.md",
+      "sha256": "298b385f2cb7dbd4cf2e1bc2aaaac61567638d67ef887eb4e533fbd2aa8eecc7",
+      "bytes": 10274,
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_integrated.ipynb",
+      "sha256": "487379bf0c9c5fae5877d1eb5ec1414dedabbe2f2634a3827ae224f6e31bc568",
+      "bytes": 91470,
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_integrated.html",
+      "sha256": "87ef29ccb2362ed6e9a5347d1deefe45d2dafe20537f926f6764ae1cfd567195",
+      "bytes": 440140,
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_integrated_teacher.md",
+      "sha256": "5004166eabc9231f46ce1c85aac6b08adb602a7d94b6376330101d23f15e4a12",
+      "bytes": 13461,
+      "unchanged": true
+    }
+  ],
+  "blank_student_responses": [
+    {
+      "notebook": "bridge",
+      "cell": 29,
+      "ast_empty": true
+    },
+    {
+      "notebook": "bridge",
+      "cell": 33,
+      "ast_empty": true
+    },
+    {
+      "notebook": "integrated",
+      "cell": 36,
+      "ast_empty": true
+    }
+  ],
+  "bridge_all_code_and_stored_text_unchanged_since_initial_candidate": true,
+  "integrated_source_changed_vs_frozen_baseline": [
+    37
+  ],
+  "html": [
+    {
+      "file": "week01_axes_linear_bridge.html",
+      "key_updated_content_present": {
+        "코드 읽기:": true,
+        "lookup_and_masked_mean": true,
+        "실제 토큰 ID 5": true,
+        "유효 위치 평균": true
+      },
+      "scope": "HTML source parsed, visual rendering unobserved"
+    },
+    {
+      "file": "week01_integrated.html",
+      "key_updated_content_present": {
+        "def lookup_and_masked_mean(table, token_ids):": true,
+        "입력 코드 셀을 실행한 뒤 빈 답안 셀에 직접 작성": true,
+        "과제 D·E": true
+      },
+      "scope": "HTML source parsed, visual rendering unobserved"
+    }
+  ],
+  "student_internal_time_status_pattern_hits": [],
+  "untouched_baseline_inputs": [
+    {
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "frozen_sha": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "current_sha": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week02/week02_prediction_evaluation.ipynb",
+      "frozen_sha": "9bb1ea5110b74ea1cf32fbc9ee9e9a5aadbceba2f750c2dfc2d6587e18954bdf",
+      "current_sha": "9bb1ea5110b74ea1cf32fbc9ee9e9a5aadbceba2f750c2dfc2d6587e18954bdf",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week02/week02_temporal_preprocessing.ipynb",
+      "frozen_sha": "a830a15e8d2bf2cb91e17cd2e8b14172390fc7cea3a07539add3fe52a05b5865",
+      "current_sha": "a830a15e8d2bf2cb91e17cd2e8b14172390fc7cea3a07539add3fe52a05b5865",
+      "unchanged": true
+    },
+    {
+      "path": "curriculum/student-plan.html",
+      "frozen_sha": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "current_sha": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "unchanged": true
+    }
+  ],
+  "classification": "Course instructions to solve, execute Jupyter, use a new kernel, save own answer and record help remain educational instructions, not internal schedule/status.",
+  "student_time_and_achievement": "unobserved",
+  "visual_browser": "not tested; no policy bypass"
+}

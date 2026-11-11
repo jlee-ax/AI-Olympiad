@@ -1,0 +1,50 @@
+{
+  "operation": "Preserve the first sequence freshness observation and compare its declared artifact bindings with the successor candidate; no content adjudication",
+  "previous_run": "reviews/week01-sequence-20261111/state/candidate-4873-f3f7-01",
+  "previous_record_sha256_before": {
+    "reviews/week01-sequence-20261111/state/candidate-4873-f3f7-01/bridge-discovery.stdout.json.gz": "035605f908cc1ff37a5274d0c400ef50873cde672caad9efc63cbf875828b4d9",
+    "reviews/week01-sequence-20261111/state/candidate-4873-f3f7-01/freshness-observation.json": "214ba2ab5af1743909ed9d2836002eb12c846943cfed20e100a4789c589fa0f5",
+    "reviews/week01-sequence-20261111/state/candidate-4873-f3f7-01/historical-workflow.stdout.json.gz": "0df61961ce63d37789624e44a56f4398f8c686be021d8b87ada2efd30e12ee50",
+    "reviews/week01-sequence-20261111/state/candidate-4873-f3f7-01/integrated-discovery.stdout.json.gz": "022c2df62eadf61a6af202dc9d3b4af64e3e0128b7c8964581ba241070c3f53c",
+    "reviews/week01-sequence-20261111/state/candidate-4873-f3f7-01/prior-retrieval-live-binding.json": "cc5f519730b616c83ac3c2f4ffd73b7892499298e4e3cd652f28c5e507b22b13",
+    "reviews/week01-sequence-20261111/state/candidate-4873-f3f7-01/saved-evidence-verification.json": "d8a00bef8e765b6690a09241fba3f7d727f91aab330d0f0ff85ad75076246570",
+    "reviews/week01-sequence-20261111/state/capture_freshness.py": "1a6e191db7ae62a653b26c30b144b0f9ed6caf0f173e828d5fa54b6d1b6b3ded",
+    "reviews/week01-sequence-20261111/state/review.md": "5557ec63c9dd530b66aeecf4458076f52de35bc8464ac4ebe6b69e95fe0b91e6"
+  },
+  "previous_record_sha256_after": {
+    "reviews/week01-sequence-20261111/state/candidate-4873-f3f7-01/bridge-discovery.stdout.json.gz": "035605f908cc1ff37a5274d0c400ef50873cde672caad9efc63cbf875828b4d9",
+    "reviews/week01-sequence-20261111/state/candidate-4873-f3f7-01/freshness-observation.json": "214ba2ab5af1743909ed9d2836002eb12c846943cfed20e100a4789c589fa0f5",
+    "reviews/week01-sequence-20261111/state/candidate-4873-f3f7-01/historical-workflow.stdout.json.gz": "0df61961ce63d37789624e44a56f4398f8c686be021d8b87ada2efd30e12ee50",
+    "reviews/week01-sequence-20261111/state/candidate-4873-f3f7-01/integrated-discovery.stdout.json.gz": "022c2df62eadf61a6af202dc9d3b4af64e3e0128b7c8964581ba241070c3f53c",
+    "reviews/week01-sequence-20261111/state/candidate-4873-f3f7-01/prior-retrieval-live-binding.json": "cc5f519730b616c83ac3c2f4ffd73b7892499298e4e3cd652f28c5e507b22b13",
+    "reviews/week01-sequence-20261111/state/candidate-4873-f3f7-01/saved-evidence-verification.json": "d8a00bef8e765b6690a09241fba3f7d727f91aab330d0f0ff85ad75076246570",
+    "reviews/week01-sequence-20261111/state/capture_freshness.py": "1a6e191db7ae62a653b26c30b144b0f9ed6caf0f173e828d5fa54b6d1b6b3ded",
+    "reviews/week01-sequence-20261111/state/review.md": "5557ec63c9dd530b66aeecf4458076f52de35bc8464ac4ebe6b69e95fe0b91e6"
+  },
+  "previous_files_unchanged": true,
+  "artifact_bindings": [
+    {
+      "path": "lessons/week01/week01_integrated.ipynb",
+      "previous_observed_sha256": "487379bf0c9c5fae5877d1eb5ec1414dedabbe2f2634a3827ae224f6e31bc568",
+      "current_sha256": "487379bf0c9c5fae5877d1eb5ec1414dedabbe2f2634a3827ae224f6e31bc568",
+      "matches": true
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "previous_observed_sha256": "f3f739cf8fdd90a68550e3b1b093bedaeb3fc7ce1a310bcf4303b6feb29de544",
+      "current_sha256": "16b797de3935af5e25d6e297cdd8b4c72d7dbb32667ab36b9fb9df36965cd84d",
+      "matches": false
+    }
+  ],
+  "previous_observation_status_for_current_candidate": "stale_for_bridge_new_bytes",
+  "current_run": "reviews/week01-sequence-20261111/state/candidate-4873-16b7-02",
+  "current_observation_sha256": "03a9115ca2f123cd5726aae69f5aad716afbbc64028b6598f4761f07ed6bcfaa",
+  "checks": {
+    "old_observation_files_unchanged": true,
+    "integrated_binding_retained": true,
+    "bridge_binding_changed": true,
+    "new_capture_checks_passed": true
+  },
+  "new_quality_graph_approval_or_discovery_session": false,
+  "previous_pending_observation_rewritten": false
+}

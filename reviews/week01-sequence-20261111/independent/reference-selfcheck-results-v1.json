@@ -1,0 +1,101 @@
+{
+  "rows": [
+    {
+      "case": "base",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_not_candidate_or_student\",\n  \"case\": \"base\",\n  \"actual\": {\n    \"lookup\": [\n      [\n        [\n          2.0,\n          0.0,\n          4.0\n        ],\n        [\n          0.0,\n          4.0,\n          2.0\n        ],\n        [\n          2.0,\n          0.0,\n          4.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ]\n      ],\n      [\n        [\n          0.0,\n          0.0,\n          0.0\n        ],\n        [\n          1.0,\n          -1.0,\n          3.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ]\n      ]\n    ],\n    \"mask\": [\n      [\n        1,\n        1,\n        1,\n        0\n      ],\n      [\n        1,\n        1,\n        0,\n        0\n      ]\n    ],\n    \"counts\": [\n      3,\n      2\n    ],\n    \"sums\": [\n      [\n        4.0,\n        4.0,\n        10.0\n      ],\n      [\n        1.0,\n        -1.0,\n        3.0\n      ]\n    ],\n    \"pooled\": [\n      [\n        1.3333333333333333,\n        1.3333333333333333,\n        3.3333333333333335\n      ],\n      [\n        0.5,\n        -0.5,\n        1.5\n      ]\n    ],\n    \"valid\": [\n      true,\n      true\n    ],\n    \"zero_count_policy\": \"zero placeholder with valid=False; mathematical mean undefined\"\n  },\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "separate_subprocess": true,
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "padding-extension",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_not_candidate_or_student\",\n  \"case\": \"padding-extension\",\n  \"actual\": {\n    \"lookup\": [\n      [\n        [\n          2.0,\n          0.0,\n          4.0\n        ],\n        [\n          0.0,\n          4.0,\n          2.0\n        ],\n        [\n          2.0,\n          0.0,\n          4.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ]\n      ],\n      [\n        [\n          0.0,\n          0.0,\n          0.0\n        ],\n        [\n          1.0,\n          -1.0,\n          3.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ]\n      ]\n    ],\n    \"mask\": [\n      [\n        1,\n        1,\n        1,\n        0,\n        0,\n        0\n      ],\n      [\n        1,\n        1,\n        0,\n        0,\n        0,\n        0\n      ]\n    ],\n    \"counts\": [\n      3,\n      2\n    ],\n    \"sums\": [\n      [\n        4.0,\n        4.0,\n        10.0\n      ],\n      [\n        1.0,\n        -1.0,\n        3.0\n      ]\n    ],\n    \"pooled\": [\n      [\n        1.3333333333333333,\n        1.3333333333333333,\n        3.3333333333333335\n      ],\n      [\n        0.5,\n        -0.5,\n        1.5\n      ]\n    ],\n    \"valid\": [\n      true,\n      true\n    ],\n    \"zero_count_policy\": \"zero placeholder with valid=False; mathematical mean undefined\"\n  },\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "separate_subprocess": true,
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "PAD-vector-change",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_not_candidate_or_student\",\n  \"case\": \"PAD-vector-change\",\n  \"actual\": {\n    \"lookup\": [\n      [\n        [\n          2.0,\n          0.0,\n          4.0\n        ],\n        [\n          0.0,\n          4.0,\n          2.0\n        ],\n        [\n          2.0,\n          0.0,\n          4.0\n        ],\n        [\n          100.0,\n          -50.0,\n          7.0\n        ]\n      ],\n      [\n        [\n          0.0,\n          0.0,\n          0.0\n        ],\n        [\n          1.0,\n          -1.0,\n          3.0\n        ],\n        [\n          100.0,\n          -50.0,\n          7.0\n        ],\n        [\n          100.0,\n          -50.0,\n          7.0\n        ]\n      ]\n    ],\n    \"mask\": [\n      [\n        1,\n        1,\n        1,\n        0\n      ],\n      [\n        1,\n        1,\n        0,\n        0\n      ]\n    ],\n    \"counts\": [\n      3,\n      2\n    ],\n    \"sums\": [\n      [\n        4.0,\n        4.0,\n        10.0\n      ],\n      [\n        1.0,\n        -1.0,\n        3.0\n      ]\n    ],\n    \"pooled\": [\n      [\n        1.3333333333333333,\n        1.3333333333333333,\n        3.3333333333333335\n      ],\n      [\n        0.5,\n        -0.5,\n        1.5\n      ]\n    ],\n    \"valid\": [\n      true,\n      true\n    ],\n    \"zero_count_policy\": \"zero placeholder with valid=False; mathematical mean undefined\"\n  },\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "separate_subprocess": true,
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "real-zero-token",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_not_candidate_or_student\",\n  \"case\": \"real-zero-token\",\n  \"actual\": {\n    \"lookup\": [\n      [\n        [\n          0.0,\n          0.0,\n          0.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ]\n      ]\n    ],\n    \"mask\": [\n      [\n        1,\n        0,\n        0,\n        0\n      ]\n    ],\n    \"counts\": [\n      1\n    ],\n    \"sums\": [\n      [\n        0.0,\n        0.0,\n        0.0\n      ]\n    ],\n    \"pooled\": [\n      [\n        0.0,\n        0.0,\n        0.0\n      ]\n    ],\n    \"valid\": [\n      true\n    ],\n    \"zero_count_policy\": \"zero placeholder with valid=False; mathematical mean undefined\",\n    \"separate_retrieval_zero_rejection\": true\n  },\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "separate_subprocess": true,
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "all-PAD",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_not_candidate_or_student\",\n  \"case\": \"all-PAD\",\n  \"actual\": {\n    \"lookup\": [\n      [\n        [\n          9.0,\n          9.0,\n          9.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ]\n      ]\n    ],\n    \"mask\": [\n      [\n        0,\n        0,\n        0,\n        0\n      ]\n    ],\n    \"counts\": [\n      0\n    ],\n    \"sums\": [\n      [\n        0.0,\n        0.0,\n        0.0\n      ]\n    ],\n    \"pooled\": [\n      [\n        0.0,\n        0.0,\n        0.0\n      ]\n    ],\n    \"valid\": [\n      false\n    ],\n    \"zero_count_policy\": \"zero placeholder with valid=False; mathematical mean undefined\"\n  },\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "separate_subprocess": true,
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "repeated-token",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_not_candidate_or_student\",\n  \"case\": \"repeated-token\",\n  \"actual\": {\n    \"lookup\": [\n      [\n        [\n          2.0,\n          0.0,\n          4.0\n        ],\n        [\n          0.0,\n          4.0,\n          2.0\n        ],\n        [\n          2.0,\n          0.0,\n          4.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ]\n      ]\n    ],\n    \"mask\": [\n      [\n        1,\n        1,\n        1,\n        0\n      ]\n    ],\n    \"counts\": [\n      3\n    ],\n    \"sums\": [\n      [\n        4.0,\n        4.0,\n        10.0\n      ]\n    ],\n    \"pooled\": [\n      [\n        1.3333333333333333,\n        1.3333333333333333,\n        3.3333333333333335\n      ]\n    ],\n    \"valid\": [\n      true\n    ],\n    \"zero_count_policy\": \"zero placeholder with valid=False; mathematical mean undefined\"\n  },\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "separate_subprocess": true,
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "position-permutation",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_not_candidate_or_student\",\n  \"case\": \"position-permutation\",\n  \"actual\": {\n    \"lookup\": [\n      [\n        [\n          9.0,\n          9.0,\n          9.0\n        ],\n        [\n          2.0,\n          0.0,\n          4.0\n        ],\n        [\n          0.0,\n          4.0,\n          2.0\n        ],\n        [\n          2.0,\n          0.0,\n          4.0\n        ]\n      ],\n      [\n        [\n          9.0,\n          9.0,\n          9.0\n        ],\n        [\n          1.0,\n          -1.0,\n          3.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ],\n        [\n          0.0,\n          0.0,\n          0.0\n        ]\n      ]\n    ],\n    \"mask\": [\n      [\n        0,\n        1,\n        1,\n        1\n      ],\n      [\n        0,\n        1,\n        0,\n        1\n      ]\n    ],\n    \"counts\": [\n      3,\n      2\n    ],\n    \"sums\": [\n      [\n        4.0,\n        4.0,\n        10.0\n      ],\n      [\n        1.0,\n        -1.0,\n        3.0\n      ]\n    ],\n    \"pooled\": [\n      [\n        1.3333333333333333,\n        1.3333333333333333,\n        3.3333333333333335\n      ],\n      [\n        0.5,\n        -0.5,\n        1.5\n      ]\n    ],\n    \"valid\": [\n      true,\n      true\n    ],\n    \"zero_count_policy\": \"zero placeholder with valid=False; mathematical mean undefined\"\n  },\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "separate_subprocess": true,
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "invalid-negative-ID",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_not_candidate_or_student\",\n  \"case\": \"invalid-negative-ID\",\n  \"actual\": {\n    \"rejected\": true,\n    \"message\": \"token IDs must be integer 0<=ID<V\"\n  },\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "separate_subprocess": true,
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "invalid-high-ID",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_not_candidate_or_student\",\n  \"case\": \"invalid-high-ID\",\n  \"actual\": {\n    \"rejected\": true,\n    \"message\": \"token IDs must be integer 0<=ID<V\"\n  },\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "separate_subprocess": true,
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "wrong-denominator-only",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_not_candidate_or_student\",\n  \"case\": \"wrong-denominator-only\",\n  \"actual\": {\n    \"correct\": [\n      [\n        1.3333333333333333,\n        1.3333333333333333,\n        3.3333333333333335\n      ],\n      [\n        0.5,\n        -0.5,\n        1.5\n      ]\n    ],\n    \"wrong\": [\n      [\n        1.0,\n        1.0,\n        2.5\n      ],\n      [\n        0.25,\n        -0.25,\n        0.75\n      ]\n    ],\n    \"control_detects_fault\": true\n  },\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "separate_subprocess": true,
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "valid-zero-dropped",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_not_candidate_or_student\",\n  \"case\": \"valid-zero-dropped\",\n  \"actual\": {\n    \"wrong_counts\": [\n      3,\n      1\n    ],\n    \"wrong_means\": [\n      [\n        1.3333333333333333,\n        1.3333333333333333,\n        3.3333333333333335\n      ],\n      [\n        1.0,\n        -1.0,\n        3.0\n      ]\n    ],\n    \"control_detects_fault\": true\n  },\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "separate_subprocess": true,
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "downstream-cosine",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_not_candidate_or_student\",\n  \"case\": \"downstream-cosine\",\n  \"actual\": {\n    \"lookup\": [\n      [\n        [\n          2.0,\n          0.0,\n          4.0\n        ],\n        [\n          0.0,\n          4.0,\n          2.0\n        ],\n        [\n          2.0,\n          0.0,\n          4.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ]\n      ],\n      [\n        [\n          0.0,\n          0.0,\n          0.0\n        ],\n        [\n          1.0,\n          -1.0,\n          3.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ],\n        [\n          9.0,\n          9.0,\n          9.0\n        ]\n      ]\n    ],\n    \"mask\": [\n      [\n        1,\n        1,\n        1,\n        0\n      ],\n      [\n        1,\n        1,\n        0,\n        0\n      ]\n    ],\n    \"counts\": [\n      3,\n      2\n    ],\n    \"sums\": [\n      [\n        4.0,\n        4.0,\n        10.0\n      ],\n      [\n        1.0,\n        -1.0,\n        3.0\n      ]\n    ],\n    \"pooled\": [\n      [\n        1.3333333333333333,\n        1.3333333333333333,\n        3.3333333333333335\n      ],\n      [\n        0.5,\n        -0.5,\n        1.5\n      ]\n    ],\n    \"valid\": [\n      true,\n      true\n    ],\n    \"zero_count_policy\": \"zero placeholder with valid=False; mathematical mean undefined\",\n    \"raw_scores\": [\n      [\n        9.333333333333334,\n        10.0,\n        -1.3333333333333333\n      ],\n      [\n        3.0,\n        5.5,\n        -0.5\n      ]\n    ],\n    \"cosine_scores\": [\n      [\n        0.9949366763261822,\n        0.7872958216222169,\n        -0.34815531191139565\n      ],\n      [\n        0.7385489458759965,\n        1.0,\n        -0.30151134457776363\n      ]\n    ],\n    \"raw_ids\": [\n      17,\n      17\n    ],\n    \"cosine_ids\": [\n      80,\n      17\n    ]\n  },\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "separate_subprocess": true,
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    }
+  ],
+  "candidate_status": "not_read_not_run"
+}

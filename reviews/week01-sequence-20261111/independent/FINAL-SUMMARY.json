@@ -1,0 +1,94 @@
+{
+  "status": "completed_no_blocking_candidate_defect_found",
+  "candidate_inputs": [
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "sha256": "16b797de3935af5e25d6e297cdd8b4c72d7dbb32667ab36b9fb9df36965cd84d",
+      "bytes": 44247
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.html",
+      "sha256": "86ca70620ded9e592a84fba218ab1fed635a6c6f3c451bad1c808fb89fc16030",
+      "bytes": 388014
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge_teacher.md",
+      "sha256": "298b385f2cb7dbd4cf2e1bc2aaaac61567638d67ef887eb4e533fbd2aa8eecc7",
+      "bytes": 10274
+    },
+    {
+      "path": "lessons/week01/week01_integrated.ipynb",
+      "sha256": "487379bf0c9c5fae5877d1eb5ec1414dedabbe2f2634a3827ae224f6e31bc568",
+      "bytes": 91470
+    },
+    {
+      "path": "lessons/week01/week01_integrated.html",
+      "sha256": "87ef29ccb2362ed6e9a5347d1deefe45d2dafe20537f926f6764ae1cfd567195",
+      "bytes": 440140
+    },
+    {
+      "path": "lessons/week01/week01_integrated_teacher.md",
+      "sha256": "5004166eabc9231f46ce1c85aac6b08adb602a7d94b6376330101d23f15e4a12",
+      "bytes": 13461
+    }
+  ],
+  "assessed_main_cases": 33,
+  "normal_controls": 24,
+  "single_faults_detected": 8,
+  "deliberately_wrong_mean_hidden_by_cosine_control": 1,
+  "relocated_representative_cases": 2,
+  "portability_status": "passed",
+  "historical_reviewer_harness_failures": 2,
+  "frozen_inputs_unchanged": [
+    {
+      "path": "baseline-manifest.json",
+      "sha256": "7b6f91167398fbc32b9dc1e8037795facf7d954f0b879baf239bf13f509e3edb",
+      "unchanged": true
+    },
+    {
+      "path": "independent-inputs-and-expectations.json",
+      "sha256": "246cbc64f5be837ecccf5f08725b18e3daeab0282f9a6db5949c1744570fd370",
+      "unchanged": true
+    },
+    {
+      "path": "pre-candidate-criteria.md",
+      "sha256": "fa39ec334c349a5e8f2fb655840263a859b0fbb442acd18e7d42ce1908c4bd15",
+      "unchanged": true
+    },
+    {
+      "path": "execute_candidate_case.py",
+      "sha256": "e2c8691fe4e0556e397888b5842bd179cc2a47b1e250088a5402c808f2b4c1fe",
+      "unchanged": true
+    },
+    {
+      "path": "reference_sequence.py",
+      "sha256": "e49d3e145c8b092eb43aa9cfe6386bc2796ae30d6fea8baf0594772946fa6a97",
+      "unchanged": true
+    },
+    {
+      "path": "CANDIDATE-EXECUTION-PROTOCOL.md",
+      "sha256": "6e126fc74509cda56291e73d453bdaf3186dbee44ac29305df65f97a02645a6c",
+      "unchanged": true
+    },
+    {
+      "path": "preparation-status.json",
+      "sha256": "25d676398e1f5b0f2c52e18760864c7543b9e4c7a70fd5ed6505baaf32871912",
+      "unchanged": true
+    }
+  ],
+  "temporary_runtime_and_clone_removed": true,
+  "content_report_unchanged_sha256": "402dbffd3a06b512e853cd2fdd7f34ac2dffdc90176771aae9f2ae2faf842608",
+  "functional_results_unchanged_sha256": "05c61dcf11276fff0ed8b001d30646c6000a3a70b6e4c0c3a0844e7f5da61ba3",
+  "student_performance_and_actual_time": "not_observed",
+  "remaining_limits": [
+    "HTML visual rendering",
+    "ordinary socket-based Jupyter/Colab",
+    "fresh dependency installation",
+    "full repository relocation regression",
+    "hidden tests",
+    "student understanding/help/independent performance",
+    "actual total workload/time",
+    "entire ten-week mastery"
+  ],
+  "completed_utc": "2026-11-11T13:54:47.495188+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "candidate_status": "not_read_not_run",
+  "reference_scope": "reviewer-only, not candidate function or student achievement",
+  "reference_cases": [
+    "base",
+    "padding-extension",
+    "PAD-vector-change",
+    "real-zero-token",
+    "all-PAD",
+    "repeated-token",
+    "position-permutation",
+    "invalid-negative-ID",
+    "invalid-high-ID",
+    "wrong-denominator-only",
+    "valid-zero-dropped",
+    "downstream-cosine"
+  ],
+  "worker_source": "reviews/week01-retrieval-20261111/independent/execute_candidate_case.py",
+  "worker_source_sha256": "e2c8691fe4e0556e397888b5842bd179cc2a47b1e250088a5402c808f2b4c1fe",
+  "new_worker_sha256": "e2c8691fe4e0556e397888b5842bd179cc2a47b1e250088a5402c808f2b4c1fe"
+}

@@ -1,0 +1,66 @@
+{
+  "operation": "Direct SHA256 comparison of prior review final_artifact_sha256 declarations against live files",
+  "prior_review_path": "reviews/week01-retrieval-20261111/independent/final-summary.json",
+  "prior_review_file_sha256": "1323dfe06fbc17cc9e146515201f4852cf0b530b658c897893bf326195780e6e",
+  "artifact_bindings": [
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "prior_review_sha256": "de5ba77f7cd1325769ca4af29a8fd9c851d14c8c83d5acb88a127bc277579ef0",
+      "current_sha256": "f3f739cf8fdd90a68550e3b1b093bedaeb3fc7ce1a310bcf4303b6feb29de544",
+      "matches": false,
+      "error": null
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.html",
+      "prior_review_sha256": "347f2a86ae8ed1d4f1d1ac4b13ac62cf93805029d9f48b40a259ce11f4871fea",
+      "current_sha256": "21b146a325a11c3cf33e431d6d6060ce89d4c237a358c890ec9d2960427d6825",
+      "matches": false,
+      "error": null
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge_teacher.md",
+      "prior_review_sha256": "ebf6bc2040dbfa6f0708f8759872db475905b4a150125c1cde7a89e6b22771b9",
+      "current_sha256": "298b385f2cb7dbd4cf2e1bc2aaaac61567638d67ef887eb4e533fbd2aa8eecc7",
+      "matches": false,
+      "error": null
+    },
+    {
+      "path": "lessons/week01/week01_integrated.ipynb",
+      "prior_review_sha256": "b530a36ae4f0b4fe9237fb29d604dc288198df7027c85c2e99d1a2e6f2a41611",
+      "current_sha256": "487379bf0c9c5fae5877d1eb5ec1414dedabbe2f2634a3827ae224f6e31bc568",
+      "matches": false,
+      "error": null
+    },
+    {
+      "path": "lessons/week01/week01_integrated.html",
+      "prior_review_sha256": "a9aae8cb533a13e67d7c7ac71b23c14e3b29b65db71a291dd7b49e5ff8d87036",
+      "current_sha256": "87ef29ccb2362ed6e9a5347d1deefe45d2dafe20537f926f6764ae1cfd567195",
+      "matches": false,
+      "error": null
+    },
+    {
+      "path": "lessons/week01/week01_integrated_teacher.md",
+      "prior_review_sha256": "81a4f367b59d11d8b96c27606f893087f65a4637f2291f2466cabba42ea6172f",
+      "current_sha256": "5004166eabc9231f46ce1c85aac6b08adb602a7d94b6376330101d23f15e4a12",
+      "matches": false,
+      "error": null
+    }
+  ],
+  "matching_artifact_count": 0,
+  "artifact_count": 6,
+  "byte_binding_status": "stale_for_new_bytes",
+  "prior_state_record_path": "reviews/week01-retrieval-20261111/state/candidate-b530-de5-01/freshness-observation.json",
+  "prior_state_live_artifact_drift": [
+    {
+      "path": "lessons/week01/week01_integrated.ipynb",
+      "prior_observed_sha256": "b530a36ae4f0b4fe9237fb29d604dc288198df7027c85c2e99d1a2e6f2a41611",
+      "current_sha256": "487379bf0c9c5fae5877d1eb5ec1414dedabbe2f2634a3827ae224f6e31bc568"
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "prior_observed_sha256": "de5ba77f7cd1325769ca4af29a8fd9c851d14c8c83d5acb88a127bc277579ef0",
+      "current_sha256": "f3f739cf8fdd90a68550e3b1b093bedaeb3fc7ce1a310bcf4303b6feb29de544"
+    }
+  ],
+  "limit": "This wrapper checks declared byte bindings. It does not run the old author validator or re-evaluate the independent semantic judgment."
+}

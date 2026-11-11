@@ -1,0 +1,82 @@
+{
+  "id": "route-bridge-A",
+  "candidate_sha": "f3f739cf8fdd90a68550e3b1b093bedaeb3fc7ce1a310bcf4303b6feb29de544",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge.ipynb",
+  "config_sha": "cc0a0505606a732207d4e4b2be750bf4cdbb9e586ecffe007a3c1f5196a6d05d",
+  "status": "oracle_error",
+  "scope": "actual candidate notebook code; not student achievement",
+  "execution": "new subprocess / fresh in-process kernel",
+  "cells": [
+    {
+      "index": 2,
+      "definitions_only": false,
+      "full_source_sha": "0ef3cdab4806b707912c9b423b52d11a945c7a03df05d73e74e5a26b7d690514",
+      "source_sha": "0ef3cdab4806b707912c9b423b52d11a945c7a03df05d73e74e5a26b7d690514",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "X =\n [[2 1]\n [1 3]\n [3 2]]\nshape: (3, 2) / 첫 행: [2 1]\n위치 1의 ID: P24\n"
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "definitions_only": false,
+      "full_source_sha": "241915d52561ca262c3df964f84b47b0aada6eebe24a5ed4891428f1e684f5eb",
+      "source_sha": "241915d52561ca262c3df964f84b47b0aada6eebe24a5ed4891428f1e684f5eb",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": []
+    },
+    {
+      "index": 29,
+      "definitions_only": false,
+      "full_source_sha": "5c2c9683e0cc5a4911f682f9b0744544723caf50e8e78a36fe4128ab72714cfa",
+      "source_sha": "5c2c9683e0cc5a4911f682f9b0744544723caf50e8e78a36fe4128ab72714cfa",
+      "blank_ast": true,
+      "status": "ok",
+      "outputs": []
+    }
+  ],
+  "student_achievement": "not_observed",
+  "learning_time": "not_observed",
+  "oracle": {
+    "sha256": "445c7fd54800e594568ec6780f569688ba2a2974f6b06e6bf01ed8454766a8bd",
+    "status": "error",
+    "outputs": [
+      {
+        "output_type": "stream",
+        "name": "stdout",
+        "text": "{\"scope\": \"provided_setup_and_reviewer_reference_for_blank_A\", \"expected\": [[6, 12], [5, 3], [3, 9]], \"actual\": [[6, 12], [5, 3], [3, 9]], \"answer_blank\": false}\n"
+      },
+      {
+        "output_type": "error",
+        "ename": "AssertionError",
+        "evalue": "",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[4]\u001b[39m\u001b[32m, line 5\u001b[39m\n\u001b[32m      1\u001b[39m \u001b[38;5;28;01mimport\u001b[39;00m ast,json\n\u001b[32m      2\u001b[39m expected=[[\u001b[32m6\u001b[39m,\u001b[32m12\u001b[39m],[\u001b[32m5\u001b[39m,\u001b[32m3\u001b[39m],[\u001b[32m3\u001b[39m,\u001b[32m9\u001b[39m]]\n\u001b[32m      3\u001b[39m actual=(X_new@W_new).tolist()\n\u001b[32m      4\u001b[39m print(json.dumps({\u001b[33m'scope'\u001b[39m:\u001b[33m'provided_setup_and_reviewer_reference_for_blank_A'\u001b[39m,\u001b[33m'expected'\u001b[39m:expected,\u001b[33m'actual'\u001b[39m:actual,\u001b[33m'answer_blank'\u001b[39m:\u001b[38;5;28;01mnot\u001b[39;00m ast.parse(_review_candidate_cell_sources[\u001b[32m27\u001b[39m]).body}))\n\u001b[32m----> \u001b[39m\u001b[32m5\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m actual==expected \u001b[38;5;28;01mand\u001b[39;00m \u001b[38;5;28;01mnot\u001b[39;00m ast.parse(_review_candidate_cell_sources[\u001b[32m27\u001b[39m]).body\n",
+          "\u001b[31mAssertionError\u001b[39m: "
+        ]
+      }
+    ]
+  },
+  "error": {
+    "ename": "AssertionError",
+    "evalue": "",
+    "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[4]\u001b[39m\u001b[32m, line 5\u001b[39m\n\u001b[32m      1\u001b[39m \u001b[38;5;28;01mimport\u001b[39;00m ast,json\n\u001b[32m      2\u001b[39m expected=[[\u001b[32m6\u001b[39m,\u001b[32m12\u001b[39m],[\u001b[32m5\u001b[39m,\u001b[32m3\u001b[39m],[\u001b[32m3\u001b[39m,\u001b[32m9\u001b[39m]]\n\u001b[32m      3\u001b[39m actual=(X_new@W_new).tolist()\n\u001b[32m      4\u001b[39m print(json.dumps({\u001b[33m'scope'\u001b[39m:\u001b[33m'provided_setup_and_reviewer_reference_for_blank_A'\u001b[39m,\u001b[33m'expected'\u001b[39m:expected,\u001b[33m'actual'\u001b[39m:actual,\u001b[33m'answer_blank'\u001b[39m:\u001b[38;5;28;01mnot\u001b[39;00m ast.parse(_review_candidate_cell_sources[\u001b[32m27\u001b[39m]).body}))\n\u001b[32m----> \u001b[39m\u001b[32m5\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m actual==expected \u001b[38;5;28;01mand\u001b[39;00m \u001b[38;5;28;01mnot\u001b[39;00m ast.parse(_review_candidate_cell_sources[\u001b[32m27\u001b[39m]).body\n",
+      "\u001b[31mAssertionError\u001b[39m: "
+    ]
+  },
+  "elapsed_seconds": 0.2794,
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

@@ -1,0 +1,103 @@
+{
+  "id": "final-native-repeated-token",
+  "candidate_sha": "16b797de3935af5e25d6e297cdd8b4c72d7dbb32667ab36b9fb9df36965cd84d",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge.ipynb",
+  "config_sha": "a61a8f74643b86bb43aecdae0982262c3268688e0bbe696519e0c5a9f1f61e08",
+  "status": "passed",
+  "scope": "actual candidate helper / independent frozen input; not student achievement",
+  "execution": "new subprocess / fresh in-process kernel",
+  "cells": [
+    {
+      "index": 2,
+      "definitions_only": false,
+      "full_source_sha": "0ef3cdab4806b707912c9b423b52d11a945c7a03df05d73e74e5a26b7d690514",
+      "source_sha": "0ef3cdab4806b707912c9b423b52d11a945c7a03df05d73e74e5a26b7d690514",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "X =\n [[2 1]\n [1 3]\n [3 2]]\nshape: (3, 2) / 첫 행: [2 1]\n위치 1의 ID: P24\n"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "definitions_only": false,
+      "full_source_sha": "bf88ee4a3442156b8073a3cb1bd096c0201263151a68a11c13114aa6048c696b",
+      "source_sha": "bf88ee4a3442156b8073a3cb1bd096c0201263151a68a11c13114aa6048c696b",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "Q/G shape: (2, 2) (4, 2)\n원시 내적 점수표:\n [[3.  0.  2.  1. ]\n [4.  2.  0.  0.5]]\n원시 내적 최댓값의 후보 ID: [42 42]\n후보 행별 L2 길이: [5.         2.         2.         1.11803399]\n"
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "definitions_only": false,
+      "full_source_sha": "7ae26a9b838f17d09923cc37e5561c8982abe66b8789b63eac53e28b412f471e",
+      "source_sha": "7ae26a9b838f17d09923cc37e5561c8982abe66b8789b63eac53e28b412f471e",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "길이 분모 shape: (2, 1) (4, 1)\n각 후보 정규화 후 길이: [1. 1. 1. 1.]\n코사인 점수표: [[0.6   0.    1.    0.894]\n [0.8   1.    0.    0.447]] / shape: (2, 4)\n질문 ID → 코사인 최댓값 후보 ID: {103: 19, 109: 7}\n"
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "definitions_only": false,
+      "full_source_sha": "be1700f79c15f1483488964248c5954fc538bbbd249ee6091318d28e0c7fe66d",
+      "source_sha": "be1700f79c15f1483488964248c5954fc538bbbd249ee6091318d28e0c7fe66d",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "표 / 토큰 ID / 조회 shape: (6, 3) (2, 4) (2, 4, 3)\n조회한 벡터:\n [[[2. 0. 1.]\n  [0. 2. 1.]\n  [8. 8. 8.]\n  [8. 8. 8.]]\n\n [[2. 2. 0.]\n  [0. 0. 0.]\n  [2. 2. 0.]\n  [8. 8. 8.]]]\n외부 ID 41 → 표 행: 3 → [2. 2. 0.]\n"
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "definitions_only": false,
+      "full_source_sha": "291e9bd5ecc39299980c29a3ad5fbdc86467cbfb2e073fb66b8a68dd585b92cf",
+      "source_sha": "291e9bd5ecc39299980c29a3ad5fbdc86467cbfb2e073fb66b8a68dd585b92cf",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "유효 위치:\n [[ True  True False False]\n [ True  True  True False]]\n유효 합 / 개수:\n [[2. 2. 2.]\n [4. 4. 0.]] \n [[2]\n [3]]\n문장별 평균: [[1.         1.         1.        ]\n [1.33333333 1.33333333 0.        ]]\n잘못 전체 네 칸으로 평균: [[4.5 4.5 4.5]\n [3.  3.  2. ]]\n순서를 바꾸면 조회 자리는 같은가요? False\n순서를 바꾸어도 평균은 같은가요? True\n"
+        }
+      ]
+    }
+  ],
+  "student_achievement": "not_observed",
+  "learning_time": "not_observed",
+  "oracle": {
+    "sha256": "f3226c6366ed8dafc7f76b75950a99898ea36b83603f34405aabc5d245a4a0a3",
+    "status": "ok",
+    "outputs": [
+      {
+        "output_type": "stream",
+        "name": "stdout",
+        "text": "{\"scope\": \"actual_candidate_helper_on_frozen_new_input\", \"case\": \"repeated-token\", \"expected\": [[[[2.0, 0.0, 4.0], [0.0, 4.0, 2.0], [2.0, 0.0, 4.0], [9.0, 9.0, 9.0]]], [[true, true, true, false]], [[4.0, 4.0, 10.0]], [[3]], [[1.3333333333333333, 1.3333333333333333, 3.3333333333333335]]], \"actual\": [[[[2.0, 0.0, 4.0], [0.0, 4.0, 2.0], [2.0, 0.0, 4.0], [9.0, 9.0, 9.0]]], [[true, true, true, false]], [[4.0, 4.0, 10.0]], [[3]], [[1.3333333333333333, 1.3333333333333333, 3.3333333333333335]]]}\n"
+      }
+    ]
+  },
+  "elapsed_seconds": 0.1993,
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

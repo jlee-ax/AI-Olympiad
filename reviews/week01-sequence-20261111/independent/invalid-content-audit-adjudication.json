@@ -1,0 +1,10 @@
+{
+  "script": "audit_content.py",
+  "exit_code": 1,
+  "failed_line": "assert allcode and stored",
+  "validity": "invalid_reviewer_harness_failure",
+  "reason": "Raw JSON stored stream text can be list-of-lines; actual nbformat-normalized stream text is string. The original worker normalizes both and its full saved-output comparisons passed. v2 normalizes stored notebook via nbformat before content comparison.",
+  "original_script_preserved": true,
+  "not_candidate_failure": true,
+  "replacement": "audit_content_v2.py"
+}

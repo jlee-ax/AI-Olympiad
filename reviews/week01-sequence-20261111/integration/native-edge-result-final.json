@@ -1,0 +1,37 @@
+{
+  "candidate_sha256": "16b797de3935af5e25d6e297cdd8b4c72d7dbb32667ab36b9fb9df36965cd84d",
+  "status": "passed",
+  "independent_means": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      -0.5,
+      2.0,
+      2.5
+    ],
+    [
+      1.6666666666666667,
+      1.3333333333333333,
+      1.0
+    ]
+  ],
+  "counts": [
+    2,
+    2,
+    3
+  ],
+  "checks": [
+    "nonzero PAD and real zero vectors",
+    "repeat ID counts",
+    "change/extend PAD invariance",
+    "fixed lookup order loss",
+    "input arrays unchanged",
+    "negative/out-of-range/bool/float/all-PAD/dimensions rejected",
+    "valid zero mean distinguished from invalid cosine direction",
+    "wrong denominator can preserve all cosine scores"
+  ],
+  "limits": "Synthetic finite cases; does not show student mastery or actual model training."
+}

@@ -1,0 +1,137 @@
+{
+  "checked_at_utc": "2026-11-11T13:42:37.637841+00:00",
+  "method": "fresh local clone, copied uncommitted candidate and tools, same installed environment",
+  "generated_sha256": {
+    "week01_axes_linear_bridge.ipynb": "f3f739cf8fdd90a68550e3b1b093bedaeb3fc7ce1a310bcf4303b6feb29de544",
+    "week01_axes_linear_bridge.html": "21b146a325a11c3cf33e431d6d6060ce89d4c237a358c890ec9d2960427d6825",
+    "week01_integrated.ipynb": "487379bf0c9c5fae5877d1eb5ec1414dedabbe2f2634a3827ae224f6e31bc568",
+    "week01_integrated.html": "87ef29ccb2362ed6e9a5347d1deefe45d2dafe20537f926f6764ae1cfd567195"
+  },
+  "builder_stdout": "BUILT week01_axes_linear_bridge 35\nBUILT week01_integrated 38",
+  "existing_output_directory_refused": true,
+  "existing_output_directory_exit_code": 2,
+  "generated_files_unchanged_after_refusal": true,
+  "validator_existing_json_refused": true,
+  "validator_existing_json_exit_code": 1,
+  "sentinel_unchanged": true,
+  "candidate_results": [
+    {
+      "kind": "bridge",
+      "status": "passed",
+      "cells": 35,
+      "executed_code_cells_zero_based": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        27,
+        29,
+        31,
+        33
+      ],
+      "checks": [
+        "candidate_native_dot_cosine_distance_and_ids",
+        "native_functions_unseen_three_features_and_positive_negative_scaling",
+        "same_shape_wrong_axis_broadcast_feature_order_and_rejected_invalids",
+        "tie_first_position_and_24_unique_winner_id_permutations",
+        "actual_lookup_helper_unseen_V6_B2_T3_d4_and_boundaries",
+        "reference_B_actual_helper_counts_sums_mean_cosine_ID_and_teacher"
+      ]
+    },
+    {
+      "kind": "main",
+      "status": "passed",
+      "cells": 38,
+      "executed_code_cells_zero_based": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+        34,
+        36
+      ],
+      "checks": [
+        "main_fit_zero_valid_and_physical_csv_roundtrip",
+        "student_blank_and_precise_function_reuse_instructions",
+        "teacher_reference_new_X_mean_models_csv_ID_and_error_cases"
+      ]
+    },
+    {
+      "kind": "bridge-route",
+      "status": "passed",
+      "cells": 35,
+      "executed_code_cells_zero_based": [
+        2,
+        14,
+        16,
+        22,
+        24,
+        27,
+        29,
+        31,
+        33
+      ],
+      "checks": [
+        "fresh_kernel_2_14_16_22_24_27_29_31_33_prepares_reuse"
+      ]
+    },
+    {
+      "kind": "original-route",
+      "status": "passed",
+      "cells": 89,
+      "executed_code_cells_zero_based": [
+        3,
+        27,
+        54,
+        19,
+        20,
+        22,
+        43,
+        46,
+        48,
+        59,
+        64,
+        69,
+        71,
+        73,
+        74,
+        78,
+        84
+      ],
+      "checks": [
+        "fresh_original_preparation_and_provided_examples"
+      ]
+    }
+  ],
+  "protected_worktree": {
+    "status": "not_checked",
+    "files_compared": 0
+  },
+  "limitations": [
+    "same Python, packages, and fonts as source environment",
+    "previous committed builder and baseline artifacts must be present",
+    "protected worktree absent from validator arguments",
+    "temporary clone and output are removed",
+    "no learner observation or full browser rendering"
+  ]
+}

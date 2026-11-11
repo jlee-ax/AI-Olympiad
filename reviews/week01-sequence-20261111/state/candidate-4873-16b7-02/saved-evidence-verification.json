@@ -1,0 +1,22 @@
+{
+  "verification_type": "captured_bytes_and_state_only",
+  "checks": {
+    "candidate_hashes_still_match": true,
+    "old_fifteen_record_files_still_match": true,
+    "previous_sequence_files_still_match": true,
+    "all_captured_stdout_bytes_match": true,
+    "capture_checks_passed": true,
+    "prior_observation_preservation_checks_passed": true
+  },
+  "all_checks_passed": true,
+  "stdout_checks": {
+    "integrated-discovery": true,
+    "bridge-discovery": true,
+    "historical-workflow": true
+  },
+  "report_sha256": "218ffec2394bdf5fcf43949c5c259e2ceaf0da8f45870c662420aee4a099e088",
+  "observation_sha256": "03a9115ca2f123cd5726aae69f5aad716afbbc64028b6598f4761f07ed6bcfaa",
+  "previous_observation_recheck_sha256": "54519f5b450f96c46efebfff30d6be2fc219a7d6017bfb0e5402d8d487c293a6",
+  "new_content_judgment": "not_performed",
+  "new_quality_graph_approval_or_discovery_session": false
+}

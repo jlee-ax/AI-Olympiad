@@ -1,0 +1,39 @@
+{
+  "inputs": [
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "sha256": "f3f739cf8fdd90a68550e3b1b093bedaeb3fc7ce1a310bcf4303b6feb29de544",
+      "bytes": 43464
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.html",
+      "sha256": "21b146a325a11c3cf33e431d6d6060ce89d4c237a358c890ec9d2960427d6825",
+      "bytes": 387230
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge_teacher.md",
+      "sha256": "298b385f2cb7dbd4cf2e1bc2aaaac61567638d67ef887eb4e533fbd2aa8eecc7",
+      "bytes": 10274
+    },
+    {
+      "path": "lessons/week01/week01_integrated.ipynb",
+      "sha256": "487379bf0c9c5fae5877d1eb5ec1414dedabbe2f2634a3827ae224f6e31bc568",
+      "bytes": 91470
+    },
+    {
+      "path": "lessons/week01/week01_integrated.html",
+      "sha256": "87ef29ccb2362ed6e9a5347d1deefe45d2dafe20537f926f6764ae1cfd567195",
+      "bytes": 440140
+    },
+    {
+      "path": "lessons/week01/week01_integrated_teacher.md",
+      "sha256": "5004166eabc9231f46ce1c85aac6b08adb602a7d94b6376330101d23f15e4a12",
+      "bytes": 13461
+    }
+  ],
+  "integrated_changed_source_cells_vs_frozen_baseline": [
+    37
+  ],
+  "source_review": "changed cell37 read directly; all earlier source hashes match frozen previously read baseline",
+  "not_approval_transfer": true
+}
