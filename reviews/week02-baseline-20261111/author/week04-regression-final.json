@@ -1,0 +1,229 @@
+{
+  "source_sha256": {
+    "week02_prediction_evaluation.ipynb": "2eabca5db515279632f8c8e287564c08b486938c2fc8b1f96ff5a72ef2e61787",
+    "week02_temporal_preprocessing.ipynb": "549cd18bfad99a720587b65b80a4de0b2402435cbdc95a0a5619e779f80f94e0"
+  },
+  "cv_folds": [
+    {
+      "train_groups": [
+        "A",
+        "G"
+      ],
+      "val_groups": [
+        "B",
+        "H"
+      ],
+      "train_rows": 4,
+      "val_rows": 4,
+      "models": {
+        "logistic": {
+          "fitted_mean": 3.0,
+          "fit_row_ids": [
+            "a1",
+            "a2",
+            "g1",
+            "g2"
+          ],
+          "scaler_n_samples_seen": 4,
+          "prediction": [
+            1,
+            -1,
+            -1,
+            1
+          ]
+        },
+        "knn3": {
+          "fitted_mean": 3.0,
+          "fit_row_ids": [
+            "a1",
+            "a2",
+            "g1",
+            "g2"
+          ],
+          "scaler_n_samples_seen": 4,
+          "prediction": [
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        }
+      }
+    },
+    {
+      "train_groups": [
+        "B",
+        "H"
+      ],
+      "val_groups": [
+        "A",
+        "G"
+      ],
+      "train_rows": 4,
+      "val_rows": 4,
+      "models": {
+        "logistic": {
+          "fitted_mean": 5.333333333333333,
+          "fit_row_ids": [
+            "b1",
+            "b2",
+            "h1",
+            "h2"
+          ],
+          "scaler_n_samples_seen": 4,
+          "prediction": [
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        "knn3": {
+          "fitted_mean": 5.333333333333333,
+          "fit_row_ids": [
+            "b1",
+            "b2",
+            "h1",
+            "h2"
+          ],
+          "scaler_n_samples_seen": 4,
+          "prediction": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    }
+  ],
+  "expanded_dummy_refit": {
+    "fit_row_ids": [
+      "a1",
+      "a2",
+      "b1",
+      "b2",
+      "g1",
+      "g2",
+      "h1",
+      "h2"
+    ],
+    "scaler_n_samples_seen": 8,
+    "imputer": 4,
+    "scale_mean": 4,
+    "scale_std": "sqrt(2)",
+    "prediction": [
+      -1,
+      -1,
+      -1,
+      -1
+    ]
+  },
+  "independent_split": {
+    "training": [
+      "m4",
+      "m5",
+      "n4",
+      "n5"
+    ],
+    "validation": [
+      "p6",
+      "p7",
+      "q6",
+      "q7"
+    ],
+    "max_train_time": 5,
+    "min_val_time": 6
+  },
+  "validation_scores": [
+    1.25,
+    2.0,
+    -0.125,
+    1.25
+  ],
+  "threshold_metrics": [
+    {
+      "threshold": 2,
+      "counts": [
+        0,
+        1,
+        1,
+        2
+      ],
+      "f1": "0"
+    },
+    {
+      "threshold": 1.25,
+      "counts": [
+        1,
+        2,
+        0,
+        1
+      ],
+      "f1": "2/5"
+    },
+    {
+      "threshold": -0.125,
+      "counts": [
+        2,
+        2,
+        0,
+        0
+      ],
+      "f1": "2/3"
+    },
+    {
+      "threshold": -1,
+      "counts": [
+        2,
+        2,
+        0,
+        0
+      ],
+      "f1": "2/3"
+    }
+  ],
+  "chosen_threshold": -0.125,
+  "unlabeled_exercise": {
+    "ids": [
+      "r8",
+      "s8",
+      "u8"
+    ],
+    "scores": [
+      1.0,
+      -0.125,
+      -0.25
+    ],
+    "prediction": [
+      1,
+      1,
+      -1
+    ],
+    "alternate_minus_one_prediction": [
+      1,
+      1,
+      1
+    ]
+  },
+  "new_unlabeled_case": {
+    "ids": [
+      "w8",
+      "z8",
+      "v8"
+    ],
+    "scores": [
+      -0.5,
+      0.0,
+      -0.125
+    ],
+    "prediction": [
+      -1,
+      1,
+      1
+    ],
+    "row_id_reorder_invariance": true
+  },
+  "fit_state_invariant": true,
+  "scope": "synthetic finite cases; not student performance or fourth-week lesson completion"
+}

@@ -1,0 +1,579 @@
+{
+  "version": 1,
+  "scope": "frozen before candidate; reviewer-owned fixtures, not shared with author, not an access-controlled final test",
+  "majority": {
+    "training_rows": [
+      {
+        "id": "l1",
+        "x": 2,
+        "y": -1
+      },
+      {
+        "id": "l2",
+        "x": 5000,
+        "y": 0
+      },
+      {
+        "id": "l3",
+        "x": 4,
+        "y": 1
+      },
+      {
+        "id": "l4",
+        "x": 6,
+        "y": -1
+      },
+      {
+        "id": "l5",
+        "x": 8,
+        "y": -1
+      },
+      {
+        "id": "l6",
+        "x": 10,
+        "y": 1
+      },
+      {
+        "id": "l7",
+        "x": 12,
+        "y": -1
+      }
+    ],
+    "unknown_label": 0,
+    "known_labels": [
+      -1,
+      1
+    ],
+    "expected_counts": {
+      "-1": 4,
+      "1": 2
+    },
+    "expected_class": -1,
+    "expected_known_x_mean_fraction": [
+      7,
+      1
+    ],
+    "training_frequency_reversal_changes": [
+      {
+        "id": "l1",
+        "y": 1
+      },
+      {
+        "id": "l4",
+        "y": 1
+      }
+    ],
+    "reversed_expected_counts": {
+      "-1": 2,
+      "1": 4
+    },
+    "reversed_expected_class": 1,
+    "permutation": [
+      6,
+      4,
+      2,
+      5,
+      0,
+      1,
+      3
+    ],
+    "X_change_policy": "change finite/missing feature values without changing IDs/labels; majority predictions remain fixed, preprocessing fit state may change",
+    "query_rows": [
+      {
+        "id": "q-m",
+        "x": -500
+      },
+      {
+        "id": "q-a",
+        "x": 1
+      },
+      {
+        "id": "q-z",
+        "x": 500
+      },
+      {
+        "id": "q-b",
+        "x": null
+      }
+    ],
+    "expected_query_ids": [
+      "q-m",
+      "q-a",
+      "q-z",
+      "q-b"
+    ],
+    "expected_predictions": [
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "tie_case": {
+      "labels": [
+        1,
+        -1,
+        0,
+        -1,
+        1
+      ],
+      "expected_known_counts": {
+        "-1": 2,
+        "1": 2
+      },
+      "reference_tie_policy": -1,
+      "expected_class": -1,
+      "candidate_other_fixed_tie_policy": "acceptable if explicit, deterministic, and correctly applied"
+    },
+    "single_class_cases": [
+      {
+        "labels": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "expected_class": 1
+      },
+      {
+        "labels": [
+          -1,
+          0,
+          -1
+        ],
+        "expected_class": -1
+      }
+    ],
+    "no_known_cases": [
+      [
+        0,
+        0,
+        0
+      ],
+      []
+    ],
+    "no_known_expected": "explicit no-learning status/error; separately declared fallback must not be called learned majority",
+    "invalid_label_cases": [
+      [
+        1,
+        -1,
+        2
+      ],
+      [
+        1,
+        -1,
+        -3
+      ],
+      [
+        1,
+        -1,
+        "1"
+      ],
+      [
+        1,
+        -1,
+        null
+      ],
+      [
+        1,
+        -1,
+        true
+      ],
+      [
+        1,
+        -1,
+        0.5
+      ]
+    ],
+    "invalid_expected": "reject or explicit documented normalization consistent with contract; no silent coercion into known classes",
+    "validation_label_variants": [
+      [
+        -1,
+        -1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "expected_effect_of_validation_labels_on_fitted_majority": "none"
+  },
+  "rare_evaluation": {
+    "rows": [
+      {
+        "id": "e-h",
+        "y": -1,
+        "candidate_z": 1
+      },
+      {
+        "id": "e-b",
+        "y": 1,
+        "candidate_z": 1
+      },
+      {
+        "id": "e-r",
+        "y": -1,
+        "candidate_z": -1
+      },
+      {
+        "id": "e-a",
+        "y": -1,
+        "candidate_z": 1
+      },
+      {
+        "id": "e-u",
+        "y": -1,
+        "candidate_z": -1
+      },
+      {
+        "id": "e-k",
+        "y": 1,
+        "candidate_z": 1
+      },
+      {
+        "id": "e-j",
+        "y": -1,
+        "candidate_z": -1
+      },
+      {
+        "id": "e-p",
+        "y": -1,
+        "candidate_z": 1
+      },
+      {
+        "id": "e-c",
+        "y": -1,
+        "candidate_z": -1
+      }
+    ],
+    "positive_label": 1,
+    "negative_label": -1,
+    "target_truth_weight": 6,
+    "unknown_extra": {
+      "id": "e-unknown",
+      "y": 0,
+      "candidate_z": 1
+    },
+    "baseline_expected": {
+      "TP": 0,
+      "FP": 0,
+      "TN": 7,
+      "FN": 2,
+      "accuracy_fraction": [
+        7,
+        9
+      ],
+      "precision": null,
+      "recall_fraction": [
+        0,
+        1
+      ],
+      "F1_fraction": [
+        0,
+        1
+      ],
+      "truth_weighted_fraction": [
+        7,
+        19
+      ]
+    },
+    "candidate_z_expected": {
+      "TP": 2,
+      "FP": 3,
+      "TN": 4,
+      "FN": 0,
+      "accuracy_fraction": [
+        2,
+        3
+      ],
+      "precision_fraction": [
+        2,
+        5
+      ],
+      "recall_fraction": [
+        1,
+        1
+      ],
+      "F1_fraction": [
+        4,
+        7
+      ],
+      "truth_weighted_fraction": [
+        16,
+        19
+      ]
+    },
+    "required_output_order": [
+      "e-c",
+      "e-b",
+      "e-p",
+      "e-h",
+      "e-j",
+      "e-a",
+      "e-u",
+      "e-k",
+      "e-r"
+    ],
+    "candidate_z_predictions_in_required_order": [
+      -1,
+      1,
+      1,
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1
+    ],
+    "metric_choices": {
+      "accuracy": "baseline",
+      "recall": "candidate_z",
+      "F1": "candidate_z",
+      "truth_weighted": "candidate_z"
+    },
+    "official_objective_for_reference_choice": "F1; fixed before reading evaluation outcome",
+    "candidate_z_status": "provided prediction ledger; not evidence of model training"
+  },
+  "zero_denominator_cases": [
+    {
+      "name": "no_predicted_positive_with_real_positive",
+      "truth": [
+        -1,
+        -1,
+        1
+      ],
+      "prediction": [
+        -1,
+        -1,
+        -1
+      ],
+      "precision": null,
+      "recall": 0,
+      "F1": 0
+    },
+    {
+      "name": "no_real_positive_all_negative",
+      "truth": [
+        -1,
+        -1
+      ],
+      "prediction": [
+        -1,
+        -1
+      ],
+      "precision": null,
+      "recall": null,
+      "F1": null
+    },
+    {
+      "name": "no_real_positive_predict_positive",
+      "truth": [
+        -1,
+        -1
+      ],
+      "prediction": [
+        1,
+        1
+      ],
+      "precision": 0,
+      "recall": null,
+      "F1": 0
+    },
+    {
+      "name": "empty_evaluation",
+      "truth": [],
+      "prediction": [],
+      "accuracy": null,
+      "precision": null,
+      "recall": null,
+      "F1": null
+    }
+  ],
+  "split_reference": {
+    "status": "reviewer synthetic reference only; not official Robot split reproduction",
+    "contract": "independent snapshots; same entity set; every validation colour/object familiar in training; hold out full colour-object combinations globally; no previous observation/action/time history available",
+    "available_input_fields": [
+      "entity",
+      "colour",
+      "object"
+    ],
+    "history_available": false,
+    "rows": [
+      {
+        "id": "s01",
+        "entity": "N2",
+        "colour": "teal",
+        "object": "disc"
+      },
+      {
+        "id": "s02",
+        "entity": "N2",
+        "colour": "teal",
+        "object": "cone"
+      },
+      {
+        "id": "s03",
+        "entity": "N2",
+        "colour": "ivory",
+        "object": "disc"
+      },
+      {
+        "id": "s04",
+        "entity": "N2",
+        "colour": "ivory",
+        "object": "cone"
+      },
+      {
+        "id": "s05",
+        "entity": "N2",
+        "colour": "amber",
+        "object": "disc"
+      },
+      {
+        "id": "s06",
+        "entity": "N2",
+        "colour": "amber",
+        "object": "cone"
+      },
+      {
+        "id": "s07",
+        "entity": "N7",
+        "colour": "teal",
+        "object": "disc"
+      },
+      {
+        "id": "s08",
+        "entity": "N7",
+        "colour": "teal",
+        "object": "cone"
+      },
+      {
+        "id": "s09",
+        "entity": "N7",
+        "colour": "ivory",
+        "object": "disc"
+      },
+      {
+        "id": "s10",
+        "entity": "N7",
+        "colour": "ivory",
+        "object": "cone"
+      },
+      {
+        "id": "s11",
+        "entity": "N7",
+        "colour": "amber",
+        "object": "disc"
+      },
+      {
+        "id": "s12",
+        "entity": "N7",
+        "colour": "amber",
+        "object": "cone"
+      }
+    ],
+    "valid_family_a": {
+      "heldout_combinations": [
+        [
+          "teal",
+          "disc"
+        ],
+        [
+          "amber",
+          "cone"
+        ]
+      ],
+      "train_ids": [
+        "s02",
+        "s03",
+        "s04",
+        "s05",
+        "s08",
+        "s09",
+        "s10",
+        "s11"
+      ],
+      "validation_ids": [
+        "s01",
+        "s06",
+        "s07",
+        "s12"
+      ]
+    },
+    "valid_family_b": {
+      "heldout_combinations": [
+        [
+          "ivory",
+          "disc"
+        ],
+        [
+          "teal",
+          "cone"
+        ]
+      ],
+      "train_ids": [
+        "s01",
+        "s04",
+        "s05",
+        "s06",
+        "s07",
+        "s10",
+        "s11",
+        "s12"
+      ],
+      "validation_ids": [
+        "s02",
+        "s03",
+        "s08",
+        "s09"
+      ]
+    },
+    "expected_same_entity_overlap_accepted": [
+      "N2",
+      "N7"
+    ],
+    "invalid_combination_leak": {
+      "train_ids": [
+        "s02",
+        "s03",
+        "s04",
+        "s05",
+        "s08",
+        "s09",
+        "s10",
+        "s11",
+        "s01"
+      ],
+      "validation_ids": [
+        "s06",
+        "s07",
+        "s12"
+      ]
+    },
+    "invalid_feature_request": [
+      "previous_observation"
+    ],
+    "different_goal_new_entity_partition": {
+      "train_ids": [
+        "s01",
+        "s02",
+        "s03",
+        "s04",
+        "s05",
+        "s06"
+      ],
+      "validation_ids": [
+        "s07",
+        "s08",
+        "s09",
+        "s10",
+        "s11",
+        "s12"
+      ],
+      "expected": "valid only for an explicitly different unseen-entity objective, not the selected same-entities/unseen-combinations contract"
+    }
+  }
+}

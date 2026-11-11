@@ -1,0 +1,9 @@
+{
+  "id": "temporal-full",
+  "notebook": "candidate02-inputs/week02_temporal_preprocessing.ipynb",
+  "sha256": "549cd18bfad99a720587b65b80a4de0b2402435cbdc95a0a5619e779f80f94e0",
+  "scope": "actual candidate provided cells plus explicitly labelled reviewer reference if attached; not learner performance",
+  "compare_stored": true,
+  "save_png": false,
+  "oracle": "oracles/baseline-frozen.py"
+}

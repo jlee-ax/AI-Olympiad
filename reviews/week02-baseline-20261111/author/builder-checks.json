@@ -1,0 +1,52 @@
+{
+  "new_a": {
+    "code": 0,
+    "stdout": "Source and IDs match: /workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week02/week02_prediction_evaluation.ipynb (25 cells)\nCreated 25 cells at /workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-baseline-20261111/author/builder-check-bulsk5x3/generated-a.ipynb\n",
+    "stderr": ""
+  },
+  "new_b": {
+    "code": 0,
+    "stdout": "Created 25 cells at /workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-baseline-20261111/author/builder-check-bulsk5x3/generated-b.ipynb\n",
+    "stderr": ""
+  },
+  "deterministic_sha256": "37a7150072c61b961020c9c2bde7ef7a0ad324d0068c6811dab2a3232f6cc5fe",
+  "projection_equal": true,
+  "existing_file": {
+    "code": 2,
+    "stdout": "",
+    "stderr": "usage: build_week02.py [-h] [--output OUTPUT] [--check-source CHECK_SOURCE]\nbuild_week02.py: error: --output already exists or is a symlink\n"
+  },
+  "existing_dir": {
+    "code": 2,
+    "stdout": "",
+    "stderr": "usage: build_week02.py [-h] [--output OUTPUT] [--check-source CHECK_SOURCE]\nbuild_week02.py: error: --output already exists or is a symlink\n"
+  },
+  "dangling_symlink": {
+    "code": 2,
+    "stdout": "",
+    "stderr": "usage: build_week02.py [-h] [--output OUTPUT] [--check-source CHECK_SOURCE]\nbuild_week02.py: error: --output already exists or is a symlink\n"
+  },
+  "symlink_parent": {
+    "code": 2,
+    "stdout": "",
+    "stderr": "usage: build_week02.py [-h] [--output OUTPUT] [--check-source CHECK_SOURCE]\nbuild_week02.py: error: --output parent path must not contain symlinks\n"
+  },
+  "missing_parent": {
+    "code": 2,
+    "stdout": "",
+    "stderr": "usage: build_week02.py [-h] [--output OUTPUT] [--check-source CHECK_SOURCE]\nbuild_week02.py: error: --output parent must already exist\n"
+  },
+  "no_args": {
+    "code": 2,
+    "stdout": "",
+    "stderr": "usage: build_week02.py [-h] [--output OUTPUT] [--check-source CHECK_SOURCE]\nbuild_week02.py: error: provide --output or --check-source\n"
+  },
+  "import_safe": true,
+  "partial_write_cleanup": true,
+  "mismatched_source": {
+    "code": 2,
+    "stdout": "",
+    "stderr": "usage: build_week02.py [-h] [--output OUTPUT] [--check-source CHECK_SOURCE]\nbuild_week02.py: error: builder and notebook cell IDs/types/sources differ\n"
+  },
+  "source_sha256_unchanged": "2eabca5db515279632f8c8e287564c08b486938c2fc8b1f96ff5a72ef2e61787"
+}

@@ -1,0 +1,38 @@
+{
+  "baseline": {
+    "week02_prediction_evaluation.ipynb": {
+      "path": "lessons/week02/week02_prediction_evaluation.ipynb",
+      "sha256": "dd360d9b78c8273253a688769bc14a4948dc4d8f89369da6c1f291e47a7e27a9"
+    },
+    "week02_prediction_evaluation.html": {
+      "path": "lessons/week02/week02_prediction_evaluation.html",
+      "sha256": "40d1c41d88ffcdde6fa6726dab6e6f6811d9544cfcd6817b22878051c5ed0f6e"
+    },
+    "week02_temporal_preprocessing.ipynb": {
+      "path": "lessons/week02/week02_temporal_preprocessing.ipynb",
+      "sha256": "8b7ded5749a9f5f8c16a00112ead4e13ed4c3f1749c121ef056631c52ba0e55c"
+    },
+    "week02_temporal_preprocessing.html": {
+      "path": "lessons/week02/week02_temporal_preprocessing.html",
+      "sha256": "fe8a10b1d50980fc6585fb6996efd1bbefbfe85d9f3c907ec7bdd5b5b5f5aadc"
+    },
+    "teacher-notes.md": {
+      "path": "lessons/week02/teacher-notes.md",
+      "sha256": "f91a29f97e4a94fdff7665d0cde8820efd7cff8f7cb74de15fb7a5d405771412"
+    },
+    "week02_temporal_preprocessing_teacher.md": {
+      "path": "lessons/week02/week02_temporal_preprocessing_teacher.md",
+      "sha256": "8f628190234ef0791e8d5249be9eea74e5a1ddd545713531a8db82345149a902"
+    }
+  },
+  "plan": {
+    "path": "curriculum/student-plan.html",
+    "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5"
+  },
+  "previous_review": {
+    "path": "reviews/week02-auc-20261111/independent/final-review.md",
+    "sha256": "3058aecad4b9e9e985b32847d117ee1370d87e078bd575905225ac1a153e56a4"
+  },
+  "candidate_not_read": true,
+  "new_fixtures_not_executed": true
+}

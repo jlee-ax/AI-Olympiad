@@ -1,0 +1,8 @@
+{
+  "id": "main-full",
+  "notebook": "candidate02-inputs/week02_prediction_evaluation.ipynb",
+  "sha256": "2eabca5db515279632f8c8e287564c08b486938c2fc8b1f96ff5a72ef2e61787",
+  "scope": "actual candidate provided cells plus explicitly labelled reviewer reference if attached; not learner performance",
+  "compare_stored": true,
+  "save_png": false
+}

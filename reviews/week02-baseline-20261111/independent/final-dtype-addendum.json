@@ -1,0 +1,28 @@
+{
+  "final_main_sha256": "2eabca5db515279632f8c8e287564c08b486938c2fc8b1f96ff5a72ef2e61787",
+  "previous_supplement_sha256": "549cd18bfad99a720587b65b80a4de0b2402435cbdc95a0a5619e779f80f94e0",
+  "final_supplement_sha256": "c35d1977f79e102b933e86ee8dc547924e4054001ab04ad8609b7ffdf14ce5d1",
+  "final_supplement_HTML_sha256": "f1ad6f978d04844c9e9849c9a8b7cc64a9eeb24b46bf6ad96371075d6bb81475",
+  "snapshot": "candidate03-inputs",
+  "changes": [
+    {
+      "cell": 14,
+      "type": "markdown",
+      "changed_keys": [
+        "source"
+      ]
+    }
+  ],
+  "all_code_cells_metadata_execution_counts_stored_outputs_identical": true,
+  "content_judgement": "correct: explicit dtype=object preserves mixed B/T and numeric0 before ndarray string coercion; helper cannot recover numeric0 already converted to string0; direct mixed Python list is handled by the helper internal object conversion",
+  "execution_reuse": "no new execution; exact code and stored-output equality binds prior full kernel/native-helper results to final text version",
+  "HTML_scope": "new explanation text found in HTML; full browser/MathJax not rendered",
+  "previous_report": "final-review.md",
+  "previous_report_sha256": "8ae5bb171e079d6fd5a6097736ac9ec08486fbd82aefac230efc3f2cb73598e1",
+  "previous_results": "final-results.json",
+  "previous_results_sha256": "5524e03c68097a584debc55c661a1a6bd706b9016cce96717047520d2e755bd8",
+  "prior_results_not_overwritten": true,
+  "author_previous_SHA_warning": "old author README SHA was reported pending separate correction by parent; do not treat historical SHA as final artifact approval",
+  "final_live_files_match_snapshot": true,
+  "new_tests_executed": false
+}

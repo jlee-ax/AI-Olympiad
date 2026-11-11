@@ -1,0 +1,321 @@
+{
+  "artifact_sha256": {
+    "week02_prediction_evaluation.ipynb": "2eabca5db515279632f8c8e287564c08b486938c2fc8b1f96ff5a72ef2e61787",
+    "week02_prediction_evaluation.html": "46fc2a995dae76a06a6c182d38429004a85822b5016075251be1aa20e44d1700",
+    "week02_temporal_preprocessing.ipynb": "549cd18bfad99a720587b65b80a4de0b2402435cbdc95a0a5619e779f80f94e0",
+    "week02_temporal_preprocessing.html": "5695b6c2adfd12dce7cf349a1ff9f0d448178b7b8c3c0ffb1507c9e94932c520",
+    "teacher-notes.md": "2348b396701799328dbf5c8d586176debe29a010b2cc6bace7bf9acc10e75d36",
+    "week02_temporal_preprocessing_teacher.md": "1c79ed6817542bf95738141676f62d137b6505981be0ccbfbea7a415f3dee925",
+    "build_week02.py": "95d73cfb47f3cb2b24076693e082a66a9f131cb0d0f1ad9ec427a733d427ca17"
+  },
+  "sklearn": "1.8.0",
+  "cases": [
+    {
+      "name": "main_worked",
+      "label": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "scores": [
+        0.9,
+        0.6,
+        0.4,
+        0.1
+      ],
+      "exact_pair_auc": "3/4",
+      "exact_trapezoid": "3/4",
+      "roc_points": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "sklearn_auc": 0.75,
+      "sklearn_trapezoid": 0.75
+    },
+    {
+      "name": "supplement_worked",
+      "label": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "scores": [
+        1.5,
+        2.5,
+        0,
+        1.5
+      ],
+      "exact_pair_auc": "1/2",
+      "exact_trapezoid": "1/2",
+      "roc_points": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "1/2",
+          "0"
+        ],
+        [
+          "1/2",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "sklearn_auc": 0.5,
+      "sklearn_trapezoid": 0.5
+    },
+    {
+      "name": "independent_exercise",
+      "label": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "scores": [
+        1.25,
+        2,
+        -0.125,
+        1.25
+      ],
+      "exact_pair_auc": "1/8",
+      "exact_trapezoid": "1/8",
+      "roc_points": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "1/2",
+          "0"
+        ],
+        [
+          "1",
+          "1/2"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "sklearn_auc": 0.125,
+      "sklearn_trapezoid": 0.125
+    },
+    {
+      "name": "reverse_ranking",
+      "label": [
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "scores": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exact_pair_auc": "0",
+      "exact_trapezoid": "0",
+      "roc_points": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "1/2",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "1/2"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "sklearn_auc": 0.0,
+      "sklearn_trapezoid": 0.0
+    },
+    {
+      "name": "correct_ranking",
+      "label": [
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "scores": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "exact_pair_auc": "1",
+      "exact_trapezoid": "1",
+      "roc_points": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1/2"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "1/2",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "sklearn_auc": 1.0,
+      "sklearn_trapezoid": 1.0
+    },
+    {
+      "name": "all_tied",
+      "label": [
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "scores": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "exact_pair_auc": "1/2",
+      "exact_trapezoid": "1/2",
+      "roc_points": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "sklearn_auc": 0.5,
+      "sklearn_trapezoid": 0.5
+    },
+    {
+      "name": "fresh_mixed_ties",
+      "label": [
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "scores": [
+        3,
+        3,
+        2,
+        1,
+        0,
+        2
+      ],
+      "exact_pair_auc": "4/9",
+      "exact_trapezoid": "4/9",
+      "roc_points": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "1/3",
+          "1/3"
+        ],
+        [
+          "2/3",
+          "2/3"
+        ],
+        [
+          "1",
+          "2/3"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "sklearn_auc": 0.4444444444444444,
+      "sklearn_trapezoid": 0.4444444444444444
+    }
+  ],
+  "thresholds": {
+    "fixed_score_f1_at_0.5": "1/2",
+    "fixed_score_f1_at_0.3": "4/5",
+    "scores_and_threshold_shift_together_same_prediction": true,
+    "scores_only_shift_f1": "2/3",
+    "auc_unchanged": 0.75
+  },
+  "unknown_label": {
+    "known_only_auc": 1.0,
+    "wrong_unknown_to_negative_auc": 0.5
+  },
+  "one_class": [
+    {
+      "labels": [
+        1,
+        1
+      ],
+      "mathematical_auc": "undefined",
+      "return": "nan",
+      "warnings": [
+        "UndefinedMetricWarning"
+      ]
+    },
+    {
+      "labels": [
+        -1,
+        -1
+      ],
+      "mathematical_auc": "undefined",
+      "return": "nan",
+      "warnings": [
+        "UndefinedMetricWarning"
+      ]
+    }
+  ],
+  "scope": "finite synthetic numeric controls; not student achievement or probability calibration"
+}

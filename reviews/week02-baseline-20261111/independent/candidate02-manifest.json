@@ -1,0 +1,34 @@
+{
+  "files": {
+    "week02_prediction_evaluation.ipynb": {
+      "sha256": "2eabca5db515279632f8c8e287564c08b486938c2fc8b1f96ff5a72ef2e61787",
+      "bytes": 63465
+    },
+    "week02_prediction_evaluation.html": {
+      "sha256": "46fc2a995dae76a06a6c182d38429004a85822b5016075251be1aa20e44d1700",
+      "bytes": 398213
+    },
+    "week02_temporal_preprocessing.ipynb": {
+      "sha256": "549cd18bfad99a720587b65b80a4de0b2402435cbdc95a0a5619e779f80f94e0",
+      "bytes": 69783
+    },
+    "week02_temporal_preprocessing.html": {
+      "sha256": "5695b6c2adfd12dce7cf349a1ff9f0d448178b7b8c3c0ffb1507c9e94932c520",
+      "bytes": 425099
+    },
+    "build_week02.py": {
+      "sha256": "95d73cfb47f3cb2b24076693e082a66a9f131cb0d0f1ad9ec427a733d427ca17",
+      "bytes": 37784
+    },
+    "teacher-notes.md": {
+      "sha256": "2348b396701799328dbf5c8d586176debe29a010b2cc6bace7bf9acc10e75d36",
+      "bytes": 18047
+    },
+    "week02_temporal_preprocessing_teacher.md": {
+      "sha256": "1c79ed6817542bf95738141676f62d137b6505981be0ccbfbea7a415f3dee925",
+      "bytes": 21365
+    }
+  },
+  "all_parent_sha_matched": true,
+  "source_unchanged_during_snapshot": true
+}

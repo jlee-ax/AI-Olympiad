@@ -1,0 +1,18 @@
+{
+  "boolean_guard_removed": {
+    "expected": "reviewer catches forbidden False accepted by altered actual helper",
+    "actual": "oracle_error / AssertionError: candidate accepted forbidden input: boolean_bool_False",
+    "scope": "actual candidate code single-site mutation in memory; reviewer oracle detection",
+    "valid_negative_control": true,
+    "raw_result": "runs/mutant-no-boolean-guard/result.json"
+  },
+  "unknown_class_attempt": {
+    "initial_intended_expected": "adding 0 to known_mask would include unknown as learned class, so an assertion should detect it",
+    "actual": "passed; actual tested known_mask still excludes numeric unknown",
+    "valid_negative_control": false,
+    "classification": "ineffective mutation; not a detected error or evidence of an original defect",
+    "reason": "np.isin(raw, [B,T,0]) uses a mixed sequence whose test values become strings; numeric 0 did not acquire the intended known-label meaning. This interpretation follows the modified source and the passing explicit mask/unknown-heavy checks, not a further experiment.",
+    "raw_result": "runs/mutant-unknown-used-as-class/result.json",
+    "preservation": "original passed result and config remain unchanged; no replacement run after parent stop"
+  }
+}

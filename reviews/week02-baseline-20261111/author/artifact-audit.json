@@ -1,0 +1,79 @@
+{
+  "artifact_sha256": {
+    "week02_prediction_evaluation.ipynb": "2eabca5db515279632f8c8e287564c08b486938c2fc8b1f96ff5a72ef2e61787",
+    "week02_prediction_evaluation.html": "46fc2a995dae76a06a6c182d38429004a85822b5016075251be1aa20e44d1700",
+    "week02_temporal_preprocessing.ipynb": "549cd18bfad99a720587b65b80a4de0b2402435cbdc95a0a5619e779f80f94e0",
+    "week02_temporal_preprocessing.html": "5695b6c2adfd12dce7cf349a1ff9f0d448178b7b8c3c0ffb1507c9e94932c520",
+    "teacher-notes.md": "2348b396701799328dbf5c8d586176debe29a010b2cc6bace7bf9acc10e75d36",
+    "week02_temporal_preprocessing_teacher.md": "1c79ed6817542bf95738141676f62d137b6505981be0ccbfbea7a415f3dee925",
+    "build_week02.py": "95d73cfb47f3cb2b24076693e082a66a9f131cb0d0f1ad9ec427a733d427ca17"
+  },
+  "notebook_html_and_blank_answers": {
+    "week02_prediction_evaluation": {
+      "cells": 25,
+      "code_cells": 8,
+      "html_exact_export": true,
+      "blank_answers": [
+        {
+          "cell_id": "4cfbd70e",
+          "execution_count": 8,
+          "ast_empty": true,
+          "saved_outputs": 0
+        }
+      ]
+    },
+    "week02_temporal_preprocessing": {
+      "cells": 25,
+      "code_cells": 10,
+      "html_exact_export": true,
+      "blank_answers": [
+        {
+          "cell_id": "46cc245a",
+          "execution_count": null,
+          "ast_empty": true,
+          "saved_outputs": 0
+        }
+      ]
+    }
+  },
+  "workload_character_counts": {
+    "worked_explanation": {
+      "before_chars": 1017,
+      "after_chars": 1951
+    },
+    "integrated_exercise_4_to_6": {
+      "before_chars": 608,
+      "after_chars": 1102
+    },
+    "robot_compare": {
+      "before_chars": 1359,
+      "after_chars": 1558
+    },
+    "code_cells_before_after": [
+      9,
+      10
+    ],
+    "notebook_cells_before_after": [
+      24,
+      25
+    ]
+  },
+  "retained_old_validation_sha256": {
+    "validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+    "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit_learn": "1.8.0",
+    "matplotlib": "3.11.2"
+  },
+  "sources_and_qa_sha_consistent": true,
+  "limits": [
+    "static HTML exact export only; no browser/MathJax visual QA",
+    "student achievement and elapsed learning time not observed",
+    "main validator cleanup logged sqlite readonly traceback after reported pass",
+    "old discovery findings remain unchanged and are not an approval"
+  ]
+}

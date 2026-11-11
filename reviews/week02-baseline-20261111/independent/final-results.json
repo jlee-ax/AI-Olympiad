@@ -1,0 +1,482 @@
+{
+  "scope": "Independent finite Week02 baseline and split-purpose review; no learner achievement inferred",
+  "final_artifacts": {
+    "week02_prediction_evaluation.ipynb": {
+      "sha256": "2eabca5db515279632f8c8e287564c08b486938c2fc8b1f96ff5a72ef2e61787",
+      "bytes": 63465
+    },
+    "week02_prediction_evaluation.html": {
+      "sha256": "46fc2a995dae76a06a6c182d38429004a85822b5016075251be1aa20e44d1700",
+      "bytes": 398213
+    },
+    "week02_temporal_preprocessing.ipynb": {
+      "sha256": "549cd18bfad99a720587b65b80a4de0b2402435cbdc95a0a5619e779f80f94e0",
+      "bytes": 69783
+    },
+    "week02_temporal_preprocessing.html": {
+      "sha256": "5695b6c2adfd12dce7cf349a1ff9f0d448178b7b8c3c0ffb1507c9e94932c520",
+      "bytes": 425099
+    },
+    "build_week02.py": {
+      "sha256": "95d73cfb47f3cb2b24076693e082a66a9f131cb0d0f1ad9ec427a733d427ca17",
+      "bytes": 37784
+    },
+    "teacher-notes.md": {
+      "sha256": "2348b396701799328dbf5c8d586176debe29a010b2cc6bace7bf9acc10e75d36",
+      "bytes": 18047
+    },
+    "week02_temporal_preprocessing_teacher.md": {
+      "sha256": "1c79ed6817542bf95738141676f62d137b6505981be0ccbfbea7a415f3dee925",
+      "bytes": 21365
+    }
+  },
+  "live_source_matches_final_snapshot": true,
+  "freeze": {
+    "criteria_sha256": "6b66a06bd4081748f0d6dbbe73464d67e30f85b40aed80f4942d621e2b11b28c",
+    "input_sha256": "9c9f11f59ce5c952c0e983264afd11bb8c05f49d3981e9740749472073dde8f2",
+    "freeze_file_sha256": "265a3cba138c3f4505313230f8d4b84c2eeb0f3e8920e0ec6ee4064bbab0627f"
+  },
+  "runs": {
+    "main-full": {
+      "status": "passed",
+      "input_sha256": "2eabca5db515279632f8c8e287564c08b486938c2fc8b1f96ff5a72ef2e61787",
+      "code_cells_executed": 8,
+      "result_path": "runs/main-full/result.json",
+      "result_sha256": "252588fc857815538ac0fa1ef5610660a61d5f75baccbdaa5b21e17984d48011",
+      "source_unchanged": true,
+      "runtime_removed": true
+    },
+    "temporal-full": {
+      "status": "passed",
+      "input_sha256": "549cd18bfad99a720587b65b80a4de0b2402435cbdc95a0a5619e779f80f94e0",
+      "code_cells_executed": 10,
+      "result_path": "runs/temporal-full/result.json",
+      "result_sha256": "d6fc44d9c1c21a4afa9cfb284b665c6093f45e54fa0207f83dc0e7298632cd59",
+      "source_unchanged": true,
+      "runtime_removed": true
+    },
+    "mutant-no-boolean-guard": {
+      "status": "oracle_error",
+      "input_sha256": "549cd18bfad99a720587b65b80a4de0b2402435cbdc95a0a5619e779f80f94e0",
+      "code_cells_executed": 10,
+      "result_path": "runs/mutant-no-boolean-guard/result.json",
+      "result_sha256": "5c663a8c2e7c1390bb66ba3265c1098452cfa91414e4db847e975bc64e9931fc",
+      "source_unchanged": true,
+      "runtime_removed": true
+    },
+    "mutant-unknown-used-as-class": {
+      "status": "passed",
+      "input_sha256": "549cd18bfad99a720587b65b80a4de0b2402435cbdc95a0a5619e779f80f94e0",
+      "code_cells_executed": 10,
+      "result_path": "runs/mutant-unknown-used-as-class/result.json",
+      "result_sha256": "58e72a1aae152bf6c9de3b9e94d3740be40493ef0e2aabaf32b75a436b3d31bf",
+      "source_unchanged": true,
+      "runtime_removed": true
+    }
+  },
+  "actual_native_function": {
+    "name": "fit_known_mode",
+    "native_contract": "B/T and numeric unknown0, Boolean forbidden",
+    "frozen_label_adapter": "only frozen reference labels -1/+1 mapped to B/T; unknown remains numeric0; raw numeric ±1 separately rejected as wrong native contract",
+    "chosen": "B",
+    "class_prior": {
+      "B": 0.6666666666666666,
+      "T": 0.3333333333333333
+    },
+    "zero_float_accepted": true,
+    "unknown_heavy_excluded": true,
+    "actual_rejections_count": 14,
+    "actual_rejections": [
+      {
+        "case": "boolean_bool_True",
+        "expected": "ValueError for documented contract",
+        "actual": "ValueError",
+        "message": "이 예제의 훈련 라벨은 B/T/0이어야 합니다.",
+        "detector": "actual candidate fit_known_mode guard"
+      },
+      {
+        "case": "boolean_bool_False",
+        "expected": "ValueError for documented contract",
+        "actual": "ValueError",
+        "message": "이 예제의 훈련 라벨은 B/T/0이어야 합니다.",
+        "detector": "actual candidate fit_known_mode guard"
+      },
+      {
+        "case": "boolean_bool_True",
+        "expected": "ValueError for documented contract",
+        "actual": "ValueError",
+        "message": "이 예제의 훈련 라벨은 B/T/0이어야 합니다.",
+        "detector": "actual candidate fit_known_mode guard"
+      },
+      {
+        "case": "boolean_bool_False",
+        "expected": "ValueError for documented contract",
+        "actual": "ValueError",
+        "message": "이 예제의 훈련 라벨은 B/T/0이어야 합니다.",
+        "detector": "actual candidate fit_known_mode guard"
+      },
+      {
+        "case": "invalid_label_0",
+        "expected": "ValueError for documented contract",
+        "actual": "ValueError",
+        "message": "이 예제의 훈련 라벨은 B/T/0이어야 합니다.",
+        "detector": "actual candidate fit_known_mode guard"
+      },
+      {
+        "case": "invalid_label_1",
+        "expected": "ValueError for documented contract",
+        "actual": "ValueError",
+        "message": "이 예제의 훈련 라벨은 B/T/0이어야 합니다.",
+        "detector": "actual candidate fit_known_mode guard"
+      },
+      {
+        "case": "invalid_label_2",
+        "expected": "ValueError for documented contract",
+        "actual": "ValueError",
+        "message": "이 예제의 훈련 라벨은 B/T/0이어야 합니다.",
+        "detector": "actual candidate fit_known_mode guard"
+      },
+      {
+        "case": "invalid_label_3",
+        "expected": "ValueError for documented contract",
+        "actual": "ValueError",
+        "message": "이 예제의 훈련 라벨은 B/T/0이어야 합니다.",
+        "detector": "actual candidate fit_known_mode guard"
+      },
+      {
+        "case": "invalid_label_4",
+        "expected": "ValueError for documented contract",
+        "actual": "ValueError",
+        "message": "이 예제의 훈련 라벨은 B/T/0이어야 합니다.",
+        "detector": "actual candidate fit_known_mode guard"
+      },
+      {
+        "case": "invalid_label_5",
+        "expected": "ValueError for documented contract",
+        "actual": "ValueError",
+        "message": "이 예제의 훈련 라벨은 B/T/0이어야 합니다.",
+        "detector": "actual candidate fit_known_mode guard"
+      },
+      {
+        "case": "raw_numeric_pm1_not_native_contract",
+        "expected": "ValueError for documented contract",
+        "actual": "ValueError",
+        "message": "이 예제의 훈련 라벨은 B/T/0이어야 합니다.",
+        "detector": "actual candidate fit_known_mode guard"
+      },
+      {
+        "case": "no_known_0",
+        "expected": "ValueError for documented contract",
+        "actual": "ValueError",
+        "message": "알려진 훈련 라벨이 없습니다.",
+        "detector": "actual candidate fit_known_mode guard"
+      },
+      {
+        "case": "no_known_1",
+        "expected": "ValueError for documented contract",
+        "actual": "ValueError",
+        "message": "알려진 훈련 라벨이 없습니다.",
+        "detector": "actual candidate fit_known_mode guard"
+      },
+      {
+        "case": "tie_declared_stop_policy",
+        "expected": "ValueError for documented contract",
+        "actual": "ValueError",
+        "message": "최빈 동률: 먼저 동률 정책을 정하세요.",
+        "detector": "actual candidate fit_known_mode guard"
+      }
+    ],
+    "single_class": [
+      {
+        "known_class": "T",
+        "classes": [
+          "T"
+        ],
+        "proba_columns": 1
+      },
+      {
+        "known_class": "B",
+        "classes": [
+          "B"
+        ],
+        "proba_columns": 1
+      }
+    ],
+    "training_frequency_reversal": "T",
+    "validation_label_changes": [
+      {
+        "changed_validation_truth": [
+          "B",
+          "B",
+          "T",
+          "T"
+        ],
+        "predictions_unchanged": true,
+        "fit_state_unchanged": true
+      },
+      {
+        "changed_validation_truth": [
+          "T",
+          "T",
+          "T",
+          "T"
+        ],
+        "predictions_unchanged": true,
+        "fit_state_unchanged": true
+      }
+    ],
+    "training_permutation_unchanged": true,
+    "query_X_change_predictions_unchanged": true,
+    "X_fit_scope": "helper internally creates placeholder X; separate actual DummyClassifier fits to changed frozen X demonstrate estimator feature independence, not a helper X argument",
+    "separate_model_X_fit_change_unchanged": true,
+    "tie_policy_scope": "frozen reviewer reference can select -1; actual lesson explicitly stops on tie. Pre-frozen criterion allows an explicit policy and does not require one unique returned class"
+  },
+  "native_metrics_on_frozen_rows": {
+    "baseline": {
+      "counts": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 7,
+        "FN": 2
+      },
+      "metrics": {
+        "accuracy": 0.7777777777777778,
+        "precision": null,
+        "recall": 0.0,
+        "F1": 0.0,
+        "TPR": 0.0,
+        "FPR": 0.0
+      },
+      "truth_weighted": 0.368421052631579,
+      "native_precision_policy_nan": "NaN",
+      "warnings": []
+    },
+    "candidate_z": {
+      "counts": {
+        "TP": 2,
+        "FP": 3,
+        "TN": 4,
+        "FN": 0
+      },
+      "metrics": {
+        "accuracy": 0.6666666666666666,
+        "precision": 0.4,
+        "recall": 1.0,
+        "F1": 0.5714285714285714,
+        "TPR": 1.0,
+        "FPR": 0.42857142857142855
+      },
+      "truth_weighted": 0.8421052631578947,
+      "native_precision_policy_nan": 0.4,
+      "warnings": []
+    }
+  },
+  "objective_choices": {
+    "accuracy": "baseline",
+    "recall": "candidate_z",
+    "F1": "candidate_z",
+    "truth_weighted": "candidate_z"
+  },
+  "zero_denominator_actual_native_rates": [
+    {
+      "name": "no_predicted_positive_with_real_positive",
+      "actual_counts": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 2,
+        "FN": 1
+      },
+      "mathematical_rates": {
+        "accuracy": 0.6666666666666666,
+        "precision": null,
+        "recall": 0.0,
+        "F1": 0.0,
+        "TPR": 0.0,
+        "FPR": 0.0
+      }
+    },
+    {
+      "name": "no_real_positive_all_negative",
+      "actual_counts": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 2,
+        "FN": 0
+      },
+      "mathematical_rates": {
+        "accuracy": 1.0,
+        "precision": null,
+        "recall": null,
+        "F1": null,
+        "TPR": null,
+        "FPR": 0.0
+      }
+    },
+    {
+      "name": "no_real_positive_predict_positive",
+      "actual_counts": {
+        "TP": 0,
+        "FP": 2,
+        "TN": 0,
+        "FN": 0
+      },
+      "mathematical_rates": {
+        "accuracy": 0.0,
+        "precision": 0.0,
+        "recall": null,
+        "F1": 0.0,
+        "TPR": null,
+        "FPR": 1.0
+      }
+    },
+    {
+      "name": "empty_evaluation",
+      "actual_counts": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 0,
+        "FN": 0
+      },
+      "mathematical_rates": {
+        "accuracy": null,
+        "precision": null,
+        "recall": null,
+        "F1": null,
+        "TPR": null,
+        "FPR": null
+      }
+    }
+  ],
+  "reviewer_negative_controls": [
+    {
+      "case": "validation_labels_appended_to_training",
+      "expected": "reviewer oracle detects mismatch",
+      "actual": "detected",
+      "wrong": "T",
+      "correct": "B",
+      "scope": "actual helper accepts supplied labels but cannot infer their data origin; reviewer detects wrong caller boundary",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-baseline-20261111/independent/runs/temporal-full/runtime/tmpdir/ipykernel_10/2156240459.py\", line 53, in differs\n    try:assert wrong==expected,name\n               ^^^^^^^^^^^^^^^\nAssertionError: validation_labels_appended_to_training\n"
+    },
+    {
+      "case": "wrong_prediction_ID_order",
+      "expected": "reviewer oracle detects mismatch",
+      "actual": "detected",
+      "wrong": [
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1
+      ],
+      "correct": [
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "scope": "reviewer nonconstant peer prediction ledger; constant predictions alone cannot detect row reordering",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-baseline-20261111/independent/runs/temporal-full/runtime/tmpdir/ipykernel_10/2156240459.py\", line 53, in differs\n    try:assert wrong==expected,name\n               ^^^^^^^^^^^^^^^\nAssertionError: wrong_prediction_ID_order\n"
+    },
+    {
+      "case": "accuracy_used_for_predeclared_F1_objective",
+      "expected": "reviewer oracle detects mismatch",
+      "actual": "detected",
+      "wrong": "baseline",
+      "correct": "candidate_z",
+      "scope": "reviewer objective comparison using actual native metric results",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-baseline-20261111/independent/runs/temporal-full/runtime/tmpdir/ipykernel_10/2156240459.py\", line 53, in differs\n    try:assert wrong==expected,name\n               ^^^^^^^^^^^^^^^\nAssertionError: accuracy_used_for_predeclared_F1_objective\n"
+    }
+  ],
+  "split_reference": {
+    "scope": "reviewer synthetic reference only; no candidate split validator is supplied",
+    "valid_family_a": true,
+    "valid_family_b": true,
+    "different_goal_new_entity": true,
+    "expected_rejections": [
+      {
+        "case": "combination_leak",
+        "actual": "ValueError",
+        "message": "heldout combination leakage",
+        "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-baseline-20261111/independent/runs/temporal-full/runtime/tmpdir/ipykernel_10/2156240459.py\", line 104, in <module>\n    try:fn()\n        ^^^^\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-baseline-20261111/independent/runs/temporal-full/runtime/tmpdir/ipykernel_10/2156240459.py\", line 103, in <lambda>\n    for name,fn in [('combination_leak',lambda:split_check(sf['invalid_combination_leak'])),('missing_history',lambda:split_check(sf['valid_family_a'],requested=sf['invalid_feature_request'])),('new_entity_split_for_wrong_goal',lambda:split_check(sf['different_goal_new_entity_partition']))]:\n                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-baseline-20261111/independent/runs/temporal-full/runtime/tmpdir/ipykernel_10/2156240459.py\", line 95, in split_check\n    if keys(T)&keys(V):raise ValueError('heldout combination leakage')\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: heldout combination leakage\n",
+        "detector": "reviewer reference only"
+      },
+      {
+        "case": "missing_history",
+        "actual": "ValueError",
+        "message": "requested history/input is unavailable",
+        "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-baseline-20261111/independent/runs/temporal-full/runtime/tmpdir/ipykernel_10/2156240459.py\", line 104, in <module>\n    try:fn()\n        ^^^^\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-baseline-20261111/independent/runs/temporal-full/runtime/tmpdir/ipykernel_10/2156240459.py\", line 103, in <lambda>\n    for name,fn in [('combination_leak',lambda:split_check(sf['invalid_combination_leak'])),('missing_history',lambda:split_check(sf['valid_family_a'],requested=sf['invalid_feature_request'])),('new_entity_split_for_wrong_goal',lambda:split_check(sf['different_goal_new_entity_partition']))]:\n                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-baseline-20261111/independent/runs/temporal-full/runtime/tmpdir/ipykernel_10/2156240459.py\", line 90, in split_check\n    if any(k not in sf['available_input_fields'] for k in requested):raise ValueError('requested history/input is unavailable')\n                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: requested history/input is unavailable\n",
+        "detector": "reviewer reference only"
+      },
+      {
+        "case": "new_entity_split_for_wrong_goal",
+        "actual": "ValueError",
+        "message": "different entity set changes deployment target",
+        "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-baseline-20261111/independent/runs/temporal-full/runtime/tmpdir/ipykernel_10/2156240459.py\", line 104, in <module>\n    try:fn()\n        ^^^^\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-baseline-20261111/independent/runs/temporal-full/runtime/tmpdir/ipykernel_10/2156240459.py\", line 103, in <lambda>\n    for name,fn in [('combination_leak',lambda:split_check(sf['invalid_combination_leak'])),('missing_history',lambda:split_check(sf['valid_family_a'],requested=sf['invalid_feature_request'])),('new_entity_split_for_wrong_goal',lambda:split_check(sf['different_goal_new_entity_partition']))]:\n                                                                                                                                                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-baseline-20261111/independent/runs/temporal-full/runtime/tmpdir/ipykernel_10/2156240459.py\", line 93, in split_check\n    if {r['entity'] for r in T}!={r['entity'] for r in V}:raise ValueError('different entity set changes deployment target')\n                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: different entity set changes deployment target\n",
+        "detector": "reviewer reference only"
+      }
+    ]
+  },
+  "mutations": {
+    "boolean_guard_removed": {
+      "expected": "reviewer catches forbidden False accepted by altered actual helper",
+      "actual": "oracle_error / AssertionError: candidate accepted forbidden input: boolean_bool_False",
+      "scope": "actual candidate code single-site mutation in memory; reviewer oracle detection",
+      "valid_negative_control": true,
+      "raw_result": "runs/mutant-no-boolean-guard/result.json"
+    },
+    "unknown_class_attempt": {
+      "initial_intended_expected": "adding 0 to known_mask would include unknown as learned class, so an assertion should detect it",
+      "actual": "passed; actual tested known_mask still excludes numeric unknown",
+      "valid_negative_control": false,
+      "classification": "ineffective mutation; not a detected error or evidence of an original defect",
+      "reason": "np.isin(raw, [B,T,0]) uses a mixed sequence whose test values become strings; numeric 0 did not acquire the intended known-label meaning. This interpretation follows the modified source and the passing explicit mask/unknown-heavy checks, not a further experiment.",
+      "raw_result": "runs/mutant-unknown-used-as-class/result.json",
+      "preservation": "original passed result and config remain unchanged; no replacement run after parent stop"
+    }
+  },
+  "prior_code_preservation": {
+    "week02_prediction_evaluation.ipynb": {
+      "all_prior_code_cell_sources_preserved": true,
+      "prior_code_count": 8,
+      "new_code_count": 8
+    },
+    "week02_temporal_preprocessing.ipynb": {
+      "all_prior_code_cell_sources_preserved": true,
+      "prior_code_count": 9,
+      "new_code_count": 10
+    }
+  },
+  "student_answers": {
+    "main_cell20": "comments only",
+    "supplement_cell23": "comments only",
+    "learner_solution_help_time": "not_observed"
+  },
+  "criteria_judgement": {
+    "majority_learning_boundary": "met in finite actual helper/model tests; helper cannot infer whether caller-supplied labels came from training or validation",
+    "rare_positive_objectives": "met for finite reference ledger using actual native counts/rates/weighted metric and sklearn report policy",
+    "split_purpose_transfer": "content coherent; execution is reviewer synthetic split checker, not candidate-provided function or official Robot partition",
+    "load_and_scope": "existing B/T table reused; worked code cell and mandatory substeps increased; actual burden/time unknown",
+    "regression": "existing provided code sources preserved and complete fresh-kernel execution passed; no new Week04 course or 271-author-test claim"
+  },
+  "not_executed_or_observed": [
+    "new CLI/builder/validator functional checks in this iteration",
+    "all frozen feature imputation expectations independently refit: helper has no imputer; old provided preprocessing assertions ran",
+    "full browser/MathJax visual rendering",
+    "relocated-checkout execution (configs are relative but actual relocation not tested)",
+    "student-written independent answers or actual time/achievement",
+    "access-controlled hidden final test creation",
+    "official Robot dataset splitting or model training"
+  ],
+  "runtime_cache_dirs_remaining": [],
+  "blocking_lesson_defects_in_tested_final_scope": [],
+  "protected_scope": "only new independent directory written; no Week01/student/teacher source/index/remote modifications"
+}

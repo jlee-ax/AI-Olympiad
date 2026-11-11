@@ -1,0 +1,19 @@
+Target SHA256 953b49caf4771700406bb4400dc7e8212e457261e93f5bda0342fa9a8b9c11ca
+test_boolean_is_not_unknown (__main__.KnownModeTests.test_boolean_is_not_unknown) ... ok
+test_features_do_not_change_prediction (__main__.KnownModeTests.test_features_do_not_change_prediction) ... ok
+test_independent_metrics_and_selection (__main__.KnownModeTests.test_independent_metrics_and_selection) ... ok
+test_independent_reverse_and_order (__main__.KnownModeTests.test_independent_reverse_and_order) ... ok
+test_invalid_label_stops (__main__.KnownModeTests.test_invalid_label_stops) ... ok
+test_no_known_stops (__main__.KnownModeTests.test_no_known_stops) ... ok
+test_numeric_float_zero_is_unknown (__main__.KnownModeTests.test_numeric_float_zero_is_unknown) ... ok
+test_reverse_training_only_on_refit (__main__.KnownModeTests.test_reverse_training_only_on_refit) ... ok
+test_single_known_class_is_fittable_but_other_class_absent (__main__.KnownModeTests.test_single_known_class_is_fittable_but_other_class_absent) ... ok
+test_tie_stops (__main__.KnownModeTests.test_tie_stops) ... ok
+test_validation_labels_do_not_change_fitted_state_or_predictions (__main__.KnownModeTests.test_validation_labels_do_not_change_fitted_state_or_predictions) ... ok
+test_worked_known_b_despite_unknown_majority (__main__.KnownModeTests.test_worked_known_b_despite_unknown_majority) ... ok
+test_worked_validation_metrics (__main__.KnownModeTests.test_worked_validation_metrics) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.013s
+
+OK
