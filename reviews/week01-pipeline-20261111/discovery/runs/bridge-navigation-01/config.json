@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "scope": {
+    "id": "week01-supplement-retained-demands-rebound-week01-bridge-time-cleanup-01-rebound-bridge-navigation-01",
+    "lesson_path": "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/lesson-source.md",
+    "artifact_path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+    "artifact_sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+    "lesson_revision": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+    "readiness": "course",
+    "boundary": "Standalone Week1 axes/linear bridge after adding one forward navigation link to a separate problem-pipeline notebook. Preserve all original D01/D05/D07 requirements and three open questions. No code or saved output changed; a navigation route does not merge the linked notebook into this artifact or close its broad learning demands."
+  },
+  "frontier": [
+    {
+      "id": "retained-three",
+      "question": "Which parts of original D01/D05/D07 are actually implemented in the new bridge, and which original operations still remain?",
+      "required_kinds": [
+        "official_scope",
+        "official_problem",
+        "research"
+      ]
+    }
+  ],
+  "policy": {
+    "max_events": 80,
+    "max_rounds": 12,
+    "max_no_progress": 8,
+    "max_elapsed_minutes": 180
+  }
+}

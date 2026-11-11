@@ -1,0 +1,17 @@
+{
+  "authority": "advisory_only",
+  "current_runs": [
+    "bridge-navigation-01",
+    "pipeline-final-01"
+  ],
+  "historical_runs": {
+    "pipeline-candidate-01": {
+      "session_file_sha256": "6c4cf35ed13f6248ec561789fceb0645c4526ccd3154afa54a995e70298ee0bc",
+      "report_file_sha256": "82143c42669b721a4c08405c61674fe28811b1b6d0aee23caab0ad3223ac0400",
+      "replaced_for_current_reporting_by": "pipeline-final-01",
+      "reason": "Raw notebook changed only in the ID-order preservation wording after a valid byte-bound candidate review; preserve all nineteen demands, five questions and immutable candidate session/report/raw.",
+      "stale_evidence": "reviews/week01-pipeline-20261111/discovery/pipeline-candidate-01-stale-after-id-wording.json"
+    }
+  },
+  "scope_note": "Current and historical byte-bound discovery comparisons; no criterion acceptance, full-course readiness or learner achievement."
+}

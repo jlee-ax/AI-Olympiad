@@ -1,0 +1,9 @@
+{
+  "authority": "advisory_only",
+  "current_runs": [
+    "bridge-navigation-01",
+    "pipeline-candidate-01"
+  ],
+  "historical_runs": {},
+  "scope_note": "These are separately byte-bound current discovery comparisons, not criterion acceptance, full-course readiness or learner achievement."
+}

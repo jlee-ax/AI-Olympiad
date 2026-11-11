@@ -1,0 +1,132 @@
+[
+  {
+    "name": "unknown_zero_relabelled_negative",
+    "source_cell": 3,
+    "old": "known_train = training[training[\"label\"].isin([-1, 1])].copy()",
+    "new": "known_train = training.copy(); known_train[\"label\"] = known_train[\"label\"].replace({0: -1})",
+    "additional_change": null,
+    "detector": "notebook_assert",
+    "status": "detected",
+    "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+  },
+  {
+    "name": "target_in_features",
+    "source_cell": 3,
+    "old": "feature_cols = [\"texture\", \"color\"]",
+    "new": "feature_cols = [\"texture\", \"color\", \"label\"]",
+    "additional_change": null,
+    "detector": "notebook_assert",
+    "status": "detected",
+    "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+  },
+  {
+    "name": "train_and_validation_fit",
+    "source_cell": 5,
+    "old": "model.fit(known_train[feature_cols], known_train[\"label\"])",
+    "new": "model.fit(pd.concat([known_train[feature_cols], pd.DataFrame([[2000,3]],columns=feature_cols)]), pd.concat([known_train[\"label\"],pd.Series([-1])]))",
+    "additional_change": null,
+    "detector": "notebook_assert",
+    "status": "detected",
+    "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+  },
+  {
+    "name": "constant_imputation",
+    "source_cell": 5,
+    "old": "SimpleImputer(strategy=\"mean\")",
+    "new": "SimpleImputer(strategy=\"constant\", fill_value=0)",
+    "additional_change": null,
+    "detector": "notebook_assert",
+    "status": "detected",
+    "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+  },
+  {
+    "name": "training_target_reversed",
+    "source_cell": 5,
+    "old": "model.fit(known_train[feature_cols], known_train[\"label\"])",
+    "new": "model.fit(known_train[feature_cols], -known_train[\"label\"])",
+    "additional_change": null,
+    "detector": "notebook_assert",
+    "status": "detected",
+    "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+  },
+  {
+    "name": "validation_refit",
+    "source_cell": 11,
+    "old": "_ = model.predict(changed_validation[feature_cols])",
+    "new": "model.fit(changed_validation[feature_cols], changed_validation[\"label\"]); _ = model.predict(changed_validation[feature_cols])",
+    "additional_change": null,
+    "detector": "notebook_assert",
+    "status": "detected",
+    "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+  },
+  {
+    "name": "positional_prediction_order",
+    "source_cell": 15,
+    "old": "return [mapping[row_id] for row_id in ids]",
+    "new": "return [label for _, label in pairs]",
+    "additional_change": null,
+    "detector": "notebook_assert",
+    "status": "detected",
+    "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+  },
+  {
+    "name": "missing_id_guard_bypassed",
+    "source_cell": 15,
+    "old": "if any(is_missing_id(row_id) for row_id in ids):",
+    "new": "if False:",
+    "additional_change": "prediction ID guard also disabled",
+    "detector": "notebook_assert",
+    "status": "detected",
+    "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+  },
+  {
+    "name": "boolean_output_allowed",
+    "source_cell": 15,
+    "old": "if isinstance(prediction, (bool, np.bool_)) or not isinstance(prediction, (int, np.integer)):",
+    "new": "if not isinstance(prediction, (int, np.integer)):",
+    "additional_change": null,
+    "detector": "independent_bool_oracle",
+    "status": "detected",
+    "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+  },
+  {
+    "name": "unknown_zero_output_allowed",
+    "source_cell": 15,
+    "old": "if int(prediction) not in (-1, 1):",
+    "new": "if int(prediction) not in (-1, 0, 1):",
+    "additional_change": null,
+    "detector": "notebook_assert",
+    "status": "detected",
+    "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+  },
+  {
+    "name": "forbidden_header_added",
+    "source_cell": 17,
+    "old": "writer.writerows([[value] for value in labels])",
+    "new": "writer.writerow([\"label\"]); writer.writerows([[value] for value in labels])",
+    "additional_change": null,
+    "detector": "notebook_assert",
+    "status": "detected",
+    "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+  },
+  {
+    "name": "wrong_zip_filename",
+    "source_cell": 17,
+    "old": "archive.writestr(\"submissionA.csv\", text_A)",
+    "new": "archive.writestr(\"A.csv\", text_A)",
+    "additional_change": null,
+    "detector": "notebook_assert",
+    "status": "detected",
+    "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+  },
+  {
+    "name": "physical_zip_replaced_by_memory",
+    "source_cell": 19,
+    "old": "practice_zip.write_bytes(archive_bytes)\n    read_back = practice_zip.read_bytes()",
+    "new": "read_back = archive_bytes",
+    "additional_change": null,
+    "detector": "independent_physical_io_oracle",
+    "status": "detected",
+    "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+  }
+]

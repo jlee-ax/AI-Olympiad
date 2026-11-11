@@ -1,0 +1,112 @@
+{
+  "D01": {
+    "judgment": "gap",
+    "observed_behavior": "The standalone bridge explains row/feature/output axes, matrix contraction and shape-valid feature-order mistakes, including an independent new linear transform. It does not give the original reshape-versus-transpose coordinate task or Radar input/target-axis transfer. Local progress is preserved while broad D01 remains open. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+    "cells": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      },
+      "learning": {
+        "judgment": "uncertain"
+      },
+      "assessment": {
+        "judgment": "gap",
+        "cells": [
+          20,
+          21,
+          22,
+          23
+        ]
+      },
+      "principle": {
+        "judgment": "gap"
+      },
+      "practice": {
+        "judgment": "gap"
+      }
+    }
+  },
+  "D05": {
+    "judgment": "gap",
+    "observed_behavior": "The bridge builds Q@G.T, recovers arbitrary candidate IDs, demonstrates shuffled rows with unchanged IDs and provides a separate new-input retrieval/order task. Norm/unit normalization, cosine scoring and same-identity/different-gender official constraints are absent. The synthetic maximum-dot rule is correctly limited to its teaching contract. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+    "cells": [
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "gap"
+      },
+      "learning": {
+        "judgment": "gap"
+      },
+      "assessment": {
+        "judgment": "uncertain",
+        "cells": [
+          24,
+          25,
+          26,
+          27
+        ]
+      },
+      "principle": {
+        "judgment": "gap"
+      },
+      "practice": {
+        "judgment": "met",
+        "cells": [
+          24,
+          25,
+          26,
+          27
+        ]
+      }
+    }
+  },
+  "D07": {
+    "judgment": "gap",
+    "observed_behavior": "The guided lookup prints all vectors, maps (2,3) to (2,3,2), preserves repeated-index values and contrasts same-shape reversed positions. No independent lookup varies B/L/H or contrasts vocabulary size V with sequence length L; the final optional exercise is stack/concatenate and candidate-ID alignment. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+    "cells": [
+      17,
+      18,
+      19
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      },
+      "learning": {
+        "judgment": "met"
+      },
+      "assessment": {
+        "judgment": "gap",
+        "cells": [
+          28
+        ]
+      },
+      "principle": {
+        "judgment": "uncertain"
+      },
+      "practice": {
+        "judgment": "met"
+      }
+    }
+  }
+}

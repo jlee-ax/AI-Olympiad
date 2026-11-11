@@ -1,0 +1,55 @@
+{
+  "id": "rebind-pipeline-candidate-01-043-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D12",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "Separate model/train copies preserve the worked example state, but the original repeated-call mutable-default and returned-list alias diagnostic is not present.",
+    "start_line": 1,
+    "end_line": 435,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "Separate model/train copies preserve the worked example state, but the original repeated-call mutable-default and returned-list alias diagnostic is not present.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 435
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "Separate model/train copies preserve the worked example state, but the original repeated-call mutable-default and returned-list alias diagnostic is not present.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 435
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Separate model/train copies preserve the worked example state, but the original repeated-call mutable-default and returned-list alias diagnostic is not present.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 435
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "Separate model/train copies preserve the worked example state, but the original repeated-call mutable-default and returned-list alias diagnostic is not present.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 435
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "Separate model/train copies preserve the worked example state, but the original repeated-call mutable-default and returned-list alias diagnostic is not present.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 435
+      }
+    ]
+  }
+}

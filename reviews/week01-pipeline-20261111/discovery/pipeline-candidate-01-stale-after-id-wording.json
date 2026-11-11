@@ -1,0 +1,119 @@
+{
+  "recorded_at_utc": "2026-11-11T09:15:06.049871+00:00",
+  "prior_session_path": "reviews/week01-pipeline-20261111/discovery/runs/pipeline-candidate-01/session.json",
+  "prior_session_file_sha256": "6c4cf35ed13f6248ec561789fceb0645c4526ccd3154afa54a995e70298ee0bc",
+  "prior_report_file_sha256": "82143c42669b721a4c08405c61674fe28811b1b6d0aee23caab0ad3223ac0400",
+  "bound_artifact_sha256": "94bc86e3df06b36d47827695ecb287d8be4ef9d6b63a6790f79f97c0ff130e30",
+  "current_artifact_sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+  "status": "needs_work",
+  "ready_for_review": false,
+  "blockers": [
+    {
+      "code": "artifact_changed",
+      "id": "lessons/week01/week01_problem_pipeline.ipynb"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:56f4cd2e520467f2"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:e70b5658df5e5219"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:945fdb55281a968c"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:48d60d61369ba391"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:dfc74aebf5362656"
+    },
+    {
+      "code": "frontier_unresolved",
+      "id": "next-wave"
+    },
+    {
+      "code": "frontier_unresolved",
+      "id": "week01-pipeline-transfer"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D11"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D01"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D02"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D03"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D04"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D05"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D12"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D06"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D07"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D08"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D09"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D10"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "H01"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "H02"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "N02"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "N03"
+    }
+  ],
+  "next_action": "expand_frontier",
+  "source_changes_directly_read": [
+    {
+      "cell_index": 12,
+      "cell_id": "ecb6bc7a",
+      "before": "## 4. 예측을 ID와 묶어서 제출 순서로 옮기기\n\n이 합성 연습의 A/B는 각기 새로운 입력입니다. 편의를 위해 원하는 출력 순서를 별도 ID 목록으로 줍니다. 실제 명세가 **입력 파일의 원래 순서**를 요구하면 읽기 전에 원래 ID 순서를 보관합니다. 공식 Antique의 출력 CSV에는 ID 열을 넣지 않습니다.\n\n아래 함수는 필요한 특성 열이 빠졌거나 ID가 없거나 중복되면 조용히 행을 버리지 않고 오류를 냅니다. 값 한 칸의 결측은 앞에서 배운 대체 규칙으로 처리합니다. <code>feature_cols</code>만 모델에 넣으므로 정답이나 나중 검사 열은 입력에 끼어들지 않습니다.\n",
+      "after": "## 4. 예측을 ID와 묶어서 제출 순서로 옮기기\n\n이 합성 연습의 A/B는 각기 새로운 입력입니다. 편의를 위해 원하는 출력 순서를 별도 ID 목록으로 줍니다. 실제 명세가 **입력 파일의 원래 순서**를 요구하면 읽은 직후 정렬·변형하기 전에 원래 ID 순서를 보관합니다. 공식 Antique의 출력 CSV에는 ID 열을 넣지 않습니다.\n\n아래 함수는 필요한 특성 열이 빠졌거나 ID가 없거나 중복되면 조용히 행을 버리지 않고 오류를 냅니다. 값 한 칸의 결측은 앞에서 배운 대체 규칙으로 처리합니다. <code>feature_cols</code>만 모델에 넣으므로 정답이나 나중 검사 열은 입력에 끼어들지 않습니다.\n"
+    }
+  ],
+  "all_other_notebook_fields_identical": true,
+  "reason": "Correct the original-order preservation instruction to immediately after reading and before sorting/transformation. Preserve the candidate session/report/exact notebook, and bind the new raw artifact separately."
+}

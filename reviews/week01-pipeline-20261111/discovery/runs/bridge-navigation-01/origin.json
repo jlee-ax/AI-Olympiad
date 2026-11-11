@@ -1,0 +1,37 @@
+{
+  "recorded_at_utc": "2026-11-11T09:01:30.963280+00:00",
+  "prior_session_path": "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/session.json",
+  "prior_session_file_sha256": "3bca5d2c71643cd02549c55ac133229799b7b9f2c2e1859130a99d28dbe2582f",
+  "prior_session_usage": {
+    "events": 15,
+    "rounds": 1,
+    "elapsed_minutes": 0,
+    "no_progress": 0
+  },
+  "prior_artifact_sha256": "1c3ccb5d79d5e6c0a1cb919fd9f8cfac723637b1dedac2d056fe45379ffd8847",
+  "new_artifact_path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+  "new_artifact_sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+  "new_baseline_reason": "The actual artifact bytes changed, or this is a different standalone lesson artifact. A new explicit seed is required. Prior session history remains unchanged; this is not a continuation that erases counters or gaps.",
+  "prior_original_demand_payloads_unchanged": true,
+  "retained_demand_ids": [
+    "D01",
+    "D05",
+    "D07"
+  ],
+  "retained_open_question_count": 3,
+  "historical_external_sources_imported_unchanged": true,
+  "new_source_payload_path": null,
+  "new_source_payload_sha256": null,
+  "new_extractor": null,
+  "added_demand_ids": [],
+  "new_open_question_count": 0,
+  "findings_path": "reviews/week01-pipeline-20261111/discovery/bridge-navigation-findings.json",
+  "findings_sha256": "0a94b87ceed4ea434250351f0d247a2ea5e5c8165151b3615d20b350b7f56281",
+  "author": "/root/week01_bridge; one navigation line added in the final markdown cell",
+  "reviewer": "/root/discovery_resume",
+  "student_answers_fabricated": false,
+  "learner_mastery_observed": false,
+  "classroom_or_selfstudy_duration_measured": false,
+  "original_artifact_modified_by_reviewer": false,
+  "original_prior_session_modified_by_reviewer": false
+}

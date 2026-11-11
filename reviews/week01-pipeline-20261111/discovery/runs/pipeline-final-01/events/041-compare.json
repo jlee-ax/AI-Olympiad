@@ -1,0 +1,55 @@
+{
+  "id": "rebind-pipeline-final-01-041-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D04",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The lesson preserves classifier classes and gives an explicit Antique-to-LabelPropagation label mapping warning with reverse restoration. It does not implement the original contiguous class-index encode/argmax/decode round trip or new noncontiguous label set {-3,4,12} assessment. Library-returned labels and binary remapping are partial progress.",
+    "start_line": 421,
+    "end_line": 435,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The lesson preserves classifier classes and gives an explicit Antique-to-LabelPropagation label mapping warning with reverse restoration. It does not implement the original contiguous class-index encode/argmax/decode round trip or new noncontiguous label set {-3,4,12} assessment. Library-returned labels and binary remapping are partial progress.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 421,
+        "end_line": 435
+      },
+      {
+        "id": "learning",
+        "judgment": "uncertain",
+        "observed_behavior": "The lesson preserves classifier classes and gives an explicit Antique-to-LabelPropagation label mapping warning with reverse restoration. It does not implement the original contiguous class-index encode/argmax/decode round trip or new noncontiguous label set {-3,4,12} assessment. Library-returned labels and binary remapping are partial progress.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 421,
+        "end_line": 435
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "The lesson preserves classifier classes and gives an explicit Antique-to-LabelPropagation label mapping warning with reverse restoration. It does not implement the original contiguous class-index encode/argmax/decode round trip or new noncontiguous label set {-3,4,12} assessment. Library-returned labels and binary remapping are partial progress.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 421,
+        "end_line": 435
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The lesson preserves classifier classes and gives an explicit Antique-to-LabelPropagation label mapping warning with reverse restoration. It does not implement the original contiguous class-index encode/argmax/decode round trip or new noncontiguous label set {-3,4,12} assessment. Library-returned labels and binary remapping are partial progress.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 421,
+        "end_line": 435
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "The lesson preserves classifier classes and gives an explicit Antique-to-LabelPropagation label mapping warning with reverse restoration. It does not implement the original contiguous class-index encode/argmax/decode round trip or new noncontiguous label set {-3,4,12} assessment. Library-returned labels and binary remapping are partial progress.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 421,
+        "end_line": 435
+      }
+    ]
+  }
+}

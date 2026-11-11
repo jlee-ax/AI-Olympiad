@@ -1,0 +1,11 @@
+{
+  "id": "rebind-pipeline-candidate-01-028-read",
+  "op": "read",
+  "data": {
+    "reason": "Separate new actual-artifact baseline; preserve historical external requirements and open questions. Local receipts only; no original-source search or source authentication.",
+    "source_id": "C02",
+    "actor": "/root/course_discovery/verify_new_scope",
+    "start_line": 1,
+    "end_line": 8
+  }
+}

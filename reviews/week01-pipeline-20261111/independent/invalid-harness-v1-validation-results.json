@@ -1,0 +1,394 @@
+{
+  "checked_at_utc": "2026-11-11T09:15:02.248756+00:00",
+  "source_sha256": {
+    "lessons/week01/week01_problem_pipeline.ipynb": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+    "lessons/week01/week01_problem_pipeline.html": "28308deb024292977cd22a2931801ff242f010e5b6e8b4de01fa4e01e3a4bfd3",
+    "lessons/week01/week01_problem_pipeline_teacher.md": "646c9e4bbd6b631864f2e802b3cfb9f38da39ee6b7db79cef6a431ee6a7eb589",
+    "lessons/week01/week01_axes_linear_bridge.ipynb": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+    "lessons/week01/week01_axes_linear_bridge.html": "45bc5fe99f90b7bd4dd39ef67557b87c227f263e59e20c54fa1d44764a07239b"
+  },
+  "script_sha256": "4d3336d8268f945e3e305987c64137e744c8d9c14d44a7c33d06f44023ebb4be",
+  "criteria_sha256": "164f0e760ba368641bfe8030f140233cc22a0b5e8b60305e6837ed98bd137993",
+  "criteria_addendum_sha256": "816b1aa5ac7f6ecd8aefd0334926c6640941150569969f60607469e13f20f0b4",
+  "execution": "fresh InProcessKernelManager; no socket kernel; all 12 code cells including blank answer executed sequentially",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "sklearn": "1.8.0"
+  },
+  "checks": [
+    {
+      "name": "fresh_inprocess_all_cells_and_saved_outputs",
+      "status": "pass",
+      "cells": 27,
+      "code_cells": 12,
+      "code_indices": [
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25
+      ]
+    },
+    {
+      "name": "physical_submission_zip_write_read_cleanup",
+      "status": "pass",
+      "audit": [
+        {
+          "operation": "write",
+          "name": "submission.zip",
+          "exists": true,
+          "bytes": 251,
+          "sha256": "bd29591969e5d21db76b2b934a9de7a0272aacde347790feb4b3475304f6e398",
+          "path": "runtime/tmpdir/toy-submission-gj16igud/submission.zip"
+        },
+        {
+          "operation": "read",
+          "name": "submission.zip",
+          "bytes": 251,
+          "sha256": "bd29591969e5d21db76b2b934a9de7a0272aacde347790feb4b3475304f6e398"
+        }
+      ],
+      "removed": true
+    },
+    {
+      "name": "student_answer_blank",
+      "status": "pass",
+      "actual_student_solution_executed": false
+    },
+    {
+      "name": "fraction_oracle_main_fit_predictions_and_training_influence",
+      "status": "pass",
+      "means": [
+        5,
+        3
+      ],
+      "centers": {
+        "-1": [
+          2,
+          2
+        ],
+        "1": [
+          8,
+          4
+        ]
+      },
+      "validation_accuracy": "3/4",
+      "changes": [
+        {
+          "kind": "X",
+          "query": [
+            5.25,
+            3
+          ],
+          "original": 1,
+          "modified": -1,
+          "centers": [
+            [
+              2.0,
+              2.0
+            ],
+            [
+              9.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "kind": "y",
+          "query": [
+            5.25,
+            3
+          ],
+          "original": 1,
+          "modified": -1,
+          "centers": [
+            [
+              3.6666666666666665,
+              2.3333333333333335
+            ],
+            [
+              9.0,
+              5.0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "unknown_label_not_negative_and_validation_never_refit",
+      "status": "pass"
+    },
+    {
+      "name": "joint_row_permutations_and_named_feature_whitelist",
+      "status": "pass",
+      "permutations": 12
+    },
+    {
+      "name": "missing_id_helper_and_actual_path_plus_shape_value_guards",
+      "status": "pass",
+      "missing_id_cases": 20,
+      "other_cases": 15
+    },
+    {
+      "name": "independent_archive_parser_errors_and_formatter_scope",
+      "status": "pass",
+      "rejected": {
+        "same_length_wrong_order": "ValueError",
+        "header": "ValueError",
+        "index_or_extra_column": "ValueError",
+        "missing_row": "ValueError",
+        "extra_row": "ValueError",
+        "unknown_output": "ValueError",
+        "probability_output": "ValueError",
+        "wrong_filename": "ValueError",
+        "extra_member": "ValueError",
+        "duplicate_member": "ValueError",
+        "not_zip": "BadZipFile"
+      },
+      "constant_format_valid": true,
+      "corrupt_upstream_mapping_detected_by_model_oracle": true,
+      "formatter_alone_cannot_detect_upstream_corruption": true
+    },
+    {
+      "name": "independent_new_contract_two_trained_models_and_real_csv",
+      "status": "pass",
+      "means": [
+        4,
+        4,
+        2
+      ],
+      "known_ids": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "unknown_ids": [
+        "R5"
+      ],
+      "models": [
+        {
+          "model": "nearest_centroid",
+          "validation_predictions": [
+            0,
+            1,
+            1
+          ],
+          "accuracy": 0.6666666666666666,
+          "input_predictions": [
+            1,
+            0,
+            0
+          ],
+          "physical_audit_csv_reopened": true
+        },
+        {
+          "model": "gaussian_naive_bayes",
+          "validation_predictions": [
+            0,
+            1,
+            0
+          ],
+          "accuracy": 1.0,
+          "input_predictions": [
+            1,
+            0,
+            0
+          ],
+          "physical_audit_csv_reopened": true
+        }
+      ]
+    },
+    {
+      "name": "source_mutation_tests",
+      "status": "pass",
+      "count": 13,
+      "results": [
+        {
+          "name": "unknown_zero_relabelled_negative",
+          "source_cell": 3,
+          "old": "known_train = training[training[\"label\"].isin([-1, 1])].copy()",
+          "new": "known_train = training.copy(); known_train[\"label\"] = known_train[\"label\"].replace({0: -1})",
+          "additional_change": null,
+          "detector": "notebook_assert",
+          "status": "detected",
+          "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+        },
+        {
+          "name": "target_in_features",
+          "source_cell": 3,
+          "old": "feature_cols = [\"texture\", \"color\"]",
+          "new": "feature_cols = [\"texture\", \"color\", \"label\"]",
+          "additional_change": null,
+          "detector": "notebook_assert",
+          "status": "detected",
+          "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+        },
+        {
+          "name": "train_and_validation_fit",
+          "source_cell": 5,
+          "old": "model.fit(known_train[feature_cols], known_train[\"label\"])",
+          "new": "model.fit(pd.concat([known_train[feature_cols], pd.DataFrame([[2000,3]],columns=feature_cols)]), pd.concat([known_train[\"label\"],pd.Series([-1])]))",
+          "additional_change": null,
+          "detector": "notebook_assert",
+          "status": "detected",
+          "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+        },
+        {
+          "name": "constant_imputation",
+          "source_cell": 5,
+          "old": "SimpleImputer(strategy=\"mean\")",
+          "new": "SimpleImputer(strategy=\"constant\", fill_value=0)",
+          "additional_change": null,
+          "detector": "notebook_assert",
+          "status": "detected",
+          "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+        },
+        {
+          "name": "training_target_reversed",
+          "source_cell": 5,
+          "old": "model.fit(known_train[feature_cols], known_train[\"label\"])",
+          "new": "model.fit(known_train[feature_cols], -known_train[\"label\"])",
+          "additional_change": null,
+          "detector": "notebook_assert",
+          "status": "detected",
+          "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+        },
+        {
+          "name": "validation_refit",
+          "source_cell": 11,
+          "old": "_ = model.predict(changed_validation[feature_cols])",
+          "new": "model.fit(changed_validation[feature_cols], changed_validation[\"label\"]); _ = model.predict(changed_validation[feature_cols])",
+          "additional_change": null,
+          "detector": "notebook_assert",
+          "status": "detected",
+          "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+        },
+        {
+          "name": "positional_prediction_order",
+          "source_cell": 15,
+          "old": "return [mapping[row_id] for row_id in ids]",
+          "new": "return [label for _, label in pairs]",
+          "additional_change": null,
+          "detector": "notebook_assert",
+          "status": "detected",
+          "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+        },
+        {
+          "name": "missing_id_guard_bypassed",
+          "source_cell": 15,
+          "old": "if any(is_missing_id(row_id) for row_id in ids):",
+          "new": "if False:",
+          "additional_change": "prediction ID guard also disabled",
+          "detector": "notebook_assert",
+          "status": "detected",
+          "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+        },
+        {
+          "name": "boolean_output_allowed",
+          "source_cell": 15,
+          "old": "if isinstance(prediction, (bool, np.bool_)) or not isinstance(prediction, (int, np.integer)):",
+          "new": "if not isinstance(prediction, (int, np.integer)):",
+          "additional_change": null,
+          "detector": "independent_bool_oracle",
+          "status": "detected",
+          "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+        },
+        {
+          "name": "unknown_zero_output_allowed",
+          "source_cell": 15,
+          "old": "if int(prediction) not in (-1, 1):",
+          "new": "if int(prediction) not in (-1, 0, 1):",
+          "additional_change": null,
+          "detector": "notebook_assert",
+          "status": "detected",
+          "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+        },
+        {
+          "name": "forbidden_header_added",
+          "source_cell": 17,
+          "old": "writer.writerows([[value] for value in labels])",
+          "new": "writer.writerow([\"label\"]); writer.writerows([[value] for value in labels])",
+          "additional_change": null,
+          "detector": "notebook_assert",
+          "status": "detected",
+          "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+        },
+        {
+          "name": "wrong_zip_filename",
+          "source_cell": 17,
+          "old": "archive.writestr(\"submissionA.csv\", text_A)",
+          "new": "archive.writestr(\"A.csv\", text_A)",
+          "additional_change": null,
+          "detector": "notebook_assert",
+          "status": "detected",
+          "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+        },
+        {
+          "name": "physical_zip_replaced_by_memory",
+          "source_cell": 19,
+          "old": "practice_zip.write_bytes(archive_bytes)\n    read_back = practice_zip.read_bytes()",
+          "new": "read_back = archive_bytes",
+          "additional_change": null,
+          "detector": "independent_physical_io_oracle",
+          "status": "detected",
+          "evidence": "cell 3: AttributeError 'NoneType' object has no attribute 'outputs'"
+        }
+      ]
+    },
+    {
+      "name": "frozen_input_hashes_and_bridge_link_only",
+      "status": "pass",
+      "unchanged_files": [
+        "lessons/week01/week01_python_tables.ipynb",
+        "lessons/week01/week01_python_tables.html",
+        "lessons/week01/teacher-notes.txt",
+        "lessons/week02/week02_prediction_evaluation.ipynb",
+        "lessons/week02/week02_temporal_preprocessing.ipynb",
+        "curriculum/student-plan.html"
+      ],
+      "bridge_changed_markdown": [
+        {
+          "cell": 28,
+          "before": "### 선택 C · 묶음 만들기\n\n<code>gallery_new[:2]</code>와 <code>gallery_new[2:]</code>로 stack(axis=0), concatenate(axis=0), concatenate(axis=1)을 실행하기 전에 결과 shape와 축의 뜻을 적으세요. 열 연결의 각 행이 같은 후보의 특성 확장인지 후보 ID를 대조해 설명하세요. <code>gallery_new[:1]</code>과 <code>gallery_new[1:]</code>은 어떤 연산이 실패하고 어떤 행 연결이 가능한지도 이유와 함께 예측하세요. 별도 코드 셀을 만들어 확인합니다.\n\n## 다음 단계\n\n10주차 새 문제에서는 입력·출력·평가 규칙을 다시 읽고 열과 ID의 의미를 먼저 적습니다. 이 자료의 1주차 선수는 3주차 가중합, 6주차 층별 shape, 7~9주차 인코더 표현·검색, 10주차 낯선 입력 해석으로 이어집니다. 후속 모델 구현, 분할·학습·평가, 대회 문제 해결을 이 노트북 하나로 완료했다고 볼 수는 없습니다.\n\n## 자료와 범위\n\n- [1주차 본 교안](week01_python_tables.ipynb): 표·axis, 전치, 내적. [10주 학습 계획](../../curriculum/student-plan.html): 주차별 학습 내용.\n- [IOAI 2025 Restroom 공식 문제와 baseline](https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Restroom/Restroom.ipynb)은 후보 번호·순서와 벡터 점수를 검토하는 계기입니다. 실제 baseline은 이미지 인코더 출력 연결·정규화와 별도의 선택 규칙을 사용합니다. 이 단순 합성 내적의 최댓값 규칙은 공식 정답이나 대회 해결법이 아닙니다.\n- [NumPy matmul](https://numpy.org/doc/stable/reference/generated/numpy.matmul.html), [stack](https://numpy.org/doc/stable/reference/generated/numpy.stack.html), [concatenate](https://numpy.org/doc/stable/reference/generated/numpy.concatenate.html), [argmax](https://numpy.org/doc/stable/reference/generated/numpy.argmax.html), [PyTorch Embedding](https://docs.pytorch.org/docs/2.15/generated/torch.nn.Embedding.html).\n- [KOAI 2027 안내](https://kitpa.org/koai/2027)에 연결된 [국내 실라버스](https://kitpa.org/koai/syllabus)는 조사 당시 IOAI 2026 기준 표기였습니다. 별도 [IOAI 2027 원문](https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf)의 국제 항목을 국내 2027 확정 범위나 1주차 필수로 자동 취급하지 않습니다. 확인 기록: [source-research.md](../../reviews/discovery-loop-20261111/source-research.md), 2026-11-11. 최신 공지를 다시 확인하세요.\n\n교안의 숫자와 문제는 자체 제작 자료입니다.\n",
+          "after": "### 선택 C · 묶음 만들기\n\n<code>gallery_new[:2]</code>와 <code>gallery_new[2:]</code>로 stack(axis=0), concatenate(axis=0), concatenate(axis=1)을 실행하기 전에 결과 shape와 축의 뜻을 적으세요. 열 연결의 각 행이 같은 후보의 특성 확장인지 후보 ID를 대조해 설명하세요. <code>gallery_new[:1]</code>과 <code>gallery_new[1:]</code>은 어떤 연산이 실패하고 어떤 행 연결이 가능한지도 이유와 함께 예측하세요. 별도 코드 셀을 만들어 확인합니다.\n\n## 다음 단계\n\n[문제 명세에서 모델 학습과 제출까지](week01_problem_pipeline.ipynb)에서 입력·정답·ID를 예측과 제출 형식으로 이어 보세요.\n\n10주차 새 문제에서는 입력·출력·평가 규칙을 다시 읽고 열과 ID의 의미를 먼저 적습니다. 이 자료의 1주차 선수는 3주차 가중합, 6주차 층별 shape, 7~9주차 인코더 표현·검색, 10주차 낯선 입력 해석으로 이어집니다. 후속 모델 구현, 분할·학습·평가, 대회 문제 해결을 이 노트북 하나로 완료했다고 볼 수는 없습니다.\n\n## 자료와 범위\n\n- [1주차 본 교안](week01_python_tables.ipynb): 표·axis, 전치, 내적. [10주 학습 계획](../../curriculum/student-plan.html): 주차별 학습 내용.\n- [IOAI 2025 Restroom 공식 문제와 baseline](https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Restroom/Restroom.ipynb)은 후보 번호·순서와 벡터 점수를 검토하는 계기입니다. 실제 baseline은 이미지 인코더 출력 연결·정규화와 별도의 선택 규칙을 사용합니다. 이 단순 합성 내적의 최댓값 규칙은 공식 정답이나 대회 해결법이 아닙니다.\n- [NumPy matmul](https://numpy.org/doc/stable/reference/generated/numpy.matmul.html), [stack](https://numpy.org/doc/stable/reference/generated/numpy.stack.html), [concatenate](https://numpy.org/doc/stable/reference/generated/numpy.concatenate.html), [argmax](https://numpy.org/doc/stable/reference/generated/numpy.argmax.html), [PyTorch Embedding](https://docs.pytorch.org/docs/2.15/generated/torch.nn.Embedding.html).\n- [KOAI 2027 안내](https://kitpa.org/koai/2027)에 연결된 [국내 실라버스](https://kitpa.org/koai/syllabus)는 조사 당시 IOAI 2026 기준 표기였습니다. 별도 [IOAI 2027 원문](https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf)의 국제 항목을 국내 2027 확정 범위나 1주차 필수로 자동 취급하지 않습니다. 확인 기록: [source-research.md](../../reviews/discovery-loop-20261111/source-research.md), 2026-11-11. 최신 공지를 다시 확인하세요.\n\n교안의 숫자와 문제는 자체 제작 자료입니다.\n"
+        }
+      ],
+      "code_and_outputs_equal_frozen_git_head": true,
+      "html_fresh_export_equal": true
+    },
+    {
+      "name": "student_timing_internal_ops_absent",
+      "status": "pass",
+      "searched_terms": [
+        "120분",
+        "5~7시간",
+        "교사는 독립 수행 전에",
+        "실측",
+        "수업 시간",
+        "자습 시간",
+        "운영 계획",
+        "분량 조절"
+      ],
+      "learning_instructions_and_prediction_time_preserved": true
+    }
+  ],
+  "blocking_defects": [],
+  "limits": [
+    "Finite synthetic checks only; no official Antique data, server submission or 2027 contest question attempted",
+    "Student answer cell is blank; no actual student independent work or mastery observed",
+    "Total student workload and 120-minute feasibility unmeasured; supplements may increase burden",
+    "Normal socket Jupyter/Colab and full browser visual rendering unverified",
+    "Public teacher notes are not access control; protected hidden final tests not generated or executed",
+    "Formatter can check consistency with a mapping, not whether the upstream mapping is true"
+  ]
+}

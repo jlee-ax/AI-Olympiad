@@ -1,0 +1,47 @@
+{
+  "id": "rebind-pipeline-candidate-01-055-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "P02",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "covered",
+    "rationale": "The lesson states the official submission.ipynb/submission.zip/two headerless CSV contract, preserves ID-to-prediction correspondence, constructs actual ZIP/CSV bytes, writes/reopens a temporary submission.zip, and rejects missing columns, duplicate IDs, unknown output labels, wrong order/header/count. The independent new problem requires a differently named, headered ID+signal CSV, read-back and error diagnosis. The teaching contract and transfer design are met; official-machine acceptance, hidden-data execution and full Antique modelling are not claimed.",
+    "start_line": 174,
+    "end_line": 420,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The lesson states the official submission.ipynb/submission.zip/two headerless CSV contract, preserves ID-to-prediction correspondence, constructs actual ZIP/CSV bytes, writes/reopens a temporary submission.zip, and rejects missing columns, duplicate IDs, unknown output labels, wrong order/header/count. The independent new problem requires a differently named, headered ID+signal CSV, read-back and error diagnosis. The teaching contract and transfer design are met; official-machine acceptance, hidden-data execution and full Antique modelling are not claimed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 174,
+        "end_line": 420
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "The lesson states the official submission.ipynb/submission.zip/two headerless CSV contract, preserves ID-to-prediction correspondence, constructs actual ZIP/CSV bytes, writes/reopens a temporary submission.zip, and rejects missing columns, duplicate IDs, unknown output labels, wrong order/header/count. The independent new problem requires a differently named, headered ID+signal CSV, read-back and error diagnosis. The teaching contract and transfer design are met; official-machine acceptance, hidden-data execution and full Antique modelling are not claimed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 174,
+        "end_line": 420
+      },
+      {
+        "id": "assessment",
+        "judgment": "met",
+        "observed_behavior": "The lesson states the official submission.ipynb/submission.zip/two headerless CSV contract, preserves ID-to-prediction correspondence, constructs actual ZIP/CSV bytes, writes/reopens a temporary submission.zip, and rejects missing columns, duplicate IDs, unknown output labels, wrong order/header/count. The independent new problem requires a differently named, headered ID+signal CSV, read-back and error diagnosis. The teaching contract and transfer design are met; official-machine acceptance, hidden-data execution and full Antique modelling are not claimed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 370,
+        "end_line": 420
+      },
+      {
+        "id": "submission_contract",
+        "judgment": "met",
+        "observed_behavior": "The lesson states the official submission.ipynb/submission.zip/two headerless CSV contract, preserves ID-to-prediction correspondence, constructs actual ZIP/CSV bytes, writes/reopens a temporary submission.zip, and rejects missing columns, duplicate IDs, unknown output labels, wrong order/header/count. The independent new problem requires a differently named, headered ID+signal CSV, read-back and error diagnosis. The teaching contract and transfer design are met; official-machine acceptance, hidden-data execution and full Antique modelling are not claimed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 336
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "rebind-pipeline-final-01-039-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D02",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The lesson derives squared distance to learned class centroids. NearestCentroid is not the original kNN requirement: no test-by-training distance matrix, neighbor selection, k/tie voting or noncontiguous neighbor-label assessment is implemented.",
+    "start_line": 69,
+    "end_line": 173,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "The lesson derives squared distance to learned class centroids. NearestCentroid is not the original kNN requirement: no test-by-training distance matrix, neighbor selection, k/tie voting or noncontiguous neighbor-label assessment is implemented.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 173
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "The lesson derives squared distance to learned class centroids. NearestCentroid is not the original kNN requirement: no test-by-training distance matrix, neighbor selection, k/tie voting or noncontiguous neighbor-label assessment is implemented.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 173
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "The lesson derives squared distance to learned class centroids. NearestCentroid is not the original kNN requirement: no test-by-training distance matrix, neighbor selection, k/tie voting or noncontiguous neighbor-label assessment is implemented.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 173
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The lesson derives squared distance to learned class centroids. NearestCentroid is not the original kNN requirement: no test-by-training distance matrix, neighbor selection, k/tie voting or noncontiguous neighbor-label assessment is implemented.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 173
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "The lesson derives squared distance to learned class centroids. NearestCentroid is not the original kNN requirement: no test-by-training distance matrix, neighbor selection, k/tie voting or noncontiguous neighbor-label assessment is implemented.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 173
+      }
+    ]
+  }
+}

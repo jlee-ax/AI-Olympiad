@@ -1,0 +1,46 @@
+{
+  "recorded_at_utc": "2026-11-11T09:01:30.795444+00:00",
+  "prior_session_path": "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/session.json",
+  "prior_session_file_sha256": "3bca5d2c71643cd02549c55ac133229799b7b9f2c2e1859130a99d28dbe2582f",
+  "bound_artifact_sha256": "1c3ccb5d79d5e6c0a1cb919fd9f8cfac723637b1dedac2d056fe45379ffd8847",
+  "current_artifact_sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+  "status": "needs_work",
+  "ready_for_review": false,
+  "blockers": [
+    {
+      "code": "artifact_changed",
+      "id": "lessons/week01/week01_axes_linear_bridge.ipynb"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:eade388b57a8f2ee"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:495a6112320397c0"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:d878296854874d47"
+    },
+    {
+      "code": "frontier_unresolved",
+      "id": "retained-three"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D01"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D05"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D07"
+    }
+  ],
+  "next_action": "expand_frontier",
+  "directly_read_change": "Only final markdown cell28 adds a navigation link to week01_problem_pipeline.ipynb. All code-cell sources, execution counts and saved outputs match the preserved prior raw notebook.",
+  "effect": "The raw notebook binding is stale; missing learning/assessment operations are not supplied by a navigation link. Preserve the old session and compare all three original demands in a separate new baseline."
+}

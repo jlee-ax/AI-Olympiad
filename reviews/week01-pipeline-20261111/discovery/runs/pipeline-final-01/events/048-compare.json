@@ -1,0 +1,55 @@
+{
+  "id": "rebind-pipeline-final-01-048-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D10",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The lesson changes training input to expose changed learned state/predictions, stresses validation without refit, diagnoses output failures and asks independent new-contract implementation. It distinguishes toy accuracy from real performance. The original numerical-gradient/relative-error principles and their prerequisites remain outside this standalone unit.",
+    "start_line": 69,
+    "end_line": 420,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "The lesson changes training input to expose changed learned state/predictions, stresses validation without refit, diagnoses output failures and asks independent new-contract implementation. It distinguishes toy accuracy from real performance. The original numerical-gradient/relative-error principles and their prerequisites remain outside this standalone unit.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 420
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "The lesson changes training input to expose changed learned state/predictions, stresses validation without refit, diagnoses output failures and asks independent new-contract implementation. It distinguishes toy accuracy from real performance. The original numerical-gradient/relative-error principles and their prerequisites remain outside this standalone unit.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 420
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "The lesson changes training input to expose changed learned state/predictions, stresses validation without refit, diagnoses output failures and asks independent new-contract implementation. It distinguishes toy accuracy from real performance. The original numerical-gradient/relative-error principles and their prerequisites remain outside this standalone unit.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 420
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The lesson changes training input to expose changed learned state/predictions, stresses validation without refit, diagnoses output failures and asks independent new-contract implementation. It distinguishes toy accuracy from real performance. The original numerical-gradient/relative-error principles and their prerequisites remain outside this standalone unit.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 420
+      },
+      {
+        "id": "practice",
+        "judgment": "met",
+        "observed_behavior": "The lesson changes training input to expose changed learned state/predictions, stresses validation without refit, diagnoses output failures and asks independent new-contract implementation. It distinguishes toy accuracy from real performance. The original numerical-gradient/relative-error principles and their prerequisites remain outside this standalone unit.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 420
+      }
+    ]
+  }
+}

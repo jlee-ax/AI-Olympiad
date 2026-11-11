@@ -1,0 +1,55 @@
+{
+  "id": "rebind-bridge-navigation-01-014-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D05",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The bridge builds Q@G.T, recovers arbitrary candidate IDs, demonstrates shuffled rows with unchanged IDs and provides a separate new-input retrieval/order task. Norm/unit normalization, cosine scoring and same-identity/different-gender official constraints are absent. The synthetic maximum-dot rule is correctly limited to its teaching contract. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+    "start_line": 169,
+    "end_line": 236,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "The bridge builds Q@G.T, recovers arbitrary candidate IDs, demonstrates shuffled rows with unchanged IDs and provides a separate new-input retrieval/order task. Norm/unit normalization, cosine scoring and same-identity/different-gender official constraints are absent. The synthetic maximum-dot rule is correctly limited to its teaching contract. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 169,
+        "end_line": 236
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "The bridge builds Q@G.T, recovers arbitrary candidate IDs, demonstrates shuffled rows with unchanged IDs and provides a separate new-input retrieval/order task. Norm/unit normalization, cosine scoring and same-identity/different-gender official constraints are absent. The synthetic maximum-dot rule is correctly limited to its teaching contract. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 169,
+        "end_line": 236
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "The bridge builds Q@G.T, recovers arbitrary candidate IDs, demonstrates shuffled rows with unchanged IDs and provides a separate new-input retrieval/order task. Norm/unit normalization, cosine scoring and same-identity/different-gender official constraints are absent. The synthetic maximum-dot rule is correctly limited to its teaching contract. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 305,
+        "end_line": 338
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The bridge builds Q@G.T, recovers arbitrary candidate IDs, demonstrates shuffled rows with unchanged IDs and provides a separate new-input retrieval/order task. Norm/unit normalization, cosine scoring and same-identity/different-gender official constraints are absent. The synthetic maximum-dot rule is correctly limited to its teaching contract. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 169,
+        "end_line": 236
+      },
+      {
+        "id": "practice",
+        "judgment": "met",
+        "observed_behavior": "The bridge builds Q@G.T, recovers arbitrary candidate IDs, demonstrates shuffled rows with unchanged IDs and provides a separate new-input retrieval/order task. Norm/unit normalization, cosine scoring and same-identity/different-gender official constraints are absent. The synthetic maximum-dot rule is correctly limited to its teaching contract. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 305,
+        "end_line": 338
+      }
+    ]
+  }
+}

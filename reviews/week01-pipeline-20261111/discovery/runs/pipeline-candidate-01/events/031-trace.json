@@ -1,0 +1,87 @@
+{
+  "id": "rebind-pipeline-candidate-01-031-trace",
+  "op": "trace",
+  "data": {
+    "reason": "Separate new actual-artifact baseline; preserve historical external requirements and open questions. Local receipts only; no original-source search or source authentication.",
+    "frontier_id": "next-wave",
+    "read_ids": [
+      "rebind-pipeline-candidate-01-027-read",
+      "rebind-pipeline-candidate-01-028-read",
+      "rebind-pipeline-candidate-01-029-read",
+      "rebind-pipeline-candidate-01-030-read"
+    ],
+    "actor": "/root/course_discovery/verify_new_scope",
+    "rationale": "Historical extracted requirement payloads imported unchanged; not a fresh source extraction. Historical extracted requirement payloads imported unchanged; not a fresh source extraction. Independent extractor supplied these external operations before lesson comparison; reviewer retains the narrower introductory interpretation explicitly.",
+    "counterevidence": "International past tasks do not govern the exact domestic 2027 exam. Week1 foundations are legitimate; scheduled later placement is not delivery.",
+    "uninvestigated": [
+      "Domestic 2027 syllabus body still says IOAI 2026; applicability of the international 2027 changes and full PDF difference remain unverified after HTTP 429.",
+      "Pixel empty-rectangle/dtype rules, full CLIP quality, runtime and actual submission environment remain untested.",
+      "The new label-semantics unit does not establish complete semi-supervised learning or the positive-only probability derivation; actual later teaching remains to be read.",
+      "Student independent transfer, help received, completion time and learning effects remain unobserved."
+    ],
+    "demands": [
+      {
+        "id": "N01",
+        "statement": "개념의 사용 시점·출력 의미를 이론 설명과 코드 구현에서 각각 평가하기",
+        "prerequisites": [
+          "표의 행·열과 함수 입출력",
+          "기본 비율과 계산 순서"
+        ],
+        "learning_demand": "같은 개념을 언제 사용하고 출력이 무엇을 뜻하는지 설명한 뒤 코드와 연결한다.",
+        "assessment_demand": "예시를 가린 새로운 입력에서 비코딩 계산·이유와 구현 결과를 각각 남긴다.",
+        "dimensions": [
+          {
+            "id": "modality",
+            "required_behavior": "비코딩 이유와 코드 결과를 별도 근거로 보존한다."
+          }
+        ],
+        "source_locations": [
+          "C01 national announcement L218–234; linked syllabus L83–85"
+        ],
+        "interpretation": "Course design transfer from exam modalities; not a claim about undisclosed exact exam questions."
+      },
+      {
+        "id": "N02",
+        "statement": "반열린 이미지 사각형·면적 예산·제출 계약을 함께 점검하기",
+        "prerequisites": [
+          "행·열 인덱스",
+          "정수 구간과 곱셈",
+          "비율"
+        ],
+        "learning_demand": "좌상단 포함·우하단 제외를 픽셀 집합과 연결하고 (bottom-top)*(right-left)로 면적과 6.25% 예산을 판정한다.",
+        "assessment_demand": "새 사각형의 경계·상한 초과 사례를 손으로 예측하고 slice 및 지정 출력 구조와 비교한다.",
+        "dimensions": [
+          {
+            "id": "contract",
+            "required_behavior": "각 이미지당 한 사각형과 좌표 의미·출력 계약을 동시에 확인한다."
+          }
+        ],
+        "source_locations": [
+          "C02 raw L28–90"
+        ],
+        "interpretation": "Additional official task family; not immediate Week1 or Week2 mandatory content."
+      },
+      {
+        "id": "N03",
+        "statement": "미상 라벨을 확정 음성과 구분하고 특성·출력 라벨 경계를 보존하기",
+        "prerequisites": [
+          "입력 특성과 목표 구분",
+          "조건 선택과 행 대응"
+        ],
+        "learning_demand": "주어진 라벨 명세에서 unknown과 negative를 구분하고 목표 열을 특성에서 빼며 미상 학습 행 처리 규칙을 명시한다.",
+        "assessment_demand": "새 표에서 미상 행·허용 출력 라벨을 판단하고 코드와 이유를 독립 작성한다.",
+        "dimensions": [
+          {
+            "id": "assumptions",
+            "required_behavior": "알려진 라벨만 쓰는 축소 지도학습 규칙을 공식 문제 전체 해결과 구별한다. PU 상수 alpha 공식을 일반 미상 라벨에 자동 적용하지 않는다."
+          }
+        ],
+        "source_locations": [
+          "C03 raw L19–72",
+          "C04 printed pp5–6"
+        ],
+        "interpretation": "Narrow introductory demand; full semi-supervised model training and probability derivation remain open."
+      }
+    ]
+  }
+}

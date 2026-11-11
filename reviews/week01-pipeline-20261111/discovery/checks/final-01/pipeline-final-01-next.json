@@ -1,0 +1,291 @@
+{
+  "authority": "advisory_only",
+  "exhausted": [],
+  "limits": [
+    "Discovery/search execution, official attribution, semantic extraction and adequacy judgments are supplied by a human or model; this program does not browse or run one.",
+    "Read receipts prove the bytes and line ranges opened by this program, not reader comprehension, source truth or completeness of the external universe.",
+    "The frozen frontier and append-only hash chain expose changed declarations when bound to a review; they do not authenticate identity or prevent a caller from rewriting and rebinding history.",
+    "Recorded readiness applies only to the declared boundary; deferred placement does not establish later teaching or learner performance."
+  ],
+  "next_action": "expand_frontier",
+  "queue": [
+    {
+      "affected": [
+        "D11",
+        "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+        "scope"
+      ],
+      "demand_id": "D11",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_prerequisites_uncertain",
+        "dimension_learning_uncertain",
+        "dimension_assessment_uncertain",
+        "dimension_principle_uncertain",
+        "dimension_practice_uncertain",
+        "uncertain"
+      ],
+      "statement": "\ud604\uc7ac \uad6d\ub0b4 \uc801\uc6a9 \ubc94\uc704\uc640 \uad6d\uc81c \ucd5c\uc2e0 \ubc94\uc704\ub97c \ubd84\ub9ac\ud558\uae30"
+    },
+    {
+      "affected": [
+        "D01",
+        "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+        "problems"
+      ],
+      "demand_id": "D01",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_learning_gap",
+        "dimension_assessment_gap",
+        "dimension_principle_gap",
+        "dimension_practice_gap",
+        "gap"
+      ],
+      "statement": "\ubc30\uc5f4\uc758 \ucd95 \uc758\ubbf8\uc640 \ub370\uc774\ud130 \ubc30\uce58\ub97c \ubcf4\uc874\ud558\uae30"
+    },
+    {
+      "affected": [
+        "D02",
+        "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+        "problems"
+      ],
+      "demand_id": "D02",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_prerequisites_uncertain",
+        "dimension_learning_gap",
+        "dimension_assessment_gap",
+        "dimension_principle_gap",
+        "dimension_practice_gap",
+        "gap"
+      ],
+      "statement": "\uac70\ub9ac\u00b7\uc774\uc6c3\u00b7\ud22c\ud45c\ub97c \uba85\uc138\uc5d0\uc11c \uad6c\uc131\ud558\uae30"
+    },
+    {
+      "affected": [
+        "D03",
+        "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+        "problems"
+      ],
+      "demand_id": "D03",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_assessment_uncertain",
+        "uncertain"
+      ],
+      "statement": "\uc785\ub825\uacfc \uc815\ub2f5\uc758 \uc5ed\ud560 \ubc0f \uc0ac\uc6a9 \uc2dc\uc810\uc744 \ubd84\ub9ac\ud558\uae30"
+    },
+    {
+      "affected": [
+        "D04",
+        "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+        "problems"
+      ],
+      "demand_id": "D04",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_learning_uncertain",
+        "dimension_assessment_uncertain",
+        "dimension_principle_gap",
+        "dimension_practice_gap",
+        "gap"
+      ],
+      "statement": "\ud074\ub798\uc2a4 label\uc744 \ub0b4\ubd80 index\ub85c \ubc14\uafb8\uace0 \uc815\ud655\ud788 \ubcf5\uc6d0\ud558\uae30"
+    },
+    {
+      "affected": [
+        "D05",
+        "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+        "problems"
+      ],
+      "demand_id": "D05",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_prerequisites_uncertain",
+        "dimension_learning_gap",
+        "dimension_assessment_gap",
+        "dimension_principle_gap",
+        "dimension_practice_gap",
+        "gap"
+      ],
+      "statement": "\uc720\uc0ac\ub3c4 \ud589\ub82c\uc758 \uc704\uce58\ub97c \uc2e4\uc81c \uc2dd\ubcc4\uc790\ub85c \ub3cc\ub824\uc8fc\uae30"
+    },
+    {
+      "affected": [
+        "D12",
+        "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+        "problems"
+      ],
+      "demand_id": "D12",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_prerequisites_gap",
+        "dimension_learning_gap",
+        "dimension_assessment_gap",
+        "dimension_principle_gap",
+        "dimension_practice_gap",
+        "gap"
+      ],
+      "statement": "mutable default\ub294 Python \uc9c4\ub2e8\uc758 \ubcc4\ub3c4 \uacbd\uacc4\ub85c \ub0a8\uae30\uae30"
+    },
+    {
+      "affected": [
+        "D06",
+        "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+        "mechanisms"
+      ],
+      "demand_id": "D06",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_assessment_uncertain",
+        "dimension_principle_gap",
+        "dimension_practice_gap",
+        "gap"
+      ],
+      "statement": "\uc804\ucc98\ub9ac \ud1b5\uacc4\uc758 fit \uacbd\uacc4\ub97c \ubd84\ud560 \uc548\uc5d0 \ub450\uae30"
+    },
+    {
+      "affected": [
+        "D07",
+        "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+        "mechanisms"
+      ],
+      "demand_id": "D07",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_prerequisites_gap",
+        "dimension_learning_gap",
+        "dimension_assessment_gap",
+        "dimension_principle_gap",
+        "dimension_practice_gap",
+        "gap"
+      ],
+      "statement": "embedding lookup\uc758 \uc0c8 \ucd95\uacfc \uc5b4\ud718 \ucd95\uc744 \uad6c\ubcc4\ud558\uae30"
+    },
+    {
+      "affected": [
+        "D08",
+        "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+        "mechanisms"
+      ],
+      "demand_id": "D08",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_prerequisites_gap",
+        "dimension_learning_gap",
+        "dimension_assessment_gap",
+        "dimension_principle_gap",
+        "dimension_practice_gap",
+        "gap"
+      ],
+      "statement": "mask\uc758 shape\ubfd0 \uc544\ub2c8\ub77c \ucc38\uc5ec \uc758\ubbf8\ub97c \uac80\uc99d\ud558\uae30"
+    },
+    {
+      "affected": [
+        "D09",
+        "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+        "mechanisms"
+      ],
+      "demand_id": "D09",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_prerequisites_gap",
+        "dimension_learning_gap",
+        "dimension_assessment_gap",
+        "dimension_principle_gap",
+        "dimension_practice_gap",
+        "gap"
+      ],
+      "statement": "\uc815\ub2f5 \ud655\ub960\u00b7\uc190\uc2e4\u00b7\uc548\uc815\ud654\uc758 \uacc4\uc0b0\uc744 \uad6c\ubcc4\ud558\uae30"
+    },
+    {
+      "affected": [
+        "D10",
+        "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+        "mechanisms"
+      ],
+      "demand_id": "D10",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_prerequisites_gap",
+        "dimension_assessment_uncertain",
+        "dimension_principle_gap",
+        "gap"
+      ],
+      "statement": "\uc791\uc740 \uc131\uacf5\uacfc \uc804\uccb4 \uc62c\ubc14\ub984\uc744 \uad6c\ubcc4\ud558\ub294 \uac80\uc99d \uc124\uacc4"
+    },
+    {
+      "affected": [
+        "H01",
+        "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+        "heldout"
+      ],
+      "demand_id": "H01",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_learning_gap",
+        "dimension_assessment_gap",
+        "dimension_principle_gap",
+        "dimension_practice_gap",
+        "gap"
+      ],
+      "statement": "weighted score\uc758 \ubd84\ubaa8\ub97c \ud3c9\uac00 \ub300\uc0c1 \uc804\uccb4\uc5d0\uc11c \uc138\uae30"
+    },
+    {
+      "affected": [
+        "H02",
+        "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+        "heldout"
+      ],
+      "demand_id": "H02",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_learning_gap",
+        "dimension_assessment_gap",
+        "dimension_principle_gap",
+        "dimension_practice_gap",
+        "gap"
+      ],
+      "statement": "\uac1c\ubc1c\uc5d0\uc11c \uc0ac\uc6a9\ud55c \ub3c4\uad6c\uac00 \ucd94\ub860\uc5d0\ub3c4 \uc788\ub294\uc9c0 \uac80\uc99d\ud558\uae30"
+    },
+    {
+      "affected": [
+        "N02",
+        "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+        "next-wave"
+      ],
+      "demand_id": "N02",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_prerequisites_gap",
+        "dimension_learning_gap",
+        "dimension_assessment_gap",
+        "dimension_contract_gap",
+        "gap"
+      ],
+      "statement": "\ubc18\uc5f4\ub9b0 \uc774\ubbf8\uc9c0 \uc0ac\uac01\ud615\u00b7\uba74\uc801 \uc608\uc0b0\u00b7\uc81c\ucd9c \uacc4\uc57d\uc744 \ud568\uaed8 \uc810\uac80\ud558\uae30"
+    },
+    {
+      "affected": [
+        "N03",
+        "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02-rebound-pipeline-candidate-01-rebound-pipeline-final-01",
+        "next-wave"
+      ],
+      "demand_id": "N03",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_assumptions_uncertain",
+        "uncertain"
+      ],
+      "statement": "\ubbf8\uc0c1 \ub77c\ubca8\uc744 \ud655\uc815 \uc74c\uc131\uacfc \uad6c\ubd84\ud558\uace0 \ud2b9\uc131\u00b7\ucd9c\ub825 \ub77c\ubca8 \uacbd\uacc4\ub97c \ubcf4\uc874\ud558\uae30"
+    }
+  ],
+  "status": "needs_work",
+  "usage": {
+    "elapsed_minutes": 0,
+    "events": 55,
+    "no_progress": 0,
+    "rounds": 6
+  }
+}

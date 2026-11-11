@@ -1,0 +1,55 @@
+{
+  "id": "rebind-pipeline-final-01-050-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "H02",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The lesson distinguishes training, validation and hidden final labels, keeps forbidden later input out, and locally reconstructs CSV/ZIP bytes. It does not diagnose/remove a development-only unavailable inference API or rebuild an offline submission from learned local artifacts as required by original Concepts.",
+    "start_line": 12,
+    "end_line": 369,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The lesson distinguishes training, validation and hidden final labels, keeps forbidden later input out, and locally reconstructs CSV/ZIP bytes. It does not diagnose/remove a development-only unavailable inference API or rebuild an offline submission from learned local artifacts as required by original Concepts.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 369
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "The lesson distinguishes training, validation and hidden final labels, keeps forbidden later input out, and locally reconstructs CSV/ZIP bytes. It does not diagnose/remove a development-only unavailable inference API or rebuild an offline submission from learned local artifacts as required by original Concepts.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 369
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "The lesson distinguishes training, validation and hidden final labels, keeps forbidden later input out, and locally reconstructs CSV/ZIP bytes. It does not diagnose/remove a development-only unavailable inference API or rebuild an offline submission from learned local artifacts as required by original Concepts.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 369
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The lesson distinguishes training, validation and hidden final labels, keeps forbidden later input out, and locally reconstructs CSV/ZIP bytes. It does not diagnose/remove a development-only unavailable inference API or rebuild an offline submission from learned local artifacts as required by original Concepts.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 369
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "The lesson distinguishes training, validation and hidden final labels, keeps forbidden later input out, and locally reconstructs CSV/ZIP bytes. It does not diagnose/remove a development-only unavailable inference API or rebuild an offline submission from learned local artifacts as required by original Concepts.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 369
+      }
+    ]
+  }
+}

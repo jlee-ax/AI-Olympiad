@@ -1,0 +1,55 @@
+{
+  "id": "rebind-pipeline-final-01-054-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "P01",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "covered",
+    "rationale": "A real training-only imputer and NearestCentroid classifier learn means/classes/centroids. The lesson computes distance reasoning, exposes changed learned state and changed prediction after a training perturbation, and evaluates an untouched worked validation set. Its new independent problem changes feature count/names, ID naming, unknown/normal label codes and output format; students select and fit a defensible learned classifier, inspect its learned values, predict and explain accuracy. This is a bounded material-design judgment, not complete Antique, future-exam or measured learner success.",
+    "start_line": 69,
+    "end_line": 420,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "A real training-only imputer and NearestCentroid classifier learn means/classes/centroids. The lesson computes distance reasoning, exposes changed learned state and changed prediction after a training perturbation, and evaluates an untouched worked validation set. Its new independent problem changes feature count/names, ID naming, unknown/normal label codes and output format; students select and fit a defensible learned classifier, inspect its learned values, predict and explain accuracy. This is a bounded material-design judgment, not complete Antique, future-exam or measured learner success.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 420
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "A real training-only imputer and NearestCentroid classifier learn means/classes/centroids. The lesson computes distance reasoning, exposes changed learned state and changed prediction after a training perturbation, and evaluates an untouched worked validation set. Its new independent problem changes feature count/names, ID naming, unknown/normal label codes and output format; students select and fit a defensible learned classifier, inspect its learned values, predict and explain accuracy. This is a bounded material-design judgment, not complete Antique, future-exam or measured learner success.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 173
+      },
+      {
+        "id": "assessment",
+        "judgment": "met",
+        "observed_behavior": "A real training-only imputer and NearestCentroid classifier learn means/classes/centroids. The lesson computes distance reasoning, exposes changed learned state and changed prediction after a training perturbation, and evaluates an untouched worked validation set. Its new independent problem changes feature count/names, ID naming, unknown/normal label codes and output format; students select and fit a defensible learned classifier, inspect its learned values, predict and explain accuracy. This is a bounded material-design judgment, not complete Antique, future-exam or measured learner success.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 370,
+        "end_line": 420
+      },
+      {
+        "id": "learned_state",
+        "judgment": "met",
+        "observed_behavior": "A real training-only imputer and NearestCentroid classifier learn means/classes/centroids. The lesson computes distance reasoning, exposes changed learned state and changed prediction after a training perturbation, and evaluates an untouched worked validation set. Its new independent problem changes feature count/names, ID naming, unknown/normal label codes and output format; students select and fit a defensible learned classifier, inspect its learned values, predict and explain accuracy. This is a bounded material-design judgment, not complete Antique, future-exam or measured learner success.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 129
+      },
+      {
+        "id": "contract_transfer",
+        "judgment": "met",
+        "observed_behavior": "A real training-only imputer and NearestCentroid classifier learn means/classes/centroids. The lesson computes distance reasoning, exposes changed learned state and changed prediction after a training perturbation, and evaluates an untouched worked validation set. Its new independent problem changes feature count/names, ID naming, unknown/normal label codes and output format; students select and fit a defensible learned classifier, inspect its learned values, predict and explain accuracy. This is a bounded material-design judgment, not complete Antique, future-exam or measured learner success.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 370,
+        "end_line": 420
+      }
+    ]
+  }
+}

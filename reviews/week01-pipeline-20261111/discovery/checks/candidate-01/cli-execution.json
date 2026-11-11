@@ -1,0 +1,104 @@
+{
+  "recorded_at_utc": "2026-11-11T09:10:22.452680+00:00",
+  "calls": [
+    {
+      "run": "bridge-navigation-01",
+      "op": "next",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "next",
+        "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "93879ef7c3be76f224648b08ddff67f3f15bc799470630b40a41a88e7f713f7b",
+      "stdout_bytes": 2641
+    },
+    {
+      "run": "bridge-navigation-01",
+      "op": "report",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "report",
+        "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c9c1f16a7d4f74bf17ed50f99ff02408288439f9a49f704100c28b22f68b8b5e",
+      "stdout_bytes": 157226,
+      "matches_saved_report": true
+    },
+    {
+      "run": "bridge-navigation-01",
+      "op": "manifest",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "manifest",
+        "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6652d10772744f738a3c971da390a9dd004883ef51c8dcd21d01a3f3e6d03b91",
+      "stdout_bytes": 146
+    },
+    {
+      "run": "pipeline-candidate-01",
+      "op": "next",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "next",
+        "reviews/week01-pipeline-20261111/discovery/runs/pipeline-candidate-01/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "14bb9eda1fb9b8191b95c90ab118dbeb0b5468321a58ab9909dc878a57bc1305",
+      "stdout_bytes": 10650
+    },
+    {
+      "run": "pipeline-candidate-01",
+      "op": "report",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "report",
+        "reviews/week01-pipeline-20261111/discovery/runs/pipeline-candidate-01/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e84f158ab2a2a51beedcaccceee87d90ec8f6985e9e69b6596c3d31bc64f06fd",
+      "stdout_bytes": 2369097,
+      "matches_saved_report": true
+    },
+    {
+      "run": "pipeline-candidate-01",
+      "op": "manifest",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "manifest",
+        "reviews/week01-pipeline-20261111/discovery/runs/pipeline-candidate-01/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "be42f66846118061b20d39292c5c799ac66f9e74fa6ac4d14823017994b646e4",
+      "stdout_bytes": 146
+    }
+  ],
+  "scope": "Actual candidate-byte inspection; final independent content review is separate."
+}

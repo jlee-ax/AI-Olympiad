@@ -1,0 +1,19 @@
+{
+  "status": "invalid",
+  "files": [
+    {
+      "file": "invalid-harness-v1-mutation-results.json",
+      "sha256": "98e2c83df077dbd1a3cb977d7ac07e5820094a1e7bf79cecb36339e376ea01eb",
+      "status": "invalid",
+      "reason": "All 13 mutation failures occurred at cell 3 display due to stale in-process display singleton, before mutations could be exercised. Claimed mutation detections are invalid. Normal-case observations must use the new separate final result."
+    },
+    {
+      "file": "invalid-harness-v1-validation-results.json",
+      "sha256": "49a4f63666fbddebc296194c8303619344d1d8f643d2dbdf59c048c28057876f",
+      "status": "invalid",
+      "reason": "All 13 mutation failures occurred at cell 3 display due to stale in-process display singleton, before mutations could be exercised. Claimed mutation detections are invalid. Normal-case observations must use the new separate final result."
+    }
+  ],
+  "not_valid_mutation_evidence": true,
+  "correction": "Each mutation is rerun in a separate Python process with a fresh in-process kernel. Only the new mutation-results.json and validation-results.json may be used as final evidence."
+}

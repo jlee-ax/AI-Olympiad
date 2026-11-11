@@ -1,0 +1,72 @@
+{
+  "frozen_at_utc": "2026-11-11T08:52:03.396288+00:00",
+  "git_head": "4eaaf2b8a4c99d08f35136bb333b02d4d4bcfb50",
+  "new_artifact_content_read": false,
+  "new_artifact_paths_present_at_freeze": [],
+  "files": [
+    {
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "cells": 89,
+      "code_cells": 28,
+      "source_projection": "week01_python_tables-source-v1.json",
+      "source_projection_sha256": "a83bce8e075684a78460c5b6564def2a923aec33dfdd1a73408d7231c975cf3e"
+    },
+    {
+      "path": "lessons/week01/week01_python_tables.html",
+      "bytes": 814322,
+      "sha256": "0ee9668f102756c47c666d12e145bdd6c7c89709d625dcd07533bc3291cfda24"
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "bytes": 27610,
+      "sha256": "1c3ccb5d79d5e6c0a1cb919fd9f8cfac723637b1dedac2d056fe45379ffd8847",
+      "cells": 29,
+      "code_cells": 13,
+      "source_projection": "week01_axes_linear_bridge-source-v1.json",
+      "source_projection_sha256": "d6e045cd3b889edf1d23d6cb3ea26497b7ed95ed2836e4c640ca7561f55ca99b"
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.html",
+      "bytes": 347586,
+      "sha256": "2393694747659d0777c23a5924e26f22deecf3b7a3eb52fadd1e562a0cbea5c9"
+    },
+    {
+      "path": "lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge_teacher.md",
+      "bytes": 5928,
+      "sha256": "651038f80b4800f8efb72094823e497cfe5168985bc882e586b1c4dc12fcf9c0"
+    },
+    {
+      "path": "lessons/week02/week02_prediction_evaluation.ipynb",
+      "bytes": 34579,
+      "sha256": "9bb1ea5110b74ea1cf32fbc9ee9e9a5aadbceba2f750c2dfc2d6587e18954bdf",
+      "cells": 25,
+      "code_cells": 8,
+      "source_projection": "week02_prediction_evaluation-source-v1.json",
+      "source_projection_sha256": "e956e39e928905a7c0beb6537608cc8456fc1cae18c1cec2faa437765f41c3c8"
+    },
+    {
+      "path": "lessons/week02/week02_temporal_preprocessing.ipynb",
+      "bytes": 56497,
+      "sha256": "a830a15e8d2bf2cb91e17cd2e8b14172390fc7cea3a07539add3fe52a05b5865",
+      "cells": 19,
+      "code_cells": 9,
+      "source_projection": "week02_temporal_preprocessing-source-v1.json",
+      "source_projection_sha256": "7dd0450fa6f5b018772dcc1daa3a5c75dbd828ef18c42b5df195706ff1833608"
+    },
+    {
+      "path": "curriculum/student-plan.html",
+      "bytes": 66831,
+      "sha256": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254"
+    }
+  ],
+  "criteria_file": "criteria-v1.md",
+  "criteria_sha256": "164f0e760ba368641bfe8030f140233cc22a0b5e8b60305e6837ed98bd137993",
+  "rule": "Do not overwrite v1; later changes require a separate addendum with reason and preserved earlier results."
+}

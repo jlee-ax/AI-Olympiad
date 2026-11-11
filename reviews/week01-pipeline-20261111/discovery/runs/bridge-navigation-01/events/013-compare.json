@@ -1,0 +1,55 @@
+{
+  "id": "rebind-bridge-navigation-01-013-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D01",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The standalone bridge explains row/feature/output axes, matrix contraction and shape-valid feature-order mistakes, including an independent new linear transform. It does not give the original reshape-versus-transpose coordinate task or Radar input/target-axis transfer. Local progress is preserved while broad D01 remains open. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+    "start_line": 16,
+    "end_line": 168,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The standalone bridge explains row/feature/output axes, matrix contraction and shape-valid feature-order mistakes, including an independent new linear transform. It does not give the original reshape-versus-transpose coordinate task or Radar input/target-axis transfer. Local progress is preserved while broad D01 remains open. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 16,
+        "end_line": 168
+      },
+      {
+        "id": "learning",
+        "judgment": "uncertain",
+        "observed_behavior": "The standalone bridge explains row/feature/output axes, matrix contraction and shape-valid feature-order mistakes, including an independent new linear transform. It does not give the original reshape-versus-transpose coordinate task or Radar input/target-axis transfer. Local progress is preserved while broad D01 remains open. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 16,
+        "end_line": 168
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "The standalone bridge explains row/feature/output axes, matrix contraction and shape-valid feature-order mistakes, including an independent new linear transform. It does not give the original reshape-versus-transpose coordinate task or Radar input/target-axis transfer. Local progress is preserved while broad D01 remains open. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 267,
+        "end_line": 304
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The standalone bridge explains row/feature/output axes, matrix contraction and shape-valid feature-order mistakes, including an independent new linear transform. It does not give the original reshape-versus-transpose coordinate task or Radar input/target-axis transfer. Local progress is preserved while broad D01 remains open. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 16,
+        "end_line": 168
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "The standalone bridge explains row/feature/output axes, matrix contraction and shape-valid feature-order mistakes, including an independent new linear transform. It does not give the original reshape-versus-transpose coordinate task or Radar input/target-axis transfer. Local progress is preserved while broad D01 remains open. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 16,
+        "end_line": 168
+      }
+    ]
+  }
+}

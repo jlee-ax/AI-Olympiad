@@ -1,0 +1,10 @@
+{
+  "recorded_at_utc": "2026-11-11T08:57:37.505916+00:00",
+  "artifact_path": "lessons/week01/week01_problem_pipeline.ipynb",
+  "artifact_sha256": "e0b45183e0e49adc5bd9012872b7e4bbe89fc787dce03319a58e956100bf2484",
+  "snapshot_path": "reviews/week01-pipeline-20261111/discovery/candidate-reads/e0b45183-candidate-exact.ipynb",
+  "status": "candidate_read_only_no_discovery_session_bound",
+  "reviewer": "/root/discovery_resume",
+  "semantic_reading": "Cell sources were directly read across candidate versions; all final candidate sources will be rechecked against this exact snapshot before binding.",
+  "limits": "No final content approval, learner outcome or complete official problem coverage is declared."
+}

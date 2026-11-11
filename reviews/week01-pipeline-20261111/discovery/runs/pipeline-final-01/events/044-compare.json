@@ -1,0 +1,55 @@
+{
+  "id": "rebind-pipeline-final-01-044-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D06",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The worked pipeline fits its mean imputer and learned classifier only on known training rows and demonstrates unchanged learned statistics under changed validation input. The independent task selects a new training subset and fits a chosen classifier. The original standardization z formula and train-only versus all-data mean-centering practice are absent, and the full retained independent leakage-versus-overfitting/validation-stress assessment is not posed.",
+    "start_line": 69,
+    "end_line": 173,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The worked pipeline fits its mean imputer and learned classifier only on known training rows and demonstrates unchanged learned statistics under changed validation input. The independent task selects a new training subset and fits a chosen classifier. The original standardization z formula and train-only versus all-data mean-centering practice are absent, and the full retained independent leakage-versus-overfitting/validation-stress assessment is not posed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 173
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "The worked pipeline fits its mean imputer and learned classifier only on known training rows and demonstrates unchanged learned statistics under changed validation input. The independent task selects a new training subset and fits a chosen classifier. The original standardization z formula and train-only versus all-data mean-centering practice are absent, and the full retained independent leakage-versus-overfitting/validation-stress assessment is not posed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 173
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "The worked pipeline fits its mean imputer and learned classifier only on known training rows and demonstrates unchanged learned statistics under changed validation input. The independent task selects a new training subset and fits a chosen classifier. The original standardization z formula and train-only versus all-data mean-centering practice are absent, and the full retained independent leakage-versus-overfitting/validation-stress assessment is not posed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 370,
+        "end_line": 420
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The worked pipeline fits its mean imputer and learned classifier only on known training rows and demonstrates unchanged learned statistics under changed validation input. The independent task selects a new training subset and fits a chosen classifier. The original standardization z formula and train-only versus all-data mean-centering practice are absent, and the full retained independent leakage-versus-overfitting/validation-stress assessment is not posed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 173
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "The worked pipeline fits its mean imputer and learned classifier only on known training rows and demonstrates unchanged learned statistics under changed validation input. The independent task selects a new training subset and fits a chosen classifier. The original standardization z formula and train-only versus all-data mean-centering practice are absent, and the full retained independent leakage-versus-overfitting/validation-stress assessment is not posed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 173
+      }
+    ]
+  }
+}

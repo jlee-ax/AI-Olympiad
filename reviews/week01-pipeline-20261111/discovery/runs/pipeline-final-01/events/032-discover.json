@@ -1,0 +1,43 @@
+{
+  "id": "rebind-pipeline-final-01-032-discover",
+  "op": "discover",
+  "data": {
+    "reason": "Separate new actual-artifact baseline; preserve historical external requirements and open questions. Local receipts only; no original-source search or source authentication.",
+    "frontier_id": "week01-pipeline-transfer",
+    "query": "Historical provenance import for a new actual artifact; no new web search: Current domestic official practice scope and official Antique input, learned-model, evaluation and submission operations; actual direct web reading on 2026-11-11.",
+    "actor": "/root/discovery_resume/pipeline_source_extract",
+    "outcome": "found",
+    "candidates": [
+      {
+        "id": "W1P-S01",
+        "uri": "https://kitpa.org/koai/2027",
+        "path": "reviews/week01-pipeline-20261111/discovery/source-extraction/national-2027.md",
+        "revision": "2026-11-11 direct web read; mutable national2027 announcement",
+        "kind": "official_scope",
+        "attribution": "Direct original-web reading and independent extraction by /root/discovery_resume/pipeline_source_extract; local file is a paraphrased note, not an authenticated original snapshot.",
+        "read_extent": "web L90–100,L147–165,L218–234",
+        "local_note_sha256": "d2d65dea2a2a2a23fb8343c3e1cd6c214c4b1295a44a22ea9c8ccdf0728ed6b2"
+      },
+      {
+        "id": "W1P-S02",
+        "uri": "https://kitpa.org/koai/syllabus",
+        "path": "reviews/week01-pipeline-20261111/discovery/source-extraction/domestic-syllabus.md",
+        "revision": "2026-11-11 direct web read; body labelled IOAI2026; mutable official page",
+        "kind": "official_scope",
+        "attribution": "Direct original-web reading and independent extraction by /root/discovery_resume/pipeline_source_extract; local file is a paraphrased note.",
+        "read_extent": "web L72–132,L133–196",
+        "local_note_sha256": "05420f75c3b7c0b246f900c4446d5d493d3b1f584ffe6b4411d9ba0b78d1a0e6"
+      },
+      {
+        "id": "W1P-S03",
+        "uri": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb",
+        "path": "reviews/week01-pipeline-20261111/discovery/source-extraction/antique-2025.md",
+        "revision": "IOAI2025 individual Antique; mutable main read2026-11-11, no upstream commit pin",
+        "kind": "official_problem",
+        "attribution": "Direct original-web reading and independent extraction by /root/discovery_resume/pipeline_source_extract; local file is a paraphrased note. No contest data or execution.",
+        "read_extent": "raw web L19–72,L118–158,L176–210",
+        "local_note_sha256": "121822b580e5acae59798fc48e03df6825c0d7d43da57ed2de6a3c5ed7cdefa0"
+      }
+    ]
+  }
+}

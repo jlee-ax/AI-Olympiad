@@ -1,0 +1,55 @@
+{
+  "id": "rebind-pipeline-final-01-040-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D03",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "uncertain",
+    "rationale": "The source and synthetic contracts distinguish input features, later labels, IDs and future inspection information; fit receives only allowed feature columns. The changed-label independent task asks the student to exclude targets and explain availability. The retained assessment also requires an explicit shape-valid versus semantically unavailable input contrast, which is not independently posed here.",
+    "start_line": 12,
+    "end_line": 68,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The source and synthetic contracts distinguish input features, later labels, IDs and future inspection information; fit receives only allowed feature columns. The changed-label independent task asks the student to exclude targets and explain availability. The retained assessment also requires an explicit shape-valid versus semantically unavailable input contrast, which is not independently posed here.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 68
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "The source and synthetic contracts distinguish input features, later labels, IDs and future inspection information; fit receives only allowed feature columns. The changed-label independent task asks the student to exclude targets and explain availability. The retained assessment also requires an explicit shape-valid versus semantically unavailable input contrast, which is not independently posed here.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 68
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "The source and synthetic contracts distinguish input features, later labels, IDs and future inspection information; fit receives only allowed feature columns. The changed-label independent task asks the student to exclude targets and explain availability. The retained assessment also requires an explicit shape-valid versus semantically unavailable input contrast, which is not independently posed here.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 370,
+        "end_line": 420
+      },
+      {
+        "id": "principle",
+        "judgment": "met",
+        "observed_behavior": "The source and synthetic contracts distinguish input features, later labels, IDs and future inspection information; fit receives only allowed feature columns. The changed-label independent task asks the student to exclude targets and explain availability. The retained assessment also requires an explicit shape-valid versus semantically unavailable input contrast, which is not independently posed here.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 68
+      },
+      {
+        "id": "practice",
+        "judgment": "met",
+        "observed_behavior": "The source and synthetic contracts distinguish input features, later labels, IDs and future inspection information; fit receives only allowed feature columns. The changed-label independent task asks the student to exclude targets and explain availability. The retained assessment also requires an explicit shape-valid versus semantically unavailable input contrast, which is not independently posed here.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 68
+      }
+    ]
+  }
+}

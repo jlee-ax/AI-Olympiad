@@ -1,0 +1,7 @@
+{
+  "criteria_sha256": "164f0e760ba368641bfe8030f140233cc22a0b5e8b60305e6837ed98bd137993",
+  "input_manifest_sha256": "874370699ae93ab91b4450939896561b38676f8e1f072c4b2f88b096af56e459",
+  "frozen_at_utc": "2026-11-11T08:52:03.396288+00:00",
+  "new_artifact_content_read": false,
+  "new_artifact_paths_present_at_freeze": []
+}

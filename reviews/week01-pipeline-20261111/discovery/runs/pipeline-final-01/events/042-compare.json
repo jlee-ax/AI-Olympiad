@@ -1,0 +1,55 @@
+{
+  "id": "rebind-pipeline-final-01-042-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D05",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "Prediction pairs and arbitrary row IDs are aligned to required output order, including a same-length wrong-order counterexample. The original retrieval requirement also retains Q/G score axes, vector norm and cosine, and official identity/gender matching constraints; none is taught or independently assessed in this pipeline.",
+    "start_line": 174,
+    "end_line": 369,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "Prediction pairs and arbitrary row IDs are aligned to required output order, including a same-length wrong-order counterexample. The original retrieval requirement also retains Q/G score axes, vector norm and cosine, and official identity/gender matching constraints; none is taught or independently assessed in this pipeline.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 174,
+        "end_line": 369
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "Prediction pairs and arbitrary row IDs are aligned to required output order, including a same-length wrong-order counterexample. The original retrieval requirement also retains Q/G score axes, vector norm and cosine, and official identity/gender matching constraints; none is taught or independently assessed in this pipeline.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 174,
+        "end_line": 369
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Prediction pairs and arbitrary row IDs are aligned to required output order, including a same-length wrong-order counterexample. The original retrieval requirement also retains Q/G score axes, vector norm and cosine, and official identity/gender matching constraints; none is taught or independently assessed in this pipeline.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 174,
+        "end_line": 369
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "Prediction pairs and arbitrary row IDs are aligned to required output order, including a same-length wrong-order counterexample. The original retrieval requirement also retains Q/G score axes, vector norm and cosine, and official identity/gender matching constraints; none is taught or independently assessed in this pipeline.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 174,
+        "end_line": 369
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "Prediction pairs and arbitrary row IDs are aligned to required output order, including a same-length wrong-order counterexample. The original retrieval requirement also retains Q/G score axes, vector norm and cosine, and official identity/gender matching constraints; none is taught or independently assessed in this pipeline.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 174,
+        "end_line": 369
+      }
+    ]
+  }
+}

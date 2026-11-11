@@ -1,0 +1,67 @@
+{
+  "source_sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+  "contract_cases": [
+    {
+      "name": "no_header",
+      "status": "detected",
+      "reason": "exact header/2 columns",
+      "input_csv": "J3,1\nJ1,0\nJ2,0\n"
+    },
+    {
+      "name": "extra_index",
+      "status": "detected",
+      "reason": "exact header/2 columns",
+      "input_csv": ",item,signal\n0,J3,1\n1,J1,0\n2,J2,0\n"
+    },
+    {
+      "name": "old_column_names",
+      "status": "detected",
+      "reason": "exact header/2 columns",
+      "input_csv": "row_id,prediction\nJ3,1\nJ1,0\nJ2,0\n"
+    },
+    {
+      "name": "wrong_sorted_ids",
+      "status": "detected",
+      "reason": "input ID row order/count",
+      "input_csv": "item,signal\nJ1,0\nJ2,0\nJ3,1\n"
+    },
+    {
+      "name": "unknown_negative_output",
+      "status": "detected",
+      "reason": "only 0/1 permitted",
+      "input_csv": "item,signal\nJ3,-1\nJ1,0\nJ2,0\n"
+    },
+    {
+      "name": "predictions_reversed_only",
+      "status": "detected",
+      "reason": "ID prediction provenance",
+      "input_csv": "item,signal\nJ3,0\nJ1,0\nJ2,1\n"
+    },
+    {
+      "name": "missing_row",
+      "status": "detected",
+      "reason": "input ID row order/count",
+      "input_csv": "item,signal\nJ3,1\nJ1,0\n"
+    },
+    {
+      "name": "copied_old_label_mask",
+      "status": "detected",
+      "wrong_known_ids": [
+        "R3",
+        "R4",
+        "R5"
+      ],
+      "wrong_means": [
+        6.0,
+        5.0,
+        2.6666666666666665
+      ],
+      "reason": "New unknown=-1 and known 0/1; old mask excludes real normal rows and includes unknown R5"
+    }
+  ],
+  "teacher_reference_executed": true,
+  "teacher_reference_matches_fraction_oracle": true,
+  "student_answer_executed": false,
+  "student_learning_observed": false,
+  "scope": "Separate reviewer implementation; model-specific expected vector used only for optional nearest-centroid example, not other classifiers"
+}

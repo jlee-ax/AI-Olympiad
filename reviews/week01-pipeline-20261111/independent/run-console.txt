@@ -1,0 +1,42 @@
+/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/jupyter_client/localinterfaces.py:58: UserWarning: Unexpected error discovering local network interfaces: [Errno 1] Operation not permitted
+  ret = f(**kwargs)
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/sklearn/neighbors/_nearest_centroid.py:241: UserWarning: self.within_class_std_dev_ has at least 1 zero standard deviation.Inputs within the same classes for at least 1 feature are identical.
+  warnings.warn(
+{
+  "source_sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+  "checks": 12,
+  "mutations": 13,
+  "blocking_defects": [],
+  "alternatives": [
+    {
+      "model": "nearest_centroid",
+      "validation_predictions": [
+        0,
+        1,
+        1
+      ],
+      "accuracy": 0.6666666666666666,
+      "input_predictions": [
+        1,
+        0,
+        0
+      ],
+      "physical_audit_csv_reopened": true
+    },
+    {
+      "model": "gaussian_naive_bayes",
+      "validation_predictions": [
+        0,
+        1,
+        0
+      ],
+      "accuracy": 1.0,
+      "input_predictions": [
+        1,
+        0,
+        0
+      ],
+      "physical_audit_csv_reopened": true
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "recorded_at_utc": "2026-11-11T09:16:18.495814+00:00",
+  "reviewer": "/root/discovery_resume",
+  "verifier_sha256": "7956d55b3f8476c019d6afd8d733dbc7a56233db20508b10899be6f4797c0e1f",
+  "calls": [
+    {
+      "run": "bridge-navigation-01",
+      "operation": "next",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "next",
+        "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "93879ef7c3be76f224648b08ddff67f3f15bc799470630b40a41a88e7f713f7b",
+      "stdout_bytes": 2641
+    },
+    {
+      "run": "bridge-navigation-01",
+      "operation": "report",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "report",
+        "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c9c1f16a7d4f74bf17ed50f99ff02408288439f9a49f704100c28b22f68b8b5e",
+      "stdout_bytes": 157226,
+      "parsed_json_matches_saved_report": true
+    },
+    {
+      "run": "bridge-navigation-01",
+      "operation": "manifest",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "manifest",
+        "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6652d10772744f738a3c971da390a9dd004883ef51c8dcd21d01a3f3e6d03b91",
+      "stdout_bytes": 146
+    },
+    {
+      "run": "pipeline-final-01",
+      "operation": "next",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "next",
+        "reviews/week01-pipeline-20261111/discovery/runs/pipeline-final-01/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d0840bfbcb3acc3bd10a376cb5d44c0dd13681dd572424f53cd5ceeac0012108",
+      "stdout_bytes": 11066
+    },
+    {
+      "run": "pipeline-final-01",
+      "operation": "report",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "report",
+        "reviews/week01-pipeline-20261111/discovery/runs/pipeline-final-01/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "03b145d2d8ec831231341ac7408fbbba97a21cc19666ce0acbc030e19f0f409d",
+      "stdout_bytes": 2372211,
+      "parsed_json_matches_saved_report": true
+    },
+    {
+      "run": "pipeline-final-01",
+      "operation": "manifest",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "manifest",
+        "reviews/week01-pipeline-20261111/discovery/runs/pipeline-final-01/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "2e117b33d1fbbe563f5942bcdcbf71c37819b8b73155bfac1b9f798740220c10",
+      "stdout_bytes": 146
+    }
+  ],
+  "all_current_reports_match_saved_reports": true,
+  "all_protected_history_and_original_unchanged": true,
+  "all_current_mechanical_checks_passed": true,
+  "git_index_matches_initial": true,
+  "cache_paths": [],
+  "duplicate_intermediate_session_files": [],
+  "files_before_final_report": 194,
+  "bytes_before_final_report": 8505685,
+  "limits": [
+    "No intermediate session-NN duplicates were created; retain final config/session/report/manifest/events/transitions and exact snapshots.",
+    "Old candidate checks and source-linked trace remain preserved. Report stdout hashes avoid storing another full receipt-heavy report copy.",
+    "A valid CLI exit confirms a replayable record, not lesson/course readiness or learner achievement."
+  ]
+}

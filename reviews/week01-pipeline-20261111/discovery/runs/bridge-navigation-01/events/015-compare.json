@@ -1,0 +1,55 @@
+{
+  "id": "rebind-bridge-navigation-01-015-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D07",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The guided lookup prints all vectors, maps (2,3) to (2,3,2), preserves repeated-index values and contrasts same-shape reversed positions. No independent lookup varies B/L/H or contrasts vocabulary size V with sequence length L; the final optional exercise is stack/concatenate and candidate-ID alignment. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+    "start_line": 228,
+    "end_line": 266,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The guided lookup prints all vectors, maps (2,3) to (2,3,2), preserves repeated-index values and contrasts same-shape reversed positions. No independent lookup varies B/L/H or contrasts vocabulary size V with sequence length L; the final optional exercise is stack/concatenate and candidate-ID alignment. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 228,
+        "end_line": 266
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "The guided lookup prints all vectors, maps (2,3) to (2,3,2), preserves repeated-index values and contrasts same-shape reversed positions. No independent lookup varies B/L/H or contrasts vocabulary size V with sequence length L; the final optional exercise is stack/concatenate and candidate-ID alignment. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 228,
+        "end_line": 266
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "The guided lookup prints all vectors, maps (2,3) to (2,3,2), preserves repeated-index values and contrasts same-shape reversed positions. No independent lookup varies B/L/H or contrasts vocabulary size V with sequence length L; the final optional exercise is stack/concatenate and candidate-ID alignment. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 339,
+        "end_line": 360
+      },
+      {
+        "id": "principle",
+        "judgment": "uncertain",
+        "observed_behavior": "The guided lookup prints all vectors, maps (2,3) to (2,3,2), preserves repeated-index values and contrasts same-shape reversed positions. No independent lookup varies B/L/H or contrasts vocabulary size V with sequence length L; the final optional exercise is stack/concatenate and candidate-ID alignment. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 228,
+        "end_line": 266
+      },
+      {
+        "id": "practice",
+        "judgment": "met",
+        "observed_behavior": "The guided lookup prints all vectors, maps (2,3) to (2,3,2), preserves repeated-index values and contrasts same-shape reversed positions. No independent lookup varies B/L/H or contrasts vocabulary size V with sequence length L; the final optional exercise is stack/concatenate and candidate-ID alignment. A navigation link to the separately reviewed problem-pipeline notebook adds a route for subsequent study; it does not add these missing operations to the bridge itself.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 228,
+        "end_line": 266
+      }
+    ]
+  }
+}

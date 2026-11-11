@@ -1,0 +1,55 @@
+{
+  "id": "rebind-pipeline-candidate-01-037-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D11",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "uncertain",
+    "rationale": "The lesson distinguishes the 2027 national announcement from its still IOAI2026-labelled linked syllabus and labels Antique as an earlier international source. Full international2027 differences and domestic adoption remain unverified; the original independent applicability/scope assessment is not supplied.",
+    "start_line": 421,
+    "end_line": 435,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "The lesson distinguishes the 2027 national announcement from its still IOAI2026-labelled linked syllabus and labels Antique as an earlier international source. Full international2027 differences and domestic adoption remain unverified; the original independent applicability/scope assessment is not supplied.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 421,
+        "end_line": 435
+      },
+      {
+        "id": "learning",
+        "judgment": "uncertain",
+        "observed_behavior": "The lesson distinguishes the 2027 national announcement from its still IOAI2026-labelled linked syllabus and labels Antique as an earlier international source. Full international2027 differences and domestic adoption remain unverified; the original independent applicability/scope assessment is not supplied.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 421,
+        "end_line": 435
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "The lesson distinguishes the 2027 national announcement from its still IOAI2026-labelled linked syllabus and labels Antique as an earlier international source. Full international2027 differences and domestic adoption remain unverified; the original independent applicability/scope assessment is not supplied.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 421,
+        "end_line": 435
+      },
+      {
+        "id": "principle",
+        "judgment": "uncertain",
+        "observed_behavior": "The lesson distinguishes the 2027 national announcement from its still IOAI2026-labelled linked syllabus and labels Antique as an earlier international source. Full international2027 differences and domestic adoption remain unverified; the original independent applicability/scope assessment is not supplied.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 421,
+        "end_line": 435
+      },
+      {
+        "id": "practice",
+        "judgment": "uncertain",
+        "observed_behavior": "The lesson distinguishes the 2027 national announcement from its still IOAI2026-labelled linked syllabus and labels Antique as an earlier international source. Full international2027 differences and domestic adoption remain unverified; the original independent applicability/scope assessment is not supplied.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 421,
+        "end_line": 435
+      }
+    ]
+  }
+}

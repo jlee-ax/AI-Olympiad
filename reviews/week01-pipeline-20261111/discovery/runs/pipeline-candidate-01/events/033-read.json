@@ -1,0 +1,11 @@
+{
+  "id": "rebind-pipeline-candidate-01-033-read",
+  "op": "read",
+  "data": {
+    "reason": "Read the actual independently authored local primary-source reading note; this receipt is not original-source authentication.",
+    "source_id": "W1P-S01",
+    "actor": "/root/discovery_resume/pipeline_source_extract",
+    "start_line": 1,
+    "end_line": 10
+  }
+}

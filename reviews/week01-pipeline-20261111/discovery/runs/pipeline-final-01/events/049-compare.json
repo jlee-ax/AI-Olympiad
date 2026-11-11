@@ -1,0 +1,55 @@
+{
+  "id": "rebind-pipeline-final-01-049-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "H01",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The lesson computes unweighted accuracy over all four validation rows. The original Radar truth-dependent 1/50 weighting and metric-ranking reversal remain unimplemented.",
+    "start_line": 69,
+    "end_line": 173,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The lesson computes unweighted accuracy over all four validation rows. The original Radar truth-dependent 1/50 weighting and metric-ranking reversal remain unimplemented.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 173
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "The lesson computes unweighted accuracy over all four validation rows. The original Radar truth-dependent 1/50 weighting and metric-ranking reversal remain unimplemented.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 173
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "The lesson computes unweighted accuracy over all four validation rows. The original Radar truth-dependent 1/50 weighting and metric-ranking reversal remain unimplemented.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 173
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The lesson computes unweighted accuracy over all four validation rows. The original Radar truth-dependent 1/50 weighting and metric-ranking reversal remain unimplemented.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 173
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "The lesson computes unweighted accuracy over all four validation rows. The original Radar truth-dependent 1/50 weighting and metric-ranking reversal remain unimplemented.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 69,
+        "end_line": 173
+      }
+    ]
+  }
+}

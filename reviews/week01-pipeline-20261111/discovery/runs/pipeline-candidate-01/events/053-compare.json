@@ -1,0 +1,47 @@
+{
+  "id": "rebind-pipeline-candidate-01-053-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "N03",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "uncertain",
+    "rationale": "The synthetic -1/+1/0 contract distinguishes unknown from negative, excludes target columns and explicitly restricts fit to known labels. The independent contract changes 0 to normal and -1 to unknown, requiring the student to re-read rather than assume label meanings. The lesson states its known-label-only model does not solve full Antique and warns about LabelPropagation remapping. The retained PU constant-alpha observation-assumptions contrast is still not taught or independently assessed.",
+    "start_line": 12,
+    "end_line": 435,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The synthetic -1/+1/0 contract distinguishes unknown from negative, excludes target columns and explicitly restricts fit to known labels. The independent contract changes 0 to normal and -1 to unknown, requiring the student to re-read rather than assume label meanings. The lesson states its known-label-only model does not solve full Antique and warns about LabelPropagation remapping. The retained PU constant-alpha observation-assumptions contrast is still not taught or independently assessed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 435
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "The synthetic -1/+1/0 contract distinguishes unknown from negative, excludes target columns and explicitly restricts fit to known labels. The independent contract changes 0 to normal and -1 to unknown, requiring the student to re-read rather than assume label meanings. The lesson states its known-label-only model does not solve full Antique and warns about LabelPropagation remapping. The retained PU constant-alpha observation-assumptions contrast is still not taught or independently assessed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 435
+      },
+      {
+        "id": "assessment",
+        "judgment": "met",
+        "observed_behavior": "The synthetic -1/+1/0 contract distinguishes unknown from negative, excludes target columns and explicitly restricts fit to known labels. The independent contract changes 0 to normal and -1 to unknown, requiring the student to re-read rather than assume label meanings. The lesson states its known-label-only model does not solve full Antique and warns about LabelPropagation remapping. The retained PU constant-alpha observation-assumptions contrast is still not taught or independently assessed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 370,
+        "end_line": 420
+      },
+      {
+        "id": "assumptions",
+        "judgment": "uncertain",
+        "observed_behavior": "The synthetic -1/+1/0 contract distinguishes unknown from negative, excludes target columns and explicitly restricts fit to known labels. The independent contract changes 0 to normal and -1 to unknown, requiring the student to re-read rather than assume label meanings. The lesson states its known-label-only model does not solve full Antique and warns about LabelPropagation remapping. The retained PU constant-alpha observation-assumptions contrast is still not taught or independently assessed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 435
+      }
+    ]
+  }
+}

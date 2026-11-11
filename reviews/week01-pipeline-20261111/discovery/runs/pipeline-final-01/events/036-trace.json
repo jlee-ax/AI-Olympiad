@@ -1,0 +1,68 @@
+{
+  "id": "rebind-pipeline-final-01-036-trace",
+  "op": "trace",
+  "data": {
+    "actor": "/root/discovery_resume/pipeline_source_extract",
+    "rationale": "Historical extracted requirement payloads imported unchanged; not a fresh source extraction. Independent primary-web readings selected before any new lesson comparison; retain the distinction between a bounded first-unit teaching route and full official problem demands.",
+    "counterevidence": "Antique is an international2025 task, not a domestic middle-school past question; source pages do not dictate Week1 placement. Its random unknown-label baseline is a heuristic. A fixed score can teach metrics but does not itself evidence fitting a learned classifier.",
+    "uninvestigated": [
+      "실제 Antique 전체 반지도 학습·숨은 자료 실행·제출 수락과 대회 성능은 실행으로 확인하지 않았다."
+    ],
+    "demands": [
+      {
+        "id": "P01",
+        "statement": "낯선 분류 명세를 자료·학습·예측·평가 흐름으로 옮기기",
+        "prerequisites": [
+          "표의 행·열과 함수 입력/출력",
+          "입력 특성과 관측 정답의 구별",
+          "비율"
+        ],
+        "learning_demand": "명세에서 특성·허용 자료·라벨·지표를 정하고, 훈련 자료가 결정하는 모델 상태와 predict 출력을 구별해 흐름을 구성한다.",
+        "assessment_demand": "열·행·라벨 약속이 달라진 새 표에서 fit 자료, 배운 상태, 예측·평가를 이유와 코드로 독립 연결한다.",
+        "dimensions": [
+          {
+            "id": "learned_state",
+            "required_behavior": "학습 자료를 받는 fit과 학습된 상태를 쓰는 predict를 추적하며, 미리 정한 점수만 실행한 것을 모델 학습으로 설명하지 않는다."
+          },
+          {
+            "id": "contract_transfer",
+            "required_behavior": "새 명세의 입력 가용성·라벨·평가 분모를 다시 읽고 적용한다. 숨은 평가 자료를 임의로 학습에 사용하지 않는다."
+          }
+        ],
+        "source_locations": [
+          "W1P-S02 web L83–85,L100–132",
+          "W1P-S03 raw L25,L29–50,L118–158"
+        ],
+        "interpretation": "Official practice/model-training operations support this bounded educational transfer. Independent new-table assessment is a teaching design inference, not an undisclosed exam-item or mandatory Week1 depth claim."
+      },
+      {
+        "id": "P02",
+        "statement": "예측 벡터를 행 대응과 공식 제출 계약까지 보존하기",
+        "prerequisites": [
+          "행 순서와 식별자",
+          "배열의 길이·dtype",
+          "파일 이름과 CSV"
+        ],
+        "learning_demand": "허용 예측 라벨·행 대응을 유지하고 지정 이름·구조로 저장하며, 평가 수치와 파일 형식 적합성을 구별한다.",
+        "assessment_demand": "새 행 수의 예측을 직접 저장하고 다시 읽어 라벨·개수·대응·header/index 유무를 확인하며 잘못된 파일을 진단한다.",
+        "dimensions": [
+          {
+            "id": "submission_contract",
+            "required_behavior": "Antique 전체 계약은 submission.ipynb→submission.zip 안 submissionA.csv/submissionB.csv, 각 행 ±1, header 없음이다. 합성 CSV 하나를 만든 경우 이 전체 계약 달성으로 간주하지 않는다."
+          }
+        ],
+        "source_locations": [
+          "W1P-S03 raw L52–65,L151–190"
+        ],
+        "interpretation": "Row correspondence follows prediction-array/CSV ordering in the baseline. Read-back and changed-row-count diagnosis are bounded assessment design inferences. No actual submission acceptance is claimed."
+      }
+    ],
+    "frontier_id": "week01-pipeline-transfer",
+    "read_ids": [
+      "rebind-pipeline-final-01-033-read",
+      "rebind-pipeline-final-01-034-read",
+      "rebind-pipeline-final-01-035-read"
+    ],
+    "reason": "Separate new actual-artifact baseline; preserve historical external requirements and open questions. Local receipts only; no original-source search or source authentication."
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "rebind-pipeline-candidate-01-038-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D01",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "Tabular feature-column order, row correspondence and dimensionality are used, but no reshape-versus-transpose coordinate prediction or original Radar high-dimensional input/target-axis transfer appears in this standalone pipeline.",
+    "start_line": 12,
+    "end_line": 68,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Tabular feature-column order, row correspondence and dimensionality are used, but no reshape-versus-transpose coordinate prediction or original Radar high-dimensional input/target-axis transfer appears in this standalone pipeline.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 68
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "Tabular feature-column order, row correspondence and dimensionality are used, but no reshape-versus-transpose coordinate prediction or original Radar high-dimensional input/target-axis transfer appears in this standalone pipeline.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 68
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Tabular feature-column order, row correspondence and dimensionality are used, but no reshape-versus-transpose coordinate prediction or original Radar high-dimensional input/target-axis transfer appears in this standalone pipeline.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 68
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "Tabular feature-column order, row correspondence and dimensionality are used, but no reshape-versus-transpose coordinate prediction or original Radar high-dimensional input/target-axis transfer appears in this standalone pipeline.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 68
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "Tabular feature-column order, row correspondence and dimensionality are used, but no reshape-versus-transpose coordinate prediction or original Radar high-dimensional input/target-axis transfer appears in this standalone pipeline.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 12,
+        "end_line": 68
+      }
+    ]
+  }
+}

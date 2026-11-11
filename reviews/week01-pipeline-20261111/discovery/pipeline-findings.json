@@ -1,0 +1,419 @@
+{
+  "D11": {
+    "judgment": "uncertain",
+    "observed_behavior": "The lesson distinguishes the 2027 national announcement from its still IOAI2026-labelled linked syllabus and labels Antique as an earlier international source. Full international2027 differences and domestic adoption remain unverified; the original independent applicability/scope assessment is not supplied.",
+    "cells": [
+      "1c7edeca"
+    ]
+  },
+  "D01": {
+    "judgment": "gap",
+    "observed_behavior": "Tabular feature-column order, row correspondence and dimensionality are used, but no reshape-versus-transpose coordinate prediction or original Radar high-dimensional input/target-axis transfer appears in this standalone pipeline.",
+    "cells": [
+      "cb044aa9",
+      "e8e25947",
+      "622155d2"
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      }
+    }
+  },
+  "D02": {
+    "judgment": "gap",
+    "observed_behavior": "The lesson derives squared distance to learned class centroids. NearestCentroid is not the original kNN requirement: no test-by-training distance matrix, neighbor selection, k/tie voting or noncontiguous neighbor-label assessment is implemented.",
+    "cells": [
+      "2bed1d84",
+      "1566ce2a",
+      "29a11f88",
+      "33667a04",
+      "67ef140d",
+      "f265b556",
+      "edd0bdb3",
+      "5c8fe7f9"
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "uncertain"
+      }
+    }
+  },
+  "D03": {
+    "judgment": "uncertain",
+    "observed_behavior": "The source and synthetic contracts distinguish input features, later labels, IDs and future inspection information; fit receives only allowed feature columns. The changed-label independent task asks the student to exclude targets and explain availability. The retained assessment also requires an explicit shape-valid versus semantically unavailable input contrast, which is not independently posed here.",
+    "cells": [
+      "cb044aa9",
+      "e8e25947",
+      "622155d2"
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      },
+      "learning": {
+        "judgment": "met"
+      },
+      "assessment": {
+        "judgment": "uncertain",
+        "cells": [
+          "bb177697",
+          "f53ccb1f",
+          "d6195f91",
+          "06ceb97e"
+        ]
+      },
+      "principle": {
+        "judgment": "met"
+      },
+      "practice": {
+        "judgment": "met"
+      }
+    }
+  },
+  "D04": {
+    "judgment": "gap",
+    "observed_behavior": "The lesson preserves classifier classes and gives an explicit Antique-to-LabelPropagation label mapping warning with reverse restoration. It does not implement the original contiguous class-index encode/argmax/decode round trip or new noncontiguous label set {-3,4,12} assessment. Library-returned labels and binary remapping are partial progress.",
+    "cells": [
+      "1c7edeca"
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      },
+      "learning": {
+        "judgment": "uncertain"
+      },
+      "assessment": {
+        "judgment": "uncertain"
+      },
+      "principle": {
+        "judgment": "gap"
+      },
+      "practice": {
+        "judgment": "gap"
+      }
+    }
+  },
+  "D05": {
+    "judgment": "gap",
+    "observed_behavior": "Prediction pairs and arbitrary row IDs are aligned to required output order, including a same-length wrong-order counterexample. The original retrieval requirement also retains Q/G score axes, vector norm and cosine, and official identity/gender matching constraints; none is taught or independently assessed in this pipeline.",
+    "cells": [
+      "ecb6bc7a",
+      "d5a85a2f",
+      "3d1ecace",
+      "50753714",
+      "12269b20",
+      "8433e657",
+      "8373b05e",
+      "c0b62e3b",
+      "ca2adc3d",
+      "f7c76622"
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "uncertain"
+      }
+    }
+  },
+  "D12": {
+    "judgment": "gap",
+    "observed_behavior": "Separate model/train copies preserve the worked example state, but the original repeated-call mutable-default and returned-list alias diagnostic is not present.",
+    "cells": null
+  },
+  "D06": {
+    "judgment": "gap",
+    "observed_behavior": "The worked pipeline fits its mean imputer and learned classifier only on known training rows and demonstrates unchanged learned statistics under changed validation input. The independent task selects a new training subset and fits a chosen classifier. The original standardization z formula and train-only versus all-data mean-centering practice are absent, and the full retained independent leakage-versus-overfitting/validation-stress assessment is not posed.",
+    "cells": [
+      "2bed1d84",
+      "1566ce2a",
+      "29a11f88",
+      "33667a04",
+      "67ef140d",
+      "f265b556",
+      "edd0bdb3",
+      "5c8fe7f9"
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      },
+      "learning": {
+        "judgment": "met"
+      },
+      "assessment": {
+        "judgment": "uncertain",
+        "cells": [
+          "bb177697",
+          "f53ccb1f",
+          "d6195f91",
+          "06ceb97e"
+        ]
+      },
+      "principle": {
+        "judgment": "gap",
+        "cells": [
+          "2bed1d84",
+          "1566ce2a",
+          "29a11f88",
+          "33667a04",
+          "67ef140d",
+          "f265b556",
+          "edd0bdb3",
+          "5c8fe7f9"
+        ]
+      },
+      "practice": {
+        "judgment": "gap",
+        "cells": [
+          "2bed1d84",
+          "1566ce2a",
+          "29a11f88",
+          "33667a04",
+          "67ef140d",
+          "f265b556",
+          "edd0bdb3",
+          "5c8fe7f9"
+        ]
+      }
+    }
+  },
+  "D07": {
+    "judgment": "gap",
+    "observed_behavior": "Label-code correspondence and class centers are not token embedding lookup. There is no repeated-index lookup value/shape task or independent B/L/V/H transfer.",
+    "cells": null
+  },
+  "D08": {
+    "judgment": "gap",
+    "observed_behavior": "No attention Q/K score axes, participation mask API, blocked probability renormalization or causal/padding assessment appears.",
+    "cells": null
+  },
+  "D09": {
+    "judgment": "gap",
+    "observed_behavior": "Nearest-centroid classification and accuracy are not class-axis softmax, target probability, negative-log loss, shift invariance or stable large-logit computation.",
+    "cells": null
+  },
+  "D10": {
+    "judgment": "gap",
+    "observed_behavior": "The lesson changes training input to expose changed learned state/predictions, stresses validation without refit, diagnoses output failures and asks independent new-contract implementation. It distinguishes toy accuracy from real performance. The original numerical-gradient/relative-error principles and their prerequisites remain outside this standalone unit.",
+    "cells": [
+      "2bed1d84",
+      "1566ce2a",
+      "29a11f88",
+      "33667a04",
+      "67ef140d",
+      "f265b556",
+      "edd0bdb3",
+      "5c8fe7f9",
+      "bb177697",
+      "f53ccb1f",
+      "d6195f91",
+      "06ceb97e"
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "gap"
+      },
+      "learning": {
+        "judgment": "met"
+      },
+      "assessment": {
+        "judgment": "uncertain"
+      },
+      "principle": {
+        "judgment": "gap"
+      },
+      "practice": {
+        "judgment": "met"
+      }
+    }
+  },
+  "H01": {
+    "judgment": "gap",
+    "observed_behavior": "The lesson computes unweighted accuracy over all four validation rows. The original Radar truth-dependent 1/50 weighting and metric-ranking reversal remain unimplemented.",
+    "cells": [
+      "2bed1d84",
+      "1566ce2a",
+      "29a11f88",
+      "33667a04",
+      "67ef140d",
+      "f265b556",
+      "edd0bdb3",
+      "5c8fe7f9"
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      }
+    }
+  },
+  "H02": {
+    "judgment": "gap",
+    "observed_behavior": "The lesson distinguishes training, validation and hidden final labels, keeps forbidden later input out, and locally reconstructs CSV/ZIP bytes. It does not diagnose/remove a development-only unavailable inference API or rebuild an offline submission from learned local artifacts as required by original Concepts.",
+    "cells": [
+      "cb044aa9",
+      "e8e25947",
+      "622155d2",
+      "ecb6bc7a",
+      "d5a85a2f",
+      "3d1ecace",
+      "50753714",
+      "12269b20",
+      "8433e657",
+      "8373b05e",
+      "c0b62e3b",
+      "ca2adc3d",
+      "f7c76622"
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      }
+    }
+  },
+  "N01": {
+    "judgment": "covered",
+    "observed_behavior": "The lesson connects written source/contract interpretation, hand calculations of training means and learned centers, complete executable examples and a distinct new three-feature/changed-label/output-format task with an empty code answer and help reporting. Both modalities are present as material design; learner independence remains unobserved.",
+    "cells": [
+      "bb177697",
+      "f53ccb1f",
+      "d6195f91",
+      "06ceb97e"
+    ]
+  },
+  "N02": {
+    "judgment": "gap",
+    "observed_behavior": "No half-open image rectangle, pixel-area budget, boundary/over-budget case or image JSONL contract is implemented. This official task family remains later course work.",
+    "cells": null
+  },
+  "N03": {
+    "judgment": "uncertain",
+    "observed_behavior": "The synthetic -1/+1/0 contract distinguishes unknown from negative, excludes target columns and explicitly restricts fit to known labels. The independent contract changes 0 to normal and -1 to unknown, requiring the student to re-read rather than assume label meanings. The lesson states its known-label-only model does not solve full Antique and warns about LabelPropagation remapping. The retained PU constant-alpha observation-assumptions contrast is still not taught or independently assessed.",
+    "cells": [
+      "cb044aa9",
+      "e8e25947",
+      "622155d2",
+      "1c7edeca"
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      },
+      "learning": {
+        "judgment": "met"
+      },
+      "assessment": {
+        "judgment": "met",
+        "cells": [
+          "bb177697",
+          "f53ccb1f",
+          "d6195f91",
+          "06ceb97e"
+        ]
+      },
+      "assumptions": {
+        "judgment": "uncertain",
+        "cells": [
+          "cb044aa9",
+          "1c7edeca"
+        ]
+      }
+    }
+  },
+  "P01": {
+    "judgment": "covered",
+    "observed_behavior": "A real training-only imputer and NearestCentroid classifier learn means/classes/centroids. The lesson computes distance reasoning, exposes changed learned state and changed prediction after a training perturbation, and evaluates an untouched worked validation set. Its new independent problem changes feature count/names, ID naming, unknown/normal label codes and output format; students select and fit a defensible learned classifier, inspect its learned values, predict and explain accuracy. This is a bounded material-design judgment, not complete Antique, future-exam or measured learner success.",
+    "cells": [
+      "2bed1d84",
+      "1566ce2a",
+      "29a11f88",
+      "33667a04",
+      "67ef140d",
+      "f265b556",
+      "edd0bdb3",
+      "5c8fe7f9",
+      "bb177697",
+      "f53ccb1f",
+      "d6195f91",
+      "06ceb97e"
+    ],
+    "dimensions": {
+      "learning": {
+        "judgment": "met",
+        "cells": [
+          "2bed1d84",
+          "1566ce2a",
+          "29a11f88",
+          "33667a04",
+          "67ef140d",
+          "f265b556",
+          "edd0bdb3",
+          "5c8fe7f9"
+        ]
+      },
+      "assessment": {
+        "judgment": "met",
+        "cells": [
+          "bb177697",
+          "f53ccb1f",
+          "d6195f91",
+          "06ceb97e"
+        ]
+      },
+      "learned_state": {
+        "judgment": "met",
+        "cells": [
+          "2bed1d84",
+          "33667a04"
+        ]
+      },
+      "contract_transfer": {
+        "judgment": "met",
+        "cells": [
+          "bb177697",
+          "f53ccb1f",
+          "d6195f91",
+          "06ceb97e"
+        ]
+      }
+    }
+  },
+  "P02": {
+    "judgment": "covered",
+    "observed_behavior": "The lesson states the official submission.ipynb/submission.zip/two headerless CSV contract, preserves ID-to-prediction correspondence, constructs actual ZIP/CSV bytes, writes/reopens a temporary submission.zip, and rejects missing columns, duplicate IDs, unknown output labels, wrong order/header/count. The independent new problem requires a differently named, headered ID+signal CSV, read-back and error diagnosis. The teaching contract and transfer design are met; official-machine acceptance, hidden-data execution and full Antique modelling are not claimed.",
+    "cells": [
+      "ecb6bc7a",
+      "d5a85a2f",
+      "3d1ecace",
+      "50753714",
+      "12269b20",
+      "8433e657",
+      "8373b05e",
+      "c0b62e3b",
+      "ca2adc3d",
+      "f7c76622",
+      "bb177697",
+      "f53ccb1f",
+      "d6195f91",
+      "06ceb97e"
+    ],
+    "dimensions": {
+      "assessment": {
+        "judgment": "met",
+        "cells": [
+          "bb177697",
+          "f53ccb1f",
+          "d6195f91",
+          "06ceb97e"
+        ]
+      },
+      "submission_contract": {
+        "judgment": "met",
+        "cells": [
+          "cb044aa9",
+          "c0b62e3b"
+        ]
+      }
+    }
+  }
+}

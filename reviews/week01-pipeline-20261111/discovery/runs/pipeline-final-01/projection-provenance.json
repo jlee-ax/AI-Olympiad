@@ -1,0 +1,123 @@
+{
+  "artifact_path": "lessons/week01/week01_problem_pipeline.ipynb",
+  "artifact_sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+  "exact_snapshot_path": "reviews/week01-pipeline-20261111/discovery/runs/pipeline-final-01/artifact-exact.ipynb",
+  "exact_snapshot_sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+  "projection_path": "reviews/week01-pipeline-20261111/discovery/runs/pipeline-final-01/lesson-source.md",
+  "projection_sha256": "1eed14ba5df23994411ba0513bd24ac25f79d6627ab7d68a597496f14758929c",
+  "method": "Every cell source in original order with explicit cell index, ID and type; outputs and metadata omitted from projection but preserved in exact notebook snapshot.",
+  "cell_count": 27,
+  "cell_spans": {
+    "0": [
+      1,
+      11
+    ],
+    "1": [
+      12,
+      22
+    ],
+    "2": [
+      23,
+      40
+    ],
+    "3": [
+      41,
+      68
+    ],
+    "4": [
+      69,
+      81
+    ],
+    "5": [
+      82,
+      103
+    ],
+    "6": [
+      104,
+      110
+    ],
+    "7": [
+      111,
+      129
+    ],
+    "8": [
+      130,
+      136
+    ],
+    "9": [
+      137,
+      153
+    ],
+    "10": [
+      154,
+      160
+    ],
+    "11": [
+      161,
+      173
+    ],
+    "12": [
+      174,
+      182
+    ],
+    "13": [
+      183,
+      214
+    ],
+    "14": [
+      215,
+      221
+    ],
+    "15": [
+      222,
+      256
+    ],
+    "16": [
+      257,
+      265
+    ],
+    "17": [
+      266,
+      311
+    ],
+    "18": [
+      312,
+      318
+    ],
+    "19": [
+      319,
+      336
+    ],
+    "20": [
+      337,
+      343
+    ],
+    "21": [
+      344,
+      369
+    ],
+    "22": [
+      370,
+      388
+    ],
+    "23": [
+      389,
+      404
+    ],
+    "24": [
+      405,
+      415
+    ],
+    "25": [
+      416,
+      420
+    ],
+    "26": [
+      421,
+      435
+    ]
+  },
+  "semantic_correspondence_review": "All cell sources directly read by reviewer. Projection correspondence is a manual review declaration; the projector only concatenates the cell source text.",
+  "author": "/root/week01_bridge; distinct from independent source extractor and discovery reviewer",
+  "reviewer": "/root/discovery_resume"
+}

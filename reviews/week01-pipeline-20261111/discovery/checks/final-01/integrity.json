@@ -1,0 +1,377 @@
+{
+  "authority": "advisory_only",
+  "current_selection": "reviews/week01-pipeline-20261111/discovery/current-run-selection.json",
+  "protected_initial_files": [
+    {
+      "path": "reviews/discovery-loop-20261111/runs/session.json",
+      "expected_initial_sha256": "81d71bca932382b67c280daabc32cd3bcbfb6fd14ffa87a712679b8e5b85bdf2",
+      "current_sha256": "81d71bca932382b67c280daabc32cd3bcbfb6fd14ffa87a712679b8e5b85bdf2",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/course-discovery-20261111/runs/baseline-wave-01/session.json",
+      "expected_initial_sha256": "e4af0f4adcb1efe6bb92b895b2b09ecd6c2c7e561d7dd3c132a5a08ceba140bf",
+      "current_sha256": "e4af0f4adcb1efe6bb92b895b2b09ecd6c2c7e561d7dd3c132a5a08ceba140bf",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/course-discovery-20261111/runs/plan-wave-01/session.json",
+      "expected_initial_sha256": "91b69c804e1081450598eb74e0bbaed157b5132ec5d60c400939a68681ab3ffe",
+      "current_sha256": "91b69c804e1081450598eb74e0bbaed157b5132ec5d60c400939a68681ab3ffe",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/course-discovery-20261111/runs/week02-candidate-02/session.json",
+      "expected_initial_sha256": "d24adf9f72beb4db2dfa0c75a2051a91104c20321ac9ca773b02be06b4c53c7f",
+      "current_sha256": "d24adf9f72beb4db2dfa0c75a2051a91104c20321ac9ca773b02be06b4c53c7f",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/course-discovery-20261111/runs/week01-bridge-02/session.json",
+      "expected_initial_sha256": "d785ed42afddb1d652b3b87cffc2b9ea312c1f35c4f98ce2535ccab3b90c3c87",
+      "current_sha256": "d785ed42afddb1d652b3b87cffc2b9ea312c1f35c4f98ce2535ccab3b90c3c87",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/session.json",
+      "expected_initial_sha256": "3bca5d2c71643cd02549c55ac133229799b7b9f2c2e1859130a99d28dbe2582f",
+      "current_sha256": "3bca5d2c71643cd02549c55ac133229799b7b9f2c2e1859130a99d28dbe2582f",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/report.json",
+      "expected_initial_sha256": "0724210c299286dac7267d75cbe8ca87accdc56f516979382288d6922be4e5c2",
+      "current_sha256": "0724210c299286dac7267d75cbe8ca87accdc56f516979382288d6922be4e5c2",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/projection-provenance.json",
+      "expected_initial_sha256": "594f55c6f8305292c7443b69192ab2ff6877f9bcae1eb84a968e1207e51f088f",
+      "current_sha256": "594f55c6f8305292c7443b69192ab2ff6877f9bcae1eb84a968e1207e51f088f",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-main-time-cleanup-01/session.json",
+      "expected_initial_sha256": "eb2aaa9bde90fbfd9889e39276d578bddd0937ce40c26ceb0e8430fcaedfc9ed",
+      "current_sha256": "eb2aaa9bde90fbfd9889e39276d578bddd0937ce40c26ceb0e8430fcaedfc9ed",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-main-time-cleanup-01/report.json",
+      "expected_initial_sha256": "6716828ecdbb9570f53b0d15ef6618c030baf7141f12c0d78a6c949d187a4720",
+      "current_sha256": "6716828ecdbb9570f53b0d15ef6618c030baf7141f12c0d78a6c949d187a4720",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-main-time-cleanup-01/projection-provenance.json",
+      "expected_initial_sha256": "35981b47c202a7c246fa43d6dfe200097ab7d70eb640bcd62c0f6ab1464299c1",
+      "current_sha256": "35981b47c202a7c246fa43d6dfe200097ab7d70eb640bcd62c0f6ab1464299c1",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-02/session.json",
+      "expected_initial_sha256": "54d55c36015f501e569622ee9b3f1d3f5d6d2d9a0bec82880e662c929d921b41",
+      "current_sha256": "54d55c36015f501e569622ee9b3f1d3f5d6d2d9a0bec82880e662c929d921b41",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-02/report.json",
+      "expected_initial_sha256": "51556f2e517bfb180647ac4152cd30031b38d01906b8340e1cc747fb34def343",
+      "current_sha256": "51556f2e517bfb180647ac4152cd30031b38d01906b8340e1cc747fb34def343",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-02/projection-provenance.json",
+      "expected_initial_sha256": "07c89550b245a7a1c4a40e26f830be8ba706f5bb9a199c0d2587fd49629bc10f",
+      "current_sha256": "07c89550b245a7a1c4a40e26f830be8ba706f5bb9a199c0d2587fd49629bc10f",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-01/session.json",
+      "expected_initial_sha256": "967f7c2c208bdc22de30ec6d9f41d3dedd1938d43c6fa64d2fc7830efe40873b",
+      "current_sha256": "967f7c2c208bdc22de30ec6d9f41d3dedd1938d43c6fa64d2fc7830efe40873b",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-01/report.json",
+      "expected_initial_sha256": "92aaaeb0deb973dfa60117ebbf488edb0280a374c3430e5fc8ab05b81a504e21",
+      "current_sha256": "92aaaeb0deb973dfa60117ebbf488edb0280a374c3430e5fc8ab05b81a504e21",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-01/projection-provenance.json",
+      "expected_initial_sha256": "4d0d14c3cf6b38a1127ce5fdd0caf0312b5e3c2993025b073ebb18430161bed0",
+      "current_sha256": "4d0d14c3cf6b38a1127ce5fdd0caf0312b5e3c2993025b073ebb18430161bed0",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/quality.json",
+      "expected_initial_sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "current_sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/workflow.json",
+      "expected_initial_sha256": "21f999d6cfbc17a01c64d885e7c27cd0879e4794cbf405d253193bd02c7d131f",
+      "current_sha256": "21f999d6cfbc17a01c64d885e7c27cd0879e4794cbf405d253193bd02c7d131f",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/depth.json",
+      "expected_initial_sha256": "252644772fb7422757e5f68ace544223aac90d95f3347b95c929750e173bfe3a",
+      "current_sha256": "252644772fb7422757e5f68ace544223aac90d95f3347b95c929750e173bfe3a",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/graph.json",
+      "expected_initial_sha256": "de4c9556a2b93a30205f290062c668dca4a82871a32fe9b05960dd067265403d",
+      "current_sha256": "de4c9556a2b93a30205f290062c668dca4a82871a32fe9b05960dd067265403d",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/paths.json",
+      "expected_initial_sha256": "ae5f2cf2a01dce72005a063d8bcb91badb80d5d11b836971c13edf77b497b4b8",
+      "current_sha256": "ae5f2cf2a01dce72005a063d8bcb91badb80d5d11b836971c13edf77b497b4b8",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/semantic-review.json",
+      "expected_initial_sha256": "609abbee31e01581f3bafdf705ed8acba2b78d10f48ac5b229f696734a92e2e6",
+      "current_sha256": "609abbee31e01581f3bafdf705ed8acba2b78d10f48ac5b229f696734a92e2e6",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_initial_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "current_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "unchanged": true,
+      "authorized_navigation_change": false
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "expected_initial_sha256": "1c3ccb5d79d5e6c0a1cb919fd9f8cfac723637b1dedac2d056fe45379ffd8847",
+      "current_sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+      "unchanged": false,
+      "authorized_navigation_change": true
+    }
+  ],
+  "all_protected_history_and_original_unchanged": true,
+  "new_current_sessions": [
+    {
+      "run": "bridge-navigation-01",
+      "session_path": "reviews/week01-pipeline-20261111/discovery/runs/bridge-navigation-01/session.json",
+      "session_file_sha256": "75ac4108f14505e5cd147e9c0754f9ed979e969372c8d2860c2295c1b84251bf",
+      "bound_artifact_sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+      "current_artifact_sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+      "projection_sha256": "45e99a9109db9b2da282d79eb95dbac1425ec08e303d9ce7dcb9d98de42a7821",
+      "static_checks": {
+        "prior_session_unchanged": true,
+        "all_retained_and_new_demand_payloads_match": true,
+        "all_original_open_questions_retained": true,
+        "expected_open_questions_match": true,
+        "snapshot_matches_bound_sha": true,
+        "projection_matches_every_snapshot_cell_source": true,
+        "projection_matches_recorded_sha": true,
+        "findings_match_recorded_sha": true,
+        "new_source_payload_matches_recorded_sha": true
+      },
+      "current_checks": {
+        "artifact_matches_binding": true,
+        "snapshot_is_exact_current_bytes": true,
+        "saved_report_matches_current_inspection": true,
+        "freshness_blockers_absent": true
+      },
+      "status": "needs_work",
+      "ready_for_review": false,
+      "demand_count": 3,
+      "retained_demand_count": 3,
+      "added_demand_ids": [],
+      "queue_count": 3,
+      "covered": [],
+      "events": 15,
+      "open_question_count": 3,
+      "next_action": "expand_frontier",
+      "freshness_blockers": [],
+      "blank_answer_cells": []
+    },
+    {
+      "run": "pipeline-final-01",
+      "session_path": "reviews/week01-pipeline-20261111/discovery/runs/pipeline-final-01/session.json",
+      "session_file_sha256": "dc5f4269f4564a6937dadead1c286692ae45404c88f8a12299865165bda21553",
+      "bound_artifact_sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+      "current_artifact_sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+      "projection_sha256": "1eed14ba5df23994411ba0513bd24ac25f79d6627ab7d68a597496f14758929c",
+      "static_checks": {
+        "prior_session_unchanged": true,
+        "all_retained_and_new_demand_payloads_match": true,
+        "all_original_open_questions_retained": true,
+        "expected_open_questions_match": true,
+        "snapshot_matches_bound_sha": true,
+        "projection_matches_every_snapshot_cell_source": true,
+        "projection_matches_recorded_sha": true,
+        "findings_match_recorded_sha": true,
+        "new_source_payload_matches_recorded_sha": true
+      },
+      "current_checks": {
+        "artifact_matches_binding": true,
+        "snapshot_is_exact_current_bytes": true,
+        "saved_report_matches_current_inspection": true,
+        "freshness_blockers_absent": true
+      },
+      "status": "needs_work",
+      "ready_for_review": false,
+      "demand_count": 19,
+      "retained_demand_count": 19,
+      "added_demand_ids": [],
+      "queue_count": 16,
+      "covered": [
+        "N01",
+        "P01",
+        "P02"
+      ],
+      "events": 55,
+      "open_question_count": 5,
+      "next_action": "expand_frontier",
+      "freshness_blockers": [],
+      "blank_answer_cells": [
+        {
+          "cell_index": 25,
+          "cell_id": "06ceb97e",
+          "ast_statement_count": 0
+        }
+      ]
+    }
+  ],
+  "historical_rebound_sessions": [
+    {
+      "run": "pipeline-candidate-01",
+      "session_path": "reviews/week01-pipeline-20261111/discovery/runs/pipeline-candidate-01/session.json",
+      "session_file_sha256": "6c4cf35ed13f6248ec561789fceb0645c4526ccd3154afa54a995e70298ee0bc",
+      "bound_artifact_sha256": "94bc86e3df06b36d47827695ecb287d8be4ef9d6b63a6790f79f97c0ff130e30",
+      "current_artifact_sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+      "projection_sha256": "42c330abc6d219e224b7f2572af02209e63b357f46ecfa8d59872b19bcafd772",
+      "static_checks": {
+        "prior_session_unchanged": true,
+        "all_retained_and_new_demand_payloads_match": true,
+        "all_original_open_questions_retained": true,
+        "expected_open_questions_match": true,
+        "snapshot_matches_bound_sha": true,
+        "projection_matches_every_snapshot_cell_source": true,
+        "projection_matches_recorded_sha": true,
+        "findings_match_recorded_sha": true,
+        "new_source_payload_matches_recorded_sha": true
+      },
+      "current_checks": {
+        "artifact_matches_binding": false,
+        "snapshot_is_exact_current_bytes": false,
+        "saved_report_matches_current_inspection": false,
+        "freshness_blockers_absent": false
+      },
+      "status": "needs_work",
+      "ready_for_review": false,
+      "demand_count": 19,
+      "retained_demand_count": 17,
+      "added_demand_ids": [
+        "P01",
+        "P02"
+      ],
+      "queue_count": 16,
+      "covered": [
+        "N01",
+        "P01",
+        "P02"
+      ],
+      "events": 55,
+      "open_question_count": 5,
+      "next_action": "expand_frontier",
+      "freshness_blockers": [
+        {
+          "code": "artifact_changed",
+          "id": "lessons/week01/week01_problem_pipeline.ipynb"
+        }
+      ],
+      "blank_answer_cells": [
+        {
+          "cell_index": 25,
+          "cell_id": "06ceb97e",
+          "ast_statement_count": 0
+        }
+      ],
+      "historical_disposition": {
+        "session_file_sha256": "6c4cf35ed13f6248ec561789fceb0645c4526ccd3154afa54a995e70298ee0bc",
+        "report_file_sha256": "82143c42669b721a4c08405c61674fe28811b1b6d0aee23caab0ad3223ac0400",
+        "replaced_for_current_reporting_by": "pipeline-final-01",
+        "reason": "Raw notebook changed only in the ID-order preservation wording after a valid byte-bound candidate review; preserve all nineteen demands, five questions and immutable candidate session/report/raw.",
+        "stale_evidence": "reviews/week01-pipeline-20261111/discovery/pipeline-candidate-01-stale-after-id-wording.json"
+      },
+      "historical_session_sha_matches_selection": true,
+      "historical_report_sha_matches_selection": true
+    }
+  ],
+  "previous_current_session_inspections": [
+    {
+      "run": "week01-bridge-time-cleanup-01",
+      "session_path": "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/session.json",
+      "status": "needs_work",
+      "ready_for_review": false,
+      "bound_artifact_sha256": "1c3ccb5d79d5e6c0a1cb919fd9f8cfac723637b1dedac2d056fe45379ffd8847",
+      "current_artifact_sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+      "freshness_blockers": [
+        {
+          "code": "artifact_changed",
+          "id": "lessons/week01/week01_axes_linear_bridge.ipynb"
+        }
+      ]
+    },
+    {
+      "run": "week02-main-time-cleanup-01",
+      "session_path": "reviews/week02-expansion-20261111/discovery/runs/week02-main-time-cleanup-01/session.json",
+      "status": "needs_work",
+      "ready_for_review": false,
+      "bound_artifact_sha256": "9bb1ea5110b74ea1cf32fbc9ee9e9a5aadbceba2f750c2dfc2d6587e18954bdf",
+      "current_artifact_sha256": "9bb1ea5110b74ea1cf32fbc9ee9e9a5aadbceba2f750c2dfc2d6587e18954bdf",
+      "freshness_blockers": []
+    },
+    {
+      "run": "week02-temporal-final-02",
+      "session_path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-02/session.json",
+      "status": "needs_work",
+      "ready_for_review": false,
+      "bound_artifact_sha256": "a830a15e8d2bf2cb91e17cd2e8b14172390fc7cea3a07539add3fe52a05b5865",
+      "current_artifact_sha256": "a830a15e8d2bf2cb91e17cd2e8b14172390fc7cea3a07539add3fe52a05b5865",
+      "freshness_blockers": []
+    }
+  ],
+  "all_current_mechanical_checks_passed": true,
+  "git_index_sha256": "69172e45f585dd558ca872c017fff2d7079e0faa82bb1d83306ad87193f4020a",
+  "git_index_matches_initial": true,
+  "limits": [
+    "Comparison meaning was directly judged by the independent reviewer. This script checks bytes and recorded declarations only.",
+    "The source extractor performed new official-web reads independently of lesson content; local source receipts authenticate neither upstream source truth nor independence.",
+    "Prior quality/workflow agreement and readiness records remain unchanged; new production authorization is not a fabricated old acceptance.",
+    "No student answers or learning results were observed."
+  ]
+}

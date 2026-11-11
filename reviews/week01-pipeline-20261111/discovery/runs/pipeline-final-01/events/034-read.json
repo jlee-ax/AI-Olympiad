@@ -1,0 +1,11 @@
+{
+  "id": "rebind-pipeline-final-01-034-read",
+  "op": "read",
+  "data": {
+    "reason": "Separate new actual-artifact baseline; preserve historical external requirements and open questions. Local receipts only; no original-source search or source authentication.",
+    "source_id": "W1P-S02",
+    "actor": "/root/discovery_resume/pipeline_source_extract",
+    "start_line": 1,
+    "end_line": 12
+  }
+}
