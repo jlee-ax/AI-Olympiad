@@ -1,0 +1,115 @@
+{
+  "schema": "candidate-test-plan-v1",
+  "prepared_before_candidate": true,
+  "candidate_sha": null,
+  "state": "prepared_not_run",
+  "execution_isolation": "Each case starts a separate subprocess. When running notebook cells, that subprocess creates a fresh in-process kernel. No browser file-URL or socket-policy workaround.",
+  "recording": {
+    "expected": "reference-expectations.json frozen before candidate",
+    "candidate_actual": "candidate-results.json initially pending; later append/new run file tied to final SHA",
+    "reviewer_reference_actual": "preparation-*-result.json explicitly reviewer-only",
+    "failures": "preserve raw stdout/stderr, return code, expectation, actual, and classification; never overwrite an invalid run as though it had not occurred"
+  },
+  "lanes": [
+    {
+      "id": "candidate-native-functions",
+      "purpose": "Use the actual lesson aggregation/conversion functions on independent grid/scalar/category inputs; report extracted cell/function provenance and any minimal adapter. No reviewer rewrite is evidence that candidate logic works."
+    },
+    {
+      "id": "reviewer-new-contract",
+      "purpose": "Reviewer solves independent-transfer-spec.json using independent code and at least two valid models. This demonstrates oracle consistency and assessment flexibility only; not candidate automatic validation or student performance."
+    },
+    {
+      "id": "candidate-fresh-full-run",
+      "purpose": "Execute all actual candidate cells in order from fresh kernel; compare stored outputs and actual values; preserve blank student response cells."
+    },
+    {
+      "id": "linked-required-route",
+      "purpose": "Follow the candidate actual A-E/bridge setup instructions in separate fresh subprocesses; execute provided prep/example cells only; blank answers remain unobserved."
+    },
+    {
+      "id": "manual-content",
+      "purpose": "Check formulas/units, input/axis semantics, official-source scope, plan prerequisites, total required exercise mapping/burden, score-vs-trained-model language."
+    }
+  ],
+  "cases": [
+    {
+      "id": "C01",
+      "lane": "candidate-native-functions",
+      "input": "asymmetric 2x2 grid [[1,0],[1,0]], then a second grid with same shape",
+      "expected": "sum correct named axis; first column 2, not first row 1; compare all output values, not just shape"
+    },
+    {
+      "id": "C02",
+      "lane": "candidate-native-functions",
+      "input": "batch containing two different observations; reverse observation order only, then transpose each grid",
+      "expected": "respect sample axis and each named spatial/channel axis; ordering effect is explicit"
+    },
+    {
+      "id": "C03",
+      "lane": "candidate-native-functions",
+      "input": "numeric 0, None, CSV blank/NaN, empty/all-missing per published domain",
+      "expected": "0 retained; missing and unknown-label policies separated; no unsupported domain claim"
+    },
+    {
+      "id": "C04",
+      "lane": "candidate-native-functions",
+      "input": "unknown-target S0 extreme100; validation reading999; label permutation on validation only",
+      "expected": "train-only fit state excludes S0 under this independent reduced contract and never fits validation; fit state invariant to validation changes"
+    },
+    {
+      "id": "C05",
+      "lane": "candidate-native-functions",
+      "input": "unseen green category plus bijective category renaming",
+      "expected": "candidate declared unknown-category policy and nominal meaning; do not assume category code is a physical distance"
+    },
+    {
+      "id": "C06",
+      "lane": "candidate-native-functions",
+      "input": "ID-only shuffle and joint row+label+ID shuffle; missing/duplicate IDs",
+      "expected": "reject invalid alignment or preserve per-ID correspondence; reject null IDs where contract requires"
+    },
+    {
+      "id": "C07",
+      "lane": "reviewer-new-contract",
+      "input": "same independent training/validation X; centroid vs3NN",
+      "expected": "both fit and valid output accepted despite different V9 prediction; no forced exact answer across model choices"
+    },
+    {
+      "id": "C08",
+      "lane": "candidate-native-functions",
+      "input": "feature matrix with columns swapped but same shape, late target-derived field injected",
+      "expected": "semantic mismatch/leakage detected or described; valid tensor shape alone is insufficient"
+    },
+    {
+      "id": "C09",
+      "lane": "candidate-native-functions",
+      "input": "CSV row order/header/name/shape mutations; physical write replaced by memory",
+      "expected": "actual lesson file event/reopen required if lesson claims physical file; reviewer oracle file events excluded"
+    },
+    {
+      "id": "C10",
+      "lane": "candidate-fresh-full-run",
+      "input": "final candidate source and all cells",
+      "expected": "run all supplied code, preserve empty assessment, compare outputs/PNG presence; distinguish successful run from learning outcomes"
+    },
+    {
+      "id": "C11",
+      "lane": "linked-required-route",
+      "input": "final candidate exact original A-E and bridge pointers/setup",
+      "expected": "fresh provided-code route resolves dependencies and schemas; no student empty cell counted as solved"
+    },
+    {
+      "id": "C12",
+      "lane": "manual-content",
+      "input": "candidate vs frozen criterion and plan",
+      "expected": "existing required goals mapped, one coherent deepening path, no unsubstantiated mastery/time claim or wholesale advanced first-week requirement"
+    }
+  ],
+  "limits": [
+    "If candidate function has a deliberately different published domain, record applicability and adapt semantic test without changing the frozen new contract/results.",
+    "Unsupported feature conversion in a lesson is a scope finding, not permission to relabel a reviewer implementation as candidate behavior.",
+    "A new model may predict differently; assess validity, not answer matching.",
+    "No claim of a real student or secure hidden test is made."
+  ]
+}

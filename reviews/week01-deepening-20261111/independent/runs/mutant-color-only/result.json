@@ -1,0 +1,164 @@
+{
+  "id": "mutant-color-only",
+  "candidate_sha": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_integrated.ipynb",
+  "config_sha": "4aa947ed0984db1d4123bee8b9d17651eb011bdc850d614792803179cfd69fc1",
+  "status": "notebook_error",
+  "scope": "candidate_actual",
+  "execution": "new subprocess / fresh in-process kernel",
+  "cells": [
+    {
+      "index": 2,
+      "source_sha": "43c106f2b855664e7d9244759666f7320a383e645487f7eb4908b4805c5ccf78",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "metadata": {},
+          "data": {
+            "text/plain": "  pot_id place  light_h  water_ml  height_cm\n0    P01    실내        2       0.0          8\n1    P02    실내        3      20.0         10\n2    P03    창가        5       NaN         12\n3    P04    창가        6      40.0         14\n4    P05    실내        4      10.0         14\n5    P06    창가        7      50.0         18",
+            "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>pot_id</th>\n      <th>place</th>\n      <th>light_h</th>\n      <th>water_ml</th>\n      <th>height_cm</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>P01</td>\n      <td>실내</td>\n      <td>2</td>\n      <td>0.0</td>\n      <td>8</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>P02</td>\n      <td>실내</td>\n      <td>3</td>\n      <td>20.0</td>\n      <td>10</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>P03</td>\n      <td>창가</td>\n      <td>5</td>\n      <td>NaN</td>\n      <td>12</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>P04</td>\n      <td>창가</td>\n      <td>6</td>\n      <td>40.0</td>\n      <td>14</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>P05</td>\n      <td>실내</td>\n      <td>4</td>\n      <td>10.0</td>\n      <td>14</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>P06</td>\n      <td>창가</td>\n      <td>7</td>\n      <td>50.0</td>\n      <td>18</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+          }
+        },
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "행과 열: (6, 5) / 열 순서: ['pot_id', 'place', 'light_h', 'water_ml', 'height_cm']\n"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "source_sha": "605668709f70e143caae930f43b796c65c8df287c753fa987e5d1d1d79d26133",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "특성 shape: (6, 2) / 정답 shape: (6,)\n"
+        },
+        {
+          "output_type": "display_data",
+          "metadata": {},
+          "data": {
+            "text/plain": "  pot_id  light_h  height_cm\n2    P03        5         12\n3    P04        6         14\n5    P06        7         18",
+            "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>pot_id</th>\n      <th>light_h</th>\n      <th>height_cm</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>2</th>\n      <td>P03</td>\n      <td>5</td>\n      <td>12</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>P04</td>\n      <td>6</td>\n      <td>14</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>P06</td>\n      <td>7</td>\n      <td>18</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+          }
+        },
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "결측 물의 ID: ['P03']\n물 0의 ID: ['P01']\n"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "source_sha": "24d465d1f1a380fefa7b4358fba1315492d1cdda483a8e795d17ab6769e414d6",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "CSV의 관측 평균(ml): 24.0\n[0, None, NaN, 6]의 평균: 3.0\n관측이 없는 경우: None\n"
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "source_sha": "efe018d0b3fa4d4339d51f9651c8276878713ee6581bfb63d60e0c5b7e4e254a",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "평균(cm): 10.0\n편차(cm): [-2.  0.  2.]\n분산(cm², ddof=0): 2.6666666666666665\n"
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "source_sha": "6c5e5a18e0abcd7b5137a851e29777ca4422a2fea98eec659e0b22eb178e8ca3",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "입력 shape: (3, 2)\n날별 평균: [3.66666667 3.66666667] / shape: (2,)\n화분별 평균: [2. 3. 6.] / shape: (3,)\n"
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "source_sha": "a569df707ba0e2929a8b2f625dbb6db1ebdaf5653972502a94c6270ce547980d",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "reshape:\n [[2 2 3]\n [3 6 6]]\n전치:\n [[2 3 6]\n [2 3 6]]\n같은 shape인가요? True\n날별 보정:\n [[3 4]\n [4 5]\n [7 8]]\n길이 3인 보정은 오른쪽 축 2와 달라 오류\n"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "source_sha": "bdb7c80973ac29784bd3e52e87488bbcde4b84cab94460ee98a0f51467bbc676",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "P02 shape (행, 열, 채널): (2, 2, 2)\nP02 [0,1] / [1,0]: [1 1] / [1 0]\n행·열을 바꾼 shape / [0,1]: (2, 2, 2) / [1 0]\n"
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "source_sha": "97a49ba879db8158dbad0ae13daad31658eaca666fcea3a82f565cd27f2c70e8",
+      "blank_ast": false,
+      "status": "error",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "P02 색 1인 모든 칸: 3\nP02 노란 잎 수: 3\n배경 색만 바꾼 뒤: 1\n각 ID의 노란 잎 수: {'P01': 2, 'P02': 3, 'P03': 2, 'P04': 3, 'P05': 2, 'P06': 4}\n"
+        },
+        {
+          "output_type": "error",
+          "ename": "AssertionError",
+          "evalue": "",
+          "traceback": [
+            "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+            "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+            "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[8]\u001b[39m\u001b[32m, line 15\u001b[39m\n\u001b[32m     11\u001b[39m print(\u001b[33m\"배경 색만 바꾼 뒤:\"\u001b[39m, count_yellow_leaf(background_changed))\n\u001b[32m     12\u001b[39m \n\u001b[32m     13\u001b[39m yellow_by_id = {pot: count_yellow_leaf(image) \u001b[38;5;28;01mfor\u001b[39;00m pot, image \u001b[38;5;28;01min\u001b[39;00m leaf_images.items()}\n\u001b[32m     14\u001b[39m print(\u001b[33m\"각 ID의 노란 잎 수:\"\u001b[39m, yellow_by_id)\n\u001b[32m---> \u001b[39m\u001b[32m15\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m count_yellow_leaf(p02_image) == \u001b[32m1\u001b[39m\n\u001b[32m     16\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m count_yellow_leaf(background_changed) == \u001b[32m1\u001b[39m\n\u001b[32m     17\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m [yellow_by_id[pot] \u001b[38;5;28;01mfor\u001b[39;00m pot \u001b[38;5;28;01min\u001b[39;00m plants[\u001b[33m\"pot_id\"\u001b[39m]] == [\u001b[32m0\u001b[39m, \u001b[32m1\u001b[39m, \u001b[32m2\u001b[39m, \u001b[32m3\u001b[39m, \u001b[32m2\u001b[39m, \u001b[32m3\u001b[39m]\n",
+            "\u001b[31mAssertionError\u001b[39m: "
+          ]
+        }
+      ]
+    }
+  ],
+  "student_achievement": "not_observed",
+  "learning_time": "not_observed",
+  "failed_cell": 16,
+  "error": {
+    "ename": "AssertionError",
+    "evalue": "",
+    "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[8]\u001b[39m\u001b[32m, line 15\u001b[39m\n\u001b[32m     11\u001b[39m print(\u001b[33m\"배경 색만 바꾼 뒤:\"\u001b[39m, count_yellow_leaf(background_changed))\n\u001b[32m     12\u001b[39m \n\u001b[32m     13\u001b[39m yellow_by_id = {pot: count_yellow_leaf(image) \u001b[38;5;28;01mfor\u001b[39;00m pot, image \u001b[38;5;28;01min\u001b[39;00m leaf_images.items()}\n\u001b[32m     14\u001b[39m print(\u001b[33m\"각 ID의 노란 잎 수:\"\u001b[39m, yellow_by_id)\n\u001b[32m---> \u001b[39m\u001b[32m15\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m count_yellow_leaf(p02_image) == \u001b[32m1\u001b[39m\n\u001b[32m     16\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m count_yellow_leaf(background_changed) == \u001b[32m1\u001b[39m\n\u001b[32m     17\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m [yellow_by_id[pot] \u001b[38;5;28;01mfor\u001b[39;00m pot \u001b[38;5;28;01min\u001b[39;00m plants[\u001b[33m\"pot_id\"\u001b[39m]] == [\u001b[32m0\u001b[39m, \u001b[32m1\u001b[39m, \u001b[32m2\u001b[39m, \u001b[32m3\u001b[39m, \u001b[32m2\u001b[39m, \u001b[32m3\u001b[39m]\n",
+      "\u001b[31mAssertionError\u001b[39m: "
+    ]
+  },
+  "elapsed_seconds": 0.72,
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

@@ -1,0 +1,116 @@
+{
+  "meaning": "Current code smoke checks; example quality/workflow are synthetic, not a review or approval of the lesson. Baseline is scheduled scope only.",
+  "runs": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/quality.py",
+        "baseline"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "synthetic": false,
+      "authority": "advisory_only",
+      "checks": [],
+      "output_sha256": "7861252bae06d8ad216f148a7ac55c058e3e5daacd6ac5e342c3e04882fb5886"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/quality.py",
+        "evaluate",
+        "examples/quality.json"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "synthetic": true,
+      "authority": "advisory_only",
+      "checks": [
+        {
+          "id": "K01",
+          "status": "passed"
+        },
+        {
+          "id": "K02",
+          "status": "passed"
+        },
+        {
+          "id": "K03",
+          "status": "passed"
+        },
+        {
+          "id": "K04",
+          "status": "passed"
+        },
+        {
+          "id": "K05",
+          "status": "passed"
+        },
+        {
+          "id": "K06",
+          "status": "passed"
+        },
+        {
+          "id": "K07",
+          "status": "passed"
+        },
+        {
+          "id": "K08",
+          "status": "passed"
+        },
+        {
+          "id": "K09",
+          "status": "passed"
+        },
+        {
+          "id": "K10",
+          "status": "passed"
+        },
+        {
+          "id": "K11",
+          "status": "passed"
+        },
+        {
+          "id": "K12",
+          "status": "passed"
+        },
+        {
+          "id": "K13",
+          "status": "passed"
+        },
+        {
+          "id": "K14",
+          "status": "passed"
+        },
+        {
+          "id": "K15",
+          "status": "passed"
+        },
+        {
+          "id": "K16",
+          "status": "passed"
+        }
+      ],
+      "output_sha256": "2cfed3c762c9ad8c7b9411f2afb35951872057f547020f9d1d5aba6152f14ba7"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/workflow.py",
+        "decide",
+        "examples/quality-workflow.json",
+        "--quality",
+        "examples/quality.json"
+      ],
+      "exit_code": 0,
+      "status": "continue",
+      "synthetic": true,
+      "authority": "advisory_only",
+      "checks": [],
+      "output_sha256": "18b38f001c909c21386a8b3da622dfde0e0c63d017ae1528e8e19ba05f06e4cc"
+    }
+  ]
+}

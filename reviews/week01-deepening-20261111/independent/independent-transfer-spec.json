@@ -1,0 +1,186 @@
+{
+  "schema": "independent-transfer-spec-v1",
+  "purpose": "Reviewer-owned new contract, not candidate code or student work; fixture prepared before reading a new candidate.",
+  "task": "At the inspection snapshot, predict ok/check for a new sample from reading, a 2x2 occupancy grid, and unordered zone.",
+  "available_fields": [
+    "sample_id",
+    "reading",
+    "grid",
+    "zone"
+  ],
+  "roles": {
+    "sample_id": "opaque output identifier, excluded from features",
+    "reading": "numeric measurement; 0 is observed, null/CSV blank/NaN means missing",
+    "grid": "grid[row][column], exactly 2x2 integers 0/1; aggregate first COLUMN by summing over rows",
+    "zone": "unordered category; train-known blue/red; unseen values use all-zero indicator vector",
+    "target": "ok/check known; ? means unknown, not negative"
+  },
+  "training_rule": "This reduced teaching contract fits both numeric imputation and supervised classifier on known-target training rows only. Unknown row is retained in raw table but excluded from both fits. This is not the full official Antique semi-supervised requirement.",
+  "feature_order": [
+    "reading_imputed",
+    "first_column_occupancy_sum",
+    "zone_blue",
+    "zone_red"
+  ],
+  "validation_rule": "No fitting on validation inputs or truth. No final test data or score is supplied. Report this small validation only.",
+  "reference_models": {
+    "centroid": "Euclidean nearest class centroid. Class tie order ok then check only for this reference. No baseline query has a centroid tie.",
+    "alternative": "3NN, k=3, squared Euclidean, equal distance ordered by provided training row order; majority vote. It is intentionally accepted despite a different V9 prediction."
+  },
+  "train": [
+    {
+      "sample_id": "S8",
+      "reading": 0,
+      "grid": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "zone": "blue",
+      "target": "ok"
+    },
+    {
+      "sample_id": "S2",
+      "reading": 2,
+      "grid": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "zone": "red",
+      "target": "ok"
+    },
+    {
+      "sample_id": "S9",
+      "reading": null,
+      "grid": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "zone": "blue",
+      "target": "check"
+    },
+    {
+      "sample_id": "S4",
+      "reading": 4,
+      "grid": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "zone": "red",
+      "target": "check"
+    },
+    {
+      "sample_id": "S0",
+      "reading": 100,
+      "grid": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "zone": "red",
+      "target": "?"
+    }
+  ],
+  "validation": [
+    {
+      "sample_id": "V9",
+      "reading": null,
+      "grid": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "zone": "green",
+      "target": "check"
+    },
+    {
+      "sample_id": "V4",
+      "reading": 0,
+      "grid": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "zone": "blue",
+      "target": "ok"
+    },
+    {
+      "sample_id": "V7",
+      "reading": 4,
+      "grid": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "zone": "red",
+      "target": "check"
+    }
+  ],
+  "submission": {
+    "filename": "reviewer-answer.csv",
+    "header": [
+      "case_id",
+      "status"
+    ],
+    "required_id_order": [
+      "V7",
+      "V9",
+      "V4"
+    ],
+    "labels": [
+      "ok",
+      "check"
+    ],
+    "encoding": "UTF-8",
+    "newline": "LF"
+  },
+  "scope_limits": [
+    "No claim of representing all Robot inputs or solving its official task.",
+    "No new candidate notebook has been read or executed.",
+    "A correct alternative model need not reproduce the centroid predictions.",
+    "Reviewer reference results are not student achievement."
+  ]
+}

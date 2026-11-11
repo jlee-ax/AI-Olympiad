@@ -1,0 +1,15 @@
+{
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_integrated.ipynb",
+  "sha256": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551",
+  "scope": "candidate_actual",
+  "id": "mutant-object-only",
+  "replacements": [
+    {
+      "cell": 16,
+      "old": "((objects == 1) & (colors == 1)).sum()",
+      "new": "(objects == 1).sum()"
+    }
+  ],
+  "oracle": null,
+  "expected": "reject"
+}

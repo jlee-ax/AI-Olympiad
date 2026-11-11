@@ -1,0 +1,80 @@
+{
+  "copy_type": "temporary minimal asset checkout copy, not a full git clone",
+  "shared_dependency_environment": "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+  "original_repo": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision",
+  "temporary_repo": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-deepening-20261111/independent/relocation-copy-m91rxu2o/checkout",
+  "copied_files": [
+    {
+      "path": "lessons/week01/week01_integrated.ipynb",
+      "sha256": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551"
+    },
+    {
+      "path": "reviews/week01-deepening-20261111/independent/baseline-manifest.json",
+      "sha256": "389e7d2763445e332a846493770b926329da5e652ab74866bfec487308fc97f5"
+    },
+    {
+      "path": "reviews/week01-deepening-20261111/independent/execute_candidate_case.py",
+      "sha256": "e2c8691fe4e0556e397888b5842bd179cc2a47b1e250088a5402c808f2b4c1fe"
+    },
+    {
+      "path": "reviews/week01-deepening-20261111/independent/rebase-case-configs.py",
+      "sha256": "832702f8807b37220dd8f11951aa181166ff147d1165a12aa0a86b96c9c73b05"
+    },
+    {
+      "path": "reviews/week01-deepening-20261111/independent/oracle-full.py",
+      "sha256": "52ef4ea3148ed885dab36eca37b05bb9ecdfb86090633d372078664da71fb387"
+    },
+    {
+      "path": "reviews/week01-deepening-20261111/independent/oracle-native-aggregation.py",
+      "sha256": "0629daa9853937e49ef8ad5b278e3cfeb5e33aa268fc45d7606779da38e44006"
+    },
+    {
+      "path": "reviews/week01-deepening-20261111/independent/case-configs/full-candidate.json",
+      "sha256": "5690088113b988591136f2682340c5d75729faf350ef92284f3b7da9b1e23bb9"
+    },
+    {
+      "path": "reviews/week01-deepening-20261111/independent/case-configs/native-aggregation.json",
+      "sha256": "f498bbf94619788fde192fd39e797cfe7f8a6e27b1a45095db987b9039b3e4da"
+    },
+    {
+      "path": "reviews/week01-deepening-20261111/independent/case-configs/mutant-memory-replaces-physical.json",
+      "sha256": "9700e9092c571958dede09c9eb72ec3146234cbbcb07a7ff9842e0370b0a18a0"
+    }
+  ],
+  "candidate_sha256": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551",
+  "expected": {
+    "full-candidate": "passed",
+    "native-aggregation": "passed",
+    "mutant-memory-replaces-physical": "intentional physical-file assertion rejection"
+  },
+  "rows": [
+    {
+      "id": "full-candidate",
+      "actual": "passed",
+      "returncode": 0,
+      "matched_expected": true,
+      "source_unchanged": true,
+      "runtime_removed": true
+    },
+    {
+      "id": "native-aggregation",
+      "actual": "passed",
+      "returncode": 0,
+      "matched_expected": true,
+      "source_unchanged": true,
+      "runtime_removed": true
+    },
+    {
+      "id": "mutant-memory-replaces-physical",
+      "actual": "harness_or_assertion_error",
+      "returncode": 1,
+      "matched_expected": true,
+      "source_unchanged": true,
+      "runtime_removed": true
+    }
+  ],
+  "original_config_hashes_unchanged": true,
+  "original_source_unchanged": true,
+  "status": "passed",
+  "temporary_copy_removed": true
+}

@@ -1,0 +1,15 @@
+{
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_integrated.ipynb",
+  "sha256": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551",
+  "scope": "candidate_actual",
+  "id": "mutant-memory-replaces-physical",
+  "replacements": [
+    {
+      "cell": 32,
+      "old": "import tempfile\nfrom pathlib import Path\n\nwith tempfile.TemporaryDirectory(prefix=\"plant-result-\") as directory:\n    result_path = Path(directory) / \"result.csv\"\n    restored.to_csv(result_path, index=False)\n    file_check = pd.read_csv(result_path)\n    print(\"파일에서 다시 읽은 ID:\", file_check[\"pot_id\"].tolist())\n    assert file_check[\"pot_id\"].tolist() == required_order\n    assert file_check[\"prediction\"].tolist() == restored[\"prediction\"].tolist()\nprint(\"임시 파일은 정리됨:\", not result_path.exists())\nassert not result_path.exists()\n",
+      "new": "file_check = pd.read_csv(StringIO(output_csv))\nprint(\"파일에서 다시 읽은 ID:\", file_check[\"pot_id\"].tolist())\nassert file_check[\"pot_id\"].tolist() == required_order\nprint(\"임시 파일은 정리됨:\", True)"
+    }
+  ],
+  "require_candidate_file": "result.csv",
+  "expected": "reject"
+}

@@ -1,0 +1,204 @@
+{
+  "candidate_sha": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551",
+  "intentional_mutations": 8,
+  "detected": 8,
+  "candidate_self_assertions_detected": 4,
+  "independent_oracles_detected": 4,
+  "claim_limit": "These eight are controlled copies/patches, not eight actual candidate defects. No claim of general mutant completeness or student skill.",
+  "rows": [
+    {
+      "id": "mutant-color-only",
+      "mutation_scope": "candidate cell16 count_yellow_leaf",
+      "mutated_actual_candidate_code": true,
+      "reviewer_reference_implementation_mutated": false,
+      "change": "Count color=1 even on backgrounds",
+      "expected": "P02 1 yellow leaf",
+      "actual": "3 (includes 2 backgrounds)",
+      "detector": "candidate notebook cell16 assertion",
+      "raw_status": "notebook_error",
+      "raw_error": {
+        "ename": "AssertionError",
+        "evalue": "",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[8]\u001b[39m\u001b[32m, line 15\u001b[39m\n\u001b[32m     11\u001b[39m print(\u001b[33m\"배경 색만 바꾼 뒤:\"\u001b[39m, count_yellow_leaf(background_changed))\n\u001b[32m     12\u001b[39m \n\u001b[32m     13\u001b[39m yellow_by_id = {pot: count_yellow_leaf(image) \u001b[38;5;28;01mfor\u001b[39;00m pot, image \u001b[38;5;28;01min\u001b[39;00m leaf_images.items()}\n\u001b[32m     14\u001b[39m print(\u001b[33m\"각 ID의 노란 잎 수:\"\u001b[39m, yellow_by_id)\n\u001b[32m---> \u001b[39m\u001b[32m15\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m count_yellow_leaf(p02_image) == \u001b[32m1\u001b[39m\n\u001b[32m     16\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m count_yellow_leaf(background_changed) == \u001b[32m1\u001b[39m\n\u001b[32m     17\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m [yellow_by_id[pot] \u001b[38;5;28;01mfor\u001b[39;00m pot \u001b[38;5;28;01min\u001b[39;00m plants[\u001b[33m\"pot_id\"\u001b[39m]] == [\u001b[32m0\u001b[39m, \u001b[32m1\u001b[39m, \u001b[32m2\u001b[39m, \u001b[32m3\u001b[39m, \u001b[32m2\u001b[39m, \u001b[32m3\u001b[39m]\n",
+          "\u001b[31mAssertionError\u001b[39m: "
+        ]
+      },
+      "valid_detection": true,
+      "source_unchanged": true,
+      "raw_result": "runs/mutant-color-only/result.json",
+      "classification_note": "Raw traceback inspected; semantic assertion failed at the intended changed behavior."
+    },
+    {
+      "id": "mutant-object-only",
+      "mutation_scope": "candidate cell16 count_yellow_leaf",
+      "mutated_actual_candidate_code": true,
+      "reviewer_reference_implementation_mutated": false,
+      "change": "Count all leaves regardless of color",
+      "expected": "P02 1 yellow leaf",
+      "actual": "2 (includes green leaf)",
+      "detector": "candidate notebook cell16 assertion",
+      "raw_status": "notebook_error",
+      "raw_error": {
+        "ename": "AssertionError",
+        "evalue": "",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[8]\u001b[39m\u001b[32m, line 15\u001b[39m\n\u001b[32m     11\u001b[39m print(\u001b[33m\"배경 색만 바꾼 뒤:\"\u001b[39m, count_yellow_leaf(background_changed))\n\u001b[32m     12\u001b[39m \n\u001b[32m     13\u001b[39m yellow_by_id = {pot: count_yellow_leaf(image) \u001b[38;5;28;01mfor\u001b[39;00m pot, image \u001b[38;5;28;01min\u001b[39;00m leaf_images.items()}\n\u001b[32m     14\u001b[39m print(\u001b[33m\"각 ID의 노란 잎 수:\"\u001b[39m, yellow_by_id)\n\u001b[32m---> \u001b[39m\u001b[32m15\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m count_yellow_leaf(p02_image) == \u001b[32m1\u001b[39m\n\u001b[32m     16\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m count_yellow_leaf(background_changed) == \u001b[32m1\u001b[39m\n\u001b[32m     17\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m [yellow_by_id[pot] \u001b[38;5;28;01mfor\u001b[39;00m pot \u001b[38;5;28;01min\u001b[39;00m plants[\u001b[33m\"pot_id\"\u001b[39m]] == [\u001b[32m0\u001b[39m, \u001b[32m1\u001b[39m, \u001b[32m2\u001b[39m, \u001b[32m3\u001b[39m, \u001b[32m2\u001b[39m, \u001b[32m3\u001b[39m]\n",
+          "\u001b[31mAssertionError\u001b[39m: "
+        ]
+      },
+      "valid_detection": true,
+      "source_unchanged": true,
+      "raw_result": "runs/mutant-object-only/result.json",
+      "classification_note": "Raw traceback inspected; semantic assertion failed at the intended changed behavior."
+    },
+    {
+      "id": "mutant-zero-missing",
+      "mutation_scope": "candidate cell6 observed_mean",
+      "mutated_actual_candidate_code": true,
+      "reviewer_reference_implementation_mutated": false,
+      "change": "Treat numeric 0 as missing",
+      "expected": "observed average24 and [0,None,NaN,6] average3",
+      "actual": "observed average30 and example6",
+      "detector": "candidate notebook cell6 assertion",
+      "raw_status": "notebook_error",
+      "raw_error": {
+        "ename": "AssertionError",
+        "evalue": "",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[3]\u001b[39m\u001b[32m, line 17\u001b[39m\n\u001b[32m     13\u001b[39m water_average = observed_mean(water_records)\n\u001b[32m     14\u001b[39m print(\u001b[33m\"CSV의 관측 평균(ml):\"\u001b[39m, water_average)\n\u001b[32m     15\u001b[39m print(\u001b[33m\"[0, None, NaN, 6]의 평균:\"\u001b[39m, observed_mean([\u001b[32m0\u001b[39m, \u001b[38;5;28;01mNone\u001b[39;00m, np.nan, \u001b[32m6\u001b[39m]))\n\u001b[32m     16\u001b[39m print(\u001b[33m\"관측이 없는 경우:\"\u001b[39m, observed_mean([\u001b[38;5;28;01mNone\u001b[39;00m, np.nan]))\n\u001b[32m---> \u001b[39m\u001b[32m17\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m water_average == \u001b[32m24\u001b[39m \u001b[38;5;28;01mand\u001b[39;00m observed_mean([\u001b[32m0\u001b[39m, \u001b[38;5;28;01mNone\u001b[39;00m, np.nan, \u001b[32m6\u001b[39m]) == \u001b[32m3\u001b[39m\n\u001b[32m     18\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m observed_mean([\u001b[32m0\u001b[39m]) == \u001b[32m0\u001b[39m \u001b[38;5;28;01mand\u001b[39;00m observed_mean([]) \u001b[38;5;28;01mis\u001b[39;00m \u001b[38;5;28;01mNone\u001b[39;00m\n",
+          "\u001b[31mAssertionError\u001b[39m: "
+        ]
+      },
+      "valid_detection": true,
+      "source_unchanged": true,
+      "raw_result": "runs/mutant-zero-missing/result.json",
+      "classification_note": "Raw traceback inspected; semantic assertion failed at the intended changed behavior."
+    },
+    {
+      "id": "mutant-fit-population",
+      "mutation_scope": "candidate cell22 actual imputer fit",
+      "mutated_actual_candidate_code": true,
+      "reviewer_reference_implementation_mutated": false,
+      "change": "Fit imputer on all six plants before transforming training",
+      "expected": "train-only mean20",
+      "actual": "all-plants mean24",
+      "detector": "candidate notebook cell22 learned-statistic assertion",
+      "raw_status": "notebook_error",
+      "raw_error": {
+        "ename": "AssertionError",
+        "evalue": "",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[11]\u001b[39m\u001b[32m, line 19\u001b[39m\n\u001b[32m     15\u001b[39m print(\u001b[33m\"훈련 ID:\"\u001b[39m, training[\u001b[33m\"pot_id\"\u001b[39m].tolist())\n\u001b[32m     16\u001b[39m print(\u001b[33m\"훈련에서 배운 물 대체값(ml):\"\u001b[39m, fill.statistics_)\n\u001b[32m     17\u001b[39m print(\u001b[33m\"X = [물/10ml, 노란 잎 수]:\\n\"\u001b[39m, x_train)\n\u001b[32m     18\u001b[39m print(\u001b[33m\"X / y shape:\"\u001b[39m, x_train.shape, \u001b[33m\"/\"\u001b[39m, y_train.shape)\n\u001b[32m---> \u001b[39m\u001b[32m19\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.allclose(fill.statistics_, [\u001b[32m20\u001b[39m])\n\u001b[32m     20\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.array_equal(x_train, [[\u001b[32m0\u001b[39m,\u001b[32m0\u001b[39m], [\u001b[32m2\u001b[39m,\u001b[32m1\u001b[39m], [\u001b[32m2\u001b[39m,\u001b[32m2\u001b[39m], [\u001b[32m4\u001b[39m,\u001b[32m3\u001b[39m]])\n",
+          "\u001b[31mAssertionError\u001b[39m: "
+        ]
+      },
+      "valid_detection": true,
+      "source_unchanged": true,
+      "raw_result": "runs/mutant-fit-population/result.json",
+      "classification_note": "Raw traceback inspected; semantic assertion failed at the intended changed behavior."
+    },
+    {
+      "id": "mutant-hardcoded-centers",
+      "mutation_scope": "candidate cell24 actual model fit/state",
+      "mutated_actual_candidate_code": true,
+      "reviewer_reference_implementation_mutated": false,
+      "change": "Override learned centers with original toy constants after fit",
+      "expected": "independent new input check center [3,3]",
+      "actual": "hardcoded check center [3,2.5]",
+      "detector": "independent native-conversion oracle line19 after all notebook cells passed",
+      "raw_status": "oracle_error",
+      "raw_error": {
+        "ename": "AssertionError",
+        "evalue": "",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[19]\u001b[39m\u001b[32m, line 19\u001b[39m\n\u001b[32m     15\u001b[39m y_train=(training.height_cm>=\u001b[32m12\u001b[39m).astype(int)\n\u001b[32m     16\u001b[39m exec(transform_train);exec(fit_source);exec(transform_val)\n\u001b[32m     17\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.allclose(fill.statistics_,[\u001b[32m20\u001b[39m])\n\u001b[32m     18\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.array_equal(x_train,[[\u001b[32m0\u001b[39m,\u001b[32m1\u001b[39m],[\u001b[32m2\u001b[39m,\u001b[32m0\u001b[39m],[\u001b[32m2\u001b[39m,\u001b[32m4\u001b[39m],[\u001b[32m4\u001b[39m,\u001b[32m2\u001b[39m]])\n\u001b[32m---> \u001b[39m\u001b[32m19\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.allclose(model.centroids_,[[\u001b[32m1\u001b[39m,\u001b[32m.5\u001b[39m],[\u001b[32m3\u001b[39m,\u001b[32m3\u001b[39m]])\n\u001b[32m     20\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.array_equal(x_validation,[[\u001b[32m2\u001b[39m,\u001b[32m3\u001b[39m],[\u001b[32m0\u001b[39m,\u001b[32m0\u001b[39m]])\n\u001b[32m     21\u001b[39m original_center=model.centroids_.copy();original_by_id=dict(zip(training.pot_id,model.predict(x_train)))\n\u001b[32m     22\u001b[39m \u001b[38;5;66;03m# Validate holdout transform leaves fitted state unchanged even under a strong value perturbation.\u001b[39;00m\n",
+          "\u001b[31mAssertionError\u001b[39m: "
+        ]
+      },
+      "valid_detection": true,
+      "source_unchanged": true,
+      "raw_result": "runs/mutant-hardcoded-centers/result.json",
+      "classification_note": "Raw traceback inspected; semantic assertion failed at the intended changed behavior."
+    },
+    {
+      "id": "mutant-positional-images",
+      "mutation_scope": "candidate cell22 actual transformation",
+      "mutated_actual_candidate_code": true,
+      "reviewer_reference_implementation_mutated": false,
+      "change": "Read images by dictionary insertion order instead of row ID",
+      "expected": "new rows yellow counts [1,0,4,2]",
+      "actual": "positional counts [2,4,0,1]",
+      "detector": "independent native-conversion oracle line18 after all notebook cells passed",
+      "raw_status": "oracle_error",
+      "raw_error": {
+        "ename": "AssertionError",
+        "evalue": "",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[19]\u001b[39m\u001b[32m, line 18\u001b[39m\n\u001b[32m     14\u001b[39m leaf_images={\u001b[33m'U1'\u001b[39m:image_n(\u001b[32m2\u001b[39m),\u001b[33m'U5'\u001b[39m:image_n(\u001b[32m4\u001b[39m),\u001b[33m'U3'\u001b[39m:image_n(\u001b[32m0\u001b[39m),\u001b[33m'U9'\u001b[39m:image_n(\u001b[32m1\u001b[39m),\u001b[33m'Z2'\u001b[39m:image_n(\u001b[32m0\u001b[39m),\u001b[33m'Z8'\u001b[39m:image_n(\u001b[32m3\u001b[39m)}\n\u001b[32m     15\u001b[39m y_train=(training.height_cm>=\u001b[32m12\u001b[39m).astype(int)\n\u001b[32m     16\u001b[39m exec(transform_train);exec(fit_source);exec(transform_val)\n\u001b[32m     17\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.allclose(fill.statistics_,[\u001b[32m20\u001b[39m])\n\u001b[32m---> \u001b[39m\u001b[32m18\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.array_equal(x_train,[[\u001b[32m0\u001b[39m,\u001b[32m1\u001b[39m],[\u001b[32m2\u001b[39m,\u001b[32m0\u001b[39m],[\u001b[32m2\u001b[39m,\u001b[32m4\u001b[39m],[\u001b[32m4\u001b[39m,\u001b[32m2\u001b[39m]])\n\u001b[32m     19\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.allclose(model.centroids_,[[\u001b[32m1\u001b[39m,\u001b[32m.5\u001b[39m],[\u001b[32m3\u001b[39m,\u001b[32m3\u001b[39m]])\n\u001b[32m     20\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.array_equal(x_validation,[[\u001b[32m2\u001b[39m,\u001b[32m3\u001b[39m],[\u001b[32m0\u001b[39m,\u001b[32m0\u001b[39m]])\n\u001b[32m     21\u001b[39m original_center=model.centroids_.copy();original_by_id=dict(zip(training.pot_id,model.predict(x_train)))\n",
+          "\u001b[31mAssertionError\u001b[39m: "
+        ]
+      },
+      "valid_detection": true,
+      "source_unchanged": true,
+      "raw_result": "runs/mutant-positional-images/result.json",
+      "classification_note": "Raw traceback inspected; semantic assertion failed at the intended changed behavior."
+    },
+    {
+      "id": "mutant-id-value-mismatch",
+      "mutation_scope": "candidate cell30 actual output alignment",
+      "mutated_actual_candidate_code": true,
+      "reviewer_reference_implementation_mutated": false,
+      "change": "Reverse prediction values after restoring ID order",
+      "expected": "P05->0, P06->1",
+      "actual": "P05->1, P06->0; shape/header/allowed labels still valid",
+      "detector": "independent full-demo per-ID semantic assertion after all notebook cells passed",
+      "raw_status": "oracle_error",
+      "raw_error": {
+        "ename": "AssertionError",
+        "evalue": "",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[19]\u001b[39m\u001b[32m, line 10\u001b[39m\n\u001b[32m      6\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.allclose(changed_fill.statistics_, [\u001b[32m80\u001b[39m/\u001b[32m3\u001b[39m])\n\u001b[32m      7\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.allclose(changed_model.centroids_, [[\u001b[32m1\u001b[39m,\u001b[32m.5\u001b[39m],[\u001b[32m13\u001b[39m/\u001b[32m3\u001b[39m,\u001b[32m2.5\u001b[39m]])\n\u001b[32m      8\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m (original_prediction,changed_prediction)==(\u001b[32m1\u001b[39m,\u001b[32m0\u001b[39m)\n\u001b[32m      9\u001b[39m expected_pairs=dict(zip(result[\u001b[33m'pot_id'\u001b[39m],result[\u001b[33m'prediction'\u001b[39m]))\n\u001b[32m---> \u001b[39m\u001b[32m10\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m dict(zip(restored[\u001b[33m'pot_id'\u001b[39m],restored[\u001b[33m'prediction'\u001b[39m]))==expected_pairs\n\u001b[32m     11\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m checked.columns.tolist()==[\u001b[33m'pot_id'\u001b[39m,\u001b[33m'prediction'\u001b[39m]\n\u001b[32m     12\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m checked[\u001b[33m'pot_id'\u001b[39m].tolist()==[\u001b[33m'P05'\u001b[39m,\u001b[33m'P06'\u001b[39m]\n\u001b[32m     13\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m checked[\u001b[33m'prediction'\u001b[39m].tolist()==[\u001b[32m0\u001b[39m,\u001b[32m1\u001b[39m]\n",
+          "\u001b[31mAssertionError\u001b[39m: "
+        ]
+      },
+      "valid_detection": true,
+      "source_unchanged": true,
+      "raw_result": "runs/mutant-id-value-mismatch/result.json",
+      "classification_note": "Raw traceback inspected; semantic assertion failed at the intended changed behavior."
+    },
+    {
+      "id": "mutant-memory-replaces-physical",
+      "mutation_scope": "candidate cell32 actual file step",
+      "mutated_actual_candidate_code": true,
+      "reviewer_reference_implementation_mutated": false,
+      "change": "Replace actual result.csv disk write/read with StringIO",
+      "expected": "notebook-phase result.csv write and read events",
+      "actual": "zero notebook result.csv events; all code cells still passed",
+      "detector": "independent worker physical-file contract assertion; reviewer I/O excluded",
+      "raw_status": "harness_or_assertion_error",
+      "raw_error": {
+        "type": "AssertionError",
+        "message": "actual notebook physical file write/read missing: result.csv"
+      },
+      "valid_detection": true,
+      "source_unchanged": true,
+      "raw_result": "runs/mutant-memory-replaces-physical/result.json",
+      "classification_note": "For memory-only mutant, raw harness_or_assertion_error is the deliberate file-contract AssertionError, not a broken harness or incidental import/runtime failure."
+    }
+  ]
+}

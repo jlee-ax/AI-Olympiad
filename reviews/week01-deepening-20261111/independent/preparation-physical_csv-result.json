@@ -1,0 +1,8 @@
+{
+  "case": "physical_csv",
+  "returncode": 0,
+  "stdout": "{\n  \"case\": \"physical_csv\",\n  \"scope\": \"reviewer_reference_only_not_candidate_or_student\",\n  \"candidate_read\": false,\n  \"actual\": {\n    \"rows\": [\n      [\n        \"V7\",\n        \"check\"\n      ],\n      [\n        \"V9\",\n        \"ok\"\n      ],\n      [\n        \"V4\",\n        \"ok\"\n      ]\n    ],\n    \"file_io_events\": [\n      {\n        \"stage\": \"reviewer_reference\",\n        \"operation\": \"write_bytes\",\n        \"filename\": \"reviewer-answer.csv\"\n      },\n      {\n        \"stage\": \"reviewer_reference\",\n        \"operation\": \"read_bytes\",\n        \"filename\": \"reviewer-answer.csv\"\n      }\n    ],\n    \"temporary_file_removed\": true,\n    \"candidate_physical_io_proven\": false\n  },\n  \"status\": \"passed\"\n}\n",
+  "stderr": "",
+  "scope": "reviewer_reference_not_candidate_or_student",
+  "separate_subprocess": true
+}

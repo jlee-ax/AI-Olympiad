@@ -1,0 +1,15 @@
+{
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_integrated.ipynb",
+  "sha256": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551",
+  "scope": "candidate_actual",
+  "id": "mutant-hardcoded-centers",
+  "replacements": [
+    {
+      "cell": 24,
+      "old": "model.fit(x_train, y_train)",
+      "new": "model.fit(x_train, y_train)\nmodel.centroids_ = np.array([[1,.5],[3,2.5]])"
+    }
+  ],
+  "oracle": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-deepening-20261111/independent/oracle-native-conversion.py",
+  "expected": "reject"
+}

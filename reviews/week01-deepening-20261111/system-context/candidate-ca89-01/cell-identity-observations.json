@@ -1,0 +1,278 @@
+{
+  "old_snapshot_path": "reviews/week01-integration-20261111/discovery/runs/integrated-candidate-01/artifact-exact.ipynb",
+  "old_sha256": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+  "new_sha256": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551",
+  "old_cell_count": 34,
+  "new_cell_count": 38,
+  "new_code_cell_count": 18,
+  "removed_old_cell_ids": [],
+  "cells": [
+    {
+      "index": 0,
+      "cell_id": "ed72400c",
+      "cell_type": "markdown",
+      "source_status": "changed",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 1,
+      "cell_id": "5a7a14b7",
+      "cell_type": "markdown",
+      "source_status": "changed",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 2,
+      "cell_id": "484f22ba",
+      "cell_type": "code",
+      "source_status": "same",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 3,
+      "cell_id": "bde02238",
+      "cell_type": "markdown",
+      "source_status": "same",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 4,
+      "cell_id": "a4f8e26d",
+      "cell_type": "code",
+      "source_status": "same",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 5,
+      "cell_id": "e3783955",
+      "cell_type": "markdown",
+      "source_status": "same",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 6,
+      "cell_id": "d942743f",
+      "cell_type": "code",
+      "source_status": "same",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 7,
+      "cell_id": "0a64f981",
+      "cell_type": "markdown",
+      "source_status": "same",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 8,
+      "cell_id": "a7f428a6",
+      "cell_type": "code",
+      "source_status": "same",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 9,
+      "cell_id": "a3f9c114",
+      "cell_type": "markdown",
+      "source_status": "same",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 10,
+      "cell_id": "9d537595",
+      "cell_type": "code",
+      "source_status": "same",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 11,
+      "cell_id": "38fa5085",
+      "cell_type": "markdown",
+      "source_status": "same",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 12,
+      "cell_id": "32ed7e09",
+      "cell_type": "code",
+      "source_status": "same",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 13,
+      "cell_id": "deep-leaf-intro",
+      "cell_type": "markdown",
+      "source_status": "new",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 14,
+      "cell_id": "deep-leaf-grid",
+      "cell_type": "code",
+      "source_status": "new",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 15,
+      "cell_id": "deep-count-intro",
+      "cell_type": "markdown",
+      "source_status": "new",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 16,
+      "cell_id": "deep-count-code",
+      "cell_type": "code",
+      "source_status": "new",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 17,
+      "cell_id": "f574b6b5",
+      "cell_type": "markdown",
+      "source_status": "same",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 18,
+      "cell_id": "7591b8af",
+      "cell_type": "code",
+      "source_status": "same",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 19,
+      "cell_id": "9529029d",
+      "cell_type": "markdown",
+      "source_status": "same",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 20,
+      "cell_id": "1d316bff",
+      "cell_type": "code",
+      "source_status": "same",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 21,
+      "cell_id": "ce3f374d",
+      "cell_type": "markdown",
+      "source_status": "changed",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 22,
+      "cell_id": "4d60619c",
+      "cell_type": "code",
+      "source_status": "changed",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 23,
+      "cell_id": "28086cfc",
+      "cell_type": "markdown",
+      "source_status": "changed",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 24,
+      "cell_id": "ae89f4b6",
+      "cell_type": "code",
+      "source_status": "changed",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 25,
+      "cell_id": "5ba7e603",
+      "cell_type": "markdown",
+      "source_status": "changed",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 26,
+      "cell_id": "8e809e64",
+      "cell_type": "code",
+      "source_status": "changed",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 27,
+      "cell_id": "683a7ca2",
+      "cell_type": "markdown",
+      "source_status": "changed",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 28,
+      "cell_id": "3512f7de",
+      "cell_type": "code",
+      "source_status": "changed",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 29,
+      "cell_id": "4bbb0c87",
+      "cell_type": "markdown",
+      "source_status": "same",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 30,
+      "cell_id": "f40633df",
+      "cell_type": "code",
+      "source_status": "same",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 31,
+      "cell_id": "f9e7d348",
+      "cell_type": "markdown",
+      "source_status": "same",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 32,
+      "cell_id": "213dcc44",
+      "cell_type": "code",
+      "source_status": "same",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 33,
+      "cell_id": "303c6117",
+      "cell_type": "markdown",
+      "source_status": "changed",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 34,
+      "cell_id": "9462ed76",
+      "cell_type": "code",
+      "source_status": "changed",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 35,
+      "cell_id": "97f45dbb",
+      "cell_type": "markdown",
+      "source_status": "changed",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 36,
+      "cell_id": "e49ac1c2",
+      "cell_type": "code",
+      "source_status": "changed",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    },
+    {
+      "index": 37,
+      "cell_id": "4042bdda",
+      "cell_type": "markdown",
+      "source_status": "changed",
+      "same_source_is_not_proof_of_same_runtime_or_meaning": true
+    }
+  ],
+  "limit": "This is an identity/source-text comparison only. Runtime state dependencies and pedagogical impact require direct review."
+}

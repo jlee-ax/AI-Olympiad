@@ -1,0 +1,11 @@
+{
+  "id": "route-bridge-A",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge.ipynb",
+  "sha256": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+  "scope": "provided_followup_code_only_student_answers_unobserved",
+  "cells": [
+    2,
+    21,
+    23
+  ]
+}

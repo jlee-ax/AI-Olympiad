@@ -1,0 +1,83 @@
+{
+  "schema": "independent-final-review-v1",
+  "completed_at_utc": "2026-11-11T12:07:53.323514+00:00",
+  "candidate_artifacts": {
+    "lessons/week01/week01_integrated.ipynb": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551",
+    "lessons/week01/week01_integrated.html": "f2d7d0fb5326e901335aa47350caba489bf64309e27f1befc866442f30883b28",
+    "lessons/week01/week01_integrated_teacher.md": "d93a33f70a4db3e028f0f00a68c83c50270f73351c68987a2a71f721b69015d7"
+  },
+  "frozen_criteria_and_baseline_unchanged": {
+    "baseline-manifest.json": true,
+    "pre-candidate-criteria.md": true
+  },
+  "manual_content_review": {
+    "selected_gap": "new multi-field/axis/category specification -> representation -> trained model -> heldout/output transfer",
+    "status": "addressed_at_design_level",
+    "blocking_defects_reproduced": 0,
+    "criterion_by_criterion": "content-review.md",
+    "full_10_week_or_official_task_approval": false
+  },
+  "functional": {
+    "normal_controls_passed": 12,
+    "normal_controls_total": 12,
+    "intentional_mutants_detected": 8,
+    "intentional_mutants_total": 8,
+    "notebook_own_assertions_detected": 4,
+    "independent_oracles_detected": 4,
+    "full_notebook_cells": 38,
+    "full_code_cells_executed": 18,
+    "full_comment_only_student_code_cells": 1,
+    "provided_followup_routes": 8,
+    "valid_binary_grids_checked_against_actual_helper": 256,
+    "unexpected_failures": 0,
+    "raw_results": "candidate-functional-results-v1.json",
+    "mutation_expectations_actuals_scopes": "mutation-adjudication.json"
+  },
+  "separate_lanes": {
+    "actual_candidate_helper": "runs/native-aggregation/result.json",
+    "actual_candidate_conversion_source": "runs/native-conversion/result.json",
+    "reviewer_solution_of_candidate_exercise": "runs/reviewer-exercise/result.json",
+    "reviewer_new_four_feature_contract": "preparation-arithmetic-result.json",
+    "student_work": "not_observed"
+  },
+  "relocation": {
+    "representative_cases_matched": 3,
+    "normal_cases_passed": 2,
+    "physical_file_mutant_correctly_rejected": 1,
+    "status": "passed",
+    "copy_type": "temporary minimal asset checkout copy, not a full git clone",
+    "shared_dependency_environment": true,
+    "full_git_clone_or_clean_install_tested": false,
+    "original_configs_logs_and_freeze_preserved": true,
+    "temporary_copy_removed": true,
+    "raw_summary": "relocation-results/summary.json",
+    "reproduction": "REPRODUCING-ANOTHER-CHECKOUT.md"
+  },
+  "html": {
+    "input_code_blocks": 18,
+    "notebook_code_text_match": true,
+    "embedded_png_count": 1,
+    "browser_visual_inspection": "not_performed",
+    "generated_scatter_png_directly_viewed": true
+  },
+  "versions": {
+    "ipykernel": "7.4.0",
+    "IPython": "9.18.1",
+    "nbformat": "5.11.1",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.8.0",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2"
+  },
+  "remaining_unobserved": [
+    "actual student independent responses and learning transfer",
+    "actual learner time, help, and total first-week burden",
+    "10-week execution/mastery/admission outcomes",
+    "secure hidden/final test",
+    "ordinary socket Jupyter/Colab and complete browser-rendered HTML layout"
+  ],
+  "write_scope": "Only reviews/week01-deepening-20261111/independent/; no lesson/source/other-review/index/commit/remote mutation by reviewer.",
+  "runtime_cache_directories_remaining": [],
+  "blockers": []
+}

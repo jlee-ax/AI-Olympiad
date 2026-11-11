@@ -1,0 +1,24 @@
+{
+  "recorded_at_utc": "2026-11-11T11:59:41.142992+00:00",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "reviews/week01-deepening-20261111/system-context/verify_context.py",
+    "--run",
+    "candidate-ca89-01"
+  ],
+  "exit_code": 0,
+  "stdout_file": "reviews/week01-deepening-20261111/system-context/candidate-ca89-01/mechanical-verification-02.json",
+  "stdout_sha256": "5b8b4ba810e16b67d6f82d697c793336a04e34b7dc97542215e4f1323c70206f",
+  "context_snapshot_unchanged": true,
+  "capture_validation_sha256": "54b8e0b916636d00815eca02cd02c26083d86428a822876aac4cbbafe91a33e1",
+  "current_validation_sha256": "54b8e0b916636d00815eca02cd02c26083d86428a822876aac4cbbafe91a33e1",
+  "validation_changed_since_capture": false,
+  "recorded_validator_sha256": "c7c8d4f14eb09b92e892c338c80c32cdbfd9cb7d76340d8e2f5503cc7a6a1b10",
+  "actual_validator_sha256": "c7c8d4f14eb09b92e892c338c80c32cdbfd9cb7d76340d8e2f5503cc7a6a1b10",
+  "validation_names_current_validator": true,
+  "changed_context_inputs": [],
+  "failed_checks": [],
+  "independent_review_status": "pending; no new approval or inherited judgment",
+  "interpretation": "The context retains the actual validation version at capture. A later portable-validator update is a changed evidence version, not a silently updated old context or a demonstrated lesson-content defect."
+}

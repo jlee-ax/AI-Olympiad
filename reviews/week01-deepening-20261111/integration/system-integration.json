@@ -1,0 +1,37 @@
+{
+  "local_baseline_commit": "4e54fcb691bce53d4803d0a3ea13bb1eb3150f9b",
+  "local_tree": "8076fc1023eb55464251c32f8488d26ccfe17c92",
+  "remote_lesson_head_after_fast_forward": "53c7077ed3489df0636b490c479be11d89184761",
+  "system_tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest discover -s tests",
+    "return_code": 0,
+    "tests": 271,
+    "log": "system-regression.log"
+  },
+  "before_content_edit_artifact_and_context_sha256": {
+    "tools/quality.py": "03f24f7e9b89979e30facf258f8c8f9f358b1aca2de876a1adae5e058f0fc96b",
+    "tools/workflow.py": "11dc7a916d00a3b67528b63f7d6b02a74e9b895972f7ce56ec540d245b54872b",
+    "tools/review_preflight.py": "de09542da3c32f73f6f89a84709e63616fc8516f2ba6cbec08599443b5c878c5",
+    "lessons/week01/week01_integrated.ipynb": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+    "lessons/week01/week01_integrated.html": "53b48bf8370cff4f97ace9f78cbf8c5b838f7c758a56b86ef82d474003470596",
+    "curriculum/student-plan.html": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5"
+  },
+  "older_discovery_replay": {
+    "command": "python3 -B reviews/week01-integration-20261111/discovery/verify_integrated_discovery.py",
+    "return_code": 2,
+    "old_history_unchanged": true,
+    "mechanical_replay_passed": true,
+    "context_binding_current": false,
+    "changed_context_paths": [
+      "tools/quality.py",
+      "tools/workflow.py",
+      "tools/review_preflight.py"
+    ],
+    "stdout_sha256": "98f484968aaf0c2c548c6eba1007da44a1c17604a086293e6c0f013f03625a37",
+    "interpretation": "Older pinned tool/CLI context is stale after the implementation merge; this is not a judgment of the lesson content."
+  },
+  "limits": [
+    "The 271 tests include synthetic harness cases; no student learning, approval, semantic adequacy or full Jupyter/browser validation is inferred.",
+    "The legacy lesson_validation runner targets the older original notebook; this baseline executes the integrated notebook explicitly."
+  ]
+}

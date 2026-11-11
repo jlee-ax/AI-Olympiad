@@ -1,0 +1,8 @@
+{
+  "case": "controls",
+  "returncode": 0,
+  "stdout": "{\n  \"case\": \"controls\",\n  \"scope\": \"reviewer_reference_only_not_candidate_or_student\",\n  \"candidate_read\": false,\n  \"actual\": {\n    \"zero\": 1,\n    \"empty\": null,\n    \"all_missing\": null,\n    \"nan\": 1,\n    \"wrong_fit_unknown_mean\": 26.5,\n    \"wrong_zero_omission_mean\": 3,\n    \"same_shape_axis_wrong\": {\n      \"correct\": 2,\n      \"wrong\": 1\n    },\n    \"validation_999_does_not_change_fit\": true,\n    \"centroid_joint_row_permutation\": true,\n    \"two_different_model_outputs_accepted\": true,\n    \"format_mutants_rejected\": [\n      \"header\",\n      \"order\",\n      \"duplicate\",\n      \"missing\",\n      \"invalid_label\"\n    ],\n    \"valid_shape_wrong_prediction_requires_semantic_review\": true\n  },\n  \"status\": \"passed\"\n}\n",
+  "stderr": "",
+  "scope": "reviewer_reference_not_candidate_or_student",
+  "separate_subprocess": true
+}

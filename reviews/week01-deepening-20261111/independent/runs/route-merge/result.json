@@ -1,0 +1,90 @@
+{
+  "id": "route-merge",
+  "candidate_sha": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_python_tables.ipynb",
+  "config_sha": "e11e62dc8a4ab370f299badc832a8a006efc662156f72834ea0a7d3766a43355",
+  "status": "passed",
+  "scope": "provided_followup_code_only_student_answers_unobserved",
+  "execution": "new subprocess / fresh in-process kernel",
+  "cells": [
+    {
+      "index": 3,
+      "source_sha": "2045e2bca3a89afd0a30e80fe654e6c712c21e9526390c22180746897892a040",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "준비 완료. 이후 셀은 위에서 아래 순서로 실행합니다.\n"
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "source_sha": "e622a039066a87f247270c47c2bb99c3e12b1fc831582b67637a8c151e7d3c3a",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "읽은 자료: 노트북에 포함된 동일한 CSV\n"
+        },
+        {
+          "output_type": "display_data",
+          "metadata": {},
+          "data": {
+            "text/plain": "  pot_id place  sunlight_hours  water_ml  height_cm\n0    P01    실내               2       0.0          8\n1    P02    실내               3      20.0         10\n2    P03    창가               5       NaN         12\n3    P04    창가               6      40.0         14\n4    P05    실내               4      20.0         10\n5    P06    창가               7      60.0         18",
+            "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>pot_id</th>\n      <th>place</th>\n      <th>sunlight_hours</th>\n      <th>water_ml</th>\n      <th>height_cm</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>P01</td>\n      <td>실내</td>\n      <td>2</td>\n      <td>0.0</td>\n      <td>8</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>P02</td>\n      <td>실내</td>\n      <td>3</td>\n      <td>20.0</td>\n      <td>10</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>P03</td>\n      <td>창가</td>\n      <td>5</td>\n      <td>NaN</td>\n      <td>12</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>P04</td>\n      <td>창가</td>\n      <td>6</td>\n      <td>40.0</td>\n      <td>14</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>P05</td>\n      <td>실내</td>\n      <td>4</td>\n      <td>20.0</td>\n      <td>10</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>P06</td>\n      <td>창가</td>\n      <td>7</td>\n      <td>60.0</td>\n      <td>18</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+          }
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "source_sha": "4e871aa0c46d9cd256f7570943b37c690095a8222a31e6de48e97ced9a93276f",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "metadata": {},
+          "data": {
+            "text/plain": "  sample_id site  light_hours  water_amount_ml  final_height_cm\n0       Q01   실내            1              0.0                7\n1       Q02   실내            2              NaN                9\n2       Q03   창가            4             20.0               12\n3       Q04   창가            5             40.0               14",
+            "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>sample_id</th>\n      <th>site</th>\n      <th>light_hours</th>\n      <th>water_amount_ml</th>\n      <th>final_height_cm</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>Q01</td>\n      <td>실내</td>\n      <td>1</td>\n      <td>0.0</td>\n      <td>7</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>Q02</td>\n      <td>실내</td>\n      <td>2</td>\n      <td>NaN</td>\n      <td>9</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>Q03</td>\n      <td>창가</td>\n      <td>4</td>\n      <td>20.0</td>\n      <td>12</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>Q04</td>\n      <td>창가</td>\n      <td>5</td>\n      <td>40.0</td>\n      <td>14</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+          }
+        }
+      ]
+    },
+    {
+      "index": 78,
+      "source_sha": "fed3d4614f38cab3871f2d29f0c704de889c257d8440616cca4dea5e0eee5c1a",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "metadata": {},
+          "data": {
+            "text/plain": "  site      note\n0   실내  실내 관찰 구역\n1   창가  창가 관찰 구역",
+            "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>site</th>\n      <th>note</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>실내</td>\n      <td>실내 관찰 구역</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>창가</td>\n      <td>창가 관찰 구역</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+          }
+        }
+      ]
+    },
+    {
+      "index": 81,
+      "source_sha": "4fc363026df5df797aeb4ef74adb0268db19edde368fbd6eb05d3db599e29212",
+      "blank_ast": true,
+      "status": "ok",
+      "outputs": []
+    }
+  ],
+  "student_achievement": "not_observed",
+  "learning_time": "not_observed",
+  "elapsed_seconds": 2.0765,
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

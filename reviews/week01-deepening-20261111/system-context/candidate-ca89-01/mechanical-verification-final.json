@@ -1,0 +1,64 @@
+{
+  "authority": "advisory_only",
+  "record_type": "context_capture_verification_only",
+  "run": "candidate-ca89-01",
+  "checks": {
+    "artifact_at_capture_stable": true,
+    "current_artifacts_match_capture": true,
+    "exact_notebook_snapshot_matches": true,
+    "projection_sha_matches": true,
+    "projection_is_all_snapshot_cell_sources": true,
+    "old_records_still_unchanged": true,
+    "captured_context_inputs_current": true,
+    "stdout:old-discovery-report": true,
+    "stdout:old-context-verifier": true,
+    "stdout:old-quality-evaluate": true,
+    "stdout:old-workflow-decide": true,
+    "stdout:old-bundle-with-old-discovery": true,
+    "independent_addendum_preserves_pending_snapshot": true,
+    "independent_evidence_file_hashes_current": true,
+    "independent_result_and_mutation_bind_current_artifact": true,
+    "independent_recorded_case_counts_match_results": true,
+    "independent_old_session_unchanged": true,
+    "independent_addendum_is_not_K_approval_or_new_session": true,
+    "old_artifact_changed_actually_reported": true,
+    "old_demands_questions_queue_retained": true,
+    "old_pause_retained": true,
+    "no_new_approval_or_tool_session_claimed": true
+  },
+  "all_mechanical_checks_passed": true,
+  "queries": [
+    {
+      "name": "old-discovery-report",
+      "exact_stdout_bytes_and_sha_match": true,
+      "exit_code_recorded": 0,
+      "parsed_status": "needs_work"
+    },
+    {
+      "name": "old-context-verifier",
+      "exact_stdout_bytes_and_sha_match": true,
+      "exit_code_recorded": 2,
+      "parsed_status": null
+    },
+    {
+      "name": "old-quality-evaluate",
+      "exact_stdout_bytes_and_sha_match": true,
+      "exit_code_recorded": 0,
+      "parsed_status": "uncertain"
+    },
+    {
+      "name": "old-workflow-decide",
+      "exact_stdout_bytes_and_sha_match": true,
+      "exit_code_recorded": 0,
+      "parsed_status": "pause"
+    },
+    {
+      "name": "old-bundle-with-old-discovery",
+      "exact_stdout_bytes_and_sha_match": true,
+      "exit_code_recorded": 1,
+      "parsed_status": "blocked"
+    }
+  ],
+  "independent_review_at_capture": "pending; append its actual final artifact/result binding later without replacing this record.",
+  "limits": "Verifies recorded bytes and declarations only. Does not authenticate sources, establish semantic sufficiency, create a discovery session, pass K01-K16 or infer learner outcomes."
+}

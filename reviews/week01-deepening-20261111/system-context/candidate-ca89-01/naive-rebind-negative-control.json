@@ -1,0 +1,12 @@
+{
+  "operation": "quality.object_fingerprint after changing only old bundle artifact path/SHA in memory",
+  "source_bundle_path": "reviews/week01/independent-transfer-20261111/quality.json",
+  "source_bundle_sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+  "mutated_disk_record": false,
+  "actual": {
+    "result": "rejected",
+    "exception_type": "ValueError",
+    "message": "Object locator not found in artifact: 'cell:1ab9cd79'"
+  },
+  "interpretation": "A different actual artifact with different cells needs its own scoped object/evidence mapping. This rejection is a locator/binding result, not an educational assessment."
+}

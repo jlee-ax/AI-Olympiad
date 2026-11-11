@@ -1,0 +1,34 @@
+{
+  "old_repo_from_frozen_manifest": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision",
+  "new_repo": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-deepening-20261111/independent/relocation-copy-m91rxu2o/checkout",
+  "method": "Only notebook/oracle path fields are rebased relative to frozen repo root. No source/oracle/config/log/frozen baseline is modified.",
+  "configs": [
+    {
+      "input_config": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-deepening-20261111/independent/relocation-copy-m91rxu2o/checkout/reviews/week01-deepening-20261111/independent/case-configs/full-candidate.json",
+      "input_sha256": "5690088113b988591136f2682340c5d75729faf350ef92284f3b7da9b1e23bb9",
+      "new_config": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-deepening-20261111/independent/relocation-copy-m91rxu2o/checkout/reviews/week01-deepening-20261111/independent/rebased-configs/full-candidate.json",
+      "new_sha256": "1c3194a892c527ffcbf74a715111527083567841e1549860a3ab17471a101784",
+      "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-deepening-20261111/independent/relocation-copy-m91rxu2o/checkout/lessons/week01/week01_integrated.ipynb",
+      "oracle": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-deepening-20261111/independent/relocation-copy-m91rxu2o/checkout/reviews/week01-deepening-20261111/independent/oracle-full.py",
+      "candidate_sha256": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551"
+    },
+    {
+      "input_config": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-deepening-20261111/independent/relocation-copy-m91rxu2o/checkout/reviews/week01-deepening-20261111/independent/case-configs/native-aggregation.json",
+      "input_sha256": "f498bbf94619788fde192fd39e797cfe7f8a6e27b1a45095db987b9039b3e4da",
+      "new_config": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-deepening-20261111/independent/relocation-copy-m91rxu2o/checkout/reviews/week01-deepening-20261111/independent/rebased-configs/native-aggregation.json",
+      "new_sha256": "21f6d88a8f1fb76721988263033a74c48059536e3e29cc9a978f2addef4fb5bf",
+      "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-deepening-20261111/independent/relocation-copy-m91rxu2o/checkout/lessons/week01/week01_integrated.ipynb",
+      "oracle": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-deepening-20261111/independent/relocation-copy-m91rxu2o/checkout/reviews/week01-deepening-20261111/independent/oracle-native-aggregation.py",
+      "candidate_sha256": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551"
+    },
+    {
+      "input_config": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-deepening-20261111/independent/relocation-copy-m91rxu2o/checkout/reviews/week01-deepening-20261111/independent/case-configs/mutant-memory-replaces-physical.json",
+      "input_sha256": "9700e9092c571958dede09c9eb72ec3146234cbbcb07a7ff9842e0370b0a18a0",
+      "new_config": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-deepening-20261111/independent/relocation-copy-m91rxu2o/checkout/reviews/week01-deepening-20261111/independent/rebased-configs/mutant-memory-replaces-physical.json",
+      "new_sha256": "b53b14c354b092dec2e837107ad7f5beb8049dcabd503c52bd85754cc3680747",
+      "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-deepening-20261111/independent/relocation-copy-m91rxu2o/checkout/lessons/week01/week01_integrated.ipynb",
+      "oracle": null,
+      "candidate_sha256": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551"
+    }
+  ]
+}

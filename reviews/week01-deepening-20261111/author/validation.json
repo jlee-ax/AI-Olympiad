@@ -1,0 +1,65 @@
+{
+  "checked_at_utc": "2026-11-11T11:56:07.270885+00:00",
+  "method": "fresh in-process kernel; independent scalar loops and two independently fit models",
+  "cell_count": 38,
+  "code_cell_count": 18,
+  "executed_code_cells_zero_based": [
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28,
+    30,
+    32,
+    34,
+    36
+  ],
+  "checks": [
+    "notebook_schema_and_exact_html_export",
+    "fresh_inprocess_all_18_code_cells_saved_text_html_and_png_match",
+    "student_independent_code_blank_and_teacher_csv_absent",
+    "bounded_real_csv_mean_none_nan_zero_empty",
+    "axis_reshape_broadcast_and_variance",
+    "256_valid_observations_background_invariance_and_same_shape_transpose",
+    "id_pairing_real_fit_24_joint_permutations_mismatch_and_train_only",
+    "scatter_identity_units_and_memory_and_physical_csv_roundtrip",
+    "teacher_key_independent_schema_two_models_file_and_error_cases"
+  ],
+  "source_sha256_before_and_after": {
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_integrated.ipynb": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_integrated.html": "f2d7d0fb5326e901335aa47350caba489bf64309e27f1befc866442f30883b28",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_integrated_teacher.md": "d93a33f70a4db3e028f0f00a68c83c50270f73351c68987a2a71f721b69015d7",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_python_tables.ipynb": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge.ipynb": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_problem_pipeline.ipynb": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb": "733c0093b44f30d31354567331c2c39ee325ed074e7a6368bb1f2e96f0c174c0",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.html": "ee3ca9f9ebf491a6e768b3dd99264415d11a384f48f7311b51d5711d48b79f0c",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/lesson-manifest.json": "06ac05f087e7123efcac06782735ad923040e48f062996b28f5b90c9b41c2d07",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/teacher-notes.txt": "23c4195940e0da732f70d97383af440f0913d066f1f72844f5198a9558cb1a38",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/validation.json": "574d75c158af6218aea44394e01829b95fb992593c2c59773b17728d0ec7869c",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/data/week1_plants.csv": "fece0473e50b097afa7c2b3e2647c9a6e623bd3d8e009e6ef620151887227639",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/data/week1_plants_new.csv": "869db97ef7c5f6ccf1020bc435fe831f180e9b9548d722c41c91b63af44d7290"
+  },
+  "protected_worktree": {
+    "status": "checked",
+    "reason": "explicit path",
+    "files_compared": 7
+  },
+  "validator_sha256": "c7c8d4f14eb09b92e892c338c80c32cdbfd9cb7d76340d8e2f5503cc7a6a1b10",
+  "limitations": [
+    "blank student answer was not solved by a learner",
+    "reference error checks exercise a teacher solution, not student code",
+    "student achievement and workload are unobserved",
+    "ordinary socket Jupyter/Colab and browser visual rendering were not tested",
+    "synthetic exercises do not solve the international competition tasks"
+  ]
+}

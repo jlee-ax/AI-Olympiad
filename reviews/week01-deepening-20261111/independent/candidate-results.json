@@ -1,0 +1,6 @@
+{
+  "status": "not_run",
+  "candidate_sha": null,
+  "reason": "Final candidate SHA not received; no candidate read or execution.",
+  "results": []
+}

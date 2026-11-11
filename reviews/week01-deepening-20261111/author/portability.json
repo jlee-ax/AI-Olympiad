@@ -1,0 +1,70 @@
+{
+  "checked_at_utc": "2026-11-11T11:57:53.467570+00:00",
+  "method": "fresh local git clone; copy current uncommitted candidate and author tools; execute with current Python",
+  "builder_stdout": "BUILT 38 cells 18 code cells",
+  "generated_sha256": [
+    "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551",
+    "f2d7d0fb5326e901335aa47350caba489bf64309e27f1befc866442f30883b28"
+  ],
+  "builder_existing_directory_refused": true,
+  "builder_refusal_exit_code": 2,
+  "builder_output_unchanged_after_refusal": true,
+  "candidate_validation_checks": [
+    "notebook_schema_and_exact_html_export",
+    "fresh_inprocess_all_18_code_cells_saved_text_html_and_png_match",
+    "student_independent_code_blank_and_teacher_csv_absent",
+    "bounded_real_csv_mean_none_nan_zero_empty",
+    "axis_reshape_broadcast_and_variance",
+    "256_valid_observations_background_invariance_and_same_shape_transpose",
+    "id_pairing_real_fit_24_joint_permutations_mismatch_and_train_only",
+    "scatter_identity_units_and_memory_and_physical_csv_roundtrip",
+    "teacher_key_independent_schema_two_models_file_and_error_cases"
+  ],
+  "protected_worktree": {
+    "status": "not_checked",
+    "reason": "no path supplied",
+    "files_compared": 0
+  },
+  "followup_results": [
+    {
+      "notebook": "original",
+      "executed_cell_indices_zero_based": [
+        3,
+        27,
+        54,
+        19,
+        20,
+        22,
+        43,
+        46,
+        48,
+        59,
+        64,
+        69,
+        71,
+        73,
+        74,
+        78,
+        84
+      ],
+      "status": "passed"
+    },
+    {
+      "notebook": "bridge",
+      "executed_cell_indices_zero_based": [
+        2,
+        21,
+        23,
+        25,
+        27
+      ],
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "same installed Python, libraries, and fonts as source workspace",
+    "clone used no protected-worktree argument",
+    "temporary clone and generated files are removed",
+    "no learner observation or full browser rendering"
+  ]
+}

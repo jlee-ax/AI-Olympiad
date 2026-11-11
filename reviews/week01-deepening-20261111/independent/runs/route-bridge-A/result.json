@@ -1,0 +1,44 @@
+{
+  "id": "route-bridge-A",
+  "candidate_sha": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge.ipynb",
+  "config_sha": "c7a2daece5b9cab94509280d402042b3f29f7e290b1fbe23e401bc7b414f19d5",
+  "status": "passed",
+  "scope": "provided_followup_code_only_student_answers_unobserved",
+  "execution": "new subprocess / fresh in-process kernel",
+  "cells": [
+    {
+      "index": 2,
+      "source_sha": "0ef3cdab4806b707912c9b423b52d11a945c7a03df05d73e74e5a26b7d690514",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "X =\n [[2 1]\n [1 3]\n [3 2]]\nshape: (3, 2) / 첫 행: [2 1]\n위치 1의 ID: P24\n"
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "source_sha": "241915d52561ca262c3df964f84b47b0aada6eebe24a5ed4891428f1e684f5eb",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": []
+    },
+    {
+      "index": 23,
+      "source_sha": "5c2c9683e0cc5a4911f682f9b0744544723caf50e8e78a36fe4128ab72714cfa",
+      "blank_ast": true,
+      "status": "ok",
+      "outputs": []
+    }
+  ],
+  "student_achievement": "not_observed",
+  "learning_time": "not_observed",
+  "elapsed_seconds": 0.1638,
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

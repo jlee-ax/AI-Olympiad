@@ -1,0 +1,99 @@
+{
+  "id": "mutant-zero-missing",
+  "candidate_sha": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_integrated.ipynb",
+  "config_sha": "854ee9be1946ef772eb0f2603d5069e2d484e1d14726a811e90bc4b075523cd9",
+  "status": "notebook_error",
+  "scope": "candidate_actual",
+  "execution": "new subprocess / fresh in-process kernel",
+  "cells": [
+    {
+      "index": 2,
+      "source_sha": "43c106f2b855664e7d9244759666f7320a383e645487f7eb4908b4805c5ccf78",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "metadata": {},
+          "data": {
+            "text/plain": "  pot_id place  light_h  water_ml  height_cm\n0    P01    실내        2       0.0          8\n1    P02    실내        3      20.0         10\n2    P03    창가        5       NaN         12\n3    P04    창가        6      40.0         14\n4    P05    실내        4      10.0         14\n5    P06    창가        7      50.0         18",
+            "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>pot_id</th>\n      <th>place</th>\n      <th>light_h</th>\n      <th>water_ml</th>\n      <th>height_cm</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>P01</td>\n      <td>실내</td>\n      <td>2</td>\n      <td>0.0</td>\n      <td>8</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>P02</td>\n      <td>실내</td>\n      <td>3</td>\n      <td>20.0</td>\n      <td>10</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>P03</td>\n      <td>창가</td>\n      <td>5</td>\n      <td>NaN</td>\n      <td>12</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>P04</td>\n      <td>창가</td>\n      <td>6</td>\n      <td>40.0</td>\n      <td>14</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>P05</td>\n      <td>실내</td>\n      <td>4</td>\n      <td>10.0</td>\n      <td>14</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>P06</td>\n      <td>창가</td>\n      <td>7</td>\n      <td>50.0</td>\n      <td>18</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+          }
+        },
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "행과 열: (6, 5) / 열 순서: ['pot_id', 'place', 'light_h', 'water_ml', 'height_cm']\n"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "source_sha": "605668709f70e143caae930f43b796c65c8df287c753fa987e5d1d1d79d26133",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "특성 shape: (6, 2) / 정답 shape: (6,)\n"
+        },
+        {
+          "output_type": "display_data",
+          "metadata": {},
+          "data": {
+            "text/plain": "  pot_id  light_h  height_cm\n2    P03        5         12\n3    P04        6         14\n5    P06        7         18",
+            "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>pot_id</th>\n      <th>light_h</th>\n      <th>height_cm</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>2</th>\n      <td>P03</td>\n      <td>5</td>\n      <td>12</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>P04</td>\n      <td>6</td>\n      <td>14</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>P06</td>\n      <td>7</td>\n      <td>18</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+          }
+        },
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "결측 물의 ID: ['P03']\n물 0의 ID: ['P01']\n"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "source_sha": "e7373ef65714e49c8b691c838d6fe2ab49d53f75b5f6e3de919db645fbac417d",
+      "blank_ast": false,
+      "status": "error",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "CSV의 관측 평균(ml): 30.0\n[0, None, NaN, 6]의 평균: 6.0\n관측이 없는 경우: None\n"
+        },
+        {
+          "output_type": "error",
+          "ename": "AssertionError",
+          "evalue": "",
+          "traceback": [
+            "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+            "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+            "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[3]\u001b[39m\u001b[32m, line 17\u001b[39m\n\u001b[32m     13\u001b[39m water_average = observed_mean(water_records)\n\u001b[32m     14\u001b[39m print(\u001b[33m\"CSV의 관측 평균(ml):\"\u001b[39m, water_average)\n\u001b[32m     15\u001b[39m print(\u001b[33m\"[0, None, NaN, 6]의 평균:\"\u001b[39m, observed_mean([\u001b[32m0\u001b[39m, \u001b[38;5;28;01mNone\u001b[39;00m, np.nan, \u001b[32m6\u001b[39m]))\n\u001b[32m     16\u001b[39m print(\u001b[33m\"관측이 없는 경우:\"\u001b[39m, observed_mean([\u001b[38;5;28;01mNone\u001b[39;00m, np.nan]))\n\u001b[32m---> \u001b[39m\u001b[32m17\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m water_average == \u001b[32m24\u001b[39m \u001b[38;5;28;01mand\u001b[39;00m observed_mean([\u001b[32m0\u001b[39m, \u001b[38;5;28;01mNone\u001b[39;00m, np.nan, \u001b[32m6\u001b[39m]) == \u001b[32m3\u001b[39m\n\u001b[32m     18\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m observed_mean([\u001b[32m0\u001b[39m]) == \u001b[32m0\u001b[39m \u001b[38;5;28;01mand\u001b[39;00m observed_mean([]) \u001b[38;5;28;01mis\u001b[39;00m \u001b[38;5;28;01mNone\u001b[39;00m\n",
+            "\u001b[31mAssertionError\u001b[39m: "
+          ]
+        }
+      ]
+    }
+  ],
+  "student_achievement": "not_observed",
+  "learning_time": "not_observed",
+  "failed_cell": 6,
+  "error": {
+    "ename": "AssertionError",
+    "evalue": "",
+    "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[3]\u001b[39m\u001b[32m, line 17\u001b[39m\n\u001b[32m     13\u001b[39m water_average = observed_mean(water_records)\n\u001b[32m     14\u001b[39m print(\u001b[33m\"CSV의 관측 평균(ml):\"\u001b[39m, water_average)\n\u001b[32m     15\u001b[39m print(\u001b[33m\"[0, None, NaN, 6]의 평균:\"\u001b[39m, observed_mean([\u001b[32m0\u001b[39m, \u001b[38;5;28;01mNone\u001b[39;00m, np.nan, \u001b[32m6\u001b[39m]))\n\u001b[32m     16\u001b[39m print(\u001b[33m\"관측이 없는 경우:\"\u001b[39m, observed_mean([\u001b[38;5;28;01mNone\u001b[39;00m, np.nan]))\n\u001b[32m---> \u001b[39m\u001b[32m17\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m water_average == \u001b[32m24\u001b[39m \u001b[38;5;28;01mand\u001b[39;00m observed_mean([\u001b[32m0\u001b[39m, \u001b[38;5;28;01mNone\u001b[39;00m, np.nan, \u001b[32m6\u001b[39m]) == \u001b[32m3\u001b[39m\n\u001b[32m     18\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m observed_mean([\u001b[32m0\u001b[39m]) == \u001b[32m0\u001b[39m \u001b[38;5;28;01mand\u001b[39;00m observed_mean([]) \u001b[38;5;28;01mis\u001b[39;00m \u001b[38;5;28;01mNone\u001b[39;00m\n",
+      "\u001b[31mAssertionError\u001b[39m: "
+    ]
+  },
+  "elapsed_seconds": 0.6168,
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

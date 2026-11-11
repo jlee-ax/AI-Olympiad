@@ -1,0 +1,27 @@
+{
+  "candidate_sha256": {
+    "lessons/week01/week01_integrated.ipynb": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551",
+    "lessons/week01/week01_integrated.html": "f2d7d0fb5326e901335aa47350caba489bf64309e27f1befc866442f30883b28",
+    "lessons/week01/week01_integrated_teacher.md": "d93a33f70a4db3e028f0f00a68c83c50270f73351c68987a2a71f721b69015d7"
+  },
+  "post_lesson_regression": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest discover -s tests",
+    "exit_code": 0,
+    "tests": 271,
+    "log": "final-regression.log",
+    "log_sha256": "96c9d06259b7fd01cbc8656a21f2e502544a02986ca58ff02eb9d1b459dfb9a4"
+  },
+  "protected_input_sha256_check": {
+    "source": "reviews/discovery-loop-20261111/preserved-inputs.json",
+    "checked_count": 6,
+    "all_unchanged": true,
+    "original_worktree_modified": false
+  },
+  "deleted_week01_readme": "absent from both worktrees",
+  "saved_plot_visual_inspection": "One stored PNG visually inspected: Korean title and axes, legend and P01–P06 labels legible; the actual HTML browser layout was not checked.",
+  "not_established": [
+    "real student time, unaided learning or transfer",
+    "standard socket Jupyter kernel and full browser rendering",
+    "actual course completion"
+  ]
+}

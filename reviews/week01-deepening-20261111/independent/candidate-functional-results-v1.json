@@ -1,0 +1,167 @@
+{
+  "candidate_sha": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551",
+  "rows": [
+    {
+      "id": "full-candidate",
+      "expected": "pass",
+      "actual": "passed",
+      "matched_expected": true,
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "id": "mutant-color-only",
+      "expected": "reject",
+      "actual": "notebook_error",
+      "matched_expected": true,
+      "returncode": 1,
+      "error": ""
+    },
+    {
+      "id": "mutant-fit-population",
+      "expected": "reject",
+      "actual": "notebook_error",
+      "matched_expected": true,
+      "returncode": 1,
+      "error": ""
+    },
+    {
+      "id": "mutant-hardcoded-centers",
+      "expected": "reject",
+      "actual": "oracle_error",
+      "matched_expected": true,
+      "returncode": 1,
+      "error": ""
+    },
+    {
+      "id": "mutant-id-value-mismatch",
+      "expected": "reject",
+      "actual": "oracle_error",
+      "matched_expected": true,
+      "returncode": 1,
+      "error": ""
+    },
+    {
+      "id": "mutant-memory-replaces-physical",
+      "expected": "reject",
+      "actual": "harness_or_assertion_error",
+      "matched_expected": true,
+      "returncode": 1,
+      "error": "actual notebook physical file write/read missing: result.csv"
+    },
+    {
+      "id": "mutant-object-only",
+      "expected": "reject",
+      "actual": "notebook_error",
+      "matched_expected": true,
+      "returncode": 1,
+      "error": ""
+    },
+    {
+      "id": "mutant-positional-images",
+      "expected": "reject",
+      "actual": "oracle_error",
+      "matched_expected": true,
+      "returncode": 1,
+      "error": ""
+    },
+    {
+      "id": "mutant-zero-missing",
+      "expected": "reject",
+      "actual": "notebook_error",
+      "matched_expected": true,
+      "returncode": 1,
+      "error": ""
+    },
+    {
+      "id": "native-aggregation",
+      "expected": "pass",
+      "actual": "passed",
+      "matched_expected": true,
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "id": "native-conversion",
+      "expected": "pass",
+      "actual": "passed",
+      "matched_expected": true,
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "id": "reviewer-exercise",
+      "expected": "pass",
+      "actual": "passed",
+      "matched_expected": true,
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "id": "route-axis",
+      "expected": "pass",
+      "actual": "passed",
+      "matched_expected": true,
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "id": "route-bridge-A",
+      "expected": "pass",
+      "actual": "passed",
+      "matched_expected": true,
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "id": "route-bridge-B",
+      "expected": "pass",
+      "actual": "passed",
+      "matched_expected": true,
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "id": "route-dot",
+      "expected": "pass",
+      "actual": "passed",
+      "matched_expected": true,
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "id": "route-dtype-mean",
+      "expected": "pass",
+      "actual": "passed",
+      "matched_expected": true,
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "id": "route-graphs",
+      "expected": "pass",
+      "actual": "passed",
+      "matched_expected": true,
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "id": "route-merge",
+      "expected": "pass",
+      "actual": "passed",
+      "matched_expected": true,
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "id": "route-python",
+      "expected": "pass",
+      "actual": "passed",
+      "matched_expected": true,
+      "returncode": 0,
+      "error": null
+    }
+  ],
+  "scope": "Separate fresh subprocess/kernel per case. A rejected mutant requires review of raw reason, not merely a nonzero status.",
+  "student_achievement": "not_observed"
+}

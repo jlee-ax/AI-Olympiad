@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+    "-B",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-deepening-20261111/independent/relocation-copy-m91rxu2o/checkout/reviews/week01-deepening-20261111/independent/execute_candidate_case.py",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-deepening-20261111/independent/relocation-copy-m91rxu2o/checkout/reviews/week01-deepening-20261111/independent/rebased-configs/mutant-memory-replaces-physical.json"
+  ],
+  "returncode": 1,
+  "stdout": "{\"id\": \"mutant-memory-replaces-physical\", \"status\": \"harness_or_assertion_error\", \"scope\": \"candidate_actual\", \"source_unchanged\": true, \"runtime_removed\": true}\n",
+  "stderr": "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/jupyter_client/localinterfaces.py:58: UserWarning: Unexpected error discovering local network interfaces: [Errno 1] Operation not permitted\n  ret = f(**kwargs)\n"
+}

@@ -1,0 +1,127 @@
+{
+  "record_type": "read_only_artifact_context_capture",
+  "authority": "advisory_only",
+  "recorded_at_utc": "2026-11-11T11:56:24.370326+00:00",
+  "git_HEAD": "4e54fcb691bce53d4803d0a3ea13bb1eb3150f9b",
+  "capture_script_sha256": "74f2919342230ceb12d19d991266a568f5821a6cc5272bcfde6b143cfd18f0d2",
+  "artifacts_at_start": {
+    "lessons/week01/week01_integrated.ipynb": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551",
+    "lessons/week01/week01_integrated.html": "f2d7d0fb5326e901335aa47350caba489bf64309e27f1befc866442f30883b28",
+    "lessons/week01/week01_integrated_teacher.md": "d93a33f70a4db3e028f0f00a68c83c50270f73351c68987a2a71f721b69015d7"
+  },
+  "artifacts_at_end": {
+    "lessons/week01/week01_integrated.ipynb": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551",
+    "lessons/week01/week01_integrated.html": "f2d7d0fb5326e901335aa47350caba489bf64309e27f1befc866442f30883b28",
+    "lessons/week01/week01_integrated_teacher.md": "d93a33f70a4db3e028f0f00a68c83c50270f73351c68987a2a71f721b69015d7"
+  },
+  "artifacts_stable_during_capture": true,
+  "main_exact_snapshot_path": "reviews/week01-deepening-20261111/system-context/candidate-ca89-01/artifact-exact.ipynb",
+  "main_exact_snapshot_sha256": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551",
+  "source_projection_path": "reviews/week01-deepening-20261111/system-context/candidate-ca89-01/lesson-source.md",
+  "source_projection_sha256": "0fb201fa3a40eb7ad7065f1a5213de1bde0f3a96d2934a301e95ef340ad4185a",
+  "context_inputs": [
+    {
+      "path": "curriculum/contract.json",
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "curriculum/student-plan.html",
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5"
+    },
+    {
+      "path": "skills/references/criteria.json",
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "skills/koai-evaluate/references/unit-specifications.json",
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "skills/koai-evaluate/references/theory-explanation.json",
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "tools/quality.py",
+      "sha256": "03f24f7e9b89979e30facf258f8c8f9f358b1aca2de876a1adae5e058f0fc96b"
+    },
+    {
+      "path": "tools/workflow.py",
+      "sha256": "11dc7a916d00a3b67528b63f7d6b02a74e9b895972f7ce56ec540d245b54872b"
+    },
+    {
+      "path": "tools/review_preflight.py",
+      "sha256": "de09542da3c32f73f6f89a84709e63616fc8516f2ba6cbec08599443b5c878c5"
+    },
+    {
+      "path": "tools/discovery_loop.py",
+      "sha256": "2273d1e9a47aff0dc038f0379837c908cb84a559d3e31e3a026f5a7c189d0914"
+    },
+    {
+      "path": "reviews/week01-deepening-20261111/sources-and-scope.md",
+      "sha256": "773f08959f4d35ecb6eb9ba6984041aad9070db5d8469269e51e5a6ac702fd1e"
+    },
+    {
+      "path": "reviews/week01-deepening-20261111/author/validation.json",
+      "sha256": "54b8e0b916636d00815eca02cd02c26083d86428a822876aac4cbbafe91a33e1"
+    },
+    {
+      "path": "reviews/week01-integration-20261111/transfer/source-reading.json",
+      "sha256": "060523d2c222845c6c728f13e2e1df3eb0f53210b46f821c1b5c668d99c7d1ff"
+    }
+  ],
+  "protected_previous_records_before": {
+    "reviews/week01-integration-20261111/discovery/runs/integrated-candidate-01/session.json": "9c4ceb26c18bb2a2c9e0b912036bff2fb9aff8dfaf3adf0fdc3e08e9bafe9145",
+    "reviews/week01-integration-20261111/discovery/runs/integrated-candidate-01/report.json": "177bd3eb88dc8e08e9d435913453ee7290400aa8cbf41275738e3e9eb869562d",
+    "reviews/week01-integration-20261111/discovery/runs/integrated-candidate-01/manifest.json": "31f99a9f045d0e055552b900959739235364610aa1b0c562d5666fc3a52a27fe",
+    "reviews/week01-integration-20261111/discovery/runs/integrated-candidate-01/origin.json": "2d239efe17363f6f6cc7b5ee04613936cd5eb5b39b709714d32eff356fa0be76",
+    "reviews/week01-integration-20261111/discovery/runs/integrated-candidate-01/projection-provenance.json": "87b4e4a0b7cedd733a980086d0663115742b6ea8f2eb8cb883a4b6ffc5a895fa",
+    "reviews/week01-integration-20261111/discovery/context-binding.json": "51958250ed86610362b36007edf2cc6ddc3195218c9804c77d39929c1c75f9ae",
+    "reviews/week01/independent-transfer-20261111/quality.json": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+    "reviews/week01/independent-transfer-20261111/workflow.json": "21f999d6cfbc17a01c64d885e7c27cd0879e4794cbf405d253193bd02c7d131f",
+    "reviews/week01/independent-transfer-20261111/graph.json": "de4c9556a2b93a30205f290062c668dca4a82871a32fe9b05960dd067265403d",
+    "reviews/week01/independent-transfer-20261111/depth.json": "252644772fb7422757e5f68ace544223aac90d95f3347b95c929750e173bfe3a",
+    "reviews/week01/independent-transfer-20261111/paths.json": "ae5f2cf2a01dce72005a063d8bcb91badb80d5d11b836971c13edf77b497b4b8",
+    "reviews/week01/independent-transfer-20261111/semantic-review.json": "609abbee31e01581f3bafdf705ed8acba2b78d10f48ac5b229f696734a92e2e6",
+    "lessons/week01/week01_python_tables.ipynb": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+    "lessons/week01/week01_axes_linear_bridge.ipynb": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+    "lessons/week01/week01_problem_pipeline.ipynb": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a"
+  },
+  "protected_previous_records_after": {
+    "reviews/week01-integration-20261111/discovery/runs/integrated-candidate-01/session.json": "9c4ceb26c18bb2a2c9e0b912036bff2fb9aff8dfaf3adf0fdc3e08e9bafe9145",
+    "reviews/week01-integration-20261111/discovery/runs/integrated-candidate-01/report.json": "177bd3eb88dc8e08e9d435913453ee7290400aa8cbf41275738e3e9eb869562d",
+    "reviews/week01-integration-20261111/discovery/runs/integrated-candidate-01/manifest.json": "31f99a9f045d0e055552b900959739235364610aa1b0c562d5666fc3a52a27fe",
+    "reviews/week01-integration-20261111/discovery/runs/integrated-candidate-01/origin.json": "2d239efe17363f6f6cc7b5ee04613936cd5eb5b39b709714d32eff356fa0be76",
+    "reviews/week01-integration-20261111/discovery/runs/integrated-candidate-01/projection-provenance.json": "87b4e4a0b7cedd733a980086d0663115742b6ea8f2eb8cb883a4b6ffc5a895fa",
+    "reviews/week01-integration-20261111/discovery/context-binding.json": "51958250ed86610362b36007edf2cc6ddc3195218c9804c77d39929c1c75f9ae",
+    "reviews/week01/independent-transfer-20261111/quality.json": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+    "reviews/week01/independent-transfer-20261111/workflow.json": "21f999d6cfbc17a01c64d885e7c27cd0879e4794cbf405d253193bd02c7d131f",
+    "reviews/week01/independent-transfer-20261111/graph.json": "de4c9556a2b93a30205f290062c668dca4a82871a32fe9b05960dd067265403d",
+    "reviews/week01/independent-transfer-20261111/depth.json": "252644772fb7422757e5f68ace544223aac90d95f3347b95c929750e173bfe3a",
+    "reviews/week01/independent-transfer-20261111/paths.json": "ae5f2cf2a01dce72005a063d8bcb91badb80d5d11b836971c13edf77b497b4b8",
+    "reviews/week01/independent-transfer-20261111/semantic-review.json": "609abbee31e01581f3bafdf705ed8acba2b78d10f48ac5b229f696734a92e2e6",
+    "lessons/week01/week01_python_tables.ipynb": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+    "lessons/week01/week01_axes_linear_bridge.ipynb": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+    "lessons/week01/week01_problem_pipeline.ipynb": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a"
+  },
+  "protected_previous_records_unchanged": true,
+  "old_discovery_demand_count": 19,
+  "old_discovery_question_count": 8,
+  "old_discovery_queue_count": 17,
+  "old_pause": "criteria_agreement_required",
+  "git_index_before": "4f051579c221b787fbf45ebd5c14b31ae47a697165cd1c1dff14885044c74633",
+  "git_index_after": "4f051579c221b787fbf45ebd5c14b31ae47a697165cd1c1dff14885044c74633",
+  "git_index_unchanged_during_capture": true,
+  "current_task_authorization": "Parent delegated the current user-directed lesson follow-up and explicitly authorized a new separate system-context capture. This authoring authorization is not old criteria agreement or workflow acceptance.",
+  "independent_content_review_status": "pending; append its actual final artifact/result binding later without replacing this record.",
+  "new_quality_bundle_created": false,
+  "new_discovery_session_created": false,
+  "new_graph_or_workflow_acceptance_created": false,
+  "old_judgments_automatically_inherited": false,
+  "learner_outcomes_observed": false,
+  "limits": [
+    "The capture script computes byte identity, executes read-only existing tools and preserves their exact output. It does not authenticate primary sources, extract new educational requirements or decide meaning.",
+    "This context.json has its own advisory evidence format. It is not a discovery_loop session or K01-K16 quality bundle validated by those tools.",
+    "Old session demands/questions/queue and historical pause remain unchanged. A new lesson does not inherit old approvals.",
+    "Same source text can behave differently after changed earlier cells; source identity is not a semantic carry-forward judgment."
+  ]
+}

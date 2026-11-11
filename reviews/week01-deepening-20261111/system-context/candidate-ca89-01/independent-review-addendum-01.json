@@ -1,0 +1,57 @@
+{
+  "record_type": "independent_review_evidence_binding_addendum",
+  "authority": "advisory_only",
+  "recorded_at_utc": "2026-11-11T12:05:43.446481+00:00",
+  "artifact_path": "lessons/week01/week01_integrated.ipynb",
+  "artifact_sha256": "ca89cf21b31a82e51f083344f3d156e046ad1356d31c22ffd87607aeeddd4551",
+  "prior_context_path": "reviews/week01-deepening-20261111/system-context/candidate-ca89-01/context.json",
+  "prior_context_sha256": "def63c86cf69d262649a44e29f6a00c139dc0686e48288cd0ae8e3e6716e1d15",
+  "prior_context_review_status_at_capture_preserved": "pending; append its actual final artifact/result binding later without replacing this record.",
+  "independent_content_review_status": "completed for the bounded candidate design/content/function scope in the linked report",
+  "independent_reviewer": "/root/lesson_review",
+  "evidence_files": [
+    {
+      "path": "reviews/week01-deepening-20261111/independent/content-review.md",
+      "sha256": "97f19d5914c147c3daab8e3256928cf30d71196c25c9f6f5b81a080409e0f2c3",
+      "role": "manual content judgment"
+    },
+    {
+      "path": "reviews/week01-deepening-20261111/independent/mutation-adjudication.json",
+      "sha256": "0c86b3cdcedb1c1f040e1b9f51019714f15d2646a158c14214754a83599622d8",
+      "role": "mutation reason adjudication"
+    },
+    {
+      "path": "reviews/week01-deepening-20261111/independent/candidate-functional-results-v1.json",
+      "sha256": "7246d9e9ae9dab88e820e57fdade73fbfdd4ba6aed4866f1fa8ab9e89429d441",
+      "role": "actual functional run outcomes"
+    }
+  ],
+  "result_json_path": "reviews/week01-deepening-20261111/independent/candidate-functional-results-v1.json",
+  "result_artifact_key": "candidate_sha",
+  "mutation_json_path": "reviews/week01-deepening-20261111/independent/mutation-adjudication.json",
+  "mutation_artifact_key": "candidate_sha",
+  "reported_results": {
+    "normal_cases": 12,
+    "intentional_error_cases": 8,
+    "all_rows_match_expected": true,
+    "mutations_detected": 8,
+    "candidate_own_assertions_detected": 4,
+    "independent_oracles_detected": 4
+  },
+  "independent_reported_conclusion": "The selected heterogeneous-input-to-representation-to-model transfer gap is addressed at material-design level; no blocking technical/specification defect was reproduced in the finite reviewed scope. This sentence records the linked reviewer judgment, not a conclusion inferred from matching hashes.",
+  "old_discovery_session_path": "reviews/week01-integration-20261111/discovery/runs/integrated-candidate-01/session.json",
+  "old_discovery_session_sha256": "9c4ceb26c18bb2a2c9e0b912036bff2fb9aff8dfaf3adf0fdc3e08e9bafe9145",
+  "old_demand_count": 19,
+  "old_question_count": 8,
+  "old_queue_count": 17,
+  "old_pause_preserved": "criteria_agreement_required",
+  "new_quality_criteria_passes_created": false,
+  "new_discovery_session_created": false,
+  "old_covered_judgments_inherited": false,
+  "limits": [
+    "The linked independent candidate criteria and 12 normal/8 error cases are not K01-K16 or an aggregate workflow approval.",
+    "Four mutants were detected by candidate assertions and four by independent oracles; this is not a claim that the candidate detects every error.",
+    "Reviewer reference solutions and supplied blank student slots are not learner work. Student mastery, independent performance, actual workload, ordinary Jupyter/Colab and full-browser HTML remain unobserved.",
+    "Subsequent relocation/portability checks belong to separate follow-up files; this binding does not claim they are complete."
+  ]
+}
