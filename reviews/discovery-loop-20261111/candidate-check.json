@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "sample_rectangular_pairwise_matrix_and_one_cell",
+      "status": "passed"
+    },
+    {
+      "name": "elementwise_multiplication_counterexample",
+      "status": "passed"
+    },
+    {
+      "name": "contraction_mismatch_raises",
+      "status": "passed"
+    },
+    {
+      "name": "stack_and_concatenate_axes_and_shape_constraints",
+      "status": "passed"
+    },
+    {
+      "name": "query_gallery_reorder_id_alignment_and_wrong_controls",
+      "status": "passed"
+    },
+    {
+      "name": "independent_exercise_review_answer_and_reordering",
+      "status": "passed"
+    },
+    {
+      "name": "independent_exercise_stack_and_concatenate_answers",
+      "status": "passed"
+    },
+    {
+      "name": "lesson_scope_headings_and_no_learner_claim",
+      "status": "passed"
+    }
+  ],
+  "test_scope": "Executes the draft's sample, independent task input, and teacher review answer, plus negative controls; does not execute learner responses.",
+  "learner_evidence": "No learner response or independent performance observed.",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.4"
+  },
+  "executed_example_stdout": "점수:\n [[2 2 1 4]\n [0 3 1 2]]\nquery ID -> gallery ID: {np.int64(103): np.int64(35), np.int64(109): np.int64(7)}\nstack / 행 연결 / 열 연결: (2, 2, 3) (4, 3) (2, 6)\n",
+  "artifacts_sha256": {
+    "candidate-bridge.md": "c3a1ac4d26f3d566af348b2adf62bfdfbe9c0c8eca07aeb8088e1680baaa19d7",
+    "candidate-check.py": "0d46626a8dd488870f37668d0d7d6a9c8099eeed9f9d5b11d7e3732a89728bef"
+  }
+}

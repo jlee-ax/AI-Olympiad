@@ -1,0 +1,55 @@
+{
+  "id": "actual-005-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Current direct-read research and actual-lesson review; design evidence, no learner claim.",
+    "demand_id": "D11",
+    "judgment": "uncertain",
+    "reviewer": "root-actual-content-review",
+    "rationale": "현재 참고 링크는 있으나 국내/국제 버전차·RL 신설 상태 기록은 없음. Scope is course-level; later placement proposals do not invalidate a proper basic Week1, and do not prove later teaching.",
+    "start_line": 1284,
+    "end_line": 1295,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "Existing sums/indexing/return/axis foundations are preserved; full prerequisite-set availability is reviewed separately. 현재 참고 링크는 있으나 국내/국제 버전차·RL 신설 상태 기록은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 국제2027의 새 RL/SSH/Git을 국내 KOAI2027 확정 요구나 1주차 필수로 자동 승격하지 않는다.",
+        "start_line": 1284,
+        "end_line": 1295
+      },
+      {
+        "id": "learning",
+        "judgment": "uncertain",
+        "observed_behavior": "현재 참고 링크는 있으나 국내/국제 버전차·RL 신설 상태 기록은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 국제2027의 새 RL/SSH/Git을 국내 KOAI2027 확정 요구나 1주차 필수로 자동 승격하지 않는다.",
+        "start_line": 1284,
+        "end_line": 1295
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "현재 참고 링크는 있으나 국내/국제 버전차·RL 신설 상태 기록은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 국제2027의 새 RL/SSH/Git을 국내 KOAI2027 확정 요구나 1주차 필수로 자동 승격하지 않는다.",
+        "start_line": 1284,
+        "end_line": 1295
+      },
+      {
+        "id": "principle",
+        "judgment": "uncertain",
+        "observed_behavior": "현재 참고 링크는 있으나 국내/국제 버전차·RL 신설 상태 기록은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 국제2027의 새 RL/SSH/Git을 국내 KOAI2027 확정 요구나 1주차 필수로 자동 승격하지 않는다.",
+        "start_line": 1284,
+        "end_line": 1295
+      },
+      {
+        "id": "practice",
+        "judgment": "uncertain",
+        "observed_behavior": "현재 참고 링크는 있으나 국내/국제 버전차·RL 신설 상태 기록은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 국제2027의 새 RL/SSH/Git을 국내 KOAI2027 확정 요구나 1주차 필수로 자동 승격하지 않는다.",
+        "start_line": 1284,
+        "end_line": 1295
+      }
+    ]
+  }
+}

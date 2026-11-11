@@ -1,0 +1,55 @@
+{
+  "id": "actual-028-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Current direct-read research and actual-lesson review; design evidence, no learner claim.",
+    "demand_id": "D09",
+    "judgment": "gap",
+    "reviewer": "root-actual-content-review",
+    "rationale": "지수·로그·softmax·loss 없음. Scope is course-level; later placement proposals do not invalidate a proper basic Week1, and do not prove later teaching.",
+    "start_line": 238,
+    "end_line": 271,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "Existing sums/indexing/return/axis foundations are preserved; full prerequisite-set availability is reviewed separately. 지수·로그·softmax·loss 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 분류/손실 단원에서 원리와 구현을 함께 다룰 충분한 깊이 기준. 1주차 확대 근거는 아님.",
+        "start_line": 238,
+        "end_line": 271
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "지수·로그·softmax·loss 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 분류/손실 단원에서 원리와 구현을 함께 다룰 충분한 깊이 기준. 1주차 확대 근거는 아님.",
+        "start_line": 238,
+        "end_line": 271
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "지수·로그·softmax·loss 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 분류/손실 단원에서 원리와 구현을 함께 다룰 충분한 깊이 기준. 1주차 확대 근거는 아님.",
+        "start_line": 1224,
+        "end_line": 1238
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "지수·로그·softmax·loss 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 분류/손실 단원에서 원리와 구현을 함께 다룰 충분한 깊이 기준. 1주차 확대 근거는 아님.",
+        "start_line": 238,
+        "end_line": 271
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "지수·로그·softmax·loss 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 분류/손실 단원에서 원리와 구현을 함께 다룰 충분한 깊이 기준. 1주차 확대 근거는 아님.",
+        "start_line": 1224,
+        "end_line": 1238
+      }
+    ]
+  }
+}

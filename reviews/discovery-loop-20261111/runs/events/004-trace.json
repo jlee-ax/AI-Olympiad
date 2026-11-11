@@ -1,0 +1,46 @@
+{
+  "id": "actual-004-trace",
+  "op": "trace",
+  "data": {
+    "reason": "Current direct-read research and actual-lesson review; design evidence, no learner claim.",
+    "frontier_id": "scope",
+    "read_ids": [
+      "actual-002-read",
+      "actual-003-read"
+    ],
+    "actor": "source-research-sol",
+    "rationale": "Externally derived obligations precede lesson matching. Topic names alone do not discharge the operation.",
+    "counterevidence": "Official international tasks and library contracts do not mandate immediate Week1 placement. Existing foundation strengths remain valid.",
+    "uninvestigated": [],
+    "demands": [
+      {
+        "id": "D11",
+        "statement": "현재 국내 적용 범위와 국제 최신 범위를 분리하기",
+        "prerequisites": [
+          "출처 버전 읽기",
+          "scope 관리"
+        ],
+        "learning_demand": "문서 연도/연결 관계 판정; 공식 범위와 교육 추론을 분리; 미확정 범위는 research로 기록",
+        "assessment_demand": "URL/year 추적; 적용성 미확정 표시; 시수 근거와 출제 범위 구별",
+        "dimensions": [
+          {
+            "id": "principle",
+            "required_behavior": "범위 동치(S_domestic2026,S_IOAI2027)를 가정하지 않는다."
+          },
+          {
+            "id": "practice",
+            "required_behavior": "국내 관련 공지나 변경 실라버스를 재확인할 backlog를 두고 국제의 RL·remote tooling을 별도 경로로 정리한다."
+          }
+        ],
+        "stage_proposal": {
+          "decision": "research",
+          "rationale": "국제2027의 새 RL/SSH/Git을 국내 KOAI2027 확정 요구나 1주차 필수로 자동 승격하지 않는다."
+        },
+        "source_locations": [
+          "S01 L74,L87–196",
+          "S03 p2 technical fundamentals,p4 §5 RL"
+        ]
+      }
+    ]
+  }
+}

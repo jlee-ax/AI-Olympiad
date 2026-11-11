@@ -212,3 +212,7 @@ Use [joined review preflight](review-preflight.md) to check actual artifact byte
 The [2026-11-11 system review](../reviews/system-improvement-20261111/review.md) records reproduced defects, real-record functional checks, the whole Week 1 audit and remaining gaps.
 
 Use [the combined lesson validation workspace](lesson-validation.md) to run current tools/specifications with a frozen lesson copy, without modifying either source worktree. The [follow-up verification](../reviews/system-followup-20261111/review.md) records all-declared-source checks, strict workflow JSON and separate current semantic reviews.
+
+## Open external requirements before readiness
+
+Use the [bounded discovery loop](discovery-loop.md) to seed an external frontier before comparing the lesson, execute actual local source reads, trace new demands and assessment depth, and retain new questions through further search/read/review rounds. The program manages state and next actions; the authorized human/model performs searches and semantic judgments. Real quality and joined readiness require a current discovery session; real production/recurring workflow decisions cannot continue or claim completion without its bound manifest. Historical synthetic controls remain scoped. `--legacy-scope` in preflight is inspection only and always blocks readiness. K01–K16 and their frozen criteria remain separate.

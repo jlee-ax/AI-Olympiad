@@ -1,0 +1,9 @@
+Command: PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest discover -s tests -q
+Discovery evaluator SHA256: 2273d1e9a47aff0dc038f0379837c908cb84a559d3e31e3a026f5a7c189d0914
+
+----------------------------------------------------------------------
+Ran 255 tests in 32.968s
+
+OK
+
+Exit code: 0

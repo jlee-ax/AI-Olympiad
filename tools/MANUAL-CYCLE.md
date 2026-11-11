@@ -118,3 +118,7 @@ Set a completion claim only when its actual condition has been checked. A curren
 accepted review of every required check is also necessary for
 `stop / verified_completion_claim`. An explicit requested stop is honored before
 quality and review gates. Preserve the saved state and report remaining blockers.
+
+## Expand the external frontier
+
+Before lesson comparison, seed the [discovery session](discovery-loop.md) with questions derived from external scope, traceable problems and relevant references. The operator/model actually searches and reads; the tool opens local snapshot/lesson spans and advances the saved state. Trace newly required concepts, prerequisites, reasoning and independent assessment depth into fresh demands. Keep unresolved questions persistent and expand them into additional frontier probes; do not close them by writing an empty later cycle. Recompare after warranted edits, retain accountable later placement for a foundation unit, stop at finite limits and resume without resetting usage. Real preflight and production readiness require this session and its current review manifest. A recorded sampled frontier is not proof of universal coverage or autonomous execution.

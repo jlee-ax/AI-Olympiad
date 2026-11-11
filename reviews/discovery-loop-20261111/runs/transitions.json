@@ -1,0 +1,182 @@
+[
+  {
+    "event": "actual-001-discover",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "actual-002-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "actual-003-read",
+    "status": "needs_work",
+    "next_action": "trace_source_requirements"
+  },
+  {
+    "event": "actual-004-trace",
+    "status": "needs_work",
+    "next_action": "discover_original_sources"
+  },
+  {
+    "event": "actual-005-compare",
+    "status": "needs_work",
+    "next_action": "discover_original_sources"
+  },
+  {
+    "event": "actual-006-discover",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "actual-007-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "actual-008-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "actual-009-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "actual-010-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "actual-011-read",
+    "status": "needs_work",
+    "next_action": "trace_source_requirements"
+  },
+  {
+    "event": "actual-012-trace",
+    "status": "needs_work",
+    "next_action": "discover_original_sources"
+  },
+  {
+    "event": "actual-013-compare",
+    "status": "needs_work",
+    "next_action": "discover_original_sources"
+  },
+  {
+    "event": "actual-014-compare",
+    "status": "needs_work",
+    "next_action": "discover_original_sources"
+  },
+  {
+    "event": "actual-015-compare",
+    "status": "needs_work",
+    "next_action": "discover_original_sources"
+  },
+  {
+    "event": "actual-016-compare",
+    "status": "needs_work",
+    "next_action": "discover_original_sources"
+  },
+  {
+    "event": "actual-017-compare",
+    "status": "needs_work",
+    "next_action": "discover_original_sources"
+  },
+  {
+    "event": "actual-018-compare",
+    "status": "needs_work",
+    "next_action": "discover_original_sources"
+  },
+  {
+    "event": "actual-019-discover",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "actual-020-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "actual-021-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "actual-022-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "actual-023-read",
+    "status": "needs_work",
+    "next_action": "trace_source_requirements"
+  },
+  {
+    "event": "actual-024-trace",
+    "status": "needs_work",
+    "next_action": "research_or_refine_and_recompare"
+  },
+  {
+    "event": "actual-025-compare",
+    "status": "needs_work",
+    "next_action": "research_or_refine_and_recompare"
+  },
+  {
+    "event": "actual-026-compare",
+    "status": "needs_work",
+    "next_action": "research_or_refine_and_recompare"
+  },
+  {
+    "event": "actual-027-compare",
+    "status": "needs_work",
+    "next_action": "research_or_refine_and_recompare"
+  },
+  {
+    "event": "actual-028-compare",
+    "status": "needs_work",
+    "next_action": "research_or_refine_and_recompare"
+  },
+  {
+    "event": "actual-029-compare",
+    "status": "needs_work",
+    "next_action": "research_or_refine_and_recompare"
+  },
+  {
+    "event": "actual-030-frontier",
+    "status": "needs_work",
+    "next_action": "discover_original_sources"
+  },
+  {
+    "event": "actual-031-discover",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "actual-032-read",
+    "status": "needs_work",
+    "next_action": "trace_source_requirements"
+  },
+  {
+    "event": "actual-033-trace",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "actual-034-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "actual-035-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "actual-036-frontier",
+    "status": "needs_work",
+    "next_action": "discover_original_sources"
+  }
+]

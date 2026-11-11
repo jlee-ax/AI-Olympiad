@@ -1,0 +1,11 @@
+{
+  "id": "actual-021-read",
+  "op": "read",
+  "data": {
+    "reason": "Current direct-read research and actual-lesson review; design evidence, no learner claim.",
+    "source_id": "S09",
+    "start_line": 1,
+    "end_line": 15,
+    "actor": "source-research-sol"
+  }
+}

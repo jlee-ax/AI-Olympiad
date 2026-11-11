@@ -1,0 +1,55 @@
+{
+  "id": "actual-025-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Current direct-read research and actual-lesson review; design evidence, no learner claim.",
+    "demand_id": "D06",
+    "judgment": "gap",
+    "reviewer": "root-actual-content-review",
+    "rationale": "참고 링크는 있음. split/fit/transform 실습과 독립 누수 진단은 없음. current의 예측 시점 설명만으로 대체 불가. Scope is course-level; later placement proposals do not invalidate a proper basic Week1, and do not prove later teaching.",
+    "start_line": 99,
+    "end_line": 124,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "Existing sums/indexing/return/axis foundations are preserved; full prerequisite-set availability is reviewed separately. 참고 링크는 있음. split/fit/transform 실습과 독립 누수 진단은 없음. current의 예측 시점 설명만으로 대체 불가.",
+        "rationale": "Reviewed teaching/task DESIGN only. 현재 1주차 선수 평균·분산을 연결하되, 모델 평가 단원에서 분할+fit 경계를 실제 코드로 학습한다.",
+        "start_line": 99,
+        "end_line": 124
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "참고 링크는 있음. split/fit/transform 실습과 독립 누수 진단은 없음. current의 예측 시점 설명만으로 대체 불가.",
+        "rationale": "Reviewed teaching/task DESIGN only. 현재 1주차 선수 평균·분산을 연결하되, 모델 평가 단원에서 분할+fit 경계를 실제 코드로 학습한다.",
+        "start_line": 99,
+        "end_line": 124
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "참고 링크는 있음. split/fit/transform 실습과 독립 누수 진단은 없음. current의 예측 시점 설명만으로 대체 불가.",
+        "rationale": "Reviewed teaching/task DESIGN only. 현재 1주차 선수 평균·분산을 연결하되, 모델 평가 단원에서 분할+fit 경계를 실제 코드로 학습한다.",
+        "start_line": 1284,
+        "end_line": 1295
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "참고 링크는 있음. split/fit/transform 실습과 독립 누수 진단은 없음. current의 예측 시점 설명만으로 대체 불가.",
+        "rationale": "Reviewed teaching/task DESIGN only. 현재 1주차 선수 평균·분산을 연결하되, 모델 평가 단원에서 분할+fit 경계를 실제 코드로 학습한다.",
+        "start_line": 99,
+        "end_line": 124
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "참고 링크는 있음. split/fit/transform 실습과 독립 누수 진단은 없음. current의 예측 시점 설명만으로 대체 불가.",
+        "rationale": "Reviewed teaching/task DESIGN only. 현재 1주차 선수 평균·분산을 연결하되, 모델 평가 단원에서 분할+fit 경계를 실제 코드로 학습한다.",
+        "start_line": 1284,
+        "end_line": 1295
+      }
+    ]
+  }
+}

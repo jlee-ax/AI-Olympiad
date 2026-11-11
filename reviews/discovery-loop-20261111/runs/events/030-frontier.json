@@ -1,0 +1,14 @@
+{
+  "id": "actual-030-frontier",
+  "op": "frontier",
+  "data": {
+    "reason": "Current direct-read research and actual-lesson review; design evidence, no learner claim.",
+    "probe": {
+      "id": "heldout",
+      "question": "Which previously unreviewed scoring and execution-contract requirements change the work queue?",
+      "required_kinds": [
+        "official_problem"
+      ]
+    }
+  }
+}

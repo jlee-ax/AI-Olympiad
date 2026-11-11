@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "variants": {
+    "baseline": {
+      "expected": "needs_work",
+      "actual": "needs_work",
+      "ready": false,
+      "queue_reasons": [
+        [
+          "dimension_learning_gap",
+          "dimension_assessment_gap",
+          "dimension_principle_gap",
+          "dimension_practice_gap",
+          "gap"
+        ]
+      ]
+    },
+    "candidate": {
+      "expected": "recorded_ready",
+      "actual": "recorded_ready",
+      "ready": true,
+      "queue_reasons": []
+    },
+    "missing_assessment": {
+      "expected": "needs_work",
+      "actual": "needs_work",
+      "ready": false,
+      "queue_reasons": [
+        [
+          "dimension_assessment_gap"
+        ]
+      ]
+    }
+  },
+  "original_course_D05": "still_unresolved",
+  "candidate_sha256": "c3a1ac4d26f3d566af348b2adf62bfdfbe9c0c8eca07aeb8088e1680baaa19d7",
+  "implementation_sha256": "2273d1e9a47aff0dc038f0379837c908cb84a559d3e31e3a026f5a7c189d0914",
+  "limits": [
+    "Only one scoped design bridge was improved, not the whole lesson/course.",
+    "The missing-assessment case is a deliberate material fault reviewed by root; automatic semantic fault detection is not claimed.",
+    "The candidate is a review fixture; user lesson files are unchanged."
+  ]
+}

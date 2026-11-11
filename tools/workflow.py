@@ -442,7 +442,7 @@ def _verification(state, fingerprint):
     return {'passed': passed, 'reason': reason, 'review_id': review['id'], 'checks': checks, 'warnings': warnings}
 
 
-def decide(state, quality_report=None):
+def decide(state, quality_report=None, discovery_report=None):
     errors, warnings = validate_state(state)
     result = {'status': 'blocked', 'reason': 'invalid_state', 'authority': 'advisory_only',
               'synthetic': state.get('synthetic') if isinstance(state, dict) and type(state.get('synthetic')) is bool else None,
@@ -505,6 +505,38 @@ def decide(state, quality_report=None):
             return finish('stop', reason)
     if usage['minutes_since_checkpoint'] >= limits['checkpoint_minutes']:
         return finish('pause', 'checkpoint_due')
+    if isinstance(quality_report, dict) and quality_report.get('synthetic') is True and not state['synthetic']:
+        return finish('blocked', 'synthetic_quality_cannot_validate_real_work')
+    discovery_required = (not state['synthetic'] and scope['task_kind'] in ('lesson_production', 'recurring')) or any(item['id'] == 'review:discovery' for item in context['inputs'])
+    if discovery_report is None and isinstance(quality_report, dict):
+        discovery_report = quality_report.get('discovery')
+    if discovery_required or discovery_report is not None:
+        if discovery_report is None:
+            return finish('blocked', 'discovery_missing')
+        result['discovery'] = discovery_report
+        if (not isinstance(discovery_report, dict) or discovery_report.get('schema_version') != 1 or
+                discovery_report.get('authority') != 'advisory_only' or
+                not isinstance(discovery_report.get('session_sha256'), str) or
+                not isinstance(discovery_report.get('scope'), dict) or
+                not isinstance(discovery_report.get('comparisons'), list) or
+                any(not isinstance(item, dict) or not isinstance(item.get('lesson_receipt'), dict) or
+                    not isinstance(item['lesson_receipt'].get('sha256'), str)
+                    for item in discovery_report.get('comparisons', []))):
+            return finish('blocked', 'invalid_discovery_report')
+        if discovery_report.get('synthetic') != state['synthetic']:
+            return finish('blocked', 'discovery_synthetic_mismatch')
+        manifest = {'id': 'review:discovery', 'revision': 'discovery-loop-v1', 'sha256': discovery_report['session_sha256']}
+        if manifest not in [_manifest(item) for item in context['inputs']]:
+            return finish('blocked', 'discovery_context_not_bound')
+        if discovery_report.get('ready_for_review') is not True:
+            return finish('blocked', 'discovery_unresolved')
+        discovery_scope = discovery_report.get('scope', {})
+        expected_artifact = discovery_scope.get('artifact_sha256')
+        if expected_artifact is None:
+            comparisons = discovery_report.get('comparisons', [])
+            expected_artifact = comparisons[-1]['lesson_receipt']['sha256'] if comparisons else None
+        if expected_artifact != context['artifact']['sha256']:
+            return finish('blocked', 'discovery_artifact_mismatch')
     if scope['task_kind'] != 'design' or quality_report is not None:
         if quality_report is None:
             return finish('pause', 'quality_assessment_required')
@@ -560,7 +592,11 @@ def main(argv=None):
     parser.add_argument('state', type=Path)
     parser.add_argument('--query', default='', help='AND substring terms for recall only')
     parser.add_argument('--quality', type=Path, help='Quality bundle for decide; required for lesson/recurring scope')
+    parser.add_argument('--discovery', type=Path, help='Discovery session to replay for decide')
+    parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[1])
     args = parser.parse_args(argv)
+    if args.discovery and args.command != 'decide':
+        parser.error('--discovery applies only to decide')
     if args.quality and args.command != 'decide':
         parser.error('--quality applies only to decide')
     if args.query and args.command != 'recall':
@@ -577,12 +613,20 @@ def main(argv=None):
         if args.quality and not errors:
             import quality
             try:
-                quality_report = quality.evaluate(quality.load(args.quality))
+                quality_report = quality.evaluate(quality.load(args.quality), args.root)
             except (OSError, UnicodeError, ValueError, TypeError, KeyError, AttributeError, RecursionError, OverflowError) as exc:
                 print(json.dumps({'status': 'blocked', 'reason': 'invalid_quality_input', 'authority': 'advisory_only',
                                   'errors': [ascii(str(exc))]}))
                 return 2
-        output = decide(state, quality_report)
+        discovery_report = None
+        if args.discovery and not errors:
+            import discovery_loop
+            try:
+                discovery_report = discovery_loop.inspect(discovery_loop.load(args.discovery), args.root)
+            except (OSError, UnicodeError, ValueError, TypeError, KeyError, AttributeError) as exc:
+                print(json.dumps({'status': 'blocked', 'reason': 'invalid_discovery_input', 'authority': 'advisory_only', 'errors': [str(exc)]}))
+                return 2
+        output = decide(state, quality_report, discovery_report)
     else:
         output = {'status': 'invalid' if errors else 'valid', 'reason': 'invalid_state' if errors else 'structural_checks_only',
                   'authority': 'advisory_only', 'errors': errors, 'warnings': warnings,
