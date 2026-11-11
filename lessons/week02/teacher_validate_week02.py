@@ -40,7 +40,7 @@ assert confusion_matrix(truth_with_unknown[known], predictions[known], labels=[-
 assert confusion_matrix(wrong_truth, predictions, labels=[-1,1]).tolist() == [[1,1],[1,1]]
 assert np.isclose(group_example.correct.mean(), 2/3) and np.isclose(group_accuracy['mean'].mean(), .4)
 
-# New, independent assessment data; answers are intentionally absent from student artifact.
+# Historical M/N finite control; it is not the current two-contract assessment.
 new = pd.DataFrame([
     ('m1','M',3,-1), ('m2','M',6,1), ('n1','N',9,1), ('n2','N',np.nan,-1), ('n3','N',12,0),
     ('o1','O',99,1), ('o2','O',np.nan,1), ('p1','P',np.nan,-1), ('p2','P',np.nan,-1),
@@ -281,7 +281,7 @@ def main(argv=None):
             "total_cells": len(nb.cells), "code_cells": len(code_cells), "executed_code_cells": len(code_cells),
             "error_outputs": 0, "assessment_answer_cell_filled": False,
             "assessment_template_and_saved_outputs": "checked before execution",
-            "teacher_only_independent_checks": "passed; finite A/B worked-example and independent-exercise cases, not student performance",
+            "teacher_only_independent_checks": "passed; A/B worked-example and historical M/N finite controls; current two-contract answers are not checked, and student performance is not observed",
             "week04_group_cv_checks": "not performed here; known_train_4w and group-CV feasibility require separate review",
             "test_labels_and_scores_in_student_notebook": None,
             "test_labels_and_scores_inspection": "not performed; arbitrary input is not scanned for held-out test content",
