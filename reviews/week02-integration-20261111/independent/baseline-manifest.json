@@ -1,0 +1,139 @@
+{
+  "recorded_utc": "2026-11-11T15:07:41.555317+00:00",
+  "repo_root": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision",
+  "scope": "Week02 and ten-week plan only; no Week01 file read/copied/modified",
+  "inputs": [
+    {
+      "path": "lessons/week02/week02_prediction_evaluation.ipynb",
+      "sha256": "9bb1ea5110b74ea1cf32fbc9ee9e9a5aadbceba2f750c2dfc2d6587e18954bdf",
+      "bytes": 34579,
+      "cell_count": 25,
+      "code_cells": [
+        5,
+        7,
+        11,
+        13,
+        15,
+        17,
+        20,
+        23
+      ],
+      "cell_source_sha256": [
+        "fdc75698eb35888903e255d9e0f4e5775dabd116a49d6d030aa2bfc40f251b9d",
+        "5136efae4164333afb5707aad115fb5303f8fdc0460f222ee78528584910aed5",
+        "136ab69371bdc0cf8ed06f6e57df8e76a3593fa21b11874ea72a947344504656",
+        "65f739cf6356af2afbf2c72b3771b45a707d4352316db5a2a5b950b9bd5b307e",
+        "ae3fa4e4233c24839d768ac3d10462cfee20c2ba9afa953fd87281e42ebf575d",
+        "cc77c225d1eb129033489a9af33dd8315dc144e1227d1955e5f6c50ba086792d",
+        "2db2c3a6d49cf3091cfce7eaaedca20fd60adccedb107877329318e521f0cbd6",
+        "c7fa8ccb49b48c09ca3b801db8a599cc6008a1807c6b0aaf67d33e5f434f9c7b",
+        "d94430443c0cb58252c5243ca96cf07944d203750c29a4c2b485bd3b6aa56a20",
+        "fdd0144cb8e027a50e685acdbb242b6b38fcbc51db15cb0b00d0dae2d861f60b",
+        "46340c2d0ad8cb19404f8721ea12184aad6616ff1a21ac75d66b495075d06461",
+        "bbafde770736c458f150ba8cfad3b11c30f05439b4b45e95d0d68577943e1888",
+        "c20eb0b4c4841f918e8c38f305cd7a182d22107a06d625d401393ab2ef37575d",
+        "dbdc82cc9e2874657a597f18fcbe61b11602c4b3633d05ada66bc9c34db74dcf",
+        "f29e3b2b49774943d9986ea6b1b3bc108c109265cdabe23a6fac67d4fd39174d",
+        "509a9568eb04d1ea39bc5a45e2a0ccdbd685496046cb53a8afd237d0c0dfc257",
+        "a050bebf8f8595d777a9c8c1990e8b3c9c07e761d306cea6e54b5410b3a9d658",
+        "891022fa730f9d0ba0ab0542dbb8247fa2fbdd1e86168779c639fdfdd4000c50",
+        "33fd157a06190a9c27292291319a695839074d66c84db358940ca264f8bead4a",
+        "540b7ededac0a4aa3c521480b318be8530363ebb6c0ce8962e71e4e4abc03651",
+        "9fa96b87a098a294aabee473ac90542507cc517cd9b62aa95b4fb539d149b8d4",
+        "3d758106047714257fec7b6baac5f242ae508706af36888f39f2690bac4461d0",
+        "b0e4bd0676651c40ca7fbb741f1503845d291af208fb7b1cb5bbad3a202b354c",
+        "9faf2a5c91a867b9f484c0e117a39f6a41631982016338c1db92f53dc8a400d6",
+        "30558ef8c26dac6762f17034a6652b40474ad65a66fc88e0945e3cb7bf57cd32"
+      ]
+    },
+    {
+      "path": "lessons/week02/week02_prediction_evaluation.html",
+      "sha256": "ffd7586b5ec43cd35b1abfaa5b434a1c43e68832df5367df2df08c6d649e4c66",
+      "bytes": 358899
+    },
+    {
+      "path": "lessons/week02/teacher-notes.md",
+      "sha256": "2d9667b059f1556613117ce6648fe16b3c6c67c4c0a7cdf2b2be06fd0f6b6977",
+      "bytes": 10705
+    },
+    {
+      "path": "lessons/week02/teacher_validate_week02.py",
+      "sha256": "f31d8057913167b87a1489034ab9b98f7a7e3e1ace801a5919762040e7260a28",
+      "bytes": 7350
+    },
+    {
+      "path": "lessons/week02/validation.json",
+      "sha256": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+      "bytes": 1014
+    },
+    {
+      "path": "lessons/week02/week02_temporal_preprocessing.ipynb",
+      "sha256": "a830a15e8d2bf2cb91e17cd2e8b14172390fc7cea3a07539add3fe52a05b5865",
+      "bytes": 56497,
+      "cell_count": 19,
+      "code_cells": [
+        3,
+        4,
+        6,
+        8,
+        9,
+        11,
+        12,
+        15,
+        17
+      ],
+      "cell_source_sha256": [
+        "0445987728fbb2fa47d8f29c0ed5f317d5b787282ec625637d5b2f0889eddaa9",
+        "c65561f1904cef4612eea0634be43ce50cc44aa5c326188d27a671c0a4e1392f",
+        "9ea9d75766bac118e4848c167040dfa67b6905af9f912f7a7b4040393563a411",
+        "8fe4cf83b4a8627a5b0e29f0caef9770a1e94d1042cf1c1e8abfa2c403f26d5b",
+        "7f32b3de0dcf59d8a52003cd9a937b3fb86dcde00edc3a3f63cd71823d56c4cc",
+        "c7eeb8ee15e6d19c8262075f44775e519d572ffdbfa8091aeaf8dd010a27ae55",
+        "b7cd77aae3d4c3b6e6de5ac847cb6153faf79e908f00f1c6bdf74c31f3dfa670",
+        "3240208cf082f9ee6570514e7b356128f10e400a28e670d5c64283f25e5997a6",
+        "7ad0ee3feb3bcc0143f9e28df23f6bf931dd5fad90167ba6aae4316217186159",
+        "a1590eaa6bf2696ad0ffaa12a5365b5eec8701913fe80fa852191f687bb92f22",
+        "ee7d30951b956dbf7af1dbe8287f1badab4d44e06998538f8665c092a6d3ce6f",
+        "54b9cffbea4d7b7e200bdcc78f82059ab49062bad0a36910225337f65b768319",
+        "903d1db9bdfc2ce89430dcdb5ba50e9107c805492565b10d67c06aa0b69f43ce",
+        "74a11865b6a619bd337ff7ebddd6d3334d18e9a5c61be31429e8accf69863ace",
+        "c0e44786032e4fa92804ccb30c3ac963a81c582860cd835cae9806ed2033297a",
+        "68421bba9ac96484b70df8371f69d49319bf17fc8f0759aa8eadfb0421e6f7f9",
+        "23a2fc417382f5cb3301b5c68053f2cda54ddba2af527e8d65b27e0c73f1d456",
+        "94b0313531467d2843a51428a5abb1666cd0c823259b5790be0f93644bc19acd",
+        "a2777e5ba3b52dc02f1d730979509ddce4a7ae587eea36e9ee3740d7139ffb3b"
+      ]
+    },
+    {
+      "path": "lessons/week02/week02_temporal_preprocessing.html",
+      "sha256": "f8fd2ee95761debd8bfc7ea9d2bf4493ef5594cbf90fdb6b3b75a8fd1ea883e4",
+      "bytes": 395994
+    },
+    {
+      "path": "lessons/week02/week02_temporal_preprocessing_teacher.md",
+      "sha256": "e898de9e42be0ee9f562a6b36df036d5eb0a66e488ee62d8d9e9c3b666dcee74",
+      "bytes": 12585
+    },
+    {
+      "path": "lessons/week02/validate_week02_temporal_preprocessing.py",
+      "sha256": "fd7071e8239756e0823a443104c4cef206c74644571971367a16fbd37686b447",
+      "bytes": 14716
+    },
+    {
+      "path": "lessons/week02/week02_temporal_preprocessing_validation.json",
+      "sha256": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936",
+      "bytes": 5143
+    },
+    {
+      "path": "lessons/week02/build_week02.py",
+      "sha256": "54b518d6c7986e77525085ca9fa623a4ff7857fa1b53cc62fedf2483945fa0cc",
+      "bytes": 27300
+    },
+    {
+      "path": "curriculum/student-plan.html",
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "bytes": 66956
+    }
+  ],
+  "execution_status": "not_run; source/previous records read only"
+}

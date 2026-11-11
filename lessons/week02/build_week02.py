@@ -1,13 +1,16 @@
 from pathlib import Path
 from textwrap import dedent
+import argparse
+import os
 import nbformat as nbf
 
-ROOT = Path(__file__).resolve().parent
+# IDs are bound to the existing lesson, rather than freshly randomized on each build.
+CELL_IDS = ['e358e232', '0b2e15b2', 'dc5957ae', '767b2e69', 'e7ed9434', '0e7bf648', '0c805316', '01bda10d', 'ff7434b0', '63987d25', 'c6e98879', 'eeb3c838', '4e3b494b', '34ad0b72', '66895ce1', 'f3e1201e', 'a99596fe', '629f49f8', 'f68e4feb', '823ff075', '4cfbd70e', 'e12f7e4e', '4af3ca93', '811dc0d0', '7eadda6c']
 cells = []
 def md(s):
-    cells.append(nbf.v4.new_markdown_cell(dedent(s).strip()))
+    cells.append(nbf.v4.new_markdown_cell(dedent(s).strip(), id=CELL_IDS[len(cells)]))
 def code(s):
-    cells.append(nbf.v4.new_code_cell(dedent(s).strip()))
+    cells.append(nbf.v4.new_code_cell(dedent(s).strip(), id=CELL_IDS[len(cells)]))
 
 md(r'''
 # 2주차 · 예측하기 전과 평가할 때
@@ -26,8 +29,7 @@ md(r'''
 4. 양성 기준을 정해 TP/FP/FN/TN과 정확도·정밀도·재현율을 계산하고 분모 0을 해석한다.
 5. 새 자료에서 같은 결정을 이유와 함께 독립적으로 적용한다.
 
-Jupyter 또는 Colab의 Python 3에서 NumPy, pandas, scikit-learn, Matplotlib이 필요합니다. 모두 준비된 환경에서 노트북을 열고 첫 셀부터 **Shift+Enter**로 순서대로 실행하세요. 저장은 Ctrl+S(맥은 ⌘S), 전체 재실행은 Kernel → Restart Kernel and Run All Cells입니다. 각 질문은 실행 전에 답과 이유를 쓰고, 답안 칸에 받은 도움을 기록합니다. 빈 코드 칸은 학생이 작성하는 곳입니다.
-
+Jupyter 또는 Colab의 Python 3에서 NumPy, pandas, scikit-learn 1.3 이상, Matplotlib이 필요합니다. 1.3 이상은 이 노트북에서 `zero_division=np.nan`을 사용하기 위해 필요합니다. 모두 준비된 환경에서 노트북을 열고 첫 셀부터 **Shift+Enter**로 순서대로 실행하세요. 저장은 Ctrl+S(맥은 ⌘S), 전체 재실행은 Kernel → Restart Kernel and Run All Cells입니다. 각 질문은 실행 전에 답과 이유를 쓰고, 답안 칸에 받은 도움을 기록합니다. 빈 코드 칸은 학생이 작성하는 곳입니다.
 ''')
 md(r'''
 ## 1. 먼저 자료 계약을 읽습니다 · 이론
@@ -61,7 +63,7 @@ md(r'''
 md(r'''
 ### 분할할 표
 
-A·B는 훈련, C·D는 검증, E·F는 별도 보관할 최종 테스트 개체입니다. E·F의 자료와 정답은 이 노트북에서 사용하지 않습니다. 훈련 A/B의 두 클래스 수가 우연히 같지만 그룹을 나눌 때마다 같은 비율이 보장되는 것은 아닙니다.
+이번 수업의 작은 예제에서는 A·B만 훈련, C·D는 검증에 사용합니다. E·F는 최종 테스트 개체의 자리 표시이며 자료와 정답은 아직 만들어지지 않았습니다. 훈련 A/B의 두 클래스 수가 우연히 같지만 그룹을 나눌 때마다 같은 비율이 보장되는 것은 아닙니다.
 
 | 행 | 개체 | reading(u) | label |
 |---|---|---:|---:|
@@ -74,6 +76,17 @@ A·B는 훈련, C·D는 검증, E·F는 별도 보관할 최종 테스트 개체
 | c2 | C | 결측 | +1 |
 | d1 | D | 10 | -1 |
 | d2 | D | 12 | -1 |
+
+같은 합성 원본에는 **추가 훈련 후보** G/H도 있습니다. 아래 네 행은 이번 A/B 손계산이나 `fit`에는 넣지 않습니다. 이 표와 위 표의 열은 같습니다.
+
+| 행 | 개체 | reading(u) | label |
+|---|---|---:|---:|
+| g1 | G | 2 | -1 |
+| g2 | G | 4 | +1 |
+| h1 | H | 4 | -1 |
+| h2 | H | 6 | +1 |
+
+4주차에 A/B/G/H를 훈련 후보로 함께 사용한다면 정답이 알려진 행을 고른 뒤 전처리와 모델을 **다시 fit**하고, 기준 모델도 같은 조건에서 다시 계산합니다. C/D는 검증에 남기고 E/F는 생성 전 자리 표시로 둡니다. 전체 원본은 같아도 이번 수업과 4주차의 훈련 행과 `fit` 상태는 다릅니다. 교차검증은 각 훈련 fold에서 전처리를 새로 fit해야 하며, 이 작은 합성 자료는 안정적인 성능 추정용이 아닙니다.
 
 **예상**: b3을 정상 사례로 세어도 될까요? a1과 a2가 다른 행이니 하나는 훈련, 하나는 검증으로 보내도 새 개체 평가일까요? `row_id`의 순서가 달라지면 예측을 어떻게 원래 행과 연결할까요?
 
@@ -94,6 +107,17 @@ records = pd.DataFrame([
     ("c1", "C", 20, 1), ("c2", "C", np.nan, 1),
     ("d1", "D", 10, -1), ("d2", "D", 12, -1),
 ], columns=["row_id", "group", "reading", "label"])
+# 같은 원본의 추가 훈련 후보. 이번 수업의 A/B fit에는 넣지 않습니다.
+additional_train = pd.DataFrame([
+    ("g1", "G", 2, -1), ("g2", "G", 4, 1),
+    ("h1", "H", 4, -1), ("h2", "H", 6, 1),
+], columns=records.columns)
+course_records = pd.concat([records, additional_train], ignore_index=True)
+train_4w = course_records[course_records["group"].isin(["A", "B", "G", "H"])].copy()
+known_train_4w = train_4w[train_4w["label"].isin([-1, 1])].copy()
+assert course_records["row_id"].is_unique
+assert set(train_4w["group"]).isdisjoint({"C", "D"})
+
 train = records[records["group"].isin(["A", "B"])].copy()
 validation = records[records["group"].isin(["C", "D"])].copy()
 known_train = train[train["label"].isin([-1, 1])].copy()
@@ -104,6 +128,7 @@ print("검증 개체:", sorted(validation["group"].unique()))
 print("fit에 쓰는 훈련 행:", known_train["row_id"].tolist())
 print("정답 미상으로 제외한 훈련 행:", train.loc[train["label"] == 0, "row_id"].tolist())
 print("검증 출력 순서:", validation["row_id"].tolist())
+print("4주 추가 훈련 후보 행:", additional_train["row_id"].tolist())
 ''')
 md(r'''
 ## 2. `fit`은 훈련에서 규칙을 배우고 `transform`은 그 규칙을 적용합니다
@@ -219,6 +244,10 @@ assert np.isnan(p_nan) and r_nan == 0
 md(r'''
 scikit-learn의 기본 `zero_division="warn"`은 이런 경우 경고를 내고 0을 반환합니다. `0` 또는 `np.nan`은 보고 정책이며 수학적 정의를 바꾸지 않습니다. 위 `np.nan` 선택은 scikit-learn 1.3 이상에서 사용할 수 있습니다. 평균을 낼 때 NaN을 제외하는 정책은 어떤 항목을 제외했는지도 바꿉니다. 모델 선택은 오류 비용과 과제의 **공식 지표**를 먼저 확인하고 검증 결과로 합니다. 이 작은 예제는 실제 성능을 입증하지 않습니다.
 
+### 무엇을 기준으로 선택할까요?
+
+위 검증 네 행에서 고정 규칙의 정확도는 $1/4$, 재현율은 $1/2$입니다. 항상 `-1`인 기준 모델의 정확도는 $1/2$, 재현율은 0입니다. 정확도를 기준으로 정했다면 이 두 후보 중 기준 모델의 검증 점수가 높고, 재현율을 기준으로 정했다면 고정 규칙의 점수가 높습니다. 기준 모델의 정밀도는 정의되지 않으므로 0으로 정해진 실제 측정값처럼 비교하지 않습니다. 후보와 기준을 먼저 정하고 검증 근거로 선택합니다. 이 네 행의 결과는 실제 성능을 추정하기에 너무 작습니다.
+
 ### 미상은 음성이 아닙니다
 
 다음 네 행 중 세 행만 정답이 알려져 있습니다. 마지막 두 줄을 비교해, `0`을 정상으로 바꾸면 모르는 행까지 채점에 끼어든다는 것을 확인합니다.
@@ -264,7 +293,7 @@ md(r'''
 
 이 절은 앞의 예시와 코드·교사용 해설을 가리고 풉니다. 결과·이유와 사용한 도움(없음/힌트/예시/직접 설명)을 남기세요. 이 입력의 해답은 학생 자료에 넣지 않았습니다.
 
-새로운 합성 자료도 측정 직후, 예측 시점에 제공되는 `reading` 하나로 판정하며 `+1`은 이상, `-1`은 정상, `0`은 미상입니다. 독립 개체 M·N을 훈련, O·P를 검증, Q를 별도 보관할 최종 테스트로 정했습니다. Q의 값과 정답을 보지 않고 아래를 풉니다. 이 파이프라인은 알려진 **훈련 행만** 대체·표준화를 학습합니다.
+새 합성 자료도 측정 **직후** 제공되는 `reading` 하나로 판정합니다. `+1`은 이상, `-1`은 정상, `0`은 미상입니다. M·N은 훈련, O·P는 검증이며 Q는 최종 테스트의 자리 표시입니다. Q의 자료와 정답은 아직 없습니다. 이 파이프라인은 알려진 **훈련 행만** 대체·표준화를 학습합니다.
 
 | 행 | 개체 | reading(u) | label |
 |---|---|---:|---:|
@@ -278,12 +307,29 @@ md(r'''
 | p1 | P | 결측 | -1 |
 | p2 | P | 결측 | -1 |
 
-**필기:**
-1. `fit`에 쓰는 행 ID를 쓰고, n3의 `0`을 `-1`로 바꾸지 않는 이유를 적으세요. 훈련 관측 평균과, 검증의 관측값까지 섞은 잘못된 평균을 각각 구하세요.
+**선택형 1.** 이 예제의 `fit`에 사용할 행은 어느 묶음인가요? 미상과 결측 측정값을 서로 다르게 취급하는 이유도 말하세요.
+
+- 가. m1, m2, n1, n2
+- 나. m1, m2, n1, n2, n3
+- 다. m1, m2, n1, n2, o1
+- 라. m1, m2, n1
+
+**선택형 2.** 검증의 모든 행을 `-1`로 예측하면 정밀도와 재현율은 각각 무엇인가요?
+
+- 가. 정밀도는 정의 불가, 재현율은 0
+- 나. 정밀도와 재현율은 모두 0
+- 다. 정밀도는 0, 재현율은 정의 불가
+- 라. 정밀도와 재현율은 모두 1
+
+**짧은 서술.** M의 m1과 m2를 서로 다른 묶음으로 보내면 왜 처음 보는 개체를 평가하는 목적에 맞지 않나요? 예측 후에 기록된 수리 결과를 입력에 넣는 것과도 비교하세요.
+
+**추가 필기:**
+
+1. 훈련 관측 평균과 검증 관측값까지 섞은 잘못된 평균을 각각 구하세요.
 2. 결측 대체 후 훈련 평균·모집단 표준편차를 구하세요. 이 값으로 검증을 변환해 $z\ge1$이면 `+1`, 아니면 `-1`인 고정 규칙의 예측을 o1,o2,p1,p2 순서대로 적으세요. TP/FP/FN/TN, 정확도·정밀도·재현율을 분모와 함께 구하세요.
-3. 모든 검증 행을 `-1`로 예측하면 정밀도와 재현율은 각각 어떻게 되나요? 정의 불가와 라이브러리의 `zero_division=0`을 구별하세요.
+3. 선택형 2에서 정의 불가와 라이브러리의 `zero_division=0`을 구별하세요.
 4. 별도의 불균형 평가에서 X는 3행 중 3행, Y는 5행 중 1행을 맞혔습니다. 전체 행 정확도와 개체별 평균을 각각 구하고 분모가 다른 이유를 쓰세요.
-5. 같은 개체 M의 m1과 m2를 서로 다른 묶음에 무작위 배정한 분할은 왜 이 과제에 맞지 않나요? 예측 후에야 기록된 수리 결과를 입력에 넣으면 어떤 문제가 있나요? 미래를 예측할 때 시간 역전의 위험과 Q를 사용할 시점도 적으세요.
+5. 미래를 예측할 때 시간 역전의 위험과 Q를 사용할 시점을 적으세요.
 
 **코딩:** 새 자료를 직접 입력하고 학습 가능한 행을 고른 뒤 `SimpleImputer`와 `StandardScaler`를 훈련에서만 `fit`하여 검증에 `transform`하세요. 위 고정 규칙의 행 순서별 예측과 `confusion_matrix(..., labels=[-1, 1])`를 출력하고 손계산과 비교하세요. 테스트 Q는 읽거나 사용하지 않습니다.
 ''')
@@ -303,14 +349,16 @@ md(r'''
 - 받은 도움: 없음 / 힌트 / 예시 / 직접 설명 (내용도 적기)
 ''')
 md(r'''
-## 7. 필수 연습
+## 7. 필수 연습의 이어지는 경로
 
-앞에서 만든 분할 ID와 훈련 파이프라인을 보존하고, 모든 설정 선택 전에 최종 테스트를 열지 않습니다. 각 결과를 적으세요.
+앞에서 만든 분할 ID와 훈련 파이프라인을 보존하고, 모든 설정 선택 전에 최종 테스트를 열지 않습니다. 아래는 같은 필수 연습을 이어서 수행하는 경로입니다. 본문의 목록과 보충의 같은 활동을 각각 다시 제출할 필요는 없습니다. [보충 노트북](week02_temporal_preprocessing.ipynb) 또는 [보충 HTML](week02_temporal_preprocessing.html)을 엽니다.
 
-1. **지표·ROC**: 아래처럼 확률이 서로 다른 별도 표에서 임계값을 바꾸어 TP/FP/FN/TN, F1, TPR, FPR을 손계산하고 `roc_curve`와 비교합니다. $F1=2TP/(2TP+FP+FN)$, $TPR=TP/(TP+FN)$, $FPR=FP/(FP+TN)$이며 각 분모가 0인 경우도 설명합니다. `DummyClassifier`의 상수 예측으로 풍부한 ROC를 만들었다고 가정하지 않습니다.
-2. **전처리**: 알려진 훈련 행으로 평균과 중앙값 대체를 각각 학습합니다. 새 범주를 포함한 검증에 one-hot을 적용할 때 설정을 기록하고, 최소·최대 정규화와 표준화를 각각 적용해 훈련에서만 통계량을 배웠는지 확인합니다. 시계열 forward-fill은 개체별 시간순으로 하고 미래 관측값을 쓰지 않습니다.
-3. **특성**: 각 개체의 시간순 과거 3개 관측으로 윈도·평균·표준편차를 만들고 범주형 특성도 만듭니다. 겹치는 윈도와 미래가 다른 묶음으로 새지 않도록 **원본 개체·시간 기준으로 먼저 분할**하고, 윈도를 만들 때 필요한 경계·사용 가능한 과거를 명세합니다.
-4. **분할·실행**: 같은 개체 행을 묶은 분할과 시간 조건을 검사하고, 위의 새로운 입력 독립 과제를 끝내세요. 읽은 입력, 출력 순서, 통계량, 오류 반례와 도움을 기록합니다. 시간·그룹·비율을 모두 만족하는 분할이 없을 때는 제약과 선택을 설명합니다.
+1. **지표·ROC:** 아래의 0~1 점수표를 손으로 계산하고 코드와 대조한 뒤, 보충 4절과 6절의 지표·임계값·ROC 독립 과제를 풉니다. 양성 예측이 없는 경우처럼 분모가 0인 경우를 설명합니다.
+2. **전처리:** 이 노트북 2절의 평균 대체·표준화를 사용하고, 보충 3절과 6절에서 중앙값 대체, 최소·최대 변환, one-hot과 미지 범주를 수행합니다. 각 통계와 범주 목록은 훈련에서만 배웁니다.
+3. **과거 특성:** 보충 1–2절과 6절에서 개체별·시간순 forward-fill, 원본 관측의 최근 세 값과 평균·모집단 표준편차, 범주형 특성을 만듭니다. 목표 행과 허용된 과거 문맥을 구분합니다.
+4. **분할·재실행:** 이 노트북 6절의 새 입력과 보충 6절의 분할 설계·코드를 수행합니다. 개체와 시간 조건, 입력·출력 순서, 통계량, 오류 반례와 받은 도움을 기록합니다. 모든 제약을 만족할 수 없을 때에는 그 이유를 설명합니다.
+
+이 노트북은 **측정 직후**에 그 측정값을 사용할 수 있는 계약이고, 보충은 **측정 전**에 예측하므로 같은 시각의 측정값을 쓸 수 없습니다. 계약이 달라진 것이며 어느 규칙을 모든 과제에 적용할 수는 없습니다.
 
 ### ROC 연습용 별도 표
 
@@ -348,5 +396,50 @@ nb = nbf.v4.new_notebook(cells=cells, metadata={
     "language_info": {"name": "python"},
 })
 nbf.validate(nb)
-nbf.write(nb, ROOT / "week02_prediction_evaluation.ipynb")
-print(f"Created {len(cells)} cells")
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description="Build the lesson only at an explicitly new notebook path.")
+    parser.add_argument("--output", type=Path, help="new .ipynb file under an existing non-symlink directory")
+    parser.add_argument("--check-source", type=Path, help="compare cell IDs, types, and sources without writing")
+    args = parser.parse_args(argv)
+    if args.output is None and args.check_source is None:
+        parser.error("provide --output or --check-source")
+    if args.check_source is not None:
+        existing = nbf.read(args.check_source, as_version=4)
+        nbf.validate(existing)
+        projection = lambda book: [(c.id, c.cell_type, c.source) for c in book.cells]
+        if projection(existing) != projection(nb):
+            parser.error("builder and notebook cell IDs/types/sources differ")
+        print(f"Source and IDs match: {args.check_source} ({len(cells)} cells)")
+    if args.output is not None:
+        target = Path(os.path.abspath(args.output))
+        if target.suffix.lower() != ".ipynb":
+            parser.error("--output must name a new .ipynb file")
+        if target.exists() or target.is_symlink():
+            parser.error("--output already exists or is a symlink")
+        if not target.parent.is_dir():
+            parser.error("--output parent must already exist")
+        if any(part.is_symlink() for part in (target.parent, *target.parent.parents)):
+            parser.error("--output parent path must not contain symlinks")
+        # Serialize before touching the destination. Exclusive creation protects existing paths.
+        serialized = nbf.writes(nb)
+        created_identity = None
+        try:
+            with target.open("x", encoding="utf-8") as handle:
+                stat = os.fstat(handle.fileno())
+                created_identity = (stat.st_dev, stat.st_ino)
+                handle.write(serialized)
+        except BaseException:
+            if created_identity is not None:
+                try:
+                    stat = target.lstat()
+                    if (stat.st_dev, stat.st_ino) == created_identity:
+                        target.unlink()
+                except FileNotFoundError:
+                    pass
+            raise
+        print(f"Created {len(cells)} cells at {target}")
+
+
+if __name__ == "__main__":
+    main()

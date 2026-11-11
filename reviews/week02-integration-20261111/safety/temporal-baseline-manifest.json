@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-11-11T15:51:05.041768+00:00",
+  "purpose": "exact byte preservation before validator edit; original inputs and old report never overwritten",
+  "files": {
+    "validate_week02_temporal_preprocessing.py": {
+      "sha256": "fd7071e8239756e0823a443104c4cef206c74644571971367a16fbd37686b447",
+      "bytes": 14716
+    },
+    "week02_temporal_preprocessing.ipynb": {
+      "sha256": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+      "bytes": 60291
+    },
+    "week02_temporal_preprocessing.html": {
+      "sha256": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+      "bytes": 402657
+    },
+    "week02_temporal_preprocessing_teacher.md": {
+      "sha256": "ac2be76a2d03ca742b36ff87367e7108c9606d43400bd6c2d3bf27c41f14a581",
+      "bytes": 14942
+    },
+    "week02_temporal_preprocessing_validation.json": {
+      "sha256": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936",
+      "bytes": 5143
+    }
+  }
+}

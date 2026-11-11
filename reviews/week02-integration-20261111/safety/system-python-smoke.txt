@@ -1,0 +1,4 @@
+System Python isolated copy smoke, not semantic validation:
+returncode 1
+ModuleNotFoundError: No module named nbformat
+No package installation attempted. All subsequent in-process execution uses the existing venv Python with -B and temporary caches, without changing that environment.

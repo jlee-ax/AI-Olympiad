@@ -7805,6 +7805,7 @@ a.anchor-link {
 <h1 id="2%EC%A3%BC%EC%B0%A8-%C2%B7-%EA%B3%BC%EA%B1%B0-%EA%B8%B0%EB%A1%9D%EC%97%90%EC%84%9C-%EC%98%88%EC%B8%A1%EA%B9%8C%EC%A7%80">2주차 · 과거 기록에서 예측까지<a class="anchor-link" href="#2%EC%A3%BC%EC%B0%A8-%C2%B7-%EA%B3%BC%EA%B1%B0-%EA%B8%B0%EB%A1%9D%EC%97%90%EC%84%9C-%EC%98%88%EC%B8%A1%EA%B9%8C%EC%A7%80">¶</a></h1><p>예측하기 전에 이용할 수 있는 기록을 고르고, 훈련에서 배운 변환으로 새로운 기록을 처리합니다. 이어서 점수와 임계값, 평가 기준을 살펴봅니다.</p>
 <p>이 노트북의 숫자와 표는 설명을 위해 새로 만든 합성 자료입니다. 실제 센서의 성능이나 사물의 관계를 뜻하지 않습니다. 앞의 2주차 교안에서 배운 훈련·검증·테스트, 평균 대체, 표준화와 혼동행렬을 활용합니다.</p>
 <p>실행 환경: Python 3, NumPy, pandas, Matplotlib, scikit-learn 1.3 이상(<code>sparse_output</code>과 ROC의 첫 +∞ 임계값 지원)이 필요합니다.</p>
+<p>앞 교안은 측정 <strong>직후</strong>에 그 측정값을 사용할 수 있었지만, 이 보충은 측정 <strong>전</strong> 예측입니다. 따라서 같은 시각의 측정은 사용할 수 없습니다. 각 자료의 계약에 따라 달라지는 것이며 서로 모순되는 규칙이 아닙니다. <a href="week02_prediction_evaluation.ipynb">앞 교안 노트북</a> · <a href="week02_prediction_evaluation.html">앞 교안 HTML</a>.</p>
 </div>
 </div>
 </div>
@@ -7876,7 +7877,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -7917,7 +7918,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_features</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">targets</span><span class="p">):</span>
@@ -7993,7 +7994,7 @@ d7     7.0    NaN    NaN    red
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">wrong</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"unit"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"X"</span><span class="p">,</span> <span class="s2">"Y"</span><span class="p">,</span> <span class="s2">"Y"</span><span class="p">],</span> <span class="s2">"time"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
@@ -8050,7 +8051,7 @@ d7     7.0    NaN    NaN    red
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">numeric</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
@@ -8106,7 +8107,7 @@ d7         1.25         0.5      0.500             0.0            1.0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="c1"># 검증의 과거 입력을 바꾸어도 이미 학습한 훈련 통계는 바뀌지 않습니다.</span>
@@ -8176,7 +8177,7 @@ TPR=\frac{TP}{TP+FN},\quad FPR=\frac{FP}{FP+TN}.$$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">(</span><span class="n">val_encoded</span><span class="p">[</span><span class="s2">"num__recent"</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">val_encoded</span><span class="p">[</span><span class="s2">"cat__kind_red"</span><span class="p">])</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
@@ -8236,7 +8237,7 @@ ROC: (임계값, FPR, TPR) [(np.float64(inf), np.float64(0.0), np.float64(0.0)),
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -8330,7 +8331,7 @@ ROC: (임계값, FPR, TPR) [(np.float64(inf), np.float64(0.0), np.float64(0.0)),
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">weighted_accuracy</span><span class="p">(</span><span class="n">actual</span><span class="p">,</span> <span class="n">predicted</span><span class="p">,</span> <span class="n">target_weight</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
@@ -8441,11 +8442,88 @@ ROC: (임계값, FPR, TPR) [(np.float64(inf), np.float64(0.0), np.float64(0.0)),
 </tr>
 </tbody>
 </table>
-<p>예측 행 M4, M5, N4, N5는 훈련이고, P6, P7, Q6, Q7은 검증입니다. 훈련 정답은 시각 6 전에 모두 알려졌다고 가정합니다. P/Q의 허용된 과거는 예측 서비스에 이미 도착한 라벨 없는 같은 개체의 문맥입니다. 검증 정답은 순서대로 $[+1,-1,+1,-1]$입니다. 최종 테스트의 새 개체와 정답은 별도 보류합니다.</p>
+<p>아래는 <strong>예측 대상 행</strong>과 사후에 확인할 정답입니다. 정답의 값은 그룹·시각 분할을 정하는 데 사용하지 않으며 예측 특성으로도 사용하지 않습니다. 선택한 검증 행의 정답은 예측 점수를 만든 뒤 임계값 평가·선택에만 사용하고 훈련이나 전처리 <code>fit</code>에 넣지 않습니다. 각 정답은 해당 시각의 예측 후 그날 끝에 도착하고, 시각 5의 정답은 시각 6 전에 알려진다고 가정합니다.</p>
+<table>
+<thead>
+<tr>
+<th>대상 행</th>
+<th style="text-align:right">M4</th>
+<th style="text-align:right">M5</th>
+<th style="text-align:right">N4</th>
+<th style="text-align:right">N5</th>
+<th style="text-align:right">P6</th>
+<th style="text-align:right">P7</th>
+<th style="text-align:right">Q6</th>
+<th style="text-align:right">Q7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사후 정답</td>
+<td style="text-align:right">-1</td>
+<td style="text-align:right">+1</td>
+<td style="text-align:right">-1</td>
+<td style="text-align:right">+1</td>
+<td style="text-align:right">+1</td>
+<td style="text-align:right">-1</td>
+<td style="text-align:right">+1</td>
+<td style="text-align:right">-1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>먼저 분할을 직접 설계하세요.</strong> 시각 6 전에 학습을 끝내고, 그때까지 훈련에 없던 새 개체의 시각 6·7을 순차적으로 예측하는 것이 목표입니다. 위 여덟 대상 행을 빠짐없이 훈련과 검증에 배정하세요. 훈련·검증의 개체가 겹치지 않으며, 훈련 정답은 검증 예측 전에 도착해야 합니다. 선택한 행 ID와 이유를 쓰고, 코드로 그룹 교집합과 훈련·검증 대상 시각의 순서를 검사하세요. 각 개체의 허용된 과거는 라벨 없는 문맥으로 쓸 수 있지만 훈련 대상 행이나 전처리 <code>fit</code>에 자동으로 들어가지는 않습니다. 같은 개체를 양쪽에 두는 후보와 시간 순서를 거꾸로 한 후보가 왜 이 목표에 맞지 않는지도 설명하세요. 최종 테스트의 새 개체와 정답은 생성되지 않았습니다.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=w02-exercise-1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ol>
 <li>각 행의 <code>recent</code>를 구하고, M4와 P6의 최근 관측 세 개·평균·모집단 표준편차를 계산하세요. N4와 Q6에서 forward-fill의 출처를 설명하세요. P7에 시각 6 측정을 쓸 수 있는 조건과 한꺼번에 예측하는 계약에서의 차이도 설명하세요.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=w02-exercise-2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="2">
 <li>훈련 <code>recent</code>의 중앙값과 결측 대체 후 최솟값·최댓값을 구하고 검증 네 값을 변환하세요. 훈련 종류로 one-hot 열을 학습했을 때 <code>bronze</code>와 <code>gold</code>는 각각 무엇이 되나요? <code>drop="first"</code>가 미지 범주 해석에 주는 영향도 설명하세요.</li>
-<li>점수는 변환한 <code>recent</code> 자체이고 클수록 양성입니다. 이 자료는 훈련 범위가 8이어서 아래 값과 임계값을 이진 부동소수로 정확히 표현할 수 있습니다. 다른 자료의 경계는 부동소수 오차를 확인하고 비교 정책을 정해야 합니다. 점수가 임계값 이상이면 양성입니다. 임계값 $2$, $5/4$, $-1/8$에서 TP/FP/TN/FN, 정확도·정밀도·재현율·F1, FPR/TPR을 구하세요. ROC 좌표를 임계값이 높은 순으로 적어 가로축 FPR, 세로축 TPR에 그린 뒤 동점이 한 번에 바뀌는지 확인하세요. 실제 양성 또는 음성이 없는 표와 양성 예측이 없는 표에서 어떤 분모가 0인지 쓰세요.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=w02-exercise-3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="3">
+<li><p>점수는 변환한 <code>recent</code> 자체이고 클수록 양성입니다. 이 연습의 점수와 임계값은 이진 부동소수로 정확히 표현할 수 있도록 정했습니다. 다른 자료의 경계는 부동소수 오차를 확인하고 비교 정책을 정해야 합니다. 점수가 임계값 이상이면 양성입니다. 임계값 $2$, $5/4$, $-1/8$에서 TP/FP/TN/FN, 정확도·정밀도·재현율·F1, FPR/TPR을 구하세요. ROC 좌표를 임계값이 높은 순으로 적어 가로축 FPR, 세로축 TPR에 그린 뒤 동점이 한 번에 바뀌는지 확인하세요. 실제 양성 또는 음성이 없는 표와 양성 예측이 없는 표에서 어떤 분모가 0인지 쓰세요.</p>
+<p>이제 후보 임계값은 $2$, $5/4$, $-1/8$, $-1$이며 <strong>검증 F1이 가장 큰 값</strong>을 고릅니다. F1이 같으면 <strong>더 높은 임계값</strong>을 고른다는 기준을 미리 정합니다. $-1$에서 달라지는 예측이 있는지 먼저 확인하고, 선택한 임계값과 이유를 적은 뒤 고정하세요. 같은 예측을 만드는 두 임계값은 ROC의 서로 다른 새 좌표를 만들지 않습니다. 이 선택은 검증용 정답으로만 하고 최종 테스트는 사용하지 않습니다.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=w02-exercise-4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="4">
 <li>아래 코드는 왜 틀렸나요? 새 자료로 고치고, <strong>검증 입력을 바꾸어도 훈련 중앙값·범위·범주가 불변</strong>임을 코드로 확인하세요. 동시에 그 입력을 과거로 쓸 수 있는 검증 행의 변환값은 바뀔 수 있음을 확인하세요.</li>
 </ol>
 <div class="highlight"><pre><span></span><span class="c1"># 잘못된 예: 평가할 자료를 규칙 학습에 섞음</span>
@@ -8455,7 +8533,53 @@ ROC: (임계값, FPR, TPR) [(np.float64(inf), np.float64(0.0), np.float64(0.0)),
 <li>(가) 검증 기록의 미래 값을 중심 윈도에 넣은 경우, (나) 훈련만 사용해 만든 많은 후보 중 동일 검증 성적이 가장 좋은 것을 계속 고른 경우, (다) 최종 테스트 정답으로 임계값을 고른 경우의 정보 흐름을 비교하세요. 누수와 검증 반복 사용의 과대적합 가능성을 구분하고 각 평가에 미치는 영향을 설명하세요.</li>
 <li>별도 합성 평가에서 실제 B 6개·T 2개, 가중치는 실제 B에 1, 실제 T에 4입니다. 후보 U는 B 6개와 T 0개, 후보 V는 B 3개와 T 2개를 맞혔습니다. 두 후보의 전체 행 정확도와 가중 정확도를 손으로 계산하고, 실제 정답·예측 배열을 만들어 <code>weighted_accuracy</code>로 확인한 뒤 순위가 같은지 비교하세요. 가중 분모에 어떤 행이 포함되는지 설명하세요.</li>
 </ol>
-<p>직접 새 DataFrame을 만들고 분할, 특성 생성, <code>fit</code>/<code>transform</code>, 임계값별 계산을 작성하세요. 결과를 적을 때 행 ID·점수 순서와 사용한 도움을 함께 남기세요.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=w02-exercise-5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>고정 후 라벨 없는 새 연습 입력.</strong> P/Q의 시각 7 검증 정답까지 도착한 뒤, 아래 새 개체들의 시각 8을 예측합니다. 다음 원본 측정은 모두 해당 예측 전에 도착했고 정답 열은 제공되지 않습니다. 이 행들은 독립 최종 테스트가 아닌 합성 연습 입력입니다.</p>
+<table>
+<thead>
+<tr>
+<th>개체</th>
+<th style="text-align:right">시각 1</th>
+<th style="text-align:right">시각 2</th>
+<th style="text-align:right">시각 7</th>
+<th>종류</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">9</td>
+<td>bronze</td>
+</tr>
+<tr>
+<td>S</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0</td>
+<td>gold</td>
+</tr>
+<tr>
+<td>U</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">-1</td>
+<td>silver</td>
+</tr>
+</tbody>
+</table>
+<p>R8, S8, U8 순서로 <code>recent</code>, <code>mean3</code>, <code>std3</code>를 만들고, 선택한 훈련 행에서 이미 배운 변환과 <strong>고정된 임계값</strong>을 그대로 적용하세요. 정답 열 없이 행 ID에 대응한 예측을 출력하고, 행 수와 순서 및 미지 종류의 처리도 확인하세요. 이 입력으로 다시 <code>fit</code>하거나 임계값을 바꾸지 않습니다. 앞의 동률이던 두 후보가 U의 점수에 대해 같은 판정을 주는지도 확인하고, 그 결과를 보고 이미 고정한 선택을 바꾸지는 마세요.</p>
+<p>직접 새 DataFrame을 만들고 분할, 특성 생성, <code>fit</code>/<code>transform</code>, 임계값별 계산과 라벨 없는 예측을 작성하세요. 결과를 적을 때 행 ID·점수 순서와 사용한 도움을 함께 남기세요.</p>
 </div>
 </div>
 </div>

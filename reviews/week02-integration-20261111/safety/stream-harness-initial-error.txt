@@ -1,0 +1,1 @@
+Initial unit harness attempt did not execute coalesce_stream_outputs: synthetic Node.__getattr__ incorrectly raised KeyError for deepcopy's __deepcopy__ lookup. Fixed harness to raise AttributeError for missing attributes. This was not a validator failure and was not counted as passing semantic validation.

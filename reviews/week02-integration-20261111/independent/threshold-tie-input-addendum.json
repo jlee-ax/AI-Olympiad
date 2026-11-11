@@ -1,0 +1,62 @@
+{
+  "schema": "independent-threshold-tie-addendum-v1",
+  "prepared_before_source_candidate_read": true,
+  "recorded_utc": "2026-11-11T15:19:52.236341+00:00",
+  "status": "prepared_not_run",
+  "preserves_prior_frozen_inputs": true,
+  "validation": {
+    "scores": [
+      -0.25,
+      0.25,
+      0.75
+    ],
+    "truth": [
+      -1,
+      1,
+      1
+    ],
+    "candidate_thresholds": [
+      -0.75,
+      -0.5
+    ],
+    "comparison": ">=",
+    "objective": "overall accuracy",
+    "expected_predictions_for_both": [
+      1,
+      1,
+      1
+    ],
+    "expected_accuracy_fraction": [
+      2,
+      3
+    ]
+  },
+  "tie_policy": "Among candidates with exactly equal official validation score, select the numerically highest threshold; policy declared before new input is inspected",
+  "expected_selected_threshold": -0.5,
+  "new_unlabeled_rows": [
+    {
+      "id": "new-tie-probe",
+      "score": -0.625
+    }
+  ],
+  "expected_predictions_by_candidate": {
+    "-0.75": [
+      1
+    ],
+    "-0.5": [
+      -1
+    ]
+  },
+  "expected_selected_prediction": [
+    -1
+  ],
+  "metamorphic_claim": "identical validation predictions/score do not uniquely specify future decision behavior; persist actual chosen numeric threshold and comparison/tie policy, not just validation predictions",
+  "bad_variants": [
+    "choose lower tied threshold",
+    "store only validation predictions and reconstruct arbitrary tied threshold",
+    "use new row or its unavailable truth to break the tie",
+    "apply a different threshold after recording the selected one"
+  ],
+  "arithmetic_domain": "all numbers exactly representable binary fractions; no rounding policy ambiguity intended",
+  "source_scope": "provided decision scores, not trained-model claim; this fixture is independent of candidate table values; original v2 fixtures unchanged"
+}

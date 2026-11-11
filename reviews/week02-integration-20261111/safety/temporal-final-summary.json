@@ -1,0 +1,62 @@
+{
+  "created_utc": "2026-11-11T15:58:55.581848+00:00",
+  "validator_sha256": "60fb798542c226df82ebf7b7966824cd4300b81033c3570614f75ddd7329f6b4",
+  "fixture_sha256": {
+    "validate_week02_temporal_preprocessing.py": "60fb798542c226df82ebf7b7966824cd4300b81033c3570614f75ddd7329f6b4",
+    "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+    "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+    "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+    "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+  },
+  "tests": {
+    "all_passed": true,
+    "count": 26,
+    "evidence": "temporal-final-results.json"
+  },
+  "numerical_temporal_roc_qa_unchanged": true,
+  "numerical_qa_sha256": "986c54062283256bcba1f18bf40c1b756fd81707b934c80c22024986b05758bc",
+  "live_inputs_and_old_report_unchanged_since_final_fixture": {
+    "week02_temporal_preprocessing.ipynb": true,
+    "week02_temporal_preprocessing.html": true,
+    "week02_temporal_preprocessing_teacher.md": true,
+    "week02_temporal_preprocessing_validation.json": true
+  },
+  "checked_cases": [
+    "default stdout JSON; new report JSON matches stdout",
+    "existing file/directory/ordinary and dangling symlink/symlink ancestor/input overlap refused",
+    "exact single tagged comment template; duplicate code or tagged markdown/comment answer/code answer/stored output/executed exercise refused",
+    "-O and PYTHONOPTIMIZE refusal before third-party imports",
+    "actual code and temporal numerical QA failures detected",
+    "report-construction and partial-write failures; owned partial file removed",
+    "late existing result preserved",
+    "notebook/HTML/teacher changes during validation refused; simulated user edits preserved; no stale report"
+  ],
+  "report_factuality": {
+    "fresh_execution": "sequential InteractiveShell in a fresh process; no Jupyter socket",
+    "saved_outputs": "execution counts/error absence/one PNG and unexecuted blank exercise observed; original capture method not verified",
+    "fixed_historical_warning_and_previous_attempt_removed": true,
+    "browser_wording": "HTML structural checks only; visual review is not performed by this validator.",
+    "browser_wording_corrected_before_final_fixture_and_tests": true,
+    "student_achievement": "not observed or automatically evaluated; blank distribution state only"
+  },
+  "preservation": {
+    "old_report_bytes": "temporal-baseline/week02_temporal_preprocessing_validation.json",
+    "baseline_manifest": "temporal-baseline-manifest.json",
+    "final_fixture_manifest": "temporal-final-fixture-manifest.json",
+    "old_report_sha256": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+  },
+  "historical_results": "temporal-results.json used earlier teacher ac2b and validator1955; one harness newline comparison failed. See temporal-initial-result-note.txt. It is not final evidence.",
+  "write_scope": [
+    "lessons/week02/validate_week02_temporal_preprocessing.py",
+    "reviews/week02-integration-20261111/safety/temporal-* new files only"
+  ],
+  "committed_or_pushed": false,
+  "no_socket_attempts": true,
+  "limits": [
+    "arbitrary trusted notebook Python is not OS isolated and can access absolute paths",
+    "test harness supplies and cleans temporary cache paths; no packages or shared venv files modified",
+    "finite synthetic teacher references do not evaluate student achievement or completion time",
+    "no browser visual review or remote MathJax availability verification"
+  ],
+  "reproduce": "python -B reviews/week02-integration-20261111/safety/temporal-regressions.py --fixture reviews/week02-integration-20261111/safety/temporal-final-fixture --validator reviews/week02-integration-20261111/safety/temporal-final-fixture/validate_week02_temporal_preprocessing.py --expected-validator-sha 60fb798542c226df82ebf7b7966824cd4300b81033c3570614f75ddd7329f6b4 --results reviews/week02-integration-20261111/safety/temporal-NEW-results.json"
+}

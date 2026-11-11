@@ -8,10 +8,14 @@ from datetime import datetime, timezone
 import hashlib
 import io
 import json
+import os
 from pathlib import Path
 import platform
 import re
 import sys
+
+if not __debug__:
+    raise RuntimeError("Optimized Python disables QA assertions; run without -O/PYTHONOPTIMIZE.")
 
 import IPython
 from IPython.core.interactiveshell import InteractiveShell
@@ -29,23 +33,63 @@ ROOT = Path(__file__).resolve().parent
 NOTEBOOK = ROOT / "week02_temporal_preprocessing.ipynb"
 HTML = ROOT / "week02_temporal_preprocessing.html"
 GUIDE = ROOT / "week02_temporal_preprocessing_teacher.md"
+EXERCISE_TEMPLATE = "# 새 자료를 직접 입력하고 코드를 작성하세요."
 
 
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def main():
+def new_report_path(path):
+    """Refuse every existing target and symlink before executing notebook code."""
+    path = Path(os.path.abspath(path))
+    for component in (path, *path.parents):
+        if component.is_symlink():
+            raise ValueError("Report path must not contain a symlink: " + str(component))
+    if os.path.lexists(path):
+        raise FileExistsError("Report must use a NEW file path: " + str(path))
+    if not path.parent.is_dir():
+        raise ValueError("Report parent must be an existing directory: " + str(path.parent))
+    return path
+
+
+def write_new_report(path, rendered):
+    # Check again because another actor may have created the target while QA ran.
+    path = new_report_path(path)
+    owned = None
+    try:
+        with path.open("x", encoding="utf-8") as stream:
+            owned = os.fstat(stream.fileno())
+            stream.write(rendered)
+    except BaseException:
+        if owned is not None:
+            try:
+                current = path.lstat()
+                if (current.st_dev, current.st_ino) == (owned.st_dev, owned.st_ino):
+                    path.unlink()
+            except FileNotFoundError:
+                pass
+        raise
+
+
+def main(argv=None):
     parser = argparse.ArgumentParser()
-    parser.add_argument("--write", type=Path, help="write the JSON record to this path")
-    args = parser.parse_args()
-    nb = nbformat.read(NOTEBOOK, as_version=4)
+    parser.add_argument("--write", type=Path, help="exclusively create the JSON record at a NEW file path")
+    args = parser.parse_args(argv)
+    output = new_report_path(args.write) if args.write is not None else None
+    inputs = {path: path.read_bytes() for path in (NOTEBOOK, HTML, GUIDE)}
+    nb = nbformat.reads(inputs[NOTEBOOK].decode("utf-8"), as_version=4)
     nbformat.validate(nb)
     assert Version(sklearn.__version__) >= Version("1.3")
-    exercises = [c for c in nb.cells if c.cell_type == "code"
-                 and "independent-exercise" in c.metadata.get("tags", [])]
-    assert len(exercises) == 1 and not ast.parse(exercises[0].source).body
-    assert exercises[0].execution_count is None and not exercises[0].outputs
+    exercises = [c for c in nb.cells if "independent-exercise" in c.metadata.get("tags", [])]
+    if len(exercises) != 1:
+        raise ValueError("Exactly one independent-exercise cell is required.")
+    exercise = exercises[0]
+    if (exercise.cell_type != "code" or exercise.source.strip() != EXERCISE_TEMPLATE
+            or ast.parse(exercise.source).body):
+        raise ValueError("Only the original blank exercise comment template is allowed.")
+    if exercise.execution_count is not None or exercise.outputs:
+        raise ValueError("Exercise must be unexecuted and have no saved outputs.")
     examples = [c for c in nb.cells if c.cell_type == "code" and c is not exercises[0]]
     assert all(c.execution_count is not None for c in examples)
     assert not any(o.output_type == "error" for c in examples for o in c.outputs)
@@ -55,7 +99,7 @@ def main():
     assert base64.b64decode(images[0]).startswith(bytes.fromhex("89504e470d0a1a0a"))
     text = "\n".join(c.source for c in nb.cells)
     assert not re.search(r"\d+\s*(?:분|시간)", text)
-    html = HTML.read_text(encoding="utf-8")
+    html = inputs[HTML].decode("utf-8")
     assert "data:image/png;base64," in html
     for marker in ("과거 기록에서 예측까지", "새 입력으로 직접 확인하기",
                    "Validation ROC", "OneHotEncoder"):
@@ -249,7 +293,7 @@ def main():
     report = {
         "status": "passed",
         "executed_at_utc": datetime.now(timezone.utc).isoformat(),
-        "execution": "fresh process; nbformat validation; sequential in-process IPython, no local Jupyter kernel",
+        "execution": "fresh process; nbformat validation; sequential InteractiveShell execution, no Jupyter socket",
         "python": sys.version.split()[0],
         "platform": platform.platform(),
         "packages": {"nbformat": nbformat.__version__, "IPython": IPython.__version__,
@@ -260,28 +304,33 @@ def main():
         "weighted_worked_forward_and_reverse": [worked_forward, worked_reverse],
         "weighted_comparison": {"rtol": 0, "atol": 1e-12},
         "student_exercise_ast_empty": True,
+        "student_exercise_template_checked_before_execution": True,
+        "student_answer_verification": "blank distribution state only; student answers and achievement are not automatically evaluated",
         "student_exercise_outputs_empty": True,
         "saved_executed_example_cells": len(examples),
         "saved_png_outputs": len(images),
         "html_png_embedded": True,
         "saved_streams_match_fresh_execution": True,
-        "saved_output_capture": "fresh InProcessKernelManager with matplotlib inline; eight example cells and one blank exercise executed; image/png saved",
-        "saved_output_capture_warning": "jupyter_client local interface discovery raised Operation not permitted; the in-process kernel and PNG capture still completed",
+        "saved_output_observations": "example cells have stored execution counts and no error outputs; one PNG is present; the distributed exercise is unexecuted with no saved output; original capture method is not verified",
         "checks": cases,
         "stdout": stdout.getvalue(),
         "stderr": stderr.getvalue(),
-        "sha256": {p.name: sha(p) for p in (NOTEBOOK, HTML, GUIDE, Path(__file__).resolve())},
+        "sha256": {**{p.name: hashlib.sha256(data).hexdigest() for p, data in inputs.items()},
+                   Path(__file__).name: sha(Path(__file__).resolve())},
         "limits": [
             "Synthetic finite cases only; student answers, learning and completion time not observed.",
-            "HTML structural checks only: local file browser policy prevented visual review.",
+            "HTML structural checks only; visual review is not performed by this validator.",
             "HTML MathJax availability was not verified.",
             "Final test dataset is not created or held out by this script.",
+            "This is not OS isolation; arbitrary trusted notebook Python can access absolute paths.",
         ],
-        "previous_attempt": "Read-only sandbox denied IPython temporary directory; the run was repeated with authorized writable temporary space.",
     }
     rendered = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
-    if args.write:
-        args.write.write_text(rendered, encoding="utf-8")
+    for path, before in inputs.items():
+        if path.read_bytes() != before:
+            raise RuntimeError("Input changed during validation; refusing result: " + str(path))
+    if output is not None:
+        write_new_report(output, rendered)
     print(rendered)
 
 

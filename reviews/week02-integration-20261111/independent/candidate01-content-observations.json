@@ -1,0 +1,26 @@
+{
+  "candidate_main_sha256": "7bfe0429035c3a5a96bf6be5ceac63eaa34e8f212567e96dcf3447b6d67fa997",
+  "candidate_supplement_sha256": "909e3cd0a33dd99e5a6a8dc388132d9b5c700799b20540753014f608d4d43491",
+  "recorded_utc": "2026-11-11T15:23:22.384255+00:00",
+  "snapshot": "candidate01-inputs",
+  "scope": "source/teacher reading only; full execution not yet claimed",
+  "findings": [
+    {
+      "id": "R01",
+      "location": "supplement markdown cell19 first paragraph",
+      "status": "needs wording correction or narrower independent-claim scope",
+      "reason": "cell18 asks learner to calculate training min/max, but next cell discloses training range as floating-point explanation; partial answer exposure",
+      "first_observed_in": "candidate01",
+      "lineage": "same explanatory number also existed in earlier baseline supplement; not newly introduced by current author",
+      "correction": "remove the computed range number, preserve exact-binary-input/threshold explanation; do not delete boundary policy"
+    }
+  ],
+  "preserved_normal_observations": [
+    "A/B worked subset remains separate from A/B/G/H extension; original mean/scaler/leaky example not replaced",
+    "teacher chosen group-CV train folds each contain both classes; more than one legitimate group partition is possible",
+    "student main22 explicitly maps duplicate mandatory items to supplement rather than duplicate submission",
+    "new unlabeled rows explicitly are synthetic practice, not hidden final test"
+  ],
+  "additional_test_caution": "Full extended-cohort mean/scaler numbers may coincide with worked subset by construction. Actual fit row IDs/count and fold state must be inspected; same numeric stats alone do not prove refit.",
+  "student_performance_and_time": "not_observed"
+}

@@ -1,0 +1,1027 @@
+{
+  "created_utc": "2026-11-11T15:57:38.812111+00:00",
+  "validator_sha256": "60fb798542c226df82ebf7b7966824cd4300b81033c3570614f75ddd7329f6b4",
+  "notebook_sha256": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+  "all_passed": true,
+  "cases": [
+    {
+      "name": "normal_default_stdout",
+      "passed": true,
+      "returncode": 0,
+      "detector": null,
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "report_records_checked_input_snapshot": true,
+        "report_does_not_claim_old_capture_or_warning": true,
+        "default_created_no_report": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "{\n  \"status\": \"passed\",\n  \"executed_at_utc\": \"2026-11-11T15:57:01.515790+00:00\",\n  \"execution\": \"fresh process; nbformat validation; sequential InteractiveShell execution, no Jupyter socket\",\n  \"python\": \"3.12.14\",\n  \"platform\": \"Linux-6.18.57-x86_64-with-glibc2.41\",\n  \"packages\": {\n    \"nbformat\": \"5.11.1\",\n    \"IPython\": \"9.18.1\",\n    \"numpy\": \"2.5.4\",\n    \"pandas\": \"3.1.1\",\n    \"scikit-learn\": \"1.8.0\",\n    \"matplotlib\": \"3.11.2\"\n  },\n  \"notebook_cells\": 24,\n  \"code_cell_indices\": [\n    3,\n    4,\n    6,\n    8,\n    9,\n    11,\n    12,\n    15,\n    22\n  ],\n  \"weighted_worked_forward_and_reverse\": [\n    0.5,\n    0.5000000000000001\n  ],\n  \"weighted_comparison\": {\n    \"rtol\": 0,\n    \"atol\": 1e-12\n  },\n  \"student_exercise_ast_empty\": true,\n  \"student_exercise_template_checked_before_execution\": true,\n  \"student_answer_verification\": \"blank distribution state only; student answers and achievement are not automatically evaluated\",\n  \"student_exercise_outputs_empty\": true,\n  \"saved_executed_example_cells\": 8,\n  \"saved_png_outputs\": 1,\n  \"html_png_embedded\": true,\n  \"saved_streams_match_fresh_execution\": true,\n  \"saved_output_observations\": \"example cells have stored execution counts and no error outputs; one PNG is present; the distributed exercise is unexecuted with no saved output; original capture method is not verified\",\n  \"checks\": [\n    \"worked example, tie, ROC points and plotted axes\",\n    \"unsorted past-only records, cross-group and future mutations, duplicate rejection\",\n    \"new exercise: forward-fill, window, median, range, unknown, train-stat invariance\",\n    \"same-width wrong encoder and validation-fit leakage mutations\",\n    \"new exercise ROC, F1, tie, positive/negative denominator edge cases\",\n    \"new weighted score: truth-based weights, all-row denominator, ranking, mutations and finite positive-weight bounds\"\n  ],\n  \"stdout\": \"훈련 특성:\\n     recent  mean3   std3  kind\\nid                            \\na4     6.0  4.000  1.633   red\\na5     4.0  4.667  0.943   red\\nb4     NaN    NaN    NaN  blue\\nb5     2.0    NaN    NaN  blue\\n\\n검증 특성:\\n     recent  mean3   std3   kind\\nid                             \\nc6     8.0  5.333  2.055  green\\nc7    12.0  8.333  2.867  green\\nd6     1.0    NaN    NaN    red\\nd7     7.0    NaN    NaN    red\\n  unit  time  reading  global_fill  within_unit\\n0    X     1     99.0         99.0         99.0\\n1    Y     1      NaN         99.0          NaN\\n2    Y     2      2.0          2.0          2.0\\n틀린 시각 2 중심 윈도 평균: 35.333333333333336\\n훈련 통계 (중앙값): [4.         4.33333333 1.2879011 ]\\n훈련 최솟값: [2.         4.         0.94280904]\\n훈련 범주: [array(['blue', 'red'], dtype=object)]\\n검증 변환:\\n     num__recent  num__mean3  num__std3  cat__kind_blue  cat__kind_red\\nid                                                                   \\nc6         1.50         2.0      1.611             0.0            0.0\\nc7         2.50         6.5      2.789             0.0            0.0\\nd6        -0.25         0.5      0.500             0.0            1.0\\nd7         1.25         0.5      0.500             0.0            1.0\\n바뀐 검증 recent: [8.0, 100.0, 1.0, 7.0]\\n검증 변경 후에도 훈련 중앙값: 4.0\\n기본 미지 범주 정책: ValueError\\n생략된 blue와 미지 green: [[0.0], [0.0]]\\n임계값 inf {'TP': 0, 'FP': 0, 'TN': 2, 'FN': 2} {'accuracy': 0.5, 'precision': None, 'recall': 0.0, 'F1': 0.0, 'TPR': 0.0, 'FPR': 0.0}\\n임계값 2.5 {'TP': 0, 'FP': 1, 'TN': 1, 'FN': 2} {'accuracy': 0.25, 'precision': 0.0, 'recall': 0.0, 'F1': 0.0, 'TPR': 0.0, 'FPR': 0.5}\\n임계값 1.5 {'TP': 2, 'FP': 1, 'TN': 1, 'FN': 0} {'accuracy': 0.75, 'precision': 0.6666666666666666, 'recall': 1.0, 'F1': 0.8, 'TPR': 1.0, 'FPR': 0.5}\\n임계값 0 {'TP': 2, 'FP': 2, 'TN': 0, 'FN': 0} {'accuracy': 0.5, 'precision': 0.5, 'recall': 1.0, 'F1': 0.6666666666666666, 'TPR': 1.0, 'FPR': 1.0}\\nROC: (임계값, FPR, TPR) [(np.float64(inf), np.float64(0.0), np.float64(0.0)), (np.float64(2.5), np.float64(0.5), np.float64(0.0)), (np.float64(1.5), np.float64(0.5), np.float64(1.0)), (np.float64(0.0), np.float64(1.0), np.float64(1.0))]\\n가 행 정확도 0.8333333333333334 가중 정확도 0.5\\n나 행 정확도 0.6666666666666666 가중 정확도 0.8\\n\",\n  \"stderr\": \"\",\n  \"sha256\": {\n    \"week02_temporal_preprocessing.ipynb\": \"b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c\",\n    \"week02_temporal_preprocessing.html\": \"0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d\",\n    \"week02_temporal_preprocessing_teacher.md\": \"56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3\",\n    \"validate_week02_temporal_preprocessing.py\": \"60fb798542c226df82ebf7b7966824cd4300b81033c3570614f75ddd7329f6b4\"\n  },\n  \"limits\": [\n    \"Synthetic finite cases only; student answers, learning and completion time not observed.\",\n    \"HTML structural checks only; visual review is not performed by this validator.\",\n    \"HTML MathJax availability was not verified.\",\n    \"Final test dataset is not created or held out by this script.\",\n    \"This is not OS isolation; arbitrary trusted notebook Python can access absolute paths.\"\n  ]\n}\n\n",
+      "stderr": "",
+      "cache_entries_before_harness_cleanup": [
+        "ipythondir",
+        "mplconfigdir",
+        "ipythondir/profile_default",
+        "mplconfigdir/fontlist-v3.11.0.json",
+        "ipythondir/profile_default/history.sqlite",
+        "ipythondir/profile_default/pid",
+        "ipythondir/profile_default/startup",
+        "ipythondir/profile_default/log",
+        "ipythondir/profile_default/security",
+        "ipythondir/profile_default/startup/README"
+      ]
+    },
+    {
+      "name": "new_report",
+      "passed": true,
+      "returncode": 0,
+      "detector": null,
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "report_records_checked_input_snapshot": true,
+        "report_does_not_claim_old_capture_or_warning": true,
+        "new_report_json_equals_stdout": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "{\n  \"status\": \"passed\",\n  \"executed_at_utc\": \"2026-11-11T15:57:01.584140+00:00\",\n  \"execution\": \"fresh process; nbformat validation; sequential InteractiveShell execution, no Jupyter socket\",\n  \"python\": \"3.12.14\",\n  \"platform\": \"Linux-6.18.57-x86_64-with-glibc2.41\",\n  \"packages\": {\n    \"nbformat\": \"5.11.1\",\n    \"IPython\": \"9.18.1\",\n    \"numpy\": \"2.5.4\",\n    \"pandas\": \"3.1.1\",\n    \"scikit-learn\": \"1.8.0\",\n    \"matplotlib\": \"3.11.2\"\n  },\n  \"notebook_cells\": 24,\n  \"code_cell_indices\": [\n    3,\n    4,\n    6,\n    8,\n    9,\n    11,\n    12,\n    15,\n    22\n  ],\n  \"weighted_worked_forward_and_reverse\": [\n    0.5,\n    0.5000000000000001\n  ],\n  \"weighted_comparison\": {\n    \"rtol\": 0,\n    \"atol\": 1e-12\n  },\n  \"student_exercise_ast_empty\": true,\n  \"student_exercise_template_checked_before_execution\": true,\n  \"student_answer_verification\": \"blank distribution state only; student answers and achievement are not automatically evaluated\",\n  \"student_exercise_outputs_empty\": true,\n  \"saved_executed_example_cells\": 8,\n  \"saved_png_outputs\": 1,\n  \"html_png_embedded\": true,\n  \"saved_streams_match_fresh_execution\": true,\n  \"saved_output_observations\": \"example cells have stored execution counts and no error outputs; one PNG is present; the distributed exercise is unexecuted with no saved output; original capture method is not verified\",\n  \"checks\": [\n    \"worked example, tie, ROC points and plotted axes\",\n    \"unsorted past-only records, cross-group and future mutations, duplicate rejection\",\n    \"new exercise: forward-fill, window, median, range, unknown, train-stat invariance\",\n    \"same-width wrong encoder and validation-fit leakage mutations\",\n    \"new exercise ROC, F1, tie, positive/negative denominator edge cases\",\n    \"new weighted score: truth-based weights, all-row denominator, ranking, mutations and finite positive-weight bounds\"\n  ],\n  \"stdout\": \"훈련 특성:\\n     recent  mean3   std3  kind\\nid                            \\na4     6.0  4.000  1.633   red\\na5     4.0  4.667  0.943   red\\nb4     NaN    NaN    NaN  blue\\nb5     2.0    NaN    NaN  blue\\n\\n검증 특성:\\n     recent  mean3   std3   kind\\nid                             \\nc6     8.0  5.333  2.055  green\\nc7    12.0  8.333  2.867  green\\nd6     1.0    NaN    NaN    red\\nd7     7.0    NaN    NaN    red\\n  unit  time  reading  global_fill  within_unit\\n0    X     1     99.0         99.0         99.0\\n1    Y     1      NaN         99.0          NaN\\n2    Y     2      2.0          2.0          2.0\\n틀린 시각 2 중심 윈도 평균: 35.333333333333336\\n훈련 통계 (중앙값): [4.         4.33333333 1.2879011 ]\\n훈련 최솟값: [2.         4.         0.94280904]\\n훈련 범주: [array(['blue', 'red'], dtype=object)]\\n검증 변환:\\n     num__recent  num__mean3  num__std3  cat__kind_blue  cat__kind_red\\nid                                                                   \\nc6         1.50         2.0      1.611             0.0            0.0\\nc7         2.50         6.5      2.789             0.0            0.0\\nd6        -0.25         0.5      0.500             0.0            1.0\\nd7         1.25         0.5      0.500             0.0            1.0\\n바뀐 검증 recent: [8.0, 100.0, 1.0, 7.0]\\n검증 변경 후에도 훈련 중앙값: 4.0\\n기본 미지 범주 정책: ValueError\\n생략된 blue와 미지 green: [[0.0], [0.0]]\\n임계값 inf {'TP': 0, 'FP': 0, 'TN': 2, 'FN': 2} {'accuracy': 0.5, 'precision': None, 'recall': 0.0, 'F1': 0.0, 'TPR': 0.0, 'FPR': 0.0}\\n임계값 2.5 {'TP': 0, 'FP': 1, 'TN': 1, 'FN': 2} {'accuracy': 0.25, 'precision': 0.0, 'recall': 0.0, 'F1': 0.0, 'TPR': 0.0, 'FPR': 0.5}\\n임계값 1.5 {'TP': 2, 'FP': 1, 'TN': 1, 'FN': 0} {'accuracy': 0.75, 'precision': 0.6666666666666666, 'recall': 1.0, 'F1': 0.8, 'TPR': 1.0, 'FPR': 0.5}\\n임계값 0 {'TP': 2, 'FP': 2, 'TN': 0, 'FN': 0} {'accuracy': 0.5, 'precision': 0.5, 'recall': 1.0, 'F1': 0.6666666666666666, 'TPR': 1.0, 'FPR': 1.0}\\nROC: (임계값, FPR, TPR) [(np.float64(inf), np.float64(0.0), np.float64(0.0)), (np.float64(2.5), np.float64(0.5), np.float64(0.0)), (np.float64(1.5), np.float64(0.5), np.float64(1.0)), (np.float64(0.0), np.float64(1.0), np.float64(1.0))]\\n가 행 정확도 0.8333333333333334 가중 정확도 0.5\\n나 행 정확도 0.6666666666666666 가중 정확도 0.8\\n\",\n  \"stderr\": \"\",\n  \"sha256\": {\n    \"week02_temporal_preprocessing.ipynb\": \"b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c\",\n    \"week02_temporal_preprocessing.html\": \"0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d\",\n    \"week02_temporal_preprocessing_teacher.md\": \"56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3\",\n    \"validate_week02_temporal_preprocessing.py\": \"60fb798542c226df82ebf7b7966824cd4300b81033c3570614f75ddd7329f6b4\"\n  },\n  \"limits\": [\n    \"Synthetic finite cases only; student answers, learning and completion time not observed.\",\n    \"HTML structural checks only; visual review is not performed by this validator.\",\n    \"HTML MathJax availability was not verified.\",\n    \"Final test dataset is not created or held out by this script.\",\n    \"This is not OS isolation; arbitrary trusted notebook Python can access absolute paths.\"\n  ]\n}\n\n",
+      "stderr": "",
+      "cache_entries_before_harness_cleanup": [
+        "ipythondir",
+        "mplconfigdir",
+        "ipythondir/profile_default",
+        "mplconfigdir/fontlist-v3.11.0.json",
+        "ipythondir/profile_default/history.sqlite",
+        "ipythondir/profile_default/pid",
+        "ipythondir/profile_default/startup",
+        "ipythondir/profile_default/log",
+        "ipythondir/profile_default/security",
+        "ipythondir/profile_default/startup/README"
+      ]
+    },
+    {
+      "name": "path_existing_file",
+      "passed": true,
+      "returncode": 1,
+      "detector": "NEW file",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-ai1f_gzs/input/validate_week02_temporal_preprocessing.py\", line 338, in <module>\n    main()\n  File \"/tmp/temporal-safety-case-ai1f_gzs/input/validate_week02_temporal_preprocessing.py\", line 79, in main\n    output = new_report_path(args.write) if args.write is not None else None\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/temporal-safety-case-ai1f_gzs/input/validate_week02_temporal_preprocessing.py\", line 50, in new_report_path\n    raise FileExistsError(\"Report must use a NEW file path: \" + str(path))\nFileExistsError: Report must use a NEW file path: /tmp/temporal-safety-case-ai1f_gzs/input/week02_temporal_preprocessing_validation.json\n",
+      "cache_entries_before_harness_cleanup": [
+        "mplconfigdir"
+      ]
+    },
+    {
+      "name": "path_existing_directory",
+      "passed": true,
+      "returncode": 1,
+      "detector": "NEW file",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-ppqljsrj/input/validate_week02_temporal_preprocessing.py\", line 338, in <module>\n    main()\n  File \"/tmp/temporal-safety-case-ppqljsrj/input/validate_week02_temporal_preprocessing.py\", line 79, in main\n    output = new_report_path(args.write) if args.write is not None else None\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/temporal-safety-case-ppqljsrj/input/validate_week02_temporal_preprocessing.py\", line 50, in new_report_path\n    raise FileExistsError(\"Report must use a NEW file path: \" + str(path))\nFileExistsError: Report must use a NEW file path: /tmp/temporal-safety-case-ppqljsrj/input\n",
+      "cache_entries_before_harness_cleanup": [
+        "mplconfigdir"
+      ]
+    },
+    {
+      "name": "path_symlink_file",
+      "passed": true,
+      "returncode": 1,
+      "detector": "symlink",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-3y792j36/input/validate_week02_temporal_preprocessing.py\", line 338, in <module>\n    main()\n  File \"/tmp/temporal-safety-case-3y792j36/input/validate_week02_temporal_preprocessing.py\", line 79, in main\n    output = new_report_path(args.write) if args.write is not None else None\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/temporal-safety-case-3y792j36/input/validate_week02_temporal_preprocessing.py\", line 48, in new_report_path\n    raise ValueError(\"Report path must not contain a symlink: \" + str(component))\nValueError: Report path must not contain a symlink: /tmp/temporal-safety-case-3y792j36/link.json\n",
+      "cache_entries_before_harness_cleanup": [
+        "mplconfigdir"
+      ]
+    },
+    {
+      "name": "path_dangling_symlink",
+      "passed": true,
+      "returncode": 1,
+      "detector": "symlink",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-cq0fjll_/input/validate_week02_temporal_preprocessing.py\", line 338, in <module>\n    main()\n  File \"/tmp/temporal-safety-case-cq0fjll_/input/validate_week02_temporal_preprocessing.py\", line 79, in main\n    output = new_report_path(args.write) if args.write is not None else None\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/temporal-safety-case-cq0fjll_/input/validate_week02_temporal_preprocessing.py\", line 48, in new_report_path\n    raise ValueError(\"Report path must not contain a symlink: \" + str(component))\nValueError: Report path must not contain a symlink: /tmp/temporal-safety-case-cq0fjll_/link.json\n",
+      "cache_entries_before_harness_cleanup": [
+        "mplconfigdir"
+      ]
+    },
+    {
+      "name": "path_symlink_parent",
+      "passed": true,
+      "returncode": 1,
+      "detector": "symlink",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-p87_oyei/input/validate_week02_temporal_preprocessing.py\", line 338, in <module>\n    main()\n  File \"/tmp/temporal-safety-case-p87_oyei/input/validate_week02_temporal_preprocessing.py\", line 79, in main\n    output = new_report_path(args.write) if args.write is not None else None\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/temporal-safety-case-p87_oyei/input/validate_week02_temporal_preprocessing.py\", line 48, in new_report_path\n    raise ValueError(\"Report path must not contain a symlink: \" + str(component))\nValueError: Report path must not contain a symlink: /tmp/temporal-safety-case-p87_oyei/link\n",
+      "cache_entries_before_harness_cleanup": [
+        "mplconfigdir"
+      ]
+    },
+    {
+      "name": "path_missing_parent",
+      "passed": true,
+      "returncode": 1,
+      "detector": "existing directory",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-wozwrmz5/input/validate_week02_temporal_preprocessing.py\", line 338, in <module>\n    main()\n  File \"/tmp/temporal-safety-case-wozwrmz5/input/validate_week02_temporal_preprocessing.py\", line 79, in main\n    output = new_report_path(args.write) if args.write is not None else None\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/temporal-safety-case-wozwrmz5/input/validate_week02_temporal_preprocessing.py\", line 52, in new_report_path\n    raise ValueError(\"Report parent must be an existing directory: \" + str(path.parent))\nValueError: Report parent must be an existing directory: /tmp/temporal-safety-case-wozwrmz5/absent\n",
+      "cache_entries_before_harness_cleanup": [
+        "mplconfigdir"
+      ]
+    },
+    {
+      "name": "path_overlap_input",
+      "passed": true,
+      "returncode": 1,
+      "detector": "NEW file",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-s6pmcne_/input/validate_week02_temporal_preprocessing.py\", line 338, in <module>\n    main()\n  File \"/tmp/temporal-safety-case-s6pmcne_/input/validate_week02_temporal_preprocessing.py\", line 79, in main\n    output = new_report_path(args.write) if args.write is not None else None\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/temporal-safety-case-s6pmcne_/input/validate_week02_temporal_preprocessing.py\", line 50, in new_report_path\n    raise FileExistsError(\"Report must use a NEW file path: \" + str(path))\nFileExistsError: Report must use a NEW file path: /tmp/temporal-safety-case-s6pmcne_/input/week02_temporal_preprocessing.ipynb\n",
+      "cache_entries_before_harness_cleanup": [
+        "mplconfigdir"
+      ]
+    },
+    {
+      "name": "comment_answer",
+      "passed": true,
+      "returncode": 1,
+      "detector": "original blank exercise comment template",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "6339cbce68fa5538da3764894128aef277436d82d27f59f69a0718399e8dd4af",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "6339cbce68fa5538da3764894128aef277436d82d27f59f69a0718399e8dd4af",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "6339cbce68fa5538da3764894128aef277436d82d27f59f69a0718399e8dd4af",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-lnlbsxmu/input/validate_week02_temporal_preprocessing.py\", line 338, in <module>\n    main()\n  File \"/tmp/temporal-safety-case-lnlbsxmu/input/validate_week02_temporal_preprocessing.py\", line 90, in main\n    raise ValueError(\"Only the original blank exercise comment template is allowed.\")\nValueError: Only the original blank exercise comment template is allowed.\n",
+      "cache_entries_before_harness_cleanup": [
+        "mplconfigdir"
+      ]
+    },
+    {
+      "name": "code_answer",
+      "passed": true,
+      "returncode": 1,
+      "detector": "original blank exercise comment template",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "2803807c16a44a8ee246ede822158850d2e059e3a2c07ae3cf1fed488f68c75a",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "2803807c16a44a8ee246ede822158850d2e059e3a2c07ae3cf1fed488f68c75a",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "2803807c16a44a8ee246ede822158850d2e059e3a2c07ae3cf1fed488f68c75a",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-dkbox6io/input/validate_week02_temporal_preprocessing.py\", line 338, in <module>\n    main()\n  File \"/tmp/temporal-safety-case-dkbox6io/input/validate_week02_temporal_preprocessing.py\", line 90, in main\n    raise ValueError(\"Only the original blank exercise comment template is allowed.\")\nValueError: Only the original blank exercise comment template is allowed.\n",
+      "cache_entries_before_harness_cleanup": [
+        "mplconfigdir"
+      ]
+    },
+    {
+      "name": "duplicate_exercise",
+      "passed": true,
+      "returncode": 1,
+      "detector": "Exactly one independent-exercise",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "851a0ca2bf9ba8018b652e6486009c6b1bcabad71a9001b687be51646873b385",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "851a0ca2bf9ba8018b652e6486009c6b1bcabad71a9001b687be51646873b385",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "851a0ca2bf9ba8018b652e6486009c6b1bcabad71a9001b687be51646873b385",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-1zoa5vu1/input/validate_week02_temporal_preprocessing.py\", line 338, in <module>\n    main()\n  File \"/tmp/temporal-safety-case-1zoa5vu1/input/validate_week02_temporal_preprocessing.py\", line 86, in main\n    raise ValueError(\"Exactly one independent-exercise cell is required.\")\nValueError: Exactly one independent-exercise cell is required.\n",
+      "cache_entries_before_harness_cleanup": [
+        "mplconfigdir"
+      ]
+    },
+    {
+      "name": "duplicate_tagged_markdown",
+      "passed": true,
+      "returncode": 1,
+      "detector": "Exactly one independent-exercise",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "f6927309c5aea37d77afbaea5519181b5907081fad77df5435831af42796b658",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "f6927309c5aea37d77afbaea5519181b5907081fad77df5435831af42796b658",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "f6927309c5aea37d77afbaea5519181b5907081fad77df5435831af42796b658",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-z0xnv1p3/input/validate_week02_temporal_preprocessing.py\", line 338, in <module>\n    main()\n  File \"/tmp/temporal-safety-case-z0xnv1p3/input/validate_week02_temporal_preprocessing.py\", line 86, in main\n    raise ValueError(\"Exactly one independent-exercise cell is required.\")\nValueError: Exactly one independent-exercise cell is required.\n",
+      "cache_entries_before_harness_cleanup": [
+        "mplconfigdir"
+      ]
+    },
+    {
+      "name": "stored_exercise_output",
+      "passed": true,
+      "returncode": 1,
+      "detector": "unexecuted and have no saved outputs",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b3f73b716b8355e9184d35694cbb35342249b3b6b0096ddc761607bf094e7543",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b3f73b716b8355e9184d35694cbb35342249b3b6b0096ddc761607bf094e7543",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b3f73b716b8355e9184d35694cbb35342249b3b6b0096ddc761607bf094e7543",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-00nfmkbv/input/validate_week02_temporal_preprocessing.py\", line 338, in <module>\n    main()\n  File \"/tmp/temporal-safety-case-00nfmkbv/input/validate_week02_temporal_preprocessing.py\", line 92, in main\n    raise ValueError(\"Exercise must be unexecuted and have no saved outputs.\")\nValueError: Exercise must be unexecuted and have no saved outputs.\n",
+      "cache_entries_before_harness_cleanup": [
+        "mplconfigdir"
+      ]
+    },
+    {
+      "name": "executed_exercise_count7",
+      "passed": true,
+      "returncode": 1,
+      "detector": "unexecuted and have no saved outputs",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "13749f88e01bf191913d6e5b3c0aabe10f64781ea3d9379f13fb93ebacf1e66d",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "13749f88e01bf191913d6e5b3c0aabe10f64781ea3d9379f13fb93ebacf1e66d",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "13749f88e01bf191913d6e5b3c0aabe10f64781ea3d9379f13fb93ebacf1e66d",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-c3vt_j2o/input/validate_week02_temporal_preprocessing.py\", line 338, in <module>\n    main()\n  File \"/tmp/temporal-safety-case-c3vt_j2o/input/validate_week02_temporal_preprocessing.py\", line 92, in main\n    raise ValueError(\"Exercise must be unexecuted and have no saved outputs.\")\nValueError: Exercise must be unexecuted and have no saved outputs.\n",
+      "cache_entries_before_harness_cleanup": [
+        "mplconfigdir"
+      ]
+    },
+    {
+      "name": "missing_exercise",
+      "passed": true,
+      "returncode": 1,
+      "detector": "Exactly one independent-exercise",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "46767a1e8674536da7a43f3b36751425d3ee199b059a4e60d50afb0458f32774",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "46767a1e8674536da7a43f3b36751425d3ee199b059a4e60d50afb0458f32774",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "46767a1e8674536da7a43f3b36751425d3ee199b059a4e60d50afb0458f32774",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-cgzyzsuu/input/validate_week02_temporal_preprocessing.py\", line 338, in <module>\n    main()\n  File \"/tmp/temporal-safety-case-cgzyzsuu/input/validate_week02_temporal_preprocessing.py\", line 86, in main\n    raise ValueError(\"Exactly one independent-exercise cell is required.\")\nValueError: Exactly one independent-exercise cell is required.\n",
+      "cache_entries_before_harness_cleanup": [
+        "mplconfigdir"
+      ]
+    },
+    {
+      "name": "optimized_flag",
+      "passed": true,
+      "returncode": 1,
+      "detector": "Optimized Python disables QA assertions",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-3n1gbv5p/input/validate_week02_temporal_preprocessing.py\", line 18, in <module>\n    raise RuntimeError(\"Optimized Python disables QA assertions; run without -O/PYTHONOPTIMIZE.\")\nRuntimeError: Optimized Python disables QA assertions; run without -O/PYTHONOPTIMIZE.\n",
+      "cache_entries_before_harness_cleanup": []
+    },
+    {
+      "name": "optimized_env",
+      "passed": true,
+      "returncode": 1,
+      "detector": "Optimized Python disables QA assertions",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-lv67qw__/input/validate_week02_temporal_preprocessing.py\", line 18, in <module>\n    raise RuntimeError(\"Optimized Python disables QA assertions; run without -O/PYTHONOPTIMIZE.\")\nRuntimeError: Optimized Python disables QA assertions; run without -O/PYTHONOPTIMIZE.\n",
+      "cache_entries_before_harness_cleanup": []
+    },
+    {
+      "name": "code_runtime_failure",
+      "passed": true,
+      "returncode": 1,
+      "detector": "reviewer runtime failure",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "no_partial_new_report": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "96b336299cc9df86d106c317e8f1137e89c17cad649451d9f97d53c79ec7c29e",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "96b336299cc9df86d106c317e8f1137e89c17cad649451d9f97d53c79ec7c29e",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "96b336299cc9df86d106c317e8f1137e89c17cad649451d9f97d53c79ec7c29e",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-shb2p667/input/validate_week02_temporal_preprocessing.py\", line 338, in <module>\n    main()\n  File \"/tmp/temporal-safety-case-shb2p667/input/validate_week02_temporal_preprocessing.py\", line 122, in main\n    raise RuntimeError(f\"cell {i}: {result.error_in_exec}\")\nRuntimeError: cell 24: reviewer runtime failure\n",
+      "cache_entries_before_harness_cleanup": [
+        "ipythondir",
+        "mplconfigdir",
+        "ipythondir/profile_default",
+        "mplconfigdir/fontlist-v3.11.0.json",
+        "ipythondir/profile_default/history.sqlite",
+        "ipythondir/profile_default/pid",
+        "ipythondir/profile_default/startup",
+        "ipythondir/profile_default/log",
+        "ipythondir/profile_default/security",
+        "ipythondir/profile_default/startup/README"
+      ]
+    },
+    {
+      "name": "actual_temporal_qa_failure",
+      "passed": true,
+      "returncode": 1,
+      "detector": "expected_recent",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "no_partial_new_report": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "e1392184596542373d68b2a63c672dac8bc7e1d0882cc10129b3486c1875dc34",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "e1392184596542373d68b2a63c672dac8bc7e1d0882cc10129b3486c1875dc34",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "e1392184596542373d68b2a63c672dac8bc7e1d0882cc10129b3486c1875dc34",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-0lhw70x1/input/validate_week02_temporal_preprocessing.py\", line 338, in <module>\n    main()\n  File \"/tmp/temporal-safety-case-0lhw70x1/input/validate_week02_temporal_preprocessing.py\", line 137, in main\n    assert np.allclose(ns[\"val_x\"].recent, expected_recent)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "cache_entries_before_harness_cleanup": [
+        "ipythondir",
+        "mplconfigdir",
+        "ipythondir/profile_default",
+        "mplconfigdir/fontlist-v3.11.0.json",
+        "ipythondir/profile_default/history.sqlite",
+        "ipythondir/profile_default/pid",
+        "ipythondir/profile_default/startup",
+        "ipythondir/profile_default/log",
+        "ipythondir/profile_default/security",
+        "ipythondir/profile_default/startup/README"
+      ]
+    },
+    {
+      "name": "report_construction_failure",
+      "passed": true,
+      "returncode": 1,
+      "detector": "reviewer report failure",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "no_partial_new_report": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-erdtz8e1/runner.py\", line 5, in <module>\n    m.main(['--write', '/tmp/temporal-safety-case-erdtz8e1/NEW.json'])\n  File \"/tmp/temporal-safety-case-erdtz8e1/input/validate_week02_temporal_preprocessing.py\", line 298, in main\n    \"platform\": platform.platform(),\n                ^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/temporal-safety-case-erdtz8e1/runner.py\", line 4, in <lambda>\n    m.platform.platform=lambda: (_ for _ in ()).throw(RuntimeError('reviewer report failure'))\n                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/temporal-safety-case-erdtz8e1/runner.py\", line 4, in <genexpr>\n    m.platform.platform=lambda: (_ for _ in ()).throw(RuntimeError('reviewer report failure'))\nRuntimeError: reviewer report failure\n",
+      "cache_entries_before_harness_cleanup": [
+        "ipythondir",
+        "mplconfigdir",
+        "ipythondir/profile_default",
+        "mplconfigdir/fontlist-v3.11.0.json",
+        "ipythondir/profile_default/history.sqlite",
+        "ipythondir/profile_default/pid",
+        "ipythondir/profile_default/startup",
+        "ipythondir/profile_default/log",
+        "ipythondir/profile_default/security",
+        "ipythondir/profile_default/startup/README"
+      ]
+    },
+    {
+      "name": "partial_write_rollback",
+      "passed": true,
+      "returncode": 1,
+      "detector": "reviewer partial write failure",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "no_partial_new_report": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-uy1dev7f/runner.py\", line 17, in <module>\n    m.main(['--write', '/tmp/temporal-safety-case-uy1dev7f/NEW.json'])\n  File \"/tmp/temporal-safety-case-uy1dev7f/input/validate_week02_temporal_preprocessing.py\", line 333, in main\n    write_new_report(output, rendered)\n  File \"/tmp/temporal-safety-case-uy1dev7f/input/validate_week02_temporal_preprocessing.py\", line 63, in write_new_report\n    stream.write(rendered)\n  File \"/tmp/temporal-safety-case-uy1dev7f/runner.py\", line 11, in write\n    self.f.write(text[:23]);self.f.flush();raise OSError('reviewer partial write failure')\n                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: reviewer partial write failure\n",
+      "cache_entries_before_harness_cleanup": [
+        "ipythondir",
+        "mplconfigdir",
+        "ipythondir/profile_default",
+        "mplconfigdir/fontlist-v3.11.0.json",
+        "ipythondir/profile_default/history.sqlite",
+        "ipythondir/profile_default/pid",
+        "ipythondir/profile_default/startup",
+        "ipythondir/profile_default/log",
+        "ipythondir/profile_default/security",
+        "ipythondir/profile_default/startup/README"
+      ]
+    },
+    {
+      "name": "late_report_collision",
+      "passed": true,
+      "returncode": 1,
+      "detector": "NEW file",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "late_user_result_preserved": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-3m005qui/runner.py\", line 9, in <module>\n    m.main(['--write', '/tmp/temporal-safety-case-3m005qui/NEW.json'])\n  File \"/tmp/temporal-safety-case-3m005qui/input/validate_week02_temporal_preprocessing.py\", line 333, in main\n    write_new_report(output, rendered)\n  File \"/tmp/temporal-safety-case-3m005qui/runner.py\", line 6, in late\n    path.write_text('concurrent user result');return original_write(path,rendered)\n                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/temporal-safety-case-3m005qui/input/validate_week02_temporal_preprocessing.py\", line 58, in write_new_report\n    path = new_report_path(path)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/temporal-safety-case-3m005qui/input/validate_week02_temporal_preprocessing.py\", line 50, in new_report_path\n    raise FileExistsError(\"Report must use a NEW file path: \" + str(path))\nFileExistsError: Report must use a NEW file path: /tmp/temporal-safety-case-3m005qui/NEW.json\n",
+      "cache_entries_before_harness_cleanup": [
+        "ipythondir",
+        "mplconfigdir",
+        "ipythondir/profile_default",
+        "mplconfigdir/fontlist-v3.11.0.json",
+        "ipythondir/profile_default/history.sqlite",
+        "ipythondir/profile_default/pid",
+        "ipythondir/profile_default/startup",
+        "ipythondir/profile_default/log",
+        "ipythondir/profile_default/security",
+        "ipythondir/profile_default/startup/README"
+      ]
+    },
+    {
+      "name": "input_changed_week02_temporal_preprocessing.ipynb",
+      "passed": true,
+      "returncode": 1,
+      "detector": "Input changed during validation",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "user_input_change_preserved": true,
+        "no_stale_report": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "abbdd93123dfb36bfcd8bb9411a6348f429fdb1a77d538269c796dec95d26fdd",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "abbdd93123dfb36bfcd8bb9411a6348f429fdb1a77d538269c796dec95d26fdd",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-imjx21c1/runner.py\", line 14, in <module>\n    m.main(['--write', '/tmp/temporal-safety-case-imjx21c1/NEW.json'])\n  File \"/tmp/temporal-safety-case-imjx21c1/input/validate_week02_temporal_preprocessing.py\", line 331, in main\n    raise RuntimeError(\"Input changed during validation; refusing result: \" + str(path))\nRuntimeError: Input changed during validation; refusing result: /tmp/temporal-safety-case-imjx21c1/input/week02_temporal_preprocessing.ipynb\n",
+      "cache_entries_before_harness_cleanup": [
+        "ipythondir",
+        "mplconfigdir",
+        "ipythondir/profile_default",
+        "mplconfigdir/fontlist-v3.11.0.json",
+        "ipythondir/profile_default/history.sqlite",
+        "ipythondir/profile_default/pid",
+        "ipythondir/profile_default/startup",
+        "ipythondir/profile_default/log",
+        "ipythondir/profile_default/security",
+        "ipythondir/profile_default/startup/README"
+      ]
+    },
+    {
+      "name": "input_changed_week02_temporal_preprocessing.html",
+      "passed": true,
+      "returncode": 1,
+      "detector": "Input changed during validation",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "user_input_change_preserved": true,
+        "no_stale_report": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "3dc30a181d7547b4f24c4f93fec124ae9fffa7f08b26954b1c4a64192d37eae5",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "3dc30a181d7547b4f24c4f93fec124ae9fffa7f08b26954b1c4a64192d37eae5",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-5y361570/runner.py\", line 14, in <module>\n    m.main(['--write', '/tmp/temporal-safety-case-5y361570/NEW.json'])\n  File \"/tmp/temporal-safety-case-5y361570/input/validate_week02_temporal_preprocessing.py\", line 331, in main\n    raise RuntimeError(\"Input changed during validation; refusing result: \" + str(path))\nRuntimeError: Input changed during validation; refusing result: /tmp/temporal-safety-case-5y361570/input/week02_temporal_preprocessing.html\n",
+      "cache_entries_before_harness_cleanup": [
+        "ipythondir",
+        "mplconfigdir",
+        "ipythondir/profile_default",
+        "mplconfigdir/fontlist-v3.11.0.json",
+        "ipythondir/profile_default/history.sqlite",
+        "ipythondir/profile_default/pid",
+        "ipythondir/profile_default/startup",
+        "ipythondir/profile_default/log",
+        "ipythondir/profile_default/security",
+        "ipythondir/profile_default/startup/README"
+      ]
+    },
+    {
+      "name": "input_changed_week02_temporal_preprocessing_teacher.md",
+      "passed": true,
+      "returncode": 1,
+      "detector": "Input changed during validation",
+      "checks": {
+        "expected_exit_and_detector": true,
+        "input_and_existing_report_match_expected": true,
+        "no_adjacent_new_files": true,
+        "user_input_change_preserved": true,
+        "no_stale_report": true,
+        "test_cache_removed_by_harness": true
+      },
+      "before_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "expected_after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "ebce4d4b3bb2f62a068e933e67e216c096af3892bd98b1ebb0f43230b63e32fe",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "after_sha256": {
+        "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+        "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+        "week02_temporal_preprocessing_teacher.md": "ebce4d4b3bb2f62a068e933e67e216c096af3892bd98b1ebb0f43230b63e32fe",
+        "week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936"
+      },
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/temporal-safety-case-iqh0930p/runner.py\", line 14, in <module>\n    m.main(['--write', '/tmp/temporal-safety-case-iqh0930p/NEW.json'])\n  File \"/tmp/temporal-safety-case-iqh0930p/input/validate_week02_temporal_preprocessing.py\", line 331, in main\n    raise RuntimeError(\"Input changed during validation; refusing result: \" + str(path))\nRuntimeError: Input changed during validation; refusing result: /tmp/temporal-safety-case-iqh0930p/input/week02_temporal_preprocessing_teacher.md\n",
+      "cache_entries_before_harness_cleanup": [
+        "ipythondir",
+        "mplconfigdir",
+        "ipythondir/profile_default",
+        "mplconfigdir/fontlist-v3.11.0.json",
+        "ipythondir/profile_default/history.sqlite",
+        "ipythondir/profile_default/pid",
+        "ipythondir/profile_default/startup",
+        "ipythondir/profile_default/log",
+        "ipythondir/profile_default/security",
+        "ipythondir/profile_default/startup/README"
+      ]
+    }
+  ],
+  "execution": "existing venv Python -B in temporary copies; no socket kernel or package installation",
+  "limitations": [
+    "arbitrary notebook Python is not OS isolated",
+    "temporary cache paths are supplied and removed by this test harness",
+    "finite teacher reference cases and blank-state guard are not student achievement verification"
+  ]
+}

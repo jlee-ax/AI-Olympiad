@@ -1,0 +1,156 @@
+{
+  "date_utc": "2026-11-11T16:00:56.757231+00:00",
+  "scope": "Week02 only; independent provided-code execution and reviewer reference checks; not student achievement",
+  "candidate_artifacts": {
+    "week02_prediction_evaluation.ipynb": {
+      "expected_sha256": "7bfe0429035c3a5a96bf6be5ceac63eaa34e8f212567e96dcf3447b6d67fa997",
+      "actual_sha256": "7bfe0429035c3a5a96bf6be5ceac63eaa34e8f212567e96dcf3447b6d67fa997",
+      "match": true
+    },
+    "week02_prediction_evaluation.html": {
+      "expected_sha256": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+      "actual_sha256": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+      "match": true
+    },
+    "week02_temporal_preprocessing.ipynb": {
+      "expected_sha256": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+      "actual_sha256": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+      "match": true
+    },
+    "week02_temporal_preprocessing.html": {
+      "expected_sha256": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+      "actual_sha256": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+      "match": true
+    },
+    "teacher-notes.md": {
+      "expected_sha256": "9f25ba75e0956042be5862850f0a00cbfa94cb4846fa85d8694ff77c0dbc294a",
+      "actual_sha256": "9f25ba75e0956042be5862850f0a00cbfa94cb4846fa85d8694ff77c0dbc294a",
+      "match": true
+    },
+    "week02_temporal_preprocessing_teacher.md": {
+      "expected_sha256": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+      "actual_sha256": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+      "match": true
+    },
+    "build_week02.py": {
+      "expected_sha256": "45763bd5f44e06e7c3684169f9ca9ba0bb1d103acbbb53ec571b93a018164cb9",
+      "actual_sha256": "45763bd5f44e06e7c3684169f9ca9ba0bb1d103acbbb53ec571b93a018164cb9",
+      "match": true
+    },
+    "teacher_validate_week02.py": {
+      "expected_sha256": "bcb7c3be3f0dcc4405ac8e1971ff932ba363d660949af8740a249acc3fa4fe5a",
+      "actual_sha256": "bcb7c3be3f0dcc4405ac8e1971ff932ba363d660949af8740a249acc3fa4fe5a",
+      "match": true
+    }
+  },
+  "runs": {
+    "main-full": {
+      "status": "passed",
+      "result": "runs/main-full/result.json",
+      "result_sha256": "aa95436ae413f257ab8250b89dc7f09401a1e2aca131fb1a51c547b20464be1a",
+      "source_sha256": "7bfe0429035c3a5a96bf6be5ceac63eaa34e8f212567e96dcf3447b6d67fa997",
+      "provided_code_cells": 8,
+      "source_unchanged": true,
+      "runtime_removed": true
+    },
+    "temporal-full": {
+      "status": "passed",
+      "result": "runs/temporal-full/result.json",
+      "result_sha256": "50305c1a32f78cb093657620cd59f01b4dbfccf8bf56a79e00626adcc7f08f6c",
+      "source_sha256": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+      "provided_code_cells": 9,
+      "source_unchanged": true,
+      "runtime_removed": true
+    },
+    "core-cv": {
+      "status": "passed",
+      "result": "runs/core-cv/result.json",
+      "result_sha256": "7878b3a5bbabad314f44ee108f64f582cc4266ff9aa438c0902232c56f15e06f",
+      "source_sha256": "7bfe0429035c3a5a96bf6be5ceac63eaa34e8f212567e96dcf3447b6d67fa997",
+      "provided_code_cells": 8,
+      "source_unchanged": true,
+      "runtime_removed": true
+    },
+    "core-decision": {
+      "status": "passed",
+      "result": "runs/core-decision/result.json",
+      "result_sha256": "3a6736da40239318db6a20272f8f9fb03baa62b3d95038e0f5332082a611aca9",
+      "source_sha256": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+      "provided_code_cells": 9,
+      "source_unchanged": true,
+      "runtime_removed": true
+    }
+  },
+  "criteria": {
+    "A_group_cv": "met_in_finite_reference_cases; actual extended cohort fitted in each fold using five classifier families, two independent valid partition families; does not prove future Week04 course completion",
+    "B_linked_route_and_decision": "met_in_content_and_finite_cases; actual native helpers plus labelled reviewer decision/reference code; student answer cells remain blank",
+    "C_tool_safety": "partially_reviewed_static_only; independent validator/builder CLI functional checks not executed; author regressions are separate evidence"
+  },
+  "expected_errors": {
+    "core_cv": [
+      {
+        "name": "row-group-overlap",
+        "detected": true,
+        "type": "ValueError",
+        "message": "entity overlap"
+      },
+      {
+        "name": "single-class-training-fold",
+        "detected": true,
+        "type": "ValueError",
+        "message": "two known training classes required"
+      },
+      {
+        "name": "single-class-training-fold",
+        "detected": true,
+        "type": "ValueError",
+        "message": "two known training classes required"
+      },
+      {
+        "name": "full-cohort-preprocess-in-CV-fold",
+        "detected": true,
+        "actual_mean": 6.0,
+        "expected_mean": 2,
+        "classifier_training_rows": 4
+      }
+    ],
+    "core_decision": [
+      {
+        "name": "wrong-metric-for-weighted-task",
+        "detected": true
+      },
+      {
+        "name": "minimize-instead-of-maximize",
+        "detected": true
+      }
+    ],
+    "detection_owner": "reviewer-authored oracle checks; raw expected traceback preserved in run result, not accidental process failure"
+  },
+  "other_core_results": {
+    "same_entity_future_split_accepted": true,
+    "full_extension_n_samples_seen": 8,
+    "unknown_as_negative_changes_choice": true,
+    "strict_vs_inclusive_threshold_counterexample": true,
+    "equal_validation_score_can_change_new_prediction": true,
+    "new_unlabeled_application_fit_stats_unchanged": true
+  },
+  "finding_history": {
+    "initial_candidate_temporal_sha256": "909e3cd0a33dd99e5a6a8dc388132d9b5c700799b20540753014f608d4d43491",
+    "finding": "cell19 disclosed derived range requested in student cell18",
+    "evidence": "candidate01-content-observations.json",
+    "final_status": "fixed; candidate02 differs only in markdown cell19; code/stored outputs unchanged",
+    "unfixed_blocking_defects_in_tested_scope": []
+  },
+  "unverified": [
+    "independent main/temporal validator CLI safety and builder CLI/import safety execution",
+    "latest temporal validator 60fb798542c226df82ebf7b7966824cd4300b81033c3570614f75ddd7329f6b4 functional behavior",
+    "all frozen v2 combinations; scope reduced to two representative functional cases by parent",
+    "fresh checkout portability execution; original configs contain absolute notebook/oracle paths and require rebasing",
+    "full browser HTML/MathJax rendering",
+    "genuinely hidden final test creation and learner performance/time"
+  ],
+  "runtime_cache_dirs_remaining": [],
+  "original_source_files_not_modified_by_review": true,
+  "week01_not_accessed_in_this_review": true,
+  "index_and_remote_not_modified": true
+}

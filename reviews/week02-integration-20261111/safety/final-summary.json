@@ -1,0 +1,69 @@
+{
+  "created_utc": "2026-11-11T15:26:28.696479+00:00",
+  "validator_sha256": "bcb7c3be3f0dcc4405ac8e1971ff932ba363d660949af8740a249acc3fa4fe5a",
+  "reviewed_input_notebook_sha256": "7bfe0429035c3a5a96bf6be5ceac63eaa34e8f212567e96dcf3447b6d67fa997",
+  "final_candidate_regressions": {
+    "passed": true,
+    "count": 33,
+    "evidence": "candidate-final-results.json"
+  },
+  "stream_preservation_checks": {
+    "passed": true,
+    "count": 9,
+    "evidence": "stream-coalescing-results.json"
+  },
+  "reproduction": {
+    "notebook_bytes_equal": true,
+    "html_bytes_equal": true
+  },
+  "all_case_input_and_existing_output_sha_preserved": true,
+  "all_case_runtime_caches_removed": true,
+  "qa_source_unchanged_from_HEAD": true,
+  "qa_source_sha256": "88ff9539c0214b30274ecf36699f8383eb629bb652f1c62b1955085ef3301f5e",
+  "scope": [
+    "lessons/week02/teacher_validate_week02.py",
+    "reviews/week02-integration-20261111/safety/ new files only"
+  ],
+  "not_changed_by_this_work": [
+    "week01 course/user files",
+    "build_week02.py",
+    "student notebooks",
+    "teacher documents",
+    "historical review records"
+  ],
+  "committed_or_pushed": false,
+  "environment_blocked": [
+    {
+      "action": "ordinary nbclient fresh socket kernel",
+      "target": "temporary baseline copy only",
+      "status": "attempted once; kernel died before kernel_info",
+      "reason": "Operation not permitted (src/ip_resolver.cpp:542)",
+      "evidence": "baseline-first-results.json",
+      "input_and_existing_outputs_preserved": true,
+      "runtime_cache_removed": true,
+      "retried_or_bypassed": false
+    }
+  ],
+  "not_executed": [
+    {
+      "case": "system Python smoke",
+      "reason": "nbformat not installed",
+      "evidence": "system-python-smoke.txt"
+    },
+    {
+      "case": "source-only draft SHA check",
+      "reason": "author had replaced draft; expected SHA mismatch before execution",
+      "evidence": "draft-sha-mismatch.json"
+    }
+  ],
+  "limits": [
+    "temporary cwd/cache is not OS security isolation; arbitrary Python can access absolute paths",
+    "trusted self-contained notebooks only",
+    "known_train_4w and week04 group-CV feasibility are not checked here",
+    "arbitrary input is not scanned for withheld test labels/scores; report now null with explanation",
+    "browser visual inspection and remote MathJax availability not checked",
+    "finite teacher references are not student performance/timing observations"
+  ],
+  "reproduce": "python -B reviews/week02-integration-20261111/safety/run_regressions.py --skip-subprocess --candidate-notebook lessons/week02/week02_prediction_evaluation.ipynb --expected-sha 7bfe0429035c3a5a96bf6be5ceac63eaa34e8f212567e96dcf3447b6d67fa997 --results reviews/week02-integration-20261111/safety/NEW-result-name.json",
+  "migration": "--inprocess alone now produces stdout JSON with memory-only artifacts; use --output-dir /existing-parent/NEW to explicitly create notebook, HTML, validation.json without replacing any existing path"
+}

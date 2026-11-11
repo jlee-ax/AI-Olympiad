@@ -1,0 +1,15 @@
+{
+  "all_passed": true,
+  "cases": {
+    "adjacent_identical_streams": true,
+    "display_barrier": true,
+    "execute_result_barrier": true,
+    "stderr_barrier": true,
+    "different_stream_metadata_preserved": true,
+    "same_stream_metadata_preserved": true,
+    "different_extra_fields_preserved": true,
+    "numeric_text_unchanged": true,
+    "input_objects_not_modified": true
+  },
+  "rule": "only adjacent same-stream outputs whose non-text fields are equal; preserve all barriers and text"
+}

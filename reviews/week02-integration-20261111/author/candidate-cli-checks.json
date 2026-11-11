@@ -1,0 +1,9 @@
+{
+  "stdout_exit": 0,
+  "new_path_exit": 0,
+  "same_results": true,
+  "new_output_sha256": "f64aad45d169b9f4c0a966a2caa6851fc7ef28d6511f5c0b3c18589a79bfcba1",
+  "existing_path_refused_exit": 1,
+  "existing_output_unchanged": true,
+  "previous_report_sha256_unchanged": "f64aad45d169b9f4c0a966a2caa6851fc7ef28d6511f5c0b3c18589a79bfcba1"
+}

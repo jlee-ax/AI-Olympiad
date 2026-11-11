@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "executed_at_utc": "2026-11-11T15:27:16.069674+00:00",
+  "execution": "fresh process; nbformat validation; sequential in-process IPython, no local Jupyter kernel",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "packages": {
+    "nbformat": "5.11.1",
+    "IPython": "9.18.1",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.8.0",
+    "matplotlib": "3.11.2"
+  },
+  "notebook_cells": 24,
+  "code_cell_indices": [
+    3,
+    4,
+    6,
+    8,
+    9,
+    11,
+    12,
+    15,
+    22
+  ],
+  "weighted_worked_forward_and_reverse": [
+    0.5,
+    0.5000000000000001
+  ],
+  "weighted_comparison": {
+    "rtol": 0,
+    "atol": 1e-12
+  },
+  "student_exercise_ast_empty": true,
+  "student_exercise_outputs_empty": true,
+  "saved_executed_example_cells": 8,
+  "saved_png_outputs": 1,
+  "html_png_embedded": true,
+  "saved_streams_match_fresh_execution": true,
+  "saved_output_capture": "fresh InProcessKernelManager with matplotlib inline; eight example cells and one blank exercise executed; image/png saved",
+  "saved_output_capture_warning": "jupyter_client local interface discovery raised Operation not permitted; the in-process kernel and PNG capture still completed",
+  "checks": [
+    "worked example, tie, ROC points and plotted axes",
+    "unsorted past-only records, cross-group and future mutations, duplicate rejection",
+    "new exercise: forward-fill, window, median, range, unknown, train-stat invariance",
+    "same-width wrong encoder and validation-fit leakage mutations",
+    "new exercise ROC, F1, tie, positive/negative denominator edge cases",
+    "new weighted score: truth-based weights, all-row denominator, ranking, mutations and finite positive-weight bounds"
+  ],
+  "stdout": "훈련 특성:\n     recent  mean3   std3  kind\nid                            \na4     6.0  4.000  1.633   red\na5     4.0  4.667  0.943   red\nb4     NaN    NaN    NaN  blue\nb5     2.0    NaN    NaN  blue\n\n검증 특성:\n     recent  mean3   std3   kind\nid                             \nc6     8.0  5.333  2.055  green\nc7    12.0  8.333  2.867  green\nd6     1.0    NaN    NaN    red\nd7     7.0    NaN    NaN    red\n  unit  time  reading  global_fill  within_unit\n0    X     1     99.0         99.0         99.0\n1    Y     1      NaN         99.0          NaN\n2    Y     2      2.0          2.0          2.0\n틀린 시각 2 중심 윈도 평균: 35.333333333333336\n훈련 통계 (중앙값): [4.         4.33333333 1.2879011 ]\n훈련 최솟값: [2.         4.         0.94280904]\n훈련 범주: [array(['blue', 'red'], dtype=object)]\n검증 변환:\n     num__recent  num__mean3  num__std3  cat__kind_blue  cat__kind_red\nid                                                                   \nc6         1.50         2.0      1.611             0.0            0.0\nc7         2.50         6.5      2.789             0.0            0.0\nd6        -0.25         0.5      0.500             0.0            1.0\nd7         1.25         0.5      0.500             0.0            1.0\n바뀐 검증 recent: [8.0, 100.0, 1.0, 7.0]\n검증 변경 후에도 훈련 중앙값: 4.0\n기본 미지 범주 정책: ValueError\n생략된 blue와 미지 green: [[0.0], [0.0]]\n임계값 inf {'TP': 0, 'FP': 0, 'TN': 2, 'FN': 2} {'accuracy': 0.5, 'precision': None, 'recall': 0.0, 'F1': 0.0, 'TPR': 0.0, 'FPR': 0.0}\n임계값 2.5 {'TP': 0, 'FP': 1, 'TN': 1, 'FN': 2} {'accuracy': 0.25, 'precision': 0.0, 'recall': 0.0, 'F1': 0.0, 'TPR': 0.0, 'FPR': 0.5}\n임계값 1.5 {'TP': 2, 'FP': 1, 'TN': 1, 'FN': 0} {'accuracy': 0.75, 'precision': 0.6666666666666666, 'recall': 1.0, 'F1': 0.8, 'TPR': 1.0, 'FPR': 0.5}\n임계값 0 {'TP': 2, 'FP': 2, 'TN': 0, 'FN': 0} {'accuracy': 0.5, 'precision': 0.5, 'recall': 1.0, 'F1': 0.6666666666666666, 'TPR': 1.0, 'FPR': 1.0}\nROC: (임계값, FPR, TPR) [(np.float64(inf), np.float64(0.0), np.float64(0.0)), (np.float64(2.5), np.float64(0.5), np.float64(0.0)), (np.float64(1.5), np.float64(0.5), np.float64(1.0)), (np.float64(0.0), np.float64(1.0), np.float64(1.0))]\n가 행 정확도 0.8333333333333334 가중 정확도 0.5\n나 행 정확도 0.6666666666666666 가중 정확도 0.8\n",
+  "stderr": "",
+  "sha256": {
+    "week02_temporal_preprocessing.ipynb": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+    "week02_temporal_preprocessing.html": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+    "week02_temporal_preprocessing_teacher.md": "ac2be76a2d03ca742b36ff87367e7108c9606d43400bd6c2d3bf27c41f14a581",
+    "validate_week02_temporal_preprocessing.py": "fd7071e8239756e0823a443104c4cef206c74644571971367a16fbd37686b447"
+  },
+  "limits": [
+    "Synthetic finite cases only; student answers, learning and completion time not observed.",
+    "HTML structural checks only: local file browser policy prevented visual review.",
+    "HTML MathJax availability was not verified.",
+    "Final test dataset is not created or held out by this script."
+  ],
+  "previous_attempt": "Read-only sandbox denied IPython temporary directory; the run was repeated with authorized writable temporary space."
+}

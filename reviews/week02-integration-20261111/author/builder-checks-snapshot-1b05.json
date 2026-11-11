@@ -1,0 +1,50 @@
+{
+  "new_a": {
+    "code": 0,
+    "stdout": "Source and IDs match: /workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week02/week02_prediction_evaluation.ipynb (25 cells)\nCreated 25 cells at /workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-integration-20261111/author/builder-check-hxq8w0nl/generated-a.ipynb\n",
+    "stderr": ""
+  },
+  "new_b": {
+    "code": 0,
+    "stdout": "Created 25 cells at /workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-integration-20261111/author/builder-check-hxq8w0nl/generated-b.ipynb\n",
+    "stderr": ""
+  },
+  "deterministic_sha256": "5ca7d42d3b81af848323eb5cb4f9f3e7dc763d792d8a03a30e22079d796f68ce",
+  "projection_equal": true,
+  "existing_file": {
+    "code": 2,
+    "stdout": "",
+    "stderr": "usage: build_week02.py [-h] [--output OUTPUT] [--check-source CHECK_SOURCE]\nbuild_week02.py: error: --output already exists or is a symlink\n"
+  },
+  "existing_dir": {
+    "code": 2,
+    "stdout": "",
+    "stderr": "usage: build_week02.py [-h] [--output OUTPUT] [--check-source CHECK_SOURCE]\nbuild_week02.py: error: --output already exists or is a symlink\n"
+  },
+  "dangling_symlink": {
+    "code": 2,
+    "stdout": "",
+    "stderr": "usage: build_week02.py [-h] [--output OUTPUT] [--check-source CHECK_SOURCE]\nbuild_week02.py: error: --output already exists or is a symlink\n"
+  },
+  "symlink_parent": {
+    "code": 2,
+    "stdout": "",
+    "stderr": "usage: build_week02.py [-h] [--output OUTPUT] [--check-source CHECK_SOURCE]\nbuild_week02.py: error: --output parent path must not contain symlinks\n"
+  },
+  "missing_parent": {
+    "code": 2,
+    "stdout": "",
+    "stderr": "usage: build_week02.py [-h] [--output OUTPUT] [--check-source CHECK_SOURCE]\nbuild_week02.py: error: --output parent must already exist\n"
+  },
+  "no_args": {
+    "code": 2,
+    "stdout": "",
+    "stderr": "usage: build_week02.py [-h] [--output OUTPUT] [--check-source CHECK_SOURCE]\nbuild_week02.py: error: provide --output or --check-source\n"
+  },
+  "mismatched_source": {
+    "code": 2,
+    "stdout": "",
+    "stderr": "usage: build_week02.py [-h] [--output OUTPUT] [--check-source CHECK_SOURCE]\nbuild_week02.py: error: builder and notebook cell IDs/types/sources differ\n"
+  },
+  "source_sha256_unchanged": "7bfe0429035c3a5a96bf6be5ceac63eaa34e8f212567e96dcf3447b6d67fa997"
+}

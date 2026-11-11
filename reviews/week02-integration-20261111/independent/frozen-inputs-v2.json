@@ -1,0 +1,478 @@
+{
+  "schema": "week02-integration-independent-inputs-v2",
+  "frozen_before_candidate": true,
+  "created_utc": "2026-11-11T15:12:40.239908+00:00",
+  "status": "prepared_not_run",
+  "privacy": "No concrete inputs shared in author/agent messages; public repo files are not a hidden exam.",
+  "CV": {
+    "goal": "generalize to previously unseen entities; times may overlap across entities",
+    "training_records": [
+      {
+        "id": "q1",
+        "entity": "quartz",
+        "time": 1,
+        "reading": 0,
+        "kind": "amber",
+        "label": -1
+      },
+      {
+        "id": "q2",
+        "entity": "quartz",
+        "time": 2,
+        "reading": 4,
+        "kind": "amber",
+        "label": 1
+      },
+      {
+        "id": "r1",
+        "entity": "reed",
+        "time": 1,
+        "reading": 2,
+        "kind": "violet",
+        "label": 1
+      },
+      {
+        "id": "r2",
+        "entity": "reed",
+        "time": 2,
+        "reading": null,
+        "kind": "violet",
+        "label": -1
+      },
+      {
+        "id": "s1",
+        "entity": "sable",
+        "time": 1,
+        "reading": 6,
+        "kind": "amber",
+        "label": -1
+      },
+      {
+        "id": "s2",
+        "entity": "sable",
+        "time": 2,
+        "reading": 8,
+        "kind": "violet",
+        "label": 1
+      },
+      {
+        "id": "t1",
+        "entity": "tide",
+        "time": 1,
+        "reading": 10,
+        "kind": "copper",
+        "label": 1
+      },
+      {
+        "id": "t2",
+        "entity": "tide",
+        "time": 2,
+        "reading": 12,
+        "kind": "violet",
+        "label": -1
+      },
+      {
+        "id": "tu",
+        "entity": "tide",
+        "time": 3,
+        "reading": 1000,
+        "kind": "opaque",
+        "label": 0
+      }
+    ],
+    "fit_contract": "known training labels -1/+1 only; 0 unknown not negative; measured zero included; mean-impute then population-standardize within each fold",
+    "expected_known_rows": 8,
+    "expected_full_training_mean": 6,
+    "expected_full_training_population_variance_after_mean_fill": 14,
+    "wrong_unknown_included_mean": 130.25,
+    "wrong_zero_dropped_mean": 7,
+    "accepted_examples_not_exhaustive": [
+      {
+        "id": "family_one",
+        "folds": [
+          {
+            "train_entities": [
+              "quartz",
+              "reed"
+            ],
+            "validation_entities": [
+              "sable",
+              "tide"
+            ],
+            "expected_fit_mean": 2,
+            "expected_population_variance_after_mean_fill": 2
+          },
+          {
+            "train_entities": [
+              "sable",
+              "tide"
+            ],
+            "validation_entities": [
+              "quartz",
+              "reed"
+            ],
+            "expected_fit_mean": 9,
+            "expected_population_variance_after_mean_fill": 5
+          }
+        ]
+      },
+      {
+        "id": "family_two",
+        "folds": [
+          {
+            "train_entities": [
+              "quartz",
+              "sable"
+            ],
+            "validation_entities": [
+              "reed",
+              "tide"
+            ],
+            "expected_fit_mean": 4.5,
+            "expected_population_variance_after_mean_fill": 8.75
+          },
+          {
+            "train_entities": [
+              "reed",
+              "tide"
+            ],
+            "validation_entities": [
+              "quartz",
+              "sable"
+            ],
+            "expected_fit_mean": 8,
+            "expected_population_variance_after_mean_fill": 14
+          }
+        ]
+      }
+    ],
+    "accept_other_partitions": "any complete disjoint-group fold family with nonempty sides and both known classes in each training fold; do not require exact listed IDs",
+    "bad_row_split": {
+      "train_ids": [
+        "q1",
+        "r1",
+        "s1",
+        "t1"
+      ],
+      "validation_ids": [
+        "q2",
+        "r2",
+        "s2",
+        "t2"
+      ],
+      "reason": "both labels in train but entities overlap"
+    },
+    "infeasible_control": {
+      "training": [
+        {
+          "id": "old-neg1",
+          "entity": "old-only-negative",
+          "reading": 2,
+          "label": -1
+        },
+        {
+          "id": "old-neg2",
+          "entity": "old-only-negative",
+          "reading": 4,
+          "label": -1
+        },
+        {
+          "id": "old-pos1",
+          "entity": "old-only-positive",
+          "reading": 6,
+          "label": 1
+        },
+        {
+          "id": "old-pos2",
+          "entity": "old-only-positive",
+          "reading": null,
+          "label": 1
+        }
+      ],
+      "expected": "split iterator may return folds, but every nonempty group-held-out training side contains only one class; report infeasible for two-class estimator contract"
+    },
+    "leak_mutation": "replace only held-out fold reading by large finite values and kind by a novel category; training imputer/scaler/categories stay unchanged while transformed held-out values may change",
+    "raw_history_for_future_goal": [
+      {
+        "entity": "quartz",
+        "time": 0,
+        "reading": 1,
+        "arrival_time": 0.25
+      },
+      {
+        "entity": "reed",
+        "time": 0,
+        "reading": 2,
+        "arrival_time": 0.25
+      },
+      {
+        "entity": "sable",
+        "time": 0,
+        "reading": 3,
+        "arrival_time": 0.25
+      },
+      {
+        "entity": "tide",
+        "time": 0,
+        "reading": 4,
+        "arrival_time": 0.25
+      },
+      {
+        "entity": "quartz",
+        "time": 1,
+        "reading": 0,
+        "arrival_time": 1.25
+      },
+      {
+        "entity": "quartz",
+        "time": 2,
+        "reading": 4,
+        "arrival_time": 2.25
+      },
+      {
+        "entity": "reed",
+        "time": 1,
+        "reading": 2,
+        "arrival_time": 1.25
+      },
+      {
+        "entity": "reed",
+        "time": 2,
+        "reading": null,
+        "arrival_time": 2.25
+      },
+      {
+        "entity": "sable",
+        "time": 1,
+        "reading": 6,
+        "arrival_time": 1.25
+      },
+      {
+        "entity": "sable",
+        "time": 2,
+        "reading": 8,
+        "arrival_time": 2.25
+      },
+      {
+        "entity": "tide",
+        "time": 1,
+        "reading": 10,
+        "arrival_time": 1.25
+      },
+      {
+        "entity": "tide",
+        "time": 2,
+        "reading": 12,
+        "arrival_time": 2.25
+      }
+    ],
+    "second_deployment_contract": {
+      "goal": "same known entities at later target times, predicting before that time measurement",
+      "training_targets": "time1 labels arrive1.5",
+      "validation_targets": "time2 prediction; labels arrive2.5",
+      "expected": "same entity may be on both sides; train labels must be available before validation; same-entity strict past raw values only. Do not enforce unseen-entity group exclusion here."
+    }
+  },
+  "decision": {
+    "validation_ledger": [
+      {
+        "id": "v-pos",
+        "entity": "minor",
+        "truth": 1,
+        "score": 0.5
+      },
+      {
+        "id": "v-n1",
+        "entity": "major",
+        "truth": -1,
+        "score": 0.875
+      },
+      {
+        "id": "v-n2",
+        "entity": "major",
+        "truth": -1,
+        "score": 0.5
+      },
+      {
+        "id": "v-n3",
+        "entity": "major",
+        "truth": -1,
+        "score": 0.75
+      },
+      {
+        "id": "v-n4",
+        "entity": "major",
+        "truth": -1,
+        "score": 0.25
+      },
+      {
+        "id": "v-n5",
+        "entity": "major",
+        "truth": -1,
+        "score": 0.125
+      },
+      {
+        "id": "v-unknown",
+        "entity": "minor",
+        "truth": 0,
+        "score": 0.5
+      }
+    ],
+    "positive_label": 1,
+    "unknown_label": 0,
+    "exclude_unknown_from_scoring": true,
+    "candidate_thresholds": [
+      1.0,
+      0.5,
+      0.125
+    ],
+    "comparison": ">=",
+    "target_truth_weight": 9,
+    "background_truth_weight": 1,
+    "expected_metrics": [
+      {
+        "threshold": 1.0,
+        "TP": 0,
+        "FP": 0,
+        "TN": 5,
+        "FN": 1,
+        "accuracy_fraction": [
+          5,
+          6
+        ],
+        "precision": "undefined",
+        "recall": 0,
+        "F1": 0,
+        "entity_accuracy_fraction": [
+          1,
+          2
+        ],
+        "truth_weighted_accuracy_fraction": [
+          5,
+          14
+        ]
+      },
+      {
+        "threshold": 0.5,
+        "TP": 1,
+        "FP": 3,
+        "TN": 2,
+        "FN": 0,
+        "accuracy_fraction": [
+          3,
+          6
+        ],
+        "precision_fraction": [
+          1,
+          4
+        ],
+        "recall": 1,
+        "F1_fraction": [
+          2,
+          5
+        ],
+        "entity_accuracy_fraction": [
+          7,
+          10
+        ],
+        "truth_weighted_accuracy_fraction": [
+          11,
+          14
+        ]
+      },
+      {
+        "threshold": 0.125,
+        "TP": 1,
+        "FP": 5,
+        "TN": 0,
+        "FN": 0,
+        "accuracy_fraction": [
+          1,
+          6
+        ],
+        "precision_fraction": [
+          1,
+          6
+        ],
+        "recall": 1,
+        "F1_fraction": [
+          2,
+          7
+        ],
+        "entity_accuracy_fraction": [
+          1,
+          2
+        ],
+        "truth_weighted_accuracy_fraction": [
+          9,
+          14
+        ]
+      }
+    ],
+    "expected_selected_threshold": {
+      "overall_accuracy": 1.0,
+      "mean_entity_accuracy": 0.5,
+      "truth_weighted_accuracy": 0.5
+    },
+    "test_boundary": "choose and record objective/threshold/unknown+tie policy using validation only; lock selection before applying new unlabeled rows; do not fit/retune with new rows or manufactured truths",
+    "unlabeled_application_rows": [
+      {
+        "id": "u-z",
+        "score": 0.5
+      },
+      {
+        "id": "u-a",
+        "score": 0.875
+      },
+      {
+        "id": "u-m",
+        "score": 0.25
+      }
+    ],
+    "required_output_id_order": [
+      "u-m",
+      "u-z",
+      "u-a"
+    ],
+    "expected_predictions_in_required_order_for_weighted_objective": [
+      -1,
+      1,
+      1
+    ],
+    "wrong_unknown_as_negative_counterexample": "macro entity accuracy can reverse winner; denominator and row eligibility must be checked, not just value ranges",
+    "score_scope": "provided scores, not a newly trained nonconstant model"
+  },
+  "safe_tooling": {
+    "default_validation_success": "all original notebook/HTML/validation plus protected sibling sentinel exact bytes unchanged",
+    "default_validation_failure_cases": [
+      "malformed notebook JSON",
+      "syntactically invalid cell",
+      "intentional cell assertion failure",
+      "student answer AST nonempty",
+      "missing input"
+    ],
+    "explicit_output_success": "executed notebook/HTML/report in fresh declared output directory; input sources unchanged, QA removed, distribution answer remains blank",
+    "explicit_output_failure_cases": [
+      "destination conflicts with source or existing protected output without explicit overwrite authorization",
+      "JSON report target aliases source notebook/HTML",
+      "input file changes after read and before any in-place refresh commit"
+    ],
+    "builder_preservation": "build inputs/existing artifact files remain unchanged on normal separate-output generation and on errors; explicit authorized refresh preserves regeneration capability",
+    "no_original_execution": "all cases on new isolated copies/output paths; never run legacy writer against live lessons/week02",
+    "source_scope": "Week02 only; no Week01/user-worktree or remote/index actions"
+  },
+  "planned_single_faults": [
+    "row split leaking entities",
+    "single-class CV training accepted as two-class feasible",
+    "reuse full-cohort preprocessing in a CV fold",
+    "include unknown or drop measured zero during fit",
+    "refit preprocessing/encoder on validation",
+    "replace official metric by overall accuracy or invert optimization direction",
+    "split equal scores at one threshold or use > instead of >=",
+    "use predicted labels/only-correct rows for weights/denominator",
+    "read held-out labels or refit before locked application",
+    "implicit success overwrite",
+    "partial failure overwrite or output path aliases source"
+  ],
+  "claim_limits": "Predefined oracle fixtures and reviewer implementations are not learner achievement. Candidate helper, actual lesson examples and reviewer reference solutions must be reported separately."
+}

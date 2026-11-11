@@ -1,0 +1,50 @@
+{
+  "nbformat_validation": "passed",
+  "top_to_bottom_execution": "passed",
+  "execution_method": "fresh in-process IPython kernel",
+  "input_sha256": "7bfe0429035c3a5a96bf6be5ceac63eaa34e8f212567e96dcf3447b6d67fa997",
+  "artifacts": {
+    "candidate-main.ipynb": {
+      "sha256": "91331474447a2a34eb7776e02139ec8ff3ef196de984c42b9ee05f38751822f1",
+      "bytes": 37933
+    },
+    "candidate-main.html": {
+      "sha256": "39a198d9ab6f9baeb02f86006429a491108ba5f3776a94ab4d1c4b1742a77f62",
+      "bytes": 366114
+    }
+  },
+  "artifact_mode": "memory only; stdout report",
+  "output_directory": null,
+  "total_cells": 25,
+  "code_cells": 8,
+  "executed_code_cells": 8,
+  "error_outputs": 0,
+  "assessment_answer_cell_filled": false,
+  "assessment_template_and_saved_outputs": "checked before execution",
+  "teacher_only_independent_checks": "passed; finite A/B worked-example and independent-exercise cases, not student performance",
+  "week04_group_cv_checks": "not performed here; known_train_4w and group-CV feasibility require separate review",
+  "test_labels_and_scores_in_student_notebook": null,
+  "test_labels_and_scores_inspection": "not performed; arbitrary input is not scanned for held-out test content",
+  "teacher_qa_removed_from_artifacts": true,
+  "actual_student_performance_observed": false,
+  "class_timing_measured": false,
+  "html_visual_inspection": "not performed by validator",
+  "html_math_rendering": "nbconvert uses a remote MathJax CDN; availability not verified",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.8.0",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "nbconvert": "7.17.2",
+    "ipykernel": "7.4.0"
+  },
+  "limitations": [
+    "finite synthetic examples only",
+    "execution does not measure learning",
+    "class timing is proposed",
+    "temporary cwd/cache directories are not OS isolation; arbitrary Python may access absolute paths",
+    "week04 extension known_train_4w and group-CV feasibility are not checked by this validator",
+    "self-contained trusted notebooks only; relative files are resolved in a temporary directory"
+  ]
+}

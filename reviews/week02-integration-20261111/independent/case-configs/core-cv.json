@@ -1,0 +1,9 @@
+{
+  "id": "core-cv",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-integration-20261111/independent/candidate02-inputs/week02_prediction_evaluation.ipynb",
+  "sha256": "7bfe0429035c3a5a96bf6be5ceac63eaa34e8f212567e96dcf3447b6d67fa997",
+  "scope": "actual candidate source/data/helpers plus explicitly reviewer-authored reference procedure on frozen new inputs; not student achievement",
+  "compare_stored": false,
+  "save_png": false,
+  "oracle": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-integration-20261111/independent/oracles/core-cv.py"
+}

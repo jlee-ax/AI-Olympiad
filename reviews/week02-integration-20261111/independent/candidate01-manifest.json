@@ -1,0 +1,73 @@
+{
+  "captured_utc": "2026-11-11T15:21:43.394076+00:00",
+  "inputs": [
+    {
+      "path": "lessons/week02/build_week02.py",
+      "snapshot": "candidate01-inputs/build_week02.py",
+      "sha256": "1b05c05997528d3afe6b87b2822de8f0631879a62e582b24bdba356479102bed",
+      "bytes": 32105
+    },
+    {
+      "path": "lessons/week02/teacher-notes.md",
+      "snapshot": "candidate01-inputs/teacher-notes.md",
+      "sha256": "7a318727050f79e219508d6c923491cd5113a55f1bc77c68c22c9d5f74c6de0f",
+      "bytes": 14073
+    },
+    {
+      "path": "lessons/week02/teacher_validate_week02.py",
+      "snapshot": "candidate01-inputs/teacher_validate_week02.py",
+      "sha256": "00049f36f1faf47a437f208788df6add15ddf447202a7690cb30201006e19ea8",
+      "bytes": 15181
+    },
+    {
+      "path": "lessons/week02/validate_week02_temporal_preprocessing.py",
+      "snapshot": "candidate01-inputs/validate_week02_temporal_preprocessing.py",
+      "sha256": "fd7071e8239756e0823a443104c4cef206c74644571971367a16fbd37686b447",
+      "bytes": 14716
+    },
+    {
+      "path": "lessons/week02/validation.json",
+      "snapshot": "candidate01-inputs/validation.json",
+      "sha256": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+      "bytes": 1014
+    },
+    {
+      "path": "lessons/week02/week02_prediction_evaluation.html",
+      "snapshot": "candidate01-inputs/week02_prediction_evaluation.html",
+      "sha256": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+      "bytes": 366114
+    },
+    {
+      "path": "lessons/week02/week02_prediction_evaluation.ipynb",
+      "snapshot": "candidate01-inputs/week02_prediction_evaluation.ipynb",
+      "sha256": "7bfe0429035c3a5a96bf6be5ceac63eaa34e8f212567e96dcf3447b6d67fa997",
+      "bytes": 37934
+    },
+    {
+      "path": "lessons/week02/week02_temporal_preprocessing.html",
+      "snapshot": "candidate01-inputs/week02_temporal_preprocessing.html",
+      "sha256": "8c15a3f02e17f185ae9fad1e4447c8c632601820127ef5050c9f1b398af22efe",
+      "bytes": 402676
+    },
+    {
+      "path": "lessons/week02/week02_temporal_preprocessing.ipynb",
+      "snapshot": "candidate01-inputs/week02_temporal_preprocessing.ipynb",
+      "sha256": "909e3cd0a33dd99e5a6a8dc388132d9b5c700799b20540753014f608d4d43491",
+      "bytes": 60310
+    },
+    {
+      "path": "lessons/week02/week02_temporal_preprocessing_teacher.md",
+      "snapshot": "candidate01-inputs/week02_temporal_preprocessing_teacher.md",
+      "sha256": "ac2be76a2d03ca742b36ff87367e7108c9606d43400bd6c2d3bf27c41f14a581",
+      "bytes": 14942
+    },
+    {
+      "path": "lessons/week02/week02_temporal_preprocessing_validation.json",
+      "snapshot": "candidate01-inputs/week02_temporal_preprocessing_validation.json",
+      "sha256": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936",
+      "bytes": 5143
+    }
+  ],
+  "historical_source_only_candidate": "7179/ceae received but not opened before executable candidate superseded it; no approval claimed",
+  "source_only_hash_not_relabelled": true
+}

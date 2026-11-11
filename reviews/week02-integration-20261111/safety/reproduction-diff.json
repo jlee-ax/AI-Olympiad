@@ -1,0 +1,20 @@
+{
+  "input_sha256": "7bfe0429035c3a5a96bf6be5ceac63eaa34e8f212567e96dcf3447b6d67fa997",
+  "notebook_differences": [
+    {
+      "path": "/cells/15/outputs",
+      "a": "length 2",
+      "b": "length 1"
+    },
+    {
+      "path": "/cells/23/outputs",
+      "a": "length 1",
+      "b": "length 2"
+    }
+  ],
+  "html_first_difference": {
+    "index": 332862,
+    "a": "></div>\n<div class=\"jp-RenderedText jp-OutputArea-output\" data-mime-type=\"text/plain\" tabindex=\"0\">\n<pre>정답이 알려진 행 수: 3\n</pre>\n</div>\n</div>\n<div class=\"jp-OutputArea-child\">\n<div class=\"jp-OutputPrompt jp-OutputArea-prompt\"></div>\n<div class=\"jp-RenderedText jp-OutputArea-output\" data-mime-type=\"text/plain\" tabindex=\"",
+    "b": "></div>\n<div class=\"jp-RenderedText jp-OutputArea-output\" data-mime-type=\"text/plain\" tabindex=\"0\">\n<pre>정답이 알려진 행 수: 3\n올바른 비교(미상 제외):\n [[0 1]\n [1 1]]\n틀린 비교(미상을 -1로 둠):\n [[1 1]\n [1 1]]\n</pre>\n</div>\n</div>\n</div>\n</div>\n</div>\n<div class=\"jp-Cell jp-MarkdownCell jp-Notebook-cell\" id=\"cell-id=a99596fe\">\n<div class=\"jp-C"
+  }
+}

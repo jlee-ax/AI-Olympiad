@@ -1,0 +1,22 @@
+{
+  "validate_week02_temporal_preprocessing.py": {
+    "sha256": "60fb798542c226df82ebf7b7966824cd4300b81033c3570614f75ddd7329f6b4",
+    "bytes": 16940
+  },
+  "week02_temporal_preprocessing.ipynb": {
+    "sha256": "b5f555d8d089b5856f952f74f683fc44bd8404c6449c355f1e48b4a25f98477c",
+    "bytes": 60291
+  },
+  "week02_temporal_preprocessing.html": {
+    "sha256": "0b45f63af46cbfe25b06ae95a4d8688ac3d9f720246eadcd9200f37f3caff90d",
+    "bytes": 402657
+  },
+  "week02_temporal_preprocessing_teacher.md": {
+    "sha256": "56c185091604d90799e3b8cf62ed12be29013e87029834d7b8c3489b0a6f23d3",
+    "bytes": 15529
+  },
+  "week02_temporal_preprocessing_validation.json": {
+    "sha256": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936",
+    "bytes": 5143
+  }
+}

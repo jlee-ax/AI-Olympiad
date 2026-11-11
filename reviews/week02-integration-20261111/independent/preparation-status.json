@@ -1,0 +1,14 @@
+{
+  "prepared_utc": "2026-11-11T15:15:49.183277+00:00",
+  "status": "frozen_before_candidate_not_run",
+  "active_criteria": "pre-candidate-criteria.md",
+  "active_addendum": "scope-addendum-ko.md",
+  "addendum_language_only_correction": "scope-addendum.md preserved; Korean heading/introduction only, substantive criteria unchanged",
+  "active_input": "frozen-inputs-v2.json",
+  "candidate_opened_since_writing_started": false,
+  "candidate_or_validator_or_builder_executed": false,
+  "new_test_executed": false,
+  "week01_files_accessed_or_modified": false,
+  "next_action": "wait for parent final candidate SHA and independent review instruction",
+  "student_achievement_time": "not_observed"
+}
