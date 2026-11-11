@@ -1,0 +1,8 @@
+{
+  "plan_raw_sha256": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254",
+  "plan_path": "curriculum/student-plan.html",
+  "contract_path": "curriculum/contract.json",
+  "contract_sha256": "0d7d65d1151941ebdd8a3f2807893f75eb423d889d0a8eb0ee5dda74b31b34ac",
+  "contract_60_rows_status": "scheduled_only",
+  "legacy_queue_preserved_at": "reviews/discovery-loop-20261111/runs/session.json"
+}

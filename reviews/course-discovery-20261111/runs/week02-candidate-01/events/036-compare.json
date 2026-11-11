@@ -1,0 +1,55 @@
+{
+  "id": "course-week02-candidate-01-036-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "D04",
+    "reviewer": "/root/course_discovery",
+    "judgment": "gap",
+    "rationale": "Permitted -1/+1 outputs and unknown handling exist; no internal index encode/decode or noncontiguous multi-class label restoration exercise is implemented.",
+    "start_line": 24,
+    "end_line": 103,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Permitted -1/+1 outputs and unknown handling exist; no internal index encode/decode or noncontiguous multi-class label restoration exercise is implemented.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 24,
+        "end_line": 103
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "Permitted -1/+1 outputs and unknown handling exist; no internal index encode/decode or noncontiguous multi-class label restoration exercise is implemented.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 24,
+        "end_line": 103
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Permitted -1/+1 outputs and unknown handling exist; no internal index encode/decode or noncontiguous multi-class label restoration exercise is implemented.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 24,
+        "end_line": 103
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "Permitted -1/+1 outputs and unknown handling exist; no internal index encode/decode or noncontiguous multi-class label restoration exercise is implemented.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 24,
+        "end_line": 103
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "Permitted -1/+1 outputs and unknown handling exist; no internal index encode/decode or noncontiguous multi-class label restoration exercise is implemented.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 24,
+        "end_line": 103
+      }
+    ]
+  }
+}

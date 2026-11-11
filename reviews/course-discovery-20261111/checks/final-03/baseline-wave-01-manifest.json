@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "tools/discovery_loop.py",
+    "manifest",
+    "reviews/course-discovery-20261111/runs/baseline-wave-01/session.json"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"id\": \"review:discovery\",\n  \"revision\": \"discovery-loop-v1\",\n  \"sha256\": \"35ac6a8ea22bc5d6f057b938a8405293b3ea56a46ce501de61c8c2dbfb9100f8\"\n}\n",
+  "stderr": "",
+  "stdout_sha256": "a03c872b9d71900c72b7117ac9f5df715944c0e40134850e4f0f627d71cf8039",
+  "parsed_output": {
+    "id": "review:discovery",
+    "revision": "discovery-loop-v1",
+    "sha256": "35ac6a8ea22bc5d6f057b938a8405293b3ea56a46ce501de61c8c2dbfb9100f8"
+  }
+}

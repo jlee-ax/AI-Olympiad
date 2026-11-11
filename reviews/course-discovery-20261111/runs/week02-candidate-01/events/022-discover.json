@@ -1,0 +1,29 @@
+{
+  "id": "course-week02-candidate-01-022-discover",
+  "op": "discover",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "frontier_id": "heldout",
+    "query": "Replay prior declared source notes for retained demand semantics; not a new web search: reviews/discovery-loop-20261111/runs/session.json",
+    "actor": "source-research-sol",
+    "outcome": "found",
+    "candidates": [
+      {
+        "id": "S04",
+        "uri": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Radar/Radar.ipynb",
+        "path": "reviews/discovery-loop-20261111/inputs/reading-note-S04.md",
+        "revision": "2025 본대회 개인전; main 동적 원문/공식 baseline",
+        "kind": "official_problem",
+        "attribution": "Source-research Sol agent directly read the original at recorded extent. Program reads this note only; official status/entailment are not authenticated."
+      },
+      {
+        "id": "S06",
+        "uri": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Concepts/Concepts.ipynb",
+        "path": "reviews/discovery-loop-20261111/inputs/reading-note-S06.md",
+        "revision": "2025 본대회 개인전; main 동적 원문/공식 baseline",
+        "kind": "official_problem",
+        "attribution": "Source-research Sol agent directly read the original at recorded extent. Program reads this note only; official status/entailment are not authenticated."
+      }
+    ]
+  }
+}

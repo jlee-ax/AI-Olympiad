@@ -1,0 +1,242 @@
+[
+  {
+    "event": "course-week02-candidate-01-001-discover",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-002-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-003-read",
+    "status": "needs_work",
+    "next_action": "trace_source_requirements"
+  },
+  {
+    "event": "course-week02-candidate-01-004-trace",
+    "status": "needs_work",
+    "next_action": "discover_original_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-005-discover",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-006-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-007-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-008-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-009-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-010-read",
+    "status": "needs_work",
+    "next_action": "trace_source_requirements"
+  },
+  {
+    "event": "course-week02-candidate-01-011-trace",
+    "status": "needs_work",
+    "next_action": "discover_original_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-012-discover",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-013-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-014-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-015-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-016-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-017-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-018-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-019-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-020-read",
+    "status": "needs_work",
+    "next_action": "trace_source_requirements"
+  },
+  {
+    "event": "course-week02-candidate-01-021-trace",
+    "status": "needs_work",
+    "next_action": "discover_original_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-022-discover",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-023-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-024-read",
+    "status": "needs_work",
+    "next_action": "trace_source_requirements"
+  },
+  {
+    "event": "course-week02-candidate-01-025-trace",
+    "status": "needs_work",
+    "next_action": "discover_original_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-026-discover",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-027-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-028-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-029-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-week02-candidate-01-030-read",
+    "status": "needs_work",
+    "next_action": "trace_source_requirements"
+  },
+  {
+    "event": "course-week02-candidate-01-031-trace",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-week02-candidate-01-032-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-week02-candidate-01-033-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-week02-candidate-01-034-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-week02-candidate-01-035-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-week02-candidate-01-036-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-week02-candidate-01-037-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-week02-candidate-01-038-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-week02-candidate-01-039-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-week02-candidate-01-040-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-week02-candidate-01-041-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-week02-candidate-01-042-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-week02-candidate-01-043-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-week02-candidate-01-044-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-week02-candidate-01-045-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-week02-candidate-01-046-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-week02-candidate-01-047-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-week02-candidate-01-048-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  }
+]

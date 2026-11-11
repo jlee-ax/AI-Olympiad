@@ -1,0 +1,55 @@
+{
+  "id": "course-week02-candidate-02-039-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "D06",
+    "reviewer": "/root/course_discovery",
+    "judgment": "uncertain",
+    "rationale": "Cells6–8 derive train-only mean/scale and execute correct transform plus a separately marked leakage counterexample. Cell19 supplies new-input independent fit/transform and reasons. The retained assessment also requires leakage versus overfitting distinction; Cell3 mentions validation adaptation, but no independent contrast item is provided. Formula and operation improve; full original demand is not marked covered.",
+    "start_line": 104,
+    "end_line": 145,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Cells6–8 derive train-only mean/scale and execute correct transform plus a separately marked leakage counterexample. Cell19 supplies new-input independent fit/transform and reasons. The retained assessment also requires leakage versus overfitting distinction; Cell3 mentions validation adaptation, but no independent contrast item is provided. Formula and operation improve; full original demand is not marked covered.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 104,
+        "end_line": 145
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "Cells6–8 derive train-only mean/scale and execute correct transform plus a separately marked leakage counterexample. Cell19 supplies new-input independent fit/transform and reasons. The retained assessment also requires leakage versus overfitting distinction; Cell3 mentions validation adaptation, but no independent contrast item is provided. Formula and operation improve; full original demand is not marked covered.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 104,
+        "end_line": 145
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "Cells6–8 derive train-only mean/scale and execute correct transform plus a separately marked leakage counterexample. Cell19 supplies new-input independent fit/transform and reasons. The retained assessment also requires leakage versus overfitting distinction; Cell3 mentions validation adaptation, but no independent contrast item is provided. Formula and operation improve; full original demand is not marked covered.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 271,
+        "end_line": 316
+      },
+      {
+        "id": "principle",
+        "judgment": "met",
+        "observed_behavior": "Cells6–8 derive train-only mean/scale and execute correct transform plus a separately marked leakage counterexample. Cell19 supplies new-input independent fit/transform and reasons. The retained assessment also requires leakage versus overfitting distinction; Cell3 mentions validation adaptation, but no independent contrast item is provided. Formula and operation improve; full original demand is not marked covered.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 104,
+        "end_line": 145
+      },
+      {
+        "id": "practice",
+        "judgment": "met",
+        "observed_behavior": "Cells6–8 derive train-only mean/scale and execute correct transform plus a separately marked leakage counterexample. Cell19 supplies new-input independent fit/transform and reasons. The retained assessment also requires leakage versus overfitting distinction; Cell3 mentions validation adaptation, but no independent contrast item is provided. Formula and operation improve; full original demand is not marked covered.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 118,
+        "end_line": 145
+      }
+    ]
+  }
+}

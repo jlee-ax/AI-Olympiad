@@ -1,0 +1,11 @@
+{
+  "original_session_path": "reviews/discovery-loop-20261111/runs/session.json",
+  "original_session_sha256": "81d71bca932382b67c280daabc32cd3bcbfb6fd14ffa87a712679b8e5b85bdf2",
+  "candidate_path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+  "candidate_sha256": "6241f6bce0db5b2dfe40dc672a0706a09d7228d2aea451cd1a03b05847f910c4",
+  "author": "/root/week01_bridge",
+  "reviewer": "/root/course_discovery",
+  "original_demand_payloads_unchanged": true,
+  "original_lesson_unmodified": true,
+  "comparison_scope": "Separate supplement only; no change to prior baseline or Week2 session."
+}

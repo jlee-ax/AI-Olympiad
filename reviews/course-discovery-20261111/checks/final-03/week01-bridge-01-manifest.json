@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "tools/discovery_loop.py",
+    "manifest",
+    "reviews/course-discovery-20261111/runs/week01-bridge-01/session.json"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"id\": \"review:discovery\",\n  \"revision\": \"discovery-loop-v1\",\n  \"sha256\": \"c097c8485554e5b14fc2c225cee8160d61d0a1c93b53ff538d41c7b3640481a7\"\n}\n",
+  "stderr": "",
+  "stdout_sha256": "02dd1c1179f49d254d95058ba13b4443bc35d0c8cb30f9c3c73d0a6660f0bd13",
+  "parsed_output": {
+    "id": "review:discovery",
+    "revision": "discovery-loop-v1",
+    "sha256": "c097c8485554e5b14fc2c225cee8160d61d0a1c93b53ff538d41c7b3640481a7"
+  }
+}

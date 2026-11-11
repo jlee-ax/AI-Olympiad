@@ -1,0 +1,106 @@
+{
+  "artifact_path": "lessons/week02/week02_prediction_evaluation.ipynb",
+  "artifact_sha256": "52b5c170ab2c83fc29327c302e9c77e34c58bce81061c7a167228d0cc67c36e3",
+  "method": "fresh in-process IPython InteractiveShell; top-to-bottom execution; no source notebook writes",
+  "code_cell_count": 8,
+  "executed_code_cells": 8,
+  "error_count": 0,
+  "cells": [
+    {
+      "cell_index": 5,
+      "cell_id": "0e7bf648",
+      "stdout": "훈련 개체: ['A', 'B']\n검증 개체: ['C', 'D']\nfit에 쓰는 훈련 행: ['a1', 'a2', 'b1', 'b2']\n정답 미상으로 제외한 훈련 행: ['b3']\n검증 출력 순서: ['c1', 'c2', 'd1', 'd2']\n",
+      "error": null
+    },
+    {
+      "cell_index": 7,
+      "cell_id": "01bda10d",
+      "stdout": "훈련 평균 대체값: 4.0\n대체 후 훈련 평균과 표준편차: 4.0 1.414214\n훈련 z: [-1.414, 0.0, 1.414, 0.0]\n검증 행과 z: [('c1', 11.314), ('c2', 0.0), ('d1', 4.243), ('d2', 5.657)]\n틀린 대체값(검증 입력 포함): 9.0\n",
+      "error": null
+    },
+    {
+      "cell_index": 11,
+      "cell_id": "eeb3c838",
+      "stdout": "행 ID와 예측: [('c1', 1), ('c2', -1), ('d1', 1), ('d2', 1)]\n혼동행렬(행=실제, 열=예측; 순서 -1,+1):\n [[0 2]\n [1 1]]\n정확도: 0.25 정밀도: 0.333 재현율: 0.5\n",
+      "error": null
+    },
+    {
+      "cell_index": 13,
+      "cell_id": "34ad0b72",
+      "stdout": "기준 모델이 배운 대체값: 4.0\n기준 모델이 배운 평균·표준편차: 4.0 1.414214\n기준 예측: [-1, -1, -1, -1]\n기준 혼동행렬:\n [[2 0]\n [2 0]]\n수학: 정밀도 정의 불가, 재현율 0/2 = 0\n라이브러리 정책 zero_division=0: 0.0 0.0\n라이브러리 정책 zero_division=np.nan: nan 0.0\n",
+      "error": null
+    },
+    {
+      "cell_index": 15,
+      "cell_id": "f3e1201e",
+      "stdout": "정답이 알려진 행 수: 3\n올바른 비교(미상 제외):\n [[0 1]\n [1 1]]\n틀린 비교(미상을 -1로 둠):\n [[1 1]\n [1 1]]\n",
+      "error": null
+    },
+    {
+      "cell_index": 17,
+      "cell_id": "629f49f8",
+      "stdout": "       sum  count  mean\nrobot                  \nR1       8     10   0.8\nR2       0      2   0.0\n전체 행 정확도: 0.666667\n개체별 평균 정확도: 0.4\n",
+      "error": null
+    },
+    {
+      "cell_index": 20,
+      "cell_id": "4cfbd70e",
+      "stdout": "",
+      "error": null
+    },
+    {
+      "cell_index": 23,
+      "cell_id": "811dc0d0",
+      "stdout": "임계값 0.5 혼동행렬 [[1, 1], [1, 1]] TPR 0.5 FPR 0.5\n임계값 0.3 혼동행렬 [[1, 1], [0, 2]] TPR 1.0 FPR 0.5\nROC 좌표 (FPR, TPR): [(0.0, 0.0), (0.0, 0.5), (0.5, 0.5), (0.5, 1.0), (1.0, 1.0)]\n",
+      "error": null
+    }
+  ],
+  "independent_runtime_checks": [
+    {
+      "name": "known training rows exclude unknown",
+      "passed": true
+    },
+    {
+      "name": "split group sets disjoint",
+      "passed": true
+    },
+    {
+      "name": "valid and deliberately leaky imputation differ 4 versus 9",
+      "passed": true
+    },
+    {
+      "name": "transform changed validation values leaves learned imputation unchanged",
+      "passed": true
+    },
+    {
+      "name": "rule confusion matrix correct",
+      "passed": true
+    },
+    {
+      "name": "zero denominator policy remains NaN with zero recall",
+      "passed": true
+    },
+    {
+      "name": "row and group metric differ on stated unequal counts",
+      "passed": true
+    },
+    {
+      "name": "ROC matrices at both thresholds",
+      "passed": true
+    }
+  ],
+  "versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.8.0",
+    "ipython": "9.16.1"
+  },
+  "student_answers_evaluated": false,
+  "learner_performance_observed": false,
+  "time_to_learn_measured": false,
+  "limits": [
+    "Finite code/examples only. No student answers were fabricated or completed.",
+    "Checks of numeric outputs and saved statistics do not authenticate explanations, transfer, class timing or course sufficiency.",
+    "No CLIP, contest dataset, online API, hidden test or deployment execution was attempted."
+  ]
+}

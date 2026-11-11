@@ -1,0 +1,55 @@
+{
+  "id": "course-week01-bridge-02-015-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "D07",
+    "reviewer": "/root/course_discovery",
+    "judgment": "gap",
+    "rationale": "Cells17–19 now prompt and print all lookup vectors, show (2,3)->(2,3,2), preserve repeated-index values and contrast a shape-preserving reversed-position error. Learning and guided practice progress are met. No separate independent lookup task varies B/L/H or contrasts vocabulary size V with token length L; independent Cell28 remains stack/concatenate with candidate-ID alignment, not lookup. The original broad demand remains gap.",
+    "start_line": 228,
+    "end_line": 266,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Cells17–19 now prompt and print all lookup vectors, show (2,3)->(2,3,2), preserve repeated-index values and contrast a shape-preserving reversed-position error. Learning and guided practice progress are met. No separate independent lookup task varies B/L/H or contrasts vocabulary size V with token length L; independent Cell28 remains stack/concatenate with candidate-ID alignment, not lookup. The original broad demand remains gap.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 228,
+        "end_line": 266
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "Cells17–19 now prompt and print all lookup vectors, show (2,3)->(2,3,2), preserve repeated-index values and contrast a shape-preserving reversed-position error. Learning and guided practice progress are met. No separate independent lookup task varies B/L/H or contrasts vocabulary size V with token length L; independent Cell28 remains stack/concatenate with candidate-ID alignment, not lookup. The original broad demand remains gap.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 228,
+        "end_line": 266
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Cells17–19 now prompt and print all lookup vectors, show (2,3)->(2,3,2), preserve repeated-index values and contrast a shape-preserving reversed-position error. Learning and guided practice progress are met. No separate independent lookup task varies B/L/H or contrasts vocabulary size V with token length L; independent Cell28 remains stack/concatenate with candidate-ID alignment, not lookup. The original broad demand remains gap.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 339,
+        "end_line": 358
+      },
+      {
+        "id": "principle",
+        "judgment": "uncertain",
+        "observed_behavior": "Cells17–19 now prompt and print all lookup vectors, show (2,3)->(2,3,2), preserve repeated-index values and contrast a shape-preserving reversed-position error. Learning and guided practice progress are met. No separate independent lookup task varies B/L/H or contrasts vocabulary size V with token length L; independent Cell28 remains stack/concatenate with candidate-ID alignment, not lookup. The original broad demand remains gap.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 228,
+        "end_line": 266
+      },
+      {
+        "id": "practice",
+        "judgment": "met",
+        "observed_behavior": "Cells17–19 now prompt and print all lookup vectors, show (2,3)->(2,3,2), preserve repeated-index values and contrast a shape-preserving reversed-position error. Learning and guided practice progress are met. No separate independent lookup task varies B/L/H or contrasts vocabulary size V with token length L; independent Cell28 remains stack/concatenate with candidate-ID alignment, not lookup. The original broad demand remains gap.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 228,
+        "end_line": 266
+      }
+    ]
+  }
+}

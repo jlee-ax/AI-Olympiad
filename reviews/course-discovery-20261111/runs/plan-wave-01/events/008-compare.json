@@ -1,0 +1,47 @@
+{
+  "id": "course-plan-wave-01-008-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "N02",
+    "reviewer": "/root/course_discovery",
+    "judgment": "gap",
+    "rationale": "Weeks7/9/10 schedule image/CLIP/submission topics, but no explicit half-open area-budget task and independent boundary assessment is delivered in the plan.",
+    "start_line": 1,
+    "end_line": 397,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "Weeks7/9/10 schedule image/CLIP/submission topics, but no explicit half-open area-budget task and independent boundary assessment is delivered in the plan.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 397
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "Weeks7/9/10 schedule image/CLIP/submission topics, but no explicit half-open area-budget task and independent boundary assessment is delivered in the plan.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 397
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Weeks7/9/10 schedule image/CLIP/submission topics, but no explicit half-open area-budget task and independent boundary assessment is delivered in the plan.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 397
+      },
+      {
+        "id": "contract",
+        "judgment": "gap",
+        "observed_behavior": "Weeks7/9/10 schedule image/CLIP/submission topics, but no explicit half-open area-budget task and independent boundary assessment is delivered in the plan.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 397
+      }
+    ]
+  }
+}

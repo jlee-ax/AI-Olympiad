@@ -1,0 +1,55 @@
+{
+  "id": "course-week02-candidate-01-043-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "D10",
+    "reviewer": "/root/course_discovery",
+    "judgment": "gap",
+    "rationale": "Independent new inputs, hand/code checks and finite-example limitations are present. The original demand retains numerical gradient checks/relative-error foundations, which are not taught or assessed in this unit.",
+    "start_line": 271,
+    "end_line": 359,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "Independent new inputs, hand/code checks and finite-example limitations are present. The original demand retains numerical gradient checks/relative-error foundations, which are not taught or assessed in this unit.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 271,
+        "end_line": 359
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "Independent new inputs, hand/code checks and finite-example limitations are present. The original demand retains numerical gradient checks/relative-error foundations, which are not taught or assessed in this unit.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 271,
+        "end_line": 359
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "Independent new inputs, hand/code checks and finite-example limitations are present. The original demand retains numerical gradient checks/relative-error foundations, which are not taught or assessed in this unit.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 271,
+        "end_line": 359
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "Independent new inputs, hand/code checks and finite-example limitations are present. The original demand retains numerical gradient checks/relative-error foundations, which are not taught or assessed in this unit.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 271,
+        "end_line": 359
+      },
+      {
+        "id": "practice",
+        "judgment": "met",
+        "observed_behavior": "Independent new inputs, hand/code checks and finite-example limitations are present. The original demand retains numerical gradient checks/relative-error foundations, which are not taught or assessed in this unit.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 271,
+        "end_line": 359
+      }
+    ]
+  }
+}

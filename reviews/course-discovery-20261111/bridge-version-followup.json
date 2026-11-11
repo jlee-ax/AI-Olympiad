@@ -1,0 +1,127 @@
+{
+  "old_raw_sha256": "74f52475ce1cd8bd80b61b8b4f064836f224912d2be5f46e39072b5a21080b45",
+  "new_raw_sha256": "6241f6bce0db5b2dfe40dc672a0706a09d7228d2aea451cd1a03b05847f910c4",
+  "old_session": "runs/week01-bridge-01/session.json",
+  "new_session": "runs/week01-bridge-02/session.json",
+  "old_session_preserved": true,
+  "old_current_blockers": [
+    {
+      "code": "artifact_changed",
+      "id": "lessons/week01/week01_axes_linear_bridge.ipynb"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:eade388b57a8f2ee"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:495a6112320397c0"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:d878296854874d47"
+    },
+    {
+      "code": "frontier_unresolved",
+      "id": "retained-three"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D01"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D05"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D07"
+    }
+  ],
+  "new_current_blockers": [
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:eade388b57a8f2ee"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:495a6112320397c0"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:d878296854874d47"
+    },
+    {
+      "code": "frontier_unresolved",
+      "id": "retained-three"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D01"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D05"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D07"
+    }
+  ],
+  "new_snapshot_exact_raw_bytes": "inputs/final-week01-bridge-original.ipynb",
+  "old_version_preservation_limit": "Old raw notebook was changed by its author before an exact-byte review copy was made. Its bound SHA, full cell-source projection, read receipts, events, execution outputs and original recorded report remain; old original output/metadata bytes cannot be reconstructed from that projection. No claim of an exact old .ipynb backup is made.",
+  "manual_change_read": "Read all new raw JSON/cell source bytes and semantic source diff. Changed text is in Cells11,17,18,19,28; 29 cells remain. Added concat-ID pairing condition, full lookup values, (2,3)->(2,3,2), repeated-index checks, and equal-shape reversed-position counterexample.",
+  "demand_payloads_unchanged": true,
+  "dimension_judgments": {
+    "D01": {
+      "old": {
+        "prerequisites": "met",
+        "learning": "uncertain",
+        "assessment": "gap",
+        "principle": "gap",
+        "practice": "gap"
+      },
+      "new": {
+        "prerequisites": "met",
+        "learning": "uncertain",
+        "assessment": "gap",
+        "principle": "gap",
+        "practice": "gap"
+      }
+    },
+    "D05": {
+      "old": {
+        "prerequisites": "gap",
+        "learning": "gap",
+        "assessment": "uncertain",
+        "principle": "gap",
+        "practice": "met"
+      },
+      "new": {
+        "prerequisites": "gap",
+        "learning": "gap",
+        "assessment": "uncertain",
+        "principle": "gap",
+        "practice": "met"
+      }
+    },
+    "D07": {
+      "old": {
+        "prerequisites": "met",
+        "learning": "uncertain",
+        "assessment": "gap",
+        "principle": "uncertain",
+        "practice": "gap"
+      },
+      "new": {
+        "prerequisites": "met",
+        "learning": "met",
+        "assessment": "gap",
+        "principle": "uncertain",
+        "practice": "met"
+      }
+    }
+  },
+  "student_performance": "not_observed",
+  "course_completion": false
+}

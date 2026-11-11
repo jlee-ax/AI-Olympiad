@@ -1,0 +1,55 @@
+{
+  "id": "course-week01-bridge-02-014-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "D05",
+    "reviewer": "/root/course_discovery",
+    "judgment": "gap",
+    "rationale": "Cells13–17 build Q@G.T, convert maximum positions to arbitrary IDs, and show a shape-preserving shuffled-ID failure; Cells24–27 supply a new independent ID/order task. Norm/normalized cosine and same-identity/different-gender official matching constraints are absent; text correctly labels synthetic max-dot scoring as a teaching contract. The original broad demand remains open.",
+    "start_line": 169,
+    "end_line": 236,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "Cells13–17 build Q@G.T, convert maximum positions to arbitrary IDs, and show a shape-preserving shuffled-ID failure; Cells24–27 supply a new independent ID/order task. Norm/normalized cosine and same-identity/different-gender official matching constraints are absent; text correctly labels synthetic max-dot scoring as a teaching contract. The original broad demand remains open.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 169,
+        "end_line": 236
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "Cells13–17 build Q@G.T, convert maximum positions to arbitrary IDs, and show a shape-preserving shuffled-ID failure; Cells24–27 supply a new independent ID/order task. Norm/normalized cosine and same-identity/different-gender official matching constraints are absent; text correctly labels synthetic max-dot scoring as a teaching contract. The original broad demand remains open.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 169,
+        "end_line": 236
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "Cells13–17 build Q@G.T, convert maximum positions to arbitrary IDs, and show a shape-preserving shuffled-ID failure; Cells24–27 supply a new independent ID/order task. Norm/normalized cosine and same-identity/different-gender official matching constraints are absent; text correctly labels synthetic max-dot scoring as a teaching contract. The original broad demand remains open.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 305,
+        "end_line": 338
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "Cells13–17 build Q@G.T, convert maximum positions to arbitrary IDs, and show a shape-preserving shuffled-ID failure; Cells24–27 supply a new independent ID/order task. Norm/normalized cosine and same-identity/different-gender official matching constraints are absent; text correctly labels synthetic max-dot scoring as a teaching contract. The original broad demand remains open.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 169,
+        "end_line": 236
+      },
+      {
+        "id": "practice",
+        "judgment": "met",
+        "observed_behavior": "Cells13–17 build Q@G.T, convert maximum positions to arbitrary IDs, and show a shape-preserving shuffled-ID failure; Cells24–27 supply a new independent ID/order task. Norm/normalized cosine and same-identity/different-gender official matching constraints are absent; text correctly labels synthetic max-dot scoring as a teaching contract. The original broad demand remains open.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 305,
+        "end_line": 338
+      }
+    ]
+  }
+}

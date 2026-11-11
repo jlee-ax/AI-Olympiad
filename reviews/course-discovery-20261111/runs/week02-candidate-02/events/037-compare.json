@@ -1,0 +1,55 @@
+{
+  "id": "course-week02-candidate-02-037-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "D05",
+    "reviewer": "/root/course_discovery",
+    "judgment": "gap",
+    "rationale": "Row IDs and output ordering are explained; no retrieval similarity-matrix position-to-original-ID reconstruction or new-ID assessment is implemented.",
+    "start_line": 24,
+    "end_line": 103,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Row IDs and output ordering are explained; no retrieval similarity-matrix position-to-original-ID reconstruction or new-ID assessment is implemented.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 24,
+        "end_line": 103
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "Row IDs and output ordering are explained; no retrieval similarity-matrix position-to-original-ID reconstruction or new-ID assessment is implemented.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 24,
+        "end_line": 103
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Row IDs and output ordering are explained; no retrieval similarity-matrix position-to-original-ID reconstruction or new-ID assessment is implemented.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 24,
+        "end_line": 103
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "Row IDs and output ordering are explained; no retrieval similarity-matrix position-to-original-ID reconstruction or new-ID assessment is implemented.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 24,
+        "end_line": 103
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "Row IDs and output ordering are explained; no retrieval similarity-matrix position-to-original-ID reconstruction or new-ID assessment is implemented.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 24,
+        "end_line": 103
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "original_path": "lessons/week02/week02_prediction_evaluation.ipynb",
+    "snapshot_path": "reviews/course-discovery-20261111/inputs/final-week02-original.ipynb",
+    "sha256": "52b5c170ab2c83fc29327c302e9c77e34c58bce81061c7a167228d0cc67c36e3",
+    "exact_raw_bytes": true
+  },
+  {
+    "original_path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+    "snapshot_path": "reviews/course-discovery-20261111/inputs/final-week01-bridge-original.ipynb",
+    "sha256": "6241f6bce0db5b2dfe40dc672a0706a09d7228d2aea451cd1a03b05847f910c4",
+    "exact_raw_bytes": true
+  }
+]

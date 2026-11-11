@@ -1,0 +1,127 @@
+{
+  "artifact_path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+  "artifact_sha256": "74f52475ce1cd8bd80b61b8b4f064836f224912d2be5f46e39072b5a21080b45",
+  "projection_path": "reviews/course-discovery-20261111/candidate-inputs/week01-bridge-01/lesson-source.md",
+  "projection_sha256": "6332c5d6fdd67f24a7e807eabf3b17e2346e5c1c65d9d40bc7911ba44a187b06",
+  "method": "all 29 cell source texts in order, explicit cell IDs/types, outputs omitted",
+  "author": "/root/week01_bridge (gpt-6.1-terra, max), confirmed by parent",
+  "reviewer": "/root/course_discovery",
+  "cell_spans": {
+    "0": [
+      1,
+      15
+    ],
+    "1": [
+      16,
+      30
+    ],
+    "2": [
+      31,
+      42
+    ],
+    "3": [
+      43,
+      55
+    ],
+    "4": [
+      56,
+      64
+    ],
+    "5": [
+      65,
+      88
+    ],
+    "6": [
+      89,
+      98
+    ],
+    "7": [
+      99,
+      105
+    ],
+    "8": [
+      106,
+      114
+    ],
+    "9": [
+      115,
+      121
+    ],
+    "10": [
+      122,
+      131
+    ],
+    "11": [
+      132,
+      146
+    ],
+    "12": [
+      147,
+      168
+    ],
+    "13": [
+      169,
+      186
+    ],
+    "14": [
+      187,
+      202
+    ],
+    "15": [
+      203,
+      211
+    ],
+    "16": [
+      212,
+      227
+    ],
+    "17": [
+      228,
+      236
+    ],
+    "18": [
+      237,
+      248
+    ],
+    "19": [
+      249,
+      253
+    ],
+    "20": [
+      254,
+      269
+    ],
+    "21": [
+      270,
+      277
+    ],
+    "22": [
+      278,
+      286
+    ],
+    "23": [
+      287,
+      291
+    ],
+    "24": [
+      292,
+      303
+    ],
+    "25": [
+      304,
+      311
+    ],
+    "26": [
+      312,
+      320
+    ],
+    "27": [
+      321,
+      325
+    ],
+    "28": [
+      326,
+      345
+    ]
+  }
+}

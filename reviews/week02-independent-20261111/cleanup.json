@@ -1,0 +1,17 @@
+{
+  "removed_review_generated_only": [
+    "reviews/week02-independent-20261111/runtime",
+    "reviews/week02-independent-20261111/cases/leaky_baseline_fit/teacher-notes.md",
+    "reviews/week02-independent-20261111/cases/leaky_preprocess/teacher-notes.md",
+    "reviews/week02-independent-20261111/cases/original/week02_prediction_evaluation.html",
+    "reviews/week02-independent-20261111/cases/original/teacher-notes.md",
+    "reviews/week02-independent-20261111/cases/filled_assignment_answer/week02_prediction_evaluation.html",
+    "reviews/week02-independent-20261111/cases/filled_assignment_answer/teacher-notes.md",
+    "reviews/week02-independent-20261111/cases/filled_assignment_answer/validation.json",
+    "reviews/week02-independent-20261111/cases/swap_precision_recall/teacher-notes.md",
+    "reviews/week02-independent-20261111/cases/reverse_confusion_labels/teacher-notes.md",
+    "reviews/week02-independent-20261111/cases/include_unknown_train/teacher-notes.md",
+    "reviews/week02-independent-20261111/cases/invert_roc_threshold/teacher-notes.md"
+  ],
+  "reason": "Remove execution cache, duplicated HTML/notes and stale successful receipts in deliberately failing mutation folders. Source lessons were not touched."
+}

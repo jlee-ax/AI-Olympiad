@@ -1,0 +1,94 @@
+{
+  "archive": "state-snapshots-bridge.tar.gz",
+  "archive_sha256": "a3f349a62bb47cabdd3f6b5a00a2cd96c9b46b54a1f61a9f014fc9b20bb8b8d3",
+  "archive_bytes": 45945,
+  "original_bytes": 500900,
+  "file_count": 16,
+  "method": "Python tarfile USTAR in sorted relative path order; mode0644 uid/gid0 empty owner names mtime0; gzip level9 filename empty mtime0. Exact original bytes; no JSON reserialization.",
+  "verification": "Read every member back from the finished archive and check relative path, regular-file type, byte length and SHA-256 against originals before unlinking only the explicitly listed duplicate expanded files.",
+  "expanded_files_retained": "session.json, report.json, manifest.json, all event files, failure records, input projections/source notes, command evidence and scripts.",
+  "files": [
+    {
+      "path": "runs/week01-bridge-01/session-00.json",
+      "bytes": 1382,
+      "sha256": "a8cf18599762d9bff19001dc46664523e7d08d5ea660e16f14c5c3bf0f4de043"
+    },
+    {
+      "path": "runs/week01-bridge-01/session-01.json",
+      "bytes": 7270,
+      "sha256": "3aac121becdd68f89be08c886cc85bfff445970d0b8bc3da2debcda2dde2985c"
+    },
+    {
+      "path": "runs/week01-bridge-01/session-02.json",
+      "bytes": 8825,
+      "sha256": "96b9c8902fe21a6134867f5ffbe4d19a4b967af0741eb6be29b855ef96638e5c"
+    },
+    {
+      "path": "runs/week01-bridge-01/session-03.json",
+      "bytes": 10662,
+      "sha256": "ad1fe48054da69667f6eac2082b293d18803b8f155d7c919afa4bf03c39e3e8f"
+    },
+    {
+      "path": "runs/week01-bridge-01/session-04.json",
+      "bytes": 12486,
+      "sha256": "fd93280dff5e582147c59fe190685396e07646c83c8beb1a7c7bd3f34e7d5fee"
+    },
+    {
+      "path": "runs/week01-bridge-01/session-05.json",
+      "bytes": 14315,
+      "sha256": "179570a751ac4a91c50fa2149b329f701aa9dbffc854675d81e653af4feb4403"
+    },
+    {
+      "path": "runs/week01-bridge-01/session-06.json",
+      "bytes": 15951,
+      "sha256": "3982de2fbb74496e71142f03c276a805cfcb7a628586eaf7f8f73b8df1a76e62"
+    },
+    {
+      "path": "runs/week01-bridge-01/session-07.json",
+      "bytes": 17617,
+      "sha256": "9bd295dd92e98a55f743416a1eb36dd3e6b7b85b47a372e33cf70b94a5bba1a1"
+    },
+    {
+      "path": "runs/week01-bridge-01/session-08.json",
+      "bytes": 19373,
+      "sha256": "b9524a1925ee7b6fed9d514af1b0c7f9e929421851b0cd58568c2d8e09e2dcbe"
+    },
+    {
+      "path": "runs/week01-bridge-01/session-09.json",
+      "bytes": 21082,
+      "sha256": "7e210c560a4ebea7c450515b5302c00dbc9a15f541e7b43579e48faf1738ed38"
+    },
+    {
+      "path": "runs/week01-bridge-01/session-10.json",
+      "bytes": 22786,
+      "sha256": "268d5a2b38f0067a519e424cf6ab32dc76dc72a5c683c5423145208f2e7345de"
+    },
+    {
+      "path": "runs/week01-bridge-01/session-11.json",
+      "bytes": 24539,
+      "sha256": "b8cf8db095e8e86cb7c467cd09fc01e46eb73cd99bf166d1de23ff4913ef2aa0"
+    },
+    {
+      "path": "runs/week01-bridge-01/session-12.json",
+      "bytes": 30622,
+      "sha256": "8f6ded3e1f64562b2a37a5abbe19b230e8aaf8bd0e662c8a0adfcad344b89a47"
+    },
+    {
+      "path": "runs/week01-bridge-01/session-13.json",
+      "bytes": 75795,
+      "sha256": "cdfe63748823f0ce5bfae800b0a2034cf421f22b92c1cd7528a868214bc7bd2c"
+    },
+    {
+      "path": "runs/week01-bridge-01/session-14.json",
+      "bytes": 99994,
+      "sha256": "ff9a5f7b11fe2fdfcd89e3b19018b08f18e388bd33764b5c2850dd454572596c"
+    },
+    {
+      "path": "runs/week01-bridge-01/session-15.json",
+      "bytes": 118201,
+      "sha256": "09f8234496e4716b4422ab6f9e504d8da9f7f4af930efc5820fe121c6385a497"
+    }
+  ],
+  "verified_member_count": 16,
+  "deletion_scope": "Only the explicitly listed runs/*/session-NN.json duplicate snapshots, per parent instruction. Historical bytes are retained in the verified archive."
+}

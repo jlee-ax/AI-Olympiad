@@ -1,0 +1,55 @@
+{
+  "id": "course-week02-candidate-02-044-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "H01",
+    "reviewer": "/root/course_discovery",
+    "judgment": "gap",
+    "rationale": "Cells16–19 teach row accuracy versus mean per-group accuracy on unequal group counts. The retained Radar demand instead uses truth-dependent weights w(-1)=1, others=50 and requires metric ranking reversal. Those operations and their independent assessment are absent; a related denominator lesson is partial prerequisite progress.",
+    "start_line": 241,
+    "end_line": 299,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Cells16–19 teach row accuracy versus mean per-group accuracy on unequal group counts. The retained Radar demand instead uses truth-dependent weights w(-1)=1, others=50 and requires metric ranking reversal. Those operations and their independent assessment are absent; a related denominator lesson is partial prerequisite progress.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 241,
+        "end_line": 299
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "Cells16–19 teach row accuracy versus mean per-group accuracy on unequal group counts. The retained Radar demand instead uses truth-dependent weights w(-1)=1, others=50 and requires metric ranking reversal. Those operations and their independent assessment are absent; a related denominator lesson is partial prerequisite progress.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 241,
+        "end_line": 299
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Cells16–19 teach row accuracy versus mean per-group accuracy on unequal group counts. The retained Radar demand instead uses truth-dependent weights w(-1)=1, others=50 and requires metric ranking reversal. Those operations and their independent assessment are absent; a related denominator lesson is partial prerequisite progress.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 241,
+        "end_line": 299
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "Cells16–19 teach row accuracy versus mean per-group accuracy on unequal group counts. The retained Radar demand instead uses truth-dependent weights w(-1)=1, others=50 and requires metric ranking reversal. Those operations and their independent assessment are absent; a related denominator lesson is partial prerequisite progress.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 241,
+        "end_line": 299
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "Cells16–19 teach row accuracy versus mean per-group accuracy on unequal group counts. The retained Radar demand instead uses truth-dependent weights w(-1)=1, others=50 and requires metric ranking reversal. Those operations and their independent assessment are absent; a related denominator lesson is partial prerequisite progress.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 241,
+        "end_line": 299
+      }
+    ]
+  }
+}

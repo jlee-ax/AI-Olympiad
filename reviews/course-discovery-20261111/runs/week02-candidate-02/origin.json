@@ -1,0 +1,17 @@
+{
+  "parent_baseline_session": "reviews/discovery-loop-20261111/runs/session.json",
+  "parent_baseline_file_sha256": "81d71bca932382b67c280daabc32cd3bcbfb6fd14ffa87a712679b8e5b85bdf2",
+  "expanded_baseline_session": "reviews/course-discovery-20261111/runs/baseline-wave-01/session.json",
+  "expanded_baseline_file_sha256": "e4af0f4adcb1efe6bb92b895b2b09ecd6c2c7e561d7dd3c132a5a08ceba140bf",
+  "previous_candidate_observed_but_not_review_bound": "ca7ba8c40797859bd74a051a28c850e15131bcc9aff552e0f046edef0d5104bd",
+  "candidate_original_path": "lessons/week02/week02_prediction_evaluation.ipynb",
+  "candidate_original_sha256": "52b5c170ab2c83fc29327c302e9c77e34c58bce81061c7a167228d0cc67c36e3",
+  "new_baseline_reason": "Different actual lesson artifact requires a new explicit seed; all original demand payloads retained without retirement or narrowing.",
+  "author_role": "/root/week02_lesson (gpt-6.1-terra, max), distinct teaching author; identity confirmed by parent",
+  "reviewer_role": "/root/course_discovery",
+  "new_extractor_role": "/root/course_discovery/verify_new_scope",
+  "historical_extractor_role": "source-research-sol, imported unchanged",
+  "original_notebook_modified": false,
+  "original_teacher_files_modified": false,
+  "student_mastery": "not_observed"
+}

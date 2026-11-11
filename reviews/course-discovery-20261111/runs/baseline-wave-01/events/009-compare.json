@@ -1,0 +1,47 @@
+{
+  "id": "course-baseline-wave-01-009-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "N03",
+    "reviewer": "/root/course_discovery",
+    "judgment": "gap",
+    "rationale": "Whole preserved Week1 projection distinguishes input/target and prediction time, but the new unknown-versus-negative label and permitted-output exercise is absent.",
+    "start_line": 1,
+    "end_line": 1295,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "Whole preserved Week1 projection distinguishes input/target and prediction time, but the new unknown-versus-negative label and permitted-output exercise is absent.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 1295
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "Whole preserved Week1 projection distinguishes input/target and prediction time, but the new unknown-versus-negative label and permitted-output exercise is absent.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 1295
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Whole preserved Week1 projection distinguishes input/target and prediction time, but the new unknown-versus-negative label and permitted-output exercise is absent.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 1295
+      },
+      {
+        "id": "assumptions",
+        "judgment": "gap",
+        "observed_behavior": "Whole preserved Week1 projection distinguishes input/target and prediction time, but the new unknown-versus-negative label and permitted-output exercise is absent.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 1295
+      }
+    ]
+  }
+}

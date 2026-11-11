@@ -1,0 +1,55 @@
+{
+  "id": "course-week02-candidate-01-042-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "D09",
+    "reviewer": "/root/course_discovery",
+    "judgment": "gap",
+    "rationale": "Classification metrics are not softmax/cross-entropy derivation or stable-logit computation. No probability/loss/stabilization assessment exists.",
+    "start_line": 146,
+    "end_line": 240,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "Classification metrics are not softmax/cross-entropy derivation or stable-logit computation. No probability/loss/stabilization assessment exists.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 146,
+        "end_line": 240
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "Classification metrics are not softmax/cross-entropy derivation or stable-logit computation. No probability/loss/stabilization assessment exists.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 146,
+        "end_line": 240
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Classification metrics are not softmax/cross-entropy derivation or stable-logit computation. No probability/loss/stabilization assessment exists.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 146,
+        "end_line": 240
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "Classification metrics are not softmax/cross-entropy derivation or stable-logit computation. No probability/loss/stabilization assessment exists.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 146,
+        "end_line": 240
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "Classification metrics are not softmax/cross-entropy derivation or stable-logit computation. No probability/loss/stabilization assessment exists.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 146,
+        "end_line": 240
+      }
+    ]
+  }
+}

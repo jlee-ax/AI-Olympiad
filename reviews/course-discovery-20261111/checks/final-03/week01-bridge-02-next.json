@@ -1,0 +1,84 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "tools/discovery_loop.py",
+    "next",
+    "reviews/course-discovery-20261111/runs/week01-bridge-02/session.json",
+    "--root",
+    "."
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"authority\": \"advisory_only\",\n  \"exhausted\": [],\n  \"limits\": [\n    \"Discovery/search execution, official attribution, semantic extraction and adequacy judgments are supplied by a human or model; this program does not browse or run one.\",\n    \"Read receipts prove the bytes and line ranges opened by this program, not reader comprehension, source truth or completeness of the external universe.\",\n    \"The frozen frontier and append-only hash chain expose changed declarations when bound to a review; they do not authenticate identity or prevent a caller from rewriting and rebinding history.\",\n    \"Recorded readiness applies only to the declared boundary; deferred placement does not establish later teaching or learner performance.\"\n  ],\n  \"next_action\": \"expand_frontier\",\n  \"queue\": [\n    {\n      \"affected\": [\n        \"D01\",\n        \"retained-three\",\n        \"week01-supplement-retained-demands\"\n      ],\n      \"demand_id\": \"D01\",\n      \"next_action\": \"research_or_refine_and_recompare\",\n      \"reasons\": [\n        \"dimension_learning_uncertain\",\n        \"dimension_assessment_gap\",\n        \"dimension_principle_gap\",\n        \"dimension_practice_gap\",\n        \"gap\"\n      ],\n      \"statement\": \"\\ubc30\\uc5f4\\uc758 \\ucd95 \\uc758\\ubbf8\\uc640 \\ub370\\uc774\\ud130 \\ubc30\\uce58\\ub97c \\ubcf4\\uc874\\ud558\\uae30\"\n    },\n    {\n      \"affected\": [\n        \"D05\",\n        \"retained-three\",\n        \"week01-supplement-retained-demands\"\n      ],\n      \"demand_id\": \"D05\",\n      \"next_action\": \"research_or_refine_and_recompare\",\n      \"reasons\": [\n        \"dimension_prerequisites_gap\",\n        \"dimension_learning_gap\",\n        \"dimension_assessment_uncertain\",\n        \"dimension_principle_gap\",\n        \"gap\"\n      ],\n      \"statement\": \"\\uc720\\uc0ac\\ub3c4 \\ud589\\ub82c\\uc758 \\uc704\\uce58\\ub97c \\uc2e4\\uc81c \\uc2dd\\ubcc4\\uc790\\ub85c \\ub3cc\\ub824\\uc8fc\\uae30\"\n    },\n    {\n      \"affected\": [\n        \"D07\",\n        \"retained-three\",\n        \"week01-supplement-retained-demands\"\n      ],\n      \"demand_id\": \"D07\",\n      \"next_action\": \"research_or_refine_and_recompare\",\n      \"reasons\": [\n        \"dimension_assessment_gap\",\n        \"dimension_principle_uncertain\",\n        \"gap\"\n      ],\n      \"statement\": \"embedding lookup\\uc758 \\uc0c8 \\ucd95\\uacfc \\uc5b4\\ud718 \\ucd95\\uc744 \\uad6c\\ubcc4\\ud558\\uae30\"\n    }\n  ],\n  \"status\": \"needs_work\",\n  \"usage\": {\n    \"elapsed_minutes\": 0,\n    \"events\": 15,\n    \"no_progress\": 0,\n    \"rounds\": 1\n  }\n}\n",
+  "stderr": "",
+  "stdout_sha256": "a4bca24046a0aed46875e3974ada42f7c7dc19dcbef419dccc2d8d339a929463",
+  "parsed_output": {
+    "authority": "advisory_only",
+    "exhausted": [],
+    "limits": [
+      "Discovery/search execution, official attribution, semantic extraction and adequacy judgments are supplied by a human or model; this program does not browse or run one.",
+      "Read receipts prove the bytes and line ranges opened by this program, not reader comprehension, source truth or completeness of the external universe.",
+      "The frozen frontier and append-only hash chain expose changed declarations when bound to a review; they do not authenticate identity or prevent a caller from rewriting and rebinding history.",
+      "Recorded readiness applies only to the declared boundary; deferred placement does not establish later teaching or learner performance."
+    ],
+    "next_action": "expand_frontier",
+    "queue": [
+      {
+        "affected": [
+          "D01",
+          "retained-three",
+          "week01-supplement-retained-demands"
+        ],
+        "demand_id": "D01",
+        "next_action": "research_or_refine_and_recompare",
+        "reasons": [
+          "dimension_learning_uncertain",
+          "dimension_assessment_gap",
+          "dimension_principle_gap",
+          "dimension_practice_gap",
+          "gap"
+        ],
+        "statement": "배열의 축 의미와 데이터 배치를 보존하기"
+      },
+      {
+        "affected": [
+          "D05",
+          "retained-three",
+          "week01-supplement-retained-demands"
+        ],
+        "demand_id": "D05",
+        "next_action": "research_or_refine_and_recompare",
+        "reasons": [
+          "dimension_prerequisites_gap",
+          "dimension_learning_gap",
+          "dimension_assessment_uncertain",
+          "dimension_principle_gap",
+          "gap"
+        ],
+        "statement": "유사도 행렬의 위치를 실제 식별자로 돌려주기"
+      },
+      {
+        "affected": [
+          "D07",
+          "retained-three",
+          "week01-supplement-retained-demands"
+        ],
+        "demand_id": "D07",
+        "next_action": "research_or_refine_and_recompare",
+        "reasons": [
+          "dimension_assessment_gap",
+          "dimension_principle_uncertain",
+          "gap"
+        ],
+        "statement": "embedding lookup의 새 축과 어휘 축을 구별하기"
+      }
+    ],
+    "status": "needs_work",
+    "usage": {
+      "elapsed_minutes": 0,
+      "events": 15,
+      "no_progress": 0,
+      "rounds": 1
+    }
+  }
+}

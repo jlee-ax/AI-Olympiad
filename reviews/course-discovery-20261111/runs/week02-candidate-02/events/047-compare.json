@@ -1,0 +1,47 @@
+{
+  "id": "course-week02-candidate-02-047-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "N02",
+    "reviewer": "/root/course_discovery",
+    "judgment": "gap",
+    "rationale": "No half-open image rectangle, area budget, boundary case or JSONL output-contract task exists in Week2. Appropriate later placement is a proposal; no actual Week7/9 delivery or responsible committed placement is claimed.",
+    "start_line": 1,
+    "end_line": 359,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "No half-open image rectangle, area budget, boundary case or JSONL output-contract task exists in Week2. Appropriate later placement is a proposal; no actual Week7/9 delivery or responsible committed placement is claimed.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 359
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "No half-open image rectangle, area budget, boundary case or JSONL output-contract task exists in Week2. Appropriate later placement is a proposal; no actual Week7/9 delivery or responsible committed placement is claimed.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 359
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "No half-open image rectangle, area budget, boundary case or JSONL output-contract task exists in Week2. Appropriate later placement is a proposal; no actual Week7/9 delivery or responsible committed placement is claimed.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 359
+      },
+      {
+        "id": "contract",
+        "judgment": "gap",
+        "observed_behavior": "No half-open image rectangle, area budget, boundary case or JSONL output-contract task exists in Week2. Appropriate later placement is a proposal; no actual Week7/9 delivery or responsible committed placement is claimed.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 359
+      }
+    ]
+  }
+}

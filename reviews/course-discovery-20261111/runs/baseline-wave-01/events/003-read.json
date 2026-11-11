@@ -1,0 +1,11 @@
+{
+  "id": "course-baseline-wave-01-003-read",
+  "op": "read",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "source_id": "C02",
+    "actor": "/root/course_discovery/verify_new_scope",
+    "start_line": 1,
+    "end_line": 8
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "course-week02-candidate-01-035-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "D03",
+    "reviewer": "/root/course_discovery",
+    "judgment": "uncertain",
+    "rationale": "Cells2–5 distinguish feature/target/time and use reading only; Cell19 asks about post-prediction repair data. Original requirement also asks independent shape-correct versus semantically unavailable input diagnosis; that exact contrast is not explicitly assessed here. Earlier Week1 covered judgment is preserved in its own baseline.",
+    "start_line": 24,
+    "end_line": 103,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Cells2–5 distinguish feature/target/time and use reading only; Cell19 asks about post-prediction repair data. Original requirement also asks independent shape-correct versus semantically unavailable input diagnosis; that exact contrast is not explicitly assessed here. Earlier Week1 covered judgment is preserved in its own baseline.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 24,
+        "end_line": 103
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "Cells2–5 distinguish feature/target/time and use reading only; Cell19 asks about post-prediction repair data. Original requirement also asks independent shape-correct versus semantically unavailable input diagnosis; that exact contrast is not explicitly assessed here. Earlier Week1 covered judgment is preserved in its own baseline.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 24,
+        "end_line": 103
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "Cells2–5 distinguish feature/target/time and use reading only; Cell19 asks about post-prediction repair data. Original requirement also asks independent shape-correct versus semantically unavailable input diagnosis; that exact contrast is not explicitly assessed here. Earlier Week1 covered judgment is preserved in its own baseline.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 271,
+        "end_line": 316
+      },
+      {
+        "id": "principle",
+        "judgment": "met",
+        "observed_behavior": "Cells2–5 distinguish feature/target/time and use reading only; Cell19 asks about post-prediction repair data. Original requirement also asks independent shape-correct versus semantically unavailable input diagnosis; that exact contrast is not explicitly assessed here. Earlier Week1 covered judgment is preserved in its own baseline.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 24,
+        "end_line": 103
+      },
+      {
+        "id": "practice",
+        "judgment": "met",
+        "observed_behavior": "Cells2–5 distinguish feature/target/time and use reading only; Cell19 asks about post-prediction repair data. Original requirement also asks independent shape-correct versus semantically unavailable input diagnosis; that exact contrast is not explicitly assessed here. Earlier Week1 covered judgment is preserved in its own baseline.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 24,
+        "end_line": 103
+      }
+    ]
+  }
+}

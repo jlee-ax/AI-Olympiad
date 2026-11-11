@@ -1,0 +1,49 @@
+{
+  "archive": "cli-report-replays.tar.gz",
+  "archive_sha256": "0840dbbf3993162f6e58492a54aa82d3cbf5588560ddac4ad555a56c23fdaa60",
+  "archive_bytes": 3679903,
+  "original_bytes": 21590781,
+  "file_count": 7,
+  "method": "Python tarfile USTAR in sorted relative path order; mode0644 uid/gid0 empty owner names mtime0; gzip level9 filename empty mtime0. Exact original bytes; no JSON reserialization.",
+  "verification": "Read every member back from the finished archive and check relative path, regular-file type, byte length and SHA-256 against originals before unlinking only the explicitly listed duplicate expanded files.",
+  "expanded_files_retained": "session.json, report.json, manifest.json, all event files, failure records, input projections/source notes, command evidence and scripts.",
+  "files": [
+    {
+      "path": "checks/final-01/baseline-wave-01-report.json",
+      "bytes": 3829470,
+      "sha256": "8bc4190aa9877616a7019219a1679b71813d01c4fdf75a9c70e16ff8f54eeea0"
+    },
+    {
+      "path": "checks/final-01/plan-wave-01-report.json",
+      "bytes": 2804603,
+      "sha256": "2bd3b99f500f6e023c960f6644f5f661d79bee5d504bab220fc6f4c2536428a1"
+    },
+    {
+      "path": "checks/final-01/week02-candidate-02-report.json",
+      "bytes": 4030040,
+      "sha256": "eb720573239c13e553442fe9cb654ccbb52a0f64c08c61ee03c9cf8d9e4ba547"
+    },
+    {
+      "path": "checks/final-02/baseline-wave-01-report.json",
+      "bytes": 3829470,
+      "sha256": "8bc4190aa9877616a7019219a1679b71813d01c4fdf75a9c70e16ff8f54eeea0"
+    },
+    {
+      "path": "checks/final-02/plan-wave-01-report.json",
+      "bytes": 2804603,
+      "sha256": "2bd3b99f500f6e023c960f6644f5f661d79bee5d504bab220fc6f4c2536428a1"
+    },
+    {
+      "path": "checks/final-02/week01-bridge-01-report.json",
+      "bytes": 262555,
+      "sha256": "661467c74e39e04dc859e3b923c3eb43743ae0196a35cc6a3b2ad711b88f8b44"
+    },
+    {
+      "path": "checks/final-02/week02-candidate-02-report.json",
+      "bytes": 4030040,
+      "sha256": "eb720573239c13e553442fe9cb654ccbb52a0f64c08c61ee03c9cf8d9e4ba547"
+    }
+  ],
+  "verified_member_count": 7,
+  "deletion_scope": "Only the explicitly listed checks/final-*/*-report.json duplicate CLI replay receipts; authoritative runs/*/report.json and current-summary files stay expanded."
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "C01",
+    "uri": "https://kitpa.org/koai/2027",
+    "revision": "2026-11-11 direct web read; mutable national 2027 announcement",
+    "kind": "official_scope",
+    "path": "reviews/course-discovery-20261111/inputs/reading-note-C01.md",
+    "attribution": "Direct web reading/extraction by /root/course_discovery/verify_new_scope; reviewer independently re-read selected original spans. Program opens this paraphrased note only; no source authentication.",
+    "local_note_sha256": "1dafc1909ca1f806126219d55af1a570ad0ee064082a627f388907a879a39ec4"
+  },
+  {
+    "id": "C02",
+    "uri": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Pixel/Pixel.ipynb",
+    "revision": "2025 individual contest; mutable main read 2026-11-11; no upstream commit pin",
+    "kind": "official_problem",
+    "path": "reviews/course-discovery-20261111/inputs/reading-note-C02.md",
+    "attribution": "Direct web reading/extraction by /root/course_discovery/verify_new_scope; reviewer independently re-read selected original spans. Program opens this paraphrased note only; no source authentication.",
+    "local_note_sha256": "47dc65371b5b61e0f95606e11db480d2bb10812618e301719624ba5797c7e975"
+  },
+  {
+    "id": "C03",
+    "uri": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb",
+    "revision": "2025 individual contest; mutable main read 2026-11-11; no upstream commit pin",
+    "kind": "official_problem",
+    "path": "reviews/course-discovery-20261111/inputs/reading-note-C03.md",
+    "attribution": "Direct web reading/extraction by /root/course_discovery/verify_new_scope; reviewer independently re-read selected original spans. Program opens this paraphrased note only; no source authentication.",
+    "local_note_sha256": "80c9df970f3b64bbd303d24d36704a2e6c6e2c98668c933ebd724d1bbe79c39f"
+  },
+  {
+    "id": "C04",
+    "uri": "https://cs229.stanford.edu/summer2019/ps1.pdf",
+    "revision": "CS229 Summer 2019 PS1; problem 2; direct web read 2026-11-11",
+    "kind": "research",
+    "path": "reviews/course-discovery-20261111/inputs/reading-note-C04.md",
+    "attribution": "Direct web reading/extraction by /root/course_discovery/verify_new_scope; reviewer independently re-read selected original spans. Program opens this paraphrased note only; no source authentication.",
+    "local_note_sha256": "0a9dff6efa721c16022cf053bad9378f894ef2f29a28847e51f5867e41dc8bce"
+  }
+]

@@ -1,0 +1,172 @@
+{
+  "id": "course-week02-candidate-02-021-trace",
+  "op": "trace",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "frontier_id": "mechanisms",
+    "read_ids": [
+      "course-week02-candidate-02-013-read",
+      "course-week02-candidate-02-014-read",
+      "course-week02-candidate-02-015-read",
+      "course-week02-candidate-02-016-read",
+      "course-week02-candidate-02-017-read",
+      "course-week02-candidate-02-018-read",
+      "course-week02-candidate-02-019-read",
+      "course-week02-candidate-02-020-read"
+    ],
+    "actor": "source-research-sol",
+    "rationale": "Unchanged historical demand payloads copied from original source extractor; not a claim of a fresh extraction or current web-source verification.",
+    "counterevidence": "Original source notes are agent-authored paraphrases. Original broad course demand does not imply all of it belongs in Week2.",
+    "uninvestigated": [],
+    "demands": [
+      {
+        "id": "D06",
+        "statement": "전처리 통계의 fit 경계를 분할 안에 두기",
+        "prerequisites": [
+          "평균·분산",
+          "변환 함수",
+          "학습/검증 역할"
+        ],
+        "learning_demand": "데이터 분할; 학습 부분의 통계 계산; 같은 통계로 다른 부분 변환; 부풀려진 평가의 원인 추적",
+        "assessment_demand": "fit vs transform; 검증자료 변경이 학습통계에 영향을 주는지; 새 입력 코드 수정; 누수와 과대적합을 구별",
+        "dimensions": [
+          {
+            "id": "principle",
+            "required_behavior": "mu_train=mean(X_train); z=(x-mu_train)/sigma_train. test 값으로 mu/sigma를 다시 fit하지 않는다."
+          },
+          {
+            "id": "practice",
+            "required_behavior": "train [0,2], test [100]의 평균 중심화를 train-only와 전체자료 두 방식으로 계산하고 학습값이 왜 변하는지 설명한다."
+          }
+        ],
+        "stage_proposal": {
+          "decision": "later",
+          "rationale": "현재 1주차 선수 평균·분산을 연결하되, 모델 평가 단원에서 분할+fit 경계를 실제 코드로 학습한다."
+        },
+        "source_locations": [
+          "S01 L126–132",
+          "S10 §12.1–12.2 L76–208"
+        ]
+      },
+      {
+        "id": "D07",
+        "statement": "embedding lookup의 새 축과 어휘 축을 구별하기",
+        "prerequisites": [
+          "정수 indexing",
+          "축 의미",
+          "사전/어휘 ID"
+        ],
+        "learning_demand": "정수 ID로 행 lookup; 입력 shape 보존 후 vector 축 추가; 반복 ID의 같은 행 대응",
+        "assessment_demand": "값과 shape 모두 예측; B/L/V/H 의미; 반복 index 값 보존; 새 B/L/H 입력 전이",
+        "dimensions": [
+          {
+            "id": "principle",
+            "required_behavior": "E∈R^(V×H), tokens∈Z^(B×L)→E[tokens]∈R^(B×L×H). V는 token 길이 L이 아니다."
+          },
+          {
+            "id": "practice",
+            "required_behavior": "4×2 lookup table과 token [[2,0,2],[1,3,0]]으로 전체 값을 손으로 채운 뒤 lookup한다."
+          }
+        ],
+        "stage_proposal": {
+          "decision": "later",
+          "rationale": "라이브러리 계약에서 발견한 구체 선수와 평가 항목. embedding 자체를 1주차 필수로 놓지 않는다."
+        },
+        "source_locations": [
+          "S01 L149",
+          "S08 L560–591,L611–636"
+        ]
+      },
+      {
+        "id": "D08",
+        "statement": "mask의 shape뿐 아니라 참여 의미를 검증하기",
+        "prerequisites": [
+          "행렬곱",
+          "transpose",
+          "우측 축 broadcasting",
+          "softmax/확률",
+          "padding 구별"
+        ],
+        "learning_demand": "Q/K score의 두 위치 축 추적; mask를 score에 정렬; 차단 위치가 softmax 확률에서 빠지는 이유 설명; API 변경 시 극성 확인",
+        "assessment_demand": "축/shape; mask 의미·API 계약; 차단 뒤 분모 재정규화; padding vs causal mask 구별",
+        "dimensions": [
+          {
+            "id": "principle",
+            "required_behavior": "A=softmax(QK^T/sqrt(d_k)+M) V; score (B,H,L,S). mask는 이 shape로 broadcast. SDPA True=참여."
+          },
+          {
+            "id": "practice",
+            "required_behavior": "동일 score 세 위치 중 마지막을 차단할 때 남은 확률을 계산하고 bool mask의 True 의미를 명세에서 찾는다."
+          }
+        ],
+        "stage_proposal": {
+          "decision": "later",
+          "rationale": "전체 attention 기초가 갖추어진 뒤 실시. 최신 beta API 문구는 버전을 고정하고 공식 문제의 정확한 API 요구처럼 과장하지 않는다."
+        },
+        "source_locations": [
+          "S02 p7 Q25,p10 Q34",
+          "S07 L73–106",
+          "S09 L464–489,L511–516,L552–583"
+        ]
+      },
+      {
+        "id": "D09",
+        "statement": "정답 확률·손실·안정화의 계산을 구별하기",
+        "prerequisites": [
+          "합 기호/분모",
+          "index",
+          "지수·로그",
+          "실수 계산 한계"
+        ],
+        "learning_demand": "class 축 정규화; 정답 index의 확률 선택; 음의 로그; 공통 상수 이동으로 동치 확인",
+        "assessment_demand": "class 축과 정답 index; argmax와 loss 차이; 수학적 동치 증명; overflow 진단",
+        "dimensions": [
+          {
+            "id": "principle",
+            "required_behavior": "p_j=exp(s_j)/sum_k exp(s_k); L=-log(p_y); softmax(s)=softmax(s-max(s))."
+          },
+          {
+            "id": "practice",
+            "required_behavior": "[1,0]과 [10,0]의 동일 argmax·다른 정답 확률을 설명한 뒤 [1001,1000]을 안정화해 계산한다."
+          }
+        ],
+        "stage_proposal": {
+          "decision": "later",
+          "rationale": "분류/손실 단원에서 원리와 구현을 함께 다룰 충분한 깊이 기준. 1주차 확대 근거는 아님."
+        },
+        "source_locations": [
+          "S11 Softmax classifier L182–209"
+        ]
+      },
+      {
+        "id": "D10",
+        "statement": "작은 성공과 전체 올바름을 구별하는 검증 설계",
+        "prerequisites": [
+          "함수·변수 상태",
+          "차분·미분",
+          "오차의 분모",
+          "학습/검증 역할"
+        ],
+        "learning_demand": "예측한 중간값과 실행 대조; 조건을 바꾼 반례 설계; 구현 정확성과 일반화 증거 구별",
+        "assessment_demand": "독립 입력 선택; 실패 원인과 추가 증거 구별; 0 분모/크기 영향; 단일 성공의 한계",
+        "dimensions": [
+          {
+            "id": "principle",
+            "required_behavior": "g_num=(L(theta+h)-L(theta-h))/(2h); 상대오차는 두 gradient 크기와 0인 경우를 고려."
+          },
+          {
+            "id": "practice",
+            "required_behavior": "작은 데이터 암기 성공으로 일반화/입력 파이프라인 올바름을 단정한 주장을 반박하고 추가 확인을 고른다."
+          }
+        ],
+        "stage_proposal": {
+          "decision": "defer",
+          "rationale": "검증 사고는 now 선수로 인정하되 수치미분의 정밀도/상대오차는 고급 검증에 defer. 자료 암기를 완전 검증으로 취급하지 않는다."
+        },
+        "source_locations": [
+          "S12 L25–47,L66–72,L88–104"
+        ]
+      }
+    ]
+  }
+}

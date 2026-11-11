@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "tools/discovery_loop.py",
+    "manifest",
+    "reviews/course-discovery-20261111/runs/plan-wave-01/session.json"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"id\": \"review:discovery\",\n  \"revision\": \"discovery-loop-v1\",\n  \"sha256\": \"f62c71ab45f6e75e9d3870fc3ec05e88174a5e5115ea5b288db82cb954c7a925\"\n}\n",
+  "stderr": "",
+  "stdout_sha256": "d110a6ff5c0791d3f89aad587aacea9af96ef824eaea4e67ef6cea9068a0e9b5",
+  "parsed_output": {
+    "id": "review:discovery",
+    "revision": "discovery-loop-v1",
+    "sha256": "f62c71ab45f6e75e9d3870fc3ec05e88174a5e5115ea5b288db82cb954c7a925"
+  }
+}

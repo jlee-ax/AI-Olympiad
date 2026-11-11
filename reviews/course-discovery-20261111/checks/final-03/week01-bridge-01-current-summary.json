@@ -1,0 +1,21 @@
+{
+  "status": "needs_work",
+  "ready_for_review": false,
+  "demand_count": 3,
+  "queue_count": 3,
+  "open_question_count": 3,
+  "events": 15,
+  "next_action": "expand_frontier",
+  "covered": [],
+  "judgments": {
+    "D01": "gap",
+    "D05": "gap",
+    "D07": "gap"
+  },
+  "freshness_blockers": [
+    {
+      "code": "artifact_changed",
+      "id": "lessons/week01/week01_axes_linear_bridge.ipynb"
+    }
+  ]
+}

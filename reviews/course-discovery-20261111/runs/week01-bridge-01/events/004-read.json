@@ -1,0 +1,11 @@
+{
+  "id": "course-week01-bridge-01-004-read",
+  "op": "read",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "source_id": "S04",
+    "actor": "source-research-sol",
+    "start_line": 1,
+    "end_line": 15
+  }
+}

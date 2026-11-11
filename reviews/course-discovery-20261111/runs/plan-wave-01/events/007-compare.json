@@ -1,0 +1,47 @@
+{
+  "id": "course-plan-wave-01-007-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "N01",
+    "reviewer": "/root/course_discovery",
+    "judgment": "gap",
+    "rationale": "Plan line 94 announces weekly selected/written questions and coding. These are scheduled activities; actual artifacts, item validity and student work are not supplied by this plan.",
+    "start_line": 1,
+    "end_line": 397,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "Plan line 94 announces weekly selected/written questions and coding. These are scheduled activities; actual artifacts, item validity and student work are not supplied by this plan.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 397
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "Plan line 94 announces weekly selected/written questions and coding. These are scheduled activities; actual artifacts, item validity and student work are not supplied by this plan.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 397
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Plan line 94 announces weekly selected/written questions and coding. These are scheduled activities; actual artifacts, item validity and student work are not supplied by this plan.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 397
+      },
+      {
+        "id": "modality",
+        "judgment": "gap",
+        "observed_behavior": "Plan line 94 announces weekly selected/written questions and coding. These are scheduled activities; actual artifacts, item validity and student work are not supplied by this plan.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 397
+      }
+    ]
+  }
+}

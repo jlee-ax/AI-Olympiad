@@ -1,0 +1,47 @@
+{
+  "id": "course-week02-candidate-02-046-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "N01",
+    "reviewer": "/root/course_discovery",
+    "judgment": "covered",
+    "rationale": "For this Week2 unit only, explicit reasoning/calculation (Cells2–4,6,9,16) is connected to actual code (5,7,11,13,15,17) and a distinct new-input written+coding task (19–21), with help recording. This is a manual material-design judgment, not a course/exam/student success finding.",
+    "start_line": 271,
+    "end_line": 316,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "For this Week2 unit only, explicit reasoning/calculation (Cells2–4,6,9,16) is connected to actual code (5,7,11,13,15,17) and a distinct new-input written+coding task (19–21), with help recording. This is a manual material-design judgment, not a course/exam/student success finding.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 271,
+        "end_line": 316
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "For this Week2 unit only, explicit reasoning/calculation (Cells2–4,6,9,16) is connected to actual code (5,7,11,13,15,17) and a distinct new-input written+coding task (19–21), with help recording. This is a manual material-design judgment, not a course/exam/student success finding.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 271,
+        "end_line": 316
+      },
+      {
+        "id": "assessment",
+        "judgment": "met",
+        "observed_behavior": "For this Week2 unit only, explicit reasoning/calculation (Cells2–4,6,9,16) is connected to actual code (5,7,11,13,15,17) and a distinct new-input written+coding task (19–21), with help recording. This is a manual material-design judgment, not a course/exam/student success finding.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 271,
+        "end_line": 316
+      },
+      {
+        "id": "modality",
+        "judgment": "met",
+        "observed_behavior": "For this Week2 unit only, explicit reasoning/calculation (Cells2–4,6,9,16) is connected to actual code (5,7,11,13,15,17) and a distinct new-input written+coding task (19–21), with help recording. This is a manual material-design judgment, not a course/exam/student success finding.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 271,
+        "end_line": 316
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "course-week02-candidate-02-033-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "D01",
+    "reviewer": "/root/course_discovery",
+    "judgment": "gap",
+    "rationale": "Tabular row/column and one-feature transforms are implemented; no independent high-dimensional axis/layout transfer required by Radar/retrieval is present. This is later-course residual work.",
+    "start_line": 1,
+    "end_line": 359,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Tabular row/column and one-feature transforms are implemented; no independent high-dimensional axis/layout transfer required by Radar/retrieval is present. This is later-course residual work.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 359
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "Tabular row/column and one-feature transforms are implemented; no independent high-dimensional axis/layout transfer required by Radar/retrieval is present. This is later-course residual work.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 359
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Tabular row/column and one-feature transforms are implemented; no independent high-dimensional axis/layout transfer required by Radar/retrieval is present. This is later-course residual work.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 359
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "Tabular row/column and one-feature transforms are implemented; no independent high-dimensional axis/layout transfer required by Radar/retrieval is present. This is later-course residual work.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 359
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "Tabular row/column and one-feature transforms are implemented; no independent high-dimensional axis/layout transfer required by Radar/retrieval is present. This is later-course residual work.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 359
+      }
+    ]
+  }
+}

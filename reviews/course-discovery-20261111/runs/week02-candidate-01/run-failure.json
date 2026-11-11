@@ -1,0 +1,9 @@
+{
+  "command": "python -B reviews/course-discovery-20261111/run_candidate.py --run week02-candidate-01 --expected-sha 52b5c170ab2c83fc29327c302e9c77e34c58bce81061c7a167228d0cc67c36e3",
+  "exit_code": 1,
+  "failure": "importlib.metadata.PackageNotFoundError: No package metadata was found for nbformat",
+  "stage": "after discovery report was saved and code-cell loop ran; execution result could not be saved because optional metadata collection failed",
+  "claim_limit": "Do not use this failed run as a completed runtime verification. A distinct new run is required.",
+  "repair": "Removed unused nbformat distribution lookup; the runner executes via IPython and does not import nbformat. Notebook content and old session unchanged.",
+  "authority": "advisory_only"
+}

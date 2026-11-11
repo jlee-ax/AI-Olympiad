@@ -1,0 +1,22 @@
+{
+  "prior_session_path": "reviews/discovery-loop-20261111/runs/session.json",
+  "prior_file_sha256": "81d71bca932382b67c280daabc32cd3bcbfb6fd14ffa87a712679b8e5b85bdf2",
+  "prior_session_digest": "eb2d2b8983b91e55dd6bdc380ce2b5ed252a8e20a1ed39cc966280648d9dbd12",
+  "prior_events": 36,
+  "inherited_queue": [
+    "D11",
+    "D01",
+    "D02",
+    "D04",
+    "D05",
+    "D12",
+    "D06",
+    "D07",
+    "D08",
+    "D09",
+    "D10",
+    "H01",
+    "H02"
+  ],
+  "prior_scope_unchanged": true
+}

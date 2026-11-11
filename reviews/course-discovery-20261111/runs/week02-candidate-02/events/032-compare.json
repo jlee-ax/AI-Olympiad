@@ -1,0 +1,55 @@
+{
+  "id": "course-week02-candidate-02-032-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "D11",
+    "reviewer": "/root/course_discovery",
+    "judgment": "uncertain",
+    "rationale": "National page remains IOAI2026-labelled while linking from KOAI2027. Candidate states national 2026 scope. International2027 full differences and domestic applicability remain unverified.",
+    "start_line": 347,
+    "end_line": 359,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "National page remains IOAI2026-labelled while linking from KOAI2027. Candidate states national 2026 scope. International2027 full differences and domestic applicability remain unverified.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 347,
+        "end_line": 359
+      },
+      {
+        "id": "learning",
+        "judgment": "uncertain",
+        "observed_behavior": "National page remains IOAI2026-labelled while linking from KOAI2027. Candidate states national 2026 scope. International2027 full differences and domestic applicability remain unverified.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 347,
+        "end_line": 359
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "National page remains IOAI2026-labelled while linking from KOAI2027. Candidate states national 2026 scope. International2027 full differences and domestic applicability remain unverified.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 347,
+        "end_line": 359
+      },
+      {
+        "id": "principle",
+        "judgment": "uncertain",
+        "observed_behavior": "National page remains IOAI2026-labelled while linking from KOAI2027. Candidate states national 2026 scope. International2027 full differences and domestic applicability remain unverified.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 347,
+        "end_line": 359
+      },
+      {
+        "id": "practice",
+        "judgment": "uncertain",
+        "observed_behavior": "National page remains IOAI2026-labelled while linking from KOAI2027. Candidate states national 2026 scope. International2027 full differences and domestic applicability remain unverified.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 347,
+        "end_line": 359
+      }
+    ]
+  }
+}

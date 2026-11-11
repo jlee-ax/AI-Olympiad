@@ -1,0 +1,47 @@
+{
+  "id": "course-baseline-wave-01-007-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "N01",
+    "reviewer": "/root/course_discovery",
+    "judgment": "uncertain",
+    "rationale": "Week1 has explanatory prompts and coding, but their presence does not establish all-course dual-modality evaluation or new unseen-exam transfer. Original scope is course readiness.",
+    "start_line": 1,
+    "end_line": 1295,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "Week1 has explanatory prompts and coding, but their presence does not establish all-course dual-modality evaluation or new unseen-exam transfer. Original scope is course readiness.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 1295
+      },
+      {
+        "id": "learning",
+        "judgment": "uncertain",
+        "observed_behavior": "Week1 has explanatory prompts and coding, but their presence does not establish all-course dual-modality evaluation or new unseen-exam transfer. Original scope is course readiness.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 1295
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "Week1 has explanatory prompts and coding, but their presence does not establish all-course dual-modality evaluation or new unseen-exam transfer. Original scope is course readiness.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 1295
+      },
+      {
+        "id": "modality",
+        "judgment": "uncertain",
+        "observed_behavior": "Week1 has explanatory prompts and coding, but their presence does not establish all-course dual-modality evaluation or new unseen-exam transfer. Original scope is course readiness.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 1295
+      }
+    ]
+  }
+}

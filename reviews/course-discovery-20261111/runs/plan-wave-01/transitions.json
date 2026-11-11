@@ -1,0 +1,47 @@
+[
+  {
+    "event": "course-plan-wave-01-001-discover",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-plan-wave-01-002-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-plan-wave-01-003-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-plan-wave-01-004-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "course-plan-wave-01-005-read",
+    "status": "needs_work",
+    "next_action": "trace_source_requirements"
+  },
+  {
+    "event": "course-plan-wave-01-006-trace",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-plan-wave-01-007-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-plan-wave-01-008-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "course-plan-wave-01-009-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  }
+]

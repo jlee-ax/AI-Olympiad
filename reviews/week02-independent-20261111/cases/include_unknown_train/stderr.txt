@@ -1,0 +1,10 @@
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/jupyter_client/localinterfaces.py:58: UserWarning: Unexpected error discovering local network interfaces: [Errno 1] Operation not permitted
+  ret = f(**kwargs)
+Traceback (most recent call last):
+  File "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-independent-20261111/cases/include_unknown_train/teacher_validate_week02.py", line 93, in <module>
+    raise RuntimeError(reply['content'])
+RuntimeError: {'status': 'error', 'traceback': ['\x1b[31m---------------------------------------------------------------------------\x1b[39m', '\x1b[31mAssertionError\x1b[39m                            Traceback (most recent call last)', '\x1b[36mCell\x1b[39m\x1b[36m \x1b[39m\x1b[32mIn[2]\x1b[39m\x1b[32m, line 18\x1b[39m\n\x1b[32m     14\x1b[39m \n\x1b[32m     15\x1b[39m \x1b[38;5;66;03m# 일부러 틀린 반례: 검증 입력까지 fit에 넣음. 아래 결과는 정답 모델에 쓰지 않음.\x1b[39;00m\n\x1b[32m     16\x1b[39m leaky_imputer = SimpleImputer(strategy=\x1b[33m"mean"\x1b[39m).fit(pd.concat([X_train, X_val]))\n\x1b[32m     17\x1b[39m print(\x1b[33m"틀린 대체값(검증 입력 포함):"\x1b[39m, leaky_imputer.statistics_[\x1b[32m0\x1b[39m])\n\x1b[32m---> \x1b[39m\x1b[32m18\x1b[39m \x1b[38;5;28;01massert\x1b[39;00m np.isclose(preprocess.named_steps[\x1b[33m"imputer"\x1b[39m].statistics_[\x1b[32m0\x1b[39m], \x1b[32m4\x1b[39m)\n\x1b[32m     19\x1b[39m \x1b[38;5;28;01massert\x1b[39;00m np.isclose(leaky_imputer.statistics_[\x1b[32m0\x1b[39m], \x1b[32m9\x1b[39m)\n', '\x1b[31mAssertionError\x1b[39m: '], 'ename': 'AssertionError', 'evalue': '', 'engine_info': {'engine_uuid': '15e8d7da-f091-4915-b8c3-5f6909a5ab07', 'engine_id': -1, 'method': 'execute'}, 'execution_count': 2, 'user_expressions': {}, 'payload': []}

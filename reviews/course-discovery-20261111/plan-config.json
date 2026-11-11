@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "scope": {
+    "id": "course-plan-sampled-frontier",
+    "lesson_path": "reviews/course-discovery-20261111/inputs/student-plan.html",
+    "artifact_path": "curriculum/student-plan.html",
+    "artifact_sha256": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254",
+    "lesson_revision": "plan-a3a48fe01212",
+    "readiness": "course",
+    "boundary": "Actual ten-week scheduling document only; planned teaching and evaluation are not delivered lessons or student results."
+  },
+  "frontier": [
+    {
+      "id": "next-wave",
+      "question": "Does the actual ten-week plan account for newly sampled official task/theory requirements?",
+      "required_kinds": [
+        "official_scope",
+        "official_problem",
+        "research"
+      ]
+    }
+  ],
+  "policy": {
+    "max_events": 100,
+    "max_rounds": 20,
+    "max_no_progress": 8,
+    "max_elapsed_minutes": 180
+  }
+}

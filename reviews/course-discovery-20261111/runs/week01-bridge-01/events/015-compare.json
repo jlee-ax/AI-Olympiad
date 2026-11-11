@@ -1,0 +1,55 @@
+{
+  "id": "course-week01-bridge-01-015-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "D07",
+    "reviewer": "/root/course_discovery",
+    "judgment": "gap",
+    "rationale": "Cells17–19 show integer lookup, an external ID-to-row map, and shape(B,T,d), explicitly separating lookup from learned image-encoder representations. No separate independent lookup task varies B/L/H, fills all repeated-index values, or contrasts vocabulary size V with token length L. The optional independent Cell28 is stack/concatenate, not embedding lookup.",
+    "start_line": 228,
+    "end_line": 253,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Cells17–19 show integer lookup, an external ID-to-row map, and shape(B,T,d), explicitly separating lookup from learned image-encoder representations. No separate independent lookup task varies B/L/H, fills all repeated-index values, or contrasts vocabulary size V with token length L. The optional independent Cell28 is stack/concatenate, not embedding lookup.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 228,
+        "end_line": 253
+      },
+      {
+        "id": "learning",
+        "judgment": "uncertain",
+        "observed_behavior": "Cells17–19 show integer lookup, an external ID-to-row map, and shape(B,T,d), explicitly separating lookup from learned image-encoder representations. No separate independent lookup task varies B/L/H, fills all repeated-index values, or contrasts vocabulary size V with token length L. The optional independent Cell28 is stack/concatenate, not embedding lookup.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 228,
+        "end_line": 253
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Cells17–19 show integer lookup, an external ID-to-row map, and shape(B,T,d), explicitly separating lookup from learned image-encoder representations. No separate independent lookup task varies B/L/H, fills all repeated-index values, or contrasts vocabulary size V with token length L. The optional independent Cell28 is stack/concatenate, not embedding lookup.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 326,
+        "end_line": 345
+      },
+      {
+        "id": "principle",
+        "judgment": "uncertain",
+        "observed_behavior": "Cells17–19 show integer lookup, an external ID-to-row map, and shape(B,T,d), explicitly separating lookup from learned image-encoder representations. No separate independent lookup task varies B/L/H, fills all repeated-index values, or contrasts vocabulary size V with token length L. The optional independent Cell28 is stack/concatenate, not embedding lookup.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 228,
+        "end_line": 253
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "Cells17–19 show integer lookup, an external ID-to-row map, and shape(B,T,d), explicitly separating lookup from learned image-encoder representations. No separate independent lookup task varies B/L/H, fills all repeated-index values, or contrasts vocabulary size V with token length L. The optional independent Cell28 is stack/concatenate, not embedding lookup.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 228,
+        "end_line": 253
+      }
+    ]
+  }
+}

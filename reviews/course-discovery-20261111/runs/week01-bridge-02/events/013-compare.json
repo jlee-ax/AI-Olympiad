@@ -1,0 +1,55 @@
+{
+  "id": "course-week01-bridge-02-013-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "D01",
+    "reviewer": "/root/course_discovery",
+    "judgment": "gap",
+    "rationale": "Cells1–12 and20–23 explicitly explain row/feature/output axes, contraction and shape-correct feature-order errors. The unchanged original demand additionally requires reshape-versus-transpose coordinate prediction and an incorrect-reshape counterexample, plus model-input/target-axis transfer. Those are not implemented in this standalone supplement. This is local progress, not broad D01 completion.",
+    "start_line": 16,
+    "end_line": 168,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Cells1–12 and20–23 explicitly explain row/feature/output axes, contraction and shape-correct feature-order errors. The unchanged original demand additionally requires reshape-versus-transpose coordinate prediction and an incorrect-reshape counterexample, plus model-input/target-axis transfer. Those are not implemented in this standalone supplement. This is local progress, not broad D01 completion.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 16,
+        "end_line": 168
+      },
+      {
+        "id": "learning",
+        "judgment": "uncertain",
+        "observed_behavior": "Cells1–12 and20–23 explicitly explain row/feature/output axes, contraction and shape-correct feature-order errors. The unchanged original demand additionally requires reshape-versus-transpose coordinate prediction and an incorrect-reshape counterexample, plus model-input/target-axis transfer. Those are not implemented in this standalone supplement. This is local progress, not broad D01 completion.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 16,
+        "end_line": 168
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Cells1–12 and20–23 explicitly explain row/feature/output axes, contraction and shape-correct feature-order errors. The unchanged original demand additionally requires reshape-versus-transpose coordinate prediction and an incorrect-reshape counterexample, plus model-input/target-axis transfer. Those are not implemented in this standalone supplement. This is local progress, not broad D01 completion.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 267,
+        "end_line": 304
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "Cells1–12 and20–23 explicitly explain row/feature/output axes, contraction and shape-correct feature-order errors. The unchanged original demand additionally requires reshape-versus-transpose coordinate prediction and an incorrect-reshape counterexample, plus model-input/target-axis transfer. Those are not implemented in this standalone supplement. This is local progress, not broad D01 completion.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 16,
+        "end_line": 168
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "Cells1–12 and20–23 explicitly explain row/feature/output axes, contraction and shape-correct feature-order errors. The unchanged original demand additionally requires reshape-versus-transpose coordinate prediction and an incorrect-reshape counterexample, plus model-input/target-axis transfer. Those are not implemented in this standalone supplement. This is local progress, not broad D01 completion.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 16,
+        "end_line": 168
+      }
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "artifact_path": "lessons/week02/week02_prediction_evaluation.ipynb",
+  "artifact_sha256": "52b5c170ab2c83fc29327c302e9c77e34c58bce81061c7a167228d0cc67c36e3",
+  "projection_path": "reviews/course-discovery-20261111/candidate-inputs/week02-candidate-02/lesson-source.md",
+  "projection_sha256": "11a030f727e3c3a8dbfa145dc168d1ea32a47a9a7285f7da6931ed9cdb76758e",
+  "method": "ordered source text of every notebook cell, including cell IDs and type, with explicit cell headings; outputs omitted",
+  "semantic_correspondence_review": "Reviewer directly read all 25 cells, source and teacher notes; headings are added, no teaching content is added.",
+  "cell_spans": {
+    "0": [
+      1,
+      9
+    ],
+    "1": [
+      10,
+      23
+    ],
+    "2": [
+      24,
+      42
+    ],
+    "3": [
+      43,
+      54
+    ],
+    "4": [
+      55,
+      76
+    ],
+    "5": [
+      77,
+      103
+    ],
+    "6": [
+      104,
+      117
+    ],
+    "7": [
+      118,
+      139
+    ],
+    "8": [
+      140,
+      145
+    ],
+    "9": [
+      146,
+      166
+    ],
+    "10": [
+      167,
+      174
+    ],
+    "11": [
+      175,
+      188
+    ],
+    "12": [
+      189,
+      194
+    ],
+    "13": [
+      195,
+      222
+    ],
+    "14": [
+      223,
+      230
+    ],
+    "15": [
+      231,
+      240
+    ],
+    "16": [
+      241,
+      251
+    ],
+    "17": [
+      252,
+      264
+    ],
+    "18": [
+      265,
+      270
+    ],
+    "19": [
+      271,
+      299
+    ],
+    "20": [
+      300,
+      304
+    ],
+    "21": [
+      305,
+      316
+    ],
+    "22": [
+      317,
+      331
+    ],
+    "23": [
+      332,
+      346
+    ],
+    "24": [
+      347,
+      359
+    ]
+  },
+  "author": "/root/week02_lesson (gpt-6.1-terra, max), identity confirmed by parent",
+  "reviewer": "/root/course_discovery"
+}

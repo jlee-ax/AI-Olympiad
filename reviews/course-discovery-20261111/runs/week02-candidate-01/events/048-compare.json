@@ -1,0 +1,47 @@
+{
+  "id": "course-week02-candidate-01-048-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "N03",
+    "reviewer": "/root/course_discovery",
+    "judgment": "uncertain",
+    "rationale": "Cells2/4/14–15 correctly distinguish unknown from negative and explicitly limit known-label training; Cell19 asks new n3 reason and implementation. The CS229-derived observation-model/constant-alpha counterexample is not taught or independently tested. Introductory label semantics are supported, but the entire declared assumptions dimension remains uncertain.",
+    "start_line": 24,
+    "end_line": 76,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Cells2/4/14–15 correctly distinguish unknown from negative and explicitly limit known-label training; Cell19 asks new n3 reason and implementation. The CS229-derived observation-model/constant-alpha counterexample is not taught or independently tested. Introductory label semantics are supported, but the entire declared assumptions dimension remains uncertain.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 24,
+        "end_line": 76
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "Cells2/4/14–15 correctly distinguish unknown from negative and explicitly limit known-label training; Cell19 asks new n3 reason and implementation. The CS229-derived observation-model/constant-alpha counterexample is not taught or independently tested. Introductory label semantics are supported, but the entire declared assumptions dimension remains uncertain.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 24,
+        "end_line": 76
+      },
+      {
+        "id": "assessment",
+        "judgment": "met",
+        "observed_behavior": "Cells2/4/14–15 correctly distinguish unknown from negative and explicitly limit known-label training; Cell19 asks new n3 reason and implementation. The CS229-derived observation-model/constant-alpha counterexample is not taught or independently tested. Introductory label semantics are supported, but the entire declared assumptions dimension remains uncertain.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 271,
+        "end_line": 316
+      },
+      {
+        "id": "assumptions",
+        "judgment": "uncertain",
+        "observed_behavior": "Cells2/4/14–15 correctly distinguish unknown from negative and explicitly limit known-label training; Cell19 asks new n3 reason and implementation. The CS229-derived observation-model/constant-alpha counterexample is not taught or independently tested. Introductory label semantics are supported, but the entire declared assumptions dimension remains uncertain.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 55,
+        "end_line": 145
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "scope": {
+    "id": "week01-supplement-retained-demands",
+    "lesson_path": "reviews/course-discovery-20261111/candidate-inputs/week01-bridge-01/lesson-source.md",
+    "artifact_path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+    "artifact_sha256": "74f52475ce1cd8bd80b61b8b4f064836f224912d2be5f46e39072b5a21080b45",
+    "lesson_revision": "74f52475ce1cd8bd80b61b8b4f064836f224912d2be5f46e39072b5a21080b45",
+    "readiness": "course",
+    "boundary": "Independent Week1 supplementary artifact only, assessed against three unchanged original broad demands. Neither original Week1 nor Week2 is merged into this projection. No course completion or mandatory Week1 placement is inferred."
+  },
+  "frontier": [
+    {
+      "id": "retained-three",
+      "question": "Which parts of original D01/D05/D07 are actually implemented in the new bridge, and which original operations still remain?",
+      "required_kinds": [
+        "official_scope",
+        "official_problem",
+        "research"
+      ]
+    }
+  ],
+  "policy": {
+    "max_events": 80,
+    "max_rounds": 12,
+    "max_no_progress": 8,
+    "max_elapsed_minutes": 180
+  }
+}

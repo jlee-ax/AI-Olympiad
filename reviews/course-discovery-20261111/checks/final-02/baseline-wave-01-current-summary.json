@@ -1,0 +1,32 @@
+{
+  "status": "needs_work",
+  "ready_for_review": false,
+  "demand_count": 17,
+  "queue_count": 16,
+  "open_question_count": 4,
+  "events": 45,
+  "next_action": "expand_frontier",
+  "covered": [
+    "D03"
+  ],
+  "judgments": {
+    "D11": "uncertain",
+    "D01": "gap",
+    "D02": "gap",
+    "D03": "covered",
+    "D04": "gap",
+    "D05": "gap",
+    "D12": "gap",
+    "D06": "gap",
+    "D07": "gap",
+    "D08": "gap",
+    "D09": "gap",
+    "D10": "gap",
+    "H01": "gap",
+    "H02": "gap",
+    "N01": "uncertain",
+    "N02": "gap",
+    "N03": "gap"
+  },
+  "freshness_blockers": []
+}

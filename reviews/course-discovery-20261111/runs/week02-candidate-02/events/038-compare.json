@@ -1,0 +1,55 @@
+{
+  "id": "course-week02-candidate-02-038-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Actual sampled external source review; material design only, no student achievement claim.",
+    "demand_id": "D12",
+    "reviewer": "/root/course_discovery",
+    "judgment": "gap",
+    "rationale": "No mutable-default/alias diagnostic is implemented. This remains a separate Python follow-up rather than an asserted Week2 requirement.",
+    "start_line": 1,
+    "end_line": 359,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "No mutable-default/alias diagnostic is implemented. This remains a separate Python follow-up rather than an asserted Week2 requirement.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 359
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "No mutable-default/alias diagnostic is implemented. This remains a separate Python follow-up rather than an asserted Week2 requirement.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 359
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "No mutable-default/alias diagnostic is implemented. This remains a separate Python follow-up rather than an asserted Week2 requirement.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 359
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "No mutable-default/alias diagnostic is implemented. This remains a separate Python follow-up rather than an asserted Week2 requirement.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 359
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "No mutable-default/alias diagnostic is implemented. This remains a separate Python follow-up rather than an asserted Week2 requirement.",
+        "rationale": "Manual content judgment by independent reviewer. The file receipt verifies bytes and span only; neither semantic entailment nor learner mastery is machine proven.",
+        "start_line": 1,
+        "end_line": 359
+      }
+    ]
+  }
+}

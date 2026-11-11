@@ -1,0 +1,67 @@
+{
+  "prior_session_unchanged": true,
+  "prior_session_sha256": "81d71bca932382b67c280daabc32cd3bcbfb6fd14ffa87a712679b8e5b85bdf2",
+  "candidate_original_path": "lessons/week02/week02_prediction_evaluation.ipynb",
+  "candidate_sha256_current": "52b5c170ab2c83fc29327c302e9c77e34c58bce81061c7a167228d0cc67c36e3",
+  "candidate_sha256_matches_review": true,
+  "student_answer_cell_index": 20,
+  "student_answer_cell_id": "4cfbd70e",
+  "student_answer_code_ast_statement_count": 0,
+  "student_answer_blank": "Code cell contains comments only; this is direct syntax inspection, not a hard-coded success flag.",
+  "discovery_tool_sha256": "2273d1e9a47aff0dc038f0379837c908cb84a559d3e31e3a026f5a7c189d0914",
+  "git_index_sha256_at_first_check": "cc45949317b19b16e2f12811ebdf45e6a2368c5ce0351d96d704d0ac8a05bc5a",
+  "git_index_sha256_now": "cc45949317b19b16e2f12811ebdf45e6a2368c5ce0351d96d704d0ac8a05bc5a",
+  "git_index_unchanged_between_checks": true,
+  "new_scope_author": "/root/course_discovery/verify_new_scope",
+  "teaching_author": "/root/week02_lesson",
+  "reviewer": "/root/course_discovery",
+  "source_originals_authenticated": false,
+  "learning_effects_measured": false,
+  "cli_commands": [
+    {
+      "run": "baseline-wave-01",
+      "operation": "next",
+      "exit_code": 0
+    },
+    {
+      "run": "baseline-wave-01",
+      "operation": "report",
+      "exit_code": 0
+    },
+    {
+      "run": "baseline-wave-01",
+      "operation": "manifest",
+      "exit_code": 0
+    },
+    {
+      "run": "plan-wave-01",
+      "operation": "next",
+      "exit_code": 0
+    },
+    {
+      "run": "plan-wave-01",
+      "operation": "report",
+      "exit_code": 0
+    },
+    {
+      "run": "plan-wave-01",
+      "operation": "manifest",
+      "exit_code": 0
+    },
+    {
+      "run": "week02-candidate-02",
+      "operation": "next",
+      "exit_code": 0
+    },
+    {
+      "run": "week02-candidate-02",
+      "operation": "report",
+      "exit_code": 0
+    },
+    {
+      "run": "week02-candidate-02",
+      "operation": "manifest",
+      "exit_code": 0
+    }
+  ]
+}

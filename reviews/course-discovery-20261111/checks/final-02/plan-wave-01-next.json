@@ -1,0 +1,86 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "tools/discovery_loop.py",
+    "next",
+    "reviews/course-discovery-20261111/runs/plan-wave-01/session.json",
+    "--root",
+    "."
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"authority\": \"advisory_only\",\n  \"exhausted\": [],\n  \"limits\": [\n    \"Discovery/search execution, official attribution, semantic extraction and adequacy judgments are supplied by a human or model; this program does not browse or run one.\",\n    \"Read receipts prove the bytes and line ranges opened by this program, not reader comprehension, source truth or completeness of the external universe.\",\n    \"The frozen frontier and append-only hash chain expose changed declarations when bound to a review; they do not authenticate identity or prevent a caller from rewriting and rebinding history.\",\n    \"Recorded readiness applies only to the declared boundary; deferred placement does not establish later teaching or learner performance.\"\n  ],\n  \"next_action\": \"expand_frontier\",\n  \"queue\": [\n    {\n      \"affected\": [\n        \"N01\",\n        \"course-plan-sampled-frontier\",\n        \"next-wave\"\n      ],\n      \"demand_id\": \"N01\",\n      \"next_action\": \"research_or_refine_and_recompare\",\n      \"reasons\": [\n        \"dimension_prerequisites_gap\",\n        \"dimension_learning_gap\",\n        \"dimension_assessment_gap\",\n        \"dimension_modality_gap\",\n        \"gap\"\n      ],\n      \"statement\": \"\\uac1c\\ub150\\uc758 \\uc0ac\\uc6a9 \\uc2dc\\uc810\\u00b7\\ucd9c\\ub825 \\uc758\\ubbf8\\ub97c \\uc774\\ub860 \\uc124\\uba85\\uacfc \\ucf54\\ub4dc \\uad6c\\ud604\\uc5d0\\uc11c \\uac01\\uac01 \\ud3c9\\uac00\\ud558\\uae30\"\n    },\n    {\n      \"affected\": [\n        \"N02\",\n        \"course-plan-sampled-frontier\",\n        \"next-wave\"\n      ],\n      \"demand_id\": \"N02\",\n      \"next_action\": \"research_or_refine_and_recompare\",\n      \"reasons\": [\n        \"dimension_prerequisites_gap\",\n        \"dimension_learning_gap\",\n        \"dimension_assessment_gap\",\n        \"dimension_contract_gap\",\n        \"gap\"\n      ],\n      \"statement\": \"\\ubc18\\uc5f4\\ub9b0 \\uc774\\ubbf8\\uc9c0 \\uc0ac\\uac01\\ud615\\u00b7\\uba74\\uc801 \\uc608\\uc0b0\\u00b7\\uc81c\\ucd9c \\uacc4\\uc57d\\uc744 \\ud568\\uaed8 \\uc810\\uac80\\ud558\\uae30\"\n    },\n    {\n      \"affected\": [\n        \"N03\",\n        \"course-plan-sampled-frontier\",\n        \"next-wave\"\n      ],\n      \"demand_id\": \"N03\",\n      \"next_action\": \"research_or_refine_and_recompare\",\n      \"reasons\": [\n        \"dimension_prerequisites_gap\",\n        \"dimension_learning_gap\",\n        \"dimension_assessment_gap\",\n        \"dimension_assumptions_gap\",\n        \"gap\"\n      ],\n      \"statement\": \"\\ubbf8\\uc0c1 \\ub77c\\ubca8\\uc744 \\ud655\\uc815 \\uc74c\\uc131\\uacfc \\uad6c\\ubd84\\ud558\\uace0 \\ud2b9\\uc131\\u00b7\\ucd9c\\ub825 \\ub77c\\ubca8 \\uacbd\\uacc4\\ub97c \\ubcf4\\uc874\\ud558\\uae30\"\n    }\n  ],\n  \"status\": \"needs_work\",\n  \"usage\": {\n    \"elapsed_minutes\": 0,\n    \"events\": 9,\n    \"no_progress\": 0,\n    \"rounds\": 1\n  }\n}\n",
+  "stderr": "",
+  "stdout_sha256": "d8839cf669eab8a02418e5567bda4e3716850ecc45609e2992b098f70aafd765",
+  "parsed_output": {
+    "authority": "advisory_only",
+    "exhausted": [],
+    "limits": [
+      "Discovery/search execution, official attribution, semantic extraction and adequacy judgments are supplied by a human or model; this program does not browse or run one.",
+      "Read receipts prove the bytes and line ranges opened by this program, not reader comprehension, source truth or completeness of the external universe.",
+      "The frozen frontier and append-only hash chain expose changed declarations when bound to a review; they do not authenticate identity or prevent a caller from rewriting and rebinding history.",
+      "Recorded readiness applies only to the declared boundary; deferred placement does not establish later teaching or learner performance."
+    ],
+    "next_action": "expand_frontier",
+    "queue": [
+      {
+        "affected": [
+          "N01",
+          "course-plan-sampled-frontier",
+          "next-wave"
+        ],
+        "demand_id": "N01",
+        "next_action": "research_or_refine_and_recompare",
+        "reasons": [
+          "dimension_prerequisites_gap",
+          "dimension_learning_gap",
+          "dimension_assessment_gap",
+          "dimension_modality_gap",
+          "gap"
+        ],
+        "statement": "개념의 사용 시점·출력 의미를 이론 설명과 코드 구현에서 각각 평가하기"
+      },
+      {
+        "affected": [
+          "N02",
+          "course-plan-sampled-frontier",
+          "next-wave"
+        ],
+        "demand_id": "N02",
+        "next_action": "research_or_refine_and_recompare",
+        "reasons": [
+          "dimension_prerequisites_gap",
+          "dimension_learning_gap",
+          "dimension_assessment_gap",
+          "dimension_contract_gap",
+          "gap"
+        ],
+        "statement": "반열린 이미지 사각형·면적 예산·제출 계약을 함께 점검하기"
+      },
+      {
+        "affected": [
+          "N03",
+          "course-plan-sampled-frontier",
+          "next-wave"
+        ],
+        "demand_id": "N03",
+        "next_action": "research_or_refine_and_recompare",
+        "reasons": [
+          "dimension_prerequisites_gap",
+          "dimension_learning_gap",
+          "dimension_assessment_gap",
+          "dimension_assumptions_gap",
+          "gap"
+        ],
+        "statement": "미상 라벨을 확정 음성과 구분하고 특성·출력 라벨 경계를 보존하기"
+      }
+    ],
+    "status": "needs_work",
+    "usage": {
+      "elapsed_minutes": 0,
+      "events": 9,
+      "no_progress": 0,
+      "rounds": 1
+    }
+  }
+}

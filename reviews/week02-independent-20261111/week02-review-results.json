@@ -1,0 +1,259 @@
+{
+  "reviewed_at_utc": "2026-11-11T04:39:01.569087+00:00",
+  "source_sha256_before": {
+    "week02_prediction_evaluation.ipynb": "52b5c170ab2c83fc29327c302e9c77e34c58bce81061c7a167228d0cc67c36e3",
+    "teacher_validate_week02.py": "f31d8057913167b87a1489034ab9b98f7a7e3e1ace801a5919762040e7260a28",
+    "teacher-notes.md": "ac9907e60ece1f135f81bb2603f0d958a7244e61810b1316e2c6cf0bb267a7dd"
+  },
+  "source_sha256_after": {
+    "week02_prediction_evaluation.ipynb": "52b5c170ab2c83fc29327c302e9c77e34c58bce81061c7a167228d0cc67c36e3",
+    "teacher_validate_week02.py": "f31d8057913167b87a1489034ab9b98f7a7e3e1ace801a5919762040e7260a28",
+    "teacher-notes.md": "ac9907e60ece1f135f81bb2603f0d958a7244e61810b1316e2c6cf0bb267a7dd"
+  },
+  "source_unchanged_during_review": true,
+  "python": "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.8.0",
+    "ipykernel": "7.4.0",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0"
+  },
+  "execution": {
+    "name": "original",
+    "command": [
+      "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+      "-B",
+      "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-independent-20261111/cases/original/teacher_validate_week02.py",
+      "--inprocess"
+    ],
+    "returncode": 0,
+    "replacements": 0,
+    "detected": false,
+    "stdout_tail": "uts\": 0,\n  \"assessment_answer_cell_filled\": false,\n  \"teacher_only_independent_checks\": \"passed; exact cases documented in teacher notes\",\n  \"test_labels_and_scores_in_student_notebook\": false,\n  \"actual_student_performance_observed\": false,\n  \"class_timing_measured\": false,\n  \"html_visual_inspection\": \"not performed: organization browser policy blocks local file URLs\",\n  \"html_math_rendering\": \"nbconvert uses a remote MathJax CDN; availability not verified\",\n  \"versions\": {\n    \"numpy\": \"2.5.4\",\n    \"pandas\": \"3.1.1\",\n    \"scikit-learn\": \"1.8.0\",\n    \"nbformat\": \"5.11.1\",\n    \"nbclient\": \"0.11.0\",\n    \"nbconvert\": \"7.17.2\",\n    \"ipykernel\": \"7.4.0\"\n  },\n  \"limitations\": [\n    \"finite synthetic examples only\",\n    \"execution does not measure learning\",\n    \"class timing is proposed\"\n  ]\n}\n",
+    "stderr_tail": "0.00s - Debugger warning: It seems that frozen modules are being used, which may\n0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n0.00s - to python to disable frozen modules.\n0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/jupyter_client/localinterfaces.py:58: UserWarning: Unexpected error discovering local network interfaces: [Errno 1] Operation not permitted\n  ret = f(**kwargs)\n"
+  },
+  "original_code_cells": 8,
+  "student_answer_code_is_comment_only": true,
+  "student_answer_output_empty": true,
+  "student_performance": "not_observed",
+  "class_120_minutes": "sum_checked_not_measured",
+  "self_study_360_to_480_minutes": "sum_checked_not_measured",
+  "independent_exact_main": {
+    "mean": "4",
+    "variance": "2",
+    "validation_z": [
+      11.31370849898476,
+      0.0,
+      4.242640687119285,
+      5.65685424949238
+    ],
+    "prediction": [
+      1,
+      -1,
+      1,
+      1
+    ],
+    "counts": {
+      "TN": 0,
+      "FP": 2,
+      "FN": 1,
+      "TP": 1
+    }
+  },
+  "independent_exact_new": {
+    "fit_row_ids": [
+      "m1",
+      "m2",
+      "n1",
+      "n2"
+    ],
+    "mean": "6",
+    "population_variance": "9/2",
+    "sigma": 2.1213203435596424,
+    "leaky_mean": "117/4",
+    "predictions": [
+      1,
+      -1,
+      -1,
+      -1
+    ],
+    "confusion_matrix": [
+      [
+        2,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "accuracy": "3/4",
+    "precision": "1",
+    "recall": "1/2",
+    "F1": "2/3",
+    "group_XY_row_mean": "1/2",
+    "group_XY_equal_mean": "3/5"
+  },
+  "extra_zero_division_cases": [
+    {
+      "truth": [
+        -1,
+        -1
+      ],
+      "pred": [
+        -1,
+        -1
+      ],
+      "precision": "nan",
+      "recall": "nan",
+      "f1": "nan"
+    },
+    {
+      "truth": [
+        -1,
+        -1
+      ],
+      "pred": [
+        -1,
+        1
+      ],
+      "precision": "0.0",
+      "recall": "nan",
+      "f1": "0.0"
+    },
+    {
+      "truth": [
+        -1,
+        1
+      ],
+      "pred": [
+        -1,
+        -1
+      ],
+      "precision": "nan",
+      "recall": "0.0",
+      "f1": "0.0"
+    }
+  ],
+  "fit_state_extreme_validation_invariance": "passed",
+  "row_id_reverse_order_consistency": "passed",
+  "six_mutations": [
+    {
+      "name": "leaky_preprocess",
+      "command": [
+        "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+        "-B",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-independent-20261111/cases/leaky_preprocess/teacher_validate_week02.py",
+        "--inprocess"
+      ],
+      "returncode": 1,
+      "replacements": 1,
+      "detected": true,
+      "stdout_tail": "",
+      "stderr_tail": "----------------------------------------------------------------------\\x1b[39m', '\\x1b[31mAssertionError\\x1b[39m                            Traceback (most recent call last)', '\\x1b[36mCell\\x1b[39m\\x1b[36m \\x1b[39m\\x1b[32mIn[2]\\x1b[39m\\x1b[32m, line 18\\x1b[39m\\n\\x1b[32m     14\\x1b[39m \\n\\x1b[32m     15\\x1b[39m \\x1b[38;5;66;03m# 일부러 틀린 반례: 검증 입력까지 fit에 넣음. 아래 결과는 정답 모델에 쓰지 않음.\\x1b[39;00m\\n\\x1b[32m     16\\x1b[39m leaky_imputer = SimpleImputer(strategy=\\x1b[33m\"mean\"\\x1b[39m).fit(pd.concat([X_train, X_val]))\\n\\x1b[32m     17\\x1b[39m print(\\x1b[33m\"틀린 대체값(검증 입력 포함):\"\\x1b[39m, leaky_imputer.statistics_[\\x1b[32m0\\x1b[39m])\\n\\x1b[32m---> \\x1b[39m\\x1b[32m18\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(preprocess.named_steps[\\x1b[33m\"imputer\"\\x1b[39m].statistics_[\\x1b[32m0\\x1b[39m], \\x1b[32m4\\x1b[39m)\\n\\x1b[32m     19\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(leaky_imputer.statistics_[\\x1b[32m0\\x1b[39m], \\x1b[32m9\\x1b[39m)\\n', '\\x1b[31mAssertionError\\x1b[39m: '], 'ename': 'AssertionError', 'evalue': '', 'engine_info': {'engine_uuid': '125b2357-e006-464d-b076-9655fbd9ad35', 'engine_id': -1, 'method': 'execute'}, 'execution_count': 2, 'user_expressions': {}, 'payload': []}\n"
+    },
+    {
+      "name": "include_unknown_train",
+      "command": [
+        "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+        "-B",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-independent-20261111/cases/include_unknown_train/teacher_validate_week02.py",
+        "--inprocess"
+      ],
+      "returncode": 1,
+      "replacements": 1,
+      "detected": true,
+      "stdout_tail": "",
+      "stderr_tail": "----------------------------------------------------------------------\\x1b[39m', '\\x1b[31mAssertionError\\x1b[39m                            Traceback (most recent call last)', '\\x1b[36mCell\\x1b[39m\\x1b[36m \\x1b[39m\\x1b[32mIn[2]\\x1b[39m\\x1b[32m, line 18\\x1b[39m\\n\\x1b[32m     14\\x1b[39m \\n\\x1b[32m     15\\x1b[39m \\x1b[38;5;66;03m# 일부러 틀린 반례: 검증 입력까지 fit에 넣음. 아래 결과는 정답 모델에 쓰지 않음.\\x1b[39;00m\\n\\x1b[32m     16\\x1b[39m leaky_imputer = SimpleImputer(strategy=\\x1b[33m\"mean\"\\x1b[39m).fit(pd.concat([X_train, X_val]))\\n\\x1b[32m     17\\x1b[39m print(\\x1b[33m\"틀린 대체값(검증 입력 포함):\"\\x1b[39m, leaky_imputer.statistics_[\\x1b[32m0\\x1b[39m])\\n\\x1b[32m---> \\x1b[39m\\x1b[32m18\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(preprocess.named_steps[\\x1b[33m\"imputer\"\\x1b[39m].statistics_[\\x1b[32m0\\x1b[39m], \\x1b[32m4\\x1b[39m)\\n\\x1b[32m     19\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(leaky_imputer.statistics_[\\x1b[32m0\\x1b[39m], \\x1b[32m9\\x1b[39m)\\n', '\\x1b[31mAssertionError\\x1b[39m: '], 'ename': 'AssertionError', 'evalue': '', 'engine_info': {'engine_uuid': '15e8d7da-f091-4915-b8c3-5f6909a5ab07', 'engine_id': -1, 'method': 'execute'}, 'execution_count': 2, 'user_expressions': {}, 'payload': []}\n"
+    },
+    {
+      "name": "reverse_confusion_labels",
+      "command": [
+        "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+        "-B",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-independent-20261111/cases/reverse_confusion_labels/teacher_validate_week02.py",
+        "--inprocess"
+      ],
+      "returncode": 1,
+      "replacements": 1,
+      "detected": true,
+      "stdout_tail": "",
+      "stderr_tail": "aceback (most recent call last)', '\\x1b[36mCell\\x1b[39m\\x1b[36m \\x1b[39m\\x1b[32mIn[3]\\x1b[39m\\x1b[32m, line 10\\x1b[39m\\n\\x1b[32m      6\\x1b[39m print(\\x1b[33m\"행 ID와 예측:\"\\x1b[39m, list(zip(validation[\\x1b[33m\"row_id\"\\x1b[39m], rule_pred.tolist())))\\n\\x1b[32m      7\\x1b[39m print(\\x1b[33m\"혼동행렬(행=실제, 열=예측; 순서 -1,+1):\\\\n\"\\x1b[39m, rule_cm)\\n\\x1b[32m      8\\x1b[39m print(\"정확도:\", round((rule_pred == y_val).mean(), 3),\\n\\x1b[32m      9\\x1b[39m       \\x1b[33m\"정밀도:\"\\x1b[39m, round(precision, \\x1b[32m3\\x1b[39m), \\x1b[33m\"재현율:\"\\x1b[39m, round(recall, \\x1b[32m3\\x1b[39m))\\n\\x1b[32m---> \\x1b[39m\\x1b[32m10\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m rule_cm.tolist() == [[\\x1b[32m0\\x1b[39m, \\x1b[32m2\\x1b[39m], [\\x1b[32m1\\x1b[39m, \\x1b[32m1\\x1b[39m]]\\n\\x1b[32m     11\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(precision, \\x1b[32m1\\x1b[39m/\\x1b[32m3\\x1b[39m) \\x1b[38;5;28;01mand\\x1b[39;00m np.isclose(recall, \\x1b[32m1\\x1b[39m/\\x1b[32m2\\x1b[39m)\\n', '\\x1b[31mAssertionError\\x1b[39m: '], 'ename': 'AssertionError', 'evalue': '', 'engine_info': {'engine_uuid': 'd68f9b58-9dd5-4951-8e8d-827dfb021a2c', 'engine_id': -1, 'method': 'execute'}, 'execution_count': 3, 'user_expressions': {}, 'payload': []}\n"
+    },
+    {
+      "name": "swap_precision_recall",
+      "command": [
+        "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+        "-B",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-independent-20261111/cases/swap_precision_recall/teacher_validate_week02.py",
+        "--inprocess"
+      ],
+      "returncode": 1,
+      "replacements": 1,
+      "detected": true,
+      "stdout_tail": "",
+      "stderr_tail": "---------------------------------------------------------\\x1b[39m', '\\x1b[31mAssertionError\\x1b[39m                            Traceback (most recent call last)', '\\x1b[36mCell\\x1b[39m\\x1b[36m \\x1b[39m\\x1b[32mIn[3]\\x1b[39m\\x1b[32m, line 11\\x1b[39m\\n\\x1b[32m      7\\x1b[39m print(\\x1b[33m\"혼동행렬(행=실제, 열=예측; 순서 -1,+1):\\\\n\"\\x1b[39m, rule_cm)\\n\\x1b[32m      8\\x1b[39m print(\"정확도:\", round((rule_pred == y_val).mean(), 3),\\n\\x1b[32m      9\\x1b[39m       \\x1b[33m\"정밀도:\"\\x1b[39m, round(precision, \\x1b[32m3\\x1b[39m), \\x1b[33m\"재현율:\"\\x1b[39m, round(recall, \\x1b[32m3\\x1b[39m))\\n\\x1b[32m     10\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m rule_cm.tolist() == [[\\x1b[32m0\\x1b[39m, \\x1b[32m2\\x1b[39m], [\\x1b[32m1\\x1b[39m, \\x1b[32m1\\x1b[39m]]\\n\\x1b[32m---> \\x1b[39m\\x1b[32m11\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(precision, \\x1b[32m1\\x1b[39m/\\x1b[32m3\\x1b[39m) \\x1b[38;5;28;01mand\\x1b[39;00m np.isclose(recall, \\x1b[32m1\\x1b[39m/\\x1b[32m2\\x1b[39m)\\n', '\\x1b[31mAssertionError\\x1b[39m: '], 'ename': 'AssertionError', 'evalue': '', 'engine_info': {'engine_uuid': '07a5ffb0-1419-47c6-872d-1c3de8f9b128', 'engine_id': -1, 'method': 'execute'}, 'execution_count': 3, 'user_expressions': {}, 'payload': []}\n"
+    },
+    {
+      "name": "leaky_baseline_fit",
+      "command": [
+        "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+        "-B",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-independent-20261111/cases/leaky_baseline_fit/teacher_validate_week02.py",
+        "--inprocess"
+      ],
+      "returncode": 1,
+      "replacements": 1,
+      "detected": true,
+      "stdout_tail": "",
+      "stderr_tail": "2m      7\\x1b[39m print(\\x1b[33m\"기준 모델이 배운 대체값:\"\\x1b[39m, baseline.named_steps[\\x1b[33m\"imputer\"\\x1b[39m].statistics_[\\x1b[32m0\\x1b[39m])\\n\\x1b[32m      8\\x1b[39m print(\"기준 모델이 배운 평균·표준편차:\", baseline.named_steps[\"scaler\"].mean_[0],\\n\\x1b[32m      9\\x1b[39m       round(baseline.named_steps[\\x1b[33m\"scaler\"\\x1b[39m].scale_[\\x1b[32m0\\x1b[39m], \\x1b[32m6\\x1b[39m))\\n\\x1b[32m---> \\x1b[39m\\x1b[32m10\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(baseline.named_steps[\\x1b[33m\"imputer\"\\x1b[39m].statistics_[\\x1b[32m0\\x1b[39m], \\x1b[32m4\\x1b[39m)\\n\\x1b[32m     11\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(baseline.named_steps[\\x1b[33m\"scaler\"\\x1b[39m].mean_[\\x1b[32m0\\x1b[39m], \\x1b[32m4\\x1b[39m)\\n\\x1b[32m     12\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(baseline.named_steps[\\x1b[33m\"scaler\"\\x1b[39m].scale_[\\x1b[32m0\\x1b[39m], np.sqrt(\\x1b[32m2\\x1b[39m))\\n\\x1b[32m     13\\x1b[39m baseline_pred = baseline.predict(X_val)\\n', '\\x1b[31mAssertionError\\x1b[39m: '], 'ename': 'AssertionError', 'evalue': '', 'engine_info': {'engine_uuid': '8bd6345d-c0e1-4c21-a9cd-d98b1096f083', 'engine_id': -1, 'method': 'execute'}, 'execution_count': 4, 'user_expressions': {}, 'payload': []}\n"
+    },
+    {
+      "name": "invert_roc_threshold",
+      "command": [
+        "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+        "-B",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-independent-20261111/cases/invert_roc_threshold/teacher_validate_week02.py",
+        "--inprocess"
+      ],
+      "returncode": 1,
+      "replacements": 1,
+      "detected": true,
+      "stdout_tail": "",
+      "stderr_tail": "m new_p == \\x1b[32m1\\x1b[39m \\x1b[38;5;28;01mand\\x1b[39;00m new_r == \\x1b[32m.5\\x1b[39m \\x1b[38;5;28;01mand\\x1b[39;00m (new_val.label.to_numpy() == new_pred).mean() == \\x1b[32m.75\\x1b[39m\\n\\x1b[32m     39\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose((\\x1b[32m3\\x1b[39m+\\x1b[32m1\\x1b[39m)/(\\x1b[32m3\\x1b[39m+\\x1b[32m5\\x1b[39m),\\x1b[32m.5\\x1b[39m) \\x1b[38;5;28;01mand\\x1b[39;00m np.isclose((\\x1b[32m3\\x1b[39m/\\x1b[32m3\\x1b[39m+\\x1b[32m1\\x1b[39m/\\x1b[32m5\\x1b[39m)/\\x1b[32m2\\x1b[39m,\\x1b[32m.6\\x1b[39m)\\n\\x1b[32m     40\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m roc_matrices[\\x1b[32m.5\\x1b[39m] == [[\\x1b[32m1\\x1b[39m,\\x1b[32m1\\x1b[39m],[\\x1b[32m1\\x1b[39m,\\x1b[32m1\\x1b[39m]]\\n\\x1b[32m---> \\x1b[39m\\x1b[32m41\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m roc_matrices[\\x1b[32m.3\\x1b[39m] == [[\\x1b[32m1\\x1b[39m,\\x1b[32m1\\x1b[39m],[\\x1b[32m0\\x1b[39m,\\x1b[32m2\\x1b[39m]]\\n\\x1b[32m     42\\x1b[39m print(\\x1b[33m'Teacher-only checks passed'\\x1b[39m)\\n\", '\\x1b[31mAssertionError\\x1b[39m: '], 'ename': 'AssertionError', 'evalue': '', 'engine_info': {'engine_uuid': '4c9eb65b-cd60-41a7-b22a-e1b10d367437', 'engine_id': -1, 'method': 'execute'}, 'execution_count': 9, 'user_expressions': {}, 'payload': []}\n"
+    }
+  ],
+  "extra_answer_guard_mutation": {
+    "name": "filled_assignment_answer",
+    "command": [
+      "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+      "-B",
+      "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-independent-20261111/cases/filled_assignment_answer/teacher_validate_week02.py",
+      "--inprocess"
+    ],
+    "returncode": 1,
+    "replacements": 0,
+    "detected": true,
+    "stdout_tail": "",
+    "stderr_tail": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-independent-20261111/cases/filled_assignment_answer/teacher_validate_week02.py\", line 28, in <module>\n    assert not assessment_answer_cell_filled, '배포용 독립 과제 칸에 학생 답안 코드가 들어 있습니다.'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 배포용 독립 과제 칸에 학생 답안 코드가 들어 있습니다.\n"
+  },
+  "unverified": [
+    "real learner independent performance and time",
+    "ordinary socket Jupyter kernel and Colab",
+    "timestamp-based splitting, forward-fill and sliding-window execution",
+    "median, one-hot and min-max homework implementation",
+    "week04 final test procedure",
+    "visual browser or printed rendering"
+  ],
+  "scope": "finite synthetic foundation; not whole week02 practical mastery",
+  "post_execution_rebind": {
+    "checked_at_utc": "2026-11-11T04:45:24.765232+00:00",
+    "student_notebook_sha256": "52b5c170ab2c83fc29327c302e9c77e34c58bce81061c7a167228d0cc67c36e3",
+    "teacher_validator_sha256": "f31d8057913167b87a1489034ab9b98f7a7e3e1ace801a5919762040e7260a28",
+    "teacher_notes_sha256": "2d9667b059f1556613117ce6648fe16b3c6c67c4c0a7cdf2b2be06fd0f6b6977",
+    "teacher_notes_change": "Removed previously plaintext E/F final-test rows and labels. Actual hidden final test not created or verified; teacher must construct and store it outside student/model-selection access. Previous public values must not be reused.",
+    "calculation_reexecution_needed": false
+  }
+}
