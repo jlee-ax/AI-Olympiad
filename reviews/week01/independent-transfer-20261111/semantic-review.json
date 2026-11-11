@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "graph_sha256": "43b7d4ec603e8aa0578b376e520dfdac3c2ec6e1a788c3f10754ef74a6901ae2",
+  "path_spec_sha256": "f37679196a50e4fd867ee990da85c3a8aaacde1460ae331078ad5bc7344426e9",
+  "reviewer": {
+    "id": "independent-week01-review",
+    "method": "Separate reviewer read exact notebook, teacher keys and final five source-brief paths, checked official references and independently executed calculations; GPT-6.1 Terra Max requested, runtime identity not separately attested."
+  },
+  "scope": "Five stated task designs only; not whole lesson, future units or learner performance.",
+  "comparisons": [
+    {
+      "path_id": "path:traceback",
+      "comparison_id": "traceback",
+      "problem_specific_key": {
+        "judgment": "met",
+        "rationale": "Distinct traceback line and contract; both corrected implementations verified. Scoped material-design judgment; key accessibility, actual help and learner performance remain unobserved.",
+        "evidence": [
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+            "locator": "Python 진단과 실제 수정 과제: traceback 진단"
+          },
+          {
+            "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+            "sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+            "locator": "표의 traceback 행"
+          }
+        ]
+      },
+      "feedback": {
+        "judgment": "met",
+        "rationale": "Distinct traceback line and contract; both corrected implementations verified. Scoped material-design judgment; key accessibility, actual help and learner performance remain unobserved.",
+        "evidence": [
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+            "locator": "Python 진단과 실제 수정 과제: traceback 진단"
+          },
+          {
+            "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+            "sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+            "locator": "표의 traceback 행"
+          }
+        ]
+      },
+      "independent_assessment": {
+        "judgment": "met",
+        "rationale": "Distinct traceback line and contract; both corrected implementations verified. Scoped material-design judgment; key accessibility, actual help and learner performance remain unobserved.",
+        "evidence": [
+          {
+            "path": "lessons/week01/week01_python_tables.ipynb",
+            "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+            "locator": "cell:7208718e + cell:ab8d9d90"
+          },
+          {
+            "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+            "sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+            "locator": "표의 traceback 행"
+          }
+        ]
+      }
+    },
+    {
+      "path_id": "path:chart",
+      "comparison_id": "chart",
+      "problem_specific_key": {
+        "judgment": "met",
+        "rationale": "Q02/Q04 coordinates and shift verified; no independent reading of an unseen completed graph claimed. Scoped material-design judgment; key accessibility, actual help and learner performance remain unobserved.",
+        "evidence": [
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+            "locator": "새 입력 학습 확인 답: 새 그래프"
+          },
+          {
+            "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+            "sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+            "locator": "표의 그래프 행"
+          }
+        ]
+      },
+      "feedback": {
+        "judgment": "met",
+        "rationale": "Q02/Q04 coordinates and shift verified; no independent reading of an unseen completed graph claimed. Scoped material-design judgment; key accessibility, actual help and learner performance remain unobserved.",
+        "evidence": [
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+            "locator": "새 입력 학습 확인 답: 새 그래프"
+          },
+          {
+            "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+            "sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+            "locator": "표의 그래프 행"
+          }
+        ]
+      },
+      "independent_assessment": {
+        "judgment": "met",
+        "rationale": "Q02/Q04 coordinates and shift verified; no independent reading of an unseen completed graph claimed. Scoped material-design judgment; key accessibility, actual help and learner performance remain unobserved.",
+        "evidence": [
+          {
+            "path": "lessons/week01/week01_python_tables.ipynb",
+            "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+            "locator": "cell:d60c3acd + cell:dff8752b"
+          },
+          {
+            "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+            "sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+            "locator": "표의 그래프 행"
+          }
+        ]
+      }
+    },
+    {
+      "path_id": "path:broadcast",
+      "comparison_id": "broadcast",
+      "problem_specific_key": {
+        "judgment": "met",
+        "rationale": "Column shapes (3,) and (1,3), row shape (2,1), and incompatible length 2 verified; fully expanded (2,3) also computes. Scoped material-design judgment; key accessibility, actual help and learner performance remain unobserved.",
+        "evidence": [
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+            "locator": "수업 밖 필수 연습 해설: 새 브로드캐스팅"
+          },
+          {
+            "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+            "sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+            "locator": "표의 broadcasting 행"
+          }
+        ]
+      },
+      "feedback": {
+        "judgment": "met",
+        "rationale": "Column shapes (3,) and (1,3), row shape (2,1), and incompatible length 2 verified; fully expanded (2,3) also computes. Scoped material-design judgment; key accessibility, actual help and learner performance remain unobserved.",
+        "evidence": [
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+            "locator": "수업 밖 필수 연습 해설: 새 브로드캐스팅"
+          },
+          {
+            "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+            "sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+            "locator": "표의 broadcasting 행"
+          }
+        ]
+      },
+      "independent_assessment": {
+        "judgment": "met",
+        "rationale": "Column shapes (3,) and (1,3), row shape (2,1), and incompatible length 2 verified; fully expanded (2,3) also computes. Scoped material-design judgment; key accessibility, actual help and learner performance remain unobserved.",
+        "evidence": [
+          {
+            "path": "lessons/week01/week01_python_tables.ipynb",
+            "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+            "locator": "cell:df2802a3"
+          },
+          {
+            "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+            "sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+            "locator": "표의 broadcasting 행"
+          }
+        ]
+      }
+    },
+    {
+      "path_id": "path:variance",
+      "comparison_id": "variance",
+      "problem_specific_key": {
+        "judgment": "met",
+        "rationale": "Original, translated and scaled means/variances independently checked with exact fractions; the new response asks for help disclosure. Scoped material-design judgment; key accessibility, actual help and learner performance remain unobserved.",
+        "evidence": [
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+            "locator": "수업 밖 필수 연습 해설: 새 독립 분산"
+          },
+          {
+            "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+            "sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+            "locator": "표의 분산 행"
+          }
+        ]
+      },
+      "feedback": {
+        "judgment": "met",
+        "rationale": "Original, translated and scaled means/variances independently checked with exact fractions; the new response asks for help disclosure. Scoped material-design judgment; key accessibility, actual help and learner performance remain unobserved.",
+        "evidence": [
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+            "locator": "수업 밖 필수 연습 해설: 새 독립 분산"
+          },
+          {
+            "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+            "sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+            "locator": "표의 분산 행"
+          }
+        ]
+      },
+      "independent_assessment": {
+        "judgment": "met",
+        "rationale": "Original, translated and scaled means/variances independently checked with exact fractions; the new response asks for help disclosure. Scoped material-design judgment; key accessibility, actual help and learner performance remain unobserved.",
+        "evidence": [
+          {
+            "path": "lessons/week01/week01_python_tables.ipynb",
+            "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+            "locator": "cell:9ce91662 + cell:variance-independent-response"
+          },
+          {
+            "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+            "sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+            "locator": "표의 분산 행"
+          }
+        ]
+      }
+    },
+    {
+      "path_id": "path:merge",
+      "comparison_id": "merge",
+      "problem_specific_key": {
+        "judgment": "met",
+        "rationale": "Actual Q02 rooftop copy, right duplicate key, validated error and unvalidated five rows were verified; original left table would yield six. Scoped material-design judgment; key accessibility, actual help and learner performance remain unobserved.",
+        "evidence": [
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+            "locator": "수업 밖 필수 연습 해설: 병합 경계"
+          },
+          {
+            "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+            "sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+            "locator": "표의 병합 행"
+          }
+        ]
+      },
+      "feedback": {
+        "judgment": "met",
+        "rationale": "Actual Q02 rooftop copy, right duplicate key, validated error and unvalidated five rows were verified; original left table would yield six. Scoped material-design judgment; key accessibility, actual help and learner performance remain unobserved.",
+        "evidence": [
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+            "locator": "수업 밖 필수 연습 해설: 병합 경계"
+          },
+          {
+            "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+            "sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+            "locator": "표의 병합 행"
+          }
+        ]
+      },
+      "independent_assessment": {
+        "judgment": "met",
+        "rationale": "Actual Q02 rooftop copy, right duplicate key, validated error and unvalidated five rows were verified; original left table would yield six. Scoped material-design judgment; key accessibility, actual help and learner performance remain unobserved.",
+        "evidence": [
+          {
+            "path": "lessons/week01/week01_python_tables.ipynb",
+            "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+            "locator": "cell:0fd965eb, 소제목 새 병합 조건을 먼저 예측하기 + cell:13559279"
+          },
+          {
+            "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+            "sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+            "locator": "표의 병합 행"
+          }
+        ]
+      }
+    }
+  ]
+}

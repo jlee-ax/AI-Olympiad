@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "required_demands": [
+    "traceback:demand",
+    "chart:demand",
+    "broadcast:demand",
+    "variance:demand",
+    "merge:demand"
+  ],
+  "paths": [
+    {
+      "id": "path:traceback",
+      "comparison_id": "traceback",
+      "roles": {
+        "source": "traceback:source",
+        "demand": "traceback:demand",
+        "prerequisite": "traceback:prerequisite",
+        "theory_explanation": "traceback:theory_explanation",
+        "coding_practice": "traceback:coding_practice",
+        "independent_assessment": "traceback:independent_assessment",
+        "feedback": "traceback:feedback"
+      },
+      "provenance": {
+        "source": {
+          "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+          "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+          "locator": "KOAI 2027, linked syllabus and 2026 example status",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "demand": {
+          "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+          "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+          "locator": "공식 요구와 1주차 목표의 구분 표: traceback 행",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "prerequisite": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:7208718e",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "theory_explanation": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:e594ea69 + cell:7208718e",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "coding_practice": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:7208718e",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "independent_assessment": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:7208718e + cell:ab8d9d90",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "feedback": {
+          "path": "lessons/week01/teacher-notes.txt",
+          "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+          "locator": "Python 진단과 실제 수정 과제: traceback 진단",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        }
+      },
+      "assessment": {
+        "independent": true,
+        "answer_conditions": "Hide worked examples and teacher key before first answer; record actual help.",
+        "allowed_support": "Learner may use hints or examples and records assistance; actual independence remains unobserved."
+      }
+    },
+    {
+      "id": "path:chart",
+      "comparison_id": "chart",
+      "roles": {
+        "source": "chart:source",
+        "demand": "chart:demand",
+        "prerequisite": "chart:prerequisite",
+        "theory_explanation": "chart:theory_explanation",
+        "coding_practice": "chart:coding_practice",
+        "independent_assessment": "chart:independent_assessment",
+        "feedback": "chart:feedback"
+      },
+      "provenance": {
+        "source": {
+          "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+          "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+          "locator": "KOAI 2027, linked syllabus and 2026 example status",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "demand": {
+          "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+          "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+          "locator": "공식 요구와 1주차 목표의 구분 표: chart 행",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "prerequisite": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:fa10c459",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "theory_explanation": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:b5362bd2",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "coding_practice": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:48d931b0",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "independent_assessment": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:d60c3acd + cell:dff8752b",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "feedback": {
+          "path": "lessons/week01/teacher-notes.txt",
+          "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+          "locator": "새 입력 학습 확인 답: 새 그래프",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        }
+      },
+      "assessment": {
+        "independent": true,
+        "answer_conditions": "Hide worked examples and teacher key before first answer; record actual help.",
+        "allowed_support": "Learner may use hints or examples and records assistance; actual independence remains unobserved."
+      }
+    },
+    {
+      "id": "path:broadcast",
+      "comparison_id": "broadcast",
+      "roles": {
+        "source": "broadcast:source",
+        "demand": "broadcast:demand",
+        "prerequisite": "broadcast:prerequisite",
+        "theory_explanation": "broadcast:theory_explanation",
+        "coding_practice": "broadcast:coding_practice",
+        "independent_assessment": "broadcast:independent_assessment",
+        "feedback": "broadcast:feedback"
+      },
+      "provenance": {
+        "source": {
+          "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+          "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+          "locator": "KOAI 2027, linked syllabus and 2026 example status",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "demand": {
+          "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+          "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+          "locator": "공식 요구와 1주차 목표의 구분 표: broadcast 행",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "prerequisite": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:e594ea69",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "theory_explanation": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:0caaa0ca",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "coding_practice": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:053a193f",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "independent_assessment": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:df2802a3",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "feedback": {
+          "path": "lessons/week01/teacher-notes.txt",
+          "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+          "locator": "수업 밖 필수 연습 해설: 새 브로드캐스팅",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        }
+      },
+      "assessment": {
+        "independent": true,
+        "answer_conditions": "Hide worked examples and teacher key before first answer; record actual help.",
+        "allowed_support": "Learner may use hints or examples and records assistance; actual independence remains unobserved."
+      }
+    },
+    {
+      "id": "path:variance",
+      "comparison_id": "variance",
+      "roles": {
+        "source": "variance:source",
+        "demand": "variance:demand",
+        "prerequisite": "variance:prerequisite",
+        "theory_explanation": "variance:theory_explanation",
+        "coding_practice": "variance:coding_practice",
+        "independent_assessment": "variance:independent_assessment",
+        "feedback": "variance:feedback"
+      },
+      "provenance": {
+        "source": {
+          "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+          "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+          "locator": "KOAI 2027, linked syllabus and 2026 example status",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "demand": {
+          "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+          "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+          "locator": "공식 요구와 1주차 목표의 구분 표: variance 행",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "prerequisite": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:82e8a039",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "theory_explanation": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:9ce91662 + cell:guided-feedback-and-support",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "coding_practice": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:ea9aba74",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "independent_assessment": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:9ce91662 + cell:variance-independent-response",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "feedback": {
+          "path": "lessons/week01/teacher-notes.txt",
+          "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+          "locator": "수업 밖 필수 연습 해설: 새 독립 분산",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        }
+      },
+      "assessment": {
+        "independent": true,
+        "answer_conditions": "Hide worked examples and teacher key before first answer; record actual help.",
+        "allowed_support": "Learner may use hints or examples and records assistance; actual independence remains unobserved."
+      }
+    },
+    {
+      "id": "path:merge",
+      "comparison_id": "merge",
+      "roles": {
+        "source": "merge:source",
+        "demand": "merge:demand",
+        "prerequisite": "merge:prerequisite",
+        "theory_explanation": "merge:theory_explanation",
+        "coding_practice": "merge:coding_practice",
+        "independent_assessment": "merge:independent_assessment",
+        "feedback": "merge:feedback"
+      },
+      "provenance": {
+        "source": {
+          "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+          "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+          "locator": "KOAI 2027, linked syllabus and 2026 example status",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "demand": {
+          "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+          "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+          "locator": "공식 요구와 1주차 목표의 구분 표: merge 행",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "prerequisite": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:876b91b7",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "theory_explanation": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:0fd965eb",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "coding_practice": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:0fd965eb + cell:02c6cde1",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "independent_assessment": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+          "locator": "cell:0fd965eb, 소제목 새 병합 조건을 먼저 예측하기 + cell:13559279",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        },
+        "feedback": {
+          "path": "lessons/week01/teacher-notes.txt",
+          "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+          "locator": "수업 밖 필수 연습 해설: 병합 경계",
+          "revision": "week1-independent-transfer-v2",
+          "origin": "Direct source brief or exact current notebook/teacher notes; claims not authenticated by hashes."
+        }
+      },
+      "assessment": {
+        "independent": true,
+        "answer_conditions": "Hide worked examples and teacher key before first answer; record actual help.",
+        "allowed_support": "Learner may use hints or examples and records assistance; actual independence remains unobserved."
+      }
+    }
+  ]
+}

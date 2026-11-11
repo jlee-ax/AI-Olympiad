@@ -1,0 +1,1319 @@
+{
+  "authority": "advisory_only",
+  "status": "blocked",
+  "synthetic": false,
+  "errors": [],
+  "blockers": [
+    {
+      "code": "contest_depth_uncertain",
+      "detail": "Read scoped findings; learner outcomes remain separate."
+    },
+    {
+      "code": "quality_not_ready",
+      "detail": "uncertain"
+    },
+    {
+      "code": "workflow_pause",
+      "detail": "criteria_agreement_required"
+    }
+  ],
+  "bindings": [
+    {
+      "kind": "artifact",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "matched": true
+    },
+    {
+      "kind": "recalled_source",
+      "path": "reviews/week01/provisional/baseline.ipynb",
+      "expected_sha256": "8ffda0c1d5ec1c5ca765fb892a09c64c3920bca6f840dfdf5a481a8da5a7cff2",
+      "actual_sha256": "8ffda0c1d5ec1c5ca765fb892a09c64c3920bca6f840dfdf5a481a8da5a7cff2",
+      "matched": true,
+      "source_id": "baseline",
+      "uri": "reviews/week01/provisional/baseline.ipynb"
+    },
+    {
+      "kind": "recalled_source",
+      "path": "reviews/week01/final/execution-receipt.json",
+      "expected_sha256": "c1b7f4c8d8c5f4040584951fc8166a4aa05c476af64251fe02242749ab7e0d83",
+      "actual_sha256": "c1b7f4c8d8c5f4040584951fc8166a4aa05c476af64251fe02242749ab7e0d83",
+      "matched": true,
+      "source_id": "execution-receipt",
+      "uri": "reviews/week01/final/execution-receipt.json"
+    },
+    {
+      "kind": "recalled_source",
+      "path": "reviews/week01/independent-transfer-20261111/content-check.json",
+      "expected_sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "actual_sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "matched": true,
+      "source_id": "followup:content-check",
+      "uri": "reviews/week01/independent-transfer-20261111/content-check.json"
+    },
+    {
+      "kind": "recalled_source",
+      "path": "lessons/week01/validation.json",
+      "expected_sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "actual_sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "matched": true,
+      "source_id": "followup:execution",
+      "uri": "lessons/week01/validation.json"
+    },
+    {
+      "kind": "recalled_source",
+      "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+      "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "matched": true,
+      "source_id": "followup:independent-review",
+      "uri": "reviews/week01/independent-transfer-20261111/independent-review.md"
+    },
+    {
+      "kind": "recalled_source",
+      "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+      "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "matched": true,
+      "source_id": "followup:source-brief",
+      "uri": "reviews/week01/independent-transfer-20261111/source-brief.md"
+    },
+    {
+      "kind": "recalled_source",
+      "path": "reviews/week01/final-followup/independent-final-rebind.json",
+      "expected_sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "actual_sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "matched": true,
+      "source_id": "independent-final-rebind",
+      "uri": "reviews/week01/final-followup/independent-final-rebind.json"
+    },
+    {
+      "kind": "declared_source",
+      "path": "reviews/week01/final/independent-material-review.json",
+      "expected_sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "actual_sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "matched": true,
+      "source_id": "independent-material-review",
+      "uri": "reviews/week01/final/independent-material-review.json"
+    },
+    {
+      "kind": "recalled_source",
+      "path": "reviews/week01/final-followup/independent-supplement.json",
+      "expected_sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "actual_sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "matched": true,
+      "source_id": "independent-supplement",
+      "uri": "reviews/week01/final-followup/independent-supplement.json"
+    },
+    {
+      "kind": "declared_source",
+      "path": "skills/references/source-readings.json",
+      "expected_sha256": "4286e62768534312c6b68ab2ea183fc837959824821278317ea9bf2a138d4c8d",
+      "actual_sha256": "4286e62768534312c6b68ab2ea183fc837959824821278317ea9bf2a138d4c8d",
+      "matched": true,
+      "source_id": "source-register",
+      "uri": "skills/references/source-readings.json"
+    }
+  ],
+  "required_inputs": [
+    {
+      "id": "review:depth",
+      "revision": "review-preflight-v1",
+      "sha256": "312100d1d6f4b5b8971eb17e157f13b206aa9c28a8e2241e2e792d01f4c58299"
+    },
+    {
+      "id": "review:graph",
+      "revision": "review-preflight-v1",
+      "sha256": "43b7d4ec603e8aa0578b376e520dfdac3c2ec6e1a788c3f10754ef74a6901ae2"
+    },
+    {
+      "id": "review:paths",
+      "revision": "review-preflight-v1",
+      "sha256": "f37679196a50e4fd867ee990da85c3a8aaacde1460ae331078ad5bc7344426e9"
+    },
+    {
+      "id": "review:semantic-review",
+      "revision": "review-preflight-v1",
+      "sha256": "dca2cc5d9821d7bf22d0a4689f0cf241a92025d936b7a86ac545e9ea2cdc5706"
+    },
+    {
+      "id": "review:source-catalog",
+      "revision": "review-preflight-v1",
+      "sha256": "0c6821ba995cc031a545fc1b6681c4e71632ebba29f674fa14d4673fbeb6021b"
+    }
+  ],
+  "contest_depth": {
+    "authority": "advisory_only",
+    "status": "uncertain",
+    "synthetic": false,
+    "comparisons": [
+      {
+        "id": "traceback",
+        "week": 1,
+        "goal_id": "goal:traceback",
+        "recorded_judgment": "met",
+        "status": "uncertain",
+        "issue_paths": [
+          "comparisons[0]"
+        ]
+      },
+      {
+        "id": "chart",
+        "week": 1,
+        "goal_id": "goal:chart",
+        "recorded_judgment": "met",
+        "status": "uncertain",
+        "issue_paths": [
+          "comparisons[1]"
+        ]
+      },
+      {
+        "id": "broadcast",
+        "week": 1,
+        "goal_id": "goal:broadcast",
+        "recorded_judgment": "met",
+        "status": "uncertain",
+        "issue_paths": [
+          "comparisons[2]"
+        ]
+      },
+      {
+        "id": "variance",
+        "week": 1,
+        "goal_id": "goal:variance",
+        "recorded_judgment": "met",
+        "status": "uncertain",
+        "issue_paths": [
+          "comparisons[3]"
+        ]
+      },
+      {
+        "id": "merge",
+        "week": 1,
+        "goal_id": "goal:merge",
+        "recorded_judgment": "met",
+        "status": "uncertain",
+        "issue_paths": [
+          "comparisons[4]"
+        ]
+      }
+    ],
+    "assessment_formats": [
+      {
+        "week": 1,
+        "status": "matched",
+        "kinds": [
+          {
+            "kind": "multiple_choice",
+            "required": 2,
+            "observed": 2,
+            "difference": 0,
+            "status": "matched"
+          },
+          {
+            "kind": "written",
+            "required": 1,
+            "observed": 1,
+            "difference": 0,
+            "status": "matched"
+          }
+        ]
+      }
+    ],
+    "gaps": [],
+    "findings": [
+      {
+        "status": "uncertain",
+        "path": "time_allocations[0].outside_class_minutes",
+        "code": "missing",
+        "message": "An integer is required."
+      },
+      {
+        "status": "uncertain",
+        "path": "unknowns[0]",
+        "code": "reported_unknown",
+        "message": "Learner independence, readiness and learning have not been observed."
+      },
+      {
+        "status": "uncertain",
+        "path": "unknowns[1]",
+        "code": "reported_unknown",
+        "message": "Revised homework duration and actual class completion time are not measured."
+      },
+      {
+        "status": "uncertain",
+        "path": "unknowns[2]",
+        "code": "reported_unknown",
+        "message": "The 2026 high-school examples do not determine 2027 middle-school difficulty."
+      },
+      {
+        "status": "uncertain",
+        "path": "unknowns[3]",
+        "code": "reported_unknown",
+        "message": "Browser layout has not been independently verified."
+      },
+      {
+        "status": "uncertain",
+        "path": "comparisons[0]",
+        "code": "unresolved_unknowns",
+        "message": "A global or explicitly scoped unknown affects this comparison."
+      },
+      {
+        "status": "uncertain",
+        "path": "comparisons[1]",
+        "code": "unresolved_unknowns",
+        "message": "A global or explicitly scoped unknown affects this comparison."
+      },
+      {
+        "status": "uncertain",
+        "path": "comparisons[2]",
+        "code": "unresolved_unknowns",
+        "message": "A global or explicitly scoped unknown affects this comparison."
+      },
+      {
+        "status": "uncertain",
+        "path": "comparisons[3]",
+        "code": "unresolved_unknowns",
+        "message": "A global or explicitly scoped unknown affects this comparison."
+      },
+      {
+        "status": "uncertain",
+        "path": "comparisons[4]",
+        "code": "unresolved_unknowns",
+        "message": "A global or explicitly scoped unknown affects this comparison."
+      }
+    ],
+    "errors": [],
+    "verification": {
+      "artifact_digest": "not_checked",
+      "source_authenticity": "not_checked",
+      "source_content": "not_checked",
+      "reviewer_independence": "not_checked",
+      "assessment_counts": "not_checked"
+    },
+    "limitations": [
+      "Recorded observations are advisory declarations, not an automated assessment of lesson meaning or problem difficulty.",
+      "The tool does not open sources or verify their official status, quotations, locations, truth, or currentness.",
+      "Artifact paths and declared SHA-256 values are not read or verified against file bytes.",
+      "Reviewer identity and independence are reported declarations and are not authenticated.",
+      "Assessment-format counts are recorded observations; they are not extracted from the lesson.",
+      "It does not establish learner achievement, equivalence to middle-school past problems, or completeness of competition coverage.",
+      "This report is independent of K01–K16 and does not change any earlier quality evaluation.",
+      "Only the two pinned KOAI 2026 example URLs have a fixed metadata consistency check; it does not fetch or authenticate them."
+    ]
+  },
+  "graph_paths": {
+    "authority": "advisory_only",
+    "status": "declared_path_complete",
+    "synthetic": false,
+    "errors": [],
+    "findings": [],
+    "warnings": [],
+    "paths": [
+      {
+        "id": "path:traceback",
+        "status": "declared_path_complete",
+        "edges": [
+          {
+            "prior_role": "source",
+            "next_role": "demand",
+            "from": "traceback:source",
+            "to": "traceback:demand",
+            "type": "supports",
+            "graph_edge_index": 0
+          },
+          {
+            "prior_role": "demand",
+            "next_role": "prerequisite",
+            "from": "traceback:demand",
+            "to": "traceback:prerequisite",
+            "type": "informs",
+            "graph_edge_index": 1
+          },
+          {
+            "prior_role": "prerequisite",
+            "next_role": "theory_explanation",
+            "from": "traceback:prerequisite",
+            "to": "traceback:theory_explanation",
+            "type": "supports",
+            "graph_edge_index": 2
+          },
+          {
+            "prior_role": "theory_explanation",
+            "next_role": "coding_practice",
+            "from": "traceback:theory_explanation",
+            "to": "traceback:coding_practice",
+            "type": "supports",
+            "graph_edge_index": 3
+          },
+          {
+            "prior_role": "coding_practice",
+            "next_role": "independent_assessment",
+            "from": "traceback:coding_practice",
+            "to": "traceback:independent_assessment",
+            "type": "supports",
+            "graph_edge_index": 4
+          },
+          {
+            "prior_role": "independent_assessment",
+            "next_role": "feedback",
+            "from": "traceback:independent_assessment",
+            "to": "traceback:feedback",
+            "type": "supports",
+            "graph_edge_index": 5
+          }
+        ],
+        "comparison_id": "traceback"
+      },
+      {
+        "id": "path:chart",
+        "status": "declared_path_complete",
+        "edges": [
+          {
+            "prior_role": "source",
+            "next_role": "demand",
+            "from": "chart:source",
+            "to": "chart:demand",
+            "type": "supports",
+            "graph_edge_index": 9
+          },
+          {
+            "prior_role": "demand",
+            "next_role": "prerequisite",
+            "from": "chart:demand",
+            "to": "chart:prerequisite",
+            "type": "informs",
+            "graph_edge_index": 10
+          },
+          {
+            "prior_role": "prerequisite",
+            "next_role": "theory_explanation",
+            "from": "chart:prerequisite",
+            "to": "chart:theory_explanation",
+            "type": "supports",
+            "graph_edge_index": 11
+          },
+          {
+            "prior_role": "theory_explanation",
+            "next_role": "coding_practice",
+            "from": "chart:theory_explanation",
+            "to": "chart:coding_practice",
+            "type": "supports",
+            "graph_edge_index": 12
+          },
+          {
+            "prior_role": "coding_practice",
+            "next_role": "independent_assessment",
+            "from": "chart:coding_practice",
+            "to": "chart:independent_assessment",
+            "type": "supports",
+            "graph_edge_index": 13
+          },
+          {
+            "prior_role": "independent_assessment",
+            "next_role": "feedback",
+            "from": "chart:independent_assessment",
+            "to": "chart:feedback",
+            "type": "supports",
+            "graph_edge_index": 14
+          }
+        ],
+        "comparison_id": "chart"
+      },
+      {
+        "id": "path:broadcast",
+        "status": "declared_path_complete",
+        "edges": [
+          {
+            "prior_role": "source",
+            "next_role": "demand",
+            "from": "broadcast:source",
+            "to": "broadcast:demand",
+            "type": "supports",
+            "graph_edge_index": 18
+          },
+          {
+            "prior_role": "demand",
+            "next_role": "prerequisite",
+            "from": "broadcast:demand",
+            "to": "broadcast:prerequisite",
+            "type": "informs",
+            "graph_edge_index": 19
+          },
+          {
+            "prior_role": "prerequisite",
+            "next_role": "theory_explanation",
+            "from": "broadcast:prerequisite",
+            "to": "broadcast:theory_explanation",
+            "type": "supports",
+            "graph_edge_index": 20
+          },
+          {
+            "prior_role": "theory_explanation",
+            "next_role": "coding_practice",
+            "from": "broadcast:theory_explanation",
+            "to": "broadcast:coding_practice",
+            "type": "supports",
+            "graph_edge_index": 21
+          },
+          {
+            "prior_role": "coding_practice",
+            "next_role": "independent_assessment",
+            "from": "broadcast:coding_practice",
+            "to": "broadcast:independent_assessment",
+            "type": "supports",
+            "graph_edge_index": 22
+          },
+          {
+            "prior_role": "independent_assessment",
+            "next_role": "feedback",
+            "from": "broadcast:independent_assessment",
+            "to": "broadcast:feedback",
+            "type": "supports",
+            "graph_edge_index": 23
+          }
+        ],
+        "comparison_id": "broadcast"
+      },
+      {
+        "id": "path:variance",
+        "status": "declared_path_complete",
+        "edges": [
+          {
+            "prior_role": "source",
+            "next_role": "demand",
+            "from": "variance:source",
+            "to": "variance:demand",
+            "type": "supports",
+            "graph_edge_index": 27
+          },
+          {
+            "prior_role": "demand",
+            "next_role": "prerequisite",
+            "from": "variance:demand",
+            "to": "variance:prerequisite",
+            "type": "informs",
+            "graph_edge_index": 28
+          },
+          {
+            "prior_role": "prerequisite",
+            "next_role": "theory_explanation",
+            "from": "variance:prerequisite",
+            "to": "variance:theory_explanation",
+            "type": "supports",
+            "graph_edge_index": 29
+          },
+          {
+            "prior_role": "theory_explanation",
+            "next_role": "coding_practice",
+            "from": "variance:theory_explanation",
+            "to": "variance:coding_practice",
+            "type": "supports",
+            "graph_edge_index": 30
+          },
+          {
+            "prior_role": "coding_practice",
+            "next_role": "independent_assessment",
+            "from": "variance:coding_practice",
+            "to": "variance:independent_assessment",
+            "type": "supports",
+            "graph_edge_index": 31
+          },
+          {
+            "prior_role": "independent_assessment",
+            "next_role": "feedback",
+            "from": "variance:independent_assessment",
+            "to": "variance:feedback",
+            "type": "supports",
+            "graph_edge_index": 32
+          }
+        ],
+        "comparison_id": "variance"
+      },
+      {
+        "id": "path:merge",
+        "status": "declared_path_complete",
+        "edges": [
+          {
+            "prior_role": "source",
+            "next_role": "demand",
+            "from": "merge:source",
+            "to": "merge:demand",
+            "type": "supports",
+            "graph_edge_index": 36
+          },
+          {
+            "prior_role": "demand",
+            "next_role": "prerequisite",
+            "from": "merge:demand",
+            "to": "merge:prerequisite",
+            "type": "informs",
+            "graph_edge_index": 37
+          },
+          {
+            "prior_role": "prerequisite",
+            "next_role": "theory_explanation",
+            "from": "merge:prerequisite",
+            "to": "merge:theory_explanation",
+            "type": "supports",
+            "graph_edge_index": 38
+          },
+          {
+            "prior_role": "theory_explanation",
+            "next_role": "coding_practice",
+            "from": "merge:theory_explanation",
+            "to": "merge:coding_practice",
+            "type": "supports",
+            "graph_edge_index": 39
+          },
+          {
+            "prior_role": "coding_practice",
+            "next_role": "independent_assessment",
+            "from": "merge:coding_practice",
+            "to": "merge:independent_assessment",
+            "type": "supports",
+            "graph_edge_index": 40
+          },
+          {
+            "prior_role": "independent_assessment",
+            "next_role": "feedback",
+            "from": "merge:independent_assessment",
+            "to": "merge:feedback",
+            "type": "supports",
+            "graph_edge_index": 41
+          }
+        ],
+        "comparison_id": "merge"
+      }
+    ],
+    "bindings": [
+      {
+        "path_id": "path:traceback",
+        "role": "source",
+        "node_id": "traceback:source",
+        "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+        "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:traceback",
+        "role": "demand",
+        "node_id": "traceback:demand",
+        "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+        "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:traceback",
+        "role": "prerequisite",
+        "node_id": "traceback:prerequisite",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:traceback",
+        "role": "theory_explanation",
+        "node_id": "traceback:theory_explanation",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:traceback",
+        "role": "coding_practice",
+        "node_id": "traceback:coding_practice",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:traceback",
+        "role": "independent_assessment",
+        "node_id": "traceback:independent_assessment",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:traceback",
+        "role": "feedback",
+        "node_id": "traceback:feedback",
+        "path": "lessons/week01/teacher-notes.txt",
+        "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "status": "current"
+      },
+      {
+        "path_id": "path:chart",
+        "role": "source",
+        "node_id": "chart:source",
+        "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+        "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:chart",
+        "role": "demand",
+        "node_id": "chart:demand",
+        "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+        "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:chart",
+        "role": "prerequisite",
+        "node_id": "chart:prerequisite",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:chart",
+        "role": "theory_explanation",
+        "node_id": "chart:theory_explanation",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:chart",
+        "role": "coding_practice",
+        "node_id": "chart:coding_practice",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:chart",
+        "role": "independent_assessment",
+        "node_id": "chart:independent_assessment",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:chart",
+        "role": "feedback",
+        "node_id": "chart:feedback",
+        "path": "lessons/week01/teacher-notes.txt",
+        "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "status": "current"
+      },
+      {
+        "path_id": "path:broadcast",
+        "role": "source",
+        "node_id": "broadcast:source",
+        "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+        "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:broadcast",
+        "role": "demand",
+        "node_id": "broadcast:demand",
+        "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+        "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:broadcast",
+        "role": "prerequisite",
+        "node_id": "broadcast:prerequisite",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:broadcast",
+        "role": "theory_explanation",
+        "node_id": "broadcast:theory_explanation",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:broadcast",
+        "role": "coding_practice",
+        "node_id": "broadcast:coding_practice",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:broadcast",
+        "role": "independent_assessment",
+        "node_id": "broadcast:independent_assessment",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:broadcast",
+        "role": "feedback",
+        "node_id": "broadcast:feedback",
+        "path": "lessons/week01/teacher-notes.txt",
+        "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "status": "current"
+      },
+      {
+        "path_id": "path:variance",
+        "role": "source",
+        "node_id": "variance:source",
+        "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+        "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:variance",
+        "role": "demand",
+        "node_id": "variance:demand",
+        "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+        "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:variance",
+        "role": "prerequisite",
+        "node_id": "variance:prerequisite",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:variance",
+        "role": "theory_explanation",
+        "node_id": "variance:theory_explanation",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:variance",
+        "role": "coding_practice",
+        "node_id": "variance:coding_practice",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:variance",
+        "role": "independent_assessment",
+        "node_id": "variance:independent_assessment",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:variance",
+        "role": "feedback",
+        "node_id": "variance:feedback",
+        "path": "lessons/week01/teacher-notes.txt",
+        "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "status": "current"
+      },
+      {
+        "path_id": "path:merge",
+        "role": "source",
+        "node_id": "merge:source",
+        "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+        "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:merge",
+        "role": "demand",
+        "node_id": "merge:demand",
+        "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+        "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:merge",
+        "role": "prerequisite",
+        "node_id": "merge:prerequisite",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:merge",
+        "role": "theory_explanation",
+        "node_id": "merge:theory_explanation",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:merge",
+        "role": "coding_practice",
+        "node_id": "merge:coding_practice",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:merge",
+        "role": "independent_assessment",
+        "node_id": "merge:independent_assessment",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "path_id": "path:merge",
+        "role": "feedback",
+        "node_id": "merge:feedback",
+        "path": "lessons/week01/teacher-notes.txt",
+        "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "status": "current"
+      }
+    ],
+    "verification": {
+      "semantics": "not_checked",
+      "source_authenticity": "not_checked",
+      "learner_independence": "not_checked"
+    },
+    "limitations": [
+      "Only explicitly declared demands, roles, direct edges and local files are checked; undeclared learning requirements are not discovered.",
+      "Role labels, provenance locators, revision/origin claims and assessment support conditions are declarations, not semantic verification.",
+      "Current SHA-256 bindings establish local byte equality, not source authenticity, official status, truth or educational adequacy.",
+      "Reviewer independence, unaided learner performance, timing, execution and contest readiness are not checked.",
+      "This opt-in report is advisory and does not change the legacy structural validator or any earlier quality evaluation."
+    ],
+    "graph_sha256": "43b7d4ec603e8aa0578b376e520dfdac3c2ec6e1a788c3f10754ef74a6901ae2"
+  },
+  "semantic_review": {
+    "authority": "advisory_only",
+    "status": "recorded_design_met",
+    "mechanical_status": "declared_path_complete",
+    "synthetic": false,
+    "errors": [],
+    "findings": [],
+    "comparisons": [
+      {
+        "path_id": "path:traceback",
+        "comparison_id": "traceback",
+        "judgments": {
+          "problem_specific_key": "met",
+          "feedback": "met",
+          "independent_assessment": "met"
+        }
+      },
+      {
+        "path_id": "path:chart",
+        "comparison_id": "chart",
+        "judgments": {
+          "problem_specific_key": "met",
+          "feedback": "met",
+          "independent_assessment": "met"
+        }
+      },
+      {
+        "path_id": "path:broadcast",
+        "comparison_id": "broadcast",
+        "judgments": {
+          "problem_specific_key": "met",
+          "feedback": "met",
+          "independent_assessment": "met"
+        }
+      },
+      {
+        "path_id": "path:variance",
+        "comparison_id": "variance",
+        "judgments": {
+          "problem_specific_key": "met",
+          "feedback": "met",
+          "independent_assessment": "met"
+        }
+      },
+      {
+        "path_id": "path:merge",
+        "comparison_id": "merge",
+        "judgments": {
+          "problem_specific_key": "met",
+          "feedback": "met",
+          "independent_assessment": "met"
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "comparison_id": "traceback",
+        "path_id": "path:traceback",
+        "dimension": "problem_specific_key",
+        "path": "lessons/week01/teacher-notes.txt",
+        "locator": "Python 진단과 실제 수정 과제: traceback 진단",
+        "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "status": "current"
+      },
+      {
+        "comparison_id": "traceback",
+        "path_id": "path:traceback",
+        "dimension": "problem_specific_key",
+        "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+        "locator": "표의 traceback 행",
+        "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "status": "current"
+      },
+      {
+        "comparison_id": "traceback",
+        "path_id": "path:traceback",
+        "dimension": "feedback",
+        "path": "lessons/week01/teacher-notes.txt",
+        "locator": "Python 진단과 실제 수정 과제: traceback 진단",
+        "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "status": "current"
+      },
+      {
+        "comparison_id": "traceback",
+        "path_id": "path:traceback",
+        "dimension": "feedback",
+        "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+        "locator": "표의 traceback 행",
+        "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "status": "current"
+      },
+      {
+        "comparison_id": "traceback",
+        "path_id": "path:traceback",
+        "dimension": "independent_assessment",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "locator": "cell:7208718e + cell:ab8d9d90",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "comparison_id": "traceback",
+        "path_id": "path:traceback",
+        "dimension": "independent_assessment",
+        "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+        "locator": "표의 traceback 행",
+        "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "status": "current"
+      },
+      {
+        "comparison_id": "chart",
+        "path_id": "path:chart",
+        "dimension": "problem_specific_key",
+        "path": "lessons/week01/teacher-notes.txt",
+        "locator": "새 입력 학습 확인 답: 새 그래프",
+        "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "status": "current"
+      },
+      {
+        "comparison_id": "chart",
+        "path_id": "path:chart",
+        "dimension": "problem_specific_key",
+        "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+        "locator": "표의 그래프 행",
+        "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "status": "current"
+      },
+      {
+        "comparison_id": "chart",
+        "path_id": "path:chart",
+        "dimension": "feedback",
+        "path": "lessons/week01/teacher-notes.txt",
+        "locator": "새 입력 학습 확인 답: 새 그래프",
+        "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "status": "current"
+      },
+      {
+        "comparison_id": "chart",
+        "path_id": "path:chart",
+        "dimension": "feedback",
+        "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+        "locator": "표의 그래프 행",
+        "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "status": "current"
+      },
+      {
+        "comparison_id": "chart",
+        "path_id": "path:chart",
+        "dimension": "independent_assessment",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "locator": "cell:d60c3acd + cell:dff8752b",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "comparison_id": "chart",
+        "path_id": "path:chart",
+        "dimension": "independent_assessment",
+        "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+        "locator": "표의 그래프 행",
+        "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "status": "current"
+      },
+      {
+        "comparison_id": "broadcast",
+        "path_id": "path:broadcast",
+        "dimension": "problem_specific_key",
+        "path": "lessons/week01/teacher-notes.txt",
+        "locator": "수업 밖 필수 연습 해설: 새 브로드캐스팅",
+        "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "status": "current"
+      },
+      {
+        "comparison_id": "broadcast",
+        "path_id": "path:broadcast",
+        "dimension": "problem_specific_key",
+        "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+        "locator": "표의 broadcasting 행",
+        "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "status": "current"
+      },
+      {
+        "comparison_id": "broadcast",
+        "path_id": "path:broadcast",
+        "dimension": "feedback",
+        "path": "lessons/week01/teacher-notes.txt",
+        "locator": "수업 밖 필수 연습 해설: 새 브로드캐스팅",
+        "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "status": "current"
+      },
+      {
+        "comparison_id": "broadcast",
+        "path_id": "path:broadcast",
+        "dimension": "feedback",
+        "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+        "locator": "표의 broadcasting 행",
+        "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "status": "current"
+      },
+      {
+        "comparison_id": "broadcast",
+        "path_id": "path:broadcast",
+        "dimension": "independent_assessment",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "locator": "cell:df2802a3",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "comparison_id": "broadcast",
+        "path_id": "path:broadcast",
+        "dimension": "independent_assessment",
+        "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+        "locator": "표의 broadcasting 행",
+        "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "status": "current"
+      },
+      {
+        "comparison_id": "variance",
+        "path_id": "path:variance",
+        "dimension": "problem_specific_key",
+        "path": "lessons/week01/teacher-notes.txt",
+        "locator": "수업 밖 필수 연습 해설: 새 독립 분산",
+        "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "status": "current"
+      },
+      {
+        "comparison_id": "variance",
+        "path_id": "path:variance",
+        "dimension": "problem_specific_key",
+        "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+        "locator": "표의 분산 행",
+        "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "status": "current"
+      },
+      {
+        "comparison_id": "variance",
+        "path_id": "path:variance",
+        "dimension": "feedback",
+        "path": "lessons/week01/teacher-notes.txt",
+        "locator": "수업 밖 필수 연습 해설: 새 독립 분산",
+        "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "status": "current"
+      },
+      {
+        "comparison_id": "variance",
+        "path_id": "path:variance",
+        "dimension": "feedback",
+        "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+        "locator": "표의 분산 행",
+        "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "status": "current"
+      },
+      {
+        "comparison_id": "variance",
+        "path_id": "path:variance",
+        "dimension": "independent_assessment",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "locator": "cell:9ce91662 + cell:variance-independent-response",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "comparison_id": "variance",
+        "path_id": "path:variance",
+        "dimension": "independent_assessment",
+        "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+        "locator": "표의 분산 행",
+        "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "status": "current"
+      },
+      {
+        "comparison_id": "merge",
+        "path_id": "path:merge",
+        "dimension": "problem_specific_key",
+        "path": "lessons/week01/teacher-notes.txt",
+        "locator": "수업 밖 필수 연습 해설: 병합 경계",
+        "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "status": "current"
+      },
+      {
+        "comparison_id": "merge",
+        "path_id": "path:merge",
+        "dimension": "problem_specific_key",
+        "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+        "locator": "표의 병합 행",
+        "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "status": "current"
+      },
+      {
+        "comparison_id": "merge",
+        "path_id": "path:merge",
+        "dimension": "feedback",
+        "path": "lessons/week01/teacher-notes.txt",
+        "locator": "수업 밖 필수 연습 해설: 병합 경계",
+        "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+        "status": "current"
+      },
+      {
+        "comparison_id": "merge",
+        "path_id": "path:merge",
+        "dimension": "feedback",
+        "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+        "locator": "표의 병합 행",
+        "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "status": "current"
+      },
+      {
+        "comparison_id": "merge",
+        "path_id": "path:merge",
+        "dimension": "independent_assessment",
+        "path": "lessons/week01/week01_python_tables.ipynb",
+        "locator": "cell:0fd965eb, 소제목 새 병합 조건을 먼저 예측하기 + cell:13559279",
+        "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+        "status": "current"
+      },
+      {
+        "comparison_id": "merge",
+        "path_id": "path:merge",
+        "dimension": "independent_assessment",
+        "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+        "locator": "표의 병합 행",
+        "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+        "status": "current"
+      }
+    ],
+    "verification": {
+      "semantics": "recorded_judgment_only",
+      "reviewer_independence": "not_checked",
+      "learner_independence": "not_observed"
+    },
+    "limitations": [
+      "A current review record preserves an explicit content judgment; it is not automated semantic verification.",
+      "Locators, reviewer identity, review method and judgments remain declarations; matching bytes do not make a wrong judgment true.",
+      "Only the declared paths and supplied review evidence are in scope; omitted demands and whole-lesson adequacy are not established.",
+      "Task design, actual unaided learner performance, learning effect and contest readiness remain separate."
+    ]
+  },
+  "workflow": {
+    "status": "pause",
+    "reason": "criteria_agreement_required",
+    "authority": "advisory_only",
+    "synthetic": false,
+    "errors": [],
+    "warnings": [
+      "scope.lesson_production_allowed is a recorded claim, not an execution capability or authenticated permission"
+    ],
+    "context_fingerprint": "76de10e4b99c2623db076081bc09a378428b803f7052409ffcea5077f6db92df"
+  },
+  "recall": {
+    "record_ids": [
+      "record-baseline-defect",
+      "record-execution-receipt",
+      "record-independent-supplement",
+      "record-independent-final-rebind",
+      "record-binding-correction",
+      "record:week1-independent-transfer-v2"
+    ],
+    "warnings": [
+      "scope.lesson_production_allowed is a recorded claim, not an execution capability or authenticated permission"
+    ]
+  },
+  "unverified_sources": [],
+  "limits": [
+    "No work, review, state update, publication or scheduling is executed.",
+    "Matching bytes and declarations do not establish semantic adequacy, consent, independent judgment or learner outcomes.",
+    "Declared local provenance and every local source catalog entry are checked; external source truth, pathless manifests and omitted dependencies remain unverified."
+  ]
+}

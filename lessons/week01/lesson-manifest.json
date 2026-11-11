@@ -88,9 +88,12 @@
     "changed_cells": 1,
     "other_weeks_unchanged": true
   },
-  "revision": "week1-contest-depth-v1",
-  "skills_reference_commit": "64f24aabdad2b1976740d88d4a0ba74a4ed89766",
-  "parent_lesson_commit": "8d341af794165da77c3b4d1545c9d0d651882dea",
+  "revision": "week1-independent-transfer-v2",
+  "skills_reference_commit": "c3579c47c7c64ac7d0919410e665a917db4cdeab",
+  "parent_lesson_commit": "f720c7f2cfe565506bfbe677ba6d2411accde80c",
   "student_schedule": "Teacher-only ledger; no minute allocations in student notebook",
-  "revision_scope": "one manual contest-depth revision; no recurring execution"
+  "revision_scope": "bounded manual revision: traceback, dirty input, graph interpretation, broadcasting, variance, missing-height aggregation, merge boundaries, vector order; no recurring execution",
+  "homework_ranges_minutes_provenance": "Four earlier ranges are a historical baseline, not an estimate for revised A–E tasks.",
+  "revised_homework_minutes": null,
+  "final_check_placement": "Inside existing NumPy/Matplotlib block; feasibility unobserved."
 }

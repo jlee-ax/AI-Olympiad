@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "traceback": "actual error location, fixes and boundary verified",
+  "variance": "exact fractions, translation and scaling checked",
+  "broadcast": "valid row/column operations and incompatible shape checked",
+  "merge": "actual new CSV, unmatched/duplicate keys and source immutability checked",
+  "graph": "actual new CSV coordinates and translated positions checked",
+  "dirty_input": "actual prepared string fails raw numeric conversion; targeted repair preserves unknowns and original",
+  "missing_height": "size/count/mean and all-missing boundary checked on copies of real CSV",
+  "vector_order": "same-length misaligned and aligned totals plus retry checked",
+  "html_static_content": "five prompts present and teacher solution absent; layout unverified",
+  "learner_answers": "blank_not_observed"
+}

@@ -1,15 +1,15 @@
 {
-  "checked_at_utc": "2026-11-11T00:10:32.097660+00:00",
+  "checked_at_utc": "2026-11-11T02:45:03.878913+00:00",
   "notebook": "week01_python_tables.ipynb",
-  "revision": "week1-contest-depth-v1",
-  "skills_reference_commit": "64f24aabdad2b1976740d88d4a0ba74a4ed89766",
+  "revision": "week1-independent-transfer-v2",
+  "skills_reference_commit": "c3579c47c7c64ac7d0919410e665a917db4cdeab",
   "nbformat_validation": "passed",
   "top_to_bottom_execution": "passed",
   "execution_method": "fresh IPython InProcessKernelManager per run",
-  "execution_seconds": 1.839,
-  "cells": 87,
-  "code_cells": 27,
-  "executed_code_cells": 27,
+  "execution_seconds": 3.052,
+  "cells": 89,
+  "code_cells": 28,
+  "executed_code_cells": 28,
   "error_outputs": 0,
   "actual_function_and_state_assertions": "passed",
   "teacher_modification_key_tests": "passed",
@@ -17,10 +17,10 @@
   "csv_mask_shape_missing_and_merge_checks": "passed",
   "plot_output_cells": [
     50,
-    67,
     69,
     71,
-    72
+    73,
+    74
   ],
   "plot_output_count": 5,
   "embedded_diagrams": 2,
@@ -43,17 +43,17 @@
   "visual_inspection": "not_performed_by_script",
   "browser_preview": "not_performed_by_script",
   "packages": {
-    "numpy": "2.3.5",
-    "pandas": "2.2.3",
-    "matplotlib": "3.10.8",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "matplotlib": "3.11.2",
     "seaborn": "0.13.2",
     "jupyterlab": "4.6.6",
     "nbclient": "0.11.0",
     "nbformat": "5.11.1",
     "ipykernel": "7.4.0"
   },
-  "notebook_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
-  "source_attachment_projection_sha256": "cf636875247062af3a004eac5b01061acdcae1770f9bb188c111df4cd625be03",
+  "notebook_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+  "source_attachment_projection_sha256": "512cac085f50177a1360463e855245e9a3e164e3b08f56f0ddbf83cfc42af5a1",
   "source_projection_unchanged_by_execution": true,
   "schedules_created": false
 }

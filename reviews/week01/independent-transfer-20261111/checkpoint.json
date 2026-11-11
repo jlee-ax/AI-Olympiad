@@ -1,0 +1,14 @@
+{
+  "checkpoint_utc": "2026-11-11T02:33:41.661809+00:00",
+  "elapsed_minutes_from_request": 30,
+  "notebook_sha256": "4a947c57202cfb148208be8123fde0937ca5aca29268e8538c82155d942a948c",
+  "revision": "week1-independent-transfer-v2",
+  "work_completed": "main and lesson merged; one manual revision, fresh notebook execution and separate scoped content review completed",
+  "remaining": "run final functional/regression checks, retain uncertain aggregate criteria, publish reviewed lesson commit",
+  "unresolved": [
+    "learner responses and actual class/homework times unobserved",
+    "browser could not start due to socket permission",
+    "independent model identity is not separately attested"
+  ],
+  "automation": "none"
+}

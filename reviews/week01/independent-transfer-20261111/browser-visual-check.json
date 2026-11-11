@@ -1,0 +1,6 @@
+{
+  "status": "not_run",
+  "attempted": true,
+  "reason": "Local Chromium exited before page launch: socket() failed Operation not permitted. No permission denial was bypassed.",
+  "separate_visual_check": "Saved scatter and variance PNGs viewed; browser layout and accessibility remain unverified."
+}

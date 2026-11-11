@@ -1,0 +1,615 @@
+{
+  "authority": "advisory_only",
+  "status": "declared_path_complete",
+  "synthetic": false,
+  "errors": [],
+  "findings": [],
+  "warnings": [],
+  "paths": [
+    {
+      "id": "path:traceback",
+      "status": "declared_path_complete",
+      "edges": [
+        {
+          "prior_role": "source",
+          "next_role": "demand",
+          "from": "traceback:source",
+          "to": "traceback:demand",
+          "type": "supports",
+          "graph_edge_index": 0
+        },
+        {
+          "prior_role": "demand",
+          "next_role": "prerequisite",
+          "from": "traceback:demand",
+          "to": "traceback:prerequisite",
+          "type": "informs",
+          "graph_edge_index": 1
+        },
+        {
+          "prior_role": "prerequisite",
+          "next_role": "theory_explanation",
+          "from": "traceback:prerequisite",
+          "to": "traceback:theory_explanation",
+          "type": "supports",
+          "graph_edge_index": 2
+        },
+        {
+          "prior_role": "theory_explanation",
+          "next_role": "coding_practice",
+          "from": "traceback:theory_explanation",
+          "to": "traceback:coding_practice",
+          "type": "supports",
+          "graph_edge_index": 3
+        },
+        {
+          "prior_role": "coding_practice",
+          "next_role": "independent_assessment",
+          "from": "traceback:coding_practice",
+          "to": "traceback:independent_assessment",
+          "type": "supports",
+          "graph_edge_index": 4
+        },
+        {
+          "prior_role": "independent_assessment",
+          "next_role": "feedback",
+          "from": "traceback:independent_assessment",
+          "to": "traceback:feedback",
+          "type": "supports",
+          "graph_edge_index": 5
+        }
+      ],
+      "comparison_id": "traceback"
+    },
+    {
+      "id": "path:chart",
+      "status": "declared_path_complete",
+      "edges": [
+        {
+          "prior_role": "source",
+          "next_role": "demand",
+          "from": "chart:source",
+          "to": "chart:demand",
+          "type": "supports",
+          "graph_edge_index": 9
+        },
+        {
+          "prior_role": "demand",
+          "next_role": "prerequisite",
+          "from": "chart:demand",
+          "to": "chart:prerequisite",
+          "type": "informs",
+          "graph_edge_index": 10
+        },
+        {
+          "prior_role": "prerequisite",
+          "next_role": "theory_explanation",
+          "from": "chart:prerequisite",
+          "to": "chart:theory_explanation",
+          "type": "supports",
+          "graph_edge_index": 11
+        },
+        {
+          "prior_role": "theory_explanation",
+          "next_role": "coding_practice",
+          "from": "chart:theory_explanation",
+          "to": "chart:coding_practice",
+          "type": "supports",
+          "graph_edge_index": 12
+        },
+        {
+          "prior_role": "coding_practice",
+          "next_role": "independent_assessment",
+          "from": "chart:coding_practice",
+          "to": "chart:independent_assessment",
+          "type": "supports",
+          "graph_edge_index": 13
+        },
+        {
+          "prior_role": "independent_assessment",
+          "next_role": "feedback",
+          "from": "chart:independent_assessment",
+          "to": "chart:feedback",
+          "type": "supports",
+          "graph_edge_index": 14
+        }
+      ],
+      "comparison_id": "chart"
+    },
+    {
+      "id": "path:broadcast",
+      "status": "declared_path_complete",
+      "edges": [
+        {
+          "prior_role": "source",
+          "next_role": "demand",
+          "from": "broadcast:source",
+          "to": "broadcast:demand",
+          "type": "supports",
+          "graph_edge_index": 18
+        },
+        {
+          "prior_role": "demand",
+          "next_role": "prerequisite",
+          "from": "broadcast:demand",
+          "to": "broadcast:prerequisite",
+          "type": "informs",
+          "graph_edge_index": 19
+        },
+        {
+          "prior_role": "prerequisite",
+          "next_role": "theory_explanation",
+          "from": "broadcast:prerequisite",
+          "to": "broadcast:theory_explanation",
+          "type": "supports",
+          "graph_edge_index": 20
+        },
+        {
+          "prior_role": "theory_explanation",
+          "next_role": "coding_practice",
+          "from": "broadcast:theory_explanation",
+          "to": "broadcast:coding_practice",
+          "type": "supports",
+          "graph_edge_index": 21
+        },
+        {
+          "prior_role": "coding_practice",
+          "next_role": "independent_assessment",
+          "from": "broadcast:coding_practice",
+          "to": "broadcast:independent_assessment",
+          "type": "supports",
+          "graph_edge_index": 22
+        },
+        {
+          "prior_role": "independent_assessment",
+          "next_role": "feedback",
+          "from": "broadcast:independent_assessment",
+          "to": "broadcast:feedback",
+          "type": "supports",
+          "graph_edge_index": 23
+        }
+      ],
+      "comparison_id": "broadcast"
+    },
+    {
+      "id": "path:variance",
+      "status": "declared_path_complete",
+      "edges": [
+        {
+          "prior_role": "source",
+          "next_role": "demand",
+          "from": "variance:source",
+          "to": "variance:demand",
+          "type": "supports",
+          "graph_edge_index": 27
+        },
+        {
+          "prior_role": "demand",
+          "next_role": "prerequisite",
+          "from": "variance:demand",
+          "to": "variance:prerequisite",
+          "type": "informs",
+          "graph_edge_index": 28
+        },
+        {
+          "prior_role": "prerequisite",
+          "next_role": "theory_explanation",
+          "from": "variance:prerequisite",
+          "to": "variance:theory_explanation",
+          "type": "supports",
+          "graph_edge_index": 29
+        },
+        {
+          "prior_role": "theory_explanation",
+          "next_role": "coding_practice",
+          "from": "variance:theory_explanation",
+          "to": "variance:coding_practice",
+          "type": "supports",
+          "graph_edge_index": 30
+        },
+        {
+          "prior_role": "coding_practice",
+          "next_role": "independent_assessment",
+          "from": "variance:coding_practice",
+          "to": "variance:independent_assessment",
+          "type": "supports",
+          "graph_edge_index": 31
+        },
+        {
+          "prior_role": "independent_assessment",
+          "next_role": "feedback",
+          "from": "variance:independent_assessment",
+          "to": "variance:feedback",
+          "type": "supports",
+          "graph_edge_index": 32
+        }
+      ],
+      "comparison_id": "variance"
+    },
+    {
+      "id": "path:merge",
+      "status": "declared_path_complete",
+      "edges": [
+        {
+          "prior_role": "source",
+          "next_role": "demand",
+          "from": "merge:source",
+          "to": "merge:demand",
+          "type": "supports",
+          "graph_edge_index": 36
+        },
+        {
+          "prior_role": "demand",
+          "next_role": "prerequisite",
+          "from": "merge:demand",
+          "to": "merge:prerequisite",
+          "type": "informs",
+          "graph_edge_index": 37
+        },
+        {
+          "prior_role": "prerequisite",
+          "next_role": "theory_explanation",
+          "from": "merge:prerequisite",
+          "to": "merge:theory_explanation",
+          "type": "supports",
+          "graph_edge_index": 38
+        },
+        {
+          "prior_role": "theory_explanation",
+          "next_role": "coding_practice",
+          "from": "merge:theory_explanation",
+          "to": "merge:coding_practice",
+          "type": "supports",
+          "graph_edge_index": 39
+        },
+        {
+          "prior_role": "coding_practice",
+          "next_role": "independent_assessment",
+          "from": "merge:coding_practice",
+          "to": "merge:independent_assessment",
+          "type": "supports",
+          "graph_edge_index": 40
+        },
+        {
+          "prior_role": "independent_assessment",
+          "next_role": "feedback",
+          "from": "merge:independent_assessment",
+          "to": "merge:feedback",
+          "type": "supports",
+          "graph_edge_index": 41
+        }
+      ],
+      "comparison_id": "merge"
+    }
+  ],
+  "bindings": [
+    {
+      "path_id": "path:traceback",
+      "role": "source",
+      "node_id": "traceback:source",
+      "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+      "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:traceback",
+      "role": "demand",
+      "node_id": "traceback:demand",
+      "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+      "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:traceback",
+      "role": "prerequisite",
+      "node_id": "traceback:prerequisite",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:traceback",
+      "role": "theory_explanation",
+      "node_id": "traceback:theory_explanation",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:traceback",
+      "role": "coding_practice",
+      "node_id": "traceback:coding_practice",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:traceback",
+      "role": "independent_assessment",
+      "node_id": "traceback:independent_assessment",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:traceback",
+      "role": "feedback",
+      "node_id": "traceback:feedback",
+      "path": "lessons/week01/teacher-notes.txt",
+      "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "status": "current"
+    },
+    {
+      "path_id": "path:chart",
+      "role": "source",
+      "node_id": "chart:source",
+      "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+      "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:chart",
+      "role": "demand",
+      "node_id": "chart:demand",
+      "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+      "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:chart",
+      "role": "prerequisite",
+      "node_id": "chart:prerequisite",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:chart",
+      "role": "theory_explanation",
+      "node_id": "chart:theory_explanation",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:chart",
+      "role": "coding_practice",
+      "node_id": "chart:coding_practice",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:chart",
+      "role": "independent_assessment",
+      "node_id": "chart:independent_assessment",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:chart",
+      "role": "feedback",
+      "node_id": "chart:feedback",
+      "path": "lessons/week01/teacher-notes.txt",
+      "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "status": "current"
+    },
+    {
+      "path_id": "path:broadcast",
+      "role": "source",
+      "node_id": "broadcast:source",
+      "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+      "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:broadcast",
+      "role": "demand",
+      "node_id": "broadcast:demand",
+      "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+      "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:broadcast",
+      "role": "prerequisite",
+      "node_id": "broadcast:prerequisite",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:broadcast",
+      "role": "theory_explanation",
+      "node_id": "broadcast:theory_explanation",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:broadcast",
+      "role": "coding_practice",
+      "node_id": "broadcast:coding_practice",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:broadcast",
+      "role": "independent_assessment",
+      "node_id": "broadcast:independent_assessment",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:broadcast",
+      "role": "feedback",
+      "node_id": "broadcast:feedback",
+      "path": "lessons/week01/teacher-notes.txt",
+      "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "status": "current"
+    },
+    {
+      "path_id": "path:variance",
+      "role": "source",
+      "node_id": "variance:source",
+      "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+      "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:variance",
+      "role": "demand",
+      "node_id": "variance:demand",
+      "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+      "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:variance",
+      "role": "prerequisite",
+      "node_id": "variance:prerequisite",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:variance",
+      "role": "theory_explanation",
+      "node_id": "variance:theory_explanation",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:variance",
+      "role": "coding_practice",
+      "node_id": "variance:coding_practice",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:variance",
+      "role": "independent_assessment",
+      "node_id": "variance:independent_assessment",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:variance",
+      "role": "feedback",
+      "node_id": "variance:feedback",
+      "path": "lessons/week01/teacher-notes.txt",
+      "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "status": "current"
+    },
+    {
+      "path_id": "path:merge",
+      "role": "source",
+      "node_id": "merge:source",
+      "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+      "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:merge",
+      "role": "demand",
+      "node_id": "merge:demand",
+      "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+      "expected_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "actual_sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:merge",
+      "role": "prerequisite",
+      "node_id": "merge:prerequisite",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:merge",
+      "role": "theory_explanation",
+      "node_id": "merge:theory_explanation",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:merge",
+      "role": "coding_practice",
+      "node_id": "merge:coding_practice",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:merge",
+      "role": "independent_assessment",
+      "node_id": "merge:independent_assessment",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "path_id": "path:merge",
+      "role": "feedback",
+      "node_id": "merge:feedback",
+      "path": "lessons/week01/teacher-notes.txt",
+      "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "status": "current"
+    }
+  ],
+  "verification": {
+    "semantics": "not_checked",
+    "source_authenticity": "not_checked",
+    "learner_independence": "not_checked"
+  },
+  "limitations": [
+    "Only explicitly declared demands, roles, direct edges and local files are checked; undeclared learning requirements are not discovered.",
+    "Role labels, provenance locators, revision/origin claims and assessment support conditions are declarations, not semantic verification.",
+    "Current SHA-256 bindings establish local byte equality, not source authenticity, official status, truth or educational adequacy.",
+    "Reviewer independence, unaided learner performance, timing, execution and contest readiness are not checked.",
+    "This opt-in report is advisory and does not change the legacy structural validator or any earlier quality evaluation."
+  ],
+  "graph_sha256": "43b7d4ec603e8aa0578b376e520dfdac3c2ec6e1a788c3f10754ef74a6901ae2"
+}

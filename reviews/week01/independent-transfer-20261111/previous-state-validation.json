@@ -1,0 +1,10 @@
+{
+  "authority": "advisory_only",
+  "errors": [],
+  "reason": "structural_checks_only",
+  "status": "valid",
+  "synthetic": false,
+  "warnings": [
+    "scope.lesson_production_allowed is a recorded claim, not an execution capability or authenticated permission"
+  ]
+}

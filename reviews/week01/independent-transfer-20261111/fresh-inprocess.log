@@ -1,0 +1,65 @@
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/jupyter_client/localinterfaces.py:58: UserWarning: Unexpected error discovering local network interfaces: [Errno 1] Operation not permitted
+  ret = f(**kwargs)
+{
+  "checked_at_utc": "2026-11-11T02:45:03.878913+00:00",
+  "notebook": "week01_python_tables.ipynb",
+  "revision": "week1-independent-transfer-v2",
+  "skills_reference_commit": "c3579c47c7c64ac7d0919410e665a917db4cdeab",
+  "nbformat_validation": "passed",
+  "top_to_bottom_execution": "passed",
+  "execution_method": "fresh IPython InProcessKernelManager per run",
+  "execution_seconds": 3.052,
+  "cells": 89,
+  "code_cells": 28,
+  "executed_code_cells": 28,
+  "error_outputs": 0,
+  "actual_function_and_state_assertions": "passed",
+  "teacher_modification_key_tests": "passed",
+  "independent_fraction_arithmetic": "passed",
+  "csv_mask_shape_missing_and_merge_checks": "passed",
+  "plot_output_cells": [
+    50,
+    69,
+    71,
+    73,
+    74
+  ],
+  "plot_output_count": 5,
+  "embedded_diagrams": 2,
+  "student_text_meta_removal": "passed",
+  "student_answers": "blank_not_assessed",
+  "student_mastery": "not_observed",
+  "classroom_timing": "estimated_not_observed",
+  "teacher_only_class_total": 120,
+  "teacher_only_time_minutes": {
+    "theory": 20,
+    "noncoding": 20,
+    "coding": 80
+  },
+  "baseline_required_homework_minutes": [
+    300,
+    420
+  ],
+  "revised_homework_time": "not_estimated_or_observed",
+  "standalone_without_csv_files": "passed",
+  "visual_inspection": "not_performed_by_script",
+  "browser_preview": "not_performed_by_script",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2",
+    "jupyterlab": "4.6.6",
+    "nbclient": "0.11.0",
+    "nbformat": "5.11.1",
+    "ipykernel": "7.4.0"
+  },
+  "notebook_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+  "source_attachment_projection_sha256": "512cac085f50177a1360463e855245e9a3e164e3b08f56f0ddbf83cfc42af5a1",
+  "source_projection_unchanged_by_execution": true,
+  "schedules_created": false
+}

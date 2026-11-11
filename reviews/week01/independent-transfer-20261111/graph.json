@@ -1,0 +1,511 @@
+{
+  "nodes": [
+    {
+      "id": "traceback:source",
+      "type": "evidence",
+      "status": "completed",
+      "label": "Python 오류 위치와 수정 / source"
+    },
+    {
+      "id": "traceback:demand",
+      "type": "evidence",
+      "status": "completed",
+      "label": "예시 1: 함수 호출의 상태와 출력"
+    },
+    {
+      "id": "traceback:prerequisite",
+      "type": "evidence",
+      "status": "completed",
+      "label": "Python 오류 위치와 수정 / prerequisite"
+    },
+    {
+      "id": "traceback:theory_explanation",
+      "type": "evidence",
+      "status": "completed",
+      "label": "Python 오류 위치와 수정 / theory_explanation"
+    },
+    {
+      "id": "traceback:coding_practice",
+      "type": "evidence",
+      "status": "completed",
+      "label": "Python 오류 위치와 수정 / coding_practice"
+    },
+    {
+      "id": "traceback:independent_assessment",
+      "type": "evidence",
+      "status": "completed",
+      "label": "Python 오류 위치와 수정 / independent_assessment"
+    },
+    {
+      "id": "traceback:feedback",
+      "type": "evidence",
+      "status": "completed",
+      "label": "Python 오류 위치와 수정 / feedback"
+    },
+    {
+      "id": "traceback:local-goal",
+      "type": "request",
+      "status": "completed",
+      "label": "1주차 기초 목표: Python 오류 위치와 수정"
+    },
+    {
+      "id": "chart:source",
+      "type": "evidence",
+      "status": "completed",
+      "label": "새 표의 좌표 구성·이동과 인과 한계 / source"
+    },
+    {
+      "id": "chart:demand",
+      "type": "evidence",
+      "status": "completed",
+      "label": "예시 3: 연속 변수 관계·분포의 시각화 선택"
+    },
+    {
+      "id": "chart:prerequisite",
+      "type": "evidence",
+      "status": "completed",
+      "label": "새 표의 좌표 구성·이동과 인과 한계 / prerequisite"
+    },
+    {
+      "id": "chart:theory_explanation",
+      "type": "evidence",
+      "status": "completed",
+      "label": "새 표의 좌표 구성·이동과 인과 한계 / theory_explanation"
+    },
+    {
+      "id": "chart:coding_practice",
+      "type": "evidence",
+      "status": "completed",
+      "label": "새 표의 좌표 구성·이동과 인과 한계 / coding_practice"
+    },
+    {
+      "id": "chart:independent_assessment",
+      "type": "evidence",
+      "status": "completed",
+      "label": "새 표의 좌표 구성·이동과 인과 한계 / independent_assessment"
+    },
+    {
+      "id": "chart:feedback",
+      "type": "evidence",
+      "status": "completed",
+      "label": "새 표의 좌표 구성·이동과 인과 한계 / feedback"
+    },
+    {
+      "id": "chart:local-goal",
+      "type": "request",
+      "status": "completed",
+      "label": "1주차 기초 목표: 새 표의 좌표 구성·이동과 인과 한계"
+    },
+    {
+      "id": "broadcast:source",
+      "type": "evidence",
+      "status": "completed",
+      "label": "새 배열의 축·보정 shape 선택 / source"
+    },
+    {
+      "id": "broadcast:demand",
+      "type": "evidence",
+      "status": "completed",
+      "label": "예시 2: shape·축·메모리; 서술형 2: KNN 거리 broadcasting 권장"
+    },
+    {
+      "id": "broadcast:prerequisite",
+      "type": "evidence",
+      "status": "completed",
+      "label": "새 배열의 축·보정 shape 선택 / prerequisite"
+    },
+    {
+      "id": "broadcast:theory_explanation",
+      "type": "evidence",
+      "status": "completed",
+      "label": "새 배열의 축·보정 shape 선택 / theory_explanation"
+    },
+    {
+      "id": "broadcast:coding_practice",
+      "type": "evidence",
+      "status": "completed",
+      "label": "새 배열의 축·보정 shape 선택 / coding_practice"
+    },
+    {
+      "id": "broadcast:independent_assessment",
+      "type": "evidence",
+      "status": "completed",
+      "label": "새 배열의 축·보정 shape 선택 / independent_assessment"
+    },
+    {
+      "id": "broadcast:feedback",
+      "type": "evidence",
+      "status": "completed",
+      "label": "새 배열의 축·보정 shape 선택 / feedback"
+    },
+    {
+      "id": "broadcast:local-goal",
+      "type": "request",
+      "status": "completed",
+      "label": "1주차 기초 목표: 새 배열의 축·보정 shape 선택"
+    },
+    {
+      "id": "variance:source",
+      "type": "evidence",
+      "status": "completed",
+      "label": "새 값의 분산·이동·배율 설명 / source"
+    },
+    {
+      "id": "variance:demand",
+      "type": "evidence",
+      "status": "completed",
+      "label": "예시 24: 피처 엔지니어링 기법 판별"
+    },
+    {
+      "id": "variance:prerequisite",
+      "type": "evidence",
+      "status": "completed",
+      "label": "새 값의 분산·이동·배율 설명 / prerequisite"
+    },
+    {
+      "id": "variance:theory_explanation",
+      "type": "evidence",
+      "status": "completed",
+      "label": "새 값의 분산·이동·배율 설명 / theory_explanation"
+    },
+    {
+      "id": "variance:coding_practice",
+      "type": "evidence",
+      "status": "completed",
+      "label": "새 값의 분산·이동·배율 설명 / coding_practice"
+    },
+    {
+      "id": "variance:independent_assessment",
+      "type": "evidence",
+      "status": "completed",
+      "label": "새 값의 분산·이동·배율 설명 / independent_assessment"
+    },
+    {
+      "id": "variance:feedback",
+      "type": "evidence",
+      "status": "completed",
+      "label": "새 값의 분산·이동·배율 설명 / feedback"
+    },
+    {
+      "id": "variance:local-goal",
+      "type": "request",
+      "status": "completed",
+      "label": "1주차 기초 목표: 새 값의 분산·이동·배율 설명"
+    },
+    {
+      "id": "merge:source",
+      "type": "evidence",
+      "status": "completed",
+      "label": "없는 키와 중복 키의 병합 결과 / source"
+    },
+    {
+      "id": "merge:demand",
+      "type": "evidence",
+      "status": "completed",
+      "label": "예시 서술형 2: KNN 입출력·다수결 계약"
+    },
+    {
+      "id": "merge:prerequisite",
+      "type": "evidence",
+      "status": "completed",
+      "label": "없는 키와 중복 키의 병합 결과 / prerequisite"
+    },
+    {
+      "id": "merge:theory_explanation",
+      "type": "evidence",
+      "status": "completed",
+      "label": "없는 키와 중복 키의 병합 결과 / theory_explanation"
+    },
+    {
+      "id": "merge:coding_practice",
+      "type": "evidence",
+      "status": "completed",
+      "label": "없는 키와 중복 키의 병합 결과 / coding_practice"
+    },
+    {
+      "id": "merge:independent_assessment",
+      "type": "evidence",
+      "status": "completed",
+      "label": "없는 키와 중복 키의 병합 결과 / independent_assessment"
+    },
+    {
+      "id": "merge:feedback",
+      "type": "evidence",
+      "status": "completed",
+      "label": "없는 키와 중복 키의 병합 결과 / feedback"
+    },
+    {
+      "id": "merge:local-goal",
+      "type": "request",
+      "status": "completed",
+      "label": "1주차 기초 목표: 없는 키와 중복 키의 병합 결과"
+    }
+  ],
+  "edges": [
+    {
+      "from": "traceback:source",
+      "to": "traceback:demand",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "traceback:demand",
+      "to": "traceback:prerequisite",
+      "type": "informs",
+      "note": "교육적 선수관계 추론; 공식 문제와 동일 과제가 아님"
+    },
+    {
+      "from": "traceback:prerequisite",
+      "to": "traceback:theory_explanation",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "traceback:theory_explanation",
+      "to": "traceback:coding_practice",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "traceback:coding_practice",
+      "to": "traceback:independent_assessment",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "traceback:independent_assessment",
+      "to": "traceback:feedback",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "traceback:demand",
+      "to": "traceback:local-goal",
+      "type": "informs",
+      "note": "Staged instructional inference, not a direct official requirement."
+    },
+    {
+      "from": "traceback:local-goal",
+      "to": "traceback:independent_assessment",
+      "type": "informs"
+    },
+    {
+      "from": "traceback:feedback",
+      "to": "traceback:coding_practice",
+      "type": "informs",
+      "note": "Proposed retry after feedback; no learner retry is claimed."
+    },
+    {
+      "from": "chart:source",
+      "to": "chart:demand",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "chart:demand",
+      "to": "chart:prerequisite",
+      "type": "informs",
+      "note": "교육적 선수관계 추론; 공식 문제와 동일 과제가 아님"
+    },
+    {
+      "from": "chart:prerequisite",
+      "to": "chart:theory_explanation",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "chart:theory_explanation",
+      "to": "chart:coding_practice",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "chart:coding_practice",
+      "to": "chart:independent_assessment",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "chart:independent_assessment",
+      "to": "chart:feedback",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "chart:demand",
+      "to": "chart:local-goal",
+      "type": "informs",
+      "note": "Staged instructional inference, not a direct official requirement."
+    },
+    {
+      "from": "chart:local-goal",
+      "to": "chart:independent_assessment",
+      "type": "informs"
+    },
+    {
+      "from": "chart:feedback",
+      "to": "chart:coding_practice",
+      "type": "informs",
+      "note": "Proposed retry after feedback; no learner retry is claimed."
+    },
+    {
+      "from": "broadcast:source",
+      "to": "broadcast:demand",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "broadcast:demand",
+      "to": "broadcast:prerequisite",
+      "type": "informs",
+      "note": "교육적 선수관계 추론; 공식 문제와 동일 과제가 아님"
+    },
+    {
+      "from": "broadcast:prerequisite",
+      "to": "broadcast:theory_explanation",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "broadcast:theory_explanation",
+      "to": "broadcast:coding_practice",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "broadcast:coding_practice",
+      "to": "broadcast:independent_assessment",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "broadcast:independent_assessment",
+      "to": "broadcast:feedback",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "broadcast:demand",
+      "to": "broadcast:local-goal",
+      "type": "informs",
+      "note": "Staged instructional inference, not a direct official requirement."
+    },
+    {
+      "from": "broadcast:local-goal",
+      "to": "broadcast:independent_assessment",
+      "type": "informs"
+    },
+    {
+      "from": "broadcast:feedback",
+      "to": "broadcast:coding_practice",
+      "type": "informs",
+      "note": "Proposed retry after feedback; no learner retry is claimed."
+    },
+    {
+      "from": "variance:source",
+      "to": "variance:demand",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "variance:demand",
+      "to": "variance:prerequisite",
+      "type": "informs",
+      "note": "교육적 선수관계 추론; 공식 문제와 동일 과제가 아님"
+    },
+    {
+      "from": "variance:prerequisite",
+      "to": "variance:theory_explanation",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "variance:theory_explanation",
+      "to": "variance:coding_practice",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "variance:coding_practice",
+      "to": "variance:independent_assessment",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "variance:independent_assessment",
+      "to": "variance:feedback",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "variance:demand",
+      "to": "variance:local-goal",
+      "type": "informs",
+      "note": "Staged instructional inference, not a direct official requirement."
+    },
+    {
+      "from": "variance:local-goal",
+      "to": "variance:independent_assessment",
+      "type": "informs"
+    },
+    {
+      "from": "variance:feedback",
+      "to": "variance:coding_practice",
+      "type": "informs",
+      "note": "Proposed retry after feedback; no learner retry is claimed."
+    },
+    {
+      "from": "merge:source",
+      "to": "merge:demand",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "merge:demand",
+      "to": "merge:prerequisite",
+      "type": "informs",
+      "note": "교육적 선수관계 추론; 공식 문제와 동일 과제가 아님"
+    },
+    {
+      "from": "merge:prerequisite",
+      "to": "merge:theory_explanation",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "merge:theory_explanation",
+      "to": "merge:coding_practice",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "merge:coding_practice",
+      "to": "merge:independent_assessment",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "merge:independent_assessment",
+      "to": "merge:feedback",
+      "type": "supports",
+      "note": "Recorded relationship; semantic meaning requires review."
+    },
+    {
+      "from": "merge:demand",
+      "to": "merge:local-goal",
+      "type": "informs",
+      "note": "Staged instructional inference, not a direct official requirement."
+    },
+    {
+      "from": "merge:local-goal",
+      "to": "merge:independent_assessment",
+      "type": "informs"
+    },
+    {
+      "from": "merge:feedback",
+      "to": "merge:coding_practice",
+      "type": "informs",
+      "note": "Proposed retry after feedback; no learner retry is claimed."
+    }
+  ]
+}

@@ -1,0 +1,418 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "scope": {
+    "task_kind": "lesson_production",
+    "lesson_production_allowed": true,
+    "recurring_allowed": false
+  },
+  "agreement": {
+    "operator_agreed": true,
+    "operator_id": "user",
+    "criteria_agreed": false,
+    "criteria_fingerprint": null,
+    "budget_fingerprint": null
+  },
+  "context": {
+    "inputs": [
+      {
+        "id": "baseline",
+        "revision": "baseline-preserved",
+        "sha256": "8ffda0c1d5ec1c5ca765fb892a09c64c3920bca6f840dfdf5a481a8da5a7cff2"
+      },
+      {
+        "id": "quality:bundle",
+        "revision": "week1-independent-transfer-v2",
+        "sha256": "6ee802aabe9c01e86319d9ecd43bd8dbc37b938a242afef8f1492f7c396dbade"
+      },
+      {
+        "id": "quality:criteria",
+        "revision": "criteria-v2",
+        "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+      },
+      {
+        "id": "quality:evaluator",
+        "revision": "quality-v1",
+        "sha256": "2b8ad68a46899cbe533cf0900f0b3b7d4956edf990c9847459d75ac72ac499c5"
+      },
+      {
+        "id": "review:depth",
+        "revision": "review-preflight-v1",
+        "sha256": "312100d1d6f4b5b8971eb17e157f13b206aa9c28a8e2241e2e792d01f4c58299"
+      },
+      {
+        "id": "review:graph",
+        "revision": "review-preflight-v1",
+        "sha256": "43b7d4ec603e8aa0578b376e520dfdac3c2ec6e1a788c3f10754ef74a6901ae2"
+      },
+      {
+        "id": "review:paths",
+        "revision": "review-preflight-v1",
+        "sha256": "f37679196a50e4fd867ee990da85c3a8aaacde1460ae331078ad5bc7344426e9"
+      },
+      {
+        "id": "review:semantic-review",
+        "revision": "review-preflight-v1",
+        "sha256": "dca2cc5d9821d7bf22d0a4689f0cf241a92025d936b7a86ac545e9ea2cdc5706"
+      },
+      {
+        "id": "review:source-catalog",
+        "revision": "review-preflight-v1",
+        "sha256": "0c6821ba995cc031a545fc1b6681c4e71632ebba29f674fa14d4673fbeb6021b"
+      }
+    ],
+    "skills": [
+      {
+        "id": "skill:koai-evaluate",
+        "revision": "c3579c47",
+        "sha256": "6056caba319960ce67689701ec6360631a0cbfbf93a3e9ae98c66a381104eb28"
+      },
+      {
+        "id": "skill:koai-ground",
+        "revision": "c3579c47",
+        "sha256": "f167a4006a7162658538f2aa2a5beb07dae15d37689a12bea1e5b0ff8b4422e5"
+      },
+      {
+        "id": "skill:koai-orchestrate",
+        "revision": "c3579c47",
+        "sha256": "91fe9d78fa935705bcbb81639c8b43cdde728501c7b3f3520c9ecaec5229fb9a"
+      },
+      {
+        "id": "skill:koai-recall",
+        "revision": "c3579c47",
+        "sha256": "e2ce471177e0631291033fceeca3dbaa94fa0796e0e9c3875f073c6c8fc355fa"
+      },
+      {
+        "id": "skill:koai-reflect",
+        "revision": "c3579c47",
+        "sha256": "dfbdada629f43261fa69da68730b75bedfe6f995086f9cb135ba7994fba1da67"
+      }
+    ],
+    "rubric": {
+      "id": "criteria",
+      "revision": "787079f",
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    "evaluator": {
+      "id": "quality-evaluator",
+      "revision": "final",
+      "sha256": "2b8ad68a46899cbe533cf0900f0b3b7d4956edf990c9847459d75ac72ac499c5"
+    },
+    "references": [
+      {
+        "id": "source-register",
+        "revision": "787079f",
+        "sha256": "4286e62768534312c6b68ab2ea183fc837959824821278317ea9bf2a138d4c8d"
+      },
+      {
+        "id": "baseline",
+        "revision": "final",
+        "sha256": "8ffda0c1d5ec1c5ca765fb892a09c64c3920bca6f840dfdf5a481a8da5a7cff2"
+      },
+      {
+        "id": "execution-receipt",
+        "revision": "final",
+        "sha256": "c1b7f4c8d8c5f4040584951fc8166a4aa05c476af64251fe02242749ab7e0d83"
+      },
+      {
+        "id": "independent-material-review",
+        "revision": "final",
+        "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+      },
+      {
+        "id": "independent-supplement",
+        "revision": "followup",
+        "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+      },
+      {
+        "id": "independent-final-rebind",
+        "revision": "followup",
+        "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+      }
+    ],
+    "artifact": {
+      "id": "week01-notebook",
+      "revision": "week1-independent-transfer-v2",
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    "author": {
+      "id": "week01-notebook-author",
+      "model_family": "not independently recorded"
+    },
+    "required_checks": [
+      "K01",
+      "K02",
+      "K03",
+      "K04",
+      "K05",
+      "K06",
+      "K07",
+      "K08",
+      "K09",
+      "K10",
+      "K11",
+      "K12",
+      "K13",
+      "K14",
+      "K15",
+      "K16"
+    ],
+    "finish_condition": "All current required checks plus independent exact-artifact review and agreed policy; learner outcomes remain untested."
+  },
+  "frozen": {
+    "rubric": {
+      "id": "criteria",
+      "revision": "787079f",
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    "evaluator": {
+      "id": "quality-evaluator",
+      "revision": "final",
+      "sha256": "2b8ad68a46899cbe533cf0900f0b3b7d4956edf990c9847459d75ac72ac499c5"
+    },
+    "references": [
+      {
+        "id": "baseline",
+        "revision": "final",
+        "sha256": "8ffda0c1d5ec1c5ca765fb892a09c64c3920bca6f840dfdf5a481a8da5a7cff2"
+      },
+      {
+        "id": "execution-receipt",
+        "revision": "final",
+        "sha256": "c1b7f4c8d8c5f4040584951fc8166a4aa05c476af64251fe02242749ab7e0d83"
+      },
+      {
+        "id": "independent-final-rebind",
+        "revision": "followup",
+        "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+      },
+      {
+        "id": "independent-material-review",
+        "revision": "final",
+        "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+      },
+      {
+        "id": "independent-supplement",
+        "revision": "followup",
+        "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+      },
+      {
+        "id": "source-register",
+        "revision": "787079f",
+        "sha256": "4286e62768534312c6b68ab2ea183fc837959824821278317ea9bf2a138d4c8d"
+      }
+    ],
+    "required_checks": [
+      "K01",
+      "K02",
+      "K03",
+      "K04",
+      "K05",
+      "K06",
+      "K07",
+      "K08",
+      "K09",
+      "K10",
+      "K11",
+      "K12",
+      "K13",
+      "K14",
+      "K15",
+      "K16"
+    ],
+    "finish_condition": "All current required checks plus independent exact-artifact review and agreed policy; learner outcomes remain untested."
+  },
+  "limits": {
+    "checkpoint_minutes": 30,
+    "max_iterations": 1,
+    "max_elapsed_minutes": null,
+    "max_no_progress": null
+  },
+  "usage": {
+    "iterations_used": 1,
+    "elapsed_minutes": 45,
+    "no_progress_count": 0,
+    "minutes_since_checkpoint": 14
+  },
+  "stop": {
+    "requested": false,
+    "reason": null,
+    "goal_claimed": false
+  },
+  "sources": [
+    {
+      "id": "source-register",
+      "revision": "787079f",
+      "sha256": "4286e62768534312c6b68ab2ea183fc837959824821278317ea9bf2a138d4c8d",
+      "uri": "skills/references/source-readings.json"
+    },
+    {
+      "id": "baseline",
+      "revision": "final",
+      "sha256": "8ffda0c1d5ec1c5ca765fb892a09c64c3920bca6f840dfdf5a481a8da5a7cff2",
+      "uri": "reviews/week01/provisional/baseline.ipynb"
+    },
+    {
+      "id": "execution-receipt",
+      "revision": "final",
+      "sha256": "c1b7f4c8d8c5f4040584951fc8166a4aa05c476af64251fe02242749ab7e0d83",
+      "uri": "reviews/week01/final/execution-receipt.json"
+    },
+    {
+      "id": "independent-material-review",
+      "revision": "final",
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "uri": "reviews/week01/final/independent-material-review.json"
+    },
+    {
+      "id": "independent-supplement",
+      "revision": "followup",
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "uri": "reviews/week01/final-followup/independent-supplement.json"
+    },
+    {
+      "id": "independent-final-rebind",
+      "revision": "followup",
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "uri": "reviews/week01/final-followup/independent-final-rebind.json"
+    },
+    {
+      "id": "followup:source-brief",
+      "uri": "reviews/week01/independent-transfer-20261111/source-brief.md",
+      "revision": "week1-independent-transfer-v2",
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "id": "followup:execution",
+      "uri": "lessons/week01/validation.json",
+      "revision": "week1-independent-transfer-v2",
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "id": "followup:content-check",
+      "uri": "reviews/week01/independent-transfer-20261111/content-check.json",
+      "revision": "week1-independent-transfer-v2",
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "id": "followup:independent-review",
+      "uri": "reviews/week01/independent-transfer-20261111/independent-review.md",
+      "revision": "week1-independent-transfer-v2",
+      "sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57"
+    }
+  ],
+  "records": [
+    {
+      "id": "record-baseline-defect",
+      "kind": "observation",
+      "text": "Baseline mean trace total cell conflated returned mean with final accumulator. Independent arithmetic reproduced the defect; final scoped material review confirms correction. No learner outcomes observed.",
+      "created_at": "2026-11-10T22:38:38.128510+00:00",
+      "source_refs": [
+        {
+          "source_id": "baseline",
+          "locator": "mean algorithm trace table"
+        }
+      ],
+      "supersedes": []
+    },
+    {
+      "id": "record-execution-receipt",
+      "kind": "evidence",
+      "text": "Exact-artifact execution-receipt received and inspected; limited to the outcomes recorded therein, not aggregate acceptance.",
+      "created_at": "2026-11-10T22:37:50.476387+00:00",
+      "source_refs": [
+        {
+          "source_id": "execution-receipt",
+          "locator": "whole receipt"
+        }
+      ],
+      "supersedes": []
+    },
+    {
+      "id": "record-independent-material-review",
+      "kind": "evidence",
+      "text": "Exact-artifact independent-material-review received and inspected; limited to the outcomes recorded therein, not aggregate acceptance.",
+      "created_at": "2026-11-10T22:37:50.476387+00:00",
+      "source_refs": [
+        {
+          "source_id": "independent-material-review",
+          "locator": "whole receipt"
+        }
+      ],
+      "supersedes": []
+    },
+    {
+      "id": "record-independent-supplement",
+      "kind": "evidence",
+      "text": "Current exact-artifact scoped supplemental source/material review; no participant or educator observations.",
+      "created_at": "2026-11-10T22:46:34.938087+00:00",
+      "source_refs": [
+        {
+          "source_id": "independent-supplement",
+          "locator": "complete scoped report"
+        }
+      ],
+      "supersedes": []
+    },
+    {
+      "id": "record-independent-final-rebind",
+      "kind": "evidence",
+      "text": "Current exact-artifact scoped supplemental source/material review; no participant or educator observations.",
+      "created_at": "2026-11-10T22:46:34.938087+00:00",
+      "source_refs": [
+        {
+          "source_id": "independent-final-rebind",
+          "locator": "complete scoped report"
+        }
+      ],
+      "supersedes": [
+        "record-independent-material-review"
+      ]
+    },
+    {
+      "id": "record-binding-correction",
+      "kind": "observation",
+      "text": "Earlier visual assessment locator d60c3acd did not contain the graph-change task. Current binding is b5362bd2 with response5d9473df. Notebook bytes unchanged. Earlier failed finding retained in supplemental report.",
+      "created_at": "2026-11-10T22:46:34.938087+00:00",
+      "source_refs": [
+        {
+          "source_id": "independent-supplement",
+          "locator": "record_corrections_needed"
+        },
+        {
+          "source_id": "independent-final-rebind",
+          "locator": "corrected binding verification"
+        }
+      ],
+      "supersedes": []
+    },
+    {
+      "id": "record:week1-independent-transfer-v2",
+      "kind": "evidence",
+      "text": "One manually executed revision: fresh notebook and changed-input checks, official source brief, and a separate scoped review. Learner performance remains unobserved.",
+      "created_at": "2026-11-11T02:32:09.236369+00:00",
+      "source_refs": [
+        {
+          "source_id": "followup:source-brief",
+          "locator": "complete current record"
+        },
+        {
+          "source_id": "followup:execution",
+          "locator": "complete current record"
+        },
+        {
+          "source_id": "followup:content-check",
+          "locator": "complete current record"
+        },
+        {
+          "source_id": "followup:independent-review",
+          "locator": "complete current record"
+        }
+      ],
+      "supersedes": []
+    }
+  ],
+  "reviews": [],
+  "history": [],
+  "snapshot_note": "30-minute manual checkpoint recorded at 2026-11-11T02:33:41.661809+00:00; counters captured at 2026-11-11T02:48:35.413281+00:00. Counters must be refreshed on resume. Criteria and finite budgets remain unagreed."
+}

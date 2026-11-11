@@ -1,0 +1,160 @@
+{
+  "authority": "advisory_only",
+  "status": "uncertain",
+  "synthetic": false,
+  "comparisons": [
+    {
+      "id": "traceback",
+      "week": 1,
+      "goal_id": "goal:traceback",
+      "recorded_judgment": "met",
+      "status": "uncertain",
+      "issue_paths": [
+        "comparisons[0]"
+      ]
+    },
+    {
+      "id": "chart",
+      "week": 1,
+      "goal_id": "goal:chart",
+      "recorded_judgment": "met",
+      "status": "uncertain",
+      "issue_paths": [
+        "comparisons[1]"
+      ]
+    },
+    {
+      "id": "broadcast",
+      "week": 1,
+      "goal_id": "goal:broadcast",
+      "recorded_judgment": "met",
+      "status": "uncertain",
+      "issue_paths": [
+        "comparisons[2]"
+      ]
+    },
+    {
+      "id": "variance",
+      "week": 1,
+      "goal_id": "goal:variance",
+      "recorded_judgment": "met",
+      "status": "uncertain",
+      "issue_paths": [
+        "comparisons[3]"
+      ]
+    },
+    {
+      "id": "merge",
+      "week": 1,
+      "goal_id": "goal:merge",
+      "recorded_judgment": "met",
+      "status": "uncertain",
+      "issue_paths": [
+        "comparisons[4]"
+      ]
+    }
+  ],
+  "assessment_formats": [
+    {
+      "week": 1,
+      "status": "matched",
+      "kinds": [
+        {
+          "kind": "multiple_choice",
+          "required": 2,
+          "observed": 2,
+          "difference": 0,
+          "status": "matched"
+        },
+        {
+          "kind": "written",
+          "required": 1,
+          "observed": 1,
+          "difference": 0,
+          "status": "matched"
+        }
+      ]
+    }
+  ],
+  "gaps": [],
+  "findings": [
+    {
+      "status": "uncertain",
+      "path": "time_allocations[0].outside_class_minutes",
+      "code": "missing",
+      "message": "An integer is required."
+    },
+    {
+      "status": "uncertain",
+      "path": "unknowns[0]",
+      "code": "reported_unknown",
+      "message": "Learner independence, readiness and learning have not been observed."
+    },
+    {
+      "status": "uncertain",
+      "path": "unknowns[1]",
+      "code": "reported_unknown",
+      "message": "Revised homework duration and actual class completion time are not measured."
+    },
+    {
+      "status": "uncertain",
+      "path": "unknowns[2]",
+      "code": "reported_unknown",
+      "message": "The 2026 high-school examples do not determine 2027 middle-school difficulty."
+    },
+    {
+      "status": "uncertain",
+      "path": "unknowns[3]",
+      "code": "reported_unknown",
+      "message": "Browser layout has not been independently verified."
+    },
+    {
+      "status": "uncertain",
+      "path": "comparisons[0]",
+      "code": "unresolved_unknowns",
+      "message": "A global or explicitly scoped unknown affects this comparison."
+    },
+    {
+      "status": "uncertain",
+      "path": "comparisons[1]",
+      "code": "unresolved_unknowns",
+      "message": "A global or explicitly scoped unknown affects this comparison."
+    },
+    {
+      "status": "uncertain",
+      "path": "comparisons[2]",
+      "code": "unresolved_unknowns",
+      "message": "A global or explicitly scoped unknown affects this comparison."
+    },
+    {
+      "status": "uncertain",
+      "path": "comparisons[3]",
+      "code": "unresolved_unknowns",
+      "message": "A global or explicitly scoped unknown affects this comparison."
+    },
+    {
+      "status": "uncertain",
+      "path": "comparisons[4]",
+      "code": "unresolved_unknowns",
+      "message": "A global or explicitly scoped unknown affects this comparison."
+    }
+  ],
+  "errors": [],
+  "verification": {
+    "artifact_digest": "not_checked",
+    "source_authenticity": "not_checked",
+    "source_content": "not_checked",
+    "reviewer_independence": "not_checked",
+    "assessment_counts": "not_checked"
+  },
+  "limitations": [
+    "Recorded observations are advisory declarations, not an automated assessment of lesson meaning or problem difficulty.",
+    "The tool does not open sources or verify their official status, quotations, locations, truth, or currentness.",
+    "Artifact paths and declared SHA-256 values are not read or verified against file bytes.",
+    "Reviewer identity and independence are reported declarations and are not authenticated.",
+    "Assessment-format counts are recorded observations; they are not extracted from the lesson.",
+    "It does not establish learner achievement, equivalence to middle-school past problems, or completeness of competition coverage.",
+    "This report is independent of K01–K16 and does not change any earlier quality evaluation.",
+    "Only the two pinned KOAI 2026 example URLs have a fixed metadata consistency check; it does not fetch or authenticate them."
+  ]
+}

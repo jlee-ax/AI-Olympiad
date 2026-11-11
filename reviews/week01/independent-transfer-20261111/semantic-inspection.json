@@ -1,0 +1,368 @@
+{
+  "authority": "advisory_only",
+  "status": "recorded_design_met",
+  "mechanical_status": "declared_path_complete",
+  "synthetic": false,
+  "errors": [],
+  "findings": [],
+  "comparisons": [
+    {
+      "path_id": "path:traceback",
+      "comparison_id": "traceback",
+      "judgments": {
+        "problem_specific_key": "met",
+        "feedback": "met",
+        "independent_assessment": "met"
+      }
+    },
+    {
+      "path_id": "path:chart",
+      "comparison_id": "chart",
+      "judgments": {
+        "problem_specific_key": "met",
+        "feedback": "met",
+        "independent_assessment": "met"
+      }
+    },
+    {
+      "path_id": "path:broadcast",
+      "comparison_id": "broadcast",
+      "judgments": {
+        "problem_specific_key": "met",
+        "feedback": "met",
+        "independent_assessment": "met"
+      }
+    },
+    {
+      "path_id": "path:variance",
+      "comparison_id": "variance",
+      "judgments": {
+        "problem_specific_key": "met",
+        "feedback": "met",
+        "independent_assessment": "met"
+      }
+    },
+    {
+      "path_id": "path:merge",
+      "comparison_id": "merge",
+      "judgments": {
+        "problem_specific_key": "met",
+        "feedback": "met",
+        "independent_assessment": "met"
+      }
+    }
+  ],
+  "bindings": [
+    {
+      "comparison_id": "traceback",
+      "path_id": "path:traceback",
+      "dimension": "problem_specific_key",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "Python 진단과 실제 수정 과제: traceback 진단",
+      "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "status": "current"
+    },
+    {
+      "comparison_id": "traceback",
+      "path_id": "path:traceback",
+      "dimension": "problem_specific_key",
+      "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+      "locator": "표의 traceback 행",
+      "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "status": "current"
+    },
+    {
+      "comparison_id": "traceback",
+      "path_id": "path:traceback",
+      "dimension": "feedback",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "Python 진단과 실제 수정 과제: traceback 진단",
+      "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "status": "current"
+    },
+    {
+      "comparison_id": "traceback",
+      "path_id": "path:traceback",
+      "dimension": "feedback",
+      "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+      "locator": "표의 traceback 행",
+      "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "status": "current"
+    },
+    {
+      "comparison_id": "traceback",
+      "path_id": "path:traceback",
+      "dimension": "independent_assessment",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "locator": "cell:7208718e + cell:ab8d9d90",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "comparison_id": "traceback",
+      "path_id": "path:traceback",
+      "dimension": "independent_assessment",
+      "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+      "locator": "표의 traceback 행",
+      "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "status": "current"
+    },
+    {
+      "comparison_id": "chart",
+      "path_id": "path:chart",
+      "dimension": "problem_specific_key",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "새 입력 학습 확인 답: 새 그래프",
+      "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "status": "current"
+    },
+    {
+      "comparison_id": "chart",
+      "path_id": "path:chart",
+      "dimension": "problem_specific_key",
+      "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+      "locator": "표의 그래프 행",
+      "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "status": "current"
+    },
+    {
+      "comparison_id": "chart",
+      "path_id": "path:chart",
+      "dimension": "feedback",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "새 입력 학습 확인 답: 새 그래프",
+      "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "status": "current"
+    },
+    {
+      "comparison_id": "chart",
+      "path_id": "path:chart",
+      "dimension": "feedback",
+      "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+      "locator": "표의 그래프 행",
+      "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "status": "current"
+    },
+    {
+      "comparison_id": "chart",
+      "path_id": "path:chart",
+      "dimension": "independent_assessment",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "locator": "cell:d60c3acd + cell:dff8752b",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "comparison_id": "chart",
+      "path_id": "path:chart",
+      "dimension": "independent_assessment",
+      "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+      "locator": "표의 그래프 행",
+      "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "status": "current"
+    },
+    {
+      "comparison_id": "broadcast",
+      "path_id": "path:broadcast",
+      "dimension": "problem_specific_key",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "수업 밖 필수 연습 해설: 새 브로드캐스팅",
+      "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "status": "current"
+    },
+    {
+      "comparison_id": "broadcast",
+      "path_id": "path:broadcast",
+      "dimension": "problem_specific_key",
+      "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+      "locator": "표의 broadcasting 행",
+      "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "status": "current"
+    },
+    {
+      "comparison_id": "broadcast",
+      "path_id": "path:broadcast",
+      "dimension": "feedback",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "수업 밖 필수 연습 해설: 새 브로드캐스팅",
+      "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "status": "current"
+    },
+    {
+      "comparison_id": "broadcast",
+      "path_id": "path:broadcast",
+      "dimension": "feedback",
+      "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+      "locator": "표의 broadcasting 행",
+      "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "status": "current"
+    },
+    {
+      "comparison_id": "broadcast",
+      "path_id": "path:broadcast",
+      "dimension": "independent_assessment",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "locator": "cell:df2802a3",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "comparison_id": "broadcast",
+      "path_id": "path:broadcast",
+      "dimension": "independent_assessment",
+      "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+      "locator": "표의 broadcasting 행",
+      "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "status": "current"
+    },
+    {
+      "comparison_id": "variance",
+      "path_id": "path:variance",
+      "dimension": "problem_specific_key",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "수업 밖 필수 연습 해설: 새 독립 분산",
+      "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "status": "current"
+    },
+    {
+      "comparison_id": "variance",
+      "path_id": "path:variance",
+      "dimension": "problem_specific_key",
+      "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+      "locator": "표의 분산 행",
+      "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "status": "current"
+    },
+    {
+      "comparison_id": "variance",
+      "path_id": "path:variance",
+      "dimension": "feedback",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "수업 밖 필수 연습 해설: 새 독립 분산",
+      "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "status": "current"
+    },
+    {
+      "comparison_id": "variance",
+      "path_id": "path:variance",
+      "dimension": "feedback",
+      "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+      "locator": "표의 분산 행",
+      "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "status": "current"
+    },
+    {
+      "comparison_id": "variance",
+      "path_id": "path:variance",
+      "dimension": "independent_assessment",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "locator": "cell:9ce91662 + cell:variance-independent-response",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "comparison_id": "variance",
+      "path_id": "path:variance",
+      "dimension": "independent_assessment",
+      "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+      "locator": "표의 분산 행",
+      "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "status": "current"
+    },
+    {
+      "comparison_id": "merge",
+      "path_id": "path:merge",
+      "dimension": "problem_specific_key",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "수업 밖 필수 연습 해설: 병합 경계",
+      "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "status": "current"
+    },
+    {
+      "comparison_id": "merge",
+      "path_id": "path:merge",
+      "dimension": "problem_specific_key",
+      "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+      "locator": "표의 병합 행",
+      "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "status": "current"
+    },
+    {
+      "comparison_id": "merge",
+      "path_id": "path:merge",
+      "dimension": "feedback",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "수업 밖 필수 연습 해설: 병합 경계",
+      "expected_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "actual_sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "status": "current"
+    },
+    {
+      "comparison_id": "merge",
+      "path_id": "path:merge",
+      "dimension": "feedback",
+      "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+      "locator": "표의 병합 행",
+      "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "status": "current"
+    },
+    {
+      "comparison_id": "merge",
+      "path_id": "path:merge",
+      "dimension": "independent_assessment",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "locator": "cell:0fd965eb, 소제목 새 병합 조건을 먼저 예측하기 + cell:13559279",
+      "expected_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "status": "current"
+    },
+    {
+      "comparison_id": "merge",
+      "path_id": "path:merge",
+      "dimension": "independent_assessment",
+      "path": "reviews/week01/independent-transfer-20261111/independent-review.md",
+      "locator": "표의 병합 행",
+      "expected_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "actual_sha256": "02b1c89449b2ce5c32102752e95955cad0aadfc7f3629a6509328a98bd8eff57",
+      "status": "current"
+    }
+  ],
+  "verification": {
+    "semantics": "recorded_judgment_only",
+    "reviewer_independence": "not_checked",
+    "learner_independence": "not_observed"
+  },
+  "limitations": [
+    "A current review record preserves an explicit content judgment; it is not automated semantic verification.",
+    "Locators, reviewer identity, review method and judgments remain declarations; matching bytes do not make a wrong judgment true.",
+    "Only the declared paths and supplied review evidence are in scope; omitted demands and whole-lesson adequacy are not established.",
+    "Task design, actual unaided learner performance, learning effect and contest readiness remain separate."
+  ]
+}

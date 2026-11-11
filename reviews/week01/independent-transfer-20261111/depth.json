@@ -1,0 +1,401 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "scope_sources": [
+    {
+      "id": "guide2027",
+      "title": "KOAI 2027 competition guide",
+      "url": "https://kitpa.org/koai/2027",
+      "locator": "Middle-school division and examination composition",
+      "read_extent": "Middle-school schedule and examination composition",
+      "version": "KOAI 2027 guide; linked syllabus labeled IOAI 2026",
+      "accessed_at": "2026-11-11",
+      "verification": "verified_official",
+      "verification_evidence": "Directly opened the linked official page and read the specified section; reviewer also checked the sources."
+    },
+    {
+      "id": "syllabus",
+      "title": "KOAI/IOAI syllabus",
+      "url": "https://kitpa.org/koai/syllabus",
+      "locator": "Heading and 1-1 programming foundations",
+      "read_extent": "Heading and programming foundation rows",
+      "version": "KOAI 2027 guide; linked syllabus labeled IOAI 2026",
+      "accessed_at": "2026-11-11",
+      "verification": "verified_official",
+      "verification_evidence": "Directly opened the linked official page and read the specified section; reviewer also checked the sources."
+    }
+  ],
+  "problem_sources": [
+    {
+      "id": "example-axis",
+      "title": "KOAI 2026 sample multiple-choice question 2",
+      "locator": "PDF page 1, question 2",
+      "read_extent": "Question 2 shape, axis and reshape alternatives",
+      "problem": "multiple choice 2",
+      "url": "https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf",
+      "version": "KOAI 2026 official sample, high-school standard",
+      "accessed_at": "2026-11-10",
+      "verification": "verified_official",
+      "verification_evidence": "Directly read the notice and linked PDF; no complete official answer key is published.",
+      "kind": "example",
+      "year": 2026,
+      "target": "high_school"
+    },
+    {
+      "id": "example-transpose",
+      "title": "KOAI 2026 sample multiple-choice question 6",
+      "locator": "PDF page 2, question 6",
+      "read_extent": "Question 6 tensor axis exchange versus reshape-like operations",
+      "problem": "multiple choice 6",
+      "url": "https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf",
+      "version": "KOAI 2026 official sample, high-school standard",
+      "accessed_at": "2026-11-10",
+      "verification": "verified_official",
+      "verification_evidence": "Directly read the notice and linked PDF; no complete official answer key is published.",
+      "kind": "example",
+      "year": 2026,
+      "target": "high_school"
+    },
+    {
+      "id": "example-knn",
+      "title": "KOAI 2026 sample written question 2",
+      "locator": "PDF page 17, written question 2",
+      "read_extent": "Question 2 function input/output shapes, majority-vote tie rule, and recommendation to use broadcasting for distance calculation",
+      "problem": "written 2",
+      "url": "https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf",
+      "version": "KOAI 2026 official sample, high-school standard",
+      "accessed_at": "2026-11-10",
+      "verification": "verified_official",
+      "verification_evidence": "Directly read the notice and linked PDF; no complete official answer key is published.",
+      "kind": "example",
+      "year": 2026,
+      "target": "high_school"
+    },
+    {
+      "id": "example-features",
+      "title": "KOAI 2026 sample multiple-choice question 24",
+      "locator": "PDF page 7, multiple-choice question 24",
+      "read_extent": "Question 24 feature-engineering alternatives",
+      "problem": "multiple choice 24",
+      "url": "https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf",
+      "version": "KOAI 2026 official sample, high-school standard",
+      "accessed_at": "2026-11-10",
+      "verification": "verified_official",
+      "verification_evidence": "Directly read the notice and linked PDF; no complete official answer key is published.",
+      "kind": "example",
+      "year": 2026,
+      "target": "high_school"
+    },
+    {
+      "id": "example-python",
+      "title": "KOAI 2026 high-school learning example multiple choice 1",
+      "locator": "PDF multiple choice 1",
+      "read_extent": "Python call/state and output alternatives",
+      "problem": "multiple choice 1",
+      "url": "https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf",
+      "version": "KOAI 2026 official sample, high-school standard",
+      "accessed_at": "2026-11-11",
+      "verification": "verified_official",
+      "verification_evidence": "Directly read the notice and linked PDF; no complete official answer key is published.",
+      "kind": "example",
+      "year": 2026,
+      "target": "high_school"
+    },
+    {
+      "id": "example-visualisation",
+      "title": "KOAI 2026 high-school learning example multiple choice 3",
+      "locator": "PDF multiple choice 3",
+      "read_extent": "Choice of visualizing continuous-variable distribution/relationship",
+      "problem": "multiple choice 3",
+      "url": "https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf",
+      "version": "KOAI 2026 official sample, high-school standard",
+      "accessed_at": "2026-11-11",
+      "verification": "verified_official",
+      "verification_evidence": "Directly read the notice and linked PDF; no complete official answer key is published.",
+      "kind": "example",
+      "year": 2026,
+      "target": "high_school"
+    }
+  ],
+  "target": {
+    "competition_year": 2027,
+    "division": "middle_school",
+    "artifact": "lessons/week01/week01_python_tables.ipynb",
+    "artifact_revision": "week1-independent-transfer-v2",
+    "artifact_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+    "class_minutes": 120,
+    "weeks": [
+      1
+    ],
+    "baseline_assumptions": [
+      "Middle-school learner with basic coding; no learner diagnosis observed.",
+      "Week 1 is a foundation, not full contest mastery."
+    ],
+    "goals": [
+      {
+        "id": "goal:traceback",
+        "week": 1,
+        "description": "Trace an out-of-range operation and test a correction."
+      },
+      {
+        "id": "goal:chart",
+        "week": 1,
+        "description": "Build and translate coordinates from a changed data table and identify the causal limit."
+      },
+      {
+        "id": "goal:broadcast",
+        "week": 1,
+        "description": "Choose column and row adjustment shapes and reject an incompatible trailing axis."
+      },
+      {
+        "id": "goal:variance",
+        "week": 1,
+        "description": "Explain population variance under translation and scaling on unseen values."
+      },
+      {
+        "id": "goal:merge",
+        "week": 1,
+        "description": "Predict unmatched and duplicate-key behavior on changed data copies."
+      }
+    ]
+  },
+  "comparisons": [
+    {
+      "week": 1,
+      "scope_refs": [
+        {
+          "source_id": "syllabus",
+          "locator": "1-1 programming foundations"
+        }
+      ],
+      "assessment_method": "Review of assigned task text, not observed student work.",
+      "answer_conditions": "Student is asked to hide completed examples and record help; teacher answers are separate but in the same repository.",
+      "allowed_support": "The task asks learners to record assistance; actual assistance and results are unobserved.",
+      "author_id": "week01-notebook-author",
+      "reviewer": {
+        "id": "independent-week01-review",
+        "independent": true,
+        "evidence_locator": "reviews/week01/independent-transfer-20261111/independent-review.md"
+      },
+      "id": "traceback",
+      "goal_id": "goal:traceback",
+      "competency": "Trace an out-of-range operation and test a correction.",
+      "problem_refs": [
+        {
+          "source_id": "example-python",
+          "locator": "multiple choice 1"
+        }
+      ],
+      "student_task_locators": [
+        "cell:7208718e",
+        "cell:ab8d9d90"
+      ],
+      "difference": "Q1 requires Python code-state reasoning; it does not specifically require traceback interpretation.",
+      "judgment": "met",
+      "rationale": "Separate reviewer inspected this bounded task design and its own key; actual learner performance remains unobserved.",
+      "theory": {
+        "applicable": true,
+        "claim": "For the nonempty input, the last valid index is length minus one.",
+        "evidence_locators": [
+          "cell:7208718e"
+        ]
+      }
+    },
+    {
+      "week": 1,
+      "scope_refs": [
+        {
+          "source_id": "syllabus",
+          "locator": "1-1 programming foundations"
+        }
+      ],
+      "assessment_method": "Review of assigned task text, not observed student work.",
+      "answer_conditions": "Student is asked to hide completed examples and record help; teacher answers are separate but in the same repository.",
+      "allowed_support": "The task asks learners to record assistance; actual assistance and results are unobserved.",
+      "author_id": "week01-notebook-author",
+      "reviewer": {
+        "id": "independent-week01-review",
+        "independent": true,
+        "evidence_locator": "reviews/week01/independent-transfer-20261111/independent-review.md"
+      },
+      "id": "chart",
+      "goal_id": "goal:chart",
+      "competency": "Build and translate coordinates from a changed data table and identify the causal limit.",
+      "problem_refs": [
+        {
+          "source_id": "example-visualisation",
+          "locator": "multiple choice 3"
+        }
+      ],
+      "student_task_locators": [
+        "cell:d60c3acd",
+        "cell:dff8752b"
+      ],
+      "difference": "Q3 asks about visualization choice; constructing coordinates is a staged precursor, not that full question.",
+      "judgment": "met",
+      "rationale": "Separate reviewer inspected this bounded task design and its own key; actual learner performance remains unobserved.",
+      "theory": {
+        "applicable": true,
+        "claim": "A plotted coordinate maps a single row and unit to two axes.",
+        "evidence_locators": [
+          "cell:d60c3acd"
+        ]
+      }
+    },
+    {
+      "week": 1,
+      "scope_refs": [
+        {
+          "source_id": "syllabus",
+          "locator": "1-1 programming foundations"
+        }
+      ],
+      "assessment_method": "Review of assigned task text, not observed student work.",
+      "answer_conditions": "Student is asked to hide completed examples and record help; teacher answers are separate but in the same repository.",
+      "allowed_support": "The task asks learners to record assistance; actual assistance and results are unobserved.",
+      "author_id": "week01-notebook-author",
+      "reviewer": {
+        "id": "independent-week01-review",
+        "independent": true,
+        "evidence_locator": "reviews/week01/independent-transfer-20261111/independent-review.md"
+      },
+      "id": "broadcast",
+      "goal_id": "goal:broadcast",
+      "competency": "Choose column and row adjustment shapes and reject an incompatible trailing axis.",
+      "problem_refs": [
+        {
+          "source_id": "example-axis",
+          "locator": "multiple choice 2"
+        },
+        {
+          "source_id": "example-knn",
+          "locator": "written question 2: broadcasting recommended for distance calculation"
+        }
+      ],
+      "student_task_locators": [
+        "cell:df2802a3"
+      ],
+      "difference": "Q2 concerns shape and reductions; this is a separate array-shape foundation, not memory semantics.",
+      "judgment": "met",
+      "rationale": "Separate reviewer inspected this bounded task design and its own key; actual learner performance remains unobserved.",
+      "theory": {
+        "applicable": true,
+        "claim": "Trailing dimensions must agree or one must be 1.",
+        "evidence_locators": [
+          "cell:df2802a3"
+        ]
+      }
+    },
+    {
+      "week": 1,
+      "scope_refs": [
+        {
+          "source_id": "syllabus",
+          "locator": "1-4 data science: statistical moments and preprocessing"
+        }
+      ],
+      "assessment_method": "Review of assigned task text, not observed student work.",
+      "answer_conditions": "Student is asked to hide completed examples and record help; teacher answers are separate but in the same repository.",
+      "allowed_support": "The task asks learners to record assistance; actual assistance and results are unobserved.",
+      "author_id": "week01-notebook-author",
+      "reviewer": {
+        "id": "independent-week01-review",
+        "independent": true,
+        "evidence_locator": "reviews/week01/independent-transfer-20261111/independent-review.md"
+      },
+      "id": "variance",
+      "goal_id": "goal:variance",
+      "competency": "Explain population variance under translation and scaling on unseen values.",
+      "problem_refs": [
+        {
+          "source_id": "example-features",
+          "locator": "multiple choice 24"
+        }
+      ],
+      "student_task_locators": [
+        "cell:9ce91662",
+        "cell:variance-independent-response"
+      ],
+      "difference": "Q24 concerns feature-engineering classification; this is a statistical-moment foundation only.",
+      "judgment": "met",
+      "rationale": "Separate reviewer inspected this bounded task design and its own key; actual learner performance remains unobserved.",
+      "theory": {
+        "applicable": true,
+        "claim": "Subtracting the mean removes a common shift; squaring doubled deviations quadruples variance.",
+        "evidence_locators": [
+          "cell:variance-independent-response"
+        ]
+      }
+    },
+    {
+      "week": 1,
+      "scope_refs": [
+        {
+          "source_id": "syllabus",
+          "locator": "1-1 programming foundations"
+        }
+      ],
+      "assessment_method": "Review of assigned task text, not observed student work.",
+      "answer_conditions": "Student is asked to hide completed examples and record help; teacher answers are separate but in the same repository.",
+      "allowed_support": "The task asks learners to record assistance; actual assistance and results are unobserved.",
+      "author_id": "week01-notebook-author",
+      "reviewer": {
+        "id": "independent-week01-review",
+        "independent": true,
+        "evidence_locator": "reviews/week01/independent-transfer-20261111/independent-review.md"
+      },
+      "id": "merge",
+      "goal_id": "goal:merge",
+      "competency": "Predict unmatched and duplicate-key behavior on changed data copies.",
+      "problem_refs": [
+        {
+          "source_id": "example-knn",
+          "locator": "written 2"
+        }
+      ],
+      "student_task_locators": [
+        "cell:0fd965eb",
+        "cell:13559279"
+      ],
+      "difference": "The KNN example specifies input arrays but does not require a join; this is data-preparation foundation, not an equivalent problem.",
+      "judgment": "met",
+      "rationale": "Separate reviewer inspected this bounded task design and its own key; actual learner performance remains unobserved.",
+      "theory": {
+        "applicable": true,
+        "claim": "A left join retains left rows; a many-to-one validation requires unique right keys.",
+        "evidence_locators": [
+          "cell:13559279"
+        ]
+      }
+    }
+  ],
+  "time_allocations": [
+    {
+      "week": 1,
+      "in_class_minutes": 120,
+      "locator": "lessons/week01/lesson-manifest.json:class_blocks; updated homework time not estimated",
+      "required_assessment_format": {
+        "status": "specified",
+        "counts": {
+          "multiple_choice": 2,
+          "written": 1
+        },
+        "locator": "curriculum/student-plan.html:official-scope-and-exam row"
+      },
+      "observed_assessment_format": {
+        "status": "observed",
+        "counts": {
+          "multiple_choice": 2,
+          "written": 1
+        },
+        "locator": "notebook cell:71068cea"
+      }
+    }
+  ],
+  "unknowns": [
+    "Learner independence, readiness and learning have not been observed.",
+    "Revised homework duration and actual class completion time are not measured.",
+    "The 2026 high-school examples do not determine 2027 middle-school difficulty.",
+    "Browser layout has not been independently verified."
+  ]
+}
