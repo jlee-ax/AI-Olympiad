@@ -1,0 +1,55 @@
+{
+  "id": "actual-015-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Current direct-read research and actual-lesson review; design evidence, no learner claim.",
+    "demand_id": "D03",
+    "judgment": "covered",
+    "reviewer": "root-actual-content-review",
+    "rationale": "baseline에는 시점·예측식 연결이 약함. current는 명시 및 새 입력 문항 있음. preprocessing-fit 누수와는 별도 요구다. Scope is course-level; later placement proposals do not invalidate a proper basic Week1, and do not prove later teaching.",
+    "start_line": 63,
+    "end_line": 98,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Existing sums/indexing/return/axis foundations are preserved; full prerequisite-set availability is reviewed separately. baseline에는 시점·예측식 연결이 약함. current는 명시 및 새 입력 문항 있음. preprocessing-fit 누수와는 별도 요구다.",
+        "rationale": "Reviewed teaching/task DESIGN only. 이미 존재하는 입력/정답 토대를 강화한 current 내용은 적절한 국소 연결. 모델 training은 later.",
+        "start_line": 63,
+        "end_line": 98
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "baseline에는 시점·예측식 연결이 약함. current는 명시 및 새 입력 문항 있음. preprocessing-fit 누수와는 별도 요구다.",
+        "rationale": "Reviewed teaching/task DESIGN only. 이미 존재하는 입력/정답 토대를 강화한 current 내용은 적절한 국소 연결. 모델 training은 later.",
+        "start_line": 63,
+        "end_line": 98
+      },
+      {
+        "id": "assessment",
+        "judgment": "met",
+        "observed_behavior": "baseline에는 시점·예측식 연결이 약함. current는 명시 및 새 입력 문항 있음. preprocessing-fit 누수와는 별도 요구다.",
+        "rationale": "Reviewed teaching/task DESIGN only. 이미 존재하는 입력/정답 토대를 강화한 current 내용은 적절한 국소 연결. 모델 training은 later.",
+        "start_line": 905,
+        "end_line": 912
+      },
+      {
+        "id": "principle",
+        "judgment": "met",
+        "observed_behavior": "baseline에는 시점·예측식 연결이 약함. current는 명시 및 새 입력 문항 있음. preprocessing-fit 누수와는 별도 요구다.",
+        "rationale": "Reviewed teaching/task DESIGN only. 이미 존재하는 입력/정답 토대를 강화한 current 내용은 적절한 국소 연결. 모델 training은 later.",
+        "start_line": 63,
+        "end_line": 98
+      },
+      {
+        "id": "practice",
+        "judgment": "met",
+        "observed_behavior": "baseline에는 시점·예측식 연결이 약함. current는 명시 및 새 입력 문항 있음. preprocessing-fit 누수와는 별도 요구다.",
+        "rationale": "Reviewed teaching/task DESIGN only. 이미 존재하는 입력/정답 토대를 강화한 current 내용은 적절한 국소 연결. 모델 training은 later.",
+        "start_line": 905,
+        "end_line": 912
+      }
+    ]
+  }
+}

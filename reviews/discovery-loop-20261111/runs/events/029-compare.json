@@ -1,0 +1,55 @@
+{
+  "id": "actual-029-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Current direct-read research and actual-lesson review; design evidence, no learner claim.",
+    "demand_id": "D10",
+    "judgment": "gap",
+    "reviewer": "root-actual-content-review",
+    "rationale": "새 입력/재실행은 있음. gradient-check·학습 검증곡선은 없음. Scope is course-level; later placement proposals do not invalidate a proper basic Week1, and do not prove later teaching.",
+    "start_line": 1197,
+    "end_line": 1209,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "Existing sums/indexing/return/axis foundations are preserved; full prerequisite-set availability is reviewed separately. 새 입력/재실행은 있음. gradient-check·학습 검증곡선은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 검증 사고는 now 선수로 인정하되 수치미분의 정밀도/상대오차는 고급 검증에 defer. 자료 암기를 완전 검증으로 취급하지 않는다.",
+        "start_line": 1197,
+        "end_line": 1209
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "새 입력/재실행은 있음. gradient-check·학습 검증곡선은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 검증 사고는 now 선수로 인정하되 수치미분의 정밀도/상대오차는 고급 검증에 defer. 자료 암기를 완전 검증으로 취급하지 않는다.",
+        "start_line": 1197,
+        "end_line": 1209
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "새 입력/재실행은 있음. gradient-check·학습 검증곡선은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 검증 사고는 now 선수로 인정하되 수치미분의 정밀도/상대오차는 고급 검증에 defer. 자료 암기를 완전 검증으로 취급하지 않는다.",
+        "start_line": 1269,
+        "end_line": 1283
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "새 입력/재실행은 있음. gradient-check·학습 검증곡선은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 검증 사고는 now 선수로 인정하되 수치미분의 정밀도/상대오차는 고급 검증에 defer. 자료 암기를 완전 검증으로 취급하지 않는다.",
+        "start_line": 1197,
+        "end_line": 1209
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "새 입력/재실행은 있음. gradient-check·학습 검증곡선은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 검증 사고는 now 선수로 인정하되 수치미분의 정밀도/상대오차는 고급 검증에 defer. 자료 암기를 완전 검증으로 취급하지 않는다.",
+        "start_line": 1269,
+        "end_line": 1283
+      }
+    ]
+  }
+}

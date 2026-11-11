@@ -1,0 +1,42 @@
+{
+  "baseline_commit": "c3579c47c7c64ac7d0919410e665a917db4cdeab",
+  "baseline_code_sha256": "5ba44f326240004a7e676e050f049bae6bcded143a6957942000282cae909bcf",
+  "cases": [
+    {
+      "id": "declared_scoped_control",
+      "expected": "recorded_met",
+      "actual": "recorded_met"
+    },
+    {
+      "id": "unregistered_external_demands_invisible",
+      "expected": "identical_report",
+      "actual": "identical_report"
+    },
+    {
+      "id": "manually_registered_uncompared_goal_visible",
+      "expected": "uncertain",
+      "actual": "uncertain"
+    }
+  ],
+  "actual_record": {
+    "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-workflow-improvement/reviews/discovery-loop-20261111/inputs/baseline-candidate-depth.json",
+    "goals": [
+      "goal:axis",
+      "goal:function",
+      "goal:written",
+      "goal:variance"
+    ],
+    "comparisons": [
+      "axis-choice",
+      "function-spec",
+      "written-format",
+      "variance-units"
+    ],
+    "status": "uncertain"
+  },
+  "interpretation": "This does not demonstrate false validity within the selected scope. It reproduces the absence of external demand discovery: undeclared obligations are invisible until an operator registers them.",
+  "limits": [
+    "The controls are explicitly synthetic. No source discovery or lesson revision is performed by the old inspector.",
+    "Recorded actual status preserves existing uncertainty; it is not upgraded to a pass."
+  ]
+}

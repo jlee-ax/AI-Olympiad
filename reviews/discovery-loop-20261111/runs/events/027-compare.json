@@ -1,0 +1,55 @@
+{
+  "id": "actual-027-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Current direct-read research and actual-lesson review; design evidence, no learner claim.",
+    "demand_id": "D08",
+    "judgment": "gap",
+    "reviewer": "root-actual-content-review",
+    "rationale": "broadcast 기초만 있음. attention/mask/softmax 없음. Scope is course-level; later placement proposals do not invalidate a proper basic Week1, and do not prove later teaching.",
+    "start_line": 974,
+    "end_line": 988,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "Existing sums/indexing/return/axis foundations are preserved; full prerequisite-set availability is reviewed separately. broadcast 기초만 있음. attention/mask/softmax 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 전체 attention 기초가 갖추어진 뒤 실시. 최신 beta API 문구는 버전을 고정하고 공식 문제의 정확한 API 요구처럼 과장하지 않는다.",
+        "start_line": 974,
+        "end_line": 988
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "broadcast 기초만 있음. attention/mask/softmax 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 전체 attention 기초가 갖추어진 뒤 실시. 최신 beta API 문구는 버전을 고정하고 공식 문제의 정확한 API 요구처럼 과장하지 않는다.",
+        "start_line": 974,
+        "end_line": 988
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "broadcast 기초만 있음. attention/mask/softmax 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 전체 attention 기초가 갖추어진 뒤 실시. 최신 beta API 문구는 버전을 고정하고 공식 문제의 정확한 API 요구처럼 과장하지 않는다.",
+        "start_line": 999,
+        "end_line": 1015
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "broadcast 기초만 있음. attention/mask/softmax 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 전체 attention 기초가 갖추어진 뒤 실시. 최신 beta API 문구는 버전을 고정하고 공식 문제의 정확한 API 요구처럼 과장하지 않는다.",
+        "start_line": 974,
+        "end_line": 988
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "broadcast 기초만 있음. attention/mask/softmax 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 전체 attention 기초가 갖추어진 뒤 실시. 최신 beta API 문구는 버전을 고정하고 공식 문제의 정확한 API 요구처럼 과장하지 않는다.",
+        "start_line": 999,
+        "end_line": 1015
+      }
+    ]
+  }
+}

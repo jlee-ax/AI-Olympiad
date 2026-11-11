@@ -1,0 +1,55 @@
+{
+  "id": "actual-034-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Current direct-read research and actual-lesson review; design evidence, no learner claim.",
+    "demand_id": "H01",
+    "judgment": "gap",
+    "reviewer": "root-actual-content-review",
+    "rationale": "현재 분모 설명은 평균용. weighted correctness·metric 선택/순위 평가 없음. Scope is course-level; later placement proposals do not invalidate a proper basic Week1, and do not prove later teaching.",
+    "start_line": 99,
+    "end_line": 124,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Existing sums/indexing/return/axis foundations are preserved; full prerequisite-set availability is reviewed separately. 현재 분모 설명은 평균용. weighted correctness·metric 선택/순위 평가 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 진짜 문제의 새 요구로 requirement-heldout에 보류. 평균을 아는지와 metric 정의를 읽고 새 분모를 만드는지를 분리한다.",
+        "start_line": 99,
+        "end_line": 124
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "현재 분모 설명은 평균용. weighted correctness·metric 선택/순위 평가 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 진짜 문제의 새 요구로 requirement-heldout에 보류. 평균을 아는지와 metric 정의를 읽고 새 분모를 만드는지를 분리한다.",
+        "start_line": 99,
+        "end_line": 124
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "현재 분모 설명은 평균용. weighted correctness·metric 선택/순위 평가 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 진짜 문제의 새 요구로 requirement-heldout에 보류. 평균을 아는지와 metric 정의를 읽고 새 분모를 만드는지를 분리한다.",
+        "start_line": 238,
+        "end_line": 271
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "현재 분모 설명은 평균용. weighted correctness·metric 선택/순위 평가 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 진짜 문제의 새 요구로 requirement-heldout에 보류. 평균을 아는지와 metric 정의를 읽고 새 분모를 만드는지를 분리한다.",
+        "start_line": 99,
+        "end_line": 124
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "현재 분모 설명은 평균용. weighted correctness·metric 선택/순위 평가 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 진짜 문제의 새 요구로 requirement-heldout에 보류. 평균을 아는지와 metric 정의를 읽고 새 분모를 만드는지를 분리한다.",
+        "start_line": 238,
+        "end_line": 271
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "actual-013-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Current direct-read research and actual-lesson review; design evidence, no learner claim.",
+    "demand_id": "D01",
+    "judgment": "gap",
+    "reviewer": "root-actual-content-review",
+    "rationale": "기초 배열 의미는 있음. 4차원 batch/channel 교환과 segmentation 출력 축은 없음. Scope is course-level; later placement proposals do not invalidate a proper basic Week1, and do not prove later teaching.",
+    "start_line": 201,
+    "end_line": 226,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Existing sums/indexing/return/axis foundations are preserved; full prerequisite-set availability is reviewed separately. 기초 배열 의미는 있음. 4차원 batch/channel 교환과 segmentation 출력 축은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 현재 1주차에는 이미 있는 의미 보존 평가를 유지. 4차원 모델 맥락은 later로 연결.",
+        "start_line": 201,
+        "end_line": 226
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "기초 배열 의미는 있음. 4차원 batch/channel 교환과 segmentation 출력 축은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 현재 1주차에는 이미 있는 의미 보존 평가를 유지. 4차원 모델 맥락은 later로 연결.",
+        "start_line": 201,
+        "end_line": 226
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "기초 배열 의미는 있음. 4차원 batch/channel 교환과 segmentation 출력 축은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 현재 1주차에는 이미 있는 의미 보존 평가를 유지. 4차원 모델 맥락은 later로 연결.",
+        "start_line": 943,
+        "end_line": 959
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "기초 배열 의미는 있음. 4차원 batch/channel 교환과 segmentation 출력 축은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 현재 1주차에는 이미 있는 의미 보존 평가를 유지. 4차원 모델 맥락은 later로 연결.",
+        "start_line": 201,
+        "end_line": 226
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "기초 배열 의미는 있음. 4차원 batch/channel 교환과 segmentation 출력 축은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 현재 1주차에는 이미 있는 의미 보존 평가를 유지. 4차원 모델 맥락은 later로 연결.",
+        "start_line": 943,
+        "end_line": 959
+      }
+    ]
+  }
+}

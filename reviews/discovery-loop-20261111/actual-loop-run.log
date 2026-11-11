@@ -1,0 +1,21 @@
+{
+  "development_demands": 12,
+  "heldout_added": [
+    "H01",
+    "H02"
+  ],
+  "final_demands": 14,
+  "final_queue_count": 13,
+  "status": "needs_work",
+  "event_count": 36,
+  "serialized_restart_each_event": true,
+  "frontier_expansion_next_action": "discover_original_sources",
+  "remaining_frontier": "next-wave",
+  "source_truth": "not_authenticated",
+  "learner_mastery": "not_observed",
+  "limits": [
+    "Sampled source corpus, not completeness of competition knowledge.",
+    "Search and semantic reading/extraction are actual agent work recorded here, not automatically executed by this Python reducer.",
+    "The original lesson branch is untouched. D03 is a narrow current material-design finding, not task-family transfer or course readiness."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "actual-001-discover",
+  "op": "discover",
+  "data": {
+    "reason": "Current direct-read research and actual-lesson review; design evidence, no learner claim.",
+    "frontier_id": "scope",
+    "query": "https://kitpa.org/koai/syllabus | https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf",
+    "actor": "source-research-sol",
+    "outcome": "found",
+    "candidates": [
+      {
+        "id": "S01",
+        "uri": "https://kitpa.org/koai/syllabus",
+        "path": "reviews/discovery-loop-20261111/inputs/reading-note-S01.md",
+        "revision": "2026 기준이라는 본문 표시; KOAI 2027 페이지가 연결",
+        "kind": "official_scope",
+        "attribution": "Source-research Sol agent directly read the original at recorded extent. Program reads this note only; official status/entailment are not authenticated."
+      },
+      {
+        "id": "S03",
+        "uri": "https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf",
+        "path": "reviews/discovery-loop-20261111/inputs/reading-note-S03.md",
+        "revision": "IOAI 2027; 2026/11 경로",
+        "kind": "official_scope",
+        "attribution": "Source-research Sol agent directly read the original at recorded extent. Program reads this note only; official status/entailment are not authenticated."
+      }
+    ]
+  }
+}

@@ -1,0 +1,1132 @@
+{
+  "schema_version": "independent-source-research.v1",
+  "as_of": "2026-11-11",
+  "writer_scope": [
+    "reviews/discovery-loop-20261111/source-research.md",
+    "reviews/discovery-loop-20261111/source-research.json"
+  ],
+  "purpose": "교안에서 범위를 역산하지 않고 외부 문제·공식 범위·API 계약·기초 이론에서 요구 및 누락 선수를 찾아 실제 교안과 대조",
+  "authority_context": [
+    {
+      "url": "https://kitpa.org/koai/2027",
+      "read_location": "L94–100,L218–235",
+      "observation": "2027 국내 페이지는 현재 국내 syllabus와 2026 예시 게시물로 연결; 1–4과목 전범위 명시"
+    },
+    {
+      "url": "https://kitpa.org/files/36",
+      "read_location": "L77–98",
+      "observation": "2026 고등부 학습 참고 예시이며 정답 미공개·난도 순 아님·교육기관 이용 사전허가 안내"
+    },
+    {
+      "url": "https://github.com/IOAI-official/IOAI-2025",
+      "read_location": "L180–202,L250–271",
+      "observation": "공식 repository가 Radar/Restroom/Concepts를 2025 개인전 task로 연결; CC BY4.0 표시"
+    }
+  ],
+  "selection": {
+    "substantive_primary_documents": 12,
+    "source_families": [
+      "national_scope/examples",
+      "international_scope",
+      "international_2025_tasks_radar/retrieval/generation",
+      "NumPy contracts",
+      "PyTorch contracts",
+      "sklearn validation contracts",
+      "Stanford foundational notes"
+    ],
+    "method": "공식 국내 범위/예시 → 실제 국제 task의 data/output/score/environment → 관련 API/theory → 선수·독립 평가 → 교안 locator/배치. seed 후보 matrix multiplication/embedding/stack를 필수 목록으로 사용하지 않음.",
+    "stopping_reason": "공식 범위, 세 종류 실제 국제 문제, 배열/텐서/평가/이론 문서가 서로 다른 신규 요구를 생성했고 요청된 8–12개 primary 문서 범위를 충족하여 이번 탐색을 마침.",
+    "completeness_claim": "bounded sample only; 전체 인터넷/전체 출제범위/학생 숙달 완전성 아님"
+  },
+  "sources": [
+    {
+      "source_id": "S01",
+      "family": "national_scope",
+      "title": "KOAI/IOAI 출제 기준",
+      "url": "https://kitpa.org/koai/syllabus",
+      "version": "2026 기준이라는 본문 표시; KOAI 2027 페이지가 연결",
+      "location": "L72–196; 특히 L74, L87–132, L133–160",
+      "read_extent": "본문 syllabus 주제표 전체 읽음",
+      "status": "direct_primary_read",
+      "evidence_paraphrase": "국내 연결 문서는 Python·배열·전처리·분할·평가에서 DL·CV·NLP까지 폭넓게 분류한다. 주간 배치표는 없다."
+    },
+    {
+      "source_id": "S02",
+      "family": "national_examples",
+      "title": "KOAI 2026 예시문제",
+      "url": "https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf",
+      "version": "2026 고등부 학습 참고 예시; 정답 미공개; 난도 순 아님",
+      "location": "PDF p1 Q1–2; p2 Q6; p6 Q19–22; p7 Q25; p9 Q32; p10 Q34; p17 서술2; p18 서술3 (페이지 1-based)",
+      "read_extent": "안내와 Q1–6, Q19–25, Q30–35, 서술1–3 및 후반부 문항을 읽음; 모든 문항을 독립 풀이/채점한 것은 아님",
+      "status": "direct_primary_read",
+      "evidence_paraphrase": "배열 조작의 의미, 분할과 검증, 가변 길이 처리, KNN 구현, 어텐션 설명 등이 별개의 요구다. 서술2는 유클리드 거리·이웃 투표·동률 규칙과 입력/출력 shape를 명시한다."
+    },
+    {
+      "source_id": "S03",
+      "family": "international_scope",
+      "title": "IOAI 2027 Syllabus",
+      "url": "https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf",
+      "version": "IOAI 2027; 2026/11 경로",
+      "location": "PDF pp1–4; L0–139",
+      "read_extent": "4페이지 전체 topic table와 각주 읽음",
+      "status": "direct_primary_read",
+      "evidence_paraphrase": "국제 최신 문서에는 technical fundamentals와 §5 강화학습이 있다. 국내 연결 실라버스와 버전 및 과목 수가 다르므로 국내 적용은 미확정이다."
+    },
+    {
+      "source_id": "S04",
+      "family": "international_task_radar",
+      "title": "IOAI 2025 Individual Contest — Radar",
+      "url": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Radar/Radar.ipynb",
+      "version": "2025 본대회 개인전; main 동적 원문/공식 baseline",
+      "location": "raw L19–167 statement; L211–255 loading; L309–340 model/loss shapes; L431–443 output",
+      "read_extent": "문제·입력/출력·평가식·loading/model/추론 코드 읽음; 전체 데이터나 학습은 실행하지 않음",
+      "status": "direct_primary_read",
+      "evidence_paraphrase": "7개 맵 중 6개가 입력이고 마지막이 정답이다. 정답 -1..3을 baseline에서 +1로 바꾸고 출력은 -1로 복원한다. 평가는 배경과 비배경의 가중치가 다르다."
+    },
+    {
+      "source_id": "S05",
+      "family": "international_task_retrieval",
+      "title": "IOAI 2025 Individual Contest — Restroom Icon Matching",
+      "url": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Restroom/Restroom.ipynb",
+      "version": "2025 본대회 개인전; main 동적 원문/공식 baseline",
+      "location": "raw L19–114 statement; L153–162 sorting; L210–277 embedding/matching",
+      "read_extent": "문제·ID 규약·제출·추론 baseline 읽음; 이미지 데이터/모델은 실행하지 않음",
+      "status": "direct_primary_read",
+      "evidence_paraphrase": "학습 자료의 네 view는 같은 restroom ID를 공유한다. 평가 query/gallery 파일명은 서로 독립적으로 섞인다. baseline은 cat·정규화·행렬 유사도·경로 정렬을 사용한다."
+    },
+    {
+      "source_id": "S06",
+      "family": "international_task_generation",
+      "title": "IOAI 2025 Individual Contest — Concepts",
+      "url": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Concepts/Concepts.ipynb",
+      "version": "2025 본대회 개인전; main 동적 원문/공식 baseline",
+      "location": "raw L23–163 description/schema; L167–218 scoring/API; L268–275 runtime",
+      "read_extent": "문제·가변 길이 정수 ID 출력·평가·API·실행 제한 읽음; 서비스 호출/모델 실행 안 함",
+      "status": "direct_primary_read",
+      "evidence_paraphrase": "출력은 제한된 수와 길이의 marker ID 시퀀스다. 개발 중 사용 가능한 AI Guesser는 추론 환경에서 사용할 수 없으며 실행 환경은 인터넷에 연결되지 않는다."
+    },
+    {
+      "source_id": "S07",
+      "family": "array_contract",
+      "title": "NumPy — Broadcasting",
+      "url": "https://numpy.org/doc/stable/user/basics.broadcasting.html",
+      "version": "stable 조회 시 NumPy v2.5 Manual",
+      "location": "General broadcasting rules L73–106; 설명 L44–65",
+      "read_extent": "정의, 우측 축 비교 규칙, missing dimension, 다차원 예 읽음",
+      "status": "direct_primary_read",
+      "evidence_paraphrase": "오른쪽부터 축을 비교하며 크기가 같거나 1이어야 한다. 부족한 왼쪽 축은 비교 시 1로 취급한다. 개념상의 확장과 실제 복사는 같지 않다."
+    },
+    {
+      "source_id": "S08",
+      "family": "tensor_contract",
+      "title": "PyTorch — Embedding",
+      "url": "https://docs.pytorch.org/docs/2.15/generated/torch.nn.Embedding.html",
+      "version": "stable redirect → 2.15, 조회일 2026-11-11",
+      "location": "L560–591 parameters/shape; L611–636 examples",
+      "read_extent": "lookup 정의, weight/input/output shape, padding_idx 예 읽음; sparse/max_norm 세부는 범위 제외",
+      "status": "direct_primary_read",
+      "evidence_paraphrase": "정수 index 입력의 shape (*)에 embedding_dim 축이 추가되어 (*, H)가 된다. weight의 어휘 크기와 출력의 시퀀스 길이를 구별해야 한다."
+    },
+    {
+      "source_id": "S09",
+      "family": "tensor_contract",
+      "title": "PyTorch — scaled_dot_product_attention",
+      "url": "https://docs.pytorch.org/docs/2.15/generated/torch.nn.functional.scaled_dot_product_attention.html",
+      "version": "stable redirect → 2.15; beta API",
+      "location": "L458–489 equivalent computation; L494–516 mask semantics; L552–583 shape",
+      "read_extent": "동등 계산, bool/float mask 의미, broadcast 조건, Q/K/V/output 축 읽음; fused kernel 상세 제외",
+      "status": "direct_primary_read",
+      "evidence_paraphrase": "attention score의 마지막 축은 source 위치다. mask는 score shape로 broadcast되어야 한다. 이 API의 bool True는 참여이며 MHA key_padding_mask와 극성이 반대다."
+    },
+    {
+      "source_id": "S10",
+      "family": "ml_validation_contract",
+      "title": "scikit-learn — Common pitfalls and recommended practices",
+      "url": "https://scikit-learn.org/stable/common_pitfalls.html",
+      "version": "조회 시 1.9.1 documentation",
+      "location": "§12.1 L76–119; §12.2 L120–208",
+      "read_extent": "전처리 일관성·누수 정의·split-before-fit·랜덤 label 반례 읽음; random-state 심화 미포함",
+      "status": "direct_primary_read",
+      "evidence_paraphrase": "전처리의 통계와 선택은 training 자료에서만 학습하고 validation/test에는 같은 변환을 적용한다. 테스트 자료가 feature 선택에 들어가면 평가가 부풀 수 있다."
+    },
+    {
+      "source_id": "S11",
+      "family": "foundational_theory",
+      "title": "Stanford CS231n — Linear Classification",
+      "url": "https://cs231n.github.io/linear-classify/",
+      "version": "정적 course notes; 현재 optimizer 권고로 전용 안 함",
+      "location": "Softmax classifier / Numeric stability L182–209",
+      "read_extent": "softmax·cross entropy·상수 이동·overflow 코드 읽음; subagent가 mapping/loss 앞부분도 교차 확인",
+      "status": "direct_primary_read",
+      "evidence_paraphrase": "분류 점수의 정규화와 정답 index 선택은 서로 다른 연산이다. 공통 최댓값을 빼면 확률을 유지하면서 지수 계산의 큰 값을 줄일 수 있다."
+    },
+    {
+      "source_id": "S12",
+      "family": "foundational_theory",
+      "title": "Stanford CS231n — Learning",
+      "url": "https://cs231n.github.io/neural-networks-3/",
+      "version": "정적 course notes; 임계값을 보편 채점 기준으로 복사하지 않음",
+      "location": "Gradient Checks L25–47; Sanity checks L66–72; Train/Val accuracy L88–104",
+      "read_extent": "중심 차분·상대 오차·작은 자료 과적합의 한계·곡선 해석 읽음; subagent 독립 교차 확인",
+      "status": "direct_primary_read",
+      "evidence_paraphrase": "작은 자료 암기는 구현 검증의 한 방법이지만 올바름 전체를 보장하지 않는다. 수치 미분과 해석 미분을 비교할 때 크기와 0인 경우를 고려한다."
+    }
+  ],
+  "lesson_snapshots": [
+    {
+      "kind": "baseline_read_only",
+      "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+      "head": "204743d94a4176ace81c64f138567c2cc12041d1",
+      "notebook_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "cell_source_sha256": "722697c67f7ea1af876249c0660c3c7244a1cc5297bc6b28ac93ad46964804c8",
+      "cells": 87
+    },
+    {
+      "kind": "current_uncommitted_read_only",
+      "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+      "head": "cefa941036fb0573f3b7bde94f8a04cb7f3c73c7",
+      "notebook_sha256": "733c0093b44f30d31354567331c2c39ee325ed074e7a6368bb1f2e96f0c174c0",
+      "cell_source_sha256": "241a02d311afd5ac90ae28e64b65d0159ca6665c4027942a4af674f45320e8a9",
+      "cells": 91
+    }
+  ],
+  "locator_protocol": "cell_id는 notebook JSON의 실제 id, index는 0-based. 누락 판정은 전체 cell source 검색, 전체 셀 구조 확인 및 관련 셀 전문 검토에 근거한 문서 검토이며 학생 성취 판정이 아니다. 모든 코드의 실행/모든 문항의 독립 풀이를 뜻하지 않는다.",
+  "demands": [
+    {
+      "demand_id": "D01",
+      "title": "배열의 축 의미와 데이터 배치를 보존하기",
+      "split": "development",
+      "source_ids": [
+        "S02",
+        "S04"
+      ],
+      "precise_refs": [
+        "S02 p1 Q2, p2 Q6",
+        "S04 raw L49–91, L337–340"
+      ],
+      "official_status": "2026 고등부 예시와 2025 국제 본대회; 1주차 시수 근거 아님",
+      "reasoning_operation": [
+        "축 이름을 shape에 대응",
+        "축 교환과 원소 재배치를 구별",
+        "입력/정답 축 추적"
+      ],
+      "prerequisites": [
+        "인덱싱",
+        "축 번호",
+        "곱으로 세는 원소 수"
+      ],
+      "theory_and_formula": {
+        "formula": "reshape는 원소 수를 보존하나 축 의미 교환은 별도; Radar 입력 (6,50,181), target (50,181).",
+        "interpretation": "아래 practice와 assessment는 원문 복제가 아닌 국소 교육 설계 추론이다."
+      },
+      "practice": {
+        "task": "작은 2×3 배열에서 reshape(3,2)와 transpose의 특정 좌표를 실행 전에 예측한다.",
+        "transfer": "모양만 같고 값의 대응이 다른 반례를 설명한다."
+      },
+      "independent_assessment_dimensions": [
+        "숫자별 좌표 예측",
+        "축 의미 설명",
+        "틀린 reshape 주장에 반례",
+        "새 입력 직접 구현"
+      ],
+      "current_lesson_locators": [
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "e594ea69",
+          "current_cell_index_zero_based": 9,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 9,
+          "role": "shape 토대"
+        },
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "depth-reshape-compare",
+          "current_cell_index_zero_based": 62,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 60,
+          "role": "독립 비교 과제"
+        }
+      ],
+      "missingness": "기초 배열 의미는 있음. 4차원 batch/channel 교환과 segmentation 출력 축은 없음.",
+      "staging": {
+        "decision": "now",
+        "rationale": "현재 1주차에는 이미 있는 의미 보존 평가를 유지. 4차원 모델 맥락은 later로 연결."
+      },
+      "learner_mastery_status": "not_measured"
+    },
+    {
+      "demand_id": "D02",
+      "title": "거리·이웃·투표를 명세에서 구성하기",
+      "split": "development",
+      "source_ids": [
+        "S02",
+        "S07"
+      ],
+      "precise_refs": [
+        "S02 p17 서술2 raw L564–600",
+        "S07 General broadcasting rules L73–106"
+      ],
+      "official_status": "공식 고등부 학습 참고 coding 예시; 공개 정답 없음",
+      "reasoning_operation": [
+        "두 표의 각 행 쌍을 비교",
+        "feature 축을 합산해 거리 생성",
+        "이웃 label을 모아 동률 규칙 적용"
+      ],
+      "prerequisites": [
+        "차와 제곱·제곱근",
+        "우측 축 비교",
+        "정수 인덱싱",
+        "정렬·빈도"
+      ],
+      "theory_and_formula": {
+        "formula": "D[i,j]=sqrt(sum_k((X_test[i,k]-X_train[j,k])**2)); shapes (m,1,d)-(1,n,d)→(m,n,d)→(m,n).",
+        "interpretation": "아래 practice와 assessment는 원문 복제가 아닌 국소 교육 설계 추론이다."
+      },
+      "practice": {
+        "task": "새 작은 좌표 세트에서 거리표와 이웃 label을 손으로 만든 뒤 NumPy로 구현한다.",
+        "independent_input": "학습 [[0,0],[2,0],[0,4]], label [9,4,9], query [[1,0]], k=2.",
+        "expected": "두 최근접 label은 9와4; 투표 동률에서 더 작은 label 4. 선택된 행 번호와 label 값을 혼동하지 않는다."
+      },
+      "independent_assessment_dimensions": [
+        "중간 거리표의 축·shape",
+        "feature 축 합산 이유",
+        "비연속 label 처리",
+        "투표 동률·k 변경 전이"
+      ],
+      "current_lesson_locators": [
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "0caaa0ca",
+          "current_cell_index_zero_based": 65,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 63,
+          "role": "broadcast 규칙 설명"
+        },
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "df2802a3",
+          "current_cell_index_zero_based": 67,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 65,
+          "role": "새 행별/열별 보정 평가"
+        },
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "d0ddef13",
+          "current_cell_index_zero_based": 85,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 81,
+          "role": "합 기호·짝 대응 토대"
+        }
+      ],
+      "missingness": "broadcast 덧셈은 있음. 거리 norm·pairwise 축·정렬·투표 알고리즘은 없음.",
+      "staging": {
+        "decision": "later",
+        "rationale": "1주차 전체 KNN 강제 근거는 없다. 현재 우측 축 규칙을 선수로 연결하고 거리/분류 단원에서 완성한다."
+      },
+      "learner_mastery_status": "not_measured"
+    },
+    {
+      "demand_id": "D03",
+      "title": "입력과 정답의 역할 및 사용 시점을 분리하기",
+      "split": "development",
+      "source_ids": [
+        "S04",
+        "S10"
+      ],
+      "precise_refs": [
+        "S04 raw L67–91,L220–255",
+        "S10 §12.2 L120–134"
+      ],
+      "official_status": "실제 국제 문제 요구와 library 검증 원리의 결합",
+      "reasoning_operation": [
+        "관측값의 역할 분류",
+        "예측 시점 가용성을 판단",
+        "정답 채널을 입력에서 제외"
+      ],
+      "prerequisites": [
+        "행/열 선택",
+        "식별자와 값 구별",
+        "예측값과 관측 정답"
+      ],
+      "theory_and_formula": {
+        "formula": "x=data[:6], y=data[6]; y가 x에 들어가는지와 t_predict에 x가 알려지는지를 별도로 검사.",
+        "interpretation": "아래 practice와 assessment는 원문 복제가 아닌 국소 교육 설계 추론이다."
+      },
+      "practice": {
+        "task": "현재 화분 예측에서 목표 높이를 입력에 추가한 코드와 미래 실제 물 기록을 사용하는 코드를 각각 진단한다.",
+        "assessment_variation": "단위와 shape가 모두 맞아도 시점상 사용할 수 없는 열을 고른다."
+      },
+      "independent_assessment_dimensions": [
+        "feature/target 역할",
+        "prediction-time availability",
+        "shape 통과와 의미 오류 구별"
+      ],
+      "current_lesson_locators": [
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "1ab9cd79",
+          "current_cell_index_zero_based": 4,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 4,
+          "role": "현재 추가된 예측 시점/식"
+        },
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "b428c6f1",
+          "current_cell_index_zero_based": 30,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 30,
+          "role": "열 선택"
+        },
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "30a2a103",
+          "current_cell_index_zero_based": 32,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 32,
+          "role": "target 제외 명시"
+        },
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "model-link-practice",
+          "current_cell_index_zero_based": 58,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": null,
+          "role": "새 시점/결측 설명"
+        }
+      ],
+      "missingness": "baseline에는 시점·예측식 연결이 약함. current는 명시 및 새 입력 문항 있음. preprocessing-fit 누수와는 별도 요구다.",
+      "staging": {
+        "decision": "now",
+        "rationale": "이미 존재하는 입력/정답 토대를 강화한 current 내용은 적절한 국소 연결. 모델 training은 later."
+      },
+      "learner_mastery_status": "not_measured"
+    },
+    {
+      "demand_id": "D04",
+      "title": "클래스 label을 내부 index로 바꾸고 정확히 복원하기",
+      "split": "development",
+      "source_ids": [
+        "S04"
+      ],
+      "precise_refs": [
+        "S04 raw L69–73,L223–228,L312–314,L435–438"
+      ],
+      "official_status": "공식 문제의 label 의미와 baseline의 한 구현 선택을 구별",
+      "reasoning_operation": [
+        "의미 label↔연속 클래스 index 대응",
+        "class 축 argmax",
+        "내부표현 역변환"
+      ],
+      "prerequisites": [
+        "정수 인덱싱",
+        "dtype",
+        "대응 함수",
+        "역함수"
+      ],
+      "theory_and_formula": {
+        "formula": "이 baseline의 encode(y)=y+1, decode(c)=c-1; decode(encode(y))=y. 이 +1 규칙은 임의 label 집합의 보편 해법은 아님.",
+        "interpretation": "아래 practice와 assessment는 원문 복제가 아닌 국소 교육 설계 추론이다."
+      },
+      "practice": {
+        "task": "새 label 집합 {-3,4,12}에는 명시적 사전 대응을 만들고 배경도 round-trip 검사한다.",
+        "counterexample": "같은 shape의 argmax 결과가 원래 semantic label과 다른 사례를 찾는다."
+      },
+      "independent_assessment_dimensions": [
+        "모든 label의 round-trip",
+        "class 축 선택",
+        "비연속 label 새 입력",
+        "제출 label 의미"
+      ],
+      "current_lesson_locators": [
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "e594ea69",
+          "current_cell_index_zero_based": 9,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 9,
+          "role": "인덱스/축 선수"
+        },
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "1e511556",
+          "current_cell_index_zero_based": 87,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 83,
+          "role": "같은 길이여도 이름/순서 확인"
+        }
+      ],
+      "missingness": "분류 label mapping·loss용 정수 target·decode 없음. plt label 인수는 이 역량 증거가 아니다.",
+      "staging": {
+        "decision": "later",
+        "rationale": "신규 외부 요구로 추출. 1주차에는 순서/대응만 선수로 표시하고 분류 loss 단원에서 구현한다."
+      },
+      "learner_mastery_status": "not_measured"
+    },
+    {
+      "demand_id": "D05",
+      "title": "유사도 행렬의 위치를 실제 식별자로 돌려주기",
+      "split": "development",
+      "source_ids": [
+        "S05"
+      ],
+      "precise_refs": [
+        "S05 raw L46–75,L91,L153–162,L210–277"
+      ],
+      "official_status": "공식 task의 matching 제약; baseline의 second-topk 선택은 정답/최적 알고리즘으로 일반화하지 않음",
+      "reasoning_operation": [
+        "query·gallery 축 해석",
+        "벡터 정규화 후 pairwise 점수",
+        "정렬된 경로와 결과 index 연결",
+        "같은 identity와 다른 gender 제약 확인"
+      ],
+      "prerequisites": [
+        "내적",
+        "norm",
+        "transpose",
+        "인덱스와 ID 구별"
+      ],
+      "theory_and_formula": {
+        "formula": "Q∈R^(q×d), G∈R^(g×d), S=QG^T∈R^(q×g); unit norm일 때 S_ij는 cosine similarity.",
+        "interpretation": "아래 practice와 assessment는 원문 복제가 아닌 국소 교육 설계 추론이다."
+      },
+      "practice": {
+        "task": "작은 query/gallery 벡터와 섞인 gallery ID [20,7,42]로 점수표를 만들고 최댓값의 위치를 ID로 바꾼다.",
+        "code_caution": "원문 baseline은 cat을 사용한다. stack 자체나 두 번째 topk 선택을 요구 역량으로 고정하지 않는다."
+      },
+      "independent_assessment_dimensions": [
+        "모든 쌍 점수 shape",
+        "임의 ID/파일순서 변경 전이",
+        "행과 열 의미",
+        "문제 제약과 heuristic 구별"
+      ],
+      "current_lesson_locators": [
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "d0ddef13",
+          "current_cell_index_zero_based": 85,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 81,
+          "role": "내적 토대"
+        },
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "1e511556",
+          "current_cell_index_zero_based": 87,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 83,
+          "role": "feature 순서 불일치 반례"
+        },
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "0fd965eb",
+          "current_cell_index_zero_based": 79,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 75,
+          "role": "키 기반 병합/식별자 유지"
+        }
+      ],
+      "missingness": "내적·순서·키 토대 있음. norm/배치 행렬곱/검색·ID 복원 없음.",
+      "staging": {
+        "decision": "later",
+        "rationale": "현재는 짝 대응 토대를 유지. 모델과 pairwise 검색은 후속. 같은 identity의 여러 view를 무작위로 나눌 때 일반화가 달라진다는 것은 교육적 분할 추론이며 원문이 group split을 명령한 것은 아니다."
+      },
+      "learner_mastery_status": "not_measured"
+    },
+    {
+      "demand_id": "D06",
+      "title": "전처리 통계의 fit 경계를 분할 안에 두기",
+      "split": "development",
+      "source_ids": [
+        "S01",
+        "S10"
+      ],
+      "precise_refs": [
+        "S01 L126–132",
+        "S10 §12.1–12.2 L76–208"
+      ],
+      "official_status": "공식 syllabus의 분할/전처리 범위; sklearn 문서의 실제 실패·수정 예",
+      "reasoning_operation": [
+        "데이터 분할",
+        "학습 부분의 통계 계산",
+        "같은 통계로 다른 부분 변환",
+        "부풀려진 평가의 원인 추적"
+      ],
+      "prerequisites": [
+        "평균·분산",
+        "변환 함수",
+        "학습/검증 역할"
+      ],
+      "theory_and_formula": {
+        "formula": "mu_train=mean(X_train); z=(x-mu_train)/sigma_train. test 값으로 mu/sigma를 다시 fit하지 않는다.",
+        "interpretation": "아래 practice와 assessment는 원문 복제가 아닌 국소 교육 설계 추론이다."
+      },
+      "practice": {
+        "task": "train [0,2], test [100]의 평균 중심화를 train-only와 전체자료 두 방식으로 계산하고 학습값이 왜 변하는지 설명한다.",
+        "expected": "train mean1, 전체 mean34. 다른 결과의 이유를 fit이 본 자료로 설명한다."
+      },
+      "independent_assessment_dimensions": [
+        "fit vs transform",
+        "검증자료 변경이 학습통계에 영향을 주는지",
+        "새 입력 코드 수정",
+        "누수와 과대적합을 구별"
+      ],
+      "current_lesson_locators": [
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "409e1675",
+          "current_cell_index_zero_based": 5,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 5,
+          "role": "평균 선수"
+        },
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "82e8a039",
+          "current_cell_index_zero_based": 6,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 6,
+          "role": "분산 선수"
+        },
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "4c54c0a5",
+          "current_cell_index_zero_based": 90,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 86,
+          "role": "StandardScaler 참고 링크"
+        }
+      ],
+      "missingness": "참고 링크는 있음. split/fit/transform 실습과 독립 누수 진단은 없음. current의 예측 시점 설명만으로 대체 불가.",
+      "staging": {
+        "decision": "later",
+        "rationale": "현재 1주차 선수 평균·분산을 연결하되, 모델 평가 단원에서 분할+fit 경계를 실제 코드로 학습한다."
+      },
+      "learner_mastery_status": "not_measured"
+    },
+    {
+      "demand_id": "D07",
+      "title": "embedding lookup의 새 축과 어휘 축을 구별하기",
+      "split": "development",
+      "source_ids": [
+        "S01",
+        "S08"
+      ],
+      "precise_refs": [
+        "S01 L149",
+        "S08 L560–591,L611–636"
+      ],
+      "official_status": "syllabus는 embedding both; library shape 계약은 학습의 구체화이며 공식 출제 문항은 아님",
+      "reasoning_operation": [
+        "정수 ID로 행 lookup",
+        "입력 shape 보존 후 vector 축 추가",
+        "반복 ID의 같은 행 대응"
+      ],
+      "prerequisites": [
+        "정수 indexing",
+        "축 의미",
+        "사전/어휘 ID"
+      ],
+      "theory_and_formula": {
+        "formula": "E∈R^(V×H), tokens∈Z^(B×L)→E[tokens]∈R^(B×L×H). V는 token 길이 L이 아니다.",
+        "interpretation": "아래 practice와 assessment는 원문 복제가 아닌 국소 교육 설계 추론이다."
+      },
+      "practice": {
+        "task": "4×2 lookup table과 token [[2,0,2],[1,3,0]]으로 전체 값을 손으로 채운 뒤 lookup한다.",
+        "counterexample": "값이 숫자라는 이유로 token ID를 연속량처럼 곱하거나 평균하는 오류를 구별한다."
+      },
+      "independent_assessment_dimensions": [
+        "값과 shape 모두 예측",
+        "B/L/V/H 의미",
+        "반복 index 값 보존",
+        "새 B/L/H 입력 전이"
+      ],
+      "current_lesson_locators": [
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "e594ea69",
+          "current_cell_index_zero_based": 9,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 9,
+          "role": "shape 선수"
+        },
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "b428c6f1",
+          "current_cell_index_zero_based": 30,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 30,
+          "role": "선택 선수"
+        }
+      ],
+      "missingness": "embedding/어휘 ID/lookup 3차원 결과 없음.",
+      "staging": {
+        "decision": "later",
+        "rationale": "라이브러리 계약에서 발견한 구체 선수와 평가 항목. embedding 자체를 1주차 필수로 놓지 않는다."
+      },
+      "learner_mastery_status": "not_measured"
+    },
+    {
+      "demand_id": "D08",
+      "title": "mask의 shape뿐 아니라 참여 의미를 검증하기",
+      "split": "development",
+      "source_ids": [
+        "S02",
+        "S07",
+        "S09"
+      ],
+      "precise_refs": [
+        "S02 p7 Q25,p10 Q34",
+        "S07 L73–106",
+        "S09 L464–489,L511–516,L552–583"
+      ],
+      "official_status": "가변길이·attention은 예시/실라버스 근거; API별 bool 극성은 현재 PyTorch 계약",
+      "reasoning_operation": [
+        "Q/K score의 두 위치 축 추적",
+        "mask를 score에 정렬",
+        "차단 위치가 softmax 확률에서 빠지는 이유 설명",
+        "API 변경 시 극성 확인"
+      ],
+      "prerequisites": [
+        "행렬곱",
+        "transpose",
+        "우측 축 broadcasting",
+        "softmax/확률",
+        "padding 구별"
+      ],
+      "theory_and_formula": {
+        "formula": "A=softmax(QK^T/sqrt(d_k)+M) V; score (B,H,L,S). mask는 이 shape로 broadcast. SDPA True=참여.",
+        "interpretation": "아래 practice와 assessment는 원문 복제가 아닌 국소 교육 설계 추론이다."
+      },
+      "practice": {
+        "task": "동일 score 세 위치 중 마지막을 차단할 때 남은 확률을 계산하고 bool mask의 True 의미를 명세에서 찾는다.",
+        "counterexample": "shape는 맞지만 극성이 뒤집힌 mask를 진단한다."
+      },
+      "independent_assessment_dimensions": [
+        "축/shape",
+        "mask 의미·API 계약",
+        "차단 뒤 분모 재정규화",
+        "padding vs causal mask 구별"
+      ],
+      "current_lesson_locators": [
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "0caaa0ca",
+          "current_cell_index_zero_based": 65,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 63,
+          "role": "broadcast 선수"
+        },
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "df2802a3",
+          "current_cell_index_zero_based": 67,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 65,
+          "role": "새 shape 독립 설명"
+        }
+      ],
+      "missingness": "broadcast 기초만 있음. attention/mask/softmax 없음.",
+      "staging": {
+        "decision": "later",
+        "rationale": "전체 attention 기초가 갖추어진 뒤 실시. 최신 beta API 문구는 버전을 고정하고 공식 문제의 정확한 API 요구처럼 과장하지 않는다."
+      },
+      "learner_mastery_status": "not_measured"
+    },
+    {
+      "demand_id": "D09",
+      "title": "정답 확률·손실·안정화의 계산을 구별하기",
+      "split": "development",
+      "source_ids": [
+        "S11"
+      ],
+      "precise_refs": [
+        "S11 Softmax classifier L182–209"
+      ],
+      "official_status": "대학 foundational notes; 대회 난도/학년/주차를 정하지 않음",
+      "reasoning_operation": [
+        "class 축 정규화",
+        "정답 index의 확률 선택",
+        "음의 로그",
+        "공통 상수 이동으로 동치 확인"
+      ],
+      "prerequisites": [
+        "합 기호/분모",
+        "index",
+        "지수·로그",
+        "실수 계산 한계"
+      ],
+      "theory_and_formula": {
+        "formula": "p_j=exp(s_j)/sum_k exp(s_k); L=-log(p_y); softmax(s)=softmax(s-max(s)).",
+        "interpretation": "아래 practice와 assessment는 원문 복제가 아닌 국소 교육 설계 추론이다."
+      },
+      "practice": {
+        "task": "[1,0]과 [10,0]의 동일 argmax·다른 정답 확률을 설명한 뒤 [1001,1000]을 안정화해 계산한다.",
+        "counterexample": "batch 전체를 분모로 합한 구현을 진단한다."
+      },
+      "independent_assessment_dimensions": [
+        "class 축과 정답 index",
+        "argmax와 loss 차이",
+        "수학적 동치 증명",
+        "overflow 진단"
+      ],
+      "current_lesson_locators": [
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "ebbfd3db",
+          "current_cell_index_zero_based": 11,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 11,
+          "role": "합 기호/축 연결"
+        },
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "d0ddef13",
+          "current_cell_index_zero_based": 85,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 81,
+          "role": "score 계산의 내적 선수"
+        }
+      ],
+      "missingness": "지수·로그·softmax·loss 없음.",
+      "staging": {
+        "decision": "later",
+        "rationale": "분류/손실 단원에서 원리와 구현을 함께 다룰 충분한 깊이 기준. 1주차 확대 근거는 아님."
+      },
+      "learner_mastery_status": "not_measured"
+    },
+    {
+      "demand_id": "D10",
+      "title": "작은 성공과 전체 올바름을 구별하는 검증 설계",
+      "split": "development",
+      "source_ids": [
+        "S12"
+      ],
+      "precise_refs": [
+        "S12 L25–47,L66–72,L88–104"
+      ],
+      "official_status": "대학 교수용 foundational practice; 수치 오차 임계값은 맥락 의존",
+      "reasoning_operation": [
+        "예측한 중간값과 실행 대조",
+        "조건을 바꾼 반례 설계",
+        "구현 정확성과 일반화 증거 구별"
+      ],
+      "prerequisites": [
+        "함수·변수 상태",
+        "차분·미분",
+        "오차의 분모",
+        "학습/검증 역할"
+      ],
+      "theory_and_formula": {
+        "formula": "g_num=(L(theta+h)-L(theta-h))/(2h); 상대오차는 두 gradient 크기와 0인 경우를 고려.",
+        "interpretation": "아래 practice와 assessment는 원문 복제가 아닌 국소 교육 설계 추론이다."
+      },
+      "practice": {
+        "task": "작은 데이터 암기 성공으로 일반화/입력 파이프라인 올바름을 단정한 주장을 반박하고 추가 확인을 고른다.",
+        "scope": "1주차는 새로운 입력·반례·전체 재실행 사고만. gradient 수치 검증은 미분 후."
+      },
+      "independent_assessment_dimensions": [
+        "독립 입력 선택",
+        "실패 원인과 추가 증거 구별",
+        "0 분모/크기 영향",
+        "단일 성공의 한계"
+      ],
+      "current_lesson_locators": [
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "depth-function-spec",
+          "current_cell_index_zero_based": 82,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 78,
+          "role": "명세→새 입력 함수"
+        },
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "abcf305f",
+          "current_cell_index_zero_based": 88,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 84,
+          "role": "커널 재시작/전체 실행 응답"
+        },
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "guided-feedback-and-support",
+          "current_cell_index_zero_based": 89,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 85,
+          "role": "도움 경로"
+        }
+      ],
+      "missingness": "새 입력/재실행은 있음. gradient-check·학습 검증곡선은 없음.",
+      "staging": {
+        "decision": "defer",
+        "rationale": "검증 사고는 now 선수로 인정하되 수치미분의 정밀도/상대오차는 고급 검증에 defer. 자료 암기를 완전 검증으로 취급하지 않는다."
+      },
+      "learner_mastery_status": "not_measured"
+    },
+    {
+      "demand_id": "D11",
+      "title": "현재 국내 적용 범위와 국제 최신 범위를 분리하기",
+      "split": "development",
+      "source_ids": [
+        "S01",
+        "S03"
+      ],
+      "precise_refs": [
+        "S01 L74,L87–196",
+        "S03 p2 technical fundamentals,p4 §5 RL"
+      ],
+      "official_status": "국내 2027 landing은 1–4과목을 명시; 국제 2027은 5과목. 국내 새 항목 채택 확인 못 함",
+      "reasoning_operation": [
+        "문서 연도/연결 관계 판정",
+        "공식 범위와 교육 추론을 분리",
+        "미확정 범위는 research로 기록"
+      ],
+      "prerequisites": [
+        "출처 버전 읽기",
+        "scope 관리"
+      ],
+      "theory_and_formula": {
+        "formula": "범위 동치(S_domestic2026,S_IOAI2027)를 가정하지 않는다.",
+        "interpretation": "아래 practice와 assessment는 원문 복제가 아닌 국소 교육 설계 추론이다."
+      },
+      "practice": {
+        "task": "국내 관련 공지나 변경 실라버스를 재확인할 backlog를 두고 국제의 RL·remote tooling을 별도 경로로 정리한다."
+      },
+      "independent_assessment_dimensions": [
+        "URL/year 추적",
+        "적용성 미확정 표시",
+        "시수 근거와 출제 범위 구별"
+      ],
+      "current_lesson_locators": [
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "4c54c0a5",
+          "current_cell_index_zero_based": 90,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 86,
+          "role": "공식 범위 링크"
+        }
+      ],
+      "missingness": "현재 참고 링크는 있으나 국내/국제 버전차·RL 신설 상태 기록은 없음.",
+      "staging": {
+        "decision": "research",
+        "rationale": "국제2027의 새 RL/SSH/Git을 국내 KOAI2027 확정 요구나 1주차 필수로 자동 승격하지 않는다."
+      },
+      "learner_mastery_status": "not_measured"
+    },
+    {
+      "demand_id": "D12",
+      "title": "mutable default는 Python 진단의 별도 경계로 남기기",
+      "split": "development",
+      "source_ids": [
+        "S02"
+      ],
+      "precise_refs": [
+        "S02 p1 Q1"
+      ],
+      "official_status": "공식 2026 고등부 참고 예시; 발표 정답 없음",
+      "reasoning_operation": [
+        "여러 호출 사이 객체 상태를 추적",
+        "return 값과 alias를 구별"
+      ],
+      "prerequisites": [
+        "리스트 변경",
+        "함수 인수",
+        "참조/객체 공유"
+      ],
+      "theory_and_formula": {
+        "formula": "기본 인수 객체의 생명주기는 함수 호출마다 새 리스트를 만드는 것과 다르다.",
+        "interpretation": "아래 practice와 assessment는 원문 복제가 아닌 국소 교육 설계 추론이다."
+      },
+      "practice": {
+        "task": "두 함수 호출 이후 이전 반환 리스트가 바뀌는 새 사례를 추적한다."
+      },
+      "independent_assessment_dimensions": [
+        "호출 간 상태",
+        "alias 반례",
+        "직접 설명"
+      ],
+      "current_lesson_locators": [
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "7208718e",
+          "current_cell_index_zero_based": 16,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 16,
+          "role": "Python 진단"
+        },
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "depth-function-spec",
+          "current_cell_index_zero_based": 82,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 78,
+          "role": "누적/결측 함수 명세"
+        }
+      ],
+      "missingness": "현재 함수·반환/누적은 있으나 mutable default·alias 의미는 없음.",
+      "staging": {
+        "decision": "defer",
+        "rationale": "실제 문항에서 찾은 요구이나 초보 1주차 핵심을 침식할 수 있다. Python 함수 심화 또는 별도 진단에서 후속 처리."
+      },
+      "learner_mastery_status": "not_measured"
+    },
+    {
+      "demand_id": "H01",
+      "title": "weighted score의 분모를 평가 대상 전체에서 세기",
+      "split": "heldout",
+      "source_ids": [
+        "S04"
+      ],
+      "precise_refs": [
+        "S04 raw L105–159 §5 Score"
+      ],
+      "official_status": "실제 IOAI2025 Radar metric; 1주차 요구라는 주장 아님",
+      "reasoning_operation": [
+        "정답이 배경인지로 weight 분류",
+        "맞힌 가중합과 가능한 전체 가중합 구별",
+        "정확도와 weighted metric 순위 비교"
+      ],
+      "prerequisites": [
+        "비율",
+        "조건별 합",
+        "참/거짓 비교",
+        "평가 대상 단위"
+      ],
+      "theory_and_formula": {
+        "formula": "score=sum_i w(y_i)*1[p_i=y_i]/sum_i w(y_i), w(-1)=1, 나머지=50.",
+        "interpretation": "아래 practice와 assessment는 원문 복제가 아닌 국소 교육 설계 추론이다."
+      },
+      "practice": {
+        "task": "새 정답 [-1,-1,-1,2]에서 A=[-1,-1,-1,-1], B=[0,0,-1,2]를 비교한다.",
+        "expected": "plain accuracy A=3/4 > B=2/4, weighted A=3/53 < B=51/53. 분모를 맞힌 개수나 예측 class로 만들면 틀림."
+      },
+      "independent_assessment_dimensions": [
+        "분모의 모집단",
+        "weight가 정답에 의존함",
+        "metric별 순위 역전",
+        "변경된 불균형 입력 전이"
+      ],
+      "current_lesson_locators": [
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "409e1675",
+          "current_cell_index_zero_based": 5,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 5,
+          "role": "합/분모 선수"
+        },
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "ebbfd3db",
+          "current_cell_index_zero_based": 11,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 11,
+          "role": "기호-축 연결"
+        }
+      ],
+      "missingness": "현재 분모 설명은 평균용. weighted correctness·metric 선택/순위 평가 없음.",
+      "staging": {
+        "decision": "later",
+        "rationale": "진짜 문제의 새 요구로 requirement-heldout에 보류. 평균을 아는지와 metric 정의를 읽고 새 분모를 만드는지를 분리한다."
+      },
+      "learner_mastery_status": "not_measured"
+    },
+    {
+      "demand_id": "H02",
+      "title": "개발에서 사용한 도구가 추론에도 있는지 검증하기",
+      "split": "heldout",
+      "source_ids": [
+        "S06"
+      ],
+      "precise_refs": [
+        "S06 raw L205–218,L268–275"
+      ],
+      "official_status": "실제 IOAI2025 Concepts 실행 명세; 특정 서비스 현재 가용성 주장이 아님",
+      "reasoning_operation": [
+        "개발/검증/추론 capability를 분리",
+        "외부 호출 의존성을 탐지",
+        "오프라인 제출물의 입력/출력 재구성"
+      ],
+      "prerequisites": [
+        "함수 입력/반환",
+        "파일/상대경로",
+        "환경과 데이터 가용성"
+      ],
+      "theory_and_formula": {
+        "formula": "submission(label,options,local_artifacts)→marker_ids; unavailable_api 호출이 함수 경로에 남으면 계약 위반.",
+        "interpretation": "아래 practice와 assessment는 원문 복제가 아닌 국소 교육 설계 추론이다."
+      },
+      "practice": {
+        "task": "개발에서는 scorer API를 썼고 제출 코드에도 매 입력마다 API 호출이 남은 가상 파이프라인을 진단한다.",
+        "expected": "추론 때 API가 없으므로 실패; 준비된 local model/자료에서 생성해야 함. retry 추가는 capability 부재의 해결책이 아님."
+      },
+      "independent_assessment_dimensions": [
+        "실행단계별 가용성",
+        "재시도 가능한 오류와 환경 제약 구별",
+        "전체 재실행 vs 의존성 제거 구별",
+        "자체 산출물로 새 입력 처리"
+      ],
+      "current_lesson_locators": [
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "a32f2b8b",
+          "current_cell_index_zero_based": 2,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 2,
+          "role": "노트북 실행 환경 안내"
+        },
+        {
+          "path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb",
+          "cell_id": "abcf305f",
+          "current_cell_index_zero_based": 88,
+          "baseline_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-reference/lessons/week01/week01_python_tables.ipynb",
+          "baseline_cell_index_zero_based": 84,
+          "role": "전체 재실행"
+        }
+      ],
+      "missingness": "current 전체 재실행은 상태 의존성 검사. inference API/network 가용성 검사는 없음.",
+      "staging": {
+        "decision": "later",
+        "rationale": "운영/제출 단원으로 연결할 신규 문제 요구. source-family가 Radar/Restroom와 다른 generation task에서 왔다."
+      },
+      "learner_mastery_status": "not_measured"
+    }
+  ],
+  "heldout_protocol": {
+    "demand_ids": [
+      "H01",
+      "H02"
+    ],
+    "design": "requirement-heldout, not fully source-heldout",
+    "disclosure": "root에게만 요약/기록. implementation agent에게 이 두 평가 상세를 직접 전달하지 않음.",
+    "limits": "H01은 development D01/D03/D04와 같은 Radar source family를 공유하므로 source-family 일반화 증거가 아님. H02는 별도 generation task이나 동일 IOAI2025 repository. 이 기록 자체는 evaluator 실행 또는 학습자 실험 결과가 아님.",
+    "execution_status": "not_executed_by_research_agent; root의 freeze→evaluate 기록 필요"
+  },
+  "candidate_decisions": [
+    {
+      "candidate": "matrix multiplication",
+      "decision": "later",
+      "reason": "Restroom pairwise similarity에 구체 사용되나 그 문제를 1주차로 가져올 근거는 없음"
+    },
+    {
+      "candidate": "embedding",
+      "decision": "later",
+      "reason": "syllabus+lookup contract+retrieval/generation context로 근거 있으나 선수와 주간 배치를 분리"
+    },
+    {
+      "candidate": "stack",
+      "decision": "not_mandatory",
+      "reason": "읽은 실제 Restroom baseline은 cat. 배치·축 구성 요구는 있어도 특정 stack API를 필수화할 근거는 발견 못 함"
+    }
+  ],
+  "limits_and_blockers": [
+    "국내 KOAI2027에 국제2027 §5 RL/technical fundamentals를 채택했는지는 미확정.",
+    "공식 KOAI2026 예시 정답은 공개되지 않았으므로 원문 요구와 교육적 풀이 추론을 구별. 문항을 대량 복제하지 않음.",
+    "IOAI main 원문과 stable library docs는 동적. URL/버전/읽은 위치를 고정 기록했으나 이번 조사에서 원격 commit hash는 확보하지 않음.",
+    "Restroom baseline에는 학습 요구와 zero-shot 예시의 긴장이 있고 두 번째 topk 선택은 heuristic; optimal recipe로 전용 안 함.",
+    "노트북·시스템·데이터 수정/실행·commit·push는 수행하지 않음."
+  ]
+}

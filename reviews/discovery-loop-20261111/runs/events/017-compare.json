@@ -1,0 +1,55 @@
+{
+  "id": "actual-017-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Current direct-read research and actual-lesson review; design evidence, no learner claim.",
+    "demand_id": "D05",
+    "judgment": "gap",
+    "reviewer": "root-actual-content-review",
+    "rationale": "내적·순서·키 토대 있음. norm/배치 행렬곱/검색·ID 복원 없음. Scope is course-level; later placement proposals do not invalidate a proper basic Week1, and do not prove later teaching.",
+    "start_line": 1224,
+    "end_line": 1238,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "Existing sums/indexing/return/axis foundations are preserved; full prerequisite-set availability is reviewed separately. 내적·순서·키 토대 있음. norm/배치 행렬곱/검색·ID 복원 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 현재는 짝 대응 토대를 유지. 모델과 pairwise 검색은 후속. 같은 identity의 여러 view를 무작위로 나눌 때 일반화가 달라진다는 것은 교육적 분할 추론이며 원문이 group split을 명령한 것은 아니다.",
+        "start_line": 1224,
+        "end_line": 1238
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "내적·순서·키 토대 있음. norm/배치 행렬곱/검색·ID 복원 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 현재는 짝 대응 토대를 유지. 모델과 pairwise 검색은 후속. 같은 identity의 여러 view를 무작위로 나눌 때 일반화가 달라진다는 것은 교육적 분할 추론이며 원문이 group split을 명령한 것은 아니다.",
+        "start_line": 1224,
+        "end_line": 1238
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "내적·순서·키 토대 있음. norm/배치 행렬곱/검색·ID 복원 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 현재는 짝 대응 토대를 유지. 모델과 pairwise 검색은 후속. 같은 identity의 여러 view를 무작위로 나눌 때 일반화가 달라진다는 것은 교육적 분할 추론이며 원문이 group split을 명령한 것은 아니다.",
+        "start_line": 1142,
+        "end_line": 1173
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "내적·순서·키 토대 있음. norm/배치 행렬곱/검색·ID 복원 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 현재는 짝 대응 토대를 유지. 모델과 pairwise 검색은 후속. 같은 identity의 여러 view를 무작위로 나눌 때 일반화가 달라진다는 것은 교육적 분할 추론이며 원문이 group split을 명령한 것은 아니다.",
+        "start_line": 1224,
+        "end_line": 1238
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "내적·순서·키 토대 있음. norm/배치 행렬곱/검색·ID 복원 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 현재는 짝 대응 토대를 유지. 모델과 pairwise 검색은 후속. 같은 identity의 여러 view를 무작위로 나눌 때 일반화가 달라진다는 것은 교육적 분할 추론이며 원문이 group split을 명령한 것은 아니다.",
+        "start_line": 1142,
+        "end_line": 1173
+      }
+    ]
+  }
+}

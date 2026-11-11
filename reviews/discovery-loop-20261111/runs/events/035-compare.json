@@ -1,0 +1,55 @@
+{
+  "id": "actual-035-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Current direct-read research and actual-lesson review; design evidence, no learner claim.",
+    "demand_id": "H02",
+    "judgment": "gap",
+    "reviewer": "root-actual-content-review",
+    "rationale": "current 전체 재실행은 상태 의존성 검사. inference API/network 가용성 검사는 없음. Scope is course-level; later placement proposals do not invalidate a proper basic Week1, and do not prove later teaching.",
+    "start_line": 29,
+    "end_line": 39,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Existing sums/indexing/return/axis foundations are preserved; full prerequisite-set availability is reviewed separately. current 전체 재실행은 상태 의존성 검사. inference API/network 가용성 검사는 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 운영/제출 단원으로 연결할 신규 문제 요구. source-family가 Radar/Restroom와 다른 generation task에서 왔다.",
+        "start_line": 29,
+        "end_line": 39
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "current 전체 재실행은 상태 의존성 검사. inference API/network 가용성 검사는 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 운영/제출 단원으로 연결할 신규 문제 요구. source-family가 Radar/Restroom와 다른 generation task에서 왔다.",
+        "start_line": 29,
+        "end_line": 39
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "current 전체 재실행은 상태 의존성 검사. inference API/network 가용성 검사는 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 운영/제출 단원으로 연결할 신규 문제 요구. source-family가 Radar/Restroom와 다른 generation task에서 왔다.",
+        "start_line": 1256,
+        "end_line": 1268
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "current 전체 재실행은 상태 의존성 검사. inference API/network 가용성 검사는 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 운영/제출 단원으로 연결할 신규 문제 요구. source-family가 Radar/Restroom와 다른 generation task에서 왔다.",
+        "start_line": 29,
+        "end_line": 39
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "current 전체 재실행은 상태 의존성 검사. inference API/network 가용성 검사는 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 운영/제출 단원으로 연결할 신규 문제 요구. source-family가 Radar/Restroom와 다른 generation task에서 왔다.",
+        "start_line": 1256,
+        "end_line": 1268
+      }
+    ]
+  }
+}

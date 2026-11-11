@@ -1,0 +1,55 @@
+{
+  "id": "actual-026-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Current direct-read research and actual-lesson review; design evidence, no learner claim.",
+    "demand_id": "D07",
+    "judgment": "gap",
+    "reviewer": "root-actual-content-review",
+    "rationale": "embedding/어휘 ID/lookup 3차원 결과 없음. Scope is course-level; later placement proposals do not invalidate a proper basic Week1, and do not prove later teaching.",
+    "start_line": 201,
+    "end_line": 226,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "Existing sums/indexing/return/axis foundations are preserved; full prerequisite-set availability is reviewed separately. embedding/어휘 ID/lookup 3차원 결과 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 라이브러리 계약에서 발견한 구체 선수와 평가 항목. embedding 자체를 1주차 필수로 놓지 않는다.",
+        "start_line": 201,
+        "end_line": 226
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "embedding/어휘 ID/lookup 3차원 결과 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 라이브러리 계약에서 발견한 구체 선수와 평가 항목. embedding 자체를 1주차 필수로 놓지 않는다.",
+        "start_line": 201,
+        "end_line": 226
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "embedding/어휘 ID/lookup 3차원 결과 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 라이브러리 계약에서 발견한 구체 선수와 평가 항목. embedding 자체를 1주차 필수로 놓지 않는다.",
+        "start_line": 577,
+        "end_line": 589
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "embedding/어휘 ID/lookup 3차원 결과 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 라이브러리 계약에서 발견한 구체 선수와 평가 항목. embedding 자체를 1주차 필수로 놓지 않는다.",
+        "start_line": 201,
+        "end_line": 226
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "embedding/어휘 ID/lookup 3차원 결과 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 라이브러리 계약에서 발견한 구체 선수와 평가 항목. embedding 자체를 1주차 필수로 놓지 않는다.",
+        "start_line": 577,
+        "end_line": 589
+      }
+    ]
+  }
+}

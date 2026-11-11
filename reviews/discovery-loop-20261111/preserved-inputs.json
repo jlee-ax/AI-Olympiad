@@ -1,0 +1,11 @@
+{
+  "purpose": "Detect any accidental change of the user current uncommitted lesson; no originals modified.",
+  "sha256": {
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/lesson-manifest.json": "06ac05f087e7123efcac06782735ad923040e48f062996b28f5b90c9b41c2d07",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/teacher-notes.txt": "23c4195940e0da732f70d97383af440f0913d066f1f72844f5198a9558cb1a38",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/validation.json": "574d75c158af6218aea44394e01829b95fb992593c2c59773b17728d0ec7869c",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.html": "ee3ca9f9ebf491a6e768b3dd99264415d11a384f48f7311b51d5711d48b79f0c",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb": "733c0093b44f30d31354567331c2c39ee325ed074e7a6368bb1f2e96f0c174c0",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/reviews/week01/model-link-20261111/notebook-execution.log": "64f9bcc3d14a5342c8e58fa036589723c653a00818de88bbd4fc8696087cbc54"
+  }
+}

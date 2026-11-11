@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "scope": {
+    "id": "KOAI-course-external-frontier",
+    "lesson_path": "reviews/discovery-loop-20261111/inputs/lesson-source.md",
+    "artifact_path": "reviews/discovery-loop-20261111/inputs/preserved-lesson.ipynb",
+    "artifact_sha256": "733c0093b44f30d31354567331c2c39ee325ed074e7a6368bb1f2e96f0c174c0",
+    "readiness": "course",
+    "boundary": "A sampled external requirement audit of the course; only Week1 actual material is available. Later scheduling is not achieved coverage.",
+    "lesson_revision": "preserved-733c0093"
+  },
+  "frontier": [
+    {
+      "id": "scope",
+      "question": "Which target scope and source-version applicability issues are outside the current lesson?",
+      "required_kinds": [
+        "official_scope"
+      ]
+    },
+    {
+      "id": "problems",
+      "question": "What operations do actual official problems require beyond named lesson examples?",
+      "required_kinds": [
+        "official_problem"
+      ]
+    },
+    {
+      "id": "mechanisms",
+      "question": "What prerequisites, formulas and assessment operations do primary technical references expose?",
+      "required_kinds": [
+        "research"
+      ]
+    }
+  ],
+  "policy": {
+    "max_events": 120,
+    "max_rounds": 20,
+    "max_no_progress": 8,
+    "max_elapsed_minutes": 180
+  }
+}

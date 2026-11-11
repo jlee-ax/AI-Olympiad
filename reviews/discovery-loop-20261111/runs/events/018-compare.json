@@ -1,0 +1,55 @@
+{
+  "id": "actual-018-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Current direct-read research and actual-lesson review; design evidence, no learner claim.",
+    "demand_id": "D12",
+    "judgment": "gap",
+    "reviewer": "root-actual-content-review",
+    "rationale": "현재 함수·반환/누적은 있으나 mutable default·alias 의미는 없음. Scope is course-level; later placement proposals do not invalidate a proper basic Week1, and do not prove later teaching.",
+    "start_line": 335,
+    "end_line": 415,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "Existing sums/indexing/return/axis foundations are preserved; full prerequisite-set availability is reviewed separately. 현재 함수·반환/누적은 있으나 mutable default·alias 의미는 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 실제 문항에서 찾은 요구이나 초보 1주차 핵심을 침식할 수 있다. Python 함수 심화 또는 별도 진단에서 후속 처리.",
+        "start_line": 335,
+        "end_line": 415
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "현재 함수·반환/누적은 있으나 mutable default·alias 의미는 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 실제 문항에서 찾은 요구이나 초보 1주차 핵심을 침식할 수 있다. Python 함수 심화 또는 별도 진단에서 후속 처리.",
+        "start_line": 335,
+        "end_line": 415
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "현재 함수·반환/누적은 있으나 mutable default·alias 의미는 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 실제 문항에서 찾은 요구이나 초보 1주차 핵심을 침식할 수 있다. Python 함수 심화 또는 별도 진단에서 후속 처리.",
+        "start_line": 1197,
+        "end_line": 1209
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "현재 함수·반환/누적은 있으나 mutable default·alias 의미는 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 실제 문항에서 찾은 요구이나 초보 1주차 핵심을 침식할 수 있다. Python 함수 심화 또는 별도 진단에서 후속 처리.",
+        "start_line": 335,
+        "end_line": 415
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "현재 함수·반환/누적은 있으나 mutable default·alias 의미는 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 실제 문항에서 찾은 요구이나 초보 1주차 핵심을 침식할 수 있다. Python 함수 심화 또는 별도 진단에서 후속 처리.",
+        "start_line": 1197,
+        "end_line": 1209
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "checkpoint_utc": "2026-11-11T03:50:23.958957+00:00",
+  "completed": [
+    "Pinned legacy reproduction",
+    "12-source research with14demands",
+    "36-event serialized actual replay",
+    "heldout requirement controls",
+    "255-regression and independent adversarial review",
+    "isolated Terra bridge and missing-assessment counterexample"
+  ],
+  "remaining": [
+    "publish tested tree to existing improvement branch",
+    "retain13course gaps and unsurveyed next-wave frontier"
+  ],
+  "protected_original_files": "all6hashesmatch",
+  "automation": "no scheduler or autonomous semantic execution",
+  "elapsed_minutes": "not independently recorded; per-event usage is supplied data"
+}

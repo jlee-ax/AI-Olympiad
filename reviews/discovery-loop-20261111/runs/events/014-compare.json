@@ -1,0 +1,55 @@
+{
+  "id": "actual-014-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Current direct-read research and actual-lesson review; design evidence, no learner claim.",
+    "demand_id": "D02",
+    "judgment": "gap",
+    "reviewer": "root-actual-content-review",
+    "rationale": "broadcast 덧셈은 있음. 거리 norm·pairwise 축·정렬·투표 알고리즘은 없음. Scope is course-level; later placement proposals do not invalidate a proper basic Week1, and do not prove later teaching.",
+    "start_line": 974,
+    "end_line": 988,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "Existing sums/indexing/return/axis foundations are preserved; full prerequisite-set availability is reviewed separately. broadcast 덧셈은 있음. 거리 norm·pairwise 축·정렬·투표 알고리즘은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 1주차 전체 KNN 강제 근거는 없다. 현재 우측 축 규칙을 선수로 연결하고 거리/분류 단원에서 완성한다.",
+        "start_line": 974,
+        "end_line": 988
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "broadcast 덧셈은 있음. 거리 norm·pairwise 축·정렬·투표 알고리즘은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 1주차 전체 KNN 강제 근거는 없다. 현재 우측 축 규칙을 선수로 연결하고 거리/분류 단원에서 완성한다.",
+        "start_line": 974,
+        "end_line": 988
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "broadcast 덧셈은 있음. 거리 norm·pairwise 축·정렬·투표 알고리즘은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 1주차 전체 KNN 강제 근거는 없다. 현재 우측 축 규칙을 선수로 연결하고 거리/분류 단원에서 완성한다.",
+        "start_line": 1224,
+        "end_line": 1238
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "broadcast 덧셈은 있음. 거리 norm·pairwise 축·정렬·투표 알고리즘은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 1주차 전체 KNN 강제 근거는 없다. 현재 우측 축 규칙을 선수로 연결하고 거리/분류 단원에서 완성한다.",
+        "start_line": 974,
+        "end_line": 988
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "broadcast 덧셈은 있음. 거리 norm·pairwise 축·정렬·투표 알고리즘은 없음.",
+        "rationale": "Reviewed teaching/task DESIGN only. 1주차 전체 KNN 강제 근거는 없다. 현재 우측 축 규칙을 선수로 연결하고 거리/분류 단원에서 완성한다.",
+        "start_line": 1224,
+        "end_line": 1238
+      }
+    ]
+  }
+}

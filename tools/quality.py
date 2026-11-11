@@ -800,13 +800,24 @@ def evaluate(bundle, root=ROOT):
            'rubric_revision': theory_rubric['revision'], 'semantic_understanding': 'not_automated',
            'learner_understanding': 'unobserved_without_actual_learner_evidence'},
            [u['id'] for u, status in zip(selected, explanation_states) if status != 'passed'])
-    ready = all(check['status'] == 'passed' for check in checks)
+    discovery_report = None
+    discovery_ready = bundle['synthetic']
+    if bundle.get('discovery') is not None:
+        import discovery_loop
+        discovery_report = discovery_loop.inspect(discovery_loop.load(safe_file(root, bundle['discovery']['path'])), root)
+        scope = discovery_report['scope']
+        discovery_path = scope.get('artifact_path', scope['lesson_path'])
+        discovery_ready = (discovery_report['ready_for_review'] and discovery_report['synthetic'] == bundle['synthetic']
+                           and discovery_path == bundle['artifact']['path']
+                           and scope.get('artifact_sha256', actual_sha) == actual_sha)
+    ready = all(check['status'] == 'passed' for check in checks) and discovery_ready
     return {'schema_version': 1, 'authority': 'advisory_only', 'synthetic': bundle['synthetic'],
             'revision': bundle['revision'], 'bundle_sha256': digest(bundle), 'artifact_sha256': actual_sha,
             'specification_sha256': file_digest(safe_file(root, CATALOG)), 'specification_revision': catalog['revision'],
             'evaluator_sha256': file_digest(Path(__file__)),
             'ready_for_review': ready, 'status': 'passed' if ready else 'failed' if any(c['status'] == 'failed' for c in checks) else 'uncertain',
-            'checks': checks, 'findings': findings,
+            'checks': checks, 'findings': findings, 'discovery': discovery_report,
+            'discovery_gate': 'recorded_ready' if discovery_ready else 'discovery_unresolved' if discovery_report else 'discovery_missing',
             'limits': ['Semantic judgments and source reading are recorded claims, not authenticated facts.',
                        'Synthetic success is not real material readiness.', 'No worker, scheduler, writer or publisher is executed.']}
 
@@ -896,6 +907,10 @@ def plan_work(bundle, root=ROOT):
         status, reason = 'pause', 'finite_budget_requires_agreement'
     elif ranked and int(ranked[0]['priority'][1]) > best_blocker:
         status, reason = 'pause', 'blocking_finding_requires_scoped_candidate'
+    elif report['discovery_gate'] != 'recorded_ready':
+        discovery_status = report['discovery']['status'] if report['discovery'] else None
+        status = 'stop' if discovery_status == 'stopped' else 'pause' if discovery_status == 'paused' else 'continue'
+        reason = report['discovery_gate']
     elif ranked:
         status, reason = 'continue', 'highest_priority_new_candidate'
     elif report['ready_for_review']:
@@ -904,7 +919,9 @@ def plan_work(bundle, root=ROOT):
         status, reason = 'noop', 'no_new_candidate_not_complete'
     return {'status': status, 'reason': reason, 'authority': 'advisory_only', 'synthetic': bundle['synthetic'],
             'quality_status': report['status'], 'ranked': ranked, 'skipped': skipped,
-            'next_candidate': ranked[0]['id'] if ranked and status == 'continue' else None,
+            'next_candidate': ranked[0]['id'] if ranked and status == 'continue' and report['discovery_gate'] == 'recorded_ready' else None,
+            'discovery': report['discovery'],
+            'next_discovery_action': report['discovery']['next_action'] if report['discovery'] else 'seed_external_frontier' if report['discovery_gate'] == 'discovery_missing' else None,
             'checkpoint_required_fields': ['artifact version', 'changed sources', 'checks and uncertainty',
                                            'accepted/rejected/no-change work', 'usage and remaining finite budget',
                                            'in-flight work', 'next action and unresolved decisions'],

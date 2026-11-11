@@ -1,0 +1,55 @@
+{
+  "id": "actual-016-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Current direct-read research and actual-lesson review; design evidence, no learner claim.",
+    "demand_id": "D04",
+    "judgment": "gap",
+    "reviewer": "root-actual-content-review",
+    "rationale": "분류 label mapping·loss용 정수 target·decode 없음. plt label 인수는 이 역량 증거가 아니다. Scope is course-level; later placement proposals do not invalidate a proper basic Week1, and do not prove later teaching.",
+    "start_line": 201,
+    "end_line": 226,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "Existing sums/indexing/return/axis foundations are preserved; full prerequisite-set availability is reviewed separately. 분류 label mapping·loss용 정수 target·decode 없음. plt label 인수는 이 역량 증거가 아니다.",
+        "rationale": "Reviewed teaching/task DESIGN only. 신규 외부 요구로 추출. 1주차에는 순서/대응만 선수로 표시하고 분류 loss 단원에서 구현한다.",
+        "start_line": 201,
+        "end_line": 226
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "분류 label mapping·loss용 정수 target·decode 없음. plt label 인수는 이 역량 증거가 아니다.",
+        "rationale": "Reviewed teaching/task DESIGN only. 신규 외부 요구로 추출. 1주차에는 순서/대응만 선수로 표시하고 분류 loss 단원에서 구현한다.",
+        "start_line": 201,
+        "end_line": 226
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "분류 label mapping·loss용 정수 target·decode 없음. plt label 인수는 이 역량 증거가 아니다.",
+        "rationale": "Reviewed teaching/task DESIGN only. 신규 외부 요구로 추출. 1주차에는 순서/대응만 선수로 표시하고 분류 loss 단원에서 구현한다.",
+        "start_line": 1247,
+        "end_line": 1255
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "분류 label mapping·loss용 정수 target·decode 없음. plt label 인수는 이 역량 증거가 아니다.",
+        "rationale": "Reviewed teaching/task DESIGN only. 신규 외부 요구로 추출. 1주차에는 순서/대응만 선수로 표시하고 분류 loss 단원에서 구현한다.",
+        "start_line": 201,
+        "end_line": 226
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "분류 label mapping·loss용 정수 target·decode 없음. plt label 인수는 이 역량 증거가 아니다.",
+        "rationale": "Reviewed teaching/task DESIGN only. 신규 외부 요구로 추출. 1주차에는 순서/대응만 선수로 표시하고 분류 loss 단원에서 구현한다.",
+        "start_line": 1247,
+        "end_line": 1255
+      }
+    ]
+  }
+}

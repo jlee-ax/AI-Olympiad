@@ -1,0 +1,18 @@
+{
+  "id": "actual-036-frontier",
+  "op": "frontier",
+  "data": {
+    "reason": "Current direct-read research and actual-lesson review; design evidence, no learner claim.",
+    "probe": {
+      "id": "next-wave",
+      "question": "Review further official task families and later actual lessons; resolve domestic/international applicability.",
+      "required_kinds": [
+        "official_scope",
+        "official_problem"
+      ]
+    },
+    "resolves": [
+      "question:fbcc34836075c9c6"
+    ]
+  }
+}

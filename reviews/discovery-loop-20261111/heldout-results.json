@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "implementation_sha256": "2273d1e9a47aff0dc038f0379837c908cb84a559d3e31e3a026f5a7c189d0914",
+  "heldout_scope": {
+    "H01": "requirement-level holdout; shares Radar source with development requirements",
+    "H02": "additional official generation-task family, Concepts"
+  },
+  "H01": {
+    "plain_A": "3/4",
+    "plain_B": "1/2",
+    "weighted_A": "3/53",
+    "weighted_B": "51/53",
+    "wrong_predicted_label_denominator_rejected": true
+  },
+  "H02": {
+    "known_external_dependency_failed": true,
+    "local_dependency_control_passed": true,
+    "network_calls": 0
+  },
+  "state_replay": {
+    "H01": [
+      "dimension_learning_gap",
+      "dimension_assessment_gap",
+      "dimension_principle_gap",
+      "dimension_practice_gap",
+      "gap"
+    ],
+    "H02": [
+      "dimension_learning_gap",
+      "dimension_assessment_gap",
+      "dimension_principle_gap",
+      "dimension_practice_gap",
+      "gap"
+    ],
+    "aggregate": "needs_work"
+  },
+  "limits": [
+    "The reducer preserves the recorded gap judgments; it does not discover scoring errors from prose by itself.",
+    "No official large dataset, hosted API, model training or learner assessment was run."
+  ]
+}
