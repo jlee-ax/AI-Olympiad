@@ -1,0 +1,82 @@
+{
+  "scope": "Two parent-authorized confirmation cases in new case IDs; original raw logs/fixtures/results preserved. The earlier collector error is separate from validator results.",
+  "source_before": {
+    "teacher_validate_week02.py": {
+      "sha256": "bcb7c3be3f0dcc4405ac8e1971ff932ba363d660949af8740a249acc3fa4fe5a",
+      "bytes": 16228
+    },
+    "week02_prediction_evaluation.ipynb": {
+      "sha256": "ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9",
+      "bytes": 62706
+    },
+    "week02_prediction_evaluation.html": {
+      "sha256": "a1328f5458de4337a314e727be6ae2d7597bd7e876f098f24fa47a3576e9b296",
+      "bytes": 397467
+    },
+    "validation.json": {
+      "sha256": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+      "bytes": 1014
+    }
+  },
+  "source_after": {
+    "teacher_validate_week02.py": {
+      "sha256": "bcb7c3be3f0dcc4405ac8e1971ff932ba363d660949af8740a249acc3fa4fe5a",
+      "bytes": 16228
+    },
+    "week02_prediction_evaluation.ipynb": {
+      "sha256": "ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9",
+      "bytes": 62706
+    },
+    "week02_prediction_evaluation.html": {
+      "sha256": "a1328f5458de4337a314e727be6ae2d7597bd7e876f098f24fa47a3576e9b296",
+      "bytes": 397467
+    },
+    "validation.json": {
+      "sha256": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+      "bytes": 1014
+    }
+  },
+  "source_unchanged": true,
+  "executed_input_sha256": "ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9",
+  "validator_sha256": "bcb7c3be3f0dcc4405ac8e1971ff932ba363d660949af8740a249acc3fa4fe5a",
+  "all_confirmations_passed": true,
+  "cases": [
+    {
+      "case": "03-default-memory-confirmed",
+      "status": "passed",
+      "returncode": 0,
+      "checks": {
+        "protected_bytes_unchanged": true,
+        "input_copy_has_no_added_files": true,
+        "not_timed_out": true,
+        "returncode_zero": true,
+        "valid_json_report": true,
+        "memory_only_report": true,
+        "reported_execution_passed": true,
+        "input_sha_matches": true,
+        "runtime_removed": true
+      },
+      "details": {
+        "week04_group_cv_checks": "not performed here; known_train_4w and group-CV feasibility require separate review",
+        "ignored_IPython_atexit_readonly_traceback": true
+      },
+      "result_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/cli-safety/03-default-memory-confirmed/result.json"
+    },
+    {
+      "case": "04-existing-output-confirmed",
+      "status": "passed",
+      "returncode": 1,
+      "checks": {
+        "protected_bytes_unchanged": true,
+        "input_copy_has_no_added_files": true,
+        "not_timed_out": true,
+        "expected_path_collision": true,
+        "existing_output_has_no_added_files": true,
+        "runtime_removed": true
+      },
+      "details": {},
+      "result_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/cli-safety/04-existing-output-confirmed/result.json"
+    }
+  ],
+  "runtime_directories_remaining": []
+}

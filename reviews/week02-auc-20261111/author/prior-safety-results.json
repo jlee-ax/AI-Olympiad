@@ -1,0 +1,269 @@
+{
+  "created_utc": "2026-11-11T17:18:50.241758+00:00",
+  "validator_sha256": "bcb7c3be3f0dcc4405ac8e1971ff932ba363d660949af8740a249acc3fa4fe5a",
+  "baseline_notebook_sha256": "7bfe0429035c3a5a96bf6be5ceac63eaa34e8f212567e96dcf3447b6d67fa997",
+  "input_notebook_sha256": "ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9",
+  "python": "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+  "all_passed": true,
+  "cases": [
+    {
+      "name": "repeat_normal",
+      "passed": true,
+      "checks": {
+        "expected_exit_and_detector": true,
+        "protected_sha_unchanged": true,
+        "runtime_cache_removed": true,
+        "no_adjacent_new_files": true
+      },
+      "returncode": 0,
+      "detector": null,
+      "before_sha256": {
+        "input/week02_prediction_evaluation.ipynb": "ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9",
+        "input/week02_prediction_evaluation.html": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+        "input/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+        "existing-user-output/keep.txt": "342b89b65650adb58bdefb130a86d263a477517a95bf47dfd90a809defec73d2"
+      },
+      "after_sha256": {
+        "input/week02_prediction_evaluation.ipynb": "ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9",
+        "input/week02_prediction_evaluation.html": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+        "input/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+        "existing-user-output/keep.txt": "342b89b65650adb58bdefb130a86d263a477517a95bf47dfd90a809defec73d2"
+      },
+      "artifact_sha256": {},
+      "stdout": "{\n  \"nbformat_validation\": \"passed\",\n  \"top_to_bottom_execution\": \"passed\",\n  \"execution_method\": \"fresh in-process IPython kernel\",\n  \"input_sha256\": \"ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9\",\n  \"artifacts\": {\n    \"week02_prediction_evaluation.ipynb\": {\n      \"sha256\": \"7a180f0b0632aeb35fff0c29a6a55fa1b4e7d054c18918b9e7312a5b4d7f4b79\",\n      \"bytes\": 42749\n    },\n    \"week02_prediction_evaluation.html\": {\n      \"sha256\": \"c580a6d431a10a526aac2a01bd18dffba2c36ec2ab543ce738226e3eac94fa9a\",\n      \"bytes\": 377430\n    }\n  },\n  \"artifact_mode\": \"memory only; stdout report\",\n  \"output_directory\": null,\n  \"total_cells\": 25,\n  \"code_cells\": 8,\n  \"executed_code_cells\": 8,\n  \"error_outputs\": 0,\n  \"assessment_answer_cell_filled\": false,\n  \"assessment_template_and_saved_outputs\": \"checked before execution\",\n  \"teacher_only_independent_checks\": \"passed; finite A/B worked-example and independent-exercise cases, not student performance\",\n  \"week04_group_cv_checks\": \"not performed here; known_train_4w and group-CV feasibility require separate review\",\n  \"test_labels_and_scores_in_student_notebook\": null,\n  \"test_labels_and_scores_inspection\": \"not performed; arbitrary input is not scanned for held-out test content\",\n  \"teacher_qa_removed_from_artifacts\": true,\n  \"actual_student_performance_observed\": false,\n  \"class_timing_measured\": false,\n  \"html_visual_inspection\": \"not performed by validator\",\n  \"html_math_rendering\": \"nbconvert uses a remote MathJax CDN; availability not verified\",\n  \"versions\": {\n    \"numpy\": \"2.5.4\",\n    \"pandas\": \"3.1.1\",\n    \"scikit-learn\": \"1.8.0\",\n    \"nbformat\": \"5.11.1\",\n    \"nbclient\": \"0.11.0\",\n    \"nbconvert\": \"7.17.2\",\n    \"ipykernel\": \"7.4.0\"\n  },\n  \"limitations\": [\n    \"finite synthetic examples only\",\n    \"execution does not measure learning\",\n    \"class timing is proposed\",\n    \"temporary cwd/cache directories are not OS isolation; arbitrary Python may access absolute paths\",\n    \"week04 extension known_train_4w and group-CV feasibility are not checked by this validator\",\n    \"self-contained trusted notebooks only; relative files are resolved in a temporary directory\"\n  ]\n}\n",
+      "stderr": "0.00s - Debugger warning: It seems that frozen modules are being used, which may\n0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n0.00s - to python to disable frozen modules.\n0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/jupyter_client/localinterfaces.py:58: UserWarning: Unexpected error discovering local network interfaces: [Errno 1] Operation not permitted\n  ret = f(**kwargs)\nException ignored in atexit callback: <bound method InteractiveShell.atexit_operations of <ipykernel.inprocess.ipkernel.InProcessInteractiveShell object at 0x7f63d99e2d50>>\nTraceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/IPython/core/interactiveshell.py\", line 4200, in atexit_operations\n    self._atexit_once()\n  File \"/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/IPython/core/interactiveshell.py\", line 4182, in _atexit_once\n    self.history_manager.end_session()\n  File \"/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/IPython/core/history.py\", line 896, in end_session\n    self.db.execute(\nsqlite3.OperationalError: attempt to write a readonly database\n"
+    },
+    {
+      "name": "code_answer",
+      "passed": true,
+      "checks": {
+        "expected_exit_and_detector": true,
+        "protected_sha_unchanged": true,
+        "runtime_cache_removed": true,
+        "no_adjacent_new_files": true
+      },
+      "returncode": 1,
+      "detector": "원래의 빈 주석 템플릿만",
+      "before_sha256": {
+        "input/week02_prediction_evaluation.ipynb": "40d552c4553fff28fabacf9654975f6a2c7ec46e849ff37de3ac36c9b371a3a6",
+        "input/week02_prediction_evaluation.html": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+        "input/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+        "existing-user-output/keep.txt": "342b89b65650adb58bdefb130a86d263a477517a95bf47dfd90a809defec73d2"
+      },
+      "after_sha256": {
+        "input/week02_prediction_evaluation.ipynb": "40d552c4553fff28fabacf9654975f6a2c7ec46e849ff37de3ac36c9b371a3a6",
+        "input/week02_prediction_evaluation.html": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+        "input/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+        "existing-user-output/keep.txt": "342b89b65650adb58bdefb130a86d263a477517a95bf47dfd90a809defec73d2"
+      },
+      "artifact_sha256": {},
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-5_9bpqjb/input/teacher_validate_week02.py\", line 310, in <module>\n    main()\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-5_9bpqjb/input/teacher_validate_week02.py\", line 249, in main\n    assessment = validate_assessment(nb)\n                 ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-5_9bpqjb/input/teacher_validate_week02.py\", line 80, in validate_assessment\n    raise ValueError(\"배포용 독립 과제 칸에는 원래의 빈 주석 템플릿만 허용됩니다.\")\nValueError: 배포용 독립 과제 칸에는 원래의 빈 주석 템플릿만 허용됩니다.\n"
+    },
+    {
+      "name": "comment_answer",
+      "passed": true,
+      "checks": {
+        "expected_exit_and_detector": true,
+        "protected_sha_unchanged": true,
+        "runtime_cache_removed": true,
+        "no_adjacent_new_files": true
+      },
+      "returncode": 1,
+      "detector": "원래의 빈 주석 템플릿만",
+      "before_sha256": {
+        "input/week02_prediction_evaluation.ipynb": "d1e545476c1d35689528fcf888dbc0bffd7ea3efff7ee303df6a7a71e8c9747f",
+        "input/week02_prediction_evaluation.html": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+        "input/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+        "existing-user-output/keep.txt": "342b89b65650adb58bdefb130a86d263a477517a95bf47dfd90a809defec73d2"
+      },
+      "after_sha256": {
+        "input/week02_prediction_evaluation.ipynb": "d1e545476c1d35689528fcf888dbc0bffd7ea3efff7ee303df6a7a71e8c9747f",
+        "input/week02_prediction_evaluation.html": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+        "input/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+        "existing-user-output/keep.txt": "342b89b65650adb58bdefb130a86d263a477517a95bf47dfd90a809defec73d2"
+      },
+      "artifact_sha256": {},
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-zcdsifrw/input/teacher_validate_week02.py\", line 310, in <module>\n    main()\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-zcdsifrw/input/teacher_validate_week02.py\", line 249, in main\n    assessment = validate_assessment(nb)\n                 ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-zcdsifrw/input/teacher_validate_week02.py\", line 80, in validate_assessment\n    raise ValueError(\"배포용 독립 과제 칸에는 원래의 빈 주석 템플릿만 허용됩니다.\")\nValueError: 배포용 독립 과제 칸에는 원래의 빈 주석 템플릿만 허용됩니다.\n"
+    },
+    {
+      "name": "stored_answer_output",
+      "passed": true,
+      "checks": {
+        "expected_exit_and_detector": true,
+        "protected_sha_unchanged": true,
+        "runtime_cache_removed": true,
+        "no_adjacent_new_files": true
+      },
+      "returncode": 1,
+      "detector": "저장된 실행 출력",
+      "before_sha256": {
+        "input/week02_prediction_evaluation.ipynb": "0e46beb1fd6ce2d7cf7865e86346215c54adc6234dae3da6b979cb0f9c86ef27",
+        "input/week02_prediction_evaluation.html": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+        "input/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+        "existing-user-output/keep.txt": "342b89b65650adb58bdefb130a86d263a477517a95bf47dfd90a809defec73d2"
+      },
+      "after_sha256": {
+        "input/week02_prediction_evaluation.ipynb": "0e46beb1fd6ce2d7cf7865e86346215c54adc6234dae3da6b979cb0f9c86ef27",
+        "input/week02_prediction_evaluation.html": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+        "input/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+        "existing-user-output/keep.txt": "342b89b65650adb58bdefb130a86d263a477517a95bf47dfd90a809defec73d2"
+      },
+      "artifact_sha256": {},
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-ne_r563h/input/teacher_validate_week02.py\", line 310, in <module>\n    main()\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-ne_r563h/input/teacher_validate_week02.py\", line 249, in main\n    assessment = validate_assessment(nb)\n                 ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-ne_r563h/input/teacher_validate_week02.py\", line 82, in validate_assessment\n    raise ValueError(\"배포용 독립 과제 칸에 저장된 실행 출력이 있습니다.\")\nValueError: 배포용 독립 과제 칸에 저장된 실행 출력이 있습니다.\n"
+    },
+    {
+      "name": "qa_unknown_in_fit_rows",
+      "passed": true,
+      "checks": {
+        "expected_exit_and_detector": true,
+        "protected_sha_unchanged": true,
+        "runtime_cache_removed": true,
+        "no_adjacent_new_files": true,
+        "no_partial_output_directory": true
+      },
+      "returncode": 1,
+      "detector": "known_train.row_id.tolist()",
+      "before_sha256": {
+        "input/week02_prediction_evaluation.ipynb": "719e97f0e5d1c55cd749c481029d8fd3891cd5c53ed71e04b60416e4ed55ac9a",
+        "input/week02_prediction_evaluation.html": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+        "input/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+        "existing-user-output/keep.txt": "342b89b65650adb58bdefb130a86d263a477517a95bf47dfd90a809defec73d2"
+      },
+      "after_sha256": {
+        "input/week02_prediction_evaluation.ipynb": "719e97f0e5d1c55cd749c481029d8fd3891cd5c53ed71e04b60416e4ed55ac9a",
+        "input/week02_prediction_evaluation.html": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+        "input/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+        "existing-user-output/keep.txt": "342b89b65650adb58bdefb130a86d263a477517a95bf47dfd90a809defec73d2"
+      },
+      "artifact_sha256": {},
+      "stdout": "",
+      "stderr": "0.00s - Debugger warning: It seems that frozen modules are being used, which may\n0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n0.00s - to python to disable frozen modules.\n0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/jupyter_client/localinterfaces.py:58: UserWarning: Unexpected error discovering local network interfaces: [Errno 1] Operation not permitted\n  ret = f(**kwargs)\nTraceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-as499bqk/input/teacher_validate_week02.py\", line 310, in <module>\n    main()\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-as499bqk/input/teacher_validate_week02.py\", line 254, in main\n    execute_notebook(nb, args.inprocess, workspace)\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-as499bqk/input/teacher_validate_week02.py\", line 164, in execute_notebook\n    raise RuntimeError(\"Notebook cell \" + cell.id + \" failed: \" + repr(reply[\"content\"]))\nRuntimeError: Notebook cell 860f752f failed: {'status': 'error', 'traceback': ['\\x1b[31m---------------------------------------------------------------------------\\x1b[39m', '\\x1b[31mAssertionError\\x1b[39m                            Traceback (most recent call last)', '\\x1b[36mCell\\x1b[39m\\x1b[36m \\x1b[39m\\x1b[32mIn[10]\\x1b[39m\\x1b[32m, line 2\\x1b[39m\\n\\x1b[32m      1\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m set(train.group).isdisjoint(validation.group)\\n\\x1b[32m----> \\x1b[39m\\x1b[32m2\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m known_train.row_id.tolist() == [\\x1b[33m\"a1\"\\x1b[39m, \\x1b[33m\"a2\"\\x1b[39m, \\x1b[33m\"b1\"\\x1b[39m, \\x1b[33m\"b2\"\\x1b[39m]\\n\\x1b[32m      3\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(preprocess.named_steps[\\x1b[33m\"imputer\"\\x1b[39m].statistics_[\\x1b[32m0\\x1b[39m], \\x1b[32m4\\x1b[39m)\\n\\x1b[32m      4\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(preprocess.named_steps[\\x1b[33m\"scaler\"\\x1b[39m].mean_[\\x1b[32m0\\x1b[39m], \\x1b[32m4\\x1b[39m)\\n\\x1b[32m      5\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(preprocess.named_steps[\\x1b[33m\"scaler\"\\x1b[39m].scale_[\\x1b[32m0\\x1b[39m], np.sqrt(\\x1b[32m2\\x1b[39m))\\n', '\\x1b[31mAssertionError\\x1b[39m: '], 'ename': 'AssertionError', 'evalue': '', 'engine_info': {'engine_uuid': '76074de7-e88b-4997-a94c-4a22022beaa7', 'engine_id': -1, 'method': 'execute'}, 'execution_count': 10, 'user_expressions': {}, 'payload': []}\nException ignored in atexit callback: <bound method InteractiveShell.atexit_operations of <ipykernel.inprocess.ipkernel.InProcessInteractiveShell object at 0x7feff82ae030>>\nTraceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/IPython/core/interactiveshell.py\", line 4200, in atexit_operations\n    self._atexit_once()\n  File \"/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/IPython/core/interactiveshell.py\", line 4182, in _atexit_once\n    self.history_manager.end_session()\n  File \"/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/IPython/core/history.py\", line 896, in end_session\n    self.db.execute(\nsqlite3.OperationalError: attempt to write a readonly database\n"
+    },
+    {
+      "name": "qa_preprocessing_leak",
+      "passed": true,
+      "checks": {
+        "expected_exit_and_detector": true,
+        "protected_sha_unchanged": true,
+        "runtime_cache_removed": true,
+        "no_adjacent_new_files": true,
+        "no_partial_output_directory": true
+      },
+      "returncode": 1,
+      "detector": "preprocess.named_steps",
+      "before_sha256": {
+        "input/week02_prediction_evaluation.ipynb": "e004ef69ea37672c2a4624a64c540ba4436dc21c3905d535acf40e4a18e2a52c",
+        "input/week02_prediction_evaluation.html": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+        "input/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+        "existing-user-output/keep.txt": "342b89b65650adb58bdefb130a86d263a477517a95bf47dfd90a809defec73d2"
+      },
+      "after_sha256": {
+        "input/week02_prediction_evaluation.ipynb": "e004ef69ea37672c2a4624a64c540ba4436dc21c3905d535acf40e4a18e2a52c",
+        "input/week02_prediction_evaluation.html": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+        "input/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+        "existing-user-output/keep.txt": "342b89b65650adb58bdefb130a86d263a477517a95bf47dfd90a809defec73d2"
+      },
+      "artifact_sha256": {},
+      "stdout": "",
+      "stderr": "0.00s - Debugger warning: It seems that frozen modules are being used, which may\n0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n0.00s - to python to disable frozen modules.\n0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/jupyter_client/localinterfaces.py:58: UserWarning: Unexpected error discovering local network interfaces: [Errno 1] Operation not permitted\n  ret = f(**kwargs)\nTraceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-dyu1v3rw/input/teacher_validate_week02.py\", line 310, in <module>\n    main()\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-dyu1v3rw/input/teacher_validate_week02.py\", line 254, in main\n    execute_notebook(nb, args.inprocess, workspace)\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-dyu1v3rw/input/teacher_validate_week02.py\", line 164, in execute_notebook\n    raise RuntimeError(\"Notebook cell \" + cell.id + \" failed: \" + repr(reply[\"content\"]))\nRuntimeError: Notebook cell c9a3f912 failed: {'status': 'error', 'traceback': ['\\x1b[31m---------------------------------------------------------------------------\\x1b[39m', '\\x1b[31mAssertionError\\x1b[39m                            Traceback (most recent call last)', '\\x1b[36mCell\\x1b[39m\\x1b[36m \\x1b[39m\\x1b[32mIn[10]\\x1b[39m\\x1b[32m, line 3\\x1b[39m\\n\\x1b[32m      1\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m set(train.group).isdisjoint(validation.group)\\n\\x1b[32m      2\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m known_train.row_id.tolist() == [\\x1b[33m\"a1\"\\x1b[39m, \\x1b[33m\"a2\"\\x1b[39m, \\x1b[33m\"b1\"\\x1b[39m, \\x1b[33m\"b2\"\\x1b[39m]\\n\\x1b[32m----> \\x1b[39m\\x1b[32m3\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(preprocess.named_steps[\\x1b[33m\"imputer\"\\x1b[39m].statistics_[\\x1b[32m0\\x1b[39m], \\x1b[32m4\\x1b[39m)\\n\\x1b[32m      4\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(preprocess.named_steps[\\x1b[33m\"scaler\"\\x1b[39m].mean_[\\x1b[32m0\\x1b[39m], \\x1b[32m4\\x1b[39m)\\n\\x1b[32m      5\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(preprocess.named_steps[\\x1b[33m\"scaler\"\\x1b[39m].scale_[\\x1b[32m0\\x1b[39m], np.sqrt(\\x1b[32m2\\x1b[39m))\\n\\x1b[32m      6\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.allclose(val_z[:,\\x1b[32m0\\x1b[39m], np.array([\\x1b[32m16\\x1b[39m, \\x1b[32m0\\x1b[39m, \\x1b[32m6\\x1b[39m, \\x1b[32m8\\x1b[39m]) / np.sqrt(\\x1b[32m2\\x1b[39m))\\n', '\\x1b[31mAssertionError\\x1b[39m: '], 'ename': 'AssertionError', 'evalue': '', 'engine_info': {'engine_uuid': '06dac039-6fe4-4e59-84d4-3ba009b07713', 'engine_id': -1, 'method': 'execute'}, 'execution_count': 10, 'user_expressions': {}, 'payload': []}\nException ignored in atexit callback: <bound method InteractiveShell.atexit_operations of <ipykernel.inprocess.ipkernel.InProcessInteractiveShell object at 0x7fa8aa6cd190>>\nTraceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/IPython/core/interactiveshell.py\", line 4200, in atexit_operations\n    self._atexit_once()\n  File \"/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/IPython/core/interactiveshell.py\", line 4182, in _atexit_once\n    self.history_manager.end_session()\n  File \"/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/IPython/core/history.py\", line 896, in end_session\n    self.db.execute(\nsqlite3.OperationalError: attempt to write a readonly database\n"
+    },
+    {
+      "name": "qa_group_overlap",
+      "passed": true,
+      "checks": {
+        "expected_exit_and_detector": true,
+        "protected_sha_unchanged": true,
+        "runtime_cache_removed": true,
+        "no_adjacent_new_files": true,
+        "no_partial_output_directory": true
+      },
+      "returncode": 1,
+      "detector": "set(train.group).isdisjoint",
+      "before_sha256": {
+        "input/week02_prediction_evaluation.ipynb": "8c089bdf57952495eeeb9ab67460946c738e2eb70cb94b556ca552651f23d885",
+        "input/week02_prediction_evaluation.html": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+        "input/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+        "existing-user-output/keep.txt": "342b89b65650adb58bdefb130a86d263a477517a95bf47dfd90a809defec73d2"
+      },
+      "after_sha256": {
+        "input/week02_prediction_evaluation.ipynb": "8c089bdf57952495eeeb9ab67460946c738e2eb70cb94b556ca552651f23d885",
+        "input/week02_prediction_evaluation.html": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+        "input/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+        "existing-user-output/keep.txt": "342b89b65650adb58bdefb130a86d263a477517a95bf47dfd90a809defec73d2"
+      },
+      "artifact_sha256": {},
+      "stdout": "",
+      "stderr": "0.00s - Debugger warning: It seems that frozen modules are being used, which may\n0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n0.00s - to python to disable frozen modules.\n0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/jupyter_client/localinterfaces.py:58: UserWarning: Unexpected error discovering local network interfaces: [Errno 1] Operation not permitted\n  ret = f(**kwargs)\nTraceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-rwmi7cat/input/teacher_validate_week02.py\", line 310, in <module>\n    main()\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-rwmi7cat/input/teacher_validate_week02.py\", line 254, in main\n    execute_notebook(nb, args.inprocess, workspace)\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-rwmi7cat/input/teacher_validate_week02.py\", line 164, in execute_notebook\n    raise RuntimeError(\"Notebook cell \" + cell.id + \" failed: \" + repr(reply[\"content\"]))\nRuntimeError: Notebook cell 758e904b failed: {'status': 'error', 'traceback': ['\\x1b[31m---------------------------------------------------------------------------\\x1b[39m', '\\x1b[31mAssertionError\\x1b[39m                            Traceback (most recent call last)', '\\x1b[36mCell\\x1b[39m\\x1b[36m \\x1b[39m\\x1b[32mIn[10]\\x1b[39m\\x1b[32m, line 1\\x1b[39m\\n\\x1b[32m----> \\x1b[39m\\x1b[32m1\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m set(train.group).isdisjoint(validation.group)\\n\\x1b[32m      2\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m known_train.row_id.tolist() == [\\x1b[33m\"a1\"\\x1b[39m, \\x1b[33m\"a2\"\\x1b[39m, \\x1b[33m\"b1\"\\x1b[39m, \\x1b[33m\"b2\"\\x1b[39m]\\n\\x1b[32m      3\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(preprocess.named_steps[\\x1b[33m\"imputer\"\\x1b[39m].statistics_[\\x1b[32m0\\x1b[39m], \\x1b[32m4\\x1b[39m)\\n\\x1b[32m      4\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(preprocess.named_steps[\\x1b[33m\"scaler\"\\x1b[39m].mean_[\\x1b[32m0\\x1b[39m], \\x1b[32m4\\x1b[39m)\\n', '\\x1b[31mAssertionError\\x1b[39m: '], 'ename': 'AssertionError', 'evalue': '', 'engine_info': {'engine_uuid': '638f1012-d402-474a-a115-97292efafb15', 'engine_id': -1, 'method': 'execute'}, 'execution_count': 10, 'user_expressions': {}, 'payload': []}\nException ignored in atexit callback: <bound method InteractiveShell.atexit_operations of <ipykernel.inprocess.ipkernel.InProcessInteractiveShell object at 0x7fbf75e18ec0>>\nTraceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/IPython/core/interactiveshell.py\", line 4200, in atexit_operations\n    self._atexit_once()\n  File \"/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/IPython/core/interactiveshell.py\", line 4182, in _atexit_once\n    self.history_manager.end_session()\n  File \"/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/IPython/core/history.py\", line 896, in end_session\n    self.db.execute(\nsqlite3.OperationalError: attempt to write a readonly database\n"
+    },
+    {
+      "name": "qa_metric_orientation",
+      "passed": true,
+      "checks": {
+        "expected_exit_and_detector": true,
+        "protected_sha_unchanged": true,
+        "runtime_cache_removed": true,
+        "no_adjacent_new_files": true,
+        "no_partial_output_directory": true
+      },
+      "returncode": 1,
+      "detector": "rule_cm.tolist()",
+      "before_sha256": {
+        "input/week02_prediction_evaluation.ipynb": "fec99e1ec70c00a24a29a611c8615e52a03de2811dc04703c98902a0cfef05e3",
+        "input/week02_prediction_evaluation.html": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+        "input/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+        "existing-user-output/keep.txt": "342b89b65650adb58bdefb130a86d263a477517a95bf47dfd90a809defec73d2"
+      },
+      "after_sha256": {
+        "input/week02_prediction_evaluation.ipynb": "fec99e1ec70c00a24a29a611c8615e52a03de2811dc04703c98902a0cfef05e3",
+        "input/week02_prediction_evaluation.html": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+        "input/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+        "existing-user-output/keep.txt": "342b89b65650adb58bdefb130a86d263a477517a95bf47dfd90a809defec73d2"
+      },
+      "artifact_sha256": {},
+      "stdout": "",
+      "stderr": "0.00s - Debugger warning: It seems that frozen modules are being used, which may\n0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n0.00s - to python to disable frozen modules.\n0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/jupyter_client/localinterfaces.py:58: UserWarning: Unexpected error discovering local network interfaces: [Errno 1] Operation not permitted\n  ret = f(**kwargs)\nTraceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-k_sryzvg/input/teacher_validate_week02.py\", line 310, in <module>\n    main()\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-k_sryzvg/input/teacher_validate_week02.py\", line 254, in main\n    execute_notebook(nb, args.inprocess, workspace)\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/unit-tmp/week02-safety-case-k_sryzvg/input/teacher_validate_week02.py\", line 164, in execute_notebook\n    raise RuntimeError(\"Notebook cell \" + cell.id + \" failed: \" + repr(reply[\"content\"]))\nRuntimeError: Notebook cell 3375a2c3 failed: {'status': 'error', 'traceback': ['\\x1b[31m---------------------------------------------------------------------------\\x1b[39m', '\\x1b[31mAssertionError\\x1b[39m                            Traceback (most recent call last)', '\\x1b[36mCell\\x1b[39m\\x1b[36m \\x1b[39m\\x1b[32mIn[10]\\x1b[39m\\x1b[32m, line 9\\x1b[39m\\n\\x1b[32m      5\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(preprocess.named_steps[\\x1b[33m\"scaler\"\\x1b[39m].scale_[\\x1b[32m0\\x1b[39m], np.sqrt(\\x1b[32m2\\x1b[39m))\\n\\x1b[32m      6\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.allclose(val_z[:,\\x1b[32m0\\x1b[39m], np.array([\\x1b[32m16\\x1b[39m, \\x1b[32m0\\x1b[39m, \\x1b[32m6\\x1b[39m, \\x1b[32m8\\x1b[39m]) / np.sqrt(\\x1b[32m2\\x1b[39m))\\n\\x1b[32m      7\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(leaky_imputer.statistics_[\\x1b[32m0\\x1b[39m], \\x1b[32m9\\x1b[39m)\\n\\x1b[32m      8\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m rule_pred.tolist() == [\\x1b[32m1\\x1b[39m,-\\x1b[32m1\\x1b[39m,\\x1b[32m1\\x1b[39m,\\x1b[32m1\\x1b[39m]\\n\\x1b[32m----> \\x1b[39m\\x1b[32m9\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m rule_cm.tolist() == [[\\x1b[32m0\\x1b[39m,\\x1b[32m2\\x1b[39m],[\\x1b[32m1\\x1b[39m,\\x1b[32m1\\x1b[39m]]\\n\\x1b[32m     10\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(precision, \\x1b[32m1\\x1b[39m/\\x1b[32m3\\x1b[39m) \\x1b[38;5;28;01mand\\x1b[39;00m np.isclose(recall, \\x1b[32m1\\x1b[39m/\\x1b[32m2\\x1b[39m)\\n\\x1b[32m     11\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(baseline.named_steps[\\x1b[33m\"imputer\"\\x1b[39m].statistics_[\\x1b[32m0\\x1b[39m], \\x1b[32m4\\x1b[39m)\\n\\x1b[32m     12\\x1b[39m \\x1b[38;5;28;01massert\\x1b[39;00m np.isclose(baseline.named_steps[\\x1b[33m\"scaler\"\\x1b[39m].mean_[\\x1b[32m0\\x1b[39m], \\x1b[32m4\\x1b[39m)\\n', '\\x1b[31mAssertionError\\x1b[39m: '], 'ename': 'AssertionError', 'evalue': '', 'engine_info': {'engine_uuid': 'affb602d-69ec-46ae-bd46-4c76f1fb63a1', 'engine_id': -1, 'method': 'execute'}, 'execution_count': 10, 'user_expressions': {}, 'payload': []}\nException ignored in atexit callback: <bound method InteractiveShell.atexit_operations of <ipykernel.inprocess.ipkernel.InProcessInteractiveShell object at 0x7ff39167d880>>\nTraceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/IPython/core/interactiveshell.py\", line 4200, in atexit_operations\n    self._atexit_once()\n  File \"/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/IPython/core/interactiveshell.py\", line 4182, in _atexit_once\n    self.history_manager.end_session()\n  File \"/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/IPython/core/history.py\", line 896, in end_session\n    self.db.execute(\nsqlite3.OperationalError: attempt to write a readonly database\n"
+    },
+    {
+      "name": "independent_new_input_reference",
+      "passed": true,
+      "checks": {
+        "expected_exit_and_detector": true,
+        "protected_sha_unchanged": true,
+        "runtime_cache_removed": true,
+        "no_adjacent_new_files": true
+      },
+      "returncode": 0,
+      "detector": null,
+      "before_sha256": {
+        "input/week02_prediction_evaluation.ipynb": "de4dd92264578e7fa8586e48136578193738ea159bcf2a249523162621f4a7c7",
+        "input/week02_prediction_evaluation.html": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+        "input/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+        "existing-user-output/keep.txt": "342b89b65650adb58bdefb130a86d263a477517a95bf47dfd90a809defec73d2"
+      },
+      "after_sha256": {
+        "input/week02_prediction_evaluation.ipynb": "de4dd92264578e7fa8586e48136578193738ea159bcf2a249523162621f4a7c7",
+        "input/week02_prediction_evaluation.html": "786fdc0319070d3c4953a5ccf888e1205146055d0e1d4a58fcd67e229820a42c",
+        "input/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+        "existing-user-output/keep.txt": "342b89b65650adb58bdefb130a86d263a477517a95bf47dfd90a809defec73d2"
+      },
+      "artifact_sha256": {},
+      "stdout": "{\n  \"nbformat_validation\": \"passed\",\n  \"top_to_bottom_execution\": \"passed\",\n  \"execution_method\": \"fresh in-process IPython kernel\",\n  \"input_sha256\": \"de4dd92264578e7fa8586e48136578193738ea159bcf2a249523162621f4a7c7\",\n  \"artifacts\": {\n    \"week02_prediction_evaluation.ipynb\": {\n      \"sha256\": \"ef2f4d1db6c08fb77231cb268aadff465a1d72ecc78b5cd39692a422bb5e1d40\",\n      \"bytes\": 43679\n    },\n    \"week02_prediction_evaluation.html\": {\n      \"sha256\": \"c55dabd6e01f799e692dc31052c58320a1eb5277c15ae326cb26153ce3a91079\",\n      \"bytes\": 383809\n    }\n  },\n  \"artifact_mode\": \"memory only; stdout report\",\n  \"output_directory\": null,\n  \"total_cells\": 26,\n  \"code_cells\": 9,\n  \"executed_code_cells\": 9,\n  \"error_outputs\": 0,\n  \"assessment_answer_cell_filled\": false,\n  \"assessment_template_and_saved_outputs\": \"checked before execution\",\n  \"teacher_only_independent_checks\": \"passed; finite A/B worked-example and independent-exercise cases, not student performance\",\n  \"week04_group_cv_checks\": \"not performed here; known_train_4w and group-CV feasibility require separate review\",\n  \"test_labels_and_scores_in_student_notebook\": null,\n  \"test_labels_and_scores_inspection\": \"not performed; arbitrary input is not scanned for held-out test content\",\n  \"teacher_qa_removed_from_artifacts\": true,\n  \"actual_student_performance_observed\": false,\n  \"class_timing_measured\": false,\n  \"html_visual_inspection\": \"not performed by validator\",\n  \"html_math_rendering\": \"nbconvert uses a remote MathJax CDN; availability not verified\",\n  \"versions\": {\n    \"numpy\": \"2.5.4\",\n    \"pandas\": \"3.1.1\",\n    \"scikit-learn\": \"1.8.0\",\n    \"nbformat\": \"5.11.1\",\n    \"nbclient\": \"0.11.0\",\n    \"nbconvert\": \"7.17.2\",\n    \"ipykernel\": \"7.4.0\"\n  },\n  \"limitations\": [\n    \"finite synthetic examples only\",\n    \"execution does not measure learning\",\n    \"class timing is proposed\",\n    \"temporary cwd/cache directories are not OS isolation; arbitrary Python may access absolute paths\",\n    \"week04 extension known_train_4w and group-CV feasibility are not checked by this validator\",\n    \"self-contained trusted notebooks only; relative files are resolved in a temporary directory\"\n  ]\n}\n",
+      "stderr": "0.00s - Debugger warning: It seems that frozen modules are being used, which may\n0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n0.00s - to python to disable frozen modules.\n0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/jupyter_client/localinterfaces.py:58: UserWarning: Unexpected error discovering local network interfaces: [Errno 1] Operation not permitted\n  ret = f(**kwargs)\nException ignored in atexit callback: <bound method InteractiveShell.atexit_operations of <ipykernel.inprocess.ipkernel.InProcessInteractiveShell object at 0x7fca0c700e60>>\nTraceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/IPython/core/interactiveshell.py\", line 4200, in atexit_operations\n    self._atexit_once()\n  File \"/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/IPython/core/interactiveshell.py\", line 4182, in _atexit_once\n    self.history_manager.end_session()\n  File \"/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/IPython/core/history.py\", line 896, in end_session\n    self.db.execute(\nsqlite3.OperationalError: attempt to write a readonly database\n"
+    }
+  ],
+  "reproduction": {
+    "status": "not run in this selection"
+  },
+  "skipped": [
+    "ordinary socket kernel: prior attempt denied by environment; see baseline-first-results.json"
+  ],
+  "limitations": [
+    "arbitrary Python absolute-path access is not blocked; no OS sandbox",
+    "finite examples do not observe student mastery or timing",
+    "system Python smoke missing nbformat; not counted as semantic execution",
+    "remote MathJax availability and browser visual inspection not tested here"
+  ]
+}

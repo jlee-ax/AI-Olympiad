@@ -1,0 +1,15 @@
+{
+  "id": "mutant-score-direction",
+  "notebook": "candidate02-inputs/week02_prediction_evaluation.ipynb",
+  "sha256": "ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9",
+  "scope": "actual candidate provided code; blank student answers not achievement",
+  "compare_stored": false,
+  "save_png": false,
+  "replacements": [
+    {
+      "cell": 23,
+      "old": "rank_area = roc_auc_score(binary_truth, roc_scores)",
+      "new": "rank_area = roc_auc_score(binary_truth, -roc_scores)"
+    }
+  ]
+}

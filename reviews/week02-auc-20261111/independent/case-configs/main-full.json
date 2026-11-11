@@ -1,0 +1,8 @@
+{
+  "id": "main-full",
+  "notebook": "candidate02-inputs/week02_prediction_evaluation.ipynb",
+  "sha256": "ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9",
+  "scope": "actual candidate provided code; blank student answers not achievement",
+  "compare_stored": true,
+  "save_png": true
+}

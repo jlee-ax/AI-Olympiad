@@ -1,0 +1,51 @@
+{
+  "all_passed": true,
+  "validator_sha256": "bcb7c3be3f0dcc4405ac8e1971ff932ba363d660949af8740a249acc3fa4fe5a",
+  "cases": [
+    {
+      "name": "repeat_normal",
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "name": "code_answer",
+      "passed": true,
+      "returncode": 1
+    },
+    {
+      "name": "comment_answer",
+      "passed": true,
+      "returncode": 1
+    },
+    {
+      "name": "stored_answer_output",
+      "passed": true,
+      "returncode": 1
+    },
+    {
+      "name": "qa_unknown_in_fit_rows",
+      "passed": true,
+      "returncode": 1
+    },
+    {
+      "name": "qa_preprocessing_leak",
+      "passed": true,
+      "returncode": 1
+    },
+    {
+      "name": "qa_group_overlap",
+      "passed": true,
+      "returncode": 1
+    },
+    {
+      "name": "qa_metric_orientation",
+      "passed": true,
+      "returncode": 1
+    },
+    {
+      "name": "independent_new_input_reference",
+      "passed": true,
+      "returncode": 0
+    }
+  ]
+}

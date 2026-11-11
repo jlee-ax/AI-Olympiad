@@ -1,0 +1,8 @@
+{
+  "id": "temporal-full",
+  "notebook": "candidate02-inputs/week02_temporal_preprocessing.ipynb",
+  "sha256": "8b7ded5749a9f5f8c16a00112ead4e13ed4c3f1749c121ef056631c52ba0e55c",
+  "scope": "actual candidate provided code; blank student answers not achievement",
+  "compare_stored": true,
+  "save_png": true
+}

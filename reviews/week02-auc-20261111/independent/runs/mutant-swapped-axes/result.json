@@ -1,0 +1,136 @@
+{
+  "id": "mutant-swapped-axes",
+  "scope": "actual candidate provided code; blank student answers not achievement",
+  "input_sha256": "ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/candidate02-inputs/week02_prediction_evaluation.ipynb",
+  "config_sha256": "cb53620018aa74188f968d399c5b5cc7ba01a1611b17a1645aa07373059de4de",
+  "status": "notebook_error",
+  "execution": "new subprocess/fresh in-process kernel",
+  "cells": [
+    {
+      "index": 5,
+      "source_sha256": "4a138da5f836147ff41a5f133a8f11a44b7122949d7161ffcb09bb081f16e096",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "훈련 개체: ['A', 'B']\n검증 개체: ['C', 'D']\nfit에 쓰는 훈련 행: ['a1', 'a2', 'b1', 'b2']\n정답 미상으로 제외한 훈련 행: ['b3']\n검증 출력 순서: ['c1', 'c2', 'd1', 'd2']\n4주 추가 훈련 후보 행: ['g1', 'g2', 'h1', 'h2']\n"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "source_sha256": "c7fa8ccb49b48c09ca3b801db8a599cc6008a1807c6b0aaf67d33e5f434f9c7b",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "훈련 평균 대체값: 4.0\n대체 후 훈련 평균과 표준편차: 4.0 1.414214\n훈련 z: [-1.414, 0.0, 1.414, 0.0]\n검증 행과 z: [('c1', 11.314), ('c2', 0.0), ('d1', 4.243), ('d2', 5.657)]\n틀린 대체값(검증 입력 포함): 9.0\n"
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "source_sha256": "bbafde770736c458f150ba8cfad3b11c30f05439b4b45e95d0d68577943e1888",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "행 ID와 예측: [('c1', 1), ('c2', -1), ('d1', 1), ('d2', 1)]\n혼동행렬(행=실제, 열=예측; 순서 -1,+1):\n [[0 2]\n [1 1]]\n정확도: 0.25 정밀도: 0.333 재현율: 0.5\n"
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "source_sha256": "dbdc82cc9e2874657a597f18fcbe61b11602c4b3633d05ada66bc9c34db74dcf",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "기준 모델이 배운 대체값: 4.0\n기준 모델이 배운 평균·표준편차: 4.0 1.414214\n기준 예측: [-1, -1, -1, -1]\n기준 혼동행렬:\n [[2 0]\n [2 0]]\n수학: 정밀도 정의 불가, 재현율 0/2 = 0\n라이브러리 정책 zero_division=0: 0.0 0.0\n라이브러리 정책 zero_division=np.nan: nan 0.0\n"
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "source_sha256": "509a9568eb04d1ea39bc5a45e2a0ccdbd685496046cb53a8afd237d0c0dfc257",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "정답이 알려진 행 수: 3\n올바른 비교(미상 제외):\n [[0 1]\n [1 1]]\n틀린 비교(미상을 -1로 둠):\n [[1 1]\n [1 1]]\n"
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "source_sha256": "891022fa730f9d0ba0ab0542dbb8247fa2fbdd1e86168779c639fdfdd4000c50",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "       sum  count  mean\nrobot                  \nR1       8     10   0.8\nR2       0      2   0.0\n전체 행 정확도: 0.666667\n개체별 평균 정확도: 0.4\n"
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "source_sha256": "9fa96b87a098a294aabee473ac90542507cc517cd9b62aa95b4fb539d149b8d4",
+      "blank_ast": true,
+      "status": "ok",
+      "outputs": []
+    },
+    {
+      "index": 23,
+      "source_sha256": "03f6964ad5542520fd8ead5f32ebc9b4c1412e63391877ffeffd34a15c7eec93",
+      "blank_ast": false,
+      "status": "error",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "임계값 0.5 혼동행렬 [[1, 1], [1, 1]] TPR 0.5 FPR 0.5 정확도 0.5 F1 0.5\n임계값 0.3 혼동행렬 [[1, 1], [0, 2]] TPR 1.0 FPR 0.5 정확도 0.75 F1 0.8\nROC 좌표 (FPR, TPR): [(0.0, 0.0), (0.0, 0.5), (0.5, 0.5), (0.5, 1.0), (1.0, 1.0)]\n사다리꼴 면적: 0.25 양성 점수의 ROC-AUC: 0.75\n"
+        },
+        {
+          "output_type": "error",
+          "ename": "AssertionError",
+          "evalue": "",
+          "traceback": [
+            "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+            "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+            "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[8]\u001b[39m\u001b[32m, line 23\u001b[39m\n\u001b[32m     19\u001b[39m binary_truth = (roc_truth == \u001b[32m1\u001b[39m).astype(int)\n\u001b[32m     20\u001b[39m roc_area = auc(tpr, fpr)\n\u001b[32m     21\u001b[39m rank_area = roc_auc_score(binary_truth, roc_scores)\n\u001b[32m     22\u001b[39m print(\u001b[33m\"사다리꼴 면적:\"\u001b[39m, roc_area, \u001b[33m\"양성 점수의 ROC-AUC:\"\u001b[39m, rank_area)\n\u001b[32m---> \u001b[39m\u001b[32m23\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.isclose(roc_area, \u001b[32m0.75\u001b[39m) \u001b[38;5;28;01mand\u001b[39;00m np.isclose(rank_area, roc_area)\n\u001b[32m     24\u001b[39m \n\u001b[32m     25\u001b[39m \u001b[38;5;66;03m# 점수와 임계값을 함께 1만큼 옮기면 판정은 같습니다. 점수만 옮기면 달라질 수 있습니다.\u001b[39;00m\n\u001b[32m     26\u001b[39m shifted_scores = roc_scores + \u001b[32m1\u001b[39m\n",
+            "\u001b[31mAssertionError\u001b[39m: "
+          ]
+        }
+      ]
+    }
+  ],
+  "student_performance_and_time": "not_observed",
+  "setup": "matplotlib inline; not student code",
+  "failed_cell": 23,
+  "error": {
+    "ename": "AssertionError",
+    "evalue": "",
+    "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[8]\u001b[39m\u001b[32m, line 23\u001b[39m\n\u001b[32m     19\u001b[39m binary_truth = (roc_truth == \u001b[32m1\u001b[39m).astype(int)\n\u001b[32m     20\u001b[39m roc_area = auc(tpr, fpr)\n\u001b[32m     21\u001b[39m rank_area = roc_auc_score(binary_truth, roc_scores)\n\u001b[32m     22\u001b[39m print(\u001b[33m\"사다리꼴 면적:\"\u001b[39m, roc_area, \u001b[33m\"양성 점수의 ROC-AUC:\"\u001b[39m, rank_area)\n\u001b[32m---> \u001b[39m\u001b[32m23\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.isclose(roc_area, \u001b[32m0.75\u001b[39m) \u001b[38;5;28;01mand\u001b[39;00m np.isclose(rank_area, roc_area)\n\u001b[32m     24\u001b[39m \n\u001b[32m     25\u001b[39m \u001b[38;5;66;03m# 점수와 임계값을 함께 1만큼 옮기면 판정은 같습니다. 점수만 옮기면 달라질 수 있습니다.\u001b[39;00m\n\u001b[32m     26\u001b[39m shifted_scores = roc_scores + \u001b[32m1\u001b[39m\n",
+      "\u001b[31mAssertionError\u001b[39m: "
+    ]
+  },
+  "elapsed_seconds": 3.0765,
+  "source_unchanged": true,
+  "runtime_removed": true
+}

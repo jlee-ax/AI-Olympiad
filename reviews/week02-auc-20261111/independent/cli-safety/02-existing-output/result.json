@@ -1,0 +1,102 @@
+{
+  "case": "02-existing-output",
+  "status": "passed",
+  "command": [
+    "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+    "-B",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/cli-safety/02-existing-output/input-copy/teacher_validate_week02.py",
+    "--inprocess",
+    "--notebook",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/cli-safety/02-existing-output/input-copy/week02_prediction_evaluation.ipynb",
+    "--output-dir",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/cli-safety/02-existing-output/existing-output"
+  ],
+  "returncode": 1,
+  "elapsed_seconds": 0.067,
+  "expected": "Existing output refused with path-collision FileExistsError; all input, existing output, and sentinel bytes preserved.",
+  "checks": {
+    "expected_existing_output_FileExistsError": true,
+    "protected_bytes_unchanged": true,
+    "input_copy_has_no_added_files": true,
+    "existing_output_has_no_added_files": true,
+    "runtime_removed": true
+  },
+  "protected_before": {
+    "input-copy/teacher_validate_week02.py": {
+      "sha256": "bcb7c3be3f0dcc4405ac8e1971ff932ba363d660949af8740a249acc3fa4fe5a",
+      "bytes": 16228
+    },
+    "existing-output/teacher_validate_week02.py": {
+      "sha256": "bcb7c3be3f0dcc4405ac8e1971ff932ba363d660949af8740a249acc3fa4fe5a",
+      "bytes": 16228
+    },
+    "input-copy/week02_prediction_evaluation.ipynb": {
+      "sha256": "ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9",
+      "bytes": 62706
+    },
+    "existing-output/week02_prediction_evaluation.ipynb": {
+      "sha256": "ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9",
+      "bytes": 62706
+    },
+    "input-copy/week02_prediction_evaluation.html": {
+      "sha256": "a1328f5458de4337a314e727be6ae2d7597bd7e876f098f24fa47a3576e9b296",
+      "bytes": 397467
+    },
+    "existing-output/week02_prediction_evaluation.html": {
+      "sha256": "a1328f5458de4337a314e727be6ae2d7597bd7e876f098f24fa47a3576e9b296",
+      "bytes": 397467
+    },
+    "input-copy/validation.json": {
+      "sha256": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+      "bytes": 1014
+    },
+    "existing-output/validation.json": {
+      "sha256": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+      "bytes": 1014
+    },
+    "existing-output/sentinel.txt": {
+      "sha256": "ae3ffc06b1208a4823732151dd7d23f0a32f251a893418f1128fda71e1611790",
+      "bytes": 49
+    }
+  },
+  "protected_after": {
+    "input-copy/teacher_validate_week02.py": {
+      "sha256": "bcb7c3be3f0dcc4405ac8e1971ff932ba363d660949af8740a249acc3fa4fe5a",
+      "bytes": 16228
+    },
+    "existing-output/teacher_validate_week02.py": {
+      "sha256": "bcb7c3be3f0dcc4405ac8e1971ff932ba363d660949af8740a249acc3fa4fe5a",
+      "bytes": 16228
+    },
+    "input-copy/week02_prediction_evaluation.ipynb": {
+      "sha256": "ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9",
+      "bytes": 62706
+    },
+    "existing-output/week02_prediction_evaluation.ipynb": {
+      "sha256": "ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9",
+      "bytes": 62706
+    },
+    "input-copy/week02_prediction_evaluation.html": {
+      "sha256": "a1328f5458de4337a314e727be6ae2d7597bd7e876f098f24fa47a3576e9b296",
+      "bytes": 397467
+    },
+    "existing-output/week02_prediction_evaluation.html": {
+      "sha256": "a1328f5458de4337a314e727be6ae2d7597bd7e876f098f24fa47a3576e9b296",
+      "bytes": 397467
+    },
+    "input-copy/validation.json": {
+      "sha256": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+      "bytes": 1014
+    },
+    "existing-output/validation.json": {
+      "sha256": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+      "bytes": 1014
+    },
+    "existing-output/sentinel.txt": {
+      "sha256": "ae3ffc06b1208a4823732151dd7d23f0a32f251a893418f1128fda71e1611790",
+      "bytes": 49
+    }
+  },
+  "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "raw_stderr_sha256": "cd1618e479d073ac36bc708b850d15f8db572484ab172d41890331101ee43f9b"
+}

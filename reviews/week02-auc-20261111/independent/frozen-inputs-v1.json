@@ -1,0 +1,244 @@
+{
+  "format_version": 1,
+  "scope": "Independent fixtures fixed before candidate; not shared with author; not access-controlled student final test",
+  "binary_mixed_tie": {
+    "ids": [
+      "cobalt",
+      "juniper",
+      "mica",
+      "plover",
+      "umber",
+      "wren"
+    ],
+    "labels": [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1
+    ],
+    "scores": [
+      0.8,
+      0.8,
+      0.4,
+      0.3,
+      0.2,
+      0.1
+    ],
+    "positive_label": 1,
+    "unknown_label": 0,
+    "higher_is_positive": true,
+    "expected_positive_negative_pairs": 9,
+    "expected_wins": 5,
+    "expected_cross_class_ties": 1,
+    "expected_auc_fraction": [
+      11,
+      18
+    ],
+    "expected_roc_fpr_fractions": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "expected_roc_tpr_fractions": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "expected_reverse_score_auc_fraction": [
+      7,
+      18
+    ],
+    "expected_label_swap_auc_fraction": [
+      7,
+      18
+    ],
+    "expected_label_swap_and_score_reverse_auc_fraction": [
+      11,
+      18
+    ],
+    "cross_class_ties_all_loss_wrong_auc_fraction": [
+      5,
+      9
+    ],
+    "cross_class_ties_all_win_wrong_auc_fraction": [
+      2,
+      3
+    ],
+    "threshold_policy": ">=",
+    "base_threshold": 0.5,
+    "expected_base_counts": {
+      "TP": 1,
+      "FP": 1,
+      "TN": 2,
+      "FN": 2
+    },
+    "expected_base_F1_fraction": [
+      2,
+      5
+    ],
+    "strictly_increasing_transform": {
+      "scale": 1,
+      "offset": 5
+    },
+    "expected_same_fixed_numeric_threshold_counts": {
+      "TP": 3,
+      "FP": 3,
+      "TN": 0,
+      "FN": 0
+    },
+    "expected_same_fixed_numeric_threshold_F1_fraction": [
+      2,
+      3
+    ],
+    "transformed_threshold": 5.5,
+    "expected_transforming_score_and_threshold_preserves_prediction": true,
+    "unknown_row": {
+      "id": "xenon",
+      "label": 0,
+      "score": 0.95
+    },
+    "expected_auc_after_unknown_excluded_fraction": [
+      11,
+      18
+    ],
+    "wrong_unknown_to_negative_auc_fraction": [
+      11,
+      24
+    ]
+  },
+  "deterministic_all_tie_imbalanced": {
+    "labels": [
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      -1
+    ],
+    "scores": [
+      0.35,
+      0.35,
+      0.35,
+      0.35,
+      0.35,
+      0.35,
+      0.35,
+      0.35
+    ],
+    "positive_label": 1,
+    "expected_auc_fraction": [
+      1,
+      2
+    ],
+    "threshold": 0.5,
+    "expected_accuracy_fraction": [
+      3,
+      4
+    ],
+    "expected_F1_fraction": [
+      0,
+      1
+    ],
+    "interpretation": "deterministic constant scores; AUC one half does not imply random sampling or accuracy one half"
+  },
+  "missing_class_cases": [
+    {
+      "name": "positive_only",
+      "labels": [
+        1,
+        1,
+        1
+      ],
+      "scores": [
+        0.7,
+        0.2,
+        0.7
+      ]
+    },
+    {
+      "name": "negative_only",
+      "labels": [
+        -1,
+        -1
+      ],
+      "scores": [
+        0.1,
+        0.9
+      ]
+    },
+    {
+      "name": "unknown_only",
+      "labels": [
+        0,
+        0
+      ],
+      "scores": [
+        0.6,
+        0.4
+      ]
+    },
+    {
+      "name": "empty",
+      "labels": [],
+      "scores": []
+    }
+  ],
+  "missing_class_expected": "mathematically undefined because P*N=0 after contract-known-label filtering; record library warning/NaN/exception without requiring one version-specific outcome",
+  "planned_single_errors": [
+    "cross-class tie zero credit",
+    "cross-class tie full credit",
+    "negative direction treated as positive",
+    "ROC FPR/TPR axes interchanged",
+    "hard threshold predictions substituted for full ranking without disclosure",
+    "unknown label treated as negative",
+    "class absence forcibly filled with numerical AUC",
+    "AUC one half asserted to prove random predictions"
+  ],
+  "regression_scope": "actual candidate examples and prior mandatory objectives, student blank cells, validation selection/final-test boundary; reviewer reference not student work"
+}

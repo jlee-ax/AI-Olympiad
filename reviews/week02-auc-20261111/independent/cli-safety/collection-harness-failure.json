@@ -1,0 +1,9 @@
+{
+  "scope": "Initial collection harness only; not a validator failure verdict.",
+  "collector_returncode": 1,
+  "collector_traceback": "Traceback (most recent call last):\n  File \"<stdin>\", line 74, in <module>\nKeyError: 'week02_prediction_evaluation.ipynb'\n",
+  "validator_returncode": null,
+  "validator_returncode_note": "Lost before persistence due to collector KeyError; initial raw stdout/stderr and input-copy remain unchanged.",
+  "case": "01-default-memory",
+  "initial_result": "01-default-memory/result.json"
+}

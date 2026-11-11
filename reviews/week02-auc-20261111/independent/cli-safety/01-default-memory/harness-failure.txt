@@ -1,0 +1,3 @@
+First collection harness stopped after writing raw logs and before saving returncode.
+KeyError: 'week02_prediction_evaluation.ipynb'
+No default CLI retry was performed, preserving the requested two-invocation limit.

@@ -1,0 +1,28 @@
+{
+  "week02_prediction_evaluation.ipynb": {
+    "changes": [
+      {
+        "cell": 22,
+        "type": "markdown",
+        "changed_keys": [
+          "source"
+        ],
+        "code_or_outputs_changed": false
+      }
+    ],
+    "cell_count_unchanged": true
+  },
+  "week02_temporal_preprocessing.ipynb": {
+    "changes": [
+      {
+        "cell": 19,
+        "type": "markdown",
+        "changed_keys": [
+          "source"
+        ],
+        "code_or_outputs_changed": false
+      }
+    ],
+    "cell_count_unchanged": true
+  }
+}

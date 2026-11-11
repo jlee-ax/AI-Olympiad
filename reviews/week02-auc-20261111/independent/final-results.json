@@ -1,0 +1,328 @@
+{
+  "scope": "Independent Week02 AUC finite checks; no student performance inferred",
+  "final_artifacts": {
+    "week02_prediction_evaluation.ipynb": {
+      "sha256": "dd360d9b78c8273253a688769bc14a4948dc4d8f89369da6c1f291e47a7e27a9",
+      "size": 63078
+    },
+    "week02_prediction_evaluation.html": {
+      "sha256": "40d1c41d88ffcdde6fa6726dab6e6f6811d9544cfcd6817b22878051c5ed0f6e",
+      "size": 397838
+    },
+    "week02_temporal_preprocessing.ipynb": {
+      "sha256": "8b7ded5749a9f5f8c16a00112ead4e13ed4c3f1749c121ef056631c52ba0e55c",
+      "size": 62309
+    },
+    "week02_temporal_preprocessing.html": {
+      "sha256": "fe8a10b1d50980fc6585fb6996efd1bbefbfe85d9f3c907ec7bdd5b5b5f5aadc",
+      "size": 406005
+    },
+    "teacher-notes.md": {
+      "sha256": "f91a29f97e4a94fdff7665d0cde8820efd7cff8f7cb74de15fb7a5d405771412",
+      "size": 17385
+    },
+    "week02_temporal_preprocessing_teacher.md": {
+      "sha256": "8f628190234ef0791e8d5249be9eea74e5a1ddd545713531a8db82345149a902",
+      "size": 17643
+    },
+    "build_week02.py": {
+      "sha256": "d4c16c27bfc158b7a495ff48b19a2b9f441cecb1383e4d1363cc78029e0bddc5",
+      "size": 37415
+    }
+  },
+  "current_live_files_match_final_snapshot": true,
+  "candidate03_diff": {
+    "week02_prediction_evaluation.ipynb": {
+      "changes": [
+        {
+          "cell": 22,
+          "type": "markdown",
+          "changed_keys": [
+            "source"
+          ]
+        },
+        {
+          "cell": 24,
+          "type": "markdown",
+          "changed_keys": [
+            "source"
+          ]
+        }
+      ],
+      "all_code_cells_and_stored_outputs_identical": true
+    },
+    "week02_temporal_preprocessing.ipynb": {
+      "changes": [],
+      "all_code_cells_and_stored_outputs_identical": true
+    }
+  },
+  "evidence_binding": {
+    "main_final_full": "dd360d9b78c8273253a688769bc14a4948dc4d8f89369da6c1f291e47a7e27a9",
+    "supplement_full_and_frozen_cases": "8b7ded5749a9f5f8c16a00112ead4e13ed4c3f1749c121ef056631c52ba0e55c",
+    "actual_main_mutations_and_CLI_input": "ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9",
+    "reuse_basis": "final main changes only Markdown22/24; code cells, stored output and execution counts identical; final main also executed afresh"
+  },
+  "runs": {
+    "main-full": {
+      "status": "passed",
+      "expected_outcome": "passed",
+      "source_sha256": "ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9",
+      "result_path": "runs/main-full/result.json",
+      "result_sha256": "aedae933b5a77384268e79b285ed58c642108e5ae00d55f408d91e766fb53531",
+      "source_unchanged": true,
+      "runtime_removed": true
+    },
+    "temporal-full": {
+      "status": "passed",
+      "expected_outcome": "passed",
+      "source_sha256": "8b7ded5749a9f5f8c16a00112ead4e13ed4c3f1749c121ef056631c52ba0e55c",
+      "result_path": "runs/temporal-full/result.json",
+      "result_sha256": "53c2e0b468350027023fb66acfd7a9f3dc4715dd8bc10bd6350ecabd58dbcba9",
+      "source_unchanged": true,
+      "runtime_removed": true
+    },
+    "auc-frozen": {
+      "status": "passed",
+      "expected_outcome": "passed",
+      "source_sha256": "8b7ded5749a9f5f8c16a00112ead4e13ed4c3f1749c121ef056631c52ba0e55c",
+      "result_path": "runs/auc-frozen/result.json",
+      "result_sha256": "63cb38535b27701e46938342dddcf2238885b8af782fa70c7e0dbdb8b6e1e078",
+      "source_unchanged": true,
+      "runtime_removed": true
+    },
+    "mutant-score-direction": {
+      "status": "notebook_error",
+      "expected_outcome": "notebook_error/AssertionError at cell23",
+      "source_sha256": "ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9",
+      "result_path": "runs/mutant-score-direction/result.json",
+      "result_sha256": "4a2b83e3b66a5557db2e6fc58f8c36f8d2c29ec539f646d8e0ed0746432ab0e5",
+      "source_unchanged": true,
+      "runtime_removed": true
+    },
+    "mutant-swapped-axes": {
+      "status": "notebook_error",
+      "expected_outcome": "notebook_error/AssertionError at cell23",
+      "source_sha256": "ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9",
+      "result_path": "runs/mutant-swapped-axes/result.json",
+      "result_sha256": "e7d83c729bf7ea04db5c9005df5ec049fd169720162f803d50bd3f113db1f58f",
+      "source_unchanged": true,
+      "runtime_removed": true
+    },
+    "main-final-full": {
+      "status": "passed",
+      "expected_outcome": "passed",
+      "source_sha256": "dd360d9b78c8273253a688769bc14a4948dc4d8f89369da6c1f291e47a7e27a9",
+      "result_path": "runs/main-final-full/result.json",
+      "result_sha256": "49873cdfef2e7144057e2dab41cd86d312be0a11a81f26750aaf6950baedaad8",
+      "source_unchanged": true,
+      "runtime_removed": true
+    },
+    "auc-frozen-v2": {
+      "status": "passed",
+      "expected_outcome": "passed",
+      "source_sha256": "8b7ded5749a9f5f8c16a00112ead4e13ed4c3f1749c121ef056631c52ba0e55c",
+      "result_path": "runs/auc-frozen-v2/result.json",
+      "result_sha256": "75810cf4594b4519fc88f5b8c5af933176ae65f8d00f90ffe4730c6a2820cd81",
+      "source_unchanged": true,
+      "runtime_removed": true
+    }
+  },
+  "frozen_normal_details": {
+    "sklearn_version": "1.8.0",
+    "reference_pair": "11/18",
+    "reference_ROC_area": "11/18",
+    "actual_ROC_area": 0.6111111111111112,
+    "actual_ranking_AUC": 0.6111111111111112,
+    "reverse_AUC": 0.3888888888888889,
+    "label_swap_AUC": 0.3888888888888889,
+    "swap_and_reverse_AUC": 0.6111111111111112,
+    "F1_original": 0.4,
+    "F1_same_numeric_threshold_after_shift": 0.6666666666666666,
+    "AUC_preserved_after_shift": true,
+    "predictions_preserved_after_threshold_shift": true,
+    "all_tie_AUC": 0.5,
+    "all_tie_deterministic_accuracy": 0.75,
+    "unknown_filter_preserves_expected": true,
+    "missing_class": [
+      {
+        "name": "positive_only",
+        "mathematical_status": "undefined P*N=0",
+        "library": {
+          "value": "NaN",
+          "warnings": [
+            "Only one class is present in y_true. ROC AUC score is not defined in that case."
+          ]
+        }
+      },
+      {
+        "name": "negative_only",
+        "mathematical_status": "undefined P*N=0",
+        "library": {
+          "value": "NaN",
+          "warnings": [
+            "Only one class is present in y_true. ROC AUC score is not defined in that case."
+          ]
+        }
+      },
+      {
+        "name": "unknown_only",
+        "mathematical_status": "undefined P*N=0",
+        "library": {
+          "exception": "ValueError",
+          "message": "Found array with 0 sample(s) (shape=(0,)) while a minimum of 1 is required.",
+          "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/runs/auc-frozen-v2/runtime/tmpdir/ipykernel_9/3126768795.py\", line 57, in <module>\n    value=roc_auc_score((y==1).astype(int),s)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/sklearn/utils/_param_validation.py\", line 218, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/sklearn/metrics/_ranking.py\", line 682, in roc_auc_score\n    y_true = check_array(y_true, ensure_2d=False, dtype=None)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/sklearn/utils/validation.py\", line 1097, in check_array\n    raise ValueError(\nValueError: Found array with 0 sample(s) (shape=(0,)) while a minimum of 1 is required.\n",
+          "warnings": []
+        }
+      },
+      {
+        "name": "empty",
+        "mathematical_status": "undefined P*N=0",
+        "library": {
+          "exception": "ValueError",
+          "message": "Found array with 0 sample(s) (shape=(0,)) while a minimum of 1 is required.",
+          "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/runs/auc-frozen-v2/runtime/tmpdir/ipykernel_9/3126768795.py\", line 57, in <module>\n    value=roc_auc_score((y==1).astype(int),s)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/sklearn/utils/_param_validation.py\", line 218, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/sklearn/metrics/_ranking.py\", line 682, in roc_auc_score\n    y_true = check_array(y_true, ensure_2d=False, dtype=None)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/sklearn/utils/validation.py\", line 1097, in check_array\n    raise ValueError(\nValueError: Found array with 0 sample(s) (shape=(0,)) while a minimum of 1 is required.\n",
+          "warnings": []
+        }
+      }
+    ],
+    "blank_student_answer": true
+  },
+  "negative_controls": [
+    {
+      "name": "tie_zero_credit",
+      "expected": "reviewer oracle rejects incorrect result",
+      "actual": "rejected by numerical mismatch",
+      "wrong_result": 0.5555555555555556,
+      "correct_result": 0.6111111111111112,
+      "scope": "reviewer pair-formula mutation; no pair helper exists in candidate",
+      "detector": "reviewer comparison, not a student answer checker",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/runs/auc-frozen-v2/runtime/tmpdir/ipykernel_9/3126768795.py\", line 65, in detect\n    assert np.isclose(float(wrong),float(right)),name\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: tie_zero_credit\n"
+    },
+    {
+      "name": "tie_full_credit",
+      "expected": "reviewer oracle rejects incorrect result",
+      "actual": "rejected by numerical mismatch",
+      "wrong_result": 0.6666666666666666,
+      "correct_result": 0.6111111111111112,
+      "scope": "reviewer pair-formula mutation",
+      "detector": "reviewer comparison, not a student answer checker",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/runs/auc-frozen-v2/runtime/tmpdir/ipykernel_9/3126768795.py\", line 65, in detect\n    assert np.isclose(float(wrong),float(right)),name\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: tie_full_credit\n"
+    },
+    {
+      "name": "wrong_positive_score_direction",
+      "expected": "reviewer oracle rejects incorrect result",
+      "actual": "rejected by numerical mismatch",
+      "wrong_result": 0.3888888888888889,
+      "correct_result": 0.6111111111111112,
+      "scope": "actual candidate-imported sklearn roc_auc_score called with wrong-directed input",
+      "detector": "reviewer comparison, not a student answer checker",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/runs/auc-frozen-v2/runtime/tmpdir/ipykernel_9/3126768795.py\", line 65, in detect\n    assert np.isclose(float(wrong),float(right)),name\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: wrong_positive_score_direction\n"
+    },
+    {
+      "name": "ROC_axes_swapped",
+      "expected": "reviewer oracle rejects incorrect result",
+      "actual": "rejected by numerical mismatch",
+      "wrong_result": 0.3888888888888889,
+      "correct_result": 0.6111111111111112,
+      "scope": "actual candidate-imported sklearn auc called with swapped axes",
+      "detector": "reviewer comparison, not a student answer checker",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/runs/auc-frozen-v2/runtime/tmpdir/ipykernel_9/3126768795.py\", line 65, in detect\n    assert np.isclose(float(wrong),float(right)),name\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ROC_axes_swapped\n"
+    },
+    {
+      "name": "hard_predictions_instead_of_score_ranking",
+      "expected": "reviewer oracle rejects incorrect result",
+      "actual": "rejected by numerical mismatch",
+      "wrong_result": 0.5,
+      "correct_result": 0.6111111111111112,
+      "scope": "actual candidate-imported sklearn roc_auc_score on disclosed hard decisions; valid different quantity, wrong full-score target",
+      "detector": "reviewer comparison, not a student answer checker",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/runs/auc-frozen-v2/runtime/tmpdir/ipykernel_9/3126768795.py\", line 65, in detect\n    assert np.isclose(float(wrong),float(right)),name\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: hard_predictions_instead_of_score_ranking\n"
+    },
+    {
+      "name": "unknown_treated_as_negative",
+      "expected": "reviewer oracle rejects incorrect result",
+      "actual": "rejected by numerical mismatch",
+      "wrong_result": 0.4583333333333333,
+      "correct_result": 0.6111111111111112,
+      "scope": "actual sklearn call with unfiltered y==1; lesson final text must require prior filtering",
+      "detector": "reviewer comparison, not a student answer checker",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/runs/auc-frozen-v2/runtime/tmpdir/ipykernel_9/3126768795.py\", line 65, in detect\n    assert np.isclose(float(wrong),float(right)),name\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: unknown_treated_as_negative\n"
+    },
+    {
+      "name": "class_absence_forced_half",
+      "expected": "reject numeric fallback when reference status is undefined",
+      "actual": "rejected",
+      "wrong_result": 0.5,
+      "correct_result": null,
+      "scope": "reviewer explicit semantic guard, not candidate/library guard",
+      "detector": "reviewer assertion",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/runs/auc-frozen-v2/runtime/tmpdir/ipykernel_9/3126768795.py\", line 77, in <module>\n    assert forced_numeric_auc is None,'numeric fallback cannot represent undefined AUC'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: numeric fallback cannot represent undefined AUC\n"
+    },
+    {
+      "name": "AUC_half_asserted_to_mean_accuracy_half",
+      "expected": "reviewer oracle rejects incorrect result",
+      "actual": "rejected by numerical mismatch",
+      "wrong_result": 0.5,
+      "correct_result": 0.75,
+      "scope": "deterministic constant-score counterexample to interpretation; not executable candidate prose",
+      "detector": "reviewer comparison, not a student answer checker",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/runs/auc-frozen-v2/runtime/tmpdir/ipykernel_9/3126768795.py\", line 65, in detect\n    assert np.isclose(float(wrong),float(right)),name\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: AUC_half_asserted_to_mean_accuracy_half\n"
+    }
+  ],
+  "actual_candidate_code_mutations": [
+    {
+      "id": "mutant-score-direction",
+      "detector": "candidate supplied assert at code cell23",
+      "raw_traceback": "runs/mutant-score-direction/result.json",
+      "result": "expected AssertionError confirmed; not unrelated exception"
+    },
+    {
+      "id": "mutant-swapped-axes",
+      "detector": "candidate supplied assert at code cell23",
+      "raw_traceback": "runs/mutant-swapped-axes/result.json",
+      "result": "expected AssertionError confirmed; not unrelated exception"
+    }
+  ],
+  "CLI": {
+    "final_summary_path": "cli-safety/final-summary.json",
+    "final_summary_sha256": "84ad04a04355ce7e66bdcf6d6ee4f0c0362b8ea6f6c767dc6da5193bff7182ec",
+    "actual_subprocess_invocations": 4,
+    "confirmed_default_returncode": 0,
+    "confirmed_existing_path_returncode": 1,
+    "preservation_verified": true,
+    "first_collection_failure": "cli-safety/collection-harness-failure.json; first returncode not captured, original partial evidence preserved",
+    "warning": "default stderr retains ignored IPython atexit readonly database traceback; not a warning-free execution",
+    "execution_target_is_previous_same-code_main_snapshot": true
+  },
+  "html_checks": {
+    "trapezoid_formula_in_HTML": true,
+    "worked_area_parts_in_HTML": true,
+    "unknown_filter_instruction_in_supplement_HTML": true,
+    "visual_scope": "generated PNGs inspected directly; whole browser/MathJax HTML not rendered"
+  },
+  "review_failures_and_refinements": [
+    "snapshot-first-mismatch-and-correction.json: transmitted HTML SHA typo confirmed by parent; first failed comparison preserved",
+    "oracle-first-control-refinement.json: initial numeric-sentinel negative check replaced by explicit undefined-status guard in new oracle/run; first files preserved",
+    "CLI first collector KeyError and partial evidence preserved; confirmed cases used new IDs",
+    "First PNG view used nonexistent output index0; corrected to saved output index1 and both actual ROC PNGs viewed"
+  ],
+  "criteria": {
+    "rank_area_direction_ties": "met in finite cases",
+    "all_tie_reverse_and_missing_class_meaning": "met in finite cases and content",
+    "ranking_vs_fixed_threshold_decision": "met in finite cases and content",
+    "validation_selection_and_Robot_contract_accuracy": "met in content; no Robot model task executed",
+    "existing_goals_blank_answers_and_4week_scope": "preserved by source comparison/provided-code regression; no new Week04 full-course claim",
+    "learner_achievement_time_load": "not_observed; task calculations expanded, no measured burden reduction"
+  },
+  "runtime_cache_dirs_remaining": [],
+  "remaining_unverified": [
+    "whole browser/MathJax rendering",
+    "other-checkout execution of relative-path replay procedure",
+    "builder CLI/import and temporal validator CLI in this iteration",
+    "actual learner solution/help/time or successful independent generalization",
+    "access-controlled hidden final test creation",
+    "arbitrary score/label shapes and every numeric edge outside frozen finite inputs"
+  ],
+  "blocking_lesson_defects_in_tested_final_scope": [],
+  "protected_scope": "Week01/user WIP/index/remote not accessed or mutated; lesson/teacher source files only read"
+}

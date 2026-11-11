@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/cli-safety/02-existing-output/input-copy/teacher_validate_week02.py", line 310, in <module>
+    main()
+  File "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/cli-safety/02-existing-output/input-copy/teacher_validate_week02.py", line 244, in main
+    output_dir = check_output_dir(args.output_dir, notebook) if args.output_dir is not None else None
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/cli-safety/02-existing-output/input-copy/teacher_validate_week02.py", line 98, in check_output_dir
+    raise FileExistsError("출력 디렉터리는 존재하지 않는 새 경로여야 합니다: " + str(path))
+FileExistsError: 출력 디렉터리는 존재하지 않는 새 경로여야 합니다: /workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/independent/cli-safety/02-existing-output/existing-output

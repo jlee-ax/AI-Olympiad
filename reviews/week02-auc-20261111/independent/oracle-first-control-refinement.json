@@ -1,0 +1,10 @@
+{
+  "first_oracle": "oracles/auc-frozen.py",
+  "first_result": "runs/auc-frozen/result.json",
+  "status": "first normal math/metric execution remains valid; one negative control was weak and superseded",
+  "issue": "class-absence fallback compared .5 to a numeric sentinel instead of directly checking undefined status",
+  "fix": "new oracle explicitly rejects numeric fallback when reference status is undefined; all other code unchanged",
+  "corrected_oracle": "oracles/auc-frozen-v2.py",
+  "corrected_run": "auc-frozen-v2",
+  "original_preserved": true
+}

@@ -1,0 +1,20 @@
+{
+  "week02_prediction_evaluation": {
+    "notebook_sha256": "dd360d9b78c8273253a688769bc14a4948dc4d8f89369da6c1f291e47a7e27a9",
+    "html_sha256": "40d1c41d88ffcdde6fa6726dab6e6f6811d9544cfcd6817b22878051c5ed0f6e",
+    "html_exact_export": true,
+    "answer_ast_empty": true,
+    "answer_outputs_empty": true,
+    "answer_execution_count": 8,
+    "png_sha256": "7cf15e7ec7bfbcc4ff3ae938188d7aceae47809998b736cf0c5b1a15f9e017f1"
+  },
+  "week02_temporal_preprocessing": {
+    "notebook_sha256": "8b7ded5749a9f5f8c16a00112ead4e13ed4c3f1749c121ef056631c52ba0e55c",
+    "html_sha256": "fe8a10b1d50980fc6585fb6996efd1bbefbfe85d9f3c907ec7bdd5b5b5f5aadc",
+    "html_exact_export": true,
+    "answer_ast_empty": true,
+    "answer_outputs_empty": true,
+    "answer_execution_count": null,
+    "png_sha256": "f12875a60ed371c0b440ba900447e198197d431dc3034ae791f09e677a6b24fd"
+  }
+}

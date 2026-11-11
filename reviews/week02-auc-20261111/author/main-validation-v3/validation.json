@@ -1,0 +1,50 @@
+{
+  "nbformat_validation": "passed",
+  "top_to_bottom_execution": "passed",
+  "execution_method": "fresh in-process IPython kernel",
+  "input_sha256": "dd360d9b78c8273253a688769bc14a4948dc4d8f89369da6c1f291e47a7e27a9",
+  "artifacts": {
+    "week02_prediction_evaluation.ipynb": {
+      "sha256": "26f172f8db67726f734566995732b238850d691ca6d294ecfa86ccb4a01b7682",
+      "bytes": 43121
+    },
+    "week02_prediction_evaluation.html": {
+      "sha256": "2b7c27a2a84e5369ded304fada26db0de2bdcb019d25ca79d537735ca5576533",
+      "bytes": 377801
+    }
+  },
+  "artifact_mode": "new output directory",
+  "output_directory": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-auc-20261111/author/main-validation-v3",
+  "total_cells": 25,
+  "code_cells": 8,
+  "executed_code_cells": 8,
+  "error_outputs": 0,
+  "assessment_answer_cell_filled": false,
+  "assessment_template_and_saved_outputs": "checked before execution",
+  "teacher_only_independent_checks": "passed; finite A/B worked-example and independent-exercise cases, not student performance",
+  "week04_group_cv_checks": "not performed here; known_train_4w and group-CV feasibility require separate review",
+  "test_labels_and_scores_in_student_notebook": null,
+  "test_labels_and_scores_inspection": "not performed; arbitrary input is not scanned for held-out test content",
+  "teacher_qa_removed_from_artifacts": true,
+  "actual_student_performance_observed": false,
+  "class_timing_measured": false,
+  "html_visual_inspection": "not performed by validator",
+  "html_math_rendering": "nbconvert uses a remote MathJax CDN; availability not verified",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.8.0",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "nbconvert": "7.17.2",
+    "ipykernel": "7.4.0"
+  },
+  "limitations": [
+    "finite synthetic examples only",
+    "execution does not measure learning",
+    "class timing is proposed",
+    "temporary cwd/cache directories are not OS isolation; arbitrary Python may access absolute paths",
+    "week04 extension known_train_4w and group-CV feasibility are not checked by this validator",
+    "self-contained trusted notebooks only; relative files are resolved in a temporary directory"
+  ]
+}

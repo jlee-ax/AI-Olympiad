@@ -1,0 +1,8 @@
+{
+  "initial_snapshot_attempt": "stopped before output directory creation; AssertionError during expected SHA comparison",
+  "target": "week02_temporal_preprocessing.html",
+  "incorrect_transmitted_expected": "fe8a10b1d50980fc6585fb6996efd1bbefbfe85d9f3c907ec7bdd5b5b5aadc",
+  "actual_and_parent_confirmed": "fe8a10b1d50980fc6585fb6996efd1bbefbfe85d9f3c907ec7bdd5b5b5f5aadc",
+  "cause": "parent confirmed SHA transcription omitted f5; no source mutation inferred",
+  "original_first_candidate_preserved": true
+}

@@ -1,0 +1,72 @@
+{
+  "scope": "Exactly two validator CLI subprocess invocations: default once and existing-output collision once. No retry, ordinary socket kernel, other validator, or builder.",
+  "source_before": {
+    "teacher_validate_week02.py": {
+      "sha256": "bcb7c3be3f0dcc4405ac8e1971ff932ba363d660949af8740a249acc3fa4fe5a",
+      "bytes": 16228
+    },
+    "week02_prediction_evaluation.ipynb": {
+      "sha256": "ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9",
+      "bytes": 62706
+    },
+    "week02_prediction_evaluation.html": {
+      "sha256": "a1328f5458de4337a314e727be6ae2d7597bd7e876f098f24fa47a3576e9b296",
+      "bytes": 397467
+    },
+    "validation.json": {
+      "sha256": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+      "bytes": 1014
+    }
+  },
+  "source_after": {
+    "teacher_validate_week02.py": {
+      "sha256": "bcb7c3be3f0dcc4405ac8e1971ff932ba363d660949af8740a249acc3fa4fe5a",
+      "bytes": 16228
+    },
+    "week02_prediction_evaluation.ipynb": {
+      "sha256": "ac2785eaf8e7edddd6202d053de8cf2504eec6b8b8228aa3e85b5786ddd29ca9",
+      "bytes": 62706
+    },
+    "week02_prediction_evaluation.html": {
+      "sha256": "a1328f5458de4337a314e727be6ae2d7597bd7e876f098f24fa47a3576e9b296",
+      "bytes": 397467
+    },
+    "validation.json": {
+      "sha256": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+      "bytes": 1014
+    }
+  },
+  "source_unchanged": true,
+  "cases": [
+    {
+      "case": "01-default-memory",
+      "status": "partial_evidence_exit_status_not_recorded",
+      "returncode": null,
+      "checks": {
+        "valid_json_report": true,
+        "memory_only_report": true,
+        "reported_execution_passed": true,
+        "input_sha_matches_actual_copy": true,
+        "protected_bytes_unchanged": true,
+        "input_copy_has_no_added_files": true,
+        "runtime_removed": true
+      }
+    },
+    {
+      "case": "02-existing-output",
+      "status": "passed",
+      "returncode": 1,
+      "checks": {
+        "expected_existing_output_FileExistsError": true,
+        "protected_bytes_unchanged": true,
+        "input_copy_has_no_added_files": true,
+        "existing_output_has_no_added_files": true,
+        "runtime_removed": true
+      }
+    }
+  ],
+  "remaining_blockers": [
+    "Default CLI returncode was not persisted because the first collection harness failed after saving stdout/stderr; default case cannot be claimed fully passed."
+  ],
+  "runtime_directories_remaining": []
+}

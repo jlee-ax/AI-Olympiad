@@ -141,7 +141,7 @@ $$\sigma=\sqrt{\frac{(2-4)^2+(4-4)^2+(6-4)^2+(4-4)^2}{4}}=\sqrt{2}\,u.$$
 
 특성값 $x$에 대한 표준화는 $z=(x-\mu)/\sigma$입니다. 따라서 $x=6\,u$는 $z=\sqrt{2}$, 결측은 훈련 평균 4로 대체되어 $z=0$입니다. 이 $z$는 단위가 없습니다. 표준편차가 0인 상수 특성에서는 위 나눗셈을 그대로 적용할 수 없으니 라이브러리의 상수 특성 처리와 과제 조건을 확인합니다.
 
-이제 잘못된 방법을 상상해 보세요. 검증의 관측값 20, 10, 12까지 평균에 섞으면 $(2+4+6+20+10+12)/6=9\,u$가 됩니다. **평가할 자료가 학습한 결측 대체값을 바꿨으므로** 공정한 새 자료 평가가 아닙니다. 9가 4보다 크다는 사실이 모델 성능이 꼭 좋아진다는 뜻은 아닙니다. 어떤 방식으로든 평가 자료가 모델 선택·학습에 끼어든 점이 문제입니다.
+이제 잘못된 방법을 상상해 보세요. 검증의 관측값 20, 10, 12까지 평균에 섞으면 $(2+4+6+20+10+12)/6=9\,u$가 됩니다. **평가할 자료가 학습한 결측 대체값을 바꿨으므로** 공정한 새 자료 평가가 아닙니다. 9가 4보다 크다는 사실이 모델 성능이 꼭 좋아진다는 뜻은 아닙니다. 이 사례에서 검증 입력을 전처리의 `fit`에 섞어 평가 정보가 학습에 들어간 점이 문제입니다. 검증 결과로 후보를 선택하는 것은 검증 자료의 정해진 역할입니다.
 ''')
 code(r'''
 preprocess = Pipeline([
@@ -284,7 +284,7 @@ assert np.isclose(group_example["correct"].mean(), 2/3)
 assert np.isclose(group_accuracy["mean"].mean(), .4)
 ''')
 md(r'''
-IOAI 2026 **Robot Chasing**은 여섯 로봇별 정확도를 계산하고 로봇 평균을 냅니다. 공개 test는 로봇마다 600행으로 균형이므로 그 공개 자료에서 같은 행들의 전체 정확도와 로봇 평균은 같습니다. 위 R1/R2 불균형 숫자는 이 차이를 설명하려고 새로 만든 교육용 자료이지 원문 자료가 아닙니다. 국제대회 문제의 아이디어를 중등 교육에 옮긴 것이며 중등 기출이라고 주장하지 않습니다.
+IOAI 2026 **Robot Chasing**은 여섯 로봇별 정확도를 계산하고 로봇 평균을 냅니다. 공개 test는 로봇마다 600행으로 균형이므로 그 공개 자료에서 같은 행들의 전체 정확도와 로봇 평균은 같습니다. 원문에서는 훈련과 공개 test에 같은 여섯 로봇이 등장하고 행은 시간 순서의 에피소드가 아닌 독립 snapshot입니다. 이전 관측·행동은 평가 시 제공되지 않으며, 익숙한 표현·색·물체의 새로운 조합이 등장할 수 있습니다. 따라서 이 원문을 이 교안의 새 개체 분할이나 보충의 시계열 예측으로 해석하지 않습니다. 위 R1/R2 불균형 숫자는 이 차이를 설명하려고 새로 만든 교육용 자료이지 원문 자료가 아닙니다. 국제대회 문제의 아이디어를 중등 교육에 옮긴 것이며 중등 기출이라고 주장하지 않습니다.
 
 2025 **Antique**의 라벨 약속은 `+1` 진품, `-1` 복제품, `0` 미상입니다. 그 문제의 다른 방법이나 자료 사용 허용 범위는 원문을 따릅니다. 이 단원의 표는 별도로 만든 합성 자료입니다.
 ''')
@@ -362,9 +362,14 @@ md(r'''
 
 ### ROC 연습용 별도 표
 
-실제 라벨 `[1, -1, 1, -1]`과 양성 점수 `[0.9, 0.6, 0.4, 0.1]`입니다. 점수가 임계값 이상이면 `+1`로 예측합니다. 임계값 0.5와 0.3의 혼동행렬 및 TPR/FPR을 먼저 적으세요. 예제의 네 점수는 확률처럼 읽는 0~1 값이지만 실제 확률의 보정 여부는 이 표만으로 알 수 없습니다.
+실제 라벨 `[1, -1, 1, -1]`과 양성 점수 `[0.9, 0.6, 0.4, 0.1]`입니다. 점수가 임계값 이상이면 `+1`로 예측합니다. 임계값 0.5와 0.3의 혼동행렬 및 TPR/FPR을 먼저 적으세요. 예제의 네 점수는 0~1 값이지만 실제 확률의 보정 여부는 이 표만으로 알 수 없습니다.
+
+**ROC-AUC**는 가로축 FPR, 세로축 TPR인 ROC 선 아래의 면적입니다. 두 점 $(x_1,y_1)$과 $(x_2,y_2)$를 직선으로 이을 때, 각 $x$는 FPR, $y$는 TPR입니다. 그 구간의 사다리꼴 면적은 $\frac{(x_2-x_1)(y_1+y_2)}{2}$입니다. 세로 구간은 $x_2-x_1=0$이므로 면적이 0입니다. 같은 수치는 양성 행 하나와 음성 행 하나를 뽑는 모든 쌍 중, 양성 점수가 더 높은 쌍의 비율이기도 합니다. 동점인 쌍은 절반만 셉니다. 이 쌍의 비율은 $\displaystyle\frac{\text{양성이 더 높은 쌍 수}+\tfrac12\times\text{동점 쌍 수}}{\text{양성 행 수}\times\text{음성 행 수}}$입니다. 이 표에서 양성 점수와 음성 점수로 만들 수 있는 네 쌍을 세고 ROC 면적과 비교해 보세요. 점수가 높을수록 `+1` 쪽이라는 약속을 지킵니다.
 ''')
 code(r'''
+from sklearn.metrics import auc, roc_auc_score
+import matplotlib.pyplot as plt
+
 roc_truth = np.array([1, -1, 1, -1])
 roc_scores = np.array([0.9, 0.6, 0.4, 0.1])
 roc_matrices = {}
@@ -373,19 +378,50 @@ for threshold in [0.5, 0.3]:
     cm = confusion_matrix(roc_truth, pred, labels=[-1, 1])
     tn, fp, fn, tp = cm.ravel()
     roc_matrices[threshold] = cm.tolist()
+    f1_at_threshold = 2 * tp / (2 * tp + fp + fn)
     print("임계값", threshold, "혼동행렬", cm.tolist(),
-          "TPR", tp / (tp + fn), "FPR", fp / (fp + tn))
+          "TPR", tp / (tp + fn), "FPR", fp / (fp + tn),
+          "정확도", (pred == roc_truth).mean(), "F1", f1_at_threshold)
 fpr, tpr, thresholds = roc_curve(roc_truth, roc_scores, pos_label=1, drop_intermediate=False)
 print("ROC 좌표 (FPR, TPR):", list(zip(fpr.round(2).tolist(), tpr.round(2).tolist())))
+# roc_auc_score의 1을 양성으로 명시합니다. 양쪽 클래스가 모두 있을 때만 계산합니다.
+binary_truth = (roc_truth == 1).astype(int)
+roc_area = auc(fpr, tpr)
+rank_area = roc_auc_score(binary_truth, roc_scores)
+print("사다리꼴 면적:", roc_area, "양성 점수의 ROC-AUC:", rank_area)
+assert np.isclose(roc_area, 0.75) and np.isclose(rank_area, roc_area)
+
+# 점수와 임계값을 함께 1만큼 옮기면 판정은 같습니다. 점수만 옮기면 달라질 수 있습니다.
+shifted_scores = roc_scores + 1
+original_pred = np.where(roc_scores >= 0.5, 1, -1)
+shifted_pred = np.where(shifted_scores >= 1.5, 1, -1)
+fixed_threshold_pred = np.where(shifted_scores >= 0.5, 1, -1)
+print("원래 판정:", original_pred.tolist(), "함께 이동:", shifted_pred.tolist(),
+      "임계값을 그대로 둠:", fixed_threshold_pred.tolist())
+assert np.array_equal(original_pred, shifted_pred)
+assert not np.array_equal(original_pred, fixed_threshold_pred)
+assert np.isclose(roc_auc_score(binary_truth, shifted_scores), rank_area)
+
+fig, ax = plt.subplots()
+ax.plot(fpr, tpr, marker="o", color="navy")
+ax.fill_between(fpr, tpr, 0, color="skyblue", alpha=0.4)
+ax.set(xlabel="FPR", ylabel="TPR", title="ROC and area", xlim=(-0.03, 1.03), ylim=(-0.03, 1.03))
+ax.grid(True, alpha=0.3)
+plt.show()
 ''')
 md(r'''
-ROC는 임계값에 따른 FPR과 TPR을 함께 보여 줍니다. 이 네 행만으로 실제 모델의 성능을 주장할 수는 없습니다. 더 작은 임계값에서 재현율이 늘 때 FP도 늘 수 있는 이유를 두 표의 행 번호로 설명하세요.
+ROC는 임계값에 따른 FPR과 TPR을 함께 보여 줍니다. 위 표에서 양성 점수 0.9는 두 음성 점수보다 높고, 양성 점수 0.4는 두 음성 점수 중 0.1보다만 높습니다. 따라서 네 양성–음성 쌍 중 세 쌍을 올바르게 정렬해 AUC는 $3/4=0.75$입니다. ROC에서 폭이 $1/2$인 첫 가로 구간은 높이 $1/2$이므로 면적 $1/4$, 다음 가로 구간은 높이 1이므로 면적 $1/2$입니다. 세로 구간은 폭이 0이어서 더하지 않습니다. 전체 면적은 $1/4+1/2=3/4$로 위 쌍 계산과 같습니다. 이 네 행만으로 실제 모델의 성능을 주장할 수는 없습니다.
+
+AUC는 여러 임계값에 걸친 **점수 순서**, 정확도와 F1은 **정한 한 임계값의 판정**을 봅니다. 위 표에서 임계값만 0.5에서 0.3으로 바꾸면 F1은 바뀌지만 점수 순서는 그대로여서 AUC는 바뀌지 않습니다. 점수와 임계값을 함께 같은 만큼 올리면 판정이 같지만, 임계값을 그대로 두고 점수만 올리면 판정이 바뀔 수 있습니다. 순서가 그대로인 점수 변환은 AUC를 보존하지만, 이것만으로 점수가 잘 보정된 확률인지 알 수 없습니다.
+
+이진 평가에서 AUC 0.5는 해당 자료의 쌍 순위 점수가 절반이라는 뜻입니다. ROC의 모든 점이 대각선 위에 있다거나 점수가 무작위로 만들어졌다는 증거는 아닙니다. AUC가 0.5보다 작을 수도 있습니다. 실제 양성 또는 음성 중 하나가 전혀 없으면 비교할 양성–음성 쌍과 ROC의 한 축이 없어 AUC는 정의되지 않습니다. 최종 테스트를 열기 전에 후보와 임계값을 정하고, 정해진 검증 결과로 선택하세요.
 
 ## 자료 출처와 다음 연결
 
 - [KOAI/IOAI 출제 기준](https://kitpa.org/koai/syllabus): 국내 페이지는 IOAI 2026 기준으로 표시합니다. 이 단원은 전처리·평가·혼동행렬의 선수 연결에 초점을 둡니다.
 - [IOAI 2025 Antique 공식 문제](https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb): 미상 0과 -1/+1의 의미. 국제 문제를 교육에 옮긴 것으로 중등 기출이 아닙니다.
 - [IOAI 2026 Robot Chasing 공식 문제](https://raw.githubusercontent.com/IOAI-official/IOAI-2026/main/Individual-Contest/2_Robot_Chasing/statement.md): 입력·출력, 공개/숨은 라벨, 로봇별 평균의 계약. 국제 문제를 교육에 옮긴 것으로 중등 기출이 아닙니다.
+- [scikit-learn: ROC-AUC](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html), [사다리꼴 면적](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.auc.html): 양성 점수와 면적 계산.
 - [scikit-learn: 데이터 누수와 전처리](https://scikit-learn.org/stable/common_pitfalls.html), [정밀도·재현율과 zero_division](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_recall_fscore_support.html): 훈련 전용 fit과 0분모의 라이브러리 정책.
 
 3~9주차에 회귀·분류·이미지·언어 자료로 옮겨갈 때도, 새로운 입력의 제공 시점 → 분할 단위 → 훈련에만 fit → 허용된 정답 → 평가 단위 순서로 다시 질문하세요. 교안 실행과 학생의 독립 성취는 서로 다른 확인입니다.

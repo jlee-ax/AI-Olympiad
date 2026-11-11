@@ -1,0 +1,62 @@
+{
+  "snapshot": "candidate01-inputs",
+  "files": {
+    "week02_prediction_evaluation.ipynb": {
+      "sha256": "7c7dc1861c8e1ccecc41444fe9b2a9383cec706fee3c6ba61506571b9a0c09a7",
+      "size": 62522,
+      "parent_supplied_expected": "7c7dc1861c8e1ccecc41444fe9b2a9383cec706fee3c6ba61506571b9a0c09a7"
+    },
+    "week02_prediction_evaluation.html": {
+      "sha256": "c70103c1abb17fbb4fd504118c2560a4d22571181d3d510083c048cc24f84144",
+      "size": 397292,
+      "parent_supplied_expected": "c70103c1abb17fbb4fd504118c2560a4d22571181d3d510083c048cc24f84144"
+    },
+    "week02_temporal_preprocessing.ipynb": {
+      "sha256": "0a315f381b481efc9351c7a92bef1f4eddade4b8ca0b138adc6431def7fa7801",
+      "size": 62088,
+      "parent_supplied_expected": "0a315f381b481efc9351c7a92bef1f4eddade4b8ca0b138adc6431def7fa7801"
+    },
+    "week02_temporal_preprocessing.html": {
+      "sha256": "8e47bf1b4a349fd1fbea4bd590e07904e1299cbafe2d2f846ff5e991fc501b2b",
+      "size": 405784,
+      "parent_supplied_expected": "8e47bf1b4a349fd1fbea4bd590e07904e1299cbafe2d2f846ff5e991fc501b2b"
+    },
+    "teacher-notes.md": {
+      "sha256": "f91a29f97e4a94fdff7665d0cde8820efd7cff8f7cb74de15fb7a5d405771412",
+      "size": 17385,
+      "parent_supplied_expected": "f91a29f97e4a94fdff7665d0cde8820efd7cff8f7cb74de15fb7a5d405771412"
+    },
+    "week02_temporal_preprocessing_teacher.md": {
+      "sha256": "4b4e6527abee2179676fd0a8f6fb47700e16f81227ef1b14bf4b113caf396ca3",
+      "size": 17411,
+      "parent_supplied_expected": "4b4e6527abee2179676fd0a8f6fb47700e16f81227ef1b14bf4b113caf396ca3"
+    },
+    "build_week02.py": {
+      "sha256": "3ebd53a997698ce25679a9ec780e6fa832213f22f08d59375e339d8004e415fd",
+      "size": 36869,
+      "parent_supplied_expected": "3ebd53a997698ce25679a9ec780e6fa832213f22f08d59375e339d8004e415fd"
+    },
+    "teacher_validate_week02.py": {
+      "sha256": "bcb7c3be3f0dcc4405ac8e1971ff932ba363d660949af8740a249acc3fa4fe5a",
+      "size": 16228,
+      "parent_supplied_expected": null
+    },
+    "validate_week02_temporal_preprocessing.py": {
+      "sha256": "60fb798542c226df82ebf7b7966824cd4300b81033c3570614f75ddd7329f6b4",
+      "size": 16940,
+      "parent_supplied_expected": null
+    },
+    "validation.json": {
+      "sha256": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+      "size": 1014,
+      "parent_supplied_expected": null
+    },
+    "week02_temporal_preprocessing_validation.json": {
+      "sha256": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936",
+      "size": 5143,
+      "parent_supplied_expected": null
+    }
+  },
+  "all_parent_hashes_matched": true,
+  "source_bytes_unchanged_during_snapshot": true
+}
