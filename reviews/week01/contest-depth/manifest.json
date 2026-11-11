@@ -1,0 +1,90 @@
+{
+  "baseline_remote_commit": "8d341af794165da77c3b4d1545c9d0d651882dea",
+  "skill_commit": "64f24aabdad2b1976740d88d4a0ba74a4ed89766",
+  "artifact_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+  "teacher_notes_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+  "reviewer": {
+    "model": "GPT-6.1 Terra Max",
+    "role": "separate reviewer",
+    "scope": "actual candidate contents, answers, boundaries, source projection and receipt; did not rerun notebook in the final check"
+  },
+  "checks": {
+    "notebook_format_and_27_cells": "passed_fresh_inprocess_kernel",
+    "independent_counterexamples": "passed",
+    "baseline_and_candidate_depth_inspection": "executed_candidate_uncertain",
+    "candidate_graph_structure": "passed",
+    "saved_5_plot_images_and_2_diagrams": "visually_inspected",
+    "html_text": "checked",
+    "html_visual_layout": "not_inspected_browser_policy_blocks_file_url",
+    "separate_process_kernel": "failed_before_cell_execution_network_interface_restricted",
+    "learner_outcomes": "not_observed",
+    "revised_homework_time": "not_estimated_or_observed",
+    "prior_K01_K16": "historical_not_rebound_to_candidate"
+  },
+  "files": [
+    {
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8"
+    },
+    {
+      "path": "lessons/week01/week01_python_tables.html",
+      "sha256": "984db7eeeb90eb851005f242a75c87fbdab0cb53f1b7aee0be9c15d3c34a787c"
+    },
+    {
+      "path": "lessons/week01/teacher-notes.txt",
+      "sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc"
+    },
+    {
+      "path": "lessons/week01/lesson-manifest.json",
+      "sha256": "db35736c4d43e182c0dc19724fa31eaada3a3892d3a83bb6dc45131a045f06cd"
+    },
+    {
+      "path": "lessons/week01/validate_week01.py",
+      "sha256": "b28009ee46ffbc707d7bcb2d8614346a4b99b90214864525130713b1420c4d03"
+    },
+    {
+      "path": "lessons/week01/validation.json",
+      "sha256": "fc37d62d05ef8d725837899e9bb8b410caff7aca65693e6ff24a5e2e36ca7131"
+    },
+    {
+      "path": "reviews/week01/contest-depth/baseline-depth.json",
+      "sha256": "f1a9a4b42d5fe275b7dc76fdf5d382a6e49b6fd34c78908195ee2ea2775bc1fb"
+    },
+    {
+      "path": "reviews/week01/contest-depth/baseline-graph.json",
+      "sha256": "f81301af4acf20f56e01ecf6f7cd5388506b2ad51c56882748a24bf4ed444480"
+    },
+    {
+      "path": "reviews/week01/contest-depth/baseline-inspection.json",
+      "sha256": "f5e5b186c916a99b47d4072319ac3e36970854a01fb5e185d4fcc7a67a34fcf7"
+    },
+    {
+      "path": "reviews/week01/contest-depth/baseline-review.md",
+      "sha256": "4b224bf37dc01b646eb0d49507ba07c2adda1afb8c1d06e1b25643cafcc36356"
+    },
+    {
+      "path": "reviews/week01/contest-depth/candidate-depth.json",
+      "sha256": "8425715ae3b5af482f8499cea394807b55f398129c95084647960b0867f6d23e"
+    },
+    {
+      "path": "reviews/week01/contest-depth/candidate-graph.json",
+      "sha256": "b28289fd2bee5e5255cd01a00492fe247f86b807e9f6d0b406c5b7d4cd7818a3"
+    },
+    {
+      "path": "reviews/week01/contest-depth/candidate-inspection.json",
+      "sha256": "0dd5ef48c94598621f5d35f34633ab5ec54257324681d577698ec5248ef72b40"
+    },
+    {
+      "path": "reviews/week01/contest-depth/candidate-review.md",
+      "sha256": "f479f490abd850a05ecd18fcf7cba25fa963d4c3e87dcf3e188f245e31772f7d"
+    },
+    {
+      "path": "reviews/week01/contest-depth/check_depth.py",
+      "sha256": "befe2970aadcbb1344b903449ffaa99848270346297024c4a43826dd072b225c"
+    },
+    {
+      "path": "reviews/week01/contest-depth/counterexample-checks.json",
+      "sha256": "4eedc1e07f4afde1198d7d2bc365182289441458a6303efb7eacdd1c40fcd52d"
+    }
+  ]
+}

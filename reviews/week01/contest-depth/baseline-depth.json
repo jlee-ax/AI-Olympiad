@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "scope_sources": [
+    {
+      "id": "guide2027",
+      "title": "KOAI 2027 competition guide",
+      "url": "https://kitpa.org/koai/2027",
+      "locator": "Middle-school division and examination composition",
+      "read_extent": "Middle-school schedule and examination composition",
+      "version": "KOAI 2027 guide; linked syllabus labeled IOAI 2026",
+      "accessed_at": "2026-11-10",
+      "verification": "verified_official",
+      "verification_evidence": "Directly opened the linked official page and read the specified section; reviewer also checked the sources."
+    },
+    {
+      "id": "syllabus",
+      "title": "KOAI/IOAI syllabus",
+      "url": "https://kitpa.org/koai/syllabus",
+      "locator": "Heading and 1-1 programming foundations",
+      "read_extent": "Heading and programming foundation rows",
+      "version": "KOAI 2027 guide; linked syllabus labeled IOAI 2026",
+      "accessed_at": "2026-11-10",
+      "verification": "verified_official",
+      "verification_evidence": "Directly opened the linked official page and read the specified section; reviewer also checked the sources."
+    }
+  ],
+  "problem_sources": [
+    {
+      "id": "example-axis",
+      "title": "KOAI 2026 sample multiple-choice question 2",
+      "locator": "PDF page 1, question 2",
+      "read_extent": "Question 2 shape, axis and reshape alternatives",
+      "problem": "multiple choice 2",
+      "url": "https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf",
+      "version": "KOAI 2026 official sample, high-school standard",
+      "accessed_at": "2026-11-10",
+      "verification": "verified_official",
+      "verification_evidence": "Directly read the notice and linked PDF; no complete official answer key is published.",
+      "kind": "example",
+      "year": 2026,
+      "target": "high_school"
+    },
+    {
+      "id": "example-transpose",
+      "title": "KOAI 2026 sample multiple-choice question 6",
+      "locator": "PDF page 2, question 6",
+      "read_extent": "Question 6 tensor axis exchange versus reshape-like operations",
+      "problem": "multiple choice 6",
+      "url": "https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf",
+      "version": "KOAI 2026 official sample, high-school standard",
+      "accessed_at": "2026-11-10",
+      "verification": "verified_official",
+      "verification_evidence": "Directly read the notice and linked PDF; no complete official answer key is published.",
+      "kind": "example",
+      "year": 2026,
+      "target": "high_school"
+    },
+    {
+      "id": "example-knn",
+      "title": "KOAI 2026 sample written question 2",
+      "locator": "PDF page 17, written question 2",
+      "read_extent": "Question 2 function input/output shapes and majority vote label tie rule",
+      "problem": "written 2",
+      "url": "https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf",
+      "version": "KOAI 2026 official sample, high-school standard",
+      "accessed_at": "2026-11-10",
+      "verification": "verified_official",
+      "verification_evidence": "Directly read the notice and linked PDF; no complete official answer key is published.",
+      "kind": "example",
+      "year": 2026,
+      "target": "high_school"
+    }
+  ],
+  "target": {
+    "competition_year": 2027,
+    "division": "middle_school",
+    "artifact": "lessons/week01/week01_python_tables.ipynb",
+    "artifact_revision": "remote-8d341af-baseline",
+    "artifact_sha256": "602c0c4e04e7208b0b082d9e4e7d4be384e1371f67c5f211d931911367d02eb0",
+    "class_minutes": 120,
+    "weeks": [
+      1
+    ],
+    "baseline_assumptions": [
+      "Middle-school learner with basic coding; no learner diagnosis observed.",
+      "Week 1 is a foundation, not full contest mastery."
+    ],
+    "goals": [
+      {
+        "id": "goal:axis",
+        "week": 1,
+        "description": "Reason about shape, axis and array manipulation as a contest foundation."
+      },
+      {
+        "id": "goal:function",
+        "week": 1,
+        "description": "Use a short function contract, missingness and returned values."
+      },
+      {
+        "id": "goal:written",
+        "week": 1,
+        "description": "Use the agreed weekly written assessment format."
+      }
+    ]
+  },
+  "comparisons": [
+    {
+      "week": 1,
+      "scope_refs": [
+        {
+          "source_id": "syllabus",
+          "locator": "1-1 programming foundations"
+        }
+      ],
+      "assessment_method": "Review of assigned task text, not observed student work.",
+      "answer_conditions": "Existing lesson requests examples to be hidden for the new-input check; teacher notes hold keys.",
+      "allowed_support": "Student records hints or help; actual assistance is unobserved.",
+      "author_id": "week01-notebook-author",
+      "reviewer": {
+        "id": "independent_review",
+        "independent": true,
+        "evidence_locator": "reviews/week01/contest-depth/baseline-review.md:independent-review"
+      },
+      "id": "axis-choice",
+      "goal_id": "goal:axis",
+      "competency": "Distinguish axis exchange from a reshape with the same resulting shape.",
+      "problem_refs": [
+        {
+          "source_id": "example-transpose",
+          "locator": "Multiple-choice question 6"
+        }
+      ],
+      "student_task_locators": [
+        "cell:145c6754",
+        "cell:5d42933c",
+        "cell:d60c3acd"
+      ],
+      "difference": "The lesson shows reshape and transpose and assigns changed shapes, but no identified question compares equal-shaped outputs to decide whether axes were exchanged.",
+      "judgment": "gap",
+      "priority": "high",
+      "rationale": "A small counterexample would require choosing and justifying the operation; this is a foundational bridge, not a claim to cover PyTorch.",
+      "theory": {
+        "applicable": true,
+        "claim": "Shape alone does not fix how input positions map to output positions.",
+        "evidence_locators": [
+          "cell:145c6754",
+          "cell:5d42933c"
+        ]
+      }
+    },
+    {
+      "week": 1,
+      "scope_refs": [
+        {
+          "source_id": "syllabus",
+          "locator": "1-1 programming foundations"
+        }
+      ],
+      "assessment_method": "Review of assigned task text, not observed student work.",
+      "answer_conditions": "Existing lesson requests examples to be hidden for the new-input check; teacher notes hold keys.",
+      "allowed_support": "Student records hints or help; actual assistance is unobserved.",
+      "author_id": "week01-notebook-author",
+      "reviewer": {
+        "id": "independent_review",
+        "independent": true,
+        "evidence_locator": "reviews/week01/contest-depth/baseline-review.md:independent-review"
+      },
+      "id": "function-spec",
+      "goal_id": "goal:function",
+      "competency": "Interpret a modest input/output contract, implement it and check a changed boundary case.",
+      "problem_refs": [
+        {
+          "source_id": "example-knn",
+          "locator": "Written question 2 input/output and label-tie rule"
+        }
+      ],
+      "student_task_locators": [
+        "cell:c6d01f13",
+        "cell:d60c3acd"
+      ],
+      "difference": "The original asks the learner to modify a supplied mean function with detailed hints; no identified short standalone function-specification task combines missing-value treatment, return and edge case without a supplied solution.",
+      "judgment": "gap",
+      "priority": "high",
+      "rationale": "A beginner-scale specification and independent checks can bridge to later full algorithmic tasks without requiring K-NN in week 1.",
+      "theory": {
+        "applicable": true,
+        "claim": "A function contract includes the meaning of input, return and specified boundary behavior.",
+        "evidence_locators": [
+          "cell:c6d01f13"
+        ]
+      }
+    },
+    {
+      "week": 1,
+      "scope_refs": [
+        {
+          "source_id": "guide2027",
+          "locator": "Middle-school written and coding exam description"
+        }
+      ],
+      "assessment_method": "Review of assigned task text, not observed student work.",
+      "answer_conditions": "Existing lesson requests examples to be hidden for the new-input check; teacher notes hold keys.",
+      "allowed_support": "Student records hints or help; actual assistance is unobserved.",
+      "author_id": "week01-notebook-author",
+      "reviewer": {
+        "id": "independent_review",
+        "independent": true,
+        "evidence_locator": "reviews/week01/contest-depth/baseline-review.md:independent-review"
+      },
+      "id": "written-format",
+      "goal_id": "goal:written",
+      "competency": "Practice the planned choice and short written response format.",
+      "problem_refs": [
+        {
+          "source_id": "example-axis",
+          "locator": "Multiple-choice question 2"
+        }
+      ],
+      "student_task_locators": [
+        "cell:71068cea"
+      ],
+      "difference": "The pinned plan specifies two choice questions and one short written question, whereas this notebook cell contains four written prompts and no choice options.",
+      "judgment": "gap",
+      "priority": "high",
+      "rationale": "The 10-minute planned block can use the intended format without extending class time; actual completion time is unobserved.",
+      "theory": {
+        "applicable": true,
+        "claim": "Reduction axis determines which values are grouped and which dimensions remain.",
+        "evidence_locators": [
+          "cell:e594ea69",
+          "cell:71068cea"
+        ]
+      }
+    }
+  ],
+  "time_allocations": [
+    {
+      "week": 1,
+      "in_class_minutes": 120,
+      "outside_class_minutes": 420,
+      "locator": "lessons/week01/lesson-manifest.json:class_blocks and homework_ranges_minutes; upper estimate",
+      "required_assessment_format": {
+        "status": "specified",
+        "counts": {
+          "multiple_choice": 2,
+          "written": 1
+        },
+        "locator": "curriculum/student-plan.html:official-scope-and-exam row"
+      },
+      "observed_assessment_format": {
+        "status": "observed",
+        "counts": {
+          "multiple_choice": 0,
+          "written": 4
+        },
+        "locator": "notebook cell:71068cea"
+      }
+    }
+  ],
+  "unknowns": [
+    "Student independence, prerequisite readiness and learning are not observed.",
+    "Class and homework completion times are estimates, not observed.",
+    "The 2026 high-school sample does not establish 2027 middle-school difficulty or actual past-question distribution."
+  ]
+}

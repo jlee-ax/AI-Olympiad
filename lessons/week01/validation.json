@@ -1,15 +1,15 @@
 {
-  "checked_at_utc": "2026-11-10T22:37:11.695512+00:00",
+  "checked_at_utc": "2026-11-11T00:10:32.097660+00:00",
   "notebook": "week01_python_tables.ipynb",
-  "revision": "week1-basic-v2",
-  "skills_reference_commit": "787079f4870068106500e5184ce457e95e6aa3f2",
+  "revision": "week1-contest-depth-v1",
+  "skills_reference_commit": "64f24aabdad2b1976740d88d4a0ba74a4ed89766",
   "nbformat_validation": "passed",
   "top_to_bottom_execution": "passed",
   "execution_method": "fresh IPython InProcessKernelManager per run",
-  "execution_seconds": 1.792,
-  "cells": 81,
-  "code_cells": 25,
-  "executed_code_cells": 25,
+  "execution_seconds": 1.839,
+  "cells": 87,
+  "code_cells": 27,
+  "executed_code_cells": 27,
   "error_outputs": 0,
   "actual_function_and_state_assertions": "passed",
   "teacher_modification_key_tests": "passed",
@@ -17,10 +17,10 @@
   "csv_mask_shape_missing_and_merge_checks": "passed",
   "plot_output_cells": [
     50,
-    64,
-    66,
-    68,
-    69
+    67,
+    69,
+    71,
+    72
   ],
   "plot_output_count": 5,
   "embedded_diagrams": 2,
@@ -34,30 +34,26 @@
     "noncoding": 20,
     "coding": 80
   },
-  "required_homework_minutes": [
+  "baseline_required_homework_minutes": [
     300,
     420
   ],
+  "revised_homework_time": "not_estimated_or_observed",
   "standalone_without_csv_files": "passed",
-  "visual_inspection": "Viewed all five saved plots and both embedded diagrams at reading size; labels, units and mappings checked",
+  "visual_inspection": "not_performed_by_script",
   "browser_preview": "not_performed_by_script",
   "packages": {
-    "numpy": "2.5.4",
-    "pandas": "3.1.1",
-    "matplotlib": "3.11.2",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.8",
     "seaborn": "0.13.2",
     "jupyterlab": "4.6.6",
     "nbclient": "0.11.0",
     "nbformat": "5.11.1",
     "ipykernel": "7.4.0"
   },
-  "notebook_sha256": "602c0c4e04e7208b0b082d9e4e7d4be384e1371f67c5f211d931911367d02eb0",
-  "source_attachment_projection_sha256": "9d9558bcb9de1b41a83ba89665e9430a0b5578383772019f6faee376a608e450",
+  "notebook_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+  "source_attachment_projection_sha256": "cf636875247062af3a004eac5b01061acdcae1770f9bb188c111df4cd625be03",
   "source_projection_unchanged_by_execution": true,
-  "schedules_created": false,
-  "separate_kernel_attempt": {
-    "status": "failed_before_cell_execution",
-    "receipt": "../../reviews/week01/separate-kernel-startup.log",
-    "reason": "ZMQ/network interface operation not permitted; kernel died before kernel_info"
-  }
+  "schedules_created": false
 }

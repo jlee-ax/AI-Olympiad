@@ -1,0 +1,172 @@
+{
+  "assessment_formats": [
+    {
+      "kinds": [
+        {
+          "difference": 0,
+          "kind": "multiple_choice",
+          "observed": 2,
+          "required": 2,
+          "status": "matched"
+        },
+        {
+          "difference": 0,
+          "kind": "written",
+          "observed": 1,
+          "required": 1,
+          "status": "matched"
+        }
+      ],
+      "status": "matched",
+      "week": 1
+    }
+  ],
+  "authority": "advisory_only",
+  "comparisons": [
+    {
+      "goal_id": "goal:axis",
+      "id": "axis-choice",
+      "issue_paths": [
+        "comparisons[0]",
+        "comparisons[0]"
+      ],
+      "recorded_judgment": "met",
+      "status": "uncertain",
+      "week": 1
+    },
+    {
+      "goal_id": "goal:function",
+      "id": "function-spec",
+      "issue_paths": [
+        "comparisons[1]",
+        "comparisons[1]"
+      ],
+      "recorded_judgment": "met",
+      "status": "uncertain",
+      "week": 1
+    },
+    {
+      "goal_id": "goal:written",
+      "id": "written-format",
+      "issue_paths": [
+        "comparisons[2]",
+        "comparisons[2]"
+      ],
+      "recorded_judgment": "met",
+      "status": "uncertain",
+      "week": 1
+    },
+    {
+      "goal_id": "goal:variance",
+      "id": "variance-units",
+      "issue_paths": [
+        "comparisons[3]",
+        "comparisons[3]"
+      ],
+      "recorded_judgment": "met",
+      "status": "uncertain",
+      "week": 1
+    }
+  ],
+  "errors": [],
+  "findings": [
+    {
+      "code": "missing",
+      "message": "An integer is required.",
+      "path": "time_allocations[0].outside_class_minutes",
+      "status": "uncertain"
+    },
+    {
+      "code": "reported_unknown",
+      "message": "Student independence, readiness and learning remain unobserved.",
+      "path": "unknowns[0]",
+      "status": "uncertain"
+    },
+    {
+      "code": "reported_unknown",
+      "message": "Revised homework time and actual class completion time are not estimated or observed.",
+      "path": "unknowns[1]",
+      "status": "uncertain"
+    },
+    {
+      "code": "reported_unknown",
+      "message": "The 2026 high-school sample cannot establish the difficulty distribution of 2027 middle-school questions.",
+      "path": "unknowns[2]",
+      "status": "uncertain"
+    },
+    {
+      "code": "reported_unknown",
+      "message": "Browser rendering of the HTML was not inspected; saved figures were inspected separately.",
+      "path": "unknowns[3]",
+      "status": "uncertain"
+    },
+    {
+      "code": "incomplete_time",
+      "message": "A complete allocation consistent with target.class_minutes is unavailable for this week.",
+      "path": "comparisons[0]",
+      "status": "uncertain"
+    },
+    {
+      "code": "unresolved_unknowns",
+      "message": "The bundle has missing or unresolved unknowns with no per-item scope.",
+      "path": "comparisons[0]",
+      "status": "uncertain"
+    },
+    {
+      "code": "incomplete_time",
+      "message": "A complete allocation consistent with target.class_minutes is unavailable for this week.",
+      "path": "comparisons[1]",
+      "status": "uncertain"
+    },
+    {
+      "code": "unresolved_unknowns",
+      "message": "The bundle has missing or unresolved unknowns with no per-item scope.",
+      "path": "comparisons[1]",
+      "status": "uncertain"
+    },
+    {
+      "code": "incomplete_time",
+      "message": "A complete allocation consistent with target.class_minutes is unavailable for this week.",
+      "path": "comparisons[2]",
+      "status": "uncertain"
+    },
+    {
+      "code": "unresolved_unknowns",
+      "message": "The bundle has missing or unresolved unknowns with no per-item scope.",
+      "path": "comparisons[2]",
+      "status": "uncertain"
+    },
+    {
+      "code": "incomplete_time",
+      "message": "A complete allocation consistent with target.class_minutes is unavailable for this week.",
+      "path": "comparisons[3]",
+      "status": "uncertain"
+    },
+    {
+      "code": "unresolved_unknowns",
+      "message": "The bundle has missing or unresolved unknowns with no per-item scope.",
+      "path": "comparisons[3]",
+      "status": "uncertain"
+    }
+  ],
+  "gaps": [],
+  "limitations": [
+    "Recorded observations are advisory declarations, not an automated assessment of lesson meaning or problem difficulty.",
+    "The tool does not open sources or verify their official status, quotations, locations, truth, or currentness.",
+    "Artifact paths and declared SHA-256 values are not read or verified against file bytes.",
+    "Reviewer identity and independence are reported declarations and are not authenticated.",
+    "Assessment-format counts are recorded observations; they are not extracted from the lesson.",
+    "It does not establish learner achievement, equivalence to middle-school past problems, or completeness of competition coverage.",
+    "This report is independent of K01\u2013K16 and does not change any earlier quality evaluation.",
+    "Only the two pinned KOAI 2026 example URLs have a fixed metadata consistency check; it does not fetch or authenticate them."
+  ],
+  "status": "uncertain",
+  "synthetic": false,
+  "verification": {
+    "artifact_digest": "not_checked",
+    "assessment_counts": "not_checked",
+    "reviewer_independence": "not_checked",
+    "source_authenticity": "not_checked",
+    "source_content": "not_checked"
+  }
+}

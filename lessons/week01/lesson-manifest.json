@@ -66,7 +66,7 @@
     ]
   ],
   "learner_evidence": "not_collected",
-  "timing": "estimated_not_observed",
+  "timing": "class and previous homework range estimated; revised homework time not estimated or observed",
   "scope": {
     "KOAI-01": "class_and_required_homework",
     "KOAI-02": "class_and_required_homework",
@@ -76,7 +76,8 @@
   "open_limitations": [
     "Classroom time and learner outcomes unobserved",
     "Student answer and new-input tasks remain for the learner",
-    "Current syllabus page is labeled IOAI 2026 while competition announcement is 2027"
+    "Current syllabus page is labeled IOAI 2026 while competition announcement is 2027",
+    "New written and independent-practice items have not been tested with learners; class and homework feasibility remain estimates"
   ],
   "schedules_created": false,
   "provenance_snapshot_preserved": true,
@@ -87,9 +88,9 @@
     "changed_cells": 1,
     "other_weeks_unchanged": true
   },
-  "revision": "week1-basic-v2",
-  "skills_reference_commit": "787079f4870068106500e5184ce457e95e6aa3f2",
-  "parent_lesson_commit": "a5e518009b216fc7746ddf7e8fd5529708a279de",
+  "revision": "week1-contest-depth-v1",
+  "skills_reference_commit": "64f24aabdad2b1976740d88d4a0ba74a4ed89766",
+  "parent_lesson_commit": "8d341af794165da77c3b4d1545c9d0d651882dea",
   "student_schedule": "Teacher-only ledger; no minute allocations in student notebook",
-  "revision_scope": "one manual revision; no recurring execution"
+  "revision_scope": "one manual contest-depth revision; no recurring execution"
 }

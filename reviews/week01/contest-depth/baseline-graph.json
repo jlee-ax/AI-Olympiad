@@ -1,0 +1,114 @@
+{
+  "nodes": [
+    {
+      "id": "scope:2027",
+      "type": "evidence",
+      "status": "verified",
+      "label": "KOAI 2027 guide and linked IOAI 2026-labeled syllabus"
+    },
+    {
+      "id": "sample:2026",
+      "type": "evidence",
+      "status": "verified",
+      "label": "KOAI 2026 high-school-standard sample, questions 2 and 6 and written 2"
+    },
+    {
+      "id": "artifact:baseline",
+      "type": "artifact",
+      "status": "verified",
+      "label": "Week 1 notebook baseline SHA256 602c0c4e04e7208b0b082d9e4e7d4be384e1371f67c5f211d931911367d02eb0"
+    },
+    {
+      "id": "skill:depth",
+      "type": "skill",
+      "status": "verified",
+      "label": "Supplemental competition-depth review at 64f24aab"
+    },
+    {
+      "id": "review:axis",
+      "type": "review",
+      "status": "completed",
+      "label": "Recorded gap: same-shape array operations need explicit contrast"
+    },
+    {
+      "id": "review:function",
+      "type": "review",
+      "status": "completed",
+      "label": "Recorded gap: beginner-scale independent function specification"
+    },
+    {
+      "id": "review:format",
+      "type": "review",
+      "status": "completed",
+      "label": "Recorded gap: planned choice and written format differs from notebook"
+    },
+    {
+      "id": "review:learner",
+      "type": "review",
+      "status": "blocked",
+      "label": "Learner independence, mastery and actual timings not observed"
+    }
+  ],
+  "edges": [
+    {
+      "from": "scope:2027",
+      "to": "review:axis",
+      "type": "supports"
+    },
+    {
+      "from": "sample:2026",
+      "to": "review:axis",
+      "type": "supports"
+    },
+    {
+      "from": "artifact:baseline",
+      "to": "review:axis",
+      "type": "supports"
+    },
+    {
+      "from": "scope:2027",
+      "to": "review:function",
+      "type": "supports"
+    },
+    {
+      "from": "sample:2026",
+      "to": "review:function",
+      "type": "supports"
+    },
+    {
+      "from": "artifact:baseline",
+      "to": "review:function",
+      "type": "supports"
+    },
+    {
+      "from": "scope:2027",
+      "to": "review:format",
+      "type": "supports"
+    },
+    {
+      "from": "artifact:baseline",
+      "to": "review:format",
+      "type": "supports"
+    },
+    {
+      "from": "skill:depth",
+      "to": "review:axis",
+      "type": "informs"
+    },
+    {
+      "from": "skill:depth",
+      "to": "review:function",
+      "type": "informs"
+    },
+    {
+      "from": "skill:depth",
+      "to": "review:format",
+      "type": "informs"
+    },
+    {
+      "from": "review:learner",
+      "to": "artifact:baseline",
+      "type": "informs"
+    }
+  ]
+}

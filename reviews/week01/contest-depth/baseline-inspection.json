@@ -1,0 +1,190 @@
+{
+  "assessment_formats": [
+    {
+      "kinds": [
+        {
+          "difference": -2,
+          "kind": "multiple_choice",
+          "observed": 0,
+          "required": 2,
+          "status": "gap"
+        },
+        {
+          "difference": 3,
+          "kind": "written",
+          "observed": 4,
+          "required": 1,
+          "status": "gap"
+        }
+      ],
+      "status": "gap",
+      "week": 1
+    }
+  ],
+  "authority": "advisory_only",
+  "comparisons": [
+    {
+      "goal_id": "goal:axis",
+      "id": "axis-choice",
+      "issue_paths": [
+        "comparisons[0]",
+        "comparisons[0]"
+      ],
+      "recorded_judgment": "gap",
+      "status": "gap",
+      "week": 1
+    },
+    {
+      "goal_id": "goal:function",
+      "id": "function-spec",
+      "issue_paths": [
+        "comparisons[1]",
+        "comparisons[1]"
+      ],
+      "recorded_judgment": "gap",
+      "status": "gap",
+      "week": 1
+    },
+    {
+      "goal_id": "goal:written",
+      "id": "written-format",
+      "issue_paths": [
+        "comparisons[2]",
+        "comparisons[2]"
+      ],
+      "recorded_judgment": "gap",
+      "status": "gap",
+      "week": 1
+    }
+  ],
+  "errors": [],
+  "findings": [
+    {
+      "code": "assessment_count_mismatch",
+      "message": "Recorded multiple_choice count is 0; the requirement is 2.",
+      "path": "time_allocations[0].observed_assessment_format.counts.multiple_choice",
+      "status": "gap"
+    },
+    {
+      "code": "assessment_count_mismatch",
+      "message": "Recorded written count is 4; the requirement is 1.",
+      "path": "time_allocations[0].observed_assessment_format.counts.written",
+      "status": "gap"
+    },
+    {
+      "code": "reported_unknown",
+      "message": "Student independence, prerequisite readiness and learning are not observed.",
+      "path": "unknowns[0]",
+      "status": "uncertain"
+    },
+    {
+      "code": "reported_unknown",
+      "message": "Class and homework completion times are estimates, not observed.",
+      "path": "unknowns[1]",
+      "status": "uncertain"
+    },
+    {
+      "code": "reported_unknown",
+      "message": "The 2026 high-school sample does not establish 2027 middle-school difficulty or actual past-question distribution.",
+      "path": "unknowns[2]",
+      "status": "uncertain"
+    },
+    {
+      "code": "assessment_format_unresolved",
+      "message": "The recorded assessment format is incomplete or differs from its requirement.",
+      "path": "comparisons[0]",
+      "status": "uncertain"
+    },
+    {
+      "code": "unresolved_unknowns",
+      "message": "The bundle has missing or unresolved unknowns with no per-item scope.",
+      "path": "comparisons[0]",
+      "status": "uncertain"
+    },
+    {
+      "code": "assessment_format_unresolved",
+      "message": "The recorded assessment format is incomplete or differs from its requirement.",
+      "path": "comparisons[1]",
+      "status": "uncertain"
+    },
+    {
+      "code": "unresolved_unknowns",
+      "message": "The bundle has missing or unresolved unknowns with no per-item scope.",
+      "path": "comparisons[1]",
+      "status": "uncertain"
+    },
+    {
+      "code": "assessment_format_unresolved",
+      "message": "The recorded assessment format is incomplete or differs from its requirement.",
+      "path": "comparisons[2]",
+      "status": "uncertain"
+    },
+    {
+      "code": "unresolved_unknowns",
+      "message": "The bundle has missing or unresolved unknowns with no per-item scope.",
+      "path": "comparisons[2]",
+      "status": "uncertain"
+    }
+  ],
+  "gaps": [
+    {
+      "difference": "The lesson shows reshape and transpose and assigns changed shapes, but no identified question compares equal-shaped outputs to decide whether axes were exchanged.",
+      "id": "axis-choice",
+      "origin": "recorded_comparison",
+      "priority": "high",
+      "rationale": "A small counterexample would require choosing and justifying the operation; this is a foundational bridge, not a claim to cover PyTorch.",
+      "week": 1
+    },
+    {
+      "difference": "The original asks the learner to modify a supplied mean function with detailed hints; no identified short standalone function-specification task combines missing-value treatment, return and edge case without a supplied solution.",
+      "id": "function-spec",
+      "origin": "recorded_comparison",
+      "priority": "high",
+      "rationale": "A beginner-scale specification and independent checks can bridge to later full algorithmic tasks without requiring K-NN in week 1.",
+      "week": 1
+    },
+    {
+      "difference": "The pinned plan specifies two choice questions and one short written question, whereas this notebook cell contains four written prompts and no choice options.",
+      "id": "written-format",
+      "origin": "recorded_comparison",
+      "priority": "high",
+      "rationale": "The 10-minute planned block can use the intended format without extending class time; actual completion time is unobserved.",
+      "week": 1
+    },
+    {
+      "difference": "Recorded multiple_choice count is 0; required count is 2.",
+      "id": "assessment:week:1:multiple_choice",
+      "origin": "assessment_format",
+      "priority": null,
+      "rationale": "Arithmetic comparison of declared counts only.",
+      "week": 1
+    },
+    {
+      "difference": "Recorded written count is 4; required count is 1.",
+      "id": "assessment:week:1:written",
+      "origin": "assessment_format",
+      "priority": null,
+      "rationale": "Arithmetic comparison of declared counts only.",
+      "week": 1
+    }
+  ],
+  "limitations": [
+    "Recorded observations are advisory declarations, not an automated assessment of lesson meaning or problem difficulty.",
+    "The tool does not open sources or verify their official status, quotations, locations, truth, or currentness.",
+    "Artifact paths and declared SHA-256 values are not read or verified against file bytes.",
+    "Reviewer identity and independence are reported declarations and are not authenticated.",
+    "Assessment-format counts are recorded observations; they are not extracted from the lesson.",
+    "It does not establish learner achievement, equivalence to middle-school past problems, or completeness of competition coverage.",
+    "This report is independent of K01\u2013K16 and does not change any earlier quality evaluation.",
+    "Only the two pinned KOAI 2026 example URLs have a fixed metadata consistency check; it does not fetch or authenticate them."
+  ],
+  "status": "gap",
+  "synthetic": false,
+  "verification": {
+    "artifact_digest": "not_checked",
+    "assessment_counts": "not_checked",
+    "reviewer_independence": "not_checked",
+    "source_authenticity": "not_checked",
+    "source_content": "not_checked"
+  }
+}
