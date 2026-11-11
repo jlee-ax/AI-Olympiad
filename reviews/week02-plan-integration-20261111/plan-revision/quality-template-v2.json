@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "revision": "quality-unconfigured-v2",
+  "synthetic": false,
+  "author_id": "unassigned",
+  "artifact": {
+    "id": "student-plan",
+    "revision": "full-scope-baseline-v2",
+    "path": "curriculum/student-plan.html",
+    "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5"
+  },
+  "target": {
+    "competition_year": 2027,
+    "division": "middle_school",
+    "coverage_claim": "selected_scope",
+    "objective_ids": [
+      "W1-python",
+      "W1-table",
+      "W1-array",
+      "W1-visualise",
+      "W2-split",
+      "W2-preprocess",
+      "W2-metrics",
+      "W2-baseline-model"
+    ],
+    "learning_outcomes": "untested"
+  },
+  "policy": {
+    "agreed": false,
+    "decision_ref": null,
+    "agreement_fingerprint": null,
+    "stop_requested": false,
+    "diagnostic_cutoff": null,
+    "maximum_required_homework_minutes": null,
+    "calibration_tolerance": null
+  },
+  "budget": {
+    "max_attempts": null,
+    "max_elapsed_minutes": null,
+    "max_no_progress": null
+  },
+  "checkpoint": {
+    "minutes_since": 0,
+    "elapsed_total": 0,
+    "no_progress_count": 0,
+    "record": null
+  },
+  "units": [],
+  "claims": [],
+  "source_reads": [],
+  "research_cycles": [],
+  "dependencies": [],
+  "reviews": [],
+  "candidates": [],
+  "attempts": [],
+  "lesson_allocations": []
+}

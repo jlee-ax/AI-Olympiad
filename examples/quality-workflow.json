@@ -22,8 +22,8 @@
       },
       {
         "id": "quality:bundle",
-        "revision": "synthetic-v3-selective-bindings",
-        "sha256": "a336c93d5c90329888065f466ef91ef942016c70cf443e7513f9696197ed6e00"
+        "revision": "synthetic-v4-week02-plan-context",
+        "sha256": "49d32b953096b83a2087f3ad4575078edc217ba55c04a09f976f41ae0b9a80a0"
       },
       {
         "id": "quality:criteria",
@@ -197,6 +197,26 @@
       ],
       "conclusion": "accepted",
       "reason": "Synthetic passing record for exercising the contract; not an attestation of real work."
+    },
+    {
+      "id": "review:synthetic-plan-context-v5",
+      "context_fingerprint": "910c13fec66d7fe03a8c4a96317c83e854d63fb0baff9efb45537977ee14c400",
+      "author_id": "synthetic-author",
+      "reviewer": {
+        "id": "synthetic-reviewer",
+        "model_family": "synthetic-family-b"
+      },
+      "checks": [
+        {
+          "id": "synthetic-reference-integrity",
+          "status": "passed",
+          "evidence_record_ids": [
+            "evidence:synthetic-fixture"
+          ]
+        }
+      ],
+      "conclusion": "accepted",
+      "reason": "Synthetic passing fixture for the revised plan context; not an attestation of real work."
     }
   ],
   "history": []

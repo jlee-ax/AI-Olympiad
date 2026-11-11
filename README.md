@@ -8,7 +8,7 @@ A workflow prototype for preparing KOAI teaching materials, with repository-loca
 
 Middle-school learners with basic coding; **ten weeks, one 120-minute class each week**. These are user-specified inputs. Required and optional outside work remain separate. The earlier 240-minute schedule is superseded.
 
-The [existing student HTML](curriculum/student-plan.html) is preserved in Korean without content changes. The [curriculum contract](curriculum/contract.json) records its weekly allocations and all 60 official syllabus rows. Planned coverage does not establish completed material or student mastery.
+The [current Korean student plan](curriculum/student-plan.html) and its [curriculum contract](curriculum/contract.json) record the weekly allocations and all 60 official syllabus rows. To use the week-by-week links, download the HTML plan and open it in a browser. Planned coverage does not establish completed material or student mastery.
 
 ## Start here
 

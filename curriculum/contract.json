@@ -1,15 +1,20 @@
 {
   "schema_version": 1,
-  "revision": "curriculum-v2-week01-integrated",
-  "supersedes": {"revision": "curriculum-v1", "contract_snapshot": "reviews/week01-integration-20261111/plan-revision/contract-v1.json", "plan_snapshot": "reviews/week01-integration-20261111/plan-revision/student-plan-v1.html", "reason": "Week 1 student entry and prior workload-estimate qualification updated; historical evaluations are not promoted."},
+  "revision": "curriculum-v3-evaluation-context",
+  "supersedes": {
+    "revision": "curriculum-v2-week01-integrated",
+    "contract_snapshot": "reviews/week02-plan-integration-20261111/plan-revision/contract-v2.json",
+    "plan_snapshot": "reviews/week02-plan-integration-20261111/plan-revision/student-plan-v2.html",
+    "reason": "Clarify evaluation targets and temporal context; add the Week 2 student entry and mark unmeasured workload and unprepared final test. Historical reviews are not promoted."
+  },
   "competition_year": 2027,
   "division": "middle_school",
   "syllabus_label": "IOAI 2026",
   "baseline": {
     "path": "curriculum/student-plan.html",
-    "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+    "sha256": "c60063bf1c55b957f4b6271a0796d5301d9f209de28a91d468c0c20e72fa0133",
     "origin_name": "curriculum-full-scope.html",
-    "designation": "Full-scope teaching content retained; the Week 1 learning-material entry now points to the integrated notebook, and the earlier time estimate is identified as unverified for it. The immediately prior plan and contract are separately preserved in the supersedes snapshots.",
+    "designation": "Full-scope teaching content and the Week 1 entry are retained. The evaluation principle and Weeks 2, 4 and 8 distinguish target-dependent splits; Week 2 now links its two notebooks and records unmeasured workload and the unprepared final test. Earlier versions are preserved in the supersession snapshots.",
     "history_refs": [
       "Sentinel_c6acc22670dc8191aa79ad3e68cf0ebc",
       "Sentinel_0604c18c70608191b15e3ce55f584653"
