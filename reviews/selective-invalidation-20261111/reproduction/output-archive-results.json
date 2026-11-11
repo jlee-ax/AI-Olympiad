@@ -1,0 +1,10 @@
+{
+  "archive": "archives/inspection-outputs-v1.tar.gz",
+  "manifest": "archives/inspection-outputs-v1.manifest.json",
+  "archive_sha256": "fe540d42754c387e0d8d996972dc6b11382a68598de3e40414c96d53b84dae75",
+  "output_report_count": 103,
+  "saved_report_bytes_before": 29281508,
+  "archive_bytes_after": 1867580,
+  "all_original_report_sizes_and_hashes_verified": true,
+  "readable_summary_and_failure_reports_retained": true
+}

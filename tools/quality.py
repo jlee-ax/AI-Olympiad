@@ -17,6 +17,7 @@ UNIT_SPECIFICATIONS = 'skills/koai-evaluate/references/unit-specifications.json'
 THEORY_SPECIFICATION = 'skills/koai-evaluate/references/theory-explanation.json'
 ORACLE_KINDS = {'axis_mean', 'binary_metrics', 'weighted_sum', 'split_fit'}
 REVIEW_CRITERIA = {'K02', 'K05', 'K06', 'K09', 'K15', 'K16'}
+PLAN_CONTEXT = '#plan-context'
 STATES = {'passed', 'failed', 'uncertain', 'not_run'}
 TIERS = {'critical': 0, 'major': 1, 'moderate': 2, 'minor': 3}
 
@@ -75,11 +76,20 @@ class PlanParser(HTMLParser):
     def __init__(self):
         super().__init__()
         self.rows = {}
+        self.context_rows = []
+        self.outside_content = []
+        self.ignored_content = 0
         self.row = None
         self.cell = None
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag in ('style', 'script'):
+            self.ignored_content += 1
+        if self.row is None and not self.ignored_content and tag not in (
+                'html', 'head', 'body', 'main', 'div', 'table', 'thead', 'tbody', 'tfoot',
+                'tr', 'colgroup', 'col', 'meta', 'link', 'title'):
+            self.outside_content.append(self.get_starttag_text())
         if tag == 'tr':
             self.row = {'attrs': attrs, 'cells': [], 'links': [], 'markup': []}
         if self.row is not None:
@@ -90,12 +100,20 @@ class PlanParser(HTMLParser):
             self.row['links'].append(attrs.get('href', ''))
 
     def handle_data(self, text):
+        if self.row is None and not self.ignored_content and text.strip():
+            self.outside_content.append(' '.join(text.split()))
         if self.row is not None:
             self.row['markup'].append(text)
         if self.cell is not None:
             self.cell.append(text)
 
     def handle_endtag(self, tag):
+        if self.row is None and not self.ignored_content and tag not in (
+                'html', 'head', 'body', 'main', 'div', 'table', 'thead', 'tbody', 'tfoot',
+                'tr', 'colgroup', 'col', 'meta', 'link', 'title'):
+            self.outside_content.append('</' + tag + '>')
+        if tag in ('style', 'script'):
+            self.ignored_content = max(0, self.ignored_content - 1)
         if self.row is not None:
             self.row['markup'].append('</' + tag + '>')
         if tag in ('th', 'td') and self.cell is not None and self.row is not None:
@@ -107,6 +125,8 @@ class PlanParser(HTMLParser):
                 if identifier in self.rows:
                     raise ValueError('Duplicate HTML row ID: ' + identifier)
                 self.rows[identifier] = self.row
+            else:
+                self.context_rows.append(self.row)
             self.row = None
 
 
@@ -114,7 +134,12 @@ def regions(path):
     if path.suffix.lower() == '.html':
         parser = PlanParser()
         parser.feed(path.read_text(encoding='utf-8'))
-        return {'#' + key: digest(value) for key, value in parser.rows.items()}
+        result = {'#' + key: digest(value) for key, value in parser.rows.items()}
+        if PLAN_CONTEXT in result:
+            raise ValueError('HTML row ID reserves plan-context for unnumbered plan rows')
+        result[PLAN_CONTEXT] = digest({'unnumbered_rows': parser.context_rows,
+                                       'outside_content': parser.outside_content})
+        return result
     if path.suffix.lower() == '.ipynb':
         data = load(path)
         cells = data.get('cells', [])
@@ -279,6 +304,12 @@ def validate(bundle):
             raise ValueError('depends_on must be a string array')
         if not isinstance(node.get('revision'), str) or not re.fullmatch('[0-9a-f]{64}', node.get('sha256', '')):
             raise ValueError('Dependency nodes need revision and digest')
+        if 'path' in node and (not isinstance(node['path'], str) or not node['path'].strip()):
+            raise ValueError('Dependency path must be a nonempty string')
+        if 'locators' in node and (not node.get('path') or not isinstance(node['locators'], list) or
+                not node['locators'] or any(not isinstance(x, str) or not x for x in node['locators']) or
+                len(set(node['locators'])) != len(node['locators'])):
+            raise ValueError('Scoped dependencies need path and unique nonempty locators')
         closure(bundle, node['id'])
     unit_ids = {x['id'] for x in bundle['units']}
     claim_ids = {x['id'] for x in bundle['claims']}
@@ -300,6 +331,10 @@ def validate(bundle):
         declared = unit.get('oracle_kinds')
         if declared is not None and (not isinstance(declared, list) or any(not isinstance(x, str) or x not in ORACLE_KINDS for x in declared) or len(set(declared)) != len(declared)):
             raise ValueError('Unit oracle_kinds must be unique supported reference kinds')
+        if 'plan_dependency_ids' in unit and (not isinstance(unit['plan_dependency_ids'], list) or
+                any(not isinstance(x, str) or not x for x in unit['plan_dependency_ids']) or
+                len(set(unit['plan_dependency_ids'])) != len(unit['plan_dependency_ids'])):
+            raise ValueError('plan_dependency_ids must be unique nonempty node IDs')
         closure(bundle, unit['id'])
     for claim in bundle['claims']:
         if not isinstance(claim.get('statement'), str) or not claim['statement'].strip() or not isinstance(claim.get('source_ids'), list) or not isinstance(claim.get('assumptions'), list) or not claim.get('domain') or not claim.get('quantity'):
@@ -345,7 +380,19 @@ def object_fingerprint(bundle, criterion_id, object_id, root=ROOT):
     for node in dependencies:
         binding = copy.deepcopy(node)
         if 'path' in node:
-            binding['actual_file_sha256'] = file_digest(safe_file(root, node['path']))
+            path = safe_file(root, node['path'])
+            if 'locators' in node:
+                available = regions(path)
+                missing = sorted(set(node['locators']) - available.keys())
+                if missing:
+                    raise ValueError('Dependency locators not found: ' + node['id'] + ': ' + ', '.join(missing))
+                # A scoped node's whole-file pin/revision is provenance only.
+                # Rebinding it must not invalidate unchanged selected regions.
+                binding.pop('sha256', None)
+                binding.pop('revision', None)
+                binding['actual_regions'] = {key: available[key] for key in sorted(node['locators'])}
+            else:
+                binding['actual_file_sha256'] = file_digest(path)
         bound_dependencies.append(binding)
         dependent = objects.get(node['id'])
         if dependent is None:
@@ -382,9 +429,176 @@ def _evidence(items, root):
         if not isinstance(item, dict) or not all(isinstance(item.get(key), str) and bool(item[key].strip()) for key in ('locator', 'observation')):
             return False
         if 'path' in item:
-            if not item.get('sha256') or file_digest(safe_file(root, item['path'])) != item['sha256']:
+            try:
+                if not item.get('sha256') or file_digest(safe_file(root, item['path'])) != item['sha256']:
+                    return False
+            except (OSError, ValueError, UnicodeError):
                 return False
     return True
+
+
+def plan_bindings(bundle, object_id, root=ROOT):
+    """Check explicit plan coverage; missing edges are tasks, never inferred edges."""
+    unit = next((x for x in bundle['units'] if x['id'] == object_id), None)
+    if unit is None:
+        return {'required': False, 'issues': [], 'scope_fingerprint': None}
+    contract = load(safe_file(root, CONTRACT))
+    nodes = {node['id']: node for node in closure(bundle, object_id)}
+    declared = unit.get('plan_dependency_ids', [])
+    required = {PLAN_CONTEXT, '#week-' + str(unit.get('week'))}
+    topics = {item['id']: item for item in contract['topics']}
+    required.update(topics[key]['plan_locator'] for key in unit['syllabus_ids'] if key in topics)
+    covered, issues, scope = set(), [], []
+    if not declared:
+        issues.append({'code': 'plan_dependencies_undeclared',
+                       'detail': 'Declare the reviewed plan regions and dependency edges; content impact is unassessed.'})
+    for identifier in declared:
+        node = nodes.get(identifier)
+        if node is None:
+            issues.append({'code': 'plan_dependency_not_connected', 'node_id': identifier})
+            continue
+        if node.get('path') != contract['baseline']['path'] or not node.get('locators'):
+            issues.append({'code': 'plan_dependency_unbound', 'node_id': identifier,
+                           'detail': 'Bind the governing plan path and explicit region locators.'})
+            continue
+        covered.update(node['locators'])
+        scope.append({'id': identifier, 'path': node['path'], 'locators': sorted(node['locators']),
+                      'depends_on': sorted(node['depends_on'])})
+    missing = sorted(required - covered)
+    if missing:
+        issues.append({'code': 'plan_regions_uncovered', 'locators': missing})
+    fingerprint = digest({'object_id': object_id, 'required_plan_regions': sorted(required),
+                          'declared': sorted(declared), 'nodes': sorted(scope, key=lambda x: x['id'])})
+    return {'required': True, 'issues': issues, 'scope_fingerprint': fingerprint,
+            'path': contract['baseline']['path'], 'nodes': sorted(scope, key=lambda x: x['id']),
+            'required_locators': sorted(required), 'covered_locators': sorted(covered)}
+
+
+def context_bindings(bundle, object_id, root=ROOT):
+    """Inspectable live bindings; a capture is not a review or approval."""
+    objects = {item['id']: item for item in bundle['units'] + bundle['claims']}
+    artifact = bundle['artifact']['path']
+    actual = regions(safe_file(root, artifact))
+    result = []
+    reads = {item['id']: item for item in bundle['source_reads']}
+    stable_read_keys = ('id', 'kind', 'url', 'version', 'extent', 'locator', 'finding', 'limitation', 'method', 'result', 'content_sha256')
+    for node in closure(bundle, object_id):
+        if node['id'] in reads:
+            reading = reads[node['id']]
+            result.append({'id': 'source_read:' + node['id'], 'kind': 'source_read',
+                           'node_id': node['id'], 'url': reading.get('url'), 'locator': reading.get('locator'),
+                           'sha256': digest({key: reading[key] for key in stable_read_keys if key in reading})})
+        if node.get('path'):
+            error = None
+            try:
+                path = safe_file(root, node['path'])
+                values = regions(path) if 'locators' in node else {'file': file_digest(path)}
+            except (OSError, ValueError, UnicodeError) as exc:
+                values, error = {}, str(exc)
+            for locator in sorted(node.get('locators', ['file'])):
+                item = {'id': 'dependency:' + node['id'] + ':' + locator,
+                        'kind': 'dependency', 'node_id': node['id'], 'path': node['path'],
+                        'locator': locator, 'sha256': values.get(locator)}
+                if item['sha256'] is None:
+                    item['error'] = error or 'Declared dependency locator not found'
+                result.append(item)
+        obj = objects.get(node['id'])
+        if obj is None:
+            continue
+        locators = {obj.get('locator', 'file')}
+        locators.update(role['locator'] for role in obj.get('chain', {}).values()
+                        if isinstance(role, dict) and isinstance(role.get('locator'), str))
+        for locations in obj.get('explanation_regions', {}).values():
+            if isinstance(locations, list):
+                locators.update(x for x in locations if isinstance(x, str))
+        for locator in sorted(locators):
+            item = {'id': 'artifact:' + node['id'] + ':' + locator,
+                    'kind': 'artifact', 'object_id': node['id'], 'path': artifact,
+                    'locator': locator, 'sha256': actual.get(locator)}
+            if item['sha256'] is None:
+                item['error'] = 'Declared artifact locator not found'
+            result.append(item)
+    return sorted(result, key=lambda x: x['id'])
+
+
+def review_freshness(bundle, review, root=ROOT):
+    """Separate detected changes from legacy binding/impact-confirmation work."""
+    binding = plan_bindings(bundle, review['object_id'], root)
+    reasons = []
+    try:
+        context_changed = review.get('context_fingerprint') != object_fingerprint(
+            bundle, review['criterion_id'], review['object_id'], root)
+    except (OSError, ValueError, UnicodeError) as exc:
+        context_changed = True
+        reasons.append({'code': 'context_unreadable', 'detail': str(exc)})
+    if context_changed:
+        reasons.append({'code': 'context_fingerprint_mismatch',
+                        'detail': 'Current context differs; a legacy scope change requires impact confirmation before classifying content impact.'})
+    try:
+        current_bindings = context_bindings(bundle, review['object_id'], root)
+    except (OSError, ValueError, UnicodeError) as exc:
+        current_bindings = []
+        reasons.append({'code': 'bindings_unreadable', 'detail': str(exc)})
+    unreadable_bindings = [item for item in current_bindings if item.get('error')]
+    if unreadable_bindings:
+        reasons.append({'code': 'bindings_unreadable', 'bindings': unreadable_bindings})
+    previous = review.get('context_bindings')
+    changes = []
+    if isinstance(previous, list) and all(isinstance(item, dict) and isinstance(item.get('id'), str) for item in previous):
+        old, new = ({item['id']: item for item in values} for values in (previous, current_bindings))
+        changes = [{'binding_id': key, 'before': old.get(key), 'after': new.get(key)}
+                   for key in sorted(old.keys() | new.keys()) if old.get(key) != new.get(key)]
+    evidence_groups = [('evidence', review.get('evidence', []))]
+    subchecks = review.get('subchecks', {})
+    if isinstance(subchecks, dict):
+        evidence_groups.extend(('subchecks.' + key + '.evidence', value.get('evidence', []))
+                               for key, value in subchecks.items() if isinstance(value, dict))
+    for location, items in evidence_groups:
+        try:
+            supported = _evidence(items, root)
+        except (OSError, ValueError, UnicodeError):
+            supported = False
+        supplied_local = any(isinstance(item, dict) and 'path' in item for item in items) if isinstance(items, list) else False
+        if not supported and (review.get('status') == 'passed' or supplied_local):
+            details = []
+            for item in items if isinstance(items, list) else []:
+                if not isinstance(item, dict) or 'path' not in item:
+                    continue
+                try:
+                    actual = file_digest(safe_file(root, item['path']))
+                except (OSError, ValueError, UnicodeError):
+                    actual = None
+                if item.get('sha256') != actual or actual is None:
+                    details.append({'path': item['path'], 'expected_sha256': item.get('sha256'), 'actual_sha256': actual})
+            reasons.append({'code': 'evidence_missing_or_changed', 'location': location, 'bindings': details})
+    # A legacy review has not acknowledged newly declared plan coverage. Do not
+    # call a hash-format/binding migration a demonstrated content change.
+    unconfirmed = (binding['required'] and not binding['issues'] and
+                   review.get('dependency_scope_fingerprint') != binding['scope_fingerprint'])
+    binding_status = 'binding_required' if binding['issues'] else 'impact_confirmation_required' if unconfirmed else 'bound'
+    known_evidence_change = any(item['code'] == 'evidence_missing_or_changed' for item in reasons)
+    # A new binding can add entries without proving a prior content change.
+    # A changed value of an already recorded binding is a separate known drift.
+    known_bound_change = any(item['before'] is not None and item['after'] is not None and
+                             item['before'].get('sha256') != item['after'].get('sha256') for item in changes)
+    if known_evidence_change or known_bound_change or unreadable_bindings:
+        status, action = 'review_required', 'Re-review the changed binding or repair missing evidence; append the result and resolve any binding tasks.'
+    elif binding['issues']:
+        status, action = 'binding_required', 'Declare missing plan bindings and confirm their impact on this review.'
+    elif unconfirmed:
+        status, action = 'impact_confirmation_required', 'Append an independently reviewed impact confirmation or a new content review for the declared scope.'
+    elif reasons:
+        status, action = 'review_required', 'Re-review the affected context or repair missing evidence; append the result.'
+    else:
+        status, action = 'current', 'Reuse the recorded review within its declared scope.'
+    return {'review_id': review['id'], 'criterion_id': review['criterion_id'],
+            'object_id': review['object_id'], 'recorded_status': review['status'],
+            'status': status, 'binding_status': binding_status, 'action': action,
+            'context_changed': context_changed, 'reasons': reasons,
+            'changed_bindings': changes, 'current_bindings': current_bindings,
+            'binding_issues': binding['issues'], 'plan_bindings': binding,
+            'change_classification': 'detected_change' if known_evidence_change or known_bound_change or unreadable_bindings else
+                                     'unconfirmed_scope' if binding['issues'] or unconfirmed else 'detected_change' if reasons else 'unchanged'}
 
 
 def _review(bundle, criterion, object_id, root):
@@ -392,11 +606,13 @@ def _review(bundle, criterion, object_id, root):
     if not matches:
         return 'not_run'
     review = matches[-1]
-    if review.get('context_fingerprint') != object_fingerprint(bundle, criterion, object_id, root):
+    freshness = review_freshness(bundle, review, root)
+    if review['status'] == 'failed' and not freshness['context_changed']:
+        return 'failed'
+    if freshness['status'] != 'current':
         return 'uncertain'
-    if review['status'] == 'passed':
-        if review.get('reviewer_id') in (None, '', bundle['author_id']) or not _evidence(review['evidence'], root):
-            return 'uncertain'
+    if review['status'] == 'passed' and review.get('reviewer_id') in (None, '', bundle['author_id']):
+        return 'uncertain'
     return review['status']
 
 
@@ -686,13 +902,19 @@ def evaluate(bundle, root=ROOT):
         valid = all(cycle.get(key) for key in ('trigger', 'queries', 'source_ids', 'disposition', 'reason'))
         valid &= isinstance(cycle.get('queries'), list) and all(isinstance(q, str) and bool(q.strip()) for q in cycle.get('queries', []))
         contexts = cycle.get('object_contexts', {})
-        valid &= isinstance(contexts, dict) and contexts.get(oid) == object_fingerprint(bundle, 'K10', oid, root)
+        context_error = None
+        try:
+            current_context = object_fingerprint(bundle, 'K10', oid, root)
+        except (OSError, ValueError, UnicodeError) as exc:
+            current_context, context_error = None, str(exc)
+        valid &= current_context is not None and isinstance(contexts, dict) and contexts.get(oid) == current_context
         source_ids = cycle.get('source_ids', [])
         valid &= isinstance(source_ids, list) and all(sid in reads for sid in source_ids)
         valid &= set(claims[oid]['source_ids']) <= set(source_ids)
         status = 'passed' if valid and cycle.get('disposition') in ('updated', 'unchanged') else 'uncertain'
         cycle_states.append(status)
-        active_cycles.append({'object_id': oid, 'cycle_id': cycle['id'], 'status': status})
+        active_cycles.append({'object_id': oid, 'cycle_id': cycle['id'], 'status': status,
+                              'context_error': context_error})
     result('K11', aggregate(cycle_states + extra), {'cycles': len(cycles), 'active_by_object': active_cycles,
            'selection': 'last_appended_cycle_per_current_claim', 'automatic_search': False},
            [x['object_id'] for x in active_cycles if x['status'] != 'passed'])
@@ -701,23 +923,30 @@ def evaluate(bundle, root=ROOT):
     for review in bundle['reviews']:
         if review.get('object_id') in current_objects and review.get('criterion_id') in REVIEW_CRITERIA:
             latest[(review['criterion_id'], review['object_id'])] = review
-    stale = []
-    for review in latest.values():
-        try:
-            if review.get('context_fingerprint') != object_fingerprint(bundle, review['criterion_id'], review['object_id'], root):
-                stale.append(review['id'])
-        except ValueError:
-            stale.append(review['id'])
+    freshness = [review_freshness(bundle, review, root) for review in latest.values()]
+    stale = [item['review_id'] for item in freshness if item['status'] == 'review_required']
+    binding_tasks = [item for item in freshness if item['binding_status'] != 'bound']
     active_review_ids = {r['id'] for r in latest.values()}
     historical = [r['id'] for r in bundle['reviews'] if r['id'] not in active_review_ids]
-    result('K12', 'uncertain' if stale else 'passed', {'stale_review_ids': stale,
+    result('K12', 'uncertain' if stale or binding_tasks else 'passed', {'stale_review_ids': stale,
+           'binding_tasks': binding_tasks, 'review_freshness': freshness,
+           'fingerprint_mismatch_review_ids': [item['review_id'] for item in freshness if item['context_changed']],
            'active_review_ids': sorted(active_review_ids), 'historical_review_ids': historical,
            'selection': 'last_appended_review_per_criterion_and_current_object',
-           'dependency_nodes': len(bundle['dependencies'])},
-           [r['object_id'] for r in latest.values() if r['id'] in stale])
-    keys = [candidate_key(bundle, item, root) for item in bundle['candidates']]
+           'dependency_nodes': len(bundle['dependencies']),
+           'limit': 'Source and region hashes detect changes, not meaning or learner outcomes. Missing bindings do not establish a content defect.'},
+           [item['object_id'] for item in freshness if item['status'] != 'current'])
+    keys, unavailable_candidates = [], []
+    for item in bundle['candidates']:
+        try:
+            keys.append(candidate_key(bundle, item, root))
+        except (OSError, ValueError, UnicodeError) as exc:
+            unavailable_candidates.append(candidate_context_error(bundle, item, root, exc))
     repeats = sorted({key for key in keys if keys.count(key) > 1})
-    result('K13', 'passed', {'exact_duplicate_proposals': len(repeats), 'action': 'suppress_duplicates', 'semantic_merge': False})
+    result('K13', 'uncertain' if unavailable_candidates else 'passed',
+           {'exact_duplicate_proposals': len(repeats), 'action': 'suppress_duplicates',
+            'semantic_merge': False, 'unavailable_contexts': unavailable_candidates},
+           [item['object_id'] for item in unavailable_candidates])
     agreed = (bundle['policy']['agreed'] and bool(bundle['policy'].get('decision_ref')) and
               bundle['policy'].get('agreement_fingerprint') == agreement_fingerprint(bundle, root))
     result('K14', 'passed' if agreed else 'uncertain', {'priority_policy': 'agreed_record' if agreed else 'proposal',
@@ -817,6 +1046,7 @@ def evaluate(bundle, root=ROOT):
             'evaluator_sha256': file_digest(Path(__file__)),
             'ready_for_review': ready, 'status': 'passed' if ready else 'failed' if any(c['status'] == 'failed' for c in checks) else 'uncertain',
             'checks': checks, 'findings': findings, 'discovery': discovery_report,
+            'selective_review': next(check['measurement'] for check in checks if check['id'] == 'K12'),
             'discovery_gate': 'recorded_ready' if discovery_ready else 'discovery_unresolved' if discovery_report else 'discovery_missing',
             'limits': ['Semantic judgments and source reading are recorded claims, not authenticated facts.',
                        'Synthetic success is not real material readiness.', 'No worker, scheduler, writer or publisher is executed.']}
@@ -843,21 +1073,43 @@ def candidate_key(bundle, candidate, root=ROOT):
                    'context': object_fingerprint(bundle, candidate['criterion_id'], candidate['object_id'], root)})
 
 
+def candidate_context_error(bundle, candidate, root, error):
+    """Only a located unavailable binding permits partial proposal diagnostics."""
+    if candidate['criterion_id'] not in {item['id'] for item in load(safe_file(root, CATALOG))['criteria']} or candidate['object_id'] not in {item['id'] for item in bundle['units'] + bundle['claims']}:
+        raise error
+    unavailable = [item for item in context_bindings(bundle, candidate['object_id'], root) if item.get('error')]
+    if not unavailable:
+        raise error
+    return {'candidate_id': candidate['id'], 'object_id': candidate['object_id'],
+            'criterion_id': candidate['criterion_id'], 'error': str(error), 'bindings': unavailable}
+
+
 def plan_work(bundle, root=ROOT):
     report = evaluate(bundle, root)
     previous = {x['key']: x for x in bundle['attempts'] if x.get('outcome') in ('accepted', 'rejected', 'no_change')}
     ranked, skipped, seen = [], [], set()
     candidates = copy.deepcopy(bundle['candidates'])
     existing_targets = {(x['criterion_id'], x['object_id']) for x in candidates}
+    binding_objects = {item['object_id'] for item in report['selective_review']['binding_tasks']}
+    binding_only_reviews = {(item['criterion_id'], item['object_id'])
+                            for item in report['selective_review']['binding_tasks']
+                            if item['status'] != 'review_required'}
     object_ids = {x['id'] for x in bundle['units'] + bundle['claims']}
     for finding in report['findings']:
         for oid in finding['objects']:
+            if (finding['criterion_id'], oid) in binding_only_reviews and finding['status'] == 'uncertain':
+                # One explicit binding/impact task comes before classifying the
+                # content effect; do not manufacture a full review campaign.
+                continue
             if oid in object_ids and (finding['criterion_id'], oid) not in existing_targets:
                 candidates.append({'id': 'finding:' + finding['criterion_id'] + ':' + oid,
                                    'criterion_id': finding['criterion_id'], 'object_id': oid,
                                    'severity': finding['severity'], 'confidence': 'confirmed' if finding['status'] == 'failed' else 'unresolved',
                                    'hypothesis': 'Resolve ' + finding['status'] + ' ' + finding['criterion_id'] + ' evidence for ' + oid,
-                                   'action': 'Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.'})
+                                   'action': ('Declare missing plan bindings and append an independent impact confirmation; preserve existing reviews.'
+                                              if finding['criterion_id'] == 'K12' and oid in binding_objects else
+                                              'Inspect the criterion measurement and original evidence; make one scoped correction or record abstention.'),
+                                   'work_kind': 'binding_or_impact_confirmation' if finding['criterion_id'] == 'K12' and oid in binding_objects else 'scoped_review_or_correction'})
     for item in candidates:
         matching = [f for f in report['findings'] if f['criterion_id'] == item['criterion_id'] and item['object_id'] in f['objects'] and f['status'] == 'failed']
         if matching:
@@ -866,7 +1118,15 @@ def plan_work(bundle, root=ROOT):
                 item['severity'] = computed_severity
             item['confidence'] = 'confirmed'
             item['priority_basis'] = 'computed_failed_criterion'
-        key = candidate_key(bundle, item, root)
+        try:
+            key = candidate_key(bundle, item, root)
+        except (OSError, ValueError, UnicodeError) as exc:
+            diagnostic = candidate_context_error(bundle, item, root, exc)
+            item['context_status'] = 'unavailable'
+            item['context_error'] = diagnostic
+            key = digest({'criterion': item['criterion_id'], 'object': item['object_id'],
+                          'hypothesis': item['hypothesis'], 'action': item['action'],
+                          'unavailable_context': diagnostic})
         if key in seen or key in previous:
             skipped.append({'id': item['id'], 'key': key, 'reason': previous.get(key, {}).get('reason', 'exact_duplicate')})
             continue
@@ -919,6 +1179,7 @@ def plan_work(bundle, root=ROOT):
         status, reason = 'noop', 'no_new_candidate_not_complete'
     return {'status': status, 'reason': reason, 'authority': 'advisory_only', 'synthetic': bundle['synthetic'],
             'quality_status': report['status'], 'ranked': ranked, 'skipped': skipped,
+            'selective_review': report['selective_review'],
             'next_candidate': ranked[0]['id'] if ranked and status == 'continue' and report['discovery_gate'] == 'recorded_ready' else None,
             'discovery': report['discovery'],
             'next_discovery_action': report['discovery']['next_action'] if report['discovery'] else 'seed_external_frontier' if report['discovery_gate'] == 'discovery_missing' else None,
@@ -958,7 +1219,10 @@ def main(argv=None):
                 if not args.criterion or not args.object:
                     parser.error('review-context requires --criterion and --object')
                 result = {'authority': 'advisory_only', 'context_fingerprint':
-                          object_fingerprint(bundle, args.criterion, args.object, args.root)}
+                          object_fingerprint(bundle, args.criterion, args.object, args.root),
+                          'plan_bindings': plan_bindings(bundle, args.object, args.root),
+                          'context_bindings': context_bindings(bundle, args.object, args.root),
+                          'limit': 'Context capture records no review or approval. Append an independently assessed review; hashes do not judge meaning or learner outcomes.'}
         print(json.dumps(result, sort_keys=True, indent=2, allow_nan=False))
         return 2 if result.get('errors') else 0
     except (OSError, ValueError, TypeError, KeyError, AttributeError, UnicodeError, RecursionError, OverflowError) as exc:

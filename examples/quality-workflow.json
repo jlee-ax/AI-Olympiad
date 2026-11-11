@@ -22,8 +22,8 @@
       },
       {
         "id": "quality:bundle",
-        "revision": "synthetic-v2",
-        "sha256": "51d741b33bb636dc1e4efd9dfc4dcfd966165c04c027f90fb12b2dcf36ff7a8d"
+        "revision": "synthetic-v3-selective-bindings",
+        "sha256": "a336c93d5c90329888065f466ef91ef942016c70cf443e7513f9696197ed6e00"
       },
       {
         "id": "quality:criteria",
@@ -33,7 +33,7 @@
       {
         "id": "quality:evaluator",
         "revision": "quality-v1",
-        "sha256": "bb7ee10c793aa9916429a1dd77900fc59238738eb49632ba7ec44935e0770b30"
+        "sha256": "03f24f7e9b89979e30facf258f8c8f9f358b1aca2de876a1adae5e058f0fc96b"
       }
     ],
     "skills": [
@@ -141,6 +141,46 @@
     {
       "id": "review:synthetic-1",
       "context_fingerprint": "a87245893042d832f558bd48a7c2296bcaee08654f4f40fa54d0b09fc21fb432",
+      "author_id": "synthetic-author",
+      "reviewer": {
+        "id": "synthetic-reviewer",
+        "model_family": "synthetic-family-b"
+      },
+      "checks": [
+        {
+          "id": "synthetic-reference-integrity",
+          "status": "passed",
+          "evidence_record_ids": [
+            "evidence:synthetic-fixture"
+          ]
+        }
+      ],
+      "conclusion": "accepted",
+      "reason": "Synthetic passing record for exercising the contract; not an attestation of real work."
+    },
+    {
+      "id": "review:synthetic-1:synthetic-scope-v3",
+      "context_fingerprint": "c3afb38d687139ebef3c1f10d4647b347950fbdfdd248c7d779e69d0c84a8c4f",
+      "author_id": "synthetic-author",
+      "reviewer": {
+        "id": "synthetic-reviewer",
+        "model_family": "synthetic-family-b"
+      },
+      "checks": [
+        {
+          "id": "synthetic-reference-integrity",
+          "status": "passed",
+          "evidence_record_ids": [
+            "evidence:synthetic-fixture"
+          ]
+        }
+      ],
+      "conclusion": "accepted",
+      "reason": "Synthetic passing record for exercising the contract; not an attestation of real work."
+    },
+    {
+      "id": "review:synthetic-selective-source-gap-v4",
+      "context_fingerprint": "f81262722ab4fabc248b40274c1e0a81cb5e9c1bed7b203190784dd7aec64e6a",
       "author_id": "synthetic-author",
       "reviewer": {
         "id": "synthetic-reviewer",

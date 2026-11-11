@@ -1,0 +1,25 @@
+{
+  "verified_at_utc": "2026-11-11T11:20:22.674685+00:00",
+  "archive": "evidence-cas.tar.gz",
+  "archive_sha256": "731d180e7f0082b60e8f43745b41f49a9c5f5d77518cf6bb63ff039087149da6",
+  "archive_bytes": 1512939,
+  "manifest": "evidence-archive-manifest.json",
+  "manifest_sha256": "5fe11b2d5e0a02663443ef46a75d4501b8270e09c30132560961bd5743a61305",
+  "regular_paths": 1197,
+  "symlink_paths": 2,
+  "unique_blobs": 299,
+  "logical_regular_bytes": 41886800,
+  "unique_blob_bytes": 26570047,
+  "all_per_path_bytes_and_hashes_verified": true,
+  "all_restored_regular_inodes_independent": true,
+  "duplicate_file_mutation_does_not_propagate": true,
+  "symlink_metadata_preserved_targets_not_read": true,
+  "restored_v4_control_cli_exact_report_equal": true,
+  "restored_v4_control_cli_exit": 0,
+  "duplicate_copy_trees_removed": [
+    "inputs",
+    "cases"
+  ],
+  "original_repository_files_modified": false,
+  "raw_summaries_and_failures_remain_outside_archive": true
+}

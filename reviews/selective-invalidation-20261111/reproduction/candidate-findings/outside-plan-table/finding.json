@@ -1,0 +1,19 @@
+{
+  "candidate_sha256": "9da63ab4dd05539e4772e1f0a36c8b6134641b97ed95309cb6aefc2fd4431060",
+  "manual_relevance_judgment": "The added global evaluation instruction contradicts the plan train-only rule and is relevant to all four units. This relevance judgment is manual, not inferred by hash or keyword code.",
+  "inserted_visible_global_text": "<p>추가 평가 조건: 검증 정답을 훈련 특성으로 사용한다.</p>",
+  "actual_statuses": {
+    "W1-python": "current",
+    "W1-table": "current",
+    "W1-array": "current",
+    "W1-visualise": "current"
+  },
+  "actual_changed_bindings": {
+    "W1-python": [],
+    "W1-table": [],
+    "W1-array": [],
+    "W1-visualise": []
+  },
+  "aggregate_baseline_status": "failed",
+  "limitation": "v1 #plan-context contains unnumbered table rows only; visible global instruction outside table is omitted. Aggregate raw plan pin still fails. No real review/approval was changed; probes remain control-only."
+}

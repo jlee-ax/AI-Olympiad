@@ -1,0 +1,8 @@
+{
+  "captured_at_utc": "2026-11-11T11:11:04.288505+00:00",
+  "quality_sha256": "03f24f7e9b89979e30facf258f8c8f9f358b1aca2de876a1adae5e058f0fc96b",
+  "workflow_sha256": "11dc7a916d00a3b67528b63f7d6b02a74e9b895972f7ce56ec540d245b54872b",
+  "preflight_sha256": "de09542da3c32f73f6f89a84709e63616fc8516f2ba6cbec08599443b5c878c5",
+  "prior_v3_tests_preserved": true,
+  "baseline_criteria_unchanged": true
+}

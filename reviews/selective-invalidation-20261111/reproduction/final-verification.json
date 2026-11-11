@@ -1,0 +1,238 @@
+{
+  "recorded_at_utc": "2026-11-11T11:21:13.971599+00:00",
+  "checks": {
+    "baseline_fourteen_changes_match": true,
+    "v3_nineteen_changes_match": true,
+    "v4_source_six_cases_match": true,
+    "v4_cli_ten_checks_match": true,
+    "v4_code_shas_current": true,
+    "all_originals_unchanged": true,
+    "all_seven_archives_verified": true,
+    "independent_restore_proven": true,
+    "no_runtime_cache": true
+  },
+  "all_checks_passed": true,
+  "source_code_shas": {
+    "tools/quality.py": "03f24f7e9b89979e30facf258f8c8f9f358b1aca2de876a1adae5e058f0fc96b",
+    "tools/workflow.py": "11dc7a916d00a3b67528b63f7d6b02a74e9b895972f7ce56ec540d245b54872b",
+    "tools/review_preflight.py": "de09542da3c32f73f6f89a84709e63616fc8516f2ba6cbec08599443b5c878c5"
+  },
+  "protected_originals": [
+    {
+      "path": "lessons/week01/data/week1_plants.csv",
+      "expected": "fece0473e50b097afa7c2b3e2647c9a6e623bd3d8e009e6ef620151887227639",
+      "actual": "fece0473e50b097afa7c2b3e2647c9a6e623bd3d8e009e6ef620151887227639",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/data/week1_plants_new.csv",
+      "expected": "869db97ef7c5f6ccf1020bc435fe831f180e9b9548d722c41c91b63af44d7290",
+      "actual": "869db97ef7c5f6ccf1020bc435fe831f180e9b9548d722c41c91b63af44d7290",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/lesson-manifest.json",
+      "expected": "188028f489df650554bddbd21a08771aa809e6aa01c97e499eaad445ee7d877c",
+      "actual": "188028f489df650554bddbd21a08771aa809e6aa01c97e499eaad445ee7d877c",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/provenance/contract.json",
+      "expected": "7e16f0278bc55042228b42e1f819603efea41b2582f8057e889b5dd84a29298c",
+      "actual": "7e16f0278bc55042228b42e1f819603efea41b2582f8057e889b5dd84a29298c",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/provenance/student-plan.html",
+      "expected": "96deb5e5e781bf39cc6bb5effe34d6d04a01ac65e13a3811c37f5a825714f7a9",
+      "actual": "96deb5e5e781bf39cc6bb5effe34d6d04a01ac65e13a3811c37f5a825714f7a9",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/provenance/unit-specifications.json",
+      "expected": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "actual": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/teacher-notes.txt",
+      "expected": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "actual": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/validate_week01.py",
+      "expected": "b28009ee46ffbc707d7bcb2d8614346a4b99b90214864525130713b1420c4d03",
+      "actual": "b28009ee46ffbc707d7bcb2d8614346a4b99b90214864525130713b1420c4d03",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/validate_week01_problem_pipeline.py",
+      "expected": "54322e12794c4370604a9eee5505c4d19b18d029a59114eed1616986cb3765c5",
+      "actual": "54322e12794c4370604a9eee5505c4d19b18d029a59114eed1616986cb3765c5",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/validation.json",
+      "expected": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "actual": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.html",
+      "expected": "45bc5fe99f90b7bd4dd39ef67557b87c227f263e59e20c54fa1d44764a07239b",
+      "actual": "45bc5fe99f90b7bd4dd39ef67557b87c227f263e59e20c54fa1d44764a07239b",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "expected": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+      "actual": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge_teacher.md",
+      "expected": "651038f80b4800f8efb72094823e497cfe5168985bc882e586b1c4dc12fcf9c0",
+      "actual": "651038f80b4800f8efb72094823e497cfe5168985bc882e586b1c4dc12fcf9c0",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_integrated.html",
+      "expected": "53b48bf8370cff4f97ace9f78cbf8c5b838f7c758a56b86ef82d474003470596",
+      "actual": "53b48bf8370cff4f97ace9f78cbf8c5b838f7c758a56b86ef82d474003470596",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_integrated.ipynb",
+      "expected": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+      "actual": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_integrated_teacher.md",
+      "expected": "aafa8f3bbd6cc7b88131157d85a9ffa5d99d5e1b53db6abe2f021eaa2096bcdd",
+      "actual": "aafa8f3bbd6cc7b88131157d85a9ffa5d99d5e1b53db6abe2f021eaa2096bcdd",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_problem_pipeline.html",
+      "expected": "28308deb024292977cd22a2931801ff242f010e5b6e8b4de01fa4e01e3a4bfd3",
+      "actual": "28308deb024292977cd22a2931801ff242f010e5b6e8b4de01fa4e01e3a4bfd3",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_problem_pipeline.ipynb",
+      "expected": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+      "actual": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_problem_pipeline_teacher.md",
+      "expected": "646c9e4bbd6b631864f2e802b3cfb9f38da39ee6b7db79cef6a431ee6a7eb589",
+      "actual": "646c9e4bbd6b631864f2e802b3cfb9f38da39ee6b7db79cef6a431ee6a7eb589",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_problem_pipeline_validation.json",
+      "expected": "b4c110a4537871496a83f7d3a2de3f0a08b2f8e0bff3436248f2d1fa7c33bfd9",
+      "actual": "b4c110a4537871496a83f7d3a2de3f0a08b2f8e0bff3436248f2d1fa7c33bfd9",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_python_tables.html",
+      "expected": "0ee9668f102756c47c666d12e145bdd6c7c89709d625dcd07533bc3291cfda24",
+      "actual": "0ee9668f102756c47c666d12e145bdd6c7c89709d625dcd07533bc3291cfda24",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "expected": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "actual": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week02/build_week02.py",
+      "expected": "54b518d6c7986e77525085ca9fa623a4ff7857fa1b53cc62fedf2483945fa0cc",
+      "actual": "54b518d6c7986e77525085ca9fa623a4ff7857fa1b53cc62fedf2483945fa0cc",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week02/teacher-notes.md",
+      "expected": "2d9667b059f1556613117ce6648fe16b3c6c67c4c0a7cdf2b2be06fd0f6b6977",
+      "actual": "2d9667b059f1556613117ce6648fe16b3c6c67c4c0a7cdf2b2be06fd0f6b6977",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week02/teacher_validate_week02.py",
+      "expected": "f31d8057913167b87a1489034ab9b98f7a7e3e1ace801a5919762040e7260a28",
+      "actual": "f31d8057913167b87a1489034ab9b98f7a7e3e1ace801a5919762040e7260a28",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week02/validate_week02_temporal_preprocessing.py",
+      "expected": "fd7071e8239756e0823a443104c4cef206c74644571971367a16fbd37686b447",
+      "actual": "fd7071e8239756e0823a443104c4cef206c74644571971367a16fbd37686b447",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week02/validation.json",
+      "expected": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+      "actual": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week02/week02_prediction_evaluation.html",
+      "expected": "ffd7586b5ec43cd35b1abfaa5b434a1c43e68832df5367df2df08c6d649e4c66",
+      "actual": "ffd7586b5ec43cd35b1abfaa5b434a1c43e68832df5367df2df08c6d649e4c66",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week02/week02_prediction_evaluation.ipynb",
+      "expected": "9bb1ea5110b74ea1cf32fbc9ee9e9a5aadbceba2f750c2dfc2d6587e18954bdf",
+      "actual": "9bb1ea5110b74ea1cf32fbc9ee9e9a5aadbceba2f750c2dfc2d6587e18954bdf",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week02/week02_temporal_preprocessing.html",
+      "expected": "f8fd2ee95761debd8bfc7ea9d2bf4493ef5594cbf90fdb6b3b75a8fd1ea883e4",
+      "actual": "f8fd2ee95761debd8bfc7ea9d2bf4493ef5594cbf90fdb6b3b75a8fd1ea883e4",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week02/week02_temporal_preprocessing.ipynb",
+      "expected": "a830a15e8d2bf2cb91e17cd2e8b14172390fc7cea3a07539add3fe52a05b5865",
+      "actual": "a830a15e8d2bf2cb91e17cd2e8b14172390fc7cea3a07539add3fe52a05b5865",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week02/week02_temporal_preprocessing_teacher.md",
+      "expected": "e898de9e42be0ee9f562a6b36df036d5eb0a66e488ee62d8d9e9c3b666dcee74",
+      "actual": "e898de9e42be0ee9f562a6b36df036d5eb0a66e488ee62d8d9e9c3b666dcee74",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week02/week02_temporal_preprocessing_validation.json",
+      "expected": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936",
+      "actual": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/quality.json",
+      "expected": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "actual": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "unchanged": true
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/workflow.json",
+      "expected": "21f999d6cfbc17a01c64d885e7c27cd0879e4794cbf405d253193bd02c7d131f",
+      "actual": "21f999d6cfbc17a01c64d885e7c27cd0879e4794cbf405d253193bd02c7d131f",
+      "unchanged": true
+    }
+  ],
+  "git_index_before": "aa671c547b54acf663648e7f4858cc70478dc3b7579ca5ca14f68d86ff96378e",
+  "git_index_at_final_check": "aa671c547b54acf663648e7f4858cc70478dc3b7579ca5ca14f68d86ff96378e",
+  "git_index_unchanged_at_final_check": true,
+  "reproduction_bytes_total": 5881523,
+  "reviewer_wrote_only": "reviews/selective-invalidation-20261111/reproduction/",
+  "limits": "This is a read-only original-state and copied-harness verification. No real review approval, policy agreement, learner outcome, index update, commit or push is performed."
+}

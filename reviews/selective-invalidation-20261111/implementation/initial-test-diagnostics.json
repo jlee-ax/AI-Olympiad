@@ -1,0 +1,13 @@
+{
+  "synthetic": true,
+  "initial_targeted_run": {"tests": 12, "failures": 3},
+  "initial_quality_run": {"tests": 79, "failures": 2},
+  "preserved_findings": [
+    {"case": "related week", "input": "replace first 1주차", "actual_changed_locator": "#plan-context", "result": "both units became review_required, correctly", "test_correction": "select exact <p>1주차</p> in week-1 row"},
+    {"case": "related scope", "input": "replace first Python 기초", "actual_changed_locator": "#scope-01", "result": "scope-02/scope-06 unit stayed current, correctly", "test_correction": "edit 데이터 처리용 NumPy·pandas in #scope-02"},
+    {"case": "unrelated week", "input": "replace first 10주차", "actual_changed_locator": "#plan-context", "result": "global context became review_required, correctly", "test_correction": "select exact <p>10주차</p> in week-10 row"},
+    {"case": "renamed fixture unit", "result": "new unit retained old self-node plan ID", "test_correction": "rename explicitly declared binding ID and capture new synthetic records"},
+    {"case": "runnable synthetic example", "result": "legacy example lacks explicit plan coverage", "test_correction": "append explicitly synthetic scoped reviews and refresh its synthetic workflow binding; preserve prior records"}
+  ],
+  "limit": "Test input corrections preserve global-change detection. No real lesson, curriculum or review record was changed."
+}

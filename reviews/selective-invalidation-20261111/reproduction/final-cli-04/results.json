@@ -1,0 +1,239 @@
+{
+  "recorded_at_utc": "2026-11-11T11:16:51.166352+00:00",
+  "source_code_expected": {
+    "tools/quality.py": "03f24f7e9b89979e30facf258f8c8f9f358b1aca2de876a1adae5e058f0fc96b",
+    "tools/workflow.py": "11dc7a916d00a3b67528b63f7d6b02a74e9b895972f7ce56ec540d245b54872b",
+    "tools/review_preflight.py": "de09542da3c32f73f6f89a84709e63616fc8516f2ba6cbec08599443b5c878c5"
+  },
+  "source_code_before": {
+    "tools/quality.py": "03f24f7e9b89979e30facf258f8c8f9f358b1aca2de876a1adae5e058f0fc96b",
+    "tools/workflow.py": "11dc7a916d00a3b67528b63f7d6b02a74e9b895972f7ce56ec540d245b54872b",
+    "tools/review_preflight.py": "de09542da3c32f73f6f89a84709e63616fc8516f2ba6cbec08599443b5c878c5"
+  },
+  "source_code_after": {
+    "tools/quality.py": "03f24f7e9b89979e30facf258f8c8f9f358b1aca2de876a1adae5e058f0fc96b",
+    "tools/workflow.py": "11dc7a916d00a3b67528b63f7d6b02a74e9b895972f7ce56ec540d245b54872b",
+    "tools/review_preflight.py": "de09542da3c32f73f6f89a84709e63616fc8516f2ba6cbec08599443b5c878c5"
+  },
+  "source_code_stable_during_commands": true,
+  "calls": [
+    {
+      "name": "evaluate",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/quality.py",
+        "evaluate",
+        "reviews/week01/independent-transfer-20261111/quality.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c9256084d81d02544b876d999ebc3969c3f5c38e61bbad303fd8026491221649",
+      "stderr": ""
+    },
+    {
+      "name": "plan",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/quality.py",
+        "plan",
+        "reviews/week01/independent-transfer-20261111/quality.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "207d1bd374c56dcf5431601541fe14ff23d785a0ddb0f88e1119f0bd2997005b",
+      "stderr": ""
+    },
+    {
+      "name": "workflow-validate",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/workflow.py",
+        "validate",
+        "reviews/week01/independent-transfer-20261111/workflow.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9c3b419a4f419a4c92c9234bbf3a34c0044b786df04608d1ef395baa7bcb7bab",
+      "stderr": ""
+    },
+    {
+      "name": "workflow-decide",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/workflow.py",
+        "decide",
+        "reviews/week01/independent-transfer-20261111/workflow.json",
+        "--quality",
+        "reviews/week01/independent-transfer-20261111/quality.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "eb0416df3c63bf1ce9a4045725805ece3ac45ef0c90b033ad2b19a17457fee94",
+      "stderr": ""
+    },
+    {
+      "name": "preflight",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/review_preflight.py",
+        "--root",
+        ".",
+        "--depth",
+        "reviews/week01/independent-transfer-20261111/depth.json",
+        "--graph",
+        "reviews/week01/independent-transfer-20261111/graph.json",
+        "--paths",
+        "reviews/week01/independent-transfer-20261111/paths.json",
+        "--semantic-review",
+        "reviews/week01/independent-transfer-20261111/semantic-review.json",
+        "--state",
+        "reviews/week01/independent-transfer-20261111/workflow.json",
+        "--quality",
+        "reviews/week01/independent-transfer-20261111/quality.json"
+      ],
+      "exit_code": 1,
+      "stdout_sha256": "786a5c0af4674519b25149f78a503d524b0428833c1e959971e5d67d423fb717",
+      "stderr": ""
+    },
+    {
+      "name": "review-context-unit",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/quality.py",
+        "review-context",
+        "reviews/week01/independent-transfer-20261111/quality.json",
+        "--criterion",
+        "K05",
+        "--object",
+        "W1-table",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "93b6028758df586b1b389cebc28e55b95cac838d2e9c818ec7787efd1a85af20",
+      "stderr": ""
+    },
+    {
+      "name": "review-context-claim",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/quality.py",
+        "review-context",
+        "reviews/week01/independent-transfer-20261111/quality.json",
+        "--criterion",
+        "K06",
+        "--object",
+        "claim:table",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "00e2b4e1b2a4f6efabc34f65df1e95b000937bdb276ad971504f45315cd157a0",
+      "stderr": ""
+    },
+    {
+      "name": "impact-unlinked-PLAN",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/quality.py",
+        "impact",
+        "reviews/week01/independent-transfer-20261111/quality.json",
+        "--changed",
+        "PLAN",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0f1840cd5161a9640a437a257315c2fd0271a55c521aab93725ab58953371899",
+      "stderr": ""
+    }
+  ],
+  "checks": {
+    "evaluate_matches_K12": true,
+    "plan_forwards_exact_selective_review": true,
+    "workflow_forwards_exact_selective_review_while_paused": true,
+    "preflight_forwards_exact_selective_review_while_blocked": true,
+    "preflight_nested_workflow_forwards_same": true,
+    "unit_context_capture_reports_missing_bindings_not_approval": true,
+    "claim_capture_has_no_unit_plan_requirement": true,
+    "legacy_unlinked_PLAN_impact_does_not_infer_edges": true,
+    "real_aggregate_remains_uncertain_not_ready": true,
+    "source_read_snapshots_present": true
+  },
+  "original_lesson_record_workflow_hashes_match_baseline": true,
+  "current_original_hashes": {
+    "lessons/week01/data/week1_plants.csv": "fece0473e50b097afa7c2b3e2647c9a6e623bd3d8e009e6ef620151887227639",
+    "lessons/week01/data/week1_plants_new.csv": "869db97ef7c5f6ccf1020bc435fe831f180e9b9548d722c41c91b63af44d7290",
+    "lessons/week01/lesson-manifest.json": "188028f489df650554bddbd21a08771aa809e6aa01c97e499eaad445ee7d877c",
+    "lessons/week01/provenance/contract.json": "7e16f0278bc55042228b42e1f819603efea41b2582f8057e889b5dd84a29298c",
+    "lessons/week01/provenance/student-plan.html": "96deb5e5e781bf39cc6bb5effe34d6d04a01ac65e13a3811c37f5a825714f7a9",
+    "lessons/week01/provenance/unit-specifications.json": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+    "lessons/week01/teacher-notes.txt": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+    "lessons/week01/validate_week01.py": "b28009ee46ffbc707d7bcb2d8614346a4b99b90214864525130713b1420c4d03",
+    "lessons/week01/validate_week01_problem_pipeline.py": "54322e12794c4370604a9eee5505c4d19b18d029a59114eed1616986cb3765c5",
+    "lessons/week01/validation.json": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+    "lessons/week01/week01_axes_linear_bridge.html": "45bc5fe99f90b7bd4dd39ef67557b87c227f263e59e20c54fa1d44764a07239b",
+    "lessons/week01/week01_axes_linear_bridge.ipynb": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+    "lessons/week01/week01_axes_linear_bridge_teacher.md": "651038f80b4800f8efb72094823e497cfe5168985bc882e586b1c4dc12fcf9c0",
+    "lessons/week01/week01_integrated.html": "53b48bf8370cff4f97ace9f78cbf8c5b838f7c758a56b86ef82d474003470596",
+    "lessons/week01/week01_integrated.ipynb": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+    "lessons/week01/week01_integrated_teacher.md": "aafa8f3bbd6cc7b88131157d85a9ffa5d99d5e1b53db6abe2f021eaa2096bcdd",
+    "lessons/week01/week01_problem_pipeline.html": "28308deb024292977cd22a2931801ff242f010e5b6e8b4de01fa4e01e3a4bfd3",
+    "lessons/week01/week01_problem_pipeline.ipynb": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+    "lessons/week01/week01_problem_pipeline_teacher.md": "646c9e4bbd6b631864f2e802b3cfb9f38da39ee6b7db79cef6a431ee6a7eb589",
+    "lessons/week01/week01_problem_pipeline_validation.json": "b4c110a4537871496a83f7d3a2de3f0a08b2f8e0bff3436248f2d1fa7c33bfd9",
+    "lessons/week01/week01_python_tables.html": "0ee9668f102756c47c666d12e145bdd6c7c89709d625dcd07533bc3291cfda24",
+    "lessons/week01/week01_python_tables.ipynb": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+    "lessons/week02/build_week02.py": "54b518d6c7986e77525085ca9fa623a4ff7857fa1b53cc62fedf2483945fa0cc",
+    "lessons/week02/teacher-notes.md": "2d9667b059f1556613117ce6648fe16b3c6c67c4c0a7cdf2b2be06fd0f6b6977",
+    "lessons/week02/teacher_validate_week02.py": "f31d8057913167b87a1489034ab9b98f7a7e3e1ace801a5919762040e7260a28",
+    "lessons/week02/validate_week02_temporal_preprocessing.py": "fd7071e8239756e0823a443104c4cef206c74644571971367a16fbd37686b447",
+    "lessons/week02/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+    "lessons/week02/week02_prediction_evaluation.html": "ffd7586b5ec43cd35b1abfaa5b434a1c43e68832df5367df2df08c6d649e4c66",
+    "lessons/week02/week02_prediction_evaluation.ipynb": "9bb1ea5110b74ea1cf32fbc9ee9e9a5aadbceba2f750c2dfc2d6587e18954bdf",
+    "lessons/week02/week02_temporal_preprocessing.html": "f8fd2ee95761debd8bfc7ea9d2bf4493ef5594cbf90fdb6b3b75a8fd1ea883e4",
+    "lessons/week02/week02_temporal_preprocessing.ipynb": "a830a15e8d2bf2cb91e17cd2e8b14172390fc7cea3a07539add3fe52a05b5865",
+    "lessons/week02/week02_temporal_preprocessing_teacher.md": "e898de9e42be0ee9f562a6b36df036d5eb0a66e488ee62d8d9e9c3b666dcee74",
+    "lessons/week02/week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936",
+    "reviews/week01/independent-transfer-20261111/quality.json": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+    "reviews/week01/independent-transfer-20261111/workflow.json": "21f999d6cfbc17a01c64d885e7c27cd0879e4794cbf405d253193bd02c7d131f"
+  },
+  "git_index_sha256": "aa671c547b54acf663648e7f4858cc70478dc3b7579ca5ca14f68d86ff96378e",
+  "git_index_matches_initial_reproduction": true,
+  "actual_current_state": {
+    "quality": "uncertain",
+    "quality_ready": false,
+    "plan": {
+      "status": "pause",
+      "reason": "priority_policy_requires_agreement"
+    },
+    "workflow": {
+      "status": "pause",
+      "reason": "criteria_agreement_required"
+    },
+    "preflight": "blocked",
+    "preflight_blockers": [
+      "contest_depth_uncertain",
+      "discovery_missing",
+      "quality_not_ready",
+      "workflow_pause"
+    ],
+    "stored_reviews_not_modified": true
+  },
+  "limits": [
+    "CLI captures are read-only; propagation exposes tasks and does not perform a content review or create acceptance.",
+    "The actual real record remains unbound at unit plan scope and uncertain overall. Copied mechanical probes are separately labeled and are not supplied as new reviews here."
+  ]
+}

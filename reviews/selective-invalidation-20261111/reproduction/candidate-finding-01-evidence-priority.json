@@ -1,0 +1,253 @@
+{
+  "candidate_quality_sha256": "405916e48b0c35aa4b9674a79c2b92fe596b5ae30a2fd6e58746f11e8df7e1fc",
+  "source_record": "baseline-01/cases/10-review-evidence-bytes/record.json",
+  "case_is_actual_record_copy": true,
+  "input_mutation": "Only referenced evidence file bytes appended; no review context/status refreshed.",
+  "actual": {
+    "K05/W1-table": {
+      "review_id": "supplement-K05-W1-table",
+      "criterion_id": "K05",
+      "object_id": "W1-table",
+      "recorded_status": "passed",
+      "status": "binding_required",
+      "action": "Declare missing plan bindings and confirm their impact on this review.",
+      "context_changed": true,
+      "reasons": [
+        {
+          "code": "context_fingerprint_mismatch",
+          "detail": "Current context differs; a legacy scope change requires impact confirmation before classifying content impact."
+        }
+      ],
+      "changed_bindings": [],
+      "current_bindings": [
+        {
+          "id": "artifact:W1-table:cell:08e374f4",
+          "kind": "artifact",
+          "object_id": "W1-table",
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "locator": "cell:08e374f4",
+          "sha256": "4d6626dede3974c260fb98c996cdd45042eaea6375234a89340290ab6649c773"
+        },
+        {
+          "id": "artifact:W1-table:cell:0eaa5024",
+          "kind": "artifact",
+          "object_id": "W1-table",
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "locator": "cell:0eaa5024",
+          "sha256": "713491b751f03811f33d07033c29442e58e730b1d87c896092cc2159dcb7d31d"
+        },
+        {
+          "id": "artifact:W1-table:cell:0fd965eb",
+          "kind": "artifact",
+          "object_id": "W1-table",
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "locator": "cell:0fd965eb",
+          "sha256": "b05a38f47fec2fff1e5e441557efe1a1c5968f725b2f4baaaf73af187278643d"
+        },
+        {
+          "id": "artifact:W1-table:cell:13559279",
+          "kind": "artifact",
+          "object_id": "W1-table",
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "locator": "cell:13559279",
+          "sha256": "adc40ed24f30f52734d960db16e28701674e369bc0b4a1e8e6ed4218c584f774"
+        },
+        {
+          "id": "artifact:W1-table:cell:1ab9cd79",
+          "kind": "artifact",
+          "object_id": "W1-table",
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "locator": "cell:1ab9cd79",
+          "sha256": "fe75f4dc9c116256e805776251785277bfcee569baa1a959913d33cff544d808"
+        },
+        {
+          "id": "artifact:W1-table:cell:30a2a103",
+          "kind": "artifact",
+          "object_id": "W1-table",
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "locator": "cell:30a2a103",
+          "sha256": "ed623b29e46940d3fa0874f3431e748689400f3a2f0c0961738a135181ec279a"
+        },
+        {
+          "id": "artifact:W1-table:cell:3aea0e50",
+          "kind": "artifact",
+          "object_id": "W1-table",
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "locator": "cell:3aea0e50",
+          "sha256": "13f6e80b87db11417c5df0d1d0f285a22bb17c9fa8bf359a5aace0c43d3715bd"
+        },
+        {
+          "id": "artifact:W1-table:cell:876b91b7",
+          "kind": "artifact",
+          "object_id": "W1-table",
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "locator": "cell:876b91b7",
+          "sha256": "650826de349e97acac2606b0486abcc182a625db67bdc91379a0cd0d2677b81c"
+        },
+        {
+          "id": "artifact:W1-table:cell:9b766e3e",
+          "kind": "artifact",
+          "object_id": "W1-table",
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "locator": "cell:9b766e3e",
+          "sha256": "b49dcfe6c0099716dc454e03222c60ceb4dfd662866766d6bc3bc031241de5a1"
+        },
+        {
+          "id": "artifact:W1-table:cell:b38de2c6",
+          "kind": "artifact",
+          "object_id": "W1-table",
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "locator": "cell:b38de2c6",
+          "sha256": "85b1b4034c3a4fa219fe0ceca029ee271b60f7ab0c391c4e86611f5a4b168e24"
+        },
+        {
+          "id": "artifact:W1-table:cell:b428c6f1",
+          "kind": "artifact",
+          "object_id": "W1-table",
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "locator": "cell:b428c6f1",
+          "sha256": "578fb1fb84e8820f3e138fc948593917e537ce46b8faa159857e52f54fa21fb1"
+        },
+        {
+          "id": "artifact:W1-table:cell:b6788dc5",
+          "kind": "artifact",
+          "object_id": "W1-table",
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "locator": "cell:b6788dc5",
+          "sha256": "6be63bb294dd2a308ab0400afbeab20f2e8eefa9aadd83b79599ee6481a11af8"
+        },
+        {
+          "id": "artifact:W1-table:cell:d60c3acd",
+          "kind": "artifact",
+          "object_id": "W1-table",
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "locator": "cell:d60c3acd",
+          "sha256": "16f2eaa4157e46f916844e4fe87cc2728603a120dbd2034626f5e8aa4560ae26"
+        },
+        {
+          "id": "artifact:W1-table:cell:dff8752b",
+          "kind": "artifact",
+          "object_id": "W1-table",
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "locator": "cell:dff8752b",
+          "sha256": "fd395167463df4dd29b908c068a125d1c9df0428531a4553d9639f4ad6c4aec9"
+        },
+        {
+          "id": "artifact:W1-table:cell:guided-feedback-and-support",
+          "kind": "artifact",
+          "object_id": "W1-table",
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "locator": "cell:guided-feedback-and-support",
+          "sha256": "9e94443a3eaf3caf1e9b9f098e703c4b638e63af49e13da46c8fe56ade0a7bdf"
+        },
+        {
+          "id": "artifact:claim:table:cell:08e374f4",
+          "kind": "artifact",
+          "object_id": "claim:table",
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "locator": "cell:08e374f4",
+          "sha256": "4d6626dede3974c260fb98c996cdd45042eaea6375234a89340290ab6649c773"
+        },
+        {
+          "id": "dependency:followup:source-brief:file",
+          "kind": "dependency",
+          "node_id": "followup:source-brief",
+          "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+          "locator": "file",
+          "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+        },
+        {
+          "id": "dependency:followup:teacher-notes:file",
+          "kind": "dependency",
+          "node_id": "followup:teacher-notes",
+          "path": "lessons/week01/teacher-notes.txt",
+          "locator": "file",
+          "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+        }
+      ],
+      "binding_issues": [
+        {
+          "code": "plan_dependencies_undeclared",
+          "detail": "Declare the reviewed plan regions and dependency edges; content impact is unassessed."
+        },
+        {
+          "code": "plan_regions_uncovered",
+          "locators": [
+            "#plan-context",
+            "#scope-02",
+            "#week-1"
+          ]
+        }
+      ],
+      "plan_bindings": {
+        "required": true,
+        "issues": [
+          {
+            "code": "plan_dependencies_undeclared",
+            "detail": "Declare the reviewed plan regions and dependency edges; content impact is unassessed."
+          },
+          {
+            "code": "plan_regions_uncovered",
+            "locators": [
+              "#plan-context",
+              "#scope-02",
+              "#week-1"
+            ]
+          }
+        ],
+        "scope_fingerprint": "dcc612b259a952495c71ecfd8e7145a27ba04553eb040d651f03a759ed4ba2ad",
+        "path": "curriculum/student-plan.html",
+        "nodes": [],
+        "required_locators": [
+          "#plan-context",
+          "#scope-02",
+          "#week-1"
+        ],
+        "covered_locators": []
+      },
+      "change_classification": "unconfirmed_scope"
+    },
+    "K06/claim:table": {
+      "review_id": "fresh-rebind-K06-claim:table",
+      "criterion_id": "K06",
+      "object_id": "claim:table",
+      "recorded_status": "passed",
+      "status": "review_required",
+      "action": "Re-review the affected context or repair missing evidence; append the result.",
+      "context_changed": false,
+      "reasons": [
+        {
+          "code": "evidence_missing_or_changed",
+          "location": "evidence",
+          "bindings": [
+            {
+              "path": "reviews/week01/final-followup/independent-final-rebind.json",
+              "expected_sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+              "actual_sha256": "cca028d01ac319535263d71e8473d6c48139baf0a774a47ed9f5ed1107e6f0f8"
+            }
+          ]
+        }
+      ],
+      "changed_bindings": [],
+      "current_bindings": [
+        {
+          "id": "artifact:claim:table:cell:08e374f4",
+          "kind": "artifact",
+          "object_id": "claim:table",
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "locator": "cell:08e374f4",
+          "sha256": "4d6626dede3974c260fb98c996cdd45042eaea6375234a89340290ab6649c773"
+        }
+      ],
+      "binding_issues": [],
+      "plan_bindings": {
+        "required": false,
+        "issues": [],
+        "scope_fingerprint": null
+      },
+      "change_classification": "detected_change"
+    }
+  },
+  "issue": "Known evidence_missing_or_changed is classified binding_required for an unbound unit, review_required for a claim. Both are known evidence drift; binding repair alone cannot repair evidence.",
+  "disposition": "Sent to implementation agent for precedence review; not a final candidate failure until design resolves."
+}

@@ -1,0 +1,7 @@
+{
+  "restored_group": "baseline-01",
+  "destination": "reviews/selective-invalidation-20261111/reproduction/restored-control-04",
+  "member_count": 15,
+  "prefix": "cases/00-control/",
+  "every_member_size_sha_verified": true
+}

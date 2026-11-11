@@ -1,0 +1,29 @@
+{
+  "checked_at_utc": "2026-11-11T10:56:18.183913+00:00",
+  "candidate_content_read": false,
+  "results": [
+    {
+      "name": "old-week1",
+      "bundle": "reviews/week01/final-followup/quality.json",
+      "bundle_sha256": "b39ac2dd54ecd2bd68f48e6464bef0fd231f9a9f9523e116c3938a69e386cc77",
+      "baseline_code_sha256": "bb7ee10c793aa9916429a1dd77900fc59238738eb49632ba7ec44935e0770b30",
+      "exit_code": 0,
+      "status": "failed",
+      "errors": null,
+      "output": "old-week1-baseline-stdout.json",
+      "real_review_records_refreshed": false
+    },
+    {
+      "name": "old-system",
+      "bundle": "reviews/system-followup-20261111/current/quality.json",
+      "bundle_sha256": "9810f5f8959cd7290b62bcd1ddef04254dcd602e707adcc2ab0aab126e56838b",
+      "baseline_code_sha256": "bb7ee10c793aa9916429a1dd77900fc59238738eb49632ba7ec44935e0770b30",
+      "exit_code": 0,
+      "status": "failed",
+      "errors": null,
+      "output": "old-system-baseline-stdout.json",
+      "real_review_records_refreshed": false
+    }
+  ],
+  "scope": "Actual old records against current root; no new pass/consent manufactured."
+}

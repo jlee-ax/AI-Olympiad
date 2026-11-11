@@ -1,0 +1,86 @@
+{
+  "group": "candidate-findings/outside-plan-table",
+  "archive": "archives/candidate-findings--outside-plan-table-inputs.tar.gz",
+  "archive_sha256": "478d4b6c4cba5f6d6ba041e3a6d63583356a104ec6c41ad2fb864b5c4848b858",
+  "members": [
+    {
+      "path": "curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "curriculum/student-plan.html",
+      "bytes": 67035,
+      "sha256": "b010239fba214c2783ef63d9f751a9837aa5c00a3679f28dd456ba34f6aa8fce"
+    },
+    {
+      "path": "lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "record.json",
+      "bytes": 129690,
+      "sha256": "9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85"
+    },
+    {
+      "path": "reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    }
+  ],
+  "retained_raw_result_paths": [
+    "reviews/selective-invalidation-20261111/reproduction/candidate-findings/outside-plan-table/finding.json"
+  ],
+  "method": "Per-file size and SHA256 verified against archive before deleting duplicate raw input copies only. Final raw results, expectations, failures and reproduction scripts are not removed."
+}

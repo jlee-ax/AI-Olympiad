@@ -1,0 +1,8 @@
+{
+  "status": "blocked",
+  "reason": "invalid_quality_input",
+  "authority": "advisory_only",
+  "errors": [
+    "\"File reference is outside the root or not a regular file: 'reviews/week01/final-followup/independent-supplement.json'\""
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "repository": "jlee-ax/AI-Olympiad",
+  "checked_via": "Authorized GitHub connector fetch_commit/fetch_file; local git rev-parse",
+  "main_head": "3203ba2446db2d0056300b4903a4ddd6c84ad492",
+  "lesson_head": "d59138309c63e05874203e52038533e3d91cd19f",
+  "local_baseline": "76b680d64548af5c87d0455008b25358af06a698",
+  "local_baseline_tree_equals_lesson_tree": "7904d104ba18e4a645b212c3d48e11375871f057",
+  "main_and_local_baseline_harness_blob_shas_match": {
+    "tools/quality.py": "c02a1421de0a98ba5a8995d7e7528edb99ee2164",
+    "tools/workflow.py": "990856075f5ebf390e3320050086e74e0506a6d3",
+    "tools/review_preflight.py": "24674281dbb86aea11ae1be316689c45338be376"
+  },
+  "scope": "This checks exact harness bytes at the baseline, not approval, semantic adequacy or learner outcomes. No remote ref changed during these reads."
+}

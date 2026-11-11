@@ -1,0 +1,2142 @@
+{
+  "group": "finalcandidate-03",
+  "archive": "archives/content-inputs-v2.tar.gz",
+  "archive_sha256": "cd23a0cc2e327d1345c85708b50598995626af78ec7cafe1ec7f5026421fa5c6",
+  "members": [
+    {
+      "path": "cases/00-real-legacy-control/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/00-real-legacy-control/curriculum/student-plan.html",
+      "bytes": 66956,
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "content_member": "sha256/cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5"
+    },
+    {
+      "path": "cases/00-real-legacy-control/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/00-real-legacy-control/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/00-real-legacy-control/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/00-real-legacy-control/record.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/00-real-legacy-control/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/00-real-legacy-control/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/00-real-legacy-control/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/00-real-legacy-control/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/00-real-legacy-control/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/00-real-legacy-control/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/00-real-legacy-control/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/00-real-legacy-control/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/00-real-legacy-control/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/01-explicit-bindings-unconfirmed/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/01-explicit-bindings-unconfirmed/curriculum/student-plan.html",
+      "bytes": 66956,
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "content_member": "sha256/cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5"
+    },
+    {
+      "path": "cases/01-explicit-bindings-unconfirmed/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/01-explicit-bindings-unconfirmed/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/01-explicit-bindings-unconfirmed/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/01-explicit-bindings-unconfirmed/record.json",
+      "bytes": 129690,
+      "sha256": "9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85",
+      "content_member": "sha256/9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85"
+    },
+    {
+      "path": "cases/01-explicit-bindings-unconfirmed/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/01-explicit-bindings-unconfirmed/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/01-explicit-bindings-unconfirmed/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/01-explicit-bindings-unconfirmed/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/01-explicit-bindings-unconfirmed/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/01-explicit-bindings-unconfirmed/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/01-explicit-bindings-unconfirmed/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/01-explicit-bindings-unconfirmed/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/01-explicit-bindings-unconfirmed/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/02-scoped-mechanical-capture-control/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/02-scoped-mechanical-capture-control/curriculum/student-plan.html",
+      "bytes": 66956,
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "content_member": "sha256/cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5"
+    },
+    {
+      "path": "cases/02-scoped-mechanical-capture-control/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/02-scoped-mechanical-capture-control/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/02-scoped-mechanical-capture-control/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/02-scoped-mechanical-capture-control/probe-only-not-reviews.json",
+      "bytes": 37272,
+      "sha256": "287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f",
+      "content_member": "sha256/287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f"
+    },
+    {
+      "path": "cases/02-scoped-mechanical-capture-control/record.json",
+      "bytes": 129690,
+      "sha256": "9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85",
+      "content_member": "sha256/9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85"
+    },
+    {
+      "path": "cases/02-scoped-mechanical-capture-control/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/02-scoped-mechanical-capture-control/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/02-scoped-mechanical-capture-control/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/02-scoped-mechanical-capture-control/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/02-scoped-mechanical-capture-control/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/02-scoped-mechanical-capture-control/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/02-scoped-mechanical-capture-control/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/02-scoped-mechanical-capture-control/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/02-scoped-mechanical-capture-control/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/03-related-week1/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/03-related-week1/curriculum/student-plan.html",
+      "bytes": 66971,
+      "sha256": "7ccb906cf8b516867b6f413f4a6c657d097d31ef676d0eb17670ba4b9ed4bdce",
+      "content_member": "sha256/7ccb906cf8b516867b6f413f4a6c657d097d31ef676d0eb17670ba4b9ed4bdce"
+    },
+    {
+      "path": "cases/03-related-week1/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/03-related-week1/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/03-related-week1/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/03-related-week1/probe-only-not-reviews.json",
+      "bytes": 37272,
+      "sha256": "287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f",
+      "content_member": "sha256/287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f"
+    },
+    {
+      "path": "cases/03-related-week1/record.json",
+      "bytes": 129690,
+      "sha256": "9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85",
+      "content_member": "sha256/9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85"
+    },
+    {
+      "path": "cases/03-related-week1/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/03-related-week1/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/03-related-week1/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/03-related-week1/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/03-related-week1/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/03-related-week1/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/03-related-week1/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/03-related-week1/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/03-related-week1/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/04-unrelated-week10/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/04-unrelated-week10/curriculum/student-plan.html",
+      "bytes": 66971,
+      "sha256": "16a6f3c922002b01fcf4d590a854478d606d32ff88479170d5df3fbef0e30ef7",
+      "content_member": "sha256/16a6f3c922002b01fcf4d590a854478d606d32ff88479170d5df3fbef0e30ef7"
+    },
+    {
+      "path": "cases/04-unrelated-week10/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/04-unrelated-week10/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/04-unrelated-week10/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/04-unrelated-week10/probe-only-not-reviews.json",
+      "bytes": 37272,
+      "sha256": "287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f",
+      "content_member": "sha256/287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f"
+    },
+    {
+      "path": "cases/04-unrelated-week10/record.json",
+      "bytes": 129690,
+      "sha256": "9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85",
+      "content_member": "sha256/9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85"
+    },
+    {
+      "path": "cases/04-unrelated-week10/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/04-unrelated-week10/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/04-unrelated-week10/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/04-unrelated-week10/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/04-unrelated-week10/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/04-unrelated-week10/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/04-unrelated-week10/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/04-unrelated-week10/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/04-unrelated-week10/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/05-related-topic-scope02/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/05-related-topic-scope02/curriculum/student-plan.html",
+      "bytes": 66971,
+      "sha256": "7a472c028c1770dcd5142ad4fc0739ab48f40a6e653674c097392b677ba47d5b",
+      "content_member": "sha256/7a472c028c1770dcd5142ad4fc0739ab48f40a6e653674c097392b677ba47d5b"
+    },
+    {
+      "path": "cases/05-related-topic-scope02/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/05-related-topic-scope02/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/05-related-topic-scope02/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/05-related-topic-scope02/probe-only-not-reviews.json",
+      "bytes": 37272,
+      "sha256": "287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f",
+      "content_member": "sha256/287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f"
+    },
+    {
+      "path": "cases/05-related-topic-scope02/record.json",
+      "bytes": 129690,
+      "sha256": "9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85",
+      "content_member": "sha256/9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85"
+    },
+    {
+      "path": "cases/05-related-topic-scope02/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/05-related-topic-scope02/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/05-related-topic-scope02/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/05-related-topic-scope02/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/05-related-topic-scope02/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/05-related-topic-scope02/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/05-related-topic-scope02/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/05-related-topic-scope02/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/05-related-topic-scope02/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/06-unrelated-topic-scope60/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/06-unrelated-topic-scope60/curriculum/student-plan.html",
+      "bytes": 66971,
+      "sha256": "ef8cbd348b0b4ecc610327e7e23dfc16a9b518e518014b99e4271350355ec966",
+      "content_member": "sha256/ef8cbd348b0b4ecc610327e7e23dfc16a9b518e518014b99e4271350355ec966"
+    },
+    {
+      "path": "cases/06-unrelated-topic-scope60/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/06-unrelated-topic-scope60/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/06-unrelated-topic-scope60/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/06-unrelated-topic-scope60/probe-only-not-reviews.json",
+      "bytes": 37272,
+      "sha256": "287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f",
+      "content_member": "sha256/287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f"
+    },
+    {
+      "path": "cases/06-unrelated-topic-scope60/record.json",
+      "bytes": 129690,
+      "sha256": "9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85",
+      "content_member": "sha256/9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85"
+    },
+    {
+      "path": "cases/06-unrelated-topic-scope60/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/06-unrelated-topic-scope60/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/06-unrelated-topic-scope60/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/06-unrelated-topic-scope60/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/06-unrelated-topic-scope60/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/06-unrelated-topic-scope60/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/06-unrelated-topic-scope60/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/06-unrelated-topic-scope60/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/06-unrelated-topic-scope60/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/07-shared-plan-context/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/07-shared-plan-context/curriculum/student-plan.html",
+      "bytes": 66963,
+      "sha256": "eeeb7ef98f318d79b8c1a68f7d343e1f56f698729d7a97509887a0815e27e3e6",
+      "content_member": "sha256/eeeb7ef98f318d79b8c1a68f7d343e1f56f698729d7a97509887a0815e27e3e6"
+    },
+    {
+      "path": "cases/07-shared-plan-context/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/07-shared-plan-context/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/07-shared-plan-context/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/07-shared-plan-context/probe-only-not-reviews.json",
+      "bytes": 37272,
+      "sha256": "287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f",
+      "content_member": "sha256/287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f"
+    },
+    {
+      "path": "cases/07-shared-plan-context/record.json",
+      "bytes": 129690,
+      "sha256": "9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85",
+      "content_member": "sha256/9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85"
+    },
+    {
+      "path": "cases/07-shared-plan-context/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/07-shared-plan-context/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/07-shared-plan-context/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/07-shared-plan-context/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/07-shared-plan-context/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/07-shared-plan-context/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/07-shared-plan-context/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/07-shared-plan-context/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/07-shared-plan-context/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/08-unselected-css/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/08-unselected-css/curriculum/student-plan.html",
+      "bytes": 66959,
+      "sha256": "5babbe843c67e1453eda51a948578cb269097c474a8c24ea7a633ac64050b4b4",
+      "content_member": "sha256/5babbe843c67e1453eda51a948578cb269097c474a8c24ea7a633ac64050b4b4"
+    },
+    {
+      "path": "cases/08-unselected-css/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/08-unselected-css/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/08-unselected-css/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/08-unselected-css/probe-only-not-reviews.json",
+      "bytes": 37272,
+      "sha256": "287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f",
+      "content_member": "sha256/287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f"
+    },
+    {
+      "path": "cases/08-unselected-css/record.json",
+      "bytes": 129690,
+      "sha256": "9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85",
+      "content_member": "sha256/9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85"
+    },
+    {
+      "path": "cases/08-unselected-css/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/08-unselected-css/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/08-unselected-css/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/08-unselected-css/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/08-unselected-css/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/08-unselected-css/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/08-unselected-css/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/08-unselected-css/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/08-unselected-css/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/09-related-table-cell/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/09-related-table-cell/curriculum/student-plan.html",
+      "bytes": 66956,
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "content_member": "sha256/cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5"
+    },
+    {
+      "path": "cases/09-related-table-cell/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/09-related-table-cell/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/09-related-table-cell/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462282,
+      "sha256": "ed44fed56dc8e8f4e153fb3326031f31a7ca00caba88190faf944fb29dd9964a",
+      "content_member": "sha256/ed44fed56dc8e8f4e153fb3326031f31a7ca00caba88190faf944fb29dd9964a"
+    },
+    {
+      "path": "cases/09-related-table-cell/probe-only-not-reviews.json",
+      "bytes": 37272,
+      "sha256": "287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f",
+      "content_member": "sha256/287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f"
+    },
+    {
+      "path": "cases/09-related-table-cell/record.json",
+      "bytes": 129690,
+      "sha256": "9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85",
+      "content_member": "sha256/9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85"
+    },
+    {
+      "path": "cases/09-related-table-cell/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/09-related-table-cell/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/09-related-table-cell/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/09-related-table-cell/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/09-related-table-cell/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/09-related-table-cell/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/09-related-table-cell/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/09-related-table-cell/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/09-related-table-cell/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/10-unselected-notebook-cell/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/10-unselected-notebook-cell/curriculum/student-plan.html",
+      "bytes": 66956,
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "content_member": "sha256/cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5"
+    },
+    {
+      "path": "cases/10-unselected-notebook-cell/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/10-unselected-notebook-cell/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/10-unselected-notebook-cell/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462274,
+      "sha256": "e88750b78ace155f77520140dd45e6fa4959268c4b376086644246ee7633e831",
+      "content_member": "sha256/e88750b78ace155f77520140dd45e6fa4959268c4b376086644246ee7633e831"
+    },
+    {
+      "path": "cases/10-unselected-notebook-cell/probe-only-not-reviews.json",
+      "bytes": 37272,
+      "sha256": "287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f",
+      "content_member": "sha256/287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f"
+    },
+    {
+      "path": "cases/10-unselected-notebook-cell/record.json",
+      "bytes": 129690,
+      "sha256": "9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85",
+      "content_member": "sha256/9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85"
+    },
+    {
+      "path": "cases/10-unselected-notebook-cell/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/10-unselected-notebook-cell/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/10-unselected-notebook-cell/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/10-unselected-notebook-cell/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/10-unselected-notebook-cell/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/10-unselected-notebook-cell/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/10-unselected-notebook-cell/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/10-unselected-notebook-cell/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/10-unselected-notebook-cell/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/11-shared-review-evidence-file/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/11-shared-review-evidence-file/curriculum/student-plan.html",
+      "bytes": 66956,
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "content_member": "sha256/cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5"
+    },
+    {
+      "path": "cases/11-shared-review-evidence-file/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/11-shared-review-evidence-file/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/11-shared-review-evidence-file/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/11-shared-review-evidence-file/probe-only-not-reviews.json",
+      "bytes": 37272,
+      "sha256": "287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f",
+      "content_member": "sha256/287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f"
+    },
+    {
+      "path": "cases/11-shared-review-evidence-file/record.json",
+      "bytes": 129690,
+      "sha256": "9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85",
+      "content_member": "sha256/9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85"
+    },
+    {
+      "path": "cases/11-shared-review-evidence-file/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/11-shared-review-evidence-file/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/11-shared-review-evidence-file/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42769,
+      "sha256": "88e3fcba801395448c8fe45ba02f23c87c003cfa5097a91fab2985e729f5c302",
+      "content_member": "sha256/88e3fcba801395448c8fe45ba02f23c87c003cfa5097a91fab2985e729f5c302"
+    },
+    {
+      "path": "cases/11-shared-review-evidence-file/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/11-shared-review-evidence-file/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/11-shared-review-evidence-file/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/11-shared-review-evidence-file/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/11-shared-review-evidence-file/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/11-shared-review-evidence-file/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/12-unreferenced-evidence-file/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/12-unreferenced-evidence-file/curriculum/student-plan.html",
+      "bytes": 66956,
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "content_member": "sha256/cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5"
+    },
+    {
+      "path": "cases/12-unreferenced-evidence-file/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/12-unreferenced-evidence-file/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/12-unreferenced-evidence-file/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/12-unreferenced-evidence-file/probe-only-not-reviews.json",
+      "bytes": 37272,
+      "sha256": "287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f",
+      "content_member": "sha256/287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f"
+    },
+    {
+      "path": "cases/12-unreferenced-evidence-file/record.json",
+      "bytes": 129690,
+      "sha256": "9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85",
+      "content_member": "sha256/9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85"
+    },
+    {
+      "path": "cases/12-unreferenced-evidence-file/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/12-unreferenced-evidence-file/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/12-unreferenced-evidence-file/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/12-unreferenced-evidence-file/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/12-unreferenced-evidence-file/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/12-unreferenced-evidence-file/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/12-unreferenced-evidence-file/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/12-unreferenced-evidence-file/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/12-unreferenced-evidence-file/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/12-unreferenced-evidence-file/unreferenced-evidence.txt",
+      "bytes": 17,
+      "sha256": "d96a8972b686d597cca54c4cf4b6c4201fb6a5d87fdc62dc19448cdbf15e7420",
+      "content_member": "sha256/d96a8972b686d597cca54c4cf4b6c4201fb6a5d87fdc62dc19448cdbf15e7420"
+    },
+    {
+      "path": "cases/13-used-source-read/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/13-used-source-read/curriculum/student-plan.html",
+      "bytes": 66956,
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "content_member": "sha256/cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5"
+    },
+    {
+      "path": "cases/13-used-source-read/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/13-used-source-read/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/13-used-source-read/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/13-used-source-read/probe-only-not-reviews.json",
+      "bytes": 37272,
+      "sha256": "287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f",
+      "content_member": "sha256/287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f"
+    },
+    {
+      "path": "cases/13-used-source-read/record.json",
+      "bytes": 129700,
+      "sha256": "e5fbb46c80505f6730df381a620a8f9704dafe780163318324b09805b77feefc",
+      "content_member": "sha256/e5fbb46c80505f6730df381a620a8f9704dafe780163318324b09805b77feefc"
+    },
+    {
+      "path": "cases/13-used-source-read/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/13-used-source-read/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/13-used-source-read/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/13-used-source-read/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/13-used-source-read/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/13-used-source-read/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/13-used-source-read/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/13-used-source-read/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/13-used-source-read/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/14-unused-source-read/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/14-unused-source-read/curriculum/student-plan.html",
+      "bytes": 66956,
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "content_member": "sha256/cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5"
+    },
+    {
+      "path": "cases/14-unused-source-read/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/14-unused-source-read/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/14-unused-source-read/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/14-unused-source-read/probe-only-not-reviews.json",
+      "bytes": 37272,
+      "sha256": "287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f",
+      "content_member": "sha256/287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f"
+    },
+    {
+      "path": "cases/14-unused-source-read/record.json",
+      "bytes": 129700,
+      "sha256": "cf5ec2a9e3fd3601706a1458b61ccdadd4d03c0aaeac492142674686b17ada44",
+      "content_member": "sha256/cf5ec2a9e3fd3601706a1458b61ccdadd4d03c0aaeac492142674686b17ada44"
+    },
+    {
+      "path": "cases/14-unused-source-read/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/14-unused-source-read/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/14-unused-source-read/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/14-unused-source-read/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/14-unused-source-read/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/14-unused-source-read/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/14-unused-source-read/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/14-unused-source-read/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/14-unused-source-read/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/15-selected-plan-provenance-only/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/15-selected-plan-provenance-only/curriculum/student-plan.html",
+      "bytes": 66956,
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "content_member": "sha256/cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5"
+    },
+    {
+      "path": "cases/15-selected-plan-provenance-only/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/15-selected-plan-provenance-only/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/15-selected-plan-provenance-only/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/15-selected-plan-provenance-only/probe-only-not-reviews.json",
+      "bytes": 37272,
+      "sha256": "287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f",
+      "content_member": "sha256/287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f"
+    },
+    {
+      "path": "cases/15-selected-plan-provenance-only/record.json",
+      "bytes": 129686,
+      "sha256": "fb09c640cf6fdabfda46355c89d8dd7f21c8ed2ee55032eccc5fe4fb21bb7ccd",
+      "content_member": "sha256/fb09c640cf6fdabfda46355c89d8dd7f21c8ed2ee55032eccc5fe4fb21bb7ccd"
+    },
+    {
+      "path": "cases/15-selected-plan-provenance-only/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/15-selected-plan-provenance-only/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/15-selected-plan-provenance-only/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/15-selected-plan-provenance-only/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/15-selected-plan-provenance-only/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/15-selected-plan-provenance-only/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/15-selected-plan-provenance-only/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/15-selected-plan-provenance-only/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/15-selected-plan-provenance-only/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/16-missing-required-scope/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/16-missing-required-scope/curriculum/student-plan.html",
+      "bytes": 66956,
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "content_member": "sha256/cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5"
+    },
+    {
+      "path": "cases/16-missing-required-scope/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/16-missing-required-scope/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/16-missing-required-scope/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/16-missing-required-scope/probe-only-not-reviews.json",
+      "bytes": 37272,
+      "sha256": "287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f",
+      "content_member": "sha256/287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f"
+    },
+    {
+      "path": "cases/16-missing-required-scope/record.json",
+      "bytes": 129669,
+      "sha256": "3c4ae1a65abf27888aaf668e816795daaed704451f05340806a86ac1fd7acb8a",
+      "content_member": "sha256/3c4ae1a65abf27888aaf668e816795daaed704451f05340806a86ac1fd7acb8a"
+    },
+    {
+      "path": "cases/16-missing-required-scope/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/16-missing-required-scope/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/16-missing-required-scope/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/16-missing-required-scope/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/16-missing-required-scope/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/16-missing-required-scope/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/16-missing-required-scope/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/16-missing-required-scope/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/16-missing-required-scope/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/17-missing-declared-edge/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/17-missing-declared-edge/curriculum/student-plan.html",
+      "bytes": 66956,
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "content_member": "sha256/cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5"
+    },
+    {
+      "path": "cases/17-missing-declared-edge/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/17-missing-declared-edge/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/17-missing-declared-edge/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/17-missing-declared-edge/probe-only-not-reviews.json",
+      "bytes": 37272,
+      "sha256": "287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f",
+      "content_member": "sha256/287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f"
+    },
+    {
+      "path": "cases/17-missing-declared-edge/record.json",
+      "bytes": 129652,
+      "sha256": "2ad27bc57c2fb5c1d05652e6f0156c54c495190c1ec0d2d1c1d572b0849ce0e3",
+      "content_member": "sha256/2ad27bc57c2fb5c1d05652e6f0156c54c495190c1ec0d2d1c1d572b0849ce0e3"
+    },
+    {
+      "path": "cases/17-missing-declared-edge/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/17-missing-declared-edge/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/17-missing-declared-edge/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/17-missing-declared-edge/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/17-missing-declared-edge/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/17-missing-declared-edge/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/17-missing-declared-edge/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/17-missing-declared-edge/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/17-missing-declared-edge/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/18-known-evidence-drift-unbound-legacy-unit/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/18-known-evidence-drift-unbound-legacy-unit/curriculum/student-plan.html",
+      "bytes": 66956,
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "content_member": "sha256/cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5"
+    },
+    {
+      "path": "cases/18-known-evidence-drift-unbound-legacy-unit/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/18-known-evidence-drift-unbound-legacy-unit/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/18-known-evidence-drift-unbound-legacy-unit/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/18-known-evidence-drift-unbound-legacy-unit/probe-only-not-reviews.json",
+      "bytes": 16724,
+      "sha256": "84bce8852df6c476abfc79148d516098d13d77036059c0e7fd812e9907c3fda3",
+      "content_member": "sha256/84bce8852df6c476abfc79148d516098d13d77036059c0e7fd812e9907c3fda3"
+    },
+    {
+      "path": "cases/18-known-evidence-drift-unbound-legacy-unit/record.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/18-known-evidence-drift-unbound-legacy-unit/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/18-known-evidence-drift-unbound-legacy-unit/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17914,
+      "sha256": "5cd9cc91c4df0549ffb8496c4d234397183c27d062b5320549313a29e926687f",
+      "content_member": "sha256/5cd9cc91c4df0549ffb8496c4d234397183c27d062b5320549313a29e926687f"
+    },
+    {
+      "path": "cases/18-known-evidence-drift-unbound-legacy-unit/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/18-known-evidence-drift-unbound-legacy-unit/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/18-known-evidence-drift-unbound-legacy-unit/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/18-known-evidence-drift-unbound-legacy-unit/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/18-known-evidence-drift-unbound-legacy-unit/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/18-known-evidence-drift-unbound-legacy-unit/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/18-known-evidence-drift-unbound-legacy-unit/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/19-visible-global-policy-outside-table/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/19-visible-global-policy-outside-table/curriculum/student-plan.html",
+      "bytes": 67035,
+      "sha256": "b010239fba214c2783ef63d9f751a9837aa5c00a3679f28dd456ba34f6aa8fce",
+      "content_member": "sha256/b010239fba214c2783ef63d9f751a9837aa5c00a3679f28dd456ba34f6aa8fce"
+    },
+    {
+      "path": "cases/19-visible-global-policy-outside-table/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/19-visible-global-policy-outside-table/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/19-visible-global-policy-outside-table/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/19-visible-global-policy-outside-table/probe-only-not-reviews.json",
+      "bytes": 37272,
+      "sha256": "287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f",
+      "content_member": "sha256/287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f"
+    },
+    {
+      "path": "cases/19-visible-global-policy-outside-table/record.json",
+      "bytes": 129690,
+      "sha256": "9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85",
+      "content_member": "sha256/9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85"
+    },
+    {
+      "path": "cases/19-visible-global-policy-outside-table/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/19-visible-global-policy-outside-table/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/19-visible-global-policy-outside-table/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/19-visible-global-policy-outside-table/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/19-visible-global-policy-outside-table/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/19-visible-global-policy-outside-table/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/19-visible-global-policy-outside-table/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/19-visible-global-policy-outside-table/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/19-visible-global-policy-outside-table/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/20-unselected-script-content/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/20-unselected-script-content/curriculum/student-plan.html",
+      "bytes": 67011,
+      "sha256": "8f28560b2477c636b8abe88acefe2393f56aa516a410c4b19682e018fa391b92",
+      "content_member": "sha256/8f28560b2477c636b8abe88acefe2393f56aa516a410c4b19682e018fa391b92"
+    },
+    {
+      "path": "cases/20-unselected-script-content/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/20-unselected-script-content/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/20-unselected-script-content/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/20-unselected-script-content/probe-only-not-reviews.json",
+      "bytes": 37272,
+      "sha256": "287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f",
+      "content_member": "sha256/287fbb1bfce71bd819a18045d68d644578ac82a6cacc2a8f54c3b2f28f89c31f"
+    },
+    {
+      "path": "cases/20-unselected-script-content/record.json",
+      "bytes": 129690,
+      "sha256": "9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85",
+      "content_member": "sha256/9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85"
+    },
+    {
+      "path": "cases/20-unselected-script-content/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/20-unselected-script-content/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/20-unselected-script-content/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/20-unselected-script-content/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/20-unselected-script-content/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/20-unselected-script-content/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/20-unselected-script-content/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/20-unselected-script-content/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/20-unselected-script-content/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    },
+    {
+      "path": "cases/21-outside-source-href-only/curriculum/contract.json",
+      "bytes": 23110,
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "content_member": "sha256/977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "cases/21-outside-source-href-only/curriculum/student-plan.html",
+      "bytes": 67051,
+      "sha256": "38d0ec117c32121f1af8b610f574bab0bb08ff4f6d2682ed53678d5d0203883f",
+      "content_member": "sha256/38d0ec117c32121f1af8b610f574bab0bb08ff4f6d2682ed53678d5d0203883f"
+    },
+    {
+      "path": "cases/21-outside-source-href-only/lessons/week01/teacher-notes.txt",
+      "bytes": 16503,
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+      "content_member": "sha256/bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "cases/21-outside-source-href-only/lessons/week01/validation.json",
+      "bytes": 1867,
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+      "content_member": "sha256/1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "cases/21-outside-source-href-only/lessons/week01/week01_python_tables.ipynb",
+      "bytes": 462307,
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "content_member": "sha256/ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "cases/21-outside-source-href-only/probe-only-not-reviews.json",
+      "bytes": 37272,
+      "sha256": "dcb9b36789bde503b1a80796a1acdc9326bffa7557f49f44279a99b9a96f7e00",
+      "content_member": "sha256/dcb9b36789bde503b1a80796a1acdc9326bffa7557f49f44279a99b9a96f7e00"
+    },
+    {
+      "path": "cases/21-outside-source-href-only/record.json",
+      "bytes": 129690,
+      "sha256": "9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85",
+      "content_member": "sha256/9e9ca088e0a1a618ec91ec928ff2a015ace927b973dcdd1a1234f0795e563a85"
+    },
+    {
+      "path": "cases/21-outside-source-href-only/reviews/week01/final/independent-material-review.json",
+      "bytes": 22852,
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf",
+      "content_member": "sha256/07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "cases/21-outside-source-href-only/reviews/week01/final-followup/independent-final-rebind.json",
+      "bytes": 17885,
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651",
+      "content_member": "sha256/17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "cases/21-outside-source-href-only/reviews/week01/final-followup/independent-supplement.json",
+      "bytes": 42740,
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab",
+      "content_member": "sha256/dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "cases/21-outside-source-href-only/reviews/week01/independent-transfer-20261111/content-check.json",
+      "bytes": 834,
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8",
+      "content_member": "sha256/082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "cases/21-outside-source-href-only/reviews/week01/independent-transfer-20261111/quality.json",
+      "bytes": 127806,
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+      "content_member": "sha256/49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "cases/21-outside-source-href-only/reviews/week01/independent-transfer-20261111/source-brief.md",
+      "bytes": 4726,
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7",
+      "content_member": "sha256/dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "cases/21-outside-source-href-only/skills/koai-evaluate/references/theory-explanation.json",
+      "bytes": 11307,
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+      "content_member": "sha256/eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "cases/21-outside-source-href-only/skills/koai-evaluate/references/unit-specifications.json",
+      "bytes": 11315,
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "content_member": "sha256/c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "cases/21-outside-source-href-only/skills/references/criteria.json",
+      "bytes": 27263,
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "content_member": "sha256/7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    }
+  ],
+  "retained_raw_result_paths": [
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/00-real-legacy-control/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/01-explicit-bindings-unconfirmed/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/02-scoped-mechanical-capture-control/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/03-related-week1/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/04-unrelated-week10/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/05-related-topic-scope02/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/06-unrelated-topic-scope60/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/07-shared-plan-context/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/08-unselected-css/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/09-related-table-cell/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/10-unselected-notebook-cell/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/11-shared-review-evidence-file/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/12-unreferenced-evidence-file/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/13-used-source-read/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/14-unused-source-read/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/15-selected-plan-provenance-only/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/16-missing-required-scope/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/17-missing-declared-edge/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/18-known-evidence-drift-unbound-legacy-unit/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/19-visible-global-policy-outside-table/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/20-unselected-script-content/freshness.json",
+    "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/cases/21-outside-source-href-only/freshness.json"
+  ],
+  "method": "Every old/raw per-path byte sequence verified before content deduplication; equal SHA+size bytes also compared directly. The compressed representation changes, all original input path bytes remain reproducible.",
+  "format": "content-addressed-tar-v1",
+  "content_index": "archives/content-inputs-v2.index.json",
+  "content_index_sha256": "7f8167187593e477d2c8e45770f16ff194507e7a61aaa2ecd425e3bd56282c18",
+  "restore_semantics": "Read archive.extractfile(content_member).read() and write_bytes separately at every original path. No extractall and no restored filesystem hardlinks."
+}

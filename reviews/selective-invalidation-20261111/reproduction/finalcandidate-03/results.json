@@ -1,0 +1,1462 @@
+{
+  "recorded_at_utc": "2026-11-11T11:06:28.075591+00:00",
+  "quality_code_sha256": "613458c1fe82173f2ff1debddeeb50cbe6bd095b11383c561f1848b845d2e0b5",
+  "quality_code_snapshot": "reviews/selective-invalidation-20261111/reproduction/finalcandidate-03/quality-code-snapshot.py",
+  "baseline_record_sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+  "real_legacy_control_statuses": {
+    "K16/W1-python": "binding_required",
+    "K16/W1-table": "binding_required",
+    "K16/W1-array": "binding_required",
+    "K16/W1-visualise": "binding_required",
+    "K06/claim:python": "review_required",
+    "K06/claim:table": "current",
+    "K06/claim:array": "current",
+    "K06/claim:visualise": "current",
+    "K02/W1-python": "binding_required",
+    "K05/W1-python": "binding_required",
+    "K09/W1-python": "binding_required",
+    "K02/W1-table": "binding_required",
+    "K05/W1-table": "binding_required",
+    "K09/W1-table": "binding_required",
+    "K02/W1-array": "binding_required",
+    "K05/W1-array": "binding_required",
+    "K09/W1-array": "binding_required",
+    "K02/W1-visualise": "binding_required",
+    "K05/W1-visualise": "binding_required",
+    "K09/W1-visualise": "binding_required"
+  },
+  "actual_record_with_explicit_scope_but_no_new_review_statuses": {
+    "W1-python": "impact_confirmation_required",
+    "W1-table": "impact_confirmation_required",
+    "W1-array": "impact_confirmation_required",
+    "W1-visualise": "impact_confirmation_required"
+  },
+  "counterfactual_capture_control_statuses": {
+    "W1-python": "current",
+    "W1-table": "current",
+    "W1-array": "current",
+    "W1-visualise": "current"
+  },
+  "all_expectations_met": true,
+  "cases": [
+    {
+      "case": "03-related-week1",
+      "probe_scope": "scoped",
+      "expected": {
+        "W1-python": "review_required",
+        "W1-table": "review_required",
+        "W1-array": "review_required",
+        "W1-visualise": "review_required"
+      },
+      "actual_statuses": {
+        "W1-python": "review_required",
+        "W1-table": "review_required",
+        "W1-array": "review_required",
+        "W1-visualise": "review_required"
+      },
+      "checks": {
+        "W1-python": true,
+        "W1-table": true,
+        "W1-array": true,
+        "W1-visualise": true
+      },
+      "all_expectations_met": true,
+      "changed_bindings": {
+        "W1-python": [
+          {
+            "binding_id": "dependency:reproduction-plan:W1-python:#week-1",
+            "before": {
+              "id": "dependency:reproduction-plan:W1-python:#week-1",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-python",
+              "path": "curriculum/student-plan.html",
+              "locator": "#week-1",
+              "sha256": "abbae388541fe147240a427c6f7ff82ac4f09b5cb1e04f7c0ca88e8d80116670"
+            },
+            "after": {
+              "id": "dependency:reproduction-plan:W1-python:#week-1",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-python",
+              "path": "curriculum/student-plan.html",
+              "locator": "#week-1",
+              "sha256": "bff26709eef231b189b2dcd4978fce76662e6996a17d9d0fa774d6d35ba459a4"
+            }
+          }
+        ],
+        "W1-table": [
+          {
+            "binding_id": "dependency:reproduction-plan:W1-table:#week-1",
+            "before": {
+              "id": "dependency:reproduction-plan:W1-table:#week-1",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-table",
+              "path": "curriculum/student-plan.html",
+              "locator": "#week-1",
+              "sha256": "abbae388541fe147240a427c6f7ff82ac4f09b5cb1e04f7c0ca88e8d80116670"
+            },
+            "after": {
+              "id": "dependency:reproduction-plan:W1-table:#week-1",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-table",
+              "path": "curriculum/student-plan.html",
+              "locator": "#week-1",
+              "sha256": "bff26709eef231b189b2dcd4978fce76662e6996a17d9d0fa774d6d35ba459a4"
+            }
+          }
+        ],
+        "W1-array": [
+          {
+            "binding_id": "dependency:reproduction-plan:W1-array:#week-1",
+            "before": {
+              "id": "dependency:reproduction-plan:W1-array:#week-1",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-array",
+              "path": "curriculum/student-plan.html",
+              "locator": "#week-1",
+              "sha256": "abbae388541fe147240a427c6f7ff82ac4f09b5cb1e04f7c0ca88e8d80116670"
+            },
+            "after": {
+              "id": "dependency:reproduction-plan:W1-array:#week-1",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-array",
+              "path": "curriculum/student-plan.html",
+              "locator": "#week-1",
+              "sha256": "bff26709eef231b189b2dcd4978fce76662e6996a17d9d0fa774d6d35ba459a4"
+            }
+          }
+        ],
+        "W1-visualise": [
+          {
+            "binding_id": "dependency:reproduction-plan:W1-visualise:#week-1",
+            "before": {
+              "id": "dependency:reproduction-plan:W1-visualise:#week-1",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-visualise",
+              "path": "curriculum/student-plan.html",
+              "locator": "#week-1",
+              "sha256": "abbae388541fe147240a427c6f7ff82ac4f09b5cb1e04f7c0ca88e8d80116670"
+            },
+            "after": {
+              "id": "dependency:reproduction-plan:W1-visualise:#week-1",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-visualise",
+              "path": "curriculum/student-plan.html",
+              "locator": "#week-1",
+              "sha256": "bff26709eef231b189b2dcd4978fce76662e6996a17d9d0fa774d6d35ba459a4"
+            }
+          }
+        ]
+      },
+      "reason_codes": {
+        "W1-python": [
+          "context_fingerprint_mismatch"
+        ],
+        "W1-table": [
+          "context_fingerprint_mismatch"
+        ],
+        "W1-array": [
+          "context_fingerprint_mismatch"
+        ],
+        "W1-visualise": [
+          "context_fingerprint_mismatch"
+        ]
+      },
+      "binding_issues": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_statuses": {
+        "W1-python": "bound",
+        "W1-table": "bound",
+        "W1-array": "bound",
+        "W1-visualise": "bound"
+      }
+    },
+    {
+      "case": "04-unrelated-week10",
+      "probe_scope": "scoped",
+      "expected": {
+        "W1-python": "current",
+        "W1-table": "current",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "actual_statuses": {
+        "W1-python": "current",
+        "W1-table": "current",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "checks": {
+        "W1-python": true,
+        "W1-table": true,
+        "W1-array": true,
+        "W1-visualise": true
+      },
+      "all_expectations_met": true,
+      "changed_bindings": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "reason_codes": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_issues": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_statuses": {
+        "W1-python": "bound",
+        "W1-table": "bound",
+        "W1-array": "bound",
+        "W1-visualise": "bound"
+      }
+    },
+    {
+      "case": "05-related-topic-scope02",
+      "probe_scope": "scoped",
+      "expected": {
+        "W1-python": "current",
+        "W1-table": "review_required",
+        "W1-array": "review_required",
+        "W1-visualise": "current"
+      },
+      "actual_statuses": {
+        "W1-python": "current",
+        "W1-table": "review_required",
+        "W1-array": "review_required",
+        "W1-visualise": "current"
+      },
+      "checks": {
+        "W1-python": true,
+        "W1-table": true,
+        "W1-array": true,
+        "W1-visualise": true
+      },
+      "all_expectations_met": true,
+      "changed_bindings": {
+        "W1-python": [],
+        "W1-table": [
+          {
+            "binding_id": "dependency:reproduction-plan:W1-table:#scope-02",
+            "before": {
+              "id": "dependency:reproduction-plan:W1-table:#scope-02",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-table",
+              "path": "curriculum/student-plan.html",
+              "locator": "#scope-02",
+              "sha256": "ce20c1b797d814cf1afe25ee037ed328f04bc333ca63b4caff0bdc76ad1c2161"
+            },
+            "after": {
+              "id": "dependency:reproduction-plan:W1-table:#scope-02",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-table",
+              "path": "curriculum/student-plan.html",
+              "locator": "#scope-02",
+              "sha256": "77b3f11beb2664677c37f20527a2a19c95d21b0faf03a68552468a99070e3aa6"
+            }
+          }
+        ],
+        "W1-array": [
+          {
+            "binding_id": "dependency:reproduction-plan:W1-array:#scope-02",
+            "before": {
+              "id": "dependency:reproduction-plan:W1-array:#scope-02",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-array",
+              "path": "curriculum/student-plan.html",
+              "locator": "#scope-02",
+              "sha256": "ce20c1b797d814cf1afe25ee037ed328f04bc333ca63b4caff0bdc76ad1c2161"
+            },
+            "after": {
+              "id": "dependency:reproduction-plan:W1-array:#scope-02",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-array",
+              "path": "curriculum/student-plan.html",
+              "locator": "#scope-02",
+              "sha256": "77b3f11beb2664677c37f20527a2a19c95d21b0faf03a68552468a99070e3aa6"
+            }
+          }
+        ],
+        "W1-visualise": []
+      },
+      "reason_codes": {
+        "W1-python": [],
+        "W1-table": [
+          "context_fingerprint_mismatch"
+        ],
+        "W1-array": [
+          "context_fingerprint_mismatch"
+        ],
+        "W1-visualise": []
+      },
+      "binding_issues": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_statuses": {
+        "W1-python": "bound",
+        "W1-table": "bound",
+        "W1-array": "bound",
+        "W1-visualise": "bound"
+      }
+    },
+    {
+      "case": "06-unrelated-topic-scope60",
+      "probe_scope": "scoped",
+      "expected": {
+        "W1-python": "current",
+        "W1-table": "current",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "actual_statuses": {
+        "W1-python": "current",
+        "W1-table": "current",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "checks": {
+        "W1-python": true,
+        "W1-table": true,
+        "W1-array": true,
+        "W1-visualise": true
+      },
+      "all_expectations_met": true,
+      "changed_bindings": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "reason_codes": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_issues": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_statuses": {
+        "W1-python": "bound",
+        "W1-table": "bound",
+        "W1-array": "bound",
+        "W1-visualise": "bound"
+      }
+    },
+    {
+      "case": "07-shared-plan-context",
+      "probe_scope": "scoped",
+      "expected": {
+        "W1-python": "review_required",
+        "W1-table": "review_required",
+        "W1-array": "review_required",
+        "W1-visualise": "review_required"
+      },
+      "actual_statuses": {
+        "W1-python": "review_required",
+        "W1-table": "review_required",
+        "W1-array": "review_required",
+        "W1-visualise": "review_required"
+      },
+      "checks": {
+        "W1-python": true,
+        "W1-table": true,
+        "W1-array": true,
+        "W1-visualise": true
+      },
+      "all_expectations_met": true,
+      "changed_bindings": {
+        "W1-python": [
+          {
+            "binding_id": "dependency:reproduction-plan:W1-python:#plan-context",
+            "before": {
+              "id": "dependency:reproduction-plan:W1-python:#plan-context",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-python",
+              "path": "curriculum/student-plan.html",
+              "locator": "#plan-context",
+              "sha256": "a92d5d1f26b5b2fbbd65007e095b3767cdd148cb7641e854b5254c3d7cac3347"
+            },
+            "after": {
+              "id": "dependency:reproduction-plan:W1-python:#plan-context",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-python",
+              "path": "curriculum/student-plan.html",
+              "locator": "#plan-context",
+              "sha256": "7ea753a1148a4e9b590460f6d948ff2485f2b1a6b8030ddfc48c267a8c3deca0"
+            }
+          }
+        ],
+        "W1-table": [
+          {
+            "binding_id": "dependency:reproduction-plan:W1-table:#plan-context",
+            "before": {
+              "id": "dependency:reproduction-plan:W1-table:#plan-context",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-table",
+              "path": "curriculum/student-plan.html",
+              "locator": "#plan-context",
+              "sha256": "a92d5d1f26b5b2fbbd65007e095b3767cdd148cb7641e854b5254c3d7cac3347"
+            },
+            "after": {
+              "id": "dependency:reproduction-plan:W1-table:#plan-context",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-table",
+              "path": "curriculum/student-plan.html",
+              "locator": "#plan-context",
+              "sha256": "7ea753a1148a4e9b590460f6d948ff2485f2b1a6b8030ddfc48c267a8c3deca0"
+            }
+          }
+        ],
+        "W1-array": [
+          {
+            "binding_id": "dependency:reproduction-plan:W1-array:#plan-context",
+            "before": {
+              "id": "dependency:reproduction-plan:W1-array:#plan-context",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-array",
+              "path": "curriculum/student-plan.html",
+              "locator": "#plan-context",
+              "sha256": "a92d5d1f26b5b2fbbd65007e095b3767cdd148cb7641e854b5254c3d7cac3347"
+            },
+            "after": {
+              "id": "dependency:reproduction-plan:W1-array:#plan-context",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-array",
+              "path": "curriculum/student-plan.html",
+              "locator": "#plan-context",
+              "sha256": "7ea753a1148a4e9b590460f6d948ff2485f2b1a6b8030ddfc48c267a8c3deca0"
+            }
+          }
+        ],
+        "W1-visualise": [
+          {
+            "binding_id": "dependency:reproduction-plan:W1-visualise:#plan-context",
+            "before": {
+              "id": "dependency:reproduction-plan:W1-visualise:#plan-context",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-visualise",
+              "path": "curriculum/student-plan.html",
+              "locator": "#plan-context",
+              "sha256": "a92d5d1f26b5b2fbbd65007e095b3767cdd148cb7641e854b5254c3d7cac3347"
+            },
+            "after": {
+              "id": "dependency:reproduction-plan:W1-visualise:#plan-context",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-visualise",
+              "path": "curriculum/student-plan.html",
+              "locator": "#plan-context",
+              "sha256": "7ea753a1148a4e9b590460f6d948ff2485f2b1a6b8030ddfc48c267a8c3deca0"
+            }
+          }
+        ]
+      },
+      "reason_codes": {
+        "W1-python": [
+          "context_fingerprint_mismatch"
+        ],
+        "W1-table": [
+          "context_fingerprint_mismatch"
+        ],
+        "W1-array": [
+          "context_fingerprint_mismatch"
+        ],
+        "W1-visualise": [
+          "context_fingerprint_mismatch"
+        ]
+      },
+      "binding_issues": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_statuses": {
+        "W1-python": "bound",
+        "W1-table": "bound",
+        "W1-array": "bound",
+        "W1-visualise": "bound"
+      }
+    },
+    {
+      "case": "08-unselected-css",
+      "probe_scope": "scoped",
+      "expected": {
+        "W1-python": "current",
+        "W1-table": "current",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "actual_statuses": {
+        "W1-python": "current",
+        "W1-table": "current",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "checks": {
+        "W1-python": true,
+        "W1-table": true,
+        "W1-array": true,
+        "W1-visualise": true
+      },
+      "all_expectations_met": true,
+      "changed_bindings": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "reason_codes": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_issues": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_statuses": {
+        "W1-python": "bound",
+        "W1-table": "bound",
+        "W1-array": "bound",
+        "W1-visualise": "bound"
+      }
+    },
+    {
+      "case": "09-related-table-cell",
+      "probe_scope": "scoped",
+      "expected": {
+        "W1-python": "current",
+        "W1-table": "review_required",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "actual_statuses": {
+        "W1-python": "current",
+        "W1-table": "review_required",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "checks": {
+        "W1-python": true,
+        "W1-table": true,
+        "W1-array": true,
+        "W1-visualise": true
+      },
+      "all_expectations_met": true,
+      "changed_bindings": {
+        "W1-python": [],
+        "W1-table": [
+          {
+            "binding_id": "artifact:W1-table:cell:08e374f4",
+            "before": {
+              "id": "artifact:W1-table:cell:08e374f4",
+              "kind": "artifact",
+              "object_id": "W1-table",
+              "path": "lessons/week01/week01_python_tables.ipynb",
+              "locator": "cell:08e374f4",
+              "sha256": "4d6626dede3974c260fb98c996cdd45042eaea6375234a89340290ab6649c773"
+            },
+            "after": {
+              "id": "artifact:W1-table:cell:08e374f4",
+              "kind": "artifact",
+              "object_id": "W1-table",
+              "path": "lessons/week01/week01_python_tables.ipynb",
+              "locator": "cell:08e374f4",
+              "sha256": "f20f18486edd6dd1500867e83f9e0806b28b488e1a14ca1827e2b485acd4213d"
+            }
+          },
+          {
+            "binding_id": "artifact:claim:table:cell:08e374f4",
+            "before": {
+              "id": "artifact:claim:table:cell:08e374f4",
+              "kind": "artifact",
+              "object_id": "claim:table",
+              "path": "lessons/week01/week01_python_tables.ipynb",
+              "locator": "cell:08e374f4",
+              "sha256": "4d6626dede3974c260fb98c996cdd45042eaea6375234a89340290ab6649c773"
+            },
+            "after": {
+              "id": "artifact:claim:table:cell:08e374f4",
+              "kind": "artifact",
+              "object_id": "claim:table",
+              "path": "lessons/week01/week01_python_tables.ipynb",
+              "locator": "cell:08e374f4",
+              "sha256": "f20f18486edd6dd1500867e83f9e0806b28b488e1a14ca1827e2b485acd4213d"
+            }
+          }
+        ],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "reason_codes": {
+        "W1-python": [],
+        "W1-table": [
+          "context_fingerprint_mismatch"
+        ],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_issues": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_statuses": {
+        "W1-python": "bound",
+        "W1-table": "bound",
+        "W1-array": "bound",
+        "W1-visualise": "bound"
+      }
+    },
+    {
+      "case": "10-unselected-notebook-cell",
+      "probe_scope": "scoped",
+      "expected": {
+        "W1-python": "current",
+        "W1-table": "current",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "actual_statuses": {
+        "W1-python": "current",
+        "W1-table": "current",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "checks": {
+        "W1-python": true,
+        "W1-table": true,
+        "W1-array": true,
+        "W1-visualise": true
+      },
+      "all_expectations_met": true,
+      "changed_bindings": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "reason_codes": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_issues": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_statuses": {
+        "W1-python": "bound",
+        "W1-table": "bound",
+        "W1-array": "bound",
+        "W1-visualise": "bound"
+      }
+    },
+    {
+      "case": "11-shared-review-evidence-file",
+      "probe_scope": "scoped",
+      "expected": {
+        "W1-python": "review_required",
+        "W1-table": "review_required",
+        "W1-array": "review_required",
+        "W1-visualise": "review_required"
+      },
+      "actual_statuses": {
+        "W1-python": "review_required",
+        "W1-table": "review_required",
+        "W1-array": "review_required",
+        "W1-visualise": "review_required"
+      },
+      "checks": {
+        "W1-python": true,
+        "W1-table": true,
+        "W1-array": true,
+        "W1-visualise": true
+      },
+      "all_expectations_met": true,
+      "changed_bindings": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "reason_codes": {
+        "W1-python": [
+          "evidence_missing_or_changed"
+        ],
+        "W1-table": [
+          "evidence_missing_or_changed"
+        ],
+        "W1-array": [
+          "evidence_missing_or_changed"
+        ],
+        "W1-visualise": [
+          "evidence_missing_or_changed"
+        ]
+      },
+      "binding_issues": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_statuses": {
+        "W1-python": "bound",
+        "W1-table": "bound",
+        "W1-array": "bound",
+        "W1-visualise": "bound"
+      }
+    },
+    {
+      "case": "12-unreferenced-evidence-file",
+      "probe_scope": "scoped",
+      "expected": {
+        "W1-python": "current",
+        "W1-table": "current",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "actual_statuses": {
+        "W1-python": "current",
+        "W1-table": "current",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "checks": {
+        "W1-python": true,
+        "W1-table": true,
+        "W1-array": true,
+        "W1-visualise": true
+      },
+      "all_expectations_met": true,
+      "changed_bindings": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "reason_codes": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_issues": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_statuses": {
+        "W1-python": "bound",
+        "W1-table": "bound",
+        "W1-array": "bound",
+        "W1-visualise": "bound"
+      }
+    },
+    {
+      "case": "13-used-source-read",
+      "probe_scope": "scoped",
+      "expected": {
+        "W1-python": "current",
+        "W1-table": "review_required",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "actual_statuses": {
+        "W1-python": "current",
+        "W1-table": "review_required",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "checks": {
+        "W1-python": true,
+        "W1-table": true,
+        "W1-array": true,
+        "W1-visualise": true
+      },
+      "all_expectations_met": true,
+      "changed_bindings": {
+        "W1-python": [],
+        "W1-table": [
+          {
+            "binding_id": "source_read:read-followup:3",
+            "before": {
+              "id": "source_read:read-followup:3",
+              "kind": "source_read",
+              "node_id": "read-followup:3",
+              "url": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isna.html",
+              "locator": "Definition (245-247)",
+              "sha256": "1fc796874f1a9f8912b87a4bbb1bf8db797a0791dbb60b55dba4d4d8bc12bf13"
+            },
+            "after": {
+              "id": "source_read:read-followup:3",
+              "kind": "source_read",
+              "node_id": "read-followup:3",
+              "url": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isna.html",
+              "locator": "Definition (245-247)",
+              "sha256": "f713638ee793f54d753a508fe86d8d27c9e4d527327e689134eafbaf3a8197ca"
+            }
+          }
+        ],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "reason_codes": {
+        "W1-python": [],
+        "W1-table": [
+          "context_fingerprint_mismatch"
+        ],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_issues": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_statuses": {
+        "W1-python": "bound",
+        "W1-table": "bound",
+        "W1-array": "bound",
+        "W1-visualise": "bound"
+      }
+    },
+    {
+      "case": "14-unused-source-read",
+      "probe_scope": "scoped",
+      "expected": {
+        "W1-python": "current",
+        "W1-table": "current",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "actual_statuses": {
+        "W1-python": "current",
+        "W1-table": "current",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "checks": {
+        "W1-python": true,
+        "W1-table": true,
+        "W1-array": true,
+        "W1-visualise": true
+      },
+      "all_expectations_met": true,
+      "changed_bindings": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "reason_codes": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_issues": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_statuses": {
+        "W1-python": "bound",
+        "W1-table": "bound",
+        "W1-array": "bound",
+        "W1-visualise": "bound"
+      }
+    },
+    {
+      "case": "15-selected-plan-provenance-only",
+      "probe_scope": "scoped",
+      "expected": {
+        "W1-python": "current",
+        "W1-table": "current",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "actual_statuses": {
+        "W1-python": "current",
+        "W1-table": "current",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "checks": {
+        "W1-python": true,
+        "W1-table": true,
+        "W1-array": true,
+        "W1-visualise": true
+      },
+      "all_expectations_met": true,
+      "changed_bindings": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "reason_codes": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_issues": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_statuses": {
+        "W1-python": "bound",
+        "W1-table": "bound",
+        "W1-array": "bound",
+        "W1-visualise": "bound"
+      }
+    },
+    {
+      "case": "16-missing-required-scope",
+      "probe_scope": "scoped",
+      "expected": {
+        "W1-python": "current",
+        "W1-table": "binding_required",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "actual_statuses": {
+        "W1-python": "current",
+        "W1-table": "binding_required",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "checks": {
+        "W1-python": true,
+        "W1-table": true,
+        "W1-array": true,
+        "W1-visualise": true
+      },
+      "all_expectations_met": true,
+      "changed_bindings": {
+        "W1-python": [],
+        "W1-table": [
+          {
+            "binding_id": "dependency:reproduction-plan:W1-table:#scope-02",
+            "before": {
+              "id": "dependency:reproduction-plan:W1-table:#scope-02",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-table",
+              "path": "curriculum/student-plan.html",
+              "locator": "#scope-02",
+              "sha256": "ce20c1b797d814cf1afe25ee037ed328f04bc333ca63b4caff0bdc76ad1c2161"
+            },
+            "after": null
+          }
+        ],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "reason_codes": {
+        "W1-python": [],
+        "W1-table": [
+          "context_fingerprint_mismatch"
+        ],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_issues": {
+        "W1-python": [],
+        "W1-table": [
+          {
+            "code": "plan_regions_uncovered",
+            "locators": [
+              "#scope-02"
+            ]
+          }
+        ],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_statuses": {
+        "W1-python": "bound",
+        "W1-table": "binding_required",
+        "W1-array": "bound",
+        "W1-visualise": "bound"
+      }
+    },
+    {
+      "case": "17-missing-declared-edge",
+      "probe_scope": "scoped",
+      "expected": {
+        "W1-python": "current",
+        "W1-table": "binding_required",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "actual_statuses": {
+        "W1-python": "current",
+        "W1-table": "binding_required",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "checks": {
+        "W1-python": true,
+        "W1-table": true,
+        "W1-array": true,
+        "W1-visualise": true
+      },
+      "all_expectations_met": true,
+      "changed_bindings": {
+        "W1-python": [],
+        "W1-table": [
+          {
+            "binding_id": "dependency:reproduction-plan:W1-table:#plan-context",
+            "before": {
+              "id": "dependency:reproduction-plan:W1-table:#plan-context",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-table",
+              "path": "curriculum/student-plan.html",
+              "locator": "#plan-context",
+              "sha256": "a92d5d1f26b5b2fbbd65007e095b3767cdd148cb7641e854b5254c3d7cac3347"
+            },
+            "after": null
+          },
+          {
+            "binding_id": "dependency:reproduction-plan:W1-table:#scope-02",
+            "before": {
+              "id": "dependency:reproduction-plan:W1-table:#scope-02",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-table",
+              "path": "curriculum/student-plan.html",
+              "locator": "#scope-02",
+              "sha256": "ce20c1b797d814cf1afe25ee037ed328f04bc333ca63b4caff0bdc76ad1c2161"
+            },
+            "after": null
+          },
+          {
+            "binding_id": "dependency:reproduction-plan:W1-table:#week-1",
+            "before": {
+              "id": "dependency:reproduction-plan:W1-table:#week-1",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-table",
+              "path": "curriculum/student-plan.html",
+              "locator": "#week-1",
+              "sha256": "abbae388541fe147240a427c6f7ff82ac4f09b5cb1e04f7c0ca88e8d80116670"
+            },
+            "after": null
+          }
+        ],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "reason_codes": {
+        "W1-python": [],
+        "W1-table": [
+          "context_fingerprint_mismatch"
+        ],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_issues": {
+        "W1-python": [],
+        "W1-table": [
+          {
+            "code": "plan_dependency_not_connected",
+            "node_id": "reproduction-plan:W1-table"
+          },
+          {
+            "code": "plan_regions_uncovered",
+            "locators": [
+              "#plan-context",
+              "#scope-02",
+              "#week-1"
+            ]
+          }
+        ],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_statuses": {
+        "W1-python": "bound",
+        "W1-table": "binding_required",
+        "W1-array": "bound",
+        "W1-visualise": "bound"
+      }
+    },
+    {
+      "case": "18-known-evidence-drift-unbound-legacy-unit",
+      "probe_scope": "legacy",
+      "expected": {
+        "W1-python": "review_required",
+        "W1-table": "review_required",
+        "W1-array": "review_required",
+        "W1-visualise": "review_required"
+      },
+      "actual_statuses": {
+        "W1-python": "review_required",
+        "W1-table": "review_required",
+        "W1-array": "review_required",
+        "W1-visualise": "review_required"
+      },
+      "checks": {
+        "W1-python": true,
+        "W1-table": true,
+        "W1-array": true,
+        "W1-visualise": true
+      },
+      "all_expectations_met": true,
+      "changed_bindings": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "reason_codes": {
+        "W1-python": [
+          "context_fingerprint_mismatch",
+          "evidence_missing_or_changed",
+          "evidence_missing_or_changed",
+          "evidence_missing_or_changed"
+        ],
+        "W1-table": [
+          "context_fingerprint_mismatch",
+          "evidence_missing_or_changed",
+          "evidence_missing_or_changed",
+          "evidence_missing_or_changed"
+        ],
+        "W1-array": [
+          "context_fingerprint_mismatch",
+          "evidence_missing_or_changed",
+          "evidence_missing_or_changed",
+          "evidence_missing_or_changed",
+          "evidence_missing_or_changed",
+          "evidence_missing_or_changed",
+          "evidence_missing_or_changed"
+        ],
+        "W1-visualise": [
+          "context_fingerprint_mismatch",
+          "evidence_missing_or_changed",
+          "evidence_missing_or_changed",
+          "evidence_missing_or_changed"
+        ]
+      },
+      "binding_issues": {
+        "W1-python": [
+          {
+            "code": "plan_dependencies_undeclared",
+            "detail": "Declare the reviewed plan regions and dependency edges; content impact is unassessed."
+          },
+          {
+            "code": "plan_regions_uncovered",
+            "locators": [
+              "#plan-context",
+              "#scope-01",
+              "#week-1"
+            ]
+          }
+        ],
+        "W1-table": [
+          {
+            "code": "plan_dependencies_undeclared",
+            "detail": "Declare the reviewed plan regions and dependency edges; content impact is unassessed."
+          },
+          {
+            "code": "plan_regions_uncovered",
+            "locators": [
+              "#plan-context",
+              "#scope-02",
+              "#week-1"
+            ]
+          }
+        ],
+        "W1-array": [
+          {
+            "code": "plan_dependencies_undeclared",
+            "detail": "Declare the reviewed plan regions and dependency edges; content impact is unassessed."
+          },
+          {
+            "code": "plan_regions_uncovered",
+            "locators": [
+              "#plan-context",
+              "#scope-02",
+              "#scope-06",
+              "#week-1"
+            ]
+          }
+        ],
+        "W1-visualise": [
+          {
+            "code": "plan_dependencies_undeclared",
+            "detail": "Declare the reviewed plan regions and dependency edges; content impact is unassessed."
+          },
+          {
+            "code": "plan_regions_uncovered",
+            "locators": [
+              "#plan-context",
+              "#scope-03",
+              "#week-1"
+            ]
+          }
+        ]
+      },
+      "binding_statuses": {
+        "W1-python": "binding_required",
+        "W1-table": "binding_required",
+        "W1-array": "binding_required",
+        "W1-visualise": "binding_required"
+      }
+    },
+    {
+      "case": "19-visible-global-policy-outside-table",
+      "probe_scope": "scoped",
+      "expected": {
+        "W1-python": "review_required",
+        "W1-table": "review_required",
+        "W1-array": "review_required",
+        "W1-visualise": "review_required"
+      },
+      "actual_statuses": {
+        "W1-python": "review_required",
+        "W1-table": "review_required",
+        "W1-array": "review_required",
+        "W1-visualise": "review_required"
+      },
+      "checks": {
+        "W1-python": true,
+        "W1-table": true,
+        "W1-array": true,
+        "W1-visualise": true
+      },
+      "all_expectations_met": true,
+      "changed_bindings": {
+        "W1-python": [
+          {
+            "binding_id": "dependency:reproduction-plan:W1-python:#plan-context",
+            "before": {
+              "id": "dependency:reproduction-plan:W1-python:#plan-context",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-python",
+              "path": "curriculum/student-plan.html",
+              "locator": "#plan-context",
+              "sha256": "a92d5d1f26b5b2fbbd65007e095b3767cdd148cb7641e854b5254c3d7cac3347"
+            },
+            "after": {
+              "id": "dependency:reproduction-plan:W1-python:#plan-context",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-python",
+              "path": "curriculum/student-plan.html",
+              "locator": "#plan-context",
+              "sha256": "3e29b87b028dc96168aec6d3d44d61b9f516ced971e3cc813b65089d30665396"
+            }
+          }
+        ],
+        "W1-table": [
+          {
+            "binding_id": "dependency:reproduction-plan:W1-table:#plan-context",
+            "before": {
+              "id": "dependency:reproduction-plan:W1-table:#plan-context",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-table",
+              "path": "curriculum/student-plan.html",
+              "locator": "#plan-context",
+              "sha256": "a92d5d1f26b5b2fbbd65007e095b3767cdd148cb7641e854b5254c3d7cac3347"
+            },
+            "after": {
+              "id": "dependency:reproduction-plan:W1-table:#plan-context",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-table",
+              "path": "curriculum/student-plan.html",
+              "locator": "#plan-context",
+              "sha256": "3e29b87b028dc96168aec6d3d44d61b9f516ced971e3cc813b65089d30665396"
+            }
+          }
+        ],
+        "W1-array": [
+          {
+            "binding_id": "dependency:reproduction-plan:W1-array:#plan-context",
+            "before": {
+              "id": "dependency:reproduction-plan:W1-array:#plan-context",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-array",
+              "path": "curriculum/student-plan.html",
+              "locator": "#plan-context",
+              "sha256": "a92d5d1f26b5b2fbbd65007e095b3767cdd148cb7641e854b5254c3d7cac3347"
+            },
+            "after": {
+              "id": "dependency:reproduction-plan:W1-array:#plan-context",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-array",
+              "path": "curriculum/student-plan.html",
+              "locator": "#plan-context",
+              "sha256": "3e29b87b028dc96168aec6d3d44d61b9f516ced971e3cc813b65089d30665396"
+            }
+          }
+        ],
+        "W1-visualise": [
+          {
+            "binding_id": "dependency:reproduction-plan:W1-visualise:#plan-context",
+            "before": {
+              "id": "dependency:reproduction-plan:W1-visualise:#plan-context",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-visualise",
+              "path": "curriculum/student-plan.html",
+              "locator": "#plan-context",
+              "sha256": "a92d5d1f26b5b2fbbd65007e095b3767cdd148cb7641e854b5254c3d7cac3347"
+            },
+            "after": {
+              "id": "dependency:reproduction-plan:W1-visualise:#plan-context",
+              "kind": "dependency",
+              "node_id": "reproduction-plan:W1-visualise",
+              "path": "curriculum/student-plan.html",
+              "locator": "#plan-context",
+              "sha256": "3e29b87b028dc96168aec6d3d44d61b9f516ced971e3cc813b65089d30665396"
+            }
+          }
+        ]
+      },
+      "reason_codes": {
+        "W1-python": [
+          "context_fingerprint_mismatch"
+        ],
+        "W1-table": [
+          "context_fingerprint_mismatch"
+        ],
+        "W1-array": [
+          "context_fingerprint_mismatch"
+        ],
+        "W1-visualise": [
+          "context_fingerprint_mismatch"
+        ]
+      },
+      "binding_issues": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_statuses": {
+        "W1-python": "bound",
+        "W1-table": "bound",
+        "W1-array": "bound",
+        "W1-visualise": "bound"
+      }
+    },
+    {
+      "case": "20-unselected-script-content",
+      "probe_scope": "scoped",
+      "expected": {
+        "W1-python": "current",
+        "W1-table": "current",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "actual_statuses": {
+        "W1-python": "current",
+        "W1-table": "current",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "checks": {
+        "W1-python": true,
+        "W1-table": true,
+        "W1-array": true,
+        "W1-visualise": true
+      },
+      "all_expectations_met": true,
+      "changed_bindings": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "reason_codes": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_issues": {
+        "W1-python": [],
+        "W1-table": [],
+        "W1-array": [],
+        "W1-visualise": []
+      },
+      "binding_statuses": {
+        "W1-python": "bound",
+        "W1-table": "bound",
+        "W1-array": "bound",
+        "W1-visualise": "bound"
+      }
+    },
+    {
+      "case": "21-outside-source-href-only",
+      "expected": {
+        "W1-python": "review_required",
+        "W1-table": "review_required",
+        "W1-array": "review_required",
+        "W1-visualise": "review_required"
+      },
+      "actual_statuses": {
+        "W1-python": "review_required",
+        "W1-table": "review_required",
+        "W1-array": "review_required",
+        "W1-visualise": "review_required"
+      },
+      "control_statuses": {
+        "W1-python": "current",
+        "W1-table": "current",
+        "W1-array": "current",
+        "W1-visualise": "current"
+      },
+      "all_expectations_met": true,
+      "reason_codes": {
+        "W1-python": [
+          "context_fingerprint_mismatch"
+        ],
+        "W1-table": [
+          "context_fingerprint_mismatch"
+        ],
+        "W1-array": [
+          "context_fingerprint_mismatch"
+        ],
+        "W1-visualise": [
+          "context_fingerprint_mismatch"
+        ]
+      },
+      "note": "Extra source-link context is an explicit mechanical control, not an actual source or new authoritative evidence. Only href changes; visible label stays identical."
+    }
+  ],
+  "real_lesson_record_workflow_unchanged": true,
+  "limits": [
+    "Original record.reviews was never changed. Explicit plan dependency declarations in copies are not independently confirmed old approvals.",
+    "Mechanical capture probes set current context fields only to test change detection. They are stored separately, never appended to copied or original reviews, and are not evidence of semantic sufficiency or authenticated review.",
+    "No notebook code was executed. Hash/region differences establish declared byte context changes only.",
+    "Legacy unbound records are not declared unaffected; expected binding/impact-confirmation work is kept separate from detected evidence/region drift."
+  ]
+}

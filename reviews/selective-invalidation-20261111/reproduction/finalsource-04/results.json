@@ -1,0 +1,734 @@
+{
+  "quality_sha256": "03f24f7e9b89979e30facf258f8c8f9f358b1aca2de876a1adae5e058f0fc96b",
+  "quality_code_stable": true,
+  "workflow_sha256": "11dc7a916d00a3b67528b63f7d6b02a74e9b895972f7ce56ec540d245b54872b",
+  "preflight_sha256": "de09542da3c32f73f6f89a84709e63616fc8516f2ba6cbec08599443b5c878c5",
+  "source_record_sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+  "copied_input_paths": [
+    "curriculum/contract.json",
+    "curriculum/student-plan.html",
+    "lessons/week01/teacher-notes.txt",
+    "lessons/week01/validation.json",
+    "lessons/week01/week01_python_tables.ipynb",
+    "reviews/week01-integration-20261111/plan-revision/contract-v1.json",
+    "reviews/week01-integration-20261111/plan-revision/student-plan-v1.html",
+    "reviews/week01/final-followup/independent-final-rebind.json",
+    "reviews/week01/final-followup/independent-supplement.json",
+    "reviews/week01/final-followup/quality.json",
+    "reviews/week01/final/execution-receipt.json",
+    "reviews/week01/final/independent-material-review.json",
+    "reviews/week01/independent-transfer-20261111/content-check.json",
+    "reviews/week01/independent-transfer-20261111/depth.json",
+    "reviews/week01/independent-transfer-20261111/graph.json",
+    "reviews/week01/independent-transfer-20261111/independent-review.md",
+    "reviews/week01/independent-transfer-20261111/paths.json",
+    "reviews/week01/independent-transfer-20261111/quality.json",
+    "reviews/week01/independent-transfer-20261111/semantic-review.json",
+    "reviews/week01/independent-transfer-20261111/source-brief.md",
+    "reviews/week01/independent-transfer-20261111/workflow.json",
+    "reviews/week01/provisional/baseline.ipynb",
+    "skills/koai-evaluate/references/theory-explanation.json",
+    "skills/koai-evaluate/references/unit-specifications.json",
+    "skills/references/criteria.json",
+    "skills/references/source-readings.json"
+  ],
+  "cases": [
+    {
+      "case": "00-control",
+      "mode": "intact",
+      "existing_candidate_preserved": true,
+      "stored_reviews_unchanged": true,
+      "source_binding_added_only_in_copy": {
+        "node_id": "read-followup:PYTHON_RETURN",
+        "path": "reviews/week01/final-followup/independent-supplement.json",
+        "origin": "Actual source_read.reading_receipt field; local reading receipt, not authenticated upstream source bytes."
+      },
+      "checks": {
+        "evaluate_retains_selective_review": true,
+        "plan_forwards_same_selective": true,
+        "workflow_forwards_same_selective_while_paused": true,
+        "preflight_forwards_same_selective": true,
+        "no_new_readiness": true,
+        "probe_expected_status": true,
+        "unrelated_K06_claims_current": true
+      },
+      "all_checks_passed": true,
+      "calls": [
+        {
+          "name": "evaluate",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/quality-code-snapshot.py",
+            "evaluate",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/00-control/record.json",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/00-control"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "c4ec944fddc9dba45fe69200c7f9af6a1df741b4683dfffa40672710607a44fe",
+          "stderr": ""
+        },
+        {
+          "name": "plan",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/quality-code-snapshot.py",
+            "plan",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/00-control/record.json",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/00-control"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "5d7aa28eaee3a3bf1048cb49327c75385353db37f133330b81f9cae325845ae6",
+          "stderr": ""
+        },
+        {
+          "name": "workflow",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/tools/workflow.py",
+            "decide",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/00-control/reviews/week01/independent-transfer-20261111/workflow.json",
+            "--quality",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/00-control/record.json",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/00-control"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "9452dafca72924d0f3e4c492e7e79828555635578111e58d7c1d660e0288c336",
+          "stderr": ""
+        },
+        {
+          "name": "preflight",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/tools/review_preflight.py",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/00-control",
+            "--depth",
+            "reviews/week01/independent-transfer-20261111/depth.json",
+            "--graph",
+            "reviews/week01/independent-transfer-20261111/graph.json",
+            "--paths",
+            "reviews/week01/independent-transfer-20261111/paths.json",
+            "--semantic-review",
+            "reviews/week01/independent-transfer-20261111/semantic-review.json",
+            "--state",
+            "reviews/week01/independent-transfer-20261111/workflow.json",
+            "--quality",
+            "record.json"
+          ],
+          "exit_code": 1,
+          "stdout_sha256": "5aa099bf883ff852e66f77d10090e224404688d04bc433a7898b85b62b94e98f",
+          "stderr": ""
+        }
+      ],
+      "probe_status": "current",
+      "actual_state": {
+        "evaluate": {
+          "status": "uncertain",
+          "reason": null
+        },
+        "plan": {
+          "status": "pause",
+          "reason": "priority_policy_requires_agreement"
+        },
+        "workflow": {
+          "status": "pause",
+          "reason": "criteria_agreement_required"
+        },
+        "preflight": {
+          "status": "blocked",
+          "reason": null
+        }
+      }
+    },
+    {
+      "case": "01-used-source-file-changed",
+      "mode": "changed",
+      "existing_candidate_preserved": true,
+      "stored_reviews_unchanged": true,
+      "source_binding_added_only_in_copy": {
+        "node_id": "read-followup:PYTHON_RETURN",
+        "path": "reviews/week01/final-followup/independent-supplement.json",
+        "origin": "Actual source_read.reading_receipt field; local reading receipt, not authenticated upstream source bytes."
+      },
+      "checks": {
+        "evaluate_retains_selective_review": true,
+        "plan_forwards_same_selective": true,
+        "workflow_forwards_same_selective_while_paused": true,
+        "preflight_forwards_same_selective": true,
+        "no_new_readiness": true,
+        "probe_expected_status": true,
+        "unrelated_K06_claims_current": true
+      },
+      "all_checks_passed": true,
+      "calls": [
+        {
+          "name": "evaluate",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/quality-code-snapshot.py",
+            "evaluate",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/01-used-source-file-changed/record.json",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/01-used-source-file-changed"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "dbefe1b29ca321ba7ba0f6a2c4621763745fd38afdf4466aece387063bdbc751",
+          "stderr": ""
+        },
+        {
+          "name": "plan",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/quality-code-snapshot.py",
+            "plan",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/01-used-source-file-changed/record.json",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/01-used-source-file-changed"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "4eda5bb5537bdbf59648a3cd0a2c06f6fa36d6502b98db50c08c08f809b024c3",
+          "stderr": ""
+        },
+        {
+          "name": "workflow",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/tools/workflow.py",
+            "decide",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/01-used-source-file-changed/reviews/week01/independent-transfer-20261111/workflow.json",
+            "--quality",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/01-used-source-file-changed/record.json",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/01-used-source-file-changed"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "c16e43128849a72f528daa314dcbba583e062c55532bc0238d6154af0e93efda",
+          "stderr": ""
+        },
+        {
+          "name": "preflight",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/tools/review_preflight.py",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/01-used-source-file-changed",
+            "--depth",
+            "reviews/week01/independent-transfer-20261111/depth.json",
+            "--graph",
+            "reviews/week01/independent-transfer-20261111/graph.json",
+            "--paths",
+            "reviews/week01/independent-transfer-20261111/paths.json",
+            "--semantic-review",
+            "reviews/week01/independent-transfer-20261111/semantic-review.json",
+            "--state",
+            "reviews/week01/independent-transfer-20261111/workflow.json",
+            "--quality",
+            "record.json"
+          ],
+          "exit_code": 1,
+          "stdout_sha256": "5e9ae5650486f951b6d2309494691f19e6a7480b6581b60418a1fc82e246bdec",
+          "stderr": ""
+        }
+      ],
+      "probe_status": "review_required",
+      "actual_state": {
+        "evaluate": {
+          "status": "uncertain",
+          "reason": null
+        },
+        "plan": {
+          "status": "pause",
+          "reason": "priority_policy_requires_agreement"
+        },
+        "workflow": {
+          "status": "pause",
+          "reason": "criteria_agreement_required"
+        },
+        "preflight": {
+          "status": "blocked",
+          "reason": null
+        }
+      }
+    },
+    {
+      "case": "02-used-source-file-missing",
+      "mode": "missing",
+      "existing_candidate_preserved": true,
+      "stored_reviews_unchanged": true,
+      "source_binding_added_only_in_copy": {
+        "node_id": "read-followup:PYTHON_RETURN",
+        "path": "reviews/week01/final-followup/independent-supplement.json",
+        "origin": "Actual source_read.reading_receipt field; local reading receipt, not authenticated upstream source bytes."
+      },
+      "checks": {
+        "evaluate_retains_selective_review": true,
+        "plan_forwards_same_selective": true,
+        "workflow_forwards_same_selective_while_paused": true,
+        "preflight_forwards_same_selective": true,
+        "no_new_readiness": true,
+        "probe_expected_status": true,
+        "unrelated_K06_claims_current": true,
+        "target_known_missing_source_requires_review": true,
+        "explicit_missing_node_path_null_sha": true,
+        "K11_claim_error_is_retained": true,
+        "existing_candidate_context_unavailable_retained": true,
+        "plan_existing_candidate_unavailable_retained": true,
+        "same_copy_v3_diagnostic_loss_reproduced": true
+      },
+      "all_checks_passed": true,
+      "calls": [
+        {
+          "name": "evaluate",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/quality-code-snapshot.py",
+            "evaluate",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/02-used-source-file-missing/record.json",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/02-used-source-file-missing"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "9c636247f3035e4913127985d081440a9b7b37a9d3db833eed700c9112174c7e",
+          "stderr": ""
+        },
+        {
+          "name": "plan",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/quality-code-snapshot.py",
+            "plan",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/02-used-source-file-missing/record.json",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/02-used-source-file-missing"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "4663b4f6d96879b1b138f5f93ed6358bf62ca6b09c7498be3b6a1ad73683b878",
+          "stderr": ""
+        },
+        {
+          "name": "workflow",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/tools/workflow.py",
+            "decide",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/02-used-source-file-missing/reviews/week01/independent-transfer-20261111/workflow.json",
+            "--quality",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/02-used-source-file-missing/record.json",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/02-used-source-file-missing"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "10dff34ffd326ab177bc84d18f12f8bb1477138d587a35e4491b50bf2f2a38db",
+          "stderr": ""
+        },
+        {
+          "name": "preflight",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/tools/review_preflight.py",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/02-used-source-file-missing",
+            "--depth",
+            "reviews/week01/independent-transfer-20261111/depth.json",
+            "--graph",
+            "reviews/week01/independent-transfer-20261111/graph.json",
+            "--paths",
+            "reviews/week01/independent-transfer-20261111/paths.json",
+            "--semantic-review",
+            "reviews/week01/independent-transfer-20261111/semantic-review.json",
+            "--state",
+            "reviews/week01/independent-transfer-20261111/workflow.json",
+            "--quality",
+            "record.json"
+          ],
+          "exit_code": 1,
+          "stdout_sha256": "483d32b875f1537346e3c8a08852c2d081a37fd6b57e2c460e9423b15446e883",
+          "stderr": ""
+        }
+      ],
+      "probe_status": "review_required",
+      "actual_state": {
+        "evaluate": {
+          "status": "uncertain",
+          "reason": null
+        },
+        "plan": {
+          "status": "pause",
+          "reason": "priority_policy_requires_agreement"
+        },
+        "workflow": {
+          "status": "pause",
+          "reason": "criteria_agreement_required"
+        },
+        "preflight": {
+          "status": "blocked",
+          "reason": null
+        }
+      }
+    },
+    {
+      "case": "03-used-source-reading-changed",
+      "mode": "used_read",
+      "existing_candidate_preserved": true,
+      "stored_reviews_unchanged": true,
+      "source_binding_added_only_in_copy": {
+        "node_id": "read-followup:PYTHON_RETURN",
+        "path": "reviews/week01/final-followup/independent-supplement.json",
+        "origin": "Actual source_read.reading_receipt field; local reading receipt, not authenticated upstream source bytes."
+      },
+      "checks": {
+        "evaluate_retains_selective_review": true,
+        "plan_forwards_same_selective": true,
+        "workflow_forwards_same_selective_while_paused": true,
+        "preflight_forwards_same_selective": true,
+        "no_new_readiness": true,
+        "probe_expected_status": true,
+        "unrelated_K06_claims_current": true
+      },
+      "all_checks_passed": true,
+      "calls": [
+        {
+          "name": "evaluate",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/quality-code-snapshot.py",
+            "evaluate",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/03-used-source-reading-changed/record.json",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/03-used-source-reading-changed"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "7864fe5b457cda0ef85f773946b56715362f84d18f56ed42438f5ea1ec7a457b",
+          "stderr": ""
+        },
+        {
+          "name": "plan",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/quality-code-snapshot.py",
+            "plan",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/03-used-source-reading-changed/record.json",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/03-used-source-reading-changed"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "38ad36f5beb857d68b700116b3ff731e63d50c7395204df0e341ab3e92976bca",
+          "stderr": ""
+        },
+        {
+          "name": "workflow",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/tools/workflow.py",
+            "decide",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/03-used-source-reading-changed/reviews/week01/independent-transfer-20261111/workflow.json",
+            "--quality",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/03-used-source-reading-changed/record.json",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/03-used-source-reading-changed"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "474cc0099e3730041de4b014f32dee6f17cc6f5ec5e83801a10a59c2d3dd4980",
+          "stderr": ""
+        },
+        {
+          "name": "preflight",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/tools/review_preflight.py",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/03-used-source-reading-changed",
+            "--depth",
+            "reviews/week01/independent-transfer-20261111/depth.json",
+            "--graph",
+            "reviews/week01/independent-transfer-20261111/graph.json",
+            "--paths",
+            "reviews/week01/independent-transfer-20261111/paths.json",
+            "--semantic-review",
+            "reviews/week01/independent-transfer-20261111/semantic-review.json",
+            "--state",
+            "reviews/week01/independent-transfer-20261111/workflow.json",
+            "--quality",
+            "record.json"
+          ],
+          "exit_code": 1,
+          "stdout_sha256": "3c17929ab79e5b33d65de2abae4c9e443b1857d9e3b80044e4cd59ca9a4ca98d",
+          "stderr": ""
+        }
+      ],
+      "probe_status": "review_required",
+      "actual_state": {
+        "evaluate": {
+          "status": "uncertain",
+          "reason": null
+        },
+        "plan": {
+          "status": "pause",
+          "reason": "priority_policy_requires_agreement"
+        },
+        "workflow": {
+          "status": "pause",
+          "reason": "criteria_agreement_required"
+        },
+        "preflight": {
+          "status": "blocked",
+          "reason": null
+        }
+      }
+    },
+    {
+      "case": "04-unused-source-reading-changed",
+      "mode": "unused_read",
+      "existing_candidate_preserved": true,
+      "stored_reviews_unchanged": true,
+      "source_binding_added_only_in_copy": {
+        "node_id": "read-followup:PYTHON_RETURN",
+        "path": "reviews/week01/final-followup/independent-supplement.json",
+        "origin": "Actual source_read.reading_receipt field; local reading receipt, not authenticated upstream source bytes."
+      },
+      "checks": {
+        "evaluate_retains_selective_review": true,
+        "plan_forwards_same_selective": true,
+        "workflow_forwards_same_selective_while_paused": true,
+        "preflight_forwards_same_selective": true,
+        "no_new_readiness": true,
+        "probe_expected_status": true,
+        "unrelated_K06_claims_current": true
+      },
+      "all_checks_passed": true,
+      "calls": [
+        {
+          "name": "evaluate",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/quality-code-snapshot.py",
+            "evaluate",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/04-unused-source-reading-changed/record.json",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/04-unused-source-reading-changed"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "b62df845147b82615bdf0c0439410026fa7bfa8c194db915c8feeb4acaee2ca0",
+          "stderr": ""
+        },
+        {
+          "name": "plan",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/quality-code-snapshot.py",
+            "plan",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/04-unused-source-reading-changed/record.json",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/04-unused-source-reading-changed"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "5d7aa28eaee3a3bf1048cb49327c75385353db37f133330b81f9cae325845ae6",
+          "stderr": ""
+        },
+        {
+          "name": "workflow",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/tools/workflow.py",
+            "decide",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/04-unused-source-reading-changed/reviews/week01/independent-transfer-20261111/workflow.json",
+            "--quality",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/04-unused-source-reading-changed/record.json",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/04-unused-source-reading-changed"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "9452dafca72924d0f3e4c492e7e79828555635578111e58d7c1d660e0288c336",
+          "stderr": ""
+        },
+        {
+          "name": "preflight",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/tools/review_preflight.py",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/04-unused-source-reading-changed",
+            "--depth",
+            "reviews/week01/independent-transfer-20261111/depth.json",
+            "--graph",
+            "reviews/week01/independent-transfer-20261111/graph.json",
+            "--paths",
+            "reviews/week01/independent-transfer-20261111/paths.json",
+            "--semantic-review",
+            "reviews/week01/independent-transfer-20261111/semantic-review.json",
+            "--state",
+            "reviews/week01/independent-transfer-20261111/workflow.json",
+            "--quality",
+            "record.json"
+          ],
+          "exit_code": 1,
+          "stdout_sha256": "824aa1b8e5442b54c979b48a3750b27432118f556ab74bbdb63470821b539713",
+          "stderr": ""
+        }
+      ],
+      "probe_status": "current",
+      "actual_state": {
+        "evaluate": {
+          "status": "uncertain",
+          "reason": null
+        },
+        "plan": {
+          "status": "pause",
+          "reason": "priority_policy_requires_agreement"
+        },
+        "workflow": {
+          "status": "pause",
+          "reason": "criteria_agreement_required"
+        },
+        "preflight": {
+          "status": "blocked",
+          "reason": null
+        }
+      }
+    },
+    {
+      "case": "05-unrelated-source-file",
+      "mode": "unrelated",
+      "existing_candidate_preserved": true,
+      "stored_reviews_unchanged": true,
+      "source_binding_added_only_in_copy": {
+        "node_id": "read-followup:PYTHON_RETURN",
+        "path": "reviews/week01/final-followup/independent-supplement.json",
+        "origin": "Actual source_read.reading_receipt field; local reading receipt, not authenticated upstream source bytes."
+      },
+      "checks": {
+        "evaluate_retains_selective_review": true,
+        "plan_forwards_same_selective": true,
+        "workflow_forwards_same_selective_while_paused": true,
+        "preflight_forwards_same_selective": true,
+        "no_new_readiness": true,
+        "probe_expected_status": true,
+        "unrelated_K06_claims_current": true
+      },
+      "all_checks_passed": true,
+      "calls": [
+        {
+          "name": "evaluate",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/quality-code-snapshot.py",
+            "evaluate",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/05-unrelated-source-file/record.json",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/05-unrelated-source-file"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "c4ec944fddc9dba45fe69200c7f9af6a1df741b4683dfffa40672710607a44fe",
+          "stderr": ""
+        },
+        {
+          "name": "plan",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/quality-code-snapshot.py",
+            "plan",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/05-unrelated-source-file/record.json",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/05-unrelated-source-file"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "5d7aa28eaee3a3bf1048cb49327c75385353db37f133330b81f9cae325845ae6",
+          "stderr": ""
+        },
+        {
+          "name": "workflow",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/tools/workflow.py",
+            "decide",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/05-unrelated-source-file/reviews/week01/independent-transfer-20261111/workflow.json",
+            "--quality",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/05-unrelated-source-file/record.json",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/05-unrelated-source-file"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "9452dafca72924d0f3e4c492e7e79828555635578111e58d7c1d660e0288c336",
+          "stderr": ""
+        },
+        {
+          "name": "preflight",
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/tools/review_preflight.py",
+            "--root",
+            "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/05-unrelated-source-file",
+            "--depth",
+            "reviews/week01/independent-transfer-20261111/depth.json",
+            "--graph",
+            "reviews/week01/independent-transfer-20261111/graph.json",
+            "--paths",
+            "reviews/week01/independent-transfer-20261111/paths.json",
+            "--semantic-review",
+            "reviews/week01/independent-transfer-20261111/semantic-review.json",
+            "--state",
+            "reviews/week01/independent-transfer-20261111/workflow.json",
+            "--quality",
+            "record.json"
+          ],
+          "exit_code": 1,
+          "stdout_sha256": "5aa099bf883ff852e66f77d10090e224404688d04bc433a7898b85b62b94e98f",
+          "stderr": ""
+        }
+      ],
+      "probe_status": "current",
+      "actual_state": {
+        "evaluate": {
+          "status": "uncertain",
+          "reason": null
+        },
+        "plan": {
+          "status": "pause",
+          "reason": "priority_policy_requires_agreement"
+        },
+        "workflow": {
+          "status": "pause",
+          "reason": "criteria_agreement_required"
+        },
+        "preflight": {
+          "status": "blocked",
+          "reason": null
+        }
+      }
+    }
+  ],
+  "all_checks_passed": true,
+  "original_lesson_record_workflow_unchanged": true,
+  "limits": [
+    "The extra dependency.path is explicit only in copied records and points to the actual declared local reading receipt, not to authenticated upstream primary content.",
+    "Original/copy historical reviews and existing candidates remain identical. Capture probes are separate controls, not appended or treated as independent reviews.",
+    "Only review bookkeeping is run; no mutated lesson code, learner task, publication or external operation is executed."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "checked_at_utc": "2026-11-11T11:22:51.287181+00:00",
+  "core_sha256": {
+    "tools/quality.py": "03f24f7e9b89979e30facf258f8c8f9f358b1aca2de876a1adae5e058f0fc96b",
+    "tools/workflow.py": "11dc7a916d00a3b67528b63f7d6b02a74e9b895972f7ce56ec540d245b54872b",
+    "tools/review_preflight.py": "de09542da3c32f73f6f89a84709e63616fc8516f2ba6cbec08599443b5c878c5"
+  },
+  "criteria_sha256": "4ae6bd20c6a5bceeac3992759321c5172e1fb905a2444da651c0ac0e393a913e",
+  "blocking_defects": [],
+  "v4_independent_matrix_cases_expected": 31,
+  "v3_preserved_failures": 2,
+  "v4_cli_scenario_combinations": 10,
+  "actual_old_bundle_evaluate_plan_runs": 4,
+  "actual_old_records_refreshed": false,
+  "real_educational_or_semantic_approval_created": false,
+  "lessons_match_HEAD": true,
+  "archive_exact_restore_verified": true,
+  "archive_sha256": "731d180e7f0082b60e8f43745b41f49a9c5f5d77518cf6bb63ff039087149da6",
+  "archive_bytes": 1512939,
+  "report_sha256": "52fbe1be9cea199db4696bc28390bbcd44e47c8ce64cf41e568c76c062d4518e",
+  "limits": [
+    "Only declared structural dependencies and recorded judgments are covered",
+    "Hashes do not determine meaning or learner achievement",
+    "Legacy scopes still need explicit binding/impact confirmation; real old records remain failed/blocked"
+  ],
+  "evidence": {
+    "matrix": "v4-matrix-results.json",
+    "integrations": "integration-v4-results.json",
+    "earlier_failure": "candidate-v3-missing-source-reproduction.json",
+    "archive_manifest": "evidence-archive-manifest.json",
+    "archive_verification": "archive-verification.json"
+  }
+}

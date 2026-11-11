@@ -1,0 +1,65 @@
+[
+  {
+    "manifest": "reviews/selective-invalidation-20261111/reproduction/archives/baseline-01-inputs.manifest.json",
+    "group": "baseline-01",
+    "member_count": 241,
+    "all_member_sizes_and_hashes_match": true,
+    "uncompressed_bytes": 15445113,
+    "archive_bytes": 2815311,
+    "format": "content-addressed-tar-v1"
+  },
+  {
+    "manifest": "reviews/selective-invalidation-20261111/reproduction/archives/candidate-01-inputs.manifest.json",
+    "group": "candidate-01",
+    "member_count": 303,
+    "all_member_sizes_and_hashes_match": true,
+    "uncompressed_bytes": 18948739,
+    "archive_bytes": 2815311,
+    "format": "content-addressed-tar-v1"
+  },
+  {
+    "manifest": "reviews/selective-invalidation-20261111/reproduction/archives/candidate-findings--outside-plan-table-inputs.manifest.json",
+    "group": "candidate-findings/outside-plan-table",
+    "member_count": 15,
+    "all_member_sizes_and_hashes_match": true,
+    "uncompressed_bytes": 967240,
+    "archive_bytes": 2815311,
+    "format": "content-addressed-tar-v1"
+  },
+  {
+    "manifest": "reviews/selective-invalidation-20261111/reproduction/archives/finalcandidate-03-inputs.manifest.json",
+    "group": "finalcandidate-03",
+    "member_count": 351,
+    "all_member_sizes_and_hashes_match": true,
+    "uncompressed_bytes": 21998939,
+    "archive_bytes": 2815311,
+    "format": "content-addressed-tar-v1"
+  },
+  {
+    "manifest": "reviews/selective-invalidation-20261111/reproduction/archives/finalsource-04-inputs.manifest.json",
+    "group": "finalsource-04",
+    "member_count": 168,
+    "all_member_sizes_and_hashes_match": true,
+    "uncompressed_bytes": 9719013,
+    "archive_bytes": 2815311,
+    "format": "content-addressed-tar-v1"
+  },
+  {
+    "manifest": "reviews/selective-invalidation-20261111/reproduction/archives/inspection-outputs-v1.manifest.json",
+    "group": "inspection-outputs",
+    "member_count": 103,
+    "all_member_sizes_and_hashes_match": true,
+    "uncompressed_bytes": 29281508,
+    "archive_bytes": 1867580,
+    "format": "regular-tar-v1"
+  },
+  {
+    "manifest": "reviews/selective-invalidation-20261111/reproduction/archives/restored-control-04-inputs.manifest.json",
+    "group": "restored-control-04",
+    "member_count": 15,
+    "all_member_sizes_and_hashes_match": true,
+    "uncompressed_bytes": 965277,
+    "archive_bytes": 2815311,
+    "format": "content-addressed-tar-v1"
+  }
+]

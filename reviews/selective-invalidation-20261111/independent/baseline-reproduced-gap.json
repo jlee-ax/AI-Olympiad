@@ -1,0 +1,19 @@
+{
+  "baseline_code_sha256": "bb7ee10c793aa9916429a1dd77900fc59238738eb49632ba7ec44935e0770b30",
+  "status": "gap_reproduced",
+  "mutation": "Only copied plan #week-1 label changed after fresh fictional reviews",
+  "before_fingerprints": {
+    "demo:a": "1c77537405f8a807dbe82284c15abb997e0cc7ffa7e78234e7df510acdbe8bc9",
+    "demo:b": "59eae72df16f99eddb900b079944a2927b16371edaec290d5fe6840e9d07d544"
+  },
+  "after_fingerprints": {
+    "demo:a": "1c77537405f8a807dbe82284c15abb997e0cc7ffa7e78234e7df510acdbe8bc9",
+    "demo:b": "59eae72df16f99eddb900b079944a2927b16371edaec290d5fe6840e9d07d544"
+  },
+  "review_ids_marked_stale": [],
+  "K01_status": "failed",
+  "K12_status": "passed",
+  "expected_new_behavior": "demo:a/week1 current-content review explicitly requires review; independent demo:b/week2 remains current; keep separate global baseline failure",
+  "histories_unchanged": true,
+  "no_real_records_or_lesson_files_modified": true
+}

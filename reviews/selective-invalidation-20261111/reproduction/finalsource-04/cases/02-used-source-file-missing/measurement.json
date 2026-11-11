@@ -1,0 +1,120 @@
+{
+  "case": "02-used-source-file-missing",
+  "mode": "missing",
+  "existing_candidate_preserved": true,
+  "stored_reviews_unchanged": true,
+  "source_binding_added_only_in_copy": {
+    "node_id": "read-followup:PYTHON_RETURN",
+    "path": "reviews/week01/final-followup/independent-supplement.json",
+    "origin": "Actual source_read.reading_receipt field; local reading receipt, not authenticated upstream source bytes."
+  },
+  "checks": {
+    "evaluate_retains_selective_review": true,
+    "plan_forwards_same_selective": true,
+    "workflow_forwards_same_selective_while_paused": true,
+    "preflight_forwards_same_selective": true,
+    "no_new_readiness": true,
+    "probe_expected_status": true,
+    "unrelated_K06_claims_current": true,
+    "target_known_missing_source_requires_review": true,
+    "explicit_missing_node_path_null_sha": true,
+    "K11_claim_error_is_retained": true,
+    "existing_candidate_context_unavailable_retained": true,
+    "plan_existing_candidate_unavailable_retained": true,
+    "same_copy_v3_diagnostic_loss_reproduced": true
+  },
+  "all_checks_passed": true,
+  "calls": [
+    {
+      "name": "evaluate",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/quality-code-snapshot.py",
+        "evaluate",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/02-used-source-file-missing/record.json",
+        "--root",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/02-used-source-file-missing"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9c636247f3035e4913127985d081440a9b7b37a9d3db833eed700c9112174c7e",
+      "stderr": ""
+    },
+    {
+      "name": "plan",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/quality-code-snapshot.py",
+        "plan",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/02-used-source-file-missing/record.json",
+        "--root",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/02-used-source-file-missing"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4663b4f6d96879b1b138f5f93ed6358bf62ca6b09c7498be3b6a1ad73683b878",
+      "stderr": ""
+    },
+    {
+      "name": "workflow",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/tools/workflow.py",
+        "decide",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/02-used-source-file-missing/reviews/week01/independent-transfer-20261111/workflow.json",
+        "--quality",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/02-used-source-file-missing/record.json",
+        "--root",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/02-used-source-file-missing"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "10dff34ffd326ab177bc84d18f12f8bb1477138d587a35e4491b50bf2f2a38db",
+      "stderr": ""
+    },
+    {
+      "name": "preflight",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/tools/review_preflight.py",
+        "--root",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/02-used-source-file-missing",
+        "--depth",
+        "reviews/week01/independent-transfer-20261111/depth.json",
+        "--graph",
+        "reviews/week01/independent-transfer-20261111/graph.json",
+        "--paths",
+        "reviews/week01/independent-transfer-20261111/paths.json",
+        "--semantic-review",
+        "reviews/week01/independent-transfer-20261111/semantic-review.json",
+        "--state",
+        "reviews/week01/independent-transfer-20261111/workflow.json",
+        "--quality",
+        "record.json"
+      ],
+      "exit_code": 1,
+      "stdout_sha256": "483d32b875f1537346e3c8a08852c2d081a37fd6b57e2c460e9423b15446e883",
+      "stderr": ""
+    }
+  ],
+  "probe_status": "review_required",
+  "actual_state": {
+    "evaluate": {
+      "status": "uncertain",
+      "reason": null
+    },
+    "plan": {
+      "status": "pause",
+      "reason": "priority_policy_requires_agreement"
+    },
+    "workflow": {
+      "status": "pause",
+      "reason": "criteria_agreement_required"
+    },
+    "preflight": {
+      "status": "blocked",
+      "reason": null
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "frozen_at_utc": "2026-11-11T10:54:40.350030+00:00",
+  "baseline_commit": "76b680d64548af5c87d0455008b25358af06a698",
+  "candidate_implementation_content_read": false,
+  "files": [
+    {
+      "path": "tools/quality.py",
+      "baseline_head_sha256": "bb7ee10c793aa9916429a1dd77900fc59238738eb49632ba7ec44935e0770b30",
+      "current_file_sha256_at_freeze": "bb7ee10c793aa9916429a1dd77900fc59238738eb49632ba7ec44935e0770b30",
+      "bytes": 60223
+    },
+    {
+      "path": "tools/workflow.py",
+      "baseline_head_sha256": "2a337ed8c7cf8c871eba2c461c66a883a42bb53257c62688a99d0f5477809cf2",
+      "current_file_sha256_at_freeze": "2a337ed8c7cf8c871eba2c461c66a883a42bb53257c62688a99d0f5477809cf2",
+      "bytes": 33109
+    },
+    {
+      "path": "tools/review_preflight.py",
+      "baseline_head_sha256": "f0b1692cab3644d67592027a441ad4c676b303661b0fb0814e1870a68958fc0d",
+      "current_file_sha256_at_freeze": "f0b1692cab3644d67592027a441ad4c676b303661b0fb0814e1870a68958fc0d",
+      "bytes": 15931
+    },
+    {
+      "path": "tools/README.md",
+      "baseline_head_sha256": "7839dc5ff9b1948f353b017aa3bbed0074596189565bd0433048e1737006c313",
+      "current_file_sha256_at_freeze": "7839dc5ff9b1948f353b017aa3bbed0074596189565bd0433048e1737006c313",
+      "bytes": 31593
+    },
+    {
+      "path": "tools/review-preflight.md",
+      "baseline_head_sha256": "f0b278a24d7cd49d05b3887f79bda1872da0f5afc066c9cd912be6fbafe5886f",
+      "current_file_sha256_at_freeze": "f0b278a24d7cd49d05b3887f79bda1872da0f5afc066c9cd912be6fbafe5886f",
+      "bytes": 5860
+    },
+    {
+      "path": "tests/test_quality.py",
+      "baseline_head_sha256": "36d71f8e697d19d71e7b436d11f5e991337ad2cc72f59d55a474055bfcb0015a",
+      "current_file_sha256_at_freeze": "36d71f8e697d19d71e7b436d11f5e991337ad2cc72f59d55a474055bfcb0015a",
+      "bytes": 27832
+    },
+    {
+      "path": "tests/test_quality_followup.py",
+      "baseline_head_sha256": "5b73d5771dcb13dd1b7bd9d5d574febddcafe41b2cbb1168887fa089a5ffa40f",
+      "current_file_sha256_at_freeze": "5b73d5771dcb13dd1b7bd9d5d574febddcafe41b2cbb1168887fa089a5ffa40f",
+      "bytes": 21048
+    },
+    {
+      "path": "tests/test_review_preflight.py",
+      "baseline_head_sha256": "e14d364108f950db2261e9a12f2d813bf60aec22eb30161973599411ae643ca1",
+      "current_file_sha256_at_freeze": "e14d364108f950db2261e9a12f2d813bf60aec22eb30161973599411ae643ca1",
+      "bytes": 20747
+    },
+    {
+      "path": "templates/quality.json",
+      "baseline_head_sha256": "0b74c8fb3f3e5e71fa776535230e3d6fa980d828b9a57195343cb25f6d729097",
+      "current_file_sha256_at_freeze": "0b74c8fb3f3e5e71fa776535230e3d6fa980d828b9a57195343cb25f6d729097",
+      "bytes": 1333
+    },
+    {
+      "path": "examples/quality.json",
+      "baseline_head_sha256": "e2147b6f94f57fb54e263b1f2e930d82598ccb3d40c6d30adf3b6e2716796487",
+      "current_file_sha256_at_freeze": "e2147b6f94f57fb54e263b1f2e930d82598ccb3d40c6d30adf3b6e2716796487",
+      "bytes": 14930
+    },
+    {
+      "path": "curriculum/student-plan.html",
+      "baseline_head_sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "current_file_sha256_at_freeze": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "bytes": 66956
+    },
+    {
+      "path": "curriculum/contract.json",
+      "baseline_head_sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "current_file_sha256_at_freeze": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54",
+      "bytes": 23110
+    },
+    {
+      "path": "skills/references/criteria.json",
+      "baseline_head_sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "current_file_sha256_at_freeze": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+      "bytes": 27263
+    },
+    {
+      "path": "skills/koai-evaluate/references/unit-specifications.json",
+      "baseline_head_sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "current_file_sha256_at_freeze": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "bytes": 11315
+    },
+    {
+      "path": "reviews/week01/final-followup/quality.json",
+      "baseline_head_sha256": "b39ac2dd54ecd2bd68f48e6464bef0fd231f9a9f9523e116c3938a69e386cc77",
+      "current_file_sha256_at_freeze": "b39ac2dd54ecd2bd68f48e6464bef0fd231f9a9f9523e116c3938a69e386cc77",
+      "bytes": 127923
+    },
+    {
+      "path": "reviews/system-followup-20261111/current/quality.json",
+      "baseline_head_sha256": "9810f5f8959cd7290b62bcd1ddef04254dcd602e707adcc2ab0aab126e56838b",
+      "current_file_sha256_at_freeze": "9810f5f8959cd7290b62bcd1ddef04254dcd602e707adcc2ab0aab126e56838b",
+      "bytes": 125456
+    }
+  ],
+  "criteria_sha256": "4ae6bd20c6a5bceeac3992759321c5172e1fb905a2444da651c0ac0e393a913e",
+  "allowed_write_scope": "reviews/selective-invalidation-20261111/independent/ only",
+  "lesson_edits_authorized": false,
+  "semantic_scope": "Structure/current-context detection only; no automatic meaning or educational judgment"
+}

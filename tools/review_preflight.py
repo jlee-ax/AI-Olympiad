@@ -230,6 +230,8 @@ def preflight(root, depth_bundle, graph, paths, state, quality_bundle=None, sema
             'review_scope': 'legacy_inspection_not_ready' if legacy_scope else 'external_frontier' if discovery_state is not None else 'synthetic_registered_comparisons' if not real_context else 'discovery_required',
             'discovery': discovery_report,
             'contest_depth': depth_report, 'graph_paths': graph_report, 'semantic_review': semantic_report, 'workflow': decision,
+            'quality': quality_report,
+            'selective_review': quality_report.get('selective_review') if quality_report else None,
             'recall': {'record_ids': [r['id'] for r in records], 'warnings': state_warnings},
             'unverified_sources': unverified_sources,
             'limits': ['No work, review, state update, publication or scheduling is executed.',

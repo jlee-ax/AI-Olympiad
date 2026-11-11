@@ -1,0 +1,34 @@
+[
+  {
+    "manifest": "reviews/selective-invalidation-20261111/reproduction/archives/baseline-01-inputs.manifest.json",
+    "group": "baseline-01",
+    "member_count": 241,
+    "all_member_sizes_and_hashes_match": true,
+    "uncompressed_bytes": 15445113,
+    "archive_bytes": 6114136
+  },
+  {
+    "manifest": "reviews/selective-invalidation-20261111/reproduction/archives/candidate-01-inputs.manifest.json",
+    "group": "candidate-01",
+    "member_count": 303,
+    "all_member_sizes_and_hashes_match": true,
+    "uncompressed_bytes": 18948739,
+    "archive_bytes": 7360396
+  },
+  {
+    "manifest": "reviews/selective-invalidation-20261111/reproduction/archives/candidate-findings--outside-plan-table-inputs.manifest.json",
+    "group": "candidate-findings/outside-plan-table",
+    "member_count": 15,
+    "all_member_sizes_and_hashes_match": true,
+    "uncompressed_bytes": 967240,
+    "archive_bytes": 382741
+  },
+  {
+    "manifest": "reviews/selective-invalidation-20261111/reproduction/archives/finalcandidate-03-inputs.manifest.json",
+    "group": "finalcandidate-03",
+    "member_count": 351,
+    "all_member_sizes_and_hashes_match": true,
+    "uncompressed_bytes": 21998939,
+    "archive_bytes": 8539925
+  }
+]

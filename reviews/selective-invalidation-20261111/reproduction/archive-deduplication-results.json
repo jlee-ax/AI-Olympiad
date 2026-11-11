@@ -1,0 +1,39 @@
+{
+  "old_representations": [
+    {
+      "manifest": "archives/baseline-01-inputs.manifest.json",
+      "archive": "archives/baseline-01-inputs.tar.gz",
+      "archive_sha256": "82bcae291c04a09a64971dd534fd977b5a75c5ba10fd866710aa7c5a926b6866",
+      "archive_bytes": 6114136
+    },
+    {
+      "manifest": "archives/candidate-01-inputs.manifest.json",
+      "archive": "archives/candidate-01-inputs.tar.gz",
+      "archive_sha256": "205162add7701eaea82ef0916ea41b6e01e0a39a724ee1911baec67bd4fe0fe4",
+      "archive_bytes": 7360396
+    },
+    {
+      "manifest": "archives/candidate-findings--outside-plan-table-inputs.manifest.json",
+      "archive": "archives/candidate-findings--outside-plan-table-inputs.tar.gz",
+      "archive_sha256": "478d4b6c4cba5f6d6ba041e3a6d63583356a104ec6c41ad2fb864b5c4848b858",
+      "archive_bytes": 382741
+    },
+    {
+      "manifest": "archives/finalcandidate-03-inputs.manifest.json",
+      "archive": "archives/finalcandidate-03-inputs.tar.gz",
+      "archive_sha256": "5127747e3b360e37368c123fc38027fbdac9257d4649621f3f0b063c77600538",
+      "archive_bytes": 8539925
+    }
+  ],
+  "old_archive_bytes_total": 22397198,
+  "new_archive": "archives/content-inputs-v2.tar.gz",
+  "new_archive_sha256": "cd23a0cc2e327d1345c85708b50598995626af78ec7cafe1ec7f5026421fa5c6",
+  "new_archive_bytes": 2815311,
+  "new_index": "archives/content-inputs-v2.index.json",
+  "unique_contents": 69,
+  "original_input_paths": 1093,
+  "every_input_size_sha_verified": true,
+  "duplicate_raw_inputs_removed_only_after_verification": true,
+  "old_compressed_archives_removed": "Compressed representation only; prior manifests and archive SHAs preserved in representation-history. Every original input path remains in current manifests.",
+  "restore_creates_independent_files": true
+}

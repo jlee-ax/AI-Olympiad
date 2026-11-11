@@ -1,0 +1,23 @@
+{
+  "code_sha256": "613458c1fe82173f2ff1debddeeb50cbe6bd095b11383c561f1848b845d2e0b5",
+  "normal_control_passed": true,
+  "freshness_status": {
+    "demo:a": "review_required",
+    "demo:b": "current"
+  },
+  "evaluate": {
+    "raised": "ValueError",
+    "message": "File reference is outside the root or not a regular file: 'sources/a.txt'",
+    "selective_review_available": false
+  },
+  "cli_exit": 2,
+  "cli_result": {
+    "status": "blocked",
+    "reason": "invalid_quality_input",
+    "authority": "advisory_only",
+    "errors": [
+      "\"File reference is outside the root or not a regular file: 'sources/a.txt'\""
+    ]
+  },
+  "finding": "evaluate/plan must retain per-object re-review evidence on missing declared sources, even when blocked/invalid."
+}

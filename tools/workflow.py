@@ -447,6 +447,8 @@ def decide(state, quality_report=None, discovery_report=None):
     result = {'status': 'blocked', 'reason': 'invalid_state', 'authority': 'advisory_only',
               'synthetic': state.get('synthetic') if isinstance(state, dict) and type(state.get('synthetic')) is bool else None,
               'errors': errors, 'warnings': warnings}
+    if isinstance(quality_report, dict) and isinstance(quality_report.get('selective_review'), dict):
+        result['selective_review'] = quality_report['selective_review']
     if errors:
         return result
     fingerprint = context_fingerprint(state)

@@ -18,6 +18,10 @@ class QualityFollowupTest(unittest.TestCase):
             review['id'] += ':current'
             review['context_fingerprint'] = quality.object_fingerprint(
                 self.bundle, review['criterion_id'], review['object_id'], self.root)
+            review['context_bindings'] = quality.context_bindings(self.bundle, review['object_id'], self.root)
+            binding = quality.plan_bindings(self.bundle, review['object_id'], self.root)
+            if binding['required']:
+                review['dependency_scope_fingerprint'] = binding['scope_fingerprint']
         self.bundle['reviews'].extend(current)
         cycle = copy.deepcopy(self.bundle['research_cycles'][-1])
         cycle['id'] += ':current'
@@ -273,6 +277,7 @@ class QualityFollowupTest(unittest.TestCase):
     def test_non_numerical_python_does_not_require_an_invented_formula(self):
         unit = self.bundle['units'][0]
         unit['id'] = 'W1-python'
+        unit['plan_dependency_ids'] = [unit['id']]
         self.bundle['target']['objective_ids'] = [unit['id']]
         self.bundle['dependencies'][-1]['id'] = unit['id']
         unit['explanation_checks'] = []  # Cannot weaken the versioned T04/T05 contract.
@@ -283,6 +288,7 @@ class QualityFollowupTest(unittest.TestCase):
             if review['criterion_id'] == 'K16':
                 review['subchecks'] = {tid: review['subchecks'][tid] for tid in ['T04', 'T05']}
             review['context_fingerprint'] = quality.object_fingerprint(self.bundle, review['criterion_id'], review['object_id'], self.root)
+        fixtures.refresh_reviews(self.bundle, self.root)
         result = check(self.report(), 'K16')
         self.assertEqual(result['status'], 'passed')
         self.assertEqual({x['id'] for x in result['measurement']['units'][0]['checks']}, {'T04', 'T05'})

@@ -1,0 +1,11 @@
+{
+  "checked_after_functional_and_regression_tests": true,
+  "changed_tracked_paths_under_existing_lessons_curriculum_week01_reviews": [],
+  "user_preserved_input_hashes_unchanged": {"matched": 6, "total": 6},
+  "remote_refs_rechecked_via_github_connector": {
+    "main": "3203ba2446db2d0056300b4903a4ddd6c84ad492",
+    "codex/week01-jupyter-lesson": "d59138309c63e05874203e52038533e3d91cd19f"
+  },
+  "system_work_branch": "codex/selective-review-invalidation-20261111",
+  "scope": "Only the separate system branch is prepared for publication; no lesson revision or original review/approval update is performed."
+}

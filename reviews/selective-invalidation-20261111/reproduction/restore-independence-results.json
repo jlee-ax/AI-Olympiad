@@ -1,0 +1,17 @@
+{
+  "method": "Actual archive_inputs.py restore used extractfile().read() and path.write_bytes for every member. Two same-content paths restored as separate files.",
+  "restored_path_a": "restore-independence-04/cases/00-control/lessons/week01/week01_python_tables.ipynb",
+  "restored_path_b": "restore-independence-04/cases/01-plan-week1-unlinked/lessons/week01/week01_python_tables.ipynb",
+  "same_original_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+  "distinct_inodes": true,
+  "inode_a": 2361814,
+  "inode_b": 2361849,
+  "after_a_sha256": "a061b72fb5b7cb839fbbfe1c561184f5272d0027bccf01a4d404e61393d6cd20",
+  "after_b_sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+  "changing_one_restored_file_does_not_change_another": true,
+  "archive_sha256_before": "cd23a0cc2e327d1345c85708b50598995626af78ec7cafe1ec7f5026421fa5c6",
+  "archive_sha256_after": "cd23a0cc2e327d1345c85708b50598995626af78ec7cafe1ec7f5026421fa5c6",
+  "archive_unchanged": true,
+  "duplicate_restored_inputs_removed_after_check": true,
+  "original_lesson_modified": false
+}

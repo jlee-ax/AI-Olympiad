@@ -1,0 +1,72 @@
+{
+  "status": "implemented_and_regression_passed",
+  "synthetic_controls": true,
+  "core_sha256": {
+    "tools/quality.py": "03f24f7e9b89979e30facf258f8c8f9f358b1aca2de876a1adae5e058f0fc96b",
+    "tools/workflow.py": "11dc7a916d00a3b67528b63f7d6b02a74e9b895972f7ce56ec540d245b54872b",
+    "tools/review_preflight.py": "de09542da3c32f73f6f89a84709e63616fc8516f2ba6cbec08599443b5c878c5"
+  },
+  "tests": {
+    "targeted_selective": {
+      "count": 15,
+      "result": "passed"
+    },
+    "preflight": {
+      "count": 17,
+      "result": "passed"
+    },
+    "full_final": {
+      "synthetic": true,
+      "command": "python -B -m unittest discover -s tests",
+      "exit_code": 0,
+      "elapsed_seconds": 91.688,
+      "source_sha256": {
+        "tools/quality.py": "03f24f7e9b89979e30facf258f8c8f9f358b1aca2de876a1adae5e058f0fc96b",
+        "tools/workflow.py": "11dc7a916d00a3b67528b63f7d6b02a74e9b895972f7ce56ec540d245b54872b",
+        "tools/review_preflight.py": "de09542da3c32f73f6f89a84709e63616fc8516f2ba6cbec08599443b5c878c5"
+      },
+      "source_unchanged_during_run": true,
+      "limit": "Regression controls establish harness behavior, not educator review or learner outcomes."
+    },
+    "diff_check": "passed"
+  },
+  "changes": [
+    "Explicit dependency path+locators and unit plan_dependency_ids; required week/topic/global structural coverage without inferred edges.",
+    "K12 per-review current/review_required/binding_required/impact_confirmation_required with separate binding_status and preserved recorded_status/history.",
+    "Inspectable source/region snapshots and live top-level/subcheck local evidence checks; unavailable source paths remain scoped diagnostics through evaluate, plan, workflow and preflight.",
+    "Binding-only findings produce binding/impact tasks rather than a blanket content-review campaign.",
+    "HTML global context includes unidentified rows and outside-row non-style/script content; unrelated rows/CSS and access-time-only refresh remain reusable.",
+    "Explicitly synthetic examples append scoped records and preserve prior fixture records."
+  ],
+  "protected_files": {
+    "synthetic": true,
+    "synthetic_example_history": {
+      "examples/quality.json": {
+        "synthetic": true,
+        "prior_review_count": 6,
+        "current_review_count": 12,
+        "prior_reviews_preserved_exactly": true
+      },
+      "examples/quality-workflow.json": {
+        "synthetic": true,
+        "prior_review_count": 1,
+        "current_review_count": 3,
+        "prior_reviews_preserved_exactly": true
+      }
+    },
+    "protected_tracked_file_count": 1500,
+    "changed_lesson_curriculum_or_existing_review_files": [],
+    "core_sha256": {
+      "tools/quality.py": "03f24f7e9b89979e30facf258f8c8f9f358b1aca2de876a1adae5e058f0fc96b",
+      "tools/workflow.py": "11dc7a916d00a3b67528b63f7d6b02a74e9b895972f7ce56ec540d245b54872b",
+      "tools/review_preflight.py": "de09542da3c32f73f6f89a84709e63616fc8516f2ba6cbec08599443b5c878c5"
+    },
+    "limit": "Only synthetic example records were appended. Existing real review history and teaching files were not edited."
+  },
+  "remaining_blockers": [],
+  "limits": [
+    "Independent candidate review is performed separately by the parent team.",
+    "Source and region hashes detect changes, not meaning, scientific truth or learner outcomes.",
+    "No lesson/curriculum/existing-real-review edits, git index changes, commits or pushes were performed."
+  ]
+}

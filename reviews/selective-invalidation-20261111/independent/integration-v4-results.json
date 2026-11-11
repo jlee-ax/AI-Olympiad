@@ -1,0 +1,136 @@
+{
+  "quality_sha256": "03f24f7e9b89979e30facf258f8c8f9f358b1aca2de876a1adae5e058f0fc96b",
+  "checks": [
+    {
+      "stage": "normal",
+      "command": "quality-evaluate",
+      "exit": 0,
+      "status": "passed",
+      "selective_exposed": true
+    },
+    {
+      "stage": "normal",
+      "command": "quality-plan",
+      "exit": 0,
+      "status": "stop",
+      "selective_exposed": true
+    },
+    {
+      "stage": "normal",
+      "command": "review-context",
+      "exit": 0,
+      "status": null,
+      "selective_exposed": false
+    },
+    {
+      "stage": "normal",
+      "command": "workflow",
+      "exit": 0,
+      "status": "continue",
+      "selective_exposed": true
+    },
+    {
+      "stage": "normal",
+      "command": "preflight",
+      "exit": 0,
+      "status": "consistent_recorded_context",
+      "selective_exposed": true
+    },
+    {
+      "stage": "missing-source",
+      "command": "quality-evaluate",
+      "exit": 0,
+      "status": "uncertain",
+      "affected": "demo:a",
+      "unaffected": "demo:b",
+      "path_diagnostic_retained": true
+    },
+    {
+      "stage": "missing-source",
+      "command": "quality-plan",
+      "exit": 0,
+      "status": "continue",
+      "affected": "demo:a",
+      "unaffected": "demo:b",
+      "path_diagnostic_retained": true
+    },
+    {
+      "stage": "missing-source",
+      "command": "workflow",
+      "exit": 0,
+      "status": "blocked",
+      "affected": "demo:a",
+      "unaffected": "demo:b",
+      "path_diagnostic_retained": true
+    },
+    {
+      "stage": "missing-source",
+      "command": "preflight",
+      "exit": 1,
+      "status": "blocked",
+      "affected": "demo:a",
+      "unaffected": "demo:b",
+      "path_diagnostic_retained": true
+    },
+    {
+      "stage": "unused-catalog-change",
+      "command": "preflight",
+      "exit": 1,
+      "status": "blocked",
+      "unit_content_reviews_current": true,
+      "global_catalog_gate_still_blocks": true
+    }
+  ],
+  "actual_old_records": [
+    {
+      "bundle": "reviews/week01/final-followup/quality.json",
+      "command": "evaluate",
+      "exit": 0,
+      "status": "failed",
+      "freshness_counts": {
+        "binding_required": 16,
+        "review_required": 1,
+        "current": 3
+      },
+      "real_records_refreshed": false
+    },
+    {
+      "bundle": "reviews/week01/final-followup/quality.json",
+      "command": "plan",
+      "exit": 0,
+      "status": "blocked",
+      "freshness_counts": {
+        "binding_required": 16,
+        "review_required": 1,
+        "current": 3
+      },
+      "real_records_refreshed": false
+    },
+    {
+      "bundle": "reviews/system-followup-20261111/current/quality.json",
+      "command": "evaluate",
+      "exit": 0,
+      "status": "failed",
+      "freshness_counts": {
+        "binding_required": 16,
+        "review_required": 1,
+        "current": 3
+      },
+      "real_records_refreshed": false
+    },
+    {
+      "bundle": "reviews/system-followup-20261111/current/quality.json",
+      "command": "plan",
+      "exit": 0,
+      "status": "blocked",
+      "freshness_counts": {
+        "binding_required": 16,
+        "review_required": 1,
+        "current": 3
+      },
+      "real_records_refreshed": false
+    }
+  ],
+  "caller_inputs_unchanged_by_inspection": true,
+  "scope": "Only explicit fictional fixtures were constructed/updated. Actual old bundles were read unchanged; no actual review/consent/learner evidence manufactured."
+}

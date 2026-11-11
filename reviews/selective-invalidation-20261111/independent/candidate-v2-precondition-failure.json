@@ -1,0 +1,6 @@
+{
+  "status": "not_executed",
+  "expected_quality_sha256": "4bce57ad008b79c5dd214c232776913d471854f0e81a4ac7ac1232d757835473",
+  "observed_quality_sha256": "613458c1fe82173f2ff1debddeeb50cbe6bd095b11383c561f1848b845d2e0b5",
+  "reason": "Writer updated to v3 before v2 execution. SHA precondition stopped the attempt. v3 subsequently confirmed by parent and writer."
+}

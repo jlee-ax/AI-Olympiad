@@ -32,6 +32,10 @@ def refresh_reviews(bundle, root):
     for review in bundle['reviews']:
         review['context_fingerprint'] = quality.object_fingerprint(
             bundle, review['criterion_id'], review['object_id'], root)
+        review['context_bindings'] = quality.context_bindings(bundle, review['object_id'], root)
+        binding = quality.plan_bindings(bundle, review['object_id'], root)
+        if binding['required']:
+            review['dependency_scope_fingerprint'] = binding['scope_fingerprint']
 
 
 def normal_bundle(root):
@@ -51,6 +55,7 @@ def normal_bundle(root):
                         'expected': [2.5, 3.5, 4.5]}}
     unit = {'id': 'unit:axis', 'week': 1, 'locator': '#week-1', 'syllabus_ids': ['KOAI-02', 'KOAI-06'],
             'concept_ids': ['axis_mean'], 'claim_ids': ['claim:axis'], 'claimed_depth': 'independent',
+            'plan_dependency_ids': ['unit:axis'],
             'oracle_kinds': ['axis_mean'],
             'explanation_checks': ['T01', 'T02', 'T03', 'T04', 'T05'],
             'explanation_regions': {tid: ['#week-1'] for tid in ('T01', 'T02', 'T03', 'T04', 'T05')},
@@ -86,7 +91,8 @@ def normal_bundle(root):
     bundle['dependencies'] = [
         {'id': 'source:numpy', 'revision': 'synthetic-v1', 'sha256': quality.digest('synthetic source'), 'depends_on': []},
         {'id': 'claim:axis', 'revision': 'synthetic-v1', 'sha256': quality.digest(claim), 'depends_on': ['source:numpy']},
-        {'id': 'unit:axis', 'revision': 'synthetic-v1', 'sha256': quality.digest(unit), 'depends_on': ['claim:axis']},
+        {'id': 'unit:axis', 'revision': 'synthetic-v1', 'sha256': quality.digest(unit), 'depends_on': ['claim:axis'],
+         'path': 'curriculum/student-plan.html', 'locators': ['#week-1', '#scope-02', '#scope-06', '#plan-context']},
     ]
     bundle['reviews'] = [{'id': 'review:' + cid, 'criterion_id': cid, 'object_id': oid,
                           'status': 'passed', 'reviewer_id': 'synthetic-independent-reviewer',

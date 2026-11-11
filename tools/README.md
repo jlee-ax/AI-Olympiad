@@ -216,3 +216,75 @@ Use [the combined lesson validation workspace](lesson-validation.md) to run curr
 ## Open external requirements before readiness
 
 Use the [bounded discovery loop](discovery-loop.md) to seed an external frontier before comparing the lesson, execute actual local source reads, trace new demands and assessment depth, and retain new questions through further search/read/review rounds. The program manages state and next actions; the authorized human/model performs searches and semantic judgments. Real quality and joined readiness require a current discovery session; real production/recurring workflow decisions cannot continue or claim completion without its bound manifest. Historical synthetic controls remain scoped. `--legacy-scope` in preflight is inspection only and always blocks readiness. K01–K16 and their frozen criteria remain separate.
+
+
+### Selective review freshness and explicit plan bindings
+
+A unit must declare `plan_dependency_ids`, naming dependency nodes already in its
+transitive `depends_on` closure. A scoped node declares the governing plan `path`
+and a nonempty, unique `locators` array. The declared union must include the
+unit's explicit `#week-N`, every `plan_locator` for its declared `syllabus_ids`,
+and `#plan-context`. Missing edges, paths or coverage produce binding work; the
+tool does not infer or add a connection from text. Separate plan nodes let units
+reuse common guidance while keeping unrelated week/scope rows separate.
+
+```json
+{
+  "id": "plan:week1-example",
+  "revision": "explicitly-reviewed-scope",
+  "sha256": "<whole-file provenance SHA256>",
+  "path": "curriculum/student-plan.html",
+  "locators": ["#week-1", "#scope-01", "#scope-02", "#scope-03", "#plan-context"],
+  "depends_on": []
+}
+```
+
+Add that ID to the relevant unit dependency node's `depends_on` and to the unit's
+`plan_dependency_ids`. The example locators apply only to a unit that explicitly
+covers those topics. A selector must exist. Scoped-node fingerprints bind actual
+selected regions and dependency declarations; their whole-file `sha256` and
+`revision` remain provenance, so repinning an unrelated region does not expire a
+local review. A node with `path` and no `locators` retains whole-file binding.
+This also supports declared local source/diagram dependencies.
+
+`#plan-context` is a reserved structural selector: unidentified table rows plus
+visible text, content markup and links outside rows. Identified week/scope rows
+are separate. Style/script content and layout-only wrapper markup are excluded.
+It detects newly added global guidance outside the table without treating CSS as
+a changed instructional requirement. This is a declared structural boundary,
+not automatic interpretation of the plan. Hidden or undeclared dependencies
+remain outside the guarantee.
+
+`review-context` returns the content fingerprint, inspectable `context_bindings`
+and `plan_bindings.scope_fingerprint`. Capturing them records no review, approval
+or learner result. An independently assessed new review must be appended with
+`dependency_scope_fingerprint` equal to the reviewed scope fingerprint, and its
+`context_bindings` snapshot. Preserve prior reviews. A legacy record with no
+plan declaration is `binding_required`; after adding declarations, an older
+review without scope confirmation is `impact_confirmation_required`. Those are
+binding/impact tasks, not a claim that all content needs review. An explicit
+independent scope review or justified carry-forward is itself a new review
+record, with its actual evidence and outcome; copying hashes is not acceptance.
+
+K12 and the `selective_review` advisory field report each latest review's
+`recorded_status`, freshness `status`, separate `binding_status`, plan path and
+locators, changed bindings and evidence paths. Known source/region or local
+review/subcheck evidence drift is `review_required`, even when binding work also
+remains. Missing or unreadable evidence cannot pass. The last review applies;
+a newer failure or uncertainty never falls back to an older pass. `plan` emits
+binding/impact tasks before proposing content work based only on missing scope.
+Workflow early pauses and preflight preserve the advisory list while retaining
+the existing agreement, scope, budget and checkpoint priority.
+
+Source and region hashes detect changes. They do not determine meaning, justify
+a scientific claim, establish a reviewer's truth, or measure learner outcomes.
+The runnable examples remain explicitly synthetic controls; they append new
+synthetic scoped reviews while preserving their older fixture history.
+
+Unavailable declared local sources/locators remain structured bindings with
+`sha256: null` and an error. `evaluate` retains affected reviews and unaffected
+current reviews; K11 reports the object's `context_error`, and K13 reports
+`unavailable_contexts` instead of treating them as duplicate-free valid context.
+`plan` labels such candidates `context_status: unavailable` and preserves the
+repair/investigation target. These are blocked/uncertain evidence states, never
+substitute review fingerprints or permission to execute a change.

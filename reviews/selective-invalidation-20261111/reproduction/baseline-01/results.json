@@ -1,0 +1,1110 @@
+{
+  "recorded_at_utc": "2026-11-11T10:55:06.665985+00:00",
+  "label": "baseline-01",
+  "quality_code_path": "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/code-baseline/quality.py",
+  "quality_code_sha256": "bb7ee10c793aa9916429a1dd77900fc59238738eb49632ba7ec44935e0770b30",
+  "real_record_path": "reviews/week01/independent-transfer-20261111/quality.json",
+  "real_record_sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+  "control_record_is_byte_equivalent_semantics": true,
+  "original_protected_paths_before": {
+    "lessons/week01/data/week1_plants.csv": "fece0473e50b097afa7c2b3e2647c9a6e623bd3d8e009e6ef620151887227639",
+    "lessons/week01/data/week1_plants_new.csv": "869db97ef7c5f6ccf1020bc435fe831f180e9b9548d722c41c91b63af44d7290",
+    "lessons/week01/lesson-manifest.json": "188028f489df650554bddbd21a08771aa809e6aa01c97e499eaad445ee7d877c",
+    "lessons/week01/provenance/contract.json": "7e16f0278bc55042228b42e1f819603efea41b2582f8057e889b5dd84a29298c",
+    "lessons/week01/provenance/student-plan.html": "96deb5e5e781bf39cc6bb5effe34d6d04a01ac65e13a3811c37f5a825714f7a9",
+    "lessons/week01/provenance/unit-specifications.json": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+    "lessons/week01/teacher-notes.txt": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+    "lessons/week01/validate_week01.py": "b28009ee46ffbc707d7bcb2d8614346a4b99b90214864525130713b1420c4d03",
+    "lessons/week01/validate_week01_problem_pipeline.py": "54322e12794c4370604a9eee5505c4d19b18d029a59114eed1616986cb3765c5",
+    "lessons/week01/validation.json": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+    "lessons/week01/week01_axes_linear_bridge.html": "45bc5fe99f90b7bd4dd39ef67557b87c227f263e59e20c54fa1d44764a07239b",
+    "lessons/week01/week01_axes_linear_bridge.ipynb": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+    "lessons/week01/week01_axes_linear_bridge_teacher.md": "651038f80b4800f8efb72094823e497cfe5168985bc882e586b1c4dc12fcf9c0",
+    "lessons/week01/week01_integrated.html": "53b48bf8370cff4f97ace9f78cbf8c5b838f7c758a56b86ef82d474003470596",
+    "lessons/week01/week01_integrated.ipynb": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+    "lessons/week01/week01_integrated_teacher.md": "aafa8f3bbd6cc7b88131157d85a9ffa5d99d5e1b53db6abe2f021eaa2096bcdd",
+    "lessons/week01/week01_problem_pipeline.html": "28308deb024292977cd22a2931801ff242f010e5b6e8b4de01fa4e01e3a4bfd3",
+    "lessons/week01/week01_problem_pipeline.ipynb": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+    "lessons/week01/week01_problem_pipeline_teacher.md": "646c9e4bbd6b631864f2e802b3cfb9f38da39ee6b7db79cef6a431ee6a7eb589",
+    "lessons/week01/week01_problem_pipeline_validation.json": "b4c110a4537871496a83f7d3a2de3f0a08b2f8e0bff3436248f2d1fa7c33bfd9",
+    "lessons/week01/week01_python_tables.html": "0ee9668f102756c47c666d12e145bdd6c7c89709d625dcd07533bc3291cfda24",
+    "lessons/week01/week01_python_tables.ipynb": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+    "lessons/week02/build_week02.py": "54b518d6c7986e77525085ca9fa623a4ff7857fa1b53cc62fedf2483945fa0cc",
+    "lessons/week02/teacher-notes.md": "2d9667b059f1556613117ce6648fe16b3c6c67c4c0a7cdf2b2be06fd0f6b6977",
+    "lessons/week02/teacher_validate_week02.py": "f31d8057913167b87a1489034ab9b98f7a7e3e1ace801a5919762040e7260a28",
+    "lessons/week02/validate_week02_temporal_preprocessing.py": "fd7071e8239756e0823a443104c4cef206c74644571971367a16fbd37686b447",
+    "lessons/week02/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+    "lessons/week02/week02_prediction_evaluation.html": "ffd7586b5ec43cd35b1abfaa5b434a1c43e68832df5367df2df08c6d649e4c66",
+    "lessons/week02/week02_prediction_evaluation.ipynb": "9bb1ea5110b74ea1cf32fbc9ee9e9a5aadbceba2f750c2dfc2d6587e18954bdf",
+    "lessons/week02/week02_temporal_preprocessing.html": "f8fd2ee95761debd8bfc7ea9d2bf4493ef5594cbf90fdb6b3b75a8fd1ea883e4",
+    "lessons/week02/week02_temporal_preprocessing.ipynb": "a830a15e8d2bf2cb91e17cd2e8b14172390fc7cea3a07539add3fe52a05b5865",
+    "lessons/week02/week02_temporal_preprocessing_teacher.md": "e898de9e42be0ee9f562a6b36df036d5eb0a66e488ee62d8d9e9c3b666dcee74",
+    "lessons/week02/week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936",
+    "reviews/week01/independent-transfer-20261111/quality.json": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+    "reviews/week01/independent-transfer-20261111/workflow.json": "21f999d6cfbc17a01c64d885e7c27cd0879e4794cbf405d253193bd02c7d131f"
+  },
+  "original_protected_paths_after": {
+    "lessons/week01/data/week1_plants.csv": "fece0473e50b097afa7c2b3e2647c9a6e623bd3d8e009e6ef620151887227639",
+    "lessons/week01/data/week1_plants_new.csv": "869db97ef7c5f6ccf1020bc435fe831f180e9b9548d722c41c91b63af44d7290",
+    "lessons/week01/lesson-manifest.json": "188028f489df650554bddbd21a08771aa809e6aa01c97e499eaad445ee7d877c",
+    "lessons/week01/provenance/contract.json": "7e16f0278bc55042228b42e1f819603efea41b2582f8057e889b5dd84a29298c",
+    "lessons/week01/provenance/student-plan.html": "96deb5e5e781bf39cc6bb5effe34d6d04a01ac65e13a3811c37f5a825714f7a9",
+    "lessons/week01/provenance/unit-specifications.json": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+    "lessons/week01/teacher-notes.txt": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec",
+    "lessons/week01/validate_week01.py": "b28009ee46ffbc707d7bcb2d8614346a4b99b90214864525130713b1420c4d03",
+    "lessons/week01/validate_week01_problem_pipeline.py": "54322e12794c4370604a9eee5505c4d19b18d029a59114eed1616986cb3765c5",
+    "lessons/week01/validation.json": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7",
+    "lessons/week01/week01_axes_linear_bridge.html": "45bc5fe99f90b7bd4dd39ef67557b87c227f263e59e20c54fa1d44764a07239b",
+    "lessons/week01/week01_axes_linear_bridge.ipynb": "09efa4d1a8ebf918dab7fc0b30f60f8130e817729d70cfe93cd7c60f15b5767f",
+    "lessons/week01/week01_axes_linear_bridge_teacher.md": "651038f80b4800f8efb72094823e497cfe5168985bc882e586b1c4dc12fcf9c0",
+    "lessons/week01/week01_integrated.html": "53b48bf8370cff4f97ace9f78cbf8c5b838f7c758a56b86ef82d474003470596",
+    "lessons/week01/week01_integrated.ipynb": "15ab0101edbca3c0c669e551cb723b401d168d9730523fa1ac1263a0d7538120",
+    "lessons/week01/week01_integrated_teacher.md": "aafa8f3bbd6cc7b88131157d85a9ffa5d99d5e1b53db6abe2f021eaa2096bcdd",
+    "lessons/week01/week01_problem_pipeline.html": "28308deb024292977cd22a2931801ff242f010e5b6e8b4de01fa4e01e3a4bfd3",
+    "lessons/week01/week01_problem_pipeline.ipynb": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+    "lessons/week01/week01_problem_pipeline_teacher.md": "646c9e4bbd6b631864f2e802b3cfb9f38da39ee6b7db79cef6a431ee6a7eb589",
+    "lessons/week01/week01_problem_pipeline_validation.json": "b4c110a4537871496a83f7d3a2de3f0a08b2f8e0bff3436248f2d1fa7c33bfd9",
+    "lessons/week01/week01_python_tables.html": "0ee9668f102756c47c666d12e145bdd6c7c89709d625dcd07533bc3291cfda24",
+    "lessons/week01/week01_python_tables.ipynb": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+    "lessons/week02/build_week02.py": "54b518d6c7986e77525085ca9fa623a4ff7857fa1b53cc62fedf2483945fa0cc",
+    "lessons/week02/teacher-notes.md": "2d9667b059f1556613117ce6648fe16b3c6c67c4c0a7cdf2b2be06fd0f6b6977",
+    "lessons/week02/teacher_validate_week02.py": "f31d8057913167b87a1489034ab9b98f7a7e3e1ace801a5919762040e7260a28",
+    "lessons/week02/validate_week02_temporal_preprocessing.py": "fd7071e8239756e0823a443104c4cef206c74644571971367a16fbd37686b447",
+    "lessons/week02/validation.json": "182c796357a6cef40180e67fd707eef1b45cc70db3dfa446e111b0c4e97edf3e",
+    "lessons/week02/week02_prediction_evaluation.html": "ffd7586b5ec43cd35b1abfaa5b434a1c43e68832df5367df2df08c6d649e4c66",
+    "lessons/week02/week02_prediction_evaluation.ipynb": "9bb1ea5110b74ea1cf32fbc9ee9e9a5aadbceba2f750c2dfc2d6587e18954bdf",
+    "lessons/week02/week02_temporal_preprocessing.html": "f8fd2ee95761debd8bfc7ea9d2bf4493ef5594cbf90fdb6b3b75a8fd1ea883e4",
+    "lessons/week02/week02_temporal_preprocessing.ipynb": "a830a15e8d2bf2cb91e17cd2e8b14172390fc7cea3a07539add3fe52a05b5865",
+    "lessons/week02/week02_temporal_preprocessing_teacher.md": "e898de9e42be0ee9f562a6b36df036d5eb0a66e488ee62d8d9e9c3b666dcee74",
+    "lessons/week02/week02_temporal_preprocessing_validation.json": "f4ccd285b1dd861497c9e4b25700993fec89c7341486803337483701646f9936",
+    "reviews/week01/independent-transfer-20261111/quality.json": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6",
+    "reviews/week01/independent-transfer-20261111/workflow.json": "21f999d6cfbc17a01c64d885e7c27cd0879e4794cbf405d253193bd02c7d131f"
+  },
+  "original_lessons_and_record_unchanged": true,
+  "git_index_before": "aa671c547b54acf663648e7f4858cc70478dc3b7579ca5ca14f68d86ff96378e",
+  "git_index_after": "aa671c547b54acf663648e7f4858cc70478dc3b7579ca5ca14f68d86ff96378e",
+  "git_index_unchanged": true,
+  "copied_input_files": [
+    {
+      "path": "curriculum/contract.json",
+      "sha256": "977460b110c75a89c08731c59f045e53168ff36dc8896ca6b0bdf4b3057a4b54"
+    },
+    {
+      "path": "curriculum/student-plan.html",
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5"
+    },
+    {
+      "path": "lessons/week01/teacher-notes.txt",
+      "sha256": "bb2c8e3777dac240197fa422e8ca067379ca038dc81a2a2e35c82e4b7c41b8ec"
+    },
+    {
+      "path": "lessons/week01/validation.json",
+      "sha256": "1d610414e48a02ba14d81b13eb86e27463b3d740ab71a20e6c49ffe2ac8528b7"
+    },
+    {
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7"
+    },
+    {
+      "path": "reviews/week01/final-followup/independent-final-rebind.json",
+      "sha256": "17203d621fdb0e7f828168bd39c0ab5dd9f450e5e04adc94371ac0ebf35ea651"
+    },
+    {
+      "path": "reviews/week01/final-followup/independent-supplement.json",
+      "sha256": "dd7820422ea5647f31788f30881d5dcadf0a50f8d383c16efd8cc9b4621756ab"
+    },
+    {
+      "path": "reviews/week01/final/independent-material-review.json",
+      "sha256": "07736b85103f5cd411b318476f023e44aec4fef77e32177d03bf484c2d2fa4cf"
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/content-check.json",
+      "sha256": "082bf99c0b3428dc173a66450d4d2a2a4b5c067dec569ad3ca5f855f18a814f8"
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/quality.json",
+      "sha256": "49a48bf0e724661ea92b6f0b5d943889f979e284e7827de5380f501f6d29add6"
+    },
+    {
+      "path": "reviews/week01/independent-transfer-20261111/source-brief.md",
+      "sha256": "dc13d394c39c2e16361341cfb61a9c2ecf2342b47e51b5a0b1ae6ffb03e4b1c7"
+    },
+    {
+      "path": "skills/koai-evaluate/references/theory-explanation.json",
+      "sha256": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c"
+    },
+    {
+      "path": "skills/koai-evaluate/references/unit-specifications.json",
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+    },
+    {
+      "path": "skills/references/criteria.json",
+      "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+    }
+  ],
+  "baseline_actual_status": {
+    "fingerprints": {
+      "K16/W1-python": "3045939cc7be915438cde147d2113914ea3fc61fd86d5a80de847a08fd7c74eb",
+      "K16/W1-table": "fe39d475ac3636177cf18bb8a7a35eae39a444737f16beb33d1de743450d8c44",
+      "K16/W1-array": "0d18ff6ce9e72615f9845ff31273701d92fc36dead9b901c88faac09209ea024",
+      "K16/W1-visualise": "b37266bae96a009ce96717e93ac21c051904dd0d170072bca3616e4370eb753c",
+      "K06/claim:python": "ca51af2ca4bd0f85660f8a164f67bf8a9d4af75da0f1d5a95944507cf2749c22",
+      "K06/claim:table": "1ccebcd439a574633376c145e282caaae1be1c07d29634509f1526671e14f148",
+      "K06/claim:array": "014cae2e195cd7b37d5e36bdf73b376d9f28c47a9ce1a5bdaafd20a12939c8bf",
+      "K06/claim:visualise": "a3a9f6dacb66e525a3fa31a7c3c6c7d893cba18d4207f842c32cefedb3e40328",
+      "K02/W1-python": "5def7fce84bc646a03dc3280d5ec78ca53ee11b9dde0c1bef63d36015868f416",
+      "K05/W1-python": "752fd4f06fecfcee3a5d1ef6a15e5515c9d3be889a5d17aebe2f962259e0d69c",
+      "K09/W1-python": "3393510110901376d0c4457853d86a141cfa2ee3669a2c85aeb8da0cee62237d",
+      "K02/W1-table": "76f92c24d2982e66ceff8361cc4b3d961ca02493f6fa3d890e96208fa4596b79",
+      "K05/W1-table": "2dec4f33d2a38da6d5c59c738e67d436323c2fa9e347b0c405532382edc28703",
+      "K09/W1-table": "249cbe5548df3bce6e29ddfce6b13b74e156cbc6f3785648abb5c802bb840e38",
+      "K02/W1-array": "0bf30b8b2afc47dcf6aa99c91593492ffc2645efa7ab59a2504d10e99d37e22e",
+      "K05/W1-array": "c1a875a5affc7e35d756770a58502a3018c7aafaa937d936f2577b8bd32e9992",
+      "K09/W1-array": "fc65ce1642bd848e18cc44cf88d13fd00ad01fcf323a97af9f966a6db00ff6f1",
+      "K02/W1-visualise": "62cd5b59227a74e737f9ac0989ae425af77fdaa134f15ad19f28c20ec79682b1",
+      "K05/W1-visualise": "ea8649e04f4eb754a060c8152819ee9a630829fbf68f3264c5971a32abc45608",
+      "K09/W1-visualise": "99e3e666ef8b32dab1575a6c3f4c85fcd1025ca7b5f0371ba015fdfc5d774c64",
+      "K10/claim:python": "436faa62e737fcead91b29a07ba03b13be7073ffa11e4463782ac8c02f7c273d",
+      "K10/claim:table": "f04089a2f77c79c5cabf5d678bd120e51dcda2aa0bbbb0a757f3a18ec0ed4d53",
+      "K10/claim:array": "92cfaff23ac961998ceeccba32d938b26d7b99bf0fa934761c45145610f59129",
+      "K10/claim:visualise": "af743ed446a9d1df32dcd110f1fc349990392815884b1896b5948bf816616730"
+    },
+    "reviews": {
+      "K16/W1-python": {
+        "latest_review_id": "fresh-rebind-K16-W1-python",
+        "stored_status": "passed",
+        "stored_context_matches": false,
+        "effective_status": "uncertain"
+      },
+      "K16/W1-table": {
+        "latest_review_id": "fresh-rebind-K16-W1-table",
+        "stored_status": "passed",
+        "stored_context_matches": false,
+        "effective_status": "uncertain"
+      },
+      "K16/W1-array": {
+        "latest_review_id": "fresh-rebind-K16-W1-array",
+        "stored_status": "passed",
+        "stored_context_matches": false,
+        "effective_status": "uncertain"
+      },
+      "K16/W1-visualise": {
+        "latest_review_id": "fresh-rebind-K16-W1-visualise",
+        "stored_status": "passed",
+        "stored_context_matches": false,
+        "effective_status": "uncertain"
+      },
+      "K06/claim:python": {
+        "latest_review_id": "fresh-rebind-K06-claim:python",
+        "stored_status": "passed",
+        "stored_context_matches": false,
+        "effective_status": "uncertain"
+      },
+      "K06/claim:table": {
+        "latest_review_id": "fresh-rebind-K06-claim:table",
+        "stored_status": "passed",
+        "stored_context_matches": true,
+        "effective_status": "passed"
+      },
+      "K06/claim:array": {
+        "latest_review_id": "fresh-rebind-K06-claim:array",
+        "stored_status": "passed",
+        "stored_context_matches": true,
+        "effective_status": "passed"
+      },
+      "K06/claim:visualise": {
+        "latest_review_id": "fresh-rebind-K06-claim:visualise",
+        "stored_status": "passed",
+        "stored_context_matches": true,
+        "effective_status": "passed"
+      },
+      "K02/W1-python": {
+        "latest_review_id": "supplement-K02-W1-python",
+        "stored_status": "passed",
+        "stored_context_matches": false,
+        "effective_status": "uncertain"
+      },
+      "K05/W1-python": {
+        "latest_review_id": "supplement-K05-W1-python",
+        "stored_status": "passed",
+        "stored_context_matches": false,
+        "effective_status": "uncertain"
+      },
+      "K09/W1-python": {
+        "latest_review_id": "supplement-K09-W1-python",
+        "stored_status": "passed",
+        "stored_context_matches": false,
+        "effective_status": "uncertain"
+      },
+      "K02/W1-table": {
+        "latest_review_id": "supplement-K02-W1-table",
+        "stored_status": "passed",
+        "stored_context_matches": false,
+        "effective_status": "uncertain"
+      },
+      "K05/W1-table": {
+        "latest_review_id": "supplement-K05-W1-table",
+        "stored_status": "passed",
+        "stored_context_matches": false,
+        "effective_status": "uncertain"
+      },
+      "K09/W1-table": {
+        "latest_review_id": "supplement-K09-W1-table",
+        "stored_status": "passed",
+        "stored_context_matches": false,
+        "effective_status": "uncertain"
+      },
+      "K02/W1-array": {
+        "latest_review_id": "supplement-K02-W1-array",
+        "stored_status": "passed",
+        "stored_context_matches": false,
+        "effective_status": "uncertain"
+      },
+      "K05/W1-array": {
+        "latest_review_id": "supplement-K05-W1-array",
+        "stored_status": "passed",
+        "stored_context_matches": false,
+        "effective_status": "uncertain"
+      },
+      "K09/W1-array": {
+        "latest_review_id": "supplement-K09-W1-array",
+        "stored_status": "passed",
+        "stored_context_matches": false,
+        "effective_status": "uncertain"
+      },
+      "K02/W1-visualise": {
+        "latest_review_id": "supplement-K02-W1-visualise",
+        "stored_status": "passed",
+        "stored_context_matches": false,
+        "effective_status": "uncertain"
+      },
+      "K05/W1-visualise": {
+        "latest_review_id": "corrected-visual-binding-current",
+        "stored_status": "passed",
+        "stored_context_matches": false,
+        "effective_status": "uncertain"
+      },
+      "K09/W1-visualise": {
+        "latest_review_id": "supplement-K09-W1-visualise",
+        "stored_status": "passed",
+        "stored_context_matches": false,
+        "effective_status": "uncertain"
+      },
+      "K10/claim:python": {
+        "latest_review_id": "supplement-K10-claim:python",
+        "stored_status": "passed",
+        "stored_context_matches": false,
+        "effective_status": "uncertain"
+      },
+      "K10/claim:table": {
+        "latest_review_id": "supplement-K10-claim:table",
+        "stored_status": "passed",
+        "stored_context_matches": true,
+        "effective_status": "passed"
+      },
+      "K10/claim:array": {
+        "latest_review_id": "supplement-K10-claim:array",
+        "stored_status": "passed",
+        "stored_context_matches": true,
+        "effective_status": "passed"
+      },
+      "K10/claim:visualise": {
+        "latest_review_id": "supplement-K10-claim:visualise",
+        "stored_status": "passed",
+        "stored_context_matches": true,
+        "effective_status": "passed"
+      }
+    },
+    "aggregate": {
+      "status": "uncertain",
+      "ready_for_review": false,
+      "discovery_gate": "discovery_missing"
+    },
+    "criterion_statuses": {
+      "K01": "passed",
+      "K02": "not_run",
+      "K03": "passed",
+      "K04": "not_run",
+      "K05": "uncertain",
+      "K06": "uncertain",
+      "K07": "passed",
+      "K08": "passed",
+      "K09": "uncertain",
+      "K10": "passed",
+      "K11": "uncertain",
+      "K12": "uncertain",
+      "K13": "passed",
+      "K14": "uncertain",
+      "K15": "not_run",
+      "K16": "uncertain"
+    },
+    "k12_measurement": {
+      "stale_review_ids": [
+        "fresh-rebind-K16-W1-python",
+        "fresh-rebind-K16-W1-table",
+        "fresh-rebind-K16-W1-array",
+        "fresh-rebind-K16-W1-visualise",
+        "fresh-rebind-K06-claim:python",
+        "supplement-K02-W1-python",
+        "supplement-K05-W1-python",
+        "supplement-K09-W1-python",
+        "supplement-K02-W1-table",
+        "supplement-K05-W1-table",
+        "supplement-K09-W1-table",
+        "supplement-K02-W1-array",
+        "supplement-K05-W1-array",
+        "supplement-K09-W1-array",
+        "supplement-K02-W1-visualise",
+        "corrected-visual-binding-current",
+        "supplement-K09-W1-visualise"
+      ],
+      "active_review_ids": [
+        "corrected-visual-binding-current",
+        "fresh-rebind-K06-claim:array",
+        "fresh-rebind-K06-claim:python",
+        "fresh-rebind-K06-claim:table",
+        "fresh-rebind-K06-claim:visualise",
+        "fresh-rebind-K16-W1-array",
+        "fresh-rebind-K16-W1-python",
+        "fresh-rebind-K16-W1-table",
+        "fresh-rebind-K16-W1-visualise",
+        "supplement-K02-W1-array",
+        "supplement-K02-W1-python",
+        "supplement-K02-W1-table",
+        "supplement-K02-W1-visualise",
+        "supplement-K05-W1-array",
+        "supplement-K05-W1-python",
+        "supplement-K05-W1-table",
+        "supplement-K09-W1-array",
+        "supplement-K09-W1-python",
+        "supplement-K09-W1-table",
+        "supplement-K09-W1-visualise"
+      ],
+      "historical_review_ids": [
+        "material-K16-W1-python",
+        "material-K16-W1-table",
+        "material-K16-W1-array",
+        "material-K16-W1-visualise",
+        "material-K06-claim:python",
+        "material-K06-claim:table",
+        "material-K06-claim:array",
+        "material-K06-claim:visualise",
+        "supplement-K05-W1-visualise",
+        "supplement-K10-claim:python",
+        "supplement-K10-claim:table",
+        "supplement-K10-claim:array",
+        "supplement-K10-claim:visualise",
+        "historical-visual-binding-failure"
+      ],
+      "selection": "last_appended_review_per_criterion_and_current_object",
+      "dependency_nodes": 39
+    },
+    "agreement": {
+      "agreed": false,
+      "decision_ref": null,
+      "agreement_fingerprint": null,
+      "stop_requested": false,
+      "diagnostic_cutoff": null,
+      "maximum_required_homework_minutes": null,
+      "calibration_tolerance": null
+    },
+    "plan_baseline": {
+      "authority": "advisory_only",
+      "status": "passed",
+      "errors": [],
+      "baseline_sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "weeks": [
+        {
+          "week": 1,
+          "class_minutes": 120,
+          "required_self_study_hours": [
+            5,
+            7
+          ]
+        },
+        {
+          "week": 2,
+          "class_minutes": 120,
+          "required_self_study_hours": [
+            6,
+            8
+          ]
+        },
+        {
+          "week": 3,
+          "class_minutes": 120,
+          "required_self_study_hours": [
+            7,
+            9
+          ]
+        },
+        {
+          "week": 4,
+          "class_minutes": 120,
+          "required_self_study_hours": [
+            8,
+            10
+          ]
+        },
+        {
+          "week": 5,
+          "class_minutes": 120,
+          "required_self_study_hours": [
+            8,
+            10
+          ]
+        },
+        {
+          "week": 6,
+          "class_minutes": 120,
+          "required_self_study_hours": [
+            10,
+            14
+          ]
+        },
+        {
+          "week": 7,
+          "class_minutes": 120,
+          "required_self_study_hours": [
+            14,
+            18
+          ]
+        },
+        {
+          "week": 8,
+          "class_minutes": 120,
+          "required_self_study_hours": [
+            16,
+            20
+          ]
+        },
+        {
+          "week": 9,
+          "class_minutes": 120,
+          "required_self_study_hours": [
+            16,
+            20
+          ]
+        },
+        {
+          "week": 10,
+          "class_minutes": 120,
+          "required_self_study_hours": [
+            10,
+            14
+          ]
+        }
+      ],
+      "topic_count": 60,
+      "coverage": "scheduled_only"
+    }
+  },
+  "plan_node": {
+    "id": "PLAN",
+    "revision": "Full-scope recalibration; SHA256 pinned in contract.json",
+    "sha256": "04c4d3f2ebe100eb488ca0713a1f2f5bf8da81ba6ce55a374740a4cdd2a183af",
+    "depends_on": []
+  },
+  "plan_in_assessed_closures": {
+    "W1-python": false,
+    "W1-table": false,
+    "W1-array": false,
+    "W1-visualise": false,
+    "claim:python": false,
+    "claim:table": false,
+    "claim:array": false,
+    "claim:visualise": false
+  },
+  "cases": [
+    {
+      "case": "01-plan-week1-unlinked",
+      "expected": {
+        "all_fingerprints_unchanged": true,
+        "plan_status": "failed",
+        "interpretation": "Original PLAN has no path and no assessed object closure edge. Relevant plan change fails aggregate K01 but changes no object fingerprint; never claim an aggregate approval survived."
+      },
+      "actual": {
+        "changed_fingerprints": [],
+        "changed_effective_review_statuses": {},
+        "changed_criterion_statuses": {
+          "K01": {
+            "before": "passed",
+            "after": "failed"
+          },
+          "K03": {
+            "before": "passed",
+            "after": "failed"
+          }
+        },
+        "aggregate_before": {
+          "status": "uncertain",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "aggregate_after": {
+          "status": "failed",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "plan_baseline_after": "failed"
+      },
+      "expectation_checks": {
+        "all_fingerprints_unchanged": true,
+        "plan_status": true
+      },
+      "all_expectations_met": true,
+      "record_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/01-plan-week1-unlinked/record.json",
+      "measurement_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/01-plan-week1-unlinked/measurement.json"
+    },
+    {
+      "case": "02-plan-week10-unlinked",
+      "expected": {
+        "all_fingerprints_unchanged": true,
+        "plan_status": "failed",
+        "interpretation": "Same legacy omission. This alone does not prove appropriate selective classification."
+      },
+      "actual": {
+        "changed_fingerprints": [],
+        "changed_effective_review_statuses": {},
+        "changed_criterion_statuses": {
+          "K01": {
+            "before": "passed",
+            "after": "failed"
+          },
+          "K03": {
+            "before": "passed",
+            "after": "failed"
+          }
+        },
+        "aggregate_before": {
+          "status": "uncertain",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "aggregate_after": {
+          "status": "failed",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "plan_baseline_after": "failed"
+      },
+      "expectation_checks": {
+        "all_fingerprints_unchanged": true,
+        "plan_status": true
+      },
+      "all_expectations_met": true,
+      "record_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/02-plan-week10-unlinked/record.json",
+      "measurement_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/02-plan-week10-unlinked/measurement.json"
+    },
+    {
+      "case": "03-plan-week1-repin-clone",
+      "expected": {
+        "all_fingerprints_unchanged": true,
+        "plan_status": "passed",
+        "interpretation": "Explicit cloned pin revision restores structural baseline, still supplies no individual new content judgment, agreement or readiness."
+      },
+      "actual": {
+        "changed_fingerprints": [],
+        "changed_effective_review_statuses": {},
+        "changed_criterion_statuses": {},
+        "aggregate_before": {
+          "status": "uncertain",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "aggregate_after": {
+          "status": "uncertain",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "plan_baseline_after": "passed"
+      },
+      "expectation_checks": {
+        "all_fingerprints_unchanged": true,
+        "plan_status": true
+      },
+      "all_expectations_met": true,
+      "record_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/03-plan-week1-repin-clone/record.json",
+      "measurement_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/03-plan-week1-repin-clone/measurement.json"
+    },
+    {
+      "case": "04-related-claim-table-cell",
+      "expected": {
+        "fingerprints_changed": [
+          "K06/claim:table",
+          "K05/W1-table"
+        ],
+        "fingerprints_unchanged": [
+          "K06/claim:array",
+          "K06/claim:visualise"
+        ],
+        "effective_statuses": {
+          "K06/claim:table": "uncertain",
+          "K06/claim:array": "passed"
+        },
+        "interpretation": "Already-working region invalidation changes a truly current local passed claim to uncertain; unrelated local pass survives."
+      },
+      "actual": {
+        "changed_fingerprints": [
+          "K02/W1-table",
+          "K05/W1-table",
+          "K06/claim:table",
+          "K09/W1-table",
+          "K10/claim:table",
+          "K16/W1-table"
+        ],
+        "changed_effective_review_statuses": {
+          "K06/claim:table": {
+            "before": "passed",
+            "after": "uncertain"
+          },
+          "K10/claim:table": {
+            "before": "passed",
+            "after": "uncertain"
+          }
+        },
+        "changed_criterion_statuses": {
+          "K01": {
+            "before": "passed",
+            "after": "failed"
+          },
+          "K08": {
+            "before": "passed",
+            "after": "failed"
+          }
+        },
+        "aggregate_before": {
+          "status": "uncertain",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "aggregate_after": {
+          "status": "failed",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "plan_baseline_after": "passed"
+      },
+      "expectation_checks": {
+        "fingerprint_changed:K06/claim:table": true,
+        "fingerprint_changed:K05/W1-table": true,
+        "fingerprint_unchanged:K06/claim:array": true,
+        "fingerprint_unchanged:K06/claim:visualise": true,
+        "effective_status:K06/claim:table": true,
+        "effective_status:K06/claim:array": true
+      },
+      "all_expectations_met": true,
+      "record_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/04-related-claim-table-cell/record.json",
+      "measurement_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/04-related-claim-table-cell/measurement.json"
+    },
+    {
+      "case": "05-unregistered-notebook-cell",
+      "expected": {
+        "all_fingerprints_unchanged": true,
+        "interpretation": "Unregistered cell 8f7fc067 does not change declared local review contexts, while full artifact digest/execution gates may fail. Omitted semantic dependencies remain a limit."
+      },
+      "actual": {
+        "changed_fingerprints": [],
+        "changed_effective_review_statuses": {},
+        "changed_criterion_statuses": {
+          "K01": {
+            "before": "passed",
+            "after": "failed"
+          },
+          "K08": {
+            "before": "passed",
+            "after": "failed"
+          }
+        },
+        "aggregate_before": {
+          "status": "uncertain",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "aggregate_after": {
+          "status": "failed",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "plan_baseline_after": "passed"
+      },
+      "expectation_checks": {
+        "all_fingerprints_unchanged": true
+      },
+      "all_expectations_met": true,
+      "record_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/05-unregistered-notebook-cell/record.json",
+      "measurement_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/05-unregistered-notebook-cell/measurement.json"
+    },
+    {
+      "case": "06-execution-count-metadata-only",
+      "expected": {
+        "all_fingerprints_unchanged": true,
+        "interpretation": "Region logic intentionally excludes execution counters/notebook metadata; full raw byte identity remains separate."
+      },
+      "actual": {
+        "changed_fingerprints": [],
+        "changed_effective_review_statuses": {},
+        "changed_criterion_statuses": {
+          "K01": {
+            "before": "passed",
+            "after": "failed"
+          },
+          "K08": {
+            "before": "passed",
+            "after": "failed"
+          }
+        },
+        "aggregate_before": {
+          "status": "uncertain",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "aggregate_after": {
+          "status": "failed",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "plan_baseline_after": "passed"
+      },
+      "expectation_checks": {
+        "all_fingerprints_unchanged": true
+      },
+      "all_expectations_met": true,
+      "record_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/06-execution-count-metadata-only/record.json",
+      "measurement_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/06-execution-count-metadata-only/measurement.json"
+    },
+    {
+      "case": "07-linked-output-cell",
+      "expected": {
+        "fingerprints_changed": [
+          "K05/W1-python"
+        ],
+        "fingerprints_unchanged": [
+          "K06/claim:array"
+        ],
+        "interpretation": "Displayed output is included in cell-region fingerprints. This detects declared byte-level context drift, not output correctness."
+      },
+      "actual": {
+        "changed_fingerprints": [
+          "K02/W1-array",
+          "K02/W1-python",
+          "K05/W1-array",
+          "K05/W1-python",
+          "K09/W1-array",
+          "K09/W1-python",
+          "K16/W1-array",
+          "K16/W1-python"
+        ],
+        "changed_effective_review_statuses": {},
+        "changed_criterion_statuses": {
+          "K01": {
+            "before": "passed",
+            "after": "failed"
+          },
+          "K08": {
+            "before": "passed",
+            "after": "failed"
+          }
+        },
+        "aggregate_before": {
+          "status": "uncertain",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "aggregate_after": {
+          "status": "failed",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "plan_baseline_after": "passed"
+      },
+      "expectation_checks": {
+        "fingerprint_changed:K05/W1-python": true,
+        "fingerprint_unchanged:K06/claim:array": true
+      },
+      "all_expectations_met": true,
+      "record_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/07-linked-output-cell/record.json",
+      "measurement_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/07-linked-output-cell/measurement.json"
+    },
+    {
+      "case": "08-used-source-reading-record",
+      "expected": {
+        "fingerprints_changed": [
+          "K06/claim:table",
+          "K05/W1-table"
+        ],
+        "fingerprints_unchanged": [
+          "K06/claim:array"
+        ],
+        "effective_statuses": {
+          "K06/claim:table": "uncertain"
+        },
+        "interpretation": "Used source read stable metadata is already in upstream object fingerprints."
+      },
+      "actual": {
+        "changed_fingerprints": [
+          "K02/W1-table",
+          "K05/W1-table",
+          "K06/claim:table",
+          "K09/W1-table",
+          "K10/claim:table",
+          "K16/W1-table"
+        ],
+        "changed_effective_review_statuses": {
+          "K06/claim:table": {
+            "before": "passed",
+            "after": "uncertain"
+          },
+          "K10/claim:table": {
+            "before": "passed",
+            "after": "uncertain"
+          }
+        },
+        "changed_criterion_statuses": {},
+        "aggregate_before": {
+          "status": "uncertain",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "aggregate_after": {
+          "status": "uncertain",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "plan_baseline_after": "passed"
+      },
+      "expectation_checks": {
+        "fingerprint_changed:K06/claim:table": true,
+        "fingerprint_changed:K05/W1-table": true,
+        "fingerprint_unchanged:K06/claim:array": true,
+        "effective_status:K06/claim:table": true
+      },
+      "all_expectations_met": true,
+      "record_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/08-used-source-reading-record/record.json",
+      "measurement_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/08-used-source-reading-record/measurement.json"
+    },
+    {
+      "case": "09-unconnected-source-reading-record",
+      "expected": {
+        "all_fingerprints_unchanged": true,
+        "interpretation": "Unused source read outside assessed closure has no local review impact; no universal invalidation."
+      },
+      "actual": {
+        "changed_fingerprints": [],
+        "changed_effective_review_statuses": {},
+        "changed_criterion_statuses": {},
+        "aggregate_before": {
+          "status": "uncertain",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "aggregate_after": {
+          "status": "uncertain",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "plan_baseline_after": "passed"
+      },
+      "expectation_checks": {
+        "all_fingerprints_unchanged": true
+      },
+      "all_expectations_met": true,
+      "record_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/09-unconnected-source-reading-record/record.json",
+      "measurement_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/09-unconnected-source-reading-record/measurement.json"
+    },
+    {
+      "case": "10-review-evidence-bytes",
+      "expected": {
+        "all_fingerprints_unchanged": true,
+        "effective_statuses": {
+          "K06/claim:table": "uncertain"
+        },
+        "interpretation": "Evidence SHA fails _evidence and withdraws local passed status without changing object_fingerprint. Legacy K12 lists context staleness only and may omit this reason."
+      },
+      "actual": {
+        "changed_fingerprints": [],
+        "changed_effective_review_statuses": {
+          "K06/claim:table": {
+            "before": "passed",
+            "after": "uncertain"
+          },
+          "K06/claim:array": {
+            "before": "passed",
+            "after": "uncertain"
+          },
+          "K06/claim:visualise": {
+            "before": "passed",
+            "after": "uncertain"
+          }
+        },
+        "changed_criterion_statuses": {},
+        "aggregate_before": {
+          "status": "uncertain",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "aggregate_after": {
+          "status": "uncertain",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "plan_baseline_after": "passed"
+      },
+      "expectation_checks": {
+        "all_fingerprints_unchanged": true,
+        "effective_status:K06/claim:table": true
+      },
+      "all_expectations_met": true,
+      "record_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/10-review-evidence-bytes/record.json",
+      "measurement_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/10-review-evidence-bytes/measurement.json"
+    },
+    {
+      "case": "11-unrelated-new-evidence-file",
+      "expected": {
+        "all_fingerprints_unchanged": true,
+        "effective_statuses": {
+          "K06/claim:table": "passed"
+        },
+        "interpretation": "A file not in the recorded evidence/dependency set has no declared influence; omitted necessary dependencies cannot be inferred from bytes."
+      },
+      "actual": {
+        "changed_fingerprints": [],
+        "changed_effective_review_statuses": {},
+        "changed_criterion_statuses": {},
+        "aggregate_before": {
+          "status": "uncertain",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "aggregate_after": {
+          "status": "uncertain",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "plan_baseline_after": "passed"
+      },
+      "expectation_checks": {
+        "all_fingerprints_unchanged": true,
+        "effective_status:K06/claim:table": true
+      },
+      "all_expectations_met": true,
+      "record_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/11-unrelated-new-evidence-file/record.json",
+      "measurement_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/11-unrelated-new-evidence-file/measurement.json"
+    },
+    {
+      "case": "12-shared-dependency-file",
+      "expected": {
+        "fingerprints_changed": [
+          "K05/W1-python",
+          "K05/W1-table",
+          "K05/W1-array",
+          "K05/W1-visualise"
+        ],
+        "fingerprints_unchanged": [
+          "K06/claim:table",
+          "K06/claim:array"
+        ],
+        "interpretation": "All four units explicitly depend on this file; broad unit impact is declared dependency behavior, not blanket invalidation."
+      },
+      "actual": {
+        "changed_fingerprints": [
+          "K02/W1-array",
+          "K02/W1-python",
+          "K02/W1-table",
+          "K02/W1-visualise",
+          "K05/W1-array",
+          "K05/W1-python",
+          "K05/W1-table",
+          "K05/W1-visualise",
+          "K09/W1-array",
+          "K09/W1-python",
+          "K09/W1-table",
+          "K09/W1-visualise",
+          "K16/W1-array",
+          "K16/W1-python",
+          "K16/W1-table",
+          "K16/W1-visualise"
+        ],
+        "changed_effective_review_statuses": {},
+        "changed_criterion_statuses": {},
+        "aggregate_before": {
+          "status": "uncertain",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "aggregate_after": {
+          "status": "uncertain",
+          "ready_for_review": false,
+          "discovery_gate": "discovery_missing"
+        },
+        "plan_baseline_after": "passed"
+      },
+      "expectation_checks": {
+        "fingerprint_changed:K05/W1-python": true,
+        "fingerprint_changed:K05/W1-table": true,
+        "fingerprint_changed:K05/W1-array": true,
+        "fingerprint_changed:K05/W1-visualise": true,
+        "fingerprint_unchanged:K06/claim:table": true,
+        "fingerprint_unchanged:K06/claim:array": true
+      },
+      "all_expectations_met": true,
+      "record_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/12-shared-dependency-file/record.json",
+      "measurement_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/12-shared-dependency-file/measurement.json"
+    },
+    {
+      "case": "14-plan-whole-file-linked-week1",
+      "expected": {
+        "fingerprints_changed": [
+          "K05/W1-table"
+        ],
+        "interpretation": "A whole-file PLAN path plus edge detects week1, but also invalidates W1table on unrelated week10 changes. Region-selective provenance must be explicit; hashes do not classify meaning."
+      },
+      "actual": {
+        "changed_fingerprints": [
+          "K02/W1-table",
+          "K05/W1-table",
+          "K09/W1-table",
+          "K16/W1-table"
+        ]
+      },
+      "expectation_checks": {
+        "whole_file_path_invalidates_table": true,
+        "unconnected_claim_unchanged": true
+      },
+      "all_expectations_met": true,
+      "record_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/14-plan-whole-file-linked-week1/record.json",
+      "measurement_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/14-plan-whole-file-linked-week1/measurement.json"
+    },
+    {
+      "case": "15-plan-whole-file-linked-week10",
+      "expected": {
+        "fingerprints_changed": [
+          "K05/W1-table"
+        ],
+        "interpretation": "A whole-file PLAN path plus edge detects week1, but also invalidates W1table on unrelated week10 changes. Region-selective provenance must be explicit; hashes do not classify meaning."
+      },
+      "actual": {
+        "changed_fingerprints": [
+          "K02/W1-table",
+          "K05/W1-table",
+          "K09/W1-table",
+          "K16/W1-table"
+        ]
+      },
+      "expectation_checks": {
+        "whole_file_path_invalidates_table": true,
+        "unconnected_claim_unchanged": true
+      },
+      "all_expectations_met": true,
+      "record_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/15-plan-whole-file-linked-week10/record.json",
+      "measurement_path": "reviews/selective-invalidation-20261111/reproduction/baseline-01/cases/15-plan-whole-file-linked-week10/measurement.json"
+    }
+  ],
+  "all_expectations_met": true,
+  "limits": [
+    "Record copies retain real historical declarations but do not create new real reviews, re-agreement or acceptance. No review fingerprint is refreshed to fabricate a passing control.",
+    "The original aggregate is already uncertain/not ready with discovery_missing and unagreed policy; only stated local K06 claims currently resolve passed.",
+    "Changes are deliberate byte/context perturbations, not assertions about semantic equivalence. Scope omissions cannot be discovered by a digest.",
+    "No code or lesson is executed from a mutated notebook. Only existing review bookkeeping reads the copies."
+  ]
+}

@@ -78,6 +78,19 @@ class ReviewPreflightTest(unittest.TestCase):
         return preflight.preflight(self.root, self.depth, self.graph, self.paths, self.state,
                                    semantic_review=self.semantic_review)
 
+    def test_early_workflow_pause_keeps_selective_quality_advice_visible(self):
+        selective = {'stale_review_ids': ['synthetic-changed-review'], 'binding_tasks': []}
+        report = {'status': 'uncertain', 'ready_for_review': False, 'synthetic': True,
+                  'selective_review': selective}
+        self.state['agreement']['criteria_agreed'] = False
+        with mock.patch('quality.evaluate', return_value=report):
+            result = preflight.preflight(self.root, self.depth, self.graph, self.paths, self.state,
+                                         quality_bundle={}, semantic_review=self.semantic_review)
+        self.assertEqual(result['workflow']['reason'], 'criteria_agreement_required')
+        self.assertEqual(result['selective_review'], selective)
+        self.assertEqual(result['workflow']['selective_review'], selective)
+        self.assertEqual(result['quality'], report)
+
     def test_complete_join_and_missing_path_or_unrelated_comparison(self):
         result = self.run_check()
         self.assertEqual(result['status'], 'consistent_recorded_context', result)

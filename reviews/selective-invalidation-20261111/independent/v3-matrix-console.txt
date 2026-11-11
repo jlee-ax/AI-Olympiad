@@ -1,0 +1,238 @@
+{
+  "code_sha256": "613458c1fe82173f2ff1debddeeb50cbe6bd095b11383c561f1848b845d2e0b5",
+  "prefix": "v3",
+  "cases": [
+    {
+      "case": "control",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-control/result.json",
+      "error": null
+    },
+    {
+      "case": "plan_week1",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-plan_week1/result.json",
+      "error": null
+    },
+    {
+      "case": "plan_week9",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-plan_week9/result.json",
+      "error": null
+    },
+    {
+      "case": "scope02",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-scope02/result.json",
+      "error": null
+    },
+    {
+      "case": "scope60",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-scope60/result.json",
+      "error": null
+    },
+    {
+      "case": "outside_global_p",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-outside_global_p/result.json",
+      "error": null
+    },
+    {
+      "case": "style_only",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-style_only/result.json",
+      "error": null
+    },
+    {
+      "case": "bound_code",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-bound_code/result.json",
+      "error": null
+    },
+    {
+      "case": "bound_output",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-bound_output/result.json",
+      "error": null
+    },
+    {
+      "case": "unrelated_cell",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-unrelated_cell/result.json",
+      "error": null
+    },
+    {
+      "case": "execution_counter",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-execution_counter/result.json",
+      "error": null
+    },
+    {
+      "case": "source_a_changed",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-source_a_changed/result.json",
+      "error": null
+    },
+    {
+      "case": "source_a_missing",
+      "status": "failed_missing_regular_path_diagnostics",
+      "process_exit": 1,
+      "result": "cases/v3-source_a_missing/result.json",
+      "error": {
+        "type": "ValueError",
+        "message": "File reference is outside the root or not a regular file: 'sources/a.txt'"
+      }
+    },
+    {
+      "case": "source_read_version",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-source_read_version/result.json",
+      "error": null
+    },
+    {
+      "case": "source_unused_changed",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-source_unused_changed/result.json",
+      "error": null
+    },
+    {
+      "case": "source_path_changed",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-source_path_changed/result.json",
+      "error": null
+    },
+    {
+      "case": "evidence_changed",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-evidence_changed/result.json",
+      "error": null
+    },
+    {
+      "case": "evidence_missing",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-evidence_missing/result.json",
+      "error": null
+    },
+    {
+      "case": "undeclared_plan",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-undeclared_plan/result.json",
+      "error": null
+    },
+    {
+      "case": "disconnected_plan",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-disconnected_plan/result.json",
+      "error": null
+    },
+    {
+      "case": "missing_source_node",
+      "status": "passed_expected_invalid",
+      "process_exit": 0,
+      "result": "cases/v3-missing_source_node/result.json",
+      "error": {
+        "type": "ValueError",
+        "message": "Missing dependency node: 'source:a'"
+      }
+    },
+    {
+      "case": "missing_claim_source_edge",
+      "status": "passed_expected_invalid",
+      "process_exit": 0,
+      "result": "cases/v3-missing_claim_source_edge/result.json",
+      "error": {
+        "type": "ValueError",
+        "message": "Every cited source must be a declared claim dependency"
+      }
+    },
+    {
+      "case": "unrelated_repin",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-unrelated_repin/result.json",
+      "error": null
+    },
+    {
+      "case": "shared_source",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-shared_source/result.json",
+      "error": null
+    },
+    {
+      "case": "append_current",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-append_current/result.json",
+      "error": null
+    },
+    {
+      "case": "append_failed",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-append_failed/result.json",
+      "error": null
+    },
+    {
+      "case": "append_uncertain",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-append_uncertain/result.json",
+      "error": null
+    },
+    {
+      "case": "append_not_run",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-append_not_run/result.json",
+      "error": null
+    },
+    {
+      "case": "append_stale",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-append_stale/result.json",
+      "error": null
+    },
+    {
+      "case": "retired_history",
+      "status": "passed",
+      "process_exit": 0,
+      "result": "cases/v3-retired_history/result.json",
+      "error": null
+    },
+    {
+      "case": "source_symlink_escape",
+      "status": "failed_missing_regular_path_diagnostics",
+      "process_exit": 1,
+      "result": "cases/v3-source_symlink_escape/result.json",
+      "error": {
+        "type": "ValueError",
+        "message": "File reference is outside the root or not a regular file: 'sources/escape.txt'"
+      }
+    }
+  ],
+  "all_cases_expected": false,
+  "new_subprocess_per_case": true,
+  "fictional_controls_not_real_review_or_learner_evidence": true
+}

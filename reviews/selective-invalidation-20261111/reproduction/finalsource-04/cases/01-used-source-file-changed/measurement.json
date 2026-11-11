@@ -1,0 +1,114 @@
+{
+  "case": "01-used-source-file-changed",
+  "mode": "changed",
+  "existing_candidate_preserved": true,
+  "stored_reviews_unchanged": true,
+  "source_binding_added_only_in_copy": {
+    "node_id": "read-followup:PYTHON_RETURN",
+    "path": "reviews/week01/final-followup/independent-supplement.json",
+    "origin": "Actual source_read.reading_receipt field; local reading receipt, not authenticated upstream source bytes."
+  },
+  "checks": {
+    "evaluate_retains_selective_review": true,
+    "plan_forwards_same_selective": true,
+    "workflow_forwards_same_selective_while_paused": true,
+    "preflight_forwards_same_selective": true,
+    "no_new_readiness": true,
+    "probe_expected_status": true,
+    "unrelated_K06_claims_current": true
+  },
+  "all_checks_passed": true,
+  "calls": [
+    {
+      "name": "evaluate",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/quality-code-snapshot.py",
+        "evaluate",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/01-used-source-file-changed/record.json",
+        "--root",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/01-used-source-file-changed"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "dbefe1b29ca321ba7ba0f6a2c4621763745fd38afdf4466aece387063bdbc751",
+      "stderr": ""
+    },
+    {
+      "name": "plan",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/quality-code-snapshot.py",
+        "plan",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/01-used-source-file-changed/record.json",
+        "--root",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/01-used-source-file-changed"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4eda5bb5537bdbf59648a3cd0a2c06f6fa36d6502b98db50c08c08f809b024c3",
+      "stderr": ""
+    },
+    {
+      "name": "workflow",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/tools/workflow.py",
+        "decide",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/01-used-source-file-changed/reviews/week01/independent-transfer-20261111/workflow.json",
+        "--quality",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/01-used-source-file-changed/record.json",
+        "--root",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/01-used-source-file-changed"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c16e43128849a72f528daa314dcbba583e062c55532bc0238d6154af0e93efda",
+      "stderr": ""
+    },
+    {
+      "name": "preflight",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/tools/review_preflight.py",
+        "--root",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-review-invalidation/reviews/selective-invalidation-20261111/reproduction/finalsource-04/cases/01-used-source-file-changed",
+        "--depth",
+        "reviews/week01/independent-transfer-20261111/depth.json",
+        "--graph",
+        "reviews/week01/independent-transfer-20261111/graph.json",
+        "--paths",
+        "reviews/week01/independent-transfer-20261111/paths.json",
+        "--semantic-review",
+        "reviews/week01/independent-transfer-20261111/semantic-review.json",
+        "--state",
+        "reviews/week01/independent-transfer-20261111/workflow.json",
+        "--quality",
+        "record.json"
+      ],
+      "exit_code": 1,
+      "stdout_sha256": "5e9ae5650486f951b6d2309494691f19e6a7480b6581b60418a1fc82e246bdec",
+      "stderr": ""
+    }
+  ],
+  "probe_status": "review_required",
+  "actual_state": {
+    "evaluate": {
+      "status": "uncertain",
+      "reason": null
+    },
+    "plan": {
+      "status": "pause",
+      "reason": "priority_policy_requires_agreement"
+    },
+    "workflow": {
+      "status": "pause",
+      "reason": "criteria_agreement_required"
+    },
+    "preflight": {
+      "status": "blocked",
+      "reason": null
+    }
+  }
+}
