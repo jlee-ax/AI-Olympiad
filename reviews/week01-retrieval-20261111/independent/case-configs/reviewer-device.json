@@ -1,0 +1,7 @@
+{
+  "id": "reviewer-device",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_integrated.ipynb",
+  "sha256": "b530a36ae4f0b4fe9237fb29d604dc288198df7027c85c2e99d1a2e6f2a41611",
+  "scope": "reviewer_reference_of_candidate_device_input_not_student_solution",
+  "oracle": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-retrieval-20261111/independent/oracle-reviewer-device.py"
+}

@@ -1,0 +1,22 @@
+{
+  "worker_source": "reviews/week01-deepening-20261111/independent/execute_candidate_case.py",
+  "source_sha256": "e2c8691fe4e0556e397888b5842bd179cc2a47b1e250088a5402c808f2b4c1fe",
+  "new_worker_sha256": "e2c8691fe4e0556e397888b5842bd179cc2a47b1e250088a5402c808f2b4c1fe",
+  "copy_scope": "generic runner only; no previous case/oracle/candidate source copied",
+  "candidate_status": "not_read_not_run",
+  "reference_scope": "reviewer-only implementation, not candidate code",
+  "reference_cases": [
+    "base",
+    "positive-query-scale",
+    "positive-gallery-scale",
+    "negative-query-scale",
+    "negative-gallery-scale",
+    "zero-query",
+    "zero-gallery",
+    "exact-tie",
+    "row-id-joint-permutation",
+    "square-broadcast-trap",
+    "independent-3d"
+  ],
+  "expected_execution": "separate subprocess per reference or actual candidate case"
+}

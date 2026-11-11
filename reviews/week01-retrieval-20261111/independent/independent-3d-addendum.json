@@ -1,0 +1,285 @@
+{
+  "schema": "independent-3d-before-candidate-v1",
+  "prepared_before_candidate_read": true,
+  "provenance": "Chosen independently; no author proposed query/gallery values reused. Added before release of author edit hold at parent request for three-dimensional input.",
+  "query_ids": [
+    "q-31",
+    "q-06"
+  ],
+  "queries": [
+    [
+      1,
+      2,
+      2
+    ],
+    [
+      2,
+      0,
+      0
+    ]
+  ],
+  "query_norms": [
+    3,
+    2
+  ],
+  "gallery_ids": [
+    "g-blue",
+    "g-red",
+    "g-left",
+    "g-top"
+  ],
+  "gallery": [
+    [
+      0,
+      3,
+      4
+    ],
+    [
+      6,
+      0,
+      0
+    ],
+    [
+      -1,
+      -2,
+      -2
+    ],
+    [
+      2,
+      1,
+      2
+    ]
+  ],
+  "gallery_norms": [
+    5,
+    6,
+    3,
+    3
+  ],
+  "raw_dot_matrix": [
+    [
+      14,
+      6,
+      -9,
+      8
+    ],
+    [
+      0,
+      12,
+      -2,
+      4
+    ]
+  ],
+  "cosine_exact_fractions": [
+    [
+      [
+        14,
+        15
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        8,
+        9
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        -1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ]
+  ],
+  "normalized_query_exact_fractions": [
+    [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    [
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ]
+  ],
+  "normalized_gallery_exact_fractions": [
+    [
+      [
+        0,
+        1
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    [
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    [
+      [
+        -1,
+        3
+      ],
+      [
+        -2,
+        3
+      ],
+      [
+        -2,
+        3
+      ]
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ]
+  ],
+  "expected_best_positions": [
+    0,
+    1
+  ],
+  "expected_best_ids": [
+    "g-blue",
+    "g-red"
+  ],
+  "unique_maxima": true,
+  "expected_shapes": {
+    "Q": [
+      2,
+      3
+    ],
+    "G": [
+      4,
+      3
+    ],
+    "Q_norm_denominator": [
+      2,
+      1
+    ],
+    "G_norm_denominator": [
+      4,
+      1
+    ],
+    "scores": [
+      2,
+      4
+    ]
+  },
+  "positive_scale": {
+    "gallery_row": 0,
+    "factor": 2,
+    "cosine_unchanged": true,
+    "ids_unchanged": true
+  },
+  "negative_query_scale": {
+    "query_row": 0,
+    "factor": -1,
+    "expected_best_ids": [
+      "g-left",
+      "g-red"
+    ]
+  },
+  "negative_gallery_scale": {
+    "gallery_row": 1,
+    "factor": -1,
+    "expected_best_ids": [
+      "g-blue",
+      "g-top"
+    ]
+  },
+  "zero_gallery_append": {
+    "id": "g-zero",
+    "vector": [
+      0,
+      0,
+      0
+    ],
+    "mathematical_cosine": "undefined; evaluate declared invalid/zero convention; do not silently call it unit vector"
+  },
+  "wrong_axis_control": "column-wise norm produces valid (4,3) shape but not row-unit normalization; verify all expected coordinates and norms, not shape alone.",
+  "joint_gallery_permutation": {
+    "order": [
+      2,
+      0,
+      3,
+      1
+    ],
+    "expected_ids": [
+      "g-left",
+      "g-blue",
+      "g-top",
+      "g-red"
+    ],
+    "expected_best_positions": [
+      1,
+      3
+    ],
+    "expected_best_ids": [
+      "g-blue",
+      "g-red"
+    ]
+  },
+  "scope": "Native function tested against exact declared general-d input; record any actual narrower domain instead of rewriting candidate logic. Reviewer reference and student achievement remain separate."
+}

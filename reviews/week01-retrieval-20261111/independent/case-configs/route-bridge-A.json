@@ -1,0 +1,12 @@
+{
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge.ipynb",
+  "sha256": "de5ba77f7cd1325769ca4af29a8fd9c851d14c8c83d5acb88a127bc277579ef0",
+  "scope": "provided_route_and_reviewer_answer_not_student_work",
+  "id": "route-bridge-A",
+  "cells": [
+    2,
+    25,
+    27
+  ],
+  "oracle": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-retrieval-20261111/independent/oracle-bridge-A.py"
+}

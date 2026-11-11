@@ -1,0 +1,96 @@
+{
+  "id": "mutant-abs-direction",
+  "candidate_sha": "de5ba77f7cd1325769ca4af29a8fd9c851d14c8c83d5acb88a127bc277579ef0",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge.ipynb",
+  "config_sha": "ac215d0afddc932aa7e9e6e40624f78d10f87c69215eced357c8fd54ee8a5b2a",
+  "status": "oracle_error",
+  "scope": "actual_candidate_functions_and_executed_selection_source",
+  "execution": "new subprocess / fresh in-process kernel",
+  "cells": [
+    {
+      "index": 2,
+      "source_sha": "0ef3cdab4806b707912c9b423b52d11a945c7a03df05d73e74e5a26b7d690514",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "X =\n [[2 1]\n [1 3]\n [3 2]]\nshape: (3, 2) / 첫 행: [2 1]\n위치 1의 ID: P24\n"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "source_sha": "bf88ee4a3442156b8073a3cb1bd096c0201263151a68a11c13114aa6048c696b",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "Q/G shape: (2, 2) (4, 2)\n원시 내적 점수표:\n [[3.  0.  2.  1. ]\n [4.  2.  0.  0.5]]\n원시 내적 최댓값의 후보 ID: [42 42]\n후보 행별 L2 길이: [5.         2.         2.         1.11803399]\n"
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "source_sha": "82b07e1599476811cbc9f5b56acbf401b41bd2a443be076aac6d0b7dafd996cd",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "길이 분모 shape: (2, 1) (4, 1)\n각 후보 정규화 후 길이: [1. 1. 1. 1.]\n코사인 점수표: [[0.6   0.    1.    0.894]\n [0.8   1.    0.    0.447]] / shape: (2, 4)\n질문 ID → 코사인 최댓값 후보 ID: {103: 19, 109: 7}\n"
+        }
+      ]
+    }
+  ],
+  "student_achievement": "not_observed",
+  "learning_time": "not_observed",
+  "oracle": {
+    "sha256": "3003493dd7a91414a7ba4ce17543cb446c5ab55aa83796d3553d35eb960f6a39",
+    "status": "error",
+    "outputs": [
+      {
+        "output_type": "stream",
+        "name": "stdout",
+        "text": "{\n  \"case\": \"independent3d\",\n  \"scope\": \"actual_candidate_normalize_rows/cosine_scores/selection_source\",\n  \"expected\": {\n    \"scores\": [\n      [\n        0.9333333333333333,\n        0.3333333333333333,\n        -1.0,\n        0.8888888888888888\n      ],\n      [\n        0.0,\n        1.0,\n        -0.3333333333333333,\n        0.6666666666666666\n      ]\n    ],\n    \"ids\": [\n      \"g-blue\",\n      \"g-red\"\n    ],\n    \"query_unit\": [\n      [\n        0.3333333333333333,\n        0.6666666666666666,\n        0.6666666666666666\n      ],\n      [\n        1.0,\n        0.0,\n        0.0\n      ]\n    ],\n    \"gallery_unit\": [\n      [\n        0.0,\n        0.6,\n        0.8\n      ],\n      [\n        1.0,\n        0.0,\n        0.0\n      ],\n      [\n        -0.3333333333333333,\n        -0.6666666666666666,\n        -0.6666666666666666\n      ],\n      [\n        0.6666666666666666,\n        0.3333333333333333,\n        0.6666666666666666\n      ]\n    ]\n  },\n  \"actual\": {\n    \"scores\": [\n      [\n        0.9333333333333333,\n        0.3333333333333333,\n        0.9999999999999999,\n        0.8888888888888888\n      ],\n      [\n        0.0,\n        1.0,\n        0.3333333333333333,\n        0.6666666666666666\n      ]\n    ],\n    \"positions\": [\n      2,\n      1\n    ],\n    \"ids\": [\n      \"g-left\",\n      \"g-red\"\n    ],\n    \"query_unit\": [\n      [\n        0.3333333333333333,\n        0.6666666666666666,\n        0.6666666666666666\n      ],\n      [\n        1.0,\n        0.0,\n        0.0\n      ]\n    ],\n    \"gallery_unit\": [\n      [\n        0.0,\n        0.6,\n        0.8\n      ],\n      [\n        1.0,\n        0.0,\n        0.0\n      ],\n      [\n        0.3333333333333333,\n        0.6666666666666666,\n        0.6666666666666666\n      ],\n      [\n        0.6666666666666666,\n        0.3333333333333333,\n        0.6666666666666666\n      ]\n    ],\n    \"query_unit_norms\": [\n      1.0,\n      1.0\n    ],\n    \"gallery_unit_norms\": [\n      1.0,\n      1.0,\n      1.0,\n      1.0\n    ]\n  }\n}\n"
+      },
+      {
+        "output_type": "error",
+        "ename": "AssertionError",
+        "evalue": "(0.9999999999999999, -1.0)",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[4]\u001b[39m\u001b[32m, line 3\u001b[39m\n\u001b[32m      1\u001b[39m _review_case = \u001b[33m'independent3d'\u001b[39m\n\u001b[32m      2\u001b[39m \u001b[38;5;28;01mfrom\u001b[39;00m pathlib \u001b[38;5;28;01mimport\u001b[39;00m Path\n\u001b[32m----> \u001b[39m\u001b[32m3\u001b[39m exec((Path.cwd().parents[\u001b[32m1\u001b[39m]/\u001b[33m\"native_probe.py\"\u001b[39m).read_text(),globals())\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:30\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:18\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:18\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:19\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+          "\u001b[31mAssertionError\u001b[39m: (0.9999999999999999, -1.0)"
+        ]
+      }
+    ]
+  },
+  "error": {
+    "ename": "AssertionError",
+    "evalue": "(0.9999999999999999, -1.0)",
+    "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[4]\u001b[39m\u001b[32m, line 3\u001b[39m\n\u001b[32m      1\u001b[39m _review_case = \u001b[33m'independent3d'\u001b[39m\n\u001b[32m      2\u001b[39m \u001b[38;5;28;01mfrom\u001b[39;00m pathlib \u001b[38;5;28;01mimport\u001b[39;00m Path\n\u001b[32m----> \u001b[39m\u001b[32m3\u001b[39m exec((Path.cwd().parents[\u001b[32m1\u001b[39m]/\u001b[33m\"native_probe.py\"\u001b[39m).read_text(),globals())\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m<string>:30\u001b[39m\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m<string>:18\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m<string>:18\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m<string>:19\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+      "\u001b[31mAssertionError\u001b[39m: (0.9999999999999999, -1.0)"
+    ]
+  },
+  "elapsed_seconds": 0.4191,
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

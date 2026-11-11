@@ -1,0 +1,81 @@
+{
+  "rows": [
+    {
+      "case": "base",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_only_not_candidate_or_student\",\n  \"case\": \"base\",\n  \"query_norms\": [\n    1.0,\n    2.0\n  ],\n  \"gallery_norms\": [\n    2.0,\n    5.0,\n    4.0\n  ],\n  \"normalized_queries\": [\n    [\n      1.0,\n      0.0\n    ],\n    [\n      0.0,\n      1.0\n    ]\n  ],\n  \"normalized_gallery\": [\n    [\n      1.0,\n      0.0\n    ],\n    [\n      0.6,\n      0.8\n    ],\n    [\n      -1.0,\n      0.0\n    ]\n  ],\n  \"raw_dot_matrix\": [\n    [\n      2.0,\n      3.0,\n      -4.0\n    ],\n    [\n      0.0,\n      8.0,\n      0.0\n    ]\n  ],\n  \"cosine_matrix\": [\n    [\n      1.0,\n      0.6,\n      -1.0\n    ],\n    [\n      0.0,\n      0.8,\n      0.0\n    ]\n  ],\n  \"cosine_best_ids\": [\n    42,\n    7\n  ],\n  \"raw_dot_best_ids\": [\n    7,\n    7\n  ],\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "positive-query-scale",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_only_not_candidate_or_student\",\n  \"case\": \"positive-query-scale\",\n  \"cosine_matrix\": [\n    [\n      1.0,\n      0.6,\n      -1.0\n    ],\n    [\n      0.0,\n      0.8,\n      0.0\n    ]\n  ],\n  \"best_ids\": [\n    42,\n    7\n  ],\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "positive-gallery-scale",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_only_not_candidate_or_student\",\n  \"case\": \"positive-gallery-scale\",\n  \"cosine_matrix\": [\n    [\n      1.0,\n      0.6,\n      -1.0\n    ],\n    [\n      0.0,\n      0.8,\n      0.0\n    ]\n  ],\n  \"best_ids\": [\n    42,\n    7\n  ],\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "negative-query-scale",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_only_not_candidate_or_student\",\n  \"case\": \"negative-query-scale\",\n  \"cosine_matrix\": [\n    [\n      -1.0,\n      -0.6,\n      1.0\n    ],\n    [\n      0.0,\n      0.8,\n      0.0\n    ]\n  ],\n  \"best_ids\": [\n    90,\n    7\n  ],\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "negative-gallery-scale",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_only_not_candidate_or_student\",\n  \"case\": \"negative-gallery-scale\",\n  \"cosine_matrix\": [\n    [\n      1.0,\n      -0.6,\n      -1.0\n    ],\n    [\n      0.0,\n      -0.8,\n      0.0\n    ]\n  ],\n  \"best_ids\": [\n    42,\n    42\n  ],\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "zero-query",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_only_not_candidate_or_student\",\n  \"case\": \"zero-query\",\n  \"explicit_zero_rejection\": true,\n  \"invalid_policy_matrix\": [\n    [\n      null,\n      null,\n      null\n    ],\n    [\n      0.0,\n      0.8,\n      0.0\n    ]\n  ],\n  \"invalid_policy_ids\": [\n    null,\n    7\n  ],\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "zero-gallery",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_only_not_candidate_or_student\",\n  \"case\": \"zero-gallery\",\n  \"explicit_zero_rejection\": true,\n  \"invalid_policy_matrix\": [\n    [\n      1.0,\n      0.6,\n      -1.0,\n      null\n    ],\n    [\n      0.0,\n      0.8,\n      0.0,\n      null\n    ]\n  ],\n  \"invalid_policy_ids\": [\n    42,\n    7\n  ],\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "exact-tie",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_only_not_candidate_or_student\",\n  \"case\": \"exact-tie\",\n  \"matrix\": [\n    [\n      1.0,\n      1.0,\n      0.0\n    ]\n  ],\n  \"minimum_id_policy\": [\n    7\n  ],\n  \"first_position_policy\": [\n    42\n  ],\n  \"tied_ids\": [\n    [\n      42,\n      7\n    ]\n  ],\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "row-id-joint-permutation",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_only_not_candidate_or_student\",\n  \"case\": \"row-id-joint-permutation\",\n  \"matrix\": [\n    [\n      -1.0,\n      1.0,\n      0.6\n    ],\n    [\n      0.0,\n      0.0,\n      0.8\n    ]\n  ],\n  \"correct_ids\": [\n    42,\n    7\n  ],\n  \"id_only_wrong\": [\n    7,\n    90\n  ],\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "square-broadcast-trap",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_only_not_candidate_or_student\",\n  \"case\": \"square-broadcast-trap\",\n  \"wrong_shape_valid_values\": [\n    [\n      1.0,\n      0.0\n    ],\n    [\n      1.5,\n      0.8\n    ]\n  ],\n  \"wrong_row_norms\": [\n    1.0,\n    1.7\n  ],\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    },
+    {
+      "case": "independent-3d",
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"reviewer_reference_only_not_candidate_or_student\",\n  \"case\": \"independent-3d\",\n  \"matrix\": [\n    [\n      0.9333333333333333,\n      0.3333333333333333,\n      -1.0,\n      0.8888888888888888\n    ],\n    [\n      0.0,\n      1.0,\n      -0.3333333333333333,\n      0.6666666666666666\n    ]\n  ],\n  \"chosen_ids\": [\n    \"g-blue\",\n    \"g-red\"\n  ],\n  \"all_gallery_row_norms\": [\n    1.0,\n    1.0,\n    1.0,\n    1.0\n  ],\n  \"status\": \"reference_matches_frozen_expectations\"\n}\n",
+      "stderr": "",
+      "scope": "reviewer_reference_only_not_candidate_or_student"
+    }
+  ]
+}

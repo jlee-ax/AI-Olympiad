@@ -1,0 +1,391 @@
+{
+  "schema": "independent-retrieval-final-review-v1",
+  "completed_at_utc": "2026-11-11T13:06:11.306807+00:00",
+  "final_artifact_sha256": {
+    "lessons/week01/week01_axes_linear_bridge.ipynb": "de5ba77f7cd1325769ca4af29a8fd9c851d14c8c83d5acb88a127bc277579ef0",
+    "lessons/week01/week01_axes_linear_bridge.html": "347f2a86ae8ed1d4f1d1ac4b13ac62cf93805029d9f48b40a259ce11f4871fea",
+    "lessons/week01/week01_axes_linear_bridge_teacher.md": "ebf6bc2040dbfa6f0708f8759872db475905b4a150125c1cde7a89e6b22771b9",
+    "lessons/week01/week01_integrated.ipynb": "b530a36ae4f0b4fe9237fb29d604dc288198df7027c85c2e99d1a2e6f2a41611",
+    "lessons/week01/week01_integrated.html": "a9aae8cb533a13e67d7c7ac71b23c14e3b29b65db71a291dd7b49e5ff8d87036",
+    "lessons/week01/week01_integrated_teacher.md": "81a4f367b59d11d8b96c27606f893087f65a4637f2291f2466cabba42ea6172f"
+  },
+  "frozen_manifests_unchanged": {
+    "FREEZE.sha256": true,
+    "ADDITIONAL-FREEZE.sha256": true,
+    "PREPARATION.sha256": true
+  },
+  "conclusion": {
+    "selected_math_and_transfer_gap": "addressed_at_material_design_level",
+    "blocking_defects_reproduced_in_final_candidate": 0,
+    "actual_student_transfer": "not_observed",
+    "time_and_total_burden": "not_measured",
+    "whole_course_or_official_task_approval": false,
+    "inverse_rank_full_contract": "remains_open"
+  },
+  "actual_candidate_execution": {
+    "normal_cases_passed": 24,
+    "normal_cases_total": 24,
+    "mutants_semantically_detected": 9,
+    "mutants_total": 9,
+    "candidate_assertions_detected": 4,
+    "independent_oracles_detected": 5,
+    "unexpected_failures": 0,
+    "each_case": "separate subprocess / fresh in-process kernel",
+    "full_bridge": {
+      "all_cells": 33,
+      "code_cells_including_blank_answers": 15,
+      "blank_answer_cells": [
+        27,
+        31
+      ]
+    },
+    "full_integrated": {
+      "all_cells": 38,
+      "code_cells_including_blank_answer": 18,
+      "blank_answer_cells": [
+        36
+      ]
+    },
+    "native_helper_cases": 13,
+    "provided_followup_routes": 8,
+    "reviewer_device_solution_cases": 1,
+    "rows": [
+      {
+        "id": "full-bridge",
+        "scope": "actual_candidate_full_notebook",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/full-bridge/result.json"
+      },
+      {
+        "id": "full-integrated",
+        "scope": "actual_candidate_full_notebook",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/full-integrated/result.json"
+      },
+      {
+        "id": "mutant-abs-direction",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "reject",
+        "actual": "oracle_error",
+        "matched_expected": true,
+        "result": "runs/mutant-abs-direction/result.json"
+      },
+      {
+        "id": "mutant-axis-zero",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "reject",
+        "actual": "notebook_error",
+        "matched_expected": true,
+        "result": "runs/mutant-axis-zero/result.json"
+      },
+      {
+        "id": "mutant-global-norm",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "reject",
+        "actual": "notebook_error",
+        "matched_expected": true,
+        "result": "runs/mutant-global-norm/result.json"
+      },
+      {
+        "id": "mutant-position-as-id",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "reject",
+        "actual": "notebook_error",
+        "matched_expected": true,
+        "result": "runs/mutant-position-as-id/result.json"
+      },
+      {
+        "id": "mutant-raw-dot-as-cosine",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "reject",
+        "actual": "notebook_error",
+        "matched_expected": true,
+        "result": "runs/mutant-raw-dot-as-cosine/result.json"
+      },
+      {
+        "id": "mutant-square-broadcast",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "reject",
+        "actual": "oracle_error",
+        "matched_expected": true,
+        "result": "runs/mutant-square-broadcast/result.json"
+      },
+      {
+        "id": "mutant-tie-last",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "reject",
+        "actual": "oracle_error",
+        "matched_expected": true,
+        "result": "runs/mutant-tie-last/result.json"
+      },
+      {
+        "id": "mutant-truncate-3d",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "reject",
+        "actual": "oracle_error",
+        "matched_expected": true,
+        "result": "runs/mutant-truncate-3d/result.json"
+      },
+      {
+        "id": "mutant-zero-silent",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "reject",
+        "actual": "oracle_error",
+        "matched_expected": true,
+        "result": "runs/mutant-zero-silent/result.json"
+      },
+      {
+        "id": "native-axis-square",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/native-axis-square/result.json"
+      },
+      {
+        "id": "native-base2d",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/native-base2d/result.json"
+      },
+      {
+        "id": "native-independent3d",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/native-independent3d/result.json"
+      },
+      {
+        "id": "native-invalid-inputs",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/native-invalid-inputs/result.json"
+      },
+      {
+        "id": "native-joint-row-id",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/native-joint-row-id/result.json"
+      },
+      {
+        "id": "native-negative-gallery-scale",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/native-negative-gallery-scale/result.json"
+      },
+      {
+        "id": "native-negative-query-scale",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/native-negative-query-scale/result.json"
+      },
+      {
+        "id": "native-positive-gallery-scale",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/native-positive-gallery-scale/result.json"
+      },
+      {
+        "id": "native-positive-query-scale",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/native-positive-query-scale/result.json"
+      },
+      {
+        "id": "native-raw-dot-contract",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/native-raw-dot-contract/result.json"
+      },
+      {
+        "id": "native-tie-first-position",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/native-tie-first-position/result.json"
+      },
+      {
+        "id": "native-zero-gallery",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/native-zero-gallery/result.json"
+      },
+      {
+        "id": "native-zero-query",
+        "scope": "actual_candidate_functions_and_executed_selection_source",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/native-zero-query/result.json"
+      },
+      {
+        "id": "reviewer-device",
+        "scope": "reviewer_reference_of_candidate_device_input_not_student_solution",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/reviewer-device/result.json"
+      },
+      {
+        "id": "route-axis",
+        "scope": "provided_followup_code_only_student_answers_unobserved",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/route-axis/result.json"
+      },
+      {
+        "id": "route-bridge-A",
+        "scope": "provided_route_and_reviewer_answer_not_student_work",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/route-bridge-A/result.json"
+      },
+      {
+        "id": "route-bridge-B-reuse",
+        "scope": "provided_route_and_reviewer_answer_not_student_work",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/route-bridge-B-reuse/result.json"
+      },
+      {
+        "id": "route-dot",
+        "scope": "provided_followup_code_only_student_answers_unobserved",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/route-dot/result.json"
+      },
+      {
+        "id": "route-dtype-mean",
+        "scope": "provided_followup_code_only_student_answers_unobserved",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/route-dtype-mean/result.json"
+      },
+      {
+        "id": "route-graphs",
+        "scope": "provided_followup_code_only_student_answers_unobserved",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/route-graphs/result.json"
+      },
+      {
+        "id": "route-merge",
+        "scope": "provided_followup_code_only_student_answers_unobserved",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/route-merge/result.json"
+      },
+      {
+        "id": "route-python",
+        "scope": "provided_followup_code_only_student_answers_unobserved",
+        "expected": "pass",
+        "actual": "passed",
+        "matched_expected": true,
+        "result": "runs/route-python/result.json"
+      }
+    ]
+  },
+  "reviewer_reference_only": {
+    "separate_reference_cases": 11,
+    "all_passed": true,
+    "results": "reference-selfcheck-results-v1.json",
+    "not_candidate_function_or_student_proof": true
+  },
+  "initial_issue": {
+    "reported_by": "parent",
+    "initial_integrated_sha": "b080f6c0049b03e011faa10d237c33468fa2cc0c14bcf136a9232ced17c08972",
+    "initial_execution": "paused before running; no fabricated before-fix execution",
+    "latest_route": [
+      2,
+      14,
+      16,
+      29
+    ],
+    "fresh_latest_route_result": "runs/route-bridge-B-reuse/result.json",
+    "status": "fixed_and_fresh_route_verified",
+    "history": "initial-route-issue.json"
+  },
+  "html": {
+    "week01_axes_linear_bridge": {
+      "input_blocks": 15,
+      "code_text_match": true,
+      "embedded_pngs": 0
+    },
+    "week01_integrated": {
+      "input_blocks": 18,
+      "code_text_match": true,
+      "embedded_pngs": 1
+    }
+  },
+  "generated_integrated_scatter_directly_viewed": true,
+  "relocation": {
+    "status": "passed",
+    "representative_cases": 2,
+    "normal_full_bridge": "passed",
+    "zero_mutant": "intended oracle AssertionError",
+    "raw_summary": "relocation-results/summary.json",
+    "method": "temporary minimal exact asset copy, not a full git clone",
+    "shared_venv": true,
+    "full_git_clone_or_clean_dependency_install": false,
+    "original_settings_and_source_unchanged": true,
+    "temporary_copy_removed": true,
+    "procedure": "REPRODUCING-ANOTHER-CHECKOUT.md"
+  },
+  "deliverables": {
+    "content_review": "content-review.md",
+    "mutant_expectations_actuals_detectors": "mutation-adjudication.json",
+    "final_report": "FINAL-REVIEW.md",
+    "relocation_addendum": "RELOCATION-ADDENDUM.md"
+  },
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.8.0",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2",
+    "ipykernel": "7.4.0",
+    "IPython": "9.18.1",
+    "nbformat": "5.11.1"
+  },
+  "remaining_unobserved": [
+    "student initial answers, unaided transfer, help, time and retention",
+    "actual total first-week/ten-week burden, mastery or admission outcomes",
+    "secure hidden/final test",
+    "full international task/model performance",
+    "ordinary socket Jupyter/Colab and complete browser-rendered HTML layout"
+  ],
+  "write_scope": "Only this new independent directory; no candidate/old review/source/index/commit/remote mutation by reviewer.",
+  "runtime_cache_directories_remaining": [],
+  "blockers": []
+}

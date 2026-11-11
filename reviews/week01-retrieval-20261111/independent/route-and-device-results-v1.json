@@ -1,0 +1,59 @@
+{
+  "rows": [
+    {
+      "id": "reviewer-device",
+      "actual": "passed",
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "id": "route-axis",
+      "actual": "passed",
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "id": "route-bridge-A",
+      "actual": "passed",
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "id": "route-bridge-B-reuse",
+      "actual": "passed",
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "id": "route-dot",
+      "actual": "passed",
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "id": "route-dtype-mean",
+      "actual": "passed",
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "id": "route-graphs",
+      "actual": "passed",
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "id": "route-merge",
+      "actual": "passed",
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "id": "route-python",
+      "actual": "passed",
+      "returncode": 0,
+      "error": null
+    }
+  ],
+  "student_performance": "not_observed; blank answers and reviewer solutions are separate"
+}

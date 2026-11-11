@@ -1,0 +1,12 @@
+{
+  "id": "initial-route-dependency",
+  "initial_integrated_sha": "b080f6c0049b03e011faa10d237c33468fa2cc0c14bcf136a9232ced17c08972",
+  "initial_bridge_sha": "de5ba77f7cd1325769ca4af29a8fd9c851d14c8c83d5acb88a127bc277579ef0",
+  "discovered_by": "parent",
+  "reviewer_confirmation": "Read actual bridge cell16: helper definitions and worked Q/G use are combined; Q/G/query/candidate IDs are defined in cell14.",
+  "initial_execution": "not performed; paused on parent notice before running initial candidate",
+  "initial_raw_snapshot": "not retained; no claim to have independently run initial integrated route",
+  "fix": "Latest integrated37 and teacher now specify bridge2 ->14 ->16 ->29 when reusing helper; independent student solution remains another option.",
+  "final_integrated_sha": "b530a36ae4f0b4fe9237fb29d604dc288198df7027c85c2e99d1a2e6f2a41611",
+  "fresh_route_execution": "pending separate result; static source path confirmed"
+}

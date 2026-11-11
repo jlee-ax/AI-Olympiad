@@ -1,0 +1,95 @@
+{
+  "id": "mutant-zero-silent",
+  "candidate_sha": "de5ba77f7cd1325769ca4af29a8fd9c851d14c8c83d5acb88a127bc277579ef0",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge.ipynb",
+  "config_sha": "eb3e7809eadd148c710eed2cc369dfcdf0f6f99868f02d53275354d2a2a19128",
+  "status": "oracle_error",
+  "scope": "actual_candidate_functions_and_executed_selection_source",
+  "execution": "new subprocess / fresh in-process kernel",
+  "cells": [
+    {
+      "index": 2,
+      "source_sha": "0ef3cdab4806b707912c9b423b52d11a945c7a03df05d73e74e5a26b7d690514",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "X =\n [[2 1]\n [1 3]\n [3 2]]\nshape: (3, 2) / 첫 행: [2 1]\n위치 1의 ID: P24\n"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "source_sha": "bf88ee4a3442156b8073a3cb1bd096c0201263151a68a11c13114aa6048c696b",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "Q/G shape: (2, 2) (4, 2)\n원시 내적 점수표:\n [[3.  0.  2.  1. ]\n [4.  2.  0.  0.5]]\n원시 내적 최댓값의 후보 ID: [42 42]\n후보 행별 L2 길이: [5.         2.         2.         1.11803399]\n"
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "source_sha": "8e6a770f8d6c071c71bec29d83feb6f20201ed3466a047906752a669d9aa89c7",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "길이 분모 shape: (2, 1) (4, 1)\n각 후보 정규화 후 길이: [1. 1. 1. 1.]\n코사인 점수표: [[0.6   0.    1.    0.894]\n [0.8   1.    0.    0.447]] / shape: (2, 4)\n질문 ID → 코사인 최댓값 후보 ID: {103: 19, 109: 7}\n"
+        }
+      ]
+    }
+  ],
+  "student_achievement": "not_observed",
+  "learning_time": "not_observed",
+  "oracle": {
+    "sha256": "9d48e9c41b234ecd33854c6702c46af71059b124e5a4afe85c0ccba338b6f897",
+    "status": "error",
+    "outputs": [
+      {
+        "output_type": "stream",
+        "name": "stdout",
+        "text": "{\n  \"case\": \"zero-query\",\n  \"scope\": \"actual_candidate_normalize_rows/cosine_scores/selection_source\",\n  \"expected\": {\n    \"policy\": \"candidate explicitly rejects zero rows with ValueError\"\n  },\n  \"actual\": {\n    \"scores\": [\n      [\n        NaN,\n        NaN,\n        NaN\n      ]\n    ],\n    \"positions\": [\n      0\n    ],\n    \"ids\": [\n      42\n    ],\n    \"query_unit\": [\n      [\n        NaN,\n        NaN\n      ]\n    ],\n    \"gallery_unit\": [\n      [\n        1.0,\n        0.0\n      ],\n      [\n        0.6,\n        0.8\n      ],\n      [\n        -1.0,\n        0.0\n      ]\n    ],\n    \"query_unit_norms\": [\n      NaN\n    ],\n    \"gallery_unit_norms\": [\n      1.0,\n      1.0,\n      1.0\n    ]\n  }\n}\n"
+      },
+      {
+        "output_type": "stream",
+        "name": "stderr",
+        "text": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-retrieval-20261111/independent/runs/mutant-zero-silent/runtime/tmpdir/ipykernel_41/3558853054.py:11: RuntimeWarning: invalid value encountered in divide\n  return rows / lengths\n"
+      },
+      {
+        "output_type": "error",
+        "ename": "AssertionError",
+        "evalue": "candidate stated zero rejection did not occur",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[4]\u001b[39m\u001b[32m, line 3\u001b[39m\n\u001b[32m      1\u001b[39m _review_case = \u001b[33m'zero-query'\u001b[39m\n\u001b[32m      2\u001b[39m \u001b[38;5;28;01mfrom\u001b[39;00m pathlib \u001b[38;5;28;01mimport\u001b[39;00m Path\n\u001b[32m----> \u001b[39m\u001b[32m3\u001b[39m exec((Path.cwd().parents[\u001b[32m1\u001b[39m]/\u001b[33m\"native_probe.py\"\u001b[39m).read_text(),globals())\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:49\u001b[39m\n",
+          "\u001b[31mAssertionError\u001b[39m: candidate stated zero rejection did not occur"
+        ]
+      }
+    ]
+  },
+  "error": {
+    "ename": "AssertionError",
+    "evalue": "candidate stated zero rejection did not occur",
+    "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[4]\u001b[39m\u001b[32m, line 3\u001b[39m\n\u001b[32m      1\u001b[39m _review_case = \u001b[33m'zero-query'\u001b[39m\n\u001b[32m      2\u001b[39m \u001b[38;5;28;01mfrom\u001b[39;00m pathlib \u001b[38;5;28;01mimport\u001b[39;00m Path\n\u001b[32m----> \u001b[39m\u001b[32m3\u001b[39m exec((Path.cwd().parents[\u001b[32m1\u001b[39m]/\u001b[33m\"native_probe.py\"\u001b[39m).read_text(),globals())\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m<string>:49\u001b[39m\n",
+      "\u001b[31mAssertionError\u001b[39m: candidate stated zero rejection did not occur"
+    ]
+  },
+  "elapsed_seconds": 0.3079,
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

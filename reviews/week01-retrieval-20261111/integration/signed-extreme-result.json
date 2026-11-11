@@ -1,0 +1,29 @@
+{
+  "candidate_sha256": "de5ba77f7cd1325769ca4af29a8fd9c851d14c8c83d5acb88a127bc277579ef0",
+  "method": "lesson function definitions; independent scalar-loop oracle",
+  "scores": [
+    [
+      -0.33333333,
+      -1.0,
+      0.94280904
+    ],
+    [
+      0.13333333,
+      0.44444444,
+      -0.23570226
+    ]
+  ],
+  "selected_ids": [
+    "Z",
+    "K"
+  ],
+  "checks": [
+    "signed unseen 3D inputs",
+    "positive and negative scaling",
+    "joint ID permutation",
+    "inputs unchanged",
+    "zero/NaN/inf/overflow/underflow/empty/shape rejection",
+    "incompatible feature counts rejected"
+  ],
+  "status": "passed"
+}

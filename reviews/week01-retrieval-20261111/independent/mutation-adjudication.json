@@ -1,0 +1,726 @@
+{
+  "mutations": 9,
+  "validly_detected": 9,
+  "candidate_assertions": 4,
+  "independent_oracles": 5,
+  "rows": [
+    {
+      "id": "mutant-axis-zero",
+      "scope": "single mutation of actual bridge cell16 source; original lesson untouched",
+      "source_patch": {
+        "cell": 16,
+        "old": "lengths = np.linalg.norm(rows, axis=1, keepdims=True)",
+        "new": "lengths = np.linalg.norm(rows, axis=0, keepdims=True)"
+      },
+      "expected_and_observed_focus": "Use feature-column norms instead of each row norm: same shape, non-unit rows.",
+      "raw_status": "notebook_error",
+      "detector": "candidate cell16 demonstration assertion",
+      "expected_actual_payload": null,
+      "failed_candidate_cell_outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "길이 분모 shape: (2, 1) (4, 1)\n각 후보 정규화 후 길이: [1.19707168 0.44444444 0.53452248 0.28943782]\n코사인 점수표: [[0.802 0.    0.535 0.267]\n [0.889 0.444 0.    0.111]] / shape: (2, 4)\n질문 ID → 코사인 최댓값 후보 ID: {103: 42, 109: 42}\n"
+        },
+        {
+          "output_type": "error",
+          "ename": "AssertionError",
+          "evalue": "",
+          "traceback": [
+            "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+            "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+            "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[3]\u001b[39m\u001b[32m, line 31\u001b[39m\n\u001b[32m     27\u001b[39m print(\u001b[33m\"각 후보 정규화 후 길이:\"\u001b[39m, np.linalg.norm(G_unit, axis=\u001b[32m1\u001b[39m))\n\u001b[32m     28\u001b[39m print(\u001b[33m\"코사인 점수표:\"\u001b[39m, np.round(scores, \u001b[32m3\u001b[39m), \u001b[33m\"/ shape:\"\u001b[39m, scores.shape)\n\u001b[32m     29\u001b[39m print(\"질문 ID → 코사인 최댓값 후보 ID:\",\n\u001b[32m     30\u001b[39m       dict(zip(query_ids.tolist(), matched_ids.tolist())))\n\u001b[32m---> \u001b[39m\u001b[32m31\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m scores.shape == (\u001b[32m2\u001b[39m, \u001b[32m4\u001b[39m) \u001b[38;5;28;01mand\u001b[39;00m np.allclose(np.linalg.norm(G_unit, axis=\u001b[32m1\u001b[39m), \u001b[32m1\u001b[39m)\n\u001b[32m     32\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.array_equal(matched_ids, [\u001b[32m19\u001b[39m, \u001b[32m7\u001b[39m])\n",
+            "\u001b[31mAssertionError\u001b[39m: "
+          ]
+        }
+      ],
+      "raw_error": {
+        "ename": "AssertionError",
+        "evalue": "",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[3]\u001b[39m\u001b[32m, line 31\u001b[39m\n\u001b[32m     27\u001b[39m print(\u001b[33m\"각 후보 정규화 후 길이:\"\u001b[39m, np.linalg.norm(G_unit, axis=\u001b[32m1\u001b[39m))\n\u001b[32m     28\u001b[39m print(\u001b[33m\"코사인 점수표:\"\u001b[39m, np.round(scores, \u001b[32m3\u001b[39m), \u001b[33m\"/ shape:\"\u001b[39m, scores.shape)\n\u001b[32m     29\u001b[39m print(\"질문 ID → 코사인 최댓값 후보 ID:\",\n\u001b[32m     30\u001b[39m       dict(zip(query_ids.tolist(), matched_ids.tolist())))\n\u001b[32m---> \u001b[39m\u001b[32m31\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m scores.shape == (\u001b[32m2\u001b[39m, \u001b[32m4\u001b[39m) \u001b[38;5;28;01mand\u001b[39;00m np.allclose(np.linalg.norm(G_unit, axis=\u001b[32m1\u001b[39m), \u001b[32m1\u001b[39m)\n\u001b[32m     32\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.array_equal(matched_ids, [\u001b[32m19\u001b[39m, \u001b[32m7\u001b[39m])\n",
+          "\u001b[31mAssertionError\u001b[39m: "
+        ]
+      },
+      "reason_manually_confirmed": true,
+      "not_incidental_runtime_failure": true,
+      "raw_result": "runs/mutant-axis-zero/result.json"
+    },
+    {
+      "id": "mutant-global-norm",
+      "scope": "single mutation of actual bridge cell16 source; original lesson untouched",
+      "source_patch": {
+        "cell": 16,
+        "old": "lengths = np.linalg.norm(rows, axis=1, keepdims=True)",
+        "new": "lengths = np.linalg.norm(rows)"
+      },
+      "expected_and_observed_focus": "Use one whole-matrix norm: same shape, non-unit rows.",
+      "raw_status": "notebook_error",
+      "detector": "candidate cell16 demonstration assertion",
+      "expected_actual_payload": null,
+      "failed_candidate_cell_outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "길이 분모 shape: (2, 1) (4, 1)\n각 후보 정규화 후 길이: [0.85435766 0.34174306 0.34174306 0.19104018]\n코사인 점수표: [[0.362 0.    0.242 0.121]\n [0.483 0.242 0.    0.06 ]] / shape: (2, 4)\n질문 ID → 코사인 최댓값 후보 ID: {103: 42, 109: 42}\n"
+        },
+        {
+          "output_type": "error",
+          "ename": "AssertionError",
+          "evalue": "",
+          "traceback": [
+            "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+            "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+            "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[3]\u001b[39m\u001b[32m, line 31\u001b[39m\n\u001b[32m     27\u001b[39m print(\u001b[33m\"각 후보 정규화 후 길이:\"\u001b[39m, np.linalg.norm(G_unit, axis=\u001b[32m1\u001b[39m))\n\u001b[32m     28\u001b[39m print(\u001b[33m\"코사인 점수표:\"\u001b[39m, np.round(scores, \u001b[32m3\u001b[39m), \u001b[33m\"/ shape:\"\u001b[39m, scores.shape)\n\u001b[32m     29\u001b[39m print(\"질문 ID → 코사인 최댓값 후보 ID:\",\n\u001b[32m     30\u001b[39m       dict(zip(query_ids.tolist(), matched_ids.tolist())))\n\u001b[32m---> \u001b[39m\u001b[32m31\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m scores.shape == (\u001b[32m2\u001b[39m, \u001b[32m4\u001b[39m) \u001b[38;5;28;01mand\u001b[39;00m np.allclose(np.linalg.norm(G_unit, axis=\u001b[32m1\u001b[39m), \u001b[32m1\u001b[39m)\n\u001b[32m     32\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.array_equal(matched_ids, [\u001b[32m19\u001b[39m, \u001b[32m7\u001b[39m])\n",
+            "\u001b[31mAssertionError\u001b[39m: "
+          ]
+        }
+      ],
+      "raw_error": {
+        "ename": "AssertionError",
+        "evalue": "",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[3]\u001b[39m\u001b[32m, line 31\u001b[39m\n\u001b[32m     27\u001b[39m print(\u001b[33m\"각 후보 정규화 후 길이:\"\u001b[39m, np.linalg.norm(G_unit, axis=\u001b[32m1\u001b[39m))\n\u001b[32m     28\u001b[39m print(\u001b[33m\"코사인 점수표:\"\u001b[39m, np.round(scores, \u001b[32m3\u001b[39m), \u001b[33m\"/ shape:\"\u001b[39m, scores.shape)\n\u001b[32m     29\u001b[39m print(\"질문 ID → 코사인 최댓값 후보 ID:\",\n\u001b[32m     30\u001b[39m       dict(zip(query_ids.tolist(), matched_ids.tolist())))\n\u001b[32m---> \u001b[39m\u001b[32m31\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m scores.shape == (\u001b[32m2\u001b[39m, \u001b[32m4\u001b[39m) \u001b[38;5;28;01mand\u001b[39;00m np.allclose(np.linalg.norm(G_unit, axis=\u001b[32m1\u001b[39m), \u001b[32m1\u001b[39m)\n\u001b[32m     32\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.array_equal(matched_ids, [\u001b[32m19\u001b[39m, \u001b[32m7\u001b[39m])\n",
+          "\u001b[31mAssertionError\u001b[39m: "
+        ]
+      },
+      "reason_manually_confirmed": true,
+      "not_incidental_runtime_failure": true,
+      "raw_result": "runs/mutant-global-norm/result.json"
+    },
+    {
+      "id": "mutant-position-as-id",
+      "scope": "single mutation of actual bridge cell16 source; original lesson untouched",
+      "source_patch": {
+        "cell": 16,
+        "old": "matched_ids = candidate_ids[positions]",
+        "new": "matched_ids = positions + 1"
+      },
+      "expected_and_observed_focus": "Return position+1 instead of candidate ID; base expected [19,7], observed [3,2].",
+      "raw_status": "notebook_error",
+      "detector": "candidate cell16 demonstration assertion",
+      "expected_actual_payload": null,
+      "failed_candidate_cell_outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "길이 분모 shape: (2, 1) (4, 1)\n각 후보 정규화 후 길이: [1. 1. 1. 1.]\n코사인 점수표: [[0.6   0.    1.    0.894]\n [0.8   1.    0.    0.447]] / shape: (2, 4)\n질문 ID → 코사인 최댓값 후보 ID: {103: 3, 109: 2}\n"
+        },
+        {
+          "output_type": "error",
+          "ename": "AssertionError",
+          "evalue": "",
+          "traceback": [
+            "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+            "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+            "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[3]\u001b[39m\u001b[32m, line 32\u001b[39m\n\u001b[32m     28\u001b[39m print(\u001b[33m\"코사인 점수표:\"\u001b[39m, np.round(scores, \u001b[32m3\u001b[39m), \u001b[33m\"/ shape:\"\u001b[39m, scores.shape)\n\u001b[32m     29\u001b[39m print(\"질문 ID → 코사인 최댓값 후보 ID:\",\n\u001b[32m     30\u001b[39m       dict(zip(query_ids.tolist(), matched_ids.tolist())))\n\u001b[32m     31\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m scores.shape == (\u001b[32m2\u001b[39m, \u001b[32m4\u001b[39m) \u001b[38;5;28;01mand\u001b[39;00m np.allclose(np.linalg.norm(G_unit, axis=\u001b[32m1\u001b[39m), \u001b[32m1\u001b[39m)\n\u001b[32m---> \u001b[39m\u001b[32m32\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.array_equal(matched_ids, [\u001b[32m19\u001b[39m, \u001b[32m7\u001b[39m])\n",
+            "\u001b[31mAssertionError\u001b[39m: "
+          ]
+        }
+      ],
+      "raw_error": {
+        "ename": "AssertionError",
+        "evalue": "",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[3]\u001b[39m\u001b[32m, line 32\u001b[39m\n\u001b[32m     28\u001b[39m print(\u001b[33m\"코사인 점수표:\"\u001b[39m, np.round(scores, \u001b[32m3\u001b[39m), \u001b[33m\"/ shape:\"\u001b[39m, scores.shape)\n\u001b[32m     29\u001b[39m print(\"질문 ID → 코사인 최댓값 후보 ID:\",\n\u001b[32m     30\u001b[39m       dict(zip(query_ids.tolist(), matched_ids.tolist())))\n\u001b[32m     31\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m scores.shape == (\u001b[32m2\u001b[39m, \u001b[32m4\u001b[39m) \u001b[38;5;28;01mand\u001b[39;00m np.allclose(np.linalg.norm(G_unit, axis=\u001b[32m1\u001b[39m), \u001b[32m1\u001b[39m)\n\u001b[32m---> \u001b[39m\u001b[32m32\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.array_equal(matched_ids, [\u001b[32m19\u001b[39m, \u001b[32m7\u001b[39m])\n",
+          "\u001b[31mAssertionError\u001b[39m: "
+        ]
+      },
+      "reason_manually_confirmed": true,
+      "not_incidental_runtime_failure": true,
+      "raw_result": "runs/mutant-position-as-id/result.json"
+    },
+    {
+      "id": "mutant-raw-dot-as-cosine",
+      "scope": "single mutation of actual bridge cell16 source; original lesson untouched",
+      "source_patch": {
+        "cell": 16,
+        "old": "return query_unit @ candidate_unit.T",
+        "new": "return np.asarray(queries) @ np.asarray(candidates).T"
+      },
+      "expected_and_observed_focus": "Return raw dot instead of cosine; base chooses [42,42] instead of [19,7].",
+      "raw_status": "notebook_error",
+      "detector": "candidate cell16 demonstration assertion",
+      "expected_actual_payload": null,
+      "failed_candidate_cell_outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "길이 분모 shape: (2, 1) (4, 1)\n각 후보 정규화 후 길이: [1. 1. 1. 1.]\n코사인 점수표: [[3.  0.  2.  1. ]\n [4.  2.  0.  0.5]] / shape: (2, 4)\n질문 ID → 코사인 최댓값 후보 ID: {103: 42, 109: 42}\n"
+        },
+        {
+          "output_type": "error",
+          "ename": "AssertionError",
+          "evalue": "",
+          "traceback": [
+            "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+            "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+            "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[3]\u001b[39m\u001b[32m, line 32\u001b[39m\n\u001b[32m     28\u001b[39m print(\u001b[33m\"코사인 점수표:\"\u001b[39m, np.round(scores, \u001b[32m3\u001b[39m), \u001b[33m\"/ shape:\"\u001b[39m, scores.shape)\n\u001b[32m     29\u001b[39m print(\"질문 ID → 코사인 최댓값 후보 ID:\",\n\u001b[32m     30\u001b[39m       dict(zip(query_ids.tolist(), matched_ids.tolist())))\n\u001b[32m     31\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m scores.shape == (\u001b[32m2\u001b[39m, \u001b[32m4\u001b[39m) \u001b[38;5;28;01mand\u001b[39;00m np.allclose(np.linalg.norm(G_unit, axis=\u001b[32m1\u001b[39m), \u001b[32m1\u001b[39m)\n\u001b[32m---> \u001b[39m\u001b[32m32\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.array_equal(matched_ids, [\u001b[32m19\u001b[39m, \u001b[32m7\u001b[39m])\n",
+            "\u001b[31mAssertionError\u001b[39m: "
+          ]
+        }
+      ],
+      "raw_error": {
+        "ename": "AssertionError",
+        "evalue": "",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[3]\u001b[39m\u001b[32m, line 32\u001b[39m\n\u001b[32m     28\u001b[39m print(\u001b[33m\"코사인 점수표:\"\u001b[39m, np.round(scores, \u001b[32m3\u001b[39m), \u001b[33m\"/ shape:\"\u001b[39m, scores.shape)\n\u001b[32m     29\u001b[39m print(\"질문 ID → 코사인 최댓값 후보 ID:\",\n\u001b[32m     30\u001b[39m       dict(zip(query_ids.tolist(), matched_ids.tolist())))\n\u001b[32m     31\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m scores.shape == (\u001b[32m2\u001b[39m, \u001b[32m4\u001b[39m) \u001b[38;5;28;01mand\u001b[39;00m np.allclose(np.linalg.norm(G_unit, axis=\u001b[32m1\u001b[39m), \u001b[32m1\u001b[39m)\n\u001b[32m---> \u001b[39m\u001b[32m32\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m np.array_equal(matched_ids, [\u001b[32m19\u001b[39m, \u001b[32m7\u001b[39m])\n",
+          "\u001b[31mAssertionError\u001b[39m: "
+        ]
+      },
+      "reason_manually_confirmed": true,
+      "not_incidental_runtime_failure": true,
+      "raw_result": "runs/mutant-raw-dot-as-cosine/result.json"
+    },
+    {
+      "id": "mutant-abs-direction",
+      "scope": "single mutation of actual bridge cell16 source; original lesson untouched",
+      "source_patch": {
+        "cell": 16,
+        "old": "return rows / lengths",
+        "new": "return np.abs(rows / lengths)"
+      },
+      "expected_and_observed_focus": "Erase negative direction with abs; 3D expected -1 but observed +0.9999999999999999, wrong g-left winner.",
+      "raw_status": "oracle_error",
+      "detector": "independent oracle invoking actual candidate helper/selection source",
+      "expected_actual_payload": {
+        "case": "independent3d",
+        "scope": "actual_candidate_normalize_rows/cosine_scores/selection_source",
+        "expected": {
+          "scores": [
+            [
+              0.9333333333333333,
+              0.3333333333333333,
+              -1.0,
+              0.8888888888888888
+            ],
+            [
+              0.0,
+              1.0,
+              -0.3333333333333333,
+              0.6666666666666666
+            ]
+          ],
+          "ids": [
+            "g-blue",
+            "g-red"
+          ],
+          "query_unit": [
+            [
+              0.3333333333333333,
+              0.6666666666666666,
+              0.6666666666666666
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "gallery_unit": [
+            [
+              0.0,
+              0.6,
+              0.8
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.3333333333333333,
+              -0.6666666666666666,
+              -0.6666666666666666
+            ],
+            [
+              0.6666666666666666,
+              0.3333333333333333,
+              0.6666666666666666
+            ]
+          ]
+        },
+        "actual": {
+          "scores": [
+            [
+              0.9333333333333333,
+              0.3333333333333333,
+              0.9999999999999999,
+              0.8888888888888888
+            ],
+            [
+              0.0,
+              1.0,
+              0.3333333333333333,
+              0.6666666666666666
+            ]
+          ],
+          "positions": [
+            2,
+            1
+          ],
+          "ids": [
+            "g-left",
+            "g-red"
+          ],
+          "query_unit": [
+            [
+              0.3333333333333333,
+              0.6666666666666666,
+              0.6666666666666666
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "gallery_unit": [
+            [
+              0.0,
+              0.6,
+              0.8
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.3333333333333333,
+              0.6666666666666666,
+              0.6666666666666666
+            ],
+            [
+              0.6666666666666666,
+              0.3333333333333333,
+              0.6666666666666666
+            ]
+          ],
+          "query_unit_norms": [
+            1.0,
+            1.0
+          ],
+          "gallery_unit_norms": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "failed_candidate_cell_outputs": null,
+      "raw_error": {
+        "ename": "AssertionError",
+        "evalue": "(0.9999999999999999, -1.0)",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[4]\u001b[39m\u001b[32m, line 3\u001b[39m\n\u001b[32m      1\u001b[39m _review_case = \u001b[33m'independent3d'\u001b[39m\n\u001b[32m      2\u001b[39m \u001b[38;5;28;01mfrom\u001b[39;00m pathlib \u001b[38;5;28;01mimport\u001b[39;00m Path\n\u001b[32m----> \u001b[39m\u001b[32m3\u001b[39m exec((Path.cwd().parents[\u001b[32m1\u001b[39m]/\u001b[33m\"native_probe.py\"\u001b[39m).read_text(),globals())\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:30\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:18\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:18\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:19\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+          "\u001b[31mAssertionError\u001b[39m: (0.9999999999999999, -1.0)"
+        ]
+      },
+      "reason_manually_confirmed": true,
+      "not_incidental_runtime_failure": true,
+      "raw_result": "runs/mutant-abs-direction/result.json"
+    },
+    {
+      "id": "mutant-square-broadcast",
+      "scope": "single mutation of actual bridge cell16 source; original lesson untouched",
+      "source_patch": {
+        "cell": 16,
+        "old": "return rows / lengths",
+        "new": "if rows.shape[0] == rows.shape[1]:\n        return rows / lengths.ravel()\n    return rows / lengths"
+      },
+      "expected_and_observed_focus": "For square inputs drop denominator column dimension; expected [.6,.8] observed [1.5,.8], row norm1.7.",
+      "raw_status": "oracle_error",
+      "detector": "independent oracle invoking actual candidate helper/selection source",
+      "expected_actual_payload": {
+        "case": "axis-square",
+        "scope": "actual_candidate_normalize_rows/cosine_scores/selection_source",
+        "expected": {
+          "gallery_unit": [
+            [
+              1,
+              0
+            ],
+            [
+              0.6,
+              0.8
+            ]
+          ],
+          "norms": [
+            1,
+            1
+          ]
+        },
+        "actual": {
+          "gallery_unit": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.5,
+              0.8
+            ]
+          ],
+          "norms": [
+            1.0,
+            1.7
+          ]
+        }
+      },
+      "failed_candidate_cell_outputs": null,
+      "raw_error": {
+        "ename": "AssertionError",
+        "evalue": "(1.5, 0.6)",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[4]\u001b[39m\u001b[32m, line 3\u001b[39m\n\u001b[32m      1\u001b[39m _review_case = \u001b[33m'axis-square'\u001b[39m\n\u001b[32m      2\u001b[39m \u001b[38;5;28;01mfrom\u001b[39;00m pathlib \u001b[38;5;28;01mimport\u001b[39;00m Path\n\u001b[32m----> \u001b[39m\u001b[32m3\u001b[39m exec((Path.cwd().parents[\u001b[32m1\u001b[39m]/\u001b[33m\"native_probe.py\"\u001b[39m).read_text(),globals())\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:62\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:18\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:18\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:19\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+          "\u001b[31mAssertionError\u001b[39m: (1.5, 0.6)"
+        ]
+      },
+      "reason_manually_confirmed": true,
+      "not_incidental_runtime_failure": true,
+      "raw_result": "runs/mutant-square-broadcast/result.json"
+    },
+    {
+      "id": "mutant-tie-last",
+      "scope": "single mutation of actual bridge cell16 source; original lesson untouched",
+      "source_patch": {
+        "cell": 16,
+        "old": "positions = np.argmax(scores, axis=1)",
+        "new": "positions = scores.shape[1] - 1 - np.argmax(scores[:, ::-1], axis=1)"
+      },
+      "expected_and_observed_focus": "Silently use last tied position; declared first policy expects position0/ID42, observed position1/ID7.",
+      "raw_status": "oracle_error",
+      "detector": "independent oracle invoking actual candidate helper/selection source",
+      "expected_actual_payload": {
+        "case": "tie-first-position",
+        "scope": "actual_candidate_normalize_rows/cosine_scores/selection_source",
+        "expected": {
+          "scores": [
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "positions": [
+            0
+          ],
+          "ids": [
+            42
+          ],
+          "note": "native lesson declares first current position; reviewer separate min-ID contract would choose7"
+        },
+        "actual": {
+          "scores": [
+            [
+              1.0,
+              1.0,
+              0.0
+            ]
+          ],
+          "positions": [
+            1
+          ],
+          "ids": [
+            7
+          ],
+          "query_unit": [
+            [
+              1.0,
+              0.0
+            ]
+          ],
+          "gallery_unit": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "query_unit_norms": [
+            1.0
+          ],
+          "gallery_unit_norms": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "failed_candidate_cell_outputs": null,
+      "raw_error": {
+        "ename": "AssertionError",
+        "evalue": "(1, 0)",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[4]\u001b[39m\u001b[32m, line 3\u001b[39m\n\u001b[32m      1\u001b[39m _review_case = \u001b[33m'tie-first-position'\u001b[39m\n\u001b[32m      2\u001b[39m \u001b[38;5;28;01mfrom\u001b[39;00m pathlib \u001b[38;5;28;01mimport\u001b[39;00m Path\n\u001b[32m----> \u001b[39m\u001b[32m3\u001b[39m exec((Path.cwd().parents[\u001b[32m1\u001b[39m]/\u001b[33m\"native_probe.py\"\u001b[39m).read_text(),globals())\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:53\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:18\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:19\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+          "\u001b[31mAssertionError\u001b[39m: (1, 0)"
+        ]
+      },
+      "reason_manually_confirmed": true,
+      "not_incidental_runtime_failure": true,
+      "raw_result": "runs/mutant-tie-last/result.json"
+    },
+    {
+      "id": "mutant-truncate-3d",
+      "scope": "single mutation of actual bridge cell16 source; original lesson untouched",
+      "source_patch": {
+        "cell": 16,
+        "old": "rows = np.asarray(vectors, dtype=float)",
+        "new": "rows = np.asarray(vectors, dtype=float)\n    rows = rows[:, :2]"
+      },
+      "expected_and_observed_focus": "Silently drop third feature; expected score14/15, observed .8944271909999159 and two-coordinate normalized vectors although winner happens unchanged.",
+      "raw_status": "oracle_error",
+      "detector": "independent oracle invoking actual candidate helper/selection source",
+      "expected_actual_payload": {
+        "case": "independent3d",
+        "scope": "actual_candidate_normalize_rows/cosine_scores/selection_source",
+        "expected": {
+          "scores": [
+            [
+              0.9333333333333333,
+              0.3333333333333333,
+              -1.0,
+              0.8888888888888888
+            ],
+            [
+              0.0,
+              1.0,
+              -0.3333333333333333,
+              0.6666666666666666
+            ]
+          ],
+          "ids": [
+            "g-blue",
+            "g-red"
+          ],
+          "query_unit": [
+            [
+              0.3333333333333333,
+              0.6666666666666666,
+              0.6666666666666666
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "gallery_unit": [
+            [
+              0.0,
+              0.6,
+              0.8
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.3333333333333333,
+              -0.6666666666666666,
+              -0.6666666666666666
+            ],
+            [
+              0.6666666666666666,
+              0.3333333333333333,
+              0.6666666666666666
+            ]
+          ]
+        },
+        "actual": {
+          "scores": [
+            [
+              0.8944271909999159,
+              0.4472135954999579,
+              -0.9999999999999999,
+              0.7999999999999999
+            ],
+            [
+              0.0,
+              1.0,
+              -0.4472135954999579,
+              0.8944271909999159
+            ]
+          ],
+          "positions": [
+            0,
+            1
+          ],
+          "ids": [
+            "g-blue",
+            "g-red"
+          ],
+          "query_unit": [
+            [
+              0.4472135954999579,
+              0.8944271909999159
+            ],
+            [
+              1.0,
+              0.0
+            ]
+          ],
+          "gallery_unit": [
+            [
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              -0.4472135954999579,
+              -0.8944271909999159
+            ],
+            [
+              0.8944271909999159,
+              0.4472135954999579
+            ]
+          ],
+          "query_unit_norms": [
+            0.9999999999999999,
+            1.0
+          ],
+          "gallery_unit_norms": [
+            1.0,
+            1.0,
+            0.9999999999999999,
+            0.9999999999999999
+          ]
+        }
+      },
+      "failed_candidate_cell_outputs": null,
+      "raw_error": {
+        "ename": "AssertionError",
+        "evalue": "(0.8944271909999159, 0.9333333333333333)",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[4]\u001b[39m\u001b[32m, line 3\u001b[39m\n\u001b[32m      1\u001b[39m _review_case = \u001b[33m'independent3d'\u001b[39m\n\u001b[32m      2\u001b[39m \u001b[38;5;28;01mfrom\u001b[39;00m pathlib \u001b[38;5;28;01mimport\u001b[39;00m Path\n\u001b[32m----> \u001b[39m\u001b[32m3\u001b[39m exec((Path.cwd().parents[\u001b[32m1\u001b[39m]/\u001b[33m\"native_probe.py\"\u001b[39m).read_text(),globals())\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:30\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:18\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:18\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:19\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+          "\u001b[31mAssertionError\u001b[39m: (0.8944271909999159, 0.9333333333333333)"
+        ]
+      },
+      "reason_manually_confirmed": true,
+      "not_incidental_runtime_failure": true,
+      "raw_result": "runs/mutant-truncate-3d/result.json"
+    },
+    {
+      "id": "mutant-zero-silent",
+      "scope": "single mutation of actual bridge cell16 source; original lesson untouched",
+      "source_patch": {
+        "cell": 16,
+        "old": "if not np.isfinite(lengths).all() or (lengths == 0).any():",
+        "new": "if not np.isfinite(lengths).all():"
+      },
+      "expected_and_observed_focus": "Remove zero-length rejection; expected ValueError, observed NaN scores and arbitrary position0/ID42.",
+      "raw_status": "oracle_error",
+      "detector": "independent oracle invoking actual candidate helper/selection source",
+      "expected_actual_payload": {
+        "case": "zero-query",
+        "scope": "actual_candidate_normalize_rows/cosine_scores/selection_source",
+        "expected": {
+          "policy": "candidate explicitly rejects zero rows with ValueError"
+        },
+        "actual": {
+          "scores": [
+            [
+              NaN,
+              NaN,
+              NaN
+            ]
+          ],
+          "positions": [
+            0
+          ],
+          "ids": [
+            42
+          ],
+          "query_unit": [
+            [
+              NaN,
+              NaN
+            ]
+          ],
+          "gallery_unit": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.6,
+              0.8
+            ],
+            [
+              -1.0,
+              0.0
+            ]
+          ],
+          "query_unit_norms": [
+            NaN
+          ],
+          "gallery_unit_norms": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "failed_candidate_cell_outputs": null,
+      "raw_error": {
+        "ename": "AssertionError",
+        "evalue": "candidate stated zero rejection did not occur",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[4]\u001b[39m\u001b[32m, line 3\u001b[39m\n\u001b[32m      1\u001b[39m _review_case = \u001b[33m'zero-query'\u001b[39m\n\u001b[32m      2\u001b[39m \u001b[38;5;28;01mfrom\u001b[39;00m pathlib \u001b[38;5;28;01mimport\u001b[39;00m Path\n\u001b[32m----> \u001b[39m\u001b[32m3\u001b[39m exec((Path.cwd().parents[\u001b[32m1\u001b[39m]/\u001b[33m\"native_probe.py\"\u001b[39m).read_text(),globals())\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:49\u001b[39m\n",
+          "\u001b[31mAssertionError\u001b[39m: candidate stated zero rejection did not occur"
+        ]
+      },
+      "reason_manually_confirmed": true,
+      "not_incidental_runtime_failure": true,
+      "raw_result": "runs/mutant-zero-silent/result.json"
+    }
+  ],
+  "claim_limit": "These are intentional copied-source mutations, not nine real defects; they do not prove every possible bug is detected."
+}

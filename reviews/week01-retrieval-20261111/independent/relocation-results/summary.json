@@ -1,0 +1,69 @@
+{
+  "copy_type": "temporary minimal exact asset copy, not a full git clone",
+  "shared_venv": "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+  "temporary_repo": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-retrieval-20261111/independent/relocation-copy-z7mwlmzh/checkout",
+  "copied_files": [
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "sha256": "de5ba77f7cd1325769ca4af29a8fd9c851d14c8c83d5acb88a127bc277579ef0"
+    },
+    {
+      "path": "reviews/week01-retrieval-20261111/independent/baseline-manifest.json",
+      "sha256": "c0c822d51c71d97233178ff34466d930096535aaa6027dd8811cc0653824d913"
+    },
+    {
+      "path": "reviews/week01-retrieval-20261111/independent/execute_candidate_case.py",
+      "sha256": "e2c8691fe4e0556e397888b5842bd179cc2a47b1e250088a5402c808f2b4c1fe"
+    },
+    {
+      "path": "reviews/week01-retrieval-20261111/independent/native_probe.py",
+      "sha256": "10bedd9b45edde20ad09900b8bd89f4670657a738afa6e3f56497da8381c81fe"
+    },
+    {
+      "path": "reviews/week01-retrieval-20261111/independent/rebase-case-configs.py",
+      "sha256": "1198eaaaa783be75fe987c790c164704bafc4c927df1298aa0b9b5c35f067934"
+    },
+    {
+      "path": "reviews/week01-retrieval-20261111/independent/independent-inputs-and-expectations.json",
+      "sha256": "ad215d79f0a4038d2cb520e0de4d4d86f608447a4072129c061f97b1cccb2bf7"
+    },
+    {
+      "path": "reviews/week01-retrieval-20261111/independent/independent-3d-addendum.json",
+      "sha256": "e4bc0ad1f132b873d2c6f4b1b14d8bc1fbaa6ed231bcc5b927adf12e8ca7db2a"
+    },
+    {
+      "path": "reviews/week01-retrieval-20261111/independent/probe-oracles/mutant-zero-silent.py",
+      "sha256": "9d48e9c41b234ecd33854c6702c46af71059b124e5a4afe85c0ccba338b6f897"
+    },
+    {
+      "path": "reviews/week01-retrieval-20261111/independent/case-configs/full-bridge.json",
+      "sha256": "4c4756767da03a66593ba60d7137ff44d379b8332972131b3ec3063a79ed316e"
+    },
+    {
+      "path": "reviews/week01-retrieval-20261111/independent/case-configs/mutant-zero-silent.json",
+      "sha256": "eb3e7809eadd148c710eed2cc369dfcdf0f6f99868f02d53275354d2a2a19128"
+    }
+  ],
+  "rows": [
+    {
+      "case": "full-bridge",
+      "status": "passed",
+      "returncode": 0,
+      "matched_expected": true,
+      "source_unchanged": true,
+      "runtime_removed": true
+    },
+    {
+      "case": "mutant-zero-silent",
+      "status": "oracle_error",
+      "returncode": 1,
+      "matched_expected": true,
+      "source_unchanged": true,
+      "runtime_removed": true
+    }
+  ],
+  "original_configs_unchanged": true,
+  "original_source_unchanged": true,
+  "status": "passed",
+  "temporary_copy_removed": true
+}

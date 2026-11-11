@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+    "-B",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-retrieval-20261111/independent/relocation-copy-z7mwlmzh/checkout/reviews/week01-retrieval-20261111/independent/execute_candidate_case.py",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-retrieval-20261111/independent/relocation-copy-z7mwlmzh/checkout/reviews/week01-retrieval-20261111/independent/rebased-configs/full-bridge.json"
+  ],
+  "returncode": 0,
+  "stdout": "{\"id\": \"full-bridge\", \"status\": \"passed\", \"scope\": \"actual_candidate_full_notebook\", \"source_unchanged\": true, \"runtime_removed\": true}\n",
+  "stderr": "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/lib/python3.12/site-packages/jupyter_client/localinterfaces.py:58: UserWarning: Unexpected error discovering local network interfaces: [Errno 1] Operation not permitted\n  ret = f(**kwargs)\n"
+}

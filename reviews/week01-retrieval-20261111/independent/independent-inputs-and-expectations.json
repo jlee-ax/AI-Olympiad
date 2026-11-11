@@ -1,0 +1,424 @@
+{
+  "schema": "independent-retrieval-inputs-v1",
+  "prepared_before_candidate": true,
+  "purpose": "Reviewer-owned new specification and exact hand-derived expected values. Candidate actual functions and reviewer reference solution must be reported separately.",
+  "base": {
+    "query_ids": [
+      "Q9",
+      "Q2"
+    ],
+    "query_vectors": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "gallery_ids": [
+      42,
+      7,
+      90
+    ],
+    "gallery_vectors": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        -4,
+        0
+      ]
+    ],
+    "feature_order": [
+      "a",
+      "b"
+    ],
+    "query_norms": [
+      1,
+      2
+    ],
+    "gallery_norms": [
+      2,
+      5,
+      4
+    ],
+    "normalized_queries": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "normalized_gallery": [
+      [
+        1,
+        0
+      ],
+      [
+        0.6,
+        0.8
+      ],
+      [
+        -1,
+        0
+      ]
+    ],
+    "raw_dot_matrix": [
+      [
+        2,
+        3,
+        -4
+      ],
+      [
+        0,
+        8,
+        0
+      ]
+    ],
+    "cosine_matrix": [
+      [
+        1,
+        0.6,
+        -1
+      ],
+      [
+        0,
+        0.8,
+        0
+      ]
+    ],
+    "squared_euclidean_matrix": [
+      [
+        1,
+        20,
+        25
+      ],
+      [
+        8,
+        13,
+        20
+      ]
+    ],
+    "raw_dot_best_positions": [
+      1,
+      1
+    ],
+    "raw_dot_best_ids": [
+      7,
+      7
+    ],
+    "cosine_best_positions": [
+      0,
+      1
+    ],
+    "cosine_best_ids": [
+      42,
+      7
+    ],
+    "squared_euclidean_best_positions": [
+      0,
+      0
+    ],
+    "squared_euclidean_best_ids": [
+      42,
+      42
+    ],
+    "unique_maxima": true
+  },
+  "cases": [
+    {
+      "id": "positive-query-scale",
+      "change": "multiply Q9 by7; keep Q2",
+      "expected_cosine_matrix": [
+        [
+          1,
+          0.6,
+          -1
+        ],
+        [
+          0,
+          0.8,
+          0
+        ]
+      ],
+      "expected_cosine_best_ids": [
+        42,
+        7
+      ],
+      "reason": "positive common factor cancels from numerator and norm; no analogous per-feature invariance claimed"
+    },
+    {
+      "id": "positive-gallery-scale",
+      "change": "multiply gallery ID7 vector by10",
+      "expected_gallery_vector": [
+        30,
+        40
+      ],
+      "expected_cosine_matrix": [
+        [
+          1,
+          0.6,
+          -1
+        ],
+        [
+          0,
+          0.8,
+          0
+        ]
+      ],
+      "expected_cosine_best_ids": [
+        42,
+        7
+      ]
+    },
+    {
+      "id": "negative-query-scale",
+      "change": "multiply Q9 by-1",
+      "expected_cosine_matrix": [
+        [
+          -1,
+          -0.6,
+          1
+        ],
+        [
+          0,
+          0.8,
+          0
+        ]
+      ],
+      "expected_cosine_best_ids": [
+        90,
+        7
+      ],
+      "reason": "negative scale reverses direction, so invariance must not be asserted"
+    },
+    {
+      "id": "negative-gallery-scale",
+      "change": "multiply gallery ID7 vector by-1",
+      "expected_cosine_matrix": [
+        [
+          1,
+          -0.6,
+          -1
+        ],
+        [
+          0,
+          -0.8,
+          0
+        ]
+      ],
+      "expected_tied_best_ids_for_Q2": [
+        42,
+        90
+      ],
+      "reason": "changed entry signs are exact; a winner need not change for every negative scaling"
+    },
+    {
+      "id": "zero-query",
+      "query_vector": [
+        0,
+        0
+      ],
+      "expected_norm": 0,
+      "mathematical_cosine": "undefined",
+      "acceptable_native_policies": [
+        "clear ValueError/rejection",
+        "explicit invalid/no-match result",
+        "documented API zero/epsilon convention distinguished from mathematical cosine and unit length"
+      ],
+      "unacceptable": [
+        "silent NaN-driven argmax presented as valid match",
+        "claim normalized zero has norm1",
+        "invent exact mathematical cosine for zero vector"
+      ]
+    },
+    {
+      "id": "zero-gallery",
+      "gallery_vector": [
+        0,
+        0
+      ],
+      "mathematical_cosine": "undefined",
+      "acceptable_native_policies": [
+        "reject input",
+        "exclude invalid gallery row while preserving IDs",
+        "explicit documented application convention with no claim of true cosine"
+      ],
+      "shape_alone_not_sufficient": true
+    },
+    {
+      "id": "exact-tie",
+      "query_vector": [
+        1,
+        0
+      ],
+      "gallery_vectors": [
+        [
+          2,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "gallery_ids": [
+        42,
+        7,
+        90
+      ],
+      "expected_cosines": [
+        1,
+        1,
+        0
+      ],
+      "expected_tied_best_ids": [
+        42,
+        7
+      ],
+      "reviewer_new_contract_policy": "smallest numeric ID",
+      "reviewer_new_contract_expected_id": 7,
+      "native_candidate_policy": "accept a different explicit legitimate tie policy. First-position policy may change chosen ID after joint permutation at ties; do not impose unique-winner invariance here."
+    },
+    {
+      "id": "row-id-joint-permutation",
+      "gallery_row_order": [
+        2,
+        0,
+        1
+      ],
+      "expected_gallery_ids": [
+        90,
+        42,
+        7
+      ],
+      "expected_cosine_matrix": [
+        [
+          -1,
+          1,
+          0.6
+        ],
+        [
+          0,
+          0,
+          0.8
+        ]
+      ],
+      "expected_cosine_best_positions": [
+        1,
+        2
+      ],
+      "expected_cosine_best_ids": [
+        42,
+        7
+      ],
+      "id_only_not_permuted_wrong_output": [
+        7,
+        90
+      ]
+    },
+    {
+      "id": "square-broadcast-trap",
+      "gallery_vectors": [
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "row_norms": [
+        2,
+        5
+      ],
+      "correct_row_normalized": [
+        [
+          1,
+          0
+        ],
+        [
+          0.6,
+          0.8
+        ]
+      ],
+      "wrong_divide_by_1d_row_norms": [
+        [
+          1,
+          0
+        ],
+        [
+          1.5,
+          0.8
+        ]
+      ],
+      "wrong_row_norms": [
+        1,
+        1.7
+      ],
+      "reason": "same shape and valid broadcasting can divide each column by a different sample norm; keepdims or explicit column vector is needed"
+    },
+    {
+      "id": "non-square-axis",
+      "base_gallery_shape": [
+        3,
+        2
+      ],
+      "correct_norm_shape_keepdims": [
+        3,
+        1
+      ],
+      "correct_normalized_shape": [
+        3,
+        2
+      ],
+      "wrong_column_normalization": "can preserve shape but does not make each row unit; compare values and each row norm, not shape only"
+    },
+    {
+      "id": "raw-dot-contract",
+      "input": "same base matrices",
+      "policy": "maximize unnormalized dot product",
+      "expected_best_ids": [
+        7,
+        7
+      ],
+      "reason": "legitimate explicitly fixed contract. Choosing cosine IDs instead is wrong for this specification; no universal cosine superiority."
+    },
+    {
+      "id": "inverse-rank-deferred",
+      "scope": "open later application, not completed by this retrieval change",
+      "order": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "rank_by_original_item": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "inverse_law": "rank[order[t]]==t",
+      "reason": "Both arrays are valid permutations but meanings differ; current best-position->ID teaching is not full inverse-rank instruction."
+    }
+  ],
+  "numeric_scope": "Hand examples are small finite real vectors. Nonzero numerical normalization tests have norm>=1e-6 and components<=1e6. Do not require an introductory implementation to solve every finite overflow/underflow case. If a broader domain is claimed, review it separately.",
+  "float_comparison": "abs_tol1e-12 for derived ordinary values. Zero/tie policy and output meaning remain explicit; numerical tolerance must not silently redefine a declared selection rule.",
+  "student_status": "not observed; these are independent reviewer inputs, not student work or secure hidden tests"
+}

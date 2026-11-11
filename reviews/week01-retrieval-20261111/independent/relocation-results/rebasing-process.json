@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+    "-B",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-retrieval-20261111/independent/relocation-copy-z7mwlmzh/checkout/reviews/week01-retrieval-20261111/independent/rebase-case-configs.py",
+    "--repo-root",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-retrieval-20261111/independent/relocation-copy-z7mwlmzh/checkout",
+    "--case",
+    "full-bridge",
+    "--case",
+    "mutant-zero-silent"
+  ],
+  "returncode": 0,
+  "stdout": "{\n  \"old_repo_from_frozen_manifest\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision\",\n  \"new_repo\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-retrieval-20261111/independent/relocation-copy-z7mwlmzh/checkout\",\n  \"method\": \"Only notebook/oracle path fields are rebased relative to frozen repo root. No source/oracle/config/log/frozen baseline is modified.\",\n  \"configs\": [\n    {\n      \"input_config\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-retrieval-20261111/independent/relocation-copy-z7mwlmzh/checkout/reviews/week01-retrieval-20261111/independent/case-configs/full-bridge.json\",\n      \"input_sha256\": \"4c4756767da03a66593ba60d7137ff44d379b8332972131b3ec3063a79ed316e\",\n      \"new_config\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-retrieval-20261111/independent/relocation-copy-z7mwlmzh/checkout/reviews/week01-retrieval-20261111/independent/rebased-configs/full-bridge.json\",\n      \"new_sha256\": \"e6ef6299a79e70ce012585490a304c363df479ced08f840a238a84a76d7cd4f6\",\n      \"notebook\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-retrieval-20261111/independent/relocation-copy-z7mwlmzh/checkout/lessons/week01/week01_axes_linear_bridge.ipynb\",\n      \"oracle\": null,\n      \"candidate_sha256\": \"de5ba77f7cd1325769ca4af29a8fd9c851d14c8c83d5acb88a127bc277579ef0\"\n    },\n    {\n      \"input_config\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-retrieval-20261111/independent/relocation-copy-z7mwlmzh/checkout/reviews/week01-retrieval-20261111/independent/case-configs/mutant-zero-silent.json\",\n      \"input_sha256\": \"eb3e7809eadd148c710eed2cc369dfcdf0f6f99868f02d53275354d2a2a19128\",\n      \"new_config\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-retrieval-20261111/independent/relocation-copy-z7mwlmzh/checkout/reviews/week01-retrieval-20261111/independent/rebased-configs/mutant-zero-silent.json\",\n      \"new_sha256\": \"741062f41118bbf23ee3e9a51cfca1106fd7f59c0471de8157a9e948e4cb8465\",\n      \"notebook\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-retrieval-20261111/independent/relocation-copy-z7mwlmzh/checkout/lessons/week01/week01_axes_linear_bridge.ipynb\",\n      \"oracle\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-retrieval-20261111/independent/relocation-copy-z7mwlmzh/checkout/reviews/week01-retrieval-20261111/independent/probe-oracles/mutant-zero-silent.py\",\n      \"candidate_sha256\": \"de5ba77f7cd1325769ca4af29a8fd9c851d14c8c83d5acb88a127bc277579ef0\"\n    }\n  ]\n}\n",
+  "stderr": ""
+}

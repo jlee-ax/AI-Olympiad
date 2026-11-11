@@ -1,0 +1,13 @@
+{
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge.ipynb",
+  "sha256": "de5ba77f7cd1325769ca4af29a8fd9c851d14c8c83d5acb88a127bc277579ef0",
+  "scope": "actual_candidate_functions_and_executed_selection_source",
+  "cells": [
+    2,
+    14,
+    16
+  ],
+  "id": "native-tie-first-position",
+  "oracle": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-retrieval-20261111/independent/probe-oracles/native-tie-first-position.py",
+  "probe": "tie-first-position"
+}

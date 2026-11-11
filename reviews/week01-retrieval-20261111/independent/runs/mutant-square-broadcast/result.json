@@ -1,0 +1,96 @@
+{
+  "id": "mutant-square-broadcast",
+  "candidate_sha": "de5ba77f7cd1325769ca4af29a8fd9c851d14c8c83d5acb88a127bc277579ef0",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge.ipynb",
+  "config_sha": "51d27aa2e8cc801b3c647482a8e837e409d6ee0ff2a9490de2cafad8d5d0242b",
+  "status": "oracle_error",
+  "scope": "actual_candidate_functions_and_executed_selection_source",
+  "execution": "new subprocess / fresh in-process kernel",
+  "cells": [
+    {
+      "index": 2,
+      "source_sha": "0ef3cdab4806b707912c9b423b52d11a945c7a03df05d73e74e5a26b7d690514",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "X =\n [[2 1]\n [1 3]\n [3 2]]\nshape: (3, 2) / 첫 행: [2 1]\n위치 1의 ID: P24\n"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "source_sha": "bf88ee4a3442156b8073a3cb1bd096c0201263151a68a11c13114aa6048c696b",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "Q/G shape: (2, 2) (4, 2)\n원시 내적 점수표:\n [[3.  0.  2.  1. ]\n [4.  2.  0.  0.5]]\n원시 내적 최댓값의 후보 ID: [42 42]\n후보 행별 L2 길이: [5.         2.         2.         1.11803399]\n"
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "source_sha": "b7e6b79edc920eaa1aff256d9dd7fbf86d97b370b7561b398877099d6c4a0bde",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "길이 분모 shape: (2, 1) (4, 1)\n각 후보 정규화 후 길이: [1. 1. 1. 1.]\n코사인 점수표: [[0.6   0.    1.    0.894]\n [0.8   1.    0.    0.447]] / shape: (2, 4)\n질문 ID → 코사인 최댓값 후보 ID: {103: 19, 109: 7}\n"
+        }
+      ]
+    }
+  ],
+  "student_achievement": "not_observed",
+  "learning_time": "not_observed",
+  "oracle": {
+    "sha256": "ebf1e0500329d24652ee46557807bafa44eeba962e416bbfa4af66d2829c3a14",
+    "status": "error",
+    "outputs": [
+      {
+        "output_type": "stream",
+        "name": "stdout",
+        "text": "{\n  \"case\": \"axis-square\",\n  \"scope\": \"actual_candidate_normalize_rows/cosine_scores/selection_source\",\n  \"expected\": {\n    \"gallery_unit\": [\n      [\n        1,\n        0\n      ],\n      [\n        0.6,\n        0.8\n      ]\n    ],\n    \"norms\": [\n      1,\n      1\n    ]\n  },\n  \"actual\": {\n    \"gallery_unit\": [\n      [\n        1.0,\n        0.0\n      ],\n      [\n        1.5,\n        0.8\n      ]\n    ],\n    \"norms\": [\n      1.0,\n      1.7\n    ]\n  }\n}\n"
+      },
+      {
+        "output_type": "error",
+        "ename": "AssertionError",
+        "evalue": "(1.5, 0.6)",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[4]\u001b[39m\u001b[32m, line 3\u001b[39m\n\u001b[32m      1\u001b[39m _review_case = \u001b[33m'axis-square'\u001b[39m\n\u001b[32m      2\u001b[39m \u001b[38;5;28;01mfrom\u001b[39;00m pathlib \u001b[38;5;28;01mimport\u001b[39;00m Path\n\u001b[32m----> \u001b[39m\u001b[32m3\u001b[39m exec((Path.cwd().parents[\u001b[32m1\u001b[39m]/\u001b[33m\"native_probe.py\"\u001b[39m).read_text(),globals())\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:62\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:18\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:18\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:19\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+          "\u001b[31mAssertionError\u001b[39m: (1.5, 0.6)"
+        ]
+      }
+    ]
+  },
+  "error": {
+    "ename": "AssertionError",
+    "evalue": "(1.5, 0.6)",
+    "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[4]\u001b[39m\u001b[32m, line 3\u001b[39m\n\u001b[32m      1\u001b[39m _review_case = \u001b[33m'axis-square'\u001b[39m\n\u001b[32m      2\u001b[39m \u001b[38;5;28;01mfrom\u001b[39;00m pathlib \u001b[38;5;28;01mimport\u001b[39;00m Path\n\u001b[32m----> \u001b[39m\u001b[32m3\u001b[39m exec((Path.cwd().parents[\u001b[32m1\u001b[39m]/\u001b[33m\"native_probe.py\"\u001b[39m).read_text(),globals())\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m<string>:62\u001b[39m\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m<string>:18\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m<string>:18\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m<string>:19\u001b[39m, in \u001b[36m_review_equal\u001b[39m\u001b[34m(actual, expected)\u001b[39m\n\u001b[32m     15\u001b[39m \u001b[33m'Could not get source, probably due dynamically evaluated source code.'\u001b[39m\n",
+      "\u001b[31mAssertionError\u001b[39m: (1.5, 0.6)"
+    ]
+  },
+  "elapsed_seconds": 0.2904,
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

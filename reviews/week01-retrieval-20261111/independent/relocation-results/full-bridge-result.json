@@ -1,0 +1,233 @@
+{
+  "id": "full-bridge",
+  "candidate_sha": "de5ba77f7cd1325769ca4af29a8fd9c851d14c8c83d5acb88a127bc277579ef0",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-retrieval-20261111/independent/relocation-copy-z7mwlmzh/checkout/lessons/week01/week01_axes_linear_bridge.ipynb",
+  "config_sha": "e6ef6299a79e70ce012585490a304c363df479ced08f840a238a84a76d7cd4f6",
+  "status": "passed",
+  "scope": "actual_candidate_full_notebook",
+  "execution": "new subprocess / fresh in-process kernel",
+  "cells": [
+    {
+      "index": 2,
+      "source_sha": "0ef3cdab4806b707912c9b423b52d11a945c7a03df05d73e74e5a26b7d690514",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "X =\n [[2 1]\n [1 3]\n [3 2]]\nshape: (3, 2) / 첫 행: [2 1]\n위치 1의 ID: P24\n"
+        }
+      ],
+      "stored_projection_match": true,
+      "stored_png_present": false,
+      "actual_png_present": false
+    },
+    {
+      "index": 4,
+      "source_sha": "71395a25940dbc42bf3782db9f03e6effc8408406638cd936b48050afac31e1f",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "원소별 곱: [2 2]\n내적: 4\n"
+        }
+      ],
+      "stored_projection_match": true,
+      "stored_png_present": false,
+      "actual_png_present": false
+    },
+    {
+      "index": 6,
+      "source_sha": "a2d62e96b27c4cf5a718cb696d08963fde01d4dd97abbc4073688e5eeaf6cee9",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "X @ W =\n [[2 1 4]\n [1 3 7]\n [3 2 7]]\nshape: (3, 2) @ (2, 3) → (3, 3)\nP24의 세 번째 출력: 7\n"
+        }
+      ],
+      "stored_projection_match": true,
+      "stored_png_present": false,
+      "actual_png_present": false
+    },
+    {
+      "index": 8,
+      "source_sha": "cb8e003d7f31253b2d93b9a6b025b8933976ed4541d9e16f6178d1546c1eb677",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "W @ X는 실행 가능하지만 shape: (2, 2)\nX @ X: ValueError — 가운데 길이 2와 3이 다릅니다.\n"
+        }
+      ],
+      "stored_projection_match": true,
+      "stored_png_present": false,
+      "actual_png_present": false
+    },
+    {
+      "index": 10,
+      "source_sha": "3e7c1d9b263dce085f3bec0809ffc624072d397ad49b410a46066ee15c629591",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "원소별 A * identity =\n [[2 0]\n [0 3]]\n행렬곱 A @ identity =\n [[2 1]\n [1 3]]\n"
+        }
+      ],
+      "stored_projection_match": true,
+      "stored_png_present": false,
+      "actual_png_present": false
+    },
+    {
+      "index": 12,
+      "source_sha": "06e3ef8810b36622258294e175243b0c96ed8c61b72db0d478c238e25bc2b942",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "새 묶음 축: (2, 2, 3)\n기존 행 축 연결: (4, 3)\n기존 열 축 연결: (2, 6)\n첫 묶음의 첫 후보: [1 0 2]\n서로 다른 모양을 stack: ValueError\n잇지 않는 열의 길이가 다름: ValueError\n"
+        }
+      ],
+      "stored_projection_match": true,
+      "stored_png_present": false,
+      "actual_png_present": false
+    },
+    {
+      "index": 14,
+      "source_sha": "bf88ee4a3442156b8073a3cb1bd096c0201263151a68a11c13114aa6048c696b",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "Q/G shape: (2, 2) (4, 2)\n원시 내적 점수표:\n [[3.  0.  2.  1. ]\n [4.  2.  0.  0.5]]\n원시 내적 최댓값의 후보 ID: [42 42]\n후보 행별 L2 길이: [5.         2.         2.         1.11803399]\n"
+        }
+      ],
+      "stored_projection_match": true,
+      "stored_png_present": false,
+      "actual_png_present": false
+    },
+    {
+      "index": 16,
+      "source_sha": "7ae26a9b838f17d09923cc37e5561c8982abe66b8789b63eac53e28b412f471e",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "길이 분모 shape: (2, 1) (4, 1)\n각 후보 정규화 후 길이: [1. 1. 1. 1.]\n코사인 점수표: [[0.6   0.    1.    0.894]\n [0.8   1.    0.    0.447]] / shape: (2, 4)\n질문 ID → 코사인 최댓값 후보 ID: {103: 19, 109: 7}\n"
+        }
+      ],
+      "stored_projection_match": true,
+      "stored_png_present": false,
+      "actual_png_present": false
+    },
+    {
+      "index": 18,
+      "source_sha": "bda990b4429353658078b7cc207671657721610236503cc774258be2a65c41f1",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "열별로 잘못 나눈 shape / 행 길이: (4, 2) [1.197 0.444 0.535 0.289]\n양수 배율의 점수 불변: True\n한 질문에 음수를 곱한 점수: [[-0.6    0.    -1.    -0.894]]\n동률 점수 / 현재 첫 ID: [1. 1.] 19\n동률 행·ID를 함께 뒤집은 첫 ID: 8\n입력 거부: 각 행의 길이는 계산 가능한 양수여야 합니다\n입력 거부: 각 값은 유한해야 합니다\n입력 거부: 각 값은 유한해야 합니다\n"
+        }
+      ],
+      "stored_projection_match": true,
+      "stored_png_present": false,
+      "actual_png_present": false
+    },
+    {
+      "index": 20,
+      "source_sha": "bc10c4e95df1fc24270dbea74e6167c1ff65eea3cae33abca5cccfdbe80a67a6",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "이전/새 G shape: (4, 2) (4, 2)\n새 점수의 열 위치: [0 3]\nID도 같이 이동: [19  7]\nID를 그대로 둔 오류: [42 35]\n"
+        }
+      ],
+      "stored_projection_match": true,
+      "stored_png_present": false,
+      "actual_png_present": false
+    },
+    {
+      "index": 22,
+      "source_sha": "2f15d9c2bf99fc7b393ec91f5fd41ed21afe70e2ee9669bd358d941a806e64f8",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "토큰 인덱스 (묶음, 위치):\n [[2 0 1]\n [1 2 0]]\n조회 결과 shape: (2, 3, 2) \n [[[1 3]\n  [0 2]\n  [2 1]]\n\n [[2 1]\n  [1 3]\n  [0 2]]]\n첫 묶음의 둘째 위치: 0 → [0 2]\n둘째 묶음의 첫 위치: 1 → [2 1]\nID 41을 대응표로 찾아 얻은 벡터: [1 3]\n순서를 뒤집은 결과 shape: (2, 3, 2)\n원래 [0, 0]: [1 3] / 뒤집은 [0, 0]: [2 1]\n"
+        }
+      ],
+      "stored_projection_match": true,
+      "stored_png_present": false,
+      "actual_png_present": false
+    },
+    {
+      "index": 25,
+      "source_sha": "241915d52561ca262c3df964f84b47b0aada6eebe24a5ed4891428f1e684f5eb",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [],
+      "stored_projection_match": true,
+      "stored_png_present": false,
+      "actual_png_present": false
+    },
+    {
+      "index": 27,
+      "source_sha": "5c2c9683e0cc5a4911f682f9b0744544723caf50e8e78a36fe4128ab72714cfa",
+      "blank_ast": true,
+      "status": "ok",
+      "outputs": [],
+      "stored_projection_match": true,
+      "stored_png_present": false,
+      "actual_png_present": false
+    },
+    {
+      "index": 29,
+      "source_sha": "c52f0a057d4a00799e2ed660639586e1ab884bdfbcc95cf1ff8b53ac1a9bff3b",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [],
+      "stored_projection_match": true,
+      "stored_png_present": false,
+      "actual_png_present": false
+    },
+    {
+      "index": 31,
+      "source_sha": "e1d3211bbbe65e2c6416b72024bb5b640bb8a8c2542a8d75641801a0d0d6b710",
+      "blank_ast": true,
+      "status": "ok",
+      "outputs": [],
+      "stored_projection_match": true,
+      "stored_png_present": false,
+      "actual_png_present": false
+    }
+  ],
+  "student_achievement": "not_observed",
+  "learning_time": "not_observed",
+  "elapsed_seconds": 0.2094,
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

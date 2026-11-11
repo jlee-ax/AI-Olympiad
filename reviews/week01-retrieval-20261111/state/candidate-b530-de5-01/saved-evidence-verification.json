@@ -1,0 +1,28 @@
+{
+  "verification_type": "saved_stdout_and_freshness_observation_only",
+  "candidate_artifact_bindings_still_match": true,
+  "all_saved_stdout_bytes_sha_match": true,
+  "stdout_checks": {
+    "ca89-context-verifier": true,
+    "integrated-original-discovery": true,
+    "bridge-original-discovery": true,
+    "historical-workflow-decide": true
+  },
+  "old_review_record_hashes_still_match": true,
+  "capture_observation_checks": {
+    "requested_artifact_shas_match_and_stay_stable": true,
+    "all_previous_review_files_unchanged": true,
+    "index_unchanged_during_capture": true,
+    "ca89_verifier_reports_current_mismatch": true,
+    "integrated_artifact_changed": true,
+    "bridge_artifact_changed": true,
+    "original_nineteen_demands_retained": true,
+    "original_eight_open_questions_retained": true,
+    "original_seventeen_queue_retained": true,
+    "bridge_original_scope_and_queue_retained": true,
+    "old_pause_retained": true
+  },
+  "new_content_judgment": "pending; none made",
+  "new_quality_graph_approval_or_discovery_session": false,
+  "report_sha256": "d7995b0a8d14630f63370a667ce36a0f66d66991835eaea5626a6a546bb06a18"
+}

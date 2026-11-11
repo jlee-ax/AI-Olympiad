@@ -8198,7 +8198,7 @@ X @ X: ValueError — 가운데 길이 2와 3이 다릅니다.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5.-%EC%97%AC%EB%9F%AC-%EC%8C%8D%EC%9D%98-%EC%A0%90%EC%88%98%EC%97%90%EC%84%9C-%EC%8B%A4%EC%A0%9C-ID-%EC%B0%BE%EA%B8%B0">5. 여러 쌍의 점수에서 실제 ID 찾기<a class="anchor-link" href="#5.-%EC%97%AC%EB%9F%AC-%EC%8C%8D%EC%9D%98-%EC%A0%90%EC%88%98%EC%97%90%EC%84%9C-%EC%8B%A4%EC%A0%9C-ID-%EC%B0%BE%EA%B8%B0">¶</a></h2><p>두 질문과 네 후보를 세 특성(둥글기·채움·밝기 점수)의 벡터로 나타냅니다. 점수들은 이미 주어졌다고 가정합니다. <strong>큰 내적을 고르는 규칙은 이 합성 연습의 약속</strong>입니다. 실제 유사도는 벡터의 크기, 정규화와 문제의 평가 규칙에 따라 달라집니다.</p>
+<h2 id="5.-%EC%A7%88%EB%AC%B8%EA%B3%BC-%ED%9B%84%EB%B3%B4%EC%9D%98-%EB%B2%A1%ED%84%B0%EB%A5%BC-%EB%B9%84%EA%B5%90%ED%95%98%EA%B3%A0-%EC%8B%A4%EC%A0%9C-ID-%EC%B0%BE%EA%B8%B0">5. 질문과 후보의 벡터를 비교하고 실제 ID 찾기<a class="anchor-link" href="#5.-%EC%A7%88%EB%AC%B8%EA%B3%BC-%ED%9B%84%EB%B3%B4%EC%9D%98-%EB%B2%A1%ED%84%B0%EB%A5%BC-%EB%B9%84%EA%B5%90%ED%95%98%EA%B3%A0-%EC%8B%A4%EC%A0%9C-ID-%EC%B0%BE%EA%B8%B0">¶</a></h2><p>두 질문과 네 후보는 각각 같은 순서의 두 특성으로 이미 표현되었다고 가정합니다. 각 행은 하나의 대상, 각 열은 그 대상의 같은 특성입니다. 이것은 합성 숫자이며 이미지 인코더를 학습하거나 실제 대회 문제를 해결한 것은 아닙니다.</p>
 <table>
 <thead>
 <tr>
@@ -8210,28 +8210,29 @@ X @ X: ValueError — 가운데 길이 2와 3이 다릅니다.
 <tbody>
 <tr>
 <td>Q</td>
-<td>(2, 3)</td>
-<td>질문, 세 특성</td>
+<td>(2, 2)</td>
+<td>질문, 두 특성</td>
 </tr>
 <tr>
 <td>G</td>
-<td>(4, 3)</td>
-<td>후보, 세 특성</td>
+<td>(4, 2)</td>
+<td>후보, 두 특성</td>
 </tr>
 <tr>
 <td>G.T</td>
-<td>(3, 4)</td>
-<td>세 특성, 후보</td>
+<td>(2, 4)</td>
+<td>두 특성, 후보</td>
 </tr>
 <tr>
-<td>S = Q @ G.T</td>
+<td>Q @ G.T</td>
 <td>(2, 4)</td>
 <td>질문, 후보</td>
 </tr>
 </tbody>
 </table>
-<p>G.T는 G의 행과 열을 바꿉니다. S의 한 칸은 질문 한 행과 후보 한 행의 내적입니다. 첫 질문 <code>[1, 0, 2]</code>과 넷째 후보 <code>[0, 0, 2]</code>는 <code>1×0 + 0×0 + 2×2 = 4</code>입니다.</p>
-<p><strong>먼저 예상:</strong> 두 질문의 최댓값이 있는 0부터 세는 <strong>열 위치</strong>와 그 위치의 <strong>후보 ID</strong>를 따로 적으세요. ID의 숫자 크기는 점수가 아닙니다.</p>
+<p>원시 내적을 크게 하는 규칙도 문제에서 그렇게 요구한다면 유효합니다. 첫 질문 [1,0]과 후보 42 [3,4], 후보 19 [2,0]의 내적은 3과 2라서 이 규칙에서는 42가 앞섭니다. 그런데 후보 42는 길이가 5이고 후보 19는 길이가 2입니다. <strong>방향</strong>을 비교하는 규칙이라면 결과가 달라질까요?</p>
+<p>벡터 v의 L2 길이는 **||v|| = √(v[0]² + … + v[d−1]²)**입니다. 후보 [3,4]의 길이는 √(3²+4²)=5이고 [2,0]의 길이는 2입니다. 길이가 0이 아닌 벡터를 자기 길이로 나누면 같은 방향의 길이 1인 벡터가 됩니다. 손으로 [3,4]와 [2,0]을 각각 나눠 보세요.</p>
+<p>앞의 화분 분류는 <strong>제곱거리의 최솟값</strong>을 골랐습니다. 이 절의 원시 내적과 다음 코사인 유사도는 각각 <strong>최댓값</strong>을 고릅니다. 다른 질문이므로 항상 같은 후보를 고르지는 않습니다. 실제로 첫 질문 [1,0]에서 후보 42·19·35까지의 제곱거리는 각각 20·1·0.25이므로 최소는 35입니다.</p>
 </div>
 </div>
 </div>
@@ -8245,16 +8246,15 @@ X @ X: ValueError — 가운데 길이 2와 3이 다릅니다.
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">query_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">103</span><span class="p">,</span> <span class="mi">109</span><span class="p">])</span>
 <span class="n">candidate_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">42</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">35</span><span class="p">])</span>
-<span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
-<span class="n">G</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
-<span class="n">scores</span> <span class="o">=</span> <span class="n">Q</span> <span class="o">@</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span>
-<span class="n">positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">matched_ids</span> <span class="o">=</span> <span class="n">candidate_ids</span><span class="p">[</span><span class="n">positions</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"점수표:</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"최댓값의 열 위치:"</span><span class="p">,</span> <span class="n">positions</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"질문 ID → 후보 ID:"</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">query_ids</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">matched_ids</span><span class="o">.</span><span class="n">tolist</span><span class="p">())))</span>
-<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
-<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">matched_ids</span><span class="p">,</span> <span class="p">[</span><span class="mi">35</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]])</span>
+
+<span class="n">raw_scores</span> <span class="o">=</span> <span class="n">Q</span> <span class="o">@</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Q/G shape:"</span><span class="p">,</span> <span class="n">Q</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">G</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"원시 내적 점수표:</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">raw_scores</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"원시 내적 최댓값의 후보 ID:"</span><span class="p">,</span> <span class="n">candidate_ids</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">raw_scores</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"후보 행별 L2 길이:"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">raw_scores</span><span class="p">,</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]])</span>
 </pre></div>
 </div>
 </div>
@@ -8267,11 +8267,151 @@ X @ X: ValueError — 가운데 길이 2와 3이 다릅니다.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>점수표:
- [[2 2 1 4]
- [0 3 1 2]]
-최댓값의 열 위치: [3 1]
-질문 ID → 후보 ID: {103: 35, 109: 7}
+<pre>Q/G shape: (2, 2) (4, 2)
+원시 내적 점수표:
+ [[3.  0.  2.  1. ]
+ [4.  2.  0.  0.5]]
+원시 내적 최댓값의 후보 ID: [42 42]
+후보 행별 L2 길이: [5.         2.         2.         1.11803399]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=retrieval-norm-text">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="%EA%B8%B8%EC%9D%B4%EB%A1%9C-%EB%82%98%EB%88%88-%EB%92%A4-%EB%82%B4%EC%A0%81%ED%95%98%EA%B8%B0">길이로 나눈 뒤 내적하기<a class="anchor-link" href="#%EA%B8%B8%EC%9D%B4%EB%A1%9C-%EB%82%98%EB%88%88-%EB%92%A4-%EB%82%B4%EC%A0%81%ED%95%98%EA%B8%B0">¶</a></h3><p>길이가 0이 아닌 두 벡터의 <strong>코사인 유사도</strong>는 다음과 같습니다.</p>
+<p><strong>cos(q,g) = (q · g) ÷ (||q|| × ||g||)</strong></p>
+<p>즉 두 벡터를 각각 자기 길이로 나눈 뒤 내적해도 됩니다. 첫 질문 [1,0]과 후보 42 [3,4]의 코사인은 3÷(1×5)=0.6, 후보 19 [2,0]은 2÷(1×2)=1입니다. 방향이 같은 후보 19가 더 큽니다. 이것이 항상 더 좋은 검색 규칙이거나 확률이라는 뜻은 아닙니다.</p>
+<p>아래 함수의 연습 범위는 <strong>비어 있지 않은 2차원 숫자 배열</strong>, 한 행이 한 대상, 공통 열이 같은 순서의 특성인 유한한 실수입니다. 각 행의 길이가 계산 가능한 양수여야 합니다. 0벡터의 수학적 코사인은 분모가 0이므로 정의되지 않습니다. 이 합성 명세는 0·NaN·무한대·계산할 수 없는 길이를 입력 오류로 알립니다. 다른 문제나 API는 무효 표시나 별도 0/epsilon 관례를 정할 수 있으며, 그 출력이 0벡터를 단위 벡터로 바꾸는 것은 아닙니다.</p>
+<p>행의 길이는 <strong>특성 축 axis=1</strong>에서 구합니다. Q는 길이 분모가 (2,1), G는 (4,1)입니다. <code>keepdims=True</code>로 열 자리를 남겨 각 행을 그 행의 길이로 나눕니다. 정규화된 Q와 G의 행렬곱은 여전히 질문×후보 (2,4)입니다.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=retrieval-norm-code">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">normalize_rows</span><span class="p">(</span><span class="n">vectors</span><span class="p">):</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">vectors</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">rows</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">2</span> <span class="ow">or</span> <span class="mi">0</span> <span class="ow">in</span> <span class="n">rows</span><span class="o">.</span><span class="n">shape</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"비어 있지 않은 2차원 배열이 필요합니다"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"각 값은 유한해야 합니다"</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">over</span><span class="o">=</span><span class="s2">"ignore"</span><span class="p">,</span> <span class="n">under</span><span class="o">=</span><span class="s2">"ignore"</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s2">"ignore"</span><span class="p">):</span>
+        <span class="n">lengths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="ow">or</span> <span class="p">(</span><span class="n">lengths</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"각 행의 길이는 계산 가능한 양수여야 합니다"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">rows</span> <span class="o">/</span> <span class="n">lengths</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">cosine_scores</span><span class="p">(</span><span class="n">queries</span><span class="p">,</span> <span class="n">candidates</span><span class="p">):</span>
+    <span class="n">query_unit</span> <span class="o">=</span> <span class="n">normalize_rows</span><span class="p">(</span><span class="n">queries</span><span class="p">)</span>
+    <span class="n">candidate_unit</span> <span class="o">=</span> <span class="n">normalize_rows</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">query_unit</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">candidate_unit</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"질문과 후보의 특성 수가 달라요"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">query_unit</span> <span class="o">@</span> <span class="n">candidate_unit</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">Q_unit</span> <span class="o">=</span> <span class="n">normalize_rows</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+<span class="n">G_unit</span> <span class="o">=</span> <span class="n">normalize_rows</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">cosine_scores</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">G</span><span class="p">)</span>
+<span class="n">positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">matched_ids</span> <span class="o">=</span> <span class="n">candidate_ids</span><span class="p">[</span><span class="n">positions</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"길이 분모 shape:"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+      <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"각 후보 정규화 후 길이:"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">G_unit</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"코사인 점수표:"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="s2">"/ shape:"</span><span class="p">,</span> <span class="n">scores</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"질문 ID → 코사인 최댓값 후보 ID:"</span><span class="p">,</span>
+      <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">query_ids</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">matched_ids</span><span class="o">.</span><span class="n">tolist</span><span class="p">())))</span>
+<span class="k">assert</span> <span class="n">scores</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">G_unit</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">matched_ids</span><span class="p">,</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>길이 분모 shape: (2, 1) (4, 1)
+각 후보 정규화 후 길이: [1. 1. 1. 1.]
+코사인 점수표: [[0.6   0.    1.    0.894]
+ [0.8   1.    0.    0.447]] / shape: (2, 4)
+질문 ID → 코사인 최댓값 후보 ID: {103: 19, 109: 7}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=retrieval-limits-text">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="%EB%B0%B0%EC%9C%A8,-%EC%B6%95%EA%B3%BC-%EA%B2%BD%EA%B3%84-%ED%99%95%EC%9D%B8">배율, 축과 경계 확인<a class="anchor-link" href="#%EB%B0%B0%EC%9C%A8,-%EC%B6%95%EA%B3%BC-%EA%B2%BD%EA%B3%84-%ED%99%95%EC%9D%B8">¶</a></h3><p>벡터 <strong>전체에 양수</strong>를 곱하면 길이도 같은 양수 배로 바뀌므로 방향과 코사인은 같습니다. 한 벡터에 음수를 곱하면 방향이 뒤집혀 코사인의 부호가 바뀝니다. 음수를 곱했다고 모든 문제의 최댓값 ID가 반드시 바뀐다는 뜻은 아닙니다. 벡터의 열마다 서로 다른 배율을 적용하거나 평균을 빼는 것은 이 규칙과 다릅니다.</p>
+<p>2주차의 열별 표준화는 훈련 <strong>각 특성 열</strong>의 평균·표준편차로 값을 바꿉니다. 여기서는 <strong>각 대상 행</strong>을 그 행의 길이로 나눕니다. 서로 다른 목적과 축이므로 바꿔 쓸 수 없습니다. 특히 본문의 화분 분류 입력 P01은 [0,0]인 유효한 관측입니다. 이 검색의 0벡터 오류 규칙을 그 분류에 적용하지 않습니다.</p>
+<p>이 예에서는 점수가 정확히 같으면 현재 후보 순서에서 <strong>첫 위치</strong>를 선택합니다. 따라서 동률 후보를 같이 재정렬할 때 첫 위치의 ID가 바뀔 수 있습니다. 다른 문제의 동률 정책이 주어지면 그 정책을 따릅니다. 아래의 잘못된 열별 나눗셈과 올바른 행별 나눗셈은 shape가 같아도 각 행의 길이가 다릅니다.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=retrieval-limits-code">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">wrong_axis</span> <span class="o">=</span> <span class="n">G</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"열별로 잘못 나눈 shape / 행 길이:"</span><span class="p">,</span>
+      <span class="n">wrong_axis</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">wrong_axis</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"양수 배율의 점수 불변:"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">cosine_scores</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">Q</span><span class="p">,</span> <span class="n">G</span><span class="p">),</span> <span class="n">scores</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"한 질문에 음수를 곱한 점수:"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">cosine_scores</span><span class="p">(</span><span class="o">-</span><span class="n">Q</span><span class="p">[:</span><span class="mi">1</span><span class="p">],</span> <span class="n">G</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">cosine_scores</span><span class="p">(</span><span class="o">-</span><span class="n">Q</span><span class="p">[:</span><span class="mi">1</span><span class="p">],</span> <span class="n">G</span><span class="p">),</span> <span class="o">-</span><span class="n">scores</span><span class="p">[:</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">tie_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">19</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="n">tie_scores</span> <span class="o">=</span> <span class="n">cosine_scores</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"동률 점수 / 현재 첫 ID:"</span><span class="p">,</span> <span class="n">tie_scores</span><span class="p">,</span> <span class="n">tie_ids</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">tie_scores</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"동률 행·ID를 함께 뒤집은 첫 ID:"</span><span class="p">,</span> <span class="n">tie_ids</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">tie_scores</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])])</span>
+<span class="k">for</span> <span class="n">invalid</span> <span class="ow">in</span> <span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="p">[[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="p">[[</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">normalize_rows</span><span class="p">(</span><span class="n">invalid</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"입력 거부:"</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>열별로 잘못 나눈 shape / 행 길이: (4, 2) [1.197 0.444 0.535 0.289]
+양수 배율의 점수 불변: True
+한 질문에 음수를 곱한 점수: [[-0.6    0.    -1.    -0.894]]
+동률 점수 / 현재 첫 ID: [1. 1.] 19
+동률 행·ID를 함께 뒤집은 첫 ID: 8
+입력 거부: 각 행의 길이는 계산 가능한 양수여야 합니다
+입력 거부: 각 값은 유한해야 합니다
+입력 거부: 각 값은 유한해야 합니다
 </pre>
 </div>
 </div>
@@ -8284,8 +8424,8 @@ X @ X: ValueError — 가운데 길이 2와 3이 다릅니다.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>첫 질문의 최댓값 위치는 3, 실제 후보 ID는 <code>candidate_ids[3] = 35</code>입니다. 둘째 질문은 위치 1, 후보 ID 7입니다. 이 예의 최댓값에는 동점이 없습니다. 동점이면 NumPy <code>argmax</code>는 첫 위치를 반환하지만 실제 과제에 동점 규칙이 있으면 그 규칙을 따릅니다.</p>
-<h3 id="%EA%B0%99%EC%9D%80-shape%EC%9D%B8%EB%8D%B0-ID%EA%B0%80-%EB%B0%94%EB%80%8C%EB%8A%94-%EB%B0%98%EB%A1%80">같은 shape인데 ID가 바뀌는 반례<a class="anchor-link" href="#%EA%B0%99%EC%9D%80-shape%EC%9D%B8%EB%8D%B0-ID%EA%B0%80-%EB%B0%94%EB%80%8C%EB%8A%94-%EB%B0%98%EB%A1%80">¶</a></h3><p>후보 행 순서를 바꿀 때 ID를 함께 바꾸지 않으면 점수표와 ID 목록의 shape는 그대로지만 이름표가 잘못 붙습니다. 아래에서 103과 109의 결과를 각각 비교하세요.</p>
+<p>첫 질문의 코사인 최댓값 위치는 2, 실제 후보 ID는 <code>candidate_ids[2] = 19</code>입니다. 둘째 질문은 위치 1, 후보 ID 7입니다. 이 예의 최댓값에는 동점이 없습니다. 후보 ID의 크기는 유사도가 아닙니다.</p>
+<h3 id="%EA%B0%99%EC%9D%80-shape%EC%9D%B8%EB%8D%B0-ID%EA%B0%80-%EB%B0%94%EB%80%8C%EB%8A%94-%EB%B0%98%EB%A1%80">같은 shape인데 ID가 바뀌는 반례<a class="anchor-link" href="#%EA%B0%99%EC%9D%80-shape%EC%9D%B8%EB%8D%B0-ID%EA%B0%80-%EB%B0%94%EB%80%8C%EB%8A%94-%EB%B0%98%EB%A1%80">¶</a></h3><p>후보 행 순서를 바꿀 때 ID를 함께 바꾸지 않으면 점수표와 ID 목록의 shape는 그대로지만 이름표가 잘못 붙습니다. 아래에서 두 질문의 결과를 비교하세요. <strong>유일한 최댓값</strong>이므로 후보와 ID를 함께 옮겼다면 같은 ID를 찾아야 합니다.</p>
 </div>
 </div>
 </div>
@@ -8294,21 +8434,21 @@ X @ X: ValueError — 가운데 길이 2와 3이 다릅니다.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="n">G_shuffled</span> <span class="o">=</span> <span class="n">G</span><span class="p">[</span><span class="n">order</span><span class="p">]</span>
 <span class="n">correct_ids</span> <span class="o">=</span> <span class="n">candidate_ids</span><span class="p">[</span><span class="n">order</span><span class="p">]</span>
-<span class="n">new_positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">Q</span> <span class="o">@</span> <span class="n">G_shuffled</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">new_positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">cosine_scores</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">G_shuffled</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">right</span> <span class="o">=</span> <span class="n">correct_ids</span><span class="p">[</span><span class="n">new_positions</span><span class="p">]</span>
 <span class="n">wrong</span> <span class="o">=</span> <span class="n">candidate_ids</span><span class="p">[</span><span class="n">new_positions</span><span class="p">]</span>  <span class="c1"># 행만 섞고 ID는 그대로 둔 실수</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"이전/새 G shape:"</span><span class="p">,</span> <span class="n">G</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">G_shuffled</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"새 점수의 열 위치:"</span><span class="p">,</span> <span class="n">new_positions</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"ID도 같이 이동:"</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"ID를 그대로 둔 오류:"</span><span class="p">,</span> <span class="n">wrong</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="p">[</span><span class="mi">35</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
-<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">wrong</span><span class="p">,</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">35</span><span class="p">])</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">wrong</span><span class="p">,</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">35</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -8321,10 +8461,10 @@ X @ X: ValueError — 가운데 길이 2와 3이 다릅니다.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>이전/새 G shape: (4, 3) (4, 3)
-새 점수의 열 위치: [2 3]
-ID도 같이 이동: [35  7]
-ID를 그대로 둔 오류: [19 35]
+<pre>이전/새 G shape: (4, 2) (4, 2)
+새 점수의 열 위치: [0 3]
+ID도 같이 이동: [19  7]
+ID를 그대로 둔 오류: [42 35]
 </pre>
 </div>
 </div>
@@ -8347,7 +8487,7 @@ ID를 그대로 둔 오류: [19 35]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
@@ -8438,7 +8578,7 @@ ID 41을 대응표로 찾아 얻은 벡터: [1 3]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="c1"># 독립 문제 입력: 각 행은 학생 한 명, 열 순서는 a, b입니다.</span>
@@ -8468,7 +8608,7 @@ ID 41을 대응표로 찾아 얻은 벡터: [1 3]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="c1"># 필수 A: 자신의 확인 코드를 작성하세요.</span>
@@ -8484,12 +8624,13 @@ ID 41을 대응표로 찾아 얻은 벡터: [1 3]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%ED%95%84%EC%88%98-B-%C2%B7-%EC%88%9C%EC%84%9C%EB%A5%BC-%EB%B0%94%EA%BE%BC-%EA%B2%80%EC%83%89-%EA%B2%B0%EA%B3%BC">필수 B · 순서를 바꾼 검색 결과<a class="anchor-link" href="#%ED%95%84%EC%88%98-B-%C2%B7-%EC%88%9C%EC%84%9C%EB%A5%BC-%EB%B0%94%EA%BE%BC-%EA%B2%80%EC%83%89-%EA%B2%B0%EA%B3%BC">¶</a></h3><p><code>query_new</code>와 <code>gallery_new</code>의 행은 같은 순서의 두 특성을 가진 벡터입니다. 한 질문에 대해 모든 후보의 내적을 구하고 가장 큰 점수의 후보를 고르세요. 이 데이터의 각 질문은 최댓값이 하나입니다.</p>
+<h3 id="%ED%95%84%EC%88%98-B-%C2%B7-%EB%82%B4%EC%A0%81%EA%B3%BC-%EC%BD%94%EC%82%AC%EC%9D%B8%EC%9C%BC%EB%A1%9C-%EA%B2%80%EC%83%89%ED%95%98%EA%B3%A0-ID-%EC%B0%BE%EA%B8%B0">필수 B · 내적과 코사인으로 검색하고 ID 찾기<a class="anchor-link" href="#%ED%95%84%EC%88%98-B-%C2%B7-%EB%82%B4%EC%A0%81%EA%B3%BC-%EC%BD%94%EC%82%AC%EC%9D%B8%EC%9C%BC%EB%A1%9C-%EA%B2%80%EC%83%89%ED%95%98%EA%B3%A0-ID-%EC%B0%BE%EA%B8%B0">¶</a></h3><p>아래 새 입력의 각 행은 같은 순서의 두 특성을 가진 질문 또는 후보 벡터입니다. 이 합성 명세는 모두 <strong>유한한 비영 벡터</strong>이며, 원시 내적을 쓰는 경우와 코사인을 쓰는 경우를 각각 비교합니다. 유일한 최댓값에서는 그 위치의 후보 ID를 반환합니다.</p>
 <ol>
-<li>점수표의 shape와 모든 값을 구하세요. 각 질문의 <strong>위치</strong>와 실제 <strong>후보 ID</strong>를 따로 쓰고, 관계를 질문 ID → 후보 ID로 적으세요.</li>
-<li>후보 행을 <code>[2, 0, 3, 1]</code> 순서로 옮기세요. 후보 ID도 똑같이 옮겼을 때 각 질문의 새 위치와 실제 ID를 쓰세요.</li>
-<li>후보 행만 옮기고 ID를 옮기지 않으면 두 질문의 어떤 잘못된 ID가 나오나요? shape가 같아도 틀린 이유를 설명하세요.</li>
-<li>점수표, 위치, 올바른 ID를 구하는 코드를 직접 쓰고 출력으로 확인하세요.</li>
+<li>각 질문과 후보의 길이를 직접 구하세요. 원시 내적 점수표와 그 최댓값 위치·후보 ID를 구합니다.</li>
+<li>각 행을 자기 길이로 나눈 뒤 코사인 점수표를 구하세요. shape와 축, 두 질문의 위치·후보 ID가 무엇인가요? 첫 질문에서 원시 내적과 코사인이 다른 후보를 고르는 이유는 무엇인가요?</li>
+<li>후보 행을 <code>[2,0,3,1]</code> 순서로 옮길 때 ID도 함께 옮기세요. 새 위치와 실제 ID를 적으세요. 행만 옮기고 ID를 그대로 두면 어떤 잘못된 ID가 나오나요?</li>
+<li>한 질문에 양수 또는 음수를 곱하면 점수가 어떻게 바뀌나요? 0벡터나 NaN이 들어오면 위 합성 명세에서는 어떻게 처리하나요? 동점에는 어떤 정책이 쓰이나요?</li>
+<li>아래 빈 코드 셀에 직접 계산·확인하는 코드를 작성하고 손계산과 비교하세요. 앞의 함수를 활용할 수 있지만, 각 축과 분모의 뜻도 설명해야 합니다.</li>
 </ol>
 </div>
 </div>
@@ -8499,7 +8640,7 @@ ID 41을 대응표로 찾아 얻은 벡터: [1 3]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">q_ids_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">61</span><span class="p">,</span> <span class="mi">22</span><span class="p">])</span>
@@ -8518,8 +8659,9 @@ ID 41을 대응표로 찾아 얻은 벡터: [1 3]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>내 점수표와 위치 / ID:</p>
-<p>순서를 바꾼 뒤 위치 / ID 및 ID만 남긴 오류:</p>
+<p>내적과 코사인의 점수표·위치·ID 및 다른 이유:</p>
+<p>행별 길이와 축, 후보·ID 순서 변경의 결과:</p>
+<p>양수·음수 배율과 0·비유한값·동률의 처리:</p>
 <p>실행 뒤 달라진 생각 / 받은 도움(없음·힌트·예시·직접 설명):</p>
 </div>
 </div>
@@ -8529,7 +8671,7 @@ ID 41을 대응표로 찾아 얻은 벡터: [1 3]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="c1"># 필수 B: 자신의 확인 코드를 작성하세요.</span>
@@ -8555,6 +8697,7 @@ ID 41을 대응표로 찾아 얻은 벡터: [1 3]
 <li><a href="https://kitpa.org/koai/2027">KOAI 2027 안내</a>에 연결된 <a href="https://kitpa.org/koai/syllabus">국내 실라버스</a>는 조사 당시 IOAI 2026 기준 표기였습니다. 별도 <a href="https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf">IOAI 2027 원문</a>의 국제 항목을 국내 2027 확정 범위나 1주차 필수로 자동 취급하지 않습니다. 확인 기록: <a href="../../reviews/discovery-loop-20261111/source-research.md">source-research.md</a>, 2026-11-11. 최신 공지를 다시 확인하세요.</li>
 </ul>
 <p>교안의 숫자와 문제는 자체 제작 자료입니다.</p>
+<p><a href="https://raw.githubusercontent.com/IOAI-official/IOAI-2026/e1963801aa4cf33a5a03520b39fa6620a7894c54/Individual-Contest/1_Find_the_Order/statement.md">IOAI 2026 Find the Order 원문</a>의 각 조각별 시간 순위는 여기서 배운 최댓값 위치→ID와 <strong>다른 출력 계약</strong>입니다. 이 교량은 그 역순위 변환이나 오디오 모델을 완수하지 않습니다.</p>
 </div>
 </div>
 </div>
