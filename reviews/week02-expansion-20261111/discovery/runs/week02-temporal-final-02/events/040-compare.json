@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-temporal-final-02-040-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D07",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "One-hot categorical feature columns are not an embedding lookup with repeated token IDs and B/L/V/H axes. That operation and independent new lookup assessment are absent.",
+    "start_line": 1,
+    "end_line": 348,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "One-hot categorical feature columns are not an embedding lookup with repeated token IDs and B/L/V/H axes. That operation and independent new lookup assessment are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 348
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "One-hot categorical feature columns are not an embedding lookup with repeated token IDs and B/L/V/H axes. That operation and independent new lookup assessment are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 348
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "One-hot categorical feature columns are not an embedding lookup with repeated token IDs and B/L/V/H axes. That operation and independent new lookup assessment are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 348
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "One-hot categorical feature columns are not an embedding lookup with repeated token IDs and B/L/V/H axes. That operation and independent new lookup assessment are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 348
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "One-hot categorical feature columns are not an embedding lookup with repeated token IDs and B/L/V/H axes. That operation and independent new lookup assessment are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 348
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-main-time-cleanup-01-036-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D04",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The output labels -1/+1 and the unknown label 0 are defined. Encoding to a contiguous internal class index, class-axis argmax, reverse conversion and independent noncontiguous-label round trips are absent.",
+    "start_line": 22,
+    "end_line": 101,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The output labels -1/+1 and the unknown label 0 are defined. Encoding to a contiguous internal class index, class-axis argmax, reverse conversion and independent noncontiguous-label round trips are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 22,
+        "end_line": 101
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "The output labels -1/+1 and the unknown label 0 are defined. Encoding to a contiguous internal class index, class-axis argmax, reverse conversion and independent noncontiguous-label round trips are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 22,
+        "end_line": 101
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "The output labels -1/+1 and the unknown label 0 are defined. Encoding to a contiguous internal class index, class-axis argmax, reverse conversion and independent noncontiguous-label round trips are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 22,
+        "end_line": 101
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The output labels -1/+1 and the unknown label 0 are defined. Encoding to a contiguous internal class index, class-axis argmax, reverse conversion and independent noncontiguous-label round trips are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 22,
+        "end_line": 101
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "The output labels -1/+1 and the unknown label 0 are defined. Encoding to a contiguous internal class index, class-axis argmax, reverse conversion and independent noncontiguous-label round trips are absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 22,
+        "end_line": 101
+      }
+    ]
+  }
+}

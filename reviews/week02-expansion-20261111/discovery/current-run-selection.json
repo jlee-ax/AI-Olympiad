@@ -1,0 +1,15 @@
+{
+  "current_runs": [
+    "week01-bridge-time-cleanup-01",
+    "week02-main-time-cleanup-01",
+    "week02-temporal-final-02"
+  ],
+  "historical_runs": {
+    "week02-temporal-final-01": {
+      "session_file_sha256": "967f7c2c208bdc22de30ec6d9f41d3dedd1938d43c6fa64d2fc7830efe40873b",
+      "replaced_for_current_reporting_by": "week02-temporal-final-02",
+      "reason": "Actual artifact changed from 774f3c48 to a830a15e after the original valid review; preserve prior session/report and artifact_changed evidence. This selection neither retires nor narrows any original demand.",
+      "stale_evidence": "reviews/week02-expansion-20261111/discovery/temporal-final-01-stale-after-float-fix.json"
+    }
+  }
+}

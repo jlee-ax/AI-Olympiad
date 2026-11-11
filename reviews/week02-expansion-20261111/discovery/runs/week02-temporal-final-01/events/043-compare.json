@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-temporal-final-01-043-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D10",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "Students are asked to predict features and rates, repair an invalid encoder fit, alter validation inputs and compare leakage with repeated validation selection. The lesson also limits toy-score claims. The original numerical-gradient and relative-error prerequisites/principle remain outside this unit.",
+    "start_line": 162,
+    "end_line": 338,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "Students are asked to predict features and rates, repair an invalid encoder fit, alter validation inputs and compare leakage with repeated validation selection. The lesson also limits toy-score claims. The original numerical-gradient and relative-error prerequisites/principle remain outside this unit.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 162,
+        "end_line": 338
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "Students are asked to predict features and rates, repair an invalid encoder fit, alter validation inputs and compare leakage with repeated validation selection. The lesson also limits toy-score claims. The original numerical-gradient and relative-error prerequisites/principle remain outside this unit.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 162,
+        "end_line": 338
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "Students are asked to predict features and rates, repair an invalid encoder fit, alter validation inputs and compare leakage with repeated validation selection. The lesson also limits toy-score claims. The original numerical-gradient and relative-error prerequisites/principle remain outside this unit.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 162,
+        "end_line": 338
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "Students are asked to predict features and rates, repair an invalid encoder fit, alter validation inputs and compare leakage with repeated validation selection. The lesson also limits toy-score claims. The original numerical-gradient and relative-error prerequisites/principle remain outside this unit.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 162,
+        "end_line": 338
+      },
+      {
+        "id": "practice",
+        "judgment": "met",
+        "observed_behavior": "Students are asked to predict features and rates, repair an invalid encoder fit, alter validation inputs and compare leakage with repeated validation selection. The lesson also limits toy-score claims. The original numerical-gradient and relative-error prerequisites/principle remain outside this unit.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 162,
+        "end_line": 338
+      }
+    ]
+  }
+}

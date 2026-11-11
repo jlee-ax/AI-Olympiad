@@ -1,0 +1,242 @@
+[
+  {
+    "event": "rebind-week02-temporal-final-02-001-discover",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-002-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-003-read",
+    "status": "needs_work",
+    "next_action": "trace_source_requirements"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-004-trace",
+    "status": "needs_work",
+    "next_action": "discover_original_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-005-discover",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-006-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-007-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-008-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-009-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-010-read",
+    "status": "needs_work",
+    "next_action": "trace_source_requirements"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-011-trace",
+    "status": "needs_work",
+    "next_action": "discover_original_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-012-discover",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-013-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-014-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-015-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-016-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-017-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-018-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-019-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-020-read",
+    "status": "needs_work",
+    "next_action": "trace_source_requirements"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-021-trace",
+    "status": "needs_work",
+    "next_action": "discover_original_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-022-discover",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-023-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-024-read",
+    "status": "needs_work",
+    "next_action": "trace_source_requirements"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-025-trace",
+    "status": "needs_work",
+    "next_action": "discover_original_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-026-discover",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-027-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-028-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-029-read",
+    "status": "needs_work",
+    "next_action": "read_discovered_sources"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-030-read",
+    "status": "needs_work",
+    "next_action": "trace_source_requirements"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-031-trace",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-032-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-033-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-034-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-035-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-036-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-037-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-038-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-039-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-040-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-041-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-042-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-043-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-044-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-045-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-046-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-047-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  },
+  {
+    "event": "rebind-week02-temporal-final-02-048-compare",
+    "status": "needs_work",
+    "next_action": "expand_frontier"
+  }
+]

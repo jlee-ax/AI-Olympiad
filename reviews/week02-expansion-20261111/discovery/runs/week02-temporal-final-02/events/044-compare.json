@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-temporal-final-02-044-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "H01",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The synthetic 1:5 table and weighted_accuracy implementation, followed by a new independent 1:4 hand/code task, correctly weight by truth, include all evaluated rows in the denominator and reverse model rankings. Prerequisites, learning and general assessment behavior are met. The unchanged original Radar-specific principle requires w(-1)=1 and other labels=50, and its practice instantiates non-background label 2 with an explicit prediction-vector comparison. The student notebook instead uses a binary B/T contract; those original cases are not supplied. The linked source and separate teacher caveat do not replace student material.",
+    "start_line": 257,
+    "end_line": 340,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The synthetic 1:5 table and weighted_accuracy implementation, followed by a new independent 1:4 hand/code task, correctly weight by truth, include all evaluated rows in the denominator and reverse model rankings. Prerequisites, learning and general assessment behavior are met. The unchanged original Radar-specific principle requires w(-1)=1 and other labels=50, and its practice instantiates non-background label 2 with an explicit prediction-vector comparison. The student notebook instead uses a binary B/T contract; those original cases are not supplied. The linked source and separate teacher caveat do not replace student material.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 257,
+        "end_line": 340
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "The synthetic 1:5 table and weighted_accuracy implementation, followed by a new independent 1:4 hand/code task, correctly weight by truth, include all evaluated rows in the denominator and reverse model rankings. Prerequisites, learning and general assessment behavior are met. The unchanged original Radar-specific principle requires w(-1)=1 and other labels=50, and its practice instantiates non-background label 2 with an explicit prediction-vector comparison. The student notebook instead uses a binary B/T contract; those original cases are not supplied. The linked source and separate teacher caveat do not replace student material.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 257,
+        "end_line": 340
+      },
+      {
+        "id": "assessment",
+        "judgment": "met",
+        "observed_behavior": "The synthetic 1:5 table and weighted_accuracy implementation, followed by a new independent 1:4 hand/code task, correctly weight by truth, include all evaluated rows in the denominator and reverse model rankings. Prerequisites, learning and general assessment behavior are met. The unchanged original Radar-specific principle requires w(-1)=1 and other labels=50, and its practice instantiates non-background label 2 with an explicit prediction-vector comparison. The student notebook instead uses a binary B/T contract; those original cases are not supplied. The linked source and separate teacher caveat do not replace student material.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 309,
+        "end_line": 340
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The synthetic 1:5 table and weighted_accuracy implementation, followed by a new independent 1:4 hand/code task, correctly weight by truth, include all evaluated rows in the denominator and reverse model rankings. Prerequisites, learning and general assessment behavior are met. The unchanged original Radar-specific principle requires w(-1)=1 and other labels=50, and its practice instantiates non-background label 2 with an explicit prediction-vector comparison. The student notebook instead uses a binary B/T contract; those original cases are not supplied. The linked source and separate teacher caveat do not replace student material.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 257,
+        "end_line": 340
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "The synthetic 1:5 table and weighted_accuracy implementation, followed by a new independent 1:4 hand/code task, correctly weight by truth, include all evaluated rows in the denominator and reverse model rankings. Prerequisites, learning and general assessment behavior are met. The unchanged original Radar-specific principle requires w(-1)=1 and other labels=50, and its practice instantiates non-background label 2 with an explicit prediction-vector comparison. The student notebook instead uses a binary B/T contract; those original cases are not supplied. The linked source and separate teacher caveat do not replace student material.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 257,
+        "end_line": 340
+      }
+    ]
+  }
+}

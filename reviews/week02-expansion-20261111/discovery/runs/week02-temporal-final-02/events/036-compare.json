@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-temporal-final-02-036-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D04",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "One-hot encoding maps an input category to feature columns and discusses unknown/drop behavior. It is not a class-label encode/argmax/decode round trip, and the retained independent noncontiguous output-label task is absent.",
+    "start_line": 124,
+    "end_line": 190,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "One-hot encoding maps an input category to feature columns and discusses unknown/drop behavior. It is not a class-label encode/argmax/decode round trip, and the retained independent noncontiguous output-label task is absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 124,
+        "end_line": 190
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "One-hot encoding maps an input category to feature columns and discusses unknown/drop behavior. It is not a class-label encode/argmax/decode round trip, and the retained independent noncontiguous output-label task is absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 124,
+        "end_line": 190
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "One-hot encoding maps an input category to feature columns and discusses unknown/drop behavior. It is not a class-label encode/argmax/decode round trip, and the retained independent noncontiguous output-label task is absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 124,
+        "end_line": 190
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "One-hot encoding maps an input category to feature columns and discusses unknown/drop behavior. It is not a class-label encode/argmax/decode round trip, and the retained independent noncontiguous output-label task is absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 124,
+        "end_line": 190
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "One-hot encoding maps an input category to feature columns and discusses unknown/drop behavior. It is not a class-label encode/argmax/decode round trip, and the retained independent noncontiguous output-label task is absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 124,
+        "end_line": 190
+      }
+    ]
+  }
+}

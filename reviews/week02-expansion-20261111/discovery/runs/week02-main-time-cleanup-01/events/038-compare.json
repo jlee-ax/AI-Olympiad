@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-main-time-cleanup-01-038-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D12",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "No multiple-call mutable-default or returned-list alias diagnostic is supplied. This separate Python demand remains open rather than being silently omitted.",
+    "start_line": 1,
+    "end_line": 357,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "No multiple-call mutable-default or returned-list alias diagnostic is supplied. This separate Python demand remains open rather than being silently omitted.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 357
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "No multiple-call mutable-default or returned-list alias diagnostic is supplied. This separate Python demand remains open rather than being silently omitted.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 357
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "No multiple-call mutable-default or returned-list alias diagnostic is supplied. This separate Python demand remains open rather than being silently omitted.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 357
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "No multiple-call mutable-default or returned-list alias diagnostic is supplied. This separate Python demand remains open rather than being silently omitted.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 357
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "No multiple-call mutable-default or returned-list alias diagnostic is supplied. This separate Python demand remains open rather than being silently omitted.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 357
+      }
+    ]
+  }
+}

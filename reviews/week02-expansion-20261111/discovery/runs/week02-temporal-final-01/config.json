@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "scope": {
+    "id": "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-01",
+    "lesson_path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-01/lesson-source.md",
+    "artifact_path": "lessons/week02/week02_temporal_preprocessing.ipynb",
+    "artifact_sha256": "774f3c48195b3fa94bbfbdadb2ba05255c8daa3745e1d7d248e660df0cb5289b",
+    "lesson_revision": "774f3c48195b3fa94bbfbdadb2ba05255c8daa3745e1d7d248e660df0cb5289b",
+    "readiness": "course",
+    "boundary": "Standalone final temporal-preprocessing Week2 supplement, with executed normal outputs and ROC image, independently compared with all seventeen unchanged original course discovery demands and four open questions. The main Week2 notebook is prerequisite context only and is not merged into this text projection. Local material progress is distinct from full course demand closure, learner achievement and latest-syllabus applicability."
+  },
+  "frontier": [
+    {
+      "id": "scope",
+      "question": "Which target scope and source-version applicability issues are outside the current lesson?",
+      "required_kinds": [
+        "official_scope"
+      ]
+    },
+    {
+      "id": "problems",
+      "question": "What operations do actual official problems require beyond named lesson examples?",
+      "required_kinds": [
+        "official_problem"
+      ]
+    },
+    {
+      "id": "mechanisms",
+      "question": "What prerequisites, formulas and assessment operations do primary technical references expose?",
+      "required_kinds": [
+        "research"
+      ]
+    },
+    {
+      "id": "heldout",
+      "question": "Revisit original scoring and runtime-contract requirements on actual Week2 without narrowing them.",
+      "required_kinds": [
+        "official_problem"
+      ]
+    },
+    {
+      "id": "next-wave",
+      "question": "Compare new national modality and Pixel/Antique/CS229 requirements with actual Week2.",
+      "required_kinds": [
+        "official_scope",
+        "official_problem",
+        "research"
+      ]
+    }
+  ],
+  "policy": {
+    "max_events": 100,
+    "max_rounds": 20,
+    "max_no_progress": 8,
+    "max_elapsed_minutes": 180
+  }
+}

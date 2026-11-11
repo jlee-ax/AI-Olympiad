@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-main-time-cleanup-01-032-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D11",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "uncertain",
+    "rationale": "The source section identifies the linked domestic syllabus as IOAI 2026. No new original-source verification or independent URL/year applicability exercise resolves the retained domestic-2027 versus international-2027 question.",
+    "start_line": 345,
+    "end_line": 357,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "The source section identifies the linked domestic syllabus as IOAI 2026. No new original-source verification or independent URL/year applicability exercise resolves the retained domestic-2027 versus international-2027 question.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 345,
+        "end_line": 357
+      },
+      {
+        "id": "learning",
+        "judgment": "uncertain",
+        "observed_behavior": "The source section identifies the linked domestic syllabus as IOAI 2026. No new original-source verification or independent URL/year applicability exercise resolves the retained domestic-2027 versus international-2027 question.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 345,
+        "end_line": 357
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "The source section identifies the linked domestic syllabus as IOAI 2026. No new original-source verification or independent URL/year applicability exercise resolves the retained domestic-2027 versus international-2027 question.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 345,
+        "end_line": 357
+      },
+      {
+        "id": "principle",
+        "judgment": "uncertain",
+        "observed_behavior": "The source section identifies the linked domestic syllabus as IOAI 2026. No new original-source verification or independent URL/year applicability exercise resolves the retained domestic-2027 versus international-2027 question.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 345,
+        "end_line": 357
+      },
+      {
+        "id": "practice",
+        "judgment": "uncertain",
+        "observed_behavior": "The source section identifies the linked domestic syllabus as IOAI 2026. No new original-source verification or independent URL/year applicability exercise resolves the retained domestic-2027 versus international-2027 question.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 345,
+        "end_line": 357
+      }
+    ]
+  }
+}

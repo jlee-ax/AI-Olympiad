@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-main-time-cleanup-01-039-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D06",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "uncertain",
+    "rationale": "The completed example derives mean and population standard deviation from known training rows and applies only transform to validation; a separately labeled bad fit produces the leaky mean 9 instead of 4. The independent new table requires training-only fit and new code, but no independent item asks the student to distinguish leakage from overfitting. The full retained assessment remains uncertain.",
+    "start_line": 102,
+    "end_line": 143,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The completed example derives mean and population standard deviation from known training rows and applies only transform to validation; a separately labeled bad fit produces the leaky mean 9 instead of 4. The independent new table requires training-only fit and new code, but no independent item asks the student to distinguish leakage from overfitting. The full retained assessment remains uncertain.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 102,
+        "end_line": 143
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "The completed example derives mean and population standard deviation from known training rows and applies only transform to validation; a separately labeled bad fit produces the leaky mean 9 instead of 4. The independent new table requires training-only fit and new code, but no independent item asks the student to distinguish leakage from overfitting. The full retained assessment remains uncertain.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 102,
+        "end_line": 143
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "The completed example derives mean and population standard deviation from known training rows and applies only transform to validation; a separately labeled bad fit produces the leaky mean 9 instead of 4. The independent new table requires training-only fit and new code, but no independent item asks the student to distinguish leakage from overfitting. The full retained assessment remains uncertain.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 269,
+        "end_line": 314
+      },
+      {
+        "id": "principle",
+        "judgment": "met",
+        "observed_behavior": "The completed example derives mean and population standard deviation from known training rows and applies only transform to validation; a separately labeled bad fit produces the leaky mean 9 instead of 4. The independent new table requires training-only fit and new code, but no independent item asks the student to distinguish leakage from overfitting. The full retained assessment remains uncertain.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 102,
+        "end_line": 143
+      },
+      {
+        "id": "practice",
+        "judgment": "met",
+        "observed_behavior": "The completed example derives mean and population standard deviation from known training rows and applies only transform to validation; a separately labeled bad fit produces the leaky mean 9 instead of 4. The independent new table requires training-only fit and new code, but no independent item asks the student to distinguish leakage from overfitting. The full retained assessment remains uncertain.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 116,
+        "end_line": 143
+      }
+    ]
+  }
+}

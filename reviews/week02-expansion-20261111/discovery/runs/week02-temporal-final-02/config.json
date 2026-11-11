@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "scope": {
+    "id": "actual-week02-against-retained-course-frontier-rebound-week02-temporal-final-02",
+    "lesson_path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-02/lesson-source.md",
+    "artifact_path": "lessons/week02/week02_temporal_preprocessing.ipynb",
+    "artifact_sha256": "a830a15e8d2bf2cb91e17cd2e8b14172390fc7cea3a07539add3fe52a05b5865",
+    "lesson_revision": "a830a15e8d2bf2cb91e17cd2e8b14172390fc7cea3a07539add3fe52a05b5865",
+    "readiness": "course",
+    "boundary": "Standalone final temporal-preprocessing Week2 supplement after floating-point weighted-score assertion repair, independently compared with all seventeen unchanged original course discovery demands and four open questions. Preserve the prior temporal-final-01 session and its stale record; the main Week2 notebook remains prerequisite context only and is not merged into this projection. No course completion or learner achievement is inferred."
+  },
+  "frontier": [
+    {
+      "id": "scope",
+      "question": "Which target scope and source-version applicability issues are outside the current lesson?",
+      "required_kinds": [
+        "official_scope"
+      ]
+    },
+    {
+      "id": "problems",
+      "question": "What operations do actual official problems require beyond named lesson examples?",
+      "required_kinds": [
+        "official_problem"
+      ]
+    },
+    {
+      "id": "mechanisms",
+      "question": "What prerequisites, formulas and assessment operations do primary technical references expose?",
+      "required_kinds": [
+        "research"
+      ]
+    },
+    {
+      "id": "heldout",
+      "question": "Revisit original scoring and runtime-contract requirements on actual Week2 without narrowing them.",
+      "required_kinds": [
+        "official_problem"
+      ]
+    },
+    {
+      "id": "next-wave",
+      "question": "Compare new national modality and Pixel/Antique/CS229 requirements with actual Week2.",
+      "required_kinds": [
+        "official_scope",
+        "official_problem",
+        "research"
+      ]
+    }
+  ],
+  "policy": {
+    "max_events": 100,
+    "max_rounds": 20,
+    "max_no_progress": 8,
+    "max_elapsed_minutes": 180
+  }
+}

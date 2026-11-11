@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-main-time-cleanup-01-035-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D03",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "uncertain",
+    "rationale": "The row contract separates reading from later label and excludes post-prediction repair information. The new-input task asks students to reject future repair records, but it does not independently contrast a shape-valid input with a semantically unavailable input as required by the retained broad assessment.",
+    "start_line": 22,
+    "end_line": 101,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The row contract separates reading from later label and excludes post-prediction repair information. The new-input task asks students to reject future repair records, but it does not independently contrast a shape-valid input with a semantically unavailable input as required by the retained broad assessment.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 22,
+        "end_line": 101
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "The row contract separates reading from later label and excludes post-prediction repair information. The new-input task asks students to reject future repair records, but it does not independently contrast a shape-valid input with a semantically unavailable input as required by the retained broad assessment.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 22,
+        "end_line": 101
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "The row contract separates reading from later label and excludes post-prediction repair information. The new-input task asks students to reject future repair records, but it does not independently contrast a shape-valid input with a semantically unavailable input as required by the retained broad assessment.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 269,
+        "end_line": 314
+      },
+      {
+        "id": "principle",
+        "judgment": "met",
+        "observed_behavior": "The row contract separates reading from later label and excludes post-prediction repair information. The new-input task asks students to reject future repair records, but it does not independently contrast a shape-valid input with a semantically unavailable input as required by the retained broad assessment.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 22,
+        "end_line": 101
+      },
+      {
+        "id": "practice",
+        "judgment": "met",
+        "observed_behavior": "The row contract separates reading from later label and excludes post-prediction repair information. The new-input task asks students to reject future repair records, but it does not independently contrast a shape-valid input with a semantically unavailable input as required by the retained broad assessment.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 22,
+        "end_line": 101
+      }
+    ]
+  }
+}

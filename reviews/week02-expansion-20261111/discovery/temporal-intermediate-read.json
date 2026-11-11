@@ -1,0 +1,11 @@
+{
+  "recorded_at_utc": "2026-11-11T08:13:01.142926+00:00",
+  "status": "intermediate_source_read_not_final_session",
+  "artifact_path": "lessons/week02/week02_temporal_preprocessing.ipynb",
+  "artifact_sha256": "4b2b59e05247c71bcdee1e2c4c5b330b6f2889ff4431d4f157c82da9a3a5e43d",
+  "snapshot_path": "reviews/week02-expansion-20261111/discovery/temporal-read-before-output-4b2b59e0.ipynb",
+  "snapshot_sha256": "4b2b59e05247c71bcdee1e2c4c5b330b6f2889ff4431d4f157c82da9a3a5e43d",
+  "reviewer": "/root/discovery_resume",
+  "all_cell_sources_directly_read": true,
+  "note": "The parent requested adding normal executed outputs and ROC image before final SHA. No discovery session is bound to this intermediate version."
+}

@@ -1,0 +1,47 @@
+{
+  "id": "rebind-week02-main-time-cleanup-01-047-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "N02",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "There is no half-open image rectangle, pixel-area budget, boundary/over-budget case or JSONL rectangle contract. That official task family remains later course work; this record claims no delivered later lesson.",
+    "start_line": 1,
+    "end_line": 357,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "There is no half-open image rectangle, pixel-area budget, boundary/over-budget case or JSONL rectangle contract. That official task family remains later course work; this record claims no delivered later lesson.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 357
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "There is no half-open image rectangle, pixel-area budget, boundary/over-budget case or JSONL rectangle contract. That official task family remains later course work; this record claims no delivered later lesson.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 357
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "There is no half-open image rectangle, pixel-area budget, boundary/over-budget case or JSONL rectangle contract. That official task family remains later course work; this record claims no delivered later lesson.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 357
+      },
+      {
+        "id": "contract",
+        "judgment": "gap",
+        "observed_behavior": "There is no half-open image rectangle, pixel-area budget, boundary/over-budget case or JSONL rectangle contract. That official task family remains later course work; this record claims no delivered later lesson.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 357
+      }
+    ]
+  }
+}

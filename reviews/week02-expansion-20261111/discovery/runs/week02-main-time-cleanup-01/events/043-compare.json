@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-main-time-cleanup-01-043-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D10",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The lesson connects hand predictions, code outputs, new inputs and limits of tiny examples. It does not supply the retained numerical-gradient/relative-error principles or zero-gradient assessment; those broader requirements remain open.",
+    "start_line": 269,
+    "end_line": 357,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "The lesson connects hand predictions, code outputs, new inputs and limits of tiny examples. It does not supply the retained numerical-gradient/relative-error principles or zero-gradient assessment; those broader requirements remain open.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 269,
+        "end_line": 357
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "The lesson connects hand predictions, code outputs, new inputs and limits of tiny examples. It does not supply the retained numerical-gradient/relative-error principles or zero-gradient assessment; those broader requirements remain open.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 269,
+        "end_line": 357
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "The lesson connects hand predictions, code outputs, new inputs and limits of tiny examples. It does not supply the retained numerical-gradient/relative-error principles or zero-gradient assessment; those broader requirements remain open.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 269,
+        "end_line": 357
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The lesson connects hand predictions, code outputs, new inputs and limits of tiny examples. It does not supply the retained numerical-gradient/relative-error principles or zero-gradient assessment; those broader requirements remain open.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 269,
+        "end_line": 357
+      },
+      {
+        "id": "practice",
+        "judgment": "met",
+        "observed_behavior": "The lesson connects hand predictions, code outputs, new inputs and limits of tiny examples. It does not supply the retained numerical-gradient/relative-error principles or zero-gradient assessment; those broader requirements remain open.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 269,
+        "end_line": 357
+      }
+    ]
+  }
+}

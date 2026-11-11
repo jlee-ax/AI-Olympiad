@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-temporal-final-02-042-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D09",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The supplement implements thresholded decision scores and classification rates. These are not class-axis softmax, target probability selection, negative-log loss, shift invariance or stable large-logit computation.",
+    "start_line": 191,
+    "end_line": 256,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "The supplement implements thresholded decision scores and classification rates. These are not class-axis softmax, target probability selection, negative-log loss, shift invariance or stable large-logit computation.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 191,
+        "end_line": 256
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "The supplement implements thresholded decision scores and classification rates. These are not class-axis softmax, target probability selection, negative-log loss, shift invariance or stable large-logit computation.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 191,
+        "end_line": 256
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "The supplement implements thresholded decision scores and classification rates. These are not class-axis softmax, target probability selection, negative-log loss, shift invariance or stable large-logit computation.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 191,
+        "end_line": 256
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The supplement implements thresholded decision scores and classification rates. These are not class-axis softmax, target probability selection, negative-log loss, shift invariance or stable large-logit computation.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 191,
+        "end_line": 256
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "The supplement implements thresholded decision scores and classification rates. These are not class-axis softmax, target probability selection, negative-log loss, shift invariance or stable large-logit computation.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 191,
+        "end_line": 256
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "rebind-week02-main-time-cleanup-01-048-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "N03",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "uncertain",
+    "rationale": "The contract and practice distinguish unknown 0 from confirmed negative -1, exclude the target from inputs and explicitly use only known training rows. The new n3 question assesses label handling. The retained assumptions axis also forbids applying constant-alpha PU correction to general unknown labels; that contrast is not taught or independently tested here.",
+    "start_line": 22,
+    "end_line": 74,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The contract and practice distinguish unknown 0 from confirmed negative -1, exclude the target from inputs and explicitly use only known training rows. The new n3 question assesses label handling. The retained assumptions axis also forbids applying constant-alpha PU correction to general unknown labels; that contrast is not taught or independently tested here.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 22,
+        "end_line": 74
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "The contract and practice distinguish unknown 0 from confirmed negative -1, exclude the target from inputs and explicitly use only known training rows. The new n3 question assesses label handling. The retained assumptions axis also forbids applying constant-alpha PU correction to general unknown labels; that contrast is not taught or independently tested here.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 22,
+        "end_line": 74
+      },
+      {
+        "id": "assessment",
+        "judgment": "met",
+        "observed_behavior": "The contract and practice distinguish unknown 0 from confirmed negative -1, exclude the target from inputs and explicitly use only known training rows. The new n3 question assesses label handling. The retained assumptions axis also forbids applying constant-alpha PU correction to general unknown labels; that contrast is not taught or independently tested here.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 269,
+        "end_line": 314
+      },
+      {
+        "id": "assumptions",
+        "judgment": "uncertain",
+        "observed_behavior": "The contract and practice distinguish unknown 0 from confirmed negative -1, exclude the target from inputs and explicitly use only known training rows. The new n3 question assesses label handling. The retained assumptions axis also forbids applying constant-alpha PU correction to general unknown labels; that contrast is not taught or independently tested here.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 53,
+        "end_line": 143
+      }
+    ]
+  }
+}

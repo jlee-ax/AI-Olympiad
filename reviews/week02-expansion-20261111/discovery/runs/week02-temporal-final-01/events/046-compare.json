@@ -1,0 +1,47 @@
+{
+  "id": "rebind-week02-temporal-final-01-046-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "N01",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "covered",
+    "rationale": "Explanations, hand calculations and executed feature/metric examples lead to a distinct new table requiring written decisions and direct independent code in an empty answer cell, with help reporting. This meets the unit-level separate-modality material-design demand, not measured learner independence or course readiness.",
+    "start_line": 307,
+    "end_line": 338,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Explanations, hand calculations and executed feature/metric examples lead to a distinct new table requiring written decisions and direct independent code in an empty answer cell, with help reporting. This meets the unit-level separate-modality material-design demand, not measured learner independence or course readiness.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 307,
+        "end_line": 338
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "Explanations, hand calculations and executed feature/metric examples lead to a distinct new table requiring written decisions and direct independent code in an empty answer cell, with help reporting. This meets the unit-level separate-modality material-design demand, not measured learner independence or course readiness.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 307,
+        "end_line": 338
+      },
+      {
+        "id": "assessment",
+        "judgment": "met",
+        "observed_behavior": "Explanations, hand calculations and executed feature/metric examples lead to a distinct new table requiring written decisions and direct independent code in an empty answer cell, with help reporting. This meets the unit-level separate-modality material-design demand, not measured learner independence or course readiness.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 307,
+        "end_line": 338
+      },
+      {
+        "id": "modality",
+        "judgment": "met",
+        "observed_behavior": "Explanations, hand calculations and executed feature/metric examples lead to a distinct new table requiring written decisions and direct independent code in an empty answer cell, with help reporting. This meets the unit-level separate-modality material-design demand, not measured learner independence or course readiness.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 307,
+        "end_line": 338
+      }
+    ]
+  }
+}

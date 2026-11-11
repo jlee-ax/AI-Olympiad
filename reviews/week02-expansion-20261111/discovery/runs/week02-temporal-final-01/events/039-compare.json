@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-temporal-final-01-039-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D06",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The supplement teaches split-before-feature decisions, training-only median/minmax/category fit, unchanged training statistics under altered validation input, and independent code repair plus leakage-versus-validation-overfitting comparison. This makes the retained assessment dimension met in this standalone material design. The original principle still explicitly requires train-only mean/standard-deviation z transformation, and the practice requires train-only versus all-data mean-centering; this supplement refers to the main notebook for standardization rather than implementing those operations itself. Broad D06 therefore remains gap in this separate artifact, without cancelling the main notebook progress.",
+    "start_line": 11,
+    "end_line": 338,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The supplement teaches split-before-feature decisions, training-only median/minmax/category fit, unchanged training statistics under altered validation input, and independent code repair plus leakage-versus-validation-overfitting comparison. This makes the retained assessment dimension met in this standalone material design. The original principle still explicitly requires train-only mean/standard-deviation z transformation, and the practice requires train-only versus all-data mean-centering; this supplement refers to the main notebook for standardization rather than implementing those operations itself. Broad D06 therefore remains gap in this separate artifact, without cancelling the main notebook progress.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 338
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "The supplement teaches split-before-feature decisions, training-only median/minmax/category fit, unchanged training statistics under altered validation input, and independent code repair plus leakage-versus-validation-overfitting comparison. This makes the retained assessment dimension met in this standalone material design. The original principle still explicitly requires train-only mean/standard-deviation z transformation, and the practice requires train-only versus all-data mean-centering; this supplement refers to the main notebook for standardization rather than implementing those operations itself. Broad D06 therefore remains gap in this separate artifact, without cancelling the main notebook progress.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 338
+      },
+      {
+        "id": "assessment",
+        "judgment": "met",
+        "observed_behavior": "The supplement teaches split-before-feature decisions, training-only median/minmax/category fit, unchanged training statistics under altered validation input, and independent code repair plus leakage-versus-validation-overfitting comparison. This makes the retained assessment dimension met in this standalone material design. The original principle still explicitly requires train-only mean/standard-deviation z transformation, and the practice requires train-only versus all-data mean-centering; this supplement refers to the main notebook for standardization rather than implementing those operations itself. Broad D06 therefore remains gap in this separate artifact, without cancelling the main notebook progress.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 307,
+        "end_line": 338
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The supplement teaches split-before-feature decisions, training-only median/minmax/category fit, unchanged training statistics under altered validation input, and independent code repair plus leakage-versus-validation-overfitting comparison. This makes the retained assessment dimension met in this standalone material design. The original principle still explicitly requires train-only mean/standard-deviation z transformation, and the practice requires train-only versus all-data mean-centering; this supplement refers to the main notebook for standardization rather than implementing those operations itself. Broad D06 therefore remains gap in this separate artifact, without cancelling the main notebook progress.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 124,
+        "end_line": 190
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "The supplement teaches split-before-feature decisions, training-only median/minmax/category fit, unchanged training statistics under altered validation input, and independent code repair plus leakage-versus-validation-overfitting comparison. This makes the retained assessment dimension met in this standalone material design. The original principle still explicitly requires train-only mean/standard-deviation z transformation, and the practice requires train-only versus all-data mean-centering; this supplement refers to the main notebook for standardization rather than implementing those operations itself. Broad D06 therefore remains gap in this separate artifact, without cancelling the main notebook progress.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 32,
+        "end_line": 190
+      }
+    ]
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "artifact_path": "lessons/week02/week02_prediction_evaluation.ipynb",
+  "artifact_sha256": "9bb1ea5110b74ea1cf32fbc9ee9e9a5aadbceba2f750c2dfc2d6587e18954bdf",
+  "exact_snapshot_path": "reviews/week02-expansion-20261111/discovery/runs/week02-main-time-cleanup-01/artifact-exact.ipynb",
+  "exact_snapshot_sha256": "9bb1ea5110b74ea1cf32fbc9ee9e9a5aadbceba2f750c2dfc2d6587e18954bdf",
+  "projection_path": "reviews/week02-expansion-20261111/discovery/runs/week02-main-time-cleanup-01/lesson-source.md",
+  "projection_sha256": "7972fbeb15f57f4cc4aa47ec0c48dbe2c764e5ec229104eac06aba5e9aca1627",
+  "method": "Every cell source in original order with explicit cell index, ID and type; outputs and metadata omitted from projection but preserved in exact notebook snapshot.",
+  "cell_count": 25,
+  "cell_spans": {
+    "0": [
+      1,
+      9
+    ],
+    "1": [
+      10,
+      21
+    ],
+    "2": [
+      22,
+      40
+    ],
+    "3": [
+      41,
+      52
+    ],
+    "4": [
+      53,
+      74
+    ],
+    "5": [
+      75,
+      101
+    ],
+    "6": [
+      102,
+      115
+    ],
+    "7": [
+      116,
+      137
+    ],
+    "8": [
+      138,
+      143
+    ],
+    "9": [
+      144,
+      164
+    ],
+    "10": [
+      165,
+      172
+    ],
+    "11": [
+      173,
+      186
+    ],
+    "12": [
+      187,
+      192
+    ],
+    "13": [
+      193,
+      220
+    ],
+    "14": [
+      221,
+      228
+    ],
+    "15": [
+      229,
+      238
+    ],
+    "16": [
+      239,
+      249
+    ],
+    "17": [
+      250,
+      262
+    ],
+    "18": [
+      263,
+      268
+    ],
+    "19": [
+      269,
+      297
+    ],
+    "20": [
+      298,
+      302
+    ],
+    "21": [
+      303,
+      314
+    ],
+    "22": [
+      315,
+      329
+    ],
+    "23": [
+      330,
+      344
+    ],
+    "24": [
+      345,
+      357
+    ]
+  },
+  "semantic_correspondence_review": "All cell sources directly read by reviewer. Projection correspondence is a manual review declaration; the projector only concatenates the cell source text.",
+  "author": "/root/week02_lesson; student time-text cleanup by /root/student_time_cleanup",
+  "reviewer": "/root/discovery_resume"
+}

@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-temporal-final-02-033-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D01",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The supplement preserves row IDs and feature-column names in tabular features. It contains no reshape-versus-transpose coordinate exercise, Radar model-input/target-axis tracking or independent high-dimensional layout transfer.",
+    "start_line": 11,
+    "end_line": 161,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The supplement preserves row IDs and feature-column names in tabular features. It contains no reshape-versus-transpose coordinate exercise, Radar model-input/target-axis tracking or independent high-dimensional layout transfer.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 161
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "The supplement preserves row IDs and feature-column names in tabular features. It contains no reshape-versus-transpose coordinate exercise, Radar model-input/target-axis tracking or independent high-dimensional layout transfer.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 161
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "The supplement preserves row IDs and feature-column names in tabular features. It contains no reshape-versus-transpose coordinate exercise, Radar model-input/target-axis tracking or independent high-dimensional layout transfer.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 161
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The supplement preserves row IDs and feature-column names in tabular features. It contains no reshape-versus-transpose coordinate exercise, Radar model-input/target-axis tracking or independent high-dimensional layout transfer.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 161
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "The supplement preserves row IDs and feature-column names in tabular features. It contains no reshape-versus-transpose coordinate exercise, Radar model-input/target-axis tracking or independent high-dimensional layout transfer.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 161
+      }
+    ]
+  }
+}

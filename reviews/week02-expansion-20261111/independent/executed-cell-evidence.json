@@ -1,0 +1,92 @@
+[
+  {
+    "index": 5,
+    "id": "0e7bf648",
+    "source": "import numpy as np\nimport pandas as pd\nfrom sklearn.impute import SimpleImputer\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.pipeline import Pipeline\nfrom sklearn.dummy import DummyClassifier\nfrom sklearn.metrics import confusion_matrix, precision_recall_fscore_support, roc_curve\n\nrecords = pd.DataFrame([\n    (\"a1\", \"A\", 2, -1), (\"a2\", \"A\", 4, -1),\n    (\"b1\", \"B\", 6, 1), (\"b2\", \"B\", np.nan, 1), (\"b3\", \"B\", 8, 0),\n    (\"c1\", \"C\", 20, 1), (\"c2\", \"C\", np.nan, 1),\n    (\"d1\", \"D\", 10, -1), (\"d2\", \"D\", 12, -1),\n], columns=[\"row_id\", \"group\", \"reading\", \"label\"])\ntrain = records[records[\"group\"].isin([\"A\", \"B\"])].copy()\nvalidation = records[records[\"group\"].isin([\"C\", \"D\"])].copy()\nknown_train = train[train[\"label\"].isin([-1, 1])].copy()\nassert set(train[\"group\"]).isdisjoint(set(validation[\"group\"]))\nassert records[\"row_id\"].is_unique\nprint(\"훈련 개체:\", sorted(train[\"group\"].unique()))\nprint(\"검증 개체:\", sorted(validation[\"group\"].unique()))\nprint(\"fit에 쓰는 훈련 행:\", known_train[\"row_id\"].tolist())\nprint(\"정답 미상으로 제외한 훈련 행:\", train.loc[train[\"label\"] == 0, \"row_id\"].tolist())\nprint(\"검증 출력 순서:\", validation[\"row_id\"].tolist())",
+    "outputs": [
+      {
+        "name": "stdout",
+        "output_type": "stream",
+        "text": "훈련 개체: ['A', 'B']\n검증 개체: ['C', 'D']\nfit에 쓰는 훈련 행: ['a1', 'a2', 'b1', 'b2']\n정답 미상으로 제외한 훈련 행: ['b3']\n검증 출력 순서: ['c1', 'c2', 'd1', 'd2']\n"
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "id": "01bda10d",
+    "source": "preprocess = Pipeline([\n    (\"imputer\", SimpleImputer(strategy=\"mean\")),\n    (\"scaler\", StandardScaler()),\n])\nX_train = known_train[[\"reading\"]]\nX_val = validation[[\"reading\"]]\ntrain_z = preprocess.fit_transform(X_train)  # 훈련에서만 평균과 스케일을 배움\nval_z = preprocess.transform(X_val)          # 배운 규칙을 그대로 사용\nprint(\"훈련 평균 대체값:\", preprocess.named_steps[\"imputer\"].statistics_[0])\nprint(\"대체 후 훈련 평균과 표준편차:\", preprocess.named_steps[\"scaler\"].mean_[0],\n      round(preprocess.named_steps[\"scaler\"].scale_[0], 6))\nprint(\"훈련 z:\", np.round(train_z[:, 0], 3).tolist())\nprint(\"검증 행과 z:\", list(zip(validation[\"row_id\"], np.round(val_z[:, 0], 3).tolist())))\n\n# 일부러 틀린 반례: 검증 입력까지 fit에 넣음. 아래 결과는 정답 모델에 쓰지 않음.\nleaky_imputer = SimpleImputer(strategy=\"mean\").fit(pd.concat([X_train, X_val]))\nprint(\"틀린 대체값(검증 입력 포함):\", leaky_imputer.statistics_[0])\nassert np.isclose(preprocess.named_steps[\"imputer\"].statistics_[0], 4)\nassert np.isclose(leaky_imputer.statistics_[0], 9)",
+    "outputs": [
+      {
+        "name": "stdout",
+        "output_type": "stream",
+        "text": "훈련 평균 대체값: 4.0\n대체 후 훈련 평균과 표준편차: 4.0 1.414214\n훈련 z: [-1.414, 0.0, 1.414, 0.0]\n검증 행과 z: [('c1', 11.314), ('c2', 0.0), ('d1', 4.243), ('d2', 5.657)]\n틀린 대체값(검증 입력 포함): 9.0\n"
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "id": "eeb3c838",
+    "source": "rule_pred = np.where(val_z[:, 0] >= 1, 1, -1)\ny_val = validation[\"label\"].to_numpy()\nrule_cm = confusion_matrix(y_val, rule_pred, labels=[-1, 1])\nprecision, recall, f1, _ = precision_recall_fscore_support(\n    y_val, rule_pred, average=\"binary\", pos_label=1, zero_division=0)\nprint(\"행 ID와 예측:\", list(zip(validation[\"row_id\"], rule_pred.tolist())))\nprint(\"혼동행렬(행=실제, 열=예측; 순서 -1,+1):\\n\", rule_cm)\nprint(\"정확도:\", round((rule_pred == y_val).mean(), 3),\n      \"정밀도:\", round(precision, 3), \"재현율:\", round(recall, 3))\nassert rule_cm.tolist() == [[0, 2], [1, 1]]\nassert np.isclose(precision, 1/3) and np.isclose(recall, 1/2)",
+    "outputs": [
+      {
+        "name": "stdout",
+        "output_type": "stream",
+        "text": "행 ID와 예측: [('c1', 1), ('c2', -1), ('d1', 1), ('d2', 1)]\n혼동행렬(행=실제, 열=예측; 순서 -1,+1):\n [[0 2]\n [1 1]]\n정확도: 0.25 정밀도: 0.333 재현율: 0.5\n"
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "id": "34ad0b72",
+    "source": "baseline = Pipeline([\n    (\"imputer\", SimpleImputer(strategy=\"mean\")),\n    (\"scaler\", StandardScaler()),\n    (\"model\", DummyClassifier(strategy=\"constant\", constant=-1)),\n])\nbaseline.fit(X_train, known_train[\"label\"])\nprint(\"기준 모델이 배운 대체값:\", baseline.named_steps[\"imputer\"].statistics_[0])\nprint(\"기준 모델이 배운 평균·표준편차:\", baseline.named_steps[\"scaler\"].mean_[0],\n      round(baseline.named_steps[\"scaler\"].scale_[0], 6))\nassert np.isclose(baseline.named_steps[\"imputer\"].statistics_[0], 4)\nassert np.isclose(baseline.named_steps[\"scaler\"].mean_[0], 4)\nassert np.isclose(baseline.named_steps[\"scaler\"].scale_[0], np.sqrt(2))\nbaseline_pred = baseline.predict(X_val)\ncm_baseline = confusion_matrix(y_val, baseline_pred, labels=[-1, 1])\np_zero, r_zero, _, _ = precision_recall_fscore_support(\n    y_val, baseline_pred, average=\"binary\", pos_label=1, zero_division=0)\np_nan, r_nan, _, _ = precision_recall_fscore_support(\n    y_val, baseline_pred, average=\"binary\", pos_label=1, zero_division=np.nan)\nprint(\"기준 예측:\", baseline_pred.tolist())\nprint(\"기준 혼동행렬:\\n\", cm_baseline)\nprint(\"수학: 정밀도 정의 불가, 재현율 0/2 = 0\")\nprint(\"라이브러리 정책 zero_division=0:\", p_zero, r_zero)\nprint(\"라이브러리 정책 zero_division=np.nan:\", p_nan, r_nan)\nassert cm_baseline.tolist() == [[2, 0], [2, 0]]\nassert np.isnan(p_nan) and r_nan == 0",
+    "outputs": [
+      {
+        "name": "stdout",
+        "output_type": "stream",
+        "text": "기준 모델이 배운 대체값: 4.0\n기준 모델이 배운 평균·표준편차: 4.0 1.414214\n기준 예측: [-1, -1, -1, -1]\n기준 혼동행렬:\n [[2 0]\n [2 0]]\n수학: 정밀도 정의 불가, 재현율 0/2 = 0\n라이브러리 정책 zero_division=0: 0.0 0.0\n라이브러리 정책 zero_division=np.nan: nan 0.0\n"
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "id": "f3e1201e",
+    "source": "truth_with_unknown = np.array([1, -1, 0, 1])\npredictions = np.array([-1, 1, -1, 1])\nknown = np.isin(truth_with_unknown, [-1, 1])\nprint(\"정답이 알려진 행 수:\", known.sum())\nprint(\"올바른 비교(미상 제외):\\n\", confusion_matrix(truth_with_unknown[known], predictions[known], labels=[-1, 1]))\nwrong_truth = np.where(truth_with_unknown == 0, -1, truth_with_unknown)\nprint(\"틀린 비교(미상을 -1로 둠):\\n\", confusion_matrix(wrong_truth, predictions, labels=[-1, 1]))",
+    "outputs": [
+      {
+        "name": "stdout",
+        "output_type": "stream",
+        "text": "정답이 알려진 행 수: 3\n올바른 비교(미상 제외):\n [[0 1]\n [1 1]]\n틀린 비교(미상을 -1로 둠):\n [[1 1]\n [1 1]]\n"
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "id": "629f49f8",
+    "source": "group_example = pd.DataFrame({\n    \"robot\": [\"R1\"] * 10 + [\"R2\"] * 2,\n    \"correct\": [1] * 8 + [0] * 2 + [0] * 2,\n})\ngroup_accuracy = group_example.groupby(\"robot\")[\"correct\"].agg([\"sum\", \"count\", \"mean\"])\nprint(group_accuracy.to_string())\nprint(\"전체 행 정확도:\", round(group_example[\"correct\"].mean(), 6))\nprint(\"개체별 평균 정확도:\", round(group_accuracy[\"mean\"].mean(), 6))\nassert np.isclose(group_example[\"correct\"].mean(), 2/3)\nassert np.isclose(group_accuracy[\"mean\"].mean(), .4)",
+    "outputs": [
+      {
+        "name": "stdout",
+        "output_type": "stream",
+        "text": "       sum  count  mean\nrobot                  \nR1       8     10   0.8\nR2       0      2   0.0\n전체 행 정확도: 0.666667\n개체별 평균 정확도: 0.4\n"
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "id": "4cfbd70e",
+    "source": "# 혼자 작성하는 공간: 새 DataFrame, 훈련/검증 분할, 파이프라인, 예측, 혼동행렬\n# 아래에 코드를 직접 작성하세요.",
+    "outputs": []
+  },
+  {
+    "index": 23,
+    "id": "811dc0d0",
+    "source": "roc_truth = np.array([1, -1, 1, -1])\nroc_scores = np.array([0.9, 0.6, 0.4, 0.1])\nroc_matrices = {}\nfor threshold in [0.5, 0.3]:\n    pred = np.where(roc_scores >= threshold, 1, -1)\n    cm = confusion_matrix(roc_truth, pred, labels=[-1, 1])\n    tn, fp, fn, tp = cm.ravel()\n    roc_matrices[threshold] = cm.tolist()\n    print(\"임계값\", threshold, \"혼동행렬\", cm.tolist(),\n          \"TPR\", tp / (tp + fn), \"FPR\", fp / (fp + tn))\nfpr, tpr, thresholds = roc_curve(roc_truth, roc_scores, pos_label=1, drop_intermediate=False)\nprint(\"ROC 좌표 (FPR, TPR):\", list(zip(fpr.round(2).tolist(), tpr.round(2).tolist())))",
+    "outputs": [
+      {
+        "name": "stdout",
+        "output_type": "stream",
+        "text": "임계값 0.5 혼동행렬 [[1, 1], [1, 1]] TPR 0.5 FPR 0.5\n임계값 0.3 혼동행렬 [[1, 1], [0, 2]] TPR 1.0 FPR 0.5\nROC 좌표 (FPR, TPR): [(0.0, 0.0), (0.0, 0.5), (0.5, 0.5), (0.5, 1.0), (1.0, 1.0)]\n"
+      }
+    ]
+  }
+]

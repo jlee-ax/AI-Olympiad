@@ -1,0 +1,25 @@
+{
+  "checked_at_utc": "2026-11-11T08:33:01.461794+00:00",
+  "status": "finite_case_review_passed_with_explicit_unverified_limits",
+  "final_student_sources": {
+    "week01_bridge": "1c3ccb5d79d5e6c0a1cb919fd9f8cfac723637b1dedac2d056fe45379ffd8847",
+    "week02_existing": "9bb1ea5110b74ea1cf32fbc9ee9e9a5aadbceba2f750c2dfc2d6587e18954bdf",
+    "week02_temporal": "a830a15e8d2bf2cb91e17cd2e8b14172390fc7cea3a07539add3fe52a05b5865"
+  },
+  "machine_evidence_sha256": {
+    "student-cleanup-results.json": "0ff6e97532dbad153c410714c88cf62443d7b662b8ce1b94f16502eafc6d3bdc",
+    "week01-bridge-results.json": "34ce82e86628b63aa4b571aa1d68fffbdb270a0eb7c1fb7aeaf7fb2591205a72",
+    "week02-review-results.json": "9c7346fcb81568687a410cfeb11f8b0b41582a833d7f6c911fd899b2062bf6c3",
+    "temporal-review-results.json": "ee4a5fc336c0222e9c15e148a65088dbfbee638176e05cef25cff6b31ec00471"
+  },
+  "human_review_sha256": "3f03a8f6ff91be3d2d5f6d393b63dc75f31228a73894e9e35e7937ec822fe33a",
+  "remaining_blockers_for_review": [],
+  "remaining_unverified": [
+    "actual student work and total study load",
+    "hidden final test preparation and independent access control",
+    "ordinary socket Jupyter/Colab and full HTML/MathJax rendering"
+  ],
+  "cache_dirs_remaining": [],
+  "sqlite_remaining": [],
+  "html_copies_remaining": []
+}

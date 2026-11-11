@@ -1,0 +1,91 @@
+{
+  "artifact_path": "lessons/week02/week02_temporal_preprocessing.ipynb",
+  "artifact_sha256": "a830a15e8d2bf2cb91e17cd2e8b14172390fc7cea3a07539add3fe52a05b5865",
+  "exact_snapshot_path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-02/artifact-exact.ipynb",
+  "exact_snapshot_sha256": "a830a15e8d2bf2cb91e17cd2e8b14172390fc7cea3a07539add3fe52a05b5865",
+  "projection_path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-02/lesson-source.md",
+  "projection_sha256": "40c7ff79b4bd98dcd368163851dfcffa504d6053657262a8dfc7d413402b3c62",
+  "method": "Every cell source in original order with explicit cell index, ID and type; outputs and metadata omitted from projection but preserved in exact notebook snapshot.",
+  "cell_count": 19,
+  "cell_spans": {
+    "0": [
+      1,
+      10
+    ],
+    "1": [
+      11,
+      31
+    ],
+    "2": [
+      32,
+      43
+    ],
+    "3": [
+      44,
+      74
+    ],
+    "4": [
+      75,
+      102
+    ],
+    "5": [
+      103,
+      108
+    ],
+    "6": [
+      109,
+      123
+    ],
+    "7": [
+      124,
+      137
+    ],
+    "8": [
+      138,
+      161
+    ],
+    "9": [
+      162,
+      190
+    ],
+    "10": [
+      191,
+      203
+    ],
+    "11": [
+      204,
+      236
+    ],
+    "12": [
+      237,
+      250
+    ],
+    "13": [
+      251,
+      256
+    ],
+    "14": [
+      257,
+      275
+    ],
+    "15": [
+      276,
+      308
+    ],
+    "16": [
+      309,
+      336
+    ],
+    "17": [
+      337,
+      340
+    ],
+    "18": [
+      341,
+      348
+    ]
+  },
+  "semantic_correspondence_review": "All cell sources directly read by reviewer. Projection correspondence is a manual review declaration; the projector only concatenates the cell source text.",
+  "author": "/root/week02_substantive_lesson (Terra author); distinct from discovery reviewer",
+  "reviewer": "/root/discovery_resume"
+}

@@ -1,0 +1,11 @@
+{
+  "reviewer": "/root/discovery_resume",
+  "issue": "Supplement declared scikit-learn >=1.2 while explaining the ROC first threshold as np.inf.",
+  "observed_artifact_sha256": "65a62ed6cba5a700701f719f7603d043b51c4a50c39a1437c501b366271515ce",
+  "primary_source_url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_curve.html",
+  "actual_read_extent": "web lines 682-685 on 2026-11-11 UTC, official stable page headed scikit-learn 1.9.1",
+  "primary_source_paraphrase": "The first returned ROC threshold is np.inf; the version-change note attributes the infinite initial threshold to version 1.3.",
+  "action": "Reported directly to parent and author for dependency declaration correction before final binding.",
+  "status": "await_author_revision",
+  "scope_limit": "Auxiliary version-consistency check, not a rerun of the old external searches or a closure of their frontier. No new discovery demand is extracted from this correction."
+}

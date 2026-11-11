@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-main-time-cleanup-01-042-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D09",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "Confusion-matrix precision and recall are implemented, but class-axis softmax, selecting the target probability, negative-log loss, shift invariance and overflow diagnosis are not taught or assessed.",
+    "start_line": 144,
+    "end_line": 238,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "Confusion-matrix precision and recall are implemented, but class-axis softmax, selecting the target probability, negative-log loss, shift invariance and overflow diagnosis are not taught or assessed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 144,
+        "end_line": 238
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "Confusion-matrix precision and recall are implemented, but class-axis softmax, selecting the target probability, negative-log loss, shift invariance and overflow diagnosis are not taught or assessed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 144,
+        "end_line": 238
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Confusion-matrix precision and recall are implemented, but class-axis softmax, selecting the target probability, negative-log loss, shift invariance and overflow diagnosis are not taught or assessed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 144,
+        "end_line": 238
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "Confusion-matrix precision and recall are implemented, but class-axis softmax, selecting the target probability, negative-log loss, shift invariance and overflow diagnosis are not taught or assessed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 144,
+        "end_line": 238
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "Confusion-matrix precision and recall are implemented, but class-axis softmax, selecting the target probability, negative-log loss, shift invariance and overflow diagnosis are not taught or assessed.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 144,
+        "end_line": 238
+      }
+    ]
+  }
+}

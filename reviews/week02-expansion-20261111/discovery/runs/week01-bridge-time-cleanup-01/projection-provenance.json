@@ -1,0 +1,131 @@
+{
+  "artifact_path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+  "artifact_sha256": "1c3ccb5d79d5e6c0a1cb919fd9f8cfac723637b1dedac2d056fe45379ffd8847",
+  "exact_snapshot_path": "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/artifact-exact.ipynb",
+  "exact_snapshot_sha256": "1c3ccb5d79d5e6c0a1cb919fd9f8cfac723637b1dedac2d056fe45379ffd8847",
+  "projection_path": "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/lesson-source.md",
+  "projection_sha256": "3729f73ad7c8b83e14427d0b63602fa664ff7a37e8bbf1a675effe7f6b6a782c",
+  "method": "Every cell source in original order with explicit cell index, ID and type; outputs and metadata omitted from projection but preserved in exact notebook snapshot.",
+  "cell_count": 29,
+  "cell_spans": {
+    "0": [
+      1,
+      15
+    ],
+    "1": [
+      16,
+      30
+    ],
+    "2": [
+      31,
+      42
+    ],
+    "3": [
+      43,
+      55
+    ],
+    "4": [
+      56,
+      64
+    ],
+    "5": [
+      65,
+      88
+    ],
+    "6": [
+      89,
+      98
+    ],
+    "7": [
+      99,
+      105
+    ],
+    "8": [
+      106,
+      114
+    ],
+    "9": [
+      115,
+      121
+    ],
+    "10": [
+      122,
+      131
+    ],
+    "11": [
+      132,
+      146
+    ],
+    "12": [
+      147,
+      168
+    ],
+    "13": [
+      169,
+      186
+    ],
+    "14": [
+      187,
+      202
+    ],
+    "15": [
+      203,
+      211
+    ],
+    "16": [
+      212,
+      227
+    ],
+    "17": [
+      228,
+      236
+    ],
+    "18": [
+      237,
+      261
+    ],
+    "19": [
+      262,
+      266
+    ],
+    "20": [
+      267,
+      282
+    ],
+    "21": [
+      283,
+      290
+    ],
+    "22": [
+      291,
+      299
+    ],
+    "23": [
+      300,
+      304
+    ],
+    "24": [
+      305,
+      316
+    ],
+    "25": [
+      317,
+      324
+    ],
+    "26": [
+      325,
+      333
+    ],
+    "27": [
+      334,
+      338
+    ],
+    "28": [
+      339,
+      358
+    ]
+  },
+  "semantic_correspondence_review": "All cell sources directly read by reviewer. Projection correspondence is a manual review declaration; the projector only concatenates the cell source text.",
+  "author": "/root/week01_bridge; student time-text cleanup by /root/student_time_cleanup",
+  "reviewer": "/root/discovery_resume"
+}

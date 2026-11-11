@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "scope": {
+    "id": "week01-supplement-retained-demands-rebound-week01-bridge-time-cleanup-01",
+    "lesson_path": "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/lesson-source.md",
+    "artifact_path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+    "artifact_sha256": "1c3ccb5d79d5e6c0a1cb919fd9f8cfac723637b1dedac2d056fe45379ffd8847",
+    "lesson_revision": "1c3ccb5d79d5e6c0a1cb919fd9f8cfac723637b1dedac2d056fe45379ffd8847",
+    "readiness": "course",
+    "boundary": "Standalone final Week1 supplementary notebook after student-facing time-text cleanup. Retain original D01/D05/D07 in full and all three open questions; this is a separate new artifact baseline, not merged Week1/Week2 course evidence or learner achievement."
+  },
+  "frontier": [
+    {
+      "id": "retained-three",
+      "question": "Which parts of original D01/D05/D07 are actually implemented in the new bridge, and which original operations still remain?",
+      "required_kinds": [
+        "official_scope",
+        "official_problem",
+        "research"
+      ]
+    }
+  ],
+  "policy": {
+    "max_events": 80,
+    "max_rounds": 12,
+    "max_no_progress": 8,
+    "max_elapsed_minutes": 180
+  }
+}

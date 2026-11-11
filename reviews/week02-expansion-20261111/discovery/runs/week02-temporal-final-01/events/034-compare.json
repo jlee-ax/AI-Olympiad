@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-temporal-final-01-034-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D02",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "No pairwise distance matrix, feature-axis reduction, neighbor selection or k/tie/label vote transfer is present in this temporal preprocessing unit.",
+    "start_line": 1,
+    "end_line": 346,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "gap",
+        "observed_behavior": "No pairwise distance matrix, feature-axis reduction, neighbor selection or k/tie/label vote transfer is present in this temporal preprocessing unit.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 346
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "No pairwise distance matrix, feature-axis reduction, neighbor selection or k/tie/label vote transfer is present in this temporal preprocessing unit.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 346
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "No pairwise distance matrix, feature-axis reduction, neighbor selection or k/tie/label vote transfer is present in this temporal preprocessing unit.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 346
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "No pairwise distance matrix, feature-axis reduction, neighbor selection or k/tie/label vote transfer is present in this temporal preprocessing unit.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 346
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "No pairwise distance matrix, feature-axis reduction, neighbor selection or k/tie/label vote transfer is present in this temporal preprocessing unit.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 1,
+        "end_line": 346
+      }
+    ]
+  }
+}

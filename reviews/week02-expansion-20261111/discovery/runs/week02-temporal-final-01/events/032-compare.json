@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-temporal-final-01-032-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D11",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "uncertain",
+    "rationale": "The source section labels the domestic page IOAI 2026 and the teaching example is explicitly synthetic. No fresh domestic-2027/international-2027 applicability investigation or independent URL/year scope assessment resolves the existing question.",
+    "start_line": 339,
+    "end_line": 346,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "The source section labels the domestic page IOAI 2026 and the teaching example is explicitly synthetic. No fresh domestic-2027/international-2027 applicability investigation or independent URL/year scope assessment resolves the existing question.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 339,
+        "end_line": 346
+      },
+      {
+        "id": "learning",
+        "judgment": "uncertain",
+        "observed_behavior": "The source section labels the domestic page IOAI 2026 and the teaching example is explicitly synthetic. No fresh domestic-2027/international-2027 applicability investigation or independent URL/year scope assessment resolves the existing question.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 339,
+        "end_line": 346
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "The source section labels the domestic page IOAI 2026 and the teaching example is explicitly synthetic. No fresh domestic-2027/international-2027 applicability investigation or independent URL/year scope assessment resolves the existing question.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 339,
+        "end_line": 346
+      },
+      {
+        "id": "principle",
+        "judgment": "uncertain",
+        "observed_behavior": "The source section labels the domestic page IOAI 2026 and the teaching example is explicitly synthetic. No fresh domestic-2027/international-2027 applicability investigation or independent URL/year scope assessment resolves the existing question.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 339,
+        "end_line": 346
+      },
+      {
+        "id": "practice",
+        "judgment": "uncertain",
+        "observed_behavior": "The source section labels the domestic page IOAI 2026 and the teaching example is explicitly synthetic. No fresh domestic-2027/international-2027 applicability investigation or independent URL/year scope assessment resolves the existing question.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 339,
+        "end_line": 346
+      }
+    ]
+  }
+}

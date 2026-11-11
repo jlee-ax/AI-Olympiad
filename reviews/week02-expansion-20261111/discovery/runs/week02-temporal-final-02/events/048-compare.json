@@ -1,0 +1,47 @@
+{
+  "id": "rebind-week02-temporal-final-02-048-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "N03",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "Targets are excluded from constructed input features and only -1/+1 labels are used. There is no unknown-0 versus negative--1 decision, new unknown-row training rule or PU constant-alpha assumptions contrast in this standalone supplement. The main notebook label-semantics progress is retained in its separate session.",
+    "start_line": 11,
+    "end_line": 336,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Targets are excluded from constructed input features and only -1/+1 labels are used. There is no unknown-0 versus negative--1 decision, new unknown-row training rule or PU constant-alpha assumptions contrast in this standalone supplement. The main notebook label-semantics progress is retained in its separate session.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 336
+      },
+      {
+        "id": "learning",
+        "judgment": "uncertain",
+        "observed_behavior": "Targets are excluded from constructed input features and only -1/+1 labels are used. There is no unknown-0 versus negative--1 decision, new unknown-row training rule or PU constant-alpha assumptions contrast in this standalone supplement. The main notebook label-semantics progress is retained in its separate session.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 336
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Targets are excluded from constructed input features and only -1/+1 labels are used. There is no unknown-0 versus negative--1 decision, new unknown-row training rule or PU constant-alpha assumptions contrast in this standalone supplement. The main notebook label-semantics progress is retained in its separate session.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 336
+      },
+      {
+        "id": "assumptions",
+        "judgment": "gap",
+        "observed_behavior": "Targets are excluded from constructed input features and only -1/+1 labels are used. There is no unknown-0 versus negative--1 decision, new unknown-row training rule or PU constant-alpha assumptions contrast in this standalone supplement. The main notebook label-semantics progress is retained in its separate session.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 336
+      }
+    ]
+  }
+}

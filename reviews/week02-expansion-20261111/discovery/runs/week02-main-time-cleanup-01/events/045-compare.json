@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-main-time-cleanup-01-045-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "H02",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The text distinguishes labeled public development data from unavailable hidden inference labels, but it does not diagnose/remove an inference-time unavailable API or reconstruct an offline submission from local artifacts.",
+    "start_line": 41,
+    "end_line": 52,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "uncertain",
+        "observed_behavior": "The text distinguishes labeled public development data from unavailable hidden inference labels, but it does not diagnose/remove an inference-time unavailable API or reconstruct an offline submission from local artifacts.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 41,
+        "end_line": 52
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "The text distinguishes labeled public development data from unavailable hidden inference labels, but it does not diagnose/remove an inference-time unavailable API or reconstruct an offline submission from local artifacts.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 41,
+        "end_line": 52
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "The text distinguishes labeled public development data from unavailable hidden inference labels, but it does not diagnose/remove an inference-time unavailable API or reconstruct an offline submission from local artifacts.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 41,
+        "end_line": 52
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The text distinguishes labeled public development data from unavailable hidden inference labels, but it does not diagnose/remove an inference-time unavailable API or reconstruct an offline submission from local artifacts.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 41,
+        "end_line": 52
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "The text distinguishes labeled public development data from unavailable hidden inference labels, but it does not diagnose/remove an inference-time unavailable API or reconstruct an offline submission from local artifacts.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 41,
+        "end_line": 52
+      }
+    ]
+  }
+}

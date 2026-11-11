@@ -7805,7 +7805,7 @@ a.anchor-link {
 <h1 id="1%EC%A3%BC%EC%B0%A8-%EB%B3%B4%EC%B6%A9-%C2%B7-%ED%91%9C%EC%97%90%EC%84%9C-%EC%A0%90%EC%88%98%EC%99%80-ID%EA%B9%8C%EC%A7%80">1주차 보충 · 표에서 점수와 ID까지<a class="anchor-link" href="#1%EC%A3%BC%EC%B0%A8-%EB%B3%B4%EC%B6%A9-%C2%B7-%ED%91%9C%EC%97%90%EC%84%9C-%EC%A0%90%EC%88%98%EC%99%80-ID%EA%B9%8C%EC%A7%80">¶</a></h1><h2 id="%EB%AA%A9%ED%91%9C%EC%99%80-%EC%9D%B4%EC%9A%A9-%EB%B0%A9%EB%B2%95">목표와 이용 방법<a class="anchor-link" href="#%EB%AA%A9%ED%91%9C%EC%99%80-%EC%9D%B4%EC%9A%A9-%EB%B0%A9%EB%B2%95">¶</a></h2><p>표의 행과 열에서 출발해 <strong>같은 뜻의 값을 곱해 더하는 이유</strong>, 행렬곱의 모양과 축, 결과 위치를 실제 ID로 바꾸는 방법을 연습합니다. 모든 숫자는 설명을 위해 만든 합성 자료입니다.</p>
 <p>본 교안의 행·열, shape, 전치, 내적을 먼저 접한 뒤 사용합니다. 변수·리스트·함수를 써 보았다고 가정합니다. 먼저 예상과 이유를 적고 코드로 확인하며, 다르게 예상했다면 첫 단계부터 살펴보세요. Python 3와 NumPy만 필요합니다. Jupyter에서 위에서 아래로 Shift+Enter를 누르고 저장하세요.</p>
 <p><strong>우선:</strong> 1~3절, 5절의 검색과 ID, 6절 필수 문항. <strong>선택 교량:</strong> 4절의 stack·concatenate, 5절의 lookup과 6절 선택 문항은 관련 후속 단원 전에 다시 써도 됩니다. 후속 공식 범위의 필수 학습을 면제한다는 뜻은 아닙니다.</p>
-<p>이 자료는 120분 수업 뒤, 계획된 1주차 필수 자습의 배열 A·내적 E와 연결하는 보충입니다. 기존 수업에 새 시간을 추가했다고 가정하지 않습니다. 중복 연습은 교사와 조정하되 기존 필수 성취를 생략하지 마세요. 기존 자습 5~7시간은 이전 범위의 추정치이며 이 보충을 포함한 실제 시간은 아직 모릅니다. 시간이 부족하면 미완료를 기록하고 보충 시간을 다시 계획합니다.</p>
+<p>본 교안을 익힌 뒤 배열 A·내적 E와 연결해 이 보충을 학습합니다.</p>
 </div>
 </div>
 </div>
@@ -8548,12 +8548,12 @@ ID 41을 대응표로 찾아 얻은 벡터: [1 3]
 <h3 id="%EC%84%A0%ED%83%9D-C-%C2%B7-%EB%AC%B6%EC%9D%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0">선택 C · 묶음 만들기<a class="anchor-link" href="#%EC%84%A0%ED%83%9D-C-%C2%B7-%EB%AC%B6%EC%9D%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0">¶</a></h3><p><code>gallery_new[:2]</code>와 <code>gallery_new[2:]</code>로 stack(axis=0), concatenate(axis=0), concatenate(axis=1)을 실행하기 전에 결과 shape와 축의 뜻을 적으세요. 열 연결의 각 행이 같은 후보의 특성 확장인지 후보 ID를 대조해 설명하세요. <code>gallery_new[:1]</code>과 <code>gallery_new[1:]</code>은 어떤 연산이 실패하고 어떤 행 연결이 가능한지도 이유와 함께 예측하세요. 별도 코드 셀을 만들어 확인합니다.</p>
 <h2 id="%EB%8B%A4%EC%9D%8C-%EB%8B%A8%EA%B3%84">다음 단계<a class="anchor-link" href="#%EB%8B%A4%EC%9D%8C-%EB%8B%A8%EA%B3%84">¶</a></h2><p>10주차 새 문제에서는 입력·출력·평가 규칙을 다시 읽고 열과 ID의 의미를 먼저 적습니다. 이 자료의 1주차 선수는 3주차 가중합, 6주차 층별 shape, 7~9주차 인코더 표현·검색, 10주차 낯선 입력 해석으로 이어집니다. 후속 모델 구현, 분할·학습·평가, 대회 문제 해결을 이 노트북 하나로 완료했다고 볼 수는 없습니다.</p>
 <h2 id="%EC%9E%90%EB%A3%8C%EC%99%80-%EB%B2%94%EC%9C%84">자료와 범위<a class="anchor-link" href="#%EC%9E%90%EB%A3%8C%EC%99%80-%EB%B2%94%EC%9C%84">¶</a></h2><ul>
-<li><a href="week01_python_tables.ipynb">1주차 본 교안</a>: 표·axis, 전치, 내적. <a href="../../curriculum/student-plan.html">10주 학습 계획</a>: 기존 수업 및 자습 편성.</li>
+<li><a href="week01_python_tables.ipynb">1주차 본 교안</a>: 표·axis, 전치, 내적. <a href="../../curriculum/student-plan.html">10주 학습 계획</a>: 주차별 학습 내용.</li>
 <li><a href="https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Restroom/Restroom.ipynb">IOAI 2025 Restroom 공식 문제와 baseline</a>은 후보 번호·순서와 벡터 점수를 검토하는 계기입니다. 실제 baseline은 이미지 인코더 출력 연결·정규화와 별도의 선택 규칙을 사용합니다. 이 단순 합성 내적의 최댓값 규칙은 공식 정답이나 대회 해결법이 아닙니다.</li>
 <li><a href="https://numpy.org/doc/stable/reference/generated/numpy.matmul.html">NumPy matmul</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.stack.html">stack</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.concatenate.html">concatenate</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.argmax.html">argmax</a>, <a href="https://docs.pytorch.org/docs/2.15/generated/torch.nn.Embedding.html">PyTorch Embedding</a>.</li>
 <li><a href="https://kitpa.org/koai/2027">KOAI 2027 안내</a>에 연결된 <a href="https://kitpa.org/koai/syllabus">국내 실라버스</a>는 조사 당시 IOAI 2026 기준 표기였습니다. 별도 <a href="https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf">IOAI 2027 원문</a>의 국제 항목을 국내 2027 확정 범위나 1주차 필수로 자동 취급하지 않습니다. 확인 기록: <a href="../../reviews/discovery-loop-20261111/source-research.md">source-research.md</a>, 2026-11-11. 최신 공지를 다시 확인하세요.</li>
 </ul>
-<p>교안의 숫자와 문제는 자체 제작 자료입니다. 실제 학생의 소요 시간·이해·도움 없이 푼 결과는 아직 관찰하지 않았습니다.</p>
+<p>교안의 숫자와 문제는 자체 제작 자료입니다.</p>
 </div>
 </div>
 </div>

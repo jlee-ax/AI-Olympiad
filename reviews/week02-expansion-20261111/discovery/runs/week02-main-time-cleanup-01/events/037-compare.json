@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-main-time-cleanup-01-037-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D05",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "Row IDs and prediction order are checked, but no query/gallery similarity matrix, normalized vector score, retrieval position-to-original-ID recovery or new-ID assessment appears.",
+    "start_line": 22,
+    "end_line": 101,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "Row IDs and prediction order are checked, but no query/gallery similarity matrix, normalized vector score, retrieval position-to-original-ID recovery or new-ID assessment appears.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 22,
+        "end_line": 101
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "Row IDs and prediction order are checked, but no query/gallery similarity matrix, normalized vector score, retrieval position-to-original-ID recovery or new-ID assessment appears.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 22,
+        "end_line": 101
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "Row IDs and prediction order are checked, but no query/gallery similarity matrix, normalized vector score, retrieval position-to-original-ID recovery or new-ID assessment appears.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 22,
+        "end_line": 101
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "Row IDs and prediction order are checked, but no query/gallery similarity matrix, normalized vector score, retrieval position-to-original-ID recovery or new-ID assessment appears.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 22,
+        "end_line": 101
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "Row IDs and prediction order are checked, but no query/gallery similarity matrix, normalized vector score, retrieval position-to-original-ID recovery or new-ID assessment appears.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 22,
+        "end_line": 101
+      }
+    ]
+  }
+}

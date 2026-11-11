@@ -1,0 +1,75 @@
+{
+  "id": "rebind-week02-temporal-final-01-025-trace",
+  "op": "trace",
+  "data": {
+    "reason": "Separate new actual-artifact baseline; preserve historical external requirements and open questions. Local receipts only; no original-source search or source authentication.",
+    "frontier_id": "heldout",
+    "read_ids": [
+      "rebind-week02-temporal-final-01-023-read",
+      "rebind-week02-temporal-final-01-024-read"
+    ],
+    "actor": "source-research-sol",
+    "rationale": "Historical extracted requirement payloads imported unchanged; not a fresh source extraction. Unchanged historical demand payloads copied from original source extractor; not a claim of a fresh extraction or current web-source verification.",
+    "counterevidence": "Original source notes are agent-authored paraphrases. Original broad course demand does not imply all of it belongs in Week2.",
+    "uninvestigated": [],
+    "demands": [
+      {
+        "id": "H01",
+        "statement": "weighted score의 분모를 평가 대상 전체에서 세기",
+        "prerequisites": [
+          "비율",
+          "조건별 합",
+          "참/거짓 비교",
+          "평가 대상 단위"
+        ],
+        "learning_demand": "정답이 배경인지로 weight 분류; 맞힌 가중합과 가능한 전체 가중합 구별; 정확도와 weighted metric 순위 비교",
+        "assessment_demand": "분모의 모집단; weight가 정답에 의존함; metric별 순위 역전; 변경된 불균형 입력 전이",
+        "dimensions": [
+          {
+            "id": "principle",
+            "required_behavior": "score=sum_i w(y_i)*1[p_i=y_i]/sum_i w(y_i), w(-1)=1, 나머지=50."
+          },
+          {
+            "id": "practice",
+            "required_behavior": "새 정답 [-1,-1,-1,2]에서 A=[-1,-1,-1,-1], B=[0,0,-1,2]를 비교한다."
+          }
+        ],
+        "stage_proposal": {
+          "decision": "later",
+          "rationale": "진짜 문제의 새 요구로 requirement-heldout에 보류. 평균을 아는지와 metric 정의를 읽고 새 분모를 만드는지를 분리한다."
+        },
+        "source_locations": [
+          "S04 raw L105–159 §5 Score"
+        ]
+      },
+      {
+        "id": "H02",
+        "statement": "개발에서 사용한 도구가 추론에도 있는지 검증하기",
+        "prerequisites": [
+          "함수 입력/반환",
+          "파일/상대경로",
+          "환경과 데이터 가용성"
+        ],
+        "learning_demand": "개발/검증/추론 capability를 분리; 외부 호출 의존성을 탐지; 오프라인 제출물의 입력/출력 재구성",
+        "assessment_demand": "실행단계별 가용성; 재시도 가능한 오류와 환경 제약 구별; 전체 재실행 vs 의존성 제거 구별; 자체 산출물로 새 입력 처리",
+        "dimensions": [
+          {
+            "id": "principle",
+            "required_behavior": "submission(label,options,local_artifacts)→marker_ids; unavailable_api 호출이 함수 경로에 남으면 계약 위반."
+          },
+          {
+            "id": "practice",
+            "required_behavior": "개발에서는 scorer API를 썼고 제출 코드에도 매 입력마다 API 호출이 남은 가상 파이프라인을 진단한다."
+          }
+        ],
+        "stage_proposal": {
+          "decision": "later",
+          "rationale": "운영/제출 단원으로 연결할 신규 문제 요구. source-family가 Radar/Restroom와 다른 generation task에서 왔다."
+        },
+        "source_locations": [
+          "S06 raw L205–218,L268–275"
+        ]
+      }
+    ]
+  }
+}

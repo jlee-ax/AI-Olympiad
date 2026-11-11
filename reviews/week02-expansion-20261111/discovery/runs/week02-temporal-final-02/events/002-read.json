@@ -1,0 +1,11 @@
+{
+  "id": "rebind-week02-temporal-final-02-002-read",
+  "op": "read",
+  "data": {
+    "reason": "Separate new actual-artifact baseline; preserve historical external requirements and open questions. Local receipts only; no original-source search or source authentication.",
+    "source_id": "S01",
+    "actor": "source-research-sol",
+    "start_line": 1,
+    "end_line": 15
+  }
+}

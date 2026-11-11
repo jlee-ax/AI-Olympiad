@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-temporal-final-01-035-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "D03",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "uncertain",
+    "rationale": "The contract distinguishes pre-measurement prediction from later measurements and labels. make_features selects the same unit and strictly earlier times, and the new task rejects centered future windows. The retained broad assessment additionally requires an explicit shape-valid versus semantically unavailable input contrast; that specific independent contrast remains absent.",
+    "start_line": 11,
+    "end_line": 123,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The contract distinguishes pre-measurement prediction from later measurements and labels. make_features selects the same unit and strictly earlier times, and the new task rejects centered future windows. The retained broad assessment additionally requires an explicit shape-valid versus semantically unavailable input contrast; that specific independent contrast remains absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 123
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "The contract distinguishes pre-measurement prediction from later measurements and labels. make_features selects the same unit and strictly earlier times, and the new task rejects centered future windows. The retained broad assessment additionally requires an explicit shape-valid versus semantically unavailable input contrast; that specific independent contrast remains absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 123
+      },
+      {
+        "id": "assessment",
+        "judgment": "uncertain",
+        "observed_behavior": "The contract distinguishes pre-measurement prediction from later measurements and labels. make_features selects the same unit and strictly earlier times, and the new task rejects centered future windows. The retained broad assessment additionally requires an explicit shape-valid versus semantically unavailable input contrast; that specific independent contrast remains absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 307,
+        "end_line": 338
+      },
+      {
+        "id": "principle",
+        "judgment": "met",
+        "observed_behavior": "The contract distinguishes pre-measurement prediction from later measurements and labels. make_features selects the same unit and strictly earlier times, and the new task rejects centered future windows. The retained broad assessment additionally requires an explicit shape-valid versus semantically unavailable input contrast; that specific independent contrast remains absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 123
+      },
+      {
+        "id": "practice",
+        "judgment": "met",
+        "observed_behavior": "The contract distinguishes pre-measurement prediction from later measurements and labels. make_features selects the same unit and strictly earlier times, and the new task rejects centered future windows. The retained broad assessment additionally requires an explicit shape-valid versus semantically unavailable input contrast; that specific independent contrast remains absent.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 123
+      }
+    ]
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "D11": {
+    "judgment": "uncertain",
+    "observed_behavior": "The source section identifies the linked domestic syllabus as IOAI 2026. No new original-source verification or independent URL/year applicability exercise resolves the retained domestic-2027 versus international-2027 question.",
+    "cells": [
+      24
+    ]
+  },
+  "D01": {
+    "judgment": "gap",
+    "observed_behavior": "The lesson implements table rows, a single numerical feature and corresponding transforms. It does not teach or independently assess reshape versus transpose coordinate predictions and Radar model-input/target axis transfer. These remain subsequent course work.",
+    "cells": null,
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      }
+    }
+  },
+  "D02": {
+    "judgment": "gap",
+    "observed_behavior": "There is no pairwise distance table, neighbor-label vote, k/tie rule or new-input kNN implementation. The split and preprocessing lesson provides prerequisites for a later distance/classification unit.",
+    "cells": null
+  },
+  "D03": {
+    "judgment": "uncertain",
+    "observed_behavior": "The row contract separates reading from later label and excludes post-prediction repair information. The new-input task asks students to reject future repair records, but it does not independently contrast a shape-valid input with a semantically unavailable input as required by the retained broad assessment.",
+    "cells": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      },
+      "learning": {
+        "judgment": "met"
+      },
+      "assessment": {
+        "judgment": "uncertain",
+        "cells": [
+          19,
+          20,
+          21
+        ]
+      },
+      "principle": {
+        "judgment": "met"
+      },
+      "practice": {
+        "judgment": "met"
+      }
+    }
+  },
+  "D04": {
+    "judgment": "gap",
+    "observed_behavior": "The output labels -1/+1 and the unknown label 0 are defined. Encoding to a contiguous internal class index, class-axis argmax, reverse conversion and independent noncontiguous-label round trips are absent.",
+    "cells": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      }
+    }
+  },
+  "D05": {
+    "judgment": "gap",
+    "observed_behavior": "Row IDs and prediction order are checked, but no query/gallery similarity matrix, normalized vector score, retrieval position-to-original-ID recovery or new-ID assessment appears.",
+    "cells": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      }
+    }
+  },
+  "D12": {
+    "judgment": "gap",
+    "observed_behavior": "No multiple-call mutable-default or returned-list alias diagnostic is supplied. This separate Python demand remains open rather than being silently omitted.",
+    "cells": null
+  },
+  "D06": {
+    "judgment": "uncertain",
+    "observed_behavior": "The completed example derives mean and population standard deviation from known training rows and applies only transform to validation; a separately labeled bad fit produces the leaky mean 9 instead of 4. The independent new table requires training-only fit and new code, but no independent item asks the student to distinguish leakage from overfitting. The full retained assessment remains uncertain.",
+    "cells": [
+      6,
+      7,
+      8
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      },
+      "learning": {
+        "judgment": "met"
+      },
+      "assessment": {
+        "judgment": "uncertain",
+        "cells": [
+          19,
+          20,
+          21
+        ]
+      },
+      "principle": {
+        "judgment": "met",
+        "cells": [
+          6,
+          7,
+          8
+        ]
+      },
+      "practice": {
+        "judgment": "met",
+        "cells": [
+          7,
+          8
+        ]
+      }
+    }
+  },
+  "D07": {
+    "judgment": "gap",
+    "observed_behavior": "No vocabulary lookup table, repeated token index, B/L/V/H interpretation or independent embedding-lookup transfer task exists in this standalone tabular lesson.",
+    "cells": null
+  },
+  "D08": {
+    "judgment": "gap",
+    "observed_behavior": "No attention Q/K score axes, boolean-mask API polarity, blocked-position probability normalization or padding/causal-mask assessment is implemented.",
+    "cells": null
+  },
+  "D09": {
+    "judgment": "gap",
+    "observed_behavior": "Confusion-matrix precision and recall are implemented, but class-axis softmax, selecting the target probability, negative-log loss, shift invariance and overflow diagnosis are not taught or assessed.",
+    "cells": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
+  },
+  "D10": {
+    "judgment": "gap",
+    "observed_behavior": "The lesson connects hand predictions, code outputs, new inputs and limits of tiny examples. It does not supply the retained numerical-gradient/relative-error principles or zero-gradient assessment; those broader requirements remain open.",
+    "cells": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "gap"
+      },
+      "learning": {
+        "judgment": "met"
+      },
+      "assessment": {
+        "judgment": "uncertain"
+      },
+      "principle": {
+        "judgment": "gap"
+      },
+      "practice": {
+        "judgment": "met"
+      }
+    }
+  },
+  "H01": {
+    "judgment": "gap",
+    "observed_behavior": "The lesson computes overall row accuracy and the mean of unequal-sized group accuracies. It does not implement Radar truth-dependent weights w(-1)=1 and others=50 or an independent metric-ranking reversal. The related denominator foundation is progress, not closure of H01.",
+    "cells": [
+      16,
+      17,
+      18,
+      19
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      }
+    }
+  },
+  "H02": {
+    "judgment": "gap",
+    "observed_behavior": "The text distinguishes labeled public development data from unavailable hidden inference labels, but it does not diagnose/remove an inference-time unavailable API or reconstruct an offline submission from local artifacts.",
+    "cells": [
+      3
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "uncertain"
+      }
+    }
+  },
+  "N01": {
+    "judgment": "covered",
+    "observed_behavior": "The lesson connects explanation and hand calculations to executable examples, then supplies a distinct new table with written reasoning, a blank code answer cell, comparison of hand/code results and help reporting. This meets the retained unit-level material-design judgment for both modalities; no learner performance or complete course readiness is inferred.",
+    "cells": [
+      19,
+      20,
+      21
+    ]
+  },
+  "N02": {
+    "judgment": "gap",
+    "observed_behavior": "There is no half-open image rectangle, pixel-area budget, boundary/over-budget case or JSONL rectangle contract. That official task family remains later course work; this record claims no delivered later lesson.",
+    "cells": null,
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "uncertain"
+      }
+    }
+  },
+  "N03": {
+    "judgment": "uncertain",
+    "observed_behavior": "The contract and practice distinguish unknown 0 from confirmed negative -1, exclude the target from inputs and explicitly use only known training rows. The new n3 question assesses label handling. The retained assumptions axis also forbids applying constant-alpha PU correction to general unknown labels; that contrast is not taught or independently tested here.",
+    "cells": [
+      2,
+      3,
+      4
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      },
+      "learning": {
+        "judgment": "met"
+      },
+      "assessment": {
+        "judgment": "met",
+        "cells": [
+          19,
+          20,
+          21
+        ]
+      },
+      "assumptions": {
+        "judgment": "uncertain",
+        "cells": [
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      }
+    }
+  }
+}

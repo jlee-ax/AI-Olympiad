@@ -1,0 +1,55 @@
+{
+  "id": "rebind-week02-temporal-final-01-045-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "H02",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "gap",
+    "rationale": "The sequential-versus-batch input-availability contract is carefully distinguished. No development-only API dependency diagnosis/removal or local-artifact offline submission reconstruction is implemented.",
+    "start_line": 11,
+    "end_line": 334,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The sequential-versus-batch input-availability contract is carefully distinguished. No development-only API dependency diagnosis/removal or local-artifact offline submission reconstruction is implemented.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 334
+      },
+      {
+        "id": "learning",
+        "judgment": "gap",
+        "observed_behavior": "The sequential-versus-batch input-availability contract is carefully distinguished. No development-only API dependency diagnosis/removal or local-artifact offline submission reconstruction is implemented.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 334
+      },
+      {
+        "id": "assessment",
+        "judgment": "gap",
+        "observed_behavior": "The sequential-versus-batch input-availability contract is carefully distinguished. No development-only API dependency diagnosis/removal or local-artifact offline submission reconstruction is implemented.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 334
+      },
+      {
+        "id": "principle",
+        "judgment": "gap",
+        "observed_behavior": "The sequential-versus-batch input-availability contract is carefully distinguished. No development-only API dependency diagnosis/removal or local-artifact offline submission reconstruction is implemented.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 334
+      },
+      {
+        "id": "practice",
+        "judgment": "gap",
+        "observed_behavior": "The sequential-versus-batch input-availability contract is carefully distinguished. No development-only API dependency diagnosis/removal or local-artifact offline submission reconstruction is implemented.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 11,
+        "end_line": 334
+      }
+    ]
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "recorded_at_utc": "2026-11-11T08:29:29.405440+00:00",
+  "reviewer": "/root/discovery_resume",
+  "verifier_sha256": "d4a439419e11548748a7e11e05f4ff5baf8fd071f23334a1c5f205622c3c5899",
+  "cli_calls": [
+    {
+      "run": "week01-bridge-time-cleanup-01",
+      "operation": "next",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "next",
+        "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "edd8e3d0f4b9c7b25b0577766a52d3423de0d326bdd75a220b6546df307058a7",
+      "stdout_bytes": 2554
+    },
+    {
+      "run": "week01-bridge-time-cleanup-01",
+      "operation": "report",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "report",
+        "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c0333a7ddfeb161905a3760a015e3dc41b03c5da6c9d90b1a3144306dad801a8",
+      "stdout_bytes": 154224,
+      "semantic_json_equals_saved_report": true
+    },
+    {
+      "run": "week01-bridge-time-cleanup-01",
+      "operation": "manifest",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "manifest",
+        "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d2bf542573b947dbd50ffd21d56e242000de1c1a3c7f404d56b234762bd2172b",
+      "stdout_bytes": 146
+    },
+    {
+      "run": "week02-main-time-cleanup-01",
+      "operation": "next",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "next",
+        "reviews/week02-expansion-20261111/discovery/runs/week02-main-time-cleanup-01/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "780eb581d63d4bde549d18bb37c6794ad35867fbdab7af875b5b2e9cdfddf8b4",
+      "stdout_bytes": 10143
+    },
+    {
+      "run": "week02-main-time-cleanup-01",
+      "operation": "report",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "report",
+        "reviews/week02-expansion-20261111/discovery/runs/week02-main-time-cleanup-01/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "22f2e818984f5d72273c1a30b50d127f096a3a3a942d467ce9575cbd5a2e6f00",
+      "stdout_bytes": 2176678,
+      "semantic_json_equals_saved_report": true
+    },
+    {
+      "run": "week02-main-time-cleanup-01",
+      "operation": "manifest",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "manifest",
+        "reviews/week02-expansion-20261111/discovery/runs/week02-main-time-cleanup-01/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "3aa01e8f64b96d206b71c6c72cca4ee8cdc289ff90fdf84abf6ded0253f25f0d",
+      "stdout_bytes": 146
+    },
+    {
+      "run": "week02-temporal-final-02",
+      "operation": "next",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "next",
+        "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-02/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "17715b3edb0db5bdd8eee83b6a29645099db19a630c4c63fb12e99239a23d7ad",
+      "stdout_bytes": 10098
+    },
+    {
+      "run": "week02-temporal-final-02",
+      "operation": "report",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "report",
+        "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-02/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "34437331c5352c975bb450e129a41ede7eb825ffe8f4222f509e973e7150f064",
+      "stdout_bytes": 2672624,
+      "semantic_json_equals_saved_report": true
+    },
+    {
+      "run": "week02-temporal-final-02",
+      "operation": "manifest",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "tools/discovery_loop.py",
+        "manifest",
+        "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-02/session.json",
+        "--root",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "13d5a782dac7363030c192bdf88ec68f814127b5b43174f86ad8afa045fab59e",
+      "stdout_bytes": 146
+    }
+  ],
+  "cli_report_json_matches_saved_reports": true,
+  "student_answer_cells": [
+    {
+      "run": "week01-bridge-time-cleanup-01",
+      "cell_index": 23,
+      "cell_id": "7b96a39e",
+      "ast_statement_count": 0,
+      "student_answer_blank": true
+    },
+    {
+      "run": "week01-bridge-time-cleanup-01",
+      "cell_index": 27,
+      "cell_id": "54646dc1",
+      "ast_statement_count": 0,
+      "student_answer_blank": true
+    },
+    {
+      "run": "week02-main-time-cleanup-01",
+      "cell_index": 20,
+      "cell_id": "4cfbd70e",
+      "ast_statement_count": 0,
+      "student_answer_blank": true
+    },
+    {
+      "run": "week02-temporal-final-02",
+      "cell_index": 17,
+      "cell_id": "46cc245a",
+      "ast_statement_count": 0,
+      "student_answer_blank": true
+    }
+  ],
+  "all_history_unchanged": true,
+  "all_new_mechanical_checks_passed": true,
+  "git_index_matches_prechange": true,
+  "cache_paths": [],
+  "duplicate_intermediate_session_files": [],
+  "files_before_final_summary": 246,
+  "bytes_before_final_summary": 11680245,
+  "limits": [
+    "Final-01 evidence and the stale temporal-final-01 session remain unchanged; current selection explicitly names temporal-final-02.",
+    "No intermediate session-NN duplicates were generated. CLI report stdout hashes avoid redundant receipt-heavy copies.",
+    "An empty answer cell establishes no student performance; no answer was inserted."
+  ]
+}

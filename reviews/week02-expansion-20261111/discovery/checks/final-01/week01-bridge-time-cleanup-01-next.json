@@ -1,0 +1,69 @@
+{
+  "authority": "advisory_only",
+  "exhausted": [],
+  "limits": [
+    "Discovery/search execution, official attribution, semantic extraction and adequacy judgments are supplied by a human or model; this program does not browse or run one.",
+    "Read receipts prove the bytes and line ranges opened by this program, not reader comprehension, source truth or completeness of the external universe.",
+    "The frozen frontier and append-only hash chain expose changed declarations when bound to a review; they do not authenticate identity or prevent a caller from rewriting and rebinding history.",
+    "Recorded readiness applies only to the declared boundary; deferred placement does not establish later teaching or learner performance."
+  ],
+  "next_action": "expand_frontier",
+  "queue": [
+    {
+      "affected": [
+        "D01",
+        "retained-three",
+        "week01-supplement-retained-demands-rebound-week01-bridge-time-cleanup-01"
+      ],
+      "demand_id": "D01",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_learning_uncertain",
+        "dimension_assessment_gap",
+        "dimension_principle_gap",
+        "dimension_practice_gap",
+        "gap"
+      ],
+      "statement": "\ubc30\uc5f4\uc758 \ucd95 \uc758\ubbf8\uc640 \ub370\uc774\ud130 \ubc30\uce58\ub97c \ubcf4\uc874\ud558\uae30"
+    },
+    {
+      "affected": [
+        "D05",
+        "retained-three",
+        "week01-supplement-retained-demands-rebound-week01-bridge-time-cleanup-01"
+      ],
+      "demand_id": "D05",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_prerequisites_gap",
+        "dimension_learning_gap",
+        "dimension_assessment_uncertain",
+        "dimension_principle_gap",
+        "gap"
+      ],
+      "statement": "\uc720\uc0ac\ub3c4 \ud589\ub82c\uc758 \uc704\uce58\ub97c \uc2e4\uc81c \uc2dd\ubcc4\uc790\ub85c \ub3cc\ub824\uc8fc\uae30"
+    },
+    {
+      "affected": [
+        "D07",
+        "retained-three",
+        "week01-supplement-retained-demands-rebound-week01-bridge-time-cleanup-01"
+      ],
+      "demand_id": "D07",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_assessment_gap",
+        "dimension_principle_uncertain",
+        "gap"
+      ],
+      "statement": "embedding lookup\uc758 \uc0c8 \ucd95\uacfc \uc5b4\ud718 \ucd95\uc744 \uad6c\ubcc4\ud558\uae30"
+    }
+  ],
+  "status": "needs_work",
+  "usage": {
+    "elapsed_minutes": 0,
+    "events": 15,
+    "no_progress": 0,
+    "rounds": 1
+  }
+}

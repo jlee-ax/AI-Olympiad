@@ -1,0 +1,268 @@
+{
+  "D11": {
+    "judgment": "uncertain",
+    "observed_behavior": "The source section labels the domestic page IOAI 2026 and the teaching example is explicitly synthetic. No fresh domestic-2027/international-2027 applicability investigation or independent URL/year scope assessment resolves the existing question.",
+    "cells": [
+      18
+    ]
+  },
+  "D01": {
+    "judgment": "gap",
+    "observed_behavior": "The supplement preserves row IDs and feature-column names in tabular features. It contains no reshape-versus-transpose coordinate exercise, Radar model-input/target-axis tracking or independent high-dimensional layout transfer.",
+    "cells": [
+      1,
+      2,
+      3,
+      4,
+      7,
+      8
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      }
+    }
+  },
+  "D02": {
+    "judgment": "gap",
+    "observed_behavior": "No pairwise distance matrix, feature-axis reduction, neighbor selection or k/tie/label vote transfer is present in this temporal preprocessing unit.",
+    "cells": null
+  },
+  "D03": {
+    "judgment": "uncertain",
+    "observed_behavior": "The contract distinguishes pre-measurement prediction from later measurements and labels. make_features selects the same unit and strictly earlier times, and the new task rejects centered future windows. The retained broad assessment additionally requires an explicit shape-valid versus semantically unavailable input contrast; that specific independent contrast remains absent.",
+    "cells": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      },
+      "learning": {
+        "judgment": "met"
+      },
+      "assessment": {
+        "judgment": "uncertain",
+        "cells": [
+          16,
+          17
+        ]
+      },
+      "principle": {
+        "judgment": "met"
+      },
+      "practice": {
+        "judgment": "met"
+      }
+    }
+  },
+  "D04": {
+    "judgment": "gap",
+    "observed_behavior": "One-hot encoding maps an input category to feature columns and discusses unknown/drop behavior. It is not a class-label encode/argmax/decode round trip, and the retained independent noncontiguous output-label task is absent.",
+    "cells": [
+      7,
+      8,
+      9
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      }
+    }
+  },
+  "D05": {
+    "judgment": "gap",
+    "observed_behavior": "The lesson retains target-row ID order but has no query/gallery score matrix, norm/cosine or position-to-arbitrary-retrieval-ID exercise.",
+    "cells": null
+  },
+  "D12": {
+    "judgment": "gap",
+    "observed_behavior": "There is no repeated-call mutable-default or alias diagnostic; the original separate Python demand remains open.",
+    "cells": null
+  },
+  "D06": {
+    "judgment": "gap",
+    "observed_behavior": "The supplement teaches split-before-feature decisions, training-only median/minmax/category fit, unchanged training statistics under altered validation input, and independent code repair plus leakage-versus-validation-overfitting comparison. This makes the retained assessment dimension met in this standalone material design. The original principle still explicitly requires train-only mean/standard-deviation z transformation, and the practice requires train-only versus all-data mean-centering; this supplement refers to the main notebook for standardization rather than implementing those operations itself. Broad D06 therefore remains gap in this separate artifact, without cancelling the main notebook progress.",
+    "cells": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      13,
+      16,
+      17
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      },
+      "learning": {
+        "judgment": "met"
+      },
+      "assessment": {
+        "judgment": "met",
+        "cells": [
+          16,
+          17
+        ]
+      },
+      "principle": {
+        "judgment": "gap",
+        "cells": [
+          7,
+          8,
+          9
+        ]
+      },
+      "practice": {
+        "judgment": "gap",
+        "cells": [
+          2,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    }
+  },
+  "D07": {
+    "judgment": "gap",
+    "observed_behavior": "One-hot categorical feature columns are not an embedding lookup with repeated token IDs and B/L/V/H axes. That operation and independent new lookup assessment are absent.",
+    "cells": null
+  },
+  "D08": {
+    "judgment": "gap",
+    "observed_behavior": "No attention-score axes, bool-mask API semantics, blocked probability renormalization, causal/padding mask or all-masked transfer appears.",
+    "cells": null
+  },
+  "D09": {
+    "judgment": "gap",
+    "observed_behavior": "The supplement implements thresholded decision scores and classification rates. These are not class-axis softmax, target probability selection, negative-log loss, shift invariance or stable large-logit computation.",
+    "cells": [
+      10,
+      11,
+      12,
+      13
+    ]
+  },
+  "D10": {
+    "judgment": "gap",
+    "observed_behavior": "Students are asked to predict features and rates, repair an invalid encoder fit, alter validation inputs and compare leakage with repeated validation selection. The lesson also limits toy-score claims. The original numerical-gradient and relative-error prerequisites/principle remain outside this unit.",
+    "cells": [
+      9,
+      13,
+      16,
+      17
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "gap"
+      },
+      "learning": {
+        "judgment": "met"
+      },
+      "assessment": {
+        "judgment": "uncertain"
+      },
+      "principle": {
+        "judgment": "gap"
+      },
+      "practice": {
+        "judgment": "met"
+      }
+    }
+  },
+  "H01": {
+    "judgment": "gap",
+    "observed_behavior": "The synthetic 1:5 table and weighted_accuracy implementation, followed by a new independent 1:4 hand/code task, correctly weight by truth, include all evaluated rows in the denominator and reverse model rankings. Prerequisites, learning and general assessment behavior are met. The unchanged original Radar-specific principle requires w(-1)=1 and other labels=50, and its practice instantiates non-background label 2 with an explicit prediction-vector comparison. The student notebook instead uses a binary B/T contract; those original cases are not supplied. The linked source and separate teacher caveat do not replace student material.",
+    "cells": [
+      14,
+      15,
+      16,
+      17
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      },
+      "learning": {
+        "judgment": "met"
+      },
+      "assessment": {
+        "judgment": "met",
+        "cells": [
+          16,
+          17
+        ]
+      },
+      "principle": {
+        "judgment": "gap"
+      },
+      "practice": {
+        "judgment": "gap"
+      }
+    }
+  },
+  "H02": {
+    "judgment": "gap",
+    "observed_behavior": "The sequential-versus-batch input-availability contract is carefully distinguished. No development-only API dependency diagnosis/removal or local-artifact offline submission reconstruction is implemented.",
+    "cells": [
+      1,
+      16
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      }
+    }
+  },
+  "N01": {
+    "judgment": "covered",
+    "observed_behavior": "Explanations, hand calculations and executed feature/metric examples lead to a distinct new table requiring written decisions and direct independent code in an empty answer cell, with help reporting. This meets the unit-level separate-modality material-design demand, not measured learner independence or course readiness.",
+    "cells": [
+      16,
+      17
+    ]
+  },
+  "N02": {
+    "judgment": "gap",
+    "observed_behavior": "No image rectangle, half-open coordinate boundary, area budget or per-image JSONL contract is implemented; the original official task family remains later course work.",
+    "cells": null
+  },
+  "N03": {
+    "judgment": "gap",
+    "observed_behavior": "Targets are excluded from constructed input features and only -1/+1 labels are used. There is no unknown-0 versus negative--1 decision, new unknown-row training rule or PU constant-alpha assumptions contrast in this standalone supplement. The main notebook label-semantics progress is retained in its separate session.",
+    "cells": [
+      1,
+      3,
+      4,
+      16
+    ],
+    "dimensions": {
+      "prerequisites": {
+        "judgment": "met"
+      },
+      "learning": {
+        "judgment": "uncertain"
+      },
+      "assessment": {
+        "judgment": "gap"
+      },
+      "assumptions": {
+        "judgment": "gap"
+      }
+    }
+  }
+}

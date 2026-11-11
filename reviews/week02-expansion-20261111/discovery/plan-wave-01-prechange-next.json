@@ -1,0 +1,71 @@
+{
+  "authority": "advisory_only",
+  "exhausted": [],
+  "limits": [
+    "Discovery/search execution, official attribution, semantic extraction and adequacy judgments are supplied by a human or model; this program does not browse or run one.",
+    "Read receipts prove the bytes and line ranges opened by this program, not reader comprehension, source truth or completeness of the external universe.",
+    "The frozen frontier and append-only hash chain expose changed declarations when bound to a review; they do not authenticate identity or prevent a caller from rewriting and rebinding history.",
+    "Recorded readiness applies only to the declared boundary; deferred placement does not establish later teaching or learner performance."
+  ],
+  "next_action": "expand_frontier",
+  "queue": [
+    {
+      "affected": [
+        "N01",
+        "course-plan-sampled-frontier",
+        "next-wave"
+      ],
+      "demand_id": "N01",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_prerequisites_gap",
+        "dimension_learning_gap",
+        "dimension_assessment_gap",
+        "dimension_modality_gap",
+        "gap"
+      ],
+      "statement": "\uac1c\ub150\uc758 \uc0ac\uc6a9 \uc2dc\uc810\u00b7\ucd9c\ub825 \uc758\ubbf8\ub97c \uc774\ub860 \uc124\uba85\uacfc \ucf54\ub4dc \uad6c\ud604\uc5d0\uc11c \uac01\uac01 \ud3c9\uac00\ud558\uae30"
+    },
+    {
+      "affected": [
+        "N02",
+        "course-plan-sampled-frontier",
+        "next-wave"
+      ],
+      "demand_id": "N02",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_prerequisites_gap",
+        "dimension_learning_gap",
+        "dimension_assessment_gap",
+        "dimension_contract_gap",
+        "gap"
+      ],
+      "statement": "\ubc18\uc5f4\ub9b0 \uc774\ubbf8\uc9c0 \uc0ac\uac01\ud615\u00b7\uba74\uc801 \uc608\uc0b0\u00b7\uc81c\ucd9c \uacc4\uc57d\uc744 \ud568\uaed8 \uc810\uac80\ud558\uae30"
+    },
+    {
+      "affected": [
+        "N03",
+        "course-plan-sampled-frontier",
+        "next-wave"
+      ],
+      "demand_id": "N03",
+      "next_action": "research_or_refine_and_recompare",
+      "reasons": [
+        "dimension_prerequisites_gap",
+        "dimension_learning_gap",
+        "dimension_assessment_gap",
+        "dimension_assumptions_gap",
+        "gap"
+      ],
+      "statement": "\ubbf8\uc0c1 \ub77c\ubca8\uc744 \ud655\uc815 \uc74c\uc131\uacfc \uad6c\ubd84\ud558\uace0 \ud2b9\uc131\u00b7\ucd9c\ub825 \ub77c\ubca8 \uacbd\uacc4\ub97c \ubcf4\uc874\ud558\uae30"
+    }
+  ],
+  "status": "needs_work",
+  "usage": {
+    "elapsed_minutes": 0,
+    "events": 9,
+    "no_progress": 0,
+    "rounds": 1
+  }
+}

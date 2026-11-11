@@ -1,0 +1,133 @@
+{
+  "authority": "advisory_only",
+  "status": "needs_work",
+  "ready_for_review": false,
+  "session_sha256": "eec6143a50440076baab574466890a81bf6255c315c67cf0a1658510cfe4cbbd",
+  "seed_sha256": "557115bd9a69d01d98b4c24cd8bbb6ec4a3d9a388dea603e7f855218e7595b3a",
+  "scope": {
+    "id": "week01-supplement-retained-demands",
+    "lesson_path": "reviews/course-discovery-20261111/candidate-inputs/week01-bridge-02/lesson-source.md",
+    "artifact_path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+    "artifact_sha256": "6241f6bce0db5b2dfe40dc672a0706a09d7228d2aea451cd1a03b05847f910c4",
+    "lesson_revision": "6241f6bce0db5b2dfe40dc672a0706a09d7228d2aea451cd1a03b05847f910c4",
+    "readiness": "course",
+    "boundary": "Independent Week1 supplementary artifact only, assessed against three unchanged original broad demands. Neither original Week1 nor Week2 is merged into this projection. No course completion or mandatory Week1 placement is inferred."
+  },
+  "artifact_sha256": "1c3ccb5d79d5e6c0a1cb919fd9f8cfac723637b1dedac2d056fe45379ffd8847",
+  "open_questions": [
+    {
+      "id": "question:eade388b57a8f2ee",
+      "frontier_id": "retained-three",
+      "question": "High-dimensional/model-context axis tracking and reshape-versus-transpose still require actual later material.",
+      "trace_id": "course-week01-bridge-02-012-trace",
+      "resolved_by": null
+    },
+    {
+      "id": "question:495a6112320397c0",
+      "frontier_id": "retained-three",
+      "question": "Normalization, identity/gender matching constraints and real encoder/submission performance remain separate from synthetic maximum-dot-product lookup.",
+      "trace_id": "course-week01-bridge-02-012-trace",
+      "resolved_by": null
+    },
+    {
+      "id": "question:d878296854874d47",
+      "frontier_id": "retained-three",
+      "question": "Vocabulary-versus-sequence axes and independent new lookup B/L/H assessment remain future teaching; student transfer and time are unobserved.",
+      "trace_id": "course-week01-bridge-02-012-trace",
+      "resolved_by": null
+    }
+  ],
+  "queue": [
+    {
+      "demand_id": "D01",
+      "statement": "배열의 축 의미와 데이터 배치를 보존하기",
+      "reasons": [
+        "dimension_learning_uncertain",
+        "dimension_assessment_gap",
+        "dimension_principle_gap",
+        "dimension_practice_gap",
+        "gap"
+      ],
+      "next_action": "research_or_refine_and_recompare",
+      "affected": [
+        "D01",
+        "retained-three",
+        "week01-supplement-retained-demands"
+      ]
+    },
+    {
+      "demand_id": "D05",
+      "statement": "유사도 행렬의 위치를 실제 식별자로 돌려주기",
+      "reasons": [
+        "dimension_prerequisites_gap",
+        "dimension_learning_gap",
+        "dimension_assessment_uncertain",
+        "dimension_principle_gap",
+        "gap"
+      ],
+      "next_action": "research_or_refine_and_recompare",
+      "affected": [
+        "D05",
+        "retained-three",
+        "week01-supplement-retained-demands"
+      ]
+    },
+    {
+      "demand_id": "D07",
+      "statement": "embedding lookup의 새 축과 어휘 축을 구별하기",
+      "reasons": [
+        "dimension_assessment_gap",
+        "dimension_principle_uncertain",
+        "gap"
+      ],
+      "next_action": "research_or_refine_and_recompare",
+      "affected": [
+        "D07",
+        "retained-three",
+        "week01-supplement-retained-demands"
+      ]
+    }
+  ],
+  "blockers": [
+    {
+      "code": "artifact_changed",
+      "id": "lessons/week01/week01_axes_linear_bridge.ipynb"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:eade388b57a8f2ee"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:495a6112320397c0"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:d878296854874d47"
+    },
+    {
+      "code": "frontier_unresolved",
+      "id": "retained-three"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D01"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D05"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D07"
+    }
+  ],
+  "usage": {
+    "events": 15,
+    "rounds": 1,
+    "elapsed_minutes": 0,
+    "no_progress": 0
+  },
+  "exhausted": [],
+  "next_action": "expand_frontier"
+}

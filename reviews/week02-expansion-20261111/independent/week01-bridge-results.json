@@ -1,0 +1,213 @@
+{
+  "reviewed_at_utc": "2026-11-11T08:07:23.055015+00:00",
+  "source_notebook_sha256": "1c3ccb5d79d5e6c0a1cb919fd9f8cfac723637b1dedac2d056fe45379ffd8847",
+  "source_teacher_sha256": "651038f80b4800f8efb72094823e497cfe5168985bc882e586b1c4dc12fcf9c0",
+  "source_unchanged": true,
+  "total_cells": 29,
+  "code_cells": 13,
+  "execution": "fresh in-process IPython kernel; all code cells succeeded",
+  "student_answer_cells": 2,
+  "student_answer_cells_comment_only": true,
+  "student_performance": "not_observed",
+  "independent_exact_A": {
+    "matrix_product": [
+      [
+        6,
+        12
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        3,
+        9
+      ]
+    ],
+    "elementwise": [
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "flipped_first_value": 9,
+    "aligned_first_value": 6
+  },
+  "independent_exact_B": {
+    "scores": [
+      [
+        4,
+        6,
+        3,
+        2
+      ],
+      [
+        5,
+        3,
+        3,
+        4
+      ]
+    ],
+    "positions": [
+      1,
+      0
+    ],
+    "matched_ids": [
+      8,
+      90
+    ],
+    "mapping": {
+      "61": 8,
+      "22": 90
+    },
+    "reordered_positions": [
+      3,
+      1
+    ],
+    "wrong_unsorted_ids": [
+      17,
+      8
+    ],
+    "joint_query_gallery_permutation_cases": 48
+  },
+  "optional_C_shapes": [
+    [
+      2,
+      2,
+      2
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      2,
+      4
+    ]
+  ],
+  "lookup_expected_values": [
+    [
+      [
+        1,
+        3
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    [
+      [
+        2,
+        1
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        0,
+        2
+      ]
+    ]
+  ],
+  "mutation_results": [
+    {
+      "name": "reverse_linear_product",
+      "embedded_assert_or_error": {
+        "index": 6,
+        "type": "IndexError",
+        "message": "index 2 is out of bounds for axis 1 with size 2"
+      },
+      "reviewer_oracle_detected": true,
+      "raw_output": "X =\n [[2 1]\n [1 3]\n [3 2]]\nshape: (3, 2) / 첫 행: [2 1]\n위치 1의 ID: P24\n원소별 곱: [2 2]\n내적: 4\nX @ W =\n [[5 3]\n [7 7]]\nshape: (3, 2) @ (2, 3) → (2, 2)\n"
+    },
+    {
+      "name": "pairwise_replaced_by_elementwise",
+      "embedded_assert_or_error": {
+        "index": 14,
+        "type": "AssertionError",
+        "message": ""
+      },
+      "reviewer_oracle_detected": true,
+      "raw_output": "X =\n [[2 1]\n [1 3]\n [3 2]]\nshape: (3, 2) / 첫 행: [2 1]\n위치 1의 ID: P24\n원소별 곱: [2 2]\n내적: 4\nX @ W =\n [[2 1 4]\n [1 3 7]\n [3 2 7]]\nshape: (3, 2) @ (2, 3) → (3, 3)\nP24의 세 번째 출력: 7\nW @ X는 실행 가능하지만 shape: (2, 2)\nX @ X: ValueError — 가운데 길이 2와 3이 다릅니다.\n원소별 A * identity =\n [[2 0]\n [0 3]]\n행렬곱 A @ identity =\n [[2 1]\n [1 3]]\n새 묶음 축: (2, 2, 3)\n기존 행 축 연결: (4, 3)\n기존 열 축 연결: (2, 6)\n첫 묶음의 첫 후보: [1 0 2]\n서로 다른 모양을 stack: ValueError\n잇지 않는 열의 길이가 다름: ValueError\n점수표:\n [[2 0 0]\n [0 2 1]]\n최댓값의 열 위치: [0 1]\n질문 ID → 후보 ID: {103: 42, 109: 7}\n"
+    },
+    {
+      "name": "wrong_argmax_axis",
+      "embedded_assert_or_error": {
+        "index": 14,
+        "type": "AssertionError",
+        "message": ""
+      },
+      "reviewer_oracle_detected": true,
+      "raw_output": "X =\n [[2 1]\n [1 3]\n [3 2]]\nshape: (3, 2) / 첫 행: [2 1]\n위치 1의 ID: P24\n원소별 곱: [2 2]\n내적: 4\nX @ W =\n [[2 1 4]\n [1 3 7]\n [3 2 7]]\nshape: (3, 2) @ (2, 3) → (3, 3)\nP24의 세 번째 출력: 7\nW @ X는 실행 가능하지만 shape: (2, 2)\nX @ X: ValueError — 가운데 길이 2와 3이 다릅니다.\n원소별 A * identity =\n [[2 0]\n [0 3]]\n행렬곱 A @ identity =\n [[2 1]\n [1 3]]\n새 묶음 축: (2, 2, 3)\n기존 행 축 연결: (4, 3)\n기존 열 축 연결: (2, 6)\n첫 묶음의 첫 후보: [1 0 2]\n서로 다른 모양을 stack: ValueError\n잇지 않는 열의 길이가 다름: ValueError\n점수표:\n [[2 2 1 4]\n [0 3 1 2]]\n최댓값의 열 위치: [0 1 0 0]\n질문 ID → 후보 ID: {103: 42, 109: 7}\n"
+    },
+    {
+      "name": "position_plus_one_as_ID",
+      "embedded_assert_or_error": {
+        "index": 14,
+        "type": "AssertionError",
+        "message": ""
+      },
+      "reviewer_oracle_detected": true,
+      "raw_output": "X =\n [[2 1]\n [1 3]\n [3 2]]\nshape: (3, 2) / 첫 행: [2 1]\n위치 1의 ID: P24\n원소별 곱: [2 2]\n내적: 4\nX @ W =\n [[2 1 4]\n [1 3 7]\n [3 2 7]]\nshape: (3, 2) @ (2, 3) → (3, 3)\nP24의 세 번째 출력: 7\nW @ X는 실행 가능하지만 shape: (2, 2)\nX @ X: ValueError — 가운데 길이 2와 3이 다릅니다.\n원소별 A * identity =\n [[2 0]\n [0 3]]\n행렬곱 A @ identity =\n [[2 1]\n [1 3]]\n새 묶음 축: (2, 2, 3)\n기존 행 축 연결: (4, 3)\n기존 열 축 연결: (2, 6)\n첫 묶음의 첫 후보: [1 0 2]\n서로 다른 모양을 stack: ValueError\n잇지 않는 열의 길이가 다름: ValueError\n점수표:\n [[2 2 1 4]\n [0 3 1 2]]\n최댓값의 열 위치: [3 1]\n질문 ID → 후보 ID: {103: 4, 109: 2}\n"
+    },
+    {
+      "name": "shuffle_without_IDs",
+      "embedded_assert_or_error": {
+        "index": 16,
+        "type": "AssertionError",
+        "message": ""
+      },
+      "reviewer_oracle_detected": true,
+      "raw_output": "X =\n [[2 1]\n [1 3]\n [3 2]]\nshape: (3, 2) / 첫 행: [2 1]\n위치 1의 ID: P24\n원소별 곱: [2 2]\n내적: 4\nX @ W =\n [[2 1 4]\n [1 3 7]\n [3 2 7]]\nshape: (3, 2) @ (2, 3) → (3, 3)\nP24의 세 번째 출력: 7\nW @ X는 실행 가능하지만 shape: (2, 2)\nX @ X: ValueError — 가운데 길이 2와 3이 다릅니다.\n원소별 A * identity =\n [[2 0]\n [0 3]]\n행렬곱 A @ identity =\n [[2 1]\n [1 3]]\n새 묶음 축: (2, 2, 3)\n기존 행 축 연결: (4, 3)\n기존 열 축 연결: (2, 6)\n첫 묶음의 첫 후보: [1 0 2]\n서로 다른 모양을 stack: ValueError\n잇지 않는 열의 길이가 다름: ValueError\n점수표:\n [[2 2 1 4]\n [0 3 1 2]]\n최댓값의 열 위치: [3 1]\n질문 ID → 후보 ID: {103: 35, 109: 7}\n이전/새 G shape: (4, 3) (4, 3)\n새 점수의 열 위치: [2 3]\nID도 같이 이동: [19 35]\nID를 그대로 둔 오류: [19 35]\n"
+    },
+    {
+      "name": "stack_replaced_by_concat",
+      "embedded_assert_or_error": {
+        "index": 12,
+        "type": "AssertionError",
+        "message": ""
+      },
+      "reviewer_oracle_detected": true,
+      "raw_output": "X =\n [[2 1]\n [1 3]\n [3 2]]\nshape: (3, 2) / 첫 행: [2 1]\n위치 1의 ID: P24\n원소별 곱: [2 2]\n내적: 4\nX @ W =\n [[2 1 4]\n [1 3 7]\n [3 2 7]]\nshape: (3, 2) @ (2, 3) → (3, 3)\nP24의 세 번째 출력: 7\nW @ X는 실행 가능하지만 shape: (2, 2)\nX @ X: ValueError — 가운데 길이 2와 3이 다릅니다.\n원소별 A * identity =\n [[2 0]\n [0 3]]\n행렬곱 A @ identity =\n [[2 1]\n [1 3]]\n새 묶음 축: (4, 3)\n기존 행 축 연결: (4, 3)\n기존 열 축 연결: (2, 6)\n첫 묶음의 첫 후보: 1\n서로 다른 모양을 stack: ValueError\n잇지 않는 열의 길이가 다름: ValueError\n"
+    },
+    {
+      "name": "lookup_transposed_axes",
+      "embedded_assert_or_error": {
+        "index": 18,
+        "type": "AssertionError",
+        "message": ""
+      },
+      "reviewer_oracle_detected": true,
+      "raw_output": "X =\n [[2 1]\n [1 3]\n [3 2]]\nshape: (3, 2) / 첫 행: [2 1]\n위치 1의 ID: P24\n원소별 곱: [2 2]\n내적: 4\nX @ W =\n [[2 1 4]\n [1 3 7]\n [3 2 7]]\nshape: (3, 2) @ (2, 3) → (3, 3)\nP24의 세 번째 출력: 7\nW @ X는 실행 가능하지만 shape: (2, 2)\nX @ X: ValueError — 가운데 길이 2와 3이 다릅니다.\n원소별 A * identity =\n [[2 0]\n [0 3]]\n행렬곱 A @ identity =\n [[2 1]\n [1 3]]\n새 묶음 축: (2, 2, 3)\n기존 행 축 연결: (4, 3)\n기존 열 축 연결: (2, 6)\n첫 묶음의 첫 후보: [1 0 2]\n서로 다른 모양을 stack: ValueError\n잇지 않는 열의 길이가 다름: ValueError\n점수표:\n [[2 2 1 4]\n [0 3 1 2]]\n최댓값의 열 위치: [3 1]\n질문 ID → 후보 ID: {103: 35, 109: 7}\n이전/새 G shape: (4, 3) (4, 3)\n새 점수의 열 위치: [2 3]\nID도 같이 이동: [35  7]\nID를 그대로 둔 오류: [19 35]\n토큰 인덱스 (묶음, 위치):\n [[2 0 1]\n [1 2 0]]\n조회 결과 shape: (3, 2, 2) \n [[[1 3]\n  [2 1]]\n\n [[0 2]\n  [1 3]]\n\n [[2 1]\n  [0 2]]]\n첫 묶음의 둘째 위치: 0 → [2 1]\n둘째 묶음의 첫 위치: 1 → [0 2]\nID 41을 대응표로 찾아 얻은 벡터: [1 3]\n순서를 뒤집은 결과 shape: (2, 3, 2)\n원래 [0, 0]: [1 3] / 뒤집은 [0, 0]: [2 1]\n"
+    },
+    {
+      "name": "lookup_reversed_positions_same_shape",
+      "embedded_assert_or_error": {
+        "index": 18,
+        "type": "AssertionError",
+        "message": ""
+      },
+      "reviewer_oracle_detected": true,
+      "raw_output": "X =\n [[2 1]\n [1 3]\n [3 2]]\nshape: (3, 2) / 첫 행: [2 1]\n위치 1의 ID: P24\n원소별 곱: [2 2]\n내적: 4\nX @ W =\n [[2 1 4]\n [1 3 7]\n [3 2 7]]\nshape: (3, 2) @ (2, 3) → (3, 3)\nP24의 세 번째 출력: 7\nW @ X는 실행 가능하지만 shape: (2, 2)\nX @ X: ValueError — 가운데 길이 2와 3이 다릅니다.\n원소별 A * identity =\n [[2 0]\n [0 3]]\n행렬곱 A @ identity =\n [[2 1]\n [1 3]]\n새 묶음 축: (2, 2, 3)\n기존 행 축 연결: (4, 3)\n기존 열 축 연결: (2, 6)\n첫 묶음의 첫 후보: [1 0 2]\n서로 다른 모양을 stack: ValueError\n잇지 않는 열의 길이가 다름: ValueError\n점수표:\n [[2 2 1 4]\n [0 3 1 2]]\n최댓값의 열 위치: [3 1]\n질문 ID → 후보 ID: {103: 35, 109: 7}\n이전/새 G shape: (4, 3) (4, 3)\n새 점수의 열 위치: [2 3]\nID도 같이 이동: [35  7]\nID를 그대로 둔 오류: [19 35]\n토큰 인덱스 (묶음, 위치):\n [[2 0 1]\n [1 2 0]]\n조회 결과 shape: (2, 3, 2) \n [[[2 1]\n  [0 2]\n  [1 3]]\n\n [[0 2]\n  [1 3]\n  [2 1]]]\n첫 묶음의 둘째 위치: 0 → [0 2]\n둘째 묶음의 첫 위치: 1 → [0 2]\nID 41을 대응표로 찾아 얻은 벡터: [1 3]\n순서를 뒤집은 결과 shape: (2, 3, 2)\n원래 [0, 0]: [2 1] / 뒤집은 [0, 0]: [2 1]\n"
+    }
+  ],
+  "class_120_minutes": "existing 20+20+20+40+20 remains120; supplement explicitly outside class",
+  "self_study_time": "original5to7hours predates supplement; revised total not estimated or observed",
+  "limits": [
+    "no student independent response or timing",
+    "no generic retrieval function, real model or encoding executed",
+    "no ordinary socket kernel or Colab run",
+    "no browser or printed visual rendering",
+    "finite axis/value permutations only; no general model or retrieval correctness claim"
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "authority": "advisory_only",
+  "legacy_original_session": {
+    "session_path": "reviews/discovery-loop-20261111/runs/session.json",
+    "expected_prior_sha256": "81d71bca932382b67c280daabc32cd3bcbfb6fd14ffa87a712679b8e5b85bdf2",
+    "current_sha256": "81d71bca932382b67c280daabc32cd3bcbfb6fd14ffa87a712679b8e5b85bdf2",
+    "unchanged_from_prior_final_review": true
+  },
+  "historical_sessions": [
+    {
+      "session_path": "reviews/course-discovery-20261111/runs/baseline-wave-01/session.json",
+      "session_file_sha256": "e4af0f4adcb1efe6bb92b895b2b09ecd6c2c7e561d7dd3c132a5a08ceba140bf",
+      "unchanged_from_prechange": true,
+      "bound_artifact_sha256": "733c0093b44f30d31354567331c2c39ee325ed074e7a6368bb1f2e96f0c174c0",
+      "current_artifact_sha256": "733c0093b44f30d31354567331c2c39ee325ed074e7a6368bb1f2e96f0c174c0",
+      "status": "needs_work",
+      "freshness_blockers": []
+    },
+    {
+      "session_path": "reviews/course-discovery-20261111/runs/plan-wave-01/session.json",
+      "session_file_sha256": "91b69c804e1081450598eb74e0bbaed157b5132ec5d60c400939a68681ab3ffe",
+      "unchanged_from_prechange": true,
+      "bound_artifact_sha256": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254",
+      "current_artifact_sha256": "a3a48fe01212b28368c34c46de2dee0c5d6a78ea7c5d37125b335891ae1f8254",
+      "status": "needs_work",
+      "freshness_blockers": []
+    },
+    {
+      "session_path": "reviews/course-discovery-20261111/runs/week02-candidate-02/session.json",
+      "session_file_sha256": "d24adf9f72beb4db2dfa0c75a2051a91104c20321ac9ca773b02be06b4c53c7f",
+      "unchanged_from_prechange": true,
+      "bound_artifact_sha256": "52b5c170ab2c83fc29327c302e9c77e34c58bce81061c7a167228d0cc67c36e3",
+      "current_artifact_sha256": "9bb1ea5110b74ea1cf32fbc9ee9e9a5aadbceba2f750c2dfc2d6587e18954bdf",
+      "status": "needs_work",
+      "freshness_blockers": [
+        {
+          "code": "artifact_changed",
+          "id": "lessons/week02/week02_prediction_evaluation.ipynb"
+        }
+      ]
+    },
+    {
+      "session_path": "reviews/course-discovery-20261111/runs/week01-bridge-02/session.json",
+      "session_file_sha256": "d785ed42afddb1d652b3b87cffc2b9ea312c1f35c4f98ce2535ccab3b90c3c87",
+      "unchanged_from_prechange": true,
+      "bound_artifact_sha256": "6241f6bce0db5b2dfe40dc672a0706a09d7228d2aea451cd1a03b05847f910c4",
+      "current_artifact_sha256": "1c3ccb5d79d5e6c0a1cb919fd9f8cfac723637b1dedac2d056fe45379ffd8847",
+      "status": "needs_work",
+      "freshness_blockers": [
+        {
+          "code": "artifact_changed",
+          "id": "lessons/week01/week01_axes_linear_bridge.ipynb"
+        }
+      ]
+    }
+  ],
+  "new_separate_baselines": [
+    {
+      "session_path": "reviews/week02-expansion-20261111/discovery/runs/week01-bridge-time-cleanup-01/session.json",
+      "artifact_sha256": "1c3ccb5d79d5e6c0a1cb919fd9f8cfac723637b1dedac2d056fe45379ffd8847",
+      "projection_sha256": "3729f73ad7c8b83e14427d0b63602fa664ff7a37e8bbf1a675effe7f6b6a782c",
+      "checks": {
+        "prior_session_unchanged": true,
+        "all_original_demand_payloads_retained": true,
+        "all_original_open_questions_retained": true,
+        "artifact_matches_final_binding": true,
+        "snapshot_is_exact_final_bytes": true,
+        "projection_matches_every_snapshot_cell_source": true,
+        "projection_matches_recorded_sha": true,
+        "findings_match_recorded_sha": true,
+        "saved_report_matches_current_inspection": true,
+        "freshness_blockers_absent": true
+      },
+      "status": "needs_work",
+      "ready_for_review": false,
+      "demand_count": 3,
+      "queue_count": 3,
+      "covered": [],
+      "events": 15,
+      "open_question_count": 3,
+      "next_action": "expand_frontier"
+    },
+    {
+      "session_path": "reviews/week02-expansion-20261111/discovery/runs/week02-main-time-cleanup-01/session.json",
+      "artifact_sha256": "9bb1ea5110b74ea1cf32fbc9ee9e9a5aadbceba2f750c2dfc2d6587e18954bdf",
+      "projection_sha256": "7972fbeb15f57f4cc4aa47ec0c48dbe2c764e5ec229104eac06aba5e9aca1627",
+      "checks": {
+        "prior_session_unchanged": true,
+        "all_original_demand_payloads_retained": true,
+        "all_original_open_questions_retained": true,
+        "artifact_matches_final_binding": true,
+        "snapshot_is_exact_final_bytes": true,
+        "projection_matches_every_snapshot_cell_source": true,
+        "projection_matches_recorded_sha": true,
+        "findings_match_recorded_sha": true,
+        "saved_report_matches_current_inspection": true,
+        "freshness_blockers_absent": true
+      },
+      "status": "needs_work",
+      "ready_for_review": false,
+      "demand_count": 17,
+      "queue_count": 16,
+      "covered": [
+        "N01"
+      ],
+      "events": 48,
+      "open_question_count": 4,
+      "next_action": "expand_frontier"
+    },
+    {
+      "session_path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-01/session.json",
+      "artifact_sha256": "774f3c48195b3fa94bbfbdadb2ba05255c8daa3745e1d7d248e660df0cb5289b",
+      "projection_sha256": "ed001ebebad7509d8d44c0cf599cb101d6e3eb92ac8435269f6dfd6f29b2d66c",
+      "checks": {
+        "prior_session_unchanged": true,
+        "all_original_demand_payloads_retained": true,
+        "all_original_open_questions_retained": true,
+        "artifact_matches_final_binding": true,
+        "snapshot_is_exact_final_bytes": true,
+        "projection_matches_every_snapshot_cell_source": true,
+        "projection_matches_recorded_sha": true,
+        "findings_match_recorded_sha": true,
+        "saved_report_matches_current_inspection": true,
+        "freshness_blockers_absent": true
+      },
+      "status": "needs_work",
+      "ready_for_review": false,
+      "demand_count": 17,
+      "queue_count": 16,
+      "covered": [
+        "N01"
+      ],
+      "events": 48,
+      "open_question_count": 4,
+      "next_action": "expand_frontier"
+    }
+  ],
+  "all_history_unchanged": true,
+  "all_new_mechanical_checks_passed": true,
+  "git_index_sha256": "3d5a4b43568f538f5a4967581232c0dd709631feb14d389192b02ffd8ac0b300",
+  "git_index_matches_prechange": true,
+  "limits": [
+    "All meaning judgments were authored by the reviewer after reading source text; this verification only checks bytes, replay and declared obligation preservation.",
+    "Original external web searches were not rerun. Local source notes remain historical paraphrases.",
+    "No learner answers, independent performance or learning effects were observed."
+  ]
+}

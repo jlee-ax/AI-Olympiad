@@ -1,0 +1,657 @@
+{
+  "checked_at_utc": "2026-11-11T08:25:16.299060+00:00",
+  "source_sha256": {
+    "week02_temporal_preprocessing.ipynb": "774f3c48195b3fa94bbfbdadb2ba05255c8daa3745e1d7d248e660df0cb5289b",
+    "week02_temporal_preprocessing.html": "75c2973f6498e0594390a2d16fcab2d7cc1a44684d600841e4f846aa0fef11f0",
+    "week02_temporal_preprocessing_teacher.md": "e898de9e42be0ee9f562a6b36df036d5eb0a66e488ee62d8d9e9c3b666dcee74",
+    "validate_week02_temporal_preprocessing.py": "3708dd0b82c4b148929915fa1fb4ff58e20818e4a1f36186a72ae0ac81f778cd"
+  },
+  "source_unchanged": true,
+  "execution": "fresh InProcessKernelManager, inline plotting configured, sequential cells",
+  "total_cells": 19,
+  "executed_code_cells": 9,
+  "code_cell_evidence": [
+    {
+      "index": 3,
+      "id": "bb3f78d9",
+      "count": 2,
+      "text": ""
+    },
+    {
+      "index": 4,
+      "id": "fe6a294b",
+      "count": 3,
+      "text": "훈련 특성:\n     recent  mean3   std3  kind\nid                            \na4     6.0  4.000  1.633   red\na5     4.0  4.667  0.943   red\nb4     NaN    NaN    NaN  blue\nb5     2.0    NaN    NaN  blue\n\n검증 특성:\n     recent  mean3   std3   kind\nid                             \nc6     8.0  5.333  2.055  green\nc7    12.0  8.333  2.867  green\nd6     1.0    NaN    NaN    red\nd7     7.0    NaN    NaN    red\n"
+    },
+    {
+      "index": 6,
+      "id": "f3539e90",
+      "count": 4,
+      "text": "  unit  time  reading  global_fill  within_unit\n0    X     1     99.0         99.0         99.0\n1    Y     1      NaN         99.0          NaN\n2    Y     2      2.0          2.0          2.0\n틀린 시각 2 중심 윈도 평균: 35.333333333333336\n"
+    },
+    {
+      "index": 8,
+      "id": "e7e69eb4",
+      "count": 5,
+      "text": "훈련 통계 (중앙값): [4.         4.33333333 1.2879011 ]\n훈련 최솟값: [2.         4.         0.94280904]\n훈련 범주: [array(['blue', 'red'], dtype=object)]\n검증 변환:\n     num__recent  num__mean3  num__std3  cat__kind_blue  cat__kind_red\nid                                                                   \nc6         1.50         2.0      1.611             0.0            0.0\nc7         2.50         6.5      2.789             0.0            0.0\nd6        -0.25         0.5      0.500             0.0            1.0\nd7         1.25         0.5      0.500             0.0            1.0\n"
+    },
+    {
+      "index": 9,
+      "id": "31911a77",
+      "count": 6,
+      "text": "바뀐 검증 recent: [8.0, 100.0, 1.0, 7.0]\n검증 변경 후에도 훈련 중앙값: 4.0\n기본 미지 범주 정책: ValueError\n생략된 blue와 미지 green: [[0.0], [0.0]]\n"
+    },
+    {
+      "index": 11,
+      "id": "5e81e683",
+      "count": 7,
+      "text": "임계값 inf {'TP': 0, 'FP': 0, 'TN': 2, 'FN': 2} {'accuracy': 0.5, 'precision': None, 'recall': 0.0, 'F1': 0.0, 'TPR': 0.0, 'FPR': 0.0}\n임계값 2.5 {'TP': 0, 'FP': 1, 'TN': 1, 'FN': 2} {'accuracy': 0.25, 'precision': 0.0, 'recall': 0.0, 'F1': 0.0, 'TPR': 0.0, 'FPR': 0.5}\n임계값 1.5 {'TP': 2, 'FP': 1, 'TN': 1, 'FN': 0} {'accuracy': 0.75, 'precision': 0.6666666666666666, 'recall': 1.0, 'F1': 0.8, 'TPR': 1.0, 'FPR': 0.5}\n임계값 0 {'TP': 2, 'FP': 2, 'TN': 0, 'FN': 0} {'accuracy': 0.5, 'precision': 0.5, 'recall': 1.0, 'F1': 0.6666666666666666, 'TPR': 1.0, 'FPR': 1.0}\nROC: (임계값, FPR, TPR) [(np.float64(inf), np.float64(0.0), np.float64(0.0)), (np.float64(2.5), np.float64(0.5), np.float64(0.0)), (np.float64(1.5), np.float64(0.5), np.float64(1.0)), (np.float64(0.0), np.float64(1.0), np.float64(1.0))]\n"
+    },
+    {
+      "index": 12,
+      "id": "9b45db57",
+      "count": 8,
+      "text": ""
+    },
+    {
+      "index": 15,
+      "id": "e12109a7",
+      "count": 9,
+      "text": "가 행 정확도 0.8333333333333334 가중 정확도 0.5\n나 행 정확도 0.6666666666666666 가중 정확도 0.8\n"
+    },
+    {
+      "index": 17,
+      "id": "46cc245a",
+      "count": 10,
+      "text": ""
+    }
+  ],
+  "student_answer_ast_empty": true,
+  "student_performance": "not_observed",
+  "checks": [
+    "all worked feature values and source times match independent list/Fraction implementation",
+    "strict current/future and cross-unit exclusion, full/prefix equality, 20 shuffled inputs",
+    "online t6 becomes t7 past; batch cutoff before6 excludes it",
+    "missing initial/all history, insufficient window, duplicate unit/time rejection",
+    "all three trained numeric statistics, unknown schema and validation-stress invariance",
+    "same-width validation encoder changes column meaning; default unknown rejects",
+    "new independent table: all recent/window values, median9/range8, categories and exact threshold scores",
+    "independent Fraction confusion/rates/zero denominators, ROC ties and AUC",
+    "actual plotted line and FPR/TPR axis labels match computed ROC",
+    "truth-based weights and all-truth denominator from arrays; independent U/V; finite-positive invalid guards and extreme finite weights"
+  ],
+  "provenance": {
+    "train": [
+      {
+        "id": "a4",
+        "unit": "A",
+        "target_time": 4,
+        "allowed_times": [
+          1,
+          2,
+          3
+        ],
+        "window_times": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "a5",
+        "unit": "A",
+        "target_time": 5,
+        "allowed_times": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "window_times": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "id": "b4",
+        "unit": "B",
+        "target_time": 4,
+        "allowed_times": [
+          1,
+          2,
+          3
+        ],
+        "window_times": []
+      },
+      {
+        "id": "b5",
+        "unit": "B",
+        "target_time": 5,
+        "allowed_times": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "window_times": []
+      }
+    ],
+    "validation": [
+      {
+        "id": "c6",
+        "unit": "C",
+        "target_time": 6,
+        "allowed_times": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "window_times": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "c7",
+        "unit": "C",
+        "target_time": 7,
+        "allowed_times": [
+          1,
+          2,
+          3,
+          4,
+          6
+        ],
+        "window_times": [
+          2,
+          3,
+          6
+        ]
+      },
+      {
+        "id": "d6",
+        "unit": "D",
+        "target_time": 6,
+        "allowed_times": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "window_times": []
+      },
+      {
+        "id": "d7",
+        "unit": "D",
+        "target_time": 7,
+        "allowed_times": [
+          1,
+          2,
+          3,
+          4,
+          6
+        ],
+        "window_times": []
+      }
+    ]
+  },
+  "metrics": [
+    {
+      "table": "worked",
+      "threshold": "inf",
+      "counts": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 2,
+        "FN": 2
+      },
+      "exact_rates": {
+        "accuracy": "1/2",
+        "precision": "None",
+        "recall": "0",
+        "F1": "0",
+        "FPR": "0",
+        "TPR": "0"
+      }
+    },
+    {
+      "table": "worked",
+      "threshold": "2.5",
+      "counts": {
+        "TP": 0,
+        "FP": 1,
+        "TN": 1,
+        "FN": 2
+      },
+      "exact_rates": {
+        "accuracy": "1/4",
+        "precision": "0",
+        "recall": "0",
+        "F1": "0",
+        "FPR": "1/2",
+        "TPR": "0"
+      }
+    },
+    {
+      "table": "worked",
+      "threshold": "1.5",
+      "counts": {
+        "TP": 2,
+        "FP": 1,
+        "TN": 1,
+        "FN": 0
+      },
+      "exact_rates": {
+        "accuracy": "3/4",
+        "precision": "2/3",
+        "recall": "1",
+        "F1": "4/5",
+        "FPR": "1/2",
+        "TPR": "1"
+      }
+    },
+    {
+      "table": "worked",
+      "threshold": "0",
+      "counts": {
+        "TP": 2,
+        "FP": 2,
+        "TN": 0,
+        "FN": 0
+      },
+      "exact_rates": {
+        "accuracy": "1/2",
+        "precision": "1/2",
+        "recall": "1",
+        "F1": "2/3",
+        "FPR": "1",
+        "TPR": "1"
+      }
+    },
+    {
+      "table": "independent",
+      "threshold": "inf",
+      "counts": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 2,
+        "FN": 2
+      },
+      "exact_rates": {
+        "accuracy": "1/2",
+        "precision": "None",
+        "recall": "0",
+        "F1": "0",
+        "FPR": "0",
+        "TPR": "0"
+      }
+    },
+    {
+      "table": "independent",
+      "threshold": "2",
+      "counts": {
+        "TP": 0,
+        "FP": 1,
+        "TN": 1,
+        "FN": 2
+      },
+      "exact_rates": {
+        "accuracy": "1/4",
+        "precision": "0",
+        "recall": "0",
+        "F1": "0",
+        "FPR": "1/2",
+        "TPR": "0"
+      }
+    },
+    {
+      "table": "independent",
+      "threshold": "1.25",
+      "counts": {
+        "TP": 1,
+        "FP": 2,
+        "TN": 0,
+        "FN": 1
+      },
+      "exact_rates": {
+        "accuracy": "1/4",
+        "precision": "1/3",
+        "recall": "1/2",
+        "F1": "2/5",
+        "FPR": "1",
+        "TPR": "1/2"
+      }
+    },
+    {
+      "table": "independent",
+      "threshold": "-0.125",
+      "counts": {
+        "TP": 2,
+        "FP": 2,
+        "TN": 0,
+        "FN": 0
+      },
+      "exact_rates": {
+        "accuracy": "1/2",
+        "precision": "1/2",
+        "recall": "1",
+        "F1": "2/3",
+        "FPR": "1",
+        "TPR": "1"
+      }
+    }
+  ],
+  "weighted_function_names": [
+    "weighted_accuracy"
+  ],
+  "weighted_exact_cases": [
+    {
+      "case": "worked_A",
+      "truth": [
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "T"
+      ],
+      "predicted": [
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
+      "target_weight": 5,
+      "exact": "1/2"
+    },
+    {
+      "case": "worked_B",
+      "truth": [
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "T"
+      ],
+      "predicted": [
+        "B",
+        "B",
+        "B",
+        "T",
+        "T",
+        "T"
+      ],
+      "target_weight": 5,
+      "exact": "4/5"
+    },
+    {
+      "case": "independent_U",
+      "truth": [
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "T",
+        "T"
+      ],
+      "predicted": [
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
+      "target_weight": 4,
+      "exact": "3/7"
+    },
+    {
+      "case": "independent_V",
+      "truth": [
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "T",
+        "T"
+      ],
+      "predicted": [
+        "B",
+        "B",
+        "B",
+        "T",
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "target_weight": 4,
+      "exact": "11/14"
+    },
+    {
+      "case": "zero_correct",
+      "truth": [
+        "B",
+        "T"
+      ],
+      "predicted": [
+        "T",
+        "B"
+      ],
+      "target_weight": 4,
+      "exact": "0"
+    },
+    {
+      "case": "all_correct",
+      "truth": [
+        "B",
+        "T"
+      ],
+      "predicted": [
+        "B",
+        "T"
+      ],
+      "target_weight": 4,
+      "exact": "1"
+    }
+  ],
+  "weighted_rounding_observations": [
+    {
+      "case": "worked_A",
+      "actual": 0.5000000000000001,
+      "exact_float": 0.5,
+      "difference": 1.1102230246251565e-16
+    }
+  ],
+  "source_mutations": [
+    {
+      "name": "include_current_time",
+      "before": "raw.time < row.time",
+      "after": "raw.time <= row.time",
+      "notebook_detected": {
+        "cell": 4,
+        "type": "AssertionError",
+        "message": ""
+      },
+      "reviewer_oracle_detected": null,
+      "stdout": "훈련 특성:\n     recent  mean3   std3  kind\nid                            \na4     4.0  4.667  0.943   red\na5     4.0  4.667  0.943   red\nb4     2.0    NaN    NaN  blue\nb5     2.0    NaN    NaN  blue\n\n검증 특성:\n     recent  mean3   std3   kind\nid                             \nc6    12.0  8.333  2.867  green\nc7    12.0  8.333  2.867  green\nd6     7.0    NaN    NaN    red\nd7     7.0    NaN    NaN    red\n"
+    },
+    {
+      "name": "remove_unit_boundary",
+      "before": "(raw.unit == row.unit) & (raw.time < row.time)",
+      "after": "(raw.time < row.time)",
+      "notebook_detected": {
+        "cell": 4,
+        "type": "AssertionError",
+        "message": ""
+      },
+      "reviewer_oracle_detected": null,
+      "stdout": "훈련 특성:\n     recent  mean3   std3  kind\nid                            \na4     6.0  6.333  1.247   red\na5     2.0  4.667  2.494   red\nb4     6.0  6.333  1.247  blue\nb5     2.0  4.667  2.494  blue\n\n검증 특성:\n     recent  mean3   std3   kind\nid                             \nc6     2.0  4.667  2.494  green\nc7     7.0  7.667  3.300  green\nd6     2.0  4.667  2.494    red\nd7     7.0  7.667  3.300    red\n"
+    },
+    {
+      "name": "reverse_time_sort",
+      "before": "past.sort_values(\"time\")",
+      "after": "past.sort_values(\"time\", ascending=False)",
+      "notebook_detected": {
+        "cell": 4,
+        "type": "AssertionError",
+        "message": ""
+      },
+      "reviewer_oracle_detected": null,
+      "stdout": "훈련 특성:\n     recent  mean3   std3  kind\nid                            \na4     2.0    4.0  1.633   red\na5     2.0    4.0  1.633   red\nb4     NaN    NaN    NaN  blue\nb5     2.0    NaN    NaN  blue\n\n검증 특성:\n     recent  mean3   std3   kind\nid                             \nc6     3.0  5.333  2.055  green\nc7     3.0  5.333  2.055  green\nd6     1.0    NaN    NaN    red\nd7     1.0    NaN    NaN    red\n"
+    },
+    {
+      "name": "remove_time_sort",
+      "before": "past = past.sort_values(\"time\")",
+      "after": "past = past",
+      "notebook_detected": {
+        "cell": 4,
+        "type": "AssertionError",
+        "message": ""
+      },
+      "reviewer_oracle_detected": null,
+      "stdout": "훈련 특성:\n     recent  mean3   std3  kind\nid                            \na4     2.0    4.0  1.633   red\na5     2.0    4.0  1.633   red\nb4     NaN    NaN    NaN  blue\nb5     2.0    NaN    NaN  blue\n\n검증 특성:\n     recent  mean3   std3   kind\nid                             \nc6     5.0  5.333  2.055  green\nc7     5.0  5.333  2.055  green\nd6     1.0    NaN    NaN    red\nd7     7.0    NaN    NaN    red\n"
+    },
+    {
+      "name": "ffill_copies_in_window",
+      "before": "past.reading.dropna().tail(3)",
+      "after": "past.reading.ffill().dropna().tail(3)",
+      "notebook_detected": null,
+      "reviewer_oracle_detected": {
+        "type": "AssertionError",
+        "message": "mean3"
+      },
+      "stdout": "훈련 특성:\n     recent  mean3   std3  kind\nid                            \na4     6.0  4.000  1.633   red\na5     4.0  4.667  0.943   red\nb4     NaN    NaN    NaN  blue\nb5     2.0    NaN    NaN  blue\n\n검증 특성:\n     recent  mean3   std3   kind\nid                             \nc6     8.0  7.000  1.414  green\nc7    12.0  9.333  1.886  green\nd6     1.0  1.000  0.000    red\nd7     7.0  3.000  2.828    red\n  unit  time  reading  global_fill  within_unit\n0    X     1     99.0         99.0         99.0\n1    Y     1      NaN         99.0          NaN\n2    Y     2      2.0          2.0          2.0\n틀린 시각 2 중심 윈도 평균: 35.333333333333336\n훈련 통계 (중앙값): [4.         4.33333333 1.2879011 ]\n훈련 최솟값: [2.         4.         0.94280904]\n훈련 범주: [array(['blue', 'red'], dtype=object)]\n검증 변환:\n     num__recent  num__mean3  num__std3  cat__kind_blue  cat__kind_red\nid                                                                   \nc6         1.50         4.5      0.683             0.0            0.0\nc7         2.50         8.0      1.366             0.0            0.0\nd6        -0.25        -4.5     -1.366             0.0            1.0\nd7         1.25        -1.5      2.732             0.0            1.0\n바뀐 검증 recent: [8.0, 100.0, 1.0, 7.0]\n검증 변경 후에도 훈련 중앙값: 4.0\n기본 미지 범주 정책: ValueError\n생략된 blue와 미지 green: [[0.0], [0.0]]\n임계값 inf {'TP': 0, 'FP': 0, 'TN': 2, 'FN': 2} {'accuracy': 0.5, 'precision': None, 'recall': 0.0, 'F1': 0.0, 'TPR': 0.0, 'FPR': 0.0}\n임계값 2.5 {'TP': 0, 'FP': 1, 'TN': 1, 'FN': 2} {'accuracy': 0.25, 'precision': 0.0, 'recall': 0.0, 'F1': 0.0, 'TPR': 0.0, 'FPR': 0.5}\n임계값 1.5 {'TP': 2, 'FP': 1, 'TN': 1, 'FN': 0} {'accuracy': 0.75, 'precision': 0.6666666666666666, 'recall': 1.0, 'F1': 0.8, 'TPR': 1.0, 'FPR': 0.5}\n임계값 0 {'TP': 2, 'FP': 2, 'TN': 0, 'FN': 0} {'accuracy': 0.5, 'precision': 0.5, 'recall': 1.0, 'F1': 0.6666666666666666, 'TPR': 1.0, 'FPR': 1.0}\nROC: (임계값, FPR, TPR) [(np.float64(inf), np.float64(0.0), np.float64(0.0)), (np.float64(2.5), np.float64(0.5), np.float64(0.0)), (np.float64(1.5), np.float64(0.5), np.float64(1.0)), (np.float64(0.0), np.float64(1.0), np.float64(1.0))]\n가 행 정확도 0.8333333333333334 가중 정확도 0.5\n나 행 정확도 0.6666666666666666 가중 정확도 0.8\n"
+    },
+    {
+      "name": "sample_instead_population_std",
+      "before": "last3.std(ddof=0)",
+      "after": "last3.std(ddof=1)",
+      "notebook_detected": {
+        "cell": 4,
+        "type": "AssertionError",
+        "message": ""
+      },
+      "reviewer_oracle_detected": null,
+      "stdout": "훈련 특성:\n     recent  mean3   std3  kind\nid                            \na4     6.0  4.000  2.000   red\na5     4.0  4.667  1.155   red\nb4     NaN    NaN    NaN  blue\nb5     2.0    NaN    NaN  blue\n\n검증 특성:\n     recent  mean3   std3   kind\nid                             \nc6     8.0  5.333  2.517  green\nc7    12.0  8.333  3.512  green\nd6     1.0    NaN    NaN    red\nd7     7.0    NaN    NaN    red\n"
+    },
+    {
+      "name": "mean_instead_of_median",
+      "before": "SimpleImputer(strategy=\"median\")",
+      "after": "SimpleImputer(strategy=\"mean\")",
+      "notebook_detected": null,
+      "reviewer_oracle_detected": {
+        "type": "AssertionError",
+        "message": "median differs from mean on new table"
+      },
+      "stdout": "훈련 특성:\n     recent  mean3   std3  kind\nid                            \na4     6.0  4.000  1.633   red\na5     4.0  4.667  0.943   red\nb4     NaN    NaN    NaN  blue\nb5     2.0    NaN    NaN  blue\n\n검증 특성:\n     recent  mean3   std3   kind\nid                             \nc6     8.0  5.333  2.055  green\nc7    12.0  8.333  2.867  green\nd6     1.0    NaN    NaN    red\nd7     7.0    NaN    NaN    red\n  unit  time  reading  global_fill  within_unit\n0    X     1     99.0         99.0         99.0\n1    Y     1      NaN         99.0          NaN\n2    Y     2      2.0          2.0          2.0\n틀린 시각 2 중심 윈도 평균: 35.333333333333336\n훈련 통계 (중앙값): [4.         4.33333333 1.2879011 ]\n훈련 최솟값: [2.         4.         0.94280904]\n훈련 범주: [array(['blue', 'red'], dtype=object)]\n검증 변환:\n     num__recent  num__mean3  num__std3  cat__kind_blue  cat__kind_red\nid                                                                   \nc6         1.50         2.0      1.611             0.0            0.0\nc7         2.50         6.5      2.789             0.0            0.0\nd6        -0.25         0.5      0.500             0.0            1.0\nd7         1.25         0.5      0.500             0.0            1.0\n바뀐 검증 recent: [8.0, 100.0, 1.0, 7.0]\n검증 변경 후에도 훈련 중앙값: 4.0\n기본 미지 범주 정책: ValueError\n생략된 blue와 미지 green: [[0.0], [0.0]]\n임계값 inf {'TP': 0, 'FP': 0, 'TN': 2, 'FN': 2} {'accuracy': 0.5, 'precision': None, 'recall': 0.0, 'F1': 0.0, 'TPR': 0.0, 'FPR': 0.0}\n임계값 2.5 {'TP': 0, 'FP': 1, 'TN': 1, 'FN': 2} {'accuracy': 0.25, 'precision': 0.0, 'recall': 0.0, 'F1': 0.0, 'TPR': 0.0, 'FPR': 0.5}\n임계값 1.5 {'TP': 2, 'FP': 1, 'TN': 1, 'FN': 0} {'accuracy': 0.75, 'precision': 0.6666666666666666, 'recall': 1.0, 'F1': 0.8, 'TPR': 1.0, 'FPR': 0.5}\n임계값 0 {'TP': 2, 'FP': 2, 'TN': 0, 'FN': 0} {'accuracy': 0.5, 'precision': 0.5, 'recall': 1.0, 'F1': 0.6666666666666666, 'TPR': 1.0, 'FPR': 1.0}\nROC: (임계값, FPR, TPR) [(np.float64(inf), np.float64(0.0), np.float64(0.0)), (np.float64(2.5), np.float64(0.5), np.float64(0.0)), (np.float64(1.5), np.float64(0.5), np.float64(1.0)), (np.float64(0.0), np.float64(1.0), np.float64(1.0))]\n가 행 정확도 0.8333333333333334 가중 정확도 0.5\n나 행 정확도 0.6666666666666666 가중 정확도 0.8\n"
+    },
+    {
+      "name": "backfill_instead_forwardfill",
+      "before": "filled = past.reading.ffill()",
+      "after": "filled = past.reading.bfill()",
+      "notebook_detected": {
+        "cell": 4,
+        "type": "AssertionError",
+        "message": ""
+      },
+      "reviewer_oracle_detected": null,
+      "stdout": "훈련 특성:\n     recent  mean3   std3  kind\nid                            \na4     6.0  4.000  1.633   red\na5     4.0  4.667  0.943   red\nb4     NaN    NaN    NaN  blue\nb5     2.0    NaN    NaN  blue\n\n검증 특성:\n     recent  mean3   std3   kind\nid                             \nc6     NaN  5.333  2.055  green\nc7    12.0  8.333  2.867  green\nd6     NaN    NaN    NaN    red\nd7     7.0    NaN    NaN    red\n"
+    },
+    {
+      "name": "fit_on_training_plus_validation",
+      "before": "transformer.fit_transform(train_x)",
+      "after": "transformer.fit(pd.concat([train_x, val_x])).transform(train_x)",
+      "notebook_detected": {
+        "cell": 8,
+        "type": "AssertionError",
+        "message": ""
+      },
+      "reviewer_oracle_detected": null,
+      "stdout": "훈련 특성:\n     recent  mean3   std3  kind\nid                            \na4     6.0  4.000  1.633   red\na5     4.0  4.667  0.943   red\nb4     NaN    NaN    NaN  blue\nb5     2.0    NaN    NaN  blue\n\n검증 특성:\n     recent  mean3   std3   kind\nid                             \nc6     8.0  5.333  2.055  green\nc7    12.0  8.333  2.867  green\nd6     1.0    NaN    NaN    red\nd7     7.0    NaN    NaN    red\n  unit  time  reading  global_fill  within_unit\n0    X     1     99.0         99.0         99.0\n1    Y     1      NaN         99.0          NaN\n2    Y     2      2.0          2.0          2.0\n틀린 시각 2 중심 윈도 평균: 35.333333333333336\n훈련 통계 (중앙값): [6.         5.         1.84389891]\n훈련 최솟값: [1.         4.         0.94280904]\n훈련 범주: [array(['blue', 'green', 'red'], dtype=object)]\n검증 변환:\n     num__recent  num__mean3  ...  cat__kind_green  cat__kind_red\nid                           ...                                \nc6        0.636       0.308  ...              1.0            0.0\nc7        1.000       1.000  ...              1.0            0.0\nd6        0.000       0.231  ...              0.0            1.0\nd7        0.545       0.231  ...              0.0            1.0\n\n[4 rows x 6 columns]\n"
+    },
+    {
+      "name": "refit_validation_transform",
+      "before": "val_array = transformer.transform(val_x)",
+      "after": "val_array = transformer.fit_transform(val_x)",
+      "notebook_detected": {
+        "cell": 8,
+        "type": "AssertionError",
+        "message": ""
+      },
+      "reviewer_oracle_detected": null,
+      "stdout": "훈련 특성:\n     recent  mean3   std3  kind\nid                            \na4     6.0  4.000  1.633   red\na5     4.0  4.667  0.943   red\nb4     NaN    NaN    NaN  blue\nb5     2.0    NaN    NaN  blue\n\n검증 특성:\n     recent  mean3   std3   kind\nid                             \nc6     8.0  5.333  2.055  green\nc7    12.0  8.333  2.867  green\nd6     1.0    NaN    NaN    red\nd7     7.0    NaN    NaN    red\n  unit  time  reading  global_fill  within_unit\n0    X     1     99.0         99.0         99.0\n1    Y     1      NaN         99.0          NaN\n2    Y     2      2.0          2.0          2.0\n틀린 시각 2 중심 윈도 평균: 35.333333333333336\n훈련 통계 (중앙값): [7.5        6.83333333 2.46112321]\n훈련 최솟값: [1.         5.33333333 2.05480467]\n훈련 범주: [array(['green', 'red'], dtype=object)]\n검증 변환:\n     num__recent  num__mean3  num__std3  cat__kind_green  cat__kind_red\nid                                                                    \nc6        0.636         0.0        0.0              1.0            0.0\nc7        1.000         1.0        1.0              1.0            0.0\nd6        0.000         0.5        0.5              0.0            1.0\nd7        0.545         0.5        0.5              0.0            1.0\n"
+    },
+    {
+      "name": "clip_out_of_training_range",
+      "before": "(\"range\", MinMaxScaler())",
+      "after": "(\"range\", MinMaxScaler(clip=True))",
+      "notebook_detected": {
+        "cell": 8,
+        "type": "AssertionError",
+        "message": ""
+      },
+      "reviewer_oracle_detected": null,
+      "stdout": "훈련 특성:\n     recent  mean3   std3  kind\nid                            \na4     6.0  4.000  1.633   red\na5     4.0  4.667  0.943   red\nb4     NaN    NaN    NaN  blue\nb5     2.0    NaN    NaN  blue\n\n검증 특성:\n     recent  mean3   std3   kind\nid                             \nc6     8.0  5.333  2.055  green\nc7    12.0  8.333  2.867  green\nd6     1.0    NaN    NaN    red\nd7     7.0    NaN    NaN    red\n  unit  time  reading  global_fill  within_unit\n0    X     1     99.0         99.0         99.0\n1    Y     1      NaN         99.0          NaN\n2    Y     2      2.0          2.0          2.0\n틀린 시각 2 중심 윈도 평균: 35.333333333333336\n훈련 통계 (중앙값): [4.         4.33333333 1.2879011 ]\n훈련 최솟값: [2.         4.         0.94280904]\n훈련 범주: [array(['blue', 'red'], dtype=object)]\n검증 변환:\n     num__recent  num__mean3  num__std3  cat__kind_blue  cat__kind_red\nid                                                                   \nc6          1.0         1.0        1.0             0.0            0.0\nc7          1.0         1.0        1.0             0.0            0.0\nd6          0.0         0.5        0.5             0.0            1.0\nd7          1.0         0.5        0.5             0.0            1.0\n"
+    },
+    {
+      "name": "strict_threshold_loses_ties",
+      "before": "score >= threshold",
+      "after": "score > threshold",
+      "notebook_detected": {
+        "cell": 11,
+        "type": "AssertionError",
+        "message": ""
+      },
+      "reviewer_oracle_detected": null,
+      "stdout": "훈련 특성:\n     recent  mean3   std3  kind\nid                            \na4     6.0  4.000  1.633   red\na5     4.0  4.667  0.943   red\nb4     NaN    NaN    NaN  blue\nb5     2.0    NaN    NaN  blue\n\n검증 특성:\n     recent  mean3   std3   kind\nid                             \nc6     8.0  5.333  2.055  green\nc7    12.0  8.333  2.867  green\nd6     1.0    NaN    NaN    red\nd7     7.0    NaN    NaN    red\n  unit  time  reading  global_fill  within_unit\n0    X     1     99.0         99.0         99.0\n1    Y     1      NaN         99.0          NaN\n2    Y     2      2.0          2.0          2.0\n틀린 시각 2 중심 윈도 평균: 35.333333333333336\n훈련 통계 (중앙값): [4.         4.33333333 1.2879011 ]\n훈련 최솟값: [2.         4.         0.94280904]\n훈련 범주: [array(['blue', 'red'], dtype=object)]\n검증 변환:\n     num__recent  num__mean3  num__std3  cat__kind_blue  cat__kind_red\nid                                                                   \nc6         1.50         2.0      1.611             0.0            0.0\nc7         2.50         6.5      2.789             0.0            0.0\nd6        -0.25         0.5      0.500             0.0            1.0\nd7         1.25         0.5      0.500             0.0            1.0\n바뀐 검증 recent: [8.0, 100.0, 1.0, 7.0]\n검증 변경 후에도 훈련 중앙값: 4.0\n기본 미지 범주 정책: ValueError\n생략된 blue와 미지 green: [[0.0], [0.0]]\n임계값 inf {'TP': 0, 'FP': 0, 'TN': 2, 'FN': 2} {'accuracy': 0.5, 'precision': None, 'recall': 0.0, 'F1': 0.0, 'TPR': 0.0, 'FPR': 0.0}\n임계값 2.5 {'TP': 0, 'FP': 0, 'TN': 2, 'FN': 2} {'accuracy': 0.5, 'precision': None, 'recall': 0.0, 'F1': 0.0, 'TPR': 0.0, 'FPR': 0.0}\n임계값 1.5 {'TP': 0, 'FP': 1, 'TN': 1, 'FN': 2} {'accuracy': 0.25, 'precision': 0.0, 'recall': 0.0, 'F1': 0.0, 'TPR': 0.0, 'FPR': 0.5}\n임계값 0 {'TP': 2, 'FP': 1, 'TN': 1, 'FN': 0} {'accuracy': 0.75, 'precision': 0.6666666666666666, 'recall': 1.0, 'F1': 0.8, 'TPR': 1.0, 'FPR': 0.5}\nROC: (임계값, FPR, TPR) [(np.float64(inf), np.float64(0.0), np.float64(0.0)), (np.float64(2.5), np.float64(0.5), np.float64(0.0)), (np.float64(1.5), np.float64(0.5), np.float64(1.0)), (np.float64(0.0), np.float64(1.0), np.float64(1.0))]\n"
+    },
+    {
+      "name": "weight_by_prediction",
+      "before": "weights = np.where(actual == \"T\", target_weight, 1.0)",
+      "after": "weights = np.where(predicted == \"T\", target_weight, 1.0)",
+      "notebook_detected": {
+        "cell": 15,
+        "type": "AssertionError",
+        "message": ""
+      },
+      "reviewer_oracle_detected": null,
+      "stdout": "훈련 특성:\n     recent  mean3   std3  kind\nid                            \na4     6.0  4.000  1.633   red\na5     4.0  4.667  0.943   red\nb4     NaN    NaN    NaN  blue\nb5     2.0    NaN    NaN  blue\n\n검증 특성:\n     recent  mean3   std3   kind\nid                             \nc6     8.0  5.333  2.055  green\nc7    12.0  8.333  2.867  green\nd6     1.0    NaN    NaN    red\nd7     7.0    NaN    NaN    red\n  unit  time  reading  global_fill  within_unit\n0    X     1     99.0         99.0         99.0\n1    Y     1      NaN         99.0          NaN\n2    Y     2      2.0          2.0          2.0\n틀린 시각 2 중심 윈도 평균: 35.333333333333336\n훈련 통계 (중앙값): [4.         4.33333333 1.2879011 ]\n훈련 최솟값: [2.         4.         0.94280904]\n훈련 범주: [array(['blue', 'red'], dtype=object)]\n검증 변환:\n     num__recent  num__mean3  num__std3  cat__kind_blue  cat__kind_red\nid                                                                   \nc6         1.50         2.0      1.611             0.0            0.0\nc7         2.50         6.5      2.789             0.0            0.0\nd6        -0.25         0.5      0.500             0.0            1.0\nd7         1.25         0.5      0.500             0.0            1.0\n바뀐 검증 recent: [8.0, 100.0, 1.0, 7.0]\n검증 변경 후에도 훈련 중앙값: 4.0\n기본 미지 범주 정책: ValueError\n생략된 blue와 미지 green: [[0.0], [0.0]]\n임계값 inf {'TP': 0, 'FP': 0, 'TN': 2, 'FN': 2} {'accuracy': 0.5, 'precision': None, 'recall': 0.0, 'F1': 0.0, 'TPR': 0.0, 'FPR': 0.0}\n임계값 2.5 {'TP': 0, 'FP': 1, 'TN': 1, 'FN': 2} {'accuracy': 0.25, 'precision': 0.0, 'recall': 0.0, 'F1': 0.0, 'TPR': 0.0, 'FPR': 0.5}\n임계값 1.5 {'TP': 2, 'FP': 1, 'TN': 1, 'FN': 0} {'accuracy': 0.75, 'precision': 0.6666666666666666, 'recall': 1.0, 'F1': 0.8, 'TPR': 1.0, 'FPR': 0.5}\n임계값 0 {'TP': 2, 'FP': 2, 'TN': 0, 'FN': 0} {'accuracy': 0.5, 'precision': 0.5, 'recall': 1.0, 'F1': 0.6666666666666666, 'TPR': 1.0, 'FPR': 1.0}\nROC: (임계값, FPR, TPR) [(np.float64(inf), np.float64(0.0), np.float64(0.0)), (np.float64(2.5), np.float64(0.5), np.float64(0.0)), (np.float64(1.5), np.float64(0.5), np.float64(1.0)), (np.float64(0.0), np.float64(1.0), np.float64(1.0))]\n가 행 정확도 0.8333333333333334 가중 정확도 0.8333333333333334\n나 행 정확도 0.6666666666666666 가중 정확도 0.4444444444444445\n"
+    },
+    {
+      "name": "denominator_correct_rows_only",
+      "before": "np.sum(weights * (actual == predicted)) / np.sum(weights)",
+      "after": "np.sum(weights * (actual == predicted)) / np.sum(weights * (actual == predicted))",
+      "notebook_detected": {
+        "cell": 15,
+        "type": "AssertionError",
+        "message": ""
+      },
+      "reviewer_oracle_detected": null,
+      "stdout": "훈련 특성:\n     recent  mean3   std3  kind\nid                            \na4     6.0  4.000  1.633   red\na5     4.0  4.667  0.943   red\nb4     NaN    NaN    NaN  blue\nb5     2.0    NaN    NaN  blue\n\n검증 특성:\n     recent  mean3   std3   kind\nid                             \nc6     8.0  5.333  2.055  green\nc7    12.0  8.333  2.867  green\nd6     1.0    NaN    NaN    red\nd7     7.0    NaN    NaN    red\n  unit  time  reading  global_fill  within_unit\n0    X     1     99.0         99.0         99.0\n1    Y     1      NaN         99.0          NaN\n2    Y     2      2.0          2.0          2.0\n틀린 시각 2 중심 윈도 평균: 35.333333333333336\n훈련 통계 (중앙값): [4.         4.33333333 1.2879011 ]\n훈련 최솟값: [2.         4.         0.94280904]\n훈련 범주: [array(['blue', 'red'], dtype=object)]\n검증 변환:\n     num__recent  num__mean3  num__std3  cat__kind_blue  cat__kind_red\nid                                                                   \nc6         1.50         2.0      1.611             0.0            0.0\nc7         2.50         6.5      2.789             0.0            0.0\nd6        -0.25         0.5      0.500             0.0            1.0\nd7         1.25         0.5      0.500             0.0            1.0\n바뀐 검증 recent: [8.0, 100.0, 1.0, 7.0]\n검증 변경 후에도 훈련 중앙값: 4.0\n기본 미지 범주 정책: ValueError\n생략된 blue와 미지 green: [[0.0], [0.0]]\n임계값 inf {'TP': 0, 'FP': 0, 'TN': 2, 'FN': 2} {'accuracy': 0.5, 'precision': None, 'recall': 0.0, 'F1': 0.0, 'TPR': 0.0, 'FPR': 0.0}\n임계값 2.5 {'TP': 0, 'FP': 1, 'TN': 1, 'FN': 2} {'accuracy': 0.25, 'precision': 0.0, 'recall': 0.0, 'F1': 0.0, 'TPR': 0.0, 'FPR': 0.5}\n임계값 1.5 {'TP': 2, 'FP': 1, 'TN': 1, 'FN': 0} {'accuracy': 0.75, 'precision': 0.6666666666666666, 'recall': 1.0, 'F1': 0.8, 'TPR': 1.0, 'FPR': 0.5}\n임계값 0 {'TP': 2, 'FP': 2, 'TN': 0, 'FN': 0} {'accuracy': 0.5, 'precision': 0.5, 'recall': 1.0, 'F1': 0.6666666666666666, 'TPR': 1.0, 'FPR': 1.0}\nROC: (임계값, FPR, TPR) [(np.float64(inf), np.float64(0.0), np.float64(0.0)), (np.float64(2.5), np.float64(0.5), np.float64(0.0)), (np.float64(1.5), np.float64(0.5), np.float64(1.0)), (np.float64(0.0), np.float64(1.0), np.float64(1.0))]\n가 행 정확도 0.8333333333333334 가중 정확도 1.0\n나 행 정확도 0.6666666666666666 가중 정확도 1.0\n"
+    }
+  ],
+  "ROC_png_visual_inspection": "independent reviewer viewed stored PNG; points, labels and axes readable",
+  "stored_roc_png_cells": [
+    12
+  ],
+  "HTML_cell_text_matches_fresh_export": true,
+  "limits": [
+    "finite synthetic cases only",
+    "real learner work and revised study load unobserved",
+    "ordinary socket kernel/Colab/browser HTML visual rendering not attempted",
+    "real hidden final test not created or verified"
+  ]
+}

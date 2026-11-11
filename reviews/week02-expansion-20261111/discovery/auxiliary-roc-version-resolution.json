@@ -1,0 +1,8 @@
+{
+  "issue_record": "reviews/week02-expansion-20261111/discovery/auxiliary-roc-version-check.json",
+  "resolved_artifact_path": "lessons/week02/week02_temporal_preprocessing.ipynb",
+  "resolved_artifact_sha256": "774f3c48195b3fa94bbfbdadb2ba05255c8daa3745e1d7d248e660df0cb5289b",
+  "observed_resolution": "Final cell 0 requires scikit-learn 1.3 or newer and explains sparse_output and the first +infinity ROC threshold. Reviewer directly read this correction and final source changes.",
+  "primary_source_url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_curve.html",
+  "scope_limit": "Auxiliary consistency repair only; old external source searches were not rerun and broad course/frontier readiness remains false."
+}

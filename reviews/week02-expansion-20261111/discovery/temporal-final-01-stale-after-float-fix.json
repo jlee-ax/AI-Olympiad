@@ -1,0 +1,106 @@
+{
+  "recorded_at_utc": "2026-11-11T08:27:53.804770+00:00",
+  "prior_session_path": "reviews/week02-expansion-20261111/discovery/runs/week02-temporal-final-01/session.json",
+  "prior_session_file_sha256": "967f7c2c208bdc22de30ec6d9f41d3dedd1938d43c6fa64d2fc7830efe40873b",
+  "bound_artifact_sha256": "774f3c48195b3fa94bbfbdadb2ba05255c8daa3745e1d7d248e660df0cb5289b",
+  "current_artifact_sha256": "a830a15e8d2bf2cb91e17cd2e8b14172390fc7cea3a07539add3fe52a05b5865",
+  "status": "needs_work",
+  "ready_for_review": false,
+  "blockers": [
+    {
+      "code": "artifact_changed",
+      "id": "lessons/week02/week02_temporal_preprocessing.ipynb"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:56f4cd2e520467f2"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:e70b5658df5e5219"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:945fdb55281a968c"
+    },
+    {
+      "code": "uninvestigated_requirement",
+      "id": "question:48d60d61369ba391"
+    },
+    {
+      "code": "frontier_unresolved",
+      "id": "next-wave"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D11"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D01"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D02"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D03"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D04"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D05"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D12"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D06"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D07"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D08"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D09"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "D10"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "H01"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "H02"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "N02"
+    },
+    {
+      "code": "demand_unresolved",
+      "id": "N03"
+    }
+  ],
+  "next_action": "expand_frontier",
+  "reason": "After a valid recorded 774f3c48 version, author changed floating-point equality assertions and explanatory text. Preserve the original session/report and exact raw notebook; record a separate new baseline for a830a15e.",
+  "source_changes_directly_read": [
+    "cell14: approximate weighted-score result comparison is separate from score >= threshold decision",
+    "cell15: np.isclose rtol=0 atol=1e-12 plus reversed-row order assertions"
+  ],
+  "original_session_and_report_overwritten": false
+}

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week02-expansion-20261111/independent/cases/filled_assignment_answer/teacher_validate_week02.py", line 28, in <module>
+    assert not assessment_answer_cell_filled, '배포용 독립 과제 칸에 학생 답안 코드가 들어 있습니다.'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 배포용 독립 과제 칸에 학생 답안 코드가 들어 있습니다.

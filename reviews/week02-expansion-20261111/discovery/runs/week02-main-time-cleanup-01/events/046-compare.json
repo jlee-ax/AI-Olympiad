@@ -1,0 +1,47 @@
+{
+  "id": "rebind-week02-main-time-cleanup-01-046-compare",
+  "op": "compare",
+  "data": {
+    "reason": "Independent manual content review of this standalone artifact against every retained original requirement.",
+    "demand_id": "N01",
+    "reviewer": "/root/discovery_resume",
+    "judgment": "covered",
+    "rationale": "The lesson connects explanation and hand calculations to executable examples, then supplies a distinct new table with written reasoning, a blank code answer cell, comparison of hand/code results and help reporting. This meets the retained unit-level material-design judgment for both modalities; no learner performance or complete course readiness is inferred.",
+    "start_line": 269,
+    "end_line": 314,
+    "dimensions": [
+      {
+        "id": "prerequisites",
+        "judgment": "met",
+        "observed_behavior": "The lesson connects explanation and hand calculations to executable examples, then supplies a distinct new table with written reasoning, a blank code answer cell, comparison of hand/code results and help reporting. This meets the retained unit-level material-design judgment for both modalities; no learner performance or complete course readiness is inferred.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 269,
+        "end_line": 314
+      },
+      {
+        "id": "learning",
+        "judgment": "met",
+        "observed_behavior": "The lesson connects explanation and hand calculations to executable examples, then supplies a distinct new table with written reasoning, a blank code answer cell, comparison of hand/code results and help reporting. This meets the retained unit-level material-design judgment for both modalities; no learner performance or complete course readiness is inferred.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 269,
+        "end_line": 314
+      },
+      {
+        "id": "assessment",
+        "judgment": "met",
+        "observed_behavior": "The lesson connects explanation and hand calculations to executable examples, then supplies a distinct new table with written reasoning, a blank code answer cell, comparison of hand/code results and help reporting. This meets the retained unit-level material-design judgment for both modalities; no learner performance or complete course readiness is inferred.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 269,
+        "end_line": 314
+      },
+      {
+        "id": "modality",
+        "judgment": "met",
+        "observed_behavior": "The lesson connects explanation and hand calculations to executable examples, then supplies a distinct new table with written reasoning, a blank code answer cell, comparison of hand/code results and help reporting. This meets the retained unit-level material-design judgment for both modalities; no learner performance or complete course readiness is inferred.",
+        "rationale": "Manual semantic judgment by /root/discovery_resume after direct lesson reading. Code only binds this declaration to exact file spans; neither semantic entailment nor learner achievement is machine proven.",
+        "start_line": 269,
+        "end_line": 314
+      }
+    ]
+  }
+}
