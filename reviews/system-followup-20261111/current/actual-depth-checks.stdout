@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "quiz": "actual snippet and axis/denominator checked",
+  "reshape": "values, shape, axis mapping and prior state checked",
+  "teacher_key": "boundary cases and 150 seeded independent cases checked",
+  "variance": "translation, scaling and units checked with fractions",
+  "student_artifact": "teacher key absent from notebook and HTML text",
+  "learner_performance": "not_observed"
+}

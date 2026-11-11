@@ -42,6 +42,15 @@ class ValidateCliTest(unittest.TestCase):
         self.assertEqual(result.returncode, 1)
         self.assertIn('ERROR:', result.stdout)
 
+    def test_lone_surrogate_in_duplicate_id_reports_error_without_traceback(self):
+        node = {'id': '\ud800', 'type': 'skill', 'status': 'proposed', 'label': 'A'}
+        graph = {'nodes': [node, dict(node)], 'edges': []}
+        result = subprocess.run([sys.executable, str(VALIDATOR), '/dev/stdin'],
+                                input=json.dumps(graph), capture_output=True, text=True, check=False)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertNotIn('Traceback', result.stdout + result.stderr)
+        self.assertIn('error', (result.stdout + result.stderr).lower())
+
     def test_dependency_warning_does_not_fail(self):
         graph = {
             'nodes': [{'id': 'a', 'type': 'skill', 'status': 'proposed', 'label': 'A'}],

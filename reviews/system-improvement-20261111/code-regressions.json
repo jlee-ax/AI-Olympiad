@@ -1,0 +1,45 @@
+{
+  "baseline_code_commit": "64f24aabdad2b1976740d88d4a0ba74a4ed89766",
+  "cases": [
+    {
+      "after": "verified_candidate_within_budget",
+      "before": "quality_context_not_bound",
+      "case": "quality_manifest_annotation",
+      "expected_after": "verified_candidate_within_budget",
+      "passed": true
+    },
+    {
+      "after": "verified_candidate_within_budget",
+      "before": "baseline_change_required",
+      "case": "frozen_manifest_annotation",
+      "expected_after": "verified_candidate_within_budget",
+      "passed": true
+    },
+    {
+      "after": [
+        "uncertain",
+        "met"
+      ],
+      "before": [
+        "uncertain",
+        "uncertain"
+      ],
+      "case": "scoped_unknown_neighbor",
+      "expected_after": [
+        "uncertain",
+        "met"
+      ],
+      "passed": true
+    },
+    {
+      "after": 0,
+      "before": 1,
+      "case": "outside_time_not_class_failure",
+      "expected_after": 0,
+      "passed": true
+    }
+  ],
+  "limits": "These controls verify implementation behavior, not source truth or educational judgment.",
+  "status": "passed",
+  "synthetic_controls": true
+}

@@ -1,6 +1,6 @@
 # Evaluation protocol
 
-For operational definitions, exact objects and pass/fail/uncertainty handling, use the [quality specification](../../references/quality-specification.md), [criterion catalog](../../references/criteria.json), and [unit specifications](unit-specifications.json). Ten weeks and 120-minute classes are confirmed; keep diagnostic/calibration thresholds distinct from those fixed inputs.
+For operational definitions, exact objects and pass/fail/uncertainty handling, use the [quality specification](../../references/quality-specification.md), [criterion catalog](../../references/criteria.json), [unit specifications](unit-specifications.json), and the [theory explanation rubric](theory-explanation.json). Ten weeks and 120-minute classes are confirmed; keep diagnostic/calibration thresholds distinct from those fixed inputs.
 
 This is a proposed check contract and comparison plan for future week 1–2 material production. It contains no lesson content, exercises, solutions, actual review scores, or learner results. Pass thresholds, experimental budgets, sample sizes, and stagnation counts remain unagreed. The [tool contract](../../../tools/README.md) defines the serialized state; [workflow decisions](../../references/workflow.md) define the pending scope.
 
@@ -98,3 +98,10 @@ The [EEF/NFER ChatGPT lesson-preparation trial](https://educationendowmentfounda
 Without agreed criteria, this proposal cannot establish improvement or authorize production or recurrence. Once criteria are agreed, completion still requires every required check for the current artifact and evaluation context. A favorable average cannot offset known failure, stale review, missing evidence, or unresolved required disagreement.
 
 A 30-minute checkpoint pauses for review; it does not schedule another run. Distinguish exhausted budgets, missing authority, failed dependencies, and agreed stagnation conditions. Do not invent stagnation counts or minimum gains. Report confirmed results, failed/unexecuted/unverified checks, and pending decisions.
+
+
+## Theory explanation review
+
+K16 operationalizes the user's theory requirement through T01–T05 and the unit-specific applicable checks. Register actual formula, derivation, diagram, algorithm and comprehension-task regions; inspect the original material and record independent per-check evidence. Review mathematical meaning with K06 and supported numerical cases with K07 separately. The CLI checks coverage, current fingerprints and recorded outcomes; it cannot understand a formula, diagram or algorithm explanation automatically. Missing student observations leave comprehension unobserved even when the prompt and answer rationale are suitable.
+
+Use a known-good control and a material fault appropriate to each applicable check (for example, a changed denominator, mislabeled graph quantity or skipped state update). Current K16 subchecks must cover all registered regions. Preserve old reviews and cycles, using the last matching current-object record. A new failure or abstention cannot be discarded in favor of an older pass. See the concrete specification for the limits of DeFT and PRIMM as supporting sources.

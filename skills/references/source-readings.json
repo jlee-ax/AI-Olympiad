@@ -13,7 +13,7 @@
         "Middle-school division",
         "Online written examination and coding test: problem composition"
       ],
-      "finding": "Both divisions cover sections 1\u20134. Written: 180 minutes, 80 multiple-choice and 10 written responses. Coding: 180 minutes, two tasks.",
+      "finding": "Both divisions cover sections 1–4. Written: 180 minutes, 80 multiple-choice and 10 written responses. Coding: 180 minutes, two tasks.",
       "limitation": "Exam composition does not specify course workload, age-based prerequisites, or permitted software for a particular future sitting."
     },
     {
@@ -24,7 +24,7 @@
       "extent": "relevant_sections",
       "locations": [
         "Topic classification",
-        "Sections 1\u20134 and both preprocessing footnotes"
+        "Sections 1–4 and both preprocessing footnotes"
       ],
       "finding": "The page distinguishes principles from actual appropriate library use, data application and output interpretation; 60 grouped rows carry separate theory/practical flags.",
       "limitation": "The displayed syllabus version differs from the governing competition year. Example names and the plan's expanded obligations must remain distinguishable."
@@ -50,7 +50,7 @@
       "kind": "academic_primary",
       "extent": "relevant_sections",
       "locations": [
-        "https://teaching.helsinki.fi/system/files/inline-files/Biggs1996_Article_EnhancingTeachingThroughConstr.pdf; pp. 351\u2013357: performances, activities and assessment"
+        "https://teaching.helsinki.fi/system/files/inline-files/Biggs1996_Article_EnhancingTeachingThroughConstr.pdf; pp. 351–357: performances, activities and assessment"
       ],
       "finding": "The paper operationalizes intended performances and aligns activities and assessment; its teacher-development example distinguishes naming information from applying and relating it.",
       "limitation": "A conceptual framework and illustrated teacher-development setting do not establish a randomized KOAI effect; activity choice still needs situated judgment and local testing."
@@ -70,11 +70,11 @@
     {
       "id": "KARPICKE",
       "url": "https://learninglab.psych.purdue.edu/downloads/2011/2011_Karpicke_Blunt_Science.pdf",
-      "version": "Science 331, 772\u2013775 (2011)",
+      "version": "Science 331, 772–775 (2011)",
       "kind": "academic_primary",
       "extent": "relevant_sections",
       "locations": [
-        "Experiments 1\u20132, article pp. 772\u2013775"
+        "Experiments 1–2, article pp. 772–775"
       ],
       "finding": "Undergraduates studied science texts with matched initial time; retrieval was compared with elaborative concept mapping and evaluated after a week, including inference questions.",
       "limitation": "Science-text learning in that sample does not validate a programming diagnostic, a 10-minute local exercise or 30-minute agent cadence."
@@ -156,6 +156,30 @@
       ],
       "finding": "The benchmark explicitly includes updated information, temporal reasoning and abstention; preserving original evidence and retrieval keys can matter.",
       "limitation": "Conversational memory experiments do not prove that this local dependency graph or deduplication policy is complete."
+    },
+    {
+      "id": "DEFT",
+      "url": "https://doi.org/10.1016/j.learninstruc.2006.03.001",
+      "version": "Ainsworth (2006), Learning and Instruction 16, 183-198",
+      "kind": "academic_primary",
+      "extent": "relevant_sections",
+      "locations": [
+        "https://www.inf.ufpr.br/alexd/REPRESENTACOES_EXTERNAS/Ainsworth_2006.pdf; sections 2, 3.2, 4, 5.2 and 6.1-6.3 (article pp.184-191)"
+      ],
+      "finding": "Representation format, domain interpretation and translation impose learning demands. This conceptual synthesis supports reviewing the purpose and correspondence of formulas, plots and diagrams.",
+      "limitation": "It does not validate these local T-checks. Adding representations can increase the demands on novices; more visuals are not automatically better."
+    },
+    {
+      "id": "PRIMM",
+      "url": "https://doi.org/10.1080/08993408.2019.1608781",
+      "version": "Sentance, Waite and Kallia (2019), author preprint, 34 PDF pages",
+      "kind": "academic_primary",
+      "extent": "relevant_sections",
+      "locations": [
+        "https://suesentance.net/wp-content/uploads/2020/02/teaching_computer_programming_with_primm__a_sociocultural_perspective_author_copy.pdf; sections 4.1-5.4, quantitative results 7.1 and discussion 8.1-8.2"
+      ],
+      "finding": "The non-randomized school study compared a bundled reading/prediction/discussion approach with usual instruction. It motivates explicit explanation and tracing.",
+      "limitation": "Schools and teachers were not randomly assigned; some controls were unavailable, and teachers reported excessive volume/difficult questions. It does not isolate our pseudocode gate or establish a KOAI effect."
     }
   ]
 }

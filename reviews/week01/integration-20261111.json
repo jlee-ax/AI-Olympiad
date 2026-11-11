@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "lesson_parent": "204743d94a4176ace81c64f138567c2cc12041d1",
+  "integrated_main": "c3579c47c7c64ac7d0919410e665a917db4cdeab",
+  "notebook_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+  "lesson_readme": "absent",
+  "conflict_resolution": {
+    "path": "examples/quality-workflow.json",
+    "type": "synthetic_fixture_only",
+    "resolution": "Preserved lesson baseline/provenance and recomputed synthetic fingerprints against current criteria; no real review or consent was fabricated."
+  },
+  "verification": {
+    "combined_unittest": {
+      "status": "passed",
+      "count": 228,
+      "seconds": 31.033,
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest discover -s tests"
+    },
+    "real_record_reproduction": {
+      "status": "passed",
+      "cases": 22,
+      "source_register": "actual integrated bytes matched the recorded expected SHA; intentional copy mutation was blocked"
+    },
+    "lesson_content_diff_before_followup": "none",
+    "student_performance": "not_observed"
+  },
+  "limits": [
+    "Synthetic fixture success is not an educational pass.",
+    "Execution and content evaluation for the next lesson change are recorded separately.",
+    "Requested Terra 6.1 Max execution setting is not independently exposed by this thread."
+  ]
+}

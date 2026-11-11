@@ -1,0 +1,156 @@
+{
+  "nodes": [
+    {
+      "id": "synthetic:source",
+      "type": "evidence",
+      "status": "proposed",
+      "label": "Fictional source"
+    },
+    {
+      "id": "synthetic:demand",
+      "type": "artifact",
+      "status": "proposed",
+      "label": "Fictional demand"
+    },
+    {
+      "id": "synthetic:prerequisite",
+      "type": "artifact",
+      "status": "proposed",
+      "label": "Fictional prerequisite"
+    },
+    {
+      "id": "synthetic:theory_explanation",
+      "type": "artifact",
+      "status": "proposed",
+      "label": "Fictional theory_explanation"
+    },
+    {
+      "id": "synthetic:coding_practice",
+      "type": "artifact",
+      "status": "proposed",
+      "label": "Fictional coding_practice"
+    },
+    {
+      "id": "synthetic:independent_assessment",
+      "type": "artifact",
+      "status": "proposed",
+      "label": "Fictional independent_assessment"
+    },
+    {
+      "id": "synthetic:feedback",
+      "type": "artifact",
+      "status": "proposed",
+      "label": "Fictional feedback"
+    }
+  ],
+  "edges": [
+    {
+      "from": "synthetic:source",
+      "to": "synthetic:demand",
+      "type": "supports"
+    },
+    {
+      "from": "synthetic:demand",
+      "to": "synthetic:prerequisite",
+      "type": "supports"
+    },
+    {
+      "from": "synthetic:prerequisite",
+      "to": "synthetic:theory_explanation",
+      "type": "supports"
+    },
+    {
+      "from": "synthetic:theory_explanation",
+      "to": "synthetic:coding_practice",
+      "type": "supports"
+    },
+    {
+      "from": "synthetic:coding_practice",
+      "to": "synthetic:independent_assessment",
+      "type": "supports"
+    },
+    {
+      "from": "synthetic:independent_assessment",
+      "to": "synthetic:feedback",
+      "type": "supports"
+    }
+  ],
+  "path_spec": {
+    "schema_version": 1,
+    "synthetic": true,
+    "required_demands": [
+      "synthetic:demand"
+    ],
+    "paths": [
+      {
+        "id": "synthetic:path",
+        "comparison_id": "synthetic:comparison",
+        "roles": {
+          "source": "synthetic:source",
+          "demand": "synthetic:demand",
+          "prerequisite": "synthetic:prerequisite",
+          "theory_explanation": "synthetic:theory_explanation",
+          "coding_practice": "synthetic:coding_practice",
+          "independent_assessment": "synthetic:independent_assessment",
+          "feedback": "synthetic:feedback"
+        },
+        "assessment": {
+          "independent": true,
+          "allowed_support": "Fictional: no hints or worked example.",
+          "answer_conditions": "Fictional: key withheld until response submission."
+        },
+        "provenance": {
+          "source": {
+            "path": "examples/graph-path-source.txt",
+            "sha256": "aa2942a2b9d53732632dffb525c5a91984dcd8e718688d2bbac6c00f2c8b513d",
+            "locator": "source: line",
+            "revision": "synthetic-v1",
+            "origin": "Fictional local fixture; no actual source was read."
+          },
+          "demand": {
+            "path": "examples/graph-path-source.txt",
+            "sha256": "aa2942a2b9d53732632dffb525c5a91984dcd8e718688d2bbac6c00f2c8b513d",
+            "locator": "demand: line",
+            "revision": "synthetic-v1",
+            "origin": "Fictional local fixture; no actual source was read."
+          },
+          "prerequisite": {
+            "path": "examples/graph-path-source.txt",
+            "sha256": "aa2942a2b9d53732632dffb525c5a91984dcd8e718688d2bbac6c00f2c8b513d",
+            "locator": "prerequisite: line",
+            "revision": "synthetic-v1",
+            "origin": "Fictional local fixture; no actual source was read."
+          },
+          "theory_explanation": {
+            "path": "examples/graph-path-source.txt",
+            "sha256": "aa2942a2b9d53732632dffb525c5a91984dcd8e718688d2bbac6c00f2c8b513d",
+            "locator": "theory_explanation: line",
+            "revision": "synthetic-v1",
+            "origin": "Fictional local fixture; no actual source was read."
+          },
+          "coding_practice": {
+            "path": "examples/graph-path-source.txt",
+            "sha256": "aa2942a2b9d53732632dffb525c5a91984dcd8e718688d2bbac6c00f2c8b513d",
+            "locator": "coding_practice: line",
+            "revision": "synthetic-v1",
+            "origin": "Fictional local fixture; no actual source was read."
+          },
+          "independent_assessment": {
+            "path": "examples/graph-path-source.txt",
+            "sha256": "aa2942a2b9d53732632dffb525c5a91984dcd8e718688d2bbac6c00f2c8b513d",
+            "locator": "independent_assessment: line",
+            "revision": "synthetic-v1",
+            "origin": "Fictional local fixture; no actual source was read."
+          },
+          "feedback": {
+            "path": "examples/graph-path-source.txt",
+            "sha256": "aa2942a2b9d53732632dffb525c5a91984dcd8e718688d2bbac6c00f2c8b513d",
+            "locator": "feedback: line",
+            "revision": "synthetic-v1",
+            "origin": "Fictional local fixture; no actual source was read."
+          }
+        }
+      }
+    ]
+  }
+}

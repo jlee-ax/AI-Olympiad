@@ -1,0 +1,316 @@
+{
+  "authority": "advisory_only",
+  "status": "uncertain",
+  "mechanical_status": "declared_path_complete",
+  "synthetic": false,
+  "errors": [],
+  "findings": [
+    {
+      "path": "semantic_review.comparisons[3].independent_assessment",
+      "code": "reviewed_independent_assessment_uncertain",
+      "message": "Recorded content judgment: uncertain.",
+      "status": "uncertain"
+    }
+  ],
+  "comparisons": [
+    {
+      "path_id": "path:axis-choice",
+      "comparison_id": "axis-choice",
+      "judgments": {
+        "problem_specific_key": "met",
+        "feedback": "met",
+        "independent_assessment": "met"
+      }
+    },
+    {
+      "path_id": "path:function-spec",
+      "comparison_id": "function-spec",
+      "judgments": {
+        "problem_specific_key": "met",
+        "feedback": "met",
+        "independent_assessment": "met"
+      }
+    },
+    {
+      "path_id": "path:written-format",
+      "comparison_id": "written-format",
+      "judgments": {
+        "problem_specific_key": "met",
+        "feedback": "met",
+        "independent_assessment": "met"
+      }
+    },
+    {
+      "path_id": "path:variance-units",
+      "comparison_id": "variance-units",
+      "judgments": {
+        "problem_specific_key": "met",
+        "feedback": "met",
+        "independent_assessment": "uncertain"
+      }
+    }
+  ],
+  "bindings": [
+    {
+      "comparison_id": "axis-choice",
+      "path_id": "path:axis-choice",
+      "dimension": "problem_specific_key",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "lines:115-119",
+      "expected_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "actual_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "status": "current"
+    },
+    {
+      "comparison_id": "axis-choice",
+      "path_id": "path:axis-choice",
+      "dimension": "feedback",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "lines:115-119",
+      "expected_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "actual_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "status": "current"
+    },
+    {
+      "comparison_id": "axis-choice",
+      "path_id": "path:axis-choice",
+      "dimension": "feedback",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "locator": "cell:guided-feedback-and-support",
+      "expected_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "actual_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "status": "current"
+    },
+    {
+      "comparison_id": "axis-choice",
+      "path_id": "path:axis-choice",
+      "dimension": "independent_assessment",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "locator": "cell:depth-reshape-compare",
+      "expected_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "actual_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "status": "current"
+    },
+    {
+      "comparison_id": "axis-choice",
+      "path_id": "path:axis-choice",
+      "dimension": "independent_assessment",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "locator": "cell:depth-reshape-response",
+      "expected_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "actual_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "status": "current"
+    },
+    {
+      "comparison_id": "axis-choice",
+      "path_id": "path:axis-choice",
+      "dimension": "independent_assessment",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "lines:4-7",
+      "expected_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "actual_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "status": "current"
+    },
+    {
+      "comparison_id": "function-spec",
+      "path_id": "path:function-spec",
+      "dimension": "problem_specific_key",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "lines:120-138",
+      "expected_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "actual_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "status": "current"
+    },
+    {
+      "comparison_id": "function-spec",
+      "path_id": "path:function-spec",
+      "dimension": "feedback",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "lines:120-138",
+      "expected_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "actual_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "status": "current"
+    },
+    {
+      "comparison_id": "function-spec",
+      "path_id": "path:function-spec",
+      "dimension": "feedback",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "locator": "cell:guided-feedback-and-support",
+      "expected_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "actual_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "status": "current"
+    },
+    {
+      "comparison_id": "function-spec",
+      "path_id": "path:function-spec",
+      "dimension": "independent_assessment",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "locator": "cell:depth-function-spec",
+      "expected_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "actual_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "status": "current"
+    },
+    {
+      "comparison_id": "function-spec",
+      "path_id": "path:function-spec",
+      "dimension": "independent_assessment",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "locator": "cell:depth-function-code",
+      "expected_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "actual_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "status": "current"
+    },
+    {
+      "comparison_id": "function-spec",
+      "path_id": "path:function-spec",
+      "dimension": "independent_assessment",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "locator": "cell:depth-function-response",
+      "expected_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "actual_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "status": "current"
+    },
+    {
+      "comparison_id": "function-spec",
+      "path_id": "path:function-spec",
+      "dimension": "independent_assessment",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "lines:4-7",
+      "expected_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "actual_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "status": "current"
+    },
+    {
+      "comparison_id": "written-format",
+      "path_id": "path:written-format",
+      "dimension": "problem_specific_key",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "lines:53-59",
+      "expected_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "actual_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "status": "current"
+    },
+    {
+      "comparison_id": "written-format",
+      "path_id": "path:written-format",
+      "dimension": "feedback",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "lines:53-59",
+      "expected_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "actual_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "status": "current"
+    },
+    {
+      "comparison_id": "written-format",
+      "path_id": "path:written-format",
+      "dimension": "feedback",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "locator": "cell:guided-feedback-and-support",
+      "expected_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "actual_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "status": "current"
+    },
+    {
+      "comparison_id": "written-format",
+      "path_id": "path:written-format",
+      "dimension": "independent_assessment",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "locator": "cell:71068cea",
+      "expected_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "actual_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "status": "current"
+    },
+    {
+      "comparison_id": "written-format",
+      "path_id": "path:written-format",
+      "dimension": "independent_assessment",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "locator": "cell:500342ab",
+      "expected_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "actual_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "status": "current"
+    },
+    {
+      "comparison_id": "written-format",
+      "path_id": "path:written-format",
+      "dimension": "independent_assessment",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "lines:4-7",
+      "expected_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "actual_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "status": "current"
+    },
+    {
+      "comparison_id": "variance-units",
+      "path_id": "path:variance-units",
+      "dimension": "problem_specific_key",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "lines:141-147",
+      "expected_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "actual_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "status": "current"
+    },
+    {
+      "comparison_id": "variance-units",
+      "path_id": "path:variance-units",
+      "dimension": "feedback",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "lines:141-147",
+      "expected_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "actual_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "status": "current"
+    },
+    {
+      "comparison_id": "variance-units",
+      "path_id": "path:variance-units",
+      "dimension": "feedback",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "locator": "cell:guided-feedback-and-support",
+      "expected_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "actual_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "status": "current"
+    },
+    {
+      "comparison_id": "variance-units",
+      "path_id": "path:variance-units",
+      "dimension": "independent_assessment",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "locator": "cell:9ce91662",
+      "expected_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "actual_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "status": "current"
+    },
+    {
+      "comparison_id": "variance-units",
+      "path_id": "path:variance-units",
+      "dimension": "independent_assessment",
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "locator": "cell:c6ef56e6",
+      "expected_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "actual_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+      "status": "current"
+    },
+    {
+      "comparison_id": "variance-units",
+      "path_id": "path:variance-units",
+      "dimension": "independent_assessment",
+      "path": "lessons/week01/teacher-notes.txt",
+      "locator": "lines:4-7",
+      "expected_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "actual_sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+      "status": "current"
+    }
+  ],
+  "verification": {
+    "semantics": "recorded_judgment_only",
+    "reviewer_independence": "not_checked",
+    "learner_independence": "not_observed"
+  },
+  "limitations": [
+    "A current review record preserves an explicit content judgment; it is not automated semantic verification.",
+    "Locators, reviewer identity, review method and judgments remain declarations; matching bytes do not make a wrong judgment true.",
+    "Only the declared paths and supplied review evidence are in scope; omitted demands and whole-lesson adequacy are not established.",
+    "Task design, actual unaided learner performance, learning effect and contest readiness remain separate."
+  ]
+}

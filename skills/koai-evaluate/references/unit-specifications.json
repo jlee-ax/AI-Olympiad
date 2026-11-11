@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": "unit-specifications-v1",
+  "revision": "unit-specifications-v2",
   "status": "production_specifications_not_completed_lessons",
   "constraints": {
     "weeks": 10,
@@ -71,7 +71,11 @@
       "coding": "Modify a small supplied procedure and check its returned value and stated error behavior.",
       "assessment": "Use changed inputs without the completed solution visible; state assistance and explain a failed case.",
       "oracle_kinds": [],
-      "time_location": "Week 1 coding block: the existing 20-minute Python diagnosis; prior support remains outside class."
+      "time_location": "Week 1 coding block: the existing 20-minute Python diagnosis; prior support remains outside class.",
+      "explanation_checks": [
+        "T04",
+        "T05"
+      ]
     },
     {
       "id": "W1-table",
@@ -95,7 +99,11 @@
       "coding": "Read the stated CSV, select the requested subset, inspect dtype/shape and count missing values; do not silently impute in week 1.",
       "assessment": "Apply the same stated contract to changed column names and a documented missing-column case.",
       "oracle_kinds": [],
-      "time_location": "Week 1 coding: CSV selection and missing-value inspection in the existing 40-minute block."
+      "time_location": "Week 1 coding: CSV selection and missing-value inspection in the existing 40-minute block.",
+      "explanation_checks": [
+        "T03",
+        "T05"
+      ]
     },
     {
       "id": "W1-array",
@@ -120,7 +128,14 @@
       "oracle_kinds": [
         "axis_mean"
       ],
-      "time_location": "Week 1 theory/noncoding/NumPy blocks; no extra class time is appended."
+      "time_location": "Week 1 theory/noncoding/NumPy blocks; no extra class time is appended.",
+      "explanation_checks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05"
+      ]
     },
     {
       "id": "W1-visualise",
@@ -142,7 +157,11 @@
       "coding": "Create the required labeled graph and interpret it; record Matplotlib and Seaborn evidence separately when claiming the full grouped item.",
       "assessment": "Change an input condition and explain the resulting graph rather than merely displaying an image.",
       "oracle_kinds": [],
-      "time_location": "Matplotlib belongs to the existing week 1 class; the plan's Seaborn obligation is required outside work."
+      "time_location": "Matplotlib belongs to the existing week 1 class; the plan's Seaborn obligation is required outside work.",
+      "explanation_checks": [
+        "T03",
+        "T05"
+      ]
     },
     {
       "id": "W2-split",
@@ -168,7 +187,12 @@
       "oracle_kinds": [
         "split_fit"
       ],
-      "time_location": "Week 2 split block; preserve the test embargo through final week 4 selection and required outside work."
+      "time_location": "Week 2 split block; preserve the test embargo through final week 4 selection and required outside work.",
+      "explanation_checks": [
+        "T03",
+        "T04",
+        "T05"
+      ]
     },
     {
       "id": "W2-preprocess",
@@ -194,7 +218,13 @@
       "oracle_kinds": [
         "split_fit"
       ],
-      "time_location": "Week 2 existing 20-minute pipeline block plus separately accounted required outside preprocessing work."
+      "time_location": "Week 2 existing 20-minute pipeline block plus separately accounted required outside preprocessing work.",
+      "explanation_checks": [
+        "T01",
+        "T02",
+        "T04",
+        "T05"
+      ]
     },
     {
       "id": "W2-metrics",
@@ -218,7 +248,13 @@
       "oracle_kinds": [
         "binary_metrics"
       ],
-      "time_location": "Week 2 noncoding 20-minute calculation within 30 minutes, which already includes 10 minutes of written practice."
+      "time_location": "Week 2 noncoding 20-minute calculation within 30 minutes, which already includes 10 minutes of written practice.",
+      "explanation_checks": [
+        "T01",
+        "T02",
+        "T03",
+        "T05"
+      ]
     },
     {
       "id": "W2-baseline-model",
@@ -244,12 +280,19 @@
       "oracle_kinds": [
         "split_fit"
       ],
-      "time_location": "Week 2 existing 20-minute dummy-model block; no test-driven tuning or added class period."
+      "time_location": "Week 2 existing 20-minute dummy-model block; no test-driven tuning or added class period.",
+      "explanation_checks": [
+        "T01",
+        "T02",
+        "T04",
+        "T05"
+      ]
     }
   ],
   "unresolved": {
     "diagnostic_cutoff": "The HTML's 4/5 and 3/4 targets are retained as source proposals; numeric readiness policy needs agreement and calibration.",
     "outside_work_limit": "Required outside-work schedule is recorded separately; acceptable individual limit and support allocation are not inferred.",
     "evidence": "No student responses, notebooks, classroom timings or learning outcomes are created by this specification."
-  }
+  },
+  "explanation_contract": "Required T-checks are scoped minimums; declare and review any additional representations actually used. These are production specifications, not completed lesson material."
 }

@@ -22,18 +22,18 @@
       },
       {
         "id": "quality:bundle",
-        "revision": "synthetic-v1",
-        "sha256": "567a224bef2a238fac07cc8a00b1bcff9b1d67bbe780587fe0b55923d4505f24"
+        "revision": "synthetic-v2",
+        "sha256": "51d741b33bb636dc1e4efd9dfc4dcfd966165c04c027f90fb12b2dcf36ff7a8d"
       },
       {
         "id": "quality:criteria",
-        "revision": "criteria-v1",
-        "sha256": "18523cddf3760b29101beca80f36c59ae83a8feb7f8c0a9634ad17aebf1a4db1"
+        "revision": "criteria-v2",
+        "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
       },
       {
         "id": "quality:evaluator",
         "revision": "quality-v1",
-        "sha256": "09ab9b98b432538f447e891accdaa3e5c563ef1e66fd19ff954e3a9c66c3b099"
+        "sha256": "2b8ad68a46899cbe533cf0900f0b3b7d4956edf990c9847459d75ac72ac499c5"
       }
     ],
     "skills": [
@@ -140,7 +140,7 @@
   "reviews": [
     {
       "id": "review:synthetic-1",
-      "context_fingerprint": "781a1b8c40e1445240d0af491e1d51882d08fc6211f9eb287ee05c0fa85856ec",
+      "context_fingerprint": "6b72f4f4ee72c4780c01ce9dedf9b9cdbd06fca1a3d0e35608d8becc71bbbdfa",
       "author_id": "synthetic-author",
       "reviewer": {
         "id": "synthetic-reviewer",

@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "revision": "theory-explanation-v1",
+  "authority": "Local review specification requested by the user; not an empirically validated scoring instrument.",
+  "selection": "Use required checks from the versioned unit specification and every additional representation declared in explanation_regions. T05 applies to every unit. No automatic semantic extraction or learner diagnosis is performed.",
+  "checks": [
+    {
+      "id": "T01",
+      "name": "Symbols, quantities and assumptions",
+      "definition": "A novice can identify what each mathematical token denotes before using the expression.",
+      "object": "Every formula used to support the selected objective, including indices and answer keys.",
+      "measurement": [
+        "Inspect the expression and a nearby symbol glossary: meaning, scalar/vector/table shape, index range, domain and units or an explicit dimensionless convention.",
+        "Check stated assumptions, denominator population, defined/undefined cases and the prerequisite location for any reused notation."
+      ],
+      "pass": "Every consequential symbol and convention is defined consistently at its actual location or an explicit accessible prerequisite; a reviewer checks the correspondence.",
+      "fail": "A denominator counts the wrong population, a symbol changes meaning, or an omitted condition changes the intended answer.",
+      "uncertainty": "A missing explanation or unresolved convention cannot support a recorded pass; do not infer comprehension from displayed LaTeX.",
+      "severity": "major",
+      "priority": "P1",
+      "sources": [
+        "NUMPY",
+        "METRICS",
+        "DEFT"
+      ],
+      "examples": {
+        "normal": "For a column mean, X is m by n, i indexes rows, j indexes columns, and division is by m; the output has n entries.",
+        "fault_or_boundary": "Dividing a column sum by n because the array has n columns changes the quantity; route the reproduced error to K06/K07 as P0."
+      },
+      "expected_effect": "Expose missing notation and assumptions before code hides them.",
+      "limits": "The exact glossary fields are a local design choice; a field check cannot establish mathematical correctness or novice understanding."
+    },
+    {
+      "id": "T02",
+      "name": "Justified derivation and a worked case",
+      "definition": "The explanation connects a definition or stated principle to the result through justified steps within the declared prerequisites.",
+      "object": "Derivations, transformations and numerical illustrations attached to a formula.",
+      "measurement": [
+        "Identify the starting definition, each consequential transformation and its justification, and substitute a concrete input with intermediate quantities and the final units/shape.",
+        "Separate a definition, a proved consequence and an explicitly assumed principle. Locate support for omitted prerequisite steps; do not require an advanced proof unrelated to the middle-school objective.",
+        "Independently recompute the worked result and include a relevant boundary or counterexample."
+      ],
+      "pass": "The steps and scoped assumptions justify the intended result and an independently checked case reconciles with it.",
+      "fail": "An invalid transformation, unexplained prerequisite gap that prevents the target task, or contradictory worked result is demonstrated.",
+      "uncertainty": "A correct final number without a reviewable route is insufficient; unavailable proof/support stays unresolved.",
+      "severity": "major",
+      "priority": "P1",
+      "sources": [
+        "BIGGS",
+        "NUMPY",
+        "METRICS"
+      ],
+      "examples": {
+        "normal": "Derive precision by identifying predicted positives as TP+FP, then substitute TP=5 and FP=10 to obtain 1/3.",
+        "fault_or_boundary": "State that the TP=FP=0 case is undefined under the default mathematical definition; record any software convention separately."
+      },
+      "expected_effect": "Make the reason for a formula assessable separately from copying or running it.",
+      "limits": "This is a local review procedure, not a published effect size or a demand to prove every imported theorem."
+    },
+    {
+      "id": "T03",
+      "name": "Diagram semantics and representation mapping",
+      "definition": "The diagram communicates a stated quantity or relation, and its connection to words, data and any formula is explicit.",
+      "object": "Plots, tables, schematic diagrams and their captions used for explanation.",
+      "measurement": [
+        "For a quantitative plot inspect each axis, variable, unit, scale, aggregation, legend and data population/source; map a mark or interval to the corresponding formula/input/output.",
+        "For a table inspect row/column meanings and units; for a schematic inspect entities, arrow meanings and the relation encoded. Do not invent numeric axes for a flow diagram.",
+        "Ask for an interpretation and a translation between two relevant representations. Check a plausible misreading; a decorative image does not discharge a required explanatory diagram."
+      ],
+      "pass": "The representation, caption and mapped quantities agree under the same conditions, with a reviewable interpretation/translation task and key.",
+      "fail": "Axes, aggregation, arrow meaning or formula-to-mark mapping changes the taught quantity or invites a demonstrated wrong inference.",
+      "uncertainty": "Absent source/units or unreviewed mapping stays unresolved; the CLI cannot inspect an image semantically.",
+      "severity": "major",
+      "priority": "P1",
+      "sources": [
+        "DEFT",
+        "BIGGS"
+      ],
+      "examples": {
+        "normal": "A bar height is the mean of a named feature for a stated group, with that feature's unit; connect it to the numerator and count.",
+        "fault_or_boundary": "A split-flow diagram labels train/validation/test and fitted-information arrows; it has no numeric x/y axes. A confusion table must declare actual-versus-predicted orientation."
+      },
+      "expected_effect": "Catch representation mismatches and require an educational purpose for each visual.",
+      "limits": "More representations may add translation burden. DeFT is a conceptual framework, not proof that this checklist improves learning."
+    },
+    {
+      "id": "T04",
+      "name": "Algorithm contract and state trace",
+      "definition": "The learner can relate an algorithm's specification and steps to changes in program state and returned output.",
+      "object": "Algorithm descriptions, pseudocode, state tables and linked implementation.",
+      "measurement": [
+        "State input types/shapes/ranges, preconditions, output/return contract, initialization, step order, branch/loop conditions, state updates and stopping/error behavior.",
+        "Use readable pseudocode with index conventions and a trace on a concrete small input showing step, condition, state before/after and output; map the steps to the linked code.",
+        "Check a changed input or relevant edge case. Separate a hand prediction from an observed run, and distinguish print from return or fitting from applying a fixed transform when relevant."
+      ],
+      "pass": "The contract, pseudocode, trace and implementation are consistent for independently checked cases, and the learner task asks why the transitions occur.",
+      "fail": "A trace skips a state-changing step, contradicts the code or contract, or a changed input produces an independently reproduced wrong result.",
+      "uncertainty": "A run log alone is not an explanation; incomplete traces or unsupported termination claims need review.",
+      "severity": "major",
+      "priority": "P1",
+      "sources": [
+        "PRIMM",
+        "BIGGS"
+      ],
+      "examples": {
+        "normal": "Trace sum=0, each addition, count and returned mean for a short list; show what the procedure promises for an empty input.",
+        "fault_or_boundary": "A table giving only the final console output does not establish loop-state understanding or the return value."
+      },
+      "expected_effect": "Expose the mechanism connecting an explanation to a working program.",
+      "limits": "The pseudocode/trace contract is a local adaptation. PRIMM evaluated a bundled teaching approach, not this isolated gate or autonomous lesson generation."
+    },
+    {
+      "id": "T05",
+      "name": "Novice explanation and understanding check",
+      "definition": "Material readiness includes a concrete way to test the intended understanding under declared assistance; actual mastery requires observed learner evidence.",
+      "object": "Explanatory language, prerequisite bridges, comprehension prompts, answer rationales and support routes.",
+      "measurement": [
+        "Expand unfamiliar vocabulary at first consequential use and link the required prerequisite/bridge before the target task.",
+        "Provide a prompt requiring interpretation, prediction or justification of the same concept and a changed-input or misconception probe when transfer is claimed. Record the expected reasoning, common error, permitted help and next support action.",
+        "Keep the prompt/key and any actual learner observation distinct. Do not invent responses; a recorded material review establishes only that the check exists and is suitable."
+      ],
+      "pass": "An independent reviewer finds the explanation and prompt/key appropriate to the stated entry behaviors, with explicit help and a concrete response to a foreseeable misunderstanding.",
+      "fail": "The check only asks the learner to rerun/copy a completed answer, assumes an untaught prerequisite, or claims unaided understanding from assisted output.",
+      "uncertainty": "No learner response means understanding is unobserved; numeric mastery cutoffs require a separate agreed, calibrated policy.",
+      "severity": "major",
+      "priority": "P1",
+      "sources": [
+        "BIGGS",
+        "PRIMM",
+        "DEFT"
+      ],
+      "examples": {
+        "normal": "Ask which population the precision denominator counts, then predict the effect of more false positives and justify the answer without the worked solution visible.",
+        "fault_or_boundary": "A checked box saying understood is not a scored explanation; a teacher-scaffolded prediction is not unaided transfer."
+      },
+      "expected_effect": "Keep theory comprehension visible beside execution and separate material checks from learner outcomes.",
+      "limits": "No automatic semantic understanding, universal question count, pass percentage or locally measured learner benefit is claimed."
+    }
+  ],
+  "review_contract": {
+    "criterion_id": "K16",
+    "object": "selected unit",
+    "evidence": "Map each required T01-T05 ID to real artifact locators in unit.explanation_regions. A current independent K16 review supplies subchecks keyed by those IDs, each with status, artifact_locators covering that entry, and evidence. Preserve failed and earlier records; the last appended matching review applies.",
+    "machine_scope": "Required-check coverage, existing registered regions, current fingerprints, reviewer separation and evidence/receipt bindings. Semantic assessment remains a reviewer claim."
+  }
+}

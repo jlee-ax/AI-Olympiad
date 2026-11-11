@@ -132,7 +132,7 @@ Run these read-only commands from the repository root:
 
 Use the quality bundle contract in the specification. For real objects, populate actual artifacts, diagnoses, activity links, claims, source reads, execution receipts and independent reviews; do not copy synthetic passes.
 
-The default quality bundle remains incomplete. A baseline pass verifies pinned schedule/scope consistency, not current material readiness. The evaluate output lists K01–K15 measurements and findings. Plan suppresses exact earlier attempts, gives a reproduced defect a priority floor, and pauses for missing agreement, finite limits, an unscoped higher-priority blocker or the reported 30-minute checkpoint. It cannot execute the recommendation.
+The default quality bundle remains incomplete. A baseline pass verifies pinned schedule/scope consistency, not current material readiness. The evaluate output lists K01–K16 measurements and findings. Plan suppresses exact earlier attempts, gives a reproduced defect a priority floor, and pauses for missing agreement, finite limits, an unscoped higher-priority blocker or the reported 30-minute checkpoint. It cannot execute the recommendation.
 
 Quality commands return structured JSON with authority advisory_only. Exit 2 means unreadable/invalid input or baseline errors; other decisions can exit 0. Inspect status and ready_for_review. A zero exit alone does not establish readiness.
 
@@ -150,7 +150,7 @@ Bind these exact manifests in context.inputs:
 | quality:criteria | Report specification_revision | Actual criterion-catalog file bytes |
 | quality:evaluator | quality-v1 | Actual quality.py file bytes |
 
-The workflow artifact digest must match the quality report's actual artifact digest. A synthetic quality report cannot validate non-synthetic workflow state. Every K01–K15 check must pass and ready_for_review must be true. The existing independent current-context verification and completion predicate still apply.
+The workflow artifact digest must match the quality report's actual artifact digest. A synthetic quality report cannot validate non-synthetic workflow state. Every K01–K16 check must pass and ready_for_review must be true. The existing independent current-context verification and completion predicate still apply.
 
 Quality is checked after scope, agreement, frozen baseline, finite budgets and checkpoint conditions, before the existing verification step. Missing quality pauses; missing bindings, artifact mismatch, failed/uncertain/unrun checks or a synthetic/real mismatch block. Adding the manifests changes the workflow context, so refresh the aggregate review explicitly. Current unit content reviews may be reused only according to their own actual region/dependency bindings.
 
@@ -162,3 +162,53 @@ The workflow input validation/fingerprint/recall commands keep their structural 
     python3 -B tools/workflow.py decide examples/quality-workflow.json --quality examples/quality.json
 
 The first reports a synthetic passed fixture; the second reports an advisory synthetic continue decision. No actual lesson execution, learner result or user approval is established. The real template remains incomplete, and a synthetic report cannot validate real state.
+
+
+### Current evidence, unit requirements and theory review
+
+The quality history is append-ordered. K11 uses the last cycle per current claim; K12 inspects the last review per current criterion/object. Old cycles and reviews remain available as history and cannot override a newer failure or abstention. This is distinct from the earlier workflow record log's explicit `supersedes` contract.
+
+K07 reads required oracle kinds from the versioned unit specifications, then finds coverage only among that unit's `claim_ids`. A valid but unrelated calculation cannot replace a missing required kind. Explicitly empty requirements pass the numerical applicability check while semantic/execution checks remain necessary. Custom synthetic units declare `oracle_kinds`; this does not authorize new real units.
+
+`maximum_required_homework_minutes` applies to each selected week. The pinned required range upper estimate and the current `outside_work` required sum must fit; optional work never offsets required work. A configured cap needs the current ledger. No cap means acceptability is explicitly unassessed. This records estimates, not measured learner time.
+
+For K16, read [the theory rubric](../skills/koai-evaluate/references/theory-explanation.json). Register `unit.explanation_regions` as T-check IDs mapped to artifact locator lists. The independent K16 review supplies `subchecks` with each applicable ID's status, `artifact_locators` covering that entry, and evidence. Obtain a current fingerprint with `review-context BUNDLE --criterion K16 --object UNIT_ID` after registering all regions. The fingerprint includes linked role/explanation and upstream object regions; K16 also includes the rubric. Editing code or an assessment cell outside the unit's primary cell can therefore invalidate its review. Only declared regions and dependencies are covered. No semantic understanding or learner result is inferred.
+
+Registered HTML row regions include nested markup/attributes, so an SVG shape or image reference change affects the fingerprint. Notebook regions include source, attachments and displayed outputs; execution counters are excluded. A declared dependency may also supply a root-relative `path`; its actual file bytes then enter the fingerprint, including local diagram assets. Unregistered external assets remain outside the guarantee. The CLI neither executes nor semantically interprets those representations.
+
+## Contest-depth evidence inspection
+
+`contest_depth.py` is an additional, read-only inspection of **recorded** comparisons. It is independent of K01–K16 and does not change previous evaluations. From the repository root, produce and inspect the explicitly fictional format fixture:
+
+```sh
+python3 -B tests/test_contest_depth.py --emit-example > /tmp/contest-depth-synthetic.json
+python3 -B tools/contest_depth.py /tmp/contest-depth-synthetic.json
+PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest discover -s tests -p 'test_contest_depth.py' -v
+```
+
+The fixture uses fictional sources, a nonexistent artifact and a synthetic digest. Even its `verified_official` values are fictional declarations, not actual source-reading receipts. `recorded_met` means only that the supplied record contains no detected structural gaps or uncertainty; it is not a finding that the lesson is sufficient. Exit 0 means the JSON was processed without structural errors, **not** that the record met requirements or the lesson passed. Read `status`, `findings`, `gaps`, and `errors`: precedence is `invalid`, then `gap`, then `uncertain`, then `recorded_met`. Invalid input exits 2. Gap and uncertainty can both appear, and recorded gaps are ordered by the recorder's `high`, `medium`, `low` priorities; unspecified priorities and automatically calculated discrepancies come last. No priority is inferred.
+
+### Bundle contract, version 1
+
+All fields are required unless explicitly described otherwise. Missing or empty required evidence is uncertain; invalid types, values, references, or duplicate IDs are errors. The CLI rejects duplicate JSON keys and non-finite numbers. Use actual evidence for real work; the recorder must inspect sources and material and make judgments separately.
+
+- `schema_version`: integer `1`; `synthetic`: boolean.
+- `scope_sources` and `problem_sources`: nonempty arrays of distinct source records. Each record has unique `id`, `title`, HTTP(S) `url`, `locator`, `version`, `accessed_at` (`YYYY-MM-DD`), `read_extent`, `verification` (`verified_official` or `unconfirmed`), and `verification_evidence`. These are declarations, not authenticated source checks. Each problem source additionally has `kind` (`past_problem` or `example`), a specific `problem` identifier, integer `year`, and `target` audience. Do not relabel an example as a past problem or assume its source audience is the course audience.
+- `target`: `competition_year` (integer), `division` (`middle_school` or `high_school`), `artifact` (path or identifier), `artifact_revision`, `artifact_sha256` (64 lowercase hexadecimal characters), positive `class_minutes`, distinct `weeks` (integers 1–10), nonempty string array `baseline_assumptions`, and nonempty `goals` array with `{id, week, description}` for each selected goal. Each goal's week must be selected. The actual project has 120-minute classes; record that value explicitly. Other positive class durations may be declared for other work.
+- `comparisons`: a nonempty array of `{id, week, goal_id, competency, scope_refs, problem_refs, student_task_locators, difference, judgment, rationale, assessment_method, answer_conditions, allowed_support, author_id, reviewer, theory}`. Each declared goal needs at least one comparison in its week. Each source-ref array contains `{source_id, locator}` objects referring to the appropriate catalog; `student_task_locators` is a nonempty string array. `judgment` is `met`, `gap`, or `uncertain`; a gap also needs `priority` (`high`, `medium`, `low`). Describe the difference even for `met`, including why none was identified. The `reviewer` object has `id`, boolean `independent`, and `evidence_locator`; same author/reviewer IDs or an explicit nonindependent reviewer produce uncertainty, but different IDs do not prove independence.
+- `theory` explicitly states applicability: use `{ "applicable": true, "claim": "...", "evidence_locators": ["..."] }` when relevant. If inapplicable, use `{ "applicable": false, "claim": "", "evidence_locators": [] }`. Missing relevant claims/locations or contradictory inapplicability are uncertain; this is not semantic analysis of theory.
+- `time_allocations`: one object per selected week with `week`, nonnegative integer `in_class_minutes` and `outside_class_minutes`, and `locator` for both. In-class minutes are compared with the declared `target.class_minutes`; out-of-class minutes are recorded separately. Missing or invalid outside-class minutes remain a bundle finding but do not by themselves create an `incomplete_time` finding on every comparison; missing class time or the shared locator still can. These are stated numbers, not measured learner time.
+- Each allocation also has `required_assessment_format` and `observed_assessment_format`, each containing `status`, `counts`, and `locator`. Requirements use `specified`, `none`, or `uncertain`; observations use `observed`, `not_applicable`, or `uncertain`. `counts` maps assessment-kind strings to nonnegative integer counts. For example, a requirement `{ "status": "specified", "counts": { "multiple_choice": 2, "written": 1 }, "locator": "plan location" }` and an observation with both counts zero produce two arithmetic gaps. A missing observed kind is uncertain, not assumed zero; an extra observed kind with a positive count is uncertain because its acceptability was not specified. To record that no format is required, use `none` and `not_applicable` with explicit empty count objects and locators. Counts are manually observed, not extracted from a notebook.
+- `unknowns`: an explicit array, or `[]` if none are recorded. A legacy string is unscoped and makes every comparison uncertain unless recorded as a gap. A scoped entry has `{ "description": "...", "comparison_ids": ["comparison-id"] }`, with a nonempty description and nonempty array of declared comparison IDs. It makes only those comparisons uncertain unless recorded as a gap; it still makes the overall bundle uncertain (or leaves its overall gap/invalid status intact). Missing, empty, invalid, or unrecognized scope remains conservative and affects all comparisons. Relevance is the recorder’s declaration, not verified by the inspector.
+
+The result's `verification` fields explicitly say `not_checked`: the tool does not read artifact bytes, compare the claimed digest, open sources, authenticate their official status or content, extract question counts, or establish reviewer independence. Do these separately. It does not understand lesson meaning or problem difficulty, identify undeclared goals, establish student achievement, or infer equivalence to middle-school past problems.
+
+For two pinned official source URLs only—the [KOAI 2026 example notice](https://kitpa.org/files/36) and its [PDF](https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf)—the tool checks the stored labels against the published metadata: `kind: example`, `year: 2026`, and a high-school-standard source target (`high_school`, `high school`, `고등부`, or `고등부 기준`). An explicit middle-school source target conflicts; an unrecognized target label remains uncertain. The course target may still be middle school. This is a fixed-label consistency check, not a live source fetch, proof of official status or difficulty equivalence, or verification of any other source.
+
+## Connected review and graph checks
+
+Use [joined review preflight](review-preflight.md) to check actual artifact bytes, [explicit seven-role paths](graph-paths.md), recorded comparisons and active workflow history together. It binds these declarations into the review context and blocks stale reuse. Follow the [manual cycle](MANUAL-CYCLE.md) for actual bounded work, review and record updates. The tools remain read-only; no worker or scheduler is added.
+
+The [2026-11-11 system review](../reviews/system-improvement-20261111/review.md) records reproduced defects, real-record functional checks, the whole Week 1 audit and remaining gaps.
+
+Use [the combined lesson validation workspace](lesson-validation.md) to run current tools/specifications with a frozen lesson copy, without modifying either source worktree. The [follow-up verification](../reviews/system-followup-20261111/review.md) records all-declared-source checks, strict workflow JSON and separate current semantic reviews.

@@ -13,6 +13,10 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = 'skills/references/criteria.json'
 CONTRACT = 'curriculum/contract.json'
+UNIT_SPECIFICATIONS = 'skills/koai-evaluate/references/unit-specifications.json'
+THEORY_SPECIFICATION = 'skills/koai-evaluate/references/theory-explanation.json'
+ORACLE_KINDS = {'axis_mean', 'binary_metrics', 'weighted_sum', 'split_fit'}
+REVIEW_CRITERIA = {'K02', 'K05', 'K06', 'K09', 'K15', 'K16'}
 STATES = {'passed', 'failed', 'uncertain', 'not_run'}
 TIERS = {'critical': 0, 'major': 1, 'moderate': 2, 'minor': 3}
 
@@ -77,17 +81,23 @@ class PlanParser(HTMLParser):
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag == 'tr':
-            self.row = {'attrs': attrs, 'cells': [], 'links': []}
+            self.row = {'attrs': attrs, 'cells': [], 'links': [], 'markup': []}
+        if self.row is not None:
+            self.row['markup'].append(self.get_starttag_text())
         if tag in ('th', 'td') and self.row is not None:
             self.cell = []
         if tag == 'a' and self.row is not None:
             self.row['links'].append(attrs.get('href', ''))
 
     def handle_data(self, text):
+        if self.row is not None:
+            self.row['markup'].append(text)
         if self.cell is not None:
             self.cell.append(text)
 
     def handle_endtag(self, tag):
+        if self.row is not None:
+            self.row['markup'].append('</' + tag + '>')
         if tag in ('th', 'td') and self.cell is not None and self.row is not None:
             self.row['cells'].append(' '.join(''.join(self.cell).split()))
             self.cell = None
@@ -115,7 +125,12 @@ def regions(path):
                 continue
             if 'cell:' + cid in result:
                 raise ValueError('Duplicate notebook cell ID')
-            result['cell:' + cid] = digest({'cell_type': cell['cell_type'], 'source': cell['source']})
+            outputs = cell.get('outputs', [])
+            if not isinstance(outputs, list) or any(not isinstance(x, dict) for x in outputs):
+                raise ValueError('Notebook outputs must be object arrays')
+            displayed = [{key: value for key, value in output.items() if key != 'execution_count'} for output in outputs]
+            result['cell:' + cid] = digest({'cell_type': cell['cell_type'], 'source': cell['source'],
+                                         'attachments': cell.get('attachments', {}), 'outputs': displayed})
         return result
     return {'file': file_digest(path)}
 
@@ -249,6 +264,9 @@ def validate(bundle):
     for key in ('agreed',):
         if type(bundle['policy'].get(key)) is not bool:
             raise ValueError('policy.' + key + ' must be boolean')
+    homework_cap = bundle['policy'].get('maximum_required_homework_minutes')
+    if homework_cap is not None and (type(homework_cap) is not int or homework_cap < 0):
+        raise ValueError('The weekly required-homework cap must be null or a nonnegative integer')
     for key in ('minutes_since', 'elapsed_total', 'no_progress_count'):
         if type(bundle['checkpoint'].get(key)) is not int or bundle['checkpoint'][key] < 0:
             raise ValueError('checkpoint counters must be nonnegative integers')
@@ -274,6 +292,14 @@ def validate(bundle):
             raise ValueError('Unit chain and execution must be objects')
         if any(x not in claim_ids for x in unit['claim_ids']):
             raise ValueError('Unit refers to an unknown claim')
+        if not isinstance(unit.get('explanation_regions', {}), dict):
+            raise ValueError('explanation_regions must map theory-check IDs to artifact locators')
+        explanation_checks = unit.get('explanation_checks')
+        if explanation_checks is not None and (not isinstance(explanation_checks, list) or any(not isinstance(x, str) or not x for x in explanation_checks) or len(set(explanation_checks)) != len(explanation_checks)):
+            raise ValueError('Unit explanation_checks must be unique nonempty check IDs')
+        declared = unit.get('oracle_kinds')
+        if declared is not None and (not isinstance(declared, list) or any(not isinstance(x, str) or x not in ORACLE_KINDS for x in declared) or len(set(declared)) != len(declared)):
+            raise ValueError('Unit oracle_kinds must be unique supported reference kinds')
         closure(bundle, unit['id'])
     for claim in bundle['claims']:
         if not isinstance(claim.get('statement'), str) or not claim['statement'].strip() or not isinstance(claim.get('source_ids'), list) or not isinstance(claim.get('assumptions'), list) or not claim.get('domain') or not claim.get('quantity'):
@@ -310,16 +336,42 @@ def object_fingerprint(bundle, criterion_id, object_id, root=ROOT):
     locator = obj.get('locator', 'file')
     if locator not in actual_regions:
         raise ValueError('Object locator not found in artifact: ' + ascii(locator))
-    # Hash actual relevant region plus explicit object data, not unrelated regions/reviews.
-    projection = copy.deepcopy(obj)
-    if criterion_id != 'K08':
-        projection.pop('execution', None)
-    if criterion_id != 'K15':
-        projection.pop('calibration', None)
+    # Bind the actual regions of this object and declared upstream objects. Node
+    # digests alone cannot detect an edited cell whose manifest was not refreshed.
+    blueprints = {x['id']: x for x in load(safe_file(root, UNIT_SPECIFICATIONS))['units']}
+    dependencies = closure(bundle, object_id)
+    bound_objects = {}
+    bound_dependencies = []
+    for node in dependencies:
+        binding = copy.deepcopy(node)
+        if 'path' in node:
+            binding['actual_file_sha256'] = file_digest(safe_file(root, node['path']))
+        bound_dependencies.append(binding)
+        dependent = objects.get(node['id'])
+        if dependent is None:
+            continue
+        projection = copy.deepcopy(dependent)
+        if criterion_id != 'K08':
+            projection.pop('execution', None)
+        if criterion_id != 'K15':
+            projection.pop('calibration', None)
+        locators = {dependent.get('locator', 'file')}
+        for role in dependent.get('chain', {}).values():
+            if isinstance(role, dict) and isinstance(role.get('locator'), str):
+                locators.add(role['locator'])
+        for locations in dependent.get('explanation_regions', {}).values():
+            if isinstance(locations, list):
+                locators.update(x for x in locations if isinstance(x, str))
+        bound_objects[node['id']] = {
+            'object': projection,
+            'regions': {location: actual_regions.get(location) for location in sorted(locators)},
+            'unit_specification': blueprints.get(node['id']),
+        }
     stable_read_keys = ('id', 'kind', 'url', 'version', 'extent', 'locator', 'finding', 'limitation', 'method', 'result', 'content_sha256')
-    return digest({'criterion': criterion, 'object': projection, 'region_sha256': actual_regions[locator],
-                   'dependencies': closure(bundle, object_id),
-                   'source_reads': sorted(({key: x[key] for key in stable_read_keys if key in x} for x in bundle['source_reads'] if x['id'] in {n['id'] for n in closure(bundle, object_id)}), key=lambda x: x['id']),
+    theory_rubric = load(safe_file(root, THEORY_SPECIFICATION)) if criterion_id == 'K16' else None
+    return digest({'criterion': criterion, 'objects': bound_objects, 'theory_rubric': theory_rubric,
+                   'dependencies': bound_dependencies,
+                   'source_reads': sorted(({key: x[key] for key in stable_read_keys if key in x} for x in bundle['source_reads'] if x['id'] in {n['id'] for n in dependencies}), key=lambda x: x['id']),
                    'target': {key: bundle['target'].get(key) for key in ('competition_year', 'division')}})
 
 
@@ -421,6 +473,7 @@ def evaluate(bundle, root=ROOT):
     expected = set(bundle['target']['objective_ids'])
     missing = expected - units.keys()
     selected = [units[k] for k in sorted(expected & units.keys())]
+    blueprints = {x['id']: x for x in load(safe_file(root, UNIT_SPECIFICATIONS))['units']}
     topics = {t['id']: t for t in contract['topics']}
     coverage = []
     for unit in selected:
@@ -469,15 +522,54 @@ def evaluate(bundle, root=ROOT):
         activity_ids = [unit['chain'].get(role, {}).get('activity_id') for role in ('theory', 'noncoding', 'coding', 'assessment')]
         if unit.get('week') not in by_week or any(a not in by_week.get(unit.get('week'), set()) for a in activity_ids):
             allocation_states.append('not_run')
+    homework_details = []
+    cap = bundle['policy'].get('maximum_required_homework_minutes')
+    allocations = {x['week']: x for x in bundle['lesson_allocations']}
+    selected_weeks = {u.get('week') for u in selected if type(u.get('week')) is int and 1 <= u['week'] <= 10}
+    for week in sorted(selected_weeks):
+        governed = next(x for x in contract['weeks'] if x['week'] == week)
+        lower, upper = [hours * 60 for hours in governed['required_self_study_hours']]
+        outside = allocations.get(week, {}).get('outside_work')
+        detail = {'week': week, 'baseline_required_minutes': [lower, upper],
+                  'weekly_cap_minutes': cap, 'required_minutes': None, 'optional_minutes': None}
+        if outside is not None:
+            if not isinstance(outside, list) or any(not isinstance(x, dict) for x in outside):
+                raise ValueError('outside_work must be an object array')
+            ids = [x.get('id') for x in outside]
+            if any(not isinstance(x, str) or not x for x in ids) or len(ids) != len(set(ids)):
+                raise ValueError('Outside-work IDs must be unique nonempty strings per week')
+            if any(type(x.get('required')) is not bool or type(x.get('minutes')) is not int or x['minutes'] < 0 for x in outside):
+                raise ValueError('Outside work needs boolean required and nonnegative integer minutes')
+            detail['required_minutes'] = sum(x['minutes'] for x in outside if x['required'])
+            detail['optional_minutes'] = sum(x['minutes'] for x in outside if not x['required'])
+            if detail['required_minutes'] < lower:
+                allocation_states.append('failed')
+                detail['ledger_status'] = 'required_plan_work_not_accounted'
+            else:
+                detail['ledger_status'] = 'recorded_estimate_not_observed_time'
+        else:
+            detail['ledger_status'] = 'not_recorded'
+        if cap is None:
+            detail['cap_status'] = 'not_agreed_not_assessed'
+        elif upper > cap or (outside is not None and detail['required_minutes'] > cap):
+            allocation_states.append('failed')
+            detail['cap_status'] = 'exceeded'
+        elif outside is None:
+            allocation_states.append('not_run')
+            detail['cap_status'] = 'current_required_work_ledger_missing'
+        else:
+            detail['cap_status'] = 'within_declared_cap'
+        homework_details.append(detail)
     result('K03', 'failed' if plan['status'] == 'failed' else aggregate(allocation_states + (['not_run'] if missing else [])),
            {'baseline_weeks': plan['weeks'], 'material_allocations': allocation_details, 'errors': plan['errors'],
-            'actual_completion_time': 'unobserved', 'outside_work_is_separate': True})
+            'actual_completion_time': 'unobserved', 'outside_work_is_separate': True,
+            'homework_cap_period': 'each_selected_week', 'outside_work': homework_details})
     prerequisite_states, chain_states, execution_states, assessment_states = [], [], [], []
     for unit in selected:
         prerequisites = unit['prerequisites']
         states = []
-        blueprints = load(safe_file(root, 'skills/koai-evaluate/references/unit-specifications.json'))
-        expected_prerequisites = next((set(x['prerequisite_ids']) for x in blueprints['units'] if x['id'] == unit['id']), None)
+        blueprint = blueprints.get(unit['id'])
+        expected_prerequisites = set(blueprint['prerequisite_ids']) if blueprint else None
         if not bundle['synthetic'] and (expected_prerequisites is None or not expected_prerequisites <= {x.get('id') for x in prerequisites}):
             states.append('failed')
         for req in prerequisites:
@@ -544,7 +636,24 @@ def evaluate(bundle, root=ROOT):
             status = 'uncertain'
             numerical_details.append({'claim_id': cid, 'status': status, 'reason': str(exc)})
         numerical.append(status)
-    result('K07', aggregate(numerical + extra), {'reference_checks': numerical_details}, [x['claim_id'] for x in numerical_details if x['status'] != 'passed'])
+    unit_oracles, oracle_gaps = [], []
+    for unit in selected:
+        blueprint = blueprints.get(unit['id'])
+        # Real unit requirements come from the versioned specification. Synthetic
+        # custom units must declare an explicit contract, including an empty list.
+        required = blueprint['oracle_kinds'] if blueprint else unit.get('oracle_kinds') if bundle['synthetic'] else None
+        present = {claims[cid].get('oracle', {}).get('kind') for cid in unit['claim_ids'] if 'oracle' in claims[cid]}
+        missing_kinds = sorted(set(required) - present) if required is not None else []
+        status = 'uncertain' if required is None else 'not_run' if missing_kinds else 'passed'
+        numerical.append(status)
+        if status != 'passed':
+            oracle_gaps.append(unit['id'])
+        unit_oracles.append({'unit_id': unit['id'], 'required_kinds': required,
+                             'present_kinds': sorted(present), 'missing_kinds': missing_kinds,
+                             'status': status, 'basis': 'versioned_unit_specification' if blueprint else 'synthetic_declaration' if bundle['synthetic'] else 'missing_unit_specification'})
+    result('K07', aggregate(numerical + extra), {'reference_checks': numerical_details, 'unit_requirements': unit_oracles,
+           'empty_requirement': 'No numerical oracle is required; semantic and execution checks still apply.'},
+           [x['claim_id'] for x in numerical_details if x['status'] != 'passed'] + oracle_gaps)
     result('K08', aggregate(execution_states + extra), {'receipts_checked': len(selected), 'does_not_authenticate_execution': True}, [u['id'] for u, status in zip(selected, execution_states) if status != 'passed'])
     result('K09', aggregate(assessment_states + extra), {'assessments_checked': len(selected), 'learning_outcomes': bundle['target'].get('learning_outcomes', 'untested')}, [u['id'] for u, status in zip(selected, assessment_states) if status != 'passed'])
     reads = {x['id']: x for x in bundle['source_reads']}
@@ -566,29 +675,46 @@ def evaluate(bundle, root=ROOT):
             source_states.append('passed' if adequate else 'uncertain')
     result('K10', aggregate(source_states + extra), {'claim_count': len(referenced_claims), 'read_receipts': len(reads), 'reading_authenticity': 'not_authenticated'}, sorted(referenced_claims))
     cycles = bundle['research_cycles']
-    cycle_states = []
-    for cycle in cycles:
-        valid = all(cycle.get(key) for key in ('trigger', 'queries', 'source_ids', 'object_ids', 'disposition', 'reason'))
+    cycle_states, active_cycles = [], []
+    for oid in sorted(referenced_claims):
+        matches = [c for c in cycles if isinstance(c.get('object_ids'), list) and oid in c['object_ids']]
+        if not matches:
+            cycle_states.append('not_run')
+            active_cycles.append({'object_id': oid, 'cycle_id': None, 'status': 'not_run'})
+            continue
+        cycle = matches[-1]
+        valid = all(cycle.get(key) for key in ('trigger', 'queries', 'source_ids', 'disposition', 'reason'))
         valid &= isinstance(cycle.get('queries'), list) and all(isinstance(q, str) and bool(q.strip()) for q in cycle.get('queries', []))
-        valid &= set(cycle.get('object_ids', [])) <= (set(units) | set(claims))
         contexts = cycle.get('object_contexts', {})
-        valid &= isinstance(contexts, dict)
-        if isinstance(contexts, dict):
-            valid &= all(contexts.get(oid) == object_fingerprint(bundle, 'K10', oid, root) for oid in cycle.get('object_ids', []) if oid in units or oid in claims)
-        valid &= all(sid in reads for sid in cycle.get('source_ids', []))
-        cycle_states.append('passed' if valid and cycle.get('disposition') in ('updated', 'unchanged') else 'uncertain')
-    uncovered_research = referenced_claims - {key for c in cycles for key in c.get('object_ids', [])}
-    if uncovered_research:
-        cycle_states.append('not_run')
-    result('K11', aggregate(cycle_states), {'cycles': len(cycles), 'automatic_search': False})
-    stale = []
+        valid &= isinstance(contexts, dict) and contexts.get(oid) == object_fingerprint(bundle, 'K10', oid, root)
+        source_ids = cycle.get('source_ids', [])
+        valid &= isinstance(source_ids, list) and all(sid in reads for sid in source_ids)
+        valid &= set(claims[oid]['source_ids']) <= set(source_ids)
+        status = 'passed' if valid and cycle.get('disposition') in ('updated', 'unchanged') else 'uncertain'
+        cycle_states.append(status)
+        active_cycles.append({'object_id': oid, 'cycle_id': cycle['id'], 'status': status})
+    result('K11', aggregate(cycle_states + extra), {'cycles': len(cycles), 'active_by_object': active_cycles,
+           'selection': 'last_appended_cycle_per_current_claim', 'automatic_search': False},
+           [x['object_id'] for x in active_cycles if x['status'] != 'passed'])
+    current_objects = {u['id'] for u in selected} | referenced_claims
+    latest = {}
     for review in bundle['reviews']:
+        if review.get('object_id') in current_objects and review.get('criterion_id') in REVIEW_CRITERIA:
+            latest[(review['criterion_id'], review['object_id'])] = review
+    stale = []
+    for review in latest.values():
         try:
-            if review.get('context_fingerprint') != object_fingerprint(bundle, review.get('criterion_id'), review.get('object_id'), root):
+            if review.get('context_fingerprint') != object_fingerprint(bundle, review['criterion_id'], review['object_id'], root):
                 stale.append(review['id'])
         except ValueError:
             stale.append(review['id'])
-    result('K12', 'uncertain' if stale else 'passed', {'stale_review_ids': stale, 'dependency_nodes': len(bundle['dependencies'])}, stale)
+    active_review_ids = {r['id'] for r in latest.values()}
+    historical = [r['id'] for r in bundle['reviews'] if r['id'] not in active_review_ids]
+    result('K12', 'uncertain' if stale else 'passed', {'stale_review_ids': stale,
+           'active_review_ids': sorted(active_review_ids), 'historical_review_ids': historical,
+           'selection': 'last_appended_review_per_criterion_and_current_object',
+           'dependency_nodes': len(bundle['dependencies'])},
+           [r['object_id'] for r in latest.values() if r['id'] in stale])
     keys = [candidate_key(bundle, item, root) for item in bundle['candidates']]
     repeats = sorted({key for key in keys if keys.count(key) > 1})
     result('K13', 'passed', {'exact_duplicate_proposals': len(repeats), 'action': 'suppress_duplicates', 'semantic_merge': False})
@@ -622,6 +748,58 @@ def evaluate(bundle, root=ROOT):
         calibration.append('uncertain' if _evidence(bundle['target'].get('learner_study_evidence', []), root) else 'failed')
     result('K15', aggregate(calibration + extra), {'educator_calibration': 'requires_actual_evidence',
            'learning_outcomes': learning_claim, 'tool_tests_are_not_learner_results': True, 'controls': calibration_counts}, [u['id'] for u, status in zip(selected, calibration) if status != 'passed'])
+    explanation_states, explanation_details = [], []
+    theory_rubric = load(safe_file(root, THEORY_SPECIFICATION))
+    theory_ids = {x['id'] for x in theory_rubric['checks']}
+    actual_regions = regions(artifact_path)
+    for unit in selected:
+        blueprint = blueprints.get(unit['id'])
+        required = blueprint['explanation_checks'] if blueprint else unit.get('explanation_checks') if bundle['synthetic'] else None
+        registered = unit.get('explanation_regions', {})
+        if required is None:
+            explanation_states.append('uncertain')
+            explanation_details.append({'unit_id': unit['id'], 'status': 'uncertain', 'reason': 'missing_unit_explanation_contract'})
+            continue
+        expected_checks = set(required) | set(registered) | {'T05'}
+        matches = [r for r in bundle['reviews'] if r.get('criterion_id') == 'K16' and r.get('object_id') == unit['id']]
+        review = matches[-1] if matches else None
+        subchecks = review.get('subchecks', {}) if review else {}
+        if not isinstance(subchecks, dict):
+            subchecks = {}
+        states, details = [], []
+        for identifier in sorted(expected_checks):
+            locations = registered.get(identifier)
+            subcheck = subchecks.get(identifier)
+            if identifier not in theory_ids:
+                status, reason = 'failed', 'unknown_theory_check'
+            elif not isinstance(locations, list) or not locations:
+                status, reason = 'not_run', 'explanation_regions_missing'
+            elif any(not isinstance(loc, str) or loc not in actual_regions for loc in locations):
+                status, reason = 'failed', 'explanation_region_not_found'
+            elif not isinstance(subcheck, dict):
+                status, reason = 'not_run', 'independent_subcheck_missing'
+            else:
+                status = subcheck.get('status', 'not_run')
+                reason = 'recorded_review_outcome'
+                if status not in STATES:
+                    status, reason = 'uncertain', 'unknown_subcheck_outcome'
+                if status == 'passed':
+                    covered = subcheck.get('artifact_locators')
+                    complete = (isinstance(covered, list) and all(isinstance(loc, str) for loc in covered)
+                                and set(covered) == set(locations))
+                    if not complete or not _evidence(subcheck.get('evidence', []), root):
+                        status, reason = 'uncertain', 'subcheck_support_or_region_coverage_missing'
+            states.append(status)
+            details.append({'id': identifier, 'status': status, 'reason': reason, 'artifact_locators': locations})
+        states.append(_review(bundle, 'K16', unit['id'], root))
+        status = aggregate(states)
+        explanation_states.append(status)
+        explanation_details.append({'unit_id': unit['id'], 'status': status, 'checks': details,
+                                    'review_id': review['id'] if review else None})
+    result('K16', aggregate(explanation_states + extra), {'units': explanation_details,
+           'rubric_revision': theory_rubric['revision'], 'semantic_understanding': 'not_automated',
+           'learner_understanding': 'unobserved_without_actual_learner_evidence'},
+           [u['id'] for u, status in zip(selected, explanation_states) if status != 'passed'])
     ready = all(check['status'] == 'passed' for check in checks)
     return {'schema_version': 1, 'authority': 'advisory_only', 'synthetic': bundle['synthetic'],
             'revision': bundle['revision'], 'bundle_sha256': digest(bundle), 'artifact_sha256': actual_sha,
@@ -636,6 +814,8 @@ def evaluate(bundle, root=ROOT):
 def agreement_fingerprint(bundle, root=ROOT):
     contract = load(safe_file(root, CONTRACT))
     return digest({'criteria': load(safe_file(root, CATALOG)),
+                   'unit_specifications': load(safe_file(root, UNIT_SPECIFICATIONS)),
+                   'theory_specification': load(safe_file(root, THEORY_SPECIFICATION)),
                    'governing_scope': {key: contract[key] for key in ('competition_year', 'division', 'syllabus_label', 'class_minutes')},
                    'official_modes': [{k: t[k] for k in ('id', 'theory', 'practical')} for t in contract['topics']],
                    'target': bundle['target'], 'budget': bundle['budget'],

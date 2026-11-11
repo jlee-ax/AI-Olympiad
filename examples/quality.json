@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": "synthetic-v1",
+  "revision": "synthetic-v2",
   "synthetic": true,
   "author_id": "synthetic-author",
   "artifact": {
@@ -21,10 +21,10 @@
   "policy": {
     "agreed": true,
     "decision_ref": "synthetic decision, not user consent",
-    "agreement_fingerprint": "3bb71d04e599e4fbd3eebbfd2b766ddb656d390e7a29960de34ade6be46deff7",
+    "agreement_fingerprint": "10de7a4fa30fd15bc707e0997491a780f6a4ae4cdbca5eef4ef855a91d5d420d",
     "stop_requested": false,
     "diagnostic_cutoff": null,
-    "maximum_required_homework_minutes": null,
+    "maximum_required_homework_minutes": 420,
     "calibration_tolerance": {
       "false_rejects": 0,
       "missed_faults": 0
@@ -171,7 +171,34 @@
             }
           ]
         }
-      ]
+      ],
+      "oracle_kinds": [
+        "axis_mean"
+      ],
+      "explanation_checks": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05"
+      ],
+      "explanation_regions": {
+        "T01": [
+          "#week-1"
+        ],
+        "T02": [
+          "#week-1"
+        ],
+        "T03": [
+          "#week-1"
+        ],
+        "T04": [
+          "#week-1"
+        ],
+        "T05": [
+          "#week-1"
+        ]
+      }
     }
   ],
   "claims": [
@@ -239,7 +266,7 @@
       "disposition": "unchanged",
       "reason": "Synthetic fixture.",
       "object_contexts": {
-        "claim:axis": "9d0d8117b1584e93503f05aa693f85eb7904de8637818f4d8dc8b524b123240c"
+        "claim:axis": "d109cb92dfd11ef8c43b9a23e01b4d876811e2615af540d11cac6eee1eb29bd4"
       }
     }
   ],
@@ -252,7 +279,7 @@
     },
     {
       "id": "claim:axis",
-      "revision": "synthetic-v1",
+      "revision": "synthetic-v2",
       "sha256": "723947274217670b37a4acb3eae7dfc626cecbf6814db6bcc8a926b8c6784754",
       "depends_on": [
         "source:numpy"
@@ -260,8 +287,8 @@
     },
     {
       "id": "unit:axis",
-      "revision": "synthetic-v1",
-      "sha256": "72bce4bca9473ef0d054f17fcc078348c242c0240a8ab02c88150ab5adc017a7",
+      "revision": "synthetic-v2",
+      "sha256": "b65f76ebf6f504c7cbbb0c79f57021fde2f1059fe2aa94973883aa494bc6e33a",
       "depends_on": [
         "claim:axis"
       ]
@@ -283,7 +310,7 @@
         }
       ],
       "reason": "Synthetic fixture review, not educator calibration.",
-      "context_fingerprint": "79d0ed9c494aa019d20f01f0cd1e955f4d877d24324984bd83de33a00794673c"
+      "context_fingerprint": "45ba7f6626603769cf63f320bed2b2a6dc8a4e49bc5c2b5017e805bf03633a76"
     },
     {
       "id": "review:K05",
@@ -300,7 +327,7 @@
         }
       ],
       "reason": "Synthetic fixture review, not educator calibration.",
-      "context_fingerprint": "6f2a41f9784ac976956fbeff51e31c0ce92ec0a37efbc4e583227da918b3849a"
+      "context_fingerprint": "a5342be7367b25b511137acc2804009b9ea26b79181aa51d3557193cccbbb182"
     },
     {
       "id": "review:K06",
@@ -317,7 +344,7 @@
         }
       ],
       "reason": "Synthetic fixture review, not educator calibration.",
-      "context_fingerprint": "0bc60bcf009cee2dc03e75a9243742e434a5cec78058937c12ad4230db5dc338"
+      "context_fingerprint": "9c42383db276ed431efa3841e632130100cddefad227f5f2ad3e9999e1b4e5f4"
     },
     {
       "id": "review:K09",
@@ -334,7 +361,7 @@
         }
       ],
       "reason": "Synthetic fixture review, not educator calibration.",
-      "context_fingerprint": "f77748ccb54ea52ed2f53903e3ec16fc04a9ce7eff1707806a24302e9fc19dab"
+      "context_fingerprint": "3fcca3ba85076351c7824cc1ce082e31a6ecc10d9c9c4eed9424861355087d49"
     },
     {
       "id": "review:K15",
@@ -351,7 +378,96 @@
         }
       ],
       "reason": "Synthetic fixture review, not educator calibration.",
-      "context_fingerprint": "d69f412927be903ba0f1e5bc82bf282aeb643c21240579a51be87bee0f6fef79"
+      "context_fingerprint": "7e832dad55872662525c482d4eca8e9a2df58e06739090b5a06f5f6e3e609cde"
+    },
+    {
+      "id": "review:K16",
+      "criterion_id": "K16",
+      "object_id": "unit:axis",
+      "status": "passed",
+      "reviewer_id": "synthetic-independent-reviewer",
+      "evidence": [
+        {
+          "locator": "synthetic control receipt",
+          "observation": "Synthetic normal/fault control, not a learner result.",
+          "path": "examples/quality-receipt.json",
+          "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+        }
+      ],
+      "reason": "Synthetic fixture review; not a real explanation or learner result.",
+      "subchecks": {
+        "T01": {
+          "status": "passed",
+          "artifact_locators": [
+            "#week-1"
+          ],
+          "evidence": [
+            {
+              "locator": "synthetic control receipt",
+              "observation": "Synthetic normal/fault control, not a learner result.",
+              "path": "examples/quality-receipt.json",
+              "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+            }
+          ]
+        },
+        "T02": {
+          "status": "passed",
+          "artifact_locators": [
+            "#week-1"
+          ],
+          "evidence": [
+            {
+              "locator": "synthetic control receipt",
+              "observation": "Synthetic normal/fault control, not a learner result.",
+              "path": "examples/quality-receipt.json",
+              "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+            }
+          ]
+        },
+        "T03": {
+          "status": "passed",
+          "artifact_locators": [
+            "#week-1"
+          ],
+          "evidence": [
+            {
+              "locator": "synthetic control receipt",
+              "observation": "Synthetic normal/fault control, not a learner result.",
+              "path": "examples/quality-receipt.json",
+              "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+            }
+          ]
+        },
+        "T04": {
+          "status": "passed",
+          "artifact_locators": [
+            "#week-1"
+          ],
+          "evidence": [
+            {
+              "locator": "synthetic control receipt",
+              "observation": "Synthetic normal/fault control, not a learner result.",
+              "path": "examples/quality-receipt.json",
+              "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+            }
+          ]
+        },
+        "T05": {
+          "status": "passed",
+          "artifact_locators": [
+            "#week-1"
+          ],
+          "evidence": [
+            {
+              "locator": "synthetic control receipt",
+              "observation": "Synthetic normal/fault control, not a learner result.",
+              "path": "examples/quality-receipt.json",
+              "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+            }
+          ]
+        }
+      },
+      "context_fingerprint": "f3bedff8ddd4ff959040cf1d48df8ccbf849a363a9156e6ca6f6dc1ab5fba3a4"
     }
   ],
   "candidates": [],
@@ -377,6 +493,13 @@
           "kind": "coding",
           "minutes": 80,
           "written_minutes": 0
+        }
+      ],
+      "outside_work": [
+        {
+          "id": "required-week-1",
+          "required": true,
+          "minutes": 420
         }
       ]
     }

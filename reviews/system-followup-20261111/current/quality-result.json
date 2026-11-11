@@ -1,0 +1,985 @@
+{
+  "artifact_sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+  "authority": "advisory_only",
+  "bundle_sha256": "5e840e675f5d2baa5a9b84da02e88c70c31313bf8bb8f4a73bfc5b5b3f8ba5c7",
+  "checks": [
+    {
+      "id": "K01",
+      "measurement": {
+        "artifact_digest_matches": true,
+        "baseline": "passed",
+        "target_matches": true
+      },
+      "status": "passed"
+    },
+    {
+      "id": "K02",
+      "measurement": {
+        "full_claim_missing_topics": [],
+        "missing": [],
+        "planned_topics": [
+          "KOAI-01",
+          "KOAI-02",
+          "KOAI-03",
+          "KOAI-06"
+        ],
+        "present": 4,
+        "requested_objectives": 4,
+        "scheduled_is_not_achieved": true,
+        "scheduled_topics_in_plan": 60
+      },
+      "status": "not_run"
+    },
+    {
+      "id": "K03",
+      "measurement": {
+        "actual_completion_time": "unobserved",
+        "baseline_weeks": [
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              5,
+              7
+            ],
+            "week": 1
+          },
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              6,
+              8
+            ],
+            "week": 2
+          },
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              7,
+              9
+            ],
+            "week": 3
+          },
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              8,
+              10
+            ],
+            "week": 4
+          },
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              8,
+              10
+            ],
+            "week": 5
+          },
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              10,
+              14
+            ],
+            "week": 6
+          },
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              14,
+              18
+            ],
+            "week": 7
+          },
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              16,
+              20
+            ],
+            "week": 8
+          },
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              16,
+              20
+            ],
+            "week": 9
+          },
+          {
+            "class_minutes": 120,
+            "required_self_study_hours": [
+              10,
+              14
+            ],
+            "week": 10
+          }
+        ],
+        "errors": [],
+        "homework_cap_period": "each_selected_week",
+        "material_allocations": [
+          {
+            "totals": {
+              "coding": 80,
+              "noncoding": 20,
+              "theory": 20
+            },
+            "week": 1,
+            "written_minutes_inside_blocks": 10
+          }
+        ],
+        "outside_work": [
+          {
+            "baseline_required_minutes": [
+              300,
+              420
+            ],
+            "cap_status": "not_agreed_not_assessed",
+            "ledger_status": "recorded_estimate_not_observed_time",
+            "optional_minutes": 0,
+            "required_minutes": 420,
+            "week": 1,
+            "weekly_cap_minutes": null
+          }
+        ],
+        "outside_work_is_separate": true
+      },
+      "status": "passed"
+    },
+    {
+      "id": "K04",
+      "measurement": {
+        "diagnosed_units": 4,
+        "missing_units": []
+      },
+      "status": "not_run"
+    },
+    {
+      "id": "K05",
+      "measurement": {
+        "linked_units": 4,
+        "semantic_review_required": true
+      },
+      "status": "uncertain"
+    },
+    {
+      "id": "K06",
+      "measurement": {
+        "claims": [
+          "claim:array",
+          "claim:python",
+          "claim:table",
+          "claim:visualise"
+        ],
+        "reviewed_records_only": true
+      },
+      "status": "passed"
+    },
+    {
+      "id": "K07",
+      "measurement": {
+        "empty_requirement": "No numerical oracle is required; semantic and execution checks still apply.",
+        "reference_checks": [
+          {
+            "actual": [
+              6.0,
+              8.0
+            ],
+            "claim_id": "claim:array",
+            "status": "passed"
+          }
+        ],
+        "unit_requirements": [
+          {
+            "basis": "versioned_unit_specification",
+            "missing_kinds": [],
+            "present_kinds": [
+              "axis_mean"
+            ],
+            "required_kinds": [
+              "axis_mean"
+            ],
+            "status": "passed",
+            "unit_id": "W1-array"
+          },
+          {
+            "basis": "versioned_unit_specification",
+            "missing_kinds": [],
+            "present_kinds": [],
+            "required_kinds": [],
+            "status": "passed",
+            "unit_id": "W1-python"
+          },
+          {
+            "basis": "versioned_unit_specification",
+            "missing_kinds": [],
+            "present_kinds": [],
+            "required_kinds": [],
+            "status": "passed",
+            "unit_id": "W1-table"
+          },
+          {
+            "basis": "versioned_unit_specification",
+            "missing_kinds": [],
+            "present_kinds": [],
+            "required_kinds": [],
+            "status": "passed",
+            "unit_id": "W1-visualise"
+          }
+        ]
+      },
+      "status": "passed"
+    },
+    {
+      "id": "K08",
+      "measurement": {
+        "does_not_authenticate_execution": true,
+        "receipts_checked": 4
+      },
+      "status": "passed"
+    },
+    {
+      "id": "K09",
+      "measurement": {
+        "assessments_checked": 4,
+        "learning_outcomes": "untested"
+      },
+      "status": "uncertain"
+    },
+    {
+      "id": "K10",
+      "measurement": {
+        "claim_count": 4,
+        "read_receipts": 29,
+        "reading_authenticity": "not_authenticated"
+      },
+      "status": "passed"
+    },
+    {
+      "id": "K11",
+      "measurement": {
+        "active_by_object": [
+          {
+            "cycle_id": "direct-read-cycle-claim:array",
+            "object_id": "claim:array",
+            "status": "passed"
+          },
+          {
+            "cycle_id": "direct-read-cycle-claim:python",
+            "object_id": "claim:python",
+            "status": "passed"
+          },
+          {
+            "cycle_id": "direct-read-cycle-claim:table",
+            "object_id": "claim:table",
+            "status": "passed"
+          },
+          {
+            "cycle_id": "direct-read-cycle-claim:visualise",
+            "object_id": "claim:visualise",
+            "status": "passed"
+          }
+        ],
+        "automatic_search": false,
+        "cycles": 4,
+        "selection": "last_appended_cycle_per_current_claim"
+      },
+      "status": "passed"
+    },
+    {
+      "id": "K12",
+      "measurement": {
+        "active_review_ids": [
+          "corrected-visual-binding-current",
+          "fresh-rebind-K06-claim:array",
+          "fresh-rebind-K06-claim:python",
+          "fresh-rebind-K06-claim:table",
+          "fresh-rebind-K06-claim:visualise",
+          "fresh-rebind-K16-W1-array",
+          "fresh-rebind-K16-W1-python",
+          "fresh-rebind-K16-W1-table",
+          "fresh-rebind-K16-W1-visualise",
+          "supplement-K02-W1-array",
+          "supplement-K02-W1-python",
+          "supplement-K02-W1-table",
+          "supplement-K02-W1-visualise",
+          "supplement-K05-W1-array",
+          "supplement-K05-W1-python",
+          "supplement-K05-W1-table",
+          "supplement-K09-W1-array",
+          "supplement-K09-W1-python",
+          "supplement-K09-W1-table",
+          "supplement-K09-W1-visualise"
+        ],
+        "dependency_nodes": 37,
+        "historical_review_ids": [
+          "material-K16-W1-python",
+          "material-K16-W1-table",
+          "material-K16-W1-array",
+          "material-K16-W1-visualise",
+          "material-K06-claim:python",
+          "material-K06-claim:table",
+          "material-K06-claim:array",
+          "material-K06-claim:visualise",
+          "supplement-K05-W1-visualise",
+          "supplement-K10-claim:python",
+          "supplement-K10-claim:table",
+          "supplement-K10-claim:array",
+          "supplement-K10-claim:visualise",
+          "historical-visual-binding-failure"
+        ],
+        "selection": "last_appended_review_per_criterion_and_current_object",
+        "stale_review_ids": [
+          "fresh-rebind-K16-W1-array",
+          "fresh-rebind-K16-W1-visualise",
+          "supplement-K02-W1-array",
+          "supplement-K05-W1-array",
+          "supplement-K09-W1-array",
+          "supplement-K02-W1-visualise",
+          "corrected-visual-binding-current",
+          "supplement-K09-W1-visualise"
+        ]
+      },
+      "status": "uncertain"
+    },
+    {
+      "id": "K13",
+      "measurement": {
+        "action": "suppress_duplicates",
+        "exact_duplicate_proposals": 0,
+        "semantic_merge": false
+      },
+      "status": "passed"
+    },
+    {
+      "id": "K14",
+      "measurement": {
+        "agreement_fingerprint": "965e5d47dc9f3709098a614801608d8307ca29d8c251be07b19bd8284815e2b5",
+        "checkpoint_due": false,
+        "priority_policy": "proposal",
+        "thresholds_not_invented": true
+      },
+      "status": "uncertain"
+    },
+    {
+      "id": "K15",
+      "measurement": {
+        "controls": [
+          {
+            "false_rejects": 0,
+            "known_fault": 0,
+            "known_good": 0,
+            "missed_faults": 0,
+            "unit": "W1-array"
+          },
+          {
+            "false_rejects": 0,
+            "known_fault": 0,
+            "known_good": 0,
+            "missed_faults": 0,
+            "unit": "W1-python"
+          },
+          {
+            "false_rejects": 0,
+            "known_fault": 0,
+            "known_good": 0,
+            "missed_faults": 0,
+            "unit": "W1-table"
+          },
+          {
+            "false_rejects": 0,
+            "known_fault": 0,
+            "known_good": 0,
+            "missed_faults": 0,
+            "unit": "W1-visualise"
+          }
+        ],
+        "educator_calibration": "requires_actual_evidence",
+        "learning_outcomes": "untested",
+        "tool_tests_are_not_learner_results": true
+      },
+      "status": "not_run"
+    },
+    {
+      "id": "K16",
+      "measurement": {
+        "learner_understanding": "unobserved_without_actual_learner_evidence",
+        "rubric_revision": "theory-explanation-v1",
+        "semantic_understanding": "not_automated",
+        "units": [
+          {
+            "checks": [
+              {
+                "artifact_locators": [
+                  "cell:409e1675",
+                  "cell:82e8a039",
+                  "cell:e594ea69",
+                  "cell:ebbfd3db",
+                  "cell:08bf506c",
+                  "cell:d60c3acd"
+                ],
+                "id": "T01",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              },
+              {
+                "artifact_locators": [
+                  "cell:409e1675",
+                  "cell:82e8a039",
+                  "cell:ebbfd3db",
+                  "cell:guided-feedback-and-support"
+                ],
+                "id": "T02",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              },
+              {
+                "artifact_locators": [
+                  "cell:mean-variance-mapping",
+                  "cell:b9a324f5",
+                  "cell:e594ea69",
+                  "cell:ebbfd3db",
+                  "cell:guided-feedback-and-support"
+                ],
+                "id": "T03",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              },
+              {
+                "artifact_locators": [
+                  "cell:b17df2fe",
+                  "cell:ebbfd3db",
+                  "cell:81129230",
+                  "cell:3468f4e4",
+                  "cell:ea9aba74"
+                ],
+                "id": "T04",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              },
+              {
+                "artifact_locators": [
+                  "cell:ffb294df",
+                  "cell:71068cea",
+                  "cell:d60c3acd",
+                  "cell:3aea0e50",
+                  "cell:guided-feedback-and-support"
+                ],
+                "id": "T05",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              }
+            ],
+            "review_id": "fresh-rebind-K16-W1-array",
+            "status": "uncertain",
+            "unit_id": "W1-array"
+          },
+          {
+            "checks": [
+              {
+                "artifact_locators": [
+                  "cell:b17df2fe",
+                  "cell:7208718e",
+                  "cell:e2a6be88",
+                  "cell:92534730",
+                  "cell:d96a754b",
+                  "cell:81129230",
+                  "cell:c6d01f13",
+                  "cell:fb78da30",
+                  "cell:14425637"
+                ],
+                "id": "T04",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              },
+              {
+                "artifact_locators": [
+                  "cell:7208718e",
+                  "cell:c6d01f13",
+                  "cell:modify-mean-function",
+                  "cell:d60c3acd",
+                  "cell:3aea0e50",
+                  "cell:guided-feedback-and-support"
+                ],
+                "id": "T05",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              }
+            ],
+            "review_id": "fresh-rebind-K16-W1-python",
+            "status": "passed",
+            "unit_id": "W1-python"
+          },
+          {
+            "checks": [
+              {
+                "artifact_locators": [
+                  "cell:1ab9cd79",
+                  "cell:876b91b7",
+                  "cell:b428c6f1",
+                  "cell:0eaa5024",
+                  "cell:30a2a103",
+                  "cell:b6788dc5",
+                  "cell:9b766e3e",
+                  "cell:08e374f4",
+                  "cell:d60c3acd"
+                ],
+                "id": "T03",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              },
+              {
+                "artifact_locators": [
+                  "cell:b38de2c6",
+                  "cell:d60c3acd",
+                  "cell:dff8752b",
+                  "cell:3aea0e50",
+                  "cell:guided-feedback-and-support"
+                ],
+                "id": "T05",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              }
+            ],
+            "review_id": "fresh-rebind-K16-W1-table",
+            "status": "passed",
+            "unit_id": "W1-table"
+          },
+          {
+            "checks": [
+              {
+                "artifact_locators": [
+                  "cell:fa10c459",
+                  "cell:48d931b0",
+                  "cell:b5362bd2",
+                  "cell:9ce91662",
+                  "cell:c6ef56e6",
+                  "cell:777a590f",
+                  "cell:33384c16",
+                  "cell:6a64bcb2",
+                  "cell:8d3421bb",
+                  "cell:d7b8c3d2",
+                  "cell:6075b8e8"
+                ],
+                "id": "T03",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              },
+              {
+                "artifact_locators": [
+                  "cell:b5362bd2",
+                  "cell:5d9473df",
+                  "cell:9ce91662",
+                  "cell:777a590f",
+                  "cell:6075b8e8",
+                  "cell:guided-feedback-and-support"
+                ],
+                "id": "T05",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              }
+            ],
+            "review_id": "fresh-rebind-K16-W1-visualise",
+            "status": "uncertain",
+            "unit_id": "W1-visualise"
+          }
+        ]
+      },
+      "status": "uncertain"
+    }
+  ],
+  "evaluator_sha256": "2b8ad68a46899cbe533cf0900f0b3b7d4956edf990c9847459d75ac72ac499c5",
+  "findings": [
+    {
+      "criterion_id": "K02",
+      "measurement": {
+        "full_claim_missing_topics": [],
+        "missing": [],
+        "planned_topics": [
+          "KOAI-01",
+          "KOAI-02",
+          "KOAI-03",
+          "KOAI-06"
+        ],
+        "present": 4,
+        "requested_objectives": 4,
+        "scheduled_is_not_achieved": true,
+        "scheduled_topics_in_plan": 60
+      },
+      "objects": [],
+      "severity": "major",
+      "status": "not_run"
+    },
+    {
+      "criterion_id": "K04",
+      "measurement": {
+        "diagnosed_units": 4,
+        "missing_units": []
+      },
+      "objects": [
+        "W1-array",
+        "W1-python",
+        "W1-table",
+        "W1-visualise"
+      ],
+      "severity": "major",
+      "status": "not_run"
+    },
+    {
+      "criterion_id": "K05",
+      "measurement": {
+        "linked_units": 4,
+        "semantic_review_required": true
+      },
+      "objects": [
+        "W1-array",
+        "W1-visualise"
+      ],
+      "severity": "moderate",
+      "status": "uncertain"
+    },
+    {
+      "criterion_id": "K09",
+      "measurement": {
+        "assessments_checked": 4,
+        "learning_outcomes": "untested"
+      },
+      "objects": [
+        "W1-array",
+        "W1-visualise"
+      ],
+      "severity": "major",
+      "status": "uncertain"
+    },
+    {
+      "criterion_id": "K12",
+      "measurement": {
+        "active_review_ids": [
+          "corrected-visual-binding-current",
+          "fresh-rebind-K06-claim:array",
+          "fresh-rebind-K06-claim:python",
+          "fresh-rebind-K06-claim:table",
+          "fresh-rebind-K06-claim:visualise",
+          "fresh-rebind-K16-W1-array",
+          "fresh-rebind-K16-W1-python",
+          "fresh-rebind-K16-W1-table",
+          "fresh-rebind-K16-W1-visualise",
+          "supplement-K02-W1-array",
+          "supplement-K02-W1-python",
+          "supplement-K02-W1-table",
+          "supplement-K02-W1-visualise",
+          "supplement-K05-W1-array",
+          "supplement-K05-W1-python",
+          "supplement-K05-W1-table",
+          "supplement-K09-W1-array",
+          "supplement-K09-W1-python",
+          "supplement-K09-W1-table",
+          "supplement-K09-W1-visualise"
+        ],
+        "dependency_nodes": 37,
+        "historical_review_ids": [
+          "material-K16-W1-python",
+          "material-K16-W1-table",
+          "material-K16-W1-array",
+          "material-K16-W1-visualise",
+          "material-K06-claim:python",
+          "material-K06-claim:table",
+          "material-K06-claim:array",
+          "material-K06-claim:visualise",
+          "supplement-K05-W1-visualise",
+          "supplement-K10-claim:python",
+          "supplement-K10-claim:table",
+          "supplement-K10-claim:array",
+          "supplement-K10-claim:visualise",
+          "historical-visual-binding-failure"
+        ],
+        "selection": "last_appended_review_per_criterion_and_current_object",
+        "stale_review_ids": [
+          "fresh-rebind-K16-W1-array",
+          "fresh-rebind-K16-W1-visualise",
+          "supplement-K02-W1-array",
+          "supplement-K05-W1-array",
+          "supplement-K09-W1-array",
+          "supplement-K02-W1-visualise",
+          "corrected-visual-binding-current",
+          "supplement-K09-W1-visualise"
+        ]
+      },
+      "objects": [
+        "W1-array",
+        "W1-array",
+        "W1-array",
+        "W1-array",
+        "W1-visualise",
+        "W1-visualise",
+        "W1-visualise",
+        "W1-visualise"
+      ],
+      "severity": "major",
+      "status": "uncertain"
+    },
+    {
+      "criterion_id": "K14",
+      "measurement": {
+        "agreement_fingerprint": "965e5d47dc9f3709098a614801608d8307ca29d8c251be07b19bd8284815e2b5",
+        "checkpoint_due": false,
+        "priority_policy": "proposal",
+        "thresholds_not_invented": true
+      },
+      "objects": [],
+      "severity": "critical",
+      "status": "uncertain"
+    },
+    {
+      "criterion_id": "K15",
+      "measurement": {
+        "controls": [
+          {
+            "false_rejects": 0,
+            "known_fault": 0,
+            "known_good": 0,
+            "missed_faults": 0,
+            "unit": "W1-array"
+          },
+          {
+            "false_rejects": 0,
+            "known_fault": 0,
+            "known_good": 0,
+            "missed_faults": 0,
+            "unit": "W1-python"
+          },
+          {
+            "false_rejects": 0,
+            "known_fault": 0,
+            "known_good": 0,
+            "missed_faults": 0,
+            "unit": "W1-table"
+          },
+          {
+            "false_rejects": 0,
+            "known_fault": 0,
+            "known_good": 0,
+            "missed_faults": 0,
+            "unit": "W1-visualise"
+          }
+        ],
+        "educator_calibration": "requires_actual_evidence",
+        "learning_outcomes": "untested",
+        "tool_tests_are_not_learner_results": true
+      },
+      "objects": [
+        "W1-array",
+        "W1-python",
+        "W1-table",
+        "W1-visualise"
+      ],
+      "severity": "major",
+      "status": "not_run"
+    },
+    {
+      "criterion_id": "K16",
+      "measurement": {
+        "learner_understanding": "unobserved_without_actual_learner_evidence",
+        "rubric_revision": "theory-explanation-v1",
+        "semantic_understanding": "not_automated",
+        "units": [
+          {
+            "checks": [
+              {
+                "artifact_locators": [
+                  "cell:409e1675",
+                  "cell:82e8a039",
+                  "cell:e594ea69",
+                  "cell:ebbfd3db",
+                  "cell:08bf506c",
+                  "cell:d60c3acd"
+                ],
+                "id": "T01",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              },
+              {
+                "artifact_locators": [
+                  "cell:409e1675",
+                  "cell:82e8a039",
+                  "cell:ebbfd3db",
+                  "cell:guided-feedback-and-support"
+                ],
+                "id": "T02",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              },
+              {
+                "artifact_locators": [
+                  "cell:mean-variance-mapping",
+                  "cell:b9a324f5",
+                  "cell:e594ea69",
+                  "cell:ebbfd3db",
+                  "cell:guided-feedback-and-support"
+                ],
+                "id": "T03",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              },
+              {
+                "artifact_locators": [
+                  "cell:b17df2fe",
+                  "cell:ebbfd3db",
+                  "cell:81129230",
+                  "cell:3468f4e4",
+                  "cell:ea9aba74"
+                ],
+                "id": "T04",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              },
+              {
+                "artifact_locators": [
+                  "cell:ffb294df",
+                  "cell:71068cea",
+                  "cell:d60c3acd",
+                  "cell:3aea0e50",
+                  "cell:guided-feedback-and-support"
+                ],
+                "id": "T05",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              }
+            ],
+            "review_id": "fresh-rebind-K16-W1-array",
+            "status": "uncertain",
+            "unit_id": "W1-array"
+          },
+          {
+            "checks": [
+              {
+                "artifact_locators": [
+                  "cell:b17df2fe",
+                  "cell:7208718e",
+                  "cell:e2a6be88",
+                  "cell:92534730",
+                  "cell:d96a754b",
+                  "cell:81129230",
+                  "cell:c6d01f13",
+                  "cell:fb78da30",
+                  "cell:14425637"
+                ],
+                "id": "T04",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              },
+              {
+                "artifact_locators": [
+                  "cell:7208718e",
+                  "cell:c6d01f13",
+                  "cell:modify-mean-function",
+                  "cell:d60c3acd",
+                  "cell:3aea0e50",
+                  "cell:guided-feedback-and-support"
+                ],
+                "id": "T05",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              }
+            ],
+            "review_id": "fresh-rebind-K16-W1-python",
+            "status": "passed",
+            "unit_id": "W1-python"
+          },
+          {
+            "checks": [
+              {
+                "artifact_locators": [
+                  "cell:1ab9cd79",
+                  "cell:876b91b7",
+                  "cell:b428c6f1",
+                  "cell:0eaa5024",
+                  "cell:30a2a103",
+                  "cell:b6788dc5",
+                  "cell:9b766e3e",
+                  "cell:08e374f4",
+                  "cell:d60c3acd"
+                ],
+                "id": "T03",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              },
+              {
+                "artifact_locators": [
+                  "cell:b38de2c6",
+                  "cell:d60c3acd",
+                  "cell:dff8752b",
+                  "cell:3aea0e50",
+                  "cell:guided-feedback-and-support"
+                ],
+                "id": "T05",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              }
+            ],
+            "review_id": "fresh-rebind-K16-W1-table",
+            "status": "passed",
+            "unit_id": "W1-table"
+          },
+          {
+            "checks": [
+              {
+                "artifact_locators": [
+                  "cell:fa10c459",
+                  "cell:48d931b0",
+                  "cell:b5362bd2",
+                  "cell:9ce91662",
+                  "cell:c6ef56e6",
+                  "cell:777a590f",
+                  "cell:33384c16",
+                  "cell:6a64bcb2",
+                  "cell:8d3421bb",
+                  "cell:d7b8c3d2",
+                  "cell:6075b8e8"
+                ],
+                "id": "T03",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              },
+              {
+                "artifact_locators": [
+                  "cell:b5362bd2",
+                  "cell:5d9473df",
+                  "cell:9ce91662",
+                  "cell:777a590f",
+                  "cell:6075b8e8",
+                  "cell:guided-feedback-and-support"
+                ],
+                "id": "T05",
+                "reason": "recorded_review_outcome",
+                "status": "passed"
+              }
+            ],
+            "review_id": "fresh-rebind-K16-W1-visualise",
+            "status": "uncertain",
+            "unit_id": "W1-visualise"
+          }
+        ]
+      },
+      "objects": [
+        "W1-array",
+        "W1-visualise"
+      ],
+      "severity": "major",
+      "status": "uncertain"
+    }
+  ],
+  "limits": [
+    "Semantic judgments and source reading are recorded claims, not authenticated facts.",
+    "Synthetic success is not real material readiness.",
+    "No worker, scheduler, writer or publisher is executed."
+  ],
+  "ready_for_review": false,
+  "revision": "week01-current-validation-copy",
+  "schema_version": 1,
+  "specification_revision": "criteria-v2",
+  "specification_sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41",
+  "status": "uncertain",
+  "synthetic": false
+}

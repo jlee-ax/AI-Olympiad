@@ -1,0 +1,258 @@
+{
+  "artifact_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+  "cases": [
+    {
+      "actual": "valid",
+      "case": "historical_graph_structure",
+      "expected": "valid",
+      "passed": true
+    },
+    {
+      "actual": "gap",
+      "case": "historical_graph_missing_path_declaration",
+      "expected": "gap",
+      "passed": true
+    },
+    {
+      "actual": "declared_path_complete",
+      "case": "real_record_projection_with_all_four_declared_paths",
+      "expected": "declared_path_complete",
+      "passed": true,
+      "scope": "All four recorded comparison paths only; does not cover every notebook objective or prove independent performance."
+    },
+    {
+      "actual": "gap",
+      "case": "same_real_projection_missing_feedback_edge",
+      "expected": "gap",
+      "passed": true
+    },
+    {
+      "actual": "stale",
+      "case": "same_real_projection_changed_notebook_bytes",
+      "expected": "stale",
+      "passed": true
+    },
+    {
+      "actual": "declared_path_complete",
+      "case": "restored_exact_notebook_bytes",
+      "expected": "declared_path_complete",
+      "passed": true
+    },
+    {
+      "actual": "blocked",
+      "blockers": [
+        {
+          "code": "contest_depth_uncertain",
+          "detail": "Read scoped findings; learner outcomes remain separate."
+        },
+        {
+          "code": "workflow_artifact_stale",
+          "detail": "Workflow artifact digest does not bind the actual depth-review artifact."
+        },
+        {
+          "code": "review_context_not_bound",
+          "detail": "Bind required_inputs and obtain a new current-context review; copying hashes creates no acceptance."
+        },
+        {
+          "code": "workflow_pause",
+          "detail": "criteria_agreement_required"
+        }
+      ],
+      "case": "actual_old_workflow_is_not_silently_rebound",
+      "expected": "blocked",
+      "passed": true,
+      "workflow": {
+        "authority": "advisory_only",
+        "context_fingerprint": "3ee2719c181c09f56df477433dc62ecb922dc8838c941e7951deb70129066e24",
+        "errors": [],
+        "reason": "criteria_agreement_required",
+        "status": "pause",
+        "synthetic": false,
+        "warnings": [
+          "scope.lesson_production_allowed is a recorded claim, not an execution capability or authenticated permission"
+        ]
+      }
+    },
+    {
+      "actual": 1,
+      "case": "actual_copy_joined_cli_blocks_stale_context",
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "actual": "gap",
+      "case": "actual_baseline_depth",
+      "expected": "gap",
+      "gaps": [
+        {
+          "difference": "The lesson shows reshape and transpose and assigns changed shapes, but no identified question compares equal-shaped outputs to decide whether axes were exchanged.",
+          "id": "axis-choice",
+          "origin": "recorded_comparison",
+          "priority": "high",
+          "rationale": "A small counterexample would require choosing and justifying the operation; this is a foundational bridge, not a claim to cover PyTorch.",
+          "week": 1
+        },
+        {
+          "difference": "The original asks the learner to modify a supplied mean function with detailed hints; no identified short standalone function-specification task combines missing-value treatment, return and edge case without a supplied solution.",
+          "id": "function-spec",
+          "origin": "recorded_comparison",
+          "priority": "high",
+          "rationale": "A beginner-scale specification and independent checks can bridge to later full algorithmic tasks without requiring K-NN in week 1.",
+          "week": 1
+        },
+        {
+          "difference": "The pinned plan specifies two choice questions and one short written question, whereas this notebook cell contains four written prompts and no choice options.",
+          "id": "written-format",
+          "origin": "recorded_comparison",
+          "priority": "high",
+          "rationale": "The 10-minute planned block can use the intended format without extending class time; actual completion time is unobserved.",
+          "week": 1
+        },
+        {
+          "difference": "Recorded multiple_choice count is 0; required count is 2.",
+          "id": "assessment:week:1:multiple_choice",
+          "origin": "assessment_format",
+          "priority": null,
+          "rationale": "Arithmetic comparison of declared counts only.",
+          "week": 1
+        },
+        {
+          "difference": "Recorded written count is 4; required count is 1.",
+          "id": "assessment:week:1:written",
+          "origin": "assessment_format",
+          "priority": null,
+          "rationale": "Arithmetic comparison of declared counts only.",
+          "week": 1
+        }
+      ],
+      "passed": true
+    },
+    {
+      "actual": "uncertain",
+      "case": "actual_candidate_preserves_uncertainty",
+      "comparisons": [
+        {
+          "goal_id": "goal:axis",
+          "id": "axis-choice",
+          "issue_paths": [
+            "comparisons[0]"
+          ],
+          "recorded_judgment": "met",
+          "status": "uncertain",
+          "week": 1
+        },
+        {
+          "goal_id": "goal:function",
+          "id": "function-spec",
+          "issue_paths": [
+            "comparisons[1]"
+          ],
+          "recorded_judgment": "met",
+          "status": "uncertain",
+          "week": 1
+        },
+        {
+          "goal_id": "goal:written",
+          "id": "written-format",
+          "issue_paths": [
+            "comparisons[2]"
+          ],
+          "recorded_judgment": "met",
+          "status": "uncertain",
+          "week": 1
+        },
+        {
+          "goal_id": "goal:variance",
+          "id": "variance-units",
+          "issue_paths": [
+            "comparisons[3]"
+          ],
+          "recorded_judgment": "met",
+          "status": "uncertain",
+          "week": 1
+        }
+      ],
+      "expected": "uncertain",
+      "findings": [
+        {
+          "code": "missing",
+          "message": "An integer is required.",
+          "path": "time_allocations[0].outside_class_minutes",
+          "status": "uncertain"
+        },
+        {
+          "code": "reported_unknown",
+          "message": "Student independence, readiness and learning remain unobserved.",
+          "path": "unknowns[0]",
+          "status": "uncertain"
+        },
+        {
+          "code": "reported_unknown",
+          "message": "Revised homework time and actual class completion time are not estimated or observed.",
+          "path": "unknowns[1]",
+          "status": "uncertain"
+        },
+        {
+          "code": "reported_unknown",
+          "message": "The 2026 high-school sample cannot establish the difficulty distribution of 2027 middle-school questions.",
+          "path": "unknowns[2]",
+          "status": "uncertain"
+        },
+        {
+          "code": "reported_unknown",
+          "message": "Browser rendering of the HTML was not inspected; saved figures were inspected separately.",
+          "path": "unknowns[3]",
+          "status": "uncertain"
+        },
+        {
+          "code": "unresolved_unknowns",
+          "message": "A global or explicitly scoped unknown affects this comparison.",
+          "path": "comparisons[0]",
+          "status": "uncertain"
+        },
+        {
+          "code": "unresolved_unknowns",
+          "message": "A global or explicitly scoped unknown affects this comparison.",
+          "path": "comparisons[1]",
+          "status": "uncertain"
+        },
+        {
+          "code": "unresolved_unknowns",
+          "message": "A global or explicitly scoped unknown affects this comparison.",
+          "path": "comparisons[2]",
+          "status": "uncertain"
+        },
+        {
+          "code": "unresolved_unknowns",
+          "message": "A global or explicitly scoped unknown affects this comparison.",
+          "path": "comparisons[3]",
+          "status": "uncertain"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "case": "actual_quiz_array_function_variance_counterexamples",
+      "expected": 0,
+      "passed": true,
+      "result": {
+        "learner_performance": "not_observed",
+        "quiz": "actual snippet and axis/denominator checked",
+        "reshape": "values, shape, axis mapping and prior state checked",
+        "status": "passed",
+        "student_artifact": "teacher key absent from notebook and HTML text",
+        "teacher_key": "boundary cases and 150 seeded independent cases checked",
+        "variance": "translation, scaling and units checked with fractions"
+      }
+    }
+  ],
+  "lesson_commit": "204743d94a4176ace81c64f138567c2cc12041d1",
+  "limits": [
+    "Graph repair tests explicit records on copies; no historical record or learner result is fabricated.",
+    "The four recorded comparisons do not cover the entire lesson; see whole-week01-review.md.",
+    "The old real workflow remains paused pending genuine criteria decisions/current reviews.",
+    "No notebook re-execution, browser layout test, educator calibration or learner observation is claimed by this run."
+  ],
+  "status": "passed"
+}

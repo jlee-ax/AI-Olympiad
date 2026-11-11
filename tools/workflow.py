@@ -473,8 +473,13 @@ def decide(state, quality_report=None):
         return finish('pause', 'context_unconfigured')
     if state['frozen'] is None:
         return finish('pause', 'baseline_required')
-    frozen = {**state['frozen'], 'references': _sorted_manifests(state['frozen']['references']),
-              'required_checks': sorted(state['frozen']['required_checks'])}
+    frozen = {
+        'rubric': _manifest(state['frozen']['rubric']),
+        'evaluator': _manifest(state['frozen']['evaluator']),
+        'references': _sorted_manifests(state['frozen']['references']),
+        'required_checks': sorted(state['frozen']['required_checks']),
+        'finish_condition': state['frozen']['finish_condition'],
+    }
     if frozen != measurement(state):
         return finish('pause', 'baseline_change_required')
     if agreement['criteria_fingerprint'] != criteria_fingerprint(state):
@@ -518,12 +523,13 @@ def decide(state, quality_report=None):
             {'id': 'quality:criteria', 'revision': quality_report['specification_revision'], 'sha256': quality_report['specification_sha256']},
             {'id': 'quality:evaluator', 'revision': 'quality-v1', 'sha256': quality_report['evaluator_sha256']},
         ]
-        if any(item not in context['inputs'] for item in required_inputs):
+        bound_inputs = [_manifest(item) for item in context['inputs']]
+        if any(item not in bound_inputs for item in required_inputs):
             return finish('blocked', 'quality_context_not_bound')
         checks = quality_report['checks']
         if (quality_report['ready_for_review'] is not True or not isinstance(checks, list) or
                 {item.get('id') for item in checks if isinstance(item, dict)} !=
-                {'K' + str(n).zfill(2) for n in range(1, 16)} or len(checks) != 15 or
+                {'K' + str(n).zfill(2) for n in range(1, 17)} or len(checks) != 16 or
                 any(not isinstance(item, dict) or item.get('status') != 'passed' for item in checks)):
             return finish('blocked', 'quality_checks_not_passed')
     verification = _verification(state, fingerprint)
@@ -538,6 +544,16 @@ def decide(state, quality_report=None):
     return finish('continue', 'verified_candidate_within_budget')
 
 
+def _unique_pairs(pairs):
+    """Reject ambiguous object names before JSON decoding discards them."""
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError('Duplicate JSON key: ' + ascii(key))
+        result[key] = value
+    return result
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('command', choices=('validate', 'decide', 'fingerprint', 'recall'))
@@ -550,7 +566,7 @@ def main(argv=None):
     if args.query and args.command != 'recall':
         parser.error('--query applies only to recall')
     try:
-        state = json.loads(args.state.read_text(encoding='utf-8'),
+        state = json.loads(args.state.read_text(encoding='utf-8'), object_pairs_hook=_unique_pairs,
                            parse_constant=lambda token: (_ for _ in ()).throw(ValueError('non-finite JSON number: ' + token)))
     except (OSError, UnicodeError, ValueError, RecursionError) as exc:
         print(json.dumps({'status': 'blocked', 'reason': 'unreadable_state', 'authority': 'advisory_only', 'errors': [str(exc)]}))

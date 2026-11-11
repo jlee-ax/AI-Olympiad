@@ -1,0 +1,24 @@
+# New current scoped semantic review — 2026-11-11
+
+A new direct content review of the **freshly executed** notebook confirms the four scoped judgments below. The current notebook SHA-256 is `7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9`; the earlier input was `2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8`. Old review/path records are preserved and correctly report stale when checked against the fresh notebook.
+
+The reviewer directly re-read all four task and response texts, c85 general feedback, teacher instructions and the exact teacher-key lines in `/workspace/scratch/d500e5cb2076/ai-olympiad-combined-validation-20261111`. A separate second reader directly repeated that current scoped review. In addition, every one of the 87 cell IDs, types, source texts and attachment objects was compared with the pinned source; that projection is identical. Current teacher notes also have identical bytes (`56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc`). Unchanged text was corroborating evidence, not an automatic semantic approval. The new records name the fresh execution context and bind the actual current files.
+
+| Current comparison | Actual key and feedback re-read | Current scoped judgment |
+|---|---|---|
+| `axis-choice`, c60–62 | Teacher lines 115–119 give both full arrays, the 5 versus 11 mismatch and row/column mapping. | Exact teacher-key feedback met. Independent prediction/explanation design narrowly met; supplied operations mean the task does not test inventing an unknown operation. |
+| `function-spec`, c78–80 | Lines 120–138 implement the count/mean contract, zero/None distinction, no-observation return and nonmutation, with additional cases and error explanations. | Exact teacher-key feedback and scoped independent task design met. Actual student implementation remains absent. |
+| `written-format`, c14–15 | Lines 53–59 give 13, the `(3,)`/two-values answer, distractor reasons and the 6ml/unknown-total written reasoning. | Exact teacher-key feedback and local hide-examples/reasons/help-disclosure design met; broad exam readiness unverified. |
+| `variance-units`, c66–67 | Lines 141–147 give changed-distribution variances, +3 invariance, ×2 factor 4, cm/mm factor 100 and zero-scale boundary. | Exact teacher-key feedback met. **Independent assessment design uncertain:** worked transformations and plotting scaffold accompany the compound task; no dedicated response/help field or per-task unaided condition resolves that concern. |
+
+General c85 feedback still uses earlier examples and lacks a complete problem-specific key/explanation for **all four** routes. Rebinding that general recap to current bytes therefore preserves a semantic gap. Binding the separately inspected teacher keys resolves the feedback connection but preserves the variance uncertainty.
+
+The final `lessons/week01/validation.json` was read and its notebook digest matches the fresh bytes. It reports 27 executed code cells, zero errors and a fresh in-process execution. Direct notebook inspection agrees on those execution counts/errors. Crucially, the reshape code slot (c61, execution count 19) and function slot (c79, execution count 26) still contain only instructions/comments and no outputs; all relevant response prompts remain blank. Receipt fields explicitly say `blank_not_assessed` and `not_observed`. No learner attempt, assistance history, delivered feedback, successful changed-input retry or learning effect is supplied by this execution.
+
+- [Direct source/execution review receipt](source-and-execution-review.json)
+- [Current graph](path-projection-graph.json)
+- [Current general-feedback paths](generic-feedback-paths.json), [new review](generic-feedback-semantic-review.json), [result](generic-feedback-semantic-result.json): mechanical `declared_path_complete`, semantic **`gap`**.
+- [Current exact-key paths](problem-feedback-paths.json), [new review](problem-feedback-semantic-review.json), [result](problem-feedback-semantic-result.json): mechanical `declared_path_complete`, semantic **`uncertain`**.
+- [Actual combined-environment API/CLI checks](semantic-checks.json): both agree; 33 evidence bindings current per review, both CLI exits 1 as expected, no stderr. Historical records on fresh bytes report stale.
+
+Current paths retain the historical comparison/source declaration as scope evidence. This new scoped review does not update its original depth-bundle target digest, old workflow context or old aggregate quality acceptance. No aggregate semantic pass, whole-lesson adequacy, official-source authenticity, classroom feasibility, learner independence/effectiveness or contest readiness is established. No tools, tests, reference lesson, prior audit record or executable environment content was edited for this review; only new files in this audit directory were written.

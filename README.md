@@ -1,5 +1,7 @@
 # AI Olympiad
 
+![Towards the International AI Olympiad](assets/readme/towards-international-ai-olympiad.png)
+
 A workflow prototype for preparing KOAI teaching materials, with repository-local skills, concrete quality criteria, source-linked records and deterministic inspection/planning tools.
 
 ## Confirmed course inputs
@@ -11,7 +13,8 @@ The [existing student HTML](curriculum/student-plan.html) is preserved in Korean
 ## Start here
 
 - Choose a [skill](skills/README.md).
-- Read the [concrete specification](skills/references/quality-specification.md) and relevant entries in the [15-criterion catalog](skills/references/criteria.json).
+- Read the [concrete specification](skills/references/quality-specification.md) and relevant entries in the [16-criterion catalog](skills/references/criteria.json).
+- Review theory with the [notation, derivation, diagram, algorithm and comprehension rubric](skills/koai-evaluate/references/theory-explanation.json).
 - Use the [eight week 1–2 unit specifications](skills/koai-evaluate/references/unit-specifications.json) for prerequisite tasks, theory/noncoding/coding/assessment behaviors and existing time placement.
 - Inspect the [source-reading register](skills/references/source-readings.json), [research evidence](skills/references/evidence.md), and [evaluation protocol](skills/koai-evaluate/references/evaluation.md) for substantive decisions.
 - Read the [state and CLI contract](tools/README.md) before recording decisions.

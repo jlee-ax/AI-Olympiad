@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "required_demands": [
+    "audit:axis-choice:demand",
+    "audit:function-spec:demand",
+    "audit:written-format:demand",
+    "audit:variance-units:demand"
+  ],
+  "paths": [
+    {
+      "id": "path:axis-choice",
+      "comparison_id": "axis-choice",
+      "roles": {
+        "source": "audit:axis-choice:source",
+        "demand": "audit:axis-choice:demand",
+        "prerequisite": "audit:axis-choice:prerequisite",
+        "theory_explanation": "audit:axis-choice:theory_explanation",
+        "coding_practice": "audit:axis-choice:coding_practice",
+        "independent_assessment": "audit:axis-choice:independent_assessment",
+        "feedback": "audit:axis-choice:feedback"
+      },
+      "provenance": {
+        "source": {
+          "path": "reviews/week01/contest-depth/candidate-depth.json",
+          "sha256": "8425715ae3b5af482f8499cea394807b55f398129c95084647960b0867f6d23e",
+          "locator": "problem_sources; comparisons[0].scope_refs/problem_refs",
+          "revision": "204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "Recorded source read and comparison, not authenticated source truth"
+        },
+        "demand": {
+          "path": "reviews/week01/contest-depth/candidate-depth.json",
+          "sha256": "8425715ae3b5af482f8499cea394807b55f398129c95084647960b0867f6d23e",
+          "locator": "comparisons[0].competency/rationale",
+          "revision": "204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "Recorded source read and comparison, not authenticated source truth"
+        },
+        "prerequisite": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+          "locator": "cell:e594ea69",
+          "revision": "fresh-executed-copy-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct review of actual fresh executed notebook source; all 87 id/type/source/attachment projections equal pinned input; learner performance unobserved"
+        },
+        "theory_explanation": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+          "locator": "cell:depth-reshape-compare",
+          "revision": "fresh-executed-copy-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct review of actual fresh executed notebook source; all 87 id/type/source/attachment projections equal pinned input; learner performance unobserved"
+        },
+        "coding_practice": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+          "locator": "cell:depth-reshape-code",
+          "revision": "fresh-executed-copy-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct review of actual fresh executed notebook source; all 87 id/type/source/attachment projections equal pinned input; learner performance unobserved"
+        },
+        "independent_assessment": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+          "locator": "cell:depth-reshape-response",
+          "revision": "fresh-executed-copy-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct review of actual fresh executed notebook source; all 87 id/type/source/attachment projections equal pinned input; learner performance unobserved"
+        },
+        "feedback": {
+          "path": "lessons/week01/teacher-notes.txt",
+          "sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+          "locator": "lines:115-119",
+          "revision": "direct-current-key-review-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct read of exact problem-specific current teacher key and explanation; no learner outcome observed"
+        }
+      },
+      "assessment": {
+        "independent": true,
+        "allowed_support": "The task asks learners to record assistance; actual assistance and results are unobserved.",
+        "answer_conditions": "Student is asked to hide completed examples and record help; teacher answers are separate but in the same repository."
+      }
+    },
+    {
+      "id": "path:function-spec",
+      "comparison_id": "function-spec",
+      "roles": {
+        "source": "audit:function-spec:source",
+        "demand": "audit:function-spec:demand",
+        "prerequisite": "audit:function-spec:prerequisite",
+        "theory_explanation": "audit:function-spec:theory_explanation",
+        "coding_practice": "audit:function-spec:coding_practice",
+        "independent_assessment": "audit:function-spec:independent_assessment",
+        "feedback": "audit:function-spec:feedback"
+      },
+      "provenance": {
+        "source": {
+          "path": "reviews/week01/contest-depth/candidate-depth.json",
+          "sha256": "8425715ae3b5af482f8499cea394807b55f398129c95084647960b0867f6d23e",
+          "locator": "problem_sources; comparisons[1].scope_refs/problem_refs",
+          "revision": "204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "Recorded source read and comparison, not authenticated source truth"
+        },
+        "demand": {
+          "path": "reviews/week01/contest-depth/candidate-depth.json",
+          "sha256": "8425715ae3b5af482f8499cea394807b55f398129c95084647960b0867f6d23e",
+          "locator": "comparisons[1].competency/rationale",
+          "revision": "204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "Recorded source read and comparison, not authenticated source truth"
+        },
+        "prerequisite": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+          "locator": "cell:7208718e",
+          "revision": "fresh-executed-copy-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct review of actual fresh executed notebook source; all 87 id/type/source/attachment projections equal pinned input; learner performance unobserved"
+        },
+        "theory_explanation": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+          "locator": "cell:depth-function-spec",
+          "revision": "fresh-executed-copy-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct review of actual fresh executed notebook source; all 87 id/type/source/attachment projections equal pinned input; learner performance unobserved"
+        },
+        "coding_practice": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+          "locator": "cell:depth-function-code",
+          "revision": "fresh-executed-copy-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct review of actual fresh executed notebook source; all 87 id/type/source/attachment projections equal pinned input; learner performance unobserved"
+        },
+        "independent_assessment": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+          "locator": "cell:depth-function-response",
+          "revision": "fresh-executed-copy-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct review of actual fresh executed notebook source; all 87 id/type/source/attachment projections equal pinned input; learner performance unobserved"
+        },
+        "feedback": {
+          "path": "lessons/week01/teacher-notes.txt",
+          "sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+          "locator": "lines:120-138",
+          "revision": "direct-current-key-review-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct read of exact problem-specific current teacher key and explanation; no learner outcome observed"
+        }
+      },
+      "assessment": {
+        "independent": true,
+        "allowed_support": "The task asks learners to record assistance; actual assistance and results are unobserved.",
+        "answer_conditions": "Student is asked to hide completed examples and record help; teacher answers are separate but in the same repository."
+      }
+    },
+    {
+      "id": "path:written-format",
+      "comparison_id": "written-format",
+      "roles": {
+        "source": "audit:written-format:source",
+        "demand": "audit:written-format:demand",
+        "prerequisite": "audit:written-format:prerequisite",
+        "theory_explanation": "audit:written-format:theory_explanation",
+        "coding_practice": "audit:written-format:coding_practice",
+        "independent_assessment": "audit:written-format:independent_assessment",
+        "feedback": "audit:written-format:feedback"
+      },
+      "provenance": {
+        "source": {
+          "path": "reviews/week01/contest-depth/candidate-depth.json",
+          "sha256": "8425715ae3b5af482f8499cea394807b55f398129c95084647960b0867f6d23e",
+          "locator": "problem_sources; comparisons[2].scope_refs/problem_refs",
+          "revision": "204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "Recorded source read and comparison, not authenticated source truth"
+        },
+        "demand": {
+          "path": "reviews/week01/contest-depth/candidate-depth.json",
+          "sha256": "8425715ae3b5af482f8499cea394807b55f398129c95084647960b0867f6d23e",
+          "locator": "comparisons[2].competency/rationale",
+          "revision": "204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "Recorded source read and comparison, not authenticated source truth"
+        },
+        "prerequisite": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+          "locator": "cell:e594ea69",
+          "revision": "fresh-executed-copy-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct review of actual fresh executed notebook source; all 87 id/type/source/attachment projections equal pinned input; learner performance unobserved"
+        },
+        "theory_explanation": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+          "locator": "cell:ebbfd3db",
+          "revision": "fresh-executed-copy-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct review of actual fresh executed notebook source; all 87 id/type/source/attachment projections equal pinned input; learner performance unobserved"
+        },
+        "coding_practice": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+          "locator": "cell:3468f4e4",
+          "revision": "fresh-executed-copy-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct review of actual fresh executed notebook source; all 87 id/type/source/attachment projections equal pinned input; learner performance unobserved"
+        },
+        "independent_assessment": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+          "locator": "cell:71068cea",
+          "revision": "fresh-executed-copy-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct review of actual fresh executed notebook source; all 87 id/type/source/attachment projections equal pinned input; learner performance unobserved"
+        },
+        "feedback": {
+          "path": "lessons/week01/teacher-notes.txt",
+          "sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+          "locator": "lines:53-59",
+          "revision": "direct-current-key-review-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct read of exact problem-specific current teacher key and explanation; no learner outcome observed"
+        }
+      },
+      "assessment": {
+        "independent": true,
+        "allowed_support": "The task asks learners to record assistance; actual assistance and results are unobserved.",
+        "answer_conditions": "Student is asked to hide completed examples and record help; teacher answers are separate but in the same repository."
+      }
+    },
+    {
+      "id": "path:variance-units",
+      "comparison_id": "variance-units",
+      "roles": {
+        "source": "audit:variance-units:source",
+        "demand": "audit:variance-units:demand",
+        "prerequisite": "audit:variance-units:prerequisite",
+        "theory_explanation": "audit:variance-units:theory_explanation",
+        "coding_practice": "audit:variance-units:coding_practice",
+        "independent_assessment": "audit:variance-units:independent_assessment",
+        "feedback": "audit:variance-units:feedback"
+      },
+      "provenance": {
+        "source": {
+          "path": "reviews/week01/contest-depth/candidate-depth.json",
+          "sha256": "8425715ae3b5af482f8499cea394807b55f398129c95084647960b0867f6d23e",
+          "locator": "problem_sources; comparisons[3].scope_refs/problem_refs",
+          "revision": "204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "Recorded source read and comparison, not authenticated source truth"
+        },
+        "demand": {
+          "path": "reviews/week01/contest-depth/candidate-depth.json",
+          "sha256": "8425715ae3b5af482f8499cea394807b55f398129c95084647960b0867f6d23e",
+          "locator": "comparisons[3].competency/rationale",
+          "revision": "204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "Recorded source read and comparison, not authenticated source truth"
+        },
+        "prerequisite": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+          "locator": "cell:409e1675",
+          "revision": "fresh-executed-copy-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct review of actual fresh executed notebook source; all 87 id/type/source/attachment projections equal pinned input; learner performance unobserved"
+        },
+        "theory_explanation": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+          "locator": "cell:9ce91662",
+          "revision": "fresh-executed-copy-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct review of actual fresh executed notebook source; all 87 id/type/source/attachment projections equal pinned input; learner performance unobserved"
+        },
+        "coding_practice": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+          "locator": "cell:c6ef56e6",
+          "revision": "fresh-executed-copy-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct review of actual fresh executed notebook source; all 87 id/type/source/attachment projections equal pinned input; learner performance unobserved"
+        },
+        "independent_assessment": {
+          "path": "lessons/week01/week01_python_tables.ipynb",
+          "sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+          "locator": "cell:9ce91662",
+          "revision": "fresh-executed-copy-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct review of actual fresh executed notebook source; all 87 id/type/source/attachment projections equal pinned input; learner performance unobserved"
+        },
+        "feedback": {
+          "path": "lessons/week01/teacher-notes.txt",
+          "sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+          "locator": "lines:141-147",
+          "revision": "direct-current-key-review-2026-11-11; source revision 204743d94a4176ace81c64f138567c2cc12041d1",
+          "origin": "New direct read of exact problem-specific current teacher key and explanation; no learner outcome observed"
+        }
+      },
+      "assessment": {
+        "independent": true,
+        "allowed_support": "The task asks learners to record assistance; actual assistance and results are unobserved.",
+        "answer_conditions": "Student is asked to hide completed examples and record help; teacher answers are separate but in the same repository."
+      }
+    }
+  ],
+  "review_context": "New scoped direct review of fresh executed notebook and current teacher key; historical demand/source record is retained as evidence only, not rebound as a fresh aggregate quality review."
+}

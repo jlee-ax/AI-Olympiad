@@ -1,0 +1,471 @@
+{
+  "nodes": [
+    {
+      "id": "scope:2027",
+      "type": "evidence",
+      "status": "verified",
+      "label": "KOAI 2027 guide and linked IOAI 2026-labeled syllabus"
+    },
+    {
+      "id": "sample:2026",
+      "type": "evidence",
+      "status": "verified",
+      "label": "KOAI 2026 high-school-standard sample, questions 2 and 6 and written 2"
+    },
+    {
+      "id": "artifact:baseline",
+      "type": "artifact",
+      "status": "verified",
+      "label": "Week 1 notebook baseline SHA256 602c0c4e04e7208b0b082d9e4e7d4be384e1371f67c5f211d931911367d02eb0"
+    },
+    {
+      "id": "skill:depth",
+      "type": "skill",
+      "status": "verified",
+      "label": "Supplemental competition-depth review at 64f24aab"
+    },
+    {
+      "id": "review:axis",
+      "type": "review",
+      "status": "completed",
+      "label": "Recorded gap: same-shape array operations need explicit contrast"
+    },
+    {
+      "id": "review:function",
+      "type": "review",
+      "status": "completed",
+      "label": "Recorded gap: beginner-scale independent function specification"
+    },
+    {
+      "id": "review:format",
+      "type": "review",
+      "status": "completed",
+      "label": "Recorded gap: planned choice and written format differs from notebook"
+    },
+    {
+      "id": "review:learner",
+      "type": "review",
+      "status": "blocked",
+      "label": "Learner independence, mastery and actual timings not observed"
+    },
+    {
+      "id": "source:scaler",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Official StandardScaler documentation: training statistics and zero-variance handling"
+    },
+    {
+      "id": "artifact:candidate",
+      "type": "artifact",
+      "status": "verified",
+      "label": "Week 1 candidate SHA256 2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8"
+    },
+    {
+      "id": "review:candidate",
+      "type": "review",
+      "status": "completed",
+      "label": "Scoped independent review of changed tasks, math, answers and boundaries; no learner outcome"
+    },
+    {
+      "id": "review:timing",
+      "type": "review",
+      "status": "blocked",
+      "label": "Actual class time and revised homework time remain unobserved"
+    },
+    {
+      "id": "audit:axis-choice:source",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared axis-choice source; task design only"
+    },
+    {
+      "id": "audit:axis-choice:demand",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared axis-choice demand; task design only"
+    },
+    {
+      "id": "audit:axis-choice:prerequisite",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared axis-choice prerequisite; task design only"
+    },
+    {
+      "id": "audit:axis-choice:theory_explanation",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared axis-choice theory_explanation; task design only"
+    },
+    {
+      "id": "audit:axis-choice:coding_practice",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared axis-choice coding_practice; task design only"
+    },
+    {
+      "id": "audit:axis-choice:independent_assessment",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared axis-choice independent_assessment; task design only"
+    },
+    {
+      "id": "audit:axis-choice:feedback",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared axis-choice feedback; task design only"
+    },
+    {
+      "id": "audit:function-spec:source",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared function-spec source; task design only"
+    },
+    {
+      "id": "audit:function-spec:demand",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared function-spec demand; task design only"
+    },
+    {
+      "id": "audit:function-spec:prerequisite",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared function-spec prerequisite; task design only"
+    },
+    {
+      "id": "audit:function-spec:theory_explanation",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared function-spec theory_explanation; task design only"
+    },
+    {
+      "id": "audit:function-spec:coding_practice",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared function-spec coding_practice; task design only"
+    },
+    {
+      "id": "audit:function-spec:independent_assessment",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared function-spec independent_assessment; task design only"
+    },
+    {
+      "id": "audit:function-spec:feedback",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared function-spec feedback; task design only"
+    },
+    {
+      "id": "audit:written-format:source",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared written-format source; task design only"
+    },
+    {
+      "id": "audit:written-format:demand",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared written-format demand; task design only"
+    },
+    {
+      "id": "audit:written-format:prerequisite",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared written-format prerequisite; task design only"
+    },
+    {
+      "id": "audit:written-format:theory_explanation",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared written-format theory_explanation; task design only"
+    },
+    {
+      "id": "audit:written-format:coding_practice",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared written-format coding_practice; task design only"
+    },
+    {
+      "id": "audit:written-format:independent_assessment",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared written-format independent_assessment; task design only"
+    },
+    {
+      "id": "audit:written-format:feedback",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared written-format feedback; task design only"
+    },
+    {
+      "id": "audit:variance-units:source",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared variance-units source; task design only"
+    },
+    {
+      "id": "audit:variance-units:demand",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared variance-units demand; task design only"
+    },
+    {
+      "id": "audit:variance-units:prerequisite",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared variance-units prerequisite; task design only"
+    },
+    {
+      "id": "audit:variance-units:theory_explanation",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared variance-units theory_explanation; task design only"
+    },
+    {
+      "id": "audit:variance-units:coding_practice",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared variance-units coding_practice; task design only"
+    },
+    {
+      "id": "audit:variance-units:independent_assessment",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared variance-units independent_assessment; task design only"
+    },
+    {
+      "id": "audit:variance-units:feedback",
+      "type": "evidence",
+      "status": "verified",
+      "label": "Declared variance-units feedback; task design only"
+    }
+  ],
+  "edges": [
+    {
+      "from": "scope:2027",
+      "to": "review:axis",
+      "type": "supports"
+    },
+    {
+      "from": "sample:2026",
+      "to": "review:axis",
+      "type": "supports"
+    },
+    {
+      "from": "artifact:baseline",
+      "to": "review:axis",
+      "type": "supports"
+    },
+    {
+      "from": "scope:2027",
+      "to": "review:function",
+      "type": "supports"
+    },
+    {
+      "from": "sample:2026",
+      "to": "review:function",
+      "type": "supports"
+    },
+    {
+      "from": "artifact:baseline",
+      "to": "review:function",
+      "type": "supports"
+    },
+    {
+      "from": "scope:2027",
+      "to": "review:format",
+      "type": "supports"
+    },
+    {
+      "from": "artifact:baseline",
+      "to": "review:format",
+      "type": "supports"
+    },
+    {
+      "from": "skill:depth",
+      "to": "review:axis",
+      "type": "informs"
+    },
+    {
+      "from": "skill:depth",
+      "to": "review:function",
+      "type": "informs"
+    },
+    {
+      "from": "skill:depth",
+      "to": "review:format",
+      "type": "informs"
+    },
+    {
+      "from": "review:learner",
+      "to": "artifact:baseline",
+      "type": "informs"
+    },
+    {
+      "from": "scope:2027",
+      "to": "review:candidate",
+      "type": "supports"
+    },
+    {
+      "from": "sample:2026",
+      "to": "review:candidate",
+      "type": "supports"
+    },
+    {
+      "from": "source:scaler",
+      "to": "review:candidate",
+      "type": "supports"
+    },
+    {
+      "from": "artifact:candidate",
+      "to": "review:candidate",
+      "type": "supports"
+    },
+    {
+      "from": "skill:depth",
+      "to": "review:candidate",
+      "type": "supports"
+    },
+    {
+      "from": "review:candidate",
+      "to": "review:axis",
+      "type": "revises"
+    },
+    {
+      "from": "review:candidate",
+      "to": "review:function",
+      "type": "revises"
+    },
+    {
+      "from": "review:candidate",
+      "to": "review:format",
+      "type": "revises"
+    },
+    {
+      "from": "review:timing",
+      "to": "artifact:candidate",
+      "type": "informs"
+    },
+    {
+      "from": "audit:axis-choice:source",
+      "to": "audit:axis-choice:demand",
+      "type": "supports"
+    },
+    {
+      "from": "audit:axis-choice:demand",
+      "to": "audit:axis-choice:prerequisite",
+      "type": "supports"
+    },
+    {
+      "from": "audit:axis-choice:prerequisite",
+      "to": "audit:axis-choice:theory_explanation",
+      "type": "supports"
+    },
+    {
+      "from": "audit:axis-choice:theory_explanation",
+      "to": "audit:axis-choice:coding_practice",
+      "type": "supports"
+    },
+    {
+      "from": "audit:axis-choice:coding_practice",
+      "to": "audit:axis-choice:independent_assessment",
+      "type": "supports"
+    },
+    {
+      "from": "audit:axis-choice:independent_assessment",
+      "to": "audit:axis-choice:feedback",
+      "type": "supports"
+    },
+    {
+      "from": "audit:function-spec:source",
+      "to": "audit:function-spec:demand",
+      "type": "supports"
+    },
+    {
+      "from": "audit:function-spec:demand",
+      "to": "audit:function-spec:prerequisite",
+      "type": "supports"
+    },
+    {
+      "from": "audit:function-spec:prerequisite",
+      "to": "audit:function-spec:theory_explanation",
+      "type": "supports"
+    },
+    {
+      "from": "audit:function-spec:theory_explanation",
+      "to": "audit:function-spec:coding_practice",
+      "type": "supports"
+    },
+    {
+      "from": "audit:function-spec:coding_practice",
+      "to": "audit:function-spec:independent_assessment",
+      "type": "supports"
+    },
+    {
+      "from": "audit:function-spec:independent_assessment",
+      "to": "audit:function-spec:feedback",
+      "type": "supports"
+    },
+    {
+      "from": "audit:written-format:source",
+      "to": "audit:written-format:demand",
+      "type": "supports"
+    },
+    {
+      "from": "audit:written-format:demand",
+      "to": "audit:written-format:prerequisite",
+      "type": "supports"
+    },
+    {
+      "from": "audit:written-format:prerequisite",
+      "to": "audit:written-format:theory_explanation",
+      "type": "supports"
+    },
+    {
+      "from": "audit:written-format:theory_explanation",
+      "to": "audit:written-format:coding_practice",
+      "type": "supports"
+    },
+    {
+      "from": "audit:written-format:coding_practice",
+      "to": "audit:written-format:independent_assessment",
+      "type": "supports"
+    },
+    {
+      "from": "audit:written-format:independent_assessment",
+      "to": "audit:written-format:feedback",
+      "type": "supports"
+    },
+    {
+      "from": "audit:variance-units:source",
+      "to": "audit:variance-units:demand",
+      "type": "supports"
+    },
+    {
+      "from": "audit:variance-units:demand",
+      "to": "audit:variance-units:prerequisite",
+      "type": "supports"
+    },
+    {
+      "from": "audit:variance-units:prerequisite",
+      "to": "audit:variance-units:theory_explanation",
+      "type": "supports"
+    },
+    {
+      "from": "audit:variance-units:theory_explanation",
+      "to": "audit:variance-units:coding_practice",
+      "type": "supports"
+    },
+    {
+      "from": "audit:variance-units:coding_practice",
+      "to": "audit:variance-units:independent_assessment",
+      "type": "supports"
+    },
+    {
+      "from": "audit:variance-units:independent_assessment",
+      "to": "audit:variance-units:feedback",
+      "type": "supports"
+    }
+  ]
+}

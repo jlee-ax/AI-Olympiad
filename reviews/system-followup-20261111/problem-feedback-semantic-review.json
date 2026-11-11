@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "reviewed_at": "2026-11-11",
+  "lesson_commit": "204743d94a4176ace81c64f138567c2cc12041d1",
+  "graph_sha256": "68c6094327d6c71ebc209234bf5c0ab9c646f78280f1a2bbd6fde11452a9690a",
+  "reviewer": {
+    "id": "sol_graph_semantics; second-read actual_semantic_second_read",
+    "method": "Directly read current notebook task/response/generic-feedback cells and exact teacher-note keys; separate second agent read confirmed the mismatches and variance design uncertainty. This is content/design review only; reviewer identity and independence are not machine-authenticated."
+  },
+  "scope": "Four recorded Week 1 comparisons only. No lesson edits, source-authenticity recheck, learner responses, timing, learning effect, full-lesson adequacy or contest readiness are established.",
+  "learner_evidence": "No learner answers, assistance history or fresh retry results were observed.",
+  "comparisons": [
+    {
+      "comparison_id": "axis-choice",
+      "path_id": "path:axis-choice",
+      "problem_specific_key": {
+        "judgment": "met",
+        "rationale": "Reshape is [[2,5],[8,11],[14,17]]; transpose is [[2,11],[5,14],[8,17]]. Both shapes are (3,2); [0,1] is 5 versus 11. Transposed first row maps to original first column; memory ownership is not inferred.",
+        "evidence": [
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+            "locator": "lines:115-119"
+          }
+        ]
+      },
+      "feedback": {
+        "judgment": "met",
+        "rationale": "Reshape is [[2,5],[8,11],[14,17]]; transpose is [[2,11],[5,14],[8,17]]. Both shapes are (3,2); [0,1] is 5 versus 11. Transposed first row maps to original first column; memory ownership is not inferred. These are task-specific answer/explanation and error-checking materials, not evidence that actual feedback was delivered or effective. Generic c85 recommends a changed-input retry but supplies no completed learner retry.",
+        "evidence": [
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+            "locator": "lines:115-119"
+          },
+          {
+            "path": "lessons/week01/week01_python_tables.ipynb",
+            "sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+            "locator": "cell:guided-feedback-and-support"
+          }
+        ]
+      },
+      "independent_assessment": {
+        "judgment": "met",
+        "rationale": "Task asks for all predicted values before execution, a differing position, counterexample and axis explanation; response asks for help disclosure. Teacher instructions hide completed examples and key first. Operations are supplied, so the reviewed design is independent prediction/explanation of mapping, not independent invention or selection of an unknown operation. Actual independent learner performance remains unobserved.",
+        "evidence": [
+          {
+            "path": "lessons/week01/week01_python_tables.ipynb",
+            "sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+            "locator": "cell:depth-reshape-compare"
+          },
+          {
+            "path": "lessons/week01/week01_python_tables.ipynb",
+            "sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+            "locator": "cell:depth-reshape-response"
+          },
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+            "locator": "lines:4-7"
+          }
+        ]
+      }
+    },
+    {
+      "comparison_id": "function-spec",
+      "path_id": "path:function-spec",
+      "problem_specific_key": {
+        "judgment": "met",
+        "rationale": "Teacher implementation counts non-None values including 0, returns (count, mean) or (0,None), and leaves input unchanged. Separate cases cover zero, all-missing, changed input, nonmutation and numeric tolerance; truthiness and print-only mistakes are explained.",
+        "evidence": [
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+            "locator": "lines:120-138"
+          }
+        ]
+      },
+      "feedback": {
+        "judgment": "met",
+        "rationale": "Teacher implementation counts non-None values including 0, returns (count, mean) or (0,None), and leaves input unchanged. Separate cases cover zero, all-missing, changed input, nonmutation and numeric tolerance; truthiness and print-only mistakes are explained. These are task-specific answer/explanation and error-checking materials, not evidence that actual feedback was delivered or effective. Generic c85 recommends a changed-input retry but supplies no completed learner retry.",
+        "evidence": [
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+            "locator": "lines:120-138"
+          },
+          {
+            "path": "lessons/week01/week01_python_tables.ipynb",
+            "sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+            "locator": "cell:guided-feedback-and-support"
+          }
+        ]
+      },
+      "independent_assessment": {
+        "judgment": "met",
+        "rationale": "Task explicitly asks learners to hide complete examples, implement their own function under a bounded contract, hand-trace and try different inputs. Response requires zero/None and no-observation reasoning, predicted/executed results and help disclosure. Teacher key is a separate file in the same repository, not technically access-controlled. Actual independent learner performance remains unobserved.",
+        "evidence": [
+          {
+            "path": "lessons/week01/week01_python_tables.ipynb",
+            "sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+            "locator": "cell:depth-function-spec"
+          },
+          {
+            "path": "lessons/week01/week01_python_tables.ipynb",
+            "sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+            "locator": "cell:depth-function-code"
+          },
+          {
+            "path": "lessons/week01/week01_python_tables.ipynb",
+            "sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+            "locator": "cell:depth-function-response"
+          },
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+            "locator": "lines:4-7"
+          }
+        ]
+      }
+    },
+    {
+      "comparison_id": "written-format",
+      "path_id": "path:written-format",
+      "problem_specific_key": {
+        "judgment": "met",
+        "rationale": "Q1 is option 2, 13, with state trace and distractor reasoning. Q2 is option 2, shape (3,) with two values per mean and distractor explanations. Written item has 2 observations and 6ml mean; actual three-pot mean is unknown, with distinct possible missing values.",
+        "evidence": [
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+            "locator": "lines:53-59"
+          }
+        ]
+      },
+      "feedback": {
+        "judgment": "met",
+        "rationale": "Q1 is option 2, 13, with state trace and distractor reasoning. Q2 is option 2, shape (3,) with two values per mean and distractor explanations. Written item has 2 observations and 6ml mean; actual three-pot mean is unknown, with distinct possible missing values. These are task-specific answer/explanation and error-checking materials, not evidence that actual feedback was delivered or effective. Generic c85 recommends a changed-input retry but supplies no completed learner retry.",
+        "evidence": [
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+            "locator": "lines:53-59"
+          },
+          {
+            "path": "lessons/week01/week01_python_tables.ipynb",
+            "sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+            "locator": "cell:guided-feedback-and-support"
+          }
+        ]
+      },
+      "independent_assessment": {
+        "judgment": "met",
+        "rationale": "Prompt asks for examples to be hidden first and answers plus reasons before consulting help; response records assistance. Two choice items and one written item are explicit, with key separate. This is a local task-design check, not evidence of broad exam readiness or unaided first attempts. Actual independent learner performance remains unobserved.",
+        "evidence": [
+          {
+            "path": "lessons/week01/week01_python_tables.ipynb",
+            "sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+            "locator": "cell:71068cea"
+          },
+          {
+            "path": "lessons/week01/week01_python_tables.ipynb",
+            "sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+            "locator": "cell:500342ab"
+          },
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+            "locator": "lines:4-7"
+          }
+        ]
+      }
+    },
+    {
+      "comparison_id": "variance-units",
+      "path_id": "path:variance-units",
+      "problem_specific_key": {
+        "judgment": "met",
+        "rationale": "Changed distributions have means 4cm and variances 32/3 and 2/3 cm^2. Adding 3 yields mean 7cm and unchanged variance; doubling yields 128/3 cm^2 (factor 4). cm-to-mm changes numerical variance by factor 100; zero standard deviation cannot be a divisor.",
+        "evidence": [
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+            "locator": "lines:141-147"
+          }
+        ]
+      },
+      "feedback": {
+        "judgment": "met",
+        "rationale": "Changed distributions have means 4cm and variances 32/3 and 2/3 cm^2. Adding 3 yields mean 7cm and unchanged variance; doubling yields 128/3 cm^2 (factor 4). cm-to-mm changes numerical variance by factor 100; zero standard deviation cannot be a divisor. These are task-specific answer/explanation and error-checking materials, not evidence that actual feedback was delivered or effective. Generic c85 recommends a changed-input retry but supplies no completed learner retry.",
+        "evidence": [
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+            "locator": "lines:141-147"
+          },
+          {
+            "path": "lessons/week01/week01_python_tables.ipynb",
+            "sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+            "locator": "cell:guided-feedback-and-support"
+          }
+        ]
+      },
+      "independent_assessment": {
+        "judgment": "uncertain",
+        "rationale": "Prompt requires changed-distribution calculations and before-execution predictions for +3 and x2, but accompanies worked scaling/standard-deviation explanations and a complete plotting scaffold. There is no dedicated response/help slot or per-task unaided support rule. Global teacher instructions to hide keys and record help exist, yet independent assessment of the entire compound competency is not established by this design. Actual independent learner performance remains unobserved.",
+        "evidence": [
+          {
+            "path": "lessons/week01/week01_python_tables.ipynb",
+            "sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+            "locator": "cell:9ce91662"
+          },
+          {
+            "path": "lessons/week01/week01_python_tables.ipynb",
+            "sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+            "locator": "cell:c6ef56e6"
+          },
+          {
+            "path": "lessons/week01/teacher-notes.txt",
+            "sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+            "locator": "lines:4-7"
+          }
+        ]
+      }
+    }
+  ],
+  "path_spec_sha256": "6e5b4e3d4aa0036a0a082602dbbaa4064346d4fff8419b4cd4fa8dd0917cd5ac",
+  "review_target": "Separate projection binding the actual per-problem teacher key; original records and lesson remain unchanged."
+}
