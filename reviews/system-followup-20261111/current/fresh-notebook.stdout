@@ -1,0 +1,59 @@
+{
+  "checked_at_utc": "2026-11-11T01:35:30.808418+00:00",
+  "notebook": "week01_python_tables.ipynb",
+  "revision": "week1-contest-depth-v1",
+  "skills_reference_commit": "64f24aabdad2b1976740d88d4a0ba74a4ed89766",
+  "nbformat_validation": "passed",
+  "top_to_bottom_execution": "passed",
+  "execution_method": "fresh IPython InProcessKernelManager per run",
+  "execution_seconds": 2.874,
+  "cells": 87,
+  "code_cells": 27,
+  "executed_code_cells": 27,
+  "error_outputs": 0,
+  "actual_function_and_state_assertions": "passed",
+  "teacher_modification_key_tests": "passed",
+  "independent_fraction_arithmetic": "passed",
+  "csv_mask_shape_missing_and_merge_checks": "passed",
+  "plot_output_cells": [
+    50,
+    67,
+    69,
+    71,
+    72
+  ],
+  "plot_output_count": 5,
+  "embedded_diagrams": 2,
+  "student_text_meta_removal": "passed",
+  "student_answers": "blank_not_assessed",
+  "student_mastery": "not_observed",
+  "classroom_timing": "estimated_not_observed",
+  "teacher_only_class_total": 120,
+  "teacher_only_time_minutes": {
+    "theory": 20,
+    "noncoding": 20,
+    "coding": 80
+  },
+  "baseline_required_homework_minutes": [
+    300,
+    420
+  ],
+  "revised_homework_time": "not_estimated_or_observed",
+  "standalone_without_csv_files": "passed",
+  "visual_inspection": "not_performed_by_script",
+  "browser_preview": "not_performed_by_script",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2",
+    "jupyterlab": "4.6.6",
+    "nbclient": "0.11.0",
+    "nbformat": "5.11.1",
+    "ipykernel": "7.4.0"
+  },
+  "notebook_sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+  "source_attachment_projection_sha256": "cf636875247062af3a004eac5b01061acdcae1770f9bb188c111df4cd625be03",
+  "source_projection_unchanged_by_execution": true,
+  "schedules_created": false
+}

@@ -273,6 +273,176 @@ def inspect_paths(graph, path_spec, root):
     return report
 
 
+SEMANTIC_DIMENSIONS = ('problem_specific_key', 'feedback', 'independent_assessment')
+
+
+def canonical_sha256(value):
+    """Bind parsed JSON content; this is not the raw-file digest."""
+    return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(',', ':'),
+                                     ensure_ascii=True, allow_nan=False).encode()).hexdigest()
+
+
+def inspect_semantic_review(graph, path_spec, review, root):
+    """Check a separately recorded content review against the current declaration.
+
+    This validates review scope and local byte bindings, then preserves the
+    reviewer's problem-specific judgments. It never derives those judgments
+    from labels, arbitrary locators, key text, or matching hashes.
+    """
+    mechanical = inspect_paths(graph, path_spec, root)
+    report = {'authority': 'advisory_only', 'status': 'gap',
+              'mechanical_status': mechanical['status'], 'synthetic': mechanical.get('synthetic'),
+              'errors': [], 'findings': [], 'comparisons': [], 'bindings': [],
+              'verification': {'semantics': 'recorded_judgment_only',
+                               'reviewer_independence': 'not_checked',
+                               'learner_independence': 'not_observed'},
+              'limitations': [
+                  'A current review record preserves an explicit content judgment; it is not automated semantic verification.',
+                  'Locators, reviewer identity, review method and judgments remain declarations; matching bytes do not make a wrong judgment true.',
+                  'Only the declared paths and supplied review evidence are in scope; omitted demands and whole-lesson adequacy are not established.',
+                  'Task design, actual unaided learner performance, learning effect and contest readiness remain separate.']}
+    errors, findings = report['errors'], report['findings']
+
+    def issue(location, code, message, status='gap'):
+        target = errors if status == 'invalid' else findings
+        target.append({'path': location, 'code': code, 'message': message, 'status': status})
+
+    def nonempty(value, location):
+        if not isinstance(value, str) or not value.strip():
+            issue(location, 'missing_review_metadata', 'A nonempty review string is required.')
+            return False
+        return True
+
+    if mechanical['status'] != 'declared_path_complete':
+        issue('paths', 'mechanical_path_' + mechanical['status'],
+              'The separately reviewed path must also pass current declaration and byte checks.',
+              'invalid' if mechanical['status'] == 'invalid' else mechanical['status'])
+    if review is None:
+        issue('semantic_review', 'missing_semantic_review',
+              'A separate current problem-specific content review is required.')
+    else:
+        errors.extend(_json_errors(review, 'semantic_review'))
+        if not isinstance(review, dict):
+            issue('semantic_review', 'invalid_type', 'Semantic review must be an object.', 'invalid')
+        elif not errors:
+            if type(review.get('schema_version')) is not int or review['schema_version'] != 1:
+                issue('semantic_review.schema_version', 'invalid_version', 'Expected integer schema_version 1.', 'invalid')
+            if type(review.get('synthetic')) is not bool or review['synthetic'] != mechanical.get('synthetic'):
+                issue('semantic_review.synthetic', 'synthetic_mismatch', 'Review and path specification must have the same explicit synthetic marker.', 'invalid')
+            for field, value in (('graph_sha256', graph), ('path_spec_sha256', path_spec)):
+                try:
+                    digest = canonical_sha256(value)
+                except (TypeError, ValueError, OverflowError, RecursionError):
+                    issue('semantic_review.' + field, 'invalid_json', 'Cannot bind invalid JSON content.', 'invalid')
+                    continue
+                expected = review.get(field)
+                if not isinstance(expected, str) or not SHA256.fullmatch(expected):
+                    issue('semantic_review.' + field, 'invalid_sha256', 'Expected a canonical content SHA-256.', 'invalid')
+                elif digest != expected:
+                    issue('semantic_review.' + field, 'stale_semantic_review', 'Content changed since this review record.', 'stale')
+            reviewer = review.get('reviewer')
+            if not isinstance(reviewer, dict):
+                issue('semantic_review.reviewer', 'missing_reviewer', 'Record a reviewer identity and direct-review method.')
+            else:
+                for field in ('id', 'method'):
+                    nonempty(reviewer.get(field), 'semantic_review.reviewer.' + field)
+            declarations = path_spec.get('paths', []) if isinstance(path_spec, dict) else []
+            expected_pairs = set()
+            for declaration in declarations if isinstance(declarations, list) else []:
+                if isinstance(declaration, dict):
+                    pid, cid = declaration.get('id'), declaration.get('comparison_id')
+                    if nonempty(cid, 'paths.comparison_id') and isinstance(pid, str):
+                        expected_pairs.add((pid, cid))
+            comparisons = review.get('comparisons')
+            if not isinstance(comparisons, list):
+                issue('semantic_review.comparisons', 'missing_comparison_reviews', 'Explicit per-path comparison reviews are required.')
+                comparisons = []
+            seen = set()
+            try:
+                local_root = Path(root).resolve(strict=True)
+            except (OSError, RuntimeError, TypeError, ValueError):
+                local_root = None
+            for i, comparison in enumerate(comparisons):
+                location = f'semantic_review.comparisons[{i}]'
+                if not isinstance(comparison, dict):
+                    issue(location, 'invalid_type', 'Comparison review must be an object.', 'invalid')
+                    continue
+                pid, cid = comparison.get('path_id'), comparison.get('comparison_id')
+                if not (nonempty(pid, location + '.path_id') and nonempty(cid, location + '.comparison_id')):
+                    continue
+                pair = (pid, cid)
+                if pair in seen:
+                    issue(location, 'duplicate_comparison_review', 'Review each declared path/comparison once.', 'invalid')
+                seen.add(pair)
+                if pair not in expected_pairs:
+                    issue(location, 'unscoped_comparison_review', 'Review does not match a current declared path/comparison.', 'invalid')
+                result = {'path_id': pid, 'comparison_id': cid, 'judgments': {}}
+                report['comparisons'].append(result)
+                for dimension in SEMANTIC_DIMENSIONS:
+                    item_location = location + '.' + dimension
+                    item = comparison.get(dimension)
+                    if not isinstance(item, dict):
+                        issue(item_location, 'missing_semantic_dimension', 'Record this problem-specific review dimension.')
+                        continue
+                    judgment = item.get('judgment')
+                    result['judgments'][dimension] = judgment
+                    if judgment not in ('met', 'gap', 'uncertain'):
+                        issue(item_location + '.judgment', 'invalid_judgment', 'Use met, gap or uncertain.', 'invalid')
+                    elif judgment != 'met':
+                        issue(item_location, 'reviewed_' + dimension + '_' + judgment,
+                              'Recorded content judgment: ' + judgment + '.', judgment)
+                    nonempty(item.get('rationale'), item_location + '.rationale')
+                    evidence = item.get('evidence')
+                    if not isinstance(evidence, list) or not evidence:
+                        issue(item_location + '.evidence', 'missing_review_evidence', 'At least one current local evidence binding is required.')
+                        continue
+                    for j, binding in enumerate(evidence):
+                        bound_location = f'{item_location}.evidence[{j}]'
+                        if not isinstance(binding, dict):
+                            issue(bound_location, 'invalid_type', 'Evidence binding must be an object.', 'invalid')
+                            continue
+                        name, expected = binding.get('path'), binding.get('sha256')
+                        valid_name = nonempty(name, bound_location + '.path')
+                        nonempty(binding.get('locator'), bound_location + '.locator')
+                        if not isinstance(expected, str) or not SHA256.fullmatch(expected):
+                            issue(bound_location + '.sha256', 'invalid_sha256', 'Expected a local byte SHA-256.', 'invalid')
+                            continue
+                        if not valid_name:
+                            continue
+                        relative = Path(name)
+                        if relative.is_absolute() or '..' in relative.parts:
+                            issue(bound_location + '.path', 'unsafe_path', 'Use a root-relative path without parent traversal.', 'invalid')
+                            continue
+                        entry = {'comparison_id': cid, 'path_id': pid, 'dimension': dimension,
+                                 'path': name, 'locator': binding.get('locator'), 'expected_sha256': expected,
+                                 'actual_sha256': None, 'status': 'unavailable'}
+                        report['bindings'].append(entry)
+                        try:
+                            if local_root is None:
+                                raise ValueError('Local evidence root is unavailable.')
+                            actual = (local_root / relative).resolve(strict=True)
+                            if not actual.is_relative_to(local_root):
+                                issue(bound_location + '.path', 'unsafe_path', 'Evidence path escapes root.', 'invalid')
+                                continue
+                            if not actual.is_file():
+                                raise ValueError('Evidence must be a regular file.')
+                            entry['actual_sha256'] = hashlib.sha256(actual.read_bytes()).hexdigest()
+                            entry['status'] = 'current' if entry['actual_sha256'] == expected else 'stale'
+                            if entry['status'] == 'stale':
+                                issue(bound_location, 'stale_review_evidence', 'Evidence bytes changed since review.', 'stale')
+                        except (OSError, RuntimeError, TypeError, ValueError) as exc:
+                            issue(bound_location, 'unavailable_review_evidence', 'Cannot read evidence: ' + str(exc))
+            for pid, cid in sorted(expected_pairs - seen):
+                issue('semantic_review.comparisons', 'missing_comparison_review',
+                      'Missing current review for ' + pid + ' / ' + cid + '.')
+            if not expected_pairs:
+                issue('semantic_review.comparisons', 'empty_review_scope', 'Empty semantic review scope cannot pass.')
+    report['status'] = ('invalid' if errors else 'stale' if any(f.get('status') == 'stale' for f in findings)
+                        else 'gap' if any(f.get('status') == 'gap' for f in findings)
+                        else 'uncertain' if findings else 'recorded_design_met')
+    return report
+
+
 # A consistent short name for callers using the other read-only inspectors.
 inspect = inspect_paths
 
@@ -296,17 +466,20 @@ def main():
     parser.add_argument('graph', type=Path)
     parser.add_argument('--spec', type=Path, help='Explicit path specification; defaults to graph.path_spec or an empty spec.')
     parser.add_argument('--root', type=Path, help='Local provenance root; defaults to graph parent directory.')
+    parser.add_argument('--semantic-review', type=Path, help='Separately recorded problem-specific content review; never inferred from path completeness.')
     args = parser.parse_args()
     try:
         graph = load_json(args.graph)
         spec = load_json(args.spec) if args.spec else graph.get('path_spec', {}) if isinstance(graph, dict) else {}
-        report = inspect_paths(graph, spec, args.root if args.root is not None else args.graph.resolve().parent)
+        root = args.root if args.root is not None else args.graph.resolve().parent
+        report = (inspect_semantic_review(graph, spec, load_json(args.semantic_review), root)
+                  if args.semantic_review else inspect_paths(graph, spec, root))
     except (OSError, UnicodeError, ValueError, RecursionError) as exc:
         print(json.dumps({'authority': 'advisory_only', 'status': 'invalid',
                           'errors': [{'path': 'input', 'code': 'unreadable_input', 'message': str(exc)}]}))
         return 2
     print(json.dumps(report, indent=2, ensure_ascii=True, allow_nan=False))
-    return 2 if report['status'] == 'invalid' else 0 if report['status'] == 'declared_path_complete' else 1
+    return 2 if report['status'] == 'invalid' else 0 if report['status'] in ('declared_path_complete', 'recorded_design_met') else 1
 
 
 if __name__ == '__main__':

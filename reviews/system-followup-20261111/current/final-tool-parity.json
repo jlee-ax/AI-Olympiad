@@ -1,0 +1,7 @@
+{
+  "different_tool_layer_files_since_execution": [
+    "tests/test_lesson_validation.py"
+  ],
+  "note": "Only the stale-receipt negative test was strengthened after the actual run; final complete regression was rerun.",
+  "production_tools_and_skills_unchanged": true
+}

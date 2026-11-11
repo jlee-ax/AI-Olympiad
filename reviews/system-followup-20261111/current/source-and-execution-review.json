@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "reviewed_at": "2026-11-11",
+  "artifact": "lessons/week01/week01_python_tables.ipynb",
+  "input_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+  "current_sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+  "teacher_notes": {
+    "path": "lessons/week01/teacher-notes.txt",
+    "sha256": "56705451b759c5812d6987bfaa76765c165a8a3b299062c575dc0dca03d2b5bc",
+    "same_as_input": true
+  },
+  "comparison_method": "Directly re-read current task, response, general feedback and exact teacher-key text; compare every cell id/type/source/attachments to pinned input; inspect actual execution counts/outputs and final receipt. Separate second reader directly repeated the current scoped content read.",
+  "projection_fields": [
+    "id",
+    "cell_type",
+    "source",
+    "attachments"
+  ],
+  "projection_sha256": "ed7061bdb27d2609a569dbf7fc02021cf3fa856f9de4c2598ff3c39763dd2e2e",
+  "input_projection_sha256": "ed7061bdb27d2609a569dbf7fc02021cf3fa856f9de4c2598ff3c39763dd2e2e",
+  "projection_equal": true,
+  "cell_count": 87,
+  "reviewed_cells": {
+    "axis-choice": [
+      {
+        "id": "depth-reshape-compare",
+        "index": 60,
+        "cell_type": "markdown",
+        "source_sha256": "068573d4225f80e1274a0748ef057ca52b5e6066031b42f3a085c107f33380be"
+      },
+      {
+        "id": "depth-reshape-code",
+        "index": 61,
+        "cell_type": "code",
+        "source_sha256": "383dca14910c196dbc5cbbb88e92e05588c2c4f8340189cf1b1878337568ca97",
+        "execution_count": 19,
+        "output_types": []
+      },
+      {
+        "id": "depth-reshape-response",
+        "index": 62,
+        "cell_type": "markdown",
+        "source_sha256": "e12dcc30652e51c1233cbce5bfbf1dd6be6e5ae526ad4bc963a82c4cfb0e7dca"
+      }
+    ],
+    "function-spec": [
+      {
+        "id": "depth-function-spec",
+        "index": 78,
+        "cell_type": "markdown",
+        "source_sha256": "8537b2d4840ca6a5f20c9f98fb887aec5eae09983f5412f2e20e2966708fb289"
+      },
+      {
+        "id": "depth-function-code",
+        "index": 79,
+        "cell_type": "code",
+        "source_sha256": "1d88487989e38d512d6d2bc098c41edf47a447e8dbeff2b44edfa3c9b5da5f30",
+        "execution_count": 26,
+        "output_types": []
+      },
+      {
+        "id": "depth-function-response",
+        "index": 80,
+        "cell_type": "markdown",
+        "source_sha256": "10cc757f7a5d39ed268705b7ca990a9872bd10e7f0a627c4e9bbb8a388b69249"
+      }
+    ],
+    "written-format": [
+      {
+        "id": "71068cea",
+        "index": 14,
+        "cell_type": "markdown",
+        "source_sha256": "60aa009914a5c2696c44d7512b876a20d23a550c009394cfb3fbfbc8d3c0011b"
+      },
+      {
+        "id": "500342ab",
+        "index": 15,
+        "cell_type": "markdown",
+        "source_sha256": "00845b935fc54d7741d458c39457f045d88d1c8fc293c5b478bc3eafda07ee33"
+      }
+    ],
+    "variance-units": [
+      {
+        "id": "9ce91662",
+        "index": 66,
+        "cell_type": "markdown",
+        "source_sha256": "95e95538de05621d336bff4913752f8347e29bb9aeea4d994371ad31f90b83da"
+      },
+      {
+        "id": "c6ef56e6",
+        "index": 67,
+        "cell_type": "code",
+        "source_sha256": "f0ca1834759fc823d5175689438e97cae5d7d04d890d460eef6d8b8be32d1211",
+        "execution_count": 21,
+        "output_types": [
+          "display_data"
+        ]
+      }
+    ],
+    "generic-feedback": [
+      {
+        "id": "guided-feedback-and-support",
+        "index": 85,
+        "cell_type": "markdown",
+        "source_sha256": "f261aafa5e1733f14a91d8b0efcaccfd93a2c1253e6ffc54427515b60be5d492"
+      }
+    ]
+  },
+  "execution_receipt": {
+    "path": "lessons/week01/validation.json",
+    "sha256": "d9103dbc1cde8652ebd91ffd6b01194ce06a3083854bc3c418c77740c83f0d24",
+    "notebook_hash_matches": true,
+    "executed_code_cells": 27,
+    "error_outputs": 0,
+    "student_answers": "blank_not_assessed",
+    "student_mastery": "not_observed"
+  },
+  "new_current_judgments": {
+    "generic_feedback": "gap_for_each_of_four_comparisons",
+    "actual_teacher_keys": "met_for_scoped_design",
+    "independent_assessment": {
+      "axis-choice": "met_narrow_mapping_prediction_scope",
+      "function-spec": "met_task_design_only",
+      "written-format": "met_local_format_design_only",
+      "variance-units": "uncertain"
+    }
+  },
+  "limits": [
+    "A new direct content review was performed; matching projections alone were not treated as semantic approval.",
+    "Blank solution and response slots remain blank after execution; no learner attempt, help history or fresh retry was observed.",
+    "Source authenticity, whole-lesson adequacy, classroom feasibility, learning effectiveness and contest readiness are not established."
+  ]
+}

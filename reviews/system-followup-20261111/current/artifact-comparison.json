@@ -1,0 +1,15 @@
+{
+  "changed_output_cells": [
+    "ff5e1213",
+    "48d931b0",
+    "c6ef56e6",
+    "33384c16",
+    "8d3421bb",
+    "d7b8c3d2"
+  ],
+  "executed_notebook_sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+  "input_notebook_sha256": "2506059c43a95f3e00e1fe868650bda1462afbfe277b18fb633e61d260f0b5d8",
+  "limit": "Current output bytes are saved as audit evidence; source lesson and student solutions were not changed.",
+  "source_attachment_projection_equal": true,
+  "student_code_blank": true
+}

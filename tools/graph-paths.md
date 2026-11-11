@@ -57,3 +57,20 @@ Each adjacent pair requires a **direct** edge in the current graph. `supports` a
 Role assignment and provenance are explicit reviewer declarations. The checker does not infer roles from a node's label, ID prefix or generic type; parse the file locator; verify the origin or revision; authenticate official sources; assess theory correctness, coding adequacy or difficulty; confirm reviewer independence; execute a notebook; observe learner work; measure timing; or discover omitted demands and dependencies. A new binding recorded with a new digest says which bytes are now being claimed; it does not approve the change. Obtain an actual current review separately.
 
 The tests include the historical negative graph, an explicit specification whose required nodes are absent from that graph, a complete fictional route, removal of each role and adjacent edge, direction/type controls, an unrelated transitive route, an uncovered second demand, collapsed/inactive roles, missing assessment/provenance, stale/restored bytes, an unchanged neighboring file, invalid and unsafe bindings, malformed JSON/API inputs, and legacy structural/feedback-cycle compatibility. These finite controls establish the reported mechanical behaviors, not educational effectiveness.
+
+
+## Separate current content review
+
+`declared_path_complete` is deliberately unchanged. A separate opt-in gate preserves a direct review of problem-specific keys, feedback and independent task design:
+
+```sh
+python3 -B tools/graph_paths.py GRAPH.json --spec PATHS.json --root LESSON_ROOT --semantic-review REVIEW.json
+```
+
+`inspect_semantic_review(graph, path_spec, review, root)` first requires a mechanically complete route, then checks the separately recorded review. It requires schema version 1, the same explicit `synthetic` marker, canonical `graph_sha256` and `path_spec_sha256`, a nonempty reviewer ID/method, and exactly one review per `(path_id, comparison_id)`. Every path must therefore have a `comparison_id`. Each comparison requires `problem_specific_key`, `feedback` and `independent_assessment`, each with an explicit `met`, `gap` or `uncertain` judgment, a rationale and at least one local `path`/raw-byte `sha256`/`locator` evidence binding. Evidence must be a readable regular file beneath the explicit root. No locator text or file meaning is automatically interpreted.
+
+The result has `mechanical_status` separately from review `status`. Status precedence is `invalid`, `stale`, `gap`, `uncertain`, then `recorded_design_met`. Missing review or incomplete review scope cannot pass. Changed graph, path declaration or review-evidence bytes makes the review stale. CLI exits are 2 for invalid, 1 for stale/gap/uncertain and 0 for `recorded_design_met`. `None` means a missing required review even for a synthetic fixture when this gate is explicitly called. Legacy `inspect_paths` and CLI behavior without `--semantic-review` remain unchanged.
+
+`recorded_design_met` means only that current evidence bindings accompany the reviewer's scoped design judgments. The gate does not authenticate reviewer independence, verify the judgments' truth, observe unaided learner work or establish learning effect/readiness. A false `met` assertion is still false even with correct hashes. Keep these claims separate.
+
+The [current actual-lesson followup](../reviews/system-followup-20261111/graph-semantic-review.md) includes frozen path specifications and direct-review records. The original projection using the general feedback recap is mechanically complete but has a reviewed semantic gap for every comparison. A separate projection using exact teacher-note keys resolves those feedback bindings while retaining uncertainty about independent assessment of the compound variance competency. No lesson or historical review is rewritten.

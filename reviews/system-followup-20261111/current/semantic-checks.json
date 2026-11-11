@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "artifact_sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+  "tool_sha256": "5d1cf5961634135a7f7331c7e02f3eca3448df67fdd6b9cc7b50e8264672dc6b",
+  "source_projection_equal": true,
+  "execution_receipt_hash_matches": true,
+  "cases": {
+    "generic-feedback": {
+      "expected_status": "gap",
+      "actual_status": "gap",
+      "mechanical_status": "declared_path_complete",
+      "current_bindings": 33,
+      "cli_exit_code": 1,
+      "cli_stderr": "",
+      "historical_record_on_fresh_bytes": "stale",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-combined-validation-20261111/tools/graph_paths.py",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-workflow-improvement/reviews/system-followup-20261111/current/path-projection-graph.json",
+        "--spec",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-workflow-improvement/reviews/system-followup-20261111/current/generic-feedback-paths.json",
+        "--semantic-review",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-workflow-improvement/reviews/system-followup-20261111/current/generic-feedback-semantic-review.json",
+        "--root",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-combined-validation-20261111"
+      ],
+      "result_file": "generic-feedback-semantic-result.json"
+    },
+    "problem-feedback": {
+      "expected_status": "uncertain",
+      "actual_status": "uncertain",
+      "mechanical_status": "declared_path_complete",
+      "current_bindings": 33,
+      "cli_exit_code": 1,
+      "cli_stderr": "",
+      "historical_record_on_fresh_bytes": "stale",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-combined-validation-20261111/tools/graph_paths.py",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-workflow-improvement/reviews/system-followup-20261111/current/path-projection-graph.json",
+        "--spec",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-workflow-improvement/reviews/system-followup-20261111/current/problem-feedback-paths.json",
+        "--semantic-review",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-workflow-improvement/reviews/system-followup-20261111/current/problem-feedback-semantic-review.json",
+        "--root",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-combined-validation-20261111"
+      ],
+      "result_file": "problem-feedback-semantic-result.json"
+    }
+  },
+  "status": "expected_gap_and_uncertainty_preserved",
+  "limits": [
+    "Gate controls passing does not establish semantic adequacy or learner performance.",
+    "Historical records remain preserved and stale on the freshly executed notebook."
+  ]
+}

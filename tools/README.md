@@ -210,3 +210,5 @@ For two pinned official source URLs only—the [KOAI 2026 example notice](https:
 Use [joined review preflight](review-preflight.md) to check actual artifact bytes, [explicit seven-role paths](graph-paths.md), recorded comparisons and active workflow history together. It binds these declarations into the review context and blocks stale reuse. Follow the [manual cycle](MANUAL-CYCLE.md) for actual bounded work, review and record updates. The tools remain read-only; no worker or scheduler is added.
 
 The [2026-11-11 system review](../reviews/system-improvement-20261111/review.md) records reproduced defects, real-record functional checks, the whole Week 1 audit and remaining gaps.
+
+Use [the combined lesson validation workspace](lesson-validation.md) to run current tools/specifications with a frozen lesson copy, without modifying either source worktree. The [follow-up verification](../reviews/system-followup-20261111/review.md) records all-declared-source checks, strict workflow JSON and separate current semantic reviews.

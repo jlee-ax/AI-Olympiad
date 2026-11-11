@@ -24,18 +24,33 @@ python3 -B tools/quality.py evaluate path/to/quality.json
 python3 -B tools/workflow.py decide path/to/state.json --quality path/to/quality.json
 ```
 
-To join depth comparisons, graph paths, actual local files, recalled sources and
-workflow review, use the optional preflight (add `--quality` when applicable):
+To join depth comparisons, graph paths, recorded path content judgments, actual
+local files, the full declared source catalog and workflow review, use the optional
+preflight (add `--quality` when applicable):
 
 ```sh
-python3 -B tools/review_preflight.py --root . --depth path/to/depth.json --graph path/to/graph.json --paths path/to/paths.json --state path/to/state.json
+python3 -B tools/review_preflight.py --root . \
+  --depth path/to/depth.json --graph path/to/graph.json --paths path/to/paths.json \
+  --semantic-review path/to/path-content-review.json --state path/to/state.json
 ```
 
-Its `required_inputs` lists canonical depth/graph/path manifests that must be
-bound into workflow inputs before obtaining a fresh aggregate review. A binding
-mismatch or stale review blocks the joined result; copying the hashes does not
-supply that review. All submitted declarations still need actual human or agent
-judgment.
+Its `required_inputs` lists canonical depth, graph, path, content-review and full
+source-catalog manifests that must be bound into workflow inputs before obtaining
+a fresh aggregate review. The content review is required even for synthetic
+fixtures. It records scoped judgments about the problem-specific key, feedback
+and independent assessment; connected role labels do not supply those judgments.
+A binding mismatch or stale review blocks the joined result; copying the hashes
+does not supply that review. All submitted declarations still need actual human
+or agent judgment. See [the preflight contract](review-preflight.md) for the
+manifest IDs, local URI policy and separate limits on learner claims.
+
+Preflight checks all declared local sources, including context-only references,
+unused catalog entries and sources of superseded records. Preserve historical
+source files at immutable paths with their recorded hashes. A changed or missing
+local source blocks even if no active record recalls it. Changing a catalog URI,
+revision or digest also requires a new catalog binding and aggregate review.
+External sources remain explicitly unverified and are never fetched; pathless
+manifests are not inferred as filesystem locations.
 
 Read `status`, `reason`, findings and errors, not just the exit code. All commands
 above are read-only. `continue` is an advisory candidate within recorded limits;
@@ -59,7 +74,9 @@ it does not grant permission, execute work, or prove the recorded claims true.
    the counters measure elapsed time for you.
 4. Validate the updated state and calculate its current fingerprint. Context
    changes normally make earlier aggregate reviews stale. Obtain a real separate
-   review of that current candidate; append its `reviews` entry, required checks,
+   review of that current candidate. When using joined preflight, first record
+   the actual scoped path content review and bind all returned `required_inputs`;
+   append the aggregate `reviews` entry, required checks,
    current evidence record IDs, conclusion and reason. Different identity strings
    alone do not establish independence. Never change an old review fingerprint
    to pretend its evidence was rechecked.

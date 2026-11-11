@@ -544,6 +544,16 @@ def decide(state, quality_report=None):
     return finish('continue', 'verified_candidate_within_budget')
 
 
+def _unique_pairs(pairs):
+    """Reject ambiguous object names before JSON decoding discards them."""
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError('Duplicate JSON key: ' + ascii(key))
+        result[key] = value
+    return result
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('command', choices=('validate', 'decide', 'fingerprint', 'recall'))
@@ -556,7 +566,7 @@ def main(argv=None):
     if args.query and args.command != 'recall':
         parser.error('--query applies only to recall')
     try:
-        state = json.loads(args.state.read_text(encoding='utf-8'),
+        state = json.loads(args.state.read_text(encoding='utf-8'), object_pairs_hook=_unique_pairs,
                            parse_constant=lambda token: (_ for _ in ()).throw(ValueError('non-finite JSON number: ' + token)))
     except (OSError, UnicodeError, ValueError, RecursionError) as exc:
         print(json.dumps({'status': 'blocked', 'reason': 'unreadable_state', 'authority': 'advisory_only', 'errors': [str(exc)]}))

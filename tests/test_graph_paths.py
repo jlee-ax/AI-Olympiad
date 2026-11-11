@@ -42,6 +42,116 @@ def codes(result):
     return {entry['code'] for entry in result['errors'] + result['findings']}
 
 
+def semantic_fixture(graph, spec):
+    """Fictional recorded review; no real semantic judgment is fabricated."""
+    binding = spec['paths'][0]['provenance']['feedback']
+    return {'schema_version': 1, 'synthetic': spec['synthetic'],
+            'graph_sha256': paths.canonical_sha256(graph),
+            'path_spec_sha256': paths.canonical_sha256(spec),
+            'reviewer': {'id': 'fictional-reviewer', 'method': 'Fictional fixture; no content review occurred.'},
+            'comparisons': [{'path_id': item['id'], 'comparison_id': item['comparison_id'],
+                             **{dimension: {'judgment': 'met', 'rationale': 'Fictional control only.',
+                                           'evidence': [{key: binding[key] for key in ('path', 'sha256', 'locator')}]}
+                                for dimension in paths.SEMANTIC_DIMENSIONS}}
+                            for item in spec['paths']]}
+
+
+class SemanticReviewTest(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.graph, self.spec = fixture(self.root)
+        self.review = semantic_fixture(self.graph, self.spec)
+
+    def inspect(self):
+        return paths.inspect_semantic_review(self.graph, self.spec, self.review, self.root)
+
+    def test_explicit_current_synthetic_review_preserves_boundary_and_inputs(self):
+        before = copy.deepcopy((self.graph, self.spec, self.review))
+        result = self.inspect()
+        self.assertEqual(result['status'], 'recorded_design_met')
+        self.assertEqual(result['verification']['semantics'], 'recorded_judgment_only')
+        self.assertEqual(result['verification']['learner_independence'], 'not_observed')
+        self.assertEqual(before, (self.graph, self.spec, self.review))
+        self.assertEqual(result, self.inspect())
+
+    def test_declaration_complete_cannot_supply_a_missing_content_review(self):
+        self.assertEqual(paths.inspect_paths(self.graph, self.spec, self.root)['status'], 'declared_path_complete')
+        result = paths.inspect_semantic_review(self.graph, self.spec, None, self.root)
+        self.assertEqual(result['status'], 'gap')
+        self.assertIn('missing_semantic_review', codes(result))
+
+    def test_known_wrong_generic_feedback_does_not_become_semantically_complete(self):
+        # The mechanical checker cannot read meaning from an arbitrary locator.
+        binding = self.spec['paths'][0]['provenance']['feedback']
+        binding['locator'] = 'Generic recap; contains no answer or repair for this task.'
+        self.review = semantic_fixture(self.graph, self.spec)
+        feedback = self.review['comparisons'][0]['feedback']
+        feedback.update(judgment='gap', rationale='Reviewer found generic recap unrelated to the required problem.')
+        self.assertEqual(paths.inspect_paths(self.graph, self.spec, self.root)['status'], 'declared_path_complete')
+        self.assertEqual(self.inspect()['status'], 'gap')
+        self.assertIn('reviewed_feedback_gap', codes(self.inspect()))
+
+    def test_uncertain_independent_design_remains_uncertain(self):
+        self.review['comparisons'][0]['independent_assessment']['judgment'] = 'uncertain'
+        self.assertEqual(self.inspect()['status'], 'uncertain')
+
+    def test_each_dimension_and_every_path_requires_a_current_review(self):
+        for dimension in paths.SEMANTIC_DIMENSIONS:
+            with self.subTest(dimension=dimension):
+                review = copy.deepcopy(self.review)
+                del review['comparisons'][0][dimension]
+                result = paths.inspect_semantic_review(self.graph, self.spec, review, self.root)
+                self.assertIn('missing_semantic_dimension', codes(result))
+        self.review['comparisons'] = []
+        self.assertIn('missing_comparison_review', codes(self.inspect()))
+
+    def test_graph_or_path_changes_invalidate_review_even_with_current_files(self):
+        self.graph['nodes'][0]['label'] = 'Changed source meaning.'
+        self.assertEqual(self.inspect()['status'], 'stale')
+        self.review['graph_sha256'] = paths.canonical_sha256(self.graph)
+        self.spec['paths'][0]['assessment']['allowed_support'] = 'Changed support condition.'
+        self.assertEqual(self.inspect()['status'], 'stale')
+
+    def test_changed_key_outside_path_bindings_is_stale(self):
+        key = self.root / 'key.txt'
+        key.write_bytes(b'Fictional problem-specific key.')
+        self.review['comparisons'][0]['problem_specific_key']['evidence'] = [
+            {'path': key.name, 'sha256': hashlib.sha256(key.read_bytes()).hexdigest(), 'locator': 'key'}]
+        self.assertEqual(self.inspect()['status'], 'recorded_design_met')
+        key.write_bytes(b'Changed key.')
+        self.assertEqual(paths.inspect_paths(self.graph, self.spec, self.root)['status'], 'declared_path_complete')
+        self.assertEqual(self.inspect()['status'], 'stale')
+        self.assertIn('stale_review_evidence', codes(self.inspect()))
+
+    def test_scope_duplicate_unknown_and_synthetic_mismatch_are_invalid(self):
+        for mutate in (lambda r: r['comparisons'].append(copy.deepcopy(r['comparisons'][0])),
+                       lambda r: r['comparisons'][0].update(comparison_id='unrelated'),
+                       lambda r: r.update(synthetic=False)):
+            with self.subTest(mutate=mutate):
+                review = copy.deepcopy(self.review)
+                mutate(review)
+                self.assertEqual(paths.inspect_semantic_review(self.graph, self.spec, review, self.root)['status'], 'invalid')
+
+    def test_review_evidence_requires_locator_safe_regular_file_and_digest(self):
+        for name in ('/etc/hosts', '../lesson.txt'):
+            review = copy.deepcopy(self.review)
+            review['comparisons'][0]['feedback']['evidence'][0]['path'] = name
+            self.assertEqual(paths.inspect_semantic_review(self.graph, self.spec, review, self.root)['status'], 'invalid')
+        for name in ('missing.txt', '.'):
+            review = copy.deepcopy(self.review)
+            review['comparisons'][0]['feedback']['evidence'][0]['path'] = name
+            self.assertIn('unavailable_review_evidence', codes(paths.inspect_semantic_review(self.graph, self.spec, review, self.root)))
+        self.review['comparisons'][0]['feedback']['evidence'][0]['locator'] = ''
+        self.assertEqual(self.inspect()['status'], 'gap')
+
+    def test_malformed_review_never_crashes(self):
+        for review in ([], {'schema_version': True}, {'extra': float('nan')}, {'extra': chr(0xD800)}):
+            with self.subTest(review=review):
+                self.assertEqual(paths.inspect_semantic_review(self.graph, self.spec, review, self.root)['status'], 'invalid')
+
+
 class GraphPathsTest(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
@@ -297,6 +407,20 @@ class GraphPathsCliTest(unittest.TestCase):
         self.assertEqual(result.returncode, 1)
         self.assertEqual(json.loads(result.stdout)['status'], 'gap')
         self.spec_file.write_text('{', encoding='utf-8')
+        self.assertEqual(self.run_cli(*args).returncode, 2)
+
+    def test_semantic_review_cli_preserves_gap_uncertainty_and_exit_codes(self):
+        review = semantic_fixture(self.graph, self.spec)
+        review_file = self.root / 'semantic-review.json'
+        args = (self.graph_file, '--spec', self.spec_file, '--root', self.root, '--semantic-review', review_file)
+        for judgment, expected_status, expected_exit in (('met', 'recorded_design_met', 0),
+                                                         ('uncertain', 'uncertain', 1), ('gap', 'gap', 1)):
+            review['comparisons'][0]['feedback']['judgment'] = judgment
+            review_file.write_text(json.dumps(review), encoding='utf-8')
+            result = self.run_cli(*args)
+            self.assertEqual(result.returncode, expected_exit, result.stderr)
+            self.assertEqual(json.loads(result.stdout)['status'], expected_status)
+        review_file.write_text('{', encoding='utf-8')
         self.assertEqual(self.run_cli(*args).returncode, 2)
 
     def test_real_candidate_without_spec_is_gap_not_legacy_failure(self):

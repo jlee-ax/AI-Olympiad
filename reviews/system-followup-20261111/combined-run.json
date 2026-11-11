@@ -1,0 +1,142 @@
+{
+  "copied_artifact_sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+  "current_bundle": "validation-current/quality.json",
+  "current_quality_result_invalidated": false,
+  "execution": {
+    "actual_function_and_state_assertions": "passed",
+    "baseline_required_homework_minutes": [
+      300,
+      420
+    ],
+    "browser_preview": "not_performed_by_script",
+    "cells": 87,
+    "checked_at_utc": "2026-11-11T01:35:30.808418+00:00",
+    "classroom_timing": "estimated_not_observed",
+    "code_cells": 27,
+    "csv_mask_shape_missing_and_merge_checks": "passed",
+    "embedded_diagrams": 2,
+    "error_outputs": 0,
+    "executed_code_cells": 27,
+    "execution_method": "fresh IPython InProcessKernelManager per run",
+    "execution_seconds": 2.874,
+    "independent_fraction_arithmetic": "passed",
+    "nbformat_validation": "passed",
+    "notebook": "week01_python_tables.ipynb",
+    "notebook_sha256": "7b9339767340e52fbbe2f123d75cfe86186479a2ac953ddea1f8de37e2fd38d9",
+    "packages": {
+      "ipykernel": "7.4.0",
+      "jupyterlab": "4.6.6",
+      "matplotlib": "3.11.2",
+      "nbclient": "0.11.0",
+      "nbformat": "5.11.1",
+      "numpy": "2.5.4",
+      "pandas": "3.1.1",
+      "seaborn": "0.13.2"
+    },
+    "plot_output_cells": [
+      50,
+      67,
+      69,
+      71,
+      72
+    ],
+    "plot_output_count": 5,
+    "revised_homework_time": "not_estimated_or_observed",
+    "revision": "week1-contest-depth-v1",
+    "schedules_created": false,
+    "skills_reference_commit": "64f24aabdad2b1976740d88d4a0ba74a4ed89766",
+    "source_attachment_projection_sha256": "cf636875247062af3a004eac5b01061acdcae1770f9bb188c111df4cd625be03",
+    "source_projection_unchanged_by_execution": true,
+    "standalone_without_csv_files": "passed",
+    "student_answers": "blank_not_assessed",
+    "student_mastery": "not_observed",
+    "student_text_meta_removal": "passed",
+    "teacher_modification_key_tests": "passed",
+    "teacher_only_class_total": 120,
+    "teacher_only_time_minutes": {
+      "coding": 80,
+      "noncoding": 20,
+      "theory": 20
+    },
+    "top_to_bottom_execution": "passed",
+    "visual_inspection": "not_performed_by_script"
+  },
+  "execution_errors": [],
+  "input_changes": [],
+  "limits": [
+    "Command exit zero means evaluation ran, not that educational criteria passed.",
+    "Historical reviews remain historical; current-context semantic review and observations are separate.",
+    "This workspace does not add network isolation, a worker, a scheduler, student answers or learner evidence."
+  ],
+  "receipts": [
+    {
+      "argv": [
+        "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+        "-B",
+        "tools/quality.py",
+        "baseline",
+        "--root",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-combined-validation-20261111"
+      ],
+      "exit_code": 0,
+      "name": "latest-baseline",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ecd46a47755d0d1a72d1d3144ac36bc0a9822b7306619da0cd9d07a2ec6178fd"
+    },
+    {
+      "argv": [
+        "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+        "-B",
+        "tools/quality.py",
+        "evaluate",
+        "reviews/week01/final-followup/quality.json",
+        "--root",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-combined-validation-20261111"
+      ],
+      "exit_code": 0,
+      "name": "latest-tool-historical-bundle",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "b92b9cdab4472e3d34b92be7d49b920ac13e71371378898b6ed39fca62a89ece"
+    },
+    {
+      "argv": [
+        "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+        "-B",
+        "lessons/week01/validate_week01.py",
+        "--inprocess"
+      ],
+      "exit_code": 0,
+      "name": "fresh-notebook",
+      "stderr_sha256": "b89cfc8c867895e50f01765e6e5a04ee86520b4d355d586a55c89c1e8a4033bd",
+      "stdout_sha256": "d9103dbc1cde8652ebd91ffd6b01194ce06a3083854bc3c418c77740c83f0d24"
+    },
+    {
+      "argv": [
+        "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+        "-B",
+        "reviews/week01/contest-depth/check_depth.py"
+      ],
+      "exit_code": 0,
+      "name": "actual-depth-checks",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "4eedc1e07f4afde1198d7d2bc365182289441458a6303efb7eacdd1c40fcd52d"
+    },
+    {
+      "argv": [
+        "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+        "-B",
+        "tools/quality.py",
+        "evaluate",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-combined-validation-20261111/validation-current/quality.json",
+        "--root",
+        "/workspace/scratch/d500e5cb2076/ai-olympiad-combined-validation-20261111"
+      ],
+      "exit_code": 0,
+      "name": "latest-tool-current-bundle",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "afcfcf2ab0c874544ab6c61f95ef7f3ff2aff6290f0f358ace6030d8ba66b550"
+    }
+  ],
+  "status": "passed",
+  "unexpected_copy_changes": []
+}
