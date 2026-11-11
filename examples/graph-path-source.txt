@@ -1,0 +1,8 @@
+SYNTHETIC FORMAT FIXTURE — no official source, lesson review or learner observation.
+source: Fictional scope asks for an operation on fictional objects.
+demand: Fictional learner must explain that operation.
+prerequisite: Fictional learner first names the input objects.
+theory_explanation: Fictional explanation connects an assumption to a result.
+coding_practice: Fictional guided code implements the operation.
+independent_assessment: Fictional task uses a new input, no hints, key withheld.
+feedback: Fictional answer rationale and prerequisite support route.

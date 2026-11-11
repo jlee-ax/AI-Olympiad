@@ -316,8 +316,13 @@ def inspect_times(check, bundle, weeks, class_minutes):
         item = check.obj(raw, path)
         week = check.integer(item.get('week', MISSING), path + '.week', 1, 10)
         inside = check.integer(item.get('in_class_minutes', MISSING), path + '.in_class_minutes', 0, 1000000)
+        # Outside-work uncertainty belongs to the bundle, not the class-time
+        # completeness flag. Keep the common locator relevant to both.
+        class_fields_complete = not check.changed(start)
         check.integer(item.get('outside_class_minutes', MISSING), path + '.outside_class_minutes', 0, 1000000)
+        locator_start = check.checkpoint()
         check.string(item.get('locator', MISSING), path + '.locator')
+        locator_complete = not check.changed(locator_start)
         if week is not None and week not in weeks and weeks:
             check.error(path + '.week', 'outside_target', 'The allocation week must belong to target.weeks.')
         if inside is not None and class_minutes is not None and inside != class_minutes:
@@ -326,7 +331,8 @@ def inspect_times(check, bundle, weeks, class_minutes):
                                    'origin': 'time_allocation', 'week': week, 'priority': None,
                                    'difference': f'Recorded class time is {inside} minutes, expected {class_minutes}.',
                                    'rationale': 'Arithmetic comparison of the recorded number only.'})
-        time_complete = not check.changed(start)
+        time_complete = class_fields_complete and locator_complete and (
+            inside is None or class_minutes is None or inside == class_minutes)
         format_result, format_gaps = inspect_assessment_format(check, item, path, week)
         formats.append(format_result)
         generated_gaps.extend(format_gaps)
@@ -343,12 +349,41 @@ def inspect_times(check, bundle, weeks, class_minutes):
 
 
 def inspect_unknowns(check, bundle):
+    # Legacy string entries and malformed scopes affect every comparison. Scoped
+    # entries affect only the named comparisons, while still making the bundle
+    # as a whole uncertain. This is a declaration, not verified relevance.
     start = check.checkpoint()
-    entries = check.strings(bundle.get('unknowns', MISSING), 'unknowns', nonempty=False)
+    entries = check.array(bundle.get('unknowns', MISSING), 'unknowns')
+    global_unknown = check.changed(start)
+    scoped = set()
+    raw_comparisons = bundle.get('comparisons', [])
+    ids = {item['id'].strip() for item in raw_comparisons
+           if isinstance(item, dict) and isinstance(item.get('id'), str)} if isinstance(raw_comparisons, list) else set()
     for i, entry in enumerate(entries):
-        if entry:
-            check.uncertain(f'unknowns[{i}]', 'reported_unknown', entry)
-    return not check.changed(start)
+        path = f'unknowns[{i}]'
+        start = check.checkpoint()
+        if isinstance(entry, str):
+            description = check.string(entry, path)
+            if description:
+                check.uncertain(path, 'reported_unknown', description)
+            global_unknown = True
+        elif isinstance(entry, dict):
+            description = check.string(entry.get('description', MISSING), path + '.description')
+            refs = check.strings(entry.get('comparison_ids', MISSING), path + '.comparison_ids')
+            for j, ref in enumerate(refs):
+                if ref and ref not in ids:
+                    check.error(f'{path}.comparison_ids[{j}]', 'invalid_reference',
+                                'This comparison ID is not declared.')
+            if check.changed(start):
+                # An invalid scope cannot establish that any comparison is unaffected.
+                global_unknown = True
+            else:
+                scoped.update(refs)
+                check.uncertain(path, 'reported_unknown', description)
+        else:
+            check.error(path, 'invalid_type', 'Expected a string or scoped unknown object.')
+            global_unknown = True
+    return global_unknown, scoped
 
 
 def inspect_refs(check, value, path, catalog, other_catalog):
@@ -377,7 +412,7 @@ def inspect_theory(check, value, path):
         check.uncertain(path, 'theory_contradiction', 'Theory is marked inapplicable but a claim or evidence is recorded.')
 
 
-def inspect_comparisons(check, bundle, catalogs, weeks, goals, target_ready, time_ready, format_ready, unknowns_clear):
+def inspect_comparisons(check, bundle, catalogs, weeks, goals, target_ready, time_ready, format_ready, unknowns):
     entries = check.array(bundle.get('comparisons', MISSING), 'comparisons', nonempty=True)
     results, gaps, seen_ids, covered_weeks, covered_goals = [], [], set(), set(), set()
     for i, raw in enumerate(entries):
@@ -433,8 +468,8 @@ def inspect_comparisons(check, bundle, catalogs, weeks, goals, target_ready, tim
             check.uncertain(path, 'incomplete_time', 'A complete allocation consistent with target.class_minutes is unavailable for this week.')
         if week is not None and not format_ready.get(week, False):
             check.uncertain(path, 'assessment_format_unresolved', 'The recorded assessment format is incomplete or differs from its requirement.')
-        if not unknowns_clear:
-            check.uncertain(path, 'unresolved_unknowns', 'The bundle has missing or unresolved unknowns with no per-item scope.')
+        if unknowns[0] or cid in unknowns[1]:
+            check.uncertain(path, 'unresolved_unknowns', 'A global or explicitly scoped unknown affects this comparison.')
         issue_paths = [x['path'] for x in check.findings[start[0]:]] + [x['path'] for x in check.errors[start[1]:]]
         status = 'gap' if judgment == 'gap' else ('uncertain' if check.changed(start) or judgment != 'met' else 'met')
         results.append({'id': cid or path, 'week': week, 'goal_id': goal_id or None, 'recorded_judgment': judgment,
@@ -463,9 +498,9 @@ def inspect(bundle):
     catalogs = inspect_sources(check, bundle)
     weeks, goals, class_minutes, target_ready = inspect_target(check, bundle)
     time_ready, generated_gaps, formats = inspect_times(check, bundle, weeks, class_minutes)
-    unknowns_clear = inspect_unknowns(check, bundle)
+    unknowns = inspect_unknowns(check, bundle)
     format_ready = {item['week']: item['status'] in ('matched', 'not_required') for item in formats}
-    comparisons, gaps = inspect_comparisons(check, bundle, catalogs, weeks, goals, target_ready, time_ready, format_ready, unknowns_clear)
+    comparisons, gaps = inspect_comparisons(check, bundle, catalogs, weeks, goals, target_ready, time_ready, format_ready, unknowns)
     gaps.extend(generated_gaps)
     gaps.sort(key=lambda item: (PRIORITY.get(item['priority'], 3), item['id']))
     status = ('invalid' if check.errors else 'gap' if gaps else

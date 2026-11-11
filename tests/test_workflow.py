@@ -39,6 +39,54 @@ def add_record(state, identifier='evidence:new', text='Synthetic new evidence.',
 
 
 class WorkflowTest(unittest.TestCase):
+    def test_quality_bindings_ignore_decorative_metadata_but_require_exact_manifest(self):
+        import quality
+        state = load('examples/quality-workflow.json')
+        report = quality.evaluate(quality.load(ROOT / 'examples/quality.json'))
+        self.assertEqual(workflow.decide(state, report)['reason'], 'verified_candidate_within_budget')
+        before = workflow.context_fingerprint(state)
+        for manifest in state['context']['inputs']:
+            if manifest['id'].startswith('quality:'):
+                manifest['note'] = 'Decorative metadata.'
+        self.assertEqual(workflow.validate_state(state)[0], [])
+        self.assertEqual(workflow.context_fingerprint(state), before)
+        self.assertEqual(workflow.decide(state, report)['reason'], 'verified_candidate_within_budget')
+        for field, value in (('id', 'quality:other'), ('revision', 'different-revision'),
+                             ('sha256', '0' * 64)):
+            with self.subTest(field=field):
+                changed = copy.deepcopy(state)
+                bundle = next(item for item in changed['context']['inputs'] if item['id'] == 'quality:bundle')
+                bundle[field] = value
+                self.assertEqual(workflow.decide(changed, report)['reason'], 'quality_context_not_bound')
+
+    def test_frozen_baseline_compares_declared_measurement_fields(self):
+        state = load()
+        before = workflow.context_fingerprint(state)
+        for key in ('rubric', 'evaluator'):
+            state['frozen'][key]['note'] = 'Saved human annotation.'
+        state['frozen']['note'] = 'Baseline annotation.'
+        self.assertEqual(workflow.validate_state(state)[0], [])
+        self.assertEqual(workflow.context_fingerprint(state), before)
+        self.assertEqual(workflow.decide(state)['reason'], 'verified_candidate_within_budget')
+        for key in ('rubric', 'evaluator'):
+            for field, value in (('id', 'other'), ('revision', 'other'), ('sha256', '0' * 64)):
+                with self.subTest(key=key, field=field):
+                    changed = copy.deepcopy(state)
+                    changed['frozen'][key][field] = value
+                    self.assertEqual(workflow.decide(changed)['reason'], 'baseline_change_required')
+
+    def test_serialized_state_preserves_dedup_and_rejects_stale_review(self):
+        state = load()
+        receipt(state)
+        duplicate = copy.deepcopy(state['records'][0])
+        duplicate.update(id='evidence:restart-copy', created_at='2026-11-11T00:00:00Z')
+        state['records'].append(duplicate)
+        restored = json.loads(json.dumps(state))
+        self.assertEqual(workflow.decide(restored)['reason'], 'no_new_evidence')
+        self.assertEqual(len(workflow.recall_records(restored)), 1)
+        add_record(restored, text='Synthetic evidence after restart.')
+        self.assertEqual(workflow.decide(restored)['reason'], 'stale_verification')
+
     def test_template_is_valid_and_pauses_without_inventing_budget(self):
         state = load('templates/workflow.json')
         self.assertEqual(workflow.validate_state(state), ([], []))
@@ -401,6 +449,36 @@ class WorkflowTest(unittest.TestCase):
                 output = json.loads(run.stdout)
                 self.assertEqual(output['authority'], 'advisory_only')
         self.assertEqual(before, {path: hashlib.sha256(path.read_bytes()).hexdigest() for path in tracked})
+
+    def test_cli_quality_cycle_survives_restart_and_rechecks_changed_evidence(self):
+        import tempfile
+        state = load('examples/quality-workflow.json')
+        next(item for item in state['context']['inputs'] if item['id'] == 'quality:bundle')['note'] = 'metadata'
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'state.json'
+            def decide_on_disk():
+                path.write_text(json.dumps(state), encoding='utf-8')
+                before = path.read_bytes()
+                run = subprocess.run([sys.executable, '-B', str(ROOT / 'tools/workflow.py'), 'decide', str(path),
+                                      '--quality', str(ROOT / 'examples/quality.json')],
+                                     capture_output=True, text=True, check=False)
+                self.assertEqual(run.returncode, 0, run.stderr)
+                self.assertEqual(path.read_bytes(), before)
+                return json.loads(run.stdout)
+
+            self.assertEqual(decide_on_disk()['reason'], 'verified_candidate_within_budget')
+            receipt(state)
+            duplicate = copy.deepcopy(state['records'][0])
+            duplicate['id'] = 'evidence:restart-copy'
+            state['records'].append(duplicate)
+            state = json.loads(json.dumps(state))
+            self.assertEqual(decide_on_disk()['reason'], 'no_new_evidence')
+            add_record(state, text='Synthetic evidence after restart.')
+            self.assertEqual(decide_on_disk()['reason'], 'stale_verification')
+            reviewed(state)
+            self.assertEqual(decide_on_disk()['reason'], 'verified_candidate_within_budget')
+            state['usage']['minutes_since_checkpoint'] = state['limits']['checkpoint_minutes']
+            self.assertEqual(decide_on_disk()['reason'], 'checkpoint_due')
 
     def test_cli_missing_file_is_a_json_error(self):
         run = subprocess.run([sys.executable, '-B', str(ROOT / 'tools/workflow.py'), 'decide',

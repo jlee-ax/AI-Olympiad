@@ -473,8 +473,13 @@ def decide(state, quality_report=None):
         return finish('pause', 'context_unconfigured')
     if state['frozen'] is None:
         return finish('pause', 'baseline_required')
-    frozen = {**state['frozen'], 'references': _sorted_manifests(state['frozen']['references']),
-              'required_checks': sorted(state['frozen']['required_checks'])}
+    frozen = {
+        'rubric': _manifest(state['frozen']['rubric']),
+        'evaluator': _manifest(state['frozen']['evaluator']),
+        'references': _sorted_manifests(state['frozen']['references']),
+        'required_checks': sorted(state['frozen']['required_checks']),
+        'finish_condition': state['frozen']['finish_condition'],
+    }
     if frozen != measurement(state):
         return finish('pause', 'baseline_change_required')
     if agreement['criteria_fingerprint'] != criteria_fingerprint(state):
@@ -518,7 +523,8 @@ def decide(state, quality_report=None):
             {'id': 'quality:criteria', 'revision': quality_report['specification_revision'], 'sha256': quality_report['specification_sha256']},
             {'id': 'quality:evaluator', 'revision': 'quality-v1', 'sha256': quality_report['evaluator_sha256']},
         ]
-        if any(item not in context['inputs'] for item in required_inputs):
+        bound_inputs = [_manifest(item) for item in context['inputs']]
+        if any(item not in bound_inputs for item in required_inputs):
             return finish('blocked', 'quality_context_not_bound')
         checks = quality_report['checks']
         if (quality_report['ready_for_review'] is not True or not isinstance(checks, list) or

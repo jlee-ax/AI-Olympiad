@@ -23,6 +23,8 @@ def validate(graph):
         nid = node.get('id')
         if not isinstance(nid, str) or not nid.strip():
             errors.append(f'node {i}: id must be nonempty'); continue
+        if any(0xD800 <= ord(char) <= 0xDFFF for char in nid):
+            errors.append(f'node {i}: id contains invalid Unicode surrogate'); continue
         if nid in ids:
             errors.append(f'node {i}: duplicate id {nid}')
         ids.add(nid)

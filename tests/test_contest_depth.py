@@ -107,7 +107,7 @@ class ContestDepthTest(unittest.TestCase):
             ('comparisons', 'scope_refs'), ('comparisons', 'problem_refs'), ('comparisons', 'difference'),
             ('comparisons', 'rationale'), ('comparisons', 'assessment_method'), ('comparisons', 'answer_conditions'),
             ('comparisons', 'allowed_support'), ('comparisons', 'author_id'), ('comparisons', 'reviewer'),
-            ('comparisons', 'goal_id'), ('time_allocations', 'outside_class_minutes'),
+            ('comparisons', 'goal_id'),
             ('time_allocations', 'locator'), ('time_allocations', 'required_assessment_format'),
             ('time_allocations', 'observed_assessment_format'),
         ]
@@ -206,6 +206,29 @@ class ContestDepthTest(unittest.TestCase):
         self.assertIsNone(result['gaps'][0]['priority'])
         self.assertEqual(result['comparisons'][0]['status'], 'uncertain')
 
+    def test_missing_outside_time_does_not_misreport_complete_class_time(self):
+        # Four independent comparison records reproduce the previous propagation.
+        for i in range(3):
+            item = copy.deepcopy(self.bundle['comparisons'][0])
+            item['id'] = f'comparison:extra:{i}'
+            self.bundle['comparisons'].append(item)
+        allocation = self.bundle['time_allocations'][0]
+        allocation.pop('outside_class_minutes')
+        result = depth.inspect(self.bundle)
+        self.assertEqual(result['status'], 'uncertain')
+        self.assertEqual([x['status'] for x in result['comparisons']], ['met'] * 4)
+        self.assertTrue(any(x['path'].endswith('.outside_class_minutes') for x in result['findings']))
+        self.assertNotIn('incomplete_time', codes(result['findings']))
+        # An actual class-time shortfall remains a gap and affects comparisons.
+        allocation['in_class_minutes'] = 119
+        result = depth.inspect(self.bundle)
+        self.assertEqual(result['status'], 'gap')
+        self.assertIn('incomplete_time', codes(result['findings']))
+        self.assertEqual([x['status'] for x in result['comparisons']], ['uncertain'] * 4)
+        allocation['in_class_minutes'] = 120
+        allocation['outside_class_minutes'] = 300
+        self.assertEqual(depth.inspect(self.bundle)['status'], 'recorded_met')
+
     def test_required_assessment_counts_missing_from_observed_lesson(self):
         observed = self.bundle['time_allocations'][0]['observed_assessment_format']
         observed['counts'] = {'multiple_choice': 0, 'written': 0}
@@ -282,6 +305,68 @@ class ContestDepthTest(unittest.TestCase):
         self.assertEqual(result['gaps'][0]['id'], 'comparison:synthetic')
         self.assertIn('reported_unknown', codes(result['findings']))
         self.assertIn('empty', codes(result['findings']))
+
+    def test_scoped_unknown_affects_only_named_comparison(self):
+        # Both records are synthetic. The inspector carries reviewer judgments;
+        # it cannot tell whether either lesson design really supports them.
+        shallow = self.bundle['comparisons'][0]
+        shallow.update(id='shallow', judgment='gap', priority='high',
+                       difference='Only repeats a supplied operation.',
+                       rationale='No independent operation choice is recorded.')
+        foundation = copy.deepcopy(shallow)
+        foundation.update(id='foundation', judgment='met',
+                          difference='A staged foundation identifies a later assessment.',
+                          rationale='Reviewer records a supported introductory objective.')
+        foundation.pop('priority')
+        self.bundle['comparisons'].append(foundation)
+        self.bundle['unknowns'] = [{'description': 'Later task source is not confirmed.',
+                                    'comparison_ids': ['shallow']}]
+        result = depth.inspect(self.bundle)
+        self.assertEqual(result['status'], 'gap')
+        self.assertEqual([item['status'] for item in result['comparisons']], ['gap', 'met'])
+        self.assertIn('reported_unknown', codes(result['findings']))
+        self.assertIn('unresolved_unknowns', codes(result['findings']))
+
+        # Reverse the scoped uncertainty: the neighboring met judgment must
+        # become uncertain, while the explicitly recorded gap remains a gap.
+        self.bundle['unknowns'][0]['comparison_ids'] = ['foundation']
+        result = depth.inspect(self.bundle)
+        self.assertEqual([item['status'] for item in result['comparisons']], ['gap', 'uncertain'])
+        self.assertTrue(result['comparisons'][1]['issue_paths'])
+        self.assertEqual(result['verification']['source_content'], 'not_checked')
+
+    def test_scoped_unknown_uses_normalized_comparison_ids(self):
+        self.bundle['comparisons'][0]['id'] = ' comparison:synthetic '
+        self.bundle['unknowns'] = [{'description': 'Unresolved source detail.',
+                                    'comparison_ids': [' comparison:synthetic ']}]
+        result = depth.inspect(self.bundle)
+        self.assertEqual(result['status'], 'uncertain')
+        self.assertEqual(result['errors'], [])
+        self.assertEqual(result['comparisons'][0]['id'], 'comparison:synthetic')
+        self.assertEqual(result['comparisons'][0]['status'], 'uncertain')
+        self.assertIn('unresolved_unknowns', codes(result['findings']))
+
+    def test_unscoped_and_invalid_unknowns_remain_conservative(self):
+        second = copy.deepcopy(self.bundle['comparisons'][0])
+        second['id'] = 'comparison:second'
+        self.bundle['comparisons'].append(second)
+        self.bundle['unknowns'] = ['An unscoped legacy uncertainty.']
+        result = depth.inspect(self.bundle)
+        self.assertEqual(result['status'], 'uncertain')
+        self.assertEqual([x['status'] for x in result['comparisons']], ['uncertain', 'uncertain'])
+        for entry in [
+            {'description': 'Missing scope.'},
+            {'description': 'Empty scope.', 'comparison_ids': []},
+            {'description': 'Unknown comparison.', 'comparison_ids': ['not-declared']},
+            {'description': '', 'comparison_ids': ['comparison:synthetic']},
+        ]:
+            with self.subTest(entry=entry):
+                self.bundle['unknowns'] = [entry]
+                result = depth.inspect(self.bundle)
+                self.assertIn(result['status'], ('invalid', 'uncertain'))
+                self.assertEqual([x['status'] for x in result['comparisons']], ['uncertain', 'uncertain'])
+        self.bundle['unknowns'] = []
+        self.assertEqual(depth.inspect(self.bundle)['status'], 'recorded_met')
 
     def test_reviewer_identity_and_independence_are_declarations(self):
         self.bundle['comparisons'][0]['reviewer']['id'] = 'synthetic-author'
