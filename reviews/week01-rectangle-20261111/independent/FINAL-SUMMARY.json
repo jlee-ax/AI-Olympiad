@@ -1,0 +1,106 @@
+{
+  "status": "completed_no_blocking_candidate_defect_found",
+  "final_inputs": [
+    {
+      "path": "lessons/week01/week01_integrated.ipynb",
+      "snapshot": "final-inputs/week01_integrated.ipynb",
+      "sha256": "201e2de6ecf2a27f7a39e45744a162dfde6c26334a46370b77135ac0793047cb",
+      "bytes": 103145
+    },
+    {
+      "path": "lessons/week01/week01_integrated.html",
+      "snapshot": "final-inputs/week01_integrated.html",
+      "sha256": "c74c81f94996d0839ed2f5506e16746f2987c778e2fd266a614b4d607f977639",
+      "bytes": 461903
+    },
+    {
+      "path": "lessons/week01/week01_integrated_teacher.md",
+      "snapshot": "final-inputs/week01_integrated_teacher.md",
+      "sha256": "871bbc08dc9a678a2598c28ce9151cc74357e7d79ffe6fa5021fcfea9a814b51",
+      "bytes": 18186
+    }
+  ],
+  "normal_or_route_controls": 21,
+  "expected_contract_rejections": 18,
+  "injected_reference_or_adapter_faults_detected": 8,
+  "assessed_main_cases": 47,
+  "relocated_representative_cases": 2,
+  "historical_full_runs_preserved": 2,
+  "historical_invalid_reviewer_capture_attempt": 1,
+  "historical_capture_errors": [
+    "SyntaxError",
+    "dependent missing config FileNotFoundError"
+  ],
+  "frozen_files_unchanged": [
+    {
+      "manifest": "FREEZE.sha256",
+      "file": "baseline-manifest.json",
+      "unchanged": true
+    },
+    {
+      "manifest": "FREEZE.sha256",
+      "file": "pre-candidate-criteria.md",
+      "unchanged": true
+    },
+    {
+      "manifest": "FREEZE.sha256",
+      "file": "frozen-inputs.json",
+      "unchanged": true
+    },
+    {
+      "manifest": "FREEZE-V2.sha256",
+      "file": "baseline-manifest.json",
+      "unchanged": true
+    },
+    {
+      "manifest": "FREEZE-V2.sha256",
+      "file": "pre-candidate-criteria.md",
+      "unchanged": true
+    },
+    {
+      "manifest": "FREEZE-V2.sha256",
+      "file": "frozen-inputs-v2.json",
+      "unchanged": true
+    },
+    {
+      "manifest": "FREEZE-V2.sha256",
+      "file": "exposure-and-replacement.md",
+      "unchanged": true
+    },
+    {
+      "manifest": "PREPARATION.sha256",
+      "file": "rectangle_probe.py",
+      "unchanged": true
+    },
+    {
+      "manifest": "PREPARATION.sha256",
+      "file": "EXECUTION-PLAN.md",
+      "unchanged": true
+    },
+    {
+      "manifest": "PREPARATION.sha256",
+      "file": "preparation-status.json",
+      "unchanged": true
+    }
+  ],
+  "active_independent_input": "frozen-inputs-v2.json",
+  "v1_exposure_record_preserved": true,
+  "v2_raw_candidate_binding_preserved": "387b; see v2-final-rebinding.json",
+  "student_generic_rectangle_answer": "blank42; no generic helper supplied in notebook",
+  "student_actual_performance_time_and_overload": "not_observed",
+  "full_RGB_implementation": "not_required_not_tested",
+  "protected_user91": "not_read_or_executed; numbering verified for safe89 only",
+  "runtime_and_font_cache_removed": true,
+  "temporary_portability_clone_removed": true,
+  "new_location_scope": "relocated exact-byte minimum fixture, final input41/42 and reviewer sample/adapter normal plus single fault; shared existing venv, not full repository relocation or fresh install",
+  "remaining_limits": [
+    "browser visual rendering",
+    "ordinary socket Jupyter/Colab",
+    "fresh dependency installation",
+    "full-repo relocation regression",
+    "student understanding/help/independence/time",
+    "full official Pixel task/hidden judge",
+    "entire ten-week mastery"
+  ],
+  "completed_utc": "2026-11-11T14:41:23.757684+00:00"
+}

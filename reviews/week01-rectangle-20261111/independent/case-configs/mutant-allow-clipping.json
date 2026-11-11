@@ -1,0 +1,11 @@
+{
+  "id": "mutant-allow-clipping",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/candidate-387b-inputs/week01_integrated.ipynb",
+  "sha256": "387b80845473172d35f9b7a979ca9f3098024b4b5c0c1b3a5df018144e16cba4",
+  "scope": "reviewer sample solution from student instructions / frozen v2; notebook answer42 remains blank",
+  "cells": [
+    41,
+    42
+  ],
+  "oracle": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/oracles/mutant-allow-clipping.py"
+}

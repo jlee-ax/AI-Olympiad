@@ -1,0 +1,52 @@
+{
+  "id": "teacher-valid-educational-small-budget",
+  "candidate_sha": "387b80845473172d35f9b7a979ca9f3098024b4b5c0c1b3a5df018144e16cba4",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/candidate-387b-inputs/week01_integrated.ipynb",
+  "config_sha": "c462b2ce5b4b0e9404b19d4382d91dd8b7d5bed8f51cb1d90ef8b231f2a649a8",
+  "status": "passed",
+  "scope": "actual teacher example function / frozen v2; notebook answer42 remains blank",
+  "execution": "new subprocess / fresh in-process kernel",
+  "cells": [
+    {
+      "index": 41,
+      "definitions_only": false,
+      "full_source_sha": "826dc8969375d66e8a511077fff18d6c4e967ac4ec5ba0ad06fbfe69a0aa8c37",
+      "source_sha": "826dc8969375d66e8a511077fff18d6c4e967ac4ec5ba0ad06fbfe69a0aa8c37",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "영역 연습 입력 / shape:\n [[1 4 7]\n [2 5 8]] (2, 3)\n"
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "definitions_only": false,
+      "full_source_sha": "ee60174982e714d118e5294eabbc1d0d079ce89d23a4825739b5cf1ad728a7e6",
+      "source_sha": "ee60174982e714d118e5294eabbc1d0d079ce89d23a4825739b5cf1ad728a7e6",
+      "blank_ast": true,
+      "status": "ok",
+      "outputs": []
+    }
+  ],
+  "student_achievement": "not_observed",
+  "learning_time": "not_observed",
+  "oracle": {
+    "sha256": "b791f991e7e49fb26d01b6751742ff0749025fa019f9dc1b4e968a2cc6c3ffdd",
+    "status": "ok",
+    "outputs": [
+      {
+        "output_type": "stream",
+        "name": "stdout",
+        "text": "{\"provenance\": {\"implementation\": \"teacher\", \"source_file\": \"active-teacher-rectangle.py\", \"original_source_sha256\": \"0fee5d07291b7c7753a09bb674cb5a492df5988d859346a8b858d7fe136f8d30\", \"executed_source_sha256\": \"0fee5d07291b7c7753a09bb674cb5a492df5988d859346a8b858d7fe136f8d30\", \"mutation\": \"none\", \"student_notebook_has_generic_helper\": false, \"scope\": \"actual_teacher_example_function\", \"student_answer_cell42_blank\": true}}\n{\"native_2d_return\": {\"grid_shape\": [4, 7], \"crop_shape\": [1, 2], \"mask_shape\": [4, 7], \"kept_shape\": [4, 7], \"mask_coordinates\": [[2, 5], [2, 6]], \"mask_area\": 2, \"spatial_maximum_passed_by_reviewer_adapter\": 2, \"channel_count\": 3, \"original_unchanged\": true}}\n{\n  \"case_id\": \"valid-educational-small-budget\",\n  \"execution_scope\": \"actual_candidate_callable\",\n  \"fixture_file\": \"frozen-inputs-v2.json\",\n  \"expected_valid\": true,\n  \"expected_nominal_area\": 2,\n  \"expected_coordinates\": [\n    [\n      2,\n      5\n    ],\n    [\n      2,\n      6\n    ]\n  ],\n  \"student_achievement\": \"not_observed\",\n  \"actual_student_time\": \"not_observed\",\n  \"require_masked_image\": false,\n  \"status\": \"passed\",\n  \"original_unchanged\": true,\n  \"actual_mask_shape\": [\n    4,\n    7\n  ],\n  \"actual_coordinates\": [\n    [\n      2,\n      5\n    ],\n    [\n      2,\n      6\n    ]\n  ],\n  \"actual_spatial_area\": 2,\n  \"channel_value_count_for_comparison_only\": 6,\n  \"budget_check\": \"separate educational absolute spatial-pixel maximum\",\n  \"masked_image_checked\": false,\n  \"masked_image_limit\": \"separate displayed/student transform path remains untested\"\n}\n{\"scope_limit\": \"actual 2D function and 2D crop/kept checked; adapter computes budget and selects one plane; full RGB implementation is not required/proven\", \"probe_status\": \"passed\"}\n"
+      }
+    ]
+  },
+  "elapsed_seconds": 0.2075,
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

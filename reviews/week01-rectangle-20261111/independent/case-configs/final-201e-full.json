@@ -1,0 +1,10 @@
+{
+  "id": "final-201e-full",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/final-inputs/week01_integrated.ipynb",
+  "sha256": "201e2de6ecf2a27f7a39e45744a162dfde6c26334a46370b77135ac0793047cb",
+  "scope": "final201e complete provided code and fixed example; blank responses not learner achievement",
+  "compare_stored": true,
+  "save_png": true,
+  "require_candidate_file": "result.csv",
+  "oracle": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/oracles/initial-full.py"
+}

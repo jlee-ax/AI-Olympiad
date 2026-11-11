@@ -1,0 +1,79 @@
+{
+  "id": "mutant-channel-budget",
+  "candidate_sha": "387b80845473172d35f9b7a979ca9f3098024b4b5c0c1b3a5df018144e16cba4",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/candidate-387b-inputs/week01_integrated.ipynb",
+  "config_sha": "332b718722a538ef04fd9bc31f13e4eff1ed5f02255e78f2c7bf0264c6bd936d",
+  "status": "oracle_error",
+  "scope": "reviewer sample solution from student instructions / frozen v2; notebook answer42 remains blank",
+  "execution": "new subprocess / fresh in-process kernel",
+  "cells": [
+    {
+      "index": 41,
+      "definitions_only": false,
+      "full_source_sha": "826dc8969375d66e8a511077fff18d6c4e967ac4ec5ba0ad06fbfe69a0aa8c37",
+      "source_sha": "826dc8969375d66e8a511077fff18d6c4e967ac4ec5ba0ad06fbfe69a0aa8c37",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "영역 연습 입력 / shape:\n [[1 4 7]\n [2 5 8]] (2, 3)\n"
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "definitions_only": false,
+      "full_source_sha": "ee60174982e714d118e5294eabbc1d0d079ce89d23a4825739b5cf1ad728a7e6",
+      "source_sha": "ee60174982e714d118e5294eabbc1d0d079ce89d23a4825739b5cf1ad728a7e6",
+      "blank_ast": true,
+      "status": "ok",
+      "outputs": []
+    }
+  ],
+  "student_achievement": "not_observed",
+  "learning_time": "not_observed",
+  "oracle": {
+    "sha256": "6fb56d2d70c3087780697db504e315571ac3f723c17ebfc22cfa9b85590290e3",
+    "status": "error",
+    "outputs": [
+      {
+        "output_type": "stream",
+        "name": "stdout",
+        "text": "{\"provenance\": {\"implementation\": \"reviewer\", \"source_file\": \"reviewer_rectangle_sample.py\", \"original_source_sha256\": \"58acdf85d1ce0a2b8b23cc3f05aa11003638078c5715a21506c42befb7081733\", \"executed_source_sha256\": \"58acdf85d1ce0a2b8b23cc3f05aa11003638078c5715a21506c42befb7081733\", \"mutation\": \"channel-budget\", \"student_notebook_has_generic_helper\": false, \"scope\": \"reviewer_sample_solution_from_student_instructions\", \"student_answer_cell42_blank\": true}}\n{\"native_2d_return\": {\"grid_shape\": [10, 24], \"crop_shape\": [4, 5], \"mask_shape\": [10, 24], \"kept_shape\": [10, 24], \"mask_coordinates\": [[6, 19], [6, 20], [6, 21], [6, 22], [6, 23], [7, 19], [7, 20], [7, 21], [7, 22], [7, 23], [8, 19], [8, 20], [8, 21], [8, 22], [8, 23], [9, 19], [9, 20], [9, 21], [9, 22], [9, 23]], \"mask_area\": 20, \"spatial_maximum_passed_by_reviewer_adapter\": 45, \"channel_count\": 3, \"original_unchanged\": true}}\n{\n  \"case_id\": \"invalid-over-exact-budget\",\n  \"execution_scope\": \"reviewer_sample_solution_from_student_instructions\",\n  \"fixture_file\": \"frozen-inputs-v2.json\",\n  \"expected_valid\": false,\n  \"expected_nominal_area\": 20,\n  \"expected_coordinates\": null,\n  \"student_achievement\": \"not_observed\",\n  \"actual_student_time\": \"not_observed\",\n  \"require_masked_image\": false,\n  \"status\": \"mismatch\",\n  \"original_unchanged\": true,\n  \"mismatch\": \"invalid contract accepted; small/clipped/zero-valued slice is insufficient\"\n}\n"
+      },
+      {
+        "output_type": "error",
+        "ename": "ProbeMismatch",
+        "evalue": "invalid contract accepted; small/clipped/zero-valued slice is insufficient",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mProbeMismatch\u001b[39m                             Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[3]\u001b[39m\u001b[32m, line 5\u001b[39m\n\u001b[32m      1\u001b[39m _CASE=\u001b[33m'invalid-over-exact-budget'\u001b[39m\n\u001b[32m      2\u001b[39m _IMPLEMENTATION=\u001b[33m'reviewer'\u001b[39m\n\u001b[32m      3\u001b[39m _MUTATION=\u001b[33m'channel-budget'\u001b[39m\n\u001b[32m      4\u001b[39m \u001b[38;5;28;01mfrom\u001b[39;00m pathlib \u001b[38;5;28;01mimport\u001b[39;00m Path\n\u001b[32m----> \u001b[39m\u001b[32m5\u001b[39m exec((Path.cwd().parents[\u001b[32m1\u001b[39m]/\u001b[33m'rectangle_case_oracle.py'\u001b[39m).read_text())\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:52\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/rectangle_probe.py:94\u001b[39m, in \u001b[36mcheck_case\u001b[39m\u001b[34m(adapter, case_id, execution_scope, require_masked_image, fixtures_path)\u001b[39m\n\u001b[32m     92\u001b[39m         emit()\n\u001b[32m     93\u001b[39m         \u001b[38;5;28;01mreturn\u001b[39;00m report\n\u001b[32m---> \u001b[39m\u001b[32m94\u001b[39m     \u001b[30;43mfail\u001b[39;49m\u001b[30;43m(\u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43minvalid contract accepted; small/clipped/zero-valued slice is insufficient\u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43m)\u001b[39;49m\n\u001b[32m     96\u001b[39m \u001b[38;5;28;01mif\u001b[39;00m caught \u001b[38;5;129;01mis\u001b[39;00m \u001b[38;5;129;01mnot\u001b[39;00m \u001b[38;5;28;01mNone\u001b[39;00m:\n\u001b[32m     97\u001b[39m     fail(\u001b[33m\"\u001b[39m\u001b[33mvalid declared input raised an exception\u001b[39m\u001b[33m\"\u001b[39m)\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/rectangle_probe.py:67\u001b[39m, in \u001b[36mcheck_case.<locals>.fail\u001b[39m\u001b[34m(message)\u001b[39m\n\u001b[32m     65\u001b[39m report.update(status=\u001b[33m\"\u001b[39m\u001b[33mmismatch\u001b[39m\u001b[33m\"\u001b[39m, mismatch=message)\n\u001b[32m     66\u001b[39m emit()\n\u001b[32m---> \u001b[39m\u001b[32m67\u001b[39m \u001b[38;5;28;01mraise\u001b[39;00m ProbeMismatch(message)\n",
+          "\u001b[31mProbeMismatch\u001b[39m: invalid contract accepted; small/clipped/zero-valued slice is insufficient"
+        ]
+      }
+    ]
+  },
+  "error": {
+    "ename": "ProbeMismatch",
+    "evalue": "invalid contract accepted; small/clipped/zero-valued slice is insufficient",
+    "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mProbeMismatch\u001b[39m                             Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[3]\u001b[39m\u001b[32m, line 5\u001b[39m\n\u001b[32m      1\u001b[39m _CASE=\u001b[33m'invalid-over-exact-budget'\u001b[39m\n\u001b[32m      2\u001b[39m _IMPLEMENTATION=\u001b[33m'reviewer'\u001b[39m\n\u001b[32m      3\u001b[39m _MUTATION=\u001b[33m'channel-budget'\u001b[39m\n\u001b[32m      4\u001b[39m \u001b[38;5;28;01mfrom\u001b[39;00m pathlib \u001b[38;5;28;01mimport\u001b[39;00m Path\n\u001b[32m----> \u001b[39m\u001b[32m5\u001b[39m exec((Path.cwd().parents[\u001b[32m1\u001b[39m]/\u001b[33m'rectangle_case_oracle.py'\u001b[39m).read_text())\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m<string>:52\u001b[39m\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/rectangle_probe.py:94\u001b[39m, in \u001b[36mcheck_case\u001b[39m\u001b[34m(adapter, case_id, execution_scope, require_masked_image, fixtures_path)\u001b[39m\n\u001b[32m     92\u001b[39m         emit()\n\u001b[32m     93\u001b[39m         \u001b[38;5;28;01mreturn\u001b[39;00m report\n\u001b[32m---> \u001b[39m\u001b[32m94\u001b[39m     \u001b[30;43mfail\u001b[39;49m\u001b[30;43m(\u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43minvalid contract accepted; small/clipped/zero-valued slice is insufficient\u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43m)\u001b[39;49m\n\u001b[32m     96\u001b[39m \u001b[38;5;28;01mif\u001b[39;00m caught \u001b[38;5;129;01mis\u001b[39;00m \u001b[38;5;129;01mnot\u001b[39;00m \u001b[38;5;28;01mNone\u001b[39;00m:\n\u001b[32m     97\u001b[39m     fail(\u001b[33m\"\u001b[39m\u001b[33mvalid declared input raised an exception\u001b[39m\u001b[33m\"\u001b[39m)\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/rectangle_probe.py:67\u001b[39m, in \u001b[36mcheck_case.<locals>.fail\u001b[39m\u001b[34m(message)\u001b[39m\n\u001b[32m     65\u001b[39m report.update(status=\u001b[33m\"\u001b[39m\u001b[33mmismatch\u001b[39m\u001b[33m\"\u001b[39m, mismatch=message)\n\u001b[32m     66\u001b[39m emit()\n\u001b[32m---> \u001b[39m\u001b[32m67\u001b[39m \u001b[38;5;28;01mraise\u001b[39;00m ProbeMismatch(message)\n",
+      "\u001b[31mProbeMismatch\u001b[39m: invalid contract accepted; small/clipped/zero-valued slice is insufficient"
+    ]
+  },
+  "elapsed_seconds": 0.3253,
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

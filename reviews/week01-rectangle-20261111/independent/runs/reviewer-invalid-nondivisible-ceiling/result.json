@@ -1,0 +1,52 @@
+{
+  "id": "reviewer-invalid-nondivisible-ceiling",
+  "candidate_sha": "387b80845473172d35f9b7a979ca9f3098024b4b5c0c1b3a5df018144e16cba4",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/candidate-387b-inputs/week01_integrated.ipynb",
+  "config_sha": "ad2c8c8e889d1e5c03168bbd73f02ba91d837afe17f004aeaba12eb51d47ff58",
+  "status": "passed",
+  "scope": "reviewer sample solution from student instructions / frozen v2; notebook answer42 remains blank",
+  "execution": "new subprocess / fresh in-process kernel",
+  "cells": [
+    {
+      "index": 41,
+      "definitions_only": false,
+      "full_source_sha": "826dc8969375d66e8a511077fff18d6c4e967ac4ec5ba0ad06fbfe69a0aa8c37",
+      "source_sha": "826dc8969375d66e8a511077fff18d6c4e967ac4ec5ba0ad06fbfe69a0aa8c37",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "영역 연습 입력 / shape:\n [[1 4 7]\n [2 5 8]] (2, 3)\n"
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "definitions_only": false,
+      "full_source_sha": "ee60174982e714d118e5294eabbc1d0d079ce89d23a4825739b5cf1ad728a7e6",
+      "source_sha": "ee60174982e714d118e5294eabbc1d0d079ce89d23a4825739b5cf1ad728a7e6",
+      "blank_ast": true,
+      "status": "ok",
+      "outputs": []
+    }
+  ],
+  "student_achievement": "not_observed",
+  "learning_time": "not_observed",
+  "oracle": {
+    "sha256": "87fd80db3897e3200f8d93abd3af0f16dbae31c6427a2756770da8b629b5fd90",
+    "status": "ok",
+    "outputs": [
+      {
+        "output_type": "stream",
+        "name": "stdout",
+        "text": "{\"provenance\": {\"implementation\": \"reviewer\", \"source_file\": \"reviewer_rectangle_sample.py\", \"original_source_sha256\": \"58acdf85d1ce0a2b8b23cc3f05aa11003638078c5715a21506c42befb7081733\", \"executed_source_sha256\": \"58acdf85d1ce0a2b8b23cc3f05aa11003638078c5715a21506c42befb7081733\", \"mutation\": \"none\", \"student_notebook_has_generic_helper\": false, \"scope\": \"reviewer_sample_solution_from_student_instructions\", \"student_answer_cell42_blank\": true}}\n{\n  \"case_id\": \"invalid-nondivisible-ceiling\",\n  \"execution_scope\": \"reviewer_sample_solution_from_student_instructions\",\n  \"fixture_file\": \"frozen-inputs-v2.json\",\n  \"expected_valid\": false,\n  \"expected_nominal_area\": 5,\n  \"expected_coordinates\": null,\n  \"student_achievement\": \"not_observed\",\n  \"actual_student_time\": \"not_observed\",\n  \"require_masked_image\": false,\n  \"status\": \"rejection_observed_pending_manual_traceback_review\",\n  \"raw_exception\": {\n    \"type\": \"ValueError\",\n    \"message\": \"rectangle spatial area exceeds declared maximum\",\n    \"traceback\": \"Traceback (most recent call last):\\n  File \\\"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/rectangle_probe.py\\\", line 72, in check_case\\n    result = adapter(image, tuple(tuple(x) for x in case[\\\"box\\\"]),\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"<string>\\\", line 40, in _adapter\\n  File \\\"<string>\\\", line 12, in reviewer_rectangle_region\\nValueError: rectangle spatial area exceeds declared maximum\\n\"\n  },\n  \"original_unchanged\": true,\n  \"expected_rejection_reason\": \"fractional maximum cannot be rounded upward\"\n}\n{\"scope_limit\": \"actual 2D function and 2D crop/kept checked; adapter computes budget and selects one plane; full RGB implementation is not required/proven\", \"probe_status\": \"rejection_observed_pending_manual_traceback_review\"}\n"
+      }
+    ]
+  },
+  "elapsed_seconds": 0.3688,
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}

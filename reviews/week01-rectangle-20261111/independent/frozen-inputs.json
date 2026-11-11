@@ -1,0 +1,445 @@
+{
+  "schema": "rectangle-independent-frozen-inputs-v1",
+  "prepared_before_candidate": true,
+  "not_executed": true,
+  "image_values": "positive coordinate-distinct value at[r,c,k]=1+1000*r+10*c+k; additional all-zero image has the same rectangle area budget",
+  "cases": [
+    {
+      "id": "edge-equality",
+      "image_shape": [
+        6,
+        16,
+        3
+      ],
+      "box": [
+        [
+          4,
+          13
+        ],
+        [
+          6,
+          16
+        ]
+      ],
+      "expected_valid": true,
+      "nominal_area": 6,
+      "budget_policy": {
+        "type": "official_fraction",
+        "numerator": 1,
+        "denominator": 16
+      },
+      "nonempty_required": "educational_contract",
+      "expected_spatial_coordinates": [
+        [
+          4,
+          13
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          4,
+          15
+        ],
+        [
+          5,
+          13
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          5,
+          15
+        ]
+      ]
+    },
+    {
+      "id": "same-area-other-position",
+      "image_shape": [
+        6,
+        16,
+        3
+      ],
+      "box": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "expected_valid": true,
+      "nominal_area": 6,
+      "budget_policy": {
+        "type": "official_fraction",
+        "numerator": 1,
+        "denominator": 16
+      },
+      "nonempty_required": "educational_contract",
+      "expected_spatial_coordinates": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "one-origin-pixel",
+      "image_shape": [
+        6,
+        16,
+        3
+      ],
+      "box": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "expected_valid": true,
+      "nominal_area": 1,
+      "budget_policy": {
+        "type": "official_fraction",
+        "numerator": 1,
+        "denominator": 16
+      },
+      "nonempty_required": "educational_contract",
+      "expected_spatial_coordinates": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "over-exact-budget",
+      "image_shape": [
+        6,
+        16,
+        3
+      ],
+      "box": [
+        [
+          3,
+          13
+        ],
+        [
+          6,
+          16
+        ]
+      ],
+      "expected_valid": false,
+      "nominal_area": 9,
+      "budget_policy": {
+        "type": "official_fraction",
+        "numerator": 1,
+        "denominator": 16
+      },
+      "nonempty_required": "educational_contract",
+      "invalid_reason": "area9>6"
+    },
+    {
+      "id": "negative-clipped-empty",
+      "image_shape": [
+        6,
+        16,
+        3
+      ],
+      "box": [
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "expected_valid": false,
+      "nominal_area": 1,
+      "budget_policy": {
+        "type": "official_fraction",
+        "numerator": 1,
+        "denominator": 16
+      },
+      "nonempty_required": "educational_contract",
+      "invalid_reason": "negative coordinate; small/empty slice cannot legalize it"
+    },
+    {
+      "id": "bottom-outside-clipped",
+      "image_shape": [
+        6,
+        16,
+        3
+      ],
+      "box": [
+        [
+          5,
+          15
+        ],
+        [
+          7,
+          16
+        ]
+      ],
+      "expected_valid": false,
+      "nominal_area": 2,
+      "budget_policy": {
+        "type": "official_fraction",
+        "numerator": 1,
+        "denominator": 16
+      },
+      "nonempty_required": "educational_contract",
+      "invalid_reason": "bottom>H; actual slice clips to1pixel"
+    },
+    {
+      "id": "right-outside-clipped",
+      "image_shape": [
+        6,
+        16,
+        3
+      ],
+      "box": [
+        [
+          4,
+          15
+        ],
+        [
+          5,
+          18
+        ]
+      ],
+      "expected_valid": false,
+      "nominal_area": 3,
+      "budget_policy": {
+        "type": "official_fraction",
+        "numerator": 1,
+        "denominator": 16
+      },
+      "nonempty_required": "educational_contract",
+      "invalid_reason": "right>W; actual slice clips to1pixel"
+    },
+    {
+      "id": "empty-height",
+      "image_shape": [
+        6,
+        16,
+        3
+      ],
+      "box": [
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ]
+      ],
+      "expected_valid": false,
+      "nominal_area": 0,
+      "budget_policy": {
+        "type": "official_fraction",
+        "numerator": 1,
+        "denominator": 16
+      },
+      "nonempty_required": "educational_contract",
+      "invalid_reason": "educational nonempty contract"
+    },
+    {
+      "id": "both-axes-reversed",
+      "image_shape": [
+        6,
+        16,
+        3
+      ],
+      "box": [
+        [
+          4,
+          8
+        ],
+        [
+          2,
+          6
+        ]
+      ],
+      "expected_valid": false,
+      "nominal_area": 4,
+      "budget_policy": {
+        "type": "official_fraction",
+        "numerator": 1,
+        "denominator": 16
+      },
+      "nonempty_required": "educational_contract",
+      "invalid_reason": "both intervals reversed despite positive area product"
+    },
+    {
+      "id": "nondivisible-budget-valid",
+      "image_shape": [
+        5,
+        7,
+        3
+      ],
+      "box": [
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          7
+        ]
+      ],
+      "expected_valid": true,
+      "nominal_area": 2,
+      "budget_policy": {
+        "type": "official_fraction",
+        "numerator": 1,
+        "denominator": 16
+      },
+      "nonempty_required": "educational_contract",
+      "expected_spatial_coordinates": [
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ]
+      ]
+    },
+    {
+      "id": "nondivisible-budget-over",
+      "image_shape": [
+        5,
+        7,
+        3
+      ],
+      "box": [
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          7
+        ]
+      ],
+      "expected_valid": false,
+      "nominal_area": 3,
+      "budget_policy": {
+        "type": "official_fraction",
+        "numerator": 1,
+        "denominator": 16
+      },
+      "nonempty_required": "educational_contract",
+      "invalid_reason": "16*3>35; do not ceil35/16"
+    },
+    {
+      "id": "small-educational-valid",
+      "image_shape": [
+        3,
+        5,
+        3
+      ],
+      "box": [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "expected_valid": true,
+      "nominal_area": 2,
+      "budget_policy": {
+        "type": "educational_max_pixels",
+        "maximum": 2
+      },
+      "nonempty_required": "educational_contract",
+      "expected_spatial_coordinates": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "small-educational-over",
+      "image_shape": [
+        3,
+        5,
+        3
+      ],
+      "box": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "expected_valid": false,
+      "nominal_area": 3,
+      "budget_policy": {
+        "type": "educational_max_pixels",
+        "maximum": 2
+      },
+      "nonempty_required": "educational_contract",
+      "invalid_reason": "educational maximum2, separate from official fraction"
+    }
+  ],
+  "same_area_different_region_pair": [
+    "edge-equality",
+    "same-area-other-position"
+  ],
+  "planned_single_faults": [
+    "include bottom/right endpoints",
+    "swap row and column coordinates",
+    "reject valid stop==H/W",
+    "accept negative/outside coordinates after slicing/clipping",
+    "count channel entries as spatial budget",
+    "ceil noninteger fractional budget",
+    "in-place edit original array/view",
+    "check only actual nonzero/changed pixel values or area, not selected coordinate set"
+  ],
+  "scope": "test adapter may call actual candidate helper or reviewer sample solution; report these separately, never student achievement"
+}

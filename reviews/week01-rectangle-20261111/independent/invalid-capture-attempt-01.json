@@ -1,0 +1,19 @@
+{
+  "validity": "invalid_reviewer_preparation_failure",
+  "candidate_executed": false,
+  "candidate_files_changed": false,
+  "inline_script_error": {
+    "type": "SyntaxError",
+    "message": "unmatched ')'",
+    "failing_line": "for i,(x,y) in enumerate(zip(a['cells'],b['cells']))):",
+    "line_number": 8
+  },
+  "dependent_command_error": {
+    "type": "FileNotFoundError",
+    "missing": "case-configs/final-387b-full.json",
+    "reason": "capture script had not executed due to syntax error"
+  },
+  "no_candidate_failure_claim": true,
+  "corrected_script": "capture_candidate_387b.py",
+  "original_tool_output_preserved_in_conversation": true
+}

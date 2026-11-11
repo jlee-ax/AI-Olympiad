@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/workspace/scratch/d500e5cb2076/olympiad-week1-cloud/.venv/bin/python",
+    "-B",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/portability-work-final/minimal-checkout/reviews/week01-rectangle-20261111/independent/rebase-case-configs.py",
+    "--repo-root",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/portability-work-final/minimal-checkout",
+    "--run-prefix",
+    "portable",
+    "--case",
+    "portability-source-normal",
+    "--case",
+    "portability-source-error"
+  ],
+  "returncode": 0,
+  "stdout": "{\"method\": \"new config path fields rebased from frozen old repo to explicit repo-root; unique output IDs; exact candidate SHA required\", \"original_files_unchanged\": true, \"old_repo\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision\", \"new_repo\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/portability-work-final/minimal-checkout\", \"configs\": [{\"original_config\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/portability-work-final/minimal-checkout/reviews/week01-rectangle-20261111/independent/case-configs/portability-source-normal.json\", \"original_sha256\": \"b65a19171588e05cdcb7aebb0eef2bc046412b49634a8a9282de383cc8071caf\", \"new_config\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/portability-work-final/minimal-checkout/reviews/week01-rectangle-20261111/independent/rebased-configs/portable/portability-source-normal.json\", \"new_id\": \"portable-portability-source-normal\", \"candidate_sha256\": \"201e2de6ecf2a27f7a39e45744a162dfde6c26334a46370b77135ac0793047cb\"}, {\"original_config\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/portability-work-final/minimal-checkout/reviews/week01-rectangle-20261111/independent/case-configs/portability-source-error.json\", \"original_sha256\": \"30d7105ee9d15a38a35baf9eb013852dbbce32b572bce9a00e35326b5bf46c11\", \"new_config\": \"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/portability-work-final/minimal-checkout/reviews/week01-rectangle-20261111/independent/rebased-configs/portable/portability-source-error.json\", \"new_id\": \"portable-portability-source-error\", \"candidate_sha256\": \"201e2de6ecf2a27f7a39e45744a162dfde6c26334a46370b77135ac0793047cb\"}]}\n",
+  "stderr": ""
+}

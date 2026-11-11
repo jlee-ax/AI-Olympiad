@@ -1,0 +1,68 @@
+{
+  "final_input_hashes_current": true,
+  "unchanged_original_bridge_plan": [
+    {
+      "path": "lessons/week01/week01_python_tables.ipynb",
+      "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+      "unchanged": true
+    },
+    {
+      "path": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "sha256": "16b797de3935af5e25d6e297cdd8b4c72d7dbb32667ab36b9fb9df36965cd84d",
+      "unchanged": true
+    },
+    {
+      "path": "curriculum/student-plan.html",
+      "sha256": "cbe69f862ae76a87cd69233889c7fd6698e38ac34eb4d385f2b825722daeabb5",
+      "unchanged": true
+    }
+  ],
+  "all18_old_integrated_code_sources_preserved": true,
+  "blank_student_cells": [
+    38,
+    42
+  ],
+  "original_numbering_verified_for_safe89_only": true,
+  "protected_user91_not_read_or_executed": true,
+  "HTML_common_instruction_initial_387b": [
+    {
+      "line": 9182,
+      "ancestors": [
+        "html",
+        "body",
+        "main",
+        "div",
+        "div",
+        "div",
+        "div",
+        "ol",
+        "li"
+      ],
+      "text": "은 왜 이 명세에서 오류인가요? 함수가 오류를 알리는지 직접 검사합니다.\n계산과 이유, 직접 작성한 코드, 실행 뒤 달라진 생각과 받은 도움을 남깁니다. 0과 빈 영역은 다릅니다. 마스크 작성과 유효 좌표 확인만으로 실제 분류 결과를 알 수는 없습니다."
+    }
+  ],
+  "HTML_common_instruction_final": [
+    {
+      "line": 9184,
+      "ancestors": [
+        "html",
+        "body",
+        "main",
+        "div",
+        "div",
+        "div",
+        "div",
+        "p"
+      ],
+      "text": "계산과 이유, 직접 작성한 코드, 실행 뒤 달라진 생각과 받은 도움을 남깁니다. 0과 빈 영역은 다릅니다. 마스크 작성과 유효 좌표 확인만으로 실제 분류 결과를 알 수는 없습니다."
+    }
+  ],
+  "HTML_common_paragraph_outside_list": true,
+  "old_asterisk_rendering_fixed": true,
+  "percentage_and_official_area_arithmetic_correct": true,
+  "student_internal_time_status_pattern_hits": [],
+  "HTML_scope": "source parsing only; browser visual rendering not observed",
+  "generic_student_rectangle_function": "absent; blank42 requires learner implementation",
+  "RGB_scope": "spatial-pixel arithmetic explained; only 2D implementation required",
+  "burden": "one duplicated prompt consolidated, but required underlying function/hand calculations/error checks remain; actual total work/time not measured"
+}

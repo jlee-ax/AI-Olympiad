@@ -1,0 +1,12 @@
+{
+  "raw_case_candidate_sha256": "387b80845473172d35f9b7a979ca9f3098024b4b5c0c1b3a5df018144e16cba4",
+  "final_candidate_sha256": "201e2de6ecf2a27f7a39e45744a162dfde6c26334a46370b77135ac0793047cb",
+  "actual_teacher_function_source_sha256": "0fee5d07291b7c7753a09bb674cb5a492df5988d859346a8b858d7fe136f8d30",
+  "teacher_function_bytes_unchanged": true,
+  "case_setup_cells41_42_unchanged": true,
+  "student_contract40_unchanged_ignoring_whitespace": true,
+  "other_source_change": "Markdown17 adds correct percentage arithmetic only; no input or code changes",
+  "all_code_and_stored_outputs_unchanged": true,
+  "raw_results_relabelled_or_overwritten": false,
+  "scope": "Rebind same finite function/reference cases after explicit source/contract comparison; final whole notebook separately rerun."
+}

@@ -1,0 +1,89 @@
+{
+  "status": "passed",
+  "scope": "relocated exact-byte minimum fixture, final input41/42 and reviewer sample/adapter normal plus single fault; shared existing venv, not full repository relocation or fresh install",
+  "cases": [
+    {
+      "id": "portability-source-normal",
+      "expected_status": "passed",
+      "actual_status": "passed",
+      "returncode": 0,
+      "raw_result": "portability-raw/portability-source-normal.json",
+      "sha256": "e0c9b4c9935d02dd304db8434e70a038df143b509f14422b6672b66025db13f3",
+      "scope": "reviewer sample solution from student instructions / frozen v2; notebook answer42 remains blank; final source rebound after exact code/contract comparison"
+    },
+    {
+      "id": "portability-source-error",
+      "expected_status": "oracle_error",
+      "actual_status": "oracle_error",
+      "returncode": 1,
+      "raw_result": "portability-raw/portability-source-error.json",
+      "sha256": "0a039858f1ac3182cffceecae285084760a5641ad2dae55f476a8133b100b72d",
+      "scope": "reviewer sample solution from student instructions / frozen v2; notebook answer42 remains blank; final source rebound after exact code/contract comparison"
+    }
+  ],
+  "copied_input_manifest": [
+    {
+      "path": "execute_notebook_case.py",
+      "sha256": "3fea58cf45f4cbf1a1b082b36932753d18695f23344c57dccb8162fda6fd0300",
+      "bytes": 7726
+    },
+    {
+      "path": "rebase-case-configs.py",
+      "sha256": "31c1d54feb6591d08b757426b395ddff0ab785c63ee3140f7c7d189c04c5e62f",
+      "bytes": 1838
+    },
+    {
+      "path": "baseline-manifest.json",
+      "sha256": "63f49b59eb8b321da6f08ea30c02bfbd689b295bc15c81abf1f6f4037d454258",
+      "bytes": 13440
+    },
+    {
+      "path": "rectangle_probe.py",
+      "sha256": "67939d660bfbc72c63920ad5637f95cfab425dc8f6db9f93cc7951ba50bbc0b9",
+      "bytes": 6750
+    },
+    {
+      "path": "frozen-inputs-v2.json",
+      "sha256": "e5e066ef058e996ab14ef28dbfcf327a45cb44ede048f0b71f1445b9c1fdc944",
+      "bytes": 11038
+    },
+    {
+      "path": "rectangle_case_oracle.py",
+      "sha256": "f4ec7ca25621e94bf5404dc5081f3d95a28857559e67d3212c81a88a0a08663e",
+      "bytes": 4289
+    },
+    {
+      "path": "reviewer_rectangle_sample.py",
+      "sha256": "58acdf85d1ce0a2b8b23cc3f05aa11003638078c5715a21506c42befb7081733",
+      "bytes": 1129
+    },
+    {
+      "path": "oracles/reviewer-valid-other-position-same-area.py",
+      "sha256": "1765c4f57872348f075fb5ab7ecce4fadf6cedb39556f2d59a1287b643194206",
+      "bytes": 177
+    },
+    {
+      "path": "oracles/mutant-ceil-budget.py",
+      "sha256": "260e48fe8dfb193d5f8deb8279d4d60888b9b980698ff1077c559de9ad3a2fe4",
+      "bytes": 182
+    },
+    {
+      "path": "case-configs/portability-source-normal.json",
+      "sha256": "b65a19171588e05cdcb7aebb0eef2bc046412b49634a8a9282de383cc8071caf",
+      "bytes": 654
+    },
+    {
+      "path": "case-configs/portability-source-error.json",
+      "sha256": "30d7105ee9d15a38a35baf9eb013852dbbce32b572bce9a00e35326b5bf46c11",
+      "bytes": 632
+    },
+    {
+      "path": "final-inputs/week01_integrated.ipynb",
+      "sha256": "201e2de6ecf2a27f7a39e45744a162dfde6c26334a46370b77135ac0793047cb",
+      "bytes": 103145
+    }
+  ],
+  "original_files_unchanged": true,
+  "temporary_copy_removed": true,
+  "student_achievement": "not_observed"
+}

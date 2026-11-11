@@ -8462,6 +8462,93 @@ P02 노란 잎 수: 1
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=rectangle-worked-text">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="%EA%B2%A9%EC%9E%90%EC%9D%98-%ED%95%9C-%EC%98%81%EC%97%AD%EC%9D%84-%EC%A0%95%ED%99%95%ED%9E%88-%EB%82%A8%EA%B8%B0%EA%B8%B0">격자의 한 영역을 정확히 남기기<a class="anchor-link" href="#%EA%B2%A9%EC%9E%90%EC%9D%98-%ED%95%9C-%EC%98%81%EC%97%AD%EC%9D%84-%EC%A0%95%ED%99%95%ED%9E%88-%EB%82%A8%EA%B8%B0%EA%B8%B0">¶</a></h3><p>앞에서 P02의 잎 관찰 전체를 살폈습니다. 이번에는 원래 격자의 <strong>지정된 위치만</strong> 남기는 다른 합성 연습을 합니다. 다음 작은 표는 행 8, 열 12인 <code>(8,12)</code> 배열이며 값은 위치를 구별하기 위한 숫자입니다. 실제 사진이나 대회 데이터는 아닙니다.</p>
+<p>사각형의 왼쪽 위 경계가 <code>(top, left)</code>, 오른쪽 아래 경계가 <code>(bottom, right)</code>라고 약속합니다. 순서는 <strong>행, 열</strong>입니다. 시작은 포함하고 끝은 포함하지 않으므로, 남기는 칸은 <code>top ≤ 행 &lt; bottom</code>, <code>left ≤ 열 &lt; right</code>입니다. 높이 H와 너비 W에서 <strong>비어 있지 않은</strong> 사각형을 이 연습에서는 이렇게 정합니다.</p>
+<p>$$0 \leq top &lt; bottom \leq H,\quad 0 \leq left &lt; right \leq W,$$
+$$\text{칸 수}=(bottom-top)\times(right-left).$$</p>
+<p><code>((2,4),(4,7))</code>이면 행 2·3과 열 4·5·6, 모두 <code>2×3=6</code>칸입니다. 아래 합성 계약의 한도도 6칸이므로 정확히 한도에 맞습니다. 전체 96칸 중 6칸은 1/16입니다. 먼저 배열과 마스크의 모양, 선택되는 두 행 세 열을 적어 보세요.</p>
+<p><strong>잘라낸 부분(crop)</strong>은 <code>(2,3)</code>이지만, 위치를 표시하는 <strong>마스크</strong>는 원래 공간 전체인 <code>(8,12)</code>입니다. 마스크의 참은 남길 칸이고, 거짓은 나머지 칸입니다. 원본 크기 결과는 선택 칸의 원래 값을 복사하고 밖을 0으로 둡니다. 원래 값이 0이어도 선택된 칸이면 면적에 포함하므로, 결과의 0이 아닌 값 개수만 세어 면적을 정할 수 없습니다. 원본은 그대로 둡니다.</p>
+<p>좌표의 끝이 H나 W와 같은 것은 허용되지만, 끝이 H나 W를 넘거나 끝이 시작보다 크지 않은 영역은 이 계약에서 오류입니다. NumPy는 어떤 범위 밖 슬라이스를 오류 없이 잘라 내므로, <strong>자르기 전에</strong> 범위와 면적을 확인합니다. RGB처럼 채널이 여러 개여도 공간 칸 수는 행×열로 셉니다. 여기서는 2차원 배열만 구현합니다.</p>
+<p><strong>코드 읽기:</strong> <code>np.arange(8 * 12)</code>는 0부터 95까지 숫자를 만들고 <code>reshape</code>는 8행 12열로 놓습니다. <code>np.zeros((H,W), dtype=bool)</code>은 처음에 모두 거짓인 마스크를, <code>np.zeros_like(rectangle_grid)</code>는 원본과 같은 모양·자료형의 숫자 0 배열을 만듭니다. 마스크의 거짓은 ‘이 자리를 남기지 않음’이라는 뜻이고 원본의 숫자 0은 값입니다. 이 둘은 달라서 원본 값이 0인 [2,4]도 마스크에서는 참입니다. <code>region_mask.astype(int)</code>는 참·거짓을 1·0으로 <strong>보여 주는</strong> 변환이며 원래 마스크 자체는 바꾸지 않습니다. <code>.copy()</code>는 여기의 숫자 배열을 따로 보관해 나중에 고쳐도 원본을 바꾸지 않게 합니다.</p>
+<p>조건이 맞지 않을 때 <code>raise ValueError</code>는 오류의 이유를 알리고 그 지점에서 계산을 멈춥니다. 원본 본문의 빈 목록 평균 함수도 이렇게 오류를 알립니다. 아래 완성 코드는 좌표와 한도를 미리 정해 한 번 계산하는 절차입니다. 뒤의 독립 과제에서는 배열·좌표·한도를 받아 다른 입력에도 쓸 수 있는 함수를 직접 만듭니다.</p>
+<p>이 연습은 <a href="https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Pixel/Pixel.ipynb">IOAI 2025 Pixel Efficiency 원문</a>의 공간 경계를 작게 옮긴 것입니다. 공식 문제의 6.25%=0.0625=1/16이므로 224×224 이미지의 50,176칸 중 최대 3,136칸을 남길 좌표를 고르고 분류 정확도를 평가합니다. 이 크기와 계약은 위 합성 예제와 별도입니다. 실제 제출은 이미지 ID와 좌표의 JSONL이며, 여기의 전체 마스크는 좌표를 <strong>확인하는 중간 결과</strong>입니다. 좌표가 유효해도 분류에 유용한 영역인지는 별도 질문입니다. 이 합성 계산이 국제 문제를 푼 것은 아닙니다.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=rectangle-worked-code">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">rectangle_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">rectangle_grid</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># 선택할 자리도 원래 값이 0일 수 있습니다</span>
+<span class="n">rectangle_before</span> <span class="o">=</span> <span class="n">rectangle_grid</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">top</span><span class="p">,</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span>
+<span class="n">bottom</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span>
+<span class="n">H</span><span class="p">,</span> <span class="n">W</span> <span class="o">=</span> <span class="n">rectangle_grid</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">max_cells</span> <span class="o">=</span> <span class="mi">6</span>  <span class="c1"># 이 (8,12) 합성 예제의 별도 한도</span>
+
+<span class="c1"># 범위와 면적을 모두 확인한 뒤에만 슬라이스합니다.</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">top</span> <span class="o">&lt;</span> <span class="n">bottom</span> <span class="o">&lt;=</span> <span class="n">H</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span> <span class="o">&lt;=</span> <span class="n">W</span><span class="p">):</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"비어 있거나 격자 밖인 영역입니다"</span><span class="p">)</span>
+<span class="n">area</span> <span class="o">=</span> <span class="p">(</span><span class="n">bottom</span> <span class="o">-</span> <span class="n">top</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">area</span> <span class="o">&gt;</span> <span class="n">max_cells</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"남길 수 있는 칸 수를 넘었습니다"</span><span class="p">)</span>
+
+<span class="n">crop</span> <span class="o">=</span> <span class="n">rectangle_grid</span><span class="p">[</span><span class="n">top</span><span class="p">:</span><span class="n">bottom</span><span class="p">,</span> <span class="n">left</span><span class="p">:</span><span class="n">right</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">region_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">H</span><span class="p">,</span> <span class="n">W</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+<span class="n">region_mask</span><span class="p">[</span><span class="n">top</span><span class="p">:</span><span class="n">bottom</span><span class="p">,</span> <span class="n">left</span><span class="p">:</span><span class="n">right</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">kept_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">rectangle_grid</span><span class="p">)</span>
+<span class="n">kept_grid</span><span class="p">[</span><span class="n">top</span><span class="p">:</span><span class="n">bottom</span><span class="p">,</span> <span class="n">left</span><span class="p">:</span><span class="n">right</span><span class="p">]</span> <span class="o">=</span> <span class="n">crop</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"선택한 값과 crop shape:</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">crop</span><span class="p">,</span> <span class="n">crop</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"전체 마스크(1=남김):</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">region_mask</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"원본 / 마스크 / 남긴 결과 shape:"</span><span class="p">,</span> <span class="n">rectangle_grid</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+      <span class="n">region_mask</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">kept_grid</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"선택 칸 수 / 그중 0이 아닌 값 수:"</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">crop</span><span class="p">))</span>
+<span class="k">assert</span> <span class="n">area</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="n">region_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">==</span> <span class="mi">6</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">crop</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">region_mask</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">rectangle_grid</span><span class="p">,</span> <span class="n">rectangle_before</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>선택한 값과 crop shape:
+ [[ 0 29 30]
+ [40 41 42]] (2, 3)
+전체 마스크(1=남김):
+ [[0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 1 1 1 0 0 0 0 0]
+ [0 0 0 0 1 1 1 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0]]
+원본 / 마스크 / 남긴 결과 shape: (8, 12) (8, 12) (8, 12)
+선택 칸 수 / 그중 0이 아닌 값 수: 6 5
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f574b6b5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8478,7 +8565,7 @@ P02 노란 잎 수: 1
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -8541,7 +8628,7 @@ P02 노란 잎 수: 1
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">p02</span> <span class="o">=</span> <span class="n">plants</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"pot_id"</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"P02"</span><span class="p">]</span>
@@ -8588,7 +8675,7 @@ P02 노란 잎 수: 1
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.impute</span><span class="w"> </span><span class="kn">import</span> <span class="n">SimpleImputer</span>
@@ -8655,7 +8742,7 @@ X / y shape: (4, 2) / (4,)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">NearestCentroid</span><span class="p">()</span>
@@ -8701,7 +8788,7 @@ X / y shape: (4, 2) / (4,)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">valid_water</span> <span class="o">=</span> <span class="n">fill</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">validation</span><span class="p">[[</span><span class="s2">"water_ml"</span><span class="p">]])</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
@@ -8812,7 +8899,7 @@ P05의 두 중심까지 제곱거리: [2.25 4.25]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">changed_training</span> <span class="o">=</span> <span class="n">training</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -8868,7 +8955,7 @@ P05의 두 중심까지 제곱거리: [2.25 4.25]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">result</span><span class="p">[[</span><span class="s2">"pot_id"</span><span class="p">,</span> <span class="s2">"prediction"</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -8918,7 +9005,7 @@ P06,1
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
@@ -8979,7 +9066,7 @@ P06,1
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">panel_examples</span> <span class="o">=</span> <span class="p">{</span>
@@ -9046,7 +9133,7 @@ P06,1
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="c1"># 새 명세의 특성과 모델을 직접 선택해 작성하고 결과를 확인하세요.</span>
@@ -9073,6 +9160,88 @@ P06,1
 <li><strong>평균·분산의 원리:</strong> ‘2. 평균은 합계를 같은 몫으로 나눈 값입니다’부터 ‘평균 계산을 순서로 적으면 알고리즘이 됩니다’까지 기호·평균·편차·분산을 확인합니다. ‘11. 손계산을 NumPy와 대조하기’에서 분산의 <code>ddof</code> 설명과 바로 아래 코드를 실행해 NumPy·pandas 기본 분모가 다를 수 있음을 살핍니다.</li>
 <li><strong>열 이름과 자료형:</strong> ‘도움 없이 해 볼 작은 변경’의 코드로 만든 <code>dirty_plants</code>에서 P02의 <code>20ml</code>을 자료사전과 대조하고, 원본을 보존한 수정·평균을 직접 확인합니다. ‘학습 확인’의 새 배열·CSV·그래프 문제도 풉니다.</li>
 <li><strong>과제 A:</strong> reshape와 전치가 같은 shape여도 값 배치가 다른 반례, 새 배열의 행별·열별 broadcasting과 오류를 작성합니다. 과제 안의 보정 예제 코드를 먼저 실행할 수 있습니다.</li>
+</ul>
+<p>위 과제 A를 먼저 직접 풉니다. 그 뒤 통합 노트북으로 돌아와 바로 아래의 영역 응용을 합니다. 원본 A에서 만든 <code>T</code>는 <strong>별도 커널의 변수</strong>라 이 노트북에서 자동으로 보이지 않습니다. 아래 입력 셀은 같은 숫자를 이 커널에 다시 만듭니다.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=rectangle-independent-text">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="%EA%B3%BC%EC%A0%9C-A%EB%A5%BC-%EC%9D%B4%EC%96%B4-%C2%B7-%EB%8B%A4%EB%A5%B8-%EC%98%81%EC%97%AD%EA%B3%BC-%EA%B2%BD%EA%B3%84%EB%A5%BC-%ED%98%BC%EC%9E%90-%EA%B2%80%EC%82%AC%ED%95%98%EA%B8%B0">과제 A를 이어 · 다른 영역과 경계를 혼자 검사하기<a class="anchor-link" href="#%EA%B3%BC%EC%A0%9C-A%EB%A5%BC-%EC%9D%B4%EC%96%B4-%C2%B7-%EB%8B%A4%EB%A5%B8-%EC%98%81%EC%97%AD%EA%B3%BC-%EA%B2%BD%EA%B3%84%EB%A5%BC-%ED%98%BC%EC%9E%90-%EA%B2%80%EC%82%AC%ED%95%98%EA%B8%B0">¶</a></h3><p>위의 8×12 완성 예제와 별도 교사용 해설을 가립니다. 원본 A에서 배열을 만들고 reshape·전치·열별·행별 브로드캐스팅과 오류를 직접 확인한 뒤, 아래 입력 셀로 같은 <code>T</code>를 <strong>통합본 커널에 다시 만듭니다</strong>. 어느 커널에서 작업 중인지와 입력값도 확인하세요.</p>
+<p>이 <strong>새 합성 명세</strong>에서 입력은 비어 있지 않은 2차원 NumPy 숫자 배열, <code>((top,left),(bottom,right))</code> 네 좌표, 양의 정수 한도입니다. 네 좌표는 Python 정수이며 참·거짓은 들어오지 않는다고 가정합니다. 다른 자료형 입력에 대한 처리는 요구하지 않습니다. 값 0은 유효한 배열 원소입니다. 이번 <code>T</code>는 (2,3), 한도는 <strong>4칸</strong>입니다. 이것은 8×12 예의 6칸 한도나 공식 Pixel의 6.25%와 다른 약속입니다.</p>
+<p>함수는 배열·좌표·한도를 <strong>인자</strong>로 받습니다. 좌표가 <code>0 ≤ top &lt; bottom ≤ H</code>, <code>0 ≤ left &lt; right ≤ W</code>를 만족하지 않거나 면적이 한도를 넘으면 슬라이스하기 전에 <code>ValueError</code>로 알립니다. 시작과 끝이 같은 빈 사각형을 오류로 정한 것은 이 합성 명세의 약속입니다. 조건이 맞으면 선택한 값 crop, 전체 크기의 불리언 마스크, 선택 밖을 0으로 둔 전체 크기 결과를 이 순서로 반환합니다. 입력 배열은 바꾸지 않습니다. 기본 슬라이스는 원본의 값을 공유할 수 있으므로 crop을 나중에 수정하려면 별도 복사할 수 있습니다.</p>
+<ol>
+<li><code>((0,1),(2,3))</code>과 <code>((0,0),(2,2))</code>의 선택된 <strong>각 값</strong>, crop 모양, 면적과 원래 크기 마스크를 손으로 먼저 구하세요. 두 영역은 모양과 면적이 같은데 같은 위치를 남기나요?</li>
+<li>위 계약을 따르는 <strong>하나의 함수</strong>를 직접 작성하고 두 영역 각각을 넣어 예상과 비교하세요. 함수 안에 T의 모양·좌표·결과를 고정하지 않습니다. 전체 결과의 남은 값과 밖의 0, 입력 T가 바뀌지 않았는지도 검사합니다.</li>
+<li><code>((1,2),(2,3))</code>이 끝 경계 H·W에 닿아도 왜 가능한지 확인하세요. <code>((0,0),(2,3))</code>은 범위는 맞아도 왜 한도에 걸리나요?</li>
+<li><code>((1,1),(3,3))</code>은 수식상 면적이 4이지만 왜 범위 오류인가요? 검사를 빼고 슬라이스하면 NumPy가 무엇을 반환하는지도 <strong>별도로</strong> 확인하세요. <code>((1,1),(1,2))</code>은 왜 이 명세에서 오류인가요? 함수가 오류를 알리는지 직접 검사합니다.</li>
+</ol>
+<p>계산과 이유, 직접 작성한 코드, 실행 뒤 달라진 생각과 받은 도움을 남깁니다. 0과 빈 영역은 다릅니다. 마스크 작성과 유효 좌표 확인만으로 실제 분류 결과를 알 수는 없습니다.</p>
+<p>내가 고른 칸·면적과 두 영역의 차이:</p>
+<p>범위·한도·빈 영역의 이유와 실행 결과:</p>
+<p>실행 뒤 달라진 생각 / 받은 도움(없음·힌트·예시·직접 설명):</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=rectangle-independent-input">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="c1"># 원본 A는 별도 커널입니다. 같은 T를 이 통합본 커널에 다시 만듭니다.</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"영역 연습 입력 / shape:</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>영역 연습 입력 / shape:
+ [[1 4 7]
+ [2 5 8]] (2, 3)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=rectangle-independent-answer">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="c1"># 배열·좌표·한도를 받는 함수를 직접 작성하고 여러 입력을 확인하세요.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=rectangle-followup-tail">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="%EB%82%98%EB%A8%B8%EC%A7%80-%EC%9B%90%EB%B3%B8-%ED%95%84%EC%88%98-%EC%97%B0%EC%8A%B5%EC%9D%84-%EC%9D%B4%EC%96%B4-%ED%95%98%EA%B8%B0">나머지 원본 필수 연습을 이어 하기<a class="anchor-link" href="#%EB%82%98%EB%A8%B8%EC%A7%80-%EC%9B%90%EB%B3%B8-%ED%95%84%EC%88%98-%EC%97%B0%EC%8A%B5%EC%9D%84-%EC%9D%B4%EC%96%B4-%ED%95%98%EA%B8%B0">¶</a></h3><ul>
 <li><strong>과제 B:</strong> 새 수의 평균·분산과 단위를 계산하고 Matplotlib과 Seaborn을 각각 사용해 분포·범주를 그립니다. 그래프 예제 셀들을 위에서 아래로 실행하고, 겹친 점과 집계된 막대의 뜻을 구별합니다.</li>
 <li><strong>과제 C:</strong> 앞에서 준비한 <code>new_plants</code>로 새 CSV의 열·자료형·결측을 확인하고 장소별 집계·병합을 합니다. 과제 C의 <code>site_notes</code> 코드도 실행하고 모르는 키·중복 키를 검사합니다.</li>
 <li><strong>과제 D·E:</strong> 0과 미상을 구분해 개수·평균을 반환하는 함수를 만들고, 다른 순서의 수량·단가로 내적을 계산합니다. E의 코드도 실행한 뒤 새 세션에서 작성한 코드를 재실행합니다.</li>

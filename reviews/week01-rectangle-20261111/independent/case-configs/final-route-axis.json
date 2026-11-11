@@ -1,0 +1,16 @@
+{
+  "id": "final-route-axis",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_python_tables.ipynb",
+  "sha256": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+  "scope": "unchanged original89 mandatory preparation/example path; any added oracle is reviewer reference, not student completion",
+  "cells": [
+    3,
+    27,
+    54,
+    59,
+    61,
+    64,
+    66
+  ],
+  "oracle": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/oracles/original-A-route.py"
+}

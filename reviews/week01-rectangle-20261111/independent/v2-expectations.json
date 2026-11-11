@@ -1,0 +1,233 @@
+{
+  "candidate_binding": "candidate-387b; final metadata-only changes may be rebound only after direct code/contract comparison",
+  "active_fixture_sha256": "e5e066ef058e996ab14ef28dbfcf327a45cb44ede048f0b71f1445b9c1fdc944",
+  "normal_cases": [
+    {
+      "id": "teacher-valid-edge-equality",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "valid_output",
+      "scope": "teacher"
+    },
+    {
+      "id": "teacher-valid-other-position-same-area",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "valid_output",
+      "scope": "teacher"
+    },
+    {
+      "id": "teacher-valid-one-origin-pixel",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "valid_output",
+      "scope": "teacher"
+    },
+    {
+      "id": "teacher-invalid-over-exact-budget",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "intended_contract_rejection_pending_raw_traceback_review",
+      "scope": "teacher"
+    },
+    {
+      "id": "teacher-invalid-negative-clipped-empty",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "intended_contract_rejection_pending_raw_traceback_review",
+      "scope": "teacher"
+    },
+    {
+      "id": "teacher-invalid-bottom-outside-clipped",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "intended_contract_rejection_pending_raw_traceback_review",
+      "scope": "teacher"
+    },
+    {
+      "id": "teacher-invalid-right-outside-clipped",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "intended_contract_rejection_pending_raw_traceback_review",
+      "scope": "teacher"
+    },
+    {
+      "id": "teacher-invalid-empty-height",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "intended_contract_rejection_pending_raw_traceback_review",
+      "scope": "teacher"
+    },
+    {
+      "id": "teacher-invalid-both-axes-reversed",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "intended_contract_rejection_pending_raw_traceback_review",
+      "scope": "teacher"
+    },
+    {
+      "id": "teacher-valid-nondivisible-budget",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "valid_output",
+      "scope": "teacher"
+    },
+    {
+      "id": "teacher-invalid-nondivisible-ceiling",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "intended_contract_rejection_pending_raw_traceback_review",
+      "scope": "teacher"
+    },
+    {
+      "id": "teacher-valid-educational-small-budget",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "valid_output",
+      "scope": "teacher"
+    },
+    {
+      "id": "teacher-invalid-educational-small-budget",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "intended_contract_rejection_pending_raw_traceback_review",
+      "scope": "teacher"
+    },
+    {
+      "id": "teacher-invalid-over-budget-even-zero-image",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "intended_contract_rejection_pending_raw_traceback_review",
+      "scope": "teacher"
+    },
+    {
+      "id": "reviewer-valid-edge-equality",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "valid_output",
+      "scope": "reviewer"
+    },
+    {
+      "id": "reviewer-valid-other-position-same-area",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "valid_output",
+      "scope": "reviewer"
+    },
+    {
+      "id": "reviewer-valid-one-origin-pixel",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "valid_output",
+      "scope": "reviewer"
+    },
+    {
+      "id": "reviewer-invalid-over-exact-budget",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "intended_contract_rejection_pending_raw_traceback_review",
+      "scope": "reviewer"
+    },
+    {
+      "id": "reviewer-invalid-negative-clipped-empty",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "intended_contract_rejection_pending_raw_traceback_review",
+      "scope": "reviewer"
+    },
+    {
+      "id": "reviewer-invalid-bottom-outside-clipped",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "intended_contract_rejection_pending_raw_traceback_review",
+      "scope": "reviewer"
+    },
+    {
+      "id": "reviewer-invalid-right-outside-clipped",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "intended_contract_rejection_pending_raw_traceback_review",
+      "scope": "reviewer"
+    },
+    {
+      "id": "reviewer-invalid-empty-height",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "intended_contract_rejection_pending_raw_traceback_review",
+      "scope": "reviewer"
+    },
+    {
+      "id": "reviewer-invalid-both-axes-reversed",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "intended_contract_rejection_pending_raw_traceback_review",
+      "scope": "reviewer"
+    },
+    {
+      "id": "reviewer-valid-nondivisible-budget",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "valid_output",
+      "scope": "reviewer"
+    },
+    {
+      "id": "reviewer-invalid-nondivisible-ceiling",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "intended_contract_rejection_pending_raw_traceback_review",
+      "scope": "reviewer"
+    },
+    {
+      "id": "reviewer-valid-educational-small-budget",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "valid_output",
+      "scope": "reviewer"
+    },
+    {
+      "id": "reviewer-invalid-educational-small-budget",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "intended_contract_rejection_pending_raw_traceback_review",
+      "scope": "reviewer"
+    },
+    {
+      "id": "reviewer-invalid-over-budget-even-zero-image",
+      "expected_worker_status": "passed",
+      "expected_semantic_outcome": "intended_contract_rejection_pending_raw_traceback_review",
+      "scope": "reviewer"
+    }
+  ],
+  "single_fault_cases": [
+    {
+      "id": "mutant-inclusive-stop",
+      "expected_worker_status": "oracle_error",
+      "scope": "reviewer sample solution",
+      "fixture_case": "valid-other-position-same-area",
+      "mutated_student_notebook": false
+    },
+    {
+      "id": "mutant-swap-spatial-axes",
+      "expected_worker_status": "oracle_error",
+      "scope": "reviewer sample solution",
+      "fixture_case": "valid-other-position-same-area",
+      "mutated_student_notebook": false
+    },
+    {
+      "id": "mutant-reject-valid-stop",
+      "expected_worker_status": "oracle_error",
+      "scope": "reviewer sample solution",
+      "fixture_case": "valid-edge-equality",
+      "mutated_student_notebook": false
+    },
+    {
+      "id": "mutant-allow-clipping",
+      "expected_worker_status": "oracle_error",
+      "scope": "reviewer sample solution",
+      "fixture_case": "invalid-negative-clipped-empty",
+      "mutated_student_notebook": false
+    },
+    {
+      "id": "mutant-channel-budget",
+      "expected_worker_status": "oracle_error",
+      "scope": "reviewer adapter",
+      "fixture_case": "invalid-over-exact-budget",
+      "mutated_student_notebook": false
+    },
+    {
+      "id": "mutant-ceil-budget",
+      "expected_worker_status": "oracle_error",
+      "scope": "reviewer adapter",
+      "fixture_case": "invalid-nondivisible-ceiling",
+      "mutated_student_notebook": false
+    },
+    {
+      "id": "mutant-mutate-original",
+      "expected_worker_status": "oracle_error",
+      "scope": "reviewer sample solution",
+      "fixture_case": "valid-other-position-same-area",
+      "mutated_student_notebook": false
+    },
+    {
+      "id": "mutant-count-values-not-area",
+      "expected_worker_status": "oracle_error",
+      "scope": "reviewer sample solution",
+      "fixture_case": "invalid-over-budget-even-zero-image",
+      "mutated_student_notebook": false
+    }
+  ],
+  "limit": "No generic rectangle helper exists in student notebook. Native fixed example separately executed. Full RGB implementation is not required/proven; frozen 3D input supplies spatial plane and separate channel-count reasoning."
+}

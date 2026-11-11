@@ -1,0 +1,124 @@
+{
+  "checked_at_utc": "2026-11-11T14:28:56.936850+00:00",
+  "method": "four separate processes, each a fresh in-process kernel",
+  "results": [
+    {
+      "kind": "main",
+      "status": "passed",
+      "cells": 44,
+      "executed_code_cells_zero_based": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+        34,
+        36,
+        38,
+        41,
+        42
+      ],
+      "checks": [
+        "top_to_bottom_saved_outputs_and_html",
+        "actual_worked_area_location_original_zero_and_no_mutation",
+        "previous_actual_model_and_physical_csv",
+        "two_student_answer_cells_empty",
+        "contract_and_existing_exercise_routing_in_student_source",
+        "actual_teacher_reference_two_T_regions_edge_and_invalids",
+        "teacher_reference_new_3x4_zero_retention_and_no_mutation",
+        "teacher_reference_bad_inputs_rejected_before_slice"
+      ]
+    },
+    {
+      "kind": "main-route",
+      "status": "passed",
+      "cells": 44,
+      "executed_code_cells_zero_based": [
+        41,
+        42
+      ],
+      "checks": [
+        "fresh_integrated_kernel_recreates_T_and_keeps_student_answer_blank"
+      ]
+    },
+    {
+      "kind": "original-A",
+      "status": "passed",
+      "cells": 89,
+      "executed_code_cells_zero_based": [
+        3,
+        27,
+        54,
+        59,
+        61,
+        64,
+        66
+      ],
+      "checks": [
+        "separate_original_A_preparation_and_provided_cells_student_blanks"
+      ]
+    },
+    {
+      "kind": "bridge-route",
+      "status": "passed",
+      "cells": 35,
+      "executed_code_cells_zero_based": [
+        2,
+        14,
+        16,
+        22,
+        24,
+        27,
+        29,
+        31,
+        33
+      ],
+      "checks": [
+        "separate_bridge_A_B_preparation_and_actual_helper"
+      ]
+    }
+  ],
+  "source_sha256_before_and_after": {
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_integrated.ipynb": "387b80845473172d35f9b7a979ca9f3098024b4b5c0c1b3a5df018144e16cba4",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_integrated.html": "8879c7d0b668a2f215406808cb1b54404c0590e47d4fadb47a7b55094d17143d",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_integrated_teacher.md": "de3ac1b2b84a81f9a52abce0e351d29a4cbb92c52db2ad9794eeeec021df65c3",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_python_tables.ipynb": "ee8279b1af621c22da5094d765ea424171c5448527d931b943a6a30cb7c2f6b7",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_python_tables.html": "0ee9668f102756c47c666d12e145bdd6c7c89709d625dcd07533bc3291cfda24",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge.ipynb": "16b797de3935af5e25d6e297cdd8b4c72d7dbb32667ab36b9fb9df36965cd84d",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge.html": "86ca70620ded9e592a84fba218ab1fed635a6c6f3c451bad1c808fb89fc16030",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_axes_linear_bridge_teacher.md": "298b385f2cb7dbd4cf2e1bc2aaaac61567638d67ef887eb4e533fbd2aa8eecc7",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/week01_problem_pipeline.ipynb": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/data/week1_plants.csv": "fece0473e50b097afa7c2b3e2647c9a6e623bd3d8e009e6ef620151887227639",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/lessons/week01/data/week1_plants_new.csv": "869db97ef7c5f6ccf1020bc435fe831f180e9b9548d722c41c91b63af44d7290",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.ipynb": "733c0093b44f30d31354567331c2c39ee325ed074e7a6368bb1f2e96f0c174c0",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/week01_python_tables.html": "ee3ca9f9ebf491a6e768b3dd99264415d11a384f48f7311b51d5711d48b79f0c",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/lesson-manifest.json": "06ac05f087e7123efcac06782735ad923040e48f062996b28f5b90c9b41c2d07",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/teacher-notes.txt": "23c4195940e0da732f70d97383af440f0913d066f1f72844f5198a9558cb1a38",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/validation.json": "574d75c158af6218aea44394e01829b95fb992593c2c59773b17728d0ec7869c",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/data/week1_plants.csv": "fece0473e50b097afa7c2b3e2647c9a6e623bd3d8e009e6ef620151887227639",
+    "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-integration/lessons/week01/data/week1_plants_new.csv": "869db97ef7c5f6ccf1020bc435fe831f180e9b9548d722c41c91b63af44d7290"
+  },
+  "protected_worktree": {
+    "status": "checked",
+    "files_compared": 7,
+    "readme_exists": false
+  },
+  "validator_sha256": "8c6bc66bc10f2ef7a4ba82458393c09d70bea8baadcf94c8f8a26c50ae0cb529",
+  "limitations": [
+    "teacher reference and provided blank-cell execution are not student performance",
+    "finite synthetic inputs do not prove all numerical or type behavior",
+    "ordinary Jupyter/Colab socket kernels and full browser rendering not tested",
+    "actual learner time, help, attainment, later weeks and international evaluation unobserved"
+  ]
+}

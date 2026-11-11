@@ -1,0 +1,10 @@
+{
+  "id": "initial-f19f-full",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/initial-inputs/week01_integrated.ipynb",
+  "sha256": "f19f0dfecee8552fbfa6cae03fe92b0f1f606bba164d24a7c15ab3c84e428a6b",
+  "scope": "exact first-candidate provided cells; fixed rectangle example and preexisting fit/CSV, not reviewer/new-input or student achievement",
+  "compare_stored": true,
+  "save_png": true,
+  "require_candidate_file": "result.csv",
+  "oracle": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/oracles/initial-full.py"
+}

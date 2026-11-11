@@ -1,0 +1,39 @@
+{
+  "inputs": [
+    {
+      "path": "lessons/week01/week01_integrated.ipynb",
+      "snapshot": "final-inputs/week01_integrated.ipynb",
+      "sha256": "201e2de6ecf2a27f7a39e45744a162dfde6c26334a46370b77135ac0793047cb",
+      "bytes": 103145
+    },
+    {
+      "path": "lessons/week01/week01_integrated.html",
+      "snapshot": "final-inputs/week01_integrated.html",
+      "sha256": "c74c81f94996d0839ed2f5506e16746f2987c778e2fd266a614b4d607f977639",
+      "bytes": 461903
+    },
+    {
+      "path": "lessons/week01/week01_integrated_teacher.md",
+      "snapshot": "final-inputs/week01_integrated_teacher.md",
+      "sha256": "871bbc08dc9a678a2598c28ce9151cc74357e7d79ffe6fa5021fcfea9a814b51",
+      "bytes": 18186
+    }
+  ],
+  "changes_vs_387b": [
+    {
+      "cell": 17,
+      "type": "markdown",
+      "source_changed": true,
+      "other_fields_unchanged": true
+    },
+    {
+      "cell": 40,
+      "type": "markdown",
+      "source_changed": true,
+      "other_fields_unchanged": true
+    }
+  ],
+  "cell_count": 44,
+  "code_cells": 21,
+  "all_code_and_stored_outputs_unchanged": true
+}

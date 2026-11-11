@@ -1,0 +1,116 @@
+{
+  "checked_at_utc": "2026-11-11T14:33:39.816435+00:00",
+  "method": "fresh local clone, copied uncommitted candidate and tools, same installed environment",
+  "generated_sha256": {
+    "week01_integrated.ipynb": "201e2de6ecf2a27f7a39e45744a162dfde6c26334a46370b77135ac0793047cb",
+    "week01_integrated.html": "c74c81f94996d0839ed2f5506e16746f2987c778e2fd266a614b4d607f977639"
+  },
+  "previous_builders_stdout": [
+    "BUILT week01_axes_linear_bridge 33\nBUILT week01_integrated 38",
+    "BUILT week01_axes_linear_bridge 35\nBUILT week01_integrated 38"
+  ],
+  "candidate_builder_stdout": "BUILT 44 cells; 21 code cells",
+  "existing_output_directory_refused": true,
+  "generated_files_unchanged": true,
+  "existing_json_refused": true,
+  "json_sentinel_unchanged": true,
+  "candidate_results": [
+    {
+      "kind": "main",
+      "status": "passed",
+      "cells": 44,
+      "executed_code_cells_zero_based": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+        34,
+        36,
+        38,
+        41,
+        42
+      ],
+      "checks": [
+        "top_to_bottom_saved_outputs_and_html",
+        "actual_worked_area_location_original_zero_and_no_mutation",
+        "previous_actual_model_and_physical_csv",
+        "two_student_answer_cells_empty",
+        "contract_and_existing_exercise_routing_in_student_source",
+        "actual_teacher_reference_two_T_regions_edge_and_invalids",
+        "teacher_reference_new_3x4_zero_retention_and_no_mutation",
+        "teacher_reference_bad_inputs_rejected_before_slice"
+      ]
+    },
+    {
+      "kind": "main-route",
+      "status": "passed",
+      "cells": 44,
+      "executed_code_cells_zero_based": [
+        41,
+        42
+      ],
+      "checks": [
+        "fresh_integrated_kernel_recreates_T_and_keeps_student_answer_blank"
+      ]
+    },
+    {
+      "kind": "original-A",
+      "status": "passed",
+      "cells": 89,
+      "executed_code_cells_zero_based": [
+        3,
+        27,
+        54,
+        59,
+        61,
+        64,
+        66
+      ],
+      "checks": [
+        "separate_original_A_preparation_and_provided_cells_student_blanks"
+      ]
+    },
+    {
+      "kind": "bridge-route",
+      "status": "passed",
+      "cells": 35,
+      "executed_code_cells_zero_based": [
+        2,
+        14,
+        16,
+        22,
+        24,
+        27,
+        29,
+        31,
+        33
+      ],
+      "checks": [
+        "separate_bridge_A_B_preparation_and_actual_helper"
+      ]
+    }
+  ],
+  "protected_worktree": {
+    "status": "not_checked",
+    "files_compared": 0,
+    "readme_exists": null
+  },
+  "limitations": [
+    "same Python packages and fonts as source environment",
+    "previous committed builders and baseline artifacts are required",
+    "protected worktree not supplied",
+    "no learner or browser rendering observation"
+  ]
+}

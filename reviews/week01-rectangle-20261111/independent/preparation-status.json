@@ -1,0 +1,17 @@
+{
+  "prepared_utc": "2026-11-11T14:17:51.144307+00:00",
+  "status": "prepared_not_run",
+  "candidate_opened": false,
+  "notebook_executed": false,
+  "oracle_imported_compiled_or_executed": false,
+  "baseline_scope": "provided baseline SHAs matched before candidate editing",
+  "active_independent_input": "frozen-inputs-v2.json",
+  "exposed_historical_input": "frozen-inputs.json",
+  "active_cases": 14,
+  "adapter_execution_scopes": [
+    "actual_candidate_callable",
+    "reviewer_sample_solution_from_student_instructions"
+  ],
+  "student_performance_and_time": "not_observed",
+  "next_action": "await parent final candidate SHA and explicit independent execution instruction"
+}

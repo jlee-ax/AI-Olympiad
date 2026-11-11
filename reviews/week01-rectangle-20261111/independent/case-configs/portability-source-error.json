@@ -1,0 +1,11 @@
+{
+  "id": "portability-source-error",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/final-inputs/week01_integrated.ipynb",
+  "sha256": "201e2de6ecf2a27f7a39e45744a162dfde6c26334a46370b77135ac0793047cb",
+  "scope": "reviewer sample solution from student instructions / frozen v2; notebook answer42 remains blank; final source rebound after exact code/contract comparison",
+  "cells": [
+    41,
+    42
+  ],
+  "oracle": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/oracles/mutant-ceil-budget.py"
+}

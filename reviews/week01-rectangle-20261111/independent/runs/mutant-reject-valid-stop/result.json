@@ -1,0 +1,79 @@
+{
+  "id": "mutant-reject-valid-stop",
+  "candidate_sha": "387b80845473172d35f9b7a979ca9f3098024b4b5c0c1b3a5df018144e16cba4",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/candidate-387b-inputs/week01_integrated.ipynb",
+  "config_sha": "ae620002bf9d4d1f257073e989ff14f58bf833ff9b9feacc937583d0fd57f3fe",
+  "status": "oracle_error",
+  "scope": "reviewer sample solution from student instructions / frozen v2; notebook answer42 remains blank",
+  "execution": "new subprocess / fresh in-process kernel",
+  "cells": [
+    {
+      "index": 41,
+      "definitions_only": false,
+      "full_source_sha": "826dc8969375d66e8a511077fff18d6c4e967ac4ec5ba0ad06fbfe69a0aa8c37",
+      "source_sha": "826dc8969375d66e8a511077fff18d6c4e967ac4ec5ba0ad06fbfe69a0aa8c37",
+      "blank_ast": false,
+      "status": "ok",
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "영역 연습 입력 / shape:\n [[1 4 7]\n [2 5 8]] (2, 3)\n"
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "definitions_only": false,
+      "full_source_sha": "ee60174982e714d118e5294eabbc1d0d079ce89d23a4825739b5cf1ad728a7e6",
+      "source_sha": "ee60174982e714d118e5294eabbc1d0d079ce89d23a4825739b5cf1ad728a7e6",
+      "blank_ast": true,
+      "status": "ok",
+      "outputs": []
+    }
+  ],
+  "student_achievement": "not_observed",
+  "learning_time": "not_observed",
+  "oracle": {
+    "sha256": "3cbdb56ce95b060c2fbb1283d3df4d4a327acb4460b8252b51f17fc743f4a12c",
+    "status": "error",
+    "outputs": [
+      {
+        "output_type": "stream",
+        "name": "stdout",
+        "text": "{\"provenance\": {\"implementation\": \"reviewer\", \"source_file\": \"reviewer_rectangle_sample.py\", \"original_source_sha256\": \"58acdf85d1ce0a2b8b23cc3f05aa11003638078c5715a21506c42befb7081733\", \"executed_source_sha256\": \"6c4b3d4771483562fddde5be762e4350042c0492c929ae6d42553b9f170b9004\", \"mutation\": \"reject-valid-stop\", \"student_notebook_has_generic_helper\": false, \"scope\": \"reviewer_sample_solution_from_student_instructions\", \"student_answer_cell42_blank\": true}}\n{\n  \"case_id\": \"valid-edge-equality\",\n  \"execution_scope\": \"reviewer_sample_solution_from_student_instructions\",\n  \"fixture_file\": \"frozen-inputs-v2.json\",\n  \"expected_valid\": true,\n  \"expected_nominal_area\": 15,\n  \"expected_coordinates\": [\n    [\n      7,\n      19\n    ],\n    [\n      7,\n      20\n    ],\n    [\n      7,\n      21\n    ],\n    [\n      7,\n      22\n    ],\n    [\n      7,\n      23\n    ],\n    [\n      8,\n      19\n    ],\n    [\n      8,\n      20\n    ],\n    [\n      8,\n      21\n    ],\n    [\n      8,\n      22\n    ],\n    [\n      8,\n      23\n    ],\n    [\n      9,\n      19\n    ],\n    [\n      9,\n      20\n    ],\n    [\n      9,\n      21\n    ],\n    [\n      9,\n      22\n    ],\n    [\n      9,\n      23\n    ]\n  ],\n  \"student_achievement\": \"not_observed\",\n  \"actual_student_time\": \"not_observed\",\n  \"require_masked_image\": false,\n  \"status\": \"mismatch\",\n  \"raw_exception\": {\n    \"type\": \"ValueError\",\n    \"message\": \"rectangle coordinates violate declared nonempty bounds\",\n    \"traceback\": \"Traceback (most recent call last):\\n  File \\\"/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/rectangle_probe.py\\\", line 72, in check_case\\n    result = adapter(image, tuple(tuple(x) for x in case[\\\"box\\\"]),\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"<string>\\\", line 40, in _adapter\\n  File \\\"<string>\\\", line 9, in reviewer_rectangle_region\\nValueError: rectangle coordinates violate declared nonempty bounds\\n\"\n  },\n  \"original_unchanged\": true,\n  \"mismatch\": \"valid declared input raised an exception\"\n}\n"
+      },
+      {
+        "output_type": "error",
+        "ename": "ProbeMismatch",
+        "evalue": "valid declared input raised an exception",
+        "traceback": [
+          "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+          "\u001b[31mProbeMismatch\u001b[39m                             Traceback (most recent call last)",
+          "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[3]\u001b[39m\u001b[32m, line 5\u001b[39m\n\u001b[32m      1\u001b[39m _CASE=\u001b[33m'valid-edge-equality'\u001b[39m\n\u001b[32m      2\u001b[39m _IMPLEMENTATION=\u001b[33m'reviewer'\u001b[39m\n\u001b[32m      3\u001b[39m _MUTATION=\u001b[33m'reject-valid-stop'\u001b[39m\n\u001b[32m      4\u001b[39m \u001b[38;5;28;01mfrom\u001b[39;00m pathlib \u001b[38;5;28;01mimport\u001b[39;00m Path\n\u001b[32m----> \u001b[39m\u001b[32m5\u001b[39m exec((Path.cwd().parents[\u001b[32m1\u001b[39m]/\u001b[33m'rectangle_case_oracle.py'\u001b[39m).read_text())\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m<string>:52\u001b[39m\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/rectangle_probe.py:97\u001b[39m, in \u001b[36mcheck_case\u001b[39m\u001b[34m(adapter, case_id, execution_scope, require_masked_image, fixtures_path)\u001b[39m\n\u001b[32m     94\u001b[39m     fail(\u001b[33m\"\u001b[39m\u001b[33minvalid contract accepted; small/clipped/zero-valued slice is insufficient\u001b[39m\u001b[33m\"\u001b[39m)\n\u001b[32m     96\u001b[39m \u001b[38;5;28;01mif\u001b[39;00m caught \u001b[38;5;129;01mis\u001b[39;00m \u001b[38;5;129;01mnot\u001b[39;00m \u001b[38;5;28;01mNone\u001b[39;00m:\n\u001b[32m---> \u001b[39m\u001b[32m97\u001b[39m     \u001b[30;43mfail\u001b[39;49m\u001b[30;43m(\u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43mvalid declared input raised an exception\u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43m)\u001b[39;49m\n\u001b[32m     98\u001b[39m \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;129;01mnot\u001b[39;00m \u001b[38;5;28misinstance\u001b[39m(result, \u001b[38;5;28mdict\u001b[39m) \u001b[38;5;129;01mor\u001b[39;00m \u001b[33m\"\u001b[39m\u001b[33mmask\u001b[39m\u001b[33m\"\u001b[39m \u001b[38;5;129;01mnot\u001b[39;00m \u001b[38;5;129;01min\u001b[39;00m result:\n\u001b[32m     99\u001b[39m     fail(\u001b[33m\"\u001b[39m\u001b[33madapter must expose the actual produced mask, not repair/reconstruct it\u001b[39m\u001b[33m\"\u001b[39m)\n",
+          "\u001b[36mFile \u001b[39m\u001b[32m/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/rectangle_probe.py:67\u001b[39m, in \u001b[36mcheck_case.<locals>.fail\u001b[39m\u001b[34m(message)\u001b[39m\n\u001b[32m     65\u001b[39m report.update(status=\u001b[33m\"\u001b[39m\u001b[33mmismatch\u001b[39m\u001b[33m\"\u001b[39m, mismatch=message)\n\u001b[32m     66\u001b[39m emit()\n\u001b[32m---> \u001b[39m\u001b[32m67\u001b[39m \u001b[38;5;28;01mraise\u001b[39;00m ProbeMismatch(message)\n",
+          "\u001b[31mProbeMismatch\u001b[39m: valid declared input raised an exception"
+        ]
+      }
+    ]
+  },
+  "error": {
+    "ename": "ProbeMismatch",
+    "evalue": "valid declared input raised an exception",
+    "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mProbeMismatch\u001b[39m                             Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[3]\u001b[39m\u001b[32m, line 5\u001b[39m\n\u001b[32m      1\u001b[39m _CASE=\u001b[33m'valid-edge-equality'\u001b[39m\n\u001b[32m      2\u001b[39m _IMPLEMENTATION=\u001b[33m'reviewer'\u001b[39m\n\u001b[32m      3\u001b[39m _MUTATION=\u001b[33m'reject-valid-stop'\u001b[39m\n\u001b[32m      4\u001b[39m \u001b[38;5;28;01mfrom\u001b[39;00m pathlib \u001b[38;5;28;01mimport\u001b[39;00m Path\n\u001b[32m----> \u001b[39m\u001b[32m5\u001b[39m exec((Path.cwd().parents[\u001b[32m1\u001b[39m]/\u001b[33m'rectangle_case_oracle.py'\u001b[39m).read_text())\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m<string>:52\u001b[39m\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/rectangle_probe.py:97\u001b[39m, in \u001b[36mcheck_case\u001b[39m\u001b[34m(adapter, case_id, execution_scope, require_masked_image, fixtures_path)\u001b[39m\n\u001b[32m     94\u001b[39m     fail(\u001b[33m\"\u001b[39m\u001b[33minvalid contract accepted; small/clipped/zero-valued slice is insufficient\u001b[39m\u001b[33m\"\u001b[39m)\n\u001b[32m     96\u001b[39m \u001b[38;5;28;01mif\u001b[39;00m caught \u001b[38;5;129;01mis\u001b[39;00m \u001b[38;5;129;01mnot\u001b[39;00m \u001b[38;5;28;01mNone\u001b[39;00m:\n\u001b[32m---> \u001b[39m\u001b[32m97\u001b[39m     \u001b[30;43mfail\u001b[39;49m\u001b[30;43m(\u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43mvalid declared input raised an exception\u001b[39;49m\u001b[30;43m\"\u001b[39;49m\u001b[30;43m)\u001b[39;49m\n\u001b[32m     98\u001b[39m \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;129;01mnot\u001b[39;00m \u001b[38;5;28misinstance\u001b[39m(result, \u001b[38;5;28mdict\u001b[39m) \u001b[38;5;129;01mor\u001b[39;00m \u001b[33m\"\u001b[39m\u001b[33mmask\u001b[39m\u001b[33m\"\u001b[39m \u001b[38;5;129;01mnot\u001b[39;00m \u001b[38;5;129;01min\u001b[39;00m result:\n\u001b[32m     99\u001b[39m     fail(\u001b[33m\"\u001b[39m\u001b[33madapter must expose the actual produced mask, not repair/reconstruct it\u001b[39m\u001b[33m\"\u001b[39m)\n",
+      "\u001b[36mFile \u001b[39m\u001b[32m/workspace/scratch/d500e5cb2076/ai-olympiad-course-revision/reviews/week01-rectangle-20261111/independent/rectangle_probe.py:67\u001b[39m, in \u001b[36mcheck_case.<locals>.fail\u001b[39m\u001b[34m(message)\u001b[39m\n\u001b[32m     65\u001b[39m report.update(status=\u001b[33m\"\u001b[39m\u001b[33mmismatch\u001b[39m\u001b[33m\"\u001b[39m, mismatch=message)\n\u001b[32m     66\u001b[39m emit()\n\u001b[32m---> \u001b[39m\u001b[32m67\u001b[39m \u001b[38;5;28;01mraise\u001b[39;00m ProbeMismatch(message)\n",
+      "\u001b[31mProbeMismatch\u001b[39m: valid declared input raised an exception"
+    ]
+  },
+  "elapsed_seconds": 0.3924,
+  "source_unchanged": true,
+  "file_io_events": [],
+  "runtime_removed": true
+}
