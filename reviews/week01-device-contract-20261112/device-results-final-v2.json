@@ -1,0 +1,83 @@
+{
+  "baseline": "e3d3afdee8d2ad60141ca7a91b5b5bf3e7d3ec6d",
+  "candidate_sha256": "88d169a244b1f4c0caeb885bb0bd1627cacf74aa6eaebe6dbb69d3ea8f94adb2",
+  "teacher_sha256": "fe584d8ccdd7e51169b3ab852c0bef8388f3d1ce7a5374615428d30dda3fc40b",
+  "labels_sha256": "eeda4512bdc920d3101c65fb8d594c9bc074c810bfea1d48f854ea3a8be3b6a6",
+  "old_alias_T2_N7_reproduced": true,
+  "unchanged_panel_values_and_ids": true,
+  "candidate_rows": 11,
+  "memory_pairs": 55,
+  "changed_each_row_others_unchanged": true,
+  "deep_copy_limit_and_per_array_copy": true,
+  "validation_truth_by_id": {
+    "V9": "정상",
+    "V4": "점검",
+    "V7": "점검"
+  },
+  "reviewer_models": {
+    "nearest_centroid": {
+      "validation": {
+        "V9": "정상",
+        "V4": "점검",
+        "V7": "정상"
+      },
+      "accuracy": 0.6666666666666666,
+      "submission": [
+        [
+          "N7",
+          "점검"
+        ],
+        [
+          "N3",
+          "점검"
+        ],
+        [
+          "N1",
+          "정상"
+        ]
+      ]
+    },
+    "tree": {
+      "validation": {
+        "V9": "정상",
+        "V4": "점검",
+        "V7": "점검"
+      },
+      "accuracy": 1.0,
+      "submission": [
+        [
+          "N7",
+          "점검"
+        ],
+        [
+          "N3",
+          "점검"
+        ],
+        [
+          "N1",
+          "정상"
+        ]
+      ]
+    }
+  },
+  "reviewer_contract_normal_and_shuffled": "passed",
+  "reviewer_contract_rejected": [
+    "missing answer ID",
+    "duplicate answer ID",
+    "unexpected answer ID",
+    "invalid answer label",
+    "missing prediction ID",
+    "duplicate prediction ID",
+    "unexpected prediction ID",
+    "invalid prediction label",
+    "wrong submission order",
+    "duplicate submission ID",
+    "missing submission ID",
+    "invalid submission label"
+  ],
+  "new_leaf_inputs": "passed: count 3, background, transpose, all background, source unchanged",
+  "baseline_cell_id_order": "preserved; unrelated cell source and attachments unchanged",
+  "unmodified_course_files": "byte equal e3d3afde",
+  "student_answers": "blank and ungraded",
+  "caveat": "Reviewer references are not student work or an automated grader."
+}
