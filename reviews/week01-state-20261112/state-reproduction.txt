@@ -1,0 +1,5 @@
+훈련 / 검증 / 새 기기 행 수: 5 3 3
+T2: background 1->1; sensor 1->0; saved 1; inputs unchanged
+independent noncontiguous input: background 1->1; sensor 1->2; saved 1
+mutants detected: original-as-trial, copied-view, aliased-snapshot
+notebook sha256=59ca974390172e4ce3339260bec23dd39a449c0b1d36e053997e2d5d8b34bb44; reviewer checks only; student work not assessed

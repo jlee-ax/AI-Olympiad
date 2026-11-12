@@ -1,0 +1,108 @@
+{
+  "status": "passed",
+  "notebook": "/workspace/scratch/d500e5cb2076/ai-olympiad-week01-followup-20261112/lessons/week01/week01_integrated.ipynb",
+  "source_sha256": "59ca974390172e4ce3339260bec23dd39a449c0b1d36e053997e2d5d8b34bb44",
+  "code_cells_executed": 22,
+  "cells": [
+    {
+      "index": 2,
+      "id": "484f22ba"
+    },
+    {
+      "index": 4,
+      "id": "a4f8e26d"
+    },
+    {
+      "index": 6,
+      "id": "d942743f"
+    },
+    {
+      "index": 8,
+      "id": "a7f428a6"
+    },
+    {
+      "index": 10,
+      "id": "9d537595"
+    },
+    {
+      "index": 12,
+      "id": "32ed7e09"
+    },
+    {
+      "index": 14,
+      "id": "deep-leaf-grid"
+    },
+    {
+      "index": 16,
+      "id": "deep-count-code"
+    },
+    {
+      "index": 18,
+      "id": "rectangle-worked-code"
+    },
+    {
+      "index": 20,
+      "id": "7591b8af"
+    },
+    {
+      "index": 22,
+      "id": "1d316bff"
+    },
+    {
+      "index": 24,
+      "id": "4d60619c"
+    },
+    {
+      "index": 26,
+      "id": "ae89f4b6"
+    },
+    {
+      "index": 28,
+      "id": "8e809e64"
+    },
+    {
+      "index": 30,
+      "id": "3512f7de"
+    },
+    {
+      "index": 32,
+      "id": "f40633df"
+    },
+    {
+      "index": 34,
+      "id": "213dcc44"
+    },
+    {
+      "index": 36,
+      "id": "9462ed76"
+    },
+    {
+      "index": 38,
+      "id": "e49ac1c2"
+    },
+    {
+      "index": 40,
+      "id": "exercise-validation-answer"
+    },
+    {
+      "index": 43,
+      "id": "rectangle-independent-input"
+    },
+    {
+      "index": 44,
+      "id": "rectangle-independent-answer"
+    }
+  ],
+  "kernel": "InProcessKernelManager in a fresh process",
+  "stdout_parent_smoke": "passed",
+  "source_projection_unchanged": true,
+  "source_file_unchanged": true,
+  "saved_executed": "/workspace/scratch/d500e5cb2076/week01-followup-validation-20261112/state-final-notebooks/integrated-executed.ipynb",
+  "saved_sha256": "ae38126b764dbd6198dbfddc7be487ebb3b46f400e4664bdcf03590269de3cb2",
+  "html": "/workspace/scratch/d500e5cb2076/week01-followup-validation-20261112/state-final-notebooks/integrated-executed.html",
+  "images": [
+    "/workspace/scratch/d500e5cb2076/week01-followup-validation-20261112/state-final-notebooks/integrated-cell-20-0.png"
+  ],
+  "stdout_cells": 18,
+  "errors": []
+}

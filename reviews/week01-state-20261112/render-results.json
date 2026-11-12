@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "source_sha256": "59ca974390172e4ce3339260bec23dd39a449c0b1d36e053997e2d5d8b34bb44",
+  "html_sha256": "0fb82138ad906a105c321e2507c9ac5c5c3b3227709753c0a19a8b7111f1ee3d",
+  "html_export": "saved source notebook; no execution or source outputs overwritten",
+  "full_execution_code_cells": 22,
+  "dom_cell_ids_in_order": 46,
+  "blank_answer_cells": [
+    "e49ac1c2",
+    "exercise-validation-answer",
+    "rectangle-independent-answer"
+  ],
+  "state_question_and_reflection": "present",
+  "teacher_key_markers": "absent from student HTML",
+  "relative_links": [
+    "week01_integrated_validation_labels.csv",
+    "week01_python_tables.ipynb",
+    "week01_axes_linear_bridge.ipynb",
+    "week01_problem_pipeline.ipynb"
+  ],
+  "progress_table_rows": 12,
+  "execution_output_differences": [
+    {
+      "cell": "7591b8af",
+      "field": "image/png",
+      "reason": "saved Matplotlib 3.11.2 vs execution 3.10.8; graph inspected"
+    }
+  ],
+  "limits": [
+    "DOM checks and one inspected plot, not a full browser rendering test",
+    "reviewer execution, not learner performance or timing",
+    "socket Jupyter not verified; in-process kernel used"
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "status": "passed",
+  "kernels": "three separate processes with InProcessKernelManager",
+  "source_sha256": {
+    "integrated": "59ca974390172e4ce3339260bec23dd39a449c0b1d36e053997e2d5d8b34bb44",
+    "tables": "b239479f4572a01f0e2848043078b45f3cda6f60e02369da091a4f4a63651880",
+    "bridge": "16b797de3935af5e25d6e297cdd8b4c72d7dbb32667ab36b9fb9df36965cd84d"
+  },
+  "main_preparation_ids": [
+    "d2be9ce3",
+    "eb304b96",
+    "5c37fc90"
+  ],
+  "integrated_initial": {
+    "has_T": false,
+    "columns": [
+      "unit",
+      "signal",
+      "panel"
+    ],
+    "plants": [
+      "pot_id",
+      "place",
+      "light_h",
+      "water_ml",
+      "height_cm"
+    ]
+  },
+  "main_prepared": {
+    "plants": [
+      "pot_id",
+      "place",
+      "sunlight_hours",
+      "water_ml",
+      "height_cm"
+    ],
+    "new_shape": [
+      4,
+      5
+    ],
+    "B_shape": [
+      2,
+      3
+    ]
+  },
+  "integrated_before_return": {
+    "has_T": false,
+    "has_sentinel": false
+  },
+  "integrated_after_recreate_T": {
+    "T": [
+      [
+        1,
+        4,
+        7
+      ],
+      [
+        2,
+        5,
+        8
+      ]
+    ],
+    "has_sentinel": false
+  },
+  "bridge_inputs": {
+    "has_T": false,
+    "has_train": false,
+    "X_new": [
+      3,
+      2
+    ],
+    "W_new": [
+      2,
+      2
+    ],
+    "token_shape": [
+      2,
+      4
+    ]
+  },
+  "integrated_return": {
+    "T": [
+      [
+        1,
+        4,
+        7
+      ],
+      [
+        2,
+        5,
+        8
+      ]
+    ],
+    "has_sentinel": false,
+    "training_IDs": [
+      "T1",
+      "T2",
+      "T3",
+      "T4",
+      "T5"
+    ]
+  },
+  "edge_cases": "valid zero token, all PAD, negative/out-of-range/bool IDs, zero/NaN vectors passed",
+  "reviewer_fixture": "T and sentinel added only to main test kernel; no student answer was executed",
+  "limits": "Not a standard socket Jupyter server, HTML browser test, or observation of a learner."
+}

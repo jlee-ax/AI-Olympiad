@@ -1,0 +1,5 @@
+notebook sha256=59ca974390172e4ce3339260bec23dd39a449c0b1d36e053997e2d5d8b34bb44
+teacher sha256=01f5c3c97d89e6279008a4e4b7996373f24e2c04a3795d062188f6f2b02363d3
+changed source: 303c6117, 97f45dbb, deep-count-intro
+other cells/output/metadata, blank answer, rectangle, and week02: unchanged
+HTML synchronization, student work, actual time, and visual browser display: not assessed

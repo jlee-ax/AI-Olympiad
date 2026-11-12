@@ -1,0 +1,13 @@
+# Direct packages in the verified environment; not a full dependency lock.
+numpy==2.3.5
+pandas==2.2.3
+scikit-learn==1.8.0
+matplotlib==3.10.8
+seaborn==0.13.2
+ipython==9.16.1
+ipykernel==7.4.0
+nbformat==5.11.1
+nbconvert==7.17.2
+jupyter_client==8.10.0
+beautifulsoup4==4.15.0
+Pillow==13.0.0
