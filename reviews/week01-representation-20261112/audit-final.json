@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "candidate_sha256": "527848e74da7b6c004c845d4dbe240ac54e2be46087d8e4cf3e597042b5ff181",
+  "teacher_sha256": "f69e6a74f7a4f1dd56400dbfdb92d0b34753238908b0c46c319ea944e8d89084",
+  "base": "eb154346cfbc2f182f51a17e8b84a319f972dafb",
+  "source_changes": [
+    "303c6117",
+    "4042bdda",
+    "deep-count-code",
+    "deep-count-intro"
+  ],
+  "cell_order_and_student_answers": "preserved",
+  "normal_permuted_noncontiguous_and_duplicate_index": "passed",
+  "object_series_shape": [
+    6
+  ],
+  "cell_array_shape": [
+    2,
+    2,
+    2
+  ],
+  "P02_count": 1,
+  "all_IDs_and_original_leaf_arrays": "same values and independent memory",
+  "returned_array_and_frame_copy_isolation": "passed",
+  "rejected": [
+    "missing_p02",
+    "duplicate_p02"
+  ],
+  "teacher_cell_IDs_verified": {
+    "0fd965eb": "과제 C",
+    "depth-function-spec": "과제 D",
+    "d0ddef13": "과제 E",
+    "c6d01f13": "함수를 고쳐 새 입력",
+    "08bf506c": "분산",
+    "b38de2c6": "도움 없이 해 볼",
+    "ec433d3b": "X_new",
+    "07c93362": "q_ids_new",
+    "bb177697": "다른 명세",
+    "06ceb97e": "#"
+  },
+  "original_user_files_and_week02": "preserved",
+  "limitations": "Representative code checks only; no student work, student timing or learning outcome observed."
+}

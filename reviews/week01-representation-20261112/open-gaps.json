@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "scope": "Reviewer-generated counterexamples, not learner work or automatic grading.",
+  "missing_validation_signal": {
+    "training_mean": 4.0,
+    "validation_refit_mean": 5.5,
+    "model_predictions": {
+      "centroid": {
+        "training_fitted_fill": [
+          "정상",
+          "점검",
+          "정상"
+        ],
+        "validation_refitted_fill": [
+          "정상",
+          "점검",
+          "점검"
+        ]
+      },
+      "tree": {
+        "training_fitted_fill": [
+          "정상",
+          "점검",
+          "점검"
+        ],
+        "validation_refitted_fill": [
+          "정상",
+          "점검",
+          "점검"
+        ]
+      }
+    }
+  },
+  "reordered_training_rows": {
+    "first_four_ids": [
+      "T5",
+      "T1",
+      "T2",
+      "T3"
+    ],
+    "naive_mean": 34.333333333333336,
+    "known_label_mean": 4.0
+  },
+  "missing_merge_key": {
+    "left_rows": 2,
+    "joined_rows": 2,
+    "Q1_merge": "both",
+    "qualification": "When missing denotes unknown identity, this match must be examined under the task contract; matching missing values is not universally invalid."
+  }
+}
