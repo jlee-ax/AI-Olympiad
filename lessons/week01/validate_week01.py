@@ -146,7 +146,7 @@ qa_output = ''.join(o.get('text', '') for o in nb.cells.pop().outputs)
 assert 'assertions passed' in qa_output
 assert source_projection(nb) == source_before
 nbformat.validate(nb)
-nbformat.write(nb, path)
+# Leave the supplied notebook bytes unchanged; the executed copy is in memory.
 
 # Teacher-key modification is tested independently of unfilled student cells.
 teacher = (ROOT / 'teacher-notes.txt').read_text()
@@ -217,7 +217,7 @@ assert not (standalone / 'data').exists()
 fallback = nbformat.read(path, 4)
 execute(fallback, standalone)
 fallback_text = ' '.join(o.get('text', '') for c in fallback.cells for o in c.get('outputs', []))
-assert '노트북에 포함된 동일한 CSV' in fallback_text
+assert '노트북에 포함된 예제 (외부 파일 없음)' in fallback_text
 report = {
     'checked_at_utc': datetime.now(timezone.utc).isoformat(),
     'notebook': path.name, 'revision': manifest['revision'],
@@ -235,8 +235,10 @@ report = {
     'baseline_required_homework_minutes': [300, 420], 'revised_homework_time': 'not_estimated_or_observed',
     'standalone_without_csv_files': 'passed',
     'visual_inspection': 'not_performed_by_script', 'browser_preview': 'not_performed_by_script',
-    'packages': {p: importlib.metadata.version(p) for p in ('numpy', 'pandas', 'matplotlib', 'seaborn', 'jupyterlab', 'nbclient', 'nbformat', 'ipykernel')},
+    'packages': {p: (importlib.metadata.version(p) if p != 'jupyterlab' or importlib.util.find_spec('jupyterlab') else 'not installed') for p in ('numpy', 'pandas', 'matplotlib', 'seaborn', 'jupyterlab', 'nbclient', 'nbformat', 'ipykernel')},
     'notebook_sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
+    'persisted_notebook': 'unchanged; executed copy held in memory',
+    'html_sha256': hashlib.sha256((ROOT / 'week01_python_tables.html').read_bytes()).hexdigest(),
     'source_attachment_projection_sha256': hashlib.sha256(json.dumps(source_projection(nb), ensure_ascii=False, sort_keys=True).encode()).hexdigest(),
     'source_projection_unchanged_by_execution': True, 'schedules_created': False,
 }
