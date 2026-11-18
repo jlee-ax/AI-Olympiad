@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "lesson_path": "lessons/week01/week01_foundations.ipynb",
+  "baseline": {
+    "commit": "607c56eb71fded982805987d74a6609aeee4c3fc",
+    "sha256": null
+  },
+  "author": "course-editor",
+  "audience": "KOAI 2027 중등부 · Python 기초 경험, AI 선행 없음",
+  "class_minutes": 120,
+  "source_inputs": [
+    {
+      "path": "curriculum/student-plan.html",
+      "sha256": "78d743c33d91c958d33dd36e994dc00507d78edecb3f30b986fed4109cc2521e",
+      "locator": "week-1 and scope-01/02/03/06"
+    },
+    {
+      "path": "skills/koai-evaluate/references/unit-specifications.json",
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "locator": "units W1-python, W1-table, W1-array, W1-visualise"
+    },
+    {
+      "path": "reviews/week01-depth-20261118/scope.md",
+      "sha256": "00b8fe27ec1496a2a8f4a346b31084b3d1950e12f5ef6ce0c511ac8ff357d8ae",
+      "locator": "official scope, source status and course allocation"
+    }
+  ],
+  "companion_paths": [
+    "lessons/week01/week01_foundations_teacher.md",
+    "lessons/week01/data/foundations_returns.csv",
+    "lessons/week01/data/foundations_boxes.csv",
+    "lessons/week01/data/foundations_returns_transfer.csv"
+  ],
+  "topics": [
+    {
+      "id": "W1-python",
+      "objective": "짧은 절차에서 조건·반복·반환값을 추적하고 바뀐 입력을 검사한다.",
+      "entry": "변수, 리스트, 파일을 본 적 있는 중학생. 상태표와 짧은 복구 경로를 제공한다.",
+      "minimum": "값과 출력, 빈 목록과 0을 구별한다. 다음 상태와 반환값을 예측하고 실제 실행과 비교한다. 예외 또는 잘못된 입력 한 경우를 진단한다.",
+      "ceiling": "실습에 쓰이는 문법과 상태 변화까지 다룬다. 인터프리터·메모리 구현이나 일반 알고리즘 복잡도 증명은 이 주의 필수로 편성하지 않는다.",
+      "assessment": "완성 답이 안 보이는 새 입력에서 반환값·실패 원인을 쓰거나 작동하는 코드를 만든다.",
+      "prerequisites": [],
+      "minutes": {
+        "class": 20,
+        "homework": 90,
+        "optional": 0
+      },
+      "sources": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "W1-table",
+      "objective": "관측 단위, 측정 시점, 특성과 목표를 구별하고 표에서 올바른 대상을 집계한다.",
+      "entry": "리스트 선택, 함수 반환 및 CSV 읽기. 자료사전·단위·고유 키를 처음 사용할 때 제시한다.",
+      "minimum": "실제 CSV를 선택하고 결측과 0을 구별한다. 분모를 설명하고, 자습에서 열 이름이 바뀐 표와 순서가 다른 두 표를 키로 병합한다.",
+      "ceiling": "중복·미매칭이 조용히 잘못된 결론이 되는 사례는 다룬다. SQL 실행계획, 학습 알고리즘과 검증 절차는 각각 별도 또는 후속 단원의 범위다.",
+      "assessment": "새 파일에서 키·열·결측·시점에 근거해 표를 만든다. 누락된 필수 열이나 잘못된 대응을 발견한다.",
+      "prerequisites": [
+        "W1-python"
+      ],
+      "minutes": {
+        "class": 45,
+        "homework": 85,
+        "optional": 0
+      },
+      "sources": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "W1-array",
+      "objective": "행과 열의 뜻을 유지하며 손계산, shape 예측 및 NumPy 결과를 연결한다.",
+      "entry": "평균의 분자와 분모를 작은 자료로 소개한다. 행·열·관측 단위는 표 단원에서 먼저 다룬다.",
+      "minimum": "직사각 배열의 두 평균과 축을 손으로 예측한다. 자습에서는 모집단 분산·벡터 내적·배열 공유·우측 축 정렬·형태 변경과 전치를 짧은 유효 사례와 잘못 쓰이는 사례로 확인한다.",
+      "ceiling": "이미지·신경망을 위한 배열 선수에 멈춘다. 일반 텐서 대수의 증명, 역전파 및 임베딩 학습은 이 주 필수에 넣지 않는다.",
+      "assessment": "처음 보는 비정사각 배열에서 남는 축의 의미·값을 예측하고, 바뀐 차원 또는 복사 방식의 결과를 확인한다.",
+      "prerequisites": [
+        "W1-table"
+      ],
+      "minutes": {
+        "class": 40,
+        "homework": 115,
+        "optional": 0
+      },
+      "sources": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "W1-visualise",
+      "objective": "표의 통계량을 목적에 맞는 그림으로 표시하고 단위·집계·해석 범위를 말한다.",
+      "entry": "어떤 기록을 세었는지, 평균과 유효 관측 수를 앞 단원에서 확인한다.",
+      "minimum": "수업 Matplotlib과 자습 Seaborn으로 각각 그림을 그린다. 축과 단위·비교 집단을 쓴다. 조건이나 집계가 바뀌면 해석이 어떻게 달라지는지 근거를 댄다.",
+      "ceiling": "수업 목표에 필요한 그래프 선택과 해석까지 다룬다. 시각화 라이브러리 내부 렌더링과 인과효과 추정은 필수가 아니다.",
+      "assessment": "새 입력으로 그래프를 선택·작성하고 집계값 및 관측 제한을 근거로 결론을 설명한다.",
+      "prerequisites": [
+        "W1-table"
+      ],
+      "minutes": {
+        "class": 15,
+        "homework": 70,
+        "optional": 0
+      },
+      "sources": [
+        0,
+        1,
+        2
+      ]
+    }
+  ]
+}
