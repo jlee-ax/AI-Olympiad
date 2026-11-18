@@ -55,12 +55,26 @@ def verify(root, ledger):
         raise ValueError("Class schedule differs from its total")
     if plus(b["minutes"] for b in ledger["home_blocks"]) != ledger["totals"]["required_home"]["minutes"]:
         raise ValueError("Required homework differs from its total")
-    for scenario in ledger.get("scenarios", []):
+    notebooks = {label: {cell["id"] for cell in json.loads((root / path).read_text(encoding="utf-8"))["cells"]}
+                 for label, path in ledger.get("notebooks", {}).items()}
+    if notebooks:
+        for block in ledger["class_blocks"] + blocks:
+            for locator in block["locators"]:
+                label, ids = locator.split(":", 1)
+                if not set(ids.split(",")) <= notebooks[label]:
+                    raise ValueError("Unknown cell in " + block["id"])
+    route_ids = [item for unit in ledger.get("route_units", []) for item in unit["block_ids"]]
+    if route_ids and (len(route_ids) != len(set(route_ids)) or set(route_ids) != lookup.keys()):
+        raise ValueError("Route units must each own distinct activities and cover the home ledger")
+    for scenario in ledger.get("scenarios", []) + ledger.get("route_units", []):
         ids = scenario["block_ids"]
         if len(ids) != len(set(ids)) or not set(ids) <= lookup.keys():
             raise ValueError("Overlapping or unknown block in " + scenario["id"])
         if plus(lookup[i]["minutes"] for i in ids) != scenario["minutes"]:
             raise ValueError("Scenario total differs: " + scenario["id"])
+        for cat, expected in scenario.get("category_minutes", {}).items():
+            if plus(lookup[i]["category_minutes"][cat] for i in ids) != expected:
+                raise ValueError("Scenario category differs: " + scenario["id"] + "/" + cat)
     return {"route": ledger["id"], "class_minutes": ledger["totals"]["class_minutes"],
             "core_home_minutes": ledger["totals"]["required_home"]["minutes"],
             "scenarios": {s["id"]: s["minutes"] for s in ledger.get("scenarios", [])},

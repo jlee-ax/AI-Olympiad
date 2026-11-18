@@ -54,6 +54,7 @@ def export_route(root, route, target, output_cache, ledger):
         replacements[Path(path).name] = "after-attempt/" + Path(path).name
     raw_digests = {}
     all_ids = {}
+    executions = {}
     for path, alias in notebook_names.items():
         source = root / path
         raw = material(root, route, path)
@@ -62,6 +63,9 @@ def export_route(root, route, target, output_cache, ledger):
         code_ids = {c["id"] for c in notebook["cells"] if c["cell_type"] == "code"}
         if set(displays) != code_ids:
             raise ValueError(f"Executed displays do not match {alias}")
+        executions[alias] = {"code_cells_completed": len(displays),
+                             "rendered_figures": sum("image/png" in out.get("data", {}) for seq in displays.values()
+                                                     for out in seq)}
         lines = []
         seen = set()
         for cell in notebook["cells"]:
@@ -116,9 +120,11 @@ def export_route(root, route, target, output_cache, ledger):
     load_summary = {"class_minutes": ledger["totals"]["class_minutes"],
                     "required_home_minutes": ledger["totals"]["required_home"]["minutes"],
                     "category_minutes": ledger["totals"]["required_home"]["category_minutes"],
+                    "scenarios": {item["id"]: item["minutes"] for item in ledger["scenarios"]},
                     "observed_student_minutes": None}
     (target / "route.json").write_text(json.dumps({"entry": notebook_names[route["entry"]],
-        "units": schedule, "workload_review": load_summary, "timing": route.get("timing", "See the registered planned estimates.")},
+        "units": schedule, "workload_review": load_summary, "execution": executions,
+        "timing": "같은 대상과 과업별 산정 단위를 적용한 1회 경로 견적이다. 수업 편성은 120분, 주차 자습 편성 상한은 420분이다."},
         ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return {"source_sha256": raw_digests,
             "packet_sha256": {str(p.relative_to(target)): digest(p) for p in sorted(target.rglob("*")) if p.is_file()}}

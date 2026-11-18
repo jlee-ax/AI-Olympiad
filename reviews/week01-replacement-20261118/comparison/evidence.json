@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "files": {
+    "reviews/week01-replacement-20261118/workload/replacement.json": "6461e80caf30e6803e8a8ee23f04c2c45e0a44b87d4ea9a47b76d09888ebe180",
+    "reviews/week01-replacement-20261118/workload/incumbent.json": "e27e0ce235327c2519977475d8ed9b254716e2005b100b0e62ca5b9ece6a4f20",
+    "reviews/week01-replacement-20261118/workload-method.md": "da20c73c1b0ec34ed74840ac7d3ec47d8620a913785f3bdc025c38f38e964bb1",
+    "reviews/week01-replacement-20261118/execution/route-inspection.json": "4d0d544eeff0464fbb17499ee56d86c26cae2484e2bf101350354df12a332ef4",
+    "reviews/week01-replacement-20261118/execution/replacement.json": "9e08e5ba91c801bd4faf56d4089b15840618b767cd5db80d842c6d53af383fc0",
+    "reviews/week01-replacement-20261118/execution/incumbent.json": "a141be84d6abe34b5e96743be84536cb2950adee1306d3b9e5dc53a550062471",
+    "reviews/week01-replacement-20261118/comparison/packets.json": "774081e288cb100dcb950b47f049340d7cdb61697e62cd379c11c11f884c63b7",
+    "reviews/week01-replacement-20261118/make_packets.py": "50e9a779d8625af9d9a7b6430f6390a07ae49db88d6f705fc1ddfaf2e8a94ba6",
+    "reviews/week01-replacement-20261118/comparison_material.py": "62bd587761f063a1fe3d0d4efc1c58de300795c475e69a2d9364a76ecd40a0f1",
+    "reviews/week01-replacement-20261118/run_route.py": "022caac76665a4d46338bc4c6d021b15a7a84ec2053993a7db27f227423c79f9"
+  },
+  "scope": "두 검토자에게 전달한 익명 학생 자료의 해시, 실제 표시, 격리 실행과 공통 과업별 시간 산정 원본을 결합한다. 교사 자료와 문제 정답은 이 학생 자료에서 제외했다."
+}

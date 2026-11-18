@@ -1,0 +1,1278 @@
+{
+  "id": "replacement",
+  "status": "독립 편성 추정. 한 학습자의 수행이나 소요 시간을 관찰한 자료 없음.",
+  "round": 5,
+  "round_sha256": "f7988c0fb0f521eb032692a40be29ba8be6e7161798324de20899758570b46f5",
+  "candidate_sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+  "method": "reviews/week01-replacement-20261118/workload-method.md",
+  "categories": [
+    "reading",
+    "planning_prediction",
+    "coding_debugging",
+    "interpretation_review",
+    "switch_restart"
+  ],
+  "unit_rates": {
+    "R": {
+      "reading": [2, 4]
+    },
+    "P": {
+      "planning_prediction": [3, 6]
+    },
+    "C": {
+      "coding_debugging": [6, 10]
+    },
+    "E": {
+      "interpretation_review": [3, 6]
+    },
+    "S": {
+      "switch_restart": [1, 3]
+    },
+    "M": {
+      "planning_prediction": [2, 4],
+      "coding_debugging": [6, 10],
+      "interpretation_review": [2, 4]
+    }
+  },
+  "unit_definitions": {
+    "R": "간단한 단위·규칙·자료표 읽기 또는 제공 코드를 한 번 실행해 확인",
+    "P": "직접 예측/계획/손추적",
+    "C": "작은 함수·배열 또는 조건을 직접 써서 새 입력에서 검산",
+    "M": "서로 의존하는 여러 판단을 한 묶음으로 만들고 이유를 설명. 설계·구현/검산·해석을 단가 안에서 배분",
+    "E": "독립적으로 요구되는 짧은 해석/이유 또는 자기점검 기록",
+    "S": "파일/커널 전환, 동일 데이터 준비·재시작"
+  },
+  "totals": {
+    "class_minutes": [120, 120],
+    "class_category_minutes_estimate": {
+      "reading": [22, 22],
+      "planning_prediction": [27, 27],
+      "coding_debugging": [48, 48],
+      "interpretation_review": [21, 21],
+      "switch_restart": [2, 2]
+    },
+    "required_home": {
+      "minutes": [200, 373],
+      "category_minutes": {
+        "reading": [24, 48],
+        "planning_prediction": [40, 80],
+        "coding_debugging": [90, 150],
+        "interpretation_review": [43, 86],
+        "switch_restart": [3, 9]
+      }
+    },
+    "one_pass_repair": {
+      "minutes": [22, 44],
+      "category_minutes": {
+        "reading": [4, 8],
+        "planning_prediction": [8, 16],
+        "coding_debugging": [6, 10],
+        "interpretation_review": [2, 4],
+        "switch_restart": [2, 6]
+      }
+    },
+    "required_plus_repair_once": {
+      "minutes": [222, 417],
+      "category_minutes": {
+        "reading": [28, 56],
+        "planning_prediction": [48, 96],
+        "coding_debugging": [96, 160],
+        "interpretation_review": [45, 90],
+        "switch_restart": [5, 15]
+      }
+    },
+    "required_plus_repair_and_both_opt_in_hints": {
+      "minutes": [226, 425],
+      "category_minutes": {
+        "reading": [32, 64],
+        "planning_prediction": [48, 96],
+        "coding_debugging": [96, 160],
+        "interpretation_review": [45, 90],
+        "switch_restart": [5, 15]
+      }
+    },
+    "verified_individual_upper": null
+  },
+  "route_units": [
+    {
+      "id": "U2",
+      "scope": "수업 이후 transfer-brief 직전까지",
+      "block_ids": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14"
+      ],
+      "minutes": [113, 211],
+      "category_minutes": {
+        "reading": [22, 44],
+        "planning_prediction": [24, 48],
+        "coding_debugging": [48, 80],
+        "interpretation_review": [18, 36],
+        "switch_restart": [1, 3]
+      }
+    },
+    {
+      "id": "U3",
+      "scope": "transfer-brief부터 transfer-data-work까지",
+      "block_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B04"
+      ],
+      "minutes": [41, 77],
+      "category_minutes": {
+        "reading": [2, 4],
+        "planning_prediction": [10, 20],
+        "coding_debugging": [18, 30],
+        "interpretation_review": [10, 20],
+        "switch_restart": [1, 3]
+      }
+    },
+    {
+      "id": "U4",
+      "scope": "transfer-faults부터 마지막 handoff까지",
+      "block_ids": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "minutes": [46, 85],
+      "category_minutes": {
+        "reading": [0, 0],
+        "planning_prediction": [6, 12],
+        "coding_debugging": [24, 40],
+        "interpretation_review": [15, 30],
+        "switch_restart": [1, 3]
+      }
+    },
+    {
+      "id": "U5",
+      "scope": "조건부 보충 한 번과 다른 반납함으로 본문 복귀 검산",
+      "block_ids": [
+        "D01",
+        "D02",
+        "D03"
+      ],
+      "minutes": [22, 44],
+      "category_minutes": {
+        "reading": [4, 8],
+        "planning_prediction": [8, 16],
+        "coding_debugging": [6, 10],
+        "interpretation_review": [2, 4],
+        "switch_restart": [2, 6]
+      }
+    },
+    {
+      "id": "Q",
+      "scope": "개별 선택 가능한 두 실마리",
+      "block_ids": [
+        "Q01",
+        "Q02"
+      ],
+      "minutes": [4, 8],
+      "category_minutes": {
+        "reading": [4, 8],
+        "planning_prediction": [0, 0],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [0, 0],
+        "switch_restart": [0, 0]
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "required",
+      "block_ids": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14",
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "minutes": [200, 373],
+      "category_minutes": {
+        "reading": [24, 48],
+        "planning_prediction": [40, 80],
+        "coding_debugging": [90, 150],
+        "interpretation_review": [43, 86],
+        "switch_restart": [3, 9]
+      }
+    },
+    {
+      "id": "repair_only_increment",
+      "block_ids": [
+        "D01",
+        "D02",
+        "D03"
+      ],
+      "minutes": [22, 44],
+      "category_minutes": {
+        "reading": [4, 8],
+        "planning_prediction": [8, 16],
+        "coding_debugging": [6, 10],
+        "interpretation_review": [2, 4],
+        "switch_restart": [2, 6]
+      }
+    },
+    {
+      "id": "both_hint_increment",
+      "block_ids": [
+        "Q01",
+        "Q02"
+      ],
+      "minutes": [4, 8],
+      "category_minutes": {
+        "reading": [4, 8],
+        "planning_prediction": [0, 0],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [0, 0],
+        "switch_restart": [0, 0]
+      }
+    },
+    {
+      "id": "required_and_one_hint",
+      "block_ids": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14",
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "Q01"
+      ],
+      "minutes": [202, 377],
+      "category_minutes": {
+        "reading": [26, 52],
+        "planning_prediction": [40, 80],
+        "coding_debugging": [90, 150],
+        "interpretation_review": [43, 86],
+        "switch_restart": [3, 9]
+      }
+    },
+    {
+      "id": "required_and_both_hints",
+      "block_ids": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14",
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "Q01",
+        "Q02"
+      ],
+      "minutes": [204, 381],
+      "category_minutes": {
+        "reading": [28, 56],
+        "planning_prediction": [40, 80],
+        "coding_debugging": [90, 150],
+        "interpretation_review": [43, 86],
+        "switch_restart": [3, 9]
+      }
+    },
+    {
+      "id": "required_and_repair_once",
+      "block_ids": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14",
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "D01",
+        "D02",
+        "D03"
+      ],
+      "minutes": [222, 417],
+      "category_minutes": {
+        "reading": [28, 56],
+        "planning_prediction": [48, 96],
+        "coding_debugging": [96, 160],
+        "interpretation_review": [45, 90],
+        "switch_restart": [5, 15]
+      }
+    },
+    {
+      "id": "required_repair_and_one_hint",
+      "block_ids": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14",
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "D01",
+        "D02",
+        "D03",
+        "Q01"
+      ],
+      "minutes": [224, 421],
+      "category_minutes": {
+        "reading": [30, 60],
+        "planning_prediction": [48, 96],
+        "coding_debugging": [96, 160],
+        "interpretation_review": [45, 90],
+        "switch_restart": [5, 15]
+      }
+    },
+    {
+      "id": "required_repair_and_both_hints",
+      "block_ids": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14",
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "D01",
+        "D02",
+        "D03",
+        "Q01",
+        "Q02"
+      ],
+      "minutes": [226, 425],
+      "category_minutes": {
+        "reading": [32, 64],
+        "planning_prediction": [48, 96],
+        "coding_debugging": [96, 160],
+        "interpretation_review": [45, 90],
+        "switch_restart": [5, 15]
+      }
+    }
+  ],
+  "class_source": "R5 교사용 해설 7–22행. 대면 수업 20+20+80=120분의 이동 불가한 편성 안에서 읽기·예측·구현·해석·전환에 배분했다. 블록별 분류는 감사자의 배치 예시다.",
+  "teacher_home_plan": {
+    "syntax_arrays": [135, 150],
+    "figures": [60, 70],
+    "transfer_csv_common": [55, 55],
+    "math_restart": [50, 60],
+    "core_sum": [300, 335],
+    "conditional_reserved": 25,
+    "scheduled_home_upper": 360,
+    "basis": "R5 교사용 해설 15–22행과 round.json 주제별 분 배정. 숫자는 배정이며 독립 실측이 아니다."
+  },
+  "notebooks": {
+    "main": "reviews/week01-depth-20261118/rounds/0005/candidate.ipynb",
+    "repair": "reviews/week01-replacement-20261118/workload/inputs/week01_foundations_repair.ipynb"
+  },
+  "class_blocks": [
+    {
+      "id": "K01",
+      "activity": "관측 행·시점 5분, 배열 모양과 축별 평균/분산 15분",
+      "locators": [
+        "main:opening,dictionary,axis-picture,variance-bridge"
+      ],
+      "minutes": [20, 20],
+      "category_minutes_estimate": {
+        "reading": [14, 14],
+        "planning_prediction": [4, 4],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [2, 2],
+        "switch_restart": [0, 0]
+      }
+    },
+    {
+      "id": "K02",
+      "activity": "U·V·W 손계산과 분모/새 축 길이 예측",
+      "locators": [
+        "main:table-card,axis-check"
+      ],
+      "minutes": [10, 10],
+      "category_minutes_estimate": {
+        "reading": [0, 0],
+        "planning_prediction": [8, 8],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [2, 2],
+        "switch_restart": [0, 0]
+      }
+    },
+    {
+      "id": "K03",
+      "activity": "선택 둘 3분·짧은 서술 4분·해설 3분",
+      "locators": [
+        "main:written-card"
+      ],
+      "minutes": [10, 10],
+      "category_minutes_estimate": {
+        "reading": [0, 0],
+        "planning_prediction": [3, 3],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [7, 7],
+        "switch_restart": [0, 0]
+      }
+    },
+    {
+      "id": "K04",
+      "activity": "Python 함수·반환·오류 추적의 5개 진단과 수정",
+      "locators": [
+        "main:python-basics,python-example,return-story,return-example,trace-example,python-five,python-independent,csv-open"
+      ],
+      "minutes": [20, 20],
+      "category_minutes_estimate": {
+        "reading": [3, 3],
+        "planning_prediction": [4, 4],
+        "coding_debugging": [11, 11],
+        "interpretation_review": [2, 2],
+        "switch_restart": [0, 0]
+      }
+    },
+    {
+      "id": "K05",
+      "activity": "CSV 열/형식/결측·이름·분모, 조건 선택과 오류 점검",
+      "locators": [
+        "main:csv-open,load-csv,inspect-table,audit-csv,select-table,select-csv,missing-error,column-error,table-independent"
+      ],
+      "minutes": [40, 40],
+      "category_minutes_estimate": {
+        "reading": [3, 3],
+        "planning_prediction": [4, 4],
+        "coding_debugging": [28, 28],
+        "interpretation_review": [4, 4],
+        "switch_restart": [1, 1]
+      }
+    },
+    {
+      "id": "K06",
+      "activity": "NumPy 축 검산·첫 Matplotlib 그림·승객별/장소별 가중 판단",
+      "locators": [
+        "main:numpy-core,reduce-period,plot-core,plot-period,weighting-principle,class-transfer,class-independent"
+      ],
+      "minutes": [20, 20],
+      "category_minutes_estimate": {
+        "reading": [2, 2],
+        "planning_prediction": [4, 4],
+        "coding_debugging": [9, 9],
+        "interpretation_review": [4, 4],
+        "switch_restart": [1, 1]
+      }
+    }
+  ],
+  "home_blocks": [
+    {
+      "id": "A01",
+      "activity": "수업에서 쓰던 함수를 같은 본교안에서 자습 상태로 준비",
+      "locators": [
+        "main:independent-start,trace-independent"
+      ],
+      "atoms": {
+        "S": 1
+      },
+      "scope": "수업 때 작성한 함수 전체를 새 과제로 산정하지 않는다. 같은 파일을 다시 여는 준비 한 번.",
+      "category_minutes": {
+        "reading": [0, 0],
+        "planning_prediction": [0, 0],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [0, 0],
+        "switch_restart": [1, 3]
+      },
+      "minutes": [1, 3]
+    },
+    {
+      "id": "A02",
+      "activity": "빈 목록·0·None·경계값 입력에서 길이·비교 횟수·반환을 대조",
+      "locators": [
+        "main:independent-start"
+      ],
+      "atoms": {
+        "C": 1,
+        "E": 1
+      },
+      "scope": "기존 count_at_least의 네 입력을 한 작은 실행으로 묶고, 두 입력에서 같은 반환인 이유를 한 번 기록.",
+      "category_minutes": {
+        "reading": [0, 0],
+        "planning_prediction": [0, 0],
+        "coding_debugging": [6, 10],
+        "interpretation_review": [3, 6],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [9, 16]
+    },
+    {
+      "id": "A03",
+      "activity": "마지막 위치 오류의 호출/실패 줄을 찾아 고친 뒤 셋에 재시험",
+      "locators": [
+        "main:independent-start,trace-independent"
+      ],
+      "atoms": {
+        "M": 1
+      },
+      "scope": "예측한 번호, 실제 traceback, 수정 근거, 길이 0·1·2 검산이 같은 고장 진단에 속한다.",
+      "category_minutes": {
+        "reading": [0, 0],
+        "planning_prediction": [2, 4],
+        "coding_debugging": [6, 10],
+        "interpretation_review": [2, 4],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [10, 18]
+    },
+    {
+      "id": "A04",
+      "activity": "인덱싱·뷰·사본 예제에서 바뀔 값을 예측",
+      "locators": [
+        "main:index-view,view-example"
+      ],
+      "atoms": {
+        "R": 1,
+        "P": 1
+      },
+      "scope": "제시된 코드를 한 번 실행하고 사전에 예상한 공유 값을 대조한다.",
+      "category_minutes": {
+        "reading": [2, 4],
+        "planning_prediction": [3, 6],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [0, 0],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [5, 10]
+    },
+    {
+      "id": "A05",
+      "activity": "오른쪽부터 맞추는 규칙과 행 보정 벡터가 실패/성공하는 조건 읽기",
+      "locators": [
+        "main:broadcast-concept,broadcast-example"
+      ],
+      "atoms": {
+        "R": 2
+      },
+      "scope": "길이가 같은 경우와 (2,1)로 고치는 예제에 각각 짧은 읽기. 이 셀에서 새 코드를 발명하지 않는다.",
+      "category_minutes": {
+        "reading": [4, 8],
+        "planning_prediction": [0, 0],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [0, 0],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [4, 8]
+    },
+    {
+      "id": "A06",
+      "activity": "reshape와 전치에서 같은 인덱스가 가리키는 원래 칸 추적",
+      "locators": [
+        "main:reshape-concept,reshape-example"
+      ],
+      "atoms": {
+        "R": 1,
+        "P": 1
+      },
+      "scope": "제공된 실행은 읽기에 포함한다. 두 좌표와 4×2의 원소 부족을 한 손추적으로 센다.",
+      "category_minutes": {
+        "reading": [2, 4],
+        "planning_prediction": [3, 6],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [0, 0],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [5, 10]
+    },
+    {
+      "id": "A07",
+      "activity": "전체 분산과 항목 순서·단위가 달린 가중합 예시 읽기",
+      "locators": [
+        "main:math-concept,math-example"
+      ],
+      "atoms": {
+        "R": 2
+      },
+      "scope": "각기 다른 두 규칙. 수치 출력은 예제에 제공된다.",
+      "category_minutes": {
+        "reading": [4, 8],
+        "planning_prediction": [0, 0],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [0, 0],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [4, 8]
+    },
+    {
+      "id": "A08",
+      "activity": "새 경기표로 게시판의 원래 횟수와 아나운서의 팀별 점수 설계",
+      "locators": [
+        "main:array-lab,array-independent"
+      ],
+      "atoms": {
+        "M": 2
+      },
+      "scope": "질문 둘은 서로 다른 결과·코드·단위·검산을 요구한다. 각 복합 실습에 선행 예측·좌표/규정 판단과 설명을 포함.",
+      "category_minutes": {
+        "reading": [0, 0],
+        "planning_prediction": [4, 8],
+        "coding_debugging": [12, 20],
+        "interpretation_review": [4, 8],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [20, 36]
+    },
+    {
+      "id": "A09",
+      "activity": "F 한 값을 사본에서 바꿔 두 결과를 다시 예측·실행·대조",
+      "locators": [
+        "main:math-lab,math-independent"
+      ],
+      "atoms": {
+        "M": 1
+      },
+      "scope": "R5 정정표. 새 자료를 다시 입력하거나 두 프로그램을 재작성하지 않는다. 사본과 원값, 뷰에서의 결과 설명도 이 한 복합 실습에 포함.",
+      "category_minutes": {
+        "reading": [0, 0],
+        "planning_prediction": [2, 4],
+        "coding_debugging": [6, 10],
+        "interpretation_review": [2, 4],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [10, 18]
+    },
+    {
+      "id": "A10",
+      "activity": "E 한 행/경계선 한 열 꺼내기와 두 종류 보정에서 대응 축 확인",
+      "locators": [
+        "main:math-lab,math-independent"
+      ],
+      "atoms": {
+        "C": 1,
+        "M": 1
+      },
+      "scope": "인덱싱·모양 확인을 한 작은 프로그램으로, 항목별/팀별 보정과 차원 설명을 한 복합 실습으로 묶는다.",
+      "category_minutes": {
+        "reading": [0, 0],
+        "planning_prediction": [2, 4],
+        "coding_debugging": [12, 20],
+        "interpretation_review": [2, 4],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [16, 28]
+    },
+    {
+      "id": "A11",
+      "activity": "새 P·Q 통과 횟수를 손으로 계산한 뒤 평균·전체 분산·단위 검산",
+      "locators": [
+        "main:math-lab,math-independent"
+      ],
+      "atoms": {
+        "M": 1
+      },
+      "scope": "두 팀의 손계산과 비교를 하나의 문제로 센다. 별도 수학 시간으로 한 번 더 추가하지 않는다.",
+      "category_minutes": {
+        "reading": [0, 0],
+        "planning_prediction": [2, 4],
+        "coding_debugging": [6, 10],
+        "interpretation_review": [2, 4],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [10, 18]
+    },
+    {
+      "id": "A12",
+      "activity": "공개 원본 반납함 병합과 서로 다른 키 이름의 책장 카드 예시 읽고 실행",
+      "locators": [
+        "main:join-story,real-merge,join-key-example"
+      ],
+      "atoms": {
+        "R": 2
+      },
+      "scope": "서로 다른 두 예시의 제공 코드를 실행한다. 학생 함수 작성은 새 프로젝트에서만 계산.",
+      "category_minutes": {
+        "reading": [4, 8],
+        "planning_prediction": [0, 0],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [0, 0],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [4, 8]
+    },
+    {
+      "id": "A13",
+      "activity": "West 행 이름·하교 관측 분모를 예상하고 구역별 size/count와 대조",
+      "locators": [
+        "main:group-story,group-example"
+      ],
+      "atoms": {
+        "R": 1,
+        "P": 1
+      },
+      "scope": "실행 뒤 다른 관측 수를 보인 구역은 같은 예상의 확인. 독립 글쓰기로 중복 청구하지 않는다.",
+      "category_minutes": {
+        "reading": [2, 4],
+        "planning_prediction": [3, 6],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [0, 0],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [5, 10]
+    },
+    {
+      "id": "A14",
+      "activity": "분포·범주 평균 예제 두 개를 실행하고 칸 속 행과 합/평균 순위를 해석",
+      "locators": [
+        "main:plot-two-questions,plot-histogram,plot-categories,plot-read"
+      ],
+      "atoms": {
+        "R": 2,
+        "P": 1,
+        "E": 1
+      },
+      "scope": "두 라이브러리 예제는 짧은 실행들이다. 원자료를 찾아 빈도와 대응시키고 다른 집계라면 달라질 점을 쓴다.",
+      "category_minutes": {
+        "reading": [4, 8],
+        "planning_prediction": [3, 6],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [3, 6],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [10, 20]
+    },
+    {
+      "id": "B01",
+      "activity": "새 파일의 자료사전을 읽고 도움 전 두 그림의 종류·대상·축·단위 설계",
+      "locators": [
+        "main:transfer-brief,transfer-first-code"
+      ],
+      "atoms": {
+        "R": 1,
+        "P": 2
+      },
+      "scope": "실마리 앞의 첫 설계 두 개를 한 번에 기록한다. 처음부터 작동하는 두 그래프를 여기서 완성하라고 가정하지 않는다.",
+      "category_minutes": {
+        "reading": [2, 4],
+        "planning_prediction": [6, 12],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [0, 0],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [8, 16]
+    },
+    {
+      "id": "B02",
+      "activity": "새 CSV를 열어 모양·자료형·빈칸을 확인하고 알려진 시점/행 이름을 기록",
+      "locators": [
+        "main:transfer-table,transfer-data-work"
+      ],
+      "atoms": {
+        "S": 1,
+        "C": 1,
+        "E": 1
+      },
+      "scope": "새 자료를 여는 준비 한 번, 표 감사 한 실행, 식별자 및 특성/미래값의 해석 한 기록.",
+      "category_minutes": {
+        "reading": [0, 0],
+        "planning_prediction": [0, 0],
+        "coding_debugging": [6, 10],
+        "interpretation_review": [3, 6],
+        "switch_restart": [1, 3]
+      },
+      "minutes": [10, 19]
+    },
+    {
+      "id": "B03",
+      "activity": "필수 열·양쪽 키·왼쪽 행을 확인하는 함수를 작성하고 역순에서 대조",
+      "locators": [
+        "main:transfer-table,transfer-data-work"
+      ],
+      "atoms": {
+        "M": 1
+      },
+      "scope": "같은 함수의 역순 검산까지 한 복합 실습. 고장 낸 입력의 실제 실행은 C01/C02에서만 센다.",
+      "category_minutes": {
+        "reading": [0, 0],
+        "planning_prediction": [2, 4],
+        "coding_debugging": [6, 10],
+        "interpretation_review": [2, 4],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [10, 18]
+    },
+    {
+      "id": "B04",
+      "activity": "하나의 절차로 기준 4·6의 선택·관측·합·평균을 비교하고 배제 사례 기록",
+      "locators": [
+        "main:transfer-table,transfer-data-work"
+      ],
+      "atoms": {
+        "M": 1,
+        "E": 1
+      },
+      "scope": "두 기준은 함수의 매개변수 교체로 처리한다. 다른 열까지 dropna할 때 잃는 행과 점심/하교 미관측의 차이를 별도로 적는다.",
+      "category_minutes": {
+        "reading": [0, 0],
+        "planning_prediction": [2, 4],
+        "coding_debugging": [6, 10],
+        "interpretation_review": [5, 10],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [13, 24]
+    },
+    {
+      "id": "C01",
+      "activity": "필수 열 meal_count를 뺀 복사본에서 기존 함수의 오류 이름 검증",
+      "locators": [
+        "main:transfer-faults,transfer-fault-work"
+      ],
+      "atoms": {
+        "C": 1
+      },
+      "scope": "이미 만든 함수를 쓰고 입력을 한 번 바꿔 실패와 이름을 비교. 원래 함수 전체의 구현은 B03에만 포함.",
+      "category_minutes": {
+        "reading": [0, 0],
+        "planning_prediction": [0, 0],
+        "coding_debugging": [6, 10],
+        "interpretation_review": [0, 0],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [6, 10]
+    },
+    {
+      "id": "C02",
+      "activity": "반납함 한 곳을 빼기 전에 실제 이름을 예상하고 미연결 ID·정상 복원 기록",
+      "locators": [
+        "main:transfer-faults,transfer-fault-work"
+      ],
+      "atoms": {
+        "M": 1
+      },
+      "scope": "도움 전에 하는 원래 시도와 최종 증빙을 이 항목에 한 번만 포함한다. 복구 대상은 이 시도를 거친 뒤 보충을 연다.",
+      "category_minutes": {
+        "reading": [0, 0],
+        "planning_prediction": [2, 4],
+        "coding_debugging": [6, 10],
+        "interpretation_review": [2, 4],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [10, 18]
+    },
+    {
+      "id": "C03",
+      "activity": "Matplotlib 분포를 두 기준에서 같은 구간으로 그려 행 이름과 높이 검산",
+      "locators": [
+        "main:transfer-figures,transfer-plot-work"
+      ],
+      "atoms": {
+        "M": 1
+      },
+      "scope": "한 그리기 절차를 재사용한다. 두 기준이 있어도 두 개의 독립 프로그램으로 산정하지 않는다.",
+      "category_minutes": {
+        "reading": [0, 0],
+        "planning_prediction": [2, 4],
+        "coding_debugging": [6, 10],
+        "interpretation_review": [2, 4],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [10, 18]
+    },
+    {
+      "id": "C04",
+      "activity": "Seaborn 구역 평균과 공유 눈금을 만들고 한 표시의 분자·분모 확인",
+      "locators": [
+        "main:transfer-figures,transfer-plot-work"
+      ],
+      "atoms": {
+        "M": 1
+      },
+      "scope": "한 그리기 절차로 두 기준을 표시한다. B04의 기초 집계는 다시 세지 않는다.",
+      "category_minutes": {
+        "reading": [0, 0],
+        "planning_prediction": [2, 4],
+        "coding_debugging": [6, 10],
+        "interpretation_review": [2, 4],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [10, 18]
+    },
+    {
+      "id": "C05",
+      "activity": "두 구역을 수치로 비교해 사서에게 답하고 그림의 질문과 인과/범위를 해석",
+      "locators": [
+        "main:handoff"
+      ],
+      "atoms": {
+        "E": 2
+      },
+      "scope": "기존 표를 다시 계산하지 않고 수치 보고 한 건, 그림 차이와 일반화 한계 한 건으로 묶는다.",
+      "category_minutes": {
+        "reading": [0, 0],
+        "planning_prediction": [0, 0],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [6, 12],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [6, 12]
+    },
+    {
+      "id": "C06",
+      "activity": "같은 노트북을 새 커널에서 다시 실행하고 도움·고친 실패·다음 목표 기록",
+      "locators": [
+        "main:handoff"
+      ],
+      "atoms": {
+        "S": 1,
+        "E": 1
+      },
+      "scope": "제공 코드 자동실행은 개별 실습으로 다시 산정하지 않는다. 마지막 자기점검은 명시적으로 요구된다.",
+      "category_minutes": {
+        "reading": [0, 0],
+        "planning_prediction": [0, 0],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [3, 6],
+        "switch_restart": [1, 3]
+      },
+      "minutes": [4, 9]
+    }
+  ],
+  "conditional_blocks": [
+    {
+      "id": "D01",
+      "activity": "조건에 해당할 때 별도 파일을 열어 중복·양측 빈 이름을 예상하고 복구 예제를 추적",
+      "locators": [
+        "repair:repair-when,repair-predict,repair-read,repair-trace,repair-duplicates,repair-restore,repair-match"
+      ],
+      "atoms": {
+        "S": 1,
+        "R": 2,
+        "P": 1
+      },
+      "scope": "B1의 두 상충행과 조정 전/후 두 미연결 방문을 따로 살피되 제공한 코드는 재작성하지 않는다.",
+      "category_minutes": {
+        "reading": [4, 8],
+        "planning_prediction": [3, 6],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [0, 0],
+        "switch_restart": [1, 3]
+      },
+      "minutes": [8, 17]
+    },
+    {
+      "id": "D02",
+      "activity": "새 G1·G2 방문 자료에서 영향 받는 ID, 확인한 원본, 남은 행·빈 연결을 독립 검산",
+      "locators": [
+        "repair:repair-return,repair-fresh"
+      ],
+      "atoms": {
+        "M": 1
+      },
+      "scope": "실제 J9와 J2 및 보존 행 수를 확인하는 한 복합 실습. 첫 예상과 도움 여부를 여기에 포함.",
+      "category_minutes": {
+        "reading": [0, 0],
+        "planning_prediction": [2, 4],
+        "coding_debugging": [6, 10],
+        "interpretation_review": [2, 4],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [10, 18]
+    },
+    {
+      "id": "D03",
+      "activity": "원래 체크포인트로 돌아와 이번에는 다른 반납함의 실제 미연결 이름 검산",
+      "locators": [
+        "repair:repair-return",
+        "main:transfer-faults,transfer-fault-work"
+      ],
+      "atoms": {
+        "S": 1,
+        "P": 1
+      },
+      "scope": "기존 절차에서 조회 값만 변경한다. 새 함수 작성 없이 다른 기록 이름의 짧은 예측·확인과 파일 이동 한 번.",
+      "category_minutes": {
+        "reading": [0, 0],
+        "planning_prediction": [3, 6],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [0, 0],
+        "switch_restart": [1, 3]
+      },
+      "minutes": [4, 9]
+    },
+    {
+      "id": "Q01",
+      "activity": "학생이 선택해 여는 표 실마리",
+      "locators": [
+        "main:transfer-table"
+      ],
+      "atoms": {
+        "R": 1
+      },
+      "scope": "각주가 안내한 키 역할 한 번 읽기. 열어 본 도움과 수정 내용은 본문 설계/표 완성에 이미 포함.",
+      "category_minutes": {
+        "reading": [2, 4],
+        "planning_prediction": [0, 0],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [0, 0],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [2, 4]
+    },
+    {
+      "id": "Q02",
+      "activity": "학생이 선택해 여는 그림 실마리",
+      "locators": [
+        "main:transfer-table"
+      ],
+      "atoms": {
+        "R": 1
+      },
+      "scope": "유형과 두 세로축 단위의 별도 짧은 읽기. 두 실마리는 독립적으로 열리며 보충 경로와 함께 선택할 수 있다.",
+      "category_minutes": {
+        "reading": [2, 4],
+        "planning_prediction": [0, 0],
+        "coding_debugging": [0, 0],
+        "interpretation_review": [0, 0],
+        "switch_restart": [0, 0]
+      },
+      "minutes": [2, 4]
+    }
+  ],
+  "dedup": [
+    "수업에 작성한 함수와 자습에서 준비하는 동일 변수를 다시 구현한 것으로 세지 않는다. 다섯 번째 Python 카드는 CSV를 열면서 확인한다.",
+    "A08의 서로 다른 요청 둘에는 계산 선택·결과·단위와 처음 시도/근거가 각각 포함된다. A09에서는 같은 두 코드를 F의 변경값에서 재사용한다. A11의 손계산과 코드 검산은 한 복합 블록이다.",
+    "B01의 실마리 전 두 첫 시도는 설계부터 계산한다. 이때 작성한 코드는 뒤에서 이어 쓰고 B03/B04/C03/C04는 완성·검산에 대해서만 부과한다. 두 기준은 매개변수로 바꿔 같은 코드/집계와 그림 절차를 재사용한다.",
+    "고장 열·한 반납함 삭제의 최초 시도 C01+C02는 16–28분으로 모든 경로에 이미 있다. 조건부에 또 더하거나 빼지 않는다. U5 끝에는 다른 반납함에서 기존 함수로 하는 새 예상·확인 3–6분과 복귀 전환 1–3분만 든다.",
+    "수업 목표에 못 미칠 때 교사가 기존 Python·축 진단 블록에서 실패한 유형만 다시 설명/입력한다(교사용 71·96행). 외부 숙제/무제한 추가 과제로 지정되지 않았다. 시간 밖에 별도 지도가 실제 필요했다면 이 모형은 그 시간을 보장하지 않는다."
+  ],
+  "self_checks": {
+    "mandatory": [
+      "A02~A03의 경계값/오류 검산",
+      "A08~A11의 예측·수정 대조",
+      "B01의 도움 전 첫 설계",
+      "C01~C02의 실제 실패 행/정상 복원",
+      "C06의 새 커널·실패/다음 목표 기록"
+    ],
+    "conditional": [
+      "D01~D03은 중복 또는 미연결의 원래 기록 이름을 찾지 못한 경우 한 번. 새 G 자료를 독립 확인하고 본문 다른 반납함에 재적용한다."
+    ],
+    "optional": [
+      "Q01 표, Q02 그림 실마리는 독립적인 접힌 문단으로 어느 쪽도 처음부터 필수는 아니다. 도움 선택 여부 기록은 공통. 각 2–4분; 한 개 시나리오의 항목은 같은 단가인 어느 실마리든 대표한다."
+    ]
+  },
+  "first_attempt_and_substitution": {
+    "current_core_displaced_by_repair_minutes": [0, 0],
+    "first_checkpoint_already_in_common": [
+      "C01",
+      "C02"
+    ],
+    "first_checkpoint_common_minutes": [16, 28],
+    "new_return_rerun_excluding_switch": [3, 6],
+    "return_switch": [1, 3],
+    "order": "최초 checkpoint 판단은 U4 앞부분에 위치한다. 어려움이 있으면 C02의 최초 시도→U5→U4의 남은 그림/보고로 이어진다. 추가 독립 입력은 다른 반납함의 기록이며 원래 체크포인트를 통째로 다시 산정하지 않는다.",
+    "home_plan_manifest_grouping": {
+      "main_up_to_transfer_data_work": [154, 288],
+      "from_transfer_faults": [46, 85],
+      "conditional_repair_increment": [22, 44]
+    }
+  },
+  "changes_from_prior_public_draft": [
+    {
+      "source": "공개 R3·R5 학생본 table-card, audit-csv, class-transfer, class-independent 및 R5 교사용 13행",
+      "formerly": "앞 세 행의 열별 빈칸 목록을 전체 목록과 연달아 출력하고 R1/R4의 수업 그래프를 다시 그림",
+      "now": "앞 세 행에서 오전 빈칸 하나만 확인. 다른 승객·정류장 질문의 가중 단위·분모를 판단",
+      "teacher_estimated_reallocated_class_minutes": [6, 8],
+      "independent_reallocated_minutes": null,
+      "scope": "기존 120분 안의 명시적 교체. 수업 예제 한 부와 새 파일 두 그래프의 자습 구현은 유지된다."
+    },
+    {
+      "source": "공개 R3·R5 array-lab, math-lab 및 R5 교사용 17행",
+      "formerly": "이름이 주어진 reshape/전치·내적과 원본·사본에 같은 값을 거듭 수정",
+      "now": "기록표와 규칙을 보고 두 요청에 맞는 계산을 고른 뒤 F 사본 하나를 바꿔 두 출력을 다시 예측·검증",
+      "separately_measured_saving": null,
+      "scope": "A08과 A09로 실제 신구 출력을 산정했다. 뷰/복사와 분산은 계속 수행한다."
+    },
+    {
+      "source": "공개 R3·R5 transfer-faults 및 R5 교사용 19–22행",
+      "formerly": "모두가 조회표 중복 한 줄을 만들고, Z와 양측 빈 키가 한꺼번에 있는 자료까지 만들어 검사",
+      "now": "공통은 누락 열과 반납함 하나 삭제. 도움이 필요한 경우 별도 첫 예시, 새 방문 데이터, 다른 반납함 복귀 검사를 수행",
+      "removed_prior_exercise_estimate": [16, 28],
+      "removed_prior_basis": "이전의 독립 중복 조작 C 1개와 혼합 미연결·빈 키 검산 M 1개. R3 편성 비교용 추정이며 현재 경로 합계에서 차감하지 않는다.",
+      "current_checkpoints_retained": [
+        "C01",
+        "C02"
+      ],
+      "conditional_reserve_documented": 25
+    }
+  ],
+  "incumbent_comparison": {
+    "reference": "reviews/week01-replacement-20261118/workload/incumbent.json",
+    "required_home_minutes": [388, 729],
+    "required_plus_all_remediation_once": [426, 803],
+    "one_pass_with_all_electives": [512, 966],
+    "older_route_specific_tasks": [
+      {
+        "old_blocks": [
+          "H11",
+          "H12"
+        ],
+        "old_estimate": [29, 52],
+        "fate": "영상 crop·mask 직접 구현과 좌표 경계 독립 실험이 사라진다. 배열 선택·원본 보존은 A04/A09/A10으로 남는다."
+      },
+      {
+        "old_blocks": [
+          "H21",
+          "H23",
+          "H24"
+        ],
+        "old_estimate": [60, 112],
+        "fate": "검색 벡터 정규화·PAD·후보 ID/동률 처리 실습은 새 경로에 배정하지 않는다. 내적의 규정 순서와 단위는 A07/A08에서 다른 자료로 평가한다."
+      },
+      {
+        "old_blocks": [
+          "H4",
+          "H5",
+          "H6",
+          "H7",
+          "H8"
+        ],
+        "fate": "기기 관측→학습→정답 공개·ID 대조→예측 파일 제출 단계 대신 반납 일지의 모양·식별자·분포·구역 평균·인과 한계 보고(B01–C06). 입력 오류와 원본 보존은 새 예제로 계속 평가한다."
+      },
+      {
+        "old_blocks": [
+          "H15",
+          "H16"
+        ],
+        "fate": "구역 연결과 함수의 경계값은 A02·A12 및 B02–C02에서 유지되며, 큰 혼합 오류 추가 실험은 D 경로에서 필요한 경우 수행한다."
+      }
+    ],
+    "limits": "각 경로를 처음부터 별도로 계산했다. 위 반복·삭제 범위에 대한 예시는 기존과 새 총량 차이에 또 더하지 않는다. 원래 확장 경로 전체의 공식 검증 상한은 없다."
+  },
+  "uncertainty_and_fit": {
+    "core_reference": "공통 단회 200–373분. 교사 배정 300–335분은 이 범위 안이지만 335분/360분의 상한은 독립 모형이 보장하지 않는다.",
+    "conditional_reference": "보충 단회와 다른 반납함의 재확인은 22–44분. 교사의 25분 추가 예산은 이 범위의 낮은 쪽이다. 일반+조건부만 222–417분으로 420분 이하. 실마리 하나도 열면 224–421분, 둘이면 226–425분이어서 모든 도움 경로가 420분 안이라고 확정할 수 없다.",
+    "assumptions": "Python 기초를 배운 학생, 설치·자료가 준비된 Jupyter, 일반 활동·보충 한 번, 기능별 재사용. 워크스테이션 장애, 교사/외부 피드백을 기다리는 경과시간, 반복 디버깅 횟수와 학생별 학습 속도는 측정하지 않았다.",
+    "upper_without_assumptions": null,
+    "higher_uncertainty": [
+      "R5 A08/A09의 새 배열 요청에서 처음 계산을 스스로 선택하는 시간",
+      "B03 함수 구현 및 C03/C04 그림·검산",
+      "D02 독립 오류 해결과 한 번 이상의 재시도"
+    ]
+  },
+  "inputs_sha256": {
+    "reviews/week01-replacement-20261118/workload-method.md": "da20c73c1b0ec34ed74840ac7d3ec47d8620a913785f3bdc025c38f38e964bb1",
+    "reviews/week01-replacement-20261118/workload/incumbent.json": "e27e0ce235327c2519977475d8ed9b254716e2005b100b0e62ca5b9ece6a4f20",
+    "reviews/week01-depth-20261118/rounds/0005/round.json": "f7988c0fb0f521eb032692a40be29ba8be6e7161798324de20899758570b46f5",
+    "reviews/week01-depth-20261118/rounds/0005/candidate.ipynb": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+    "reviews/week01-depth-20261118/rounds/0003/candidate.ipynb": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+    "reviews/week01-replacement-20261118/workload/inputs/week01_foundations_repair.ipynb": "8b0f1b4e672adb8214524c243eade54024e888d710a7875def09cc4d7b527df9",
+    "reviews/week01-depth-20261118/rounds/0005/inputs/week01_foundations_teacher.md": "081068e0233ef3eb102b0db0c0b4efeba2464c8d1973a1a5ebbb73823788bb8b",
+    "reviews/week01-depth-20261118/rounds/0001/inputs/foundations_returns.csv": "ece009210bb0ac473b988937f8ecd865f35355dc6d9c8718e3e8846e504daaaf",
+    "reviews/week01-depth-20261118/rounds/0001/inputs/foundations_boxes.csv": "471a80d0b99548c29a36331eb5ccad27d25ba7742f955a869687e7096c655635",
+    "reviews/week01-depth-20261118/rounds/0001/inputs/foundations_returns_transfer.csv": "47d719ce82e88acbe98ad175b1f827c8f7c76d22706bd8432344d86e3db6d7a6"
+  }
+}
