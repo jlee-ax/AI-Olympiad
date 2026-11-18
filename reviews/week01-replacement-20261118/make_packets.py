@@ -39,7 +39,7 @@ def pack_displays(outputs, target, alias, cell_id):
     return []
 
 
-def export_route(root, route, target, output_cache):
+def export_route(root, route, target, output_cache, ledger):
     target.mkdir(parents=True, exist_ok=False)
     student_paths = [route["entry"]]
     for unit in route["units"]:
@@ -113,8 +113,12 @@ def export_route(root, route, target, output_cache):
         destination = target / "after-attempt" / source.name
         destination.parent.mkdir(exist_ok=True)
         destination.write_bytes(raw)
+    load_summary = {"class_minutes": ledger["totals"]["class_minutes"],
+                    "required_home_minutes": ledger["totals"]["required_home"]["minutes"],
+                    "category_minutes": ledger["totals"]["required_home"]["category_minutes"],
+                    "observed_student_minutes": None}
     (target / "route.json").write_text(json.dumps({"entry": notebook_names[route["entry"]],
-        "units": schedule, "timing": route.get("timing", "See the registered planned estimates.")},
+        "units": schedule, "workload_review": load_summary, "timing": route.get("timing", "See the registered planned estimates.")},
         ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return {"source_sha256": raw_digests,
             "packet_sha256": {str(p.relative_to(target)): digest(p) for p in sorted(target.rglob("*")) if p.is_file()}}
@@ -128,13 +132,17 @@ def main():
     p.add_argument("destination", type=Path)
     p.add_argument("--root", type=Path, default=Path.cwd())
     p.add_argument("--outputs", type=Path, required=True, help="Cell displays from run_route.py --outputs")
+    p.add_argument("--workloads", type=Path, required=True,
+                   help="Independent workload ledgers named incumbent.json and replacement.json")
     args = p.parse_args()
     assignment = load(args.assignment)
     routes = {"candidate": load(args.candidate), "incumbent": load(args.incumbent)}
     if set(assignment[k] for k in ("P", "Q")) != set(routes):
         raise ValueError("Both routes must occur once")
     args.destination.mkdir(parents=True, exist_ok=False)
-    result = {k: export_route(args.root, routes[assignment[k]], args.destination / k, args.outputs) for k in ("P", "Q")}
+    ledgers = {"incumbent": load(args.workloads / "incumbent.json"), "candidate": load(args.workloads / "replacement.json")}
+    result = {k: export_route(args.root, routes[assignment[k]], args.destination / k, args.outputs,
+                              ledgers[assignment[k]]) for k in ("P", "Q")}
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 

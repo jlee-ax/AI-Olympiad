@@ -1,0 +1,77 @@
+{
+  "round": 4,
+  "round_sha256": "773157bdfa9a4eadb86f5aa5ea6ccb86512814fd02af270ee719f23c001d45c3",
+  "candidate_sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+  "inputs": {
+    "lessons/week01/week01_foundations_teacher.md": {
+      "snapshot": "reviews/week01-depth-20261118/rounds/0004/inputs/week01_foundations_teacher.md",
+      "sha256": "aa7fdace6fd8c1b98e0cb863c4a69b6ca3c9eedd1035eb460ebda6971088ce13"
+    },
+    "lessons/week01/data/foundations_boxes.csv": {
+      "snapshot": "reviews/week01-depth-20261118/rounds/0001/inputs/foundations_boxes.csv",
+      "sha256": "471a80d0b99548c29a36331eb5ccad27d25ba7742f955a869687e7096c655635"
+    },
+    "lessons/week01/data/foundations_returns_transfer.csv": {
+      "snapshot": "reviews/week01-depth-20261118/rounds/0001/inputs/foundations_returns_transfer.csv",
+      "sha256": "47d719ce82e88acbe98ad175b1f827c8f7c76d22706bd8432344d86e3db6d7a6"
+    }
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "pandas": "2.2.3"
+  },
+  "checks": [
+    {
+      "passed": true,
+      "expected_record_ids": [
+        "T1",
+        "T2",
+        "T3",
+        "T4",
+        "T5",
+        "T6",
+        "T7",
+        "T8"
+      ],
+      "actual": {
+        "type": "ValueError",
+        "message": "('구역을 찾지 못한 기록', ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8'])",
+        "reported_record_ids": [
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T5",
+          "T6",
+          "T7",
+          "T8"
+        ]
+      },
+      "case": "all_station_fields_blank_in_physical_csv",
+      "station_dtype": "float64",
+      "lookup_key_dtype": "object",
+      "derived_csv_sha256": "796a2bc290abc4a43e008616e5a699a278e431e0d8be69a4698a74035acff94c",
+      "rows": 8,
+      "missing_station_count": 8
+    },
+    {
+      "passed": true,
+      "expected_record_ids": [
+        "T1"
+      ],
+      "actual": {
+        "type": "ValueError",
+        "message": "('구역을 찾지 못한 기록', ['T1'])",
+        "reported_record_ids": [
+          "T1"
+        ]
+      },
+      "case": "empty_strings_in_both_key_columns_after_edit",
+      "station_dtype": "object",
+      "lookup_key_dtype": "object",
+      "assigned_key": "",
+      "assigned_zone": "East"
+    }
+  ],
+  "status": "passed"
+}

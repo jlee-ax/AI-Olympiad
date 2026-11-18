@@ -1,0 +1,961 @@
+{
+  "status": "blocked",
+  "freeze_commit": "cfeb4e341650af9a9378939e1ceeaedce80372f2",
+  "contract_sha256": "e3b261f7c3b3be60219f8ba941e05abce18a7bfaa29475cf11b9078abb6cff90",
+  "basis_history": [
+    {
+      "sha256": "2f69eb913f7da07cc7f0b8401906145e743ee19224c442719cc9b6ec3d19165a",
+      "anchor": "cfeb4e341650af9a9378939e1ceeaedce80372f2",
+      "after_round": 0,
+      "reopen": [],
+      "review_sha256": "09db754c017dae9fee057d4bf82db75308b12b3a4cbec24b69410e5893efa0f8"
+    },
+    {
+      "sha256": "e3b261f7c3b3be60219f8ba941e05abce18a7bfaa29475cf11b9078abb6cff90",
+      "anchor": "8e6bf19b5a5af6739533b6ae28a6a5131f2d0b8a",
+      "after_round": 3,
+      "reopen": [
+        "W1-array"
+      ],
+      "review_sha256": "6fb06916c429025c2209a69b96a077902091072020f1528a1e173143c7820ac9"
+    }
+  ],
+  "lesson_path": "lessons/week01/week01_foundations.ipynb",
+  "history": [
+    {
+      "required_topics": [
+        "W1-array",
+        "W1-python",
+        "W1-table",
+        "W1-visualise"
+      ],
+      "decisions": {
+        "W1-python": "conflict",
+        "W1-table": "conflict",
+        "W1-array": "conflict",
+        "W1-visualise": "conflict"
+      },
+      "reviews": {
+        "functional.json": "0a5590440bb4da194b7510dd32fb68ca9104f1078822906e08c4fbce0ba06243",
+        "joined.json": "5ac749f8b28069551e1f9338247989599cfcff3655a8f50e67735efb6ab11b43",
+        "oracle.json": "15a1ac7bb77de1429de784988288d085945845c75a5ad257f4d9c2353f9fe67a"
+      },
+      "adjudicated": [],
+      "reviewers": {
+        "W1-python": [
+          "joined-content-review",
+          "week01-independent-oracle"
+        ],
+        "W1-table": [
+          "independent-public-table-audit",
+          "joined-content-review",
+          "week01-independent-oracle"
+        ],
+        "W1-array": [
+          "joined-content-review",
+          "week01-independent-oracle"
+        ],
+        "W1-visualise": [
+          "joined-content-review",
+          "week01-independent-oracle"
+        ]
+      },
+      "bindings": {
+        "W1-python": "fff27b8ddd36a81cf97bdd373a6e49bfe4e8c8b7e548b7165ec95afdfbff11d1",
+        "W1-table": "aebf654e574d8e57efdd000217bd3bf69ea8f5875fe1be200fd552fb4a6f2f90",
+        "W1-array": "e870af206d3901a291a7a344982aa58411c32d2783ea63cf23cfbe8731e11bc6",
+        "W1-visualise": "ae132f132390b13570b05c9ab4bb94fec7a0f55b7308a426012a4aa5e7ae185c"
+      },
+      "findings": {
+        "W1-python": [
+          {
+            "reviewer": "joined-content-review",
+            "verdict": "revise",
+            "cells": [
+              "python-basics",
+              "return-example",
+              "python-five",
+              "python-independent",
+              "independent-start"
+            ],
+            "finding": "현재 ValueError의 이름과 메시지만 표시되어 PY-ERROR 선수에서 요구하는 호출 위치와 실제 실패 표현식을 연습할 자료가 없다. 작은 호출·실패 줄의 traceback과 다른 입력에 대한 원인·검산을 넣고 첫 시도와 도움을 구별한다.",
+            "foundation": "[0,None,4,7]에서 기준 4를 넘는 경우 한 번과 반환값 재사용, 빈 목록·0·미관측 및 잘못된 음수 기준의 새 입력이 적절하다.",
+            "ceiling": "데이터 절차에 필요한 라이브러리 오류 찾기까지만 다룰 수 있다. 인터프리터 내부 설명은 필요하지 않다.",
+            "workload": "20분 진단·90분 자습 안에서 기존 예외 출력을 짧은 추적/재시도와 교체할 수 있다. 시간은 편성값이다."
+          },
+          {
+            "reviewer": "week01-independent-oracle",
+            "verdict": "pass",
+            "cells": [
+              "python-basics",
+              "python-example",
+              "return-story",
+              "return-example",
+              "python-five",
+              "python-independent",
+              "independent-start"
+            ],
+            "finding": "직접 읽고 실행했다. 예제는 1을 반환하고 다음 계산은 2, 출력 전용 함수의 반환은 None이다. 교사용 수정 함수를 동결한 새 목록의 두 경계와 빈 목록에서 실행해 독립 반복문의 결과와 모두 일치했다. 학생용 빈 셀은 실행만으로 완료를 표시하지 않는다. 진단 4/5와 보충 기준은 교사용 문서에서 확인했다.",
+            "foundation": "상태표에서 None·0·경계값을 따라간 뒤 학생이 초과 조건을 이상 조건으로 바꾸고 반환값을 다른 계산에 넣는다. 빈 목록 문제도 별도 입력으로 묻는다.",
+            "ceiling": "함수의 반환, 조건의 단락 평가와 한 가지 오류가 이번 작업에 바로 쓰인다. 자료구조 내부나 복잡도 분석을 전제하지 않는다.",
+            "workload": "수업 20분에 다섯 카드 중 파일 읽기는 뒤 CSV 셀로 이어진다. 수업 전에 기초 Python을 경험한 학생을 전제로 자습 90분에 수정·재실행이 가능하다는 편성 판단이다."
+          }
+        ],
+        "W1-table": [
+          {
+            "reviewer": "independent-public-table-audit",
+            "verdict": "revise",
+            "cells": [
+              "join-story",
+              "real-merge",
+              "transfer-table",
+              "transfer-faults"
+            ],
+            "finding": "교사용 attach_zones를 pandas 2.2.3에서 실제 실행했다. T1.station을 빈칸으로 만들고 구역표에 (빈 box_id, East) 한 행을 더했더니 T1을 East로 받아들였다. 어떤 반납함인지 알 수 없는 관측을 통계에 넣게 된다. 학생 예제와 교사용 풀이에서 병합 전에 빠진 식별자를 찾아 거부하거나 미연결로 드러내야 한다. 교사용 파일 SHA-256 b81abef89ebdec6653dc8b279e08f5542827b50c619a389d2f47ed154d7105e2.",
+            "foundation": "같은 이름이 실제 반납함 하나를 가리킬 때 키 병합으로 행을 대응한다. 공개 입력에서 점심 기준 4일 때 West는 4행·하교 관측 3·합 13이고, 기준 6일 때는 2행·관측 2·합 6이었다. 열 누락, 오른쪽 중복, 명백히 없는 Z는 교사용 함수가 검출했다.",
+            "ceiling": "빈칸은 반납함의 이름을 확인해 주지 않는다. 동일성을 가르치는 기존 병합에서 빈 키를 짧게 확인하면 충분하다.",
+            "workload": "기존 키 검사와 오류 예시 안에 확인을 넣을 수 있다. 별도 필수 과제나 라이브러리는 필요하지 않다."
+          },
+          {
+            "reviewer": "joined-content-review",
+            "verdict": "pass",
+            "cells": [
+              "dictionary",
+              "join-story",
+              "group-story",
+              "transfer-table",
+              "transfer-data-work",
+              "transfer-faults",
+              "transfer-fault-work"
+            ],
+            "finding": "공개 입력으로 재집계하면 기준 4에서 West는 4행 중 하교 3건, 합 13이고 기준 6에서는 2행 중 2건, 합 6이다. 분모를 다르게 정하는 질문과 별도 해설이 이 차이를 설명한다.",
+            "foundation": "시점·기록ID·대상ID에서 출발해 실제 파일을 열고, 새 표의 데이터형·열의 뜻과 결측을 다시 점검한다. 기준 4에서 T3은 선택되면서 미관측이고, T4의 하교 0은 유효한 관측이다.",
+            "ceiling": "반납함 키로 결합하고 오른쪽 중복·누락 연결·필수 열 결손을 검출한다. 국제 Antique의 특성/라벨 구분은 전이 근거이며 학습·예측은 이번 단원 밖이다.",
+            "workload": "수업 45분과 자습 85분에서 원본 선택→새 표 처리·오류 실험으로 배분한다. 관측한 수업시간은 없다."
+          },
+          {
+            "reviewer": "week01-independent-oracle",
+            "verdict": "revise",
+            "cells": [
+              "dictionary",
+              "table-card",
+              "load-csv",
+              "inspect-table",
+              "join-story",
+              "real-merge",
+              "transfer-table",
+              "transfer-data-work",
+              "transfer-fault-work"
+            ],
+            "finding": "수업의 on='box_id'는 두 테이블의 열 이름이 같다. 새 일지의 station과 구역표의 box_id에 이를 그대로 옮긴 on='station'은 KeyError('station')를 낸다. 독립 입력으로 이 실패를 재현했다. 교사용 함수는 left_on과 right_on을 써서 뒤집힌 조회표와 바뀐 자료를 정확히 처리했고 공개 과제의 West 유효 분모도 3에서 2로 바뀌었다. 학생이 새 CSV 과제를 혼자 마칠 수 있게, 다른 이름의 연습 열로 양쪽 키 인수를 보여 주거나 오류 뒤에 펼칠 힌트를 남기자.",
+            "foundation": "관측 단위와 예측 시점이 분명하고, 관측한 0과 빈 하교값, 전체 선택 행과 실제 하교 관측 수를 구분한다. 자습에서 다른 이름을 가진 두 키를 붙일 때 학생이 복구할 수 있는 문법 단서가 한 단계 빠졌다.",
+            "ceiling": "중복과 미매칭을 작은 표에서 재현하는 일은 적절하다. 수정에는 자습 정답 전체 대신 이름이 다른 키를 찾는 방법이나 해당 문서 한 곳이면 충분하다.",
+            "workload": "수업 45분과 자습 85분은 작은 자료에 맞는 추정이다. 다른 이름의 키에 쓸 API를 학생이 스스로 찾아야 하는 시간이 새 집계와 오류 해석에 배정한 자습으로 넘어간다."
+          }
+        ],
+        "W1-array": [
+          {
+            "reviewer": "joined-content-review",
+            "verdict": "revise",
+            "cells": [
+              "axis-picture",
+              "axis-check",
+              "reduce-period",
+              "array-lab",
+              "array-independent",
+              "math-independent"
+            ],
+            "finding": "T04가 요구하는 축 평균 계산의 시작 상태, 행마다 바뀌는 합·개수, 종료와 반환이 생략되었다. R1·R2의 개관 한 열로 합 0→2→10, 개수 0→1→2와 첫 NumPy 출력값 5의 연결을 보여 준다.",
+            "foundation": "비정사각 배열의 분모와 출력 의미, 저장 공유와 축 변경의 서로 다른 사례가 적절하다. 새 손계산의 열 평균 [2,5]와 행 평균 [4.5,4.5,1.5]를 확인했다.",
+            "ceiling": "2차원 표와 짧은 배열 연산으로 제한하고 일반 텐서 증명까지 요구하지 않는다.",
+            "workload": "40분 수업·115분 자습은 편성 추정이다. 기존 한 열을 사용해 감산·새 수식을 덧붙이지 않고 누적 과정을 보여 줄 수 있다."
+          },
+          {
+            "reviewer": "week01-independent-oracle",
+            "verdict": "pass",
+            "cells": [
+              "axis-picture",
+              "variance-bridge",
+              "axis-check",
+              "reduce-period",
+              "broadcast-concept",
+              "array-independent",
+              "math-concept",
+              "math-lab",
+              "math-independent"
+            ],
+            "finding": "후보 reduce-period의 실제 식을 3×2 새 입력에 실행했다. 두 축의 값과 (2,), (3,)가 표준 라이브러리 계산과 일치했다. 서로 같은 평균이지만 분산이 다른 열, 음수가 섞인 가중치의 내적, 같은 모양의 재배열과 전치에서 서로 다른 원소도 고정 기댓값과 맞았다. 공개 과제는 새 행을 더할 때 값과 길이의 변화를 구분하고 코드로 확인하게 한다.",
+            "foundation": "권수의 합과 분모를 짚는 2×3 표에서 출발해 남은 축과 출력을 해석한다. 분산은 차이→제곱→평균과 권², 내적은 분류에 맞는 권·초/권에서 초가 나오는 계산으로 연결한다.",
+            "ceiling": "정렬 실패, 슬라이스의 공유와 복사, reshape와 transpose의 좌표 차이에 작은 반례가 하나씩 있다. 일반 텐서 대수나 신경망을 선행할 필요가 없다.",
+            "workload": "수업 40분에 대표 계산을 하고 자습 115분에 엄선한 세부 연산을 다시 시도하는 구성이다. 보기 좋은 수치로 계산과 의미 설명을 함께 할 수 있다."
+          }
+        ],
+        "W1-visualise": [
+          {
+            "reviewer": "joined-content-review",
+            "verdict": "revise",
+            "cells": [
+              "plot-core",
+              "plot-two-questions",
+              "transfer-figures",
+              "transfer-plot-work",
+              "handoff"
+            ],
+            "finding": "새 자료의 두 질문 앞에서 학습자가 표시 방식을 고르는 최초 답안이 없는 채 히스토그램/구역 막대와 라이브러리·축을 지시한다. 예시/교사용 답을 닫고 종류·자료·축·집계 이유를 먼저 기록한 뒤 지원받아 그린 시도도 따로 남긴다.",
+            "foundation": "범주 막대는 기록당 평균 권수, 히스토그램은 권수 구간마다 센 기록 수다. 두 조건에서 같은 눈금과 경계를 쓰게 하고 수치와 분모를 해설한다.",
+            "ceiling": "관찰 범위의 서술과 인과 주장 구별로 끝난다. 두 연속 변수의 국제적 수준 그림 선택을 완료했다고 볼 근거는 없다.",
+            "workload": "수업 15분·자습 70분 안에서 먼저 표시 방식을 고르게 한 뒤 현재 도움을 공개하는 방식으로 순서를 바꿀 수 있다."
+          },
+          {
+            "reviewer": "week01-independent-oracle",
+            "verdict": "pass",
+            "cells": [
+              "plot-core",
+              "plot-period",
+              "class-transfer",
+              "plot-two-questions",
+              "plot-histogram",
+              "plot-categories",
+              "plot-read",
+              "transfer-figures",
+              "transfer-plot-work",
+              "handoff"
+            ],
+            "finding": "새 Jupyter 커널에서 예제 그림 3개 PNG를 렌더링해 직접 살폈다. 구역 비교는 East 5.5권·West 4권, 분포는 관측 5행에 대응했다. 교사용 코드의 두 조건별 히스토그램도 별도 실행해 원자료의 독립 집계와 맞췄다. 미리 고정한 다른 표에 같은 표현을 적용해 0과 미관측 하나의 변화가 빈도와 구역 평균을 다르게 바꾸는 수치도 확인했다.",
+            "foundation": "한 막대를 만든 원자료 두 값부터 설명한 뒤, 히스토그램의 기록 수와 구역 평균의 권수/관측 기록을 별개로 읽게 한다. 구간 경계, 0과 미관측, 기준 변경을 원표와 연결한다.",
+            "ceiling": "동일한 눈금으로 조건을 바꾸고 실제 관측 수가 줄었음을 함께 말하도록 한다. 합성 관찰의 범위와 인과 해석의 한계를 짚는 깊이가 중학생에게 적절하다.",
+            "workload": "수업 15분의 작은 막대와 자습 70분의 분포·범주 비교는 같은 표를 재사용한다. 교사용 예시의 두 기준 네 패널은 한 figure에 그려지며, 시간은 실제 수업에서 검증할 추정이다."
+          }
+        ]
+      },
+      "status": "open",
+      "number": 1,
+      "round_sha256": "34a98e378196be91e406fc6fdcad41d03db83e9f456664ac3c4eef30bf06182d",
+      "candidate_sha256": "d4689c347113b60e7f7fa3d93a8f76f9412f7eb8ee793dcbcac65a95039212bf",
+      "companions": {
+        "lessons/week01/week01_foundations_teacher.md": "b81abef89ebdec6653dc8b279e08f5542827b50c619a389d2f47ed154d7105e2",
+        "lessons/week01/data/foundations_returns.csv": "ece009210bb0ac473b988937f8ecd865f35355dc6d9c8718e3e8846e504daaaf",
+        "lessons/week01/data/foundations_boxes.csv": "471a80d0b99548c29a36331eb5ccad27d25ba7742f955a869687e7096c655635",
+        "lessons/week01/data/foundations_returns_transfer.csv": "47d719ce82e88acbe98ad175b1f827c8f7c76d22706bd8432344d86e3db6d7a6"
+      },
+      "author": "week01-new-author"
+    },
+    {
+      "required_topics": [
+        "W1-array",
+        "W1-python",
+        "W1-table",
+        "W1-visualise"
+      ],
+      "decisions": {
+        "W1-python": "pass",
+        "W1-table": "conflict",
+        "W1-array": "pass",
+        "W1-visualise": "pass"
+      },
+      "reviews": {
+        "functional.json": "7e3f4f4cabdfb5970424f55b353e7a542b4e0abca69e4905dc92afec4d65b0f2",
+        "joined.json": "c27d0a256c66aa1acdfe086a2a019027e7ea1742ae0b1314dd0f1feca2cbf1ef",
+        "late-integration.json": "74409859a7c17e74c0de464b64049f452040cc10117eef6a9205c9be73b79c80",
+        "oracle.json": "536ca8d83cb541829e8808fb705f8de2d9307d5a509e1d9f253e7cba6dea6914"
+      },
+      "adjudicated": [],
+      "reviewers": {
+        "W1-python": [
+          "joined-content-review",
+          "week01-independent-oracle"
+        ],
+        "W1-table": [
+          "independent-public-table-audit",
+          "joined-content-review",
+          "release-integration-reader",
+          "week01-independent-oracle"
+        ],
+        "W1-array": [
+          "joined-content-review",
+          "week01-independent-oracle"
+        ],
+        "W1-visualise": [
+          "joined-content-review",
+          "week01-independent-oracle"
+        ]
+      },
+      "bindings": {
+        "W1-python": "3362ac1d3c4ef3e3ad752c56b64a4574259f65d54359174ce97593db1e8ab39a",
+        "W1-table": "4946fcf5a05282ef36ed3ab8bb77ae5b825c7568863d9c60d3d9e4cedd5e1543",
+        "W1-array": "0b204b225da47f0603ccf4842a478514408598bba5d0366e37621cd5d2d8e3a9",
+        "W1-visualise": "9c0d2d6f3e773201d7433567be497802a1ac59e0d66f8c32e3e886f2190c64d7"
+      },
+      "findings": {
+        "W1-python": [
+          {
+            "reviewer": "joined-content-review",
+            "verdict": "pass",
+            "cells": [
+              "python-basics",
+              "return-story",
+              "trace-example",
+              "python-five",
+              "python-independent",
+              "independent-start",
+              "trace-independent"
+            ],
+            "finding": "공개 코드를 실행해 scan_batch→count_over의 books > limit TypeError와 last_box→code_at의 codes[position] IndexError를 모두 확인했다. 후자는 인덱스 2 대신 len-1을 쓰고 빈 입력을 따로 처리하는 새 과제다.",
+            "foundation": "0·None·빈 입력, 기준과 같은 값, 반환값을 다음 계산에 쓰는 과정부터 두 호출 프레임까지 이어진다. 별도 교사용 함수로 3개·1개·빈 목록을 다시 시험했다.",
+            "ceiling": "두 오류에서 호출 함수와 멈춘 연산을 찾고 다른 데이터로 함수를 고친다. 예외 구현이나 디버거 내부는 선수로 요구하지 않는다.",
+            "workload": "수업 20분·자습 90분에 포함된 진단과 재시도다. 첫 예상과 도움 여부를 보존한다. 실제 초보자에게 걸리는 시간은 미측정이다."
+          },
+          {
+            "reviewer": "week01-independent-oracle",
+            "verdict": "pass",
+            "cells": [
+              "python-example",
+              "return-story",
+              "trace-example",
+              "python-five",
+              "python-independent",
+              "independent-start",
+              "trace-independent"
+            ],
+            "finding": "원본에서 scan_batch→count_over의 TypeError와 last_box→code_at의 IndexError가 실제 호출·실패 줄과 함께 찍혔다. 교사 풀이의 수정 함수는 빈 목록·한 항목·세 항목에서 맞는 값을 반환했다. 독립 기준 이상 횟수 세 경우의 결과도 2, 4, 0으로 다시 확인했다. 도움 여부와 수정 전후의 증거를 남길 자리가 있다.",
+            "foundation": "조건과 반복에 들어가는 값, 다음 줄로 전달되는 반환값과 실제 예외를 연결한다. 추적 예시는 호출 줄과 실패 연산을 보여 주고, 학생은 다른 목록 함수의 오류를 직접 고쳐야 한다.",
+            "ceiling": "두 프레임을 따라가 잘못 전달한 번호나 자료형을 찾는 깊이가 도구를 쓰는 목적에 맞는다. 예외 계층이나 디버거 구현을 선행할 필요가 없다.",
+            "workload": "기초 Python 경험을 전제로 한다. 수업 진단 20분, 이후 파일 읽기에서 답하는 한 카드, 자습 90분의 경계값·오류 복구 구성이 합리적이다. 실제 소요 시간은 미측정이다."
+          }
+        ],
+        "W1-table": [
+          {
+            "reviewer": "independent-public-table-audit",
+            "verdict": "pass",
+            "cells": [
+              "dictionary",
+              "join-story",
+              "real-merge",
+              "join-key-example",
+              "transfer-table",
+              "transfer-data-work",
+              "transfer-faults",
+              "transfer-fault-work"
+            ],
+            "finding": "이 회차에 보관된 실제 학생 병합 셀과 교사용 attach_zones·summarize_returns를 pandas 2.2.3에서 재실행했다. 첫 회차에서 East가 붙던 빈 키 조합은 학생 예제에서 멈추고 교사용 풀이에서는 미연결 기록 T1을 알린다. 13개 공개 대조가 모두 통과했다. 구역표를 뒤집어도 대응이 같고, 기준 4→6에서 West의 관측 수·합·평균은 (3,13,13/3)에서 (2,6,3)으로 바뀌며 East의 0은 관측으로 남는다. 실행 결과 functional/round-0002.json SHA-256 ae12099c6e398f242dbb64e7f603e403729e0c14bde76d8870cd5a0bfd6268c8.",
+            "foundation": "학생에게 실제 관측과 빈칸의 차이를 먼저 설명하고, 키 이름이 다른 두 표를 예로 들어 미연결 행의 식별자를 보인다. 새 일지에서는 열 이름과 키를 직접 고르고, 필수 열·중복·미연결로 망가진 복사본과 정상 자료를 대조한다. 두 기준의 하교 관측 수와 합에서 평균을 따로 계산할 수 있다.",
+            "ceiling": "빈 키를 구역표에서 제외한 후 같은 관찰 행을 확인하는 한 차례의 검사가 앞선 충돌을 해결한다. 일반적인 데이터베이스 이론은 이 과제를 푸는 데 필요하지 않다.",
+            "workload": "계획상 수업 45분, 자습 85분이다. 같은 표의 키 확인·기존 오류 실험에 빈 키 사례를 넣었으며, 두 번째 자료 분석 과제를 추가하지 않았다."
+          },
+          {
+            "reviewer": "joined-content-review",
+            "verdict": "pass",
+            "cells": [
+              "dictionary",
+              "join-story",
+              "join-key-example",
+              "group-story",
+              "transfer-table",
+              "transfer-data-work",
+              "transfer-faults",
+              "transfer-fault-work"
+            ],
+            "finding": "구역표 역순 결과가 원래와 같았다. 오른쪽에 빈 키를 추가한 동시에 T1의 미등록 값과 T2의 빈 값을 입력하면 두 기록을 정확히 알린다. 기준 4의 West는 4행·3관측·합 13, 기준 6은 2행·2관측·합 6이다.",
+            "foundation": "자료사전으로 시점을 정의하고 소표에서 키와 0·빈칸을 구별한다. 서로 다른 키 이름과 오른쪽 빈 키를 다루는 K1/K2 예시 후 다른 파일에 절차를 직접 작성한다.",
+            "ceiling": "동일 기록 복제, 없는 키, 양쪽에서 빈 키의 가짜 연결, 관측 분모까지 검토한다. 모델 학습·숨겨진 라벨의 추정은 이 주차의 요구 범위 밖이다.",
+            "workload": "수업 45분·자습 85분 편성이다. 두 등록 파일의 행 순서를 바꾸는 하나의 과제가 이름 지정·오류·분모를 함께 다룬다. 실측은 없다."
+          },
+          {
+            "reviewer": "release-integration-reader",
+            "verdict": "revise",
+            "cells": [
+              "csv-open",
+              "load-csv",
+              "join-story",
+              "real-merge",
+              "join-key-example",
+              "transfer-fault-work"
+            ],
+            "finding": "보관된 2회차 자료에 check_missing_key_forms.py를 직접 다시 실행했다. station 전체가 빈 실제 CSV에서는 T1~T8 중 어느 것도 알려 주지 못하고 float64/object 병합 오류가 난다. 양 표에서 빈 문자열 키인 T1은 잘못 East로 연결된다. 이 두 경우까지 재검증한다.",
+            "foundation": "반납함 키가 확인되지 않는 기록도 행 이름으로 짚을 수 있게 한다. 0권이라는 관측과 반납함 이름의 빈칸을 구별한다.",
+            "ceiling": "별도 데이터베이스 단원까지 늘릴 필요 없이 기존 CSV 읽기와 병합 예를 고칠 수 있다.",
+            "workload": "같은 입력 처리와 오류 실험을 보정하면 현재 표 단원의 수업 45분·자습 85분 편성을 유지할 수 있다."
+          },
+          {
+            "reviewer": "week01-independent-oracle",
+            "verdict": "pass",
+            "cells": [
+              "dictionary",
+              "inspect-table",
+              "join-story",
+              "real-merge",
+              "join-key-example",
+              "group-story",
+              "transfer-table",
+              "transfer-data-work",
+              "transfer-faults",
+              "transfer-fault-work"
+            ],
+            "finding": "원래 이슈를 해소했다. 카드 K1은 1층에 붙고 결측 K2는 행을 잃거나 9층을 얻지 않았다. 독립 표에서 조회표 순서를 바꾸고 실제 결측(None·NaN·pd.NA)과 미등록 키를 함께 두어도 정확한 두 기록 이름을 알렸다. CSV의 빈 필드, 유효 키 중복, 빠진 필수 열, 키는 존재하지만 구역명은 빈 경우와 정상 복구도 직접 확인했다. 프로그램 안에서 만든 빈 문자열은 별도의 값이고, 모든 키가 빈 CSV에서는 pandas의 자료형 오류가 먼저 난다는 범위 경계는 실행 기록에 남겼다.",
+            "foundation": "책장 카드의 shelf_tag와 조회표 symbol을 짝짓는 작은 예에서 left_on과 right_on의 뜻을 보여 줬다. 학생이 새 파일에서 키를 직접 고른 뒤, 막히면 이 예를 참조할 수 있다. 행·시점·유효 분모부터 키 판정까지 필요한 단계가 연결되었다.",
+            "ceiling": "관찰 기록과 조회표의 관계를 기준으로 중복 키·미연결·양쪽 결측의 차이를 확인한다. 예측 모델이나 관계형 데이터베이스 이론을 추가할 필요가 없다.",
+            "workload": "수업 45분과 자습 85분 안에서 별도의 두 행 카드 예를 거쳐 같은 절차를 전이한다. 수정한 곳은 자습 중 막히는 이유를 설명하는 데 직접 쓰인다. 시간은 편성 추정이다."
+          }
+        ],
+        "W1-array": [
+          {
+            "reviewer": "joined-content-review",
+            "verdict": "pass",
+            "cells": [
+              "axis-picture",
+              "axis-check",
+              "reduce-period",
+              "broadcast-concept",
+              "array-lab",
+              "array-independent",
+              "math-independent"
+            ],
+            "finding": "손계산용 3×2에서 축별 [2,5], [4.5,4.5,1.5]. 다른 D/E/F에서 뷰/사본, 실패하는 길이 3과 (3,1) 보정, reshape와 전치의 [0,1] 값 4·3을 독립 재계산했다.",
+            "foundation": "R1/R2 개관 열의 (합, 개수)가 (0,0)→(2,1)→(10,2)다. 종료 뒤 10/2=5와 틀린 분모 3을 대조하고 이어서 NumPy로 전체 축을 계산한다.",
+            "ceiling": "기본 인덱싱·복사·브로드캐스트·재배열·전치의 좌표 의미, 분산·내적과 단위까지 2차원 표와 짧은 1차원 벡터에서 끝낸다.",
+            "workload": "40분 수업·115분 자습 편성이다. 추가 설명은 기존 열을 재사용한다. 종이 예측과 변경한 수표 실험을 분리한다. 실제 수행 시간은 미측정이다."
+          },
+          {
+            "reviewer": "week01-independent-oracle",
+            "verdict": "pass",
+            "cells": [
+              "axis-picture",
+              "variance-bridge",
+              "axis-check",
+              "reduce-period",
+              "broadcast-concept",
+              "array-independent",
+              "math-concept",
+              "math-independent"
+            ],
+            "finding": "후보의 두 축 평균식을 고정한 비정사각 새 입력에 재실행했다. 열별 [4,4], 행별 [5,4,3]과 두 출력 모양을 독립적으로 맞췄다. 분모가 같은 두 열의 분산, 부호가 다른 가중치 내적, 전치와 재배열의 원소 대응 및 잘못된 브로드캐스팅의 실패도 검산했다.",
+            "foundation": "표의 한 열에서 합과 관측 수가 (0,0)에서 (10,2)로 바뀌는 장면이 축 평균의 분모를 설명한다. 평균이 같아도 분산이 다른 예, 같은 분류끼리 곱해 초로 더하는 내적을 각각 손과 코드로 확인한다.",
+            "ceiling": "슬라이스, 뷰와 복사, 오른쪽 축 정렬, reshape·transpose를 작고 설명 가능한 반례로 제한했다. 일반 텐서 이론은 요구하지 않는다.",
+            "workload": "기존 40분 수업·115분 자습 예산에 누적합 두 단계와 첫 시도 기록을 넣었다. 학생의 설명 시간이 편성에 포함되어 있으며 실제 수업에서는 따로 잴 수 있다."
+          }
+        ],
+        "W1-visualise": [
+          {
+            "reviewer": "joined-content-review",
+            "verdict": "pass",
+            "cells": [
+              "plot-core",
+              "plot-two-questions",
+              "plot-histogram",
+              "plot-read",
+              "transfer-first-code",
+              "transfer-figures",
+              "transfer-plot-work",
+              "handoff"
+            ],
+            "finding": "새 파일 경로 외 설계 답이 없는 transfer-first-code가 열 수 있는 실마리보다 앞선다. 기준 4/6 히스토그램 높이 [2,1,1,0,0]/[2,1,0,0,0]와 East 0·West 13/3 및 3을 실제 그림의 오브젝트에서 대조했다.",
+            "foundation": "두 구간에 든 기록 수와 구역별 관측 평균에서 막대 하나가 나타내는 자료와 세로 단위를 구분한다. 수업 예시→중간 읽기→새 입력 설계 순서다.",
+            "ceiling": "두 질문에 맞는 그림·열·축·단위를 먼저 고르고 기준을 4에서 6으로 바꾼 결과를 실제 기록으로 설명한다. 인과효과와 국제 이변량 과제 해결은 주장하지 않는다.",
+            "workload": "수업 15분·자습 70분 편성이다. 같은 새 파일에서 첫 설계와 실마리 후 구현을 분리하고 도움을 기록한다. 실제 무도움 수행은 수집 전이다."
+          },
+          {
+            "reviewer": "week01-independent-oracle",
+            "verdict": "pass",
+            "cells": [
+              "plot-core",
+              "plot-period",
+              "plot-two-questions",
+              "plot-histogram",
+              "plot-categories",
+              "plot-read",
+              "transfer-first-code",
+              "transfer-figures",
+              "transfer-plot-work",
+              "handoff"
+            ],
+            "finding": "새 커널에서 학생 예시의 그림 3개와 교사용 비교 그림을 렌더링했다. 새 히스토그램의 세로 눈금은 0과 1이며 유일한 최빈 범위가 없다는 설명이 정확하다. 공개 전이와 고정된 다른 자료에서 실제 빈도와 구역 평균도 일치했다. 교사용 네 패널 그림의 긴 오른쪽 축 문구는 1000×600 렌더에서 21.875픽셀 겹친다. 학생 예시와 표의 단위는 명료하며 교사 그림의 이 문구는 두 줄로 나누면 읽기 쉬워진다.",
+            "foundation": "한 표시의 자료와 분모를 짚는다. 학생이 두 질문에 쓸 그림·열·단위를 먼저 고른 뒤 필요할 때 실마리를 열어 선택과 구현을 구분할 수 있다.",
+            "ceiling": "분포와 범주 비교, 고정된 구간 경계와 세로 범위, 관측 수와 해석의 한계가 실전 목표에 맞는다.",
+            "workload": "수업 15분의 한 그림과 자습 70분의 두 조건 비교에 기존 표를 재사용한다. 5~7시간 전체 예산은 실제 학생 수행 전의 추정이다."
+          }
+        ]
+      },
+      "status": "open",
+      "number": 2,
+      "round_sha256": "f104987b599fa7a5278eabc1eb7ca3f24446ace3b403c20d7205b4e3f9785fe0",
+      "candidate_sha256": "1487703f78c55cadbea0ba892f1880fabefdd77a1a1d24d6bb152a180db83383",
+      "companions": {
+        "lessons/week01/week01_foundations_teacher.md": "3586f486052f1f7fae13a7f997d864e13b4fc41abfff17219a4418d9a89c979c",
+        "lessons/week01/data/foundations_returns.csv": "ece009210bb0ac473b988937f8ecd865f35355dc6d9c8718e3e8846e504daaaf",
+        "lessons/week01/data/foundations_boxes.csv": "471a80d0b99548c29a36331eb5ccad27d25ba7742f955a869687e7096c655635",
+        "lessons/week01/data/foundations_returns_transfer.csv": "47d719ce82e88acbe98ad175b1f827c8f7c76d22706bd8432344d86e3db6d7a6"
+      },
+      "author": "week01-new-author"
+    },
+    {
+      "required_topics": [
+        "W1-array",
+        "W1-python",
+        "W1-table",
+        "W1-visualise"
+      ],
+      "decisions": {
+        "W1-python": "pass",
+        "W1-table": "pass",
+        "W1-array": "pass",
+        "W1-visualise": "pass"
+      },
+      "reviews": {
+        "functional.json": "72562fdc3eb0542a0dec7101987071582540650d006e90c98776a6422535f386",
+        "joined.json": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+        "oracle.json": "cb2a49c8d48eaf2a7f1b0da740504c098ff28b1d4380c6b60912ea0f4af21578"
+      },
+      "adjudicated": [],
+      "reviewers": {
+        "W1-python": [
+          "joined-content-review",
+          "week01-independent-oracle"
+        ],
+        "W1-table": [
+          "independent-public-table-audit",
+          "joined-content-review",
+          "week01-independent-oracle"
+        ],
+        "W1-array": [
+          "joined-content-review",
+          "week01-independent-oracle"
+        ],
+        "W1-visualise": [
+          "joined-content-review",
+          "week01-independent-oracle"
+        ]
+      },
+      "bindings": {
+        "W1-python": "492f6c89ac7bc23c86953e91feb46e1a7f3f80a0216d25f6bacd31f2355e3d07",
+        "W1-table": "ae835bf91ceb00af91555877fe518bae7a3fb70f5c4970741666580acc40a71f",
+        "W1-array": "42900c9b74b253d9cf2f93ad04eb481929eef025396e03d77a05b1fe74d9920b",
+        "W1-visualise": "0a04d103f3b862e2a98870a261d916a074bad19f10cd79c7d1b34718632aabf3"
+      },
+      "findings": {
+        "W1-python": [
+          {
+            "reviewer": "joined-content-review",
+            "verdict": "pass",
+            "cells": [
+              "python-basics",
+              "return-story",
+              "trace-example",
+              "python-five",
+              "python-independent",
+              "independent-start",
+              "trace-independent"
+            ],
+            "finding": "공개 코드를 실행해 scan_batch→count_over의 books > limit TypeError와 last_box→code_at의 codes[position] IndexError를 모두 확인했다. 후자는 인덱스 2 대신 len-1을 쓰고 빈 입력을 따로 처리하는 새 과제다. 최종 28셀 실행에서 두 추적과 교사용 수정의 다른 입력 검산을 반복했다.",
+            "foundation": "0·None·빈 입력, 기준과 같은 값, 반환값을 다음 계산에 쓰는 과정부터 두 호출 프레임까지 이어진다. 별도 교사용 함수로 3개·1개·빈 목록을 다시 시험했다.",
+            "ceiling": "두 오류에서 호출 함수와 멈춘 연산을 찾고 다른 데이터로 함수를 고친다. 예외 구현이나 디버거 내부는 선수로 요구하지 않는다.",
+            "workload": "수업 20분·자습 90분에 포함된 진단과 재시도다. 첫 예상과 도움 여부를 보존한다. 실제 초보자에게 걸리는 시간은 미측정이다."
+          },
+          {
+            "reviewer": "week01-independent-oracle",
+            "verdict": "pass",
+            "cells": [
+              "python-basics",
+              "python-example",
+              "return-example",
+              "trace-example",
+              "python-five",
+              "python-independent",
+              "independent-start",
+              "trace-independent"
+            ],
+            "finding": "최종 보관본에서 TypeError와 IndexError의 두 실제 프레임을 각각 읽었다. 교사 풀이의 새 기준 횟수는 고정한 세 입력에서 2·4·0으로 독립 함수와 일치했다. 마지막 원소를 찾는 수정 예는 빈 목록·한 항목·세 항목의 반환값도 맞았다. 원본 실행만 한 상태에서 이 여백이 학생 풀이로 채워지는 일은 없었다.",
+            "foundation": "상태표와 작은 예제 뒤에 학생이 비교 경계를 바꾸고 실제로 반환값을 사용하는 문제를 둔다. 처음 틀린 줄과 그 줄을 호출한 곳을 찾아 고치는 연습으로 이어진다.",
+            "ceiling": "조건·반복·함수의 동작과 짧은 오류 추적이 실제 표 처리에 필요하다. 인터프리터 구현이나 일반 알고리즘 이론은 요구하지 않는다.",
+            "workload": "계획표의 20분 진단과 자습 90분 범위에서 예측, 실행, 실패 수정, 다른 입력 재시도를 한다. 4/5와 미달 보충 기준은 교사 해설에 제시되어 있다. 학생 시간은 미측정이다."
+          }
+        ],
+        "W1-table": [
+          {
+            "reviewer": "independent-public-table-audit",
+            "verdict": "pass",
+            "cells": [
+              "dictionary",
+              "load-csv",
+              "join-story",
+              "real-merge",
+              "join-key-example",
+              "transfer-data-work",
+              "transfer-faults",
+              "transfer-fault-work"
+            ],
+            "finding": "3회차 원본 학생 병합 셀과 교사용 함수로 기존 공개 대조 13개를 다시 통과했다. 두 추가 대조도 개별 실행했다. 실제 CSV의 station이 모두 빈 경우 이전에는 자료형 오류만 났으나 이제 T1~T8 여덟 행을 모두 미연결로 낸다. 양쪽 키에 직접 빈 문자열을 대입한 경우 T1을 미연결로 낸다. 정상 기준 4·6의 집계, 구역표 역순, 중복·미연결·열 누락 결과는 유지됐다. functional/round-0003.json 3203e92e03e56c84b266cc0c4a1e453b95bd0088d12f5d1207aa9846e8e45e0d, functional/missing-key-forms-0003.json 8834ea760525b6a00ac0548f2a6dcc3e24d0c45b9eccf3b8831f15fc642daea1.",
+            "foundation": "학생은 어떤 이름이 관측 행을 가리키고 어떤 키가 반납함을 가리키는지 자료사전에서 먼저 확인한다. 두 표에 알려진 같은 키가 있을 때만 구역을 배정하며, 새 과제에서 점심 조건과 하교 관측을 따로 선택해 분모를 설명한다. 교사용 풀이가 연결하지 못한 실제 행의 이름을 보여 준다.",
+            "ceiling": "문자형으로 맞추고 빈 이름을 제외하는 짧은 처리는 이미 쓰던 키 병합의 의미를 지킨다. 다른 병합 알고리즘이나 데이터베이스 이론을 추가로 배울 필요가 없다.",
+            "workload": "수업 45분과 자습 85분 편성을 확인했다. 이미 제시된 오류 점검에서 이름 해석을 바로잡았다. 두 표현을 비교한 추가 실행은 검토자의 교사용 해설 점검이다."
+          },
+          {
+            "reviewer": "joined-content-review",
+            "verdict": "pass",
+            "cells": [
+              "dictionary",
+              "join-story",
+              "join-key-example",
+              "group-story",
+              "transfer-table",
+              "transfer-data-work",
+              "transfer-faults",
+              "transfer-fault-work",
+              "load-csv",
+              "real-merge"
+            ],
+            "finding": "최종 공개 풀이를 두 차례 독립 실행했다. 물리 CSV의 왼쪽 키 전체·오른쪽 전체·양쪽 전체가 비면 각각 T1–T8을 보고한다. 동시에 빈 문자열과 미등록 키를 넣으면 T1·T2가 정확히 나온다. 정상·뒤집은 입력과 원래 하교 0, 유효 분모도 다시 확인했다.",
+            "foundation": "자료사전으로 시점을 정의하고 소표에서 키와 0·빈칸을 구별한다. 서로 다른 키 이름과 오른쪽 빈 키를 다루는 K1/K2 예시 후 다른 파일에 절차를 직접 작성한다. 첫 CSV 읽기에서 이름을 문자로 보존하고 양쪽 값을 같은 식별자 자료형으로 정리한 뒤 병합한다.",
+            "ceiling": "동일 기록 복제, 없는 키, 양쪽에서 빈 키의 가짜 연결, 관측 분모까지 검토한다. 모델 학습·숨겨진 라벨의 추정은 이 주차의 요구 범위 밖이다.",
+            "workload": "수업 45분·자습 85분 편성이다. 두 등록 파일의 행 순서를 바꾸는 하나의 과제가 이름 지정·오류·분모를 함께 다룬다. 실측은 없다."
+          },
+          {
+            "reviewer": "week01-independent-oracle",
+            "verdict": "pass",
+            "cells": [
+              "dictionary",
+              "load-csv",
+              "inspect-table",
+              "join-story",
+              "real-merge",
+              "join-key-example",
+              "transfer-table",
+              "transfer-data-work",
+              "transfer-faults",
+              "transfer-fault-work"
+            ],
+            "finding": "미리 고정한 새 표에서 조회 순서를 바꿔도 구역·유효 분모·평균이 맞았다. 결측(None·NaN·pd.NA), 직접 기입한 빈 문자열과 공백을 각각 미등록 키와 섞어도 정확한 원본 기록 이름을 보고했다. 반납함 열이 전부 빈 CSV는 선언된 문자형과 추론된 실수형 모두에서 001·002를 보존했다. 정상 입력에서는 007, 7, NA가 서로 다른 이름으로 연결됐고 관측 수량 0도 남았다.",
+            "foundation": "한 관찰 행, 자료형, 측정 시점과 0·빈칸부터 시작해 다른 이름의 키와 구역표를 붙인다. 학생은 본인 설계를 먼저 남긴 뒤 독립 책장 예시에서 left_on·right_on을 확인할 수 있다.",
+            "ceiling": "문자 식별자는 같은 규칙으로 비교하고 계수 열에는 손대지 않는다. 중복·미연결·빠진 열의 진단을 작은 예로 제한해 수치 분석을 위한 표 준비라는 목적에 맞는다.",
+            "workload": "수업 45분에 작은 원본을, 자습 85분에 새 자료와 키 오류를 다룬다. 문자 키 규칙은 앞자리 0과 하교 0을 구별하기 위한 짧은 보강이다. 새 학생 과제 추가 없이 같은 자료를 재사용한다."
+          }
+        ],
+        "W1-array": [
+          {
+            "reviewer": "joined-content-review",
+            "verdict": "pass",
+            "cells": [
+              "axis-picture",
+              "axis-check",
+              "reduce-period",
+              "broadcast-concept",
+              "array-lab",
+              "array-independent",
+              "math-independent"
+            ],
+            "finding": "손계산용 3×2에서 축별 [2,5], [4.5,4.5,1.5]. 다른 D/E/F에서 뷰/사본, 실패하는 길이 3과 (3,1) 보정, reshape와 전치의 [0,1] 값 4·3을 독립 재계산했다. 같은 최종 공개 입력 바이트와 변경된 교사용 파일에 대해 두 축·형태·내적 결과도 다시 계산했다.",
+            "foundation": "R1/R2 개관 열의 (합, 개수)가 (0,0)→(2,1)→(10,2)다. 종료 뒤 10/2=5와 틀린 분모 3을 대조하고 이어서 NumPy로 전체 축을 계산한다.",
+            "ceiling": "기본 인덱싱·복사·브로드캐스트·재배열·전치의 좌표 의미, 분산·내적과 단위까지 2차원 표와 짧은 1차원 벡터에서 끝낸다.",
+            "workload": "40분 수업·115분 자습 편성이다. 추가 설명은 기존 열을 재사용한다. 종이 예측과 변경한 수표 실험을 분리한다. 실제 수행 시간은 미측정이다."
+          },
+          {
+            "reviewer": "week01-independent-oracle",
+            "verdict": "pass",
+            "cells": [
+              "axis-picture",
+              "variance-bridge",
+              "axis-check",
+              "reduce-period",
+              "broadcast-concept",
+              "array-independent",
+              "math-concept",
+              "math-lab",
+              "math-independent"
+            ],
+            "finding": "최종 후보의 실제 평균식을 동결한 3×2 입력에 넣어 열별 [4,4]와 행별 [5,4,3], 남는 길이 2와 3을 재확인했다. 두 열의 모집단 분산, 부호가 섞인 내적, 전치와 reshape의 서로 다른 좌표 대응, 잘못된 크기의 덧셈과 복구도 독립 계산과 같았다.",
+            "foundation": "두 구간을 다른 방향으로 모으고 실제로 센 수를 분모에 놓는다. 같은 평균에서 퍼짐을 비교한 뒤 분류별 권수에 맞는 처리 시간을 곱해 합하는 내적을 연결한다.",
+            "ceiling": "비정사각 배열과 작은 값으로 인덱싱·뷰·복사·브로드캐스팅·형태 변경을 설명한다. 수식의 증명이나 뒤 주차의 모델 학습을 요구하지 않는다.",
+            "workload": "수업 40분의 대표 손계산과 자습 115분에 걸쳐 값, shape와 해석을 다시 대조한다. 3/4 목표와 미달 시 한 결과에 기여한 칸을 다시 찾는 보충 경로가 있다."
+          }
+        ],
+        "W1-visualise": [
+          {
+            "reviewer": "joined-content-review",
+            "verdict": "pass",
+            "cells": [
+              "plot-core",
+              "plot-two-questions",
+              "plot-histogram",
+              "plot-read",
+              "transfer-first-code",
+              "transfer-figures",
+              "transfer-plot-work",
+              "handoff"
+            ],
+            "finding": "새 파일 경로 외 설계 답이 없는 transfer-first-code가 열 수 있는 실마리보다 앞선다. 기준 4/6 히스토그램 높이 [2,1,1,0,0]/[2,1,0,0,0]와 East 0·West 13/3 및 3을 실제 그림의 오브젝트에서 대조했다. 공개 2×2 해설 그림을 Agg로 실제 렌더링해 모든 축·레이블이 그림 안에 있고 위아래 두 행의 외곽이 겹치지 않음을 확인했다.",
+            "foundation": "두 구간에 든 기록 수와 구역별 관측 평균에서 막대 하나가 나타내는 자료와 세로 단위를 구분한다. 수업 예시→중간 읽기→새 입력 설계 순서다.",
+            "ceiling": "두 질문에 맞는 그림·열·축·단위를 먼저 고르고 기준을 4에서 6으로 바꾼 결과를 실제 기록으로 설명한다. 인과효과와 국제 이변량 과제 해결은 주장하지 않는다.",
+            "workload": "수업 15분·자습 70분 편성이다. 같은 새 파일에서 첫 설계와 실마리 후 구현을 분리하고 도움을 기록한다. 실제 무도움 수행은 수집 전이다."
+          },
+          {
+            "reviewer": "week01-independent-oracle",
+            "verdict": "pass",
+            "cells": [
+              "plot-core",
+              "plot-period",
+              "plot-two-questions",
+              "plot-histogram",
+              "plot-categories",
+              "plot-read",
+              "transfer-first-code",
+              "transfer-figures",
+              "transfer-plot-work",
+              "handoff"
+            ],
+            "finding": "학생 예시 그림 3개와 교사용 2×2 비교 그림을 직접 렌더링해 살폈다. 공개 사례의 West 평균 13/3→3과 관측 수 3→2, 새 자료에서 값 하나를 보완했을 때의 빈도 및 평균 변화가 별도 집계와 일치했다. 교사 그림의 두 줄 축 문구는 1000×630 출력에서 위아래 겹침 0픽셀, 캔버스 위로 나간 길이 0픽셀이었다.",
+            "foundation": "한 막대에 들어간 관측부터 읽고, 별도 CSV에서는 어떤 값의 분포와 어느 집단의 평균을 비교할지 스스로 정한다. 첫 그림 설계와 실마리를 본 뒤 수정한 부분이 구별된다.",
+            "ceiling": "분포의 기록 수와 범주별 관측당 평균을 같은 원자료에서 검산한다. 두 조건의 동일 눈금과 결측 분모를 설명하는 수준이 1주차 실전 목표에 맞는다.",
+            "workload": "수업 15분, 자습 70분에 두 라이브러리로 실제 그림을 그리고 조건을 바꾼다. 같은 자료에서 두 질문을 던져 해석 시간을 확보한다. 편성 추정이다."
+          }
+        ]
+      },
+      "status": "reviewed",
+      "number": 3,
+      "round_sha256": "722ae526acfdf572f862002d52e2bb7747ecbbf70a3860609009fbacb867a793",
+      "candidate_sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+      "companions": {
+        "lessons/week01/week01_foundations_teacher.md": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484",
+        "lessons/week01/data/foundations_returns.csv": "ece009210bb0ac473b988937f8ecd865f35355dc6d9c8718e3e8846e504daaaf",
+        "lessons/week01/data/foundations_boxes.csv": "471a80d0b99548c29a36331eb5ccad27d25ba7742f955a869687e7096c655635",
+        "lessons/week01/data/foundations_returns_transfer.csv": "47d719ce82e88acbe98ad175b1f827c8f7c76d22706bd8432344d86e3db6d7a6"
+      },
+      "author": "week01-new-author"
+    },
+    {
+      "required_topics": [
+        "W1-array",
+        "W1-python",
+        "W1-table",
+        "W1-visualise"
+      ],
+      "decisions": {
+        "W1-python": "pass",
+        "W1-table": "pass",
+        "W1-array": "revise",
+        "W1-visualise": "pass"
+      },
+      "reviews": {
+        "functional.json": "1eaa7a4d0169c326cbc9f75b65abe494138f149c5b4d77dad4f1c7d50310d299",
+        "joined.json": "dfbfebee6a67762a49eac1f343e0a5c4ee17de7dd637c4d5daef220f499b84d2",
+        "oracle.json": "f4d014f17b3e74d947ee17324d8ab8498f3b336e4454f81b8efd2e241a93c48d"
+      },
+      "adjudicated": [],
+      "reviewers": {
+        "W1-python": [
+          "joined-content-review",
+          "week01-independent-formative-reader"
+        ],
+        "W1-table": [
+          "independent-public-table-audit",
+          "joined-content-review",
+          "week01-independent-formative-reader"
+        ],
+        "W1-array": [
+          "joined-content-review",
+          "week01-independent-formative-reader"
+        ],
+        "W1-visualise": [
+          "joined-content-review",
+          "week01-independent-formative-reader"
+        ]
+      },
+      "bindings": {
+        "W1-python": "6481faa31630df0f71298118d18c821155a516d95f2c2fe950401feca02eed5a",
+        "W1-table": "3d22c08cae8ed164f4d0638702a4a47aa01c441a2b7df28b11a64a81385450bd",
+        "W1-array": "d22bba6ed3eddacc309798c458e7a1ff2fad1d8cd95a674d80ecb7a464ee5a08",
+        "W1-visualise": "794160a51c9272b963768f11de8c3cff82c80675033fda6ca1298389465ddcb7"
+      },
+      "findings": {
+        "W1-python": [
+          {
+            "reviewer": "joined-content-review",
+            "verdict": "pass",
+            "cells": [
+              "python-basics",
+              "python-example",
+              "trace-example",
+              "python-five",
+              "python-independent",
+              "independent-start",
+              "trace-independent"
+            ],
+            "finding": "공개 입력에서 초과와 이상 함수의 다른 반환, 인덱스 오류의 호출/실패 줄, 0·1·3개 이름 목록에 대한 수정 함수의 결과를 재실행했다.",
+            "foundation": "변수·조건·반복·반환을 앞에서 정의한 뒤 [0,None,4,7]의 hits를 직접 추적한다. 새 입력에 같은 값을 포함하는 경계와 []·[None]·[0]의 행동, 오류의 실제 실패 연산을 확인한다.",
+            "ceiling": "함수 호출·실패 표현식과 반환값을 다시 쓰는 정도에 머문다. 언어 구현을 요구하지 않는다.",
+            "workload": "수업 20분, 자습 상한 90분. 빈 답에 첫 계산·도움·수정을 분리하는 다섯 장을 사용한다. 학생 시간은 추정만 있다."
+          },
+          {
+            "reviewer": "week01-independent-formative-reader",
+            "verdict": "pass",
+            "cells": [
+              "python-example",
+              "return-story",
+              "trace-example",
+              "python-five",
+              "python-independent",
+              "independent-start",
+              "trace-independent"
+            ],
+            "finding": "경계 포함 함수의 빈 목록·0·누락 결과 0, 1, 0을 확인했다. 마지막 항목은 두 개, 한 개, 빈 목록에서 각각 C, A, 미정으로 복구할 수 있었다. 예시 출력만으로 전체 독립 카드에 답할 수 없다.",
+            "foundation": "조건을 거쳐 누적한 값과 화면의 출력을 먼저 구별한다. 빈칸, 관측한 0, 기준과 같은 값, 음수 기준에서 함수 수정이 실제로 필요한지 확인한다. 고장 난 인덱스를 찾은 뒤 정상 입력과 빈 목록으로 재시험한다.",
+            "ceiling": "주어진 데이터의 조건·반복·반환·오류 줄 추적까지이며 내부 구현이나 고급 예외 설계를 요구하지 않는다.",
+            "workload": "20분 수업의 진단 중 파일 문항은 CSV를 실제로 열 때 이어 해결한다. 90분 자습에 경계 입력과 마지막 항목 함수를 확인하는 일이 남아 있다. 도우미를 다시 본 학생을 기록할 수 있다."
+          }
+        ],
+        "W1-table": [
+          {
+            "reviewer": "independent-public-table-audit",
+            "verdict": "pass",
+            "cells": [
+              "dictionary",
+              "join-story",
+              "real-merge",
+              "join-key-example",
+              "transfer-data-work",
+              "transfer-faults",
+              "transfer-fault-work"
+            ],
+            "finding": "공개 수업용 세 CSV와 이번 회차의 실제 학생 병합 셀 및 교사용 함수를 독립 실행했다. 원본 구역표 순서를 뒤집은 결과와 새 표 기준 4·6의 실제 행·분모·합·평균, 누락 열, 중복·미연결 및 양측 null 등 기존 13개 대조와 추가 2개를 모두 통과했다. station 전부를 비운 실제 CSV에서 T1~T8 미연결을 모두 보고했고 양쪽 빈 문자열 편집에서는 T1을 보고했다. 근거: public-tables-0004.json 869beeaade9c4100e78c21da9ad9fec9c94cf7c2d7bff9f02a93fd899ffbfd42, missing-key-forms-0004.json f6a0f65e57ee29b2d93ec80f3748afb2c132dfb8931dbf8b9a9c00e77b6ae8f3 (week01-replacement-20261118/workload).",
+            "foundation": "관측의 이름과 위치표에서 값을 찾는 키의 역할을 구분하고, 필터에 쓴 점심 권수와 평균의 분모에 쓴 하교 관측을 구별한다. 표를 붙이지 못한 경우 관측의 실제 이름으로 돌아간다.",
+            "ceiling": "문자열 정리·빈 키 제외와 행 수 대조를 이미 배운 표의 구체적 의미에 연결한다. 새 표에서 필요한 검증을 스스로 선택할 수 있다.",
+            "workload": "표 주제 편성은 수업 45분·공통 자습 60분이다. 각 입력에 대한 검토자의 15개 회귀 실행은 학생 과제가 아니다. 전체 경로의 시간 모형은 별도의 분량 장부에서 평가한다."
+          },
+          {
+            "reviewer": "joined-content-review",
+            "verdict": "pass",
+            "cells": [
+              "dictionary",
+              "weighting-principle",
+              "class-transfer",
+              "load-csv",
+              "join-key-example",
+              "transfer-table",
+              "transfer-faults",
+              "transfer-data-work",
+              "transfer-fault-work"
+            ],
+            "finding": "물리 CSV의 반납함 열이 모두 빈 경우 T1–T8을 정확히 알렸다. 보충 첫 예 M07/M12와 새 예 J2 및 중복 G2가 영향을 주는 J9를 독립 검산했다. 본교안의 링크와 돌아오는 merge-recheck 표지가 존재한다.",
+            "foundation": "첫 행·식별자·측정 시점을 정의한다. 정류장별 관측 수가 불균등할 때 6.75분(승객)과 8.5분(자료가 있는 정류장)이 나오는 새 질문에서 분모와 빠진 곳을 설명한다.",
+            "ceiling": "열의 이름과 값이 변한 파일을 직접 검사하고, 중복 조회키와 미연결 ID를 식별한 뒤 실제 관측만 집계한다. 학습 모델을 요구하지 않는다.",
+            "workload": "필수 수업 45분, 해당 주제 자습 60분. 재검사가 필요한 경우만 별도 보충 및 본교안 복귀 13~25분을 쓴다. 실제 시간은 수집 전이다."
+          },
+          {
+            "reviewer": "week01-independent-formative-reader",
+            "verdict": "pass",
+            "cells": [
+              "dictionary",
+              "weighting-principle",
+              "class-transfer",
+              "join-story",
+              "real-merge",
+              "transfer-table",
+              "transfer-data-work",
+              "transfer-faults",
+              "transfer-fault-work"
+            ],
+            "finding": "8행의 ID와 구역은 파일 순서를 각각 뒤집어도 유지되었다. 서로 다른 키 삭제 후 영향받는 ID를 각각 확인하고 정상 복구했다. 복구 경로에서는 새 기록 중 J9의 중복 위치와 J2의 미연결을 확인하고 3행을 유지했다. 학생은 다른 반납함으로 복귀 검산을 한다.",
+            "foundation": "원자료 한 행과 질문에서 한 번씩 셀 대상을 따로 정한다. 승객당 6.75분과 정류장당 8.5분이 같은 자료에서 나오는 이유를 개별 관측 수·장소 수로 설명하게 한다. 결측인 장소의 무게와 관측한 0을 구별한다.",
+            "ceiling": "원래 계획대로 열 선택·결측·집계·키 결합을 새 CSV에 적용한다. 키 원인을 찾지 못할 때만 복구 자료에 들어가고, 다시 자기 함수로 다른 반납함을 시험한다. 모델·분할 구현은 이 경로에 필요하지 않다.",
+            "workload": "행별 기준을 점검하던 반복과 두 번째 수업 그림을 줄여 비중 판단에 6~8분을 배정했다. 표의 수업 45분, 본 자습 60분과 필요시 25분 복구는 원래 한도에 들어간다. 실측 학생 시간은 없다."
+          }
+        ],
+        "W1-array": [
+          {
+            "reviewer": "joined-content-review",
+            "verdict": "revise",
+            "cells": [
+              "axis-picture",
+              "axis-check",
+              "numpy-core",
+              "math-concept",
+              "array-lab",
+              "array-independent",
+              "math-lab",
+              "math-independent"
+            ],
+            "finding": "원자료에서 게시판 [[1,3,2],[4,0,5]], 팀 점수 [-5,9,-4]와 틀린 가중치의 [10,-6,11]은 맞다. 그러나 초안의 array-lab은 같은 입력에 두 질문을 묻고 math-lab은 복사·보정·분산으로 이동한다. 입력을 실제로 바꾼 뒤 자신이 고른 두 출력·좌표·점수 변화를 다시 연결해 확인할 평가가 빠져 있다.",
+            "foundation": "행·열과 xᵢⱼ, 축약 대상·분모·모양, 분산·내적의 단위 및 항목 대응을 일반 용어로 정의한다. 다른 쓰임의 경기표에서 같은 3×2로 게시판 2×3과 점수 길이 3을 선택하는 첫 답이 있다.",
+            "ceiling": "기본 배열과 실수 벡터의 좌표·단위·연산까지 적절하다. 고차원 증명이나 모델 학습을 더할 필요는 없다.",
+            "workload": "수업 40분, 자습 상한 115분. 같은 독립 문제에서 한 값을 바꾸고 두 결과의 어느 칸만 변하는지 재검사하면 시간 추가를 작게 유지할 수 있다."
+          },
+          {
+            "reviewer": "week01-independent-formative-reader",
+            "verdict": "revise",
+            "cells": [
+              "array-lab",
+              "array-independent",
+              "math-lab",
+              "math-independent"
+            ],
+            "finding": "현재 지시대로 처음 게시판과 원점수를 제출한 뒤 사본에서 D의 첫 횟수만 수정하고 뷰의 공유 여부를 답하면 모든 문항을 끝낼 수 있다. 그 학생은 자신이 선택한 두 결과 중 어느 좌표와 어느 점수가 바뀌는지 예상하거나 재계산할 필요가 없다. 실제로 1회를 11회로 바꾸면 게시판의 해당 칸 하나와 D의 −5점→25점만 바뀐다. 교사용 코드도 최초 두 결과와 사본 수정 검사를 따로 실행한다. 변경 입력에서 선택한 방법을 재확인한다는 동결된 평가를 충족하려면 이 두 작업이 학생 요구에서 이어져야 한다.",
+            "foundation": "기호를 좌표·단위·남는 축과 연결했고, 처음 보는 경기표에서 게시판과 팀별 점수라는 서로 다른 결과를 연산 이름을 주기 전에 설계한다. 비정사각 배열의 축별 평균, 같은 평균과 다른 분산, 모양만 맞는 잘못된 게시판 및 순서가 다른 규정의 위험을 확인했다.",
+            "ceiling": "작은 수표의 좌표·차원과 가중합이면 충분하다. 손으로 재배치하거나 NumPy 배열을 반복하는 풀이도 글과 코드가 원래 좌표·단위를 보존하면 인정한다.",
+            "workload": "40분 수업·115분 자습에서 기존 교정값을 재사용할 수 있다. 현재 교정 활동에 결과를 다시 계산해 볼 한 문장을 연결하면 추가 자료나 단원이 필요하지 않다."
+          }
+        ],
+        "W1-visualise": [
+          {
+            "reviewer": "joined-content-review",
+            "verdict": "pass",
+            "cells": [
+              "plot-core",
+              "plot-two-questions",
+              "plot-histogram",
+              "plot-categories",
+              "plot-read",
+              "transfer-first-code",
+              "transfer-figures",
+              "transfer-plot-work",
+              "handoff"
+            ],
+            "finding": "새 CSV의 기준 4/6에서 히스토그램 [2,1,1,0,0]/[2,1,0,0,0], West 13/3→3을 실제 그려진 높이에서 확인했다. 네 축의 눈금과 레이블도 겹치거나 잘리지 않는다.",
+            "foundation": "원래 기록 수준의 분포와 구역별 관측 평균을 따로 정의하고 각 표시·빈도·권수 단위를 되짚는다. 새 자료와 질문에서 실마리를 열기 전에 무엇을 쓸지 고른다.",
+            "ceiling": "Matplotlib·Seaborn 각각의 실제 출력과 조건별 비교·관찰 해석을 요구한다. 인과결과를 계획된 과제로 세지 않는다.",
+            "workload": "수업 15분·자습 상한 70분. 수업에서 같은 그림을 복제하던 활동을 빼고 조건 변경 그래프 구현은 자습에 배치했다. 실제 독립 시간은 미측정이다."
+          },
+          {
+            "reviewer": "week01-independent-formative-reader",
+            "verdict": "pass",
+            "cells": [
+              "plot-core",
+              "plot-period",
+              "plot-two-questions",
+              "plot-read",
+              "transfer-first-code",
+              "transfer-figures",
+              "transfer-plot-work",
+              "handoff"
+            ],
+            "finding": "학생 예제의 세 그림과 시간 기준별 두 종류의 독립 그림을 실행했다. 빈도 그림을 구간 중앙의 점, 구역 평균을 Seaborn 점으로 바꿔도 두 세로 단위와 원자료 검산이 보존된다. 참고 도움 여부를 구분해 제출한다.",
+            "foundation": "빈도는 구간에 속하는 기록 수, 구역 평균은 실제 관측한 기록당 권수다. 첫 설계에서는 실마리 전에 각 그림의 열·축·단위·표시 하나의 의미를 적는다.",
+            "ceiling": "분포와 범주 요약의 수량을 정확히 보여 주면 표시 형태는 선택하게 한다. 인과 추정이나 신뢰구간 교육을 전제하지 않는다.",
+            "workload": "15분 수업에서 실제 원자료와 표시 한 개를 연결하고 70분 자습에서 바뀐 두 조건을 동일 눈금으로 비교한다. 수업 그림의 반복을 자습의 독립 제작으로 대체했다."
+          }
+        ]
+      },
+      "status": "open",
+      "number": 4,
+      "round_sha256": "773157bdfa9a4eadb86f5aa5ea6ccb86512814fd02af270ee719f23c001d45c3",
+      "candidate_sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+      "companions": {
+        "lessons/week01/week01_foundations_teacher.md": "aa7fdace6fd8c1b98e0cb863c4a69b6ca3c9eedd1035eb460ebda6971088ce13",
+        "lessons/week01/data/foundations_returns.csv": "ece009210bb0ac473b988937f8ecd865f35355dc6d9c8718e3e8846e504daaaf",
+        "lessons/week01/data/foundations_boxes.csv": "471a80d0b99548c29a36331eb5ccad27d25ba7742f955a869687e7096c655635",
+        "lessons/week01/data/foundations_returns_transfer.csv": "47d719ce82e88acbe98ad175b1f827c8f7c76d22706bd8432344d86e3db6d7a6"
+      },
+      "author": "week01-new-author"
+    }
+  ],
+  "errors": [
+    "Unresolved topic judgments"
+  ],
+  "ready": false,
+  "scope": "Independent material judgments and planned workload; learner outcomes unmeasured.",
+  "subject_round": 4,
+  "subject_sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+  "manifest": {
+    "id": "review:topic-depth",
+    "revision": "topic-depth-v1",
+    "sha256": "e1ffd6e8d6ae435d58d53025d3dbea50b79075c2a37a06b00aeeede71846965c"
+  },
+  "reopened_by_basis": []
+}

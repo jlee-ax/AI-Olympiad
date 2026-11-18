@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "stage": "candidate",
+  "contract_sha256": "e3b261f7c3b3be60219f8ba941e05abce18a7bfaa29475cf11b9078abb6cff90",
+  "round_sha256": "773157bdfa9a4eadb86f5aa5ea6ccb86512814fd02af270ee719f23c001d45c3",
+  "candidate_sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+  "reviewer": "independent-public-table-audit",
+  "topics": {
+    "W1-table": {
+      "verdict": "pass",
+      "cells": [
+        "dictionary",
+        "join-story",
+        "real-merge",
+        "join-key-example",
+        "transfer-data-work",
+        "transfer-faults",
+        "transfer-fault-work"
+      ],
+      "foundation": "관측의 이름과 위치표에서 값을 찾는 키의 역할을 구분하고, 필터에 쓴 점심 권수와 평균의 분모에 쓴 하교 관측을 구별한다. 표를 붙이지 못한 경우 관측의 실제 이름으로 돌아간다.",
+      "ceiling": "문자열 정리·빈 키 제외와 행 수 대조를 이미 배운 표의 구체적 의미에 연결한다. 새 표에서 필요한 검증을 스스로 선택할 수 있다.",
+      "workload": "표 주제 편성은 수업 45분·공통 자습 60분이다. 각 입력에 대한 검토자의 15개 회귀 실행은 학생 과제가 아니다. 전체 경로의 시간 모형은 별도의 분량 장부에서 평가한다.",
+      "finding": "공개 수업용 세 CSV와 이번 회차의 실제 학생 병합 셀 및 교사용 함수를 독립 실행했다. 원본 구역표 순서를 뒤집은 결과와 새 표 기준 4·6의 실제 행·분모·합·평균, 누락 열, 중복·미연결 및 양측 null 등 기존 13개 대조와 추가 2개를 모두 통과했다. station 전부를 비운 실제 CSV에서 T1~T8 미연결을 모두 보고했고 양쪽 빈 문자열 편집에서는 T1을 보고했다. 근거: public-tables-0004.json 869beeaade9c4100e78c21da9ad9fec9c94cf7c2d7bff9f02a93fd899ffbfd42, missing-key-forms-0004.json f6a0f65e57ee29b2d93ec80f3748afb2c132dfb8931dbf8b9a9c00e77b6ae8f3 (week01-replacement-20261118/workload).",
+      "companion_spans": [
+        {
+          "path": "lessons/week01/week01_foundations_teacher.md",
+          "lines": [
+            178,
+            205
+          ]
+        },
+        {
+          "path": "lessons/week01/week01_foundations_teacher.md",
+          "lines": [
+            207,
+            213
+          ]
+        }
+      ]
+    }
+  }
+}
