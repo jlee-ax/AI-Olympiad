@@ -16,8 +16,8 @@ jobs:
         run: python -B tools/topic_depth.py check --root . > "$RUNNER_TEMP/week01-depth.json"
       - run: >-
           python -m pip install
-          'nbformat>=5,<6' 'nbclient>=0.10,<0.11' 'ipykernel>=6,<8' 'nbconvert>=7,<8'
-          'matplotlib==3.10.8' 'seaborn==0.13.2' 'numpy==2.3.5' 'pandas==2.2.3'
+          'nbformat>=5,<6' 'nbclient>=0.10,<0.11' 'ipykernel>=6,<8' 'nbconvert>=7,<8' 'mistune>=3,<4'
+          'matplotlib==3.10.8' 'seaborn==0.13.2' 'numpy==2.3.5' 'pandas==2.2.3' 'scikit-learn==1.8.0'
       - run: python -B -m unittest discover -s tests -q
       - run: >-
           python -B reviews/week01-depth-20261118/execute_lesson.py
@@ -30,3 +30,18 @@ jobs:
           reviewed_round="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["subject_round"])' "$RUNNER_TEMP/week01-depth.json")"
           python -B "$case_dir/functional/check_public_tables.py" --root . --round "$reviewed_round"
           python -B "$case_dir/functional/check_missing_key_forms.py" --root . --round "$reviewed_round"
+          python -B reviews/week01-replacement-20261118/workload/check_repair_route.py --round "$reviewed_round"
+      - name: Verify public student navigation, activity budgets and documented review findings
+        shell: bash
+        run: |
+          case_dir=reviews/week01-replacement-20261118
+          python -B tools/lesson_route.py inspect --root . --route "$case_dir/route.json" --incumbent "$case_dir/incumbent.json"
+          python -B "$case_dir/workload/verify.py" "$case_dir/workload/replacement.json"
+          python -B "$case_dir/workload/verify.py" "$case_dir/workload/incumbent.json"
+          python -B "$case_dir/joined/replay.py" --verify
+      - name: Execute the candidate and historical student routes in separate Jupyter kernels
+        shell: bash
+        run: |
+          case_dir=reviews/week01-replacement-20261118
+          python -B "$case_dir/run_route.py" "$case_dir/route.json" --transport subprocess
+          python -B "$case_dir/run_route.py" "$case_dir/incumbent.json" --transport subprocess
