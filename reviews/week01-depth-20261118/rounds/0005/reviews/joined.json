@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "stage": "candidate",
+  "contract_sha256": "e3b261f7c3b3be60219f8ba941e05abce18a7bfaa29475cf11b9078abb6cff90",
+  "round_sha256": "f7988c0fb0f521eb032692a40be29ba8be6e7161798324de20899758570b46f5",
+  "candidate_sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+  "reviewer": "joined-content-review",
+  "topics": {
+    "W1-python": {
+      "verdict": "pass",
+      "cells": [
+        "python-basics",
+        "python-example",
+        "trace-example",
+        "python-five",
+        "python-independent",
+        "independent-start",
+        "trace-independent"
+      ],
+      "foundation": "변수·조건·반복·반환을 앞에서 정의한 뒤 [0,None,4,7]의 hits를 직접 추적한다. 새 입력에 같은 값을 포함하는 경계와 []·[None]·[0]의 행동, 오류의 실제 실패 연산을 확인한다.",
+      "ceiling": "함수 호출·실패 표현식과 반환값을 다시 쓰는 정도에 머문다. 언어 구현을 요구하지 않는다.",
+      "workload": "수업 20분, 주제 자습 배정 90분. 첫 계산·도움·수정을 분리하는 다섯 장을 사용한다. 실제 시간은 미측정이다.",
+      "finding": "공개 입력에서 초과와 이상 함수의 다른 반환, 인덱스 오류의 호출/실패 줄, 0·1·3개 이름 목록에 대한 수정 함수의 결과를 재실행했다."
+    },
+    "W1-table": {
+      "verdict": "pass",
+      "cells": [
+        "dictionary",
+        "weighting-principle",
+        "class-transfer",
+        "load-csv",
+        "join-key-example",
+        "transfer-table",
+        "transfer-faults",
+        "transfer-data-work",
+        "transfer-fault-work"
+      ],
+      "foundation": "첫 행·식별자·측정 시점을 정의한다. 정류장별 관측 수가 불균등할 때 6.75분(승객)과 8.5분(자료가 있는 정류장)이 나오는 새 질문에서 분모와 빠진 곳을 설명한다.",
+      "ceiling": "열의 이름과 값이 변한 파일을 직접 검사하고, 중복 조회키와 미연결 ID를 식별한 뒤 실제 관측만 집계한다. 학습 모델을 요구하지 않는다.",
+      "workload": "수업 45분, 이 주제 필수 자습 배정 60분. 판별 오류가 있는 학생은 별도 식별자 연습 뒤 본교안으로 돌아온다. 보충에는 계획상 25분을 배정했고 실제 학생 시간은 아직 없다.",
+      "finding": "물리 CSV의 반납함 열이 모두 빈 경우 T1–T8을 정확히 알렸다. 보충 첫 예 M07/M12와 새 예 J2 및 중복 G2가 영향을 주는 J9를 독립 검산했다. 본교안의 링크와 돌아오는 merge-recheck 표지가 존재한다."
+    },
+    "W1-array": {
+      "verdict": "pass",
+      "cells": [
+        "axis-picture",
+        "axis-check",
+        "numpy-core",
+        "math-concept",
+        "array-lab",
+        "array-independent",
+        "math-lab",
+        "math-independent"
+      ],
+      "foundation": "행·열과 xᵢⱼ, 축약 대상·분모·모양, 분산·내적의 단위 및 항목 대응을 일반 용어로 정의한다. 다른 쓰임의 경기표에서 같은 3×2로 게시판 2×3과 점수 길이 3을 선택하는 첫 답이 있다.",
+      "ceiling": "기본 배열과 실수 벡터의 좌표·단위·연산까지 적절하다. 고차원 증명이나 모델 학습을 더할 필요는 없다.",
+      "workload": "수업 40분, 주제 자습 배정 115분 안에서 같은 표의 한 값을 고친 뒤 두 출력을 재검사한다. 실제 소요 시간은 학생 기록 전이다.",
+      "finding": "게시판과 팀 점수의 연산·모양을 독립 선택한 다음 math-lab에서 F의 벌점 5→2를 먼저 예측하고 검산한다. 공개 재실행에서 게시판 [1,2]는 5→2, F 점수는 −4→2였다. 별도로 E의 성공 횟수 3→1을 넣자 게시판 [0,1]은 3→1, E 점수는 9→3이었고, 다른 칸·점수와 원자료는 유지됐다. 교사용 예도 같은 결과를 보인다."
+    },
+    "W1-visualise": {
+      "verdict": "pass",
+      "cells": [
+        "plot-core",
+        "plot-two-questions",
+        "plot-histogram",
+        "plot-categories",
+        "plot-read",
+        "transfer-first-code",
+        "transfer-figures",
+        "transfer-plot-work",
+        "handoff"
+      ],
+      "foundation": "원래 기록 수준의 분포와 구역별 관측 평균을 따로 정의하고 각 표시·빈도·권수 단위를 되짚는다. 새 자료와 질문에서 실마리를 열기 전에 무엇을 쓸지 고른다.",
+      "ceiling": "Matplotlib·Seaborn 각각의 실제 출력과 조건별 비교·관찰 해석을 요구한다. 인과결과를 계획된 과제로 세지 않는다.",
+      "workload": "수업 15분, 주제 자습 배정 70분. 새로운 조건의 두 그림을 구현하고 바뀐 수치를 해석하는 연습은 자습에 있다. 실제 독립 시간은 미측정이다.",
+      "finding": "새 CSV의 기준 4/6에서 히스토그램 [2,1,1,0,0]/[2,1,0,0,0], West 13/3→3을 실제 그려진 높이에서 확인했다. 네 축의 눈금과 레이블도 겹치거나 잘리지 않는다."
+    }
+  }
+}

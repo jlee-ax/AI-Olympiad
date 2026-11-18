@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "stage": "candidate",
+  "reviewer": "week01-independent-formative-reader",
+  "contract_sha256": "e3b261f7c3b3be60219f8ba941e05abce18a7bfaa29475cf11b9078abb6cff90",
+  "round_sha256": "f7988c0fb0f521eb032692a40be29ba8be6e7161798324de20899758570b46f5",
+  "candidate_sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+  "topics": {
+    "W1-python": {
+      "verdict": "pass",
+      "cells": [
+        "python-example",
+        "return-example",
+        "trace-example",
+        "python-five",
+        "python-independent",
+        "independent-start",
+        "trace-independent"
+      ],
+      "foundation": "함수 안의 상태, 관측한 0과 결측, 반환된 값을 이용한 다음 계산을 실제 코드로 확인한다. 새 입력에서 경계 포함 조건을 고치고 실패한 호출의 인덱스가 어디서 생겼는지 추적한다.",
+      "ceiling": "짧은 계산과 오류 복구를 수행하는 데 필요한 언어 기능에 집중한다. 앞 예제를 다시 본 경우를 첫 독립 시도와 구별한다.",
+      "workload": "수업 20분에 다섯 장의 진단을 시작하고 CSV 항목은 실제 파일을 여는 순서에 배치한다. 자습 90분 안에서 실패한 유형과 경계 입력을 다시 확인할 수 있는 편성이다.",
+      "finding": "원고 전체를 새 프로세스에서 다시 실행했다. 관측한 0, 빈 목록과 미관측 목록에 맞게 반환된 수는 1, 0, 0이다. 기준값과 같은 자료와 음수 기준, 빈 코드 목록도 독립 함수로 확인했다. QA 실행을 학생의 진단 정답률로 환산하지 않았다."
+    },
+    "W1-table": {
+      "verdict": "pass",
+      "cells": [
+        "dictionary",
+        "weighting-principle",
+        "class-transfer",
+        "join-story",
+        "real-merge",
+        "transfer-table",
+        "transfer-data-work",
+        "transfer-faults",
+        "transfer-fault-work"
+      ],
+      "foundation": "한 행의 관측과 질문에서 같은 비중을 줄 대상을 나누고, 같은 자료가 두 답으로 이어지는 원인을 분자·분모와 함께 적는다. 새 CSV에서 행의 키·특성·목표·자료형·결측을 직접 정리해 조인한다.",
+      "ceiling": "관측의 합·개수와 유효 분모, 고유 키와 미연결 ID가 핵심이다. 심화된 중복/빈 키 복구는 실패가 있을 때만 열고 다른 키로 본 과제에 복귀한다.",
+      "workload": "공통 표 자습 60분에 복구가 필요한 경우만 최대 25분이 더해지는 배정이다. 되풀이했던 오류 파일과 수업 그림을 줄여 판단 작업에 시간을 쓴다.",
+      "finding": "한 자료에서 관측마다 센 평균 6.75분과 장소마다 센 평균 8.5분을 재현했고 전체 분모가 0이면 미정이었다. 별도 키 맵을 쓴 풀이로 8행 모두 보존했고 두 파일의 순서를 뒤집어도 같은 기록이 같은 구역에 붙었다. 새 보충 자료를 끝낸 뒤 다른 반납함의 미연결 기록까지 확인했다."
+    },
+    "W1-array": {
+      "verdict": "pass",
+      "cells": [
+        "axis-picture",
+        "variance-bridge",
+        "axis-check",
+        "math-concept",
+        "array-lab",
+        "array-independent",
+        "math-lab",
+        "math-independent"
+      ],
+      "foundation": "일반식의 각 축과 좌표를 행·열·관측 단위에 대입하고, 직사각 입력에서 두 방향 평균과 출력 길이를 검산한다. 경기 기록에서는 같은 수표로 원횟수 게시판과 최종 점수를 만들 방법을 학생이 먼저 정한다.",
+      "ceiling": "손 재배치와 배열 순회 방식으로도 올바른 좌표와 점수를 모두 계산할 수 있다. 다른 점수 순서나 단순 모양 변경이 왜 틀리는지 한 좌표 또는 한 팀으로 반증하면 된다.",
+      "workload": "40분 수업과 115분 자습의 배열 예산을 유지한다. 기존 사본 교정과 두 번째 뷰 조작을 분리해 반복하는 자리에 정정 예측·두 결과 재실행을 넣었으므로 새 사례를 따로 풀 필요가 없다.",
+      "finding": "R4에서 학생이 건너뛸 수 있던 단계가 두 답칸과 재실행 요구로 들어왔다. 원자료 [2,1]의 5→2회를 사본에만 적용하자 게시판 [1,2]만 3회 줄고 F 점수는 −4→2점으로 6점 올랐다. 다른 팀의 점수와 두 출력 모양은 유지되며 원자료는 5였다. 전치 행렬을 손으로 재배치하고 항목별 점수를 반복해 합한 풀이로도 같은 결과를 확인했다."
+    },
+    "W1-visualise": {
+      "verdict": "pass",
+      "cells": [
+        "plot-core",
+        "plot-period",
+        "plot-two-questions",
+        "plot-read",
+        "transfer-first-code",
+        "transfer-figures",
+        "transfer-plot-work",
+        "handoff"
+      ],
+      "foundation": "한 구간에 들어간 기록 수와 한 구역의 관측당 평균을 다른 축 단위로 읽고 표시 하나를 원자료와 연결한다. 새 파일에서 먼저 목표, 축, 단위와 표시를 기록하고 뒤에 실마리를 열 수 있다.",
+      "ceiling": "작은 집단의 관측 범위와 해석이 가능한 분포 비교에 머문다. 고정 구간의 빈도와 관측 평균을 나타내는 점과 막대 모두 허용한다.",
+      "workload": "15분 수업에서 표와 한 그림을 연결하고 70분 자습에서 두 라이브러리를 실제로 써서 다른 조건을 비교한다. 학생마다 도움을 받은 시점과 시간은 별도로 남긴다.",
+      "finding": "Matplotlib 구간 중앙 점과 Seaborn 구역 평균 점으로 독립 구현해 네 패널을 렌더링했다. 두 기준의 빈도 합이 실제 하교 측정 수와 일치하고 West의 분모 3→2도 설명할 수 있었다. 교사용 막대 그림과 학생의 대체 표시가 같은 질문에 답했다."
+    }
+  }
+}

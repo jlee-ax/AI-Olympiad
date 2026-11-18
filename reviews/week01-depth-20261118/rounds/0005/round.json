@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "author": "week01-new-author",
+  "contract_sha256": "e3b261f7c3b3be60219f8ba941e05abce18a7bfaa29475cf11b9078abb6cff90",
+  "previous": "773157bdfa9a4eadb86f5aa5ea6ccb86512814fd02af270ee719f23c001d45c3",
+  "prior_reviews": {
+    "functional.json": "1eaa7a4d0169c326cbc9f75b65abe494138f149c5b4d77dad4f1c7d50310d299",
+    "joined.json": "dfbfebee6a67762a49eac1f343e0a5c4ee17de7dd637c4d5daef220f499b84d2",
+    "oracle.json": "f4d014f17b3e74d947ee17324d8ab8498f3b336e4454f81b8efd2e241a93c48d"
+  },
+  "candidate_sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+  "companions": [
+    {
+      "path": "lessons/week01/week01_foundations_teacher.md",
+      "snapshot": "reviews/week01-depth-20261118/rounds/0005/inputs/week01_foundations_teacher.md",
+      "sha256": "081068e0233ef3eb102b0db0c0b4efeba2464c8d1973a1a5ebbb73823788bb8b"
+    },
+    {
+      "path": "lessons/week01/data/foundations_returns.csv",
+      "snapshot": "reviews/week01-depth-20261118/rounds/0001/inputs/foundations_returns.csv",
+      "sha256": "ece009210bb0ac473b988937f8ecd865f35355dc6d9c8718e3e8846e504daaaf"
+    },
+    {
+      "path": "lessons/week01/data/foundations_boxes.csv",
+      "snapshot": "reviews/week01-depth-20261118/rounds/0001/inputs/foundations_boxes.csv",
+      "sha256": "471a80d0b99548c29a36331eb5ccad27d25ba7742f955a869687e7096c655635"
+    },
+    {
+      "path": "lessons/week01/data/foundations_returns_transfer.csv",
+      "snapshot": "reviews/week01-depth-20261118/rounds/0001/inputs/foundations_returns_transfer.csv",
+      "sha256": "47d719ce82e88acbe98ad175b1f827c8f7c76d22706bd8432344d86e3db6d7a6"
+    }
+  ],
+  "topics": {
+    "W1-python": {
+      "class": [
+        "python-basics",
+        "python-example",
+        "return-story",
+        "return-example",
+        "trace-example",
+        "python-five",
+        "python-independent"
+      ],
+      "homework": [
+        "independent-start",
+        "trace-independent"
+      ],
+      "optional": [],
+      "support": [
+        "python-basics",
+        "python-example",
+        "return-story",
+        "return-example",
+        "trace-example"
+      ],
+      "assessment": [
+        "python-five",
+        "python-independent",
+        "independent-start",
+        "trace-independent"
+      ],
+      "prerequisite_uses": {},
+      "minutes": {
+        "class": 20,
+        "homework": 90,
+        "optional": 0
+      }
+    },
+    "W1-table": {
+      "class": [
+        "opening",
+        "dictionary",
+        "table-card",
+        "written-card",
+        "csv-open",
+        "load-csv",
+        "inspect-table",
+        "audit-csv",
+        "select-table",
+        "select-csv",
+        "missing-error",
+        "column-error",
+        "table-independent",
+        "weighting-principle",
+        "class-transfer"
+      ],
+      "homework": [
+        "join-story",
+        "real-merge",
+        "join-key-example",
+        "group-story",
+        "group-example",
+        "transfer-brief",
+        "transfer-table",
+        "transfer-data-work",
+        "transfer-faults",
+        "transfer-fault-work"
+      ],
+      "optional": [],
+      "support": [
+        "dictionary",
+        "csv-open",
+        "inspect-table",
+        "weighting-principle",
+        "join-story",
+        "join-key-example"
+      ],
+      "assessment": [
+        "table-card",
+        "table-independent",
+        "class-transfer",
+        "transfer-data-work",
+        "transfer-fault-work"
+      ],
+      "prerequisite_uses": {
+        "W1-python": "load-csv"
+      },
+      "minutes": {
+        "class": 45,
+        "homework": 60,
+        "optional": 0
+      }
+    },
+    "W1-array": {
+      "class": [
+        "axis-picture",
+        "variance-bridge",
+        "axis-check",
+        "numpy-core",
+        "reduce-period",
+        "class-independent"
+      ],
+      "homework": [
+        "index-view",
+        "view-example",
+        "broadcast-concept",
+        "broadcast-example",
+        "reshape-concept",
+        "reshape-example",
+        "math-concept",
+        "math-example",
+        "array-lab",
+        "array-independent",
+        "math-lab",
+        "math-independent"
+      ],
+      "optional": [],
+      "support": [
+        "axis-picture",
+        "variance-bridge",
+        "numpy-core",
+        "broadcast-concept",
+        "math-concept"
+      ],
+      "assessment": [
+        "axis-check",
+        "class-independent",
+        "array-lab",
+        "array-independent",
+        "math-lab",
+        "math-independent"
+      ],
+      "prerequisite_uses": {
+        "W1-table": "axis-picture"
+      },
+      "minutes": {
+        "class": 40,
+        "homework": 115,
+        "optional": 0
+      }
+    },
+    "W1-visualise": {
+      "class": [
+        "plot-core",
+        "plot-period"
+      ],
+      "homework": [
+        "plot-two-questions",
+        "plot-histogram",
+        "plot-categories",
+        "plot-read",
+        "transfer-first-code",
+        "transfer-figures",
+        "transfer-plot-work",
+        "handoff"
+      ],
+      "optional": [],
+      "support": [
+        "plot-core",
+        "plot-period",
+        "plot-two-questions"
+      ],
+      "assessment": [
+        "transfer-first-code",
+        "transfer-figures",
+        "transfer-plot-work",
+        "handoff"
+      ],
+      "prerequisite_uses": {
+        "W1-table": "plot-core"
+      },
+      "minutes": {
+        "class": 15,
+        "homework": 70,
+        "optional": 0
+      }
+    }
+  },
+  "changes": [
+    {
+      "topic": "W1-array",
+      "action": "integrate a changed-input prediction and independent recheck",
+      "reason": "앞 회차에서 두 검토자 모두 발견한 결함을 보정했다. 기존 복사본의 한 값이 바뀔 때 스스로 선택한 두 결과에서 달라질 위치·값·단위와 유지될 모양을 먼저 예측한 뒤 같은 절차를 다시 실행한다. 원자료 보존도 확인한다.",
+      "alternative": "별도의 문제와 새 API를 덧붙이지 않고 이미 편성된 정정 추적에서 중복 실습을 대체했다."
+    },
+    {
+      "topic": "W1-python",
+      "action": "retain and recheck",
+      "reason": "함수 반환·입력 경계·오류 복구에 해당하는 학생 활동은 그대로다. 교사용 파일이 바뀌어 전체 경로에서 다시 확인한다.",
+      "alternative": "해당 활동에 새 연습을 붙여도 배열의 변경 입력 결함을 해결하지 못한다."
+    },
+    {
+      "topic": "W1-table",
+      "action": "retain and recheck",
+      "reason": "기록 단위와 산술 분모·새 CSV 결합 및 조건부 복귀에 해당하는 학생 활동은 그대로다. 교사용 파일이 바뀌어 전체 경로에서 다시 확인한다.",
+      "alternative": "해당 활동에 새 연습을 붙여도 배열의 변경 입력 결함을 해결하지 못한다."
+    },
+    {
+      "topic": "W1-visualise",
+      "action": "retain and recheck",
+      "reason": "분포·범주별 그림 선택과 새 자료 확인에 해당하는 학생 활동은 그대로다. 교사용 파일이 바뀌어 전체 경로에서 다시 확인한다.",
+      "alternative": "해당 활동에 새 연습을 붙여도 배열의 변경 입력 결함을 해결하지 못한다."
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "id": "week01-from-blank-fifth-manuscript",
+  "week": 1,
+  "entry": "lessons/week01/week01_foundations.ipynb",
+  "depth": {
+    "case": "reviews/week01-depth-20261118",
+    "round": 5
+  },
+  "files": {
+    "lessons/week01/week01_foundations.ipynb": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+    "lessons/week01/week01_foundations_repair.ipynb": "8b0f1b4e672adb8214524c243eade54024e888d710a7875def09cc4d7b527df9",
+    "lessons/week01/week01_foundations_teacher.md": "081068e0233ef3eb102b0db0c0b4efeba2464c8d1973a1a5ebbb73823788bb8b",
+    "lessons/week01/data/foundations_returns.csv": "ece009210bb0ac473b988937f8ecd865f35355dc6d9c8718e3e8846e504daaaf",
+    "lessons/week01/data/foundations_boxes.csv": "471a80d0b99548c29a36331eb5ccad27d25ba7742f955a869687e7096c655635",
+    "lessons/week01/data/foundations_returns_transfer.csv": "47d719ce82e88acbe98ad175b1f827c8f7c76d22706bd8432344d86e3db6d7a6"
+  },
+  "units": [
+    {
+      "id": "u01",
+      "path": "lessons/week01/week01_foundations.ipynb",
+      "cells": [
+        "opening",
+        "dictionary",
+        "table-card",
+        "axis-picture",
+        "variance-bridge",
+        "axis-check",
+        "written-card",
+        "python-basics",
+        "python-example",
+        "return-story",
+        "return-example",
+        "trace-example",
+        "python-five",
+        "python-independent",
+        "csv-open",
+        "load-csv",
+        "inspect-table",
+        "audit-csv",
+        "select-table",
+        "select-csv",
+        "missing-error",
+        "column-error",
+        "table-independent",
+        "numpy-core",
+        "reduce-period",
+        "plot-core",
+        "plot-period",
+        "weighting-principle",
+        "class-transfer",
+        "class-independent"
+      ],
+      "status": "required",
+      "reason": "수업에서 손으로 예측하고 표의 측정 단위·분모·축과 함수 상태를 확인한다.",
+      "class_minutes": 120,
+      "class_range": [
+        120,
+        120
+      ],
+      "homework_minutes": 0,
+      "homework_range": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "u02",
+      "path": "lessons/week01/week01_foundations.ipynb",
+      "cells": [
+        "independent-start",
+        "trace-independent",
+        "index-view",
+        "view-example",
+        "broadcast-concept",
+        "broadcast-example",
+        "reshape-concept",
+        "reshape-example",
+        "math-concept",
+        "math-example",
+        "array-lab",
+        "array-independent",
+        "math-lab",
+        "math-independent",
+        "join-story",
+        "real-merge",
+        "join-key-example",
+        "group-story",
+        "group-example",
+        "plot-two-questions",
+        "plot-histogram",
+        "plot-categories",
+        "plot-read",
+        "transfer-brief",
+        "transfer-first-code",
+        "transfer-table",
+        "transfer-data-work"
+      ],
+      "status": "required",
+      "reason": "오류 추적, 배열·수식 및 경기표와 점수, 표 결합·그림 읽기를 연습한 뒤 새 파일의 역할·연산·그림을 스스로 정하고 실행한다. 첫 풀이 뒤 표에 관한 선택 실마리 하나를 열 수 있다.",
+      "class_minutes": 0,
+      "class_range": [
+        0,
+        0
+      ],
+      "homework_minutes": 270,
+      "homework_range": [
+        154,
+        292
+      ]
+    },
+    {
+      "id": "u03",
+      "path": "lessons/week01/week01_foundations.ipynb",
+      "cells": [
+        "transfer-faults",
+        "transfer-fault-work",
+        "transfer-figures",
+        "transfer-plot-work",
+        "handoff"
+      ],
+      "status": "required",
+      "reason": "새 자료의 누락 열과 잘못된 연결을 시험하고 복원한다. 새 그림·해석과 재실행을 마친다. 첫 설계 뒤 그림에 관한 선택 실마리 하나를 열 수 있다.",
+      "class_minutes": 0,
+      "class_range": [
+        0,
+        0
+      ],
+      "homework_minutes": 65,
+      "homework_range": [
+        46,
+        89
+      ]
+    },
+    {
+      "id": "u04",
+      "path": "lessons/week01/week01_foundations_repair.ipynb",
+      "cells": [
+        "repair-when",
+        "repair-predict",
+        "repair-read",
+        "repair-trace",
+        "repair-duplicates",
+        "repair-restore",
+        "repair-match",
+        "repair-return",
+        "repair-fresh"
+      ],
+      "status": "conditional",
+      "reason": "중복 이름이나 연결 실패의 영향을 받는 실제 기록 ID를 첫 시도에서 찾지 못한 학생만 들어간다. 별도 자료로 바로잡고 원래 과제로 돌아와 다른 키로 재검사한다.",
+      "class_minutes": 0,
+      "class_range": [
+        0,
+        0
+      ],
+      "homework_minutes": 25,
+      "homework_range": [
+        22,
+        44
+      ]
+    }
+  ],
+  "links": [
+    {
+      "from": "u03",
+      "cell": "transfer-faults",
+      "to": "u04",
+      "href": "week01_foundations_repair.ipynb"
+    },
+    {
+      "from": "u04",
+      "cell": "repair-return",
+      "to": "u03",
+      "href": "week01_foundations.ipynb#merge-recheck"
+    }
+  ],
+  "companions": {
+    "lessons/week01/week01_foundations.ipynb": {
+      "teacher": [
+        "lessons/week01/week01_foundations_teacher.md"
+      ],
+      "data": [
+        "lessons/week01/data/foundations_returns.csv",
+        "lessons/week01/data/foundations_boxes.csv",
+        "lessons/week01/data/foundations_returns_transfer.csv"
+      ]
+    },
+    "lessons/week01/week01_foundations_repair.ipynb": {
+      "teacher": [
+        "lessons/week01/week01_foundations_teacher.md"
+      ],
+      "data": []
+    }
+  },
+  "timing": "수업 편성 120분, 자습 공통 335분 이내와 필요 시 보충 예비분 25분을 잡았다. 독립 과업별 편성 모형에서 자습 공통 200~373분, 복구 한 번까지 222~417분, 두 종류의 선택 실마리까지 모두 열면 226~425분이다. 개별 학생 시간은 관찰하지 않았다. 단원 범위는 각 실마리의 선택 비용을 포함한다.",
+  "overrun": "복구와 두 선택 실마리를 모두 이용하면 독립 견적 상단 425분이 과정 상한 420분을 5분 넘는다. 도움이 필요한 학생 모두가 한도 내에 끝난다는 판단은 보류한다."
+}

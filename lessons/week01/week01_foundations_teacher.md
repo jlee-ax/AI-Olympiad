@@ -14,7 +14,7 @@
 
 |필수 자습 묶음|계획상 한도|실제 할 일과 예상 범위|
 |---|---:|---|
-|문법·배열|150분|함수 오류 복구, 인덱싱·공유·브로드캐스팅·모양 조작, 독립 경기표와 점수. 연산명이 적힌 두 번째 전치·내적 문항을 두 요청의 선택 문제로 교체했다. 약 135~150분.|
+|문법·배열|150분|함수 오류 복구, 인덱싱·공유·브로드캐스팅·모양 조작, 독립 경기표와 점수. 두 요청에 쓸 연산을 고르고, 기존 사본 정정에서 두 결과를 함께 재검산한다. 원본과 사본을 차례로 같은 값으로 고치는 이중 실험을 대신한다. 약 135~150분.|
 |시각화|70분|두 라이브러리 그림, 첫 선택 근거, 기준 변경 해석. 약 60~70분.|
 |새 CSV|80분|읽기·집계·병합·한 곳을 뺀 실제 ID 확인은 약 55분. 여러 고장 자료를 모두 만들어 보는 반복 대신 어려움이 생겼을 때만 쓰는 복구 여유 25분을 포함한다.|
 |수학·새 세션 점검|60분|분산·단위·점수 손계산을 검산하고 새 세션에서 재실행한다. 약 50~60분. 같은 손계산을 두 묶음에 중복 산입하지 않는다.|
@@ -124,9 +124,11 @@ assert pd.isna(per_stop["다"])
 |항목별 게시판|[[1, 3, 2], [4, 0, 5]], (2, 3), 단위 회. 원자료 E의 통과는 [1, 0]의 3회이므로 게시판 [0, 1]로 간다. `reshape(2, 3)`도 모양은 같지만 [0, 1]에 D의 경계선 횟수 4를 넣는다.|
 |팀별 최종 점수|자료 열이 통과·경계 순서이므로 가중치는 [3, −2]점/회다. 팀별 항목 기여는 D [3, −8], E [9, 0], F [6, −10]점이다. 합은 [−5, 9, −4]점이고 모양은 (3,)이다. 규정 순서를 그대로 붙이면 [10, −6, 11]점이다. E는 통과만 3회여서 이 잘못된 부호를 쉽게 잡는다.|
 
+`math-lab`에서는 실행 전에 두 결과를 각각 예측했는지 본다. F의 경계선 5→2회는 원자료 [2, 1]에서 게시판 [1, 2]로 간다. 게시판은 [[1, 3, 2], [4, 0, 2]]로 한 칸만 3회 줄고 모양 (2, 3)은 같다. F의 감점이 −10점에서 −4점으로 바뀌므로 총점은 −4점에서 2점으로 **6점 오른다**. 나머지 두 팀은 그대로여서 새 점수는 [−5, 9, 2]점, 모양 (3,)이다. 예측·정정 사본의 실제 재실행·설명이 두 요청 모두에 있어야 이 확인을 마친다.
+
 손으로 열을 재배치하거나 반복문으로 항목별 기여를 더해도 좌표·순서·단위가 같으면 수용한다. 작업 대상이 팀이면 팀별 값이 남는다는 설명을 확인한다. 합에 가중치 수를 나눈 답은 총점 요구와 다르다.
 
-- F 경계선 한 칸은 5회, shape ()다. E 한 행은 [3, 0], (2,)이고 경계선만 한 열로 고르면 [[4], [0], [5]], (3, 1)이다. 원본 첫 열의 뷰를 고치면 D 통과 횟수도 11이 되지만 독립 사본만 고치면 원본은 1이다.
+- F 경계선 한 칸은 5회, shape ()다. E 한 행은 [3, 0], (2,)이고 경계선만 한 열로 고르면 [[4], [0], [5]], (3, 1)이다. 사본의 F 경계선만 5→2로 고치면 원자료 [2, 1]은 5로 유지된다. 원본 열의 뷰에서 고치면 초기 5를 보존할 수 없다.
 - 항목별 보정 결과는 [[1, 6], [3, 2], [2, 7]], 팀별 보정 결과는 [[2, 5], [5, 2], [5, 8]]이다. 팀별 보정은 (3, 1) 모양으로 세 팀과 대응시킨다.
 - P와 Q의 통과 횟수 합은 각각 9회, 관측 수는 3, 평균은 3회다. 평균과 차이는 [−3, 0, 3], [−1, 0, 1]이다. 제곱합 18·2를 3으로 나누면 각각 6회², 2/3회²이다. Q의 기록이 더 고르다.
 
@@ -134,21 +136,28 @@ assert pd.isna(per_stop["다"])
 notice = np.array([[1, 4], [3, 0], [2, 5]])
 printed_rule = np.array([-2, 3])
 aligned = printed_rule[[1, 0]]
-board = notice.T
-scores = np.array([np.dot(team, aligned) for team in notice])
+def outputs_for(records, weights):
+    team_scores = np.array([np.dot(team, weights) for team in records])
+    return records.T, team_scores
+
+board, scores = outputs_for(notice, aligned)
 print(board, board.shape, scores, scores.shape)
 assert board[0, 1] == notice[1, 0] == 3
 assert notice.reshape(2, 3)[0, 1] == 4
 assert scores.tolist() == [-5, 9, -4]
 for part in (notice[2, 1], notice[1, :], notice[:, 1:2]):
     print(part, part.shape)
-working = notice.copy()
-saved = working[:, 0].copy()
-saved[0] = 11
-assert working[0, 0] == 1
-view = working[:, 0]
-view[0] = 11
-assert working[0, 0] == 11
+corrected = notice.copy()
+corrected[2, 1] = 2
+new_board, new_scores = outputs_for(corrected, aligned)
+print(new_board, new_board.shape, new_scores, new_scores.shape)
+assert board.shape == new_board.shape == (2, 3)
+assert scores.shape == new_scores.shape == (3,)
+assert notice[2, 1] == board[1, 2] == 5
+assert np.shares_memory(notice, notice[:, 1]) and not np.shares_memory(notice, corrected)
+assert new_board[1, 2] == 2 and np.count_nonzero(new_board != board) == 1
+assert new_scores.tolist() == [-5, 9, 2]
+assert (new_scores - scores).tolist() == [0, 0, 6]
 print(notice + np.array([0, 2]))
 print(notice + np.array([1, 2, 3]).reshape(3, 1))
 for trials in ([0, 3, 6], [2, 3, 4]):

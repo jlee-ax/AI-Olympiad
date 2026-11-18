@@ -1,0 +1,96 @@
+{
+  "id": "week01-from-blank-fifth-manuscript",
+  "week": 1,
+  "route_sha256": "b97c1e36a9ba5b096beaf588dc33a17dad8884a0b71990455c68583788151bf1",
+  "entry": "lessons/week01/week01_foundations.ipynb",
+  "normal_entry": {
+    "plan": "curriculum/student-plan.html",
+    "plan_sha256": "78d743c33d91c958d33dd36e994dc00507d78edecb3f30b986fed4109cc2521e",
+    "href": "https://github.com/jlee-ax/AI-Olympiad/blob/codex/week01-depth-review-20261118/lessons/week01/week01_foundations.ipynb",
+    "basis": "link names the current working branch"
+  },
+  "units": {
+    "u01": "required",
+    "u02": "required",
+    "u03": "required",
+    "u04": "conditional"
+  },
+  "depth_sha256": "9613a330ddda9cd3388c194cd3e20bf4c88102c364809bee078604074fd585c2",
+  "round_path": "reviews/week01-depth-20261118/rounds/0005/round.json",
+  "minutes": {
+    "class": {
+      "required": 120,
+      "conditional": 0,
+      "deferred": 0
+    },
+    "homework": {
+      "required": 335,
+      "conditional": 25,
+      "deferred": 0
+    }
+  },
+  "ranges": {
+    "class": {
+      "required": [
+        120,
+        120
+      ],
+      "conditional": [
+        0,
+        0
+      ],
+      "deferred": [
+        0,
+        0
+      ]
+    },
+    "homework": {
+      "required": [
+        200,
+        381
+      ],
+      "conditional": [
+        22,
+        44
+      ],
+      "deferred": [
+        0,
+        0
+      ]
+    }
+  },
+  "complete_ranges": true,
+  "planned_limits": {
+    "class": 120,
+    "homework": [
+      300,
+      420
+    ]
+  },
+  "budget": "overrun",
+  "overrun": "복구와 두 선택 실마리를 모두 이용하면 독립 견적 상단 425분이 과정 상한 420분을 5분 넘는다. 도움이 필요한 학생 모두가 한도 내에 끝난다는 판단은 보류한다.",
+  "shorter_homework_reason": null,
+  "incumbent": {
+    "id": "week1-incumbent",
+    "week": 1,
+    "route_sha256": "8898c6db79ec224644658ed2c7513288ee264e0aaf6b2cac4d9042a72bc7f175",
+    "entry": "lessons/week01/week01_integrated.ipynb",
+    "normal_entry": {
+      "plan": "curriculum/student-plan.html",
+      "plan_sha256": "c60063bf1c55b957f4b6271a0796d5301d9f209de28a91d468c0c20e72fa0133",
+      "href": "https://github.com/jlee-ax/AI-Olympiad/blob/codex/week01-jupyter-lesson/lessons/week01/week01_integrated.ipynb",
+      "basis": "archived curriculum plan and entry blob (old named branch unavailable locally)"
+    },
+    "units": {
+      "u01": "required",
+      "u02": "required",
+      "u03": "conditional",
+      "u04": "required",
+      "u05": "conditional",
+      "u06": "conditional"
+    },
+    "timing": "수업 계획은 120분이고 기존 주차표의 필수 자습 계획은 5~7시간이다. 통합 과정에서 더해진 영역 응용과 여러 노트북의 필수 과제를 합친 전체 시간은 기존 교사용 해설에 미측정으로 명시돼 있다.",
+    "basis_commit": "607c56eb71fded982805987d74a6609aeee4c3fc"
+  },
+  "status": "route_verified"
+}

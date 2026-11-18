@@ -1,0 +1,57 @@
+{
+  "route_sha256": "b97c1e36a9ba5b096beaf588dc33a17dad8884a0b71990455c68583788151bf1",
+  "transport": "inprocess",
+  "versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.8",
+    "seaborn": "0.13.2",
+    "scikit-learn": "1.8.0",
+    "ipykernel": "7.4.0"
+  },
+  "notebooks": [
+    {
+      "notebook": "lessons/week01/week01_foundations.ipynb",
+      "sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+      "saved_outputs_cleared_in_memory": 0,
+      "code_cells": 28,
+      "figures": [
+        {
+          "cell": "plot-period",
+          "width": 540,
+          "height": 290,
+          "sha256": "124d6c2ded7e0ea2db3e5a19074b0835f76c677d580dd358dbb4cdb72796a4fe"
+        },
+        {
+          "cell": "plot-histogram",
+          "width": 540,
+          "height": 290,
+          "sha256": "bbc8d47118e21cde9ca968f82b5f7b85cfab1566e5c63f7ea2a3f601bbf0fcaf"
+        },
+        {
+          "cell": "plot-categories",
+          "width": 540,
+          "height": 290,
+          "sha256": "27cd2e2488783506e4a1670dbfd423fc0985fc93d793f632a825e9488d3429f6"
+        }
+      ],
+      "status": "executed",
+      "changed_student_files": [],
+      "data": {
+        "lessons/week01/data/foundations_returns.csv": "ece009210bb0ac473b988937f8ecd865f35355dc6d9c8718e3e8846e504daaaf",
+        "lessons/week01/data/foundations_boxes.csv": "471a80d0b99548c29a36331eb5ccad27d25ba7742f955a869687e7096c655635",
+        "lessons/week01/data/foundations_returns_transfer.csv": "47d719ce82e88acbe98ad175b1f827c8f7c76d22706bd8432344d86e3db6d7a6"
+      }
+    },
+    {
+      "notebook": "lessons/week01/week01_foundations_repair.ipynb",
+      "sha256": "8b0f1b4e672adb8214524c243eade54024e888d710a7875def09cc4d7b527df9",
+      "saved_outputs_cleared_in_memory": 0,
+      "code_cells": 4,
+      "figures": [],
+      "status": "executed",
+      "changed_student_files": [],
+      "data": {}
+    }
+  ]
+}

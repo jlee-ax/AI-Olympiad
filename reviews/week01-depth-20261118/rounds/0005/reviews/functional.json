@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "stage": "candidate",
+  "contract_sha256": "e3b261f7c3b3be60219f8ba941e05abce18a7bfaa29475cf11b9078abb6cff90",
+  "round_sha256": "f7988c0fb0f521eb032692a40be29ba8be6e7161798324de20899758570b46f5",
+  "candidate_sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+  "reviewer": "independent-public-table-audit",
+  "topics": {
+    "W1-table": {
+      "verdict": "pass",
+      "cells": [
+        "dictionary",
+        "join-story",
+        "real-merge",
+        "join-key-example",
+        "transfer-data-work",
+        "transfer-faults",
+        "transfer-fault-work"
+      ],
+      "foundation": "관측의 이름과 위치표에서 값을 찾는 키의 역할을 구분하고, 필터에 쓴 점심 권수와 평균의 분모에 쓴 하교 관측을 구별한다. 표를 붙이지 못한 경우 관측의 실제 이름으로 돌아간다.",
+      "ceiling": "문자열 정리·빈 키 제외와 행 수 대조를 이미 배운 표의 구체적 의미에 연결한다. 새 표에서 필요한 검증을 스스로 선택할 수 있다.",
+      "workload": "표 주제 편성은 수업 45분·공통 자습 60분이다. 각 입력에 대한 검토자의 15개 회귀 실행은 학생 과제가 아니다. 전체 경로의 시간 모형은 별도의 분량 장부에서 평가한다.",
+      "finding": "5회차 원본 코드와 공개 CSV에서 기존 표 대조 13개와 결측 키 추가 대조 2개를 다시 통과했다. station이 모두 빈 파일에서 T1~T8, 양쪽 빈 문자열에서 T1을 보고했다. 조건부 학생 보충의 네 코드 셀도 빈 상태에서 모두 실행했다. 새 자료에서 G2의 충돌이 J9에 영향을 주고 점검 뒤 J2만 미연결로 남았다. 본문으로 돌아와 A를 뺐을 때 T2·T4·T7, 다른 B를 뺐을 때 T1·T5였고 복원 뒤 전부 다시 연결됐다. 일반 표와 보충 결과의 파일명·SHA-256은 public-tables-0005.json 11d0623fd5b8cc7169b4ebfd3cf790bd7db1ba04ca4ffdeb2957ee7e5e5ae693, missing-key-forms-0005.json e6445113b7af24e06c86ba305517918dac674993aeb47ecc914be2f9c26584c6, recovery-route-0005.json 2d4cf1b849654c59854dd3377c91827bbf6b0b12e6852b6cead4b9bf457a463b (week01-replacement-20261118/workload).",
+      "companion_spans": [
+        {
+          "path": "lessons/week01/week01_foundations_teacher.md",
+          "lines": [
+            187,
+            214
+          ]
+        },
+        {
+          "path": "lessons/week01/week01_foundations_teacher.md",
+          "lines": [
+            216,
+            222
+          ]
+        }
+      ]
+    }
+  }
+}
