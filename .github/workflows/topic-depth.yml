@@ -1,0 +1,32 @@
+name: Review registered lesson depth
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  reviewed-lesson:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check the reviewed lesson and its evidence
+        run: python -B tools/topic_depth.py check --root . > "$RUNNER_TEMP/week01-depth.json"
+      - run: >-
+          python -m pip install
+          'nbformat>=5,<6' 'nbclient>=0.10,<0.11' 'ipykernel>=6,<8' 'nbconvert>=7,<8'
+          'matplotlib==3.10.8' 'seaborn==0.13.2' 'numpy==2.3.5' 'pandas==2.2.3'
+      - run: python -B -m unittest discover -s tests -q
+      - run: >-
+          python -B reviews/week01-depth-20261118/execute_lesson.py
+          lessons/week01/week01_foundations.ipynb --data lessons/week01/data
+          --report "$RUNNER_TEMP/week01-kernel.json" --transport subprocess
+      - name: Check the student merge and the teacher solution on normal and missing inputs
+        shell: bash
+        run: |
+          case_dir=reviews/week01-depth-20261118
+          reviewed_round="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["subject_round"])' "$RUNNER_TEMP/week01-depth.json")"
+          python -B "$case_dir/functional/check_public_tables.py" --root . --round "$reviewed_round"
+          python -B "$case_dir/functional/check_missing_key_forms.py" --root . --round "$reviewed_round"
