@@ -1,0 +1,231 @@
+{
+  "reference_commit": "d886411d9ddbce4de3e41232a62d37d126b788cc",
+  "purpose": "Isolate control behavior using declared synthetic fixture reviews; no lesson or learner approval.",
+  "source_sha256": {
+    "tools/quality.py": "03f24f7e9b89979e30facf258f8c8f9f358b1aca2de876a1adae5e058f0fc96b",
+    "tools/discovery_loop.py": "2273d1e9a47aff0dc038f0379837c908cb84a559d3e31e3a026f5a7c189d0914",
+    "tools/workflow.py": "11dc7a916d00a3b67528b63f7d6b02a74e9b895972f7ce56ec540d245b54872b",
+    "tests/test_quality.py": "9e014db3e73f9c70fd7cef511dca9d163da54ceed6fd46be3cd3ee821fee406a",
+    "tests/test_discovery_loop.py": "37769245571fda651caa7f816a9e96a88a36227a290d00a5b11d51f6e765f2fa"
+  },
+  "cases": [
+    {
+      "case": "baseline_untested_learning_outcomes",
+      "synthetic_control": true,
+      "ready_for_review": true,
+      "statuses": {
+        "K01": "passed",
+        "K02": "passed",
+        "K03": "passed",
+        "K04": "passed",
+        "K05": "passed",
+        "K06": "passed",
+        "K07": "passed",
+        "K08": "passed",
+        "K09": "passed",
+        "K10": "passed",
+        "K11": "passed",
+        "K12": "passed",
+        "K13": "passed",
+        "K14": "passed",
+        "K15": "passed",
+        "K16": "passed"
+      },
+      "findings": []
+    },
+    {
+      "case": "lesson_design_without_learner_response",
+      "synthetic_control": true,
+      "ready_for_review": false,
+      "statuses": {
+        "K01": "passed",
+        "K02": "passed",
+        "K03": "passed",
+        "K04": "not_run",
+        "K05": "passed",
+        "K06": "passed",
+        "K07": "passed",
+        "K08": "passed",
+        "K09": "passed",
+        "K10": "passed",
+        "K11": "passed",
+        "K12": "passed",
+        "K13": "passed",
+        "K14": "passed",
+        "K15": "passed",
+        "K16": "passed"
+      },
+      "findings": [
+        {
+          "criterion": "K04",
+          "status": "not_run"
+        }
+      ]
+    },
+    {
+      "case": "lesson_design_without_per_unit_calibration",
+      "synthetic_control": true,
+      "ready_for_review": false,
+      "statuses": {
+        "K01": "passed",
+        "K02": "passed",
+        "K03": "passed",
+        "K04": "passed",
+        "K05": "passed",
+        "K06": "passed",
+        "K07": "passed",
+        "K08": "passed",
+        "K09": "passed",
+        "K10": "passed",
+        "K11": "passed",
+        "K12": "passed",
+        "K13": "passed",
+        "K14": "passed",
+        "K15": "not_run",
+        "K16": "passed"
+      },
+      "findings": [
+        {
+          "criterion": "K15",
+          "status": "not_run"
+        }
+      ]
+    },
+    {
+      "case": "controls_correct_without_agreed_calibration_tolerance",
+      "synthetic_control": true,
+      "ready_for_review": false,
+      "statuses": {
+        "K01": "passed",
+        "K02": "passed",
+        "K03": "passed",
+        "K04": "passed",
+        "K05": "passed",
+        "K06": "passed",
+        "K07": "passed",
+        "K08": "passed",
+        "K09": "passed",
+        "K10": "passed",
+        "K11": "passed",
+        "K12": "passed",
+        "K13": "passed",
+        "K14": "passed",
+        "K15": "uncertain",
+        "K16": "passed"
+      },
+      "findings": [
+        {
+          "criterion": "K15",
+          "status": "uncertain"
+        }
+      ]
+    },
+    {
+      "case": "introductory_stage_for_practical_syllabus_topic",
+      "synthetic_control": true,
+      "ready_for_review": false,
+      "statuses": {
+        "K01": "passed",
+        "K02": "failed",
+        "K03": "passed",
+        "K04": "passed",
+        "K05": "passed",
+        "K06": "passed",
+        "K07": "passed",
+        "K08": "passed",
+        "K09": "passed",
+        "K10": "passed",
+        "K11": "passed",
+        "K12": "passed",
+        "K13": "passed",
+        "K14": "passed",
+        "K15": "passed",
+        "K16": "passed"
+      },
+      "findings": [
+        {
+          "criterion": "K02",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "case": "unsupported_learning_improvement_claim",
+      "synthetic_control": true,
+      "ready_for_review": false,
+      "statuses": {
+        "K01": "passed",
+        "K02": "passed",
+        "K03": "passed",
+        "K04": "passed",
+        "K05": "passed",
+        "K06": "passed",
+        "K07": "passed",
+        "K08": "passed",
+        "K09": "passed",
+        "K10": "passed",
+        "K11": "passed",
+        "K12": "passed",
+        "K13": "passed",
+        "K14": "passed",
+        "K15": "failed",
+        "K16": "passed"
+      },
+      "findings": [
+        {
+          "criterion": "K15",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "case": "background_question_blocks_otherwise_ready_material",
+      "synthetic_control": true,
+      "before_ready": true,
+      "after_ready": false,
+      "blockers": [
+        {
+          "code": "frontier_unresolved",
+          "id": "probe:background-extension"
+        },
+        {
+          "code": "frontier_no_demands_requires_review",
+          "id": "probe:background-extension"
+        }
+      ],
+      "next_action": "discover_original_sources"
+    },
+    {
+      "case": "discovered_gap_has_no_selected_edit_and_blocks_workflow",
+      "synthetic_control": true,
+      "all_registered_K01_K16_pass": true,
+      "discovery_queue": [
+        {
+          "demand_id": "demand:absent-capability",
+          "statement": "Missing capability beyond registered units.",
+          "reasons": [
+            "dimension_learning_gap",
+            "dimension_assessment_gap",
+            "gap"
+          ],
+          "next_action": "research_or_refine_and_recompare",
+          "affected": [
+            "demand:absent-capability",
+            "probe:external",
+            "unit:foundation"
+          ]
+        }
+      ],
+      "quality_plan": {
+        "status": "continue",
+        "reason": "discovery_unresolved",
+        "next_candidate": null,
+        "next_discovery_action": "research_or_refine_and_recompare"
+      },
+      "workflow_decision": {
+        "status": "blocked",
+        "reason": "discovery_unresolved"
+      }
+    }
+  ]
+}
