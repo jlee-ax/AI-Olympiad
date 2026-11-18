@@ -1,0 +1,1133 @@
+{
+  "schema_version": 1,
+  "audit_name": "audit.json",
+  "round": 5,
+  "route": "reviews/week01-replacement-20261118/route.json",
+  "route_sha256": "b97c1e36a9ba5b096beaf588dc33a17dad8884a0b71990455c68583788151bf1",
+  "entry": "lessons/week01/week01_foundations.ipynb",
+  "contract": "reviews/week01-depth-20261118/refreshes/0001/contract.json",
+  "notebook_sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+  "canonical_review": "reviews/week01-depth-20261118/rounds/0005/reviews/joined.json",
+  "canonical_review_sha256": "566e7bd69fab0d6be96012a0109675a04da6727192a214c7b06d72228da1b448",
+  "physical_report": "public-results.json",
+  "kernel_report": "kernel.json",
+  "recorded_at": "2026-11-18T13:52:30Z",
+  "author": "week01-new-author",
+  "reviewer": "joined-content-review",
+  "minutes_elapsed": 35,
+  "scope": "2027년 KOAI 중등부 준비 과정의 1주차 학생 전체 경로. 분량·공식 예시와의 연결은 수업 설계의 판단이며 실제 대회 성적·독립 학습 결과는 관찰하지 않았다.",
+  "limits": "사용자가 제한한 단위의 분기 비교와 원점 작성·수정은 승인됐다. 전 과정의 수치형 모니터링 예산·최소 개선폭·숙제 상한 등 K14 운영 합의는 없으며, 실제 학생의 성공률과 수업·자습 시간을 수집하지 않았다. 독립 추정의 최대 425분은 주당 420분을 넘는다.",
+  "first_attempt": "공개 예시를 읽은 뒤 독립 입력에서 예측·선택·도움을 기록한다. 선택 실마리나 본보기 재열람은 기록하고 교사용 원고는 첫 제출에 제공하지 않는다.",
+  "answer_conditions": "학생의 채워야 할 칸과 확인 가능한 공개 교사용 계산을 따로 읽었다. 답의 구조·출력·재시도는 확인했으며 실제 학생의 무힌트 성공률은 미관측이다.",
+  "method": "서로 다른 작성자와 검토자가 등록한 네 요구를 대조했다. 수업·자습의 모든 학생 셀 62개와 조건부 셀 9개, 실제 키·원자료·새 결과·이음 링크를 읽고, 현재 공개 입력과 별도 공개 경계 사례로 연산·실행·그림을 다시 검사했다.",
+  "checkpoint": "13:52 UTC 기술 점검. 고정 기준 commit 8e6bf19b 13:17 UTC부터 35분의 경과 시간. R4의 실제 배열 재시도 누락과 R5의 두 결과 수정 검산까지 포함하며, 사람의 작업 시간·학생 시간과 다르다.",
+  "timing_basis": "교사용 ‘수업 편성’과 등록 학생 경로 route.json의 별도 편성 및 과업별 독립 추정. 수업 120분, 공통 필수 편성 335, 조건부 예비 25. 저자 공통 추정 300~335, 보충 13~25. 독립 추정 공통 200~373, 보충 포함 222~417, 두 실마리 모두 포함 226~425분. 420분 상한보다 최대 5분 길며 실제 시간은 미측정이다.",
+  "class_minutes": 120,
+  "required_homework": 335,
+  "written_counts": {
+    "multiple_choice": 2,
+    "written": 1
+  },
+  "written_locator": "lessons/week01/week01_foundations.ipynb#cell:written-card (Q1–Q3), teacher ‘축·분산·필기’",
+  "blocks": [
+    {
+      "id": "theory",
+      "kind": "theory",
+      "minutes": 20,
+      "written_minutes": 0
+    },
+    {
+      "id": "hand",
+      "kind": "noncoding",
+      "minutes": 10,
+      "written_minutes": 0
+    },
+    {
+      "id": "written",
+      "kind": "noncoding",
+      "minutes": 10,
+      "written_minutes": 10
+    },
+    {
+      "id": "python",
+      "kind": "coding",
+      "minutes": 20,
+      "written_minutes": 0
+    },
+    {
+      "id": "csv",
+      "kind": "coding",
+      "minutes": 40,
+      "written_minutes": 0
+    },
+    {
+      "id": "array",
+      "kind": "coding",
+      "minutes": 20,
+      "written_minutes": 0
+    }
+  ],
+  "environment": "Python virtualenv koai-depth-kernel; NumPy 2.3.5, pandas 2.2.3, Matplotlib 3.10.8, Seaborn 0.13.2 and ipykernel 7.4.0, each student notebook starts in a distinct fresh kernel/process under the inprocess transport.",
+  "execution_command": "python -B reviews/week01-replacement-20261118/run_route.py reviews/week01-replacement-20261118/route.json --transport inprocess && python -B reviews/week01-replacement-20261118/joined/public_cases.py",
+  "physical_status": "passed",
+  "execution_exit": 0,
+  "assertions": [
+    {
+      "name": "등록한 학생 노트북 둘이 각각 새 커널에서 전체 28·4개 코드 셀 실행 및 소스 보존",
+      "status": "passed"
+    },
+    {
+      "name": "8개 교사용 Python 블록 독립 실행, 함수 경계·두 프레임 추적 검산",
+      "status": "passed"
+    },
+    {
+      "name": "사본 F 및 별도 E 정정 후 게시판·점수와 원본 보존 검산",
+      "status": "passed"
+    },
+    {
+      "name": "독립 가중 분모 6.75와 8.5 및 관측 없는 정류장",
+      "status": "passed"
+    },
+    {
+      "name": "다른 순서와 빈 열 및 중복 키 실제 기록 ID, 보충 새 J2/J9 점검",
+      "status": "passed"
+    },
+    {
+      "name": "두 선택 조건 네 패널의 실제 막대 높이·축, 그래프 영역 비교",
+      "status": "passed"
+    }
+  ],
+  "technical_sources": [
+    "function",
+    "exception",
+    "mean",
+    "count",
+    "merge",
+    "read-csv",
+    "dot",
+    "variance",
+    "reshape",
+    "transpose",
+    "views",
+    "broadcast",
+    "mat-hist",
+    "sns-bar"
+  ],
+  "new_technical_sources": [
+    {
+      "id": "weighted-average",
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.average.html",
+      "kind": "documentation",
+      "version": "NumPy published stable documentation, inspected 2026-11-18",
+      "accessed_at": "2026-11-18",
+      "extent": "relevant_sections",
+      "locator": "Parameters: weights and returned; displayed sum(a*weights)/sum(weights), 89–104",
+      "finding": "분자는 각 값과 가중치 곱의 합, 분모는 가중치의 합이다. 모두 같은 비중은 해당 단위 수로 나누게 된다.",
+      "limitation": "어떤 단위에 같은 비중을 줄지는 자료의 측정 과정과 사용자가 한 질문에서 정한다. 결측은 먼저 규약대로 처리해야 한다."
+    }
+  ],
+  "files": {
+    "lessons/week01/week01_foundations.ipynb": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+    "lessons/week01/week01_foundations_repair.ipynb": "8b0f1b4e672adb8214524c243eade54024e888d710a7875def09cc4d7b527df9",
+    "lessons/week01/week01_foundations_teacher.md": "081068e0233ef3eb102b0db0c0b4efeba2464c8d1973a1a5ebbb73823788bb8b",
+    "lessons/week01/data/foundations_returns.csv": "ece009210bb0ac473b988937f8ecd865f35355dc6d9c8718e3e8846e504daaaf",
+    "lessons/week01/data/foundations_boxes.csv": "471a80d0b99548c29a36331eb5ccad27d25ba7742f955a869687e7096c655635",
+    "lessons/week01/data/foundations_returns_transfer.csv": "47d719ce82e88acbe98ad175b1f827c8f7c76d22706bd8432344d86e3db6d7a6"
+  },
+  "read_cells": {
+    "lessons/week01/week01_foundations.ipynb": [
+      "opening",
+      "dictionary",
+      "table-card",
+      "axis-picture",
+      "variance-bridge",
+      "axis-check",
+      "written-card",
+      "python-basics",
+      "python-example",
+      "return-story",
+      "return-example",
+      "trace-example",
+      "python-five",
+      "python-independent",
+      "csv-open",
+      "load-csv",
+      "inspect-table",
+      "audit-csv",
+      "select-table",
+      "select-csv",
+      "missing-error",
+      "column-error",
+      "table-independent",
+      "numpy-core",
+      "reduce-period",
+      "plot-core",
+      "plot-period",
+      "weighting-principle",
+      "class-transfer",
+      "class-independent",
+      "independent-start",
+      "trace-independent",
+      "index-view",
+      "view-example",
+      "broadcast-concept",
+      "broadcast-example",
+      "reshape-concept",
+      "reshape-example",
+      "math-concept",
+      "math-example",
+      "array-lab",
+      "array-independent",
+      "math-lab",
+      "math-independent",
+      "join-story",
+      "real-merge",
+      "join-key-example",
+      "group-story",
+      "group-example",
+      "plot-two-questions",
+      "plot-histogram",
+      "plot-categories",
+      "plot-read",
+      "transfer-brief",
+      "transfer-first-code",
+      "transfer-table",
+      "transfer-data-work",
+      "transfer-faults",
+      "transfer-fault-work",
+      "transfer-figures",
+      "transfer-plot-work",
+      "handoff"
+    ],
+    "lessons/week01/week01_foundations_repair.ipynb": [
+      "repair-when",
+      "repair-predict",
+      "repair-read",
+      "repair-trace",
+      "repair-duplicates",
+      "repair-restore",
+      "repair-match",
+      "repair-return",
+      "repair-fresh"
+    ]
+  },
+  "units": {
+    "W1-python": {
+      "objective": "데이터 함수의 상태·반환을 추적하고 변경·실패 입력에서 검산한다.",
+      "route_roles": {
+        "prerequisite": [
+          "lessons/week01/week01_foundations.ipynb",
+          "python-basics"
+        ],
+        "theory_explanation": [
+          "lessons/week01/week01_foundations.ipynb",
+          "return-story"
+        ],
+        "coding_practice": [
+          "lessons/week01/week01_foundations.ipynb",
+          "python-independent"
+        ],
+        "independent_assessment": [
+          "lessons/week01/week01_foundations.ipynb",
+          "python-five,independent-start,trace-independent"
+        ],
+        "feedback": [
+          "lessons/week01/week01_foundations_teacher.md",
+          "Python 카드 / 오류 추적 / 학생 풀이를 볼 때"
+        ]
+      },
+      "independent": true,
+      "reference_problem": "sample",
+      "difference": "국내 고등부 예시 Q1은 호출 사이에 남는 기본 인수의 상태를 포함한다. 여기서는 매번 초기화되는 누계·반환·실패 연산을 독립 확인한다. 공통 능력은 실행 흐름 추적이다.",
+      "contest_judgment": "met",
+      "explain": "비어 있는 리스트·미관측·관측한 숫자 0의 반복/비교 수, 명시적으로 값을 반환하는 함수와 표시만 하는 함수가 이후 덧셈에서 다른 결과를 만든다.",
+      "examined_theory": [
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "python-basics"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "python-example"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "return-story"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "return-example"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "trace-example"
+        ]
+      ],
+      "examined_assessments": [
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "python-five"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "python-independent"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "independent-start"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "trace-independent"
+        ]
+      ],
+      "semantic": {
+        "problem_specific_key": "별도 키가 []와 [None]의 0, [0]의 포괄 기준 1 및 음수 입력 오류를 구분한다. 공개 실행에서 경계의 >와 >= 및 세 길이의 인덱스 복구를 교차 검산했다.",
+        "feedback": "화면에 표시된 값과 다음 줄에 넘어간 값을 묻고, 잘못된 0 제외에는 [0]을 다시 입력하게 한다. 잘못된 호출 번호와 실패한 조회 줄을 구분한다.",
+        "independent_assessment": "예시를 가린 뒤 출력 없는 빈 셀에서 포괄 조건을 구현하고 도움 여부를 쓴다. 다른 call-site의 실패와 수정 결과도 설명한다."
+      },
+      "asset_paths": [
+        "lessons/week01/week01_foundations.ipynb",
+        "lessons/week01/week01_foundations_teacher.md"
+      ],
+      "class_chain": {
+        "theory": [
+          "python-basics",
+          "python",
+          "읽는 값을 따라 변수의 초기·중간·최종 상태를 설명한다."
+        ],
+        "noncoding": [
+          "python-five",
+          "python",
+          "for/if/return을 실행 전 손으로 추적한다."
+        ],
+        "coding": [
+          "python-independent",
+          "python",
+          "미완성 셀에서 비교 경계를 고친 함수를 정의해 반환값을 재사용한다."
+        ],
+        "assessment": [
+          "python-five",
+          "python",
+          "처음 보는 경계 입력을 스스로 예측하고 실패한 경우와 도움을 기록한다."
+        ]
+      },
+      "prereq_cells": {
+        "PY-VARIABLES": [
+          "python-basics",
+          "python-example"
+        ],
+        "PY-CONTROL": [
+          "python-basics",
+          "python-example"
+        ],
+        "PY-FUNCTION": [
+          "python-basics",
+          "python-example"
+        ],
+        "PY-LIST": [
+          "return-story",
+          "python-five"
+        ],
+        "PY-FILE": [
+          "csv-open",
+          "load-csv"
+        ],
+        "PY-ERROR": [
+          "trace-example",
+          "python-five"
+        ]
+      },
+      "explanation_checks": {
+        "T04": {
+          "cells": [
+            "python-basics",
+            "python-example",
+            "trace-example",
+            "python-five"
+          ],
+          "observation": "0으로 시작한 hits가 None과 경계에서 유지되고 7에서 하나 오른다. 두 오류의 코드는 서로 다른 위치에서 실패한다."
+        },
+        "T05": {
+          "cells": [
+            "return-story",
+            "python-five",
+            "independent-start",
+            "trace-independent"
+          ],
+          "observation": "표시 함수와 값 반환, [0]과 [None]을 비교하고 학습자가 예측·도움·수정 근거를 남긴다."
+        }
+      },
+      "quality": {
+        "K02": "함수 수정, for/if 처리와 오류/반환을 실제 코드와 변형 입력으로 시험한다.",
+        "K04": "변수·조건·반환·리스트 자료형 정의 및 실제 추적 프레임을 선수 사용 위치 전에서 확인했다. 파일 카드는 CSV를 읽을 때 마친다.",
+        "K05": "누계의 이론·종이 추적·코드 수정 및 새로운 경계 입력이 같은 개념을 이어간다.",
+        "K09": "완성 답은 교사 파일에 있고 도움을 명시해 첫 예측 및 재시도를 따로 읽는다.",
+        "K16": "시작 상태, 루프, 경계·단락 평가, 종료와 반환, 새 실패 원인을 확인했다."
+      },
+      "claims": {
+        "flow": {
+          "text": "엄격한 임계값 비교에서는 경계와 미관측이 누계에 들지 않는다. 포괄 조건이면 관측한 0이나 같은 값이 들어갈 수 있다.",
+          "cell": "python-basics",
+          "sources": [
+            "function"
+          ],
+          "condition": "count_over와 count_at_least에 주어진 비음수 기준"
+        },
+        "returns": {
+          "text": "명시적 값 없이 반환되는 None은 정수와 더할 수 없고 trace-example에서 str>int는 TypeError다.",
+          "cell": "return-story",
+          "sources": [
+            "function",
+            "exception"
+          ],
+          "condition": "Python의 일반 함수와 이 자료에 있는 두 피연산자의 타입"
+        }
+      },
+      "discovery_summary": "공개 입력에서 초과와 이상 함수의 다른 반환, 인덱스 오류의 호출/실패 줄, 0·1·3개 이름 목록에 대한 수정 함수의 결과를 재실행했다.",
+      "discovery_dimensions": {
+        "prerequisites": [
+          "trace-example",
+          "traceback.print_exc(limit=-2",
+          "met",
+          "오류가 발생한 실제 호출과 표현식을 검토하고, python-five에서 종류와 원인, 별도 인덱스 실패를 읽었다."
+        ],
+        "learning": [
+          "python-basics",
+          "마지막 줄 뒤에 호출한 쪽",
+          "met",
+          "실행 상태표에서 None은 평가를 건너뛰고 초기·최종 상태를 정의한다. 새 입력에서도 반환을 계산에 쓴다."
+        ],
+        "assessment": [
+          "independent-start",
+          "누가 어느 번호로 호출했는지",
+          "met",
+          "완성 답을 보지 않고 두 함수의 호출·실패 번호를 예상한 뒤 유효/빈 목록에 수정본을 실행한다."
+        ]
+      }
+    },
+    "W1-table": {
+      "objective": "관찰 한 건과 집단에 주는 비중·시점을 정하고 새 CSV의 키·결측과 분모를 검산한다.",
+      "route_roles": {
+        "prerequisite": [
+          "lessons/week01/week01_foundations.ipynb",
+          "dictionary"
+        ],
+        "theory_explanation": [
+          "lessons/week01/week01_foundations.ipynb",
+          "weighting-principle"
+        ],
+        "coding_practice": [
+          "lessons/week01/week01_foundations.ipynb",
+          "real-merge"
+        ],
+        "independent_assessment": [
+          "lessons/week01/week01_foundations.ipynb",
+          "transfer-data-work,transfer-faults,transfer-fault-work"
+        ],
+        "feedback": [
+          "lessons/week01/week01_foundations_teacher.md",
+          "수첩과 원본 CSV / 한 행과 같은 비중을 받는 단위 / 조건부 식별자 복구"
+        ]
+      },
+      "independent": true,
+      "reference_problem": "antique",
+      "difference": "Antique의 0은 훈련 라벨의 미상 코드이고 실제 시험 데이터에는 라벨 열이 없다. 반납량 0은 참 관측이다. 이번 전이는 시점/코드북과 한 행의 단위까지이며 모델·제출 절차는 후속이다.",
+      "contest_judgment": "met",
+      "explain": "유효 관찰마다 같은 비중과 유효한 집단마다 같은 비중은 서로 다른 분모를 쓴다. 이름 키로 연결되고 오른쪽은 고유해야 하며 양쪽 빈 표시는 같은 대상의 근거가 아니다.",
+      "examined_theory": [
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "dictionary"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "weighting-principle"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "join-story"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "join-key-example"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "group-story"
+        ],
+        [
+          "lessons/week01/week01_foundations_repair.ipynb",
+          "repair-predict"
+        ],
+        [
+          "lessons/week01/week01_foundations_repair.ipynb",
+          "repair-trace"
+        ]
+      ],
+      "examined_assessments": [
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "class-transfer"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "transfer-table"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "transfer-data-work"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "transfer-faults"
+        ],
+        [
+          "lessons/week01/week01_foundations_repair.ipynb",
+          "repair-return"
+        ],
+        [
+          "lessons/week01/week01_foundations_repair.ipynb",
+          "repair-fresh"
+        ]
+      ],
+      "additional_evidence": {
+        "problem_specific_key": [
+          [
+            "lessons/week01/week01_foundations_repair.ipynb",
+            "repair-match,repair-fresh"
+          ]
+        ],
+        "feedback": [
+          [
+            "lessons/week01/week01_foundations_repair.ipynb",
+            "repair-trace,repair-restore,repair-return"
+          ],
+          [
+            "lessons/week01/week01_foundations.ipynb",
+            "transfer-faults"
+          ]
+        ],
+        "independent_assessment": [
+          [
+            "lessons/week01/week01_foundations_repair.ipynb",
+            "repair-return,repair-fresh"
+          ],
+          [
+            "lessons/week01/week01_foundations.ipynb",
+            "transfer-data-work,transfer-fault-work"
+          ]
+        ]
+      },
+      "semantic": {
+        "problem_specific_key": "공개 새 파일에서 기준 4의 West 4행/하교 3건/합13과 기준 6의 2행/2건/합6을 원래 행에서 계산했다. 조건부의 J9은 G2 중복에 영향받고, 확인 자료로 고치면 J2가 미연결인 채 3행이 남는다.",
+        "feedback": "출발점에서 실제 미연결 ID를 못 찾을 때만 보충으로 이동한다. 상충한 B1은 확인된 위치표로 복구한다. 보충의 새 자료에서 재검사한 뒤 본교안 표지로 돌아와 다른 키를 빼고 복구 여부를 확인한다.",
+        "independent_assessment": "작업 파일 두 개의 열·순서가 바뀌고 새 분모/누락 조건이 있다. 첫 설계, 보고 연 참조, 결과와 다른 반납함 키로 돌아온 두 번째 시험을 분리한다."
+      },
+      "asset_paths": [
+        "lessons/week01/week01_foundations.ipynb",
+        "lessons/week01/week01_foundations_teacher.md",
+        "lessons/week01/week01_foundations_repair.ipynb",
+        "lessons/week01/data/foundations_returns.csv",
+        "lessons/week01/data/foundations_boxes.csv",
+        "lessons/week01/data/foundations_returns_transfer.csv"
+      ],
+      "class_chain": {
+        "theory": [
+          "dictionary",
+          "theory",
+          "한 행의 의미, 시간상 앞선 특성과 나중의 목표를 정의한다."
+        ],
+        "noncoding": [
+          "table-card",
+          "theory",
+          "세 관찰에서 0·미관측과 조건 선택을 손으로 읽는다."
+        ],
+        "coding": [
+          "select-csv",
+          "csv",
+          "실제 CSV의 dtype, shape와 선택 행/관측 수를 확인하고 이름으로 필요한 열을 모은다."
+        ],
+        "assessment": [
+          "class-transfer",
+          "csv",
+          "새 대기 시간 자료에서 승객과 정류장 두 목적에 맞게 분모와 미관측 정책을 스스로 고른다."
+        ]
+      },
+      "prereq_cells": {
+        "PY-FUNCTION": [
+          "python-basics",
+          "load-csv"
+        ],
+        "PY-LIST": [
+          "return-story",
+          "select-csv"
+        ],
+        "PY-FILE": [
+          "csv-open",
+          "load-csv"
+        ],
+        "PY-ERROR": [
+          "missing-error",
+          "column-error"
+        ]
+      },
+      "explanation_checks": {
+        "T03": {
+          "cells": [
+            "dictionary",
+            "weighting-principle",
+            "class-transfer",
+            "join-story",
+            "group-story",
+            "transfer-table"
+          ],
+          "observation": "개별 관찰과 집단을 다른 비중으로 셀 때 합과 분모가 어떻게 바뀌는지 작은 정류장 표와 집계표를 오가며 확인했다."
+        },
+        "T05": {
+          "cells": [
+            "weighting-principle",
+            "class-transfer",
+            "join-key-example",
+            "transfer-faults"
+          ],
+          "observation": "참 0, 기록 없음, 전체 집단 요구를 구분한다. 결측 이름이 양쪽에 있을 때 학생이 오류 원인을 별도 경로로 복구한다."
+        }
+      },
+      "quality": {
+        "K02": "실제 세 CSV를 읽어 필수 열·타입·결측을 검사하고 순서가 다른 조회표의 실제 기록 이름을 유지한다.",
+        "K04": "파일 열기의 머리글, 시점·관찰과 ID 용어를 먼저 정의한다. 조건부 복구의 자체 자료도 새 커널에서 시작한다.",
+        "K05": "수첩→CSV→같은 관찰의 집계→새 열 이름과 복구의 순서가 작동한다.",
+        "K09": "새 파일 조건과 한 곳 삭제, 보충의 다른 위치표·복귀 후 재검사에서 답과 도움을 분리한다.",
+        "K16": "유효한 집단/관찰 분모, 기록 키/조인 키와 빈 필드·관측 0의 반례를 확인했다."
+      },
+      "claims": {
+        "schema": {
+          "text": "시점·스키마에서 관찰 ID, 대상 ID, 입력과 미래 목표가 다르다. Antique의 라벨 0과 책 0권을 각자의 코드북에서 해석한다.",
+          "cell": "dictionary",
+          "sources": [
+            "antique",
+            "domestic"
+          ],
+          "condition": "제시된 두 데이터 정의"
+        },
+        "join": {
+          "text": "오른쪽이 고유한 왼쪽 조인에서 순서에 의존하지 않고 실제 미연결 왼쪽 기록을 지목할 수 있다. 양쪽 빈 키는 별도 정규화가 필요하다.",
+          "cell": "join-story",
+          "sources": [
+            "merge",
+            "read-csv"
+          ],
+          "condition": "공개 CSV 스키마와 텍스트 식별자"
+        },
+        "denominator": {
+          "text": "유효한 세 승객의 대기 시간을 평균내면 6분, 자료가 있는 두 정류장에 같은 비중을 주면 7.5분이다. 측정 없는 정류장의 평균은 미정이다.",
+          "cell": "weighting-principle",
+          "sources": [
+            "mean",
+            "count",
+            "weighted-average"
+          ],
+          "condition": "원본 0·6분 및 12분, 나머지 미측정"
+        }
+      },
+      "discovery_summary": "물리 CSV의 반납함 열이 모두 빈 경우 T1–T8을 정확히 알렸다. 보충 첫 예 M07/M12와 새 예 J2 및 중복 G2가 영향을 주는 J9를 독립 검산했다. 본교안의 링크와 돌아오는 merge-recheck 표지가 존재한다.",
+      "discovery_dimensions": {
+        "prerequisites": [
+          "dictionary",
+          "한 **행**은",
+          "met",
+          "한 행·시점·측정 단위와 식별자, 뒤에 생기는 목표를 먼저 분리한다."
+        ],
+        "learning": [
+          "weighting-principle",
+          "측정 한 번마다 같은 비중이면",
+          "met",
+          "서로 다른 분모가 어떤 관측/자료가 있는 집단에 균등한 비중을 주는지 설명하고 분모 0도 드러낸다."
+        ],
+        "assessment": [
+          "transfer-faults",
+          "다른 반납함으로 자신의 절차",
+          "met",
+          "다른 이름을 제거해 실제 결손 ID를 예측하고, 도움이 필요하면 등록한 다른 노트북을 열어 중복·빈 키를 고친 후 복귀한다."
+        ]
+      }
+    },
+    "W1-array": {
+      "objective": "직사각형 자료의 좌표와 살아남는 축·관찰 단위를 설명하고 같은 두 열에서 게시판과 점수의 연산을 스스로 골라 한 칸을 바꿔 둘 다 검산한다.",
+      "route_roles": {
+        "prerequisite": [
+          "lessons/week01/week01_foundations.ipynb",
+          "axis-picture"
+        ],
+        "theory_explanation": [
+          "lessons/week01/week01_foundations.ipynb",
+          "axis-picture,variance-bridge,reshape-concept,math-concept"
+        ],
+        "coding_practice": [
+          "lessons/week01/week01_foundations.ipynb",
+          "reduce-period,reshape-example,math-example"
+        ],
+        "independent_assessment": [
+          "lessons/week01/week01_foundations.ipynb",
+          "array-lab,array-independent,math-lab,math-independent"
+        ],
+        "feedback": [
+          "lessons/week01/week01_foundations_teacher.md",
+          "축·분산·필기 / 자습 배열과 수학"
+        ]
+      },
+      "independent": true,
+      "reference_problem": "sample",
+      "difference": "국내 고등부 2026 예시 2·6은 축·모양·순서·메모리를 해석한다. 이 주차는 실제 2차원 팀 표에서 축과 가중치의 대응을 선택하고 바뀐 자료로 재검산하는 중등 준비 범위다. 공식 중등 빈도·채점기준·필수 숙달 수준은 확인되지 않는다.",
+      "contest_judgment": "met",
+      "explain": "R×C, x_ij, 관측 n과 평균·분산 및 항목별 곱의 합을 행·열의 의미, 유효 분모, 점수의 단위에서 정의한다. 모양이 같아도 항목 배치나 부호가 틀리면 결과가 달라지는 반례를 요구한다.",
+      "examined_theory": [
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "axis-picture"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "variance-bridge"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "index-view"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "broadcast-concept"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "reshape-concept"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "math-concept"
+        ]
+      ],
+      "examined_assessments": [
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "axis-check"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "array-lab"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "array-independent"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "math-lab"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "math-independent"
+        ]
+      ],
+      "semantic": {
+        "problem_specific_key": "같은 3×2에서 게시판 [[1,3,2],[4,0,5]]과 팀 점수 [-5,9,-4]가 나오며, 가중치를 뒤집으면 [10,-6,11]이다. F의 두 번째 항목을 5→2로 바꾸었을 때 게시판 해당 칸은 −3, 팀 점수는 +6이다. E 첫 항 3→1에 각각 −2와 −6을 별도 확인했다.",
+        "feedback": "교사용 ‘자습 배열과 수학’에는 원래 좌표·항목별 부호·단위, 모양만 일치하는 잘못된 계산, 정정된 두 결과 및 원본이 보존되어야 하는 이유가 함께 있다.",
+        "independent_assessment": "경기에서 두 요청을 보고 연산 이름을 스스로 고른 뒤 먼저 예측을 기록한다. math-lab은 원자료 사본의 한 칸을 바꿔 두 계산을 다시 고르고 좌표·단위·변화 방향을 비교하게 한다."
+      },
+      "asset_paths": [
+        "lessons/week01/week01_foundations.ipynb",
+        "lessons/week01/week01_foundations_teacher.md",
+        "lessons/week01/data/foundations_returns.csv"
+      ],
+      "class_chain": {
+        "theory": [
+          "axis-picture",
+          "theory",
+          "모양, x_ij와 축약되는 차원의 분모, 출력의 행 또는 열 이름을 설명한다."
+        ],
+        "noncoding": [
+          "axis-check",
+          "hand",
+          "세 기록×두 구간의 두 평균, 단위·종류·출력 길이를 먼저 계산한다."
+        ],
+        "coding": [
+          "reduce-period",
+          "array",
+          "두 축 평균과 모양을 실제 계산해 수첩의 행/열과 대응한다."
+        ],
+        "assessment": [
+          "axis-check",
+          "hand",
+          "2×3 예와 다른 3×2 자료로 예측과 이유를 제시한다."
+        ]
+      },
+      "prereq_cells": {
+        "PY-LIST": [
+          "return-story",
+          "reduce-period"
+        ],
+        "MATH-MEAN": [
+          "axis-picture",
+          "variance-bridge"
+        ]
+      },
+      "explanation_checks": {
+        "T01": {
+          "cells": [
+            "axis-picture",
+            "variance-bridge",
+            "math-concept"
+          ],
+          "observation": "x_ij의 로컬 정의, 두 축 평균의 분모와 모양, n>0인 전체 관측 분산, 두 벡터의 같은 항목·곱과 합의 의미를 검토했다."
+        },
+        "T02": {
+          "cells": [
+            "axis-picture",
+            "axis-check",
+            "math-lab"
+          ],
+          "observation": "입력 (R,C)에 대해 분모 R 또는 C가 사라지는 축과 어떻게 대응하는지 2×3/3×2의 수와 단위로 검산한다."
+        },
+        "T03": {
+          "cells": [
+            "axis-picture",
+            "variance-bridge",
+            "math-concept",
+            "array-lab"
+          ],
+          "observation": "살아남은 이름과 배열 항목을 연결하고, 모양이 같은 점수도 부호/순서가 다르면 오답일 수 있다."
+        },
+        "T04": {
+          "cells": [
+            "axis-check",
+            "reduce-period",
+            "math-example"
+          ],
+          "observation": "축과 대푯값·출력 모양을 예상한 뒤 같은 축 정의를 코드 실행의 값·단위와 맞춰본다."
+        },
+        "T05": {
+          "cells": [
+            "array-lab",
+            "array-independent",
+            "math-lab",
+            "math-independent"
+          ],
+          "observation": "연산 선택, 모양이 허용하는 오답, 새 입력에 서로 다른 출력의 영향을 손으로 예상한 뒤 실행하는 요구가 있다."
+        }
+      },
+      "quality": {
+        "K02": "NumPy로 축별 평균과 단위·모양을 계산하고, 모양 변경과 전치, 뷰/사본, 브로드캐스팅 및 내적을 각자의 조건에서 실제 비교한다.",
+        "K04": "행·열·기호·단위의 일반 정의가 예보다 앞에 있다. n>0·공동의 단위·관측된 사각 자료를 명시한다.",
+        "K05": "손계산에서 NumPy 감소 연산으로, 자습에서 다른 직사각형 팀 자료의 게시판과 점수로 이어진다.",
+        "K09": "새 경기표는 옮겨 적을 코드 없이 두 출력의 연산을 고르고, 사본 한 항목을 다르게 준 뒤 두 출력을 처음부터 예측·실행하게 한다.",
+        "K16": "일반식의 좌표와 분모, 같은 모양의 오답과 제곱 단위, 새 자료의 두 변화까지 읽고 직접 확인했다."
+      },
+      "claims": {
+        "axes": {
+          "text": "2×3 [[2,4,6],[8,0,4]]의 축 0 평균은 [5,2,5]권/기록이며 길이 3이다.",
+          "cell": "axis-picture",
+          "sources": [
+            "mean"
+          ],
+          "condition": "빠진 값 없는 유한한 사각 배열, 기본 keepdims=False",
+          "oracle": {
+            "kind": "axis_mean",
+            "axis": 0,
+            "input": [
+              [
+                2,
+                4,
+                6
+              ],
+              [
+                8,
+                0,
+                4
+              ]
+            ],
+            "expected": [
+              5,
+              2,
+              5
+            ]
+          }
+        },
+        "rows": {
+          "text": "U,V,W의 축 1 평균은 [4.5,4.5,1.5]로 기록 이름 셋이 남는다.",
+          "cell": "axis-check",
+          "sources": [
+            "mean"
+          ],
+          "condition": "0이 실제 관측이고 두 구간의 단위가 같은 3×2",
+          "oracle": {
+            "kind": "axis_mean",
+            "axis": 1,
+            "input": [
+              [
+                0,
+                9
+              ],
+              [
+                6,
+                3
+              ],
+              [
+                0,
+                3
+              ]
+            ],
+            "expected": [
+              4.5,
+              4.5,
+              1.5
+            ]
+          }
+        },
+        "scores": {
+          "text": "항목×팀 게시판은 좌표를 바꾸고, 팀별 가중 점수는 대응 항목과 가중치의 곱을 더한다. 다른 한 항목의 수정은 그 가중치를 통해 점수에 반영된다.",
+          "cell": "math-lab",
+          "sources": [
+            "dot",
+            "transpose",
+            "views"
+          ],
+          "condition": "세 팀×두 횟수, 가중값 [3,−2] 및 사본만 수정"
+        },
+        "dispersion": {
+          "text": "전체 관찰 분산은 같은 평균일 때도 달라지며 단위는 원단위의 제곱이다.",
+          "cell": "variance-bridge",
+          "sources": [
+            "variance"
+          ],
+          "condition": "n>0, ddof=0, 결측 없는 동일 단위의 자료"
+        }
+      },
+      "discovery_summary": "R×C, 대응 항목, 사각 자료의 두 독립 계산을 자세히 읽고 수치로 검산했다. 공개 F 값 수정과 독립 E 값 수정에서 게시판의 적절한 좌표·점수의 방향을 확인했다.",
+      "discovery_dimensions": {
+        "prerequisites": [
+          "axis-picture",
+          "배열의 **모양**",
+          "met",
+          "좌표·행/열 수·단위·비결측, 축별 출력의 의미를 예문 앞에서 일반 용어와 식으로 정의한다."
+        ],
+        "learning": [
+          "math-concept",
+          "각 위치가 **같은 항목**",
+          "met",
+          "원소별 곱과 가중합, 가중치 부호와 단위를 구별하고 원래 좌표 및 축약 결과를 손계산한다."
+        ],
+        "assessment": [
+          "math-lab",
+          "사본 한 칸만",
+          "met",
+          "두 요청에서 자기가 선택한 연산을 새 입력으로 각각 재실행하여 출력 좌표·단위·방향과 원본 보존을 검산한다."
+        ]
+      }
+    },
+    "W1-visualise": {
+      "objective": "분포의 빈도와 구역별 관측 평균의 집계 단위·축을 독립적으로 선택하고 조건 변경을 수치로 읽는다.",
+      "route_roles": {
+        "prerequisite": [
+          "lessons/week01/week01_foundations.ipynb",
+          "plot-core"
+        ],
+        "theory_explanation": [
+          "lessons/week01/week01_foundations.ipynb",
+          "plot-two-questions,plot-read"
+        ],
+        "coding_practice": [
+          "lessons/week01/week01_foundations.ipynb",
+          "plot-histogram,plot-categories"
+        ],
+        "independent_assessment": [
+          "lessons/week01/week01_foundations.ipynb",
+          "transfer-brief,transfer-first-code,transfer-figures,transfer-plot-work,handoff"
+        ],
+        "feedback": [
+          "lessons/week01/week01_foundations_teacher.md",
+          "병합과 두 그림의 예시 / 새 일지 독립 과제, 기준 4 및 6의 그림 및 해석"
+        ]
+      },
+      "independent": true,
+      "reference_problem": "sample",
+      "difference": "고등부 공개 예시 3은 두 변수의 관계·주변 분포를 해석한다. 여기서는 기록 수준의 분포와 범주별 평균이 무엇을 세는지 바뀐 조건에서 그리는 기초 연습으로 좁힌다. 예시 그림을 중등 결선 필수 과제나 도달률의 증거로 사용하지 않는다.",
+      "contest_judgment": "met",
+      "explain": "분포에서는 각 관측가 가진 수치를 구간에 넣고 횟수를 센다. 범주별 평균에서는 관측 한 건별 값을 범주 안에서 더하고 관측 수로 나눈다. 축의 단위와 관측 범위가 다르다.",
+      "examined_theory": [
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "plot-core"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "plot-two-questions"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "plot-read"
+        ]
+      ],
+      "examined_assessments": [
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "written-card"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "transfer-first-code"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "transfer-figures"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "transfer-plot-work"
+        ],
+        [
+          "lessons/week01/week01_foundations.ipynb",
+          "handoff"
+        ]
+      ],
+      "semantic": {
+        "problem_specific_key": "각 기준의 히스토그램 실제 빈도 [2,1,1,0,0]와 [2,1,0,0,0], West 막대 13/3과 3을 파일에서 독립 집계한 후 교사용 그림의 실제 막대 높이·레이블과 대조했다.",
+        "feedback": "교사용 ‘새 일지 독립 과제’가 관측 ID와 분모, 두 다른 표본의 평균·원인 추론 한계, 각 기준별 출력을 제시한다. 축에 기록 수/관측된 권수 평균을 바꾸어 쓸 때 어느 표 열과 비교할지도 제시한다.",
+        "independent_assessment": "새 파일에서 그림의 형식·열·단위를 선택해 먼저 기록한 뒤에만 힌트를 열 수 있다. 4와 6 조건을 모두 그리고 관측 수와 평균의 변화를 원래 행으로 설명한다."
+      },
+      "asset_paths": [
+        "lessons/week01/week01_foundations.ipynb",
+        "lessons/week01/week01_foundations_teacher.md",
+        "lessons/week01/data/foundations_returns.csv",
+        "lessons/week01/data/foundations_boxes.csv",
+        "lessons/week01/data/foundations_returns_transfer.csv"
+      ],
+      "class_chain": {
+        "theory": [
+          "plot-core",
+          "array",
+          "막대 하나가 어떤 관찰의 어떤 평균인지를 밝힌다."
+        ],
+        "noncoding": [
+          "written-card",
+          "written",
+          "그래프의 축과 막대 5의 의미를 두 관찰과 맞춘다."
+        ],
+        "coding": [
+          "plot-period",
+          "array",
+          "Matplotlib 그림의 두 축과 권/기록 단위를 표시한다."
+        ],
+        "assessment": [
+          "written-card",
+          "written",
+          "구간 축 막대값의 해석과 하교 관찰이 바뀔 때 평균·분모를 서술한다. 자습에서 실제 그래프 변화를 독립 확인한다."
+        ]
+      },
+      "prereq_cells": {
+        "PY-FILE": [
+          "csv-open",
+          "load-csv"
+        ],
+        "MATH-MEAN": [
+          "axis-picture",
+          "plot-core"
+        ]
+      },
+      "explanation_checks": {
+        "T03": {
+          "cells": [
+            "plot-core",
+            "plot-two-questions",
+            "plot-read"
+          ],
+          "observation": "구간×기록 수와 구역×평균 권수의 의미를 구체적으로 대응시키고, 숫자 한 칸이 나온 원래 행을 다시 찾게 한다."
+        },
+        "T05": {
+          "cells": [
+            "transfer-brief",
+            "transfer-first-code",
+            "transfer-figures",
+            "transfer-plot-work",
+            "handoff"
+          ],
+          "observation": "새 열과 두 기준에서 어떤 그림·축·단위를 쓸지 정하고, 도움·관찰 분모·해석 범위를 기록한다."
+        }
+      },
+      "quality": {
+        "K02": "Matplotlib의 학생용 구간 평균/빈도, Seaborn의 범주 평균을 각 실행했고 교사용 새 자료 두 조건의 그려진 값까지 대조했다.",
+        "K04": "관측 단위와 분모를 설명한 뒤 축·수치·관측 수 및 그룹의 의미를 소개한다.",
+        "K05": "종이로 막대 하나의 뜻을 예측하고 수업에 Matplotlib을 실행한 뒤 자습에서 히스토그램과 별도 범주 요약으로 확대한다.",
+        "K09": "학생은 공개 새 파일을 보고 어떤 그림을 쓸지 먼저 기록하고, 첫 설계 후에만 도움을 열고 두 기준 모두를 구현하여 해석한다.",
+        "K16": "각 그래프가 답하는 질문·축·단위·같은 그룹 내 결측 처리, 조건 변경에 따른 관찰 범위와 해석 제한을 검토했다."
+      },
+      "claims": {
+        "artists": {
+          "text": "동일한 하교 데이터에서 히스토그램 높이는 유효 기록의 수, 범주 그래프 높이는 구역별 관측 권수의 평균이다.",
+          "cell": "plot-two-questions",
+          "sources": [
+            "mat-hist",
+            "sns-bar",
+            "count"
+          ],
+          "condition": "정해진 구간의 포함 규칙, 사전 집계한 구역당 하나의 평균, 비어 있는 관측 제외"
+        }
+      },
+      "discovery_summary": "새 일지의 첫 선택과 두 그림·두 조건을 검토했다. 실제로 그려진 막대, 원래 측정의 개수·합, 축과 단위를 별도로 재검산했다.",
+      "discovery_dimensions": {
+        "prerequisites": [
+          "plot-core",
+          "가로에는 세 **구간**",
+          "met",
+          "막대 한 칸이 어느 두 기록으로 만들어지는지 단위와 함께 되짚는다."
+        ],
+        "learning": [
+          "plot-two-questions",
+          "빈 하교 기록은",
+          "met",
+          "권수 구간/기록 수와 구역/관측 평균의 다른 단위와 주장 범위를 직접 비교한다."
+        ],
+        "assessment": [
+          "transfer-brief",
+          "각 그림의 **종류",
+          "met",
+          "새 일지와 목적에서 그림·필드·단위의 첫 선택을 실마리 전에 남기고 조건이 바뀌었을 때 실제 관측으로 설명한다."
+        ]
+      }
+    }
+  },
+  "conditional_path": {
+    "role_evidence": {
+      "prerequisite": [
+        "lessons/week01/week01_foundations.ipynb",
+        "transfer-faults"
+      ],
+      "theory_explanation": [
+        "lessons/week01/week01_foundations_repair.ipynb",
+        "repair-when,repair-predict,repair-trace,repair-restore"
+      ],
+      "coding_practice": [
+        "lessons/week01/week01_foundations_repair.ipynb",
+        "repair-read,repair-duplicates,repair-match"
+      ],
+      "independent_assessment": [
+        "lessons/week01/week01_foundations_repair.ipynb",
+        "repair-return,repair-fresh"
+      ],
+      "feedback": [
+        "lessons/week01/week01_foundations_teacher.md",
+        "조건부 식별자 복구, 본교안 ‘새 표의 연결을 다시 확인하기’와 다른 키 재검사"
+      ]
+    },
+    "evidence_after_return": [
+      "lessons/week01/week01_foundations.ipynb",
+      "transfer-faults,transfer-fault-work"
+    ],
+    "semantic": {
+      "problem_specific_key": "기존 자료 M07·M12의 다른 결손 원인을 추적하고, 다른 J 표에서 중복 G2가 J9에 연결되며 새 확인표로 복원 후 J2 미연결과 세 행 보존을 검산했다.",
+      "feedback": "시설 원본이 확인한 키·구역과 실제 ID를 교사용 해설에서 분리해 제시한다. 본교안은 돌아온 직후 다른 키를 제거해 동일 절차를 새 기록에서 다시 확인하라고 한다.",
+      "independent_assessment": "첫 진단의 특정 오류가 있을 때만 링크를 연다. 독립 J 자료의 중복 영향·행수·미연결을 첫 답·도움·검산으로 남긴 후 돌아와 다른 키에서 재시도한다."
+    }
+  },
+  "whole_route": "학생 계획의 1주차 링크에서 진입한 후 u01→u02→u03의 필수 62셀과 실제 검출 실패 시 u03→u04→u03의 9셀을 확인했다. 실마리는 최초 설계 뒤 의미 있게 펼쳐지며, 외부 원문과 기술 문서를 수업과 별도로 읽었다."
+}

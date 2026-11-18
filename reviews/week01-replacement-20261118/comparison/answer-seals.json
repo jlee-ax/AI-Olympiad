@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "stage": "independent solutions reported before case-specific rubric or oracle was opened",
+  "answers": {
+    "reader-1": {
+      "answers.json": "b185e3e91c0b808ca570627e00a29fc1701093bb346b3af37060f69a80ad2679",
+      "solve.py": "8b70c7d4ce527db177432bbd6ce1e7437f176e23b2d2adf07f4295c59c75cde0",
+      "original_hist.png": "42054792c03a181d57aaca738a49b96297a13e1426f1c057b0a9f2c52b827ff3",
+      "original_dots.png": "83033c57f2bc20bd1b7af4d11e4b2bb3a2b69663fb574401ac3ab1bc196e960c",
+      "changed_hist.png": "baa7e0728e865e87cc90f51e9549f71c67b372a83251cefa805b5e6bf2ae48ee",
+      "changed_dots.png": "11c390e9ab2d6d53fbc1797cf576506239da4d4c4bc00d407954012ce623df68"
+    },
+    "reader-2": {
+      "answers.json": "12e1cac40fb530c84417a5191bd624d12e398a15f6aa4c4f9bcf0773bc014349",
+      "solve.py": "2b1d0cbe99ad22437acce4125c71acb2d21d374466683e47a651b18a2159680b",
+      "f4_original_hist.png": "410e7a27aef6b520ce42b63130ac37c48ed9afb5fb1a14c751c4bcc8465db318",
+      "f4_original_dots.png": "2abf324109869930fe3d4d69975f2675c30a94e3dcae7f0c2aa8d1195ef596d6",
+      "f4_updated_hist.png": "fd501123dc209ac2ee30186b4ac5bfe1a3fc0874c1449d5fdbfe1fc7ef1143ea",
+      "f4_updated_dots.png": "93bb78b6f17835e0b9322fbac3745c88e7006640049c33900f323214d65af930"
+    }
+  },
+  "common_unedited_scoring_excerpt_sha256": "f78141fb7c5053d4ba146bcad36aad3ba4506406edb43d85341d9cc3c5d1dd86"
+}

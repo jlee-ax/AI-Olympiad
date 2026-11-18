@@ -1,0 +1,763 @@
+{
+ "schema_version": 1,
+ "seed": {
+  "schema_version": 1,
+  "synthetic": false,
+  "scope": {
+   "id": "week01-replacement",
+   "lesson_path": "lessons/week01/week01_foundations.ipynb",
+   "lesson_revision": "replacement-after-R3",
+   "readiness": "scoped_foundation",
+   "boundary": "한국 2027 중등부 첫 주의 실제 학생 경로, 직접 설명과 새로운 목적에서의 전이. 비교 우열 및 수업 성과는 별도 증거."
+  },
+  "frontier": [
+   {
+    "id": "scope-transfer",
+    "question": "공식 범위와 실제 과제 원문에서 무엇을 직접 설명해야 하며, 한 영역의 명사나 연산명을 제거한 새 목적에서도 무엇을 설계·계산·해석해야 하는가?",
+    "required_kinds": [
+     "official_scope",
+     "official_problem"
+    ]
+   }
+  ],
+  "policy": {
+   "max_events": 60,
+   "max_rounds": 8,
+   "max_no_progress": 4,
+   "max_elapsed_minutes": 180
+  }
+ },
+ "seed_sha256": "61c688ac33e047ffc0293af0c702747b922d6e8f193127af707f1c48c7a99ae1",
+ "events": [
+  {
+   "id": "find-official",
+   "op": "discover",
+   "data": {
+    "reason": "Reopened the target domestic rules/linked domestic syllabus, original international task and official sample materials before receiving edited notebooks.",
+    "frontier_id": "scope-transfer",
+    "query": "2027 KITPA rules and linked syllabus; IOAI official 2027 scope and 2025 Antique; KITPA released 2026 sample Q1–3/6",
+    "actor": "joined-content-review",
+    "outcome": "found",
+    "candidates": [
+     {
+      "id": "guide",
+      "uri": "https://kitpa.org/koai/2027",
+      "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+      "revision": "KITPA 2027 중등부",
+      "kind": "official_scope",
+      "attribution": "Independent primary-source re-read in this experiment; dated local paraphrase with exact document locator and scope limitations."
+     },
+     {
+      "id": "domestic",
+      "uri": "https://kitpa.org/koai/syllabus",
+      "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+      "revision": "KITPA 게시판의 IOAI 2026 표기",
+      "kind": "official_scope",
+      "attribution": "Independent primary-source re-read in this experiment; dated local paraphrase with exact document locator and scope limitations."
+     },
+     {
+      "id": "antique",
+      "uri": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb",
+      "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+      "revision": "IOAI Beijing 2025 individual task 5 Antique Painting Authentication",
+      "kind": "official_problem",
+      "attribution": "Independent primary-source re-read in this experiment; dated local paraphrase with exact document locator and scope limitations."
+     },
+     {
+      "id": "sample",
+      "uri": "https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf",
+      "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+      "revision": "KITPA 2026 고등부 학습 참고 공개 예시",
+      "kind": "official_problem",
+      "attribution": "Independent primary-source re-read in this experiment; dated local paraphrase with exact document locator and scope limitations."
+     },
+     {
+      "id": "ioai27",
+      "uri": "https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf",
+      "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+      "revision": "IOAI syllabus 2027",
+      "kind": "official_scope",
+      "attribution": "Independent primary-source re-read in this experiment; dated local paraphrase with exact document locator and scope limitations."
+     }
+    ]
+   },
+   "previous_sha256": "61c688ac33e047ffc0293af0c702747b922d6e8f193127af707f1c48c7a99ae1",
+   "sha256": "10007c827707e036817de6624fe2bed712f343b33df4b2d7f11bd3067f260515"
+  },
+  {
+   "id": "read-guide",
+   "op": "read",
+   "data": {
+    "reason": "Independently opened original https://kitpa.org/koai/2027 and read 중등부 일정·평가 구성, 1–4과목 및 code 작성",
+    "actor": "joined-content-review",
+    "source_id": "guide",
+    "receipt": {
+     "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+     "sha256": "feb203278e36334a7aeacba3fc4dc54ed66b721425b80a775492f9de77648ddf",
+     "start_line": 16,
+     "end_line": 22,
+     "excerpt": "      \"id\": \"guide\",\n      \"kind\": \"official_scope\",\n      \"url\": \"https://kitpa.org/koai/2027\",\n      \"revision\": \"KITPA 2027 중등부\",\n      \"locator\": \"중등부 일정·평가 구성, 1–4과목 및 code 작성\",\n      \"statement\": \"필기 3시간에 선택 80·서술 10, 코딩 3시간에 2과제. 국내 2027 중등부에는 1–4과목이 적용된다.\",\n      \"boundary\": \"주차별 수업이나 교재 우열의 요구 수준을 정하는 표는 아니다.\"\n",
+     "excerpt_sha256": "d46929e50aaba10a8063b9668c1c86086cb1c21881ad9cf484e88b8c3475e478"
+    }
+   },
+   "previous_sha256": "10007c827707e036817de6624fe2bed712f343b33df4b2d7f11bd3067f260515",
+   "sha256": "58270028ff2ee2690e0d61d600bdc579eabb0c3756388ca4b23cd1339c3fa6fc"
+  },
+  {
+   "id": "read-domestic",
+   "op": "read",
+   "data": {
+    "reason": "Independently opened original https://kitpa.org/koai/syllabus and read 1-1 프로그래밍 기초의 Python, NumPy/pandas, Matplotlib/Seaborn, tensor manipulation 행",
+    "actor": "joined-content-review",
+    "source_id": "domestic",
+    "receipt": {
+     "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+     "sha256": "feb203278e36334a7aeacba3fc4dc54ed66b721425b80a775492f9de77648ddf",
+     "start_line": 25,
+     "end_line": 31,
+     "excerpt": "      \"id\": \"domestic\",\n      \"kind\": \"official_scope\",\n      \"url\": \"https://kitpa.org/koai/syllabus\",\n      \"revision\": \"KITPA 게시판의 IOAI 2026 표기\",\n      \"locator\": \"1-1 프로그래밍 기초의 Python, NumPy/pandas, Matplotlib/Seaborn, tensor manipulation 행\",\n      \"statement\": \"이 도구들의 표시는 실전이다. 사용자가 짧은 절차·표·배열·그림을 실제로 변경해 요구에 맞는 결과를 만들어야 한다는 W1 편성 근거다.\",\n      \"boundary\": \"직접 개념을 설명하고 새 사례에서 고르는 증거를 요구하는 것은 1주차 교재 평가를 위한 과정 판단이다.\"\n",
+     "excerpt_sha256": "77afc5f72a4a5211fb94e8ee199144ea48d1c601b1c85af12e8f3cd5785ac590"
+    }
+   },
+   "previous_sha256": "58270028ff2ee2690e0d61d600bdc579eabb0c3756388ca4b23cd1339c3fa6fc",
+   "sha256": "d313bafc0356436201bed78138ce46fe094980eb422ccd140fd7f682f90e2466"
+  },
+  {
+   "id": "read-antique",
+   "op": "read",
+   "data": {
+    "reason": "Independently opened original https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb and read Task description §1, dataset §2, task/evaluation §3–5. 공식 개인전 색인 Task 5에서 원문 확인.",
+    "actor": "joined-content-review",
+    "source_id": "antique",
+    "receipt": {
+     "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+     "sha256": "feb203278e36334a7aeacba3fc4dc54ed66b721425b80a775492f9de77648ddf",
+     "start_line": 34,
+     "end_line": 40,
+     "excerpt": "      \"id\": \"antique\",\n      \"kind\": \"official_problem\",\n      \"url\": \"https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb\",\n      \"revision\": \"IOAI Beijing 2025 individual task 5 Antique Painting Authentication\",\n      \"locator\": \"Task description §1, dataset §2, task/evaluation §3–5. 공식 개인전 색인 Task 5에서 원문 확인.\",\n      \"statement\": \"훈련 여섯 열 중 다섯 특성과 라벨을 구분한다. 라벨의 0은 미상, 두 알려진 부류는 ±1이다. 검증·시험은 다섯 특성이고 요구 출력은 시료별 ±1 예측이다.\",\n      \"boundary\": \"W1의 관찰 한 건/시점/결측 의미와 출력 대상 설정에만 유추한다. 국내 중등부에서 같은 문제나 모델이 나올 것이라는 증거는 없다.\"\n",
+     "excerpt_sha256": "758a6cc78656ca33eeb673761ae6bf1bf098dc9121894aaa3afe057149120c20"
+    }
+   },
+   "previous_sha256": "d313bafc0356436201bed78138ce46fe094980eb422ccd140fd7f682f90e2466",
+   "sha256": "1269b2675242a4c2e58b3fbc33b676b9b3dc3e9c1aa8027b87f2a43d19f27e5d"
+  },
+  {
+   "id": "read-sample",
+   "op": "read",
+   "data": {
+    "reason": "Independently opened original https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf and read pp.1–2 선택 1, 2, 3, 6. 공지 https://kitpa.org/files/36",
+    "actor": "joined-content-review",
+    "source_id": "sample",
+    "receipt": {
+     "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+     "sha256": "feb203278e36334a7aeacba3fc4dc54ed66b721425b80a775492f9de77648ddf",
+     "start_line": 43,
+     "end_line": 49,
+     "excerpt": "      \"id\": \"sample\",\n      \"kind\": \"official_problem\",\n      \"url\": \"https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf\",\n      \"revision\": \"KITPA 2026 고등부 학습 참고 공개 예시\",\n      \"locator\": \"pp.1–2 선택 1, 2, 3, 6. 공지 https://kitpa.org/files/36\",\n      \"statement\": \"함수 호출 사이의 상태, 배열 축별 축약과 메모리, 두 수치형 변수 관계와 주변분포, 네 축 Tensor의 축 교환을 질문한다.\",\n      \"boundary\": \"고등부 학습 참고 예시이며 공식 정답 전체가 공개되지 않았다. 2차원 W1의 선수 개념과 출력 의미를 읽는 행동까지만 비교한다.\"\n",
+     "excerpt_sha256": "05c816c4afd69f5777798e31450de3b32ab9d7c80adb074a59ef312823aedad8"
+    }
+   },
+   "previous_sha256": "1269b2675242a4c2e58b3fbc33b676b9b3dc3e9c1aa8027b87f2a43d19f27e5d",
+   "sha256": "db6af4e0f53077b0c97210d3d6b93a4dfb4cf4dae0dc1021a3efa51de46a21d8"
+  },
+  {
+   "id": "read-ioai27",
+   "op": "read",
+   "data": {
+    "reason": "Independently opened original https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf and read pp.1–2 Programming Fundamentals, Technical Fundamentals",
+    "actor": "joined-content-review",
+    "source_id": "ioai27",
+    "receipt": {
+     "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+     "sha256": "feb203278e36334a7aeacba3fc4dc54ed66b721425b80a775492f9de77648ddf",
+     "start_line": 52,
+     "end_line": 58,
+     "excerpt": "      \"id\": \"ioai27\",\n      \"kind\": \"official_scope\",\n      \"url\": \"https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf\",\n      \"revision\": \"IOAI syllabus 2027\",\n      \"locator\": \"pp.1–2 Programming Fundamentals, Technical Fundamentals\",\n      \"statement\": \"프로그래밍·표·시각화·tensor manipulation 기초는 실전이다. 국제판은 터미널, Jupyter, Git, SSH도 기술 기초로 명시한다.\",\n      \"boundary\": \"국내 사이트의 연결 문서는 여전히 2026 표기다. 국제 추가 항목 전체를 국내 2027 첫 주 필수로 지정할 근거가 없다.\"\n",
+     "excerpt_sha256": "3e5beaa4f46caf9153304a0be6fe04eb1d3e21c99cf9e5b292ddce7a427971ca"
+    }
+   },
+   "previous_sha256": "db6af4e0f53077b0c97210d3d6b93a4dfb4cf4dae0dc1021a3efa51de46a21d8",
+   "sha256": "0c57937e22a92048db82c40304f2a9cdcc701691bb97364632e68e38ed8ec221"
+  },
+  {
+   "id": "source-linked-course-objectives",
+   "op": "trace",
+   "data": {
+    "reason": "Actual course editor wrote four source-linked requirements in the refreshed pre-authoring contract. The external comparer re-read the sources and provided a separate pre-candidate interpretation in source-basis.json.",
+    "actor": "course-editor",
+    "frontier_id": "scope-transfer",
+    "read_ids": [
+     "read-guide",
+     "read-domestic",
+     "read-antique",
+     "read-sample",
+     "read-ioai27"
+    ],
+    "rationale": "These exact objectives/minima/assessments are transcribed from refresh 0001 of the course-editor contract. Supplemental paths receive credit only if student-reachable. The by-topic scope assertions, actual source author and material comparer are kept distinct.",
+    "counterevidence": "Antique requires learned predictions, whereas W1 transfer covers claimed row, input/target, semantics and viable output; domestic 2026 examples were published for high-school learning. Neither determines middle-school placement, actual time, effectiveness or replacement utility.",
+    "uninvestigated": [],
+    "demands": [
+     {
+      "id": "W1-python",
+      "statement": "짧은 절차에서 조건·반복·반환값을 추적하고 바뀐 입력을 검사한다.",
+      "prerequisites": [
+       "변수, 리스트, 파일을 본 적 있는 중학생. 상태표와 짧은 복구 경로를 제공한다."
+      ],
+      "learning_demand": "값과 출력, 빈 목록과 0을 구별한다. 다음 상태와 반환값을 예측하고 실제 실행과 비교한다. 예외 또는 잘못된 입력 한 경우를 진단한다. 제공한 함수·반복문을 직접 수정하고 새 입력·오류 사례에서 반환값을 실행해 확인한다.",
+      "assessment_demand": "완성 답이 안 보이는 새 입력에서 반환값·실패 원인을 쓰거나 작동하는 코드를 만든다."
+     },
+     {
+      "id": "W1-table",
+      "statement": "관측 단위, 측정 시점, 특성과 목표를 구별하고 표에서 올바른 대상을 집계한다.",
+      "prerequisites": [
+       "리스트 선택, 함수 반환 및 CSV 읽기. 자료사전·단위·고유 키를 처음 사용할 때 제시한다."
+      ],
+      "learning_demand": "실제 CSV를 선택하고 결측과 0을 구별한다. 분모를 설명하고, 자습에서 열 이름이 바뀐 표와 순서가 다른 두 표를 키로 병합한다. 열 dtype, 행·열 shape와 필요한 열 선택이 바뀐 실제 자료와 맞는지 직접 출력한다.",
+      "assessment_demand": "새 파일에서 키·열·결측·시점에 근거해 표를 만든다. 누락된 필수 열이나 잘못된 대응을 발견한다."
+     },
+     {
+      "id": "W1-array",
+      "statement": "행과 열의 뜻을 유지하며 손계산, shape 예측 및 NumPy 결과를 연결한다.",
+      "prerequisites": [
+       "평균의 분자와 분모를 작은 자료로 소개한다. 행·열·관측 단위는 표 단원에서 먼저 다룬다."
+      ],
+      "learning_demand": "직사각 배열의 두 평균과 축을 손으로 예측한다. 자습에서는 모집단 분산·벡터 내적·배열 공유·우측 축 정렬·형태 변경과 전치를 짧은 유효 사례와 잘못 쓰이는 사례로 확인한다. 행·열 인덱싱 및 슬라이스가 선택한 값과 남은 shape를 코드로 대조한다. 한 사례의 명사를 빼도 배열 각 축과 좌표가 가리키는 양, 연산 전제, 무엇이 결과 한 칸 또는 한 값으로 모이는지 설명한다. 같은 모양의 입력도 질문에 따라 다른 연산이나 출력을 요구하는 반례를 다룬다.",
+      "assessment_demand": "처음 보는 비정사각 배열에서 남는 축의 의미·값을 예측하고, 바뀐 차원 또는 복사 방식의 결과를 확인한다. 가르친 예와 쓰임이 다른 자료에서 연산 이름이나 완성 풀이를 주기 전에 필요한 결과의 뜻·단위·모양을 정하고 연산을 직접 선택한다. 입력의 조건을 바꿔 선택의 이유를 다시 확인한다."
+     },
+     {
+      "id": "W1-visualise",
+      "statement": "표의 통계량을 목적에 맞는 그림으로 표시하고 단위·집계·해석 범위를 말한다.",
+      "prerequisites": [
+       "어떤 기록을 세었는지, 평균과 유효 관측 수를 앞 단원에서 확인한다."
+      ],
+      "learning_demand": "수업 Matplotlib과 자습 Seaborn으로 각각 그림을 그린다. 축과 단위·비교 집단을 쓴다. 조건이나 집계가 바뀌면 해석이 어떻게 달라지는지 근거를 댄다. 수치 분포와 범주 차이 두 질문에 알맞은 그래프를 그리며, 표시한 자료와 단위를 직접 확인한다.",
+      "assessment_demand": "새 입력으로 그래프를 선택·작성하고 집계값 및 관측 제한을 근거로 결론을 설명한다."
+     }
+    ]
+   },
+   "previous_sha256": "0c57937e22a92048db82c40304f2a9cdcc701691bb97364632e68e38ed8ec221",
+   "sha256": "0980c6b4df982aa5d6838d54dd45da2b6edc44f668e60e818ea431e4f343835d"
+  },
+  {
+   "id": "r4-W1-python",
+   "op": "compare",
+   "data": {
+    "reason": "Direct reading of all student-route material and exact teacher response; the entry span anchors the discovery requirement and the joined graph binds the actual additional panes.",
+    "demand_id": "W1-python",
+    "reviewer": "joined-content-review",
+    "rationale": "공개 입력에서 초과와 이상 함수의 다른 반환, 인덱스 오류의 호출/실패 줄, 0·1·3개 이름 목록에 대한 수정 함수의 결과를 재실행했다.",
+    "judgment": "covered",
+    "dimensions": [
+     {
+      "id": "prerequisites",
+      "judgment": "met",
+      "observed_behavior": "오류가 발생한 실제 호출과 표현식을 검토하고, python-five에서 종류와 원인, 별도 인덱스 실패를 읽었다.",
+      "rationale": "공개 입력에서 초과와 이상 함수의 다른 반환, 인덱스 오류의 호출/실패 줄, 0·1·3개 이름 목록에 대한 수정 함수의 결과를 재실행했다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+       "start_line": 219,
+       "end_line": 219,
+       "excerpt": "    \"    traceback.print_exc(limit=-2, file=sys.stdout)\"\n",
+       "excerpt_sha256": "c8fb943572551068f8d86d6a7a964d8685559225a6150a38e625d7b099bf3e8a"
+      }
+     },
+     {
+      "id": "learning",
+      "judgment": "met",
+      "observed_behavior": "실행 상태표에서 None은 평가를 건너뛰고 초기·최종 상태를 정의한다. 새 입력에서도 반환을 계산에 쓴다.",
+      "rationale": "공개 입력에서 초과와 이상 함수의 다른 반환, 인덱스 오류의 호출/실패 줄, 0·1·3개 이름 목록에 대한 수정 함수의 결과를 재실행했다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+       "start_line": 149,
+       "end_line": 149,
+       "excerpt": "    \"마지막 줄 뒤에 호출한 쪽이 받는 수는 1이다. 목록은 네 번 살폈다. 빈 목록 `[]`이면 반복문을 한 번도 돌지 않아 처음의 0을 반환한다. `[0]`이면 0권을 관측한 한 번의 반복이 있다.\"\n",
+       "excerpt_sha256": "5ecbdae250a2f37a4a9110abcce06a08dc65ef169274d4f8c676221428f08ea0"
+      }
+     },
+     {
+      "id": "assessment",
+      "judgment": "met",
+      "observed_behavior": "완성 답을 보지 않고 두 함수의 호출·실패 번호를 예상한 뒤 유효/빈 목록에 수정본을 실행한다.",
+      "rationale": "공개 입력에서 초과와 이상 함수의 다른 반환, 인덱스 오류의 호출/실패 줄, 0·1·3개 이름 목록에 대한 수정 함수의 결과를 재실행했다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+       "start_line": 489,
+       "end_line": 489,
+       "excerpt": "    \"아래 `last_box`는 목록이 비면 `None`, 하나 이상이면 맨 마지막 반납함 이름을 돌려줘야 한다. 예시를 가리고 `[\\\"B\\\", \\\"C\\\"]`에 어떤 번호를 쓰게 될지 먼저 적자. 실행한 다음 **누가 어느 번호로 호출했는지**, **어느 줄의 무슨 연산이 멈췄는지**, **오류 종류와 그 번호가 틀린 이유**를 쓰자. 아래쪽에 고친 함수를 따로 작성하고 두 이름, 한 이름, 빈 목록에 적용하자.\\n\",\n",
+       "excerpt_sha256": "9a13e4af49834566fa805e08806bd253053fc6ce778b10af3ca9e819707c9039"
+      }
+     }
+    ],
+    "lesson_receipt": {
+     "path": "lessons/week01/week01_foundations.ipynb",
+     "sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+     "start_line": 489,
+     "end_line": 489,
+     "excerpt": "    \"아래 `last_box`는 목록이 비면 `None`, 하나 이상이면 맨 마지막 반납함 이름을 돌려줘야 한다. 예시를 가리고 `[\\\"B\\\", \\\"C\\\"]`에 어떤 번호를 쓰게 될지 먼저 적자. 실행한 다음 **누가 어느 번호로 호출했는지**, **어느 줄의 무슨 연산이 멈췄는지**, **오류 종류와 그 번호가 틀린 이유**를 쓰자. 아래쪽에 고친 함수를 따로 작성하고 두 이름, 한 이름, 빈 목록에 적용하자.\\n\",\n",
+     "excerpt_sha256": "9a13e4af49834566fa805e08806bd253053fc6ce778b10af3ca9e819707c9039"
+    }
+   },
+   "previous_sha256": "0980c6b4df982aa5d6838d54dd45da2b6edc44f668e60e818ea431e4f343835d",
+   "sha256": "8f190890c251c3c20311c358255cbb1aad30df9f9a94e7528fa1aa3ec8c9502f"
+  },
+  {
+   "id": "r4-W1-table",
+   "op": "compare",
+   "data": {
+    "reason": "Direct reading of all student-route material and exact teacher response; the entry span anchors the discovery requirement and the joined graph binds the actual additional panes.",
+    "demand_id": "W1-table",
+    "reviewer": "joined-content-review",
+    "rationale": "물리 CSV의 반납함 열이 모두 빈 경우 T1–T8을 정확히 알렸다. 보충 첫 예 M07/M12와 새 예 J2 및 중복 G2가 영향을 주는 J9를 독립 검산했다. 본교안의 링크와 돌아오는 merge-recheck 표지가 존재한다.",
+    "judgment": "covered",
+    "dimensions": [
+     {
+      "id": "prerequisites",
+      "judgment": "met",
+      "observed_behavior": "한 행·시점·측정 단위와 식별자, 뒤에 생기는 목표를 먼저 분리한다.",
+      "rationale": "물리 CSV의 반납함 열이 모두 빈 경우 T1–T8을 정확히 알렸다. 보충 첫 예 M07/M12와 새 예 J2 및 중복 G2가 영향을 주는 J9를 독립 검산했다. 본교안의 링크와 돌아오는 merge-recheck 표지가 존재한다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+       "start_line": 22,
+       "end_line": 22,
+       "excerpt": "    \"한 행에 해당하는 사람·장소·사건 등을 **관측 단위**라고 한다. 여기서 한 **행**은 어떤 반납함을 하루 관찰한 기록 하나다. 같은 반납함이라도 날짜가 다르면 다른 행이다. 한 **열**은 모든 행에서 같은 질문에 답한다. 반납함을 비울 때마다 새로 들어온 권수를 적으므로 아래 네 구간은 겹치지 않는다.\\n\",\n",
+       "excerpt_sha256": "aea4aaeade314b44636ad14c0c9951e098a6e4c55e1ec92f092a3d44c08100cc"
+      }
+     },
+     {
+      "id": "learning",
+      "judgment": "met",
+      "observed_behavior": "서로 다른 분모가 어떤 관측/자료가 있는 집단에 균등한 비중을 주는지 설명하고 분모 0도 드러낸다.",
+      "rationale": "물리 CSV의 반납함 열이 모두 빈 경우 T1–T8을 정확히 알렸다. 보충 첫 예 M07/M12와 새 예 J2 및 중복 G2가 영향을 주는 J9를 독립 검산했다. 본교안의 링크와 돌아오는 merge-recheck 표지가 존재한다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+       "start_line": 430,
+       "end_line": 430,
+       "excerpt": "    \"**비중**은 최종 값에 어느 관측이 얼마나 반영되는지를 뜻한다. 측정 한 번마다 같은 비중이면 유효한 원자료의 합을 **측정 수**로 나눈다. 장소마다 같은 비중이면 각 장소 안에서 평균을 낸 뒤 그 평균들의 합을 **평균을 구할 수 있는 장소 수**로 나눈다. 같은 장소의 측정이 여러 번 있으면 두 답이 다를 수 있다.\\n\",\n",
+       "excerpt_sha256": "e106c86895040a23d5c25fdf72a1526a990eacba7eebe22bd268302302d13a66"
+      }
+     },
+     {
+      "id": "assessment",
+      "judgment": "met",
+      "observed_behavior": "다른 이름을 제거해 실제 결손 ID를 예측하고, 도움이 필요하면 등록한 다른 노트북을 열어 중복·빈 키를 고친 후 복귀한다.",
+      "rationale": "물리 CSV의 반납함 열이 모두 빈 경우 T1–T8을 정확히 알렸다. 보충 첫 예 M07/M12와 새 예 J2 및 중복 G2가 영향을 주는 J9를 독립 검산했다. 본교안의 링크와 돌아오는 merge-recheck 표지가 존재한다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+       "start_line": 928,
+       "end_line": 928,
+       "excerpt": "    \"키가 중복되거나 미연결 기록이 생겼는데 **어느 이름에서 어긋났는지 찾지 못한 경우**에는 [식별자 연결 복구 연습](week01_foundations_repair.ipynb)을 열어 보자. 마지막 재검사를 마친 뒤 여기로 돌아와 이번에는 다른 반납함으로 자신의 절차를 다시 확인하자.\"\n",
+       "excerpt_sha256": "940961fe1776aa1479fefe9687c36925b2f8caccdee3f2e4e75a5ea569c3207c"
+      }
+     }
+    ],
+    "lesson_receipt": {
+     "path": "lessons/week01/week01_foundations.ipynb",
+     "sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+     "start_line": 928,
+     "end_line": 928,
+     "excerpt": "    \"키가 중복되거나 미연결 기록이 생겼는데 **어느 이름에서 어긋났는지 찾지 못한 경우**에는 [식별자 연결 복구 연습](week01_foundations_repair.ipynb)을 열어 보자. 마지막 재검사를 마친 뒤 여기로 돌아와 이번에는 다른 반납함으로 자신의 절차를 다시 확인하자.\"\n",
+     "excerpt_sha256": "940961fe1776aa1479fefe9687c36925b2f8caccdee3f2e4e75a5ea569c3207c"
+    }
+   },
+   "previous_sha256": "8f190890c251c3c20311c358255cbb1aad30df9f9a94e7528fa1aa3ec8c9502f",
+   "sha256": "ee79ef25defe6a602c5cd1b4716eeceba8057e80d56253ffe4a4d8fa478ebbf4"
+  },
+  {
+   "id": "r4-W1-array",
+   "op": "compare",
+   "data": {
+    "reason": "Direct reading of all student-route material and exact teacher response; the entry span anchors the discovery requirement and the joined graph binds the actual additional panes.",
+    "demand_id": "W1-array",
+    "reviewer": "joined-content-review",
+    "rationale": "원자료에서 게시판 [[1,3,2],[4,0,5]], 팀 점수 [-5,9,-4]와 틀린 가중치의 [10,-6,11]은 맞다. 그러나 초안의 array-lab은 같은 입력에 두 질문을 묻고 math-lab은 복사·보정·분산으로 이동한다. 입력을 실제로 바꾼 뒤 자신이 고른 두 출력·좌표·점수 변화를 다시 연결해 확인할 평가가 빠져 있다.",
+    "judgment": "gap",
+    "dimensions": [
+     {
+      "id": "prerequisites",
+      "judgment": "met",
+      "observed_behavior": "좌표·행/열 수·단위·비결측, 축별 출력의 의미를 예문 앞에서 일반 용어와 식으로 정의한다.",
+      "rationale": "원자료에서 게시판 [[1,3,2],[4,0,5]], 팀 점수 [-5,9,-4]와 틀린 가중치의 [10,-6,11]은 맞다. 그러나 초안의 array-lab은 같은 입력에 두 질문을 묻고 math-lab은 복사·보정·분산으로 이동한다. 입력을 실제로 바꾼 뒤 자신이 고른 두 출력·좌표·점수 변화를 다시 연결해 확인할 평가가 빠져 있다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+       "start_line": 61,
+       "end_line": 61,
+       "excerpt": "    \"배열의 **모양** `shape`는 축마다 몇 칸인지 나타낸다. 직사각형 표 `X`의 모양을 `(R, C)`라 하자. `R`은 행 수, `C`는 열 수다. $x_{ij}$는 행 번호 $i$, 열 번호 $j$의 값이다. 둘 다 0부터 세며, 여기서는 모든 칸의 단위가 같고 비어 있지 않다. $R$과 $C$는 1 이상이다.\\n\",\n",
+       "excerpt_sha256": "bba3bcc7ed3f01243a3dc18877fe758d328f04c33f0873028fb010313fd44b7d"
+      }
+     },
+     {
+      "id": "learning",
+      "judgment": "met",
+      "observed_behavior": "원소별 곱과 가중합, 가중치 부호와 단위를 구별하고 원래 좌표 및 축약 결과를 손계산한다.",
+      "rationale": "원자료에서 게시판 [[1,3,2],[4,0,5]], 팀 점수 [-5,9,-4]와 틀린 가중치의 [10,-6,11]은 맞다. 그러나 초안의 array-lab은 같은 입력에 두 질문을 묻고 math-lab은 복사·보정·분산으로 이동한다. 입력을 실제로 바꾼 뒤 자신이 고른 두 출력·좌표·점수 변화를 다시 연결해 확인할 평가가 빠져 있다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+       "start_line": 612,
+       "end_line": 612,
+       "excerpt": "    \"**가중합**은 같은 항목의 값과 그 항목의 가중치를 곱해 모두 더한 수다. 길이가 $k$인 두 1차원 벡터의 값이 $x_1,\\\\ldots,x_k$, 가중치가 $w_1,\\\\ldots,w_k$이면 내적은 $x_1w_1+\\\\cdots+x_kw_k$다. 각 위치가 **같은 항목**이어야 한다. 가중치가 음수인 항목은 총합에서 그만큼 빠진다. 합계가 목적이면 별도의 분모가 없다.\\n\",\n",
+       "excerpt_sha256": "b808d8538ed9b841ddbbc1b4362a1ecdca14796336433f04c87f9493d22b1905"
+      }
+     },
+     {
+      "id": "assessment",
+      "judgment": "gap",
+      "observed_behavior": "같은 경기표로 두 의미의 출력을 스스로 정하지만 입력을 실제로 바꾸어 두 선택의 결과를 다시 확인하도록 하지 않는다.",
+      "rationale": "원자료에서 게시판 [[1,3,2],[4,0,5]], 팀 점수 [-5,9,-4]와 틀린 가중치의 [10,-6,11]은 맞다. 그러나 초안의 array-lab은 같은 입력에 두 질문을 묻고 math-lab은 복사·보정·분산으로 이동한다. 입력을 실제로 바꾼 뒤 자신이 고른 두 출력·좌표·점수 변화를 다시 연결해 확인할 평가가 빠져 있다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+       "start_line": 652,
+       "end_line": 652,
+       "excerpt": "    \"먼저 종이에 두 결과의 값·모양·단위를 쓰고 어떤 연산을 쓸지 **직접** 정하자. 같은 입력인데 결과 칸 수가 달라지는 이유는 무엇인가? 모양만 같은 다른 답을 가려낼 원래 좌표 하나와, 규정 순서를 잘못 붙인 답을 가려낼 팀 하나를 고르자.\\n\",\n",
+       "excerpt_sha256": "2c859e09dbc83e1055b14c00917d730546b06c0b291d4a1ea96fd209a473701e"
+      }
+     }
+    ],
+    "lesson_receipt": {
+     "path": "lessons/week01/week01_foundations.ipynb",
+     "sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+     "start_line": 652,
+     "end_line": 652,
+     "excerpt": "    \"먼저 종이에 두 결과의 값·모양·단위를 쓰고 어떤 연산을 쓸지 **직접** 정하자. 같은 입력인데 결과 칸 수가 달라지는 이유는 무엇인가? 모양만 같은 다른 답을 가려낼 원래 좌표 하나와, 규정 순서를 잘못 붙인 답을 가려낼 팀 하나를 고르자.\\n\",\n",
+     "excerpt_sha256": "2c859e09dbc83e1055b14c00917d730546b06c0b291d4a1ea96fd209a473701e"
+    }
+   },
+   "previous_sha256": "ee79ef25defe6a602c5cd1b4716eeceba8057e80d56253ffe4a4d8fa478ebbf4",
+   "sha256": "ab2498d5469dad128992239daf3eb80f02f760b6524f380e2d8098ce27f64b1c"
+  },
+  {
+   "id": "r4-W1-visualise",
+   "op": "compare",
+   "data": {
+    "reason": "Direct reading of all student-route material and exact teacher response; the entry span anchors the discovery requirement and the joined graph binds the actual additional panes.",
+    "demand_id": "W1-visualise",
+    "reviewer": "joined-content-review",
+    "rationale": "새 CSV의 기준 4/6에서 히스토그램 [2,1,1,0,0]/[2,1,0,0,0], West 13/3→3을 실제 그려진 높이에서 확인했다. 네 축의 눈금과 레이블도 겹치거나 잘리지 않는다.",
+    "judgment": "covered",
+    "dimensions": [
+     {
+      "id": "prerequisites",
+      "judgment": "met",
+      "observed_behavior": "막대 한 칸이 어느 두 기록으로 만들어지는지 단위와 함께 되짚는다.",
+      "rationale": "새 CSV의 기준 4/6에서 히스토그램 [2,1,1,0,0]/[2,1,0,0,0], West 13/3→3을 실제 그려진 높이에서 확인했다. 네 축의 눈금과 레이블도 겹치거나 잘리지 않는다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+       "start_line": 404,
+       "end_line": 404,
+       "excerpt": "    \"가로에는 세 **구간**, 세로에는 R1·R2의 **기록당 평균 반납 권수**를 놓는다. 각 막대 하나는 앞에서 만든 `by_period`의 한 칸이다. 영어 눈금 Open, Break, Lunch는 순서대로 개관·오전·점심이다. 세로축은 0에서 시작하고 같은 간격은 같은 권수 차이다. 실행한 뒤 막대 하나를 골라 “어느 기록의 어떤 두 값에서 나왔다”는 문장을 써 보자.\"\n",
+       "excerpt_sha256": "a1df09d0aab726cf859b70ae51d106c03db36532014236cabfa5a76ed00d3e12"
+      }
+     },
+     {
+      "id": "learning",
+      "judgment": "met",
+      "observed_behavior": "권수 구간/기록 수와 구역/관측 평균의 다른 단위와 주장 범위를 직접 비교한다.",
+      "rationale": "새 CSV의 기준 4/6에서 히스토그램 [2,1,1,0,0]/[2,1,0,0,0], West 13/3→3을 실제 그려진 높이에서 확인했다. 네 축의 눈금과 레이블도 겹치거나 잘리지 않는다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+       "start_line": 789,
+       "end_line": 789,
+       "excerpt": "    \"**분포**를 보려면 관측 하나하나의 하교 권수를 범위에 담아 기록 수를 센다. 아래 Matplotlib 히스토그램에서 가로축은 하교 권수, 세로축은 그 범위에 든 기록 수다. 가령 4권은 4 이상 6 미만인 칸에 들어간다. 마지막 칸만 오른쪽 끝도 포함한다. 빈 하교 기록은 범위를 정할 수 없어 뺀다.\\n\",\n",
+       "excerpt_sha256": "9925fe33d86f198f5b455e859a183131490b88e55c00d70fedf842d2a70ec947"
+      }
+     },
+     {
+      "id": "assessment",
+      "judgment": "met",
+      "observed_behavior": "새 일지와 목적에서 그림·필드·단위의 첫 선택을 실마리 전에 남기고 조건이 바뀌었을 때 실제 관측으로 설명한다.",
+      "rationale": "새 CSV의 기준 4/6에서 히스토그램 [2,1,1,0,0]/[2,1,0,0,0], West 13/3→3을 실제 그려진 높이에서 확인했다. 네 축의 눈금과 레이블도 겹치거나 잘리지 않는다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+       "start_line": 853,
+       "end_line": 853,
+       "excerpt": "    \"아래 ‘실마리’를 열기 전에 이곳과 바로 다음 빈 셀에 첫 시도를 남기자. 그림 두 개를 스케치하거나 코드로 시작해도 좋다. 각 그림의 **종류, 쓸 파일과 열, 가로·세로축 및 단위, 한 표시가 가리키는 기록 또는 계산**을 직접 정하자. 구역을 어떻게 붙일지, 0과 빈칸은 무엇을 뜻하는지도 첫 설계에 표시하자. 이후 수정할 때에는 첫 시도도 남겨 두자.\\n\",\n",
+       "excerpt_sha256": "300149bbcfbfe524c5a4bdee2d59d95dcdabbdd19f6eaeacf2149e69aecfccc1"
+      }
+     }
+    ],
+    "lesson_receipt": {
+     "path": "lessons/week01/week01_foundations.ipynb",
+     "sha256": "a80f454f701606a6d2ee0f72c4d1dc6b01678d40a911510bed09d1a5caf1af84",
+     "start_line": 853,
+     "end_line": 853,
+     "excerpt": "    \"아래 ‘실마리’를 열기 전에 이곳과 바로 다음 빈 셀에 첫 시도를 남기자. 그림 두 개를 스케치하거나 코드로 시작해도 좋다. 각 그림의 **종류, 쓸 파일과 열, 가로·세로축 및 단위, 한 표시가 가리키는 기록 또는 계산**을 직접 정하자. 구역을 어떻게 붙일지, 0과 빈칸은 무엇을 뜻하는지도 첫 설계에 표시하자. 이후 수정할 때에는 첫 시도도 남겨 두자.\\n\",\n",
+     "excerpt_sha256": "300149bbcfbfe524c5a4bdee2d59d95dcdabbdd19f6eaeacf2149e69aecfccc1"
+    }
+   },
+   "previous_sha256": "ab2498d5469dad128992239daf3eb80f02f760b6524f380e2d8098ce27f64b1c",
+   "sha256": "debca00d2feb5ec2763cc2121b966a9c37d8c541fbbbf9300887121c55c4af67"
+  },
+  {
+   "id": "r5-W1-python",
+   "op": "compare",
+   "data": {
+    "reason": "Direct reading of all student-route material and exact teacher response; the entry span anchors the discovery requirement and the joined graph binds the actual additional panes.",
+    "demand_id": "W1-python",
+    "reviewer": "joined-content-review",
+    "rationale": "공개 입력에서 초과와 이상 함수의 다른 반환, 인덱스 오류의 호출/실패 줄, 0·1·3개 이름 목록에 대한 수정 함수의 결과를 재실행했다.",
+    "judgment": "covered",
+    "dimensions": [
+     {
+      "id": "prerequisites",
+      "judgment": "met",
+      "observed_behavior": "오류가 발생한 실제 호출과 표현식을 검토하고, python-five에서 종류와 원인, 별도 인덱스 실패를 읽었다.",
+      "rationale": "공개 입력에서 초과와 이상 함수의 다른 반환, 인덱스 오류의 호출/실패 줄, 0·1·3개 이름 목록에 대한 수정 함수의 결과를 재실행했다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+       "start_line": 219,
+       "end_line": 219,
+       "excerpt": "    \"    traceback.print_exc(limit=-2, file=sys.stdout)\"\n",
+       "excerpt_sha256": "c8fb943572551068f8d86d6a7a964d8685559225a6150a38e625d7b099bf3e8a"
+      }
+     },
+     {
+      "id": "learning",
+      "judgment": "met",
+      "observed_behavior": "실행 상태표에서 None은 평가를 건너뛰고 초기·최종 상태를 정의한다. 새 입력에서도 반환을 계산에 쓴다.",
+      "rationale": "공개 입력에서 초과와 이상 함수의 다른 반환, 인덱스 오류의 호출/실패 줄, 0·1·3개 이름 목록에 대한 수정 함수의 결과를 재실행했다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+       "start_line": 149,
+       "end_line": 149,
+       "excerpt": "    \"마지막 줄 뒤에 호출한 쪽이 받는 수는 1이다. 목록은 네 번 살폈다. 빈 목록 `[]`이면 반복문을 한 번도 돌지 않아 처음의 0을 반환한다. `[0]`이면 0권을 관측한 한 번의 반복이 있다.\"\n",
+       "excerpt_sha256": "5ecbdae250a2f37a4a9110abcce06a08dc65ef169274d4f8c676221428f08ea0"
+      }
+     },
+     {
+      "id": "assessment",
+      "judgment": "met",
+      "observed_behavior": "완성 답을 보지 않고 두 함수의 호출·실패 번호를 예상한 뒤 유효/빈 목록에 수정본을 실행한다.",
+      "rationale": "공개 입력에서 초과와 이상 함수의 다른 반환, 인덱스 오류의 호출/실패 줄, 0·1·3개 이름 목록에 대한 수정 함수의 결과를 재실행했다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+       "start_line": 489,
+       "end_line": 489,
+       "excerpt": "    \"아래 `last_box`는 목록이 비면 `None`, 하나 이상이면 맨 마지막 반납함 이름을 돌려줘야 한다. 예시를 가리고 `[\\\"B\\\", \\\"C\\\"]`에 어떤 번호를 쓰게 될지 먼저 적자. 실행한 다음 **누가 어느 번호로 호출했는지**, **어느 줄의 무슨 연산이 멈췄는지**, **오류 종류와 그 번호가 틀린 이유**를 쓰자. 아래쪽에 고친 함수를 따로 작성하고 두 이름, 한 이름, 빈 목록에 적용하자.\\n\",\n",
+       "excerpt_sha256": "9a13e4af49834566fa805e08806bd253053fc6ce778b10af3ca9e819707c9039"
+      }
+     }
+    ],
+    "minutes": 35,
+    "lesson_receipt": {
+     "path": "lessons/week01/week01_foundations.ipynb",
+     "sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+     "start_line": 489,
+     "end_line": 489,
+     "excerpt": "    \"아래 `last_box`는 목록이 비면 `None`, 하나 이상이면 맨 마지막 반납함 이름을 돌려줘야 한다. 예시를 가리고 `[\\\"B\\\", \\\"C\\\"]`에 어떤 번호를 쓰게 될지 먼저 적자. 실행한 다음 **누가 어느 번호로 호출했는지**, **어느 줄의 무슨 연산이 멈췄는지**, **오류 종류와 그 번호가 틀린 이유**를 쓰자. 아래쪽에 고친 함수를 따로 작성하고 두 이름, 한 이름, 빈 목록에 적용하자.\\n\",\n",
+     "excerpt_sha256": "9a13e4af49834566fa805e08806bd253053fc6ce778b10af3ca9e819707c9039"
+    }
+   },
+   "previous_sha256": "debca00d2feb5ec2763cc2121b966a9c37d8c541fbbbf9300887121c55c4af67",
+   "sha256": "fcf5560b5f8f8d2e3b4a5ea1f8a4d906f719e29d596af11b6d2eec004a506337"
+  },
+  {
+   "id": "r5-W1-table",
+   "op": "compare",
+   "data": {
+    "reason": "Direct reading of all student-route material and exact teacher response; the entry span anchors the discovery requirement and the joined graph binds the actual additional panes.",
+    "demand_id": "W1-table",
+    "reviewer": "joined-content-review",
+    "rationale": "물리 CSV의 반납함 열이 모두 빈 경우 T1–T8을 정확히 알렸다. 보충 첫 예 M07/M12와 새 예 J2 및 중복 G2가 영향을 주는 J9를 독립 검산했다. 본교안의 링크와 돌아오는 merge-recheck 표지가 존재한다.",
+    "judgment": "covered",
+    "dimensions": [
+     {
+      "id": "prerequisites",
+      "judgment": "met",
+      "observed_behavior": "한 행·시점·측정 단위와 식별자, 뒤에 생기는 목표를 먼저 분리한다.",
+      "rationale": "물리 CSV의 반납함 열이 모두 빈 경우 T1–T8을 정확히 알렸다. 보충 첫 예 M07/M12와 새 예 J2 및 중복 G2가 영향을 주는 J9를 독립 검산했다. 본교안의 링크와 돌아오는 merge-recheck 표지가 존재한다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+       "start_line": 22,
+       "end_line": 22,
+       "excerpt": "    \"한 행에 해당하는 사람·장소·사건 등을 **관측 단위**라고 한다. 여기서 한 **행**은 어떤 반납함을 하루 관찰한 기록 하나다. 같은 반납함이라도 날짜가 다르면 다른 행이다. 한 **열**은 모든 행에서 같은 질문에 답한다. 반납함을 비울 때마다 새로 들어온 권수를 적으므로 아래 네 구간은 겹치지 않는다.\\n\",\n",
+       "excerpt_sha256": "aea4aaeade314b44636ad14c0c9951e098a6e4c55e1ec92f092a3d44c08100cc"
+      }
+     },
+     {
+      "id": "learning",
+      "judgment": "met",
+      "observed_behavior": "서로 다른 분모가 어떤 관측/자료가 있는 집단에 균등한 비중을 주는지 설명하고 분모 0도 드러낸다.",
+      "rationale": "물리 CSV의 반납함 열이 모두 빈 경우 T1–T8을 정확히 알렸다. 보충 첫 예 M07/M12와 새 예 J2 및 중복 G2가 영향을 주는 J9를 독립 검산했다. 본교안의 링크와 돌아오는 merge-recheck 표지가 존재한다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+       "start_line": 430,
+       "end_line": 430,
+       "excerpt": "    \"**비중**은 최종 값에 어느 관측이 얼마나 반영되는지를 뜻한다. 측정 한 번마다 같은 비중이면 유효한 원자료의 합을 **측정 수**로 나눈다. 장소마다 같은 비중이면 각 장소 안에서 평균을 낸 뒤 그 평균들의 합을 **평균을 구할 수 있는 장소 수**로 나눈다. 같은 장소의 측정이 여러 번 있으면 두 답이 다를 수 있다.\\n\",\n",
+       "excerpt_sha256": "e106c86895040a23d5c25fdf72a1526a990eacba7eebe22bd268302302d13a66"
+      }
+     },
+     {
+      "id": "assessment",
+      "judgment": "met",
+      "observed_behavior": "다른 이름을 제거해 실제 결손 ID를 예측하고, 도움이 필요하면 등록한 다른 노트북을 열어 중복·빈 키를 고친 후 복귀한다.",
+      "rationale": "물리 CSV의 반납함 열이 모두 빈 경우 T1–T8을 정확히 알렸다. 보충 첫 예 M07/M12와 새 예 J2 및 중복 G2가 영향을 주는 J9를 독립 검산했다. 본교안의 링크와 돌아오는 merge-recheck 표지가 존재한다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+       "start_line": 937,
+       "end_line": 937,
+       "excerpt": "    \"키가 중복되거나 미연결 기록이 생겼는데 **어느 이름에서 어긋났는지 찾지 못한 경우**에는 [식별자 연결 복구 연습](week01_foundations_repair.ipynb)을 열어 보자. 마지막 재검사를 마친 뒤 여기로 돌아와 이번에는 다른 반납함으로 자신의 절차를 다시 확인하자.\"\n",
+       "excerpt_sha256": "940961fe1776aa1479fefe9687c36925b2f8caccdee3f2e4e75a5ea569c3207c"
+      }
+     }
+    ],
+    "lesson_receipt": {
+     "path": "lessons/week01/week01_foundations.ipynb",
+     "sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+     "start_line": 937,
+     "end_line": 937,
+     "excerpt": "    \"키가 중복되거나 미연결 기록이 생겼는데 **어느 이름에서 어긋났는지 찾지 못한 경우**에는 [식별자 연결 복구 연습](week01_foundations_repair.ipynb)을 열어 보자. 마지막 재검사를 마친 뒤 여기로 돌아와 이번에는 다른 반납함으로 자신의 절차를 다시 확인하자.\"\n",
+     "excerpt_sha256": "940961fe1776aa1479fefe9687c36925b2f8caccdee3f2e4e75a5ea569c3207c"
+    }
+   },
+   "previous_sha256": "fcf5560b5f8f8d2e3b4a5ea1f8a4d906f719e29d596af11b6d2eec004a506337",
+   "sha256": "201b9ae59dbaa1aa625d8529db1edfca5b554a766529e4217290f3a57a800553"
+  },
+  {
+   "id": "r5-W1-array",
+   "op": "compare",
+   "data": {
+    "reason": "Direct reading of all student-route material and exact teacher response; the entry span anchors the discovery requirement and the joined graph binds the actual additional panes.",
+    "demand_id": "W1-array",
+    "reviewer": "joined-content-review",
+    "rationale": "R×C, 대응 항목, 사각 자료의 두 독립 계산을 자세히 읽고 수치로 검산했다. 공개 F 값 수정과 독립 E 값 수정에서 게시판의 적절한 좌표·점수의 방향을 확인했다.",
+    "judgment": "covered",
+    "dimensions": [
+     {
+      "id": "prerequisites",
+      "judgment": "met",
+      "observed_behavior": "좌표·행/열 수·단위·비결측, 축별 출력의 의미를 예문 앞에서 일반 용어와 식으로 정의한다.",
+      "rationale": "R×C, 대응 항목, 사각 자료의 두 독립 계산을 자세히 읽고 수치로 검산했다. 공개 F 값 수정과 독립 E 값 수정에서 게시판의 적절한 좌표·점수의 방향을 확인했다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+       "start_line": 61,
+       "end_line": 61,
+       "excerpt": "    \"배열의 **모양** `shape`는 축마다 몇 칸인지 나타낸다. 직사각형 표 `X`의 모양을 `(R, C)`라 하자. `R`은 행 수, `C`는 열 수다. $x_{ij}$는 행 번호 $i$, 열 번호 $j$의 값이다. 둘 다 0부터 세며, 여기서는 모든 칸의 단위가 같고 비어 있지 않다. $R$과 $C$는 1 이상이다.\\n\",\n",
+       "excerpt_sha256": "bba3bcc7ed3f01243a3dc18877fe758d328f04c33f0873028fb010313fd44b7d"
+      }
+     },
+     {
+      "id": "learning",
+      "judgment": "met",
+      "observed_behavior": "원소별 곱과 가중합, 가중치 부호와 단위를 구별하고 원래 좌표 및 축약 결과를 손계산한다.",
+      "rationale": "R×C, 대응 항목, 사각 자료의 두 독립 계산을 자세히 읽고 수치로 검산했다. 공개 F 값 수정과 독립 E 값 수정에서 게시판의 적절한 좌표·점수의 방향을 확인했다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+       "start_line": 612,
+       "end_line": 612,
+       "excerpt": "    \"**가중합**은 같은 항목의 값과 그 항목의 가중치를 곱해 모두 더한 수다. 길이가 $k$인 두 1차원 벡터의 값이 $x_1,\\\\ldots,x_k$, 가중치가 $w_1,\\\\ldots,w_k$이면 내적은 $x_1w_1+\\\\cdots+x_kw_k$다. 각 위치가 **같은 항목**이어야 한다. 가중치가 음수인 항목은 총합에서 그만큼 빠진다. 합계가 목적이면 별도의 분모가 없다.\\n\",\n",
+       "excerpt_sha256": "b808d8538ed9b841ddbbc1b4362a1ecdca14796336433f04c87f9493d22b1905"
+      }
+     },
+     {
+      "id": "assessment",
+      "judgment": "met",
+      "observed_behavior": "두 요청에서 자기가 선택한 연산을 새 입력으로 각각 재실행하여 출력 좌표·단위·방향과 원본 보존을 검산한다.",
+      "rationale": "R×C, 대응 항목, 사각 자료의 두 독립 계산을 자세히 읽고 수치로 검산했다. 공개 F 값 수정과 독립 E 값 수정에서 게시판의 적절한 좌표·점수의 방향을 확인했다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+       "start_line": 684,
+       "end_line": 684,
+       "excerpt": "    \"이제 원자료의 **사본 한 칸만** 고친 뒤, 자신이 고른 두 계산을 정정된 자료에서 각각 다시 실행하자. 처음 결과·예측·재계산을 나란히 보고 달라진 좌표와 단위, 변화 방향의 이유를 적자. 원자료에 여전히 5가 있는지 확인하자. 원본의 열 뷰를 직접 고치면 이 확인은 어떻게 될까?\\n\",\n",
+       "excerpt_sha256": "11c8ef64ff676e6d7da834026b0b70715cdd6245012cc409eadbe3b4adaeef7e"
+      }
+     }
+    ],
+    "lesson_receipt": {
+     "path": "lessons/week01/week01_foundations.ipynb",
+     "sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+     "start_line": 684,
+     "end_line": 684,
+     "excerpt": "    \"이제 원자료의 **사본 한 칸만** 고친 뒤, 자신이 고른 두 계산을 정정된 자료에서 각각 다시 실행하자. 처음 결과·예측·재계산을 나란히 보고 달라진 좌표와 단위, 변화 방향의 이유를 적자. 원자료에 여전히 5가 있는지 확인하자. 원본의 열 뷰를 직접 고치면 이 확인은 어떻게 될까?\\n\",\n",
+     "excerpt_sha256": "11c8ef64ff676e6d7da834026b0b70715cdd6245012cc409eadbe3b4adaeef7e"
+    }
+   },
+   "previous_sha256": "201b9ae59dbaa1aa625d8529db1edfca5b554a766529e4217290f3a57a800553",
+   "sha256": "645472f3175555f1a8f1c4746c60becfb70a8c1f2566767d2ec72bbf57ed5bea"
+  },
+  {
+   "id": "r5-W1-visualise",
+   "op": "compare",
+   "data": {
+    "reason": "Direct reading of all student-route material and exact teacher response; the entry span anchors the discovery requirement and the joined graph binds the actual additional panes.",
+    "demand_id": "W1-visualise",
+    "reviewer": "joined-content-review",
+    "rationale": "새 일지의 첫 선택과 두 그림·두 조건을 검토했다. 실제로 그려진 막대, 원래 측정의 개수·합, 축과 단위를 별도로 재검산했다.",
+    "judgment": "covered",
+    "dimensions": [
+     {
+      "id": "prerequisites",
+      "judgment": "met",
+      "observed_behavior": "막대 한 칸이 어느 두 기록으로 만들어지는지 단위와 함께 되짚는다.",
+      "rationale": "새 일지의 첫 선택과 두 그림·두 조건을 검토했다. 실제로 그려진 막대, 원래 측정의 개수·합, 축과 단위를 별도로 재검산했다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+       "start_line": 404,
+       "end_line": 404,
+       "excerpt": "    \"가로에는 세 **구간**, 세로에는 R1·R2의 **기록당 평균 반납 권수**를 놓는다. 각 막대 하나는 앞에서 만든 `by_period`의 한 칸이다. 영어 눈금 Open, Break, Lunch는 순서대로 개관·오전·점심이다. 세로축은 0에서 시작하고 같은 간격은 같은 권수 차이다. 실행한 뒤 막대 하나를 골라 “어느 기록의 어떤 두 값에서 나왔다”는 문장을 써 보자.\"\n",
+       "excerpt_sha256": "a1df09d0aab726cf859b70ae51d106c03db36532014236cabfa5a76ed00d3e12"
+      }
+     },
+     {
+      "id": "learning",
+      "judgment": "met",
+      "observed_behavior": "권수 구간/기록 수와 구역/관측 평균의 다른 단위와 주장 범위를 직접 비교한다.",
+      "rationale": "새 일지의 첫 선택과 두 그림·두 조건을 검토했다. 실제로 그려진 막대, 원래 측정의 개수·합, 축과 단위를 별도로 재검산했다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+       "start_line": 798,
+       "end_line": 798,
+       "excerpt": "    \"**분포**를 보려면 관측 하나하나의 하교 권수를 범위에 담아 기록 수를 센다. 아래 Matplotlib 히스토그램에서 가로축은 하교 권수, 세로축은 그 범위에 든 기록 수다. 가령 4권은 4 이상 6 미만인 칸에 들어간다. 마지막 칸만 오른쪽 끝도 포함한다. 빈 하교 기록은 범위를 정할 수 없어 뺀다.\\n\",\n",
+       "excerpt_sha256": "9925fe33d86f198f5b455e859a183131490b88e55c00d70fedf842d2a70ec947"
+      }
+     },
+     {
+      "id": "assessment",
+      "judgment": "met",
+      "observed_behavior": "새 일지와 목적에서 그림·필드·단위의 첫 선택을 실마리 전에 남기고 조건이 바뀌었을 때 실제 관측으로 설명한다.",
+      "rationale": "새 일지의 첫 선택과 두 그림·두 조건을 검토했다. 실제로 그려진 막대, 원래 측정의 개수·합, 축과 단위를 별도로 재검산했다.",
+      "receipt": {
+       "path": "lessons/week01/week01_foundations.ipynb",
+       "sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+       "start_line": 862,
+       "end_line": 862,
+       "excerpt": "    \"아래 ‘실마리’를 열기 전에 이곳과 바로 다음 빈 셀에 첫 시도를 남기자. 그림 두 개를 스케치하거나 코드로 시작해도 좋다. 각 그림의 **종류, 쓸 파일과 열, 가로·세로축 및 단위, 한 표시가 가리키는 기록 또는 계산**을 직접 정하자. 구역을 어떻게 붙일지, 0과 빈칸은 무엇을 뜻하는지도 첫 설계에 표시하자. 이후 수정할 때에는 첫 시도도 남겨 두자.\\n\",\n",
+       "excerpt_sha256": "300149bbcfbfe524c5a4bdee2d59d95dcdabbdd19f6eaeacf2149e69aecfccc1"
+      }
+     }
+    ],
+    "lesson_receipt": {
+     "path": "lessons/week01/week01_foundations.ipynb",
+     "sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+     "start_line": 862,
+     "end_line": 862,
+     "excerpt": "    \"아래 ‘실마리’를 열기 전에 이곳과 바로 다음 빈 셀에 첫 시도를 남기자. 그림 두 개를 스케치하거나 코드로 시작해도 좋다. 각 그림의 **종류, 쓸 파일과 열, 가로·세로축 및 단위, 한 표시가 가리키는 기록 또는 계산**을 직접 정하자. 구역을 어떻게 붙일지, 0과 빈칸은 무엇을 뜻하는지도 첫 설계에 표시하자. 이후 수정할 때에는 첫 시도도 남겨 두자.\\n\",\n",
+     "excerpt_sha256": "300149bbcfbfe524c5a4bdee2d59d95dcdabbdd19f6eaeacf2149e69aecfccc1"
+    }
+   },
+   "previous_sha256": "645472f3175555f1a8f1c4746c60becfb70a8c1f2566767d2ec72bbf57ed5bea",
+   "sha256": "014bfad1b4764f4b9f7fa8510d55b00579e50a67082cfaefbe3f9f99eb8f6a8c"
+  }
+ ]
+}

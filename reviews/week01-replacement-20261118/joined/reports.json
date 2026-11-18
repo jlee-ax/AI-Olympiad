@@ -1,0 +1,449 @@
+{
+  "subject_sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+  "synthetic": false,
+  "evidence_sha256": {
+    "reviews/week01-replacement-20261118/joined/source-basis.json": "feb203278e36334a7aeacba3fc4dc54ed66b721425b80a775492f9de77648ddf",
+    "reviews/week01-replacement-20261118/joined/transfer-research.md": "a8e49b7c2a9f7f5d2b5688707ad36d13cc6c420a118f7690433c5ada1e781800",
+    "reviews/week01-replacement-20261118/joined/discovery-seed.json": "56ea2c485b730bcbce65df475258e44a461270c99dc39730277a82c0ad58a12c",
+    "reviews/week01-replacement-20261118/joined/discovery.json": "0689557493f3c622196b2ab2510d20787bcdaa9050c8edbc9afa1ab8a5885cde",
+    "reviews/week01-replacement-20261118/joined/audit.json": "4eb845c195fdeea8516f734fd77fa05372b24a9c130dbb19097031c3f686d944",
+    "reviews/week01-replacement-20261118/joined/public-results.json": "9ebaa884c5c58784ee99eface9ebed14a76b213aca48523340458576cb9dcedc",
+    "reviews/week01-replacement-20261118/joined/kernel.json": "9e08e5ba91c801bd4faf56d4089b15840618b767cd5db80d842c6d53af383fc0",
+    "reviews/week01-replacement-20261118/route.json": "b97c1e36a9ba5b096beaf588dc33a17dad8884a0b71990455c68583788151bf1",
+    "reviews/week01-depth-20261118/refreshes/0001/contract.json": "e3b261f7c3b3be60219f8ba941e05abce18a7bfaa29475cf11b9078abb6cff90",
+    "reviews/week01-depth-20261118/rounds/0005/reviews/joined.json": "566e7bd69fab0d6be96012a0109675a04da6727192a214c7b06d72228da1b448",
+    "lessons/week01/data/foundations_boxes.csv": "471a80d0b99548c29a36331eb5ccad27d25ba7742f955a869687e7096c655635",
+    "lessons/week01/data/foundations_returns.csv": "ece009210bb0ac473b988937f8ecd865f35355dc6d9c8718e3e8846e504daaaf",
+    "lessons/week01/data/foundations_returns_transfer.csv": "47d719ce82e88acbe98ad175b1f827c8f7c76d22706bd8432344d86e3db6d7a6",
+    "lessons/week01/week01_foundations.ipynb": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+    "lessons/week01/week01_foundations_repair.ipynb": "8b0f1b4e672adb8214524c243eade54024e888d710a7875def09cc4d7b527df9",
+    "lessons/week01/week01_foundations_teacher.md": "081068e0233ef3eb102b0db0c0b4efeba2464c8d1973a1a5ebbb73823788bb8b"
+  },
+  "bundle_sha256": {
+    "graph": "f816359117ef109af7ffc15c37cf9d9d38ad19bfc8f51211586a051293b53cec",
+    "paths": "111be7929c854a1b5ad3431ebb8bebee54e2d50962406506bb719b036d7dab85",
+    "semantic-review": "c182956325118da7483458b0be2024664dcf198abad2100e2f500719311e5cba",
+    "contest-depth": "48fb8102d7121e02a23ceea283314c9f0a8c1adc35c4a3bcc0117d779d6a99e0",
+    "quality": "c8fabc2639f68e3ff33abaa65a1b588e53516dd5c8a20def60314380be42dea6",
+    "workflow": "64ce025964e6ea4b8a47c0c4b6a6ba90972e819c0eaf1bf4339444da215211a8"
+  },
+  "route": {
+    "id": "week01-from-blank-fifth-manuscript",
+    "week": 1,
+    "route_sha256": "b97c1e36a9ba5b096beaf588dc33a17dad8884a0b71990455c68583788151bf1",
+    "entry": "lessons/week01/week01_foundations.ipynb",
+    "normal_entry": {
+      "plan": "curriculum/student-plan.html",
+      "plan_sha256": "78d743c33d91c958d33dd36e994dc00507d78edecb3f30b986fed4109cc2521e",
+      "href": "https://github.com/jlee-ax/AI-Olympiad/blob/codex/week01-depth-review-20261118/lessons/week01/week01_foundations.ipynb",
+      "basis": "link names the current working branch"
+    },
+    "units": {
+      "u01": "required",
+      "u02": "required",
+      "u03": "required",
+      "u04": "conditional"
+    },
+    "depth_sha256": "9613a330ddda9cd3388c194cd3e20bf4c88102c364809bee078604074fd585c2",
+    "round_path": "reviews/week01-depth-20261118/rounds/0005/round.json",
+    "minutes": {
+      "class": {
+        "required": 120,
+        "conditional": 0,
+        "deferred": 0
+      },
+      "homework": {
+        "required": 335,
+        "conditional": 25,
+        "deferred": 0
+      }
+    },
+    "ranges": {
+      "class": {
+        "required": [
+          120,
+          120
+        ],
+        "conditional": [
+          0,
+          0
+        ],
+        "deferred": [
+          0,
+          0
+        ]
+      },
+      "homework": {
+        "required": [
+          200,
+          381
+        ],
+        "conditional": [
+          22,
+          44
+        ],
+        "deferred": [
+          0,
+          0
+        ]
+      }
+    },
+    "complete_ranges": true,
+    "planned_limits": {
+      "class": 120,
+      "homework": [
+        300,
+        420
+      ]
+    },
+    "budget": "overrun",
+    "overrun": "복구와 두 선택 실마리를 모두 이용하면 독립 견적 상단 425분이 과정 상한 420분을 5분 넘는다. 도움이 필요한 학생 모두가 한도 내에 끝난다는 판단은 보류한다.",
+    "shorter_homework_reason": null
+  },
+  "topic_depth": {
+    "status": "reviewed",
+    "ready": true,
+    "subject_round": 5,
+    "subject_sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178",
+    "manifest": {
+      "id": "review:topic-depth",
+      "revision": "topic-depth-v1",
+      "sha256": "9613a330ddda9cd3388c194cd3e20bf4c88102c364809bee078604074fd585c2"
+    },
+    "errors": []
+  },
+  "discovery": {
+    "status": "recorded_ready",
+    "events": 15,
+    "elapsed_minutes": 35,
+    "head": "014bfad1b4764f4b9f7fa8510d55b00579e50a67082cfaefbe3f9f99eb8f6a8c",
+    "demands": {
+      "W1-python": "covered",
+      "W1-table": "covered",
+      "W1-array": "covered",
+      "W1-visualise": "covered"
+    },
+    "queue": [],
+    "blockers": []
+  },
+  "contest_depth": {
+    "status": "recorded_met",
+    "comparisons": [
+      {
+        "id": "compare:W1-python",
+        "week": 1,
+        "goal_id": "goal:W1-python",
+        "recorded_judgment": "met",
+        "status": "met",
+        "issue_paths": []
+      },
+      {
+        "id": "compare:W1-table",
+        "week": 1,
+        "goal_id": "goal:W1-table",
+        "recorded_judgment": "met",
+        "status": "met",
+        "issue_paths": []
+      },
+      {
+        "id": "compare:W1-array",
+        "week": 1,
+        "goal_id": "goal:W1-array",
+        "recorded_judgment": "met",
+        "status": "met",
+        "issue_paths": []
+      },
+      {
+        "id": "compare:W1-visualise",
+        "week": 1,
+        "goal_id": "goal:W1-visualise",
+        "recorded_judgment": "met",
+        "status": "met",
+        "issue_paths": []
+      }
+    ],
+    "findings": [],
+    "gaps": [],
+    "assessment_formats": [
+      {
+        "week": 1,
+        "status": "matched",
+        "kinds": [
+          {
+            "kind": "multiple_choice",
+            "required": 2,
+            "observed": 2,
+            "difference": 0,
+            "status": "matched"
+          },
+          {
+            "kind": "written",
+            "required": 1,
+            "observed": 1,
+            "difference": 0,
+            "status": "matched"
+          }
+        ]
+      }
+    ]
+  },
+  "paths": {
+    "status": "declared_path_complete",
+    "graph_nodes": 33,
+    "graph_edges": 29,
+    "paths": 5,
+    "findings": [],
+    "bindings": 35
+  },
+  "semantic_review": {
+    "status": "recorded_design_met",
+    "paths": 5,
+    "findings": [],
+    "bindings": 38
+  },
+  "quality": {
+    "status": "uncertain",
+    "ready_for_review": false,
+    "criterion_status": {
+      "K01": "passed",
+      "K02": "passed",
+      "K03": "passed",
+      "K04": "passed",
+      "K05": "passed",
+      "K06": "passed",
+      "K07": "passed",
+      "K08": "passed",
+      "K09": "passed",
+      "K10": "passed",
+      "K11": "passed",
+      "K12": "passed",
+      "K13": "passed",
+      "K14": "uncertain",
+      "K15": "passed",
+      "K16": "passed"
+    },
+    "findings": [
+      {
+        "criterion_id": "K14",
+        "status": "uncertain",
+        "objects": []
+      }
+    ],
+    "evaluator_sha256": "2026ad83ad778ff78b8f6937ce50abf0b87982d98db3cfaf0c480339d7052a3a"
+  },
+  "plan": {
+    "status": "pause",
+    "reason": "priority_policy_requires_agreement"
+  },
+  "workflow": {
+    "status": "pause",
+    "reason": "criteria_agreement_required",
+    "errors": []
+  },
+  "preflight": {
+    "status": "blocked",
+    "blockers": [
+      {
+        "code": "quality_not_ready",
+        "detail": "uncertain"
+      },
+      {
+        "code": "workflow_pause",
+        "detail": "criteria_agreement_required"
+      }
+    ],
+    "errors": [],
+    "binding_count": 16,
+    "unmatched": []
+  },
+  "native_commands": {
+    "route": {
+      "command": [
+        "python",
+        "-B",
+        "tools/lesson_route.py",
+        "inspect",
+        "--root",
+        ".",
+        "--route",
+        "reviews/week01-replacement-20261118/route.json"
+      ],
+      "exit": 0,
+      "status": "route_verified",
+      "budget": "overrun"
+    },
+    "registered_depth": {
+      "command": [
+        "python",
+        "-B",
+        "tools/topic_depth.py",
+        "check",
+        "--root",
+        ".",
+        "--case",
+        "reviews/week01-depth-20261118"
+      ],
+      "exit": 0,
+      "status": "reviewed",
+      "ready": true
+    },
+    "discovery": {
+      "command": [
+        "python",
+        "-B",
+        "tools/discovery_loop.py",
+        "report",
+        "reviews/week01-replacement-20261118/joined/discovery.json",
+        "--root",
+        "."
+      ],
+      "exit": 0,
+      "status": "recorded_ready",
+      "ready_for_review": true
+    },
+    "contest": {
+      "command": [
+        "python",
+        "-B",
+        "tools/contest_depth.py",
+        "<native>/contest-depth.json"
+      ],
+      "exit": 0,
+      "status": "recorded_met"
+    },
+    "structure": {
+      "command": [
+        "python",
+        "-B",
+        "tools/validate.py",
+        "<native>/graph.json"
+      ],
+      "exit": 0,
+      "status": "0 error(s), 0 warning(s)"
+    },
+    "declared_paths": {
+      "command": [
+        "python",
+        "-B",
+        "tools/graph_paths.py",
+        "<native>/graph.json",
+        "--spec",
+        "<native>/paths.json",
+        "--root",
+        "."
+      ],
+      "exit": 0,
+      "status": "declared_path_complete"
+    },
+    "semantic_paths": {
+      "command": [
+        "python",
+        "-B",
+        "tools/graph_paths.py",
+        "<native>/graph.json",
+        "--spec",
+        "<native>/paths.json",
+        "--root",
+        ".",
+        "--semantic-review",
+        "<native>/semantic-review.json"
+      ],
+      "exit": 0,
+      "status": "recorded_design_met"
+    },
+    "quality": {
+      "command": [
+        "python",
+        "-B",
+        "tools/quality.py",
+        "evaluate",
+        "<native>/quality.json",
+        "--root",
+        "."
+      ],
+      "exit": 0,
+      "status": "uncertain",
+      "ready_for_review": false
+    },
+    "plan": {
+      "command": [
+        "python",
+        "-B",
+        "tools/quality.py",
+        "plan",
+        "<native>/quality.json",
+        "--root",
+        "."
+      ],
+      "exit": 0,
+      "status": "pause",
+      "reason": "priority_policy_requires_agreement"
+    },
+    "workflow_state": {
+      "command": [
+        "python",
+        "-B",
+        "tools/workflow.py",
+        "validate",
+        "<native>/workflow.json"
+      ],
+      "exit": 0,
+      "status": "valid",
+      "reason": "structural_checks_only"
+    },
+    "workflow": {
+      "command": [
+        "python",
+        "-B",
+        "tools/workflow.py",
+        "decide",
+        "<native>/workflow.json",
+        "--root",
+        ".",
+        "--quality",
+        "<native>/quality.json",
+        "--discovery",
+        "reviews/week01-replacement-20261118/joined/discovery.json"
+      ],
+      "exit": 0,
+      "status": "pause",
+      "reason": "criteria_agreement_required"
+    },
+    "preflight": {
+      "command": [
+        "python",
+        "-B",
+        "tools/review_preflight.py",
+        "--root",
+        ".",
+        "--depth",
+        "<native>/contest-depth.json",
+        "--graph",
+        "<native>/graph.json",
+        "--paths",
+        "<native>/paths.json",
+        "--semantic-review",
+        "<native>/semantic-review.json",
+        "--state",
+        "<native>/workflow.json",
+        "--quality",
+        "<native>/quality.json",
+        "--discovery",
+        "reviews/week01-replacement-20261118/joined/discovery.json"
+      ],
+      "exit": 1,
+      "status": "blocked"
+    }
+  },
+  "source_sha256": {
+    "quality": "2026ad83ad778ff78b8f6937ce50abf0b87982d98db3cfaf0c480339d7052a3a",
+    "workflow": "60e96ef6e9680a3f1421ac79fdd9a59e807aa2556faac1e40d74abf20eb1827a",
+    "contest_depth": "7f04de3a53b2fdb028971599d7b63c37b8a12bbba9a72b3123175c1f8bf4d4f4",
+    "discovery_loop": "1fa759356b0671e2d87fafd0546fc2e163d218f34d453858d4388d6a4a6b6f75",
+    "graph_paths": "5d1cf5961634135a7f7331c7e02f3eca3448df67fdd6b9cc7b50e8264672dc6b",
+    "validate": "31ec96590de1243fbfa8ac6c47cee4e6ff0eed60aca16a78a4507b243bdb7b7a",
+    "topic_depth": "7185e0f31c549630ed1d6b14c63c82c137e1efbd524943fa868f76af5730db1c",
+    "lesson_route": "83c8bfa6f9a858c507415de15577527238c7db7a101ec3105fb713fff7d4f547",
+    "review_preflight": "de09542da3c32f73f6f89a84709e63616fc8516f2ba6cbec08599443b5c878c5"
+  }
+}
