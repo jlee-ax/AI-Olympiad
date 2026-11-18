@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "stage": "candidate",
+  "contract_sha256": "2f69eb913f7da07cc7f0b8401906145e743ee19224c442719cc9b6ec3d19165a",
+  "round_sha256": "722ae526acfdf572f862002d52e2bb7747ecbbf70a3860609009fbacb867a793",
+  "candidate_sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+  "reviewer": "independent-public-table-audit",
+  "topics": {
+    "W1-table": {
+      "verdict": "pass",
+      "cells": [
+        "dictionary",
+        "load-csv",
+        "join-story",
+        "real-merge",
+        "join-key-example",
+        "transfer-data-work",
+        "transfer-faults",
+        "transfer-fault-work"
+      ],
+      "foundation": "학생은 어떤 이름이 관측 행을 가리키고 어떤 키가 반납함을 가리키는지 자료사전에서 먼저 확인한다. 두 표에 알려진 같은 키가 있을 때만 구역을 배정하며, 새 과제에서 점심 조건과 하교 관측을 따로 선택해 분모를 설명한다. 교사용 풀이가 연결하지 못한 실제 행의 이름을 보여 준다.",
+      "ceiling": "문자형으로 맞추고 빈 이름을 제외하는 짧은 처리는 이미 쓰던 키 병합의 의미를 지킨다. 다른 병합 알고리즘이나 데이터베이스 이론을 추가로 배울 필요가 없다.",
+      "workload": "수업 45분과 자습 85분 편성을 확인했다. 이미 제시된 오류 점검에서 이름 해석을 바로잡았다. 두 표현을 비교한 추가 실행은 검토자의 교사용 해설 점검이다.",
+      "finding": "3회차 원본 학생 병합 셀과 교사용 함수로 기존 공개 대조 13개를 다시 통과했다. 두 추가 대조도 개별 실행했다. 실제 CSV의 station이 모두 빈 경우 이전에는 자료형 오류만 났으나 이제 T1~T8 여덟 행을 모두 미연결로 낸다. 양쪽 키에 직접 빈 문자열을 대입한 경우 T1을 미연결로 낸다. 정상 기준 4·6의 집계, 구역표 역순, 중복·미연결·열 누락 결과는 유지됐다. functional/round-0003.json 3203e92e03e56c84b266cc0c4a1e453b95bd0088d12f5d1207aa9846e8e45e0d, functional/missing-key-forms-0003.json 8834ea760525b6a00ac0548f2a6dcc3e24d0c45b9eccf3b8831f15fc642daea1.",
+      "companion_spans": [
+        {
+          "path": "lessons/week01/week01_foundations_teacher.md",
+          "lines": [
+            136,
+            141
+          ]
+        },
+        {
+          "path": "lessons/week01/week01_foundations_teacher.md",
+          "lines": [
+            158,
+            166
+          ]
+        }
+      ]
+    }
+  }
+}

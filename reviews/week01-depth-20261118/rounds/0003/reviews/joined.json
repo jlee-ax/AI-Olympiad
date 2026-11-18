@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "stage": "candidate",
+  "contract_sha256": "2f69eb913f7da07cc7f0b8401906145e743ee19224c442719cc9b6ec3d19165a",
+  "round_sha256": "722ae526acfdf572f862002d52e2bb7747ecbbf70a3860609009fbacb867a793",
+  "candidate_sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+  "reviewer": "joined-content-review",
+  "topics": {
+    "W1-python": {
+      "verdict": "pass",
+      "cells": [
+        "python-basics",
+        "return-story",
+        "trace-example",
+        "python-five",
+        "python-independent",
+        "independent-start",
+        "trace-independent"
+      ],
+      "foundation": "0·None·빈 입력, 기준과 같은 값, 반환값을 다음 계산에 쓰는 과정부터 두 호출 프레임까지 이어진다. 별도 교사용 함수로 3개·1개·빈 목록을 다시 시험했다.",
+      "ceiling": "두 오류에서 호출 함수와 멈춘 연산을 찾고 다른 데이터로 함수를 고친다. 예외 구현이나 디버거 내부는 선수로 요구하지 않는다.",
+      "workload": "수업 20분·자습 90분에 포함된 진단과 재시도다. 첫 예상과 도움 여부를 보존한다. 실제 초보자에게 걸리는 시간은 미측정이다.",
+      "finding": "공개 코드를 실행해 scan_batch→count_over의 books > limit TypeError와 last_box→code_at의 codes[position] IndexError를 모두 확인했다. 후자는 인덱스 2 대신 len-1을 쓰고 빈 입력을 따로 처리하는 새 과제다. 최종 28셀 실행에서 두 추적과 교사용 수정의 다른 입력 검산을 반복했다."
+    },
+    "W1-table": {
+      "verdict": "pass",
+      "cells": [
+        "dictionary",
+        "join-story",
+        "join-key-example",
+        "group-story",
+        "transfer-table",
+        "transfer-data-work",
+        "transfer-faults",
+        "transfer-fault-work",
+        "load-csv",
+        "real-merge"
+      ],
+      "foundation": "자료사전으로 시점을 정의하고 소표에서 키와 0·빈칸을 구별한다. 서로 다른 키 이름과 오른쪽 빈 키를 다루는 K1/K2 예시 후 다른 파일에 절차를 직접 작성한다. 첫 CSV 읽기에서 이름을 문자로 보존하고 양쪽 값을 같은 식별자 자료형으로 정리한 뒤 병합한다.",
+      "ceiling": "동일 기록 복제, 없는 키, 양쪽에서 빈 키의 가짜 연결, 관측 분모까지 검토한다. 모델 학습·숨겨진 라벨의 추정은 이 주차의 요구 범위 밖이다.",
+      "workload": "수업 45분·자습 85분 편성이다. 두 등록 파일의 행 순서를 바꾸는 하나의 과제가 이름 지정·오류·분모를 함께 다룬다. 실측은 없다.",
+      "finding": "최종 공개 풀이를 두 차례 독립 실행했다. 물리 CSV의 왼쪽 키 전체·오른쪽 전체·양쪽 전체가 비면 각각 T1–T8을 보고한다. 동시에 빈 문자열과 미등록 키를 넣으면 T1·T2가 정확히 나온다. 정상·뒤집은 입력과 원래 하교 0, 유효 분모도 다시 확인했다."
+    },
+    "W1-array": {
+      "verdict": "pass",
+      "cells": [
+        "axis-picture",
+        "axis-check",
+        "reduce-period",
+        "broadcast-concept",
+        "array-lab",
+        "array-independent",
+        "math-independent"
+      ],
+      "foundation": "R1/R2 개관 열의 (합, 개수)가 (0,0)→(2,1)→(10,2)다. 종료 뒤 10/2=5와 틀린 분모 3을 대조하고 이어서 NumPy로 전체 축을 계산한다.",
+      "ceiling": "기본 인덱싱·복사·브로드캐스트·재배열·전치의 좌표 의미, 분산·내적과 단위까지 2차원 표와 짧은 1차원 벡터에서 끝낸다.",
+      "workload": "40분 수업·115분 자습 편성이다. 추가 설명은 기존 열을 재사용한다. 종이 예측과 변경한 수표 실험을 분리한다. 실제 수행 시간은 미측정이다.",
+      "finding": "손계산용 3×2에서 축별 [2,5], [4.5,4.5,1.5]. 다른 D/E/F에서 뷰/사본, 실패하는 길이 3과 (3,1) 보정, reshape와 전치의 [0,1] 값 4·3을 독립 재계산했다. 같은 최종 공개 입력 바이트와 변경된 교사용 파일에 대해 두 축·형태·내적 결과도 다시 계산했다."
+    },
+    "W1-visualise": {
+      "verdict": "pass",
+      "cells": [
+        "plot-core",
+        "plot-two-questions",
+        "plot-histogram",
+        "plot-read",
+        "transfer-first-code",
+        "transfer-figures",
+        "transfer-plot-work",
+        "handoff"
+      ],
+      "foundation": "두 구간에 든 기록 수와 구역별 관측 평균에서 막대 하나가 나타내는 자료와 세로 단위를 구분한다. 수업 예시→중간 읽기→새 입력 설계 순서다.",
+      "ceiling": "두 질문에 맞는 그림·열·축·단위를 먼저 고르고 기준을 4에서 6으로 바꾼 결과를 실제 기록으로 설명한다. 인과효과와 국제 이변량 과제 해결은 주장하지 않는다.",
+      "workload": "수업 15분·자습 70분 편성이다. 같은 새 파일에서 첫 설계와 실마리 후 구현을 분리하고 도움을 기록한다. 실제 무도움 수행은 수집 전이다.",
+      "finding": "새 파일 경로 외 설계 답이 없는 transfer-first-code가 열 수 있는 실마리보다 앞선다. 기준 4/6 히스토그램 높이 [2,1,1,0,0]/[2,1,0,0,0]와 East 0·West 13/3 및 3을 실제 그림의 오브젝트에서 대조했다. 공개 2×2 해설 그림을 Agg로 실제 렌더링해 모든 축·레이블이 그림 안에 있고 위아래 두 행의 외곽이 겹치지 않음을 확인했다."
+    }
+  }
+}

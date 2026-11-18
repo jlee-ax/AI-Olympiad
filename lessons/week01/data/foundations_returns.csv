@@ -1,0 +1,7 @@
+record_id,box_id,open_books,break_books,lunch_books,after_books
+R1,A,2,4,6,7
+R2,B,8,0,4,3
+R3,A,0,,6,4
+R4,B,4,2,0,0
+R5,C,6,2,4,
+R6,C,2,6,2,9

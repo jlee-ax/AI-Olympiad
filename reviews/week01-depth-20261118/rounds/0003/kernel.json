@@ -1,0 +1,70 @@
+{
+  "notebook_sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+  "status": "passed",
+  "transport": "inprocess",
+  "runtime": {
+    "ipykernel": "7.4.0",
+    "nbclient": "0.10.4",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.8",
+    "seaborn": "0.13.2"
+  },
+  "csv_sha256": {
+    "foundations_returns.csv": "ece009210bb0ac473b988937f8ecd865f35355dc6d9c8718e3e8846e504daaaf",
+    "foundations_boxes.csv": "471a80d0b99548c29a36331eb5ccad27d25ba7742f955a869687e7096c655635",
+    "foundations_returns_transfer.csv": "47d719ce82e88acbe98ad175b1f827c8f7c76d22706bd8432344d86e3db6d7a6"
+  },
+  "code_cells": [
+    "python-example",
+    "return-example",
+    "trace-example",
+    "python-independent",
+    "load-csv",
+    "audit-csv",
+    "select-csv",
+    "column-error",
+    "table-independent",
+    "reduce-period",
+    "plot-period",
+    "class-independent",
+    "trace-independent",
+    "view-example",
+    "broadcast-example",
+    "reshape-example",
+    "array-independent",
+    "math-example",
+    "math-independent",
+    "real-merge",
+    "join-key-example",
+    "group-example",
+    "plot-histogram",
+    "plot-categories",
+    "transfer-first-code",
+    "transfer-data-work",
+    "transfer-fault-work",
+    "transfer-plot-work"
+  ],
+  "figures": [
+    {
+      "cell": "plot-period",
+      "file": "plot-period-1.png",
+      "width": 540,
+      "height": 290
+    },
+    {
+      "cell": "plot-histogram",
+      "file": "plot-histogram-2.png",
+      "width": 540,
+      "height": 290
+    },
+    {
+      "cell": "plot-categories",
+      "file": "plot-categories-3.png",
+      "width": 540,
+      "height": 290
+    }
+  ],
+  "other_files_created": [],
+  "execution": "fresh kernel; sandbox contains only the notebook and registered CSV files"
+}

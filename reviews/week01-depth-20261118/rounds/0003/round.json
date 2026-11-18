@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "author": "week01-new-author",
+  "contract_sha256": "2f69eb913f7da07cc7f0b8401906145e743ee19224c442719cc9b6ec3d19165a",
+  "previous": "f104987b599fa7a5278eabc1eb7ca3f24446ace3b403c20d7205b4e3f9785fe0",
+  "prior_reviews": {
+    "functional.json": "7e3f4f4cabdfb5970424f55b353e7a542b4e0abca69e4905dc92afec4d65b0f2",
+    "joined.json": "c27d0a256c66aa1acdfe086a2a019027e7ea1742ae0b1314dd0f1feca2cbf1ef",
+    "late-integration.json": "74409859a7c17e74c0de464b64049f452040cc10117eef6a9205c9be73b79c80",
+    "oracle.json": "536ca8d83cb541829e8808fb705f8de2d9307d5a509e1d9f253e7cba6dea6914"
+  },
+  "candidate_sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+  "companions": [
+    {
+      "path": "lessons/week01/week01_foundations_teacher.md",
+      "snapshot": "reviews/week01-depth-20261118/rounds/0003/inputs/week01_foundations_teacher.md",
+      "sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484"
+    },
+    {
+      "path": "lessons/week01/data/foundations_returns.csv",
+      "snapshot": "reviews/week01-depth-20261118/rounds/0001/inputs/foundations_returns.csv",
+      "sha256": "ece009210bb0ac473b988937f8ecd865f35355dc6d9c8718e3e8846e504daaaf"
+    },
+    {
+      "path": "lessons/week01/data/foundations_boxes.csv",
+      "snapshot": "reviews/week01-depth-20261118/rounds/0001/inputs/foundations_boxes.csv",
+      "sha256": "471a80d0b99548c29a36331eb5ccad27d25ba7742f955a869687e7096c655635"
+    },
+    {
+      "path": "lessons/week01/data/foundations_returns_transfer.csv",
+      "snapshot": "reviews/week01-depth-20261118/rounds/0001/inputs/foundations_returns_transfer.csv",
+      "sha256": "47d719ce82e88acbe98ad175b1f827c8f7c76d22706bd8432344d86e3db6d7a6"
+    }
+  ],
+  "topics": {
+    "W1-python": {
+      "class": [
+        "python-basics",
+        "python-example",
+        "return-story",
+        "return-example",
+        "trace-example",
+        "python-five",
+        "python-independent"
+      ],
+      "homework": [
+        "independent-start",
+        "trace-independent"
+      ],
+      "optional": [],
+      "support": [
+        "python-basics",
+        "python-example",
+        "return-story",
+        "return-example",
+        "trace-example"
+      ],
+      "assessment": [
+        "python-five",
+        "python-independent",
+        "independent-start",
+        "trace-independent"
+      ],
+      "prerequisite_uses": {},
+      "minutes": {
+        "class": 20,
+        "homework": 90,
+        "optional": 0
+      }
+    },
+    "W1-table": {
+      "class": [
+        "opening",
+        "dictionary",
+        "table-card",
+        "written-card",
+        "csv-open",
+        "load-csv",
+        "inspect-table",
+        "audit-csv",
+        "select-table",
+        "select-csv",
+        "missing-error",
+        "column-error",
+        "table-independent"
+      ],
+      "homework": [
+        "join-story",
+        "real-merge",
+        "join-key-example",
+        "group-story",
+        "group-example",
+        "transfer-brief",
+        "transfer-table",
+        "transfer-data-work",
+        "transfer-faults",
+        "transfer-fault-work"
+      ],
+      "optional": [],
+      "support": [
+        "dictionary",
+        "csv-open",
+        "inspect-table",
+        "join-story",
+        "join-key-example"
+      ],
+      "assessment": [
+        "table-card",
+        "table-independent",
+        "transfer-data-work",
+        "transfer-fault-work"
+      ],
+      "prerequisite_uses": {
+        "W1-python": "load-csv"
+      },
+      "minutes": {
+        "class": 45,
+        "homework": 85,
+        "optional": 0
+      }
+    },
+    "W1-array": {
+      "class": [
+        "axis-picture",
+        "variance-bridge",
+        "axis-check",
+        "numpy-core",
+        "reduce-period"
+      ],
+      "homework": [
+        "index-view",
+        "view-example",
+        "broadcast-concept",
+        "broadcast-example",
+        "reshape-concept",
+        "reshape-example",
+        "array-lab",
+        "array-independent",
+        "math-concept",
+        "math-example",
+        "math-lab",
+        "math-independent"
+      ],
+      "optional": [],
+      "support": [
+        "axis-picture",
+        "numpy-core",
+        "broadcast-concept",
+        "math-concept"
+      ],
+      "assessment": [
+        "axis-check",
+        "array-independent",
+        "math-independent"
+      ],
+      "prerequisite_uses": {
+        "W1-table": "axis-picture"
+      },
+      "minutes": {
+        "class": 40,
+        "homework": 115,
+        "optional": 0
+      }
+    },
+    "W1-visualise": {
+      "class": [
+        "plot-core",
+        "plot-period",
+        "class-transfer",
+        "class-independent"
+      ],
+      "homework": [
+        "plot-two-questions",
+        "plot-histogram",
+        "plot-categories",
+        "plot-read",
+        "transfer-first-code",
+        "transfer-figures",
+        "transfer-plot-work",
+        "handoff"
+      ],
+      "optional": [],
+      "support": [
+        "plot-core",
+        "plot-period",
+        "plot-two-questions"
+      ],
+      "assessment": [
+        "class-transfer",
+        "transfer-plot-work",
+        "handoff",
+        "transfer-first-code"
+      ],
+      "prerequisite_uses": {
+        "W1-table": "plot-core"
+      },
+      "minutes": {
+        "class": 15,
+        "homework": 70,
+        "optional": 0
+      }
+    }
+  },
+  "changes": [
+    {
+      "topic": "W1-python",
+      "action": "retain and recheck",
+      "reason": "학생 Python 활동은 2회차 그대로다. 공유 교사용 예시 갱신 후 독립 오류 추적·수정 문제를 재검증한다.",
+      "alternative": "새 문법 카드를 추가하면 기존 독립 문제와 겹친다."
+    },
+    {
+      "topic": "W1-table",
+      "action": "repair existing input and merge",
+      "reason": "실제 CSV에서 행 이름과 반납함 키를 문자열로 읽고 결측·빈 문자열·공백을 동일한 미연결 조건으로 다룬다. 0권과 원래 식별자를 보존하고 교사용 풀이에서도 원래 기록 번호를 알려 준다.",
+      "alternative": "새 과제를 추가하는 방법은 기존 풀이가 없는 구역을 지어내는 결함을 해결하지 않는다."
+    },
+    {
+      "topic": "W1-array",
+      "action": "retain and recheck",
+      "reason": "학생 배열 활동은 2회차 그대로다. 교사용 파일 갱신 뒤 축별 손계산과 실제 새 입력에 대한 대응을 재검증한다.",
+      "alternative": "배열 연산이나 모델을 추가하면 그 주에 필요한 축·모양 이해를 넘어선다."
+    },
+    {
+      "topic": "W1-visualise",
+      "action": "repair answer figure and recheck",
+      "reason": "교사용 2×2 비교 그림의 세로 단위를 두 줄로 표현해 위아래 축 이름이 겹치지 않게 하고 학생의 첫 그림 선택과 단위 입력 순서를 재검증한다.",
+      "alternative": "같은 질문을 다루는 필수 그림을 하나 더 그리게 할 필요는 없다."
+    }
+  ]
+}

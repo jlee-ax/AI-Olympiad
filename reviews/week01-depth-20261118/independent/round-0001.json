@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "reviewer": "week01-independent-oracle",
+  "actual_source_reading": [
+    "curriculum/student-plan.html at 607c56eb, week-1 and scope-01/02/03/06",
+    "https://kitpa.org/koai/2027",
+    "https://kitpa.org/koai/syllabus",
+    "https://openstax.org/books/introductory-statistics-2e/pages/2-7-measures-of-the-spread-of-the-data",
+    "https://d2l.ai/chapter_preliminaries/linear-algebra.html",
+    "https://cs231n.github.io/python-numpy-tutorial/",
+    "https://numpy.org/doc/stable/user/absolute_beginners.html",
+    "https://pandas.pydata.org/docs/getting_started/intro_tutorials/08_combine_dataframes.html",
+    "https://matplotlib.org/stable/users/explain/quick_start.html",
+    "https://seaborn.pydata.org/tutorial/distributions.html",
+    "all 57 original student cells, the 3 actual synthetic CSVs, the entire teacher guide and its 6 Python blocks"
+  ],
+  "scope": "원본 새 커널 실행, 별도의 교사 공개 풀이 실행, 사전 고정한 새 입력 검산을 구분했다. 실제 학생·실제 소요 시간 관찰은 없었다.",
+  "environment": {
+    "python": "3.12.14",
+    "ipykernel": "7.4.0",
+    "jupyter-client": "8.10.0",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.8",
+    "seaborn": "0.13.2"
+  },
+  "kernel_execution": {
+    "transport": "ipykernel.inprocess.manager.InProcessKernelManager; separate fresh Python process for each run, inline Matplotlib, archived bytes copied into the normal week/data directory",
+    "template_code_cells": 24,
+    "template_errors": 0,
+    "unattempted_independent_cells": [
+      "python-independent",
+      "table-independent",
+      "class-independent",
+      "array-independent",
+      "math-independent",
+      "transfer-data-work",
+      "transfer-fault-work",
+      "transfer-plot-work"
+    ],
+    "template_plots": [
+      {
+        "cell": "plot-period",
+        "bytes": 15376,
+        "width": 540,
+        "height": 290,
+        "sha256": "124d6c2ded7e0ea2db3e5a19074b0835f76c677d580dd358dbb4cdb72796a4fe",
+        "MIME": "image/png"
+      },
+      {
+        "cell": "plot-histogram",
+        "bytes": 15525,
+        "width": 540,
+        "height": 290,
+        "sha256": "f2207ba67a064add89c9716cfce134f40b05e2ae23863f3e000bbc799940e3ba",
+        "MIME": "image/png"
+      },
+      {
+        "cell": "plot-categories",
+        "bytes": 15773,
+        "width": 540,
+        "height": 290,
+        "sha256": "27cd2e2488783506e4a1670dbfd423fc0985fc93d793f632a825e9488d3429f6",
+        "MIME": "image/png"
+      }
+    ],
+    "teacher_code_blocks_appended": 6,
+    "teacher_outputs": {
+      "terminal_check": "Public teacher worked answers verified. 8 3 2",
+      "plots": [
+        {
+          "cell": "independent-probe",
+          "bytes": 48695,
+          "width": 989,
+          "height": 590,
+          "sha256": "d0b3ee1d81f486b728c4b14312a7fd4fe3436f240a5ff4b959147cac7ffb14da",
+          "MIME": "image/png"
+        }
+      ]
+    },
+    "direct_template_text": {
+      "axis": "입력\n[[2 4 6]\n [8 0 4]]\n(2, 3)\n구간별 [5. 2. 5.] (3,)\n기록별 [4. 4.] (2,)\n",
+      "group": "   zone  rows  observed  mean_books\n0  East     2         2         5.5\n1  West     4         3         4.0"
+    }
+  },
+  "new_input_replay": "Run python reviews/week01-depth-20261118/independent/verify_round.py reviews/week01-depth-20261118/rounds/0001. Core reductions and teaching functions are extracted from the archived sources. The schema adapter, independent Python reference calculations and fresh chart calls were written by the reviewer.",
+  "new_input_results": {
+    "round_sha256": "34a98e378196be91e406fc6fdcad41d03db83e9f456664ac3c4eef30bf06182d",
+    "candidate_sha256": "d4689c347113b60e7f7fa3d93a8f76f9412f7eb8ee793dcbcac65a95039212bf",
+    "frozen_oracle_sha256": "f8e0926c4f4c6744eaa4bffacddd92372da64adc9347fc50fc4b00197114945f",
+    "python": [
+      2,
+      4,
+      0
+    ],
+    "means_by_axis": [
+      [
+        4.0,
+        4.0
+      ],
+      [
+        5.0,
+        4.0,
+        3.0
+      ]
+    ],
+    "public_transfer": [
+      {
+        "cutoff": 4,
+        "selected": [
+          "T1",
+          "T3",
+          "T4",
+          "T6",
+          "T8"
+        ],
+        "west_observed": 3,
+        "west_mean": 4.333333333333333
+      },
+      {
+        "cutoff": 6,
+        "selected": [
+          "T4",
+          "T6",
+          "T8"
+        ],
+        "west_observed": 2,
+        "west_mean": 3.0
+      }
+    ],
+    "independent_transfer": [
+      {
+        "observed": 5,
+        "group_rows": [
+          3,
+          2,
+          1
+        ],
+        "group_observed": [
+          3,
+          1,
+          1
+        ],
+        "group_means": [
+          5.333333333333333,
+          4.0,
+          0.0
+        ],
+        "mean": 4,
+        "population_variance": 8,
+        "histogram": [
+          2,
+          2,
+          1
+        ],
+        "changed_bins": [
+          3,
+          2
+        ]
+      },
+      {
+        "observed": 6,
+        "group_rows": [
+          3,
+          2,
+          1
+        ],
+        "group_observed": [
+          3,
+          2,
+          1
+        ],
+        "group_means": [
+          5.333333333333333,
+          7.0,
+          0.0
+        ],
+        "mean": 5,
+        "population_variance": 11.666666666666666,
+        "histogram": [
+          2,
+          2,
+          2
+        ],
+        "changed_bins": [
+          3,
+          3
+        ]
+      }
+    ]
+  },
+  "educational_judgment": {
+    "C1": 2,
+    "C2": 2,
+    "C3": 2,
+    "C4": 2,
+    "C5": 1,
+    "C6": 2,
+    "C7": 1,
+    "C8": 2,
+    "sum_out_of_16": 14,
+    "decision": "revise",
+    "reason": "필수 전이에서 사용해야 할 다른 이름의 키에 대한 학생 자습용 복구 단서가 없다. 교사용 구현과 독립 수치는 정확하다."
+  }
+}

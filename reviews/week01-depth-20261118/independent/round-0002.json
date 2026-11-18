@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "reviewer": "week01-independent-oracle",
+  "round_sha256": "f104987b599fa7a5278eabc1eb7ca3f24446ace3b403c20d7205b4e3f9785fe0",
+  "candidate_sha256": "1487703f78c55cadbea0ba892f1880fabefdd77a1a1d24d6bb152a180db83383",
+  "frozen_oracle_sha256": "f8e0926c4f4c6744eaa4bffacddd92372da64adc9347fc50fc4b00197114945f",
+  "direct_reading": "1차에서 읽은 57셀과 교사 해설을 기준으로 2차 61셀 전체를 식별자별로 대조했다. 바뀌거나 추가된 학생 본문과 코드, 2차 교사 해설 전문과 코드 7블록, 1차와 바이트가 같은 CSV 세 파일을 확인했다. 공식 범위·입문 원문은 같은 고정본의 기록을 사용했다.",
+  "kernel_execution": {
+    "transport": "InProcessKernelManager in a separate fresh Python process for each run; genuine execution replies, streams and inline PNG. Student template and teacher answers were separate runs.",
+    "environment": {
+      "python": "3.12.14",
+      "ipykernel": "7.4.0",
+      "jupyter-client": "8.10.0",
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.8",
+      "seaborn": "0.13.2"
+    },
+    "template_cells": 28,
+    "unexpected_errors": 0,
+    "template_figures": [
+      {
+        "cell": "plot-period",
+        "width": 540,
+        "height": 290,
+        "bytes": 15376,
+        "sha256": "124d6c2ded7e0ea2db3e5a19074b0835f76c677d580dd358dbb4cdb72796a4fe",
+        "MIME": "image/png"
+      },
+      {
+        "cell": "plot-histogram",
+        "width": 540,
+        "height": 290,
+        "bytes": 12946,
+        "sha256": "bbc8d47118e21cde9ca968f82b5f7b85cfab1566e5c63f7ea2a3f601bbf0fcaf",
+        "MIME": "image/png"
+      },
+      {
+        "cell": "plot-categories",
+        "width": 540,
+        "height": 290,
+        "bytes": 15773,
+        "sha256": "27cd2e2488783506e4a1670dbfd423fc0985fc93d793f632a825e9488d3429f6",
+        "MIME": "image/png"
+      }
+    ],
+    "actual_outputs": {
+      "trace-example": [
+        "Traceback (most recent call last):\n  File \"<Jupyter cell>\", line 5, in scan_batch\n    return count_over(values, 4)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"<Jupyter cell>\", line 6, in count_over\n    if books is not None and books > limit:\n                             ^^^^^^^^^^^^^\nTypeError: '>' not supported between instances of 'str' and 'int'\n"
+      ],
+      "reduce-period": [
+        "입력\n[[2 4 6]\n [8 0 4]]\n(2, 3)\n구간별 [5. 2. 5.] (3,)\n기록별 [4. 4.] (2,)\n"
+      ],
+      "trace-independent": [
+        "Traceback (most recent call last):\n  File \"<Jupyter cell>\", line 5, in last_box\n    return code_at(codes, len(codes))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<Jupyter cell>\", line 2, in code_at\n    return codes[position]\n           ~~~~~^^^^^^^^^^\nIndexError: list index out of range\n"
+      ],
+      "join-key-example": [
+        "card shelf_tag  floor\n  K1         M    1.0\n  K2      None    NaN\n위치를 찾지 못한 카드 ['K2']\n"
+      ],
+      "group-example": [
+        "   zone  rows  observed  mean_books\n0  East     2         2         5.5\n1  West     4         3         4.0"
+      ]
+    },
+    "known_intentional_errors": [
+      "TypeError inside the worked trace",
+      "IndexError inside the independent repair prompt"
+    ],
+    "teacher_code_blocks_appended": 7,
+    "teacher_run_cells": 29,
+    "teacher_final_figure": [
+      {
+        "cell": "independent-probe",
+        "width": 989,
+        "height": 590,
+        "bytes": 45581,
+        "sha256": "72dd2c76ad01124d60062350721e3646171e2a19b999f3ca358d56b513b0d087",
+        "MIME": "image/png"
+      }
+    ],
+    "public_confirmation": "Public teacher worked answers verified. 8 3 2"
+  },
+  "replay_command": "python reviews/week01-depth-20261118/independent/verify_round2.py reviews/week01-depth-20261118/rounds/0002",
+  "numerical_and_extra_checks": {
+    "frozen_inputs_replay": {
+      "round_sha256": "f104987b599fa7a5278eabc1eb7ca3f24446ace3b403c20d7205b4e3f9785fe0",
+      "candidate_sha256": "1487703f78c55cadbea0ba892f1880fabefdd77a1a1d24d6bb152a180db83383",
+      "frozen_oracle_sha256": "f8e0926c4f4c6744eaa4bffacddd92372da64adc9347fc50fc4b00197114945f",
+      "python": [
+        2,
+        4,
+        0
+      ],
+      "means_by_axis": [
+        [
+          4.0,
+          4.0
+        ],
+        [
+          5.0,
+          4.0,
+          3.0
+        ]
+      ],
+      "public_transfer": [
+        {
+          "cutoff": 4,
+          "selected": [
+            "T1",
+            "T3",
+            "T4",
+            "T6",
+            "T8"
+          ],
+          "west_observed": 3,
+          "west_mean": 4.333333333333333
+        },
+        {
+          "cutoff": 6,
+          "selected": [
+            "T4",
+            "T6",
+            "T8"
+          ],
+          "west_observed": 2,
+          "west_mean": 3.0
+        }
+      ],
+      "independent_transfer": [
+        {
+          "observed": 5,
+          "group_rows": [
+            3,
+            2,
+            1
+          ],
+          "group_observed": [
+            3,
+            1,
+            1
+          ],
+          "group_means": [
+            5.333333333333333,
+            4.0,
+            0.0
+          ],
+          "mean": 4,
+          "population_variance": 8,
+          "histogram": [
+            2,
+            2,
+            1
+          ],
+          "changed_bins": [
+            3,
+            2
+          ]
+        },
+        {
+          "observed": 6,
+          "group_rows": [
+            3,
+            2,
+            1
+          ],
+          "group_observed": [
+            3,
+            2,
+            1
+          ],
+          "group_means": [
+            5.333333333333333,
+            7.0,
+            0.0
+          ],
+          "mean": 5,
+          "population_variance": 11.666666666666666,
+          "histogram": [
+            2,
+            2,
+            2
+          ],
+          "changed_bins": [
+            3,
+            3
+          ]
+        }
+      ]
+    },
+    "declared_cases": {
+      "mixed_unknown_and_null": {
+        "None": [
+          "obs-11",
+          "obs-20"
+        ],
+        "numpy.nan": [
+          "obs-11",
+          "obs-20"
+        ],
+        "pandas.NA": [
+          "obs-11",
+          "obs-20"
+        ]
+      },
+      "blank_field_read_from_csv": [
+        "v1"
+      ],
+      "existing_key_missing_zone": [
+        "obs-11",
+        "obs-20"
+      ],
+      "missing_required_field": "meal_count",
+      "duplicate_known_key": "MergeError",
+      "normal_after_errors": [
+        "obs-11",
+        "obs-17",
+        "obs-20"
+      ],
+      "last_box_fixed": [
+        null,
+        "K",
+        "T"
+      ]
+    },
+    "additional_observations_outside_fixed_cases": {
+      "programmatic_empty_string": {
+        "accepted": true,
+        "assigned": [
+          "False"
+        ]
+      },
+      "all_missing_csv_key_column": {
+        "accepted": false,
+        "diagnostic": "You are trying to merge on float64 and object columns for key 'station'. If you wish to proceed you should use pd.concat"
+      }
+    },
+    "teacher_plot_layout": {
+      "canvas_pixels": [
+        1000,
+        600
+      ],
+      "right_axis_labels_overlap_px": 21.875,
+      "right_upper_label_extends_beyond_canvas_top_px": 13.909722222222285
+    }
+  },
+  "educational_judgment": {
+    "C1": 2,
+    "C2": 2,
+    "C3": 2,
+    "C4": 2,
+    "C5": 2,
+    "C6": 1,
+    "C7": 2,
+    "C8": 2,
+    "sum_out_of_16": 15,
+    "decision": "pass",
+    "reason": "다른 이름의 키 지원과 처음 시도 뒤의 힌트로 앞선 보완점이 해소됐다. 수치·학생 그림·독립 실습은 정확하다. 보조 교사 그림 오른쪽의 긴 단위 문구 두 개가 겹쳐 그림 표현에는 부분 점수를 두었다."
+  },
+  "limits": "실제 중학생의 학습 독립성·소요 시간은 관찰하지 않았다. 강의실 학생 반응을 가정하지 않았다. 빈 문자열을 DataFrame에 직접 기입하는 경우와 모든 식별자가 비어 dtype 추론이 달라지는 경우는 실제 결측의 혼합 사례와 구분해 별도로 기록했다."
+}

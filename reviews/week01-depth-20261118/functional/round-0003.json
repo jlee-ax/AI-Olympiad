@@ -1,0 +1,434 @@
+{
+  "round": 3,
+  "round_sha256": "722ae526acfdf572f862002d52e2bb7747ecbbf70a3860609009fbacb867a793",
+  "candidate_sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+  "companions": {
+    "lessons/week01/week01_foundations_teacher.md": {
+      "snapshot": "reviews/week01-depth-20261118/rounds/0003/inputs/week01_foundations_teacher.md",
+      "sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484"
+    },
+    "lessons/week01/data/foundations_returns.csv": {
+      "snapshot": "reviews/week01-depth-20261118/rounds/0001/inputs/foundations_returns.csv",
+      "sha256": "ece009210bb0ac473b988937f8ecd865f35355dc6d9c8718e3e8846e504daaaf"
+    },
+    "lessons/week01/data/foundations_boxes.csv": {
+      "snapshot": "reviews/week01-depth-20261118/rounds/0001/inputs/foundations_boxes.csv",
+      "sha256": "471a80d0b99548c29a36331eb5ccad27d25ba7742f955a869687e7096c655635"
+    },
+    "lessons/week01/data/foundations_returns_transfer.csv": {
+      "snapshot": "reviews/week01-depth-20261118/rounds/0001/inputs/foundations_returns_transfer.csv",
+      "sha256": "47d719ce82e88acbe98ad175b1f827c8f7c76d22706bd8432344d86e3db6d7a6"
+    }
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "pandas": "2.2.3"
+  },
+  "checks": [
+    {
+      "case": "student.original_keys",
+      "expected": [
+        [
+          "R1",
+          "East"
+        ],
+        [
+          "R2",
+          "West"
+        ],
+        [
+          "R3",
+          "East"
+        ],
+        [
+          "R4",
+          "West"
+        ],
+        [
+          "R5",
+          "West"
+        ],
+        [
+          "R6",
+          "West"
+        ]
+      ],
+      "actual": [
+        [
+          "R1",
+          "East"
+        ],
+        [
+          "R2",
+          "West"
+        ],
+        [
+          "R3",
+          "East"
+        ],
+        [
+          "R4",
+          "West"
+        ],
+        [
+          "R5",
+          "West"
+        ],
+        [
+          "R6",
+          "West"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "case": "teacher.transfer_keys",
+      "expected": [
+        [
+          "T1",
+          "West"
+        ],
+        [
+          "T2",
+          "East"
+        ],
+        [
+          "T3",
+          "West"
+        ],
+        [
+          "T4",
+          "East"
+        ],
+        [
+          "T5",
+          "West"
+        ],
+        [
+          "T6",
+          "West"
+        ],
+        [
+          "T7",
+          "East"
+        ],
+        [
+          "T8",
+          "West"
+        ]
+      ],
+      "actual": [
+        [
+          "T1",
+          "West"
+        ],
+        [
+          "T2",
+          "East"
+        ],
+        [
+          "T3",
+          "West"
+        ],
+        [
+          "T4",
+          "East"
+        ],
+        [
+          "T5",
+          "West"
+        ],
+        [
+          "T6",
+          "West"
+        ],
+        [
+          "T7",
+          "East"
+        ],
+        [
+          "T8",
+          "West"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "case": "teacher.reversed_lookup",
+      "expected": [
+        [
+          "T1",
+          "West"
+        ],
+        [
+          "T2",
+          "East"
+        ],
+        [
+          "T3",
+          "West"
+        ],
+        [
+          "T4",
+          "East"
+        ],
+        [
+          "T5",
+          "West"
+        ],
+        [
+          "T6",
+          "West"
+        ],
+        [
+          "T7",
+          "East"
+        ],
+        [
+          "T8",
+          "West"
+        ]
+      ],
+      "actual": [
+        [
+          "T1",
+          "West"
+        ],
+        [
+          "T2",
+          "East"
+        ],
+        [
+          "T3",
+          "West"
+        ],
+        [
+          "T4",
+          "East"
+        ],
+        [
+          "T5",
+          "West"
+        ],
+        [
+          "T6",
+          "West"
+        ],
+        [
+          "T7",
+          "East"
+        ],
+        [
+          "T8",
+          "West"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "case": "teacher.cutoff_4",
+      "expected": {
+        "ids": [
+          "T1",
+          "T3",
+          "T4",
+          "T6",
+          "T8"
+        ],
+        "zones": {
+          "East": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "West": [
+            4,
+            3,
+            13,
+            4.333333333333333
+          ]
+        }
+      },
+      "actual": {
+        "ids": [
+          "T1",
+          "T3",
+          "T4",
+          "T6",
+          "T8"
+        ],
+        "zones": {
+          "East": [
+            1.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "West": [
+            4.0,
+            3.0,
+            13.0,
+            4.333333333333333
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "teacher.cutoff_6",
+      "expected": {
+        "ids": [
+          "T4",
+          "T6",
+          "T8"
+        ],
+        "zones": {
+          "East": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "West": [
+            2,
+            2,
+            6,
+            3
+          ]
+        }
+      },
+      "actual": {
+        "ids": [
+          "T4",
+          "T6",
+          "T8"
+        ],
+        "zones": {
+          "East": [
+            1.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "West": [
+            2.0,
+            2.0,
+            6.0,
+            3.0
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "case": "teacher.all_missing_group",
+      "expected": [
+        1,
+        0,
+        null,
+        null
+      ],
+      "actual": [
+        1.0,
+        0.0,
+        null,
+        null
+      ],
+      "passed": true
+    },
+    {
+      "case": "teacher.empty_selection",
+      "expected": [
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "case": "teacher.missing_column",
+      "expected": {
+        "reject": [
+          "KeyError"
+        ],
+        "missing_column": "meal_count"
+      },
+      "actual": {
+        "type": "KeyError",
+        "message": "'meal_count'"
+      },
+      "passed": true
+    },
+    {
+      "case": "teacher.duplicate_lookup",
+      "expected": {
+        "reject": [
+          "ValueError"
+        ]
+      },
+      "actual": {
+        "type": "MergeError",
+        "message": "Merge keys are not unique in right dataset; not a many-to-one merge"
+      },
+      "passed": true
+    },
+    {
+      "case": "teacher.unmatched_key",
+      "expected": {
+        "reject": [
+          "ValueError"
+        ]
+      },
+      "actual": {
+        "type": "ValueError",
+        "message": "('구역을 찾지 못한 기록', ['T1'])"
+      },
+      "passed": true
+    },
+    {
+      "case": "teacher.missing_left_key",
+      "expected": {
+        "reject": [
+          "ValueError"
+        ]
+      },
+      "actual": {
+        "type": "ValueError",
+        "message": "('구역을 찾지 못한 기록', ['T1'])"
+      },
+      "passed": true
+    },
+    {
+      "case": "teacher.missing_keys_on_both_sides",
+      "expected": {
+        "reject": [
+          "ValueError"
+        ]
+      },
+      "actual": {
+        "type": "ValueError",
+        "message": "('구역을 찾지 못한 기록', ['T1'])"
+      },
+      "passed": true
+    },
+    {
+      "case": "student.missing_keys_on_both_sides",
+      "expected": {
+        "reject": [
+          "AssertionError",
+          "ValueError"
+        ]
+      },
+      "actual": {
+        "type": "AssertionError",
+        "message": ""
+      },
+      "passed": true
+    }
+  ],
+  "status": "passed"
+}
