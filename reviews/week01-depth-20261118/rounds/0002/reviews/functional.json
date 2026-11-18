@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "stage": "candidate",
+  "contract_sha256": "2f69eb913f7da07cc7f0b8401906145e743ee19224c442719cc9b6ec3d19165a",
+  "round_sha256": "f104987b599fa7a5278eabc1eb7ca3f24446ace3b403c20d7205b4e3f9785fe0",
+  "candidate_sha256": "1487703f78c55cadbea0ba892f1880fabefdd77a1a1d24d6bb152a180db83383",
+  "reviewer": "independent-public-table-audit",
+  "topics": {
+    "W1-table": {
+      "verdict": "pass",
+      "cells": [
+        "dictionary",
+        "join-story",
+        "real-merge",
+        "join-key-example",
+        "transfer-table",
+        "transfer-data-work",
+        "transfer-faults",
+        "transfer-fault-work"
+      ],
+      "foundation": "학생에게 실제 관측과 빈칸의 차이를 먼저 설명하고, 키 이름이 다른 두 표를 예로 들어 미연결 행의 식별자를 보인다. 새 일지에서는 열 이름과 키를 직접 고르고, 필수 열·중복·미연결로 망가진 복사본과 정상 자료를 대조한다. 두 기준의 하교 관측 수와 합에서 평균을 따로 계산할 수 있다.",
+      "ceiling": "빈 키를 구역표에서 제외한 후 같은 관찰 행을 확인하는 한 차례의 검사가 앞선 충돌을 해결한다. 일반적인 데이터베이스 이론은 이 과제를 푸는 데 필요하지 않다.",
+      "workload": "계획상 수업 45분, 자습 85분이다. 같은 표의 키 확인·기존 오류 실험에 빈 키 사례를 넣었으며, 두 번째 자료 분석 과제를 추가하지 않았다.",
+      "finding": "이 회차에 보관된 실제 학생 병합 셀과 교사용 attach_zones·summarize_returns를 pandas 2.2.3에서 재실행했다. 첫 회차에서 East가 붙던 빈 키 조합은 학생 예제에서 멈추고 교사용 풀이에서는 미연결 기록 T1을 알린다. 13개 공개 대조가 모두 통과했다. 구역표를 뒤집어도 대응이 같고, 기준 4→6에서 West의 관측 수·합·평균은 (3,13,13/3)에서 (2,6,3)으로 바뀌며 East의 0은 관측으로 남는다. 실행 결과 functional/round-0002.json SHA-256 ae12099c6e398f242dbb64e7f603e403729e0c14bde76d8870cd5a0bfd6268c8.",
+      "companion_spans": [
+        {
+          "path": "lessons/week01/week01_foundations_teacher.md",
+          "lines": [
+            147,
+            156
+          ]
+        }
+      ]
+    }
+  }
+}

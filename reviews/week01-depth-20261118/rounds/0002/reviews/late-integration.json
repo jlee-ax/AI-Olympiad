@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "stage": "candidate",
+  "contract_sha256": "2f69eb913f7da07cc7f0b8401906145e743ee19224c442719cc9b6ec3d19165a",
+  "round_sha256": "f104987b599fa7a5278eabc1eb7ca3f24446ace3b403c20d7205b4e3f9785fe0",
+  "candidate_sha256": "1487703f78c55cadbea0ba892f1880fabefdd77a1a1d24d6bb152a180db83383",
+  "reviewer": "release-integration-reader",
+  "topics": {
+    "W1-table": {
+      "verdict": "revise",
+      "cells": [
+        "csv-open",
+        "load-csv",
+        "join-story",
+        "real-merge",
+        "join-key-example",
+        "transfer-fault-work"
+      ],
+      "foundation": "반납함 키가 확인되지 않는 기록도 행 이름으로 짚을 수 있게 한다. 0권이라는 관측과 반납함 이름의 빈칸을 구별한다.",
+      "ceiling": "별도 데이터베이스 단원까지 늘릴 필요 없이 기존 CSV 읽기와 병합 예를 고칠 수 있다.",
+      "workload": "같은 입력 처리와 오류 실험을 보정하면 현재 표 단원의 수업 45분·자습 85분 편성을 유지할 수 있다.",
+      "finding": "보관된 2회차 자료에 check_missing_key_forms.py를 직접 다시 실행했다. station 전체가 빈 실제 CSV에서는 T1~T8 중 어느 것도 알려 주지 못하고 float64/object 병합 오류가 난다. 양 표에서 빈 문자열 키인 T1은 잘못 East로 연결된다. 이 두 경우까지 재검증한다.",
+      "companion_spans": [
+        {
+          "path": "lessons/week01/week01_foundations_teacher.md",
+          "lines": [
+            147,
+            156
+          ]
+        }
+      ]
+    }
+  }
+}
