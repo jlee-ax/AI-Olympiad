@@ -52,7 +52,7 @@ The tool exposes `validate`, `decide`, `fingerprint`, and `recall` as read-only 
 
 ## Evidence and completion
 
-Artifact review and learner mastery are separate. Without an appropriate learner study, learning outcomes remain `untested`. Automated structure/execution checks and educator judgments each have their own limits.
+Material review covers the student artifact. Learner mastery and actual teacher time fall outside its decision. Automated structure/execution checks and educator judgments each have their own limits.
 
 After artifact, input, source, skill, rubric, or evaluator changes, revisit affected reviews. Preserve old receipts as history; do not relabel them as current. An incomplete dependency graph cannot identify every consequence. Missing evidence, known failures, and unresolved required disagreements cannot be offset by a favorable average score.
 

@@ -442,7 +442,7 @@ def _verification(state, fingerprint):
     return {'passed': passed, 'reason': reason, 'review_id': review['id'], 'checks': checks, 'warnings': warnings}
 
 
-def decide(state, quality_report=None, discovery_report=None):
+def decide(state, quality_report=None, discovery_report=None, *, repair_plan=None):
     errors, warnings = validate_state(state)
     result = {'status': 'blocked', 'reason': 'invalid_state', 'authority': 'advisory_only',
               'synthetic': state.get('synthetic') if isinstance(state, dict) and type(state.get('synthetic')) is bool else None,
@@ -466,6 +466,8 @@ def decide(state, quality_report=None, discovery_report=None):
     if not agreement['criteria_agreed']:
         return finish('pause', 'criteria_agreement_required')
     scope = state['scope']
+    if repair_plan is not None and (scope['task_kind'] not in ('lesson_production', 'recurring') or not scope['lesson_production_allowed']):
+        return finish('pause', 'lesson_production_not_authorized')
     if scope['task_kind'] == 'lesson_production' and not scope['lesson_production_allowed']:
         return finish('pause', 'lesson_production_not_authorized')
     if scope['task_kind'] == 'recurring' and not scope['recurring_allowed']:
@@ -527,10 +529,13 @@ def decide(state, quality_report=None, discovery_report=None):
             return finish('blocked', 'invalid_discovery_report')
         if discovery_report.get('synthetic') != state['synthetic']:
             return finish('blocked', 'discovery_synthetic_mismatch')
-        manifest = {'id': 'review:discovery', 'revision': 'discovery-loop-v1', 'sha256': discovery_report['session_sha256']}
+        import discovery_loop
+        if discovery_report.get('revision') != discovery_loop.VERSION:
+            return finish('blocked', 'discovery_context_not_bound')
+        manifest = {'id': 'review:discovery', 'revision': discovery_loop.VERSION, 'sha256': discovery_report['session_sha256']}
         if manifest not in [_manifest(item) for item in context['inputs']]:
             return finish('blocked', 'discovery_context_not_bound')
-        if discovery_report.get('ready_for_review') is not True:
+        if repair_plan is None and discovery_report.get('ready_for_review') is not True:
             return finish('blocked', 'discovery_unresolved')
         discovery_scope = discovery_report.get('scope', {})
         expected_artifact = discovery_scope.get('artifact_sha256')
@@ -561,6 +566,23 @@ def decide(state, quality_report=None, discovery_report=None):
         if any(item not in bound_inputs for item in required_inputs):
             return finish('blocked', 'quality_context_not_bound')
         checks = quality_report['checks']
+        if repair_plan is not None:
+            result['release_ready'] = False
+            if (not isinstance(repair_plan, dict) or repair_plan.get('bundle_sha256') != quality_report['bundle_sha256']
+                    or repair_plan.get('artifact_sha256') != context['artifact']['sha256']
+                    or not discovery_report or repair_plan.get('discovery') != discovery_report
+                    or quality_report.get('discovery') != discovery_report):
+                return finish('blocked', 'repair_context_not_bound')
+            if repair_plan.get('status') != 'continue':
+                return finish(repair_plan['status'], repair_plan['reason'])
+            item = next((row for row in repair_plan.get('ranked', []) if row['id'] == repair_plan.get('next_candidate')), None)
+            if not item:
+                return finish('blocked', 'no_scoped_repair')
+            if any(receipt['context_fingerprint'] == fingerprint for receipt in state['history']):
+                return finish('noop', 'no_new_evidence')
+            result['candidate'] = item
+            return finish('continue', 'scoped_repair_only')
+
         if (quality_report['ready_for_review'] is not True or not isinstance(checks, list) or
                 {item.get('id') for item in checks if isinstance(item, dict)} !=
                 {'K' + str(n).zfill(2) for n in range(1, 17)} or len(checks) != 16 or
@@ -590,16 +612,16 @@ def _unique_pairs(pairs):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=('validate', 'decide', 'fingerprint', 'recall'))
+    parser.add_argument('command', choices=('validate', 'decide', 'repair', 'fingerprint', 'recall'))
     parser.add_argument('state', type=Path)
     parser.add_argument('--query', default='', help='AND substring terms for recall only')
     parser.add_argument('--quality', type=Path, help='Quality bundle for decide; required for lesson/recurring scope')
     parser.add_argument('--discovery', type=Path, help='Discovery session to replay for decide')
     parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[1])
     args = parser.parse_args(argv)
-    if args.discovery and args.command != 'decide':
+    if args.discovery and args.command not in ('decide', 'repair'):
         parser.error('--discovery applies only to decide')
-    if args.quality and args.command != 'decide':
+    if args.quality and args.command not in ('decide', 'repair'):
         parser.error('--quality applies only to decide')
     if args.query and args.command != 'recall':
         parser.error('--query applies only to recall')
@@ -610,12 +632,18 @@ def main(argv=None):
         print(json.dumps({'status': 'blocked', 'reason': 'unreadable_state', 'authority': 'advisory_only', 'errors': [str(exc)]}))
         return 2
     errors, warnings = validate_state(state)
-    if args.command == 'decide':
+    if args.command in ('decide', 'repair'):
+        if args.command == 'repair' and args.quality is None:
+            parser.error('repair requires --quality with a bound discovery session')
+        repair_plan = None
         quality_report = None
         if args.quality and not errors:
             import quality
             try:
-                quality_report = quality.evaluate(quality.load(args.quality), args.root)
+                bundle = quality.load(args.quality)
+                quality_report = quality.evaluate(bundle, args.root)
+                if args.command == 'repair':
+                    repair_plan = quality.plan_work(bundle, args.root, report=quality_report)
             except (OSError, UnicodeError, ValueError, TypeError, KeyError, AttributeError, RecursionError, OverflowError) as exc:
                 print(json.dumps({'status': 'blocked', 'reason': 'invalid_quality_input', 'authority': 'advisory_only',
                                   'errors': [ascii(str(exc))]}))
@@ -628,7 +656,7 @@ def main(argv=None):
             except (OSError, UnicodeError, ValueError, TypeError, KeyError, AttributeError) as exc:
                 print(json.dumps({'status': 'blocked', 'reason': 'invalid_discovery_input', 'authority': 'advisory_only', 'errors': [str(exc)]}))
                 return 2
-        output = decide(state, quality_report, discovery_report)
+        output = decide(state, quality_report, discovery_report, repair_plan=repair_plan)
     else:
         output = {'status': 'invalid' if errors else 'valid', 'reason': 'invalid_state' if errors else 'structural_checks_only',
                   'authority': 'advisory_only', 'errors': errors, 'warnings': warnings,

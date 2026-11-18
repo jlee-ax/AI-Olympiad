@@ -6,7 +6,7 @@ Revision: criteria-v2. The [criterion catalog](criteria.json) defines K01–K16.
 
 The user specified **middle-school learners with basic coding, ten weeks, one 120-minute class per week**. These are confirmed inputs. AI prelearning is not an entry requirement.
 
-The [student HTML](../../curriculum/student-plan.html) is the later full-scope recalibration following the request to place required syllabus topics in class or required self-study. It is retained byte-for-byte, SHA256 96deb5e5e781bf39cc6bb5effe34d6d04a01ac65e13a3811c37f5a825714f7a9. Earlier 240-minute files and the earlier introduction with optional syllabus gaps are not this baseline.
+The [student HTML](../../curriculum/student-plan.html) is the later full-scope recalibration following the request to place required syllabus topics in class or required self-study. It is retained byte-for-byte, with its current SHA256 in curriculum/contract.json. Earlier 240-minute files and the earlier introduction with optional syllabus gaps are not this baseline.
 
 The [curriculum contract](../../curriculum/contract.json) records ten class allocations and all 60 grouped official topics with theory/practical flags, plan anchors and scheduled weeks. The HTML's 100–130 hours of required self-study are separate from 20 class hours. Its estimates and diagnostic targets are recorded source proposals, not observed student performance or scientifically calibrated thresholds.
 
@@ -45,9 +45,9 @@ The [unit specifications](../koai-evaluate/references/unit-specifications.json) 
 | W2-metrics | Define positive label, confusion counts and each denominator; undefined differs from zero |
 | W2-baseline-model | Evaluate the dummy baseline under fixed validation conditions; keep the test embargo through final week 4 selection |
 
-Prerequisite readiness means named observable behavior under recorded help, rather than an age label. Diagnose variables, control flow, functions/return, lists, files/errors; diagnose or teach means before reductions, ratios before metrics and axis behavior before dependent preprocessing. A missing skill needs a specific support activity before first use.
+Identify required behavior and locate a support activity before its first use. Examples include means before reductions, ratios before metrics, and axis behavior before preprocessing.
 
-A diagnostic record has ID, task, expected behavior, actual observation, status, help and evidence. A support route identifies its activity, before-unit, artifact locator and time placement. A scheduled support route establishes planning readiness, not demonstrated unaided mastery. The HTML's 4/5 and 3/4 targets remain source proposals until their use is agreed and calibrated.
+Material prerequisite records locate support before first use and specify the check and expected behavior. Independent K04 review establishes design adequacy at this revision. Actual student diagnosis, assistance and individual readiness are outside this review.
 
 Guided application means modifying/running an example and interpreting its output with stated assistance. Independent transfer additionally needs new input and no hint or visible completed answer for that assessment. Theory, noncoding prediction/hand-work, coding and assessment must address the same concept and intended performance. Matching IDs is insufficient without substantive review.
 
@@ -80,7 +80,7 @@ The [reading register](source-readings.json) gives original sources, exact read 
 | K01 | Actual file digests, target, ten week IDs, 60 topic IDs/flags/placements | No automatic live-source fetch |
 | K02 | Missing objectives, practical-versus-concept contradiction, recorded mode evidence | Actual named components and depth need a current review |
 | K03 | Baseline visible times/current class ledger; 120 total; written 10 inside noncoding; configured weekly cap against pinned required upper estimate and current required-work ledger | Actual completion time; a null cap leaves acceptability unassessed |
-| K04 | Required prerequisite IDs for real units, observations/help/evidence and support-route fields | Diagnosis and support adequacy |
+| K04 | Prerequisite IDs, support and first-use locations, evidence-bearing current review | Adequacy of support and the actual task |
 | K05 | Four roles, actual artifact locators and matching concept IDs | Semantic alignment review |
 | K06 | Current evidence-bearing independent recorded claim review | Arbitrary prose, proof and mechanism correctness |
 | K07 | Unit-bound required oracle kinds; independently calculated finite 2D means, binary metrics, weighted sums and declared split/fit audit | Unsupported math and unrepresented leakage; no unrelated oracle required for an empty unit requirement |
@@ -91,7 +91,7 @@ The [reading register](source-readings.json) gives original sources, exact read 
 | K12 | Transitive declared impact and stale detection on the last review per current criterion/object | Graph completeness; historical reviews are retained without vetoing a current replacement |
 | K13 | Exact proposal keys and prior accepted/rejected/no-change reasons | Paraphrase/semantic equivalence |
 | K14 | Current policy fingerprint, priority floor, finite budgets and reported 30-minute checkpoint | Authority, measured time, worker/scheduler execution |
-| K15 | Good/fault control counts and agreed tolerances, current review | Representative educator calibration and learner outcomes |
+| K15 | Limits on claims made by material review | Qualification of an evaluator version and domain is a separate operation |
 | K16 | Required T01–T05 coverage, real explanation regions, current independent subcheck records and evidence | Formula/diagram/algorithm meaning and novice comprehension are not automatically understood |
 
 A passed semantic check means a current independent evidence-bearing review is recorded; the tool does not authenticate its truth. Synthetic positive cases remain synthetic and cannot validate real workflow state.
@@ -104,11 +104,11 @@ Start with [the unconfigured bundle](../../templates/quality.json). Schema versi
 
 - Artifact: ID, revision, relative path and actual raw-file SHA256.
 - Target: competition year/division, unique nonempty objective IDs, coverage claim selected_scope or full_syllabus, and currently untested learner outcomes.
-- Policy: agreed, actual decision reference, agreement fingerprint and stop request. Diagnostic cutoff, outside-work limit and calibration tolerance stay null until agreed.
+- Policy: agreed, actual decision reference, agreement fingerprint and stop request. The optional outside-work limit applies to planning. Student diagnostic cutoffs and evaluator qualification tolerances have no bearing on the material agreement fingerprint.
 - Budget: positive attempt, total-minute and no-progress limits, or null before agreement.
 - Checkpoint: reported nonnegative minutes-since, cumulative elapsed time and no-progress count, plus an actual checkpoint record.
 - Lesson allocations: unique week and block IDs, theory/noncoding/coding kind, integer minutes and written minutes included within the block. Every chain activity points to an accounted block. `outside_work` lists unique activity IDs, boolean `required` and nonnegative integer `minutes`, including setup/support/feedback/retry estimates outside class. Required and optional sums remain distinct. A configured `maximum_required_homework_minutes` is a nonnegative integer cap **for each selected week**. Both the pinned range upper bound and the current required sum must fit. A missing ledger is `not_run` when a cap is configured; a sum below the pinned required minimum fails. Optional minutes cannot reduce required work. A null cap is reported as unassessed, not as an acceptable workload. The gate does not authenticate a claimed policy agreement or measure actual student time.
-- Unit: ID, week, real artifact locator, syllabus/concept/prerequisite/claim IDs, claimed depth, mode evidence, four-role chain, execution and calibration. Each role names concepts, expected behavior, actual locator, activity ID and help; assessment also records new-input status. Versioned unit specifications govern `oracle_kinds` and `explanation_checks`; an object cannot weaken those by declaring an empty list. Custom synthetic units must declare those contracts explicitly. `explanation_regions` maps every applicable T-check to its actual artifact locators, including additional representations beyond the unit minimum.
+- Unit: ID, week, real artifact locator, syllabus/concept/prerequisite/claim IDs, claimed depth, mode evidence, activity chain and execution when applicable. Each role names concepts, expected behavior, actual locator, activity ID and help; assessment also records new-input status. Versioned unit specifications govern `oracle_kinds` and `explanation_checks`; an object cannot weaken those by declaring an empty list. Custom synthetic units must declare those contracts explicitly. `explanation_regions` maps every applicable T-check to its actual artifact locators, including additional representations beyond the unit minimum.
 - Claim: ID, statement, domain, quantity, assumptions, locator, source IDs and optional reference check. An empirical effect claim declares that type explicitly.
 - Dependency: unique ID, content/meaning revision, SHA256 and ancestor IDs. Cited sources are claim ancestors; used claims are unit ancestors.
 - Review: ID, criterion/object IDs, status, reviewer, context fingerprint, reason and evidence. Reviewer ID differs from author for a recorded pass. Array order is append order: the last matching criterion/object record applies, even if failed or stale; never scan backward for a convenient pass. K16 also supplies `subchecks` keyed by T-check ID, each with `status`, all registered `artifact_locators` for that entry, and `evidence`. Old records remain intact.
@@ -144,7 +144,7 @@ The proposed order is P0 confirmed wrong content/key or invalid evaluation; P1 s
 
 Located findings produce scoped candidates. An unlocated higher-priority blocker causes a pause rather than cosmetic work. Ranking never grants execution authority.
 
-Record the actual policy decision/fingerprint and finite budgets before continuing. Changes to agreed criteria, governing scope, target, budget or tolerance require the corresponding refreshed decision. This does not require asking again for an unchanged authorized design task.
+Record the actual policy decision/fingerprint and finite budgets before continuing. Changes to agreed criteria, governing scope, target, budget or the material workload cap require the corresponding refreshed decision. This does not require asking again for an unchanged authorized design task.
 
 At 30 reported minutes, pause and record artifact version, source changes, passed/failed/uncertain/unrun checks, accepted/rejected/no-change work, cumulative usage and remaining budget, in-flight work, next action and unresolved choices. Do not reset cumulative usage or invent an edit. This command is not a timer.
 
@@ -154,14 +154,16 @@ Operator stop has precedence. Exhausted budget stops the campaign. No new eligib
 
 Expected effects in the catalog are reductions in identifiable substitution, scope, prerequisite, calculation, stale-review and repeated-work failures. The injected-fault tests demonstrate those finite cases and neighboring normal cases, not educational improvement.
 
-A later effectiveness test needs matched starting tasks, sources, model/tools/resource budgets, calibrated independent review, known-good/error controls, untouched transfer cases, regressions, no-change outcomes, total costs and uncertainty. Learner benefit additionally needs actual independent/delayed/transfer evidence under an agreed study.
+A later effectiveness test needs matched starting tasks, sources, model/tools/resource budgets, calibrated independent review, known-good/error controls, untouched transfer cases, regressions, no-change outcomes, total costs and uncertainty. Learner benefit is outside this project’s material-review measures.
 
 Biggs supplies an alignment design framework illustrated in teacher education, not a randomized KOAI effect. Prior-knowledge/complexity findings do not determine local cutoffs. Retrieval experiments on science texts do not validate this programming course. Older-model self-correction counterevidence motivates external checks without proving that later models cannot improve.
 
-Still unset: diagnostic cutoffs/help policy, acceptable outside workload/support allocation, calibration sample/tolerances, minimum useful improvement and total attempt/time/no-progress budgets. The default bundle stays incomplete. This work creates no student responses, new lesson notebooks, learner study or recurring worker run.
+Still unset: acceptable outside workload/support allocation, evaluator-level qualification tolerances, minimum useful improvement and total attempt/time/no-progress budgets. The default bundle stays incomplete. This work creates no student responses, new lesson notebooks, learner study or recurring worker run.
 
 Registered HTML row regions include nested markup/attributes, so an SVG shape or image reference change affects the fingerprint. Notebook regions include source, attachments and displayed outputs; execution counters are excluded. A declared dependency may also supply a root-relative `path`; its actual file bytes then enter the fingerprint, including local diagram assets. Unregistered external assets remain outside the guarantee. The CLI neither executes nor semantically interprets those representations.
 
 ## Supplementary competition-depth comparison
 
 Apply the [competition-depth procedure](../koai-evaluate/references/contest-depth.md) alongside K01–K16. It compares exact official problem/example demands against actual lesson and assessment regions, identifies staged gaps and unresolved source evidence, and preserves the distinction between task design and observed learner performance. The separate contest-depth report checks explicit review records only; it cannot automatically infer meaning, validate provenance or prove competition equivalence. Earlier frozen K01–K16 reports are not rewritten by this additional procedure.
+
+Use the [material revision procedure](../../tools/material-revision.md) for source-discovered gaps, scoped notebook edits, and version/domain qualification.

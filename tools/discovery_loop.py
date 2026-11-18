@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 import re
 
-VERSION = 'discovery-loop-v1'
+VERSION = 'discovery-loop-v2'
 KINDS = {'official_scope', 'official_problem', 'research', 'background'}
 LIMITS = [
     'Discovery/search execution, official attribution, semantic extraction and adequacy judgments are supplied by a human or model; this program does not browse or run one.',
@@ -120,6 +120,12 @@ def initialize(config):
         if probe['id'] in seen:
             raise ValueError('Duplicate frontier id')
         seen.add(probe['id'])
+        if probe.get('purpose', 'required') not in ('required', 'background'):
+            raise ValueError('Unknown frontier purpose')
+        if probe.get('purpose') == 'background':
+            text(probe.get('scope_reason'), 'frontier.scope_reason')
+            if probe['required_kinds'] != ['background']:
+                raise ValueError('Official and technical requirements cannot be marked background')
         if not set(strings(probe.get('required_kinds'), 'required_kinds', True)) <= KINDS:
             raise ValueError('Unknown source kind')
     for key in ('max_events', 'max_rounds', 'max_no_progress', 'max_elapsed_minutes'):
@@ -137,7 +143,7 @@ def replay(state):
     if not isinstance(state.get('events'), list):
         raise ValueError('events must be an array')
     view = {'sources': {}, 'reads': {}, 'demands': {}, 'comparisons': {}, 'retired': {},
-            'searches': [], 'traces': [], 'questions': {}, 'retired_sources': {}, 'retirement_reviews': [], 'demand_aliases': {}, 'frontier': {p['id']: p for p in state['seed']['frontier']},
+            'exclusions': {}, 'scope': copy.deepcopy(state['seed']['scope']), 'advances': [], 'searches': [], 'traces': [], 'questions': {}, 'retired_sources': {}, 'retirement_reviews': [], 'demand_aliases': {}, 'frontier': {p['id']: p for p in state['seed']['frontier']},
             'paused': False, 'elapsed_minutes': 0, 'rounds': 0, 'no_progress': 0}
     previous, ids = state['seed_sha256'], set()
     for index, event in enumerate(state['events']):
@@ -176,8 +182,11 @@ def apply_event(view, event, seed):
         if probe['id'] in view['frontier']:
             raise ValueError('Frontier identifiers are immutable; add a new probe')
         for qid in strings(data.get('resolves', []), 'frontier.resolves'):
-            if qid not in view['questions'] or view['questions'][qid].get('resolved_by'):
+            if qid not in view['questions'] or (view['questions'][qid].get('resolved_by') and not view['questions'][qid].get('exclusion')):
                 raise ValueError('Only an open known question can expand into a new frontier')
+            if probe.get('purpose') == 'background' and view['frontier'][view['questions'][qid]['frontier_id']].get('purpose') != 'background':
+                raise ValueError('A required question cannot be discharged into background work')
+            view['questions'][qid].pop('exclusion', None)
             view['questions'][qid]['resolved_by'] = probe['id']
         view['frontier'][probe['id']] = probe
     elif op == 'discover':
@@ -272,6 +281,41 @@ def apply_event(view, event, seed):
                                           'frontier_id': data['frontier_id'], 'read_ids': data['read_ids']}
         view['traces'].append({'event_id': event['id'], **data})
         view['no_progress'] = 0 if new_demands else view['no_progress'] + 1
+    elif op == 'advance_lesson':
+        receipt = data['verification']
+        scope = view['scope']
+        old_path = scope.get('artifact_path', scope['lesson_path'])
+        if (receipt.get('status') != 'reviewed_candidate' or receipt.get('failed') != []
+                or receipt.get('release_ready') is not False or data['baseline_path'] != old_path
+                or not re.fullmatch(r'[0-9a-f]{64}', receipt.get('candidate_sha256', ''))
+                or not re.fullmatch(r'[0-9a-f]{64}', receipt.get('work_key', ''))):
+            raise ValueError('Advance requires verification of a separate reviewed candidate')
+        path = text(data['candidate_path'], 'candidate_path')
+        if path == old_path or path in {a['baseline_path'] for a in view['advances']}:
+            raise ValueError('Keep each candidate and earlier baseline at separate paths')
+        view['advances'].append({'event_id': event['id'], **data})
+        view['scope'] = {**scope, 'lesson_revision': text(data['revision'], 'revision'),
+                         'lesson_path': path, 'artifact_path': path, 'artifact_sha256': receipt['candidate_sha256']}
+    elif op == 'exclude_question':
+        q = view['questions'][data['question_id']]
+        trace = next(t for t in view['traces'] if t['event_id'] == q['trace_id'])
+        reviewer = text(data.get('reviewer'), 'exclude_question.reviewer').strip().casefold()
+        text(data.get('scope_basis'), 'exclude_question.scope_basis')
+        if q.get('resolved_by') or reviewer == trace['actor'].strip().casefold() or data.get('read_ids') != trace['read_ids']:
+            raise ValueError('Question exclusion needs independent review of its original source receipts')
+        q.update(resolved_by=event['id'], exclusion=data)
+    elif op == 'exclude_probe':
+        fid = data['frontier_id']
+        traces = [t for t in view['traces'] if t['frontier_id'] == fid]
+        text(data.get('reviewer'), 'exclude_probe.reviewer')
+        text(data.get('scope_basis'), 'exclude_probe.scope_basis')
+        if (not traces or any(t['demands'] or t['uninvestigated'] for t in traces)
+                or data['reviewer'].strip().casefold() in {t['actor'].strip().casefold() for t in traces}
+                or data.get('trace_ids') != [t['event_id'] for t in traces]):
+            raise ValueError('Exclusion needs independent review of all directly read empty extractions')
+        if fid not in view['frontier']:
+            raise ValueError('Unknown exclusion frontier')
+        view['exclusions'][fid] = data
     elif op == 'compare':
         did = view['demand_aliases'].get(data['demand_id'], data['demand_id'])
         demand = view['demands'][did]
@@ -282,7 +326,7 @@ def apply_event(view, event, seed):
         if data.get('judgment') not in ('covered', 'gap', 'uncertain', 'deferred', 'out_of_scope'):
             raise ValueError('Invalid comparison judgment')
         verify_receipt(data.get('lesson_receipt'))
-        if data['lesson_receipt']['path'] != seed['scope']['lesson_path']:
+        if data['lesson_receipt']['path'] != view['scope']['lesson_path']:
             raise ValueError('Comparison must read the selected actual lesson')
         if data['judgment'] not in ('deferred', 'out_of_scope'):
             expected = {item['id'] for item in demand_dimensions(demand)}
@@ -295,7 +339,7 @@ def apply_event(view, event, seed):
                 for field in ('observed_behavior', 'rationale'):
                     text(dimension.get(field), 'dimension.' + field)
                 verify_receipt(dimension.get('receipt'))
-                if dimension['receipt']['path'] != seed['scope']['lesson_path']:
+                if dimension['receipt']['path'] != view['scope']['lesson_path']:
                     raise ValueError('Dimension must read actual lesson bytes')
         if data['judgment'] in ('deferred', 'out_of_scope'):
             text(data.get('scope_basis'), 'compare.scope_basis')
@@ -304,6 +348,9 @@ def apply_event(view, event, seed):
             for field in ('unit_id', 'owner', 'rationale'):
                 text(placement.get(field), 'placement.' + field)
             verify_receipt(placement.get('receipt'))
+        if 'edit' in data:
+            from material_revision import validate_intent
+            validate_intent(data['edit'], data, demand_dimensions(demand))
         view['comparisons'][did] = {'event_id': event['id'], **data, 'demand_id': did}
     elif op in ('supersede', 'review_supersession'):
         old, new = data['old_demand_id'], data['new_demand_id']
@@ -369,7 +416,7 @@ def receipt_current(root, receipt):
 
 def inspect(state, root):
     view = replay(state)
-    seed, blockers, queue = state['seed'], [], []
+    seed, blockers, queue = {**state['seed'], 'scope': view['scope']}, [], []
     def block(code, identifier):
         blockers.append({'code': code, 'id': identifier})
     artifact_sha256 = None
@@ -381,16 +428,31 @@ def inspect(state, root):
         if artifact_sha256 != seed['scope']['artifact_sha256']:
             block('artifact_changed', seed['scope']['artifact_path'])
     stale_reads = {rid for rid, read in view['reads'].items() if not receipt_current(root, read['receipt'])}
+    necessary_sources = {c['id'] for search in view['searches']
+                         if view['frontier'][search['frontier_id']].get('purpose') != 'background'
+                         for c in search['candidates']}
     for rid in sorted(stale_reads):
-        if view['reads'][rid]['source_id'] not in view['retired_sources']:
+        if view['reads'][rid]['source_id'] in necessary_sources and view['reads'][rid]['source_id'] not in view['retired_sources']:
             block('stale_source_read', rid)
     latest_retirements = {r['old_demand_id']: r for r in view['retirement_reviews']}
     for retirement in latest_retirements.values():
         if any(item['judgment'] == 'unresolved' for item in retirement['dimension_dispositions']):
             block('supersession_unresolved', retirement['event_id'])
+    advisory = []
+    def probe_issue(fid, code, identifier):
+        if view['frontier'][fid].get('purpose') == 'background':
+            advisory.append({'code': code, 'id': identifier})
+        else:
+            block(code, identifier)
     for question in view['questions'].values():
+        # Source change/replacement reopens this reviewed decision; the earlier
+        # event stays in the chain. A fresh frontier can then own the question.
+        exclusion = question.get('exclusion', {})
+        if any(rid in stale_reads or view['reads'][rid]['source_id'] in view['retired_sources']
+               for rid in exclusion.get('read_ids', [])):
+            question['resolved_by'] = None
         if question['resolved_by'] is None:
-            block('uninvestigated_requirement', question['id'])
+            probe_issue(question['frontier_id'], 'uninvestigated_requirement', question['id'])
     frontier_report = []
     for fid, probe in view['frontier'].items():
         traces = [t for t in view['traces'] if t['frontier_id'] == fid]
@@ -400,9 +462,9 @@ def inspect(state, root):
         traced_sources = {source_key(view['reads'][rid]['source_id']) for trace in traces for rid in trace['read_ids'] if rid not in stale_reads}
         for sid in sorted(discovered):
             if source_key(sid) not in read_sources:
-                block('discovered_source_unread', sid)
+                probe_issue(fid, 'discovered_source_unread', sid)
             if source_key(sid) not in traced_sources:
-                block('discovered_source_untraced', sid)
+                probe_issue(fid, 'discovered_source_untraced', sid)
         # Latest trace for each required kind applies; earlier failed/partial traces cannot be cherry-picked.
         missing = []
         for kind in probe['required_kinds']:
@@ -411,13 +473,21 @@ def inspect(state, root):
             if latest is None or any(rid in stale_reads for rid in latest['read_ids']) or any(q['frontier_id'] == fid and q['resolved_by'] is None for q in view['questions'].values()):
                 missing.append(kind)
         if missing:
-            block('frontier_unresolved', fid)
-        if not traces or not any(t['demands'] for t in traces):
+            probe_issue(fid, 'frontier_unresolved', fid)
+        exclusion = view['exclusions'].get(fid, {})
+        excluded = (bool(traces) and not missing and exclusion.get('trace_ids') == [t['event_id'] for t in traces]
+                    and all(source_key(sid) in traced_sources for sid in discovered))
+        if not excluded and (not traces or not any(t['demands'] for t in traces)):
             # A declaration that nothing applies cannot close the universe by itself.
-            block('frontier_no_demands_requires_review', fid)
-        frontier_report.append({'id': fid, 'question': probe['question'], 'missing_kinds': missing,
+            probe_issue(fid, 'frontier_no_demands_requires_review', fid)
+        frontier_report.append({'id': fid, 'question': probe['question'], 'missing_kinds': missing, 'purpose': probe.get('purpose', 'required'), 'exclusion': exclusion if excluded else None,
                                 'trace_ids': [t['event_id'] for t in traces],
                                 'uninvestigated': traces[-1]['uninvestigated'] if traces else ['Not investigated']})
+    if not any(p.get('purpose') != 'background' for p in view['frontier'].values()):
+        block('required_frontier_missing', seed['scope']['id'])
+    if view['exclusions'] and not any(did not in view['retired'] and view['frontier'][d['frontier_id']].get('purpose') != 'background'
+                                      for did, d in view['demands'].items()):
+        block('required_demand_missing', seed['scope']['id'])
     for did, demand in view['demands'].items():
         if did in view['retired']:
             continue
@@ -430,7 +500,7 @@ def inspect(state, root):
         if comparison is None:
             reasons.append('comparison_required')
         else:
-            if not receipt_current(root, comparison['lesson_receipt']):
+            if comparison['lesson_receipt']['path'] != seed['scope']['lesson_path'] or not receipt_current(root, comparison['lesson_receipt']):
                 reasons.append('lesson_changed_review_required')
             for dimension in comparison.get('dimensions', []):
                 if dimension['judgment'] != 'met':
@@ -450,6 +520,19 @@ def inspect(state, root):
                           'next_action': 'discover_read_retrace' if any('source' in r for r in reasons) else
                           'compare_actual_lesson' if comparison is None else 'research_or_refine_and_recompare',
                           'affected': sorted({did, demand['frontier_id'], seed['scope']['id']})})
+            located = (comparison and all(r == 'gap' or r.startswith('dimension_') and r.endswith('_gap')
+                                          for r in reasons))
+            if located:
+                entry = queue[-1]
+                dimensions = demand_dimensions(demand)
+                intent = comparison.get('edit')
+                entry['next_action'] = 'revise_lesson' if intent else 'design_content_revision'
+                entry['revision'] = {'id': 'repair:' + did, 'demand_id': did,
+                    'work_kind': entry['next_action'], 'source_basis': read_basis(view, demand['read_ids']),
+                    'requirements': dimensions, 'lesson_receipt': comparison['lesson_receipt'],
+                    'dimension_findings': comparison['dimensions'], 'intent': intent,
+                    'hypothesis': comparison['rationale']}
+                entry['revision']['key'] = digest(entry['revision'])
     usage = {'events': len(state['events']), 'rounds': view['rounds'],
              'elapsed_minutes': view['elapsed_minutes'], 'no_progress': view['no_progress']}
     exhausted = [key for key in usage if usage[key] >= seed['policy']['max_' + key]]
@@ -480,15 +563,15 @@ def inspect(state, root):
         status, action = 'recorded_ready', 'independent_aggregate_review'
     return {'schema_version': 1, 'authority': 'advisory_only', 'status': status,
             'ready_for_review': status == 'recorded_ready', 'synthetic': seed['synthetic'],
-            'session_sha256': digest(state), 'seed_sha256': state['seed_sha256'],
-            'scope': seed['scope'], 'artifact_sha256': artifact_sha256,
+            'revision': VERSION, 'session_sha256': digest(state), 'seed_sha256': state['seed_sha256'],
+            'scope': seed['scope'], 'artifact_sha256': artifact_sha256, 'revision_history': view['advances'],
             'bounded_scope_condition': 'Only the declared, sampled frontier has been investigated; neither complete external coverage nor contest sufficiency is established.',
             'frontier': frontier_report, 'demands': list(view['demands'].values()),
             'comparisons': list(view['comparisons'].values()), 'retired_demands': view['retired'],
             'retired_sources': view['retired_sources'], 'retirement_reviews': view['retirement_reviews'], 'historical_stale_read_ids': sorted(stale_reads),
             'open_questions': [q for q in view['questions'].values() if q['resolved_by'] is None],
             'questions': list(view['questions'].values()), 'demand_aliases': view['demand_aliases'],
-            'queue': queue, 'blockers': blockers, 'usage': usage, 'exhausted': exhausted,
+            'queue': queue, 'blockers': blockers, 'background_notes': advisory, 'usage': usage, 'exhausted': exhausted,
             'next_action': action, 'search_history': view['searches'], 'limits': LIMITS}
 
 
@@ -497,16 +580,46 @@ def step(state, event, root):
     text(event.get('id'), 'event.id')
     payload = {key: copy.deepcopy(event[key]) for key in ('id', 'op', 'data')}
     data = payload['data']
+    if payload['op'] == 'advance_lesson':
+        for old in state['events']:
+            if old['id'] != payload['id']:
+                continue
+            original = {k: v for k, v in old['data'].items() if k not in ('verification', 'input_sha256', 'baseline_path')}
+            if old['op'] == payload['op'] and original == data:
+                return copy.deepcopy(state)
+            raise ValueError('Event id reused for different content')
     if view['paused'] and payload['op'] not in ('resume', 'pause'):
         raise ValueError('Paused session requires an explicit resume event')
     # The CLI creates receipts from actual files; callers cannot inject a claimed read.
     if payload['op'] == 'read':
         source = view['sources'][data['source_id']]
         data['receipt'] = read_span(root, source['path'], data.pop('start_line'), data.pop('end_line'))
+    elif payload['op'] == 'advance_lesson':
+        from material_revision import run
+        bundle = load(local_file(root, data['quality_path']))
+        if load(local_file(root, bundle['discovery']['path'])) != state:
+            raise ValueError('Candidate must be reviewed against this exact discovery history')
+        data['baseline_path'] = bundle['artifact']['path']
+        data['verification'] = run('verify', Path(root), load(local_file(root, data['workflow_path'])),
+                                   bundle, load(local_file(root, data['patch_path'])), data['candidate_path'],
+                                   load(local_file(root, data['review_path'])))
+        if data['verification']['status'] != 'reviewed_candidate':
+            raise ValueError('Rejected candidate cannot advance the baseline')
+        data['input_sha256'] = {k: hashlib.sha256(local_file(root, data[k]).read_bytes()).hexdigest()
+                                for k in ('workflow_path', 'quality_path', 'patch_path', 'review_path')}
     elif payload['op'] == 'compare':
-        data['lesson_receipt'] = read_span(root, state['seed']['scope']['lesson_path'], data.pop('start_line'), data.pop('end_line'))
+        data['lesson_receipt'] = read_span(root, view['scope']['lesson_path'], data.pop('start_line'), data.pop('end_line'))
         for dimension in data.get('dimensions', []):
-            dimension['receipt'] = read_span(root, state['seed']['scope']['lesson_path'], dimension.pop('start_line'), dimension.pop('end_line'))
+            dimension['receipt'] = read_span(root, view['scope']['lesson_path'], dimension.pop('start_line'), dimension.pop('end_line'))
+        if 'edit' in data:
+            from material_revision import notebook_index, ordered
+            scope = view['scope']
+            notebook = load(local_file(root, scope.get('artifact_path', scope['lesson_path'])))
+            cells = notebook_index(notebook)
+            order = {k: i for i, k in enumerate(cells)}
+            if (any(not set(a['before']) <= cells.keys() for a in data['edit']['actions']) or
+                    any(not ordered(route['before'], order) for route in data['edit']['routes'].values())):
+                raise ValueError('Edit plan must identify actual baseline cells and routes')
         if data.get('judgment') == 'deferred':
             placement = data['placement']
             placement['receipt'] = read_span(root, placement.pop('path'), placement.pop('start_line'), placement.pop('end_line'))

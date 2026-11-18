@@ -1,0 +1,190 @@
+{
+  "skill_name": "koai-evaluate",
+  "evals": [
+    {
+      "id": "edit-missing-prerequisite",
+      "expected_skill": "koai-evaluate",
+      "should_trigger": true,
+      "prompt": "/workspace/repo/case-inputs/material-blocks.ipynb에 검토할 수업 블록이 있습니다. 현재 초안은 input-data, d942743f, new-observations입니다. 식물이 받은 물의 관측 개수와 0의 의미를 손으로 판단할 수 있어야 합니다. 빠진 선행 설명을 찾아 원래 링크가 가리키는 블록으로 복구하고, 실행 예와 새 입력 과제의 순서를 잡으세요. 이 편집 과제는 승인된 블록을 조립하는 작업입니다. 사용할 셀의 ID·본문·코드는 보존하고 실제 Jupyter 노트북을 /workspace/output/lesson.ipynb에 저장하세요. 최종 응답에 선택 근거를 짧게 적으세요.",
+      "expected_output": "A revised notebook with the required instructional content and a valid prerequisite order.",
+      "assertions": [
+        "Delivers a notebook preserving the requisite blocks, excluding irrelevant material, and respecting the instructional order."
+      ],
+      "koai_control": "fault",
+      "koai_notebook": {
+        "cells": {
+          "input-data": "bf8b9c7b6265ab255c4d8688a7123799c9852d7d0afca6697a9dbee1adc44ee0",
+          "e3783955": "ed527aafaf5160c7a5be1d724732ea44a2f7a1eda8b9652f21eeada4c6d97f54",
+          "d942743f": "7eab0495581ff47f70adc15e546281370783832e96b2a77b0ba1326142b2f5f9",
+          "new-observations": "7ebe1fa5245f327cd340fbf8d4c82f1980174af8b412a241c319fcaa1cdaedd7"
+        },
+        "precedence": [
+          [
+            "input-data",
+            "e3783955"
+          ],
+          [
+            "e3783955",
+            "d942743f"
+          ],
+          [
+            "d942743f",
+            "new-observations"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "edit-remove-duplication",
+      "expected_skill": "koai-evaluate",
+      "should_trigger": true,
+      "prompt": "/workspace/repo/case-inputs/material-blocks.ipynb에 검토할 수업 블록이 있습니다. 현재 초안은 input-data, e3783955, repeat-mean, d942743f, new-observations입니다. 중복 설명을 덜어내고 원래 e3783955로 들어오는 링크, 단독 실행, 새 입력에서 분모를 판단하는 과제를 보존하세요. 이 편집 과제는 승인된 블록을 조립하는 작업입니다. 사용할 셀의 ID·본문·코드는 보존하고 실제 Jupyter 노트북을 /workspace/output/lesson.ipynb에 저장하세요. 최종 응답에 선택 근거를 짧게 적으세요.",
+      "expected_output": "A revised notebook with the required instructional content and a valid prerequisite order.",
+      "assertions": [
+        "Delivers a notebook preserving the requisite blocks, excluding irrelevant material, and respecting the instructional order."
+      ],
+      "koai_control": "fault",
+      "koai_notebook": {
+        "cells": {
+          "input-data": "bf8b9c7b6265ab255c4d8688a7123799c9852d7d0afca6697a9dbee1adc44ee0",
+          "e3783955": "ed527aafaf5160c7a5be1d724732ea44a2f7a1eda8b9652f21eeada4c6d97f54",
+          "d942743f": "7eab0495581ff47f70adc15e546281370783832e96b2a77b0ba1326142b2f5f9",
+          "new-observations": "7ebe1fa5245f327cd340fbf8d4c82f1980174af8b412a241c319fcaa1cdaedd7"
+        },
+        "precedence": [
+          [
+            "input-data",
+            "e3783955"
+          ],
+          [
+            "e3783955",
+            "d942743f"
+          ],
+          [
+            "d942743f",
+            "new-observations"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "edit-order-and-scope",
+      "expected_skill": "koai-evaluate",
+      "should_trigger": true,
+      "prompt": "/workspace/repo/case-inputs/material-blocks.ipynb에 검토할 수업 블록이 있습니다. 현재 초안은 input-data, 9d537595, new-axes, a3f9c114, repeat-mean입니다. 이번 단원은 날짜별·관측소별 축소입니다. 뜻과 단위를 먼저 이해하고 코드로 확인한 뒤 낯선 직사각형 자료를 풀도록 재배열하세요. 이번 목표에 필요 없는 블록을 걷어내세요. 이 편집 과제는 승인된 블록을 조립하는 작업입니다. 사용할 셀의 ID·본문·코드는 보존하고 실제 Jupyter 노트북을 /workspace/output/lesson.ipynb에 저장하세요. 최종 응답에 선택 근거를 짧게 적으세요.",
+      "expected_output": "A revised notebook with the required instructional content and a valid prerequisite order.",
+      "assertions": [
+        "Delivers a notebook preserving the requisite blocks, excluding irrelevant material, and respecting the instructional order."
+      ],
+      "koai_control": "fault",
+      "koai_notebook": {
+        "cells": {
+          "input-data": "bf8b9c7b6265ab255c4d8688a7123799c9852d7d0afca6697a9dbee1adc44ee0",
+          "a3f9c114": "b57aae632882ae562f2c8d35f952960b1e9e59cb9a10fac05e556d447c002994",
+          "9d537595": "7b58590ba4df6c9b4bca15ec27d2836bcda8d6815383c220e651967243fb0cd9",
+          "new-axes": "8e247780b995010a4a3fdf98c32a39360e5864a996ac8e1c7a3941a5f7e67f17"
+        },
+        "precedence": [
+          [
+            "input-data",
+            "a3f9c114"
+          ],
+          [
+            "a3f9c114",
+            "9d537595"
+          ],
+          [
+            "9d537595",
+            "new-axes"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "edit-preserve-foundation",
+      "expected_skill": "koai-evaluate",
+      "should_trigger": true,
+      "prompt": "/workspace/repo/case-inputs/material-blocks.ipynb에 검토할 수업 블록이 있습니다. 현재 초안은 input-data, e3783955, d942743f, new-observations 순서입니다. 결측 관측의 평균이라는 도입 목표, 새 입력 과제와 실행 조건을 검토하고 이 목적에 맞는 교안을 제출하세요. 근거 없는 심화 추가를 피하세요. 이 편집 과제는 승인된 블록을 조립하는 작업입니다. 사용할 셀의 ID·본문·코드는 보존하고 실제 Jupyter 노트북을 /workspace/output/lesson.ipynb에 저장하세요. 최종 응답에 선택 근거를 짧게 적으세요.",
+      "expected_output": "A revised notebook with the required instructional content and a valid prerequisite order.",
+      "assertions": [
+        "Delivers a notebook preserving the requisite blocks, excluding irrelevant material, and respecting the instructional order."
+      ],
+      "koai_control": "normal",
+      "koai_notebook": {
+        "cells": {
+          "input-data": "bf8b9c7b6265ab255c4d8688a7123799c9852d7d0afca6697a9dbee1adc44ee0",
+          "e3783955": "ed527aafaf5160c7a5be1d724732ea44a2f7a1eda8b9652f21eeada4c6d97f54",
+          "d942743f": "7eab0495581ff47f70adc15e546281370783832e96b2a77b0ba1326142b2f5f9",
+          "new-observations": "7ebe1fa5245f327cd340fbf8d4c82f1980174af8b412a241c319fcaa1cdaedd7"
+        },
+        "precedence": [
+          [
+            "input-data",
+            "e3783955"
+          ],
+          [
+            "e3783955",
+            "d942743f"
+          ],
+          [
+            "d942743f",
+            "new-observations"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "edit-archive-copy",
+      "expected_skill": null,
+      "should_trigger": false,
+      "prompt": "/workspace/repo/case-inputs/material-blocks.ipynb에 검토할 수업 블록이 있습니다. 보관용 파일 복사 업무입니다. 블록 모음 전체를 순서 그대로 복사하세요. 이 편집 과제는 승인된 블록을 조립하는 작업입니다. 사용할 셀의 ID·본문·코드는 보존하고 실제 Jupyter 노트북을 /workspace/output/lesson.ipynb에 저장하세요. 최종 응답에 선택 근거를 짧게 적으세요.",
+      "expected_output": "A revised notebook with the required instructional content and a valid prerequisite order.",
+      "assertions": [
+        "Delivers a notebook preserving the requisite blocks, excluding irrelevant material, and respecting the instructional order."
+      ],
+      "koai_control": "off_scope",
+      "koai_notebook": {
+        "cells": {
+          "input-data": "bf8b9c7b6265ab255c4d8688a7123799c9852d7d0afca6697a9dbee1adc44ee0",
+          "e3783955": "ed527aafaf5160c7a5be1d724732ea44a2f7a1eda8b9652f21eeada4c6d97f54",
+          "d942743f": "7eab0495581ff47f70adc15e546281370783832e96b2a77b0ba1326142b2f5f9",
+          "repeat-mean": "2b16f588ec194133e3530b0a1a5cf8ab38ae12dc0ede4301902f35f43777e5b1",
+          "new-observations": "7ebe1fa5245f327cd340fbf8d4c82f1980174af8b412a241c319fcaa1cdaedd7",
+          "a3f9c114": "b57aae632882ae562f2c8d35f952960b1e9e59cb9a10fac05e556d447c002994",
+          "9d537595": "7b58590ba4df6c9b4bca15ec27d2836bcda8d6815383c220e651967243fb0cd9",
+          "new-axes": "8e247780b995010a4a3fdf98c32a39360e5864a996ac8e1c7a3941a5f7e67f17"
+        },
+        "precedence": [
+          [
+            "input-data",
+            "e3783955"
+          ],
+          [
+            "e3783955",
+            "d942743f"
+          ],
+          [
+            "d942743f",
+            "repeat-mean"
+          ],
+          [
+            "repeat-mean",
+            "new-observations"
+          ],
+          [
+            "new-observations",
+            "a3f9c114"
+          ],
+          [
+            "a3f9c114",
+            "9d537595"
+          ],
+          [
+            "9d537595",
+            "new-axes"
+          ]
+        ]
+      }
+    }
+  ]
+}

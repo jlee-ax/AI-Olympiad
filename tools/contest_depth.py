@@ -19,6 +19,14 @@ LIMITATIONS = [
     'This report is independent of K01–K16 and does not change any earlier quality evaluation.',
     'Only the two pinned KOAI 2026 example URLs have a fixed metadata consistency check; it does not fetch or authenticate them.',
 ]
+# These exact legacy records contain only the absence of learner observations.
+# A mixed or novel free-text uncertainty still requires substantive review.
+MATERIAL_SCOPE_NOTES = {'learner_performance', 'actual_classroom_time', 'actual_teacher_effort'}
+LEGACY_LEARNER_NOTES = {
+    'Student independence, readiness and learning remain unobserved.',
+    'Learner independence, readiness and learning have not been observed.',
+    'Student independence, prerequisite readiness and learning are not observed.',
+}
 MISSING = object()
 PRIORITY = {'high': 0, 'medium': 1, 'low': 2}
 KNOWN_EXAMPLE_PATHS = {
@@ -356,6 +364,12 @@ def inspect_unknowns(check, bundle):
     entries = check.array(bundle.get('unknowns', MISSING), 'unknowns')
     global_unknown = check.changed(start)
     scoped = set()
+    outside = set()
+    for value in check.array(bundle.get('outside_material_scope', []), 'outside_material_scope'):
+        if not isinstance(value, str) or value not in MATERIAL_SCOPE_NOTES:
+            check.error('outside_material_scope', 'invalid_value', 'Expected a defined observation category.')
+        else:
+            outside.add(value)
     raw_comparisons = bundle.get('comparisons', [])
     ids = {item['id'].strip() for item in raw_comparisons
            if isinstance(item, dict) and isinstance(item.get('id'), str)} if isinstance(raw_comparisons, list) else set()
@@ -363,6 +377,9 @@ def inspect_unknowns(check, bundle):
         path = f'unknowns[{i}]'
         start = check.checkpoint()
         if isinstance(entry, str):
+            if entry in LEGACY_LEARNER_NOTES:
+                outside.add('learner_performance')
+                continue
             description = check.string(entry, path)
             if description:
                 check.uncertain(path, 'reported_unknown', description)
@@ -383,7 +400,7 @@ def inspect_unknowns(check, bundle):
         else:
             check.error(path, 'invalid_type', 'Expected a string or scoped unknown object.')
             global_unknown = True
-    return global_unknown, scoped
+    return global_unknown, scoped, sorted(outside)
 
 
 def inspect_refs(check, value, path, catalog, other_catalog):
@@ -506,7 +523,7 @@ def inspect(bundle):
     status = ('invalid' if check.errors else 'gap' if gaps else
               'uncertain' if check.findings else 'recorded_met')
     return {'authority': 'advisory_only', 'status': status, 'synthetic': synthetic,
-            'comparisons': comparisons, 'assessment_formats': formats, 'gaps': gaps, 'findings': check.findings,
+            'outside_material_scope': unknowns[2], 'comparisons': comparisons, 'assessment_formats': formats, 'gaps': gaps, 'findings': check.findings,
             'errors': check.errors, 'verification': {'artifact_digest': 'not_checked', 'source_authenticity': 'not_checked',
                                                       'source_content': 'not_checked', 'reviewer_independence': 'not_checked',
                                                       'assessment_counts': 'not_checked'},

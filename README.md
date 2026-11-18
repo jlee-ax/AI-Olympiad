@@ -35,12 +35,12 @@ The baseline command reads actual student HTML bytes, visible time allocations a
 
 For a runnable schema demonstration, use the explicitly [synthetic quality bundle](examples/quality.json), its [bound workflow state](examples/quality-workflow.json), and [fixture receipt](examples/quality-receipt.json). These are not actual lesson or learner records.
 
-The default quality bundle has no learner responses, lesson executions, semantic reviews or agreed numeric policy. It remains incomplete. Non-design workflow decisions additionally require a current bound quality assessment; see the tool contract.
+The default quality bundle lacks lesson execution, semantic reviews and an agreed work budget. It remains incomplete. Non-design workflow decisions additionally require a current bound quality assessment; see the tool contract.
 
 ## Evidence and operating limits
 
 A current source/review record is an accountable claim, not authenticated truth. Semantic correctness, educational suitability and learning effectiveness need their own evidence. The implementation does not run Jupyter, browse sources automatically, execute a worker or schedule another invocation. A 30-minute checkpoint is a reported review condition, not a running timer.
 
-Current work implements specifications and checks. Actual lesson production and recurring execution require their concrete criteria and applicable authorization. No locally measured teaching gain is claimed. Diagnostic cutoffs, acceptable outside workload, calibration tolerances and total campaign budgets remain unset.
+Current work implements specifications and checks. Actual lesson production and recurring execution require their concrete criteria and applicable authorization. No locally measured teaching gain is claimed. Material review checks planned workload and current evidence. Evaluator qualification is reusable by version and domain. For a located gap, follow the [notebook revision and verification workflow](tools/material-revision.md).
 
 The earlier graph validator and illustrative graph/run/review files remain available for compatibility. They cannot justify a verified educational claim. See [third-party notices](THIRD_PARTY_NOTICES.md) for retained source/license information.

@@ -1,0 +1,95 @@
+{
+  "packages": {
+    "nbclient": "0.11.0",
+    "ipykernel": "7.4.0",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.8.0"
+  },
+  "week1": {
+    "lesson_code_cells_executed": 22,
+    "new_input_cells_executed": 1,
+    "kernel": "InProcessKernelManager in a fresh process",
+    "kernel_errors": 0,
+    "new_input_results": [
+      3.0,
+      null,
+      null,
+      0.0
+    ],
+    "source": "lessons/week01/week01_integrated.ipynb",
+    "candidate_sha256": "048dc55b3719392a5c9caa7527b43727322a8625039c88bed0b7504285423f7f",
+    "diff": {
+      "added": [
+        "e3783955"
+      ],
+      "removed": [
+        "redundant"
+      ],
+      "modified": [],
+      "moved": [],
+      "routes_checked": [
+        "assessment",
+        "learning",
+        "prerequisites"
+      ]
+    },
+    "restored_cells_equal_original": true
+  },
+  "week2": {
+    "lesson_code_cells_executed": 10,
+    "new_input_cells_executed": 1,
+    "kernel": "InProcessKernelManager in a fresh process",
+    "kernel_errors": 0,
+    "new_input_results": {
+      "later": [
+        -1.0,
+        0.0,
+        2.0
+      ],
+      "clipped": [
+        1.0,
+        1.0
+      ]
+    },
+    "source": "lessons/week02/week02_temporal_preprocessing.ipynb",
+    "diff": {
+      "added": [
+        "new-check"
+      ],
+      "removed": [
+        "31911a77",
+        "repeat"
+      ],
+      "modified": [
+        "9d29f53a"
+      ],
+      "moved": [
+        "e7e69eb4"
+      ],
+      "routes_checked": [
+        "learning"
+      ]
+    },
+    "earlier_training_invariance_check_preserved": true
+  },
+  "historical_sessions_replayed": {
+    "course": {
+      "status": "needs_work",
+      "demands": 14,
+      "open": 13,
+      "revision_candidates": [
+        "D01",
+        "D08",
+        "H01",
+        "H02"
+      ]
+    },
+    "bridge": {
+      "status": "recorded_ready",
+      "demands": 1,
+      "open": 0,
+      "revision_candidates": []
+    }
+  }
+}

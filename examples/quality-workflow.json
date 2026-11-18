@@ -22,18 +22,18 @@
       },
       {
         "id": "quality:bundle",
-        "revision": "synthetic-v4-week02-plan-context",
-        "sha256": "49d32b953096b83a2087f3ad4575078edc217ba55c04a09f976f41ae0b9a80a0"
+        "revision": "synthetic-v5-material",
+        "sha256": "860734462834264ed2a67fa3946b7f0d3b5408d941ee068ef43bbaae088349c3"
       },
       {
         "id": "quality:criteria",
-        "revision": "criteria-v2",
-        "sha256": "7c2815e3906b82387d38a400d30f0aa1ebf6d14e4f7d4b4286eb5db5915b1b41"
+        "revision": "criteria-v3-material",
+        "sha256": "64055406c2a74fdfb422e22b3f4d2d704dafe7b22fad3e9458415b67fb12003f"
       },
       {
         "id": "quality:evaluator",
         "revision": "quality-v1",
-        "sha256": "03f24f7e9b89979e30facf258f8c8f9f358b1aca2de876a1adae5e058f0fc96b"
+        "sha256": "16e46effec41e1600a8d55ec91e5002d8b0f46cda5ad25fc55d1f7c5bcf3687b"
       }
     ],
     "skills": [
@@ -201,6 +201,26 @@
     {
       "id": "review:synthetic-plan-context-v5",
       "context_fingerprint": "910c13fec66d7fe03a8c4a96317c83e854d63fb0baff9efb45537977ee14c400",
+      "author_id": "synthetic-author",
+      "reviewer": {
+        "id": "synthetic-reviewer",
+        "model_family": "synthetic-family-b"
+      },
+      "checks": [
+        {
+          "id": "synthetic-reference-integrity",
+          "status": "passed",
+          "evidence_record_ids": [
+            "evidence:synthetic-fixture"
+          ]
+        }
+      ],
+      "conclusion": "accepted",
+      "reason": "Synthetic passing fixture for the revised plan context; not an attestation of real work."
+    },
+    {
+      "id": "review:synthetic-material-v6",
+      "context_fingerprint": "5b2b2a46a1ad549331d70df72334473f69750f708e32f67b0bd367ec32eca028",
       "author_id": "synthetic-author",
       "reviewer": {
         "id": "synthetic-reviewer",

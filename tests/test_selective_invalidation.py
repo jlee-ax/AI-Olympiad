@@ -42,6 +42,7 @@ class SelectiveInvalidationTest(unittest.TestCase):
         cells = []
         for obj, cid in [(first, 'axis'), (second, 'other')]:
             obj['locator'] = 'cell:unit-' + cid
+            obj['prerequisites'][0]['support_before_use'] = {'before_unit': obj['id'], 'locator': obj['locator'], 'first_use': obj['locator']}
             for role in obj['chain'].values():
                 role['locator'] = obj['locator']
             obj['explanation_regions'] = {tid: [obj['locator']] for tid in obj['explanation_checks']}

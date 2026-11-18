@@ -306,6 +306,20 @@ class ContestDepthTest(unittest.TestCase):
         self.assertIn('reported_unknown', codes(result['findings']))
         self.assertIn('empty', codes(result['findings']))
 
+    def test_learner_or_timing_scope_notes_do_not_downgrade_artifact_but_real_unknowns_still_do(self):
+        path = ROOT / 'reviews/discovery-loop-20261111/inputs/baseline-candidate-depth.json'
+        archived = json.loads(path.read_text())
+        note = archived['unknowns'][0]
+        self.bundle['unknowns'] = [note]
+        self.bundle['outside_material_scope'] = ['actual_classroom_time', 'actual_teacher_effort']
+        reviewed = depth.inspect(self.bundle)
+        self.assertEqual(reviewed['status'], 'recorded_met')
+        self.assertEqual(set(reviewed['outside_material_scope']), depth.MATERIAL_SCOPE_NOTES)
+        self.bundle['unknowns'].append(archived['unknowns'][1])
+        self.assertEqual(depth.inspect(self.bundle)['status'], 'uncertain')
+        self.bundle['outside_material_scope'].append('wrong_answer_key')
+        self.assertEqual(depth.inspect(self.bundle)['status'], 'invalid')
+
     def test_scoped_unknown_affects_only_named_comparison(self):
         # Both records are synthetic. The inspector carries reviewer judgments;
         # it cannot tell whether either lesson design really supports them.

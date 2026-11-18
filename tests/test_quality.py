@@ -61,6 +61,7 @@ def normal_bundle(root):
             'explanation_regions': {tid: ['#week-1'] for tid in ('T01', 'T02', 'T03', 'T04', 'T05')},
             'mode_evidence': {'theory': 'passed', 'practical': 'passed'},
             'prerequisites': [{'id': 'synthetic-list', 'task': 'Trace a small list.',
+                               'support_before_use': {'before_unit': 'unit:axis', 'locator': '#week-1', 'first_use': '#week-1'},
                                'expected': 'State selected values.', 'observed': 'Synthetic matching response.',
                                'help': 'none', 'status': 'passed', 'evidence': receipt}],
             'chain': {role: {'concept_ids': ['axis_mean'], 'locator': '#week-1',
@@ -98,7 +99,7 @@ def normal_bundle(root):
                           'status': 'passed', 'reviewer_id': 'synthetic-independent-reviewer',
                           'evidence': receipt, 'reason': 'Synthetic fixture review, not educator calibration.'}
                          for cid, oid in [('K02', 'unit:axis'), ('K05', 'unit:axis'), ('K06', 'claim:axis'),
-                                          ('K09', 'unit:axis'), ('K15', 'unit:axis'), ('K16', 'unit:axis')]]
+                                          ('K09', 'unit:axis'), ('K04', 'unit:axis'), ('K16', 'unit:axis')]]
     bundle['reviews'][-1]['subchecks'] = {tid: {'status': 'passed', 'artifact_locators': ['#week-1'], 'evidence': receipt}
                                         for tid in ('T01', 'T02', 'T03', 'T04', 'T05')}
     agree(bundle, root)
@@ -138,7 +139,7 @@ class QualityTest(unittest.TestCase):
         report = quality.evaluate(bundle)
         self.assertFalse(report['ready_for_review'])
         self.assertEqual(check(report, 'K04')['status'], 'not_run')
-        self.assertIsNone(bundle['policy']['diagnostic_cutoff'])
+        self.assertNotIn('diagnostic_cutoff', bundle['policy'])
         self.assertIsNone(bundle['budget']['max_attempts'])
         self.assertEqual(quality.plan_work(bundle)['reason'], 'priority_policy_requires_agreement')
 
@@ -195,12 +196,13 @@ class QualityTest(unittest.TestCase):
 
     def test_support_route_is_distinct_from_unobserved_readiness(self):
         prerequisite = self.bundle['units'][0]['prerequisites'][0]
-        prerequisite['status'] = 'needs_support'
-        self.assertEqual(check(self.report(), 'K04')['status'], 'failed')
-        prerequisite['support_before_use'] = {'before_unit': 'unit:axis', 'activity_id': 'synthetic-bridge', 'locator': '#week-1', 'time_location': 'before class'}
+        for field in ('observed', 'status', 'help', 'evidence'):
+            prerequisite.pop(field, None)
         self.assertEqual(check(self.report(), 'K04')['status'], 'passed')
-        prerequisite['observed'] = ''
+        route = prerequisite.pop('support_before_use')
         self.assertEqual(check(self.report(), 'K04')['status'], 'not_run')
+        prerequisite['support_before_use'] = {**route, 'locator': '#week-2'}
+        self.assertEqual(check(self.report(), 'K04')['status'], 'failed')
 
     def test_wrong_concept_link_fails_even_with_refreshed_review(self):
         self.bundle['units'][0]['chain']['coding']['concept_ids'] = ['unrelated_plot']
@@ -325,11 +327,18 @@ class QualityTest(unittest.TestCase):
         self.assertEqual(check(self.report(), 'K11')['status'], 'not_run')
 
     def test_calibration_missed_fault_is_visible(self):
-        self.bundle['units'][0]['calibration'][1]['observed'] = 'passed'
-        refresh_reviews(self.bundle, self.root)
-        result = check(self.report(), 'K15')
-        self.assertEqual(result['status'], 'failed')
-        self.assertEqual(result['measurement']['controls'][0]['missed_faults'], 1)
+        controls = self.bundle['units'][0].pop('calibration')
+        self.bundle['policy']['calibration_tolerance'] = None
+        self.assertTrue(self.report()['ready_for_review'])
+        qualification = {'evaluator_sha256': quality.file_digest(Path(quality.__file__)), 'domain': 'axis',
+                         'controls': controls, 'tolerance': {'false_rejects': 0, 'missed_faults': 0},
+                         'reviewer': 'independent', 'author': 'author'}
+        self.assertEqual(quality.qualification(qualification, self.root)['status'], 'passed')
+        controls[1]['observed'] = 'passed'
+        result = quality.qualification(qualification, self.root)
+        self.assertEqual((result['status'], result['missed_faults']), ('failed', 1))
+        qualification['evaluator_sha256'] = '0' * 64
+        self.assertEqual(quality.qualification(qualification, self.root)['status'], 'stale')
 
     def test_learning_claim_requires_separate_learner_evidence(self):
         self.bundle['target']['learning_outcomes'] = 'improved'

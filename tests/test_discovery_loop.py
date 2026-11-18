@@ -112,7 +112,7 @@ class DiscoveryLoopTest(unittest.TestCase):
                    counterevidence='No learner outcome claim.', uninvestigated=[], demands=[self.demand()])
         self.assertEqual(self.report()['next_action'], 'compare_actual_lesson')
         self.compare(assessment='gap')
-        self.assertEqual(self.report()['next_action'], 'research_or_refine_and_recompare')
+        self.assertEqual(self.report()['next_action'], 'design_content_revision')
 
     def test_new_arbitrary_frontier_invalidates_previous_ready_and_manifest(self):
         self.ready()

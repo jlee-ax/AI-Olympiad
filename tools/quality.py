@@ -16,7 +16,7 @@ CONTRACT = 'curriculum/contract.json'
 UNIT_SPECIFICATIONS = 'skills/koai-evaluate/references/unit-specifications.json'
 THEORY_SPECIFICATION = 'skills/koai-evaluate/references/theory-explanation.json'
 ORACLE_KINDS = {'axis_mean', 'binary_metrics', 'weighted_sum', 'split_fit'}
-REVIEW_CRITERIA = {'K02', 'K05', 'K06', 'K09', 'K15', 'K16'}
+REVIEW_CRITERIA = {'K02', 'K04', 'K05', 'K06', 'K09', 'K16'}
 PLAN_CONTEXT = '#plan-context'
 STATES = {'passed', 'failed', 'uncertain', 'not_run'}
 TIERS = {'critical': 0, 'major': 1, 'moderate': 2, 'minor': 3}
@@ -358,6 +358,14 @@ def validate(bundle):
     return bundle
 
 
+def design_locators(unit):
+    for prerequisite in unit.get('prerequisites', []):
+        route = prerequisite.get('support_before_use') or {}
+        for field in ('locator', 'first_use'):
+            if isinstance(route.get(field), str):
+                yield route[field]
+
+
 def object_fingerprint(bundle, criterion_id, object_id, root=ROOT):
     catalog = load(safe_file(root, CATALOG))
     criterion = next((x for x in catalog['criteria'] if x['id'] == criterion_id), None)
@@ -400,9 +408,11 @@ def object_fingerprint(bundle, criterion_id, object_id, root=ROOT):
         projection = copy.deepcopy(dependent)
         if criterion_id != 'K08':
             projection.pop('execution', None)
-        if criterion_id != 'K15':
-            projection.pop('calibration', None)
-        locators = {dependent.get('locator', 'file')}
+        projection.pop('calibration', None)
+        for prerequisite in projection.get('prerequisites', []):
+            for legacy_field in ('observed', 'help', 'status', 'evidence'):
+                prerequisite.pop(legacy_field, None)
+        locators = {dependent.get('locator', 'file'), *design_locators(dependent)}
         for role in dependent.get('chain', {}).values():
             if isinstance(role, dict) and isinstance(role.get('locator'), str):
                 locators.add(role['locator'])
@@ -446,6 +456,9 @@ def plan_bindings(bundle, object_id, root=ROOT):
     nodes = {node['id']: node for node in closure(bundle, object_id)}
     declared = unit.get('plan_dependency_ids', [])
     required = {PLAN_CONTEXT, '#week-' + str(unit.get('week'))}
+    continuation = unit.get('continuation') or {}
+    if unit.get('stage') == 'foundation' and isinstance(continuation.get('plan_locator'), str):
+        required.add(continuation['plan_locator'])
     topics = {item['id']: item for item in contract['topics']}
     required.update(topics[key]['plan_locator'] for key in unit['syllabus_ids'] if key in topics)
     covered, issues, scope = set(), [], []
@@ -505,7 +518,7 @@ def context_bindings(bundle, object_id, root=ROOT):
         obj = objects.get(node['id'])
         if obj is None:
             continue
-        locators = {obj.get('locator', 'file')}
+        locators = {obj.get('locator', 'file'), *design_locators(obj)}
         locators.update(role['locator'] for role in obj.get('chain', {}).values()
                         if isinstance(role, dict) and isinstance(role.get('locator'), str))
         for locations in obj.get('explanation_regions', {}).values():
@@ -664,6 +677,42 @@ def _same(actual, expected):
     return actual == expected
 
 
+def qualification(record, root):
+    """Inspect one reusable evaluator/domain record independently of lesson readiness."""
+    for key in ('domain', 'reviewer', 'author'):
+        if not isinstance(record.get(key), str) or not record[key].strip():
+            raise ValueError('Qualification needs ' + key)
+    controls = record.get('controls')
+    if not isinstance(controls, list) or any(not isinstance(c, dict) for c in controls):
+        raise ValueError('Qualification needs a control array')
+    ids = [c.get('case_id') for c in controls]
+    if any(not isinstance(k, str) or not k for k in ids) or len(ids) != len(set(ids)):
+        raise ValueError('Control IDs must be distinct and nonempty')
+    for c in controls:
+        if c.get('expected') not in ('passed', 'failed') or c.get('observed') not in STATES:
+            raise ValueError('Invalid control outcome')
+    good = [c for c in controls if c['expected'] == 'passed']
+    faults = [c for c in controls if c['expected'] == 'failed']
+    counts = {'false_rejects': sum(c['observed'] != 'passed' for c in good),
+              'missed_faults': sum(c['observed'] != 'failed' for c in faults)}
+    tolerance = record.get('tolerance')
+    version = file_digest(Path(__file__))
+    if record.get('evaluator_sha256') != version:
+        status = 'stale'
+    elif not good or not faults:
+        status = 'not_run'
+    elif (record['reviewer'].strip().casefold() == record['author'].strip().casefold()
+          or any(not _evidence(c.get('evidence'), root) or
+                 not all(e.get('path') for e in c['evidence']) for c in controls)
+          or not isinstance(tolerance, dict)
+          or any(type(tolerance.get(k)) is not int or tolerance[k] < 0 for k in counts)):
+        status = 'uncertain'
+    else:
+        status = 'failed' if any(v > tolerance[k] for k, v in counts.items()) else 'passed'
+    return {'status': status, 'domain': record['domain'], 'evaluator_sha256': version,
+            'known_good': len(good), 'known_fault': len(faults), **counts}
+
+
 def evaluate(bundle, root=ROOT):
     validate(bundle)
     catalog = load(safe_file(root, CATALOG))
@@ -691,7 +740,8 @@ def evaluate(bundle, root=ROOT):
     selected = [units[k] for k in sorted(expected & units.keys())]
     blueprints = {x['id']: x for x in load(safe_file(root, UNIT_SPECIFICATIONS))['units']}
     topics = {t['id']: t for t in contract['topics']}
-    coverage = []
+    coverage, staged = [], []
+    plan_regions = regions(safe_file(root, contract['baseline']['path']))
     for unit in selected:
         ids = unit['syllabus_ids']
         if not ids or any(key not in topics for key in ids):
@@ -700,6 +750,18 @@ def evaluate(bundle, root=ROOT):
             mode = unit.get('mode_evidence', {})
             expected_theory = any(topics[key]['theory'] for key in ids)
             expected_practical = any(topics[key]['practical'] for key in ids)
+            if (expected_practical and unit.get('stage') == 'foundation' and
+                    unit.get('claimed_depth') == 'concept' and bundle['target']['coverage_claim'] == 'selected_scope'):
+                handoff = unit.get('continuation') or {}
+                week = handoff.get('week')
+                topic_ids = sorted(key for key in ids if topics[key]['practical'])
+                if (type(week) is int and type(unit.get('week')) is int and unit['week'] < week <= 10
+                        and handoff.get('plan_locator') == '#week-' + str(week)
+                        and handoff['plan_locator'] in plan_regions and handoff.get('topic_ids') == topic_ids
+                        and all(isinstance(handoff.get(k), str) and handoff[k].strip()
+                                for k in ('owner_unit', 'practical_task'))):
+                    staged.append({'from_unit': unit['id'], **handoff})
+                    expected_practical = False
             contradictory = (expected_practical and unit.get('claimed_depth') not in ('guided', 'independent'))
             missing_modes = ((expected_theory and mode.get('theory') != 'passed') or
                              (expected_practical and mode.get('practical') != 'passed'))
@@ -708,8 +770,20 @@ def evaluate(bundle, root=ROOT):
     full_missing = set(topics) - covered if bundle['target']['coverage_claim'] == 'full_syllabus' else set()
     result('K02', aggregate(coverage + (['not_run'] if missing or full_missing else [])),
            {'requested_objectives': len(expected), 'present': len(selected), 'missing': sorted(missing),
-            'planned_topics': sorted(covered), 'full_claim_missing_topics': sorted(full_missing),
+            'deferred_practical': staged, 'planned_topics': sorted(covered), 'full_claim_missing_topics': sorted(full_missing),
             'scheduled_topics_in_plan': 60, 'scheduled_is_not_achieved': True}, missing | full_missing)
+    # A staged concept notebook with no executable cells and no promised coding
+    # activity can be reviewed as a reading. Any supplied code stays in scope.
+    reading_units = set()
+    if staged and artifact_path.suffix == '.ipynb':
+        notebook = load(artifact_path)
+        if notebook.get('nbformat') == 4 and notebook.get('cells') and all(
+                c.get('cell_type') in ('markdown', 'raw') for c in notebook['cells']):
+            reading_units = {h['from_unit'] for h in staged if 'coding' not in units[h['from_unit']]['chain']}
+    def roles_for(unit):
+        if unit['id'] in reading_units:
+            return ('theory', 'noncoding', 'assessment')
+        return ('theory', 'noncoding', 'coding', 'assessment')
     allocation_states, allocation_details = [], []
     by_week = {}
     for allocation in bundle['lesson_allocations']:
@@ -735,7 +809,7 @@ def evaluate(bundle, root=ROOT):
         allocation_states.append('passed' if valid else 'failed')
         allocation_details.append({'week': week, 'totals': totals, 'written_minutes_inside_blocks': written})
     for unit in selected:
-        activity_ids = [unit['chain'].get(role, {}).get('activity_id') for role in ('theory', 'noncoding', 'coding', 'assessment')]
+        activity_ids = [unit['chain'].get(role, {}).get('activity_id') for role in roles_for(unit)]
         if unit.get('week') not in by_week or any(a not in by_week.get(unit.get('week'), set()) for a in activity_ids):
             allocation_states.append('not_run')
     homework_details = []
@@ -780,6 +854,8 @@ def evaluate(bundle, root=ROOT):
            {'baseline_weeks': plan['weeks'], 'material_allocations': allocation_details, 'errors': plan['errors'],
             'actual_completion_time': 'unobserved', 'outside_work_is_separate': True,
             'homework_cap_period': 'each_selected_week', 'outside_work': homework_details})
+    actual_regions = regions(artifact_path)
+    position = {locator: n for n, locator in enumerate(actual_regions)}
     prerequisite_states, chain_states, execution_states, assessment_states = [], [], [], []
     for unit in selected:
         prerequisites = unit['prerequisites']
@@ -789,24 +865,26 @@ def evaluate(bundle, root=ROOT):
         if not bundle['synthetic'] and (expected_prerequisites is None or not expected_prerequisites <= {x.get('id') for x in prerequisites}):
             states.append('failed')
         for req in prerequisites:
-            if not all(req.get(key) for key in ('id', 'task', 'expected', 'observed', 'help')):
+            route = req.get('support_before_use')
+            if not all(isinstance(req.get(k), str) and req[k].strip() for k in ('id', 'task', 'expected')) or not route:
                 states.append('not_run')
-            elif req.get('status') == 'passed' and _evidence(req.get('evidence', []), root):
-                states.append('passed')
-            elif req.get('status') == 'needs_support':
-                support = req.get('support_before_use')
-                support_valid = (isinstance(support, dict) and support.get('before_unit') == unit['id'] and
-                                 all(support.get(key) for key in ('activity_id', 'locator', 'time_location')))
-                states.append('passed' if support_valid and _evidence(req.get('evidence', []), root) else 'failed')
+                continue
+            support, use = route.get('locator'), route.get('first_use')
+            if not support or not use:
+                states.append('not_run')
+            elif (route.get('before_unit') != unit['id'] or support not in position or use not in position
+                  or position[support] > position[use]):
+                states.append('failed')
             else:
-                states.append('uncertain')
+                states.append('passed')
+        if (prerequisites and all(status == 'passed' for status in states)) or expected_prerequisites == set():
+            states.append(_review(bundle, 'K04', unit['id'], root))
         prerequisite_states.append(aggregate(states))
         roles = unit['chain']
-        actual_regions = regions(artifact_path)
         concepts = set(unit['concept_ids'])
         valid_roles = all(isinstance(roles.get(role), dict) and roles[role].get('locator') and
                           roles[role].get('expected_behavior') and roles[role].get('locator') in actual_regions and set(roles[role].get('concept_ids', [])) == concepts
-                          for role in ('theory', 'noncoding', 'coding', 'assessment'))
+                          for role in roles_for(unit))
         chain_states.append(_review(bundle, 'K05', unit['id'], root) if valid_roles and concepts else 'failed')
         assess = roles.get('assessment', {})
         independent = unit.get('claimed_depth') == 'independent'
@@ -817,7 +895,9 @@ def evaluate(bundle, root=ROOT):
         else:
             assessment_states.append(_review(bundle, 'K09', unit['id'], root))
         execution = unit['execution']
-        if execution.get('status') != 'passed':
+        if unit['id'] in reading_units and not execution:
+            execution_states.append('passed')
+        elif execution.get('status') != 'passed':
             execution_states.append(execution.get('status') if execution.get('status') in STATES else 'not_run')
         elif (execution.get('artifact_sha256') != actual_sha or (type(execution.get('exit_code')) is not int or execution['exit_code'] != 0) or
               not all(execution.get(key) for key in ('command', 'environment')) or
@@ -829,7 +909,7 @@ def evaluate(bundle, root=ROOT):
         else:
             execution_states.append('passed')
     extra = ['not_run'] if missing else []
-    result('K04', aggregate(prerequisite_states + extra), {'diagnosed_units': len(selected), 'missing_units': sorted(missing)}, [u['id'] for u, status in zip(selected, prerequisite_states) if status != 'passed'])
+    result('K04', aggregate(prerequisite_states + extra), {'material_units': len(selected), 'learner_observation': 'outside_scope', 'missing_units': sorted(missing)}, [u['id'] for u, status in zip(selected, prerequisite_states) if status != 'passed'])
     result('K05', aggregate(chain_states + extra), {'linked_units': len(selected), 'semantic_review_required': True}, [u['id'] for u, status in zip(selected, chain_states) if status != 'passed'])
     referenced_claims = {key for unit in selected for key in unit['claim_ids']}
     theory_states = [_review(bundle, 'K06', key, root) for key in sorted(referenced_claims)]
@@ -870,7 +950,7 @@ def evaluate(bundle, root=ROOT):
     result('K07', aggregate(numerical + extra), {'reference_checks': numerical_details, 'unit_requirements': unit_oracles,
            'empty_requirement': 'No numerical oracle is required; semantic and execution checks still apply.'},
            [x['claim_id'] for x in numerical_details if x['status'] != 'passed'] + oracle_gaps)
-    result('K08', aggregate(execution_states + extra), {'receipts_checked': len(selected), 'does_not_authenticate_execution': True}, [u['id'] for u, status in zip(selected, execution_states) if status != 'passed'])
+    result('K08', aggregate(execution_states + extra), {'execution_units': [u['id'] for u in selected if u['id'] not in reading_units or u['execution']], 'non_executable_foundations': sorted(reading_units), 'does_not_authenticate_execution': True}, [u['id'] for u, status in zip(selected, execution_states) if status != 'passed'])
     result('K09', aggregate(assessment_states + extra), {'assessments_checked': len(selected), 'learning_outcomes': bundle['target'].get('learning_outcomes', 'untested')}, [u['id'] for u, status in zip(selected, assessment_states) if status != 'passed'])
     reads = {x['id']: x for x in bundle['source_reads']}
     source_states = []
@@ -952,31 +1032,13 @@ def evaluate(bundle, root=ROOT):
     result('K14', 'passed' if agreed else 'uncertain', {'priority_policy': 'agreed_record' if agreed else 'proposal',
            'checkpoint_due': bundle['checkpoint']['minutes_since'] >= 30, 'thresholds_not_invented': True,
            'agreement_fingerprint': agreement_fingerprint(bundle, root)})
-    calibration = []
-    calibration_counts = []
-    tolerance = bundle['policy'].get('calibration_tolerance')
-    for unit in selected:
-        controls = unit.get('calibration', [])
-        known_good = [x for x in controls if x.get('expected') == 'passed']
-        known_fault = [x for x in controls if x.get('expected') == 'failed']
-        fp = sum(x.get('observed') != 'passed' for x in known_good)
-        fn = sum(x.get('observed') != 'failed' for x in known_fault)
-        calibration_counts.append({'unit': unit['id'], 'known_good': len(known_good), 'known_fault': len(known_fault), 'false_rejects': fp, 'missed_faults': fn})
-        if not known_good or not known_fault:
-            calibration.append('not_run')
-        elif any(not x.get('case_id') or not _evidence(x.get('evidence', []), root) for x in controls):
-            calibration.append('uncertain')
-        elif not isinstance(tolerance, dict) or type(tolerance.get('false_rejects')) is not int or type(tolerance.get('missed_faults')) is not int:
-            calibration.append('uncertain')
-        elif fp > tolerance['false_rejects'] or fn > tolerance['missed_faults']:
-            calibration.append('failed')
-        else:
-            calibration.append(_review(bundle, 'K15', unit['id'], root))
     learning_claim = bundle['target'].get('learning_outcomes', 'untested')
-    if learning_claim != 'untested':
-        calibration.append('uncertain' if _evidence(bundle['target'].get('learner_study_evidence', []), root) else 'failed')
-    result('K15', aggregate(calibration + extra), {'educator_calibration': 'requires_actual_evidence',
-           'learning_outcomes': learning_claim, 'tool_tests_are_not_learner_results': True, 'controls': calibration_counts}, [u['id'] for u, status in zip(selected, calibration) if status != 'passed'])
+    claim_status = 'passed' if learning_claim in ('untested', 'outside_scope') else 'failed'
+    result('K15', aggregate([claim_status] + extra),
+           {'learning_outcomes': learning_claim, 'learner_observation': 'outside_scope',
+            'evaluator_qualification': 'separate_version_and_domain_record',
+            'action': 'correct_outcome_claim' if claim_status == 'failed' else None},
+           sorted(expected) if claim_status == 'failed' else [])
     explanation_states, explanation_details = [], []
     theory_rubric = load(safe_file(root, THEORY_SPECIFICATION))
     theory_ids = {x['id'] for x in theory_rubric['checks']}
@@ -1027,7 +1089,7 @@ def evaluate(bundle, root=ROOT):
                                     'review_id': review['id'] if review else None})
     result('K16', aggregate(explanation_states + extra), {'units': explanation_details,
            'rubric_revision': theory_rubric['revision'], 'semantic_understanding': 'not_automated',
-           'learner_understanding': 'unobserved_without_actual_learner_evidence'},
+           'learner_understanding': 'outside_material_review'},
            [u['id'] for u, status in zip(selected, explanation_states) if status != 'passed'])
     discovery_report = None
     discovery_ready = bundle['synthetic']
@@ -1060,9 +1122,8 @@ def agreement_fingerprint(bundle, root=ROOT):
                    'governing_scope': {key: contract[key] for key in ('competition_year', 'division', 'syllabus_label', 'class_minutes')},
                    'official_modes': [{k: t[k] for k in ('id', 'theory', 'practical')} for t in contract['topics']],
                    'target': bundle['target'], 'budget': bundle['budget'],
-                   'diagnostic_cutoff': bundle['policy'].get('diagnostic_cutoff'),
+                   'review_profile': 'lesson-material-v2',
                    'maximum_required_homework_minutes': bundle['policy'].get('maximum_required_homework_minutes'),
-                   'calibration_tolerance': bundle['policy'].get('calibration_tolerance'),
                    'checkpoint_minutes': 30})
 
 
@@ -1084,8 +1145,9 @@ def candidate_context_error(bundle, candidate, root, error):
             'criterion_id': candidate['criterion_id'], 'error': str(error), 'bindings': unavailable}
 
 
-def plan_work(bundle, root=ROOT):
-    report = evaluate(bundle, root)
+def plan_work(bundle, root=ROOT, *, report=None):
+    if report is None:
+        report = evaluate(bundle, root)
     previous = {x['key']: x for x in bundle['attempts'] if x.get('outcome') in ('accepted', 'rejected', 'no_change')}
     ranked, skipped, seen = [], [], set()
     candidates = copy.deepcopy(bundle['candidates'])
@@ -1136,6 +1198,28 @@ def plan_work(bundle, root=ROOT):
         tier = max(TIERS[item['severity']], 1) if item['confidence'] == 'unresolved' else TIERS[item['severity']]
         ranked.append({**copy.deepcopy(item), 'key': key, 'priority': 'P' + str(tier),
                        'affected_ids': affected, '_rank': (tier, -len(affected), item['id'])})
+    discovery = report['discovery']
+    repair_ids = set()
+    bound = False
+    if discovery and discovery['status'] == 'needs_work' and discovery['synthetic'] == bundle['synthetic']:
+        scope = discovery['scope']
+        bound = (scope.get('artifact_path', scope['lesson_path']) == bundle['artifact']['path'] and
+                 scope.get('artifact_sha256', report['artifact_sha256']) == report['artifact_sha256'] and
+                 not any(b['code'] in ('artifact_changed', 'artifact_unreadable') for b in discovery['blockers']))
+        for entry in discovery['queue'] if bound else []:
+            item = entry.get('revision')
+            if not item:
+                continue
+            key = digest({'repair': item['key'], 'artifact': report['artifact_sha256'],
+                          'policy': agreement_fingerprint(bundle, root),
+                          'protocol': {n: file_digest(Path(__file__).with_name(n)) for n in
+                                       ('quality.py', 'workflow.py', 'discovery_loop.py', 'material_revision.py')}})
+            if key in previous:
+                skipped.append({'id': item['id'], 'key': key, 'reason': previous[key].get('reason', 'exact_duplicate')})
+                continue
+            repair_ids.add(item['id'])
+            ranked.append({**item, 'key': key, 'priority': 'P1', 'affected_ids': entry['affected'],
+                           '_rank': (1, -len(entry['affected']), item['id'])})
     ranked.sort(key=lambda x: x['_rank'])
     for item in ranked:
         del item['_rank']
@@ -1153,6 +1237,7 @@ def plan_work(bundle, root=ROOT):
                  (budget.get('max_no_progress') is not None and max(trailing, bundle['checkpoint']['no_progress_count']) >= budget['max_no_progress']))
     active_tiers = [max(TIERS[f['severity']], 1) if f['status'] != 'failed' else TIERS[f['severity']] for f in report['findings']]
     best_blocker = min(active_tiers, default=4)
+    selected = ranked[0] if ranked else None
     if bundle['policy']['stop_requested']:
         status, reason = 'stop', 'operator_stop'
     elif not report['checks'][0]['status'] == 'passed':
@@ -1167,6 +1252,10 @@ def plan_work(bundle, root=ROOT):
         status, reason = 'pause', 'finite_budget_requires_agreement'
     elif ranked and int(ranked[0]['priority'][1]) > best_blocker:
         status, reason = 'pause', 'blocking_finding_requires_scoped_candidate'
+    elif selected and selected['id'] in repair_ids:
+        status, reason = 'continue', 'source_grounded_revision'
+    elif bound and selected and selected.get('priority_basis') == 'computed_failed_criterion':
+        status, reason = 'continue', 'confirmed_material_defect'
     elif report['discovery_gate'] != 'recorded_ready':
         discovery_status = report['discovery']['status'] if report['discovery'] else None
         status = 'stop' if discovery_status == 'stopped' else 'pause' if discovery_status == 'paused' else 'continue'
@@ -1177,10 +1266,12 @@ def plan_work(bundle, root=ROOT):
         status, reason = 'stop', 'recorded_checks_ready_for_independent_final_review'
     else:
         status, reason = 'noop', 'no_new_candidate_not_complete'
+    eligible = status == 'continue' and (reason in ('source_grounded_revision', 'confirmed_material_defect') or report['discovery_gate'] == 'recorded_ready')
     return {'status': status, 'reason': reason, 'authority': 'advisory_only', 'synthetic': bundle['synthetic'],
+            'bundle_sha256': report['bundle_sha256'], 'artifact_sha256': report['artifact_sha256'],
             'quality_status': report['status'], 'ranked': ranked, 'skipped': skipped,
             'selective_review': report['selective_review'],
-            'next_candidate': ranked[0]['id'] if ranked and status == 'continue' and report['discovery_gate'] == 'recorded_ready' else None,
+            'next_candidate': selected['id'] if selected and eligible else None,
             'discovery': report['discovery'],
             'next_discovery_action': report['discovery']['next_action'] if report['discovery'] else 'seed_external_frontier' if report['discovery_gate'] == 'discovery_missing' else None,
             'checkpoint_required_fields': ['artifact version', 'changed sources', 'checks and uncertainty',
@@ -1191,7 +1282,7 @@ def plan_work(bundle, root=ROOT):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=('baseline', 'evaluate', 'plan', 'impact', 'review-context', 'agreement-context'))
+    parser.add_argument('command', choices=('baseline', 'qualify', 'evaluate', 'plan', 'impact', 'review-context', 'agreement-context'))
     parser.add_argument('bundle', nargs='?', type=Path)
     parser.add_argument('--root', type=Path, default=ROOT)
     parser.add_argument('--changed', action='append', default=[])
@@ -1201,6 +1292,10 @@ def main(argv=None):
     try:
         if args.command == 'baseline':
             result = baseline(args.root)
+        elif args.command == 'qualify':
+            if args.bundle is None:
+                parser.error('qualify requires an evaluator qualification record')
+            result = qualification(load(args.bundle), args.root)
         else:
             if args.bundle is None:
                 parser.error('This command requires a bundle')

@@ -1,4 +1,5 @@
 """Harbor verifier for observable fields in the KOAI public pilot cases."""
+import hashlib
 import json
 import math
 import os
@@ -39,20 +40,57 @@ def strict_json(text):
     return json.loads(text, object_pairs_hook=unique_object, parse_float=finite_number, parse_constant=finite_number)
 
 
-def read_answer(file):
+def read_answer(file, limit=65536):
     if file.parent.is_symlink() or file.is_symlink():
         return None
     try:
         if not stat.S_ISREG(file.stat().st_mode):
             return None
         with file.open('rb') as source:
-            payload = source.read(65537)
-        return strict_json(payload) if len(payload) <= 65536 else None
+            payload = source.read(limit + 1)
+        return strict_json(payload) if len(payload) <= limit else None
     except (OSError, ValueError, UnicodeError, RecursionError):
         return None
 
 
+def cell_signature(cell):
+    source = cell['source']
+    if not isinstance(source, str):
+        if not isinstance(source, list) or any(not isinstance(row, str) for row in source):
+            raise ValueError('Invalid cell source')
+        source = ''.join(source)
+    payload = {**cell, 'source': source}
+    return hashlib.sha256(json.dumps(payload, sort_keys=True, ensure_ascii=False,
+                                     allow_nan=False).encode()).hexdigest()
+
+
+def grade_notebook(key, path):
+    result = dict.fromkeys(('required_content_preserved', 'unrequested_content_absent', 'prerequisite_order'), 0)
+    notebook = read_answer(path, 4 * 1024 * 1024)
+    try:
+        if not isinstance(notebook, dict) or notebook.get('nbformat') != 4:
+            raise ValueError('Missing version 4 notebook')
+        cells = notebook['cells']
+        if not isinstance(cells, list) or not cells:
+            raise ValueError('Missing cells')
+        actual = {cell['id']: cell_signature(cell) for cell in cells}
+        if len(actual) != len(cells):
+            raise ValueError('Ambiguous cell IDs')
+        positions = {cid: n for n, cid in enumerate(actual)}
+        required = key['cells']
+        result['required_content_preserved'] = int(all(actual.get(k) == h for k, h in required.items()))
+        result['unrequested_content_absent'] = int(actual.keys() <= required.keys())
+        result['prerequisite_order'] = int(all(a in positions and b in positions and positions[a] < positions[b]
+                                                for a, b in key['precedence']))
+    except (ValueError, KeyError, TypeError, AttributeError, RecursionError, UnicodeError):
+        pass
+    passed = int(all(result.values()))
+    return {'overall': float(passed), 'custom_metrics': {'koai_material_repair': passed, **result}}
+
+
 def grade(entry, output):
+    if 'koai_notebook' in entry:
+        return grade_notebook(entry['koai_notebook'], output.with_name('lesson.ipynb'))
     expected = entry.get('koai_facts')
     if not isinstance(expected, dict) or not expected:
         raise ValueError('The verifier needs a nonempty koai_facts answer key.')

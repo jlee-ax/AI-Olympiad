@@ -150,7 +150,7 @@ Bind these exact manifests in context.inputs:
 | quality:criteria | Report specification_revision | Actual criterion-catalog file bytes |
 | quality:evaluator | quality-v1 | Actual quality.py file bytes |
 
-The workflow artifact digest must match the quality report's actual artifact digest. A synthetic quality report cannot validate non-synthetic workflow state. Every K01–K16 check must pass and ready_for_review must be true. The existing independent current-context verification and completion predicate still apply.
+The workflow artifact digest must match the quality report's actual artifact digest. A synthetic quality report cannot validate non-synthetic workflow state. For the final decision every applicable K01–K16 material check must pass and ready_for_review must be true. The existing independent current-context verification and completion predicate still apply.
 
 Quality is checked after scope, agreement, frozen baseline, finite budgets and checkpoint conditions, before the existing verification step. Missing quality pauses; missing bindings, artifact mismatch, failed/uncertain/unrun checks or a synthetic/real mismatch block. Adding the manifests changes the workflow context, so refresh the aggregate review explicitly. Current unit content reviews may be reused only according to their own actual region/dependency bindings.
 
@@ -288,3 +288,5 @@ current reviews; K11 reports the object's `context_error`, and K13 reports
 `plan` labels such candidates `context_status: unavailable` and preserves the
 repair/investigation target. These are blocked/uncertain evidence states, never
 substitute review fingerprints or permission to execute a change.
+
+Use [교안 내용 수정과 재검수](material-revision.md) for the repair-phase decision, guarded notebook edits, evidence-bound verification, and discovery handoff.

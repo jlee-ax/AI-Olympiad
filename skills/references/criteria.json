@@ -1,13 +1,11 @@
 {
   "schema_version": 1,
-  "revision": "criteria-v2",
+  "revision": "criteria-v3-material",
   "status": "proposed_for_agreement",
   "decision_required": [
     "Priority tie-break policy",
-    "Diagnostic cutoffs and acceptable help",
     "Required/optional checks per production unit",
     "Homework limit and support time",
-    "Evaluator calibration sample and tolerated errors",
     "Total run/attempt/cost budgets"
   ],
   "criteria": [
@@ -40,7 +38,7 @@
       "name": "Planned coverage and achieved depth",
       "definition": "Scheduled exposure, explanation, guided application and independent transfer are different claims.",
       "object": "Every official topic and each selected objective",
-      "measurement": "Record official modes, placement, required components, evidence and help level separately. A full-syllabus completion claim needs evidence for every required mode/component.",
+      "measurement": "Record official modes, placement, required components, evidence and help level separately. A full-syllabus completion claim needs evidence for every required mode/component. At the concept stage of a selected unit, review the owner, later week, practical task and governing plan region of any deferred practical mode. Full-syllabus claims retain every mode.",
       "pass": "All selected obligations have matching evidence at the claimed depth; no omitted official obligations in a full claim.",
       "fail": "A practical requirement is claimed complete using only a concept description, cached output, or a different named model.",
       "uncertainty": "Scheduled but unperformed work is not_run, not failure of a student.",
@@ -82,13 +80,13 @@
     },
     {
       "id": "K04",
-      "name": "Prerequisite diagnosis and support",
-      "definition": "Readiness is demonstrated prerequisite behavior or an explicit support route before its first use, not an age label.",
+      "name": "Prerequisite support before first use",
+      "definition": "Review the prerequisite explanations and checks supplied by the material.",
       "object": "Python and mathematical prerequisites of each objective",
-      "measurement": "Record a concrete task, expected behavior, actual response, help used, diagnosis and support placement. Diagnose variables/control flow, functions/return, lists/indexing, files/errors; ratios before metrics and axes before reduction.",
-      "pass": "Every dependency is demonstrated under stated help or bridged by a scheduled support activity before use, according to the agreed readiness policy.",
-      "fail": "The material depends on an unintroduced or diagnosed-missing skill with no prior support.",
-      "uncertainty": "No learner response means unknown readiness. Cutoffs such as 4/5 in the HTML are proposals until their use is agreed and calibrated.",
+      "measurement": "Locate the support, first use, task and expected behavior for every dependency. Independently review the current route.",
+      "pass": "All required IDs and support routes are present in the proper order and an independent material review passes.",
+      "fail": "A required route is absent, reversed or judged inadequate.",
+      "uncertainty": "Missing design records require content review.",
       "severity": "major",
       "priority": "P1",
       "examples": {
@@ -100,7 +98,7 @@
         "CHEN"
       ],
       "expected_effect": "Make missing prerequisites actionable.",
-      "limits": "This diagnoses named tasks, not general intelligence or all middle-school learners.",
+      "limits": "Sequence alone cannot establish that the explanation is sufficient.",
       "implementation": "See tools/quality.py and the implementation table in quality-specification.md; semantic judgments remain reviewed records."
     },
     {
@@ -339,13 +337,13 @@
     },
     {
       "id": "K15",
-      "name": "Evaluator calibration and outcome claims",
-      "definition": "A reviewer is calibrated only against independently established correct/error cases; educational benefit needs learner evidence.",
-      "object": "Human/model judgments and improvement claims",
-      "measurement": "Separate author and reviewer; test known-good and seeded-error controls, reverse order, retain disagreements and untouched cases; distinguish tool tests, content review, suitability and learner outcomes.",
-      "pass": "The strength of the conclusion matches actually collected evidence and current independent review.",
-      "fail": "Tool tests or a model preference win are presented as learning improvement, or evaluator changes are tested only on their training cases.",
-      "uncertainty": "Absent educator calibration or learner data remains untested; tolerances/sample sizes require agreement.",
+      "name": "Evidence scope of material claims",
+      "definition": "Learner outcomes fall outside lesson-material inspection.",
+      "object": "Outcome claim in the review target",
+      "measurement": "Inspect the material claim. Qualify an evaluator separately by version and domain using independently reviewed good/fault controls.",
+      "pass": "Learner outcomes are outside scope or untested.",
+      "fail": "The material workflow claims a learner outcome. Correct the claim.",
+      "uncertainty": "Unassessed evaluator domains remain unqualified.",
       "severity": "major",
       "priority": "P1",
       "examples": {

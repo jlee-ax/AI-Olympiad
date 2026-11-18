@@ -27,10 +27,12 @@ COMMON = {path: path for path in (
     'skills/references/workflow.md', 'tools/workflow.py', 'tools/quality.py',
     'tools/validate.py', 'tools/graph_paths.py', 'tools/lesson_validation.py',
     'tools/review_preflight.py', 'tools/contest_depth.py', 'tools/discovery_loop.py',
-    'tools/README.md', 'tools/review-preflight.md', 'tools/graph-paths.md', 'tools/discovery-loop.md',
+    'tools/material_revision.py', 'tools/material-revision.md', 'tools/README.md', 'tools/review-preflight.md', 'tools/graph-paths.md', 'tools/discovery-loop.md',
     'tools/MANUAL-CYCLE.md', 'tests/fixtures/candidate-graph-missing-path.json',
     'examples/graph-path.json', 'examples/graph-path-source.txt',
 )}
+MATERIAL_SUITE = ROOT / 'benchmarks/skill-evaluation/material-edits.json'
+COMMON['case-inputs/material-blocks.ipynb'] = 'benchmarks/skill-evaluation/material-blocks.ipynb'
 COMMON['case-inputs/handoff.json'] = 'benchmarks/skill-evaluation/handoff.json'
 
 # Only these declarative Agent Skills fields are accepted for the KOAI answer-file contract.
@@ -79,7 +81,7 @@ def load_cases(path, skill):
         raise ValueError('Expected a nonempty Agent Skills JSON evals list for ' + skill)
     ids, prompts, controls = set(), set(), set()
     for case in raw['evals']:
-        if not isinstance(case, dict) or set(case) != FIELDS:
+        if not isinstance(case, dict) or set(case) not in (FIELDS, (FIELDS - {'koai_facts'}) | {'koai_notebook'}):
             raise ValueError('Each KOAI case must use the documented declarative fields.')
         case_id, prompt, control = case['id'], case['prompt'], case['koai_control']
         if not isinstance(case_id, str) or not re.fullmatch(r'[a-z0-9][a-z0-9-]{0,95}', case_id) or case_id in ids:
@@ -97,7 +99,15 @@ def load_cases(path, skill):
             isinstance(item, str) and item.strip() for item in case['assertions']
         ):
             raise ValueError(f'{case_id}: missing observable assertions')
-        if not isinstance(case['koai_facts'], dict) or not case['koai_facts']:
+        if 'koai_notebook' in case:
+            key = case['koai_notebook']
+            cells = key.get('cells') if isinstance(key, dict) else None
+            edges = key.get('precedence') if isinstance(key, dict) else None
+            if (not isinstance(cells, dict) or not cells or any(not isinstance(v, str) or not re.fullmatch('[0-9a-f]{64}', v) for v in cells.values())
+                    or not isinstance(edges, list) or not edges or any(not isinstance(pair, list) or len(pair) != 2
+                    or not all(isinstance(k, str) and k in cells for k in pair) or pair[0] == pair[1] for pair in edges)):
+                raise ValueError(f'{case_id}: invalid notebook content/route contract')
+        elif not isinstance(case['koai_facts'], dict) or not case['koai_facts']:
             raise ValueError(f'{case_id}: missing answer fields')
         ids.add(case_id)
         prompts.add(canonical(prompt))
@@ -111,7 +121,7 @@ def review_blockers(receipt, source, public, entries, hashes):
     reasons = []
     if source.is_relative_to(ROOT):
         reasons.append('The checked-in suite is public development material.')
-    public_cases = [case for path in sorted(public.parents[2].glob('*/evals/evals.json'))
+    public_cases = [case for path in [*sorted(public.parents[2].glob('*/evals/evals.json')), MATERIAL_SUITE]
                     for case in strict_json(path)['evals']]
     public_ids = {row['id'] for row in public_cases}
     public_prompts = {canonical(row['prompt']) for row in public_cases}
@@ -227,7 +237,8 @@ def verify_arm(paths, entries, target, common, with_skill):
         seen.add(case_id)
         row = expected[case_id]
         if ((task / 'instruction.md').read_text(encoding='utf-8') != row['question'] + '\n'
-                or json.dumps(entry.get('koai_facts'), sort_keys=True) != json.dumps(row['koai_facts'], sort_keys=True)
+                or json.dumps(entry.get('koai_facts'), sort_keys=True) != json.dumps(row.get('koai_facts'), sort_keys=True)
+                or entry.get('koai_notebook') != row.get('koai_notebook')
                 or entry.get('has_skill') is not with_skill
                 or not entry.get('custom_grader') or entry.get('grading_mode') != 'default_plus_custom'
                 or digest(tests / 'grader.py') != digest(GRADER)):

@@ -106,3 +106,5 @@ python3 -B tools/review_preflight.py --root . --depth depth.json --graph graph.j
 ```
 
 The synthetic regression suite uses unrelated opaque demands and real temporary files, plus neighboring good/fault cases. It covers new obligations, semantic judgment limits, depth mismatches, legitimate deferral, changed bytes, source replacement, question expansion, duplicate aliases, budget prefixes, pause/resume and direct production/readiness integration. These are finite software tests, not a study of educational quality or proof that an external search was comprehensive.
+
+The current manifest revision is discovery-loop-v2. Old event chains remain replayable. Bind the current manifest for new decisions. Background probes, independent empty-extraction review, typed edits on comparisons and the advance_lesson event are documented in [the material revision procedure](material-revision.md).

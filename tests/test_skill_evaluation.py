@@ -118,6 +118,52 @@ class NativeIntegrationTests(unittest.TestCase):
             self.assertNotEqual(second.returncode, 0)
             self.assertEqual(sentinel.read_text(), 'preserve')
 
+    def test_native_grades_edited_notebooks_in_both_arms_and_rejects_content_faults(self):
+        bank = gate.strict_json(ROOT / gate.COMMON['case-inputs/material-blocks.ipynb'])
+        cells = {c['id']: c for c in bank['cells']}
+        mean = ['input-data', 'e3783955', 'd942743f', 'new-observations']
+        axis = ['input-data', 'a3f9c114', '9d537595', 'new-axes']
+        expected = {'edit-missing-prerequisite': mean, 'edit-remove-duplication': mean,
+                    'edit-order-and-scope': axis, 'edit-preserve-foundation': mean, 'edit-archive-copy': list(cells)}
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            dest = root / 'prepared'
+            proc = subprocess.run([sys.executable, '-B', str(ROOT / 'tools/skill_evaluation.py'),
+                                   'prepare', 'koai-evaluate', str(dest), '--suite', str(gate.MATERIAL_SUITE), '--pilot'],
+                                  text=True, capture_output=True)
+            self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+            prep = json.loads(proc.stdout)
+            self.assertTrue(prep['matches_reference_python'])
+            self.assertEqual((prep['pairs_prepared'], prep['live_agent_runs']), (5, 0))
+            out, logs = root / 'workspace/output', root / 'logs'
+            out.mkdir(parents=True)
+            logs.mkdir()
+            for arm in ('with', 'without'):
+                for cid, course in expected.items():
+                    tests = dest / arm / cid / 'tests'
+                    env = {**os.environ, 'HARBOR_TESTS_DIR': str(tests), 'HARBOR_WORKSPACE_DIR': str(out.parent),
+                           'HARBOR_VERIFIER_DIR': str(logs), 'HARBOR_REWARD_JSON': str(logs / 'result.json'),
+                           'HARBOR_REWARD_TXT': str(logs / 'reward.txt')}
+                    good = [cells[k] for k in course]
+                    damaged = deepcopy(good)
+                    damaged[1]['source'] = ['An unrelated sentence with the expected cell ID.']
+                    # Each fault changes exactly one aspect of a good deliverable.
+                    extra = {**cells['repeat-mean'], 'id': 'spurious-activity'}
+                    for material, metric in [(good, None), (good[1:], 'required_content_preserved'),
+                                             (damaged, 'required_content_preserved'), (good + [extra], 'unrequested_content_absent'),
+                                             ([good[1],good[0],*good[2:]], 'prerequisite_order')]:
+                        with self.subTest(arm=arm, case=cid, expected_metric=metric):
+                            (out / 'lesson.ipynb').write_text(json.dumps({**bank, 'cells': material}))
+                            (logs / 'skill_evaluator_reward.json').write_text('{"overall":0.625,"accuracy":0.75}')
+                            (logs / 'reward.txt').write_text('0.625')
+                            subprocess.run([sys.executable, '-I', str(tests / 'skill_evaluator/custom_grader_runner.py'),
+                                            '--mode', 'default_plus_custom'], env=env, check=True, capture_output=True)
+                            result = json.loads((logs / 'result.json').read_text())
+                            self.assertEqual(result['overall'], 0.625)
+                            self.assertEqual(result['koai_material_repair'], int(metric is None))
+                            if metric:
+                                self.assertEqual(result[metric], 0)
+
     def test_invalid_dataset_controls(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / 'suite.json'

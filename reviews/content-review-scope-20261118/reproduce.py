@@ -157,6 +157,11 @@ def repair_route_case():
 
 
 def main():
+    recorded = json.loads(Path(__file__).with_name('reproduction.json').read_text())
+    if any(hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != checksum
+           for name, checksum in recorded['source_sha256'].items()):
+        raise SystemExit('Historical audit: run reproduce.py from the e8e9ad6 checkout. '
+                         'Use tests/test_material_revision.py to exercise the current implementation.')
     cases = quality_cases() + [background_case(), repair_route_case()]
     sources = ['tools/quality.py', 'tools/discovery_loop.py', 'tools/workflow.py',
                'tests/test_quality.py', 'tests/test_discovery_loop.py']
