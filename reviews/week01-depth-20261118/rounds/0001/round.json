@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "author": "week01-new-author",
+  "contract_sha256": "2f69eb913f7da07cc7f0b8401906145e743ee19224c442719cc9b6ec3d19165a",
+  "previous": null,
+  "prior_reviews": {},
+  "candidate_sha256": "d4689c347113b60e7f7fa3d93a8f76f9412f7eb8ee793dcbcac65a95039212bf",
+  "companions": [
+    {
+      "path": "lessons/week01/week01_foundations_teacher.md",
+      "snapshot": "reviews/week01-depth-20261118/rounds/0001/inputs/week01_foundations_teacher.md",
+      "sha256": "b81abef89ebdec6653dc8b279e08f5542827b50c619a389d2f47ed154d7105e2"
+    },
+    {
+      "path": "lessons/week01/data/foundations_returns.csv",
+      "snapshot": "reviews/week01-depth-20261118/rounds/0001/inputs/foundations_returns.csv",
+      "sha256": "ece009210bb0ac473b988937f8ecd865f35355dc6d9c8718e3e8846e504daaaf"
+    },
+    {
+      "path": "lessons/week01/data/foundations_boxes.csv",
+      "snapshot": "reviews/week01-depth-20261118/rounds/0001/inputs/foundations_boxes.csv",
+      "sha256": "471a80d0b99548c29a36331eb5ccad27d25ba7742f955a869687e7096c655635"
+    },
+    {
+      "path": "lessons/week01/data/foundations_returns_transfer.csv",
+      "snapshot": "reviews/week01-depth-20261118/rounds/0001/inputs/foundations_returns_transfer.csv",
+      "sha256": "47d719ce82e88acbe98ad175b1f827c8f7c76d22706bd8432344d86e3db6d7a6"
+    }
+  ],
+  "topics": {
+    "W1-python": {
+      "class": [
+        "python-basics",
+        "python-example",
+        "return-story",
+        "return-example",
+        "python-five",
+        "python-independent"
+      ],
+      "homework": [
+        "independent-start"
+      ],
+      "optional": [],
+      "support": [
+        "python-basics",
+        "python-example",
+        "return-story",
+        "return-example"
+      ],
+      "assessment": [
+        "python-five",
+        "python-independent",
+        "independent-start"
+      ],
+      "prerequisite_uses": {},
+      "minutes": {
+        "class": 20,
+        "homework": 90,
+        "optional": 0
+      }
+    },
+    "W1-table": {
+      "class": [
+        "opening",
+        "dictionary",
+        "table-card",
+        "written-card",
+        "csv-open",
+        "load-csv",
+        "inspect-table",
+        "audit-csv",
+        "select-table",
+        "select-csv",
+        "missing-error",
+        "column-error",
+        "table-independent"
+      ],
+      "homework": [
+        "join-story",
+        "real-merge",
+        "group-story",
+        "group-example",
+        "transfer-brief",
+        "transfer-table",
+        "transfer-data-work",
+        "transfer-faults",
+        "transfer-fault-work"
+      ],
+      "optional": [],
+      "support": [
+        "dictionary",
+        "csv-open",
+        "inspect-table",
+        "join-story"
+      ],
+      "assessment": [
+        "table-card",
+        "table-independent",
+        "transfer-data-work",
+        "transfer-fault-work"
+      ],
+      "prerequisite_uses": {
+        "W1-python": "load-csv"
+      },
+      "minutes": {
+        "class": 45,
+        "homework": 85,
+        "optional": 0
+      }
+    },
+    "W1-array": {
+      "class": [
+        "axis-picture",
+        "variance-bridge",
+        "axis-check",
+        "numpy-core",
+        "reduce-period"
+      ],
+      "homework": [
+        "index-view",
+        "view-example",
+        "broadcast-concept",
+        "broadcast-example",
+        "reshape-concept",
+        "reshape-example",
+        "array-lab",
+        "array-independent",
+        "math-concept",
+        "math-example",
+        "math-lab",
+        "math-independent"
+      ],
+      "optional": [],
+      "support": [
+        "axis-picture",
+        "numpy-core",
+        "broadcast-concept",
+        "math-concept"
+      ],
+      "assessment": [
+        "axis-check",
+        "array-independent",
+        "math-independent"
+      ],
+      "prerequisite_uses": {
+        "W1-table": "axis-picture"
+      },
+      "minutes": {
+        "class": 40,
+        "homework": 115,
+        "optional": 0
+      }
+    },
+    "W1-visualise": {
+      "class": [
+        "plot-core",
+        "plot-period",
+        "class-transfer",
+        "class-independent"
+      ],
+      "homework": [
+        "plot-two-questions",
+        "plot-histogram",
+        "plot-categories",
+        "plot-read",
+        "transfer-figures",
+        "transfer-plot-work",
+        "handoff"
+      ],
+      "optional": [],
+      "support": [
+        "plot-core",
+        "plot-period",
+        "plot-two-questions"
+      ],
+      "assessment": [
+        "class-transfer",
+        "transfer-plot-work",
+        "handoff"
+      ],
+      "prerequisite_uses": {
+        "W1-table": "plot-core"
+      },
+      "minutes": {
+        "class": 15,
+        "homework": 70,
+        "optional": 0
+      }
+    }
+  },
+  "changes": [
+    {
+      "topic": "W1-python",
+      "action": "author",
+      "reason": "값과 출력, 빈 목록과 0을 구별한다. 다음 상태와 반환값을 예측하고 실제 실행과 비교한다. 예외 또는 잘못된 입력 한 경우를 진단한다. 제공한 함수·반복문을 직접 수정하고 새 입력·오류 사례에서 반환값을 실행해 확인한다.",
+      "alternative": "실습에 쓰이는 문법과 상태 변화까지 다룬다. 인터프리터·메모리 구현이나 일반 알고리즘 복잡도 증명은 이 주의 필수로 편성하지 않는다."
+    },
+    {
+      "topic": "W1-table",
+      "action": "author",
+      "reason": "실제 CSV를 선택하고 결측과 0을 구별한다. 분모를 설명하고, 자습에서 열 이름이 바뀐 표와 순서가 다른 두 표를 키로 병합한다. 열 dtype, 행·열 shape와 필요한 열 선택이 바뀐 실제 자료와 맞는지 직접 출력한다.",
+      "alternative": "중복·미매칭이 조용히 잘못된 결론이 되는 사례는 다룬다. SQL 실행계획, 학습 알고리즘과 검증 절차는 각각 별도 또는 후속 단원의 범위다."
+    },
+    {
+      "topic": "W1-array",
+      "action": "author",
+      "reason": "직사각 배열의 두 평균과 축을 손으로 예측한다. 자습에서는 모집단 분산·벡터 내적·배열 공유·우측 축 정렬·형태 변경과 전치를 짧은 유효 사례와 잘못 쓰이는 사례로 확인한다. 행·열 인덱싱 및 슬라이스가 선택한 값과 남은 shape를 코드로 대조한다.",
+      "alternative": "이미지·신경망을 위한 배열 선수에 멈춘다. 일반 텐서 대수의 증명, 역전파 및 임베딩 학습은 이 주 필수에 넣지 않는다."
+    },
+    {
+      "topic": "W1-visualise",
+      "action": "author",
+      "reason": "수업 Matplotlib과 자습 Seaborn으로 각각 그림을 그린다. 축과 단위·비교 집단을 쓴다. 조건이나 집계가 바뀌면 해석이 어떻게 달라지는지 근거를 댄다. 수치 분포와 범주 차이 두 질문에 알맞은 그래프를 그리며, 표시한 자료와 단위를 직접 확인한다.",
+      "alternative": "수업 목표에 필요한 그래프 선택과 해석까지 다룬다. 시각화 라이브러리 내부 렌더링과 인과효과 추정은 필수가 아니다."
+    }
+  ]
+}

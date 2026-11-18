@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "stage": "candidate",
+  "contract_sha256": "2f69eb913f7da07cc7f0b8401906145e743ee19224c442719cc9b6ec3d19165a",
+  "round_sha256": "34a98e378196be91e406fc6fdcad41d03db83e9f456664ac3c4eef30bf06182d",
+  "candidate_sha256": "d4689c347113b60e7f7fa3d93a8f76f9412f7eb8ee793dcbcac65a95039212bf",
+  "reviewer": "joined-content-review",
+  "topics": {
+    "W1-python": {
+      "verdict": "revise",
+      "cells": [
+        "python-basics",
+        "return-example",
+        "python-five",
+        "python-independent",
+        "independent-start"
+      ],
+      "foundation": "[0,None,4,7]에서 기준 4를 넘는 경우 한 번과 반환값 재사용, 빈 목록·0·미관측 및 잘못된 음수 기준의 새 입력이 적절하다.",
+      "ceiling": "데이터 절차에 필요한 라이브러리 오류 찾기까지만 다룰 수 있다. 인터프리터 내부 설명은 필요하지 않다.",
+      "workload": "20분 진단·90분 자습 안에서 기존 예외 출력을 짧은 추적/재시도와 교체할 수 있다. 시간은 편성값이다.",
+      "finding": "현재 ValueError의 이름과 메시지만 표시되어 PY-ERROR 선수에서 요구하는 호출 위치와 실제 실패 표현식을 연습할 자료가 없다. 작은 호출·실패 줄의 traceback과 다른 입력에 대한 원인·검산을 넣고 첫 시도와 도움을 구별한다."
+    },
+    "W1-table": {
+      "verdict": "pass",
+      "cells": [
+        "dictionary",
+        "join-story",
+        "group-story",
+        "transfer-table",
+        "transfer-data-work",
+        "transfer-faults",
+        "transfer-fault-work"
+      ],
+      "foundation": "시점·기록ID·대상ID에서 출발해 실제 파일을 열고, 새 표의 데이터형·열의 뜻과 결측을 다시 점검한다. 기준 4에서 T3은 선택되면서 미관측이고, T4의 하교 0은 유효한 관측이다.",
+      "ceiling": "반납함 키로 결합하고 오른쪽 중복·누락 연결·필수 열 결손을 검출한다. 국제 Antique의 특성/라벨 구분은 전이 근거이며 학습·예측은 이번 단원 밖이다.",
+      "workload": "수업 45분과 자습 85분에서 원본 선택→새 표 처리·오류 실험으로 배분한다. 관측한 수업시간은 없다.",
+      "finding": "공개 입력으로 재집계하면 기준 4에서 West는 4행 중 하교 3건, 합 13이고 기준 6에서는 2행 중 2건, 합 6이다. 분모를 다르게 정하는 질문과 별도 해설이 이 차이를 설명한다."
+    },
+    "W1-array": {
+      "verdict": "revise",
+      "cells": [
+        "axis-picture",
+        "axis-check",
+        "reduce-period",
+        "array-lab",
+        "array-independent",
+        "math-independent"
+      ],
+      "foundation": "비정사각 배열의 분모와 출력 의미, 저장 공유와 축 변경의 서로 다른 사례가 적절하다. 새 손계산의 열 평균 [2,5]와 행 평균 [4.5,4.5,1.5]를 확인했다.",
+      "ceiling": "2차원 표와 짧은 배열 연산으로 제한하고 일반 텐서 증명까지 요구하지 않는다.",
+      "workload": "40분 수업·115분 자습은 편성 추정이다. 기존 한 열을 사용해 감산·새 수식을 덧붙이지 않고 누적 과정을 보여 줄 수 있다.",
+      "finding": "T04가 요구하는 축 평균 계산의 시작 상태, 행마다 바뀌는 합·개수, 종료와 반환이 생략되었다. R1·R2의 개관 한 열로 합 0→2→10, 개수 0→1→2와 첫 NumPy 출력값 5의 연결을 보여 준다."
+    },
+    "W1-visualise": {
+      "verdict": "revise",
+      "cells": [
+        "plot-core",
+        "plot-two-questions",
+        "transfer-figures",
+        "transfer-plot-work",
+        "handoff"
+      ],
+      "foundation": "범주 막대는 기록당 평균 권수, 히스토그램은 권수 구간마다 센 기록 수다. 두 조건에서 같은 눈금과 경계를 쓰게 하고 수치와 분모를 해설한다.",
+      "ceiling": "관찰 범위의 서술과 인과 주장 구별로 끝난다. 두 연속 변수의 국제적 수준 그림 선택을 완료했다고 볼 근거는 없다.",
+      "workload": "수업 15분·자습 70분 안에서 먼저 표시 방식을 고르게 한 뒤 현재 도움을 공개하는 방식으로 순서를 바꿀 수 있다.",
+      "finding": "새 자료의 두 질문 앞에서 학습자가 표시 방식을 고르는 최초 답안이 없는 채 히스토그램/구역 막대와 라이브러리·축을 지시한다. 예시/교사용 답을 닫고 종류·자료·축·집계 이유를 먼저 기록한 뒤 지원받아 그린 시도도 따로 남긴다."
+    }
+  }
+}

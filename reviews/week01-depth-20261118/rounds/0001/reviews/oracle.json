@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "stage": "candidate",
+  "contract_sha256": "2f69eb913f7da07cc7f0b8401906145e743ee19224c442719cc9b6ec3d19165a",
+  "round_sha256": "34a98e378196be91e406fc6fdcad41d03db83e9f456664ac3c4eef30bf06182d",
+  "candidate_sha256": "d4689c347113b60e7f7fa3d93a8f76f9412f7eb8ee793dcbcac65a95039212bf",
+  "reviewer": "week01-independent-oracle",
+  "topics": {
+    "W1-python": {
+      "verdict": "pass",
+      "cells": [
+        "python-basics",
+        "python-example",
+        "return-story",
+        "return-example",
+        "python-five",
+        "python-independent",
+        "independent-start"
+      ],
+      "foundation": "상태표에서 None·0·경계값을 따라간 뒤 학생이 초과 조건을 이상 조건으로 바꾸고 반환값을 다른 계산에 넣는다. 빈 목록 문제도 별도 입력으로 묻는다.",
+      "ceiling": "함수의 반환, 조건의 단락 평가와 한 가지 오류가 이번 작업에 바로 쓰인다. 자료구조 내부나 복잡도 분석을 전제하지 않는다.",
+      "workload": "수업 20분에 다섯 카드 중 파일 읽기는 뒤 CSV 셀로 이어진다. 수업 전에 기초 Python을 경험한 학생을 전제로 자습 90분에 수정·재실행이 가능하다는 편성 판단이다.",
+      "finding": "직접 읽고 실행했다. 예제는 1을 반환하고 다음 계산은 2, 출력 전용 함수의 반환은 None이다. 교사용 수정 함수를 동결한 새 목록의 두 경계와 빈 목록에서 실행해 독립 반복문의 결과와 모두 일치했다. 학생용 빈 셀은 실행만으로 완료를 표시하지 않는다. 진단 4/5와 보충 기준은 교사용 문서에서 확인했다."
+    },
+    "W1-table": {
+      "verdict": "revise",
+      "cells": [
+        "dictionary",
+        "table-card",
+        "load-csv",
+        "inspect-table",
+        "join-story",
+        "real-merge",
+        "transfer-table",
+        "transfer-data-work",
+        "transfer-fault-work"
+      ],
+      "foundation": "관측 단위와 예측 시점이 분명하고, 관측한 0과 빈 하교값, 전체 선택 행과 실제 하교 관측 수를 구분한다. 자습에서 다른 이름을 가진 두 키를 붙일 때 학생이 복구할 수 있는 문법 단서가 한 단계 빠졌다.",
+      "ceiling": "중복과 미매칭을 작은 표에서 재현하는 일은 적절하다. 수정에는 자습 정답 전체 대신 이름이 다른 키를 찾는 방법이나 해당 문서 한 곳이면 충분하다.",
+      "workload": "수업 45분과 자습 85분은 작은 자료에 맞는 추정이다. 다른 이름의 키에 쓸 API를 학생이 스스로 찾아야 하는 시간이 새 집계와 오류 해석에 배정한 자습으로 넘어간다.",
+      "finding": "수업의 on='box_id'는 두 테이블의 열 이름이 같다. 새 일지의 station과 구역표의 box_id에 이를 그대로 옮긴 on='station'은 KeyError('station')를 낸다. 독립 입력으로 이 실패를 재현했다. 교사용 함수는 left_on과 right_on을 써서 뒤집힌 조회표와 바뀐 자료를 정확히 처리했고 공개 과제의 West 유효 분모도 3에서 2로 바뀌었다. 학생이 새 CSV 과제를 혼자 마칠 수 있게, 다른 이름의 연습 열로 양쪽 키 인수를 보여 주거나 오류 뒤에 펼칠 힌트를 남기자."
+    },
+    "W1-array": {
+      "verdict": "pass",
+      "cells": [
+        "axis-picture",
+        "variance-bridge",
+        "axis-check",
+        "reduce-period",
+        "broadcast-concept",
+        "array-independent",
+        "math-concept",
+        "math-lab",
+        "math-independent"
+      ],
+      "foundation": "권수의 합과 분모를 짚는 2×3 표에서 출발해 남은 축과 출력을 해석한다. 분산은 차이→제곱→평균과 권², 내적은 분류에 맞는 권·초/권에서 초가 나오는 계산으로 연결한다.",
+      "ceiling": "정렬 실패, 슬라이스의 공유와 복사, reshape와 transpose의 좌표 차이에 작은 반례가 하나씩 있다. 일반 텐서 대수나 신경망을 선행할 필요가 없다.",
+      "workload": "수업 40분에 대표 계산을 하고 자습 115분에 엄선한 세부 연산을 다시 시도하는 구성이다. 보기 좋은 수치로 계산과 의미 설명을 함께 할 수 있다.",
+      "finding": "후보 reduce-period의 실제 식을 3×2 새 입력에 실행했다. 두 축의 값과 (2,), (3,)가 표준 라이브러리 계산과 일치했다. 서로 같은 평균이지만 분산이 다른 열, 음수가 섞인 가중치의 내적, 같은 모양의 재배열과 전치에서 서로 다른 원소도 고정 기댓값과 맞았다. 공개 과제는 새 행을 더할 때 값과 길이의 변화를 구분하고 코드로 확인하게 한다."
+    },
+    "W1-visualise": {
+      "verdict": "pass",
+      "cells": [
+        "plot-core",
+        "plot-period",
+        "class-transfer",
+        "plot-two-questions",
+        "plot-histogram",
+        "plot-categories",
+        "plot-read",
+        "transfer-figures",
+        "transfer-plot-work",
+        "handoff"
+      ],
+      "foundation": "한 막대를 만든 원자료 두 값부터 설명한 뒤, 히스토그램의 기록 수와 구역 평균의 권수/관측 기록을 별개로 읽게 한다. 구간 경계, 0과 미관측, 기준 변경을 원표와 연결한다.",
+      "ceiling": "동일한 눈금으로 조건을 바꾸고 실제 관측 수가 줄었음을 함께 말하도록 한다. 합성 관찰의 범위와 인과 해석의 한계를 짚는 깊이가 중학생에게 적절하다.",
+      "workload": "수업 15분의 작은 막대와 자습 70분의 분포·범주 비교는 같은 표를 재사용한다. 교사용 예시의 두 기준 네 패널은 한 figure에 그려지며, 시간은 실제 수업에서 검증할 추정이다.",
+      "finding": "새 Jupyter 커널에서 예제 그림 3개 PNG를 렌더링해 직접 살폈다. 구역 비교는 East 5.5권·West 4권, 분포는 관측 5행에 대응했다. 교사용 코드의 두 조건별 히스토그램도 별도 실행해 원자료의 독립 집계와 맞췄다. 미리 고정한 다른 표에 같은 표현을 적용해 0과 미관측 하나의 변화가 빈도와 구역 평균을 다르게 바꾸는 수치도 확인했다."
+    }
+  }
+}

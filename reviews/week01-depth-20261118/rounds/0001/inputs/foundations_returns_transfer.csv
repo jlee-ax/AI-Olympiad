@@ -1,0 +1,9 @@
+slip,station,closing_count,meal_count,morning_count,pause_count
+T1,B,7,5,4,1
+T2,A,6,2,1,3
+T3,C,,4,3,2
+T4,A,0,8,2,0
+T5,B,9,0,0,6
+T6,C,5,6,4,
+T7,A,12,,5,2
+T8,C,1,7,2,6
