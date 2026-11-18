@@ -1,0 +1,95 @@
+{
+  "route_sha256": "8898c6db79ec224644658ed2c7513288ee264e0aaf6b2cac4d9042a72bc7f175",
+  "transport": "inprocess",
+  "versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.8",
+    "seaborn": "0.13.2",
+    "scikit-learn": "1.8.0",
+    "ipykernel": "7.4.0"
+  },
+  "notebooks": [
+    {
+      "notebook": "lessons/week01/week01_integrated.ipynb",
+      "sha256": "59ca974390172e4ce3339260bec23dd39a449c0b1d36e053997e2d5d8b34bb44",
+      "saved_outputs_cleared_in_memory": 24,
+      "code_cells": 22,
+      "figures": [
+        {
+          "cell": "7591b8af",
+          "width": 623,
+          "height": 431,
+          "sha256": "05f3909f740b9f6f0dab2a306abe150cdb017f8a5421c753210b731c1d79aa70"
+        }
+      ],
+      "status": "executed",
+      "changed_student_files": [],
+      "data": {}
+    },
+    {
+      "notebook": "lessons/week01/week01_python_tables.ipynb",
+      "sha256": "b239479f4572a01f0e2848043078b45f3cda6f60e02369da091a4f4a63651880",
+      "saved_outputs_cleared_in_memory": 0,
+      "code_cells": 31,
+      "figures": [
+        {
+          "cell": "48d931b0",
+          "width": 709,
+          "height": 447,
+          "sha256": "c23d4872f3f5d2be22d68cf4e9cccf948e400820605ccfde0fdbcf66ad27297c"
+        },
+        {
+          "cell": "c6ef56e6",
+          "width": 759,
+          "height": 363,
+          "sha256": "869ca69c8bcc9639fb3986bf9afb9dbf23074c8ef56ec973702ce42b65faf2f9"
+        },
+        {
+          "cell": "33384c16",
+          "width": 691,
+          "height": 447,
+          "sha256": "55fb55cf92afd4023bea35f8546cd9486a7a0a6b6459f4485150efb4ed373766"
+        },
+        {
+          "cell": "8d3421bb",
+          "width": 681,
+          "height": 447,
+          "sha256": "3bc2dd3c7eb95cd0e79d5a4ab69215dd877a004230f2309edd0600a4368297d8"
+        },
+        {
+          "cell": "d7b8c3d2",
+          "width": 705,
+          "height": 447,
+          "sha256": "fb7eaaecb60d6d0f1a753b3fb1ff9f8db83cfbd15e96204820bdea331bab7f8f"
+        }
+      ],
+      "status": "executed",
+      "changed_student_files": [],
+      "data": {
+        "lessons/week01/data/week1_plants.csv": "fece0473e50b097afa7c2b3e2647c9a6e623bd3d8e009e6ef620151887227639",
+        "lessons/week01/data/week1_plants_new.csv": "869db97ef7c5f6ccf1020bc435fe831f180e9b9548d722c41c91b63af44d7290"
+      }
+    },
+    {
+      "notebook": "lessons/week01/week01_axes_linear_bridge.ipynb",
+      "sha256": "16b797de3935af5e25d6e297cdd8b4c72d7dbb32667ab36b9fb9df36965cd84d",
+      "saved_outputs_cleared_in_memory": 12,
+      "code_cells": 16,
+      "figures": [],
+      "status": "executed",
+      "changed_student_files": [],
+      "data": {}
+    },
+    {
+      "notebook": "lessons/week01/week01_problem_pipeline.ipynb",
+      "sha256": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
+      "saved_outputs_cleared_in_memory": 13,
+      "code_cells": 12,
+      "figures": [],
+      "status": "executed",
+      "changed_student_files": [],
+      "data": {}
+    }
+  ]
+}

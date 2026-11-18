@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "id": "week01-material-replacement-20261118",
+  "maker": "w1_sealed_exam",
+  "case_ids": [
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+  ],
+  "required_cases": [
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+  ],
+  "groups": {},
+  "conditional_cases": [],
+  "replacement_rule": "matched-giwt-v1",
+  "inputs": {
+    "reviews/week01-replacement-20261118/exams/diagnostic/badge.csv": "88a8f1cf0ee6077225b832ab6cece7cb668bcd4c50d036ae507d5812bda9e834",
+    "reviews/week01-replacement-20261118/exams/diagnostic/gate.csv": "417d03c2a8485c3a84233f7b8ff3956a22411f2dd7f8696b2f5ca3cd7bb283f5",
+    "reviews/week01-replacement-20261118/exams/diagnostic/key.csv": "9b375e42dd11b6e32912a7e8ab3e3ee620eca008f10718df60712a364dbd9399",
+    "reviews/week01-replacement-20261118/exams/diagnostic/modes.csv": "310040d3377f9fd021c4b7121576cfe9882553a7d10f5222a2309869ed785fb2",
+    "reviews/week01-replacement-20261118/exams/diagnostic/oracle.py": "f5215301f2e51216b884114e397d032bad15959cb6d0fd0ff8ccb9618cff4854",
+    "reviews/week01-replacement-20261118/exams/diagnostic/questions.md": "4a7994f90aaeccfc346096c7abb142e79c6689d30933f94a859f8fbf04215d50",
+    "reviews/week01-replacement-20261118/exams/diagnostic/rubric.md": "34cd713a5bb350066bbef8182afc7af09c84fb23d2f7d4b7ba2a82b73d520dd5",
+    "reviews/week01-replacement-20261118/exams/final/bells.csv": "61071e8368b17b6bb26317e8b6e865583109af9b5579f78ffb954cd572ddde6e",
+    "reviews/week01-replacement-20261118/exams/final/bookings.csv": "f9650cae1cd68f49f47365ed3f10a77b81ce51e6bc52e2c892d79f152348622c",
+    "reviews/week01-replacement-20261118/exams/final/bookings_v2.csv": "729d174936d7eff158092332c7f231d3f32e8cdd619e249e7fcef62e89947517",
+    "reviews/week01-replacement-20261118/exams/final/booths.csv": "5ea4077c4fe30ffc3a8779341873fdd16dc82ba7032da6e2d43a35d41d8881cb",
+    "reviews/week01-replacement-20261118/exams/final/oracle.py": "871ad5bdd3785b9ae390005d15ee379cb2d32dc2d6a74c388358397c4b536203",
+    "reviews/week01-replacement-20261118/exams/final/questions.md": "7943d482d1f8d85917d62b3bab6fa4d33cd046d6c86ba8326c8610edc0cd3b6a",
+    "reviews/week01-replacement-20261118/exams/final/rubric.md": "0b5db8418a1c7c1e561d3f47559cab19b77a0c472b3f48f52f01ea2aa59daacc",
+    "reviews/week01-replacement-20261118/protocol/README.md": "5874d1980eade287796b0e96276c4645d867b30c2f3d096b2f7cb12c6e1b8a81",
+    "reviews/week01-replacement-20261118/protocol/sources.md": "970226666b2f81fc6bb7819fbb1735ec5d61ef8d5254830c857a85f1cdebe28b",
+    "reviews/week01-replacement-20261118/protocol/verify_seal.py": "cc8e706a5c5592eaa2d9b8dd0f89bb1ea731106e32caed44ae5e81a7b8df8ae2",
+    "reviews/week01-replacement-20261118/protocol/correction-20261118.md": "a21d71fa6c541155693779ae367a71322ae336a5ddfc7a38719d1a4fa528bea6",
+    "reviews/week01-replacement-20261118/design.md": "89c1dbe5e119a9ec0096f2b65c014561aea8fe29d54d998f10fb4cf3269026fe",
+    "reviews/week01-replacement-20261118/workload-method.md": "da20c73c1b0ec34ed74840ac7d3ec47d8620a913785f3bdc025c38f38e964bb1"
+  },
+  "candidate_before_revision": {
+    "commit": "404a2b42ca69056278316bfdf2e29f721c47c0b3",
+    "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e"
+  },
+  "allocation_sha256": "f2b4c51d081e5a39973fe2be8e4501f79bde21088026035b6a54bb316bfe66dd",
+  "subject": "Written material and independently replayed cases; no learner outcomes."
+}
