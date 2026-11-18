@@ -1,0 +1,207 @@
+{
+  "status": "passed",
+  "student_sha256": "d4689c347113b60e7f7fa3d93a8f76f9412f7eb8ee793dcbcac65a95039212bf",
+  "teacher_sha256": "b81abef89ebdec6653dc8b279e08f5542827b50c619a389d2f47ed154d7105e2",
+  "data_sha256": {
+    "foundations_returns_transfer.csv": "47d719ce82e88acbe98ad175b1f827c8f7c76d22706bd8432344d86e3db6d7a6",
+    "foundations_boxes.csv": "471a80d0b99548c29a36331eb5ccad27d25ba7742f955a869687e7096c655635",
+    "foundations_returns.csv": "ece009210bb0ac473b988937f8ecd865f35355dc6d9c8718e3e8846e504daaaf"
+  },
+  "python": "3.12.14",
+  "libraries": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.8",
+    "seaborn": "0.13.2"
+  },
+  "executed_student_code_ids": [
+    "python-example",
+    "return-example",
+    "python-independent",
+    "load-csv",
+    "audit-csv",
+    "select-csv",
+    "column-error",
+    "table-independent",
+    "reduce-period",
+    "plot-period",
+    "class-independent",
+    "view-example",
+    "broadcast-example",
+    "reshape-example",
+    "array-independent",
+    "math-example",
+    "math-independent",
+    "real-merge",
+    "group-example",
+    "plot-histogram",
+    "plot-categories",
+    "transfer-data-work",
+    "transfer-fault-work",
+    "transfer-plot-work"
+  ],
+  "executed_teacher_blocks": 6,
+  "reference_input": "Only repository-public examples and reviewer-created boundary modifications of the public copies.",
+  "axis_results": [
+    [
+      2.0,
+      5.0
+    ],
+    [
+      4.5,
+      4.5,
+      1.5
+    ]
+  ],
+  "variances": [
+    6.0,
+    0.6666666666666666
+  ],
+  "dot_order_results": [
+    10,
+    11
+  ],
+  "transfer": {
+    "4": {
+      "selected": [
+        "T1",
+        "T3",
+        "T4",
+        "T6",
+        "T8"
+      ],
+      "stats": {
+        "West": [
+          4,
+          3,
+          13,
+          4.333333333333333
+        ],
+        "East": [
+          1,
+          1,
+          0,
+          0.0
+        ]
+      },
+      "histogram_members": [
+        [
+          "T4",
+          "T8"
+        ],
+        [
+          "T6"
+        ],
+        [
+          "T1"
+        ],
+        [],
+        []
+      ]
+    },
+    "6": {
+      "selected": [
+        "T4",
+        "T6",
+        "T8"
+      ],
+      "stats": {
+        "East": [
+          1,
+          1,
+          0,
+          0.0
+        ],
+        "West": [
+          2,
+          2,
+          6,
+          3.0
+        ]
+      },
+      "histogram_members": [
+        [
+          "T4",
+          "T8"
+        ],
+        [
+          "T6"
+        ],
+        [],
+        [],
+        []
+      ]
+    }
+  },
+  "figure_sources": [
+    "plot-period",
+    "plot-histogram",
+    "plot-categories",
+    "teacher:block:6"
+  ],
+  "teacher_transfer_artists": [
+    {
+      "xlabel": "After-school books per record",
+      "ylabel": "Number of records",
+      "heights": [
+        2.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits": [
+        0.0,
+        2.1
+      ]
+    },
+    {
+      "xlabel": "Zone",
+      "ylabel": "Mean after-school books per observed record",
+      "heights": [
+        0.0,
+        4.333333333333333
+      ],
+      "limits": [
+        0.0,
+        4.55
+      ]
+    },
+    {
+      "xlabel": "After-school books per record",
+      "ylabel": "Number of records",
+      "heights": [
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "limits": [
+        0.0,
+        2.1
+      ]
+    },
+    {
+      "xlabel": "Zone",
+      "ylabel": "Mean after-school books per observed record",
+      "heights": [
+        0.0,
+        3.0
+      ],
+      "limits": [
+        0.0,
+        4.55
+      ]
+    }
+  ],
+  "negative_cases": [
+    "negative Python limits",
+    "incompatible array trailing dimension",
+    "missing required column",
+    "duplicate lookup key",
+    "unmatched station ID",
+    "all missing outcomes in one observed group"
+  ],
+  "scope": "In-process Python with displayed artist heights inspected in memory. Jupyter transport has a separate receipt. No learner response."
+}

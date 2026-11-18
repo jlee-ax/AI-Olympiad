@@ -1,0 +1,167 @@
+[
+  {
+    "id": "guide",
+    "url": "https://kitpa.org/koai/2027",
+    "version": "한국정보기술진흥원 · 2027 국내 대회요강",
+    "accessed_at": "2026-11-18",
+    "kind": "official",
+    "extent": "relevant_sections",
+    "locator": "중등부 일정과 2단계 문제 구성, web L147–165, L218–226",
+    "finding": "중등부에도 1–4과목을 적용한다. 필기 3시간에 선택 80·서술 10문항, 코딩 3시간에 2문항을 제시한다. 기준 링크는 국내 실라버스다.",
+    "limitation": "실제 문항별 난도·출제율이나 이 수업에 할당할 분량은 명시하지 않는다."
+  },
+  {
+    "id": "domestic",
+    "url": "https://kitpa.org/koai/syllabus",
+    "version": "한국정보기술진흥원 · IOAI 2026 기준 표기",
+    "accessed_at": "2026-11-18",
+    "kind": "official",
+    "extent": "relevant_sections",
+    "locator": "분류와 1-1 프로그래밍 기초, web L72–98. 1-4 전처리 설명 L119–132",
+    "finding": "실전은 적절한 기법을 고르고 코드로 적용하여 결과를 읽는 능력이다. 반복·함수, NumPy·pandas, Matplotlib·Seaborn, 다차원 배열 조작이 실전으로 표기되어 있다.",
+    "limitation": "데이터 처리의 모든 후속 기법을 첫 수업에서 가르치라는 뜻은 아니다. 차시별 깊이·문항·시간은 과정의 결정이다."
+  },
+  {
+    "id": "antique",
+    "url": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb",
+    "version": "Dong Yixi · IOAI 2025 Beijing, individual task 5, Antique Painting Authentication, official repository main as opened",
+    "accessed_at": "2026-11-18",
+    "kind": "official_task",
+    "extent": "relevant_sections",
+    "locator": "Task statement §§1–5 and baseline train/predict/write cells, web L19–65, L118–133, L151–158, L176–192. Official repository index also read.",
+    "finding": "훈련 CSV에는 다섯 특성 뒤에 라벨 열이 있다. +1과 -1은 관측 등급이고 0은 이 열에서만 미상이다. 대회 검증·시험 입력에는 라벨 열이 없다. 제출물은 그 행에 대응하는 ±1 예측이다. 주어진 기준 코드의 미상 라벨 난수 치환은 하나의 구현이다.",
+    "limitation": "라벨 인코딩은 자료사전별 규칙이다. 관측된 0분·0개에는 그대로 적용할 수 없다. 이 국제 문제의 전체 요구는 학습과 예측까지다. 이번 검수는 공개 서술을 읽었으며 대회 데이터를 실행하거나 국내 문항 분포를 추정하지 않았다."
+  },
+  {
+    "id": "ioai26",
+    "url": "https://ioai-official.org/syllabus/",
+    "version": "IOAI International Scientific Committee · PDF heading IOAI 2026 Syllabus",
+    "accessed_at": "2026-11-18",
+    "kind": "official",
+    "extent": "relevant_sections",
+    "locator": "pp. 1–2, classification and Programming Fundamentals, web L3–29",
+    "finding": "국제 2026 문서에도 코드 구현과 해석이 실전이며, 해당 Python·표·시각화·배열 주제가 같은 분류다.",
+    "limitation": "국내 주차별 편성은 정하지 않는다."
+  },
+  {
+    "id": "ioai27",
+    "url": "https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf",
+    "version": "IOAI International Scientific Committee · IOAI 2027 Syllabus",
+    "accessed_at": "2026-11-18",
+    "kind": "official",
+    "extent": "relevant_sections",
+    "locator": "pp. 1–2, Programming Fundamentals and Technical Fundamentals, web L13–29, L53–68",
+    "finding": "국제 2027 PDF에서도 이 실전 항목은 유지된다. 별도 기술 기초로 터미널, Jupyter, Git, 원격 접속이 나온다. 이전 기록의 접근 실패와 달리 이번 직접 열기에서 p. 2를 확인했다.",
+    "limitation": "국내 2027 요강의 연결 문서는 여전히 2026 표기다. 이 비교로 2027 국제 추가 항목의 국내 채택을 확정하거나 첫 수업 필수로 만들 수 없다."
+  },
+  {
+    "id": "notice",
+    "url": "https://kitpa.org/files/36",
+    "version": "한국정보기술진흥원 · 2026-05-11 제36호",
+    "accessed_at": "2026-11-18",
+    "kind": "official",
+    "extent": "relevant_sections",
+    "locator": "예시 공개 공지의 대상, 답안, 출판·교육기관 이용 안내, web L87–98",
+    "finding": "고등부 수준의 학습 참고 예시다. 정답은 공개하지 않으며 난이도순 배열도 아니다. 공지의 2026 중등부 시험 범위는 2027 안내와 다르다.",
+    "limitation": "2027 중등부 기출이나 난도 표본으로 해석할 수 없다. 문항 원문을 수업·기록에 복제하지 않았다."
+  },
+  {
+    "id": "sample",
+    "url": "https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf",
+    "version": "한국정보기술진흥원 KOAI 2026 학습 참고 예시 · 고등부 기준",
+    "accessed_at": "2026-11-18",
+    "kind": "official",
+    "extent": "relevant_sections",
+    "locator": "PDF pp. 1–2 선택 1, 2, 3, 6. web L49–72, L93–99",
+    "finding": "1번은 함수 호출 사이의 변경 상태를 추적한다. 2번은 행렬의 축별 합과 형태 변경 중 메모리 주장을 비교한다. 3번은 두 수치 변수의 분포 및 관계에 맞는 표시를 고른다. 6번은 차원 교환과 형태 변경을 구분한다.",
+    "limitation": "공개 전문을 읽고 요구 행동만 요약했다. W1 직사각 배열·그룹 막대·빈도 그림과 각 문항의 고유 요구 간 차이는 contest-depth 기록에 따로 남긴다."
+  },
+  {
+    "id": "python-return",
+    "url": "https://docs.python.org/3/reference/simple_stmts.html#the-return-statement",
+    "version": "Python language reference, §7.6",
+    "accessed_at": "2026-11-18",
+    "kind": "primary_documentation",
+    "extent": "relevant_sections",
+    "locator": "일반 함수의 return 문법과 표현식/None, web L174–184",
+    "finding": "return은 표현식의 값을 호출자에게 돌려주며 해당 호출을 끝낸다. 식이 없으면 None을 돌려준다.",
+    "limitation": "일반 함수에 대한 범위이며 생성기 제어 흐름이나 재귀 일반론을 다루지 않았다."
+  },
+  {
+    "id": "merge",
+    "url": "https://pandas.pydata.org/docs/reference/api/pandas.merge.html",
+    "version": "pandas.merge API",
+    "accessed_at": "2026-11-18",
+    "kind": "primary_documentation",
+    "extent": "relevant_sections",
+    "locator": "keyed merge, how/on and indicator/validate, web L63–104, L134–149",
+    "finding": "왼쪽 키 보존, 키 존재 여부 표시, 오른쪽 키 유일성 검사가 서로 다른 계약이다. 미매칭을 남겨 조사할 수 있으며 오른쪽 중복은 many_to_one 검증으로 드러난다.",
+    "limitation": "조인 키 자체가 결측이면 pandas끼리 매치할 수 있다. 해당 예시에서 키 범위를 확인해야 한다."
+  },
+  {
+    "id": "count",
+    "url": "https://pandas.pydata.org/docs/reference/api/pandas.Series.count.html",
+    "version": "pandas.Series.count API",
+    "accessed_at": "2026-11-18",
+    "kind": "primary_documentation",
+    "extent": "relevant_sections",
+    "locator": "정의와 0·결측 예제, web L368–396",
+    "finding": "count는 관측된 0을 포함하며 결측 항목을 제외한다.",
+    "limitation": "한 그룹의 전체 행 수, 유효 관측 수와 목표 변수의 의미는 데이터 사전으로 별도 확인한다."
+  },
+  {
+    "id": "mean",
+    "url": "https://numpy.org/doc/stable/reference/generated/numpy.mean.html",
+    "version": "NumPy mean API",
+    "accessed_at": "2026-11-18",
+    "kind": "primary_documentation",
+    "extent": "relevant_sections",
+    "locator": "axis·keepdims·arithmetic mean, web L75–110",
+    "finding": "명시한 축에서 산술평균을 구한다. keepdims가 거짓인 2차원 경우 해당 축이 사라진다.",
+    "limitation": "정수나 작은 유한값의 수업 매트릭스에 사용한다. 임의 부동소수점 정밀도나 결측 규칙의 일반화는 하지 않는다."
+  },
+  {
+    "id": "broadcast",
+    "url": "https://numpy.org/doc/stable/user/basics.broadcasting.html",
+    "version": "NumPy fundamental concepts",
+    "accessed_at": "2026-11-18",
+    "kind": "primary_documentation",
+    "extent": "relevant_sections",
+    "locator": "General broadcasting rules and unequal trailing axes, web L73–88, L129–150",
+    "finding": "오른쪽부터 비교해 같거나 하나가 1이어야 한다. 암묵적으로 빠진 앞 차원은 1처럼 정렬한다.",
+    "limitation": "연산이 가능해도 어느 축의 오프셋인지 의미 검사는 별개다."
+  },
+  {
+    "id": "views",
+    "url": "https://numpy.org/doc/stable/user/basics.copies.html",
+    "version": "NumPy copies and views",
+    "accessed_at": "2026-11-18",
+    "kind": "primary_documentation",
+    "extent": "relevant_sections",
+    "locator": "View, Copy, Indexing and Other operations, web L46–75, L101–104",
+    "finding": "기본 슬라이스는 데이터를 공유하고 copy는 따로 저장한다. reshape는 가능한 경우 공유하고 필요하면 복사한다.",
+    "limitation": "모양만 보고 모든 reshape가 동일한 메모리 행동을 갖는다고 단정할 수 없다."
+  },
+  {
+    "id": "bar",
+    "url": "https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.bar.html",
+    "version": "Matplotlib Axes.bar API",
+    "accessed_at": "2026-11-18",
+    "kind": "primary_documentation",
+    "extent": "relevant_sections",
+    "locator": "x, height, baseline and categories, web L261–282",
+    "finding": "각 범주 위치와 막대 높이를 전달한다. 높이를 무엇으로 집계할지는 자료를 정리하는 쪽이 결정한다.",
+    "limitation": "도구의 인수는 자료에 관한 인과 주장이나 비교 가능성을 보증하지 않는다."
+  },
+  {
+    "id": "hist",
+    "url": "https://seaborn.pydata.org/generated/seaborn.histplot.html",
+    "version": "Seaborn histplot API",
+    "accessed_at": "2026-11-18",
+    "kind": "primary_documentation",
+    "extent": "relevant_sections",
+    "locator": "x, weights, stat and bins, web L182–217",
+    "finding": "일반적인 무가중 count 히스토그램은 각 구간에 들어온 관측 수를 표시한다. 경계 또는 구간 폭이 결과를 바꿀 수 있다.",
+    "limitation": "측정 단위·주어진 자료 범위와 막대의 집계 단위를 각각 밝혀야 한다."
+  }
+]

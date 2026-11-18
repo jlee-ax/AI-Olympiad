@@ -1,0 +1,294 @@
+{
+  "nodes": [
+    {
+      "id": "W1-python:source",
+      "type": "evidence",
+      "status": "completed",
+      "label": "Python 변수·조건·반복과 반환 / source"
+    },
+    {
+      "id": "W1-python:demand",
+      "type": "artifact",
+      "status": "completed",
+      "label": "Python 변수·조건·반복과 반환 / demand"
+    },
+    {
+      "id": "W1-python:prerequisite",
+      "type": "artifact",
+      "status": "completed",
+      "label": "Python 변수·조건·반복과 반환 / prerequisite"
+    },
+    {
+      "id": "W1-python:theory_explanation",
+      "type": "artifact",
+      "status": "completed",
+      "label": "Python 변수·조건·반복과 반환 / theory_explanation"
+    },
+    {
+      "id": "W1-python:coding_practice",
+      "type": "artifact",
+      "status": "completed",
+      "label": "Python 변수·조건·반복과 반환 / coding_practice"
+    },
+    {
+      "id": "W1-python:independent_assessment",
+      "type": "artifact",
+      "status": "completed",
+      "label": "Python 변수·조건·반복과 반환 / independent_assessment"
+    },
+    {
+      "id": "W1-python:feedback",
+      "type": "artifact",
+      "status": "completed",
+      "label": "Python 변수·조건·반복과 반환 / feedback"
+    },
+    {
+      "id": "W1-table:source",
+      "type": "evidence",
+      "status": "completed",
+      "label": "관측 단위·시점·누락·키와 집계 / source"
+    },
+    {
+      "id": "W1-table:demand",
+      "type": "artifact",
+      "status": "completed",
+      "label": "관측 단위·시점·누락·키와 집계 / demand"
+    },
+    {
+      "id": "W1-table:prerequisite",
+      "type": "artifact",
+      "status": "completed",
+      "label": "관측 단위·시점·누락·키와 집계 / prerequisite"
+    },
+    {
+      "id": "W1-table:theory_explanation",
+      "type": "artifact",
+      "status": "completed",
+      "label": "관측 단위·시점·누락·키와 집계 / theory_explanation"
+    },
+    {
+      "id": "W1-table:coding_practice",
+      "type": "artifact",
+      "status": "completed",
+      "label": "관측 단위·시점·누락·키와 집계 / coding_practice"
+    },
+    {
+      "id": "W1-table:independent_assessment",
+      "type": "artifact",
+      "status": "completed",
+      "label": "관측 단위·시점·누락·키와 집계 / independent_assessment"
+    },
+    {
+      "id": "W1-table:feedback",
+      "type": "artifact",
+      "status": "completed",
+      "label": "관측 단위·시점·누락·키와 집계 / feedback"
+    },
+    {
+      "id": "W1-array:source",
+      "type": "evidence",
+      "status": "completed",
+      "label": "축과 보존되는 대상을 손으로 예측해 코드와 연결 / source"
+    },
+    {
+      "id": "W1-array:demand",
+      "type": "artifact",
+      "status": "completed",
+      "label": "축과 보존되는 대상을 손으로 예측해 코드와 연결 / demand"
+    },
+    {
+      "id": "W1-array:prerequisite",
+      "type": "artifact",
+      "status": "completed",
+      "label": "축과 보존되는 대상을 손으로 예측해 코드와 연결 / prerequisite"
+    },
+    {
+      "id": "W1-array:theory_explanation",
+      "type": "artifact",
+      "status": "completed",
+      "label": "축과 보존되는 대상을 손으로 예측해 코드와 연결 / theory_explanation"
+    },
+    {
+      "id": "W1-array:coding_practice",
+      "type": "artifact",
+      "status": "completed",
+      "label": "축과 보존되는 대상을 손으로 예측해 코드와 연결 / coding_practice"
+    },
+    {
+      "id": "W1-array:independent_assessment",
+      "type": "artifact",
+      "status": "completed",
+      "label": "축과 보존되는 대상을 손으로 예측해 코드와 연결 / independent_assessment"
+    },
+    {
+      "id": "W1-array:feedback",
+      "type": "artifact",
+      "status": "completed",
+      "label": "축과 보존되는 대상을 손으로 예측해 코드와 연결 / feedback"
+    },
+    {
+      "id": "W1-visualise:source",
+      "type": "evidence",
+      "status": "completed",
+      "label": "측정값의 분포와 범주별 평균을 선택하고 조건별로 해석 / source"
+    },
+    {
+      "id": "W1-visualise:demand",
+      "type": "artifact",
+      "status": "completed",
+      "label": "측정값의 분포와 범주별 평균을 선택하고 조건별로 해석 / demand"
+    },
+    {
+      "id": "W1-visualise:prerequisite",
+      "type": "artifact",
+      "status": "completed",
+      "label": "측정값의 분포와 범주별 평균을 선택하고 조건별로 해석 / prerequisite"
+    },
+    {
+      "id": "W1-visualise:theory_explanation",
+      "type": "artifact",
+      "status": "completed",
+      "label": "측정값의 분포와 범주별 평균을 선택하고 조건별로 해석 / theory_explanation"
+    },
+    {
+      "id": "W1-visualise:coding_practice",
+      "type": "artifact",
+      "status": "completed",
+      "label": "측정값의 분포와 범주별 평균을 선택하고 조건별로 해석 / coding_practice"
+    },
+    {
+      "id": "W1-visualise:independent_assessment",
+      "type": "artifact",
+      "status": "completed",
+      "label": "측정값의 분포와 범주별 평균을 선택하고 조건별로 해석 / independent_assessment"
+    },
+    {
+      "id": "W1-visualise:feedback",
+      "type": "artifact",
+      "status": "completed",
+      "label": "측정값의 분포와 범주별 평균을 선택하고 조건별로 해석 / feedback"
+    }
+  ],
+  "edges": [
+    {
+      "from": "W1-python:source",
+      "to": "W1-python:demand",
+      "type": "supports"
+    },
+    {
+      "from": "W1-python:demand",
+      "to": "W1-python:prerequisite",
+      "type": "supports"
+    },
+    {
+      "from": "W1-python:prerequisite",
+      "to": "W1-python:theory_explanation",
+      "type": "supports"
+    },
+    {
+      "from": "W1-python:theory_explanation",
+      "to": "W1-python:coding_practice",
+      "type": "supports"
+    },
+    {
+      "from": "W1-python:coding_practice",
+      "to": "W1-python:independent_assessment",
+      "type": "supports"
+    },
+    {
+      "from": "W1-python:independent_assessment",
+      "to": "W1-python:feedback",
+      "type": "supports"
+    },
+    {
+      "from": "W1-table:source",
+      "to": "W1-table:demand",
+      "type": "supports"
+    },
+    {
+      "from": "W1-table:demand",
+      "to": "W1-table:prerequisite",
+      "type": "supports"
+    },
+    {
+      "from": "W1-table:prerequisite",
+      "to": "W1-table:theory_explanation",
+      "type": "supports"
+    },
+    {
+      "from": "W1-table:theory_explanation",
+      "to": "W1-table:coding_practice",
+      "type": "supports"
+    },
+    {
+      "from": "W1-table:coding_practice",
+      "to": "W1-table:independent_assessment",
+      "type": "supports"
+    },
+    {
+      "from": "W1-table:independent_assessment",
+      "to": "W1-table:feedback",
+      "type": "supports"
+    },
+    {
+      "from": "W1-array:source",
+      "to": "W1-array:demand",
+      "type": "supports"
+    },
+    {
+      "from": "W1-array:demand",
+      "to": "W1-array:prerequisite",
+      "type": "supports"
+    },
+    {
+      "from": "W1-array:prerequisite",
+      "to": "W1-array:theory_explanation",
+      "type": "supports"
+    },
+    {
+      "from": "W1-array:theory_explanation",
+      "to": "W1-array:coding_practice",
+      "type": "supports"
+    },
+    {
+      "from": "W1-array:coding_practice",
+      "to": "W1-array:independent_assessment",
+      "type": "supports"
+    },
+    {
+      "from": "W1-array:independent_assessment",
+      "to": "W1-array:feedback",
+      "type": "supports"
+    },
+    {
+      "from": "W1-visualise:source",
+      "to": "W1-visualise:demand",
+      "type": "supports"
+    },
+    {
+      "from": "W1-visualise:demand",
+      "to": "W1-visualise:prerequisite",
+      "type": "supports"
+    },
+    {
+      "from": "W1-visualise:prerequisite",
+      "to": "W1-visualise:theory_explanation",
+      "type": "supports"
+    },
+    {
+      "from": "W1-visualise:theory_explanation",
+      "to": "W1-visualise:coding_practice",
+      "type": "supports"
+    },
+    {
+      "from": "W1-visualise:coding_practice",
+      "to": "W1-visualise:independent_assessment",
+      "type": "supports"
+    },
+    {
+      "from": "W1-visualise:independent_assessment",
+      "to": "W1-visualise:feedback",
+      "type": "supports"
+    }
+  ]
+}

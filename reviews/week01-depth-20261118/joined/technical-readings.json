@@ -1,0 +1,101 @@
+[
+  {
+    "id": "function",
+    "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions",
+    "version": "Python tutorial §4.8",
+    "accessed_at": "2026-11-18",
+    "kind": "documentation",
+    "extent": "relevant_sections",
+    "locator": "함수의 끝과 return, web L327–349",
+    "finding": "명시적인 값 없이 함수 끝에 도달하면 반환값은 None이다. 화면에 표시하는 호출과 이후 계산에 쓰는 반환값은 다르다.",
+    "limitation": "인용된 연산의 명세에 한정한다. 이 API 문서의 예제가 학생이 수행하거나 배운 증거는 아니다."
+  },
+  {
+    "id": "variance",
+    "url": "https://numpy.org/doc/stable/reference/generated/numpy.var.html",
+    "version": "NumPy var",
+    "accessed_at": "2026-11-18",
+    "kind": "documentation",
+    "extent": "relevant_sections",
+    "locator": "Notes, ddof=0 and 1, web L144–160",
+    "finding": "모집단 전체로 다루는 실수 배열의 분산은 평균 편차를 제곱하여 합하고 N으로 나눈다. 기본 ddof는 0이다.",
+    "limitation": "인용된 연산의 명세에 한정한다. 이 API 문서의 예제가 학생이 수행하거나 배운 증거는 아니다."
+  },
+  {
+    "id": "dot",
+    "url": "https://numpy.org/doc/stable/reference/generated/numpy.dot.html",
+    "version": "NumPy dot",
+    "accessed_at": "2026-11-18",
+    "kind": "documentation",
+    "extent": "relevant_sections",
+    "locator": "1-D, 2-D and output conditions, web L98–114, L135–147",
+    "finding": "실수 1차원 벡터의 내적은 같은 위치의 원소끼리 곱해 합한 스칼라다. 값의 순서와 특성의 대응은 분석자가 맞춰야 한다.",
+    "limitation": "인용된 연산의 명세에 한정한다. 이 API 문서의 예제가 학생이 수행하거나 배운 증거는 아니다."
+  },
+  {
+    "id": "reshape",
+    "url": "https://numpy.org/doc/stable/reference/generated/numpy.reshape.html",
+    "version": "NumPy reshape",
+    "accessed_at": "2026-11-18",
+    "kind": "documentation",
+    "extent": "relevant_sections",
+    "locator": "Default C order and copy, web L110–143",
+    "finding": "reshape의 기본 인덱스 순서에서는 마지막 인덱스가 가장 빨리 바뀐다. 역순으로 축을 바꾸는 것과 결과 모양이 같을 수 있다.",
+    "limitation": "인용된 연산의 명세에 한정한다. 이 API 문서의 예제가 학생이 수행하거나 배운 증거는 아니다."
+  },
+  {
+    "id": "transpose",
+    "url": "https://numpy.org/doc/stable/reference/generated/numpy.transpose.html",
+    "version": "NumPy transpose",
+    "accessed_at": "2026-11-18",
+    "kind": "documentation",
+    "extent": "relevant_sections",
+    "locator": "2-D transpose and axes, web L110–128",
+    "finding": "2차원 전치에서 원래 (i,j)의 값은 (j,i)로 옮겨진다.",
+    "limitation": "인용된 연산의 명세에 한정한다. 이 API 문서의 예제가 학생이 수행하거나 배운 증거는 아니다."
+  },
+  {
+    "id": "mat-hist",
+    "url": "https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html",
+    "version": "Matplotlib Axes.hist",
+    "accessed_at": "2026-11-18",
+    "kind": "documentation",
+    "extent": "relevant_sections",
+    "locator": "bin edges and density=False, web L261–270, L286–295",
+    "finding": "명시한 경계에서 보통 왼쪽을 포함하고 오른쪽을 제외하지만 마지막 구간은 최종 오른쪽 경계까지 포함한다. 무가중 기본은 각 구간에 속한 수를 센다.",
+    "limitation": "인용된 연산의 명세에 한정한다. 이 API 문서의 예제가 학생이 수행하거나 배운 증거는 아니다."
+  },
+  {
+    "id": "exception",
+    "url": "https://docs.python.org/3/tutorial/errors.html#exceptions",
+    "version": "Python §8.2",
+    "accessed_at": "2026-11-18",
+    "kind": "documentation",
+    "extent": "relevant_sections",
+    "locator": "Stack traceback, exception type, failing line, L17–43",
+    "finding": "실행 중 오류는 마지막 줄에 예외 종류와 세부 원인을 보인다. 그 앞에는 실패까지의 호출 및 소스 줄이 나올 수 있다.",
+    "limitation": "함수 문서의 동작은 원본 패키지 명세다. 공개 실행의 설치 버전은 public-results.json에 별도 기록했다."
+  },
+  {
+    "id": "sns-bar",
+    "url": "https://seaborn.pydata.org/generated/seaborn.barplot.html",
+    "version": "Seaborn 0.13.2 barplot",
+    "accessed_at": "2026-11-18",
+    "kind": "documentation",
+    "extent": "relevant_sections",
+    "locator": "estimator/errorbar, L172, L198–204, L409–411",
+    "finding": "범주 안에서 입력 값을 요약하는 추정량 기본값은 평균이다. 집계표에서 구역당 관측 평균 하나를 넘기고 errorbar=None으로 추가 오차 막대를 그리지 않는다.",
+    "limitation": "함수 문서의 동작은 원본 패키지 명세다. 공개 실행의 설치 버전은 public-results.json에 별도 기록했다."
+  },
+  {
+    "id": "read-csv",
+    "url": "https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html",
+    "version": "pandas read_csv",
+    "accessed_at": "2026-11-18",
+    "kind": "documentation",
+    "extent": "relevant_sections",
+    "locator": "dtype, na_values and keep_default_na parameters, docs web lines 130–141 and 203–224",
+    "finding": "열별 dtype와 결측 문자열을 지정할 수 있다. 기본 결측 표식을 끄고 빈 필드만 지정하면 문자 ID의 앞자리 0과 이 자료의 빈 필드 약속을 유지할 수 있다.",
+    "limitation": "공개 수업 CSV의 선언된 스키마를 전제로 한다. 표 전체의 데이터형 자동 추론 결과는 열 내용과 pandas 버전에 따라 달라진다."
+  }
+]

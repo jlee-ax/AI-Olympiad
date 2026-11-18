@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "scope": {
+    "id": "week01-foundations",
+    "lesson_path": "lessons/week01/week01_foundations.ipynb",
+    "lesson_revision": "week01-foundations-20261118",
+    "readiness": "scoped_foundation",
+    "boundary": "KOAI 2027 중등부 수업 1주차의 자료 설계. 120분 수업과 별도 필수 자습. 국제 과제의 학습 모델, 숨은 평가, 국제판 추가 주제 및 학습자 성과는 이 차시 결론 밖."
+  },
+  "frontier": [
+    {
+      "id": "probe:scope-and-task",
+      "question": "국내 공식 범위가 요구하는 실제 코딩·해석 능력과 국제 실제 과제의 라벨 규칙에서, AI 무선행 1주차에 학생이 독립적으로 보여 줄 수 있어야 할 자료 처리 판단은 무엇인가?",
+      "required_kinds": [
+        "official_scope",
+        "official_problem"
+      ]
+    }
+  ],
+  "policy": {
+    "max_events": 32,
+    "max_rounds": 6,
+    "max_no_progress": 4,
+    "max_elapsed_minutes": 60
+  }
+}

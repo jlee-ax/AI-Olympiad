@@ -1,0 +1,292 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "required_demands": [
+    "W1-python:demand",
+    "W1-table:demand",
+    "W1-array:demand",
+    "W1-visualise:demand"
+  ],
+  "paths": [
+    {
+      "id": "path:W1-python",
+      "comparison_id": "compare:W1-python",
+      "discovery_demand_id": "W1-python",
+      "roles": {
+        "source": "W1-python:source",
+        "demand": "W1-python:demand",
+        "prerequisite": "W1-python:prerequisite",
+        "theory_explanation": "W1-python:theory_explanation",
+        "coding_practice": "W1-python:coding_practice",
+        "independent_assessment": "W1-python:independent_assessment",
+        "feedback": "W1-python:feedback"
+      },
+      "assessment": {
+        "independent": true,
+        "allowed_support": "학생은 교사용 답을 닫고, 문제 지시·원자료와 미완성 셀만으로 첫 예상 또는 설계를 기록한다. 과거 예시를 다시 보거나 도움을 받으면 해당 시도를 표시한다. 새 표·그림 실마리는 첫 답을 저장한 다음 선택적으로 펼친다.",
+        "answer_conditions": "정확한 주제 판단은 표·코드·설명과 다른 입력의 결과, 사용한 도움 및 오류 수정 이유를 함께 본다. 교사용 파일에 풀이와 피드백이 있다. 무도움 판단은 첫 도움 표시와 일치하는 답에만 적용한다. 학생 응답·시간은 관측하지 않았다."
+      },
+      "provenance": {
+        "source": {
+          "path": "reviews/week01-depth-20261118/joined/sources.json",
+          "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+          "locator": "domestic · 분류와 1-1 프로그래밍 기초, web L72–98. 1-4 전처리 설명 L119–132",
+          "revision": "2026-11-18",
+          "origin": "Joined reviewer directly opened official URL https://kitpa.org/koai/syllabus"
+        },
+        "demand": {
+          "path": "reviews/week01-depth-20261118/joined/external-demands.json",
+          "sha256": "d5e8898c3bb02a31cf140390a12e81cbc45c85f358b0bf5c4d100bdf8213ce61",
+          "locator": "W1-python",
+          "revision": "2026-11-18",
+          "origin": "Course editor extracted the learning and assessment demand before candidate comparison."
+        },
+        "prerequisite": {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:python-basics",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "week01-new-author"
+        },
+        "theory_explanation": {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:python-basics",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "week01-new-author"
+        },
+        "coding_practice": {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:python-independent",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "week01-new-author"
+        },
+        "independent_assessment": {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:python-five; cell:python-independent; cell:independent-start; cell:trace-independent",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "week01-new-author"
+        },
+        "feedback": {
+          "path": "lessons/week01/week01_foundations_teacher.md",
+          "sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484",
+          "locator": "Python 카드",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "Separate public teacher solution and problem-specific feedback"
+        }
+      }
+    },
+    {
+      "id": "path:W1-table",
+      "comparison_id": "compare:W1-table",
+      "discovery_demand_id": "W1-table",
+      "roles": {
+        "source": "W1-table:source",
+        "demand": "W1-table:demand",
+        "prerequisite": "W1-table:prerequisite",
+        "theory_explanation": "W1-table:theory_explanation",
+        "coding_practice": "W1-table:coding_practice",
+        "independent_assessment": "W1-table:independent_assessment",
+        "feedback": "W1-table:feedback"
+      },
+      "assessment": {
+        "independent": true,
+        "allowed_support": "학생은 교사용 답을 닫고, 문제 지시·원자료와 미완성 셀만으로 첫 예상 또는 설계를 기록한다. 과거 예시를 다시 보거나 도움을 받으면 해당 시도를 표시한다. 새 표·그림 실마리는 첫 답을 저장한 다음 선택적으로 펼친다.",
+        "answer_conditions": "정확한 주제 판단은 표·코드·설명과 다른 입력의 결과, 사용한 도움 및 오류 수정 이유를 함께 본다. 교사용 파일에 풀이와 피드백이 있다. 무도움 판단은 첫 도움 표시와 일치하는 답에만 적용한다. 학생 응답·시간은 관측하지 않았다."
+      },
+      "provenance": {
+        "source": {
+          "path": "reviews/week01-depth-20261118/joined/sources.json",
+          "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+          "locator": "antique · Task statement §§1–5 and baseline train/predict/write cells, web L19–65, L118–133, L151–158, L176–192. Official repository index also read.",
+          "revision": "2026-11-18",
+          "origin": "Joined reviewer directly opened official URL https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb"
+        },
+        "demand": {
+          "path": "reviews/week01-depth-20261118/joined/external-demands.json",
+          "sha256": "d5e8898c3bb02a31cf140390a12e81cbc45c85f358b0bf5c4d100bdf8213ce61",
+          "locator": "W1-table",
+          "revision": "2026-11-18",
+          "origin": "Course editor extracted the learning and assessment demand before candidate comparison."
+        },
+        "prerequisite": {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:dictionary",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "week01-new-author"
+        },
+        "theory_explanation": {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:dictionary",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "week01-new-author"
+        },
+        "coding_practice": {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:select-csv",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "week01-new-author"
+        },
+        "independent_assessment": {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:transfer-brief; cell:transfer-table; cell:transfer-data-work; cell:transfer-faults; cell:transfer-fault-work",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "week01-new-author"
+        },
+        "feedback": {
+          "path": "lessons/week01/week01_foundations_teacher.md",
+          "sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484",
+          "locator": "수첩과 원본 CSV / 새 일지 독립 과제",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "Separate public teacher solution and problem-specific feedback"
+        }
+      }
+    },
+    {
+      "id": "path:W1-array",
+      "comparison_id": "compare:W1-array",
+      "discovery_demand_id": "W1-array",
+      "roles": {
+        "source": "W1-array:source",
+        "demand": "W1-array:demand",
+        "prerequisite": "W1-array:prerequisite",
+        "theory_explanation": "W1-array:theory_explanation",
+        "coding_practice": "W1-array:coding_practice",
+        "independent_assessment": "W1-array:independent_assessment",
+        "feedback": "W1-array:feedback"
+      },
+      "assessment": {
+        "independent": true,
+        "allowed_support": "학생은 교사용 답을 닫고, 문제 지시·원자료와 미완성 셀만으로 첫 예상 또는 설계를 기록한다. 과거 예시를 다시 보거나 도움을 받으면 해당 시도를 표시한다. 새 표·그림 실마리는 첫 답을 저장한 다음 선택적으로 펼친다.",
+        "answer_conditions": "정확한 주제 판단은 표·코드·설명과 다른 입력의 결과, 사용한 도움 및 오류 수정 이유를 함께 본다. 교사용 파일에 풀이와 피드백이 있다. 무도움 판단은 첫 도움 표시와 일치하는 답에만 적용한다. 학생 응답·시간은 관측하지 않았다."
+      },
+      "provenance": {
+        "source": {
+          "path": "reviews/week01-depth-20261118/joined/sources.json",
+          "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+          "locator": "domestic · 분류와 1-1 프로그래밍 기초, web L72–98. 1-4 전처리 설명 L119–132",
+          "revision": "2026-11-18",
+          "origin": "Joined reviewer directly opened official URL https://kitpa.org/koai/syllabus"
+        },
+        "demand": {
+          "path": "reviews/week01-depth-20261118/joined/external-demands.json",
+          "sha256": "d5e8898c3bb02a31cf140390a12e81cbc45c85f358b0bf5c4d100bdf8213ce61",
+          "locator": "W1-array",
+          "revision": "2026-11-18",
+          "origin": "Course editor extracted the learning and assessment demand before candidate comparison."
+        },
+        "prerequisite": {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:axis-picture",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "week01-new-author"
+        },
+        "theory_explanation": {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:axis-picture",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "week01-new-author"
+        },
+        "coding_practice": {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:reduce-period",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "week01-new-author"
+        },
+        "independent_assessment": {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:axis-check; cell:array-lab; cell:array-independent; cell:math-lab; cell:math-independent",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "week01-new-author"
+        },
+        "feedback": {
+          "path": "lessons/week01/week01_foundations_teacher.md",
+          "sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484",
+          "locator": "축·분산·필기 / 자습 배열과 수학",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "Separate public teacher solution and problem-specific feedback"
+        }
+      }
+    },
+    {
+      "id": "path:W1-visualise",
+      "comparison_id": "compare:W1-visualise",
+      "discovery_demand_id": "W1-visualise",
+      "roles": {
+        "source": "W1-visualise:source",
+        "demand": "W1-visualise:demand",
+        "prerequisite": "W1-visualise:prerequisite",
+        "theory_explanation": "W1-visualise:theory_explanation",
+        "coding_practice": "W1-visualise:coding_practice",
+        "independent_assessment": "W1-visualise:independent_assessment",
+        "feedback": "W1-visualise:feedback"
+      },
+      "assessment": {
+        "independent": true,
+        "allowed_support": "학생은 교사용 답을 닫고, 문제 지시·원자료와 미완성 셀만으로 첫 예상 또는 설계를 기록한다. 과거 예시를 다시 보거나 도움을 받으면 해당 시도를 표시한다. 새 표·그림 실마리는 첫 답을 저장한 다음 선택적으로 펼친다.",
+        "answer_conditions": "정확한 주제 판단은 표·코드·설명과 다른 입력의 결과, 사용한 도움 및 오류 수정 이유를 함께 본다. 교사용 파일에 풀이와 피드백이 있다. 무도움 판단은 첫 도움 표시와 일치하는 답에만 적용한다. 학생 응답·시간은 관측하지 않았다."
+      },
+      "provenance": {
+        "source": {
+          "path": "reviews/week01-depth-20261118/joined/sources.json",
+          "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+          "locator": "domestic · 분류와 1-1 프로그래밍 기초, web L72–98. 1-4 전처리 설명 L119–132",
+          "revision": "2026-11-18",
+          "origin": "Joined reviewer directly opened official URL https://kitpa.org/koai/syllabus"
+        },
+        "demand": {
+          "path": "reviews/week01-depth-20261118/joined/external-demands.json",
+          "sha256": "d5e8898c3bb02a31cf140390a12e81cbc45c85f358b0bf5c4d100bdf8213ce61",
+          "locator": "W1-visualise",
+          "revision": "2026-11-18",
+          "origin": "Course editor extracted the learning and assessment demand before candidate comparison."
+        },
+        "prerequisite": {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:plot-core",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "week01-new-author"
+        },
+        "theory_explanation": {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:plot-core",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "week01-new-author"
+        },
+        "coding_practice": {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:plot-period",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "week01-new-author"
+        },
+        "independent_assessment": {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:class-transfer; cell:transfer-brief; cell:transfer-first-code; cell:transfer-figures; cell:transfer-plot-work; cell:handoff",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "week01-new-author"
+        },
+        "feedback": {
+          "path": "lessons/week01/week01_foundations_teacher.md",
+          "sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484",
+          "locator": "병합과 두 그림의 예시 / 새 일지 독립 과제",
+          "revision": "week01-foundations-ef1586ee0eef",
+          "origin": "Separate public teacher solution and problem-specific feedback"
+        }
+      }
+    }
+  ]
+}

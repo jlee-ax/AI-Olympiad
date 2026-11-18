@@ -1,0 +1,242 @@
+{
+  "status": "passed",
+  "student_sha256": "1487703f78c55cadbea0ba892f1880fabefdd77a1a1d24d6bb152a180db83383",
+  "teacher_sha256": "3586f486052f1f7fae13a7f997d864e13b4fc41abfff17219a4418d9a89c979c",
+  "data_sha256": {
+    "foundations_returns_transfer.csv": "47d719ce82e88acbe98ad175b1f827c8f7c76d22706bd8432344d86e3db6d7a6",
+    "foundations_boxes.csv": "471a80d0b99548c29a36331eb5ccad27d25ba7742f955a869687e7096c655635",
+    "foundations_returns.csv": "ece009210bb0ac473b988937f8ecd865f35355dc6d9c8718e3e8846e504daaaf"
+  },
+  "python": "3.12.14",
+  "libraries": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.8",
+    "seaborn": "0.13.2"
+  },
+  "executed_student_code_ids": [
+    "python-example",
+    "return-example",
+    "trace-example",
+    "python-independent",
+    "load-csv",
+    "audit-csv",
+    "select-csv",
+    "column-error",
+    "table-independent",
+    "reduce-period",
+    "plot-period",
+    "class-independent",
+    "trace-independent",
+    "view-example",
+    "broadcast-example",
+    "reshape-example",
+    "array-independent",
+    "math-example",
+    "math-independent",
+    "real-merge",
+    "join-key-example",
+    "group-example",
+    "plot-histogram",
+    "plot-categories",
+    "transfer-first-code",
+    "transfer-data-work",
+    "transfer-fault-work",
+    "transfer-plot-work"
+  ],
+  "executed_teacher_blocks": 7,
+  "reference_input": "Only repository-public examples and reviewer-created boundary modifications of the public copies.",
+  "tracebacks": {
+    "trace-example": "Traceback (most recent call last):\n  File \"student:trace-example\", line 5, in scan_batch\n    return count_over(values, 4)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"student:python-example\", line 6, in count_over\n    if books is not None and books > limit:\n                             ^^^^^^^^^^^^^\nTypeError: '>' not supported between instances of 'str' and 'int'\n",
+    "trace-independent": "Traceback (most recent call last):\n  File \"student:trace-independent\", line 5, in last_box\n    return code_at(codes, len(codes))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"student:trace-independent\", line 2, in code_at\n    return codes[position]\n           ~~~~~^^^^^^^^^^\nIndexError: list index out of range\n"
+  },
+  "axis_results": [
+    [
+      2.0,
+      5.0
+    ],
+    [
+      4.5,
+      4.5,
+      1.5
+    ]
+  ],
+  "variances": [
+    6.0,
+    0.6666666666666666
+  ],
+  "dot_order_results": [
+    10,
+    11
+  ],
+  "transfer": {
+    "4": {
+      "selected": [
+        "T1",
+        "T3",
+        "T4",
+        "T6",
+        "T8"
+      ],
+      "stats": {
+        "West": [
+          4,
+          3,
+          13,
+          4.333333333333333
+        ],
+        "East": [
+          1,
+          1,
+          0,
+          0.0
+        ]
+      },
+      "histogram_members": [
+        [
+          "T4",
+          "T8"
+        ],
+        [
+          "T6"
+        ],
+        [
+          "T1"
+        ],
+        [],
+        []
+      ]
+    },
+    "6": {
+      "selected": [
+        "T4",
+        "T6",
+        "T8"
+      ],
+      "stats": {
+        "East": [
+          1,
+          1,
+          0,
+          0.0
+        ],
+        "West": [
+          2,
+          2,
+          6,
+          3.0
+        ]
+      },
+      "histogram_members": [
+        [
+          "T4",
+          "T8"
+        ],
+        [
+          "T6"
+        ],
+        [],
+        [],
+        []
+      ]
+    }
+  },
+  "figure_sources": [
+    "plot-period",
+    "plot-histogram",
+    "plot-categories",
+    "teacher:block:7"
+  ],
+  "teacher_transfer_artists": [
+    {
+      "xlabel": "After-school books per record",
+      "ylabel": "Number of records",
+      "heights": [
+        2.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "ticks": [
+        0.0,
+        1.0,
+        2.0
+      ],
+      "limits": [
+        0.0,
+        2.1
+      ]
+    },
+    {
+      "xlabel": "Zone",
+      "ylabel": "Mean after-school books per observed record",
+      "heights": [
+        0.0,
+        4.333333333333333
+      ],
+      "ticks": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0
+      ],
+      "limits": [
+        0.0,
+        4.55
+      ]
+    },
+    {
+      "xlabel": "After-school books per record",
+      "ylabel": "Number of records",
+      "heights": [
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ticks": [
+        0.0,
+        1.0,
+        2.0
+      ],
+      "limits": [
+        0.0,
+        2.1
+      ]
+    },
+    {
+      "xlabel": "Zone",
+      "ylabel": "Mean after-school books per observed record",
+      "heights": [
+        0.0,
+        3.0
+      ],
+      "ticks": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0
+      ],
+      "limits": [
+        0.0,
+        4.55
+      ]
+    }
+  ],
+  "negative_cases": [
+    "negative Python limits",
+    "incompatible array trailing dimension",
+    "missing required column",
+    "duplicate lookup key",
+    "unmatched station ID",
+    "both-side null ID plus a simultaneous unknown station",
+    "all missing outcomes in one observed group"
+  ],
+  "scope": "In-process Python with displayed artist heights inspected in memory. Jupyter transport has a separate receipt. No learner response."
+}

@@ -1,0 +1,356 @@
+{
+  "topic_depth": {
+    "command": "python3 -B tools/topic_depth.py check --case reviews/week01-depth-20261118 --root .",
+    "exit": 0,
+    "stdout_sha256": "5c1bc22a040b02ee3ad52c4f7a1f94a746e67ce1feab3fdff8847c4800fd6851",
+    "status": "reviewed",
+    "errors": [],
+    "ready": true,
+    "subject_round": 3,
+    "subject_sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+    "freeze_commit": "cfeb4e341650af9a9378939e1ceeaedce80372f2",
+    "manifest": {
+      "id": "review:topic-depth",
+      "revision": "topic-depth-v1",
+      "sha256": "264c14da01556f293bb211e50faf97d45c1c17442bd1e742162ba5f0ec69824e"
+    }
+  },
+  "discovery": {
+    "command": "python3 -B tools/discovery_loop.py report reviews/week01-depth-20261118/joined/discovery.json --root .",
+    "exit": 0,
+    "stdout_sha256": "886732fc92604bdca478549ad31602e1b736203a7c55985ddf4c4a861579afe9",
+    "status": "recorded_ready",
+    "ready_for_review": true,
+    "synthetic": false,
+    "demands": [
+      "W1-python",
+      "W1-table",
+      "W1-array",
+      "W1-visualise"
+    ],
+    "comparisons": {
+      "W1-python": "covered",
+      "W1-table": "covered",
+      "W1-array": "covered",
+      "W1-visualise": "covered"
+    },
+    "queue": [],
+    "blockers": [],
+    "usage": {
+      "elapsed_minutes": 40,
+      "events": 18,
+      "no_progress": 0,
+      "rounds": 1
+    }
+  },
+  "depth": {
+    "command": "python3 -B tools/contest_depth.py reviews/week01-depth-20261118/joined/contest-depth.json",
+    "exit": 0,
+    "stdout_sha256": "ec7791a6e25840a46c9a532a0e2bb0a3e15d4f4a96c107393f77bf7705015062",
+    "status": "recorded_met",
+    "synthetic": false,
+    "errors": [],
+    "comparisons": [
+      {
+        "goal_id": "goal:W1-python",
+        "id": "compare:W1-python",
+        "issue_paths": [],
+        "recorded_judgment": "met",
+        "status": "met",
+        "week": 1
+      },
+      {
+        "goal_id": "goal:W1-table",
+        "id": "compare:W1-table",
+        "issue_paths": [],
+        "recorded_judgment": "met",
+        "status": "met",
+        "week": 1
+      },
+      {
+        "goal_id": "goal:W1-array",
+        "id": "compare:W1-array",
+        "issue_paths": [],
+        "recorded_judgment": "met",
+        "status": "met",
+        "week": 1
+      },
+      {
+        "goal_id": "goal:W1-visualise",
+        "id": "compare:W1-visualise",
+        "issue_paths": [],
+        "recorded_judgment": "met",
+        "status": "met",
+        "week": 1
+      }
+    ],
+    "assessment_formats": [
+      {
+        "kinds": [
+          {
+            "difference": 0,
+            "kind": "multiple_choice",
+            "observed": 2,
+            "required": 2,
+            "status": "matched"
+          },
+          {
+            "difference": 0,
+            "kind": "written",
+            "observed": 1,
+            "required": 1,
+            "status": "matched"
+          }
+        ],
+        "status": "matched",
+        "week": 1
+      }
+    ],
+    "findings": [],
+    "gaps": [],
+    "outside_material_scope": [
+      "actual_classroom_time",
+      "actual_teacher_effort",
+      "learner_performance"
+    ]
+  },
+  "structure": {
+    "command": "python3 -B tools/validate.py reviews/week01-depth-20261118/joined/graph.json",
+    "exit": 0,
+    "stdout_sha256": "d7208f9f009f437d4af48bfdc29c67bbc0cf9663f9cea8c5ad46655a054e44e8",
+    "output": "0 error(s), 0 warning(s)"
+  },
+  "paths": {
+    "command": "python3 -B tools/graph_paths.py reviews/week01-depth-20261118/joined/graph.json --spec reviews/week01-depth-20261118/joined/paths.json --root .",
+    "exit": 0,
+    "stdout_sha256": "8bb20f9f5aa0f793bf496cb6fd7c693e75095ae7f6ab55419e8c4c212f5ff7dc",
+    "status": "declared_path_complete",
+    "synthetic": false,
+    "errors": [],
+    "warnings": [],
+    "bindings": 28,
+    "findings": []
+  },
+  "semantic": {
+    "command": "python3 -B tools/graph_paths.py reviews/week01-depth-20261118/joined/graph.json --spec reviews/week01-depth-20261118/joined/paths.json --semantic-review reviews/week01-depth-20261118/joined/semantic-review.json --root .",
+    "exit": 0,
+    "stdout_sha256": "faeccc2829e01b1d4e5fea217684348264e5c7d97deccddfff8e8fad38faed9e",
+    "status": "recorded_design_met",
+    "synthetic": false,
+    "errors": [],
+    "mechanical_status": "declared_path_complete",
+    "bindings": 24,
+    "comparisons": 4,
+    "findings": []
+  },
+  "quality": {
+    "command": "python3 -B tools/quality.py evaluate reviews/week01-depth-20261118/joined/quality.json --root .",
+    "exit": 0,
+    "stdout_sha256": "4b025e7e506ca6532d64196064ec4ed06ae3e13b601df5a61b61b2d44aaca49c",
+    "status": "uncertain",
+    "ready_for_review": false,
+    "synthetic": false,
+    "checks": {
+      "K01": "passed",
+      "K02": "passed",
+      "K03": "passed",
+      "K04": "passed",
+      "K05": "passed",
+      "K06": "passed",
+      "K07": "passed",
+      "K08": "passed",
+      "K09": "passed",
+      "K10": "passed",
+      "K11": "passed",
+      "K12": "passed",
+      "K13": "passed",
+      "K14": "uncertain",
+      "K15": "passed",
+      "K16": "passed"
+    },
+    "findings": [
+      {
+        "criterion_id": "K14",
+        "status": "uncertain"
+      }
+    ],
+    "topic_depth": {
+      "errors": [],
+      "freeze_commit": "cfeb4e341650af9a9378939e1ceeaedce80372f2",
+      "manifest": {
+        "id": "review:topic-depth",
+        "revision": "topic-depth-v1",
+        "sha256": "264c14da01556f293bb211e50faf97d45c1c17442bd1e742162ba5f0ec69824e"
+      },
+      "ready": true,
+      "status": "reviewed",
+      "subject_round": 3,
+      "subject_sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e"
+    }
+  },
+  "plan": {
+    "command": "python3 -B tools/quality.py plan reviews/week01-depth-20261118/joined/quality.json --root .",
+    "exit": 0,
+    "stdout_sha256": "cc0323a4bbcb29273f872f133b148e9ab576fdc6841c7beb1e22a37ee31ec1a5",
+    "status": "pause",
+    "reason": "priority_policy_requires_agreement",
+    "synthetic": false,
+    "next_candidate": null,
+    "next_discovery_action": "independent_aggregate_review"
+  },
+  "workflow_validation": {
+    "command": "python3 -B tools/workflow.py validate reviews/week01-depth-20261118/joined/workflow.json",
+    "exit": 0,
+    "stdout_sha256": "9c3b419a4f419a4c92c9234bbf3a34c0044b786df04608d1ef395baa7bcb7bab",
+    "status": "valid",
+    "reason": "structural_checks_only",
+    "synthetic": false,
+    "errors": [],
+    "warnings": [
+      "scope.lesson_production_allowed is a recorded claim, not an execution capability or authenticated permission"
+    ]
+  },
+  "recall": {
+    "command": "python3 -B tools/workflow.py recall reviews/week01-depth-20261118/joined/workflow.json",
+    "exit": 0,
+    "stdout_sha256": "7c9126fcc21c61a008f4a94f9f07e63014d4bfcc785a3b93be176b3fba2023c6",
+    "status": "valid",
+    "reason": "structural_checks_only",
+    "synthetic": false,
+    "errors": [],
+    "warnings": [
+      "scope.lesson_production_allowed is a recorded claim, not an execution capability or authenticated permission"
+    ],
+    "active_record_ids": [
+      "scope-and-originals",
+      "revision-trail",
+      "current-material",
+      "public-execution",
+      "legacy-criteria"
+    ]
+  },
+  "decision": {
+    "command": "python3 -B tools/workflow.py decide reviews/week01-depth-20261118/joined/workflow.json --quality reviews/week01-depth-20261118/joined/quality.json --discovery reviews/week01-depth-20261118/joined/discovery.json --root .",
+    "exit": 0,
+    "stdout_sha256": "97b0243afb7d12062f65a947304c9418fe59cc88f4441d9e80b79fb1fb09a46f",
+    "status": "pause",
+    "reason": "criteria_agreement_required",
+    "synthetic": false,
+    "errors": [],
+    "warnings": [
+      "scope.lesson_production_allowed is a recorded claim, not an execution capability or authenticated permission"
+    ]
+  },
+  "preflight": {
+    "command": "python3 -B tools/review_preflight.py --depth reviews/week01-depth-20261118/joined/contest-depth.json --graph reviews/week01-depth-20261118/joined/graph.json --paths reviews/week01-depth-20261118/joined/paths.json --semantic-review reviews/week01-depth-20261118/joined/semantic-review.json --state reviews/week01-depth-20261118/joined/workflow.json --quality reviews/week01-depth-20261118/joined/quality.json --discovery reviews/week01-depth-20261118/joined/discovery.json --root .",
+    "exit": 1,
+    "stdout_sha256": "184cc19903c664f460070372606b964620d578f6e0f1a737569a8c8f797f881f",
+    "status": "blocked",
+    "synthetic": false,
+    "errors": [],
+    "blockers": [
+      {
+        "code": "quality_not_ready",
+        "detail": "uncertain"
+      },
+      {
+        "code": "workflow_pause",
+        "detail": "criteria_agreement_required"
+      }
+    ],
+    "local_bindings": 24,
+    "unmatched_bindings": [],
+    "unverified_sources": [],
+    "scope": "external_frontier",
+    "workflow": {
+      "status": "pause",
+      "reason": "criteria_agreement_required"
+    }
+  },
+  "archived_comparisons": {
+    "exit": 0,
+    "status": "matched",
+    "comparisons": 13,
+    "spans": 52,
+    "events": [
+      {
+        "event": "r1-W1-python",
+        "judgment": "gap",
+        "spans": 4,
+        "archived_bytes_match": true
+      },
+      {
+        "event": "r1-W1-table",
+        "judgment": "covered",
+        "spans": 4,
+        "archived_bytes_match": true
+      },
+      {
+        "event": "r1-W1-array",
+        "judgment": "gap",
+        "spans": 4,
+        "archived_bytes_match": true
+      },
+      {
+        "event": "r1-W1-visualise",
+        "judgment": "gap",
+        "spans": 4,
+        "archived_bytes_match": true
+      },
+      {
+        "event": "r2-W1-python",
+        "judgment": "covered",
+        "spans": 4,
+        "archived_bytes_match": true
+      },
+      {
+        "event": "r2-W1-table",
+        "judgment": "covered",
+        "spans": 4,
+        "archived_bytes_match": true
+      },
+      {
+        "event": "r2-W1-array",
+        "judgment": "covered",
+        "spans": 4,
+        "archived_bytes_match": true
+      },
+      {
+        "event": "r2-W1-visualise",
+        "judgment": "covered",
+        "spans": 4,
+        "archived_bytes_match": true
+      },
+      {
+        "event": "r2-followup-W1-table",
+        "judgment": "gap",
+        "spans": 4,
+        "archived_bytes_match": true
+      },
+      {
+        "event": "r3-W1-python",
+        "judgment": "covered",
+        "spans": 4,
+        "archived_bytes_match": true
+      },
+      {
+        "event": "r3-W1-table",
+        "judgment": "covered",
+        "spans": 4,
+        "archived_bytes_match": true
+      },
+      {
+        "event": "r3-W1-array",
+        "judgment": "covered",
+        "spans": 4,
+        "archived_bytes_match": true
+      },
+      {
+        "event": "r3-W1-visualise",
+        "judgment": "covered",
+        "spans": 4,
+        "archived_bytes_match": true
+      }
+    ]
+  }
+}

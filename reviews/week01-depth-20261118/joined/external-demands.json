@@ -1,0 +1,42 @@
+{
+  "extractor": "course-editor",
+  "provenance": "Course editor authored scope.md and contract.json from official domestic scope, Antique, and primary technical references and supplied the following staged demands before the independent comparer opened the new candidate.",
+  "demands": [
+    {
+      "id": "W1-python",
+      "statement": "짧은 데이터 함수의 매개변수·상태·반환을 추적하고 조건이나 반복을 새 값에 맞게 고친다.",
+      "prerequisites": [
+        "짧은 리스트와 변수, 반복의 한 단계, 함수 호출과 반환"
+      ],
+      "learning_demand": "입력마다 상태가 언제 바뀌며 어떤 값이 호출자로 돌아가는지 설명하고 조건을 바꿔 실행한다.",
+      "assessment_demand": "보지 않은 입력으로 코드를 고치고 반환값을 대조한다. 인터프리터 내부 구현은 범위 밖이다."
+    },
+    {
+      "id": "W1-table",
+      "statement": "행의 기록 ID와 관측 시점을 쓰고 실제 0과 미상을 구별한 뒤 순서가 다른 표를 키로 합친다.",
+      "prerequisites": [
+        "한 행과 열, 자료사전, 실제 파일의 헤더"
+      ],
+      "learning_demand": "시점에 알 수 있는 입력과 나중에 알려질 목표를 구분하고 유효 분모, 일치하지 않는 키, 중복 키를 점검한다.",
+      "assessment_demand": "새 열 이름·순서·키를 가진 파일에서 결과를 작성하고 미매칭 기록이나 필수 열 결손을 식별한다. 모델·숨은 라벨 추론은 다른 단계다."
+    },
+    {
+      "id": "W1-array",
+      "statement": "직사각 측정 배열에서 축별로 남는 대상, 값, 분모, 모양을 설명하고 실제 연산 결과와 대조한다.",
+      "prerequisites": [
+        "표의 행과 열, 합과 유효 개수를 이용한 평균"
+      ],
+      "learning_demand": "측정 배열에 인덱싱·축 연산을 적용하고, 과정 계획의 분산·내적·슬라이스·브로드캐스팅·형태 변경에서 선택이 갖는 의미를 점검한다.",
+      "assessment_demand": "새 직사각 배열에서 모양과 값을 예측하고 바뀐 축 또는 저장 방식의 결과를 확인한다. 일반 텐서 증명은 이후 수준이다."
+    },
+    {
+      "id": "W1-visualise",
+      "statement": "측정값의 분포와 집단 비교에 맞는 표시를 그리고 원소·집계·단위를 연결한다.",
+      "prerequisites": [
+        "관측값/결측, 범주, 평균 또는 빈도의 뜻"
+      ],
+      "learning_demand": "Matplotlib와 Seaborn으로 범주와 수치 분포의 서로 다른 질문에 답하고 통계량을 해석한다.",
+      "assessment_demand": "새 관측 자료에서 그림과 근거를 작성하며 달라진 조건의 결과와 관측 자료의 해석 한계를 설명한다."
+    }
+  ]
+}

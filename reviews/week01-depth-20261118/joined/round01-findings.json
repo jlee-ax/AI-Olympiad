@@ -1,0 +1,48 @@
+{
+  "candidate_sha256": "d4689c347113b60e7f7fa3d93a8f76f9412f7eb8ee793dcbcac65a95039212bf",
+  "teacher_sha256": "b81abef89ebdec6653dc8b279e08f5542827b50c619a389d2f47ed154d7105e2",
+  "reviewer": "week01-joined-review",
+  "scope": "Whole first candidate (57 cells), separate teacher key, three public data files. No private evaluation inputs or student work inspected.",
+  "material_verdict": "changes_requested",
+  "findings": [
+    {
+      "id": "independent-choice",
+      "unit": "W1-visualise",
+      "locators": [
+        "transfer-brief",
+        "transfer-figures",
+        "handoff"
+      ],
+      "observation": "The first required transfer plot shows its library, type, axes, bins and statistic before the learner chooses the representation. The final help log cannot distinguish the initial choice from following these directions. This is clear guided production. No separate first answer to this choice was requested.",
+      "request": "Ask for and preserve an initial unassisted choice and reasoning against both questions before revealing scaffold or teacher key. Record help on subsequent attempts."
+    },
+    {
+      "id": "error-location",
+      "unit": "W1-python",
+      "locators": [
+        "return-example",
+        "python-five",
+        "column-error"
+      ],
+      "observation": "The caught errors show class and message. The learner can identify file versus column, but no visible traceback links a calling line to its failing expression as required by PY-ERROR.",
+      "request": "Supply a small actual traceback or concise excerpt with a second example that requires locating the failure and explaining how to check it, with separate feedback."
+    },
+    {
+      "id": "reduction-trace",
+      "unit": "W1-array",
+      "locators": [
+        "axis-picture",
+        "axis-check",
+        "reduce-period"
+      ],
+      "observation": "The cut-down table and correct final axis sums expose the intended denominator. The algorithm state of a one-column reduction, initialization, update, termination, and relation to the library operation are missing from T04.",
+      "request": "Use one column already on the page. Trace its sum/count before and after each row, define stopping and undefined denominator, and connect the result to the first output of NumPy mean."
+    }
+  ],
+  "preserve": [
+    "Worked column means [5,2,5] from selected rows; changed U/V/W predictions [2,5] and [4.5,4.5,1.5].",
+    "Raw public transfer records retain eligible unobserved T3 separately from T4 with a measured zero. Direct regrouping confirms West changes from 13/3 to 6/2 when the lunch threshold rises from 4 to 6.",
+    "Two activities genuinely change axis/feature correspondence: transpose differs from repacking; identical vector length can preserve the wrong feature order.",
+    "All estimated class and outside times reconcile; no evidence of actual timing."
+  ]
+}

@@ -1,0 +1,680 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "scope": {
+    "task_kind": "lesson_production",
+    "lesson_production_allowed": true,
+    "recurring_allowed": false
+  },
+  "agreement": {
+    "operator_agreed": true,
+    "operator_id": "user",
+    "criteria_agreed": false,
+    "criteria_fingerprint": null,
+    "budget_fingerprint": null
+  },
+  "context": {
+    "inputs": [
+      {
+        "id": "quality:bundle",
+        "revision": "week01-foundations-ef1586ee0eef",
+        "sha256": "19a5dcca1b1832b3a54f7e021fc60f347b788129553d29684373c41fa357f615"
+      },
+      {
+        "id": "quality:criteria",
+        "revision": "criteria-v3-material",
+        "sha256": "64055406c2a74fdfb422e22b3f4d2d704dafe7b22fad3e9458415b67fb12003f"
+      },
+      {
+        "id": "quality:evaluator",
+        "revision": "quality-v1",
+        "sha256": "2026ad83ad778ff78b8f6937ce50abf0b87982d98db3cfaf0c480339d7052a3a"
+      },
+      {
+        "id": "review:depth",
+        "revision": "review-preflight-v1",
+        "sha256": "3102d41bd4f02bb2d176ffb0168b2bb4ae801ec88cbf0725f083fef71345c2d1"
+      },
+      {
+        "id": "review:graph",
+        "revision": "review-preflight-v1",
+        "sha256": "fa63d23f47a7bc9581a4407c32ca4ba124d321900e2c81b80e1dbf8c850d414e"
+      },
+      {
+        "id": "review:paths",
+        "revision": "review-preflight-v1",
+        "sha256": "f85be5f1829d9379c0129c565f0c89a4da4d9057432ab8f934bcdd05ff372dbe"
+      },
+      {
+        "id": "review:semantic-review",
+        "revision": "review-preflight-v1",
+        "sha256": "f5db1eb39f033232276f077c41e12eb5c20518c0817d5356c52f3fa7f940c44b"
+      },
+      {
+        "id": "review:source-catalog",
+        "revision": "review-preflight-v1",
+        "sha256": "e049a823186308697de5f8048789b7fd4446697b46726af4c271d4ab27c9492d"
+      },
+      {
+        "id": "review:discovery",
+        "revision": "discovery-loop-v2",
+        "sha256": "3fea080d6664405167c4092057e483cebe4905bf9d6b15409c5d616ae60ce053"
+      },
+      {
+        "id": "review:topic-depth",
+        "revision": "topic-depth-v1",
+        "sha256": "264c14da01556f293bb211e50faf97d45c1c17442bd1e742162ba5f0ec69824e"
+      }
+    ],
+    "skills": [
+      {
+        "id": "koai-ground",
+        "revision": "2026-11-18",
+        "sha256": "7ea47e71440b79cff0bc1cf4a54fdcf0b81f8d6f3b051afc522f8738a7336e48"
+      },
+      {
+        "id": "koai-evaluate",
+        "revision": "2026-11-18",
+        "sha256": "c0a2d963e2c92e83892063277b9ea3fdb3d14279284189b9f703db67a27c7227"
+      },
+      {
+        "id": "koai-orchestrate",
+        "revision": "2026-11-18",
+        "sha256": "d9365db4788105f3b7f5f1724003d962fd914674510d586b43a0b9779275f7fb"
+      }
+    ],
+    "rubric": {
+      "id": "legacy:criteria",
+      "revision": "2026-11-18",
+      "sha256": "64055406c2a74fdfb422e22b3f4d2d704dafe7b22fad3e9458415b67fb12003f"
+    },
+    "evaluator": {
+      "id": "legacy:quality-evaluator",
+      "revision": "2026-11-18",
+      "sha256": "2026ad83ad778ff78b8f6937ce50abf0b87982d98db3cfaf0c480339d7052a3a"
+    },
+    "references": [
+      {
+        "id": "scope",
+        "revision": "2026-11-18",
+        "sha256": "00b8fe27ec1496a2a8f4a346b31084b3d1950e12f5ef6ce0c511ac8ff357d8ae"
+      },
+      {
+        "id": "frozen-contract",
+        "revision": "2026-11-18",
+        "sha256": "2f69eb913f7da07cc7f0b8401906145e743ee19224c442719cc9b6ec3d19165a"
+      },
+      {
+        "id": "freeze-review",
+        "revision": "2026-11-18",
+        "sha256": "09db754c017dae9fee057d4bf82db75308b12b3a4cbec24b69410e5893efa0f8"
+      },
+      {
+        "id": "unit-specs",
+        "revision": "2026-11-18",
+        "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+      },
+      {
+        "id": "governing-plan",
+        "revision": "2026-11-18",
+        "sha256": "78d743c33d91c958d33dd36e994dc00507d78edecb3f30b986fed4109cc2521e"
+      },
+      {
+        "id": "external-demands",
+        "revision": "2026-11-18",
+        "sha256": "d5e8898c3bb02a31cf140390a12e81cbc45c85f358b0bf5c4d100bdf8213ce61"
+      },
+      {
+        "id": "official-read",
+        "revision": "2026-11-18",
+        "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e"
+      },
+      {
+        "id": "technical-read",
+        "revision": "2026-11-18",
+        "sha256": "d5fa25bd754ee541f91b01a15c9a14a4c3e6464eb5ac146a66928c1fb6813e5c"
+      }
+    ],
+    "artifact": {
+      "id": "week01-foundations",
+      "revision": "2026-11-18",
+      "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e"
+    },
+    "author": {
+      "id": "week01-new-author",
+      "model_family": "Codex, exact model family unverified"
+    },
+    "required_checks": [
+      "K01",
+      "K02",
+      "K03",
+      "K04",
+      "K05",
+      "K06",
+      "K07",
+      "K08",
+      "K09",
+      "K10",
+      "K11",
+      "K12",
+      "K13",
+      "K14",
+      "K15",
+      "K16"
+    ],
+    "finish_condition": "Registered Week 1 topic floor, ceiling and workload judgments on exact current artifacts; source and all material/K01–K16 checks, independent functional/kernel verification and campaign-policy agreement for global closure."
+  },
+  "frozen": {
+    "rubric": {
+      "id": "legacy:criteria",
+      "revision": "2026-11-18",
+      "sha256": "64055406c2a74fdfb422e22b3f4d2d704dafe7b22fad3e9458415b67fb12003f"
+    },
+    "evaluator": {
+      "id": "legacy:quality-evaluator",
+      "revision": "2026-11-18",
+      "sha256": "2026ad83ad778ff78b8f6937ce50abf0b87982d98db3cfaf0c480339d7052a3a"
+    },
+    "references": [
+      {
+        "id": "external-demands",
+        "revision": "2026-11-18",
+        "sha256": "d5e8898c3bb02a31cf140390a12e81cbc45c85f358b0bf5c4d100bdf8213ce61"
+      },
+      {
+        "id": "freeze-review",
+        "revision": "2026-11-18",
+        "sha256": "09db754c017dae9fee057d4bf82db75308b12b3a4cbec24b69410e5893efa0f8"
+      },
+      {
+        "id": "frozen-contract",
+        "revision": "2026-11-18",
+        "sha256": "2f69eb913f7da07cc7f0b8401906145e743ee19224c442719cc9b6ec3d19165a"
+      },
+      {
+        "id": "governing-plan",
+        "revision": "2026-11-18",
+        "sha256": "78d743c33d91c958d33dd36e994dc00507d78edecb3f30b986fed4109cc2521e"
+      },
+      {
+        "id": "official-read",
+        "revision": "2026-11-18",
+        "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e"
+      },
+      {
+        "id": "scope",
+        "revision": "2026-11-18",
+        "sha256": "00b8fe27ec1496a2a8f4a346b31084b3d1950e12f5ef6ce0c511ac8ff357d8ae"
+      },
+      {
+        "id": "technical-read",
+        "revision": "2026-11-18",
+        "sha256": "d5fa25bd754ee541f91b01a15c9a14a4c3e6464eb5ac146a66928c1fb6813e5c"
+      },
+      {
+        "id": "unit-specs",
+        "revision": "2026-11-18",
+        "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65"
+      }
+    ],
+    "required_checks": [
+      "K01",
+      "K02",
+      "K03",
+      "K04",
+      "K05",
+      "K06",
+      "K07",
+      "K08",
+      "K09",
+      "K10",
+      "K11",
+      "K12",
+      "K13",
+      "K14",
+      "K15",
+      "K16"
+    ],
+    "finish_condition": "Registered Week 1 topic floor, ceiling and workload judgments on exact current artifacts; source and all material/K01–K16 checks, independent functional/kernel verification and campaign-policy agreement for global closure."
+  },
+  "limits": {
+    "checkpoint_minutes": 30,
+    "max_iterations": null,
+    "max_elapsed_minutes": null,
+    "max_no_progress": null
+  },
+  "usage": {
+    "iterations_used": 3,
+    "elapsed_minutes": 40,
+    "no_progress_count": 0,
+    "minutes_since_checkpoint": 0
+  },
+  "stop": {
+    "requested": false,
+    "reason": null,
+    "goal_claimed": false
+  },
+  "sources": [
+    {
+      "id": "scope",
+      "revision": "2026-11-18",
+      "sha256": "00b8fe27ec1496a2a8f4a346b31084b3d1950e12f5ef6ce0c511ac8ff357d8ae",
+      "uri": "reviews/week01-depth-20261118/scope.md"
+    },
+    {
+      "id": "frozen-contract",
+      "revision": "2026-11-18",
+      "sha256": "2f69eb913f7da07cc7f0b8401906145e743ee19224c442719cc9b6ec3d19165a",
+      "uri": "reviews/week01-depth-20261118/contract.json"
+    },
+    {
+      "id": "freeze-review",
+      "revision": "2026-11-18",
+      "sha256": "09db754c017dae9fee057d4bf82db75308b12b3a4cbec24b69410e5893efa0f8",
+      "uri": "reviews/week01-depth-20261118/freeze-review.json"
+    },
+    {
+      "id": "official-read",
+      "revision": "2026-11-18",
+      "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+      "uri": "reviews/week01-depth-20261118/joined/sources.json"
+    },
+    {
+      "id": "technical-read",
+      "revision": "2026-11-18",
+      "sha256": "d5fa25bd754ee541f91b01a15c9a14a4c3e6464eb5ac146a66928c1fb6813e5c",
+      "uri": "reviews/week01-depth-20261118/joined/technical-readings.json"
+    },
+    {
+      "id": "external-demands",
+      "revision": "2026-11-18",
+      "sha256": "d5e8898c3bb02a31cf140390a12e81cbc45c85f358b0bf5c4d100bdf8213ce61",
+      "uri": "reviews/week01-depth-20261118/joined/external-demands.json"
+    },
+    {
+      "id": "unit-specs",
+      "revision": "2026-11-18",
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "uri": "skills/koai-evaluate/references/unit-specifications.json"
+    },
+    {
+      "id": "governing-plan",
+      "revision": "2026-11-18",
+      "sha256": "78d743c33d91c958d33dd36e994dc00507d78edecb3f30b986fed4109cc2521e",
+      "uri": "curriculum/student-plan.html"
+    },
+    {
+      "id": "unit-review",
+      "revision": "2026-11-18",
+      "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+      "uri": "reviews/week01-depth-20261118/joined/unit-evidence.json"
+    },
+    {
+      "id": "round01",
+      "revision": "2026-11-18",
+      "sha256": "5ac749f8b28069551e1f9338247989599cfcff3655a8f50e67735efb6ab11b43",
+      "uri": "reviews/week01-depth-20261118/rounds/0001/reviews/joined.json"
+    },
+    {
+      "id": "round02",
+      "revision": "2026-11-18",
+      "sha256": "c27d0a256c66aa1acdfe086a2a019027e7ea1742ae0b1314dd0f1feca2cbf1ef",
+      "uri": "reviews/week01-depth-20261118/rounds/0002/reviews/joined.json"
+    },
+    {
+      "id": "round02-physical",
+      "revision": "2026-11-18",
+      "sha256": "2b81be482d05da4529764704d2d9b0b8f977e3a9f6407f8a0f1fc1366f9ace9d",
+      "uri": "reviews/week01-depth-20261118/joined/round02-physical-keys.json"
+    },
+    {
+      "id": "current-round",
+      "revision": "2026-11-18",
+      "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+      "uri": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json"
+    },
+    {
+      "id": "public-run",
+      "revision": "2026-11-18",
+      "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+      "uri": "reviews/week01-depth-20261118/joined/public-results.json"
+    },
+    {
+      "id": "physical-join",
+      "revision": "2026-11-18",
+      "sha256": "986a68d602deea4417d28ba02fbbabfd94809260e6b49598d27863065f9980f8",
+      "uri": "reviews/week01-depth-20261118/joined/physical-keys.json"
+    },
+    {
+      "id": "jupyter",
+      "revision": "2026-11-18",
+      "sha256": "e6756e9a0e8749d2bfeb1ea7c834ecc5a9961a52051c7ae19c8777cb4bd9e4cc",
+      "uri": "reviews/week01-depth-20261118/rounds/0003/kernel.json"
+    },
+    {
+      "id": "teacher",
+      "revision": "2026-11-18",
+      "sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484",
+      "uri": "lessons/week01/week01_foundations_teacher.md"
+    },
+    {
+      "id": "public-code",
+      "revision": "2026-11-18",
+      "sha256": "cd6a210a82df5cd69730cf25f9efc25f1017ee6a60a3d5348599a5a9546e54c7",
+      "uri": "reviews/week01-depth-20261118/joined/public_cases.py"
+    },
+    {
+      "id": "physical-code",
+      "revision": "2026-11-18",
+      "sha256": "4a11ae06124d7a277c70a676414867c1ac75a9565ec35b41777f41200a5d3594",
+      "uri": "reviews/week01-depth-20261118/joined/physical_keys.py"
+    },
+    {
+      "id": "quality-bundle",
+      "revision": "2026-11-18",
+      "sha256": "ad2b81ce847885927233e54df1ff6a249eb9eb7ebed62d8ca0e77f22a7bba6d8",
+      "uri": "reviews/week01-depth-20261118/joined/quality.json"
+    },
+    {
+      "id": "data:foundations_returns",
+      "revision": "2026-11-18",
+      "sha256": "ece009210bb0ac473b988937f8ecd865f35355dc6d9c8718e3e8846e504daaaf",
+      "uri": "lessons/week01/data/foundations_returns.csv"
+    },
+    {
+      "id": "data:foundations_boxes",
+      "revision": "2026-11-18",
+      "sha256": "471a80d0b99548c29a36331eb5ccad27d25ba7742f955a869687e7096c655635",
+      "uri": "lessons/week01/data/foundations_boxes.csv"
+    },
+    {
+      "id": "data:foundations_returns_transfer",
+      "revision": "2026-11-18",
+      "sha256": "47d719ce82e88acbe98ad175b1f827c8f7c76d22706bd8432344d86e3db6d7a6",
+      "uri": "lessons/week01/data/foundations_returns_transfer.csv"
+    }
+  ],
+  "records": [
+    {
+      "id": "scope-and-originals",
+      "kind": "evidence",
+      "text": "KITPA middle-school 2027 schedule, the domestic syllabus labeled IOAI 2026, the IOAI 2027 version, KITPA high-school worked examples and original international task Antique were read. Only four bounded Week 1 demands extracted.",
+      "source_refs": [
+        {
+          "source_id": "official-read",
+          "locator": "guide, domestic, ioai27, sample, antique"
+        },
+        {
+          "source_id": "external-demands",
+          "locator": "four pre-candidate comparisons"
+        },
+        {
+          "source_id": "frozen-contract",
+          "locator": "topics"
+        }
+      ],
+      "created_at": "2026-11-18 12:35:17 UTC",
+      "supersedes": []
+    },
+    {
+      "id": "revision-trail",
+      "kind": "evidence",
+      "text": "Python traceback, reduction state and visual design-before-hints were corrected in round 2. The original three weaknesses and conditional R2 review remain preserved. A later R2 physical all-missing/paired-empty identifier probe exposed two more defects.",
+      "source_refs": [
+        {
+          "source_id": "round01",
+          "locator": "topics"
+        },
+        {
+          "source_id": "round02",
+          "locator": "topics"
+        },
+        {
+          "source_id": "round02-physical",
+          "locator": "records"
+        }
+      ],
+      "created_at": "2026-11-18 12:35:17 UTC",
+      "supersedes": []
+    },
+    {
+      "id": "current-material",
+      "kind": "evidence",
+      "text": "Read the whole student notebook, matching teacher keys and learner feedback. Counted class/outside work by topic and first-aid boundaries. Current judgments refer only to designed material.",
+      "source_refs": [
+        {
+          "source_id": "unit-review",
+          "locator": "whole_notebook, units, checkpoint"
+        },
+        {
+          "source_id": "current-round",
+          "locator": "topics"
+        },
+        {
+          "source_id": "teacher",
+          "locator": "수업 편성, 새 일지 독립 과제"
+        }
+      ],
+      "created_at": "2026-11-18 12:35:17 UTC",
+      "supersedes": []
+    },
+    {
+      "id": "public-execution",
+      "kind": "evidence",
+      "text": "Executed code-only notebook examples and the separate public teacher solutions. Recalculated threshold grouping with the Python csv module, checked traceback frame text, bad keys, and actual chart heights/axis ranges, and replayed separately serialized missing key columns.",
+      "source_refs": [
+        {
+          "source_id": "public-run",
+          "locator": "transfer, tracebacks, teacher_transfer_artists"
+        },
+        {
+          "source_id": "physical-join",
+          "locator": "records"
+        },
+        {
+          "source_id": "jupyter",
+          "locator": "transport, code_cells, csv_sha256"
+        },
+        {
+          "source_id": "public-code",
+          "locator": "main"
+        },
+        {
+          "source_id": "physical-code",
+          "locator": "main"
+        }
+      ],
+      "created_at": "2026-11-18 12:35:17 UTC",
+      "supersedes": []
+    },
+    {
+      "id": "legacy-criteria",
+      "kind": "evidence",
+      "text": "The question and sources authorized a bounded Week 1 implementation, not a campaign-wide numerical budget. The K14 priority, attempt and numeric stop policy has no operator agreement; the material review cannot set it.",
+      "source_refs": [
+        {
+          "source_id": "frozen-contract",
+          "locator": "four topic minutes and scopes"
+        },
+        {
+          "source_id": "scope",
+          "locator": "1주차 범위"
+        },
+        {
+          "source_id": "quality-bundle",
+          "locator": "policy, budget, checkpoint"
+        }
+      ],
+      "created_at": "2026-11-18 12:35:17 UTC",
+      "supersedes": []
+    }
+  ],
+  "reviews": [
+    {
+      "id": "current-independent",
+      "context_fingerprint": "003fb026aa736346d925bfc6724d47517127947ab4dd859ae7dc21a5a86de7bf",
+      "author_id": "week01-new-author",
+      "reviewer": {
+        "id": "joined-content-review",
+        "model_family": "Codex, exact model family unverified"
+      },
+      "reason": "Independent material review and direct source/physical checks are recorded. Whole-campaign K14 policy fingerprint and numeric stop budget have no operator agreement.",
+      "conclusion": "abstain",
+      "checks": [
+        {
+          "id": "K01",
+          "status": "passed",
+          "evidence_record_ids": [
+            "scope-and-originals",
+            "public-execution",
+            "current-material"
+          ]
+        },
+        {
+          "id": "K02",
+          "status": "passed",
+          "evidence_record_ids": [
+            "scope-and-originals",
+            "public-execution",
+            "current-material"
+          ]
+        },
+        {
+          "id": "K03",
+          "status": "passed",
+          "evidence_record_ids": [
+            "scope-and-originals",
+            "public-execution",
+            "current-material"
+          ]
+        },
+        {
+          "id": "K04",
+          "status": "passed",
+          "evidence_record_ids": [
+            "scope-and-originals",
+            "public-execution",
+            "current-material"
+          ]
+        },
+        {
+          "id": "K05",
+          "status": "passed",
+          "evidence_record_ids": [
+            "scope-and-originals",
+            "public-execution",
+            "current-material"
+          ]
+        },
+        {
+          "id": "K06",
+          "status": "passed",
+          "evidence_record_ids": [
+            "scope-and-originals",
+            "public-execution",
+            "current-material"
+          ]
+        },
+        {
+          "id": "K07",
+          "status": "passed",
+          "evidence_record_ids": [
+            "scope-and-originals",
+            "public-execution",
+            "current-material"
+          ]
+        },
+        {
+          "id": "K08",
+          "status": "passed",
+          "evidence_record_ids": [
+            "scope-and-originals",
+            "public-execution",
+            "current-material"
+          ]
+        },
+        {
+          "id": "K09",
+          "status": "passed",
+          "evidence_record_ids": [
+            "scope-and-originals",
+            "public-execution",
+            "current-material"
+          ]
+        },
+        {
+          "id": "K10",
+          "status": "passed",
+          "evidence_record_ids": [
+            "scope-and-originals",
+            "public-execution",
+            "current-material"
+          ]
+        },
+        {
+          "id": "K11",
+          "status": "passed",
+          "evidence_record_ids": [
+            "scope-and-originals",
+            "public-execution",
+            "current-material"
+          ]
+        },
+        {
+          "id": "K12",
+          "status": "passed",
+          "evidence_record_ids": [
+            "scope-and-originals",
+            "public-execution",
+            "current-material"
+          ]
+        },
+        {
+          "id": "K13",
+          "status": "passed",
+          "evidence_record_ids": [
+            "scope-and-originals",
+            "public-execution",
+            "current-material"
+          ]
+        },
+        {
+          "id": "K14",
+          "status": "not_run",
+          "evidence_record_ids": [
+            "legacy-criteria"
+          ]
+        },
+        {
+          "id": "K15",
+          "status": "passed",
+          "evidence_record_ids": [
+            "scope-and-originals",
+            "public-execution",
+            "current-material"
+          ]
+        },
+        {
+          "id": "K16",
+          "status": "passed",
+          "evidence_record_ids": [
+            "scope-and-originals",
+            "public-execution",
+            "current-material"
+          ]
+        }
+      ]
+    }
+  ],
+  "history": [],
+  "scope_readback": {
+    "operator_scope": "Separate-branch Week 1 production, actual tests and repeated review authorized.",
+    "limits": "The original pre-author four-topic freeze and the assembled harness fingerprint are separate records. Current context fingerprint is a technical verification of these input bytes. No agreed campaign budget, numeric no-progress rule, or individual workload cap was supplied.",
+    "previous_rounds": "The exact independent judgments and external comparisons are recorded from each actual notebook snapshot; no historical aggregate acceptance is inferred.",
+    "outside_material_scope": [
+      "actual student performance and help",
+      "actual student and teacher time",
+      "real 2027 contest outcomes"
+    ]
+  }
+}

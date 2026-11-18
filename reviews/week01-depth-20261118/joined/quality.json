@@ -1,0 +1,3430 @@
+{
+  "schema_version": 1,
+  "revision": "week01-foundations-ef1586ee0eef",
+  "synthetic": false,
+  "author_id": "week01-new-author",
+  "artifact": {
+    "id": "week01-foundations",
+    "revision": "week01-foundations-ef1586ee0eef",
+    "path": "lessons/week01/week01_foundations.ipynb",
+    "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e"
+  },
+  "target": {
+    "competition_year": 2027,
+    "division": "middle_school",
+    "coverage_claim": "selected_scope",
+    "objective_ids": [
+      "W1-python",
+      "W1-table",
+      "W1-array",
+      "W1-visualise"
+    ],
+    "learning_outcomes": "outside_scope"
+  },
+  "policy": {
+    "agreed": false,
+    "decision_ref": null,
+    "agreement_fingerprint": null,
+    "stop_requested": false,
+    "maximum_required_homework_minutes": null
+  },
+  "budget": {
+    "max_attempts": null,
+    "max_elapsed_minutes": null,
+    "max_no_progress": null
+  },
+  "checkpoint": {
+    "minutes_since": 0,
+    "elapsed_total": 40,
+    "no_progress_count": 0,
+    "record": "2026-11-18 12:35:17 UTC에 실제 집계 검수 진행을 기록했다. 고정 커밋 시각 11:55:05 UTC부터 40분이 지났다. 세 번의 후보 작성/검수와 외부 자료 대조·복구를 포함하는 경과 시간이다. R2의 실제 파일 경계 실패와 R3의 동일 입력 통과를 확인했다. 학습 시간과 별도이며 전체 캠페인 절대 시간 또는 예산을 뜻하지 않는다."
+  },
+  "units": [
+    {
+      "id": "W1-python",
+      "week": 1,
+      "locator": "cell:python-basics",
+      "syllabus_ids": [
+        "KOAI-01"
+      ],
+      "concept_ids": [
+        "program_state",
+        "control_flow",
+        "function_return"
+      ],
+      "claimed_depth": "independent",
+      "depth_scope": "설계된 새 입력의 첫 시도와 별도 지원. 학생의 독립 수행은 관찰 전.",
+      "mode_evidence": {
+        "practical": "passed"
+      },
+      "prerequisites": [
+        {
+          "id": "PY-VARIABLES",
+          "task": "Trace assignment and distinguish a stored value from a displayed string.",
+          "expected": "Predict and justify the value used by the next statement.",
+          "support_before_use": {
+            "before_unit": "W1-python",
+            "locator": "cell:python-basics",
+            "first_use": "cell:python-example"
+          }
+        },
+        {
+          "id": "PY-CONTROL",
+          "task": "Trace a conditional and a bounded loop on a short list.",
+          "expected": "Give the selected branch, iteration count and resulting values.",
+          "support_before_use": {
+            "before_unit": "W1-python",
+            "locator": "cell:python-basics",
+            "first_use": "cell:python-example"
+          }
+        },
+        {
+          "id": "PY-FUNCTION",
+          "task": "Use a parameter and return a computed value to a caller.",
+          "expected": "Distinguish return from print and reuse the returned value.",
+          "support_before_use": {
+            "before_unit": "W1-python",
+            "locator": "cell:python-basics",
+            "first_use": "cell:python-example"
+          }
+        },
+        {
+          "id": "PY-LIST",
+          "task": "Select an indexed list element and a slice without changing the original accidentally.",
+          "expected": "Identify index boundaries and the selected values.",
+          "support_before_use": {
+            "before_unit": "W1-python",
+            "locator": "cell:return-story",
+            "first_use": "cell:python-five"
+          }
+        },
+        {
+          "id": "PY-FILE",
+          "task": "Open a supplied local CSV and identify its header and rows.",
+          "expected": "Resolve the stated path and distinguish missing file from missing column.",
+          "support_before_use": {
+            "before_unit": "W1-python",
+            "locator": "cell:csv-open",
+            "first_use": "cell:load-csv"
+          }
+        },
+        {
+          "id": "PY-ERROR",
+          "task": "Read a short traceback and locate the first relevant error.",
+          "expected": "Name the failing operation and propose a testable correction.",
+          "support_before_use": {
+            "before_unit": "W1-python",
+            "locator": "cell:trace-example",
+            "first_use": "cell:python-five"
+          }
+        }
+      ],
+      "claim_ids": [
+        "claim:calls",
+        "claim:missing-return",
+        "claim:trace"
+      ],
+      "plan_dependency_ids": [
+        "plan:W1-python"
+      ],
+      "chain": {
+        "theory": {
+          "concept_ids": [
+            "program_state",
+            "control_flow",
+            "function_return"
+          ],
+          "locator": "cell:python-basics",
+          "expected_behavior": "Explain state changes, control flow and return values needed by the supplied data procedure.",
+          "activity_id": "python",
+          "help": "worked explanation or printed prompt where indicated",
+          "new_input": false
+        },
+        "noncoding": {
+          "concept_ids": [
+            "program_state",
+            "control_flow",
+            "function_return"
+          ],
+          "locator": "cell:python-five",
+          "expected_behavior": "Predict a short procedure before running it and identify a counterexample to the mistaken return/print equivalence.",
+          "activity_id": "python",
+          "help": "worked explanation or printed prompt where indicated",
+          "new_input": false
+        },
+        "coding": {
+          "concept_ids": [
+            "program_state",
+            "control_flow",
+            "function_return"
+          ],
+          "locator": "cell:python-independent",
+          "expected_behavior": "Modify a small supplied procedure and check its returned value and stated error behavior.",
+          "activity_id": "python",
+          "help": "worked explanation or printed prompt where indicated",
+          "new_input": false
+        },
+        "assessment": {
+          "concept_ids": [
+            "program_state",
+            "control_flow",
+            "function_return"
+          ],
+          "locator": "cell:python-five",
+          "expected_behavior": "Use changed inputs without the completed solution visible; state assistance and explain a failed case.",
+          "activity_id": "python",
+          "help": "none",
+          "new_input": true
+        }
+      },
+      "independent_assignment": {
+        "locators": [
+          "cell:python-five",
+          "cell:python-independent",
+          "cell:independent-start",
+          "cell:trace-independent"
+        ],
+        "help": "학생은 교사용 답을 닫고, 문제 지시·원자료와 미완성 셀만으로 첫 예상 또는 설계를 기록한다. 과거 예시를 다시 보거나 도움을 받으면 해당 시도를 표시한다. 새 표·그림 실마리는 첫 답을 저장한 다음 선택적으로 펼친다.",
+        "key": "lessons/week01/week01_foundations_teacher.md / Python 카드"
+      },
+      "explanation_regions": {
+        "T04": [
+          "cell:python-basics",
+          "cell:python-example",
+          "cell:return-example",
+          "cell:python-five",
+          "cell:trace-example",
+          "cell:trace-independent"
+        ],
+        "T05": [
+          "cell:return-story",
+          "cell:python-five",
+          "cell:independent-start",
+          "cell:trace-independent"
+        ]
+      },
+      "execution": {
+        "status": "passed",
+        "artifact_sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+        "command": "python -B reviews/week01-depth-20261118/execute_lesson.py lessons/week01/week01_foundations.ipynb --data lessons/week01/data --report <receipt> --transport inprocess; python -B reviews/week01-depth-20261118/joined/public_cases.py",
+        "environment": "{'numpy': '2.3.5', 'pandas': '2.2.3', 'matplotlib': '3.10.8', 'seaborn': '0.13.2'}; Jupyter transport inprocess, independent fresh Python/Agg public cases.",
+        "exit_code": 0,
+        "clean_run": true,
+        "new_input": true,
+        "assertions": [
+          {
+            "name": "Isolated Jupyter execution of all supplied cells from a clean notebook with only declared CSV files",
+            "status": "passed"
+          },
+          {
+            "name": "Independent public-file cases and changed-input boundary checks; see exact per-case report",
+            "status": "passed"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "reviews/week01-depth-20261118/rounds/0003/kernel.json",
+            "sha256": "e6756e9a0e8749d2bfeb1ea7c834ecc5a9961a52051c7ae19c8777cb4bd9e4cc",
+            "locator": "code_cells, figures and registered CSV bytes",
+            "observation": "Actual notebook transport, clean starting notebook, fresh kernel."
+          },
+          {
+            "path": "reviews/week01-depth-20261118/joined/public-results.json",
+            "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+            "locator": "W1-python exact public inputs",
+            "observation": "Independent stdlib grouping and axis calculations, actual teacher functions, artists and error probes."
+          }
+        ]
+      }
+    },
+    {
+      "id": "W1-table",
+      "week": 1,
+      "locator": "cell:dictionary",
+      "syllabus_ids": [
+        "KOAI-02"
+      ],
+      "concept_ids": [
+        "row_column",
+        "feature_target",
+        "missingness"
+      ],
+      "claimed_depth": "independent",
+      "depth_scope": "설계된 새 입력의 첫 시도와 별도 지원. 학생의 독립 수행은 관찰 전.",
+      "mode_evidence": {
+        "practical": "passed"
+      },
+      "prerequisites": [
+        {
+          "id": "PY-FUNCTION",
+          "task": "Use a parameter and return a computed value to a caller.",
+          "expected": "Distinguish return from print and reuse the returned value.",
+          "support_before_use": {
+            "before_unit": "W1-table",
+            "locator": "cell:python-basics",
+            "first_use": "cell:load-csv"
+          }
+        },
+        {
+          "id": "PY-LIST",
+          "task": "Select an indexed list element and a slice without changing the original accidentally.",
+          "expected": "Identify index boundaries and the selected values.",
+          "support_before_use": {
+            "before_unit": "W1-table",
+            "locator": "cell:return-story",
+            "first_use": "cell:select-csv"
+          }
+        },
+        {
+          "id": "PY-FILE",
+          "task": "Open a supplied local CSV and identify its header and rows.",
+          "expected": "Resolve the stated path and distinguish missing file from missing column.",
+          "support_before_use": {
+            "before_unit": "W1-table",
+            "locator": "cell:csv-open",
+            "first_use": "cell:load-csv"
+          }
+        },
+        {
+          "id": "PY-ERROR",
+          "task": "Read a short traceback and locate the first relevant error.",
+          "expected": "Name the failing operation and propose a testable correction.",
+          "support_before_use": {
+            "before_unit": "W1-table",
+            "locator": "cell:missing-error",
+            "first_use": "cell:column-error"
+          }
+        }
+      ],
+      "claim_ids": [
+        "claim:count",
+        "claim:availability",
+        "claim:join",
+        "claim:null-merge",
+        "claim:id-schema"
+      ],
+      "plan_dependency_ids": [
+        "plan:W1-table"
+      ],
+      "chain": {
+        "theory": {
+          "concept_ids": [
+            "row_column",
+            "feature_target",
+            "missingness"
+          ],
+          "locator": "cell:dictionary",
+          "expected_behavior": "Define a record, column, feature and target in the same data dictionary; distinguish missing from zero.",
+          "activity_id": "theory",
+          "help": "worked explanation or printed prompt where indicated",
+          "new_input": false
+        },
+        "noncoding": {
+          "concept_ids": [
+            "row_column",
+            "feature_target",
+            "missingness"
+          ],
+          "locator": "cell:table-card",
+          "expected_behavior": "Predict selected rows/columns and missing-value counts from a small table.",
+          "activity_id": "theory",
+          "help": "worked explanation or printed prompt where indicated",
+          "new_input": false
+        },
+        "coding": {
+          "concept_ids": [
+            "row_column",
+            "feature_target",
+            "missingness"
+          ],
+          "locator": "cell:select-csv",
+          "expected_behavior": "Read the stated CSV, select the requested subset, inspect dtype/shape and count missing values; do not silently impute in week 1.",
+          "activity_id": "csv",
+          "help": "worked explanation or printed prompt where indicated",
+          "new_input": false
+        },
+        "assessment": {
+          "concept_ids": [
+            "row_column",
+            "feature_target",
+            "missingness"
+          ],
+          "locator": "cell:table-independent",
+          "expected_behavior": "Apply the same stated contract to changed column names and a documented missing-column case.",
+          "activity_id": "csv",
+          "help": "none",
+          "new_input": true
+        }
+      },
+      "independent_assignment": {
+        "locators": [
+          "cell:transfer-brief",
+          "cell:transfer-table",
+          "cell:transfer-data-work",
+          "cell:transfer-faults",
+          "cell:transfer-fault-work"
+        ],
+        "help": "학생은 교사용 답을 닫고, 문제 지시·원자료와 미완성 셀만으로 첫 예상 또는 설계를 기록한다. 과거 예시를 다시 보거나 도움을 받으면 해당 시도를 표시한다. 새 표·그림 실마리는 첫 답을 저장한 다음 선택적으로 펼친다.",
+        "key": "lessons/week01/week01_foundations_teacher.md / 수첩과 원본 CSV / 새 일지 독립 과제"
+      },
+      "explanation_regions": {
+        "T03": [
+          "cell:dictionary",
+          "cell:table-card",
+          "cell:audit-csv",
+          "cell:join-story",
+          "cell:group-story",
+          "cell:transfer-table",
+          "cell:join-key-example"
+        ],
+        "T05": [
+          "cell:dictionary",
+          "cell:missing-error",
+          "cell:group-story",
+          "cell:transfer-faults",
+          "cell:join-key-example"
+        ]
+      },
+      "execution": {
+        "status": "passed",
+        "artifact_sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+        "command": "python -B reviews/week01-depth-20261118/execute_lesson.py lessons/week01/week01_foundations.ipynb --data lessons/week01/data --report <receipt> --transport inprocess; python -B reviews/week01-depth-20261118/joined/public_cases.py",
+        "environment": "{'numpy': '2.3.5', 'pandas': '2.2.3', 'matplotlib': '3.10.8', 'seaborn': '0.13.2'}; Jupyter transport inprocess, independent fresh Python/Agg public cases.",
+        "exit_code": 0,
+        "clean_run": true,
+        "new_input": true,
+        "assertions": [
+          {
+            "name": "Isolated Jupyter execution of all supplied cells from a clean notebook with only declared CSV files",
+            "status": "passed"
+          },
+          {
+            "name": "Independent public-file cases and changed-input boundary checks; see exact per-case report",
+            "status": "passed"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "reviews/week01-depth-20261118/rounds/0003/kernel.json",
+            "sha256": "e6756e9a0e8749d2bfeb1ea7c834ecc5a9961a52051c7ae19c8777cb4bd9e4cc",
+            "locator": "code_cells, figures and registered CSV bytes",
+            "observation": "Actual notebook transport, clean starting notebook, fresh kernel."
+          },
+          {
+            "path": "reviews/week01-depth-20261118/joined/public-results.json",
+            "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+            "locator": "W1-table exact public inputs",
+            "observation": "Independent stdlib grouping and axis calculations, actual teacher functions, artists and error probes."
+          }
+        ]
+      }
+    },
+    {
+      "id": "W1-array",
+      "week": 1,
+      "locator": "cell:axis-picture",
+      "syllabus_ids": [
+        "KOAI-02",
+        "KOAI-06"
+      ],
+      "concept_ids": [
+        "shape",
+        "axis",
+        "arithmetic_mean"
+      ],
+      "claimed_depth": "independent",
+      "depth_scope": "설계된 새 입력의 첫 시도와 별도 지원. 학생의 독립 수행은 관찰 전.",
+      "mode_evidence": {
+        "practical": "passed"
+      },
+      "prerequisites": [
+        {
+          "id": "PY-LIST",
+          "task": "Select an indexed list element and a slice without changing the original accidentally.",
+          "expected": "Identify index boundaries and the selected values.",
+          "support_before_use": {
+            "before_unit": "W1-array",
+            "locator": "cell:return-story",
+            "first_use": "cell:reduce-period"
+          }
+        },
+        {
+          "id": "MATH-MEAN",
+          "task": "Compute the arithmetic mean of a short finite list.",
+          "expected": "State the sum, count and resulting quantity; bridge before axis reductions.",
+          "support_before_use": {
+            "before_unit": "W1-array",
+            "locator": "cell:axis-picture",
+            "first_use": "cell:axis-picture"
+          }
+        }
+      ],
+      "claim_ids": [
+        "claim:axis",
+        "claim:row-mean",
+        "claim:variance",
+        "claim:dot-order",
+        "claim:view",
+        "claim:broadcast",
+        "claim:reshape"
+      ],
+      "plan_dependency_ids": [
+        "plan:W1-array"
+      ],
+      "chain": {
+        "theory": {
+          "concept_ids": [
+            "shape",
+            "axis",
+            "arithmetic_mean"
+          ],
+          "locator": "cell:axis-picture",
+          "expected_behavior": "Define shape and reduction axis; explicitly state that this check uses rectangular 2D arrays with keepdims false.",
+          "activity_id": "theory",
+          "help": "worked explanation or printed prompt where indicated",
+          "new_input": false
+        },
+        "noncoding": {
+          "concept_ids": [
+            "shape",
+            "axis",
+            "arithmetic_mean"
+          ],
+          "locator": "cell:axis-check",
+          "expected_behavior": "Predict the retained dimensions and independently calculate column and row means.",
+          "activity_id": "hand",
+          "help": "worked explanation or printed prompt where indicated",
+          "new_input": false
+        },
+        "coding": {
+          "concept_ids": [
+            "shape",
+            "axis",
+            "arithmetic_mean"
+          ],
+          "locator": "cell:reduce-period",
+          "expected_behavior": "Run both axis reductions on the same array and reconcile values and output shape with the prediction.",
+          "activity_id": "array",
+          "help": "worked explanation or printed prompt where indicated",
+          "new_input": false
+        },
+        "assessment": {
+          "concept_ids": [
+            "shape",
+            "axis",
+            "arithmetic_mean"
+          ],
+          "locator": "cell:axis-check",
+          "expected_behavior": "Use a new rectangular array and explain why the output length changes with the selected axis.",
+          "activity_id": "hand",
+          "help": "none",
+          "new_input": true
+        }
+      },
+      "independent_assignment": {
+        "locators": [
+          "cell:axis-check",
+          "cell:array-lab",
+          "cell:array-independent",
+          "cell:math-lab",
+          "cell:math-independent"
+        ],
+        "help": "학생은 교사용 답을 닫고, 문제 지시·원자료와 미완성 셀만으로 첫 예상 또는 설계를 기록한다. 과거 예시를 다시 보거나 도움을 받으면 해당 시도를 표시한다. 새 표·그림 실마리는 첫 답을 저장한 다음 선택적으로 펼친다.",
+        "key": "lessons/week01/week01_foundations_teacher.md / 축·분산·필기 / 자습 배열과 수학"
+      },
+      "explanation_regions": {
+        "T01": [
+          "cell:axis-picture",
+          "cell:variance-bridge",
+          "cell:broadcast-concept",
+          "cell:math-concept"
+        ],
+        "T02": [
+          "cell:axis-picture",
+          "cell:variance-bridge",
+          "cell:math-concept",
+          "cell:math-lab"
+        ],
+        "T03": [
+          "cell:axis-picture",
+          "cell:axis-check",
+          "cell:reshape-concept"
+        ],
+        "T04": [
+          "cell:axis-picture",
+          "cell:reduce-period",
+          "cell:axis-check"
+        ],
+        "T05": [
+          "cell:axis-check",
+          "cell:array-lab",
+          "cell:math-lab"
+        ]
+      },
+      "execution": {
+        "status": "passed",
+        "artifact_sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+        "command": "python -B reviews/week01-depth-20261118/execute_lesson.py lessons/week01/week01_foundations.ipynb --data lessons/week01/data --report <receipt> --transport inprocess; python -B reviews/week01-depth-20261118/joined/public_cases.py",
+        "environment": "{'numpy': '2.3.5', 'pandas': '2.2.3', 'matplotlib': '3.10.8', 'seaborn': '0.13.2'}; Jupyter transport inprocess, independent fresh Python/Agg public cases.",
+        "exit_code": 0,
+        "clean_run": true,
+        "new_input": true,
+        "assertions": [
+          {
+            "name": "Isolated Jupyter execution of all supplied cells from a clean notebook with only declared CSV files",
+            "status": "passed"
+          },
+          {
+            "name": "Independent public-file cases and changed-input boundary checks; see exact per-case report",
+            "status": "passed"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "reviews/week01-depth-20261118/rounds/0003/kernel.json",
+            "sha256": "e6756e9a0e8749d2bfeb1ea7c834ecc5a9961a52051c7ae19c8777cb4bd9e4cc",
+            "locator": "code_cells, figures and registered CSV bytes",
+            "observation": "Actual notebook transport, clean starting notebook, fresh kernel."
+          },
+          {
+            "path": "reviews/week01-depth-20261118/joined/public-results.json",
+            "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+            "locator": "W1-array exact public inputs",
+            "observation": "Independent stdlib grouping and axis calculations, actual teacher functions, artists and error probes."
+          }
+        ]
+      }
+    },
+    {
+      "id": "W1-visualise",
+      "week": 1,
+      "locator": "cell:plot-core",
+      "syllabus_ids": [
+        "KOAI-03"
+      ],
+      "concept_ids": [
+        "variable",
+        "aggregation",
+        "axis_label"
+      ],
+      "claimed_depth": "independent",
+      "depth_scope": "설계된 새 입력의 첫 시도와 별도 지원. 학생의 독립 수행은 관찰 전.",
+      "mode_evidence": {
+        "practical": "passed"
+      },
+      "prerequisites": [
+        {
+          "id": "PY-FILE",
+          "task": "Open a supplied local CSV and identify its header and rows.",
+          "expected": "Resolve the stated path and distinguish missing file from missing column.",
+          "support_before_use": {
+            "before_unit": "W1-visualise",
+            "locator": "cell:csv-open",
+            "first_use": "cell:plot-period"
+          }
+        },
+        {
+          "id": "MATH-MEAN",
+          "task": "Compute the arithmetic mean of a short finite list.",
+          "expected": "State the sum, count and resulting quantity; bridge before axis reductions.",
+          "support_before_use": {
+            "before_unit": "W1-visualise",
+            "locator": "cell:axis-picture",
+            "first_use": "cell:plot-core"
+          }
+        }
+      ],
+      "claim_ids": [
+        "claim:plot",
+        "claim:hist-bins",
+        "claim:range"
+      ],
+      "plan_dependency_ids": [
+        "plan:W1-visualise"
+      ],
+      "chain": {
+        "theory": {
+          "concept_ids": [
+            "variable",
+            "aggregation",
+            "axis_label"
+          ],
+          "locator": "cell:plot-core",
+          "expected_behavior": "Distinguish the plotted quantity, aggregation and axis units from the underlying raw records.",
+          "activity_id": "array",
+          "help": "worked explanation or printed prompt where indicated",
+          "new_input": false
+        },
+        "noncoding": {
+          "concept_ids": [
+            "variable",
+            "aggregation",
+            "axis_label"
+          ],
+          "locator": "cell:written-card",
+          "expected_behavior": "Read a graph and match its axes and aggregation to a stated table quantity.",
+          "activity_id": "written",
+          "help": "worked explanation or printed prompt where indicated",
+          "new_input": false
+        },
+        "coding": {
+          "concept_ids": [
+            "variable",
+            "aggregation",
+            "axis_label"
+          ],
+          "locator": "cell:plot-period",
+          "expected_behavior": "Create the required labeled graph and interpret it; record Matplotlib and Seaborn evidence separately when claiming the full grouped item.",
+          "activity_id": "array",
+          "help": "worked explanation or printed prompt where indicated",
+          "new_input": false
+        },
+        "assessment": {
+          "concept_ids": [
+            "variable",
+            "aggregation",
+            "axis_label"
+          ],
+          "locator": "cell:class-independent",
+          "expected_behavior": "Change an input condition and explain the resulting graph rather than merely displaying an image.",
+          "activity_id": "array",
+          "help": "none",
+          "new_input": true
+        }
+      },
+      "independent_assignment": {
+        "locators": [
+          "cell:class-transfer",
+          "cell:transfer-brief",
+          "cell:transfer-first-code",
+          "cell:transfer-figures",
+          "cell:transfer-plot-work",
+          "cell:handoff"
+        ],
+        "help": "학생은 교사용 답을 닫고, 문제 지시·원자료와 미완성 셀만으로 첫 예상 또는 설계를 기록한다. 과거 예시를 다시 보거나 도움을 받으면 해당 시도를 표시한다. 새 표·그림 실마리는 첫 답을 저장한 다음 선택적으로 펼친다.",
+        "key": "lessons/week01/week01_foundations_teacher.md / 병합과 두 그림의 예시 / 새 일지 독립 과제"
+      },
+      "explanation_regions": {
+        "T03": [
+          "cell:plot-core",
+          "cell:plot-two-questions",
+          "cell:plot-histogram",
+          "cell:plot-categories",
+          "cell:plot-read",
+          "cell:transfer-figures"
+        ],
+        "T05": [
+          "cell:plot-read",
+          "cell:transfer-figures",
+          "cell:handoff",
+          "cell:transfer-brief",
+          "cell:transfer-first-code"
+        ]
+      },
+      "execution": {
+        "status": "passed",
+        "artifact_sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+        "command": "python -B reviews/week01-depth-20261118/execute_lesson.py lessons/week01/week01_foundations.ipynb --data lessons/week01/data --report <receipt> --transport inprocess; python -B reviews/week01-depth-20261118/joined/public_cases.py",
+        "environment": "{'numpy': '2.3.5', 'pandas': '2.2.3', 'matplotlib': '3.10.8', 'seaborn': '0.13.2'}; Jupyter transport inprocess, independent fresh Python/Agg public cases.",
+        "exit_code": 0,
+        "clean_run": true,
+        "new_input": true,
+        "assertions": [
+          {
+            "name": "Isolated Jupyter execution of all supplied cells from a clean notebook with only declared CSV files",
+            "status": "passed"
+          },
+          {
+            "name": "Independent public-file cases and changed-input boundary checks; see exact per-case report",
+            "status": "passed"
+          }
+        ],
+        "evidence": [
+          {
+            "path": "reviews/week01-depth-20261118/rounds/0003/kernel.json",
+            "sha256": "e6756e9a0e8749d2bfeb1ea7c834ecc5a9961a52051c7ae19c8777cb4bd9e4cc",
+            "locator": "code_cells, figures and registered CSV bytes",
+            "observation": "Actual notebook transport, clean starting notebook, fresh kernel."
+          },
+          {
+            "path": "reviews/week01-depth-20261118/joined/public-results.json",
+            "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+            "locator": "W1-visualise exact public inputs",
+            "observation": "Independent stdlib grouping and axis calculations, actual teacher functions, artists and error probes."
+          }
+        ]
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim:calls",
+      "statement": "조건에 따라 hits를 갱신하고 return으로 돌려준다. 기준과 같은 값은 >에서 제외되고 >=에서 포함된다.",
+      "domain": "공개 1주차 반납함 자료의 교육용 예/기술 명세",
+      "quantity": "claim:calls",
+      "assumptions": [
+        "해당 셀에 명시된 공개 입력·행/구간·시간·축 약속과 입력 범위. 실제 학생/범용 성능 주장을 하지 않는다."
+      ],
+      "locator": "cell:python-basics",
+      "source_ids": [
+        "python-return",
+        "function",
+        "exception"
+      ]
+    },
+    {
+      "id": "claim:missing-return",
+      "statement": "일반 함수가 아무 값도 반환하지 않고 끝나면 None으로 평가되어 여기에 1을 더하면 TypeError다.",
+      "domain": "공개 1주차 반납함 자료의 교육용 예/기술 명세",
+      "quantity": "claim:missing-return",
+      "assumptions": [
+        "해당 셀에 명시된 공개 입력·행/구간·시간·축 약속과 입력 범위. 실제 학생/범용 성능 주장을 하지 않는다."
+      ],
+      "locator": "cell:return-story",
+      "source_ids": [
+        "python-return",
+        "function"
+      ]
+    },
+    {
+      "id": "claim:trace",
+      "statement": "문자열 7과 정수 기준의 비교는 TypeError를 내며 스택에서 scan_batch 호출과 count_over의 실패 연산을 찾을 수 있다. 다른 last_box 사례의 범위 밖 인덱스는 IndexError다.",
+      "domain": "공개 1주차 반납함 자료의 교육용 예/기술 명세",
+      "quantity": "claim:trace",
+      "assumptions": [
+        "해당 셀에 명시된 공개 입력·행/구간·시간·축 약속과 입력 범위. 실제 학생/범용 성능 주장을 하지 않는다."
+      ],
+      "locator": "cell:trace-example",
+      "source_ids": [
+        "exception"
+      ]
+    },
+    {
+      "id": "claim:count",
+      "statement": "심사 시점이 같은 특성과 뒤의 목표를 구별한다. 하교 관측 0은 분모에 남고 미관측은 제외된다. 키로 결합하면 오른쪽 순서가 결과를 바꾸지 않는다.",
+      "domain": "공개 1주차 반납함 자료의 교육용 예/기술 명세",
+      "quantity": "claim:count",
+      "assumptions": [
+        "해당 셀에 명시된 공개 입력·행/구간·시간·축 약속과 입력 범위. 실제 학생/범용 성능 주장을 하지 않는다."
+      ],
+      "locator": "cell:dictionary",
+      "source_ids": [
+        "domestic",
+        "antique",
+        "count",
+        "merge",
+        "read-csv"
+      ]
+    },
+    {
+      "id": "claim:availability",
+      "statement": "점심 수거까지 알 수 있는 세 구간과 하교 수거 뒤 정해지는 목표를 구분한다. 데이터 사전에서 정한 실제 0과 미관측을 나눈다.",
+      "domain": "공개 1주차 반납함 자료의 교육용 예/기술 명세",
+      "quantity": "claim:availability",
+      "assumptions": [
+        "해당 셀에 명시된 공개 입력·행/구간·시간·축 약속과 입력 범위. 실제 학생/범용 성능 주장을 하지 않는다."
+      ],
+      "locator": "cell:dictionary",
+      "source_ids": [
+        "domestic",
+        "antique"
+      ]
+    },
+    {
+      "id": "claim:join",
+      "statement": "하나의 반납함 키에 붙이는 오른쪽 자료는 반납함당 한 행이어야 한다. 왼쪽 병합으로 미연결 관찰 ID를 찾을 수 있다.",
+      "domain": "공개 1주차 반납함 자료의 교육용 예/기술 명세",
+      "quantity": "claim:join",
+      "assumptions": [
+        "해당 셀에 명시된 공개 입력·행/구간·시간·축 약속과 입력 범위. 실제 학생/범용 성능 주장을 하지 않는다."
+      ],
+      "locator": "cell:join-story",
+      "source_ids": [
+        "merge"
+      ]
+    },
+    {
+      "id": "claim:null-merge",
+      "statement": "pandas의 일반 병합에서는 양쪽 결측 키가 매치될 수 있다. 고유 식별 근거가 없는 키를 배제한 뒤 왼쪽 관찰 행을 보존하고 실제 미연결 기록 이름을 확인한다.",
+      "domain": "공개 1주차 반납함 자료의 교육용 예/기술 명세",
+      "quantity": "claim:null-merge",
+      "assumptions": [
+        "해당 셀에 명시된 공개 입력·행/구간·시간·축 약속과 입력 범위. 실제 학생/범용 성능 주장을 하지 않는다."
+      ],
+      "locator": "cell:join-story",
+      "source_ids": [
+        "merge"
+      ]
+    },
+    {
+      "id": "claim:id-schema",
+      "statement": "문자 ID로 읽고 빈 필드만 결측으로 지정한다. 두 키의 양끝 공백과 빈 문자열을 통일해, 열 전체가 비는 경우에도 근거 없는 구역을 만들지 않고 실제 기록 이름을 보고한다.",
+      "domain": "공개 1주차 반납함 자료의 교육용 예/기술 명세",
+      "quantity": "claim:id-schema",
+      "assumptions": [
+        "해당 셀에 명시된 공개 입력·행/구간·시간·축 약속과 입력 범위. 실제 학생/범용 성능 주장을 하지 않는다."
+      ],
+      "locator": "cell:csv-open",
+      "source_ids": [
+        "read-csv",
+        "merge"
+      ]
+    },
+    {
+      "id": "claim:axis",
+      "statement": "R1·R2 개관·오전·점심의 열 평균은 [5,2,5], 행 평균은 [4,4]다. 2차원 배열의 줄인 축은 keepdims=False에서 사라진다.",
+      "domain": "공개 1주차 반납함 자료의 교육용 예/기술 명세",
+      "quantity": "claim:axis",
+      "assumptions": [
+        "해당 셀에 명시된 공개 입력·행/구간·시간·축 약속과 입력 범위. 실제 학생/범용 성능 주장을 하지 않는다."
+      ],
+      "locator": "cell:axis-picture",
+      "source_ids": [
+        "mean",
+        "broadcast",
+        "views",
+        "reshape",
+        "transpose",
+        "variance",
+        "dot"
+      ],
+      "oracle": {
+        "kind": "axis_mean",
+        "axis": 0,
+        "input": [
+          [
+            2,
+            4,
+            6
+          ],
+          [
+            8,
+            0,
+            4
+          ]
+        ],
+        "expected": [
+          5,
+          2,
+          5
+        ]
+      }
+    },
+    {
+      "id": "claim:row-mean",
+      "statement": "U·V·W의 행 합 [9,9,3]을 각 두 값으로 나누면 세 평균 [4.5,4.5,1.5]가 된다.",
+      "domain": "공개 1주차 반납함 자료의 교육용 예/기술 명세",
+      "quantity": "claim:row-mean",
+      "assumptions": [
+        "해당 셀에 명시된 공개 입력·행/구간·시간·축 약속과 입력 범위. 실제 학생/범용 성능 주장을 하지 않는다."
+      ],
+      "locator": "cell:axis-check",
+      "source_ids": [
+        "mean"
+      ],
+      "oracle": {
+        "kind": "axis_mean",
+        "axis": 1,
+        "input": [
+          [
+            0,
+            9
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "expected": [
+          4.5,
+          4.5,
+          1.5
+        ]
+      }
+    },
+    {
+      "id": "claim:variance",
+      "statement": "세 구간 전체를 모집단으로 볼 때 [0,3,6]과 [2,3,4]의 분산은 각각 6권², 2/3권²이다.",
+      "domain": "공개 1주차 반납함 자료의 교육용 예/기술 명세",
+      "quantity": "claim:variance",
+      "assumptions": [
+        "해당 셀에 명시된 공개 입력·행/구간·시간·축 약속과 입력 범위. 실제 학생/범용 성능 주장을 하지 않는다."
+      ],
+      "locator": "cell:math-lab",
+      "source_ids": [
+        "variance"
+      ]
+    },
+    {
+      "id": "claim:dot-order",
+      "statement": "같은 순서의 두 벡터끼리 곱해 합하면 10초이고, 시간 순서만 뒤집으면 11초다. 길이만 맞춘다고 항목이 대응되지는 않는다.",
+      "domain": "공개 1주차 반납함 자료의 교육용 예/기술 명세",
+      "quantity": "claim:dot-order",
+      "assumptions": [
+        "해당 셀에 명시된 공개 입력·행/구간·시간·축 약속과 입력 범위. 실제 학생/범용 성능 주장을 하지 않는다."
+      ],
+      "locator": "cell:math-lab",
+      "source_ids": [
+        "dot"
+      ]
+    },
+    {
+      "id": "claim:view",
+      "statement": "기본 열 슬라이스가 공유하는 원소를 바꾸면 원본도 바뀐다. 같은 열을 copy한 값은 보존된다.",
+      "domain": "공개 1주차 반납함 자료의 교육용 예/기술 명세",
+      "quantity": "claim:view",
+      "assumptions": [
+        "해당 셀에 명시된 공개 입력·행/구간·시간·축 약속과 입력 범위. 실제 학생/범용 성능 주장을 하지 않는다."
+      ],
+      "locator": "cell:index-view",
+      "source_ids": [
+        "views"
+      ]
+    },
+    {
+      "id": "claim:broadcast",
+      "statement": "(2,3)에 (2,)를 바로 더하면 오른쪽 3과 2가 호환되지 않는다. 행에 정렬할 (2,1) 보정량은 같은 날의 모든 구간에 더해진다.",
+      "domain": "공개 1주차 반납함 자료의 교육용 예/기술 명세",
+      "quantity": "claim:broadcast",
+      "assumptions": [
+        "해당 셀에 명시된 공개 입력·행/구간·시간·축 약속과 입력 범위. 실제 학생/범용 성능 주장을 하지 않는다."
+      ],
+      "locator": "cell:broadcast-concept",
+      "source_ids": [
+        "broadcast"
+      ]
+    },
+    {
+      "id": "claim:reshape",
+      "statement": "기본 C 순서로 같은 개수의 원소를 새 행으로 묶는 것과 행·열 좌표를 교환하는 전치는 모양이 같아도 값이 다를 수 있다.",
+      "domain": "공개 1주차 반납함 자료의 교육용 예/기술 명세",
+      "quantity": "claim:reshape",
+      "assumptions": [
+        "해당 셀에 명시된 공개 입력·행/구간·시간·축 약속과 입력 범위. 실제 학생/범용 성능 주장을 하지 않는다."
+      ],
+      "locator": "cell:reshape-concept",
+      "source_ids": [
+        "views",
+        "reshape",
+        "transpose"
+      ]
+    },
+    {
+      "id": "claim:plot",
+      "statement": "수치 히스토그램의 높이는 해당 구간의 기록 수이고, 구역별 평균 막대 높이는 관측한 하교 합을 그 구역의 관측 수로 나눈 값이다.",
+      "domain": "공개 1주차 반납함 자료의 교육용 예/기술 명세",
+      "quantity": "claim:plot",
+      "assumptions": [
+        "해당 셀에 명시된 공개 입력·행/구간·시간·축 약속과 입력 범위. 실제 학생/범용 성능 주장을 하지 않는다."
+      ],
+      "locator": "cell:plot-core",
+      "source_ids": [
+        "mat-hist",
+        "bar",
+        "hist",
+        "count",
+        "sns-bar"
+      ]
+    },
+    {
+      "id": "claim:hist-bins",
+      "statement": "하교 미관측을 빼고 무가중 구간 기록 수를 센다. 고정 경계의 중간 끝은 다음 구간으로, 최종 오른쪽 끝은 마지막 구간으로 들어간다.",
+      "domain": "공개 1주차 반납함 자료의 교육용 예/기술 명세",
+      "quantity": "claim:hist-bins",
+      "assumptions": [
+        "해당 셀에 명시된 공개 입력·행/구간·시간·축 약속과 입력 범위. 실제 학생/범용 성능 주장을 하지 않는다."
+      ],
+      "locator": "cell:plot-two-questions",
+      "source_ids": [
+        "mat-hist"
+      ]
+    },
+    {
+      "id": "claim:range",
+      "statement": "기준을 높이면 West의 하교 평균은 13/3에서 3권으로 바뀐다. 두 그림의 같은 범위와 대상에 기초해 설명하며 원인이나 모든 날로 일반화하지 않는다.",
+      "domain": "공개 1주차 반납함 자료의 교육용 예/기술 명세",
+      "quantity": "claim:range",
+      "assumptions": [
+        "해당 셀에 명시된 공개 입력·행/구간·시간·축 약속과 입력 범위. 실제 학생/범용 성능 주장을 하지 않는다."
+      ],
+      "locator": "cell:transfer-figures",
+      "source_ids": [
+        "bar",
+        "count",
+        "mat-hist"
+      ]
+    }
+  ],
+  "source_reads": [
+    {
+      "id": "guide",
+      "url": "https://kitpa.org/koai/2027",
+      "version": "한국정보기술진흥원 · 2027 국내 대회요강",
+      "accessed_at": "2026-11-18",
+      "kind": "official",
+      "extent": "relevant_sections",
+      "locator": "중등부 일정과 2단계 문제 구성, web L147–165, L218–226",
+      "finding": "중등부에도 1–4과목을 적용한다. 필기 3시간에 선택 80·서술 10문항, 코딩 3시간에 2문항을 제시한다. 기준 링크는 국내 실라버스다.",
+      "limitation": "실제 문항별 난도·출제율이나 이 수업에 할당할 분량은 명시하지 않는다."
+    },
+    {
+      "id": "domestic",
+      "url": "https://kitpa.org/koai/syllabus",
+      "version": "한국정보기술진흥원 · IOAI 2026 기준 표기",
+      "accessed_at": "2026-11-18",
+      "kind": "official",
+      "extent": "relevant_sections",
+      "locator": "분류와 1-1 프로그래밍 기초, web L72–98. 1-4 전처리 설명 L119–132",
+      "finding": "실전은 적절한 기법을 고르고 코드로 적용하여 결과를 읽는 능력이다. 반복·함수, NumPy·pandas, Matplotlib·Seaborn, 다차원 배열 조작이 실전으로 표기되어 있다.",
+      "limitation": "데이터 처리의 모든 후속 기법을 첫 수업에서 가르치라는 뜻은 아니다. 차시별 깊이·문항·시간은 과정의 결정이다."
+    },
+    {
+      "id": "antique",
+      "url": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb",
+      "version": "Dong Yixi · IOAI 2025 Beijing, individual task 5, Antique Painting Authentication, official repository main as opened",
+      "accessed_at": "2026-11-18",
+      "kind": "official",
+      "extent": "relevant_sections",
+      "locator": "Task statement §§1–5 and baseline train/predict/write cells, web L19–65, L118–133, L151–158, L176–192. Official repository index also read.",
+      "finding": "훈련 CSV에는 다섯 특성 뒤에 라벨 열이 있다. +1과 -1은 관측 등급이고 0은 이 열에서만 미상이다. 대회 검증·시험 입력에는 라벨 열이 없다. 제출물은 그 행에 대응하는 ±1 예측이다. 주어진 기준 코드의 미상 라벨 난수 치환은 하나의 구현이다.",
+      "limitation": "라벨 인코딩은 자료사전별 규칙이다. 관측된 0분·0개에는 그대로 적용할 수 없다. 이 국제 문제의 전체 요구는 학습과 예측까지다. 이번 검수는 공개 서술을 읽었으며 대회 데이터를 실행하거나 국내 문항 분포를 추정하지 않았다."
+    },
+    {
+      "id": "ioai26",
+      "url": "https://ioai-official.org/syllabus/",
+      "version": "IOAI International Scientific Committee · PDF heading IOAI 2026 Syllabus",
+      "accessed_at": "2026-11-18",
+      "kind": "official",
+      "extent": "relevant_sections",
+      "locator": "pp. 1–2, classification and Programming Fundamentals, web L3–29",
+      "finding": "국제 2026 문서에도 코드 구현과 해석이 실전이며, 해당 Python·표·시각화·배열 주제가 같은 분류다.",
+      "limitation": "국내 주차별 편성은 정하지 않는다."
+    },
+    {
+      "id": "ioai27",
+      "url": "https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf",
+      "version": "IOAI International Scientific Committee · IOAI 2027 Syllabus",
+      "accessed_at": "2026-11-18",
+      "kind": "official",
+      "extent": "relevant_sections",
+      "locator": "pp. 1–2, Programming Fundamentals and Technical Fundamentals, web L13–29, L53–68",
+      "finding": "국제 2027 PDF에서도 이 실전 항목은 유지된다. 별도 기술 기초로 터미널, Jupyter, Git, 원격 접속이 나온다. 이전 기록의 접근 실패와 달리 이번 직접 열기에서 p. 2를 확인했다.",
+      "limitation": "국내 2027 요강의 연결 문서는 여전히 2026 표기다. 이 비교로 2027 국제 추가 항목의 국내 채택을 확정하거나 첫 수업 필수로 만들 수 없다."
+    },
+    {
+      "id": "notice",
+      "url": "https://kitpa.org/files/36",
+      "version": "한국정보기술진흥원 · 2026-05-11 제36호",
+      "accessed_at": "2026-11-18",
+      "kind": "official",
+      "extent": "relevant_sections",
+      "locator": "예시 공개 공지의 대상, 답안, 출판·교육기관 이용 안내, web L87–98",
+      "finding": "고등부 수준의 학습 참고 예시다. 정답은 공개하지 않으며 난이도순 배열도 아니다. 공지의 2026 중등부 시험 범위는 2027 안내와 다르다.",
+      "limitation": "2027 중등부 기출이나 난도 표본으로 해석할 수 없다. 문항 원문을 수업·기록에 복제하지 않았다."
+    },
+    {
+      "id": "sample",
+      "url": "https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf",
+      "version": "한국정보기술진흥원 KOAI 2026 학습 참고 예시 · 고등부 기준",
+      "accessed_at": "2026-11-18",
+      "kind": "official",
+      "extent": "relevant_sections",
+      "locator": "PDF pp. 1–2 선택 1, 2, 3, 6. web L49–72, L93–99",
+      "finding": "1번은 함수 호출 사이의 변경 상태를 추적한다. 2번은 행렬의 축별 합과 형태 변경 중 메모리 주장을 비교한다. 3번은 두 수치 변수의 분포 및 관계에 맞는 표시를 고른다. 6번은 차원 교환과 형태 변경을 구분한다.",
+      "limitation": "공개 전문을 읽고 요구 행동만 요약했다. W1 직사각 배열·그룹 막대·빈도 그림과 각 문항의 고유 요구 간 차이는 contest-depth 기록에 따로 남긴다."
+    },
+    {
+      "id": "python-return",
+      "url": "https://docs.python.org/3/reference/simple_stmts.html#the-return-statement",
+      "version": "Python language reference, §7.6",
+      "accessed_at": "2026-11-18",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locator": "일반 함수의 return 문법과 표현식/None, web L174–184",
+      "finding": "return은 표현식의 값을 호출자에게 돌려주며 해당 호출을 끝낸다. 식이 없으면 None을 돌려준다.",
+      "limitation": "일반 함수에 대한 범위이며 생성기 제어 흐름이나 재귀 일반론을 다루지 않았다."
+    },
+    {
+      "id": "merge",
+      "url": "https://pandas.pydata.org/docs/reference/api/pandas.merge.html",
+      "version": "pandas.merge API",
+      "accessed_at": "2026-11-18",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locator": "keyed merge, how/on and indicator/validate, web L63–104, L134–149",
+      "finding": "왼쪽 키 보존, 키 존재 여부 표시, 오른쪽 키 유일성 검사가 서로 다른 계약이다. 미매칭을 남겨 조사할 수 있으며 오른쪽 중복은 many_to_one 검증으로 드러난다.",
+      "limitation": "조인 키 자체가 결측이면 pandas끼리 매치할 수 있다. 해당 예시에서 키 범위를 확인해야 한다."
+    },
+    {
+      "id": "count",
+      "url": "https://pandas.pydata.org/docs/reference/api/pandas.Series.count.html",
+      "version": "pandas.Series.count API",
+      "accessed_at": "2026-11-18",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locator": "정의와 0·결측 예제, web L368–396",
+      "finding": "count는 관측된 0을 포함하며 결측 항목을 제외한다.",
+      "limitation": "한 그룹의 전체 행 수, 유효 관측 수와 목표 변수의 의미는 데이터 사전으로 별도 확인한다."
+    },
+    {
+      "id": "mean",
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.mean.html",
+      "version": "NumPy mean API",
+      "accessed_at": "2026-11-18",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locator": "axis·keepdims·arithmetic mean, web L75–110",
+      "finding": "명시한 축에서 산술평균을 구한다. keepdims가 거짓인 2차원 경우 해당 축이 사라진다.",
+      "limitation": "정수나 작은 유한값의 수업 매트릭스에 사용한다. 임의 부동소수점 정밀도나 결측 규칙의 일반화는 하지 않는다."
+    },
+    {
+      "id": "broadcast",
+      "url": "https://numpy.org/doc/stable/user/basics.broadcasting.html",
+      "version": "NumPy fundamental concepts",
+      "accessed_at": "2026-11-18",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locator": "General broadcasting rules and unequal trailing axes, web L73–88, L129–150",
+      "finding": "오른쪽부터 비교해 같거나 하나가 1이어야 한다. 암묵적으로 빠진 앞 차원은 1처럼 정렬한다.",
+      "limitation": "연산이 가능해도 어느 축의 오프셋인지 의미 검사는 별개다."
+    },
+    {
+      "id": "views",
+      "url": "https://numpy.org/doc/stable/user/basics.copies.html",
+      "version": "NumPy copies and views",
+      "accessed_at": "2026-11-18",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locator": "View, Copy, Indexing and Other operations, web L46–75, L101–104",
+      "finding": "기본 슬라이스는 데이터를 공유하고 copy는 따로 저장한다. reshape는 가능한 경우 공유하고 필요하면 복사한다.",
+      "limitation": "모양만 보고 모든 reshape가 동일한 메모리 행동을 갖는다고 단정할 수 없다."
+    },
+    {
+      "id": "bar",
+      "url": "https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.bar.html",
+      "version": "Matplotlib Axes.bar API",
+      "accessed_at": "2026-11-18",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locator": "x, height, baseline and categories, web L261–282",
+      "finding": "각 범주 위치와 막대 높이를 전달한다. 높이를 무엇으로 집계할지는 자료를 정리하는 쪽이 결정한다.",
+      "limitation": "도구의 인수는 자료에 관한 인과 주장이나 비교 가능성을 보증하지 않는다."
+    },
+    {
+      "id": "hist",
+      "url": "https://seaborn.pydata.org/generated/seaborn.histplot.html",
+      "version": "Seaborn histplot API",
+      "accessed_at": "2026-11-18",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locator": "x, weights, stat and bins, web L182–217",
+      "finding": "일반적인 무가중 count 히스토그램은 각 구간에 들어온 관측 수를 표시한다. 경계 또는 구간 폭이 결과를 바꿀 수 있다.",
+      "limitation": "측정 단위·주어진 자료 범위와 막대의 집계 단위를 각각 밝혀야 한다."
+    },
+    {
+      "id": "function",
+      "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions",
+      "version": "Python tutorial §4.8",
+      "accessed_at": "2026-11-18",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locator": "함수의 끝과 return, web L327–349",
+      "finding": "명시적인 값 없이 함수 끝에 도달하면 반환값은 None이다. 화면에 표시하는 호출과 이후 계산에 쓰는 반환값은 다르다.",
+      "limitation": "인용된 연산의 명세에 한정한다. 이 API 문서의 예제가 학생이 수행하거나 배운 증거는 아니다."
+    },
+    {
+      "id": "variance",
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.var.html",
+      "version": "NumPy var",
+      "accessed_at": "2026-11-18",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locator": "Notes, ddof=0 and 1, web L144–160",
+      "finding": "모집단 전체로 다루는 실수 배열의 분산은 평균 편차를 제곱하여 합하고 N으로 나눈다. 기본 ddof는 0이다.",
+      "limitation": "인용된 연산의 명세에 한정한다. 이 API 문서의 예제가 학생이 수행하거나 배운 증거는 아니다."
+    },
+    {
+      "id": "dot",
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.dot.html",
+      "version": "NumPy dot",
+      "accessed_at": "2026-11-18",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locator": "1-D, 2-D and output conditions, web L98–114, L135–147",
+      "finding": "실수 1차원 벡터의 내적은 같은 위치의 원소끼리 곱해 합한 스칼라다. 값의 순서와 특성의 대응은 분석자가 맞춰야 한다.",
+      "limitation": "인용된 연산의 명세에 한정한다. 이 API 문서의 예제가 학생이 수행하거나 배운 증거는 아니다."
+    },
+    {
+      "id": "reshape",
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.reshape.html",
+      "version": "NumPy reshape",
+      "accessed_at": "2026-11-18",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locator": "Default C order and copy, web L110–143",
+      "finding": "reshape의 기본 인덱스 순서에서는 마지막 인덱스가 가장 빨리 바뀐다. 역순으로 축을 바꾸는 것과 결과 모양이 같을 수 있다.",
+      "limitation": "인용된 연산의 명세에 한정한다. 이 API 문서의 예제가 학생이 수행하거나 배운 증거는 아니다."
+    },
+    {
+      "id": "transpose",
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.transpose.html",
+      "version": "NumPy transpose",
+      "accessed_at": "2026-11-18",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locator": "2-D transpose and axes, web L110–128",
+      "finding": "2차원 전치에서 원래 (i,j)의 값은 (j,i)로 옮겨진다.",
+      "limitation": "인용된 연산의 명세에 한정한다. 이 API 문서의 예제가 학생이 수행하거나 배운 증거는 아니다."
+    },
+    {
+      "id": "mat-hist",
+      "url": "https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html",
+      "version": "Matplotlib Axes.hist",
+      "accessed_at": "2026-11-18",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locator": "bin edges and density=False, web L261–270, L286–295",
+      "finding": "명시한 경계에서 보통 왼쪽을 포함하고 오른쪽을 제외하지만 마지막 구간은 최종 오른쪽 경계까지 포함한다. 무가중 기본은 각 구간에 속한 수를 센다.",
+      "limitation": "인용된 연산의 명세에 한정한다. 이 API 문서의 예제가 학생이 수행하거나 배운 증거는 아니다."
+    },
+    {
+      "id": "exception",
+      "url": "https://docs.python.org/3/tutorial/errors.html#exceptions",
+      "version": "Python §8.2",
+      "accessed_at": "2026-11-18",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locator": "Stack traceback, exception type, failing line, L17–43",
+      "finding": "실행 중 오류는 마지막 줄에 예외 종류와 세부 원인을 보인다. 그 앞에는 실패까지의 호출 및 소스 줄이 나올 수 있다.",
+      "limitation": "함수 문서의 동작은 원본 패키지 명세다. 공개 실행의 설치 버전은 public-results.json에 별도 기록했다."
+    },
+    {
+      "id": "sns-bar",
+      "url": "https://seaborn.pydata.org/generated/seaborn.barplot.html",
+      "version": "Seaborn 0.13.2 barplot",
+      "accessed_at": "2026-11-18",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locator": "estimator/errorbar, L172, L198–204, L409–411",
+      "finding": "범주 안에서 입력 값을 요약하는 추정량 기본값은 평균이다. 집계표에서 구역당 관측 평균 하나를 넘기고 errorbar=None으로 추가 오차 막대를 그리지 않는다.",
+      "limitation": "함수 문서의 동작은 원본 패키지 명세다. 공개 실행의 설치 버전은 public-results.json에 별도 기록했다."
+    },
+    {
+      "id": "read-csv",
+      "url": "https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html",
+      "version": "pandas read_csv",
+      "accessed_at": "2026-11-18",
+      "kind": "documentation",
+      "extent": "relevant_sections",
+      "locator": "dtype, na_values and keep_default_na parameters, docs web lines 130–141 and 203–224",
+      "finding": "열별 dtype와 결측 문자열을 지정할 수 있다. 기본 결측 표식을 끄고 빈 필드만 지정하면 문자 ID의 앞자리 0과 이 자료의 빈 필드 약속을 유지할 수 있다.",
+      "limitation": "공개 수업 CSV의 선언된 스키마를 전제로 한다. 표 전체의 데이터형 자동 추론 결과는 열 내용과 pandas 버전에 따라 달라진다."
+    }
+  ],
+  "research_cycles": [
+    {
+      "id": "read:claim:calls",
+      "trigger": "짧은 수업의 새 기술 주장을 실제 공개 자료·문서 원문과 이전 범위의 한계에 대조했다.",
+      "queries": [
+        "Direct original lookup https://docs.python.org/3/reference/simple_stmts.html#the-return-statement",
+        "Direct original lookup https://docs.python.org/3/tutorial/controlflow.html#defining-functions",
+        "Direct original lookup https://docs.python.org/3/tutorial/errors.html#exceptions"
+      ],
+      "source_ids": [
+        "python-return",
+        "function",
+        "exception"
+      ],
+      "object_ids": [
+        "claim:calls"
+      ],
+      "object_contexts": {
+        "claim:calls": "ed5fe9a7f8dde5fb3bbe5e1b5b22fb8415b25555f0d41e8cc3f26d5e561fc6b8"
+      },
+      "disposition": "unchanged",
+      "reason": "직접 읽은 기술/공식 범위와 공개 입력의 독립 재계산이 해당 범위의 주장을 지지한다. 전체 문서 또는 학습효과를 읽어낸 것이 아니다."
+    },
+    {
+      "id": "read:claim:missing-return",
+      "trigger": "짧은 수업의 새 기술 주장을 실제 공개 자료·문서 원문과 이전 범위의 한계에 대조했다.",
+      "queries": [
+        "Direct original lookup https://docs.python.org/3/reference/simple_stmts.html#the-return-statement",
+        "Direct original lookup https://docs.python.org/3/tutorial/controlflow.html#defining-functions"
+      ],
+      "source_ids": [
+        "python-return",
+        "function"
+      ],
+      "object_ids": [
+        "claim:missing-return"
+      ],
+      "object_contexts": {
+        "claim:missing-return": "c44f837bf386252a481dcf6b1638206f8fa1e5ab914d2f4fadd1583acfaf5bb6"
+      },
+      "disposition": "unchanged",
+      "reason": "직접 읽은 기술/공식 범위와 공개 입력의 독립 재계산이 해당 범위의 주장을 지지한다. 전체 문서 또는 학습효과를 읽어낸 것이 아니다."
+    },
+    {
+      "id": "read:claim:trace",
+      "trigger": "짧은 수업의 새 기술 주장을 실제 공개 자료·문서 원문과 이전 범위의 한계에 대조했다.",
+      "queries": [
+        "Direct original lookup https://docs.python.org/3/tutorial/errors.html#exceptions"
+      ],
+      "source_ids": [
+        "exception"
+      ],
+      "object_ids": [
+        "claim:trace"
+      ],
+      "object_contexts": {
+        "claim:trace": "448f065d592c6add0c9517f8c151f359f3fc3de7e03c2ba819d89c19810cb9d9"
+      },
+      "disposition": "unchanged",
+      "reason": "직접 읽은 기술/공식 범위와 공개 입력의 독립 재계산이 해당 범위의 주장을 지지한다. 전체 문서 또는 학습효과를 읽어낸 것이 아니다."
+    },
+    {
+      "id": "read:claim:count",
+      "trigger": "짧은 수업의 새 기술 주장을 실제 공개 자료·문서 원문과 이전 범위의 한계에 대조했다.",
+      "queries": [
+        "Direct original lookup https://kitpa.org/koai/syllabus",
+        "Direct original lookup https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb",
+        "Direct original lookup https://pandas.pydata.org/docs/reference/api/pandas.Series.count.html",
+        "Direct original lookup https://pandas.pydata.org/docs/reference/api/pandas.merge.html",
+        "Direct original lookup https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html"
+      ],
+      "source_ids": [
+        "domestic",
+        "antique",
+        "count",
+        "merge",
+        "read-csv"
+      ],
+      "object_ids": [
+        "claim:count"
+      ],
+      "object_contexts": {
+        "claim:count": "2a97c3f041e197b9aa0778e787bfc7159d7be569dfed576359047fd1f7795293"
+      },
+      "disposition": "unchanged",
+      "reason": "직접 읽은 기술/공식 범위와 공개 입력의 독립 재계산이 해당 범위의 주장을 지지한다. 전체 문서 또는 학습효과를 읽어낸 것이 아니다."
+    },
+    {
+      "id": "read:claim:availability",
+      "trigger": "짧은 수업의 새 기술 주장을 실제 공개 자료·문서 원문과 이전 범위의 한계에 대조했다.",
+      "queries": [
+        "Direct original lookup https://kitpa.org/koai/syllabus",
+        "Direct original lookup https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb"
+      ],
+      "source_ids": [
+        "domestic",
+        "antique"
+      ],
+      "object_ids": [
+        "claim:availability"
+      ],
+      "object_contexts": {
+        "claim:availability": "a9785f8719d6399a6be24340aaadf5c2db9da751b06f98b92ceec7d4f7aa87da"
+      },
+      "disposition": "unchanged",
+      "reason": "직접 읽은 기술/공식 범위와 공개 입력의 독립 재계산이 해당 범위의 주장을 지지한다. 전체 문서 또는 학습효과를 읽어낸 것이 아니다."
+    },
+    {
+      "id": "read:claim:join",
+      "trigger": "짧은 수업의 새 기술 주장을 실제 공개 자료·문서 원문과 이전 범위의 한계에 대조했다.",
+      "queries": [
+        "Direct original lookup https://pandas.pydata.org/docs/reference/api/pandas.merge.html"
+      ],
+      "source_ids": [
+        "merge"
+      ],
+      "object_ids": [
+        "claim:join"
+      ],
+      "object_contexts": {
+        "claim:join": "93f1a885f181d8cadd0441ef4d885e8d17e8a357a8f8dec27722d7629961efde"
+      },
+      "disposition": "unchanged",
+      "reason": "직접 읽은 기술/공식 범위와 공개 입력의 독립 재계산이 해당 범위의 주장을 지지한다. 전체 문서 또는 학습효과를 읽어낸 것이 아니다."
+    },
+    {
+      "id": "read:claim:null-merge",
+      "trigger": "짧은 수업의 새 기술 주장을 실제 공개 자료·문서 원문과 이전 범위의 한계에 대조했다.",
+      "queries": [
+        "Direct original lookup https://pandas.pydata.org/docs/reference/api/pandas.merge.html"
+      ],
+      "source_ids": [
+        "merge"
+      ],
+      "object_ids": [
+        "claim:null-merge"
+      ],
+      "object_contexts": {
+        "claim:null-merge": "9f240c04d46829de126380aa3ff5c0dce6e03dfdd021b1d1cef227a078929be4"
+      },
+      "disposition": "unchanged",
+      "reason": "직접 읽은 기술/공식 범위와 공개 입력의 독립 재계산이 해당 범위의 주장을 지지한다. 전체 문서 또는 학습효과를 읽어낸 것이 아니다."
+    },
+    {
+      "id": "read:claim:id-schema",
+      "trigger": "짧은 수업의 새 기술 주장을 실제 공개 자료·문서 원문과 이전 범위의 한계에 대조했다.",
+      "queries": [
+        "Direct original lookup https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html",
+        "Direct original lookup https://pandas.pydata.org/docs/reference/api/pandas.merge.html"
+      ],
+      "source_ids": [
+        "read-csv",
+        "merge"
+      ],
+      "object_ids": [
+        "claim:id-schema"
+      ],
+      "object_contexts": {
+        "claim:id-schema": "4f0c52b35756556e793af2789a483ef2089782afb89e14b52322e54e15dfd140"
+      },
+      "disposition": "unchanged",
+      "reason": "직접 읽은 기술/공식 범위와 공개 입력의 독립 재계산이 해당 범위의 주장을 지지한다. 전체 문서 또는 학습효과를 읽어낸 것이 아니다."
+    },
+    {
+      "id": "read:claim:axis",
+      "trigger": "짧은 수업의 새 기술 주장을 실제 공개 자료·문서 원문과 이전 범위의 한계에 대조했다.",
+      "queries": [
+        "Direct original lookup https://numpy.org/doc/stable/reference/generated/numpy.mean.html",
+        "Direct original lookup https://numpy.org/doc/stable/user/basics.broadcasting.html",
+        "Direct original lookup https://numpy.org/doc/stable/user/basics.copies.html",
+        "Direct original lookup https://numpy.org/doc/stable/reference/generated/numpy.reshape.html",
+        "Direct original lookup https://numpy.org/doc/stable/reference/generated/numpy.transpose.html",
+        "Direct original lookup https://numpy.org/doc/stable/reference/generated/numpy.var.html",
+        "Direct original lookup https://numpy.org/doc/stable/reference/generated/numpy.dot.html"
+      ],
+      "source_ids": [
+        "mean",
+        "broadcast",
+        "views",
+        "reshape",
+        "transpose",
+        "variance",
+        "dot"
+      ],
+      "object_ids": [
+        "claim:axis"
+      ],
+      "object_contexts": {
+        "claim:axis": "a8685069d02ed6dfc23b7f112d7cbf5dc31e52f4f772ad01afbb38ffc757818e"
+      },
+      "disposition": "unchanged",
+      "reason": "직접 읽은 기술/공식 범위와 공개 입력의 독립 재계산이 해당 범위의 주장을 지지한다. 전체 문서 또는 학습효과를 읽어낸 것이 아니다."
+    },
+    {
+      "id": "read:claim:row-mean",
+      "trigger": "짧은 수업의 새 기술 주장을 실제 공개 자료·문서 원문과 이전 범위의 한계에 대조했다.",
+      "queries": [
+        "Direct original lookup https://numpy.org/doc/stable/reference/generated/numpy.mean.html"
+      ],
+      "source_ids": [
+        "mean"
+      ],
+      "object_ids": [
+        "claim:row-mean"
+      ],
+      "object_contexts": {
+        "claim:row-mean": "59bf9a5eb8af33ff6df2188346dd1a3f427338ee2b2dc515e81a3d85249bd2c0"
+      },
+      "disposition": "unchanged",
+      "reason": "직접 읽은 기술/공식 범위와 공개 입력의 독립 재계산이 해당 범위의 주장을 지지한다. 전체 문서 또는 학습효과를 읽어낸 것이 아니다."
+    },
+    {
+      "id": "read:claim:variance",
+      "trigger": "짧은 수업의 새 기술 주장을 실제 공개 자료·문서 원문과 이전 범위의 한계에 대조했다.",
+      "queries": [
+        "Direct original lookup https://numpy.org/doc/stable/reference/generated/numpy.var.html"
+      ],
+      "source_ids": [
+        "variance"
+      ],
+      "object_ids": [
+        "claim:variance"
+      ],
+      "object_contexts": {
+        "claim:variance": "dccdee2706a78a85fe34432788b820d0ddc3c65dfc50cb8b9a9f1a2e6bcaa7c1"
+      },
+      "disposition": "unchanged",
+      "reason": "직접 읽은 기술/공식 범위와 공개 입력의 독립 재계산이 해당 범위의 주장을 지지한다. 전체 문서 또는 학습효과를 읽어낸 것이 아니다."
+    },
+    {
+      "id": "read:claim:dot-order",
+      "trigger": "짧은 수업의 새 기술 주장을 실제 공개 자료·문서 원문과 이전 범위의 한계에 대조했다.",
+      "queries": [
+        "Direct original lookup https://numpy.org/doc/stable/reference/generated/numpy.dot.html"
+      ],
+      "source_ids": [
+        "dot"
+      ],
+      "object_ids": [
+        "claim:dot-order"
+      ],
+      "object_contexts": {
+        "claim:dot-order": "920e7484d17898a9ed9ac29ca493380aa73ed83d9bc6e74c2e24a5e869f312cf"
+      },
+      "disposition": "unchanged",
+      "reason": "직접 읽은 기술/공식 범위와 공개 입력의 독립 재계산이 해당 범위의 주장을 지지한다. 전체 문서 또는 학습효과를 읽어낸 것이 아니다."
+    },
+    {
+      "id": "read:claim:view",
+      "trigger": "짧은 수업의 새 기술 주장을 실제 공개 자료·문서 원문과 이전 범위의 한계에 대조했다.",
+      "queries": [
+        "Direct original lookup https://numpy.org/doc/stable/user/basics.copies.html"
+      ],
+      "source_ids": [
+        "views"
+      ],
+      "object_ids": [
+        "claim:view"
+      ],
+      "object_contexts": {
+        "claim:view": "ecd299b869e4742fcd511c0d6b408ed5b09189423018b73e7e247ef43a9abc87"
+      },
+      "disposition": "unchanged",
+      "reason": "직접 읽은 기술/공식 범위와 공개 입력의 독립 재계산이 해당 범위의 주장을 지지한다. 전체 문서 또는 학습효과를 읽어낸 것이 아니다."
+    },
+    {
+      "id": "read:claim:broadcast",
+      "trigger": "짧은 수업의 새 기술 주장을 실제 공개 자료·문서 원문과 이전 범위의 한계에 대조했다.",
+      "queries": [
+        "Direct original lookup https://numpy.org/doc/stable/user/basics.broadcasting.html"
+      ],
+      "source_ids": [
+        "broadcast"
+      ],
+      "object_ids": [
+        "claim:broadcast"
+      ],
+      "object_contexts": {
+        "claim:broadcast": "4863254012ad7cf037f012a596fcbf24a23a03241d5e1d64a6dccbabc726ea0b"
+      },
+      "disposition": "unchanged",
+      "reason": "직접 읽은 기술/공식 범위와 공개 입력의 독립 재계산이 해당 범위의 주장을 지지한다. 전체 문서 또는 학습효과를 읽어낸 것이 아니다."
+    },
+    {
+      "id": "read:claim:reshape",
+      "trigger": "짧은 수업의 새 기술 주장을 실제 공개 자료·문서 원문과 이전 범위의 한계에 대조했다.",
+      "queries": [
+        "Direct original lookup https://numpy.org/doc/stable/user/basics.copies.html",
+        "Direct original lookup https://numpy.org/doc/stable/reference/generated/numpy.reshape.html",
+        "Direct original lookup https://numpy.org/doc/stable/reference/generated/numpy.transpose.html"
+      ],
+      "source_ids": [
+        "views",
+        "reshape",
+        "transpose"
+      ],
+      "object_ids": [
+        "claim:reshape"
+      ],
+      "object_contexts": {
+        "claim:reshape": "65e7e5b059e3b427e3909d6afccfe96af1a81e2ad3a455bda8d7867de539c44c"
+      },
+      "disposition": "unchanged",
+      "reason": "직접 읽은 기술/공식 범위와 공개 입력의 독립 재계산이 해당 범위의 주장을 지지한다. 전체 문서 또는 학습효과를 읽어낸 것이 아니다."
+    },
+    {
+      "id": "read:claim:plot",
+      "trigger": "짧은 수업의 새 기술 주장을 실제 공개 자료·문서 원문과 이전 범위의 한계에 대조했다.",
+      "queries": [
+        "Direct original lookup https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html",
+        "Direct original lookup https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.bar.html",
+        "Direct original lookup https://seaborn.pydata.org/generated/seaborn.histplot.html",
+        "Direct original lookup https://pandas.pydata.org/docs/reference/api/pandas.Series.count.html",
+        "Direct original lookup https://seaborn.pydata.org/generated/seaborn.barplot.html"
+      ],
+      "source_ids": [
+        "mat-hist",
+        "bar",
+        "hist",
+        "count",
+        "sns-bar"
+      ],
+      "object_ids": [
+        "claim:plot"
+      ],
+      "object_contexts": {
+        "claim:plot": "d887c0ed90def71a2ee2705b5d5d6acb143b4ccf395c4f1fb61a719a0a7a1c37"
+      },
+      "disposition": "unchanged",
+      "reason": "직접 읽은 기술/공식 범위와 공개 입력의 독립 재계산이 해당 범위의 주장을 지지한다. 전체 문서 또는 학습효과를 읽어낸 것이 아니다."
+    },
+    {
+      "id": "read:claim:hist-bins",
+      "trigger": "짧은 수업의 새 기술 주장을 실제 공개 자료·문서 원문과 이전 범위의 한계에 대조했다.",
+      "queries": [
+        "Direct original lookup https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html"
+      ],
+      "source_ids": [
+        "mat-hist"
+      ],
+      "object_ids": [
+        "claim:hist-bins"
+      ],
+      "object_contexts": {
+        "claim:hist-bins": "0dc979578aa87ea1dfed03e346f503d82f31316d74670fec493be185d4d6038f"
+      },
+      "disposition": "unchanged",
+      "reason": "직접 읽은 기술/공식 범위와 공개 입력의 독립 재계산이 해당 범위의 주장을 지지한다. 전체 문서 또는 학습효과를 읽어낸 것이 아니다."
+    },
+    {
+      "id": "read:claim:range",
+      "trigger": "짧은 수업의 새 기술 주장을 실제 공개 자료·문서 원문과 이전 범위의 한계에 대조했다.",
+      "queries": [
+        "Direct original lookup https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.bar.html",
+        "Direct original lookup https://pandas.pydata.org/docs/reference/api/pandas.Series.count.html",
+        "Direct original lookup https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html"
+      ],
+      "source_ids": [
+        "bar",
+        "count",
+        "mat-hist"
+      ],
+      "object_ids": [
+        "claim:range"
+      ],
+      "object_contexts": {
+        "claim:range": "1748429290dc9e8f7ff29817034704c5ba652d917a0282e3e76eda929c18f382"
+      },
+      "disposition": "unchanged",
+      "reason": "직접 읽은 기술/공식 범위와 공개 입력의 독립 재계산이 해당 범위의 주장을 지지한다. 전체 문서 또는 학습효과를 읽어낸 것이 아니다."
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "guide",
+      "revision": "한국정보기술진흥원 · 2027 국내 대회요강",
+      "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+      "path": "reviews/week01-depth-20261118/joined/sources.json",
+      "depends_on": []
+    },
+    {
+      "id": "domestic",
+      "revision": "한국정보기술진흥원 · IOAI 2026 기준 표기",
+      "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+      "path": "reviews/week01-depth-20261118/joined/sources.json",
+      "depends_on": []
+    },
+    {
+      "id": "antique",
+      "revision": "Dong Yixi · IOAI 2025 Beijing, individual task 5, Antique Painting Authentication, official repository main as opened",
+      "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+      "path": "reviews/week01-depth-20261118/joined/sources.json",
+      "depends_on": []
+    },
+    {
+      "id": "ioai26",
+      "revision": "IOAI International Scientific Committee · PDF heading IOAI 2026 Syllabus",
+      "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+      "path": "reviews/week01-depth-20261118/joined/sources.json",
+      "depends_on": []
+    },
+    {
+      "id": "ioai27",
+      "revision": "IOAI International Scientific Committee · IOAI 2027 Syllabus",
+      "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+      "path": "reviews/week01-depth-20261118/joined/sources.json",
+      "depends_on": []
+    },
+    {
+      "id": "notice",
+      "revision": "한국정보기술진흥원 · 2026-05-11 제36호",
+      "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+      "path": "reviews/week01-depth-20261118/joined/sources.json",
+      "depends_on": []
+    },
+    {
+      "id": "sample",
+      "revision": "한국정보기술진흥원 KOAI 2026 학습 참고 예시 · 고등부 기준",
+      "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+      "path": "reviews/week01-depth-20261118/joined/sources.json",
+      "depends_on": []
+    },
+    {
+      "id": "python-return",
+      "revision": "Python language reference, §7.6",
+      "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+      "path": "reviews/week01-depth-20261118/joined/sources.json",
+      "depends_on": []
+    },
+    {
+      "id": "merge",
+      "revision": "pandas.merge API",
+      "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+      "path": "reviews/week01-depth-20261118/joined/sources.json",
+      "depends_on": []
+    },
+    {
+      "id": "count",
+      "revision": "pandas.Series.count API",
+      "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+      "path": "reviews/week01-depth-20261118/joined/sources.json",
+      "depends_on": []
+    },
+    {
+      "id": "mean",
+      "revision": "NumPy mean API",
+      "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+      "path": "reviews/week01-depth-20261118/joined/sources.json",
+      "depends_on": []
+    },
+    {
+      "id": "broadcast",
+      "revision": "NumPy fundamental concepts",
+      "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+      "path": "reviews/week01-depth-20261118/joined/sources.json",
+      "depends_on": []
+    },
+    {
+      "id": "views",
+      "revision": "NumPy copies and views",
+      "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+      "path": "reviews/week01-depth-20261118/joined/sources.json",
+      "depends_on": []
+    },
+    {
+      "id": "bar",
+      "revision": "Matplotlib Axes.bar API",
+      "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+      "path": "reviews/week01-depth-20261118/joined/sources.json",
+      "depends_on": []
+    },
+    {
+      "id": "hist",
+      "revision": "Seaborn histplot API",
+      "sha256": "0b900bd1667018164b6bb102803f59bc1280d2a137c09ef8df9506ea3850fa2e",
+      "path": "reviews/week01-depth-20261118/joined/sources.json",
+      "depends_on": []
+    },
+    {
+      "id": "function",
+      "revision": "Python tutorial §4.8",
+      "sha256": "d5fa25bd754ee541f91b01a15c9a14a4c3e6464eb5ac146a66928c1fb6813e5c",
+      "path": "reviews/week01-depth-20261118/joined/technical-readings.json",
+      "depends_on": []
+    },
+    {
+      "id": "variance",
+      "revision": "NumPy var",
+      "sha256": "d5fa25bd754ee541f91b01a15c9a14a4c3e6464eb5ac146a66928c1fb6813e5c",
+      "path": "reviews/week01-depth-20261118/joined/technical-readings.json",
+      "depends_on": []
+    },
+    {
+      "id": "dot",
+      "revision": "NumPy dot",
+      "sha256": "d5fa25bd754ee541f91b01a15c9a14a4c3e6464eb5ac146a66928c1fb6813e5c",
+      "path": "reviews/week01-depth-20261118/joined/technical-readings.json",
+      "depends_on": []
+    },
+    {
+      "id": "reshape",
+      "revision": "NumPy reshape",
+      "sha256": "d5fa25bd754ee541f91b01a15c9a14a4c3e6464eb5ac146a66928c1fb6813e5c",
+      "path": "reviews/week01-depth-20261118/joined/technical-readings.json",
+      "depends_on": []
+    },
+    {
+      "id": "transpose",
+      "revision": "NumPy transpose",
+      "sha256": "d5fa25bd754ee541f91b01a15c9a14a4c3e6464eb5ac146a66928c1fb6813e5c",
+      "path": "reviews/week01-depth-20261118/joined/technical-readings.json",
+      "depends_on": []
+    },
+    {
+      "id": "mat-hist",
+      "revision": "Matplotlib Axes.hist",
+      "sha256": "d5fa25bd754ee541f91b01a15c9a14a4c3e6464eb5ac146a66928c1fb6813e5c",
+      "path": "reviews/week01-depth-20261118/joined/technical-readings.json",
+      "depends_on": []
+    },
+    {
+      "id": "exception",
+      "revision": "Python §8.2",
+      "sha256": "d5fa25bd754ee541f91b01a15c9a14a4c3e6464eb5ac146a66928c1fb6813e5c",
+      "path": "reviews/week01-depth-20261118/joined/technical-readings.json",
+      "depends_on": []
+    },
+    {
+      "id": "sns-bar",
+      "revision": "Seaborn 0.13.2 barplot",
+      "sha256": "d5fa25bd754ee541f91b01a15c9a14a4c3e6464eb5ac146a66928c1fb6813e5c",
+      "path": "reviews/week01-depth-20261118/joined/technical-readings.json",
+      "depends_on": []
+    },
+    {
+      "id": "read-csv",
+      "revision": "pandas read_csv",
+      "sha256": "d5fa25bd754ee541f91b01a15c9a14a4c3e6464eb5ac146a66928c1fb6813e5c",
+      "path": "reviews/week01-depth-20261118/joined/technical-readings.json",
+      "depends_on": []
+    },
+    {
+      "id": "file:teacher",
+      "revision": "2026-11-18",
+      "sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484",
+      "path": "lessons/week01/week01_foundations_teacher.md",
+      "depends_on": []
+    },
+    {
+      "id": "file:lessons/week01/data/foundations_returns.csv",
+      "revision": "2026-11-18",
+      "sha256": "ece009210bb0ac473b988937f8ecd865f35355dc6d9c8718e3e8846e504daaaf",
+      "path": "lessons/week01/data/foundations_returns.csv",
+      "depends_on": []
+    },
+    {
+      "id": "file:lessons/week01/data/foundations_boxes.csv",
+      "revision": "2026-11-18",
+      "sha256": "471a80d0b99548c29a36331eb5ccad27d25ba7742f955a869687e7096c655635",
+      "path": "lessons/week01/data/foundations_boxes.csv",
+      "depends_on": []
+    },
+    {
+      "id": "file:lessons/week01/data/foundations_returns_transfer.csv",
+      "revision": "2026-11-18",
+      "sha256": "47d719ce82e88acbe98ad175b1f827c8f7c76d22706bd8432344d86e3db6d7a6",
+      "path": "lessons/week01/data/foundations_returns_transfer.csv",
+      "depends_on": []
+    },
+    {
+      "id": "file:frozen-depth",
+      "revision": "2026-11-18",
+      "sha256": "2f69eb913f7da07cc7f0b8401906145e743ee19224c442719cc9b6ec3d19165a",
+      "path": "reviews/week01-depth-20261118/contract.json",
+      "depends_on": []
+    },
+    {
+      "id": "claim:calls",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "d4c1c1eb95b5060e4dd3fd573f92d8c66ad3c83ebe74053f2fecc13dfec51b70",
+      "depends_on": [
+        "python-return",
+        "function",
+        "exception"
+      ]
+    },
+    {
+      "id": "claim:missing-return",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "7a775bb0797c47245cb2b5e34ac8ece4fa9fcba87d3c0b2625d57253c5a84417",
+      "depends_on": [
+        "python-return",
+        "function"
+      ]
+    },
+    {
+      "id": "claim:trace",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "70f3c6ca8c45eb5e7031abbba9351b2a6e3e20cc4a4bbc190d5c0876163c9d37",
+      "depends_on": [
+        "exception"
+      ]
+    },
+    {
+      "id": "plan:W1-python",
+      "revision": "curriculum-v4-week01-foundations",
+      "sha256": "78d743c33d91c958d33dd36e994dc00507d78edecb3f30b986fed4109cc2521e",
+      "path": "curriculum/student-plan.html",
+      "locators": [
+        "#plan-context",
+        "#week-1",
+        "#scope-01"
+      ],
+      "depends_on": []
+    },
+    {
+      "id": "W1-python",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "0b87cebe239a087fbcf38c59ef5b78a4a97f51bc0aa52249ba9312b4e70fe1b2",
+      "depends_on": [
+        "claim:calls",
+        "claim:missing-return",
+        "claim:trace",
+        "plan:W1-python",
+        "file:frozen-depth",
+        "file:teacher"
+      ]
+    },
+    {
+      "id": "claim:count",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "5f66a4d0c99970343f78c8b4c33fea1de566c017f5903906fc5211c252059880",
+      "depends_on": [
+        "domestic",
+        "antique",
+        "count",
+        "merge",
+        "read-csv"
+      ]
+    },
+    {
+      "id": "claim:availability",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "7811eb40685d2d9ca613ccd02d9e568a7ad02f9a1c3323aac1a3ee1584335b55",
+      "depends_on": [
+        "domestic",
+        "antique"
+      ]
+    },
+    {
+      "id": "claim:join",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "62323fa6e82f80760d01012eb525669d63312e2d1428f7477062e4aa33e1e6aa",
+      "depends_on": [
+        "merge"
+      ]
+    },
+    {
+      "id": "claim:null-merge",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "8323aa23274dfc61b0936da846e43b8d8d1d016319895689fac42f4aa02ed82c",
+      "depends_on": [
+        "merge"
+      ]
+    },
+    {
+      "id": "claim:id-schema",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "8b6ca2f57cbdad8489e7854cd00c7be66a5f20e477860a5f33233ba2d55887b4",
+      "depends_on": [
+        "read-csv",
+        "merge"
+      ]
+    },
+    {
+      "id": "plan:W1-table",
+      "revision": "curriculum-v4-week01-foundations",
+      "sha256": "78d743c33d91c958d33dd36e994dc00507d78edecb3f30b986fed4109cc2521e",
+      "path": "curriculum/student-plan.html",
+      "locators": [
+        "#plan-context",
+        "#week-1",
+        "#scope-02"
+      ],
+      "depends_on": []
+    },
+    {
+      "id": "W1-table",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "c3950f302c388947c45d76cf7b664cfa77881e4d5f7826459c3d73d63cd1d33c",
+      "depends_on": [
+        "claim:count",
+        "claim:availability",
+        "claim:join",
+        "claim:null-merge",
+        "claim:id-schema",
+        "plan:W1-table",
+        "file:frozen-depth",
+        "file:teacher",
+        "W1-python",
+        "file:lessons/week01/data/foundations_returns.csv",
+        "file:lessons/week01/data/foundations_boxes.csv",
+        "file:lessons/week01/data/foundations_returns_transfer.csv"
+      ]
+    },
+    {
+      "id": "claim:axis",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "b0ece4b8b4fad1bccfb032b528ad7e902e543b38773cfa257b1b219a0f5d529c",
+      "depends_on": [
+        "mean",
+        "broadcast",
+        "views",
+        "reshape",
+        "transpose",
+        "variance",
+        "dot"
+      ]
+    },
+    {
+      "id": "claim:row-mean",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "2ad29cfcfa5051f0f25b3dd6c52656e905c3385bc7a1033714da2b380685cf29",
+      "depends_on": [
+        "mean"
+      ]
+    },
+    {
+      "id": "claim:variance",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "0a36b9a7e35f3d2b29a5380f2fef730d059bee7013ac3795affa34b77c765dbd",
+      "depends_on": [
+        "variance"
+      ]
+    },
+    {
+      "id": "claim:dot-order",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "51d42c569499f249d73c77170c72057744e0b7f384dc9eb5d7401782c4cafba0",
+      "depends_on": [
+        "dot"
+      ]
+    },
+    {
+      "id": "claim:view",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "488120bb88b885e086a750e27867a9de94e17c58245fcd64fbbb604adbbaa263",
+      "depends_on": [
+        "views"
+      ]
+    },
+    {
+      "id": "claim:broadcast",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "b1a3bc8671698e809cee17f98def73bef8e3e030fb6609750893fb0b10a3cea0",
+      "depends_on": [
+        "broadcast"
+      ]
+    },
+    {
+      "id": "claim:reshape",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "8b4e17ee7fc3468b7496742eaa96a95ff8610bbb54669df03c0d17e1abb19228",
+      "depends_on": [
+        "views",
+        "reshape",
+        "transpose"
+      ]
+    },
+    {
+      "id": "plan:W1-array",
+      "revision": "curriculum-v4-week01-foundations",
+      "sha256": "78d743c33d91c958d33dd36e994dc00507d78edecb3f30b986fed4109cc2521e",
+      "path": "curriculum/student-plan.html",
+      "locators": [
+        "#plan-context",
+        "#week-1",
+        "#scope-02",
+        "#scope-06"
+      ],
+      "depends_on": []
+    },
+    {
+      "id": "W1-array",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "6cb240d9771b8e1aec3b775d89d6ed0a614dbe773a126b4ec3bba8f0f5ccaf7f",
+      "depends_on": [
+        "claim:axis",
+        "claim:row-mean",
+        "claim:variance",
+        "claim:dot-order",
+        "claim:view",
+        "claim:broadcast",
+        "claim:reshape",
+        "plan:W1-array",
+        "file:frozen-depth",
+        "file:teacher",
+        "W1-table",
+        "file:lessons/week01/data/foundations_returns.csv",
+        "file:lessons/week01/data/foundations_boxes.csv",
+        "file:lessons/week01/data/foundations_returns_transfer.csv"
+      ]
+    },
+    {
+      "id": "claim:plot",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "e988ac082ebf40abaf2c61a941fbfc6c8e1a4d1127720f315f180e75fb5e13fc",
+      "depends_on": [
+        "mat-hist",
+        "bar",
+        "hist",
+        "count",
+        "sns-bar"
+      ]
+    },
+    {
+      "id": "claim:hist-bins",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "a5ae514d8cf30b6bd4c320cd7009c6c42385d0280b7fe59e7843dd1cbcd6df68",
+      "depends_on": [
+        "mat-hist"
+      ]
+    },
+    {
+      "id": "claim:range",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "af4de7eb3b03d800c08d0863b9f0fb04f23197b438fc6a35e031bc5645cd4195",
+      "depends_on": [
+        "bar",
+        "count",
+        "mat-hist"
+      ]
+    },
+    {
+      "id": "plan:W1-visualise",
+      "revision": "curriculum-v4-week01-foundations",
+      "sha256": "78d743c33d91c958d33dd36e994dc00507d78edecb3f30b986fed4109cc2521e",
+      "path": "curriculum/student-plan.html",
+      "locators": [
+        "#plan-context",
+        "#week-1",
+        "#scope-03"
+      ],
+      "depends_on": []
+    },
+    {
+      "id": "W1-visualise",
+      "revision": "week01-foundations-ef1586ee0eef",
+      "sha256": "49fc0111ad50cca071e6ed804b7bd744c0c2543158e68973c684c96b6379e0cb",
+      "depends_on": [
+        "claim:plot",
+        "claim:hist-bins",
+        "claim:range",
+        "plan:W1-visualise",
+        "file:frozen-depth",
+        "file:teacher",
+        "W1-table",
+        "file:lessons/week01/data/foundations_returns.csv",
+        "file:lessons/week01/data/foundations_boxes.csv",
+        "file:lessons/week01/data/foundations_returns_transfer.csv"
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "K02:W1-python",
+      "criterion_id": "K02",
+      "object_id": "W1-python",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "조건과 반복을 포함한 함수를 고쳐 재실행한다. 새 리스트와 음수 기준에서 반환값과 오류를 각각 남기는 실전 문항이다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-python / K02",
+          "observation": "조건과 반복을 포함한 함수를 고쳐 재실행한다. 새 리스트와 음수 기준에서 반환값과 오류를 각각 남기는 실전 문항이다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-python",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "7c990d6bc3e3e4cf78e84555ac659d37aa4ab6ed8a75625d2d17e6dab247967d",
+      "dependency_scope_fingerprint": "520afce313c9a0fe9aee3569dbac1101ca4ca8083d715233e74acf489e30f149"
+    },
+    {
+      "id": "K04:W1-python",
+      "criterion_id": "K04",
+      "object_id": "W1-python",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "매개변수, 상태, 빈값, 자료형/슬라이스를 지원하고, 파일 카드 5는 CSV를 읽은 직후에 완료하는 순서를 교사용 편성에 명시한다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-python / K04",
+          "observation": "매개변수, 상태, 빈값, 자료형/슬라이스를 지원하고, 파일 카드 5는 CSV를 읽은 직후에 완료하는 순서를 교사용 편성에 명시한다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-python",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "7e77d8e0e21e37317328a7867e7d6171187a09bb34bf84a834dbe8a6fe0ff5e7",
+      "dependency_scope_fingerprint": "520afce313c9a0fe9aee3569dbac1101ca4ca8083d715233e74acf489e30f149"
+    },
+    {
+      "id": "K05:W1-python",
+      "criterion_id": "K05",
+      "object_id": "W1-python",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "기준 초과의 상태표에서 출발해 기준 포함으로 바꾼 함수로 같은 개념을 재시험한다. 값과 출력의 차이는 반환값에 1을 더해 확인한다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-python / K05",
+          "observation": "기준 초과의 상태표에서 출발해 기준 포함으로 바꾼 함수로 같은 개념을 재시험한다. 값과 출력의 차이는 반환값에 1을 더해 확인한다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-python",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "9ece76feda641314d0de10992ea40ce58c989c3cef3e9b711c043f1da76a75e5",
+      "dependency_scope_fingerprint": "520afce313c9a0fe9aee3569dbac1101ca4ca8083d715233e74acf489e30f149"
+    },
+    {
+      "id": "K09:W1-python",
+      "criterion_id": "K09",
+      "object_id": "W1-python",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "학생에게는 작동하는 엄격 초과 예제, 별도 응답란과 바뀐 기준이 주어진다. 경계와 반환을 스스로 구현하고, 도움을 본 시도는 별도로 기록한다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-python / K09",
+          "observation": "학생에게는 작동하는 엄격 초과 예제, 별도 응답란과 바뀐 기준이 주어진다. 경계와 반환을 스스로 구현하고, 도움을 본 시도는 별도로 기록한다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-python",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "7d7fda5aeca90c1fdf2ff00f174d634168eba29763d6f90e5b3864d9e37bd7dd",
+      "dependency_scope_fingerprint": "520afce313c9a0fe9aee3569dbac1101ca4ca8083d715233e74acf489e30f149"
+    },
+    {
+      "id": "K16:W1-python",
+      "criterion_id": "K16",
+      "object_id": "W1-python",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "상태표의 각 원소와 비교 횟수·누계·반환을 예제 및 변형 코드와 대조했다. 오류 이름, 실제 호출 줄, 실패 표현식과 경계 수정을 분리했다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-python / K16",
+          "observation": "상태표의 각 원소와 비교 횟수·누계·반환을 예제 및 변형 코드와 대조했다. 오류 이름, 실제 호출 줄, 실패 표현식과 경계 수정을 분리했다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-python",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "3b5de37ce33b37d078ad785144f5b12daccab959be4795608d7e09769657fc05",
+      "dependency_scope_fingerprint": "520afce313c9a0fe9aee3569dbac1101ca4ca8083d715233e74acf489e30f149",
+      "subchecks": {
+        "T04": {
+          "status": "passed",
+          "artifact_locators": [
+            "cell:python-basics",
+            "cell:python-example",
+            "cell:return-example",
+            "cell:python-five",
+            "cell:trace-example",
+            "cell:trace-independent"
+          ],
+          "evidence": [
+            {
+              "path": "lessons/week01/week01_foundations.ipynb",
+              "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+              "locator": "cell:python-basics / cell:python-example / cell:return-example / cell:python-five / cell:trace-example / cell:trace-independent",
+              "observation": "0에서 시작한 hits는 네 원소의 None·동일값·초과를 순서대로 구분해 1이 된다. 응답에서는 포함 경계와 음수 오류의 결과가 바뀐다."
+            },
+            {
+              "path": "lessons/week01/week01_foundations_teacher.md",
+              "sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484",
+              "locator": "Python 카드",
+              "observation": "수업 카드는 4회 상태 0,0,1,1 및 포함 기준 반환 2를 구분한다. 자습의 별도 코드는 len-1과 빈 목록에 None을 반환한다. 3개·1개·빈 목록과 잘못된 기준을 실행했다."
+            }
+          ]
+        },
+        "T05": {
+          "status": "passed",
+          "artifact_locators": [
+            "cell:return-story",
+            "cell:python-five",
+            "cell:independent-start",
+            "cell:trace-independent"
+          ],
+          "evidence": [
+            {
+              "path": "lessons/week01/week01_foundations.ipynb",
+              "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+              "locator": "cell:return-story / cell:python-five / cell:independent-start / cell:trace-independent",
+              "observation": "용어 설명과 print/return 대조, 실제 0과 미관측을 구분하는 실패 입력, 첫 답·지원·재시도 조건과 교사용 피드백이 연결된다. scan_batch/count_over에서 줄을 찾은 뒤 last_box/code_at의 다른 오류를 고친다."
+            },
+            {
+              "path": "lessons/week01/week01_foundations_teacher.md",
+              "sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484",
+              "locator": "Python 카드",
+              "observation": "수업 카드는 4회 상태 0,0,1,1 및 포함 기준 반환 2를 구분한다. 자습의 별도 코드는 len-1과 빈 목록에 None을 반환한다. 3개·1개·빈 목록과 잘못된 기준을 실행했다."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "K02:W1-table",
+      "criterion_id": "K02",
+      "object_id": "W1-table",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "3개의 실제 CSV를 이용해 필수 열/자료형/모양/결측·부분 선택을 점검하고 뒤집은 구역표를 키로 병합한다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-table / K02",
+          "observation": "3개의 실제 CSV를 이용해 필수 열/자료형/모양/결측·부분 선택을 점검하고 뒤집은 구역표를 키로 병합한다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-table",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "56da7f37313e369cea771fa9778d2d2774aeaa5ac429295ec76042aba033a58e",
+      "dependency_scope_fingerprint": "757ba16ff16f3c43db05f941b340584bf8c3cab3f194ebc49d14dbb46683353c"
+    },
+    {
+      "id": "K04:W1-table",
+      "criterion_id": "K04",
+      "object_id": "W1-table",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "파일의 머리글과 첫 행은 csv-open 및 load-csv에서 함께 읽는다. 실패 원인은 파일 찾기와 이미 로드된 표의 잘못된 열에서 구별한다. 문자 식별자와 빈 필드 규약을 실제 파일 열기에 앞서 안내하고, 두 키 열을 정규화하는 작은 카드 예시 후 다른 CSV를 처리한다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-table / K04",
+          "observation": "파일의 머리글과 첫 행은 csv-open 및 load-csv에서 함께 읽는다. 실패 원인은 파일 찾기와 이미 로드된 표의 잘못된 열에서 구별한다. 문자 식별자와 빈 필드 규약을 실제 파일 열기에 앞서 안내하고, 두 키 열을 정규화하는 작은 카드 예시 후 다른 CSV를 처리한다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-table",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "b558018e0e309c24cd72c9745b5f9308efdea395310e4cc17179c99ae9aaa115",
+      "dependency_scope_fingerprint": "757ba16ff16f3c43db05f941b340584bf8c3cab3f194ebc49d14dbb46683353c"
+    },
+    {
+      "id": "K05:W1-table",
+      "criterion_id": "K05",
+      "object_id": "W1-table",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "같은 행/열·시점 정의를 손으로 읽고 .loc로 선택한다. 마지막에는 열 이름과 순서만 달라져도 사전을 토대로 함수를 다시 작성하게 한다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-table / K05",
+          "observation": "같은 행/열·시점 정의를 손으로 읽고 .loc로 선택한다. 마지막에는 열 이름과 순서만 달라져도 사전을 토대로 함수를 다시 작성하게 한다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-table",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "b48701a75f3c1dc885f8cb9972fb4fd1703fd8ecf9f2a5a221c21738e98bed4f",
+      "dependency_scope_fingerprint": "757ba16ff16f3c43db05f941b340584bf8c3cab3f194ebc49d14dbb46683353c"
+    },
+    {
+      "id": "K09:W1-table",
+      "criterion_id": "K09",
+      "object_id": "W1-table",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "새 입력은 공개 원본과 다른 열 이름/순서/결측 패턴을 사용한다. 누락 열과 중복·미연결 키를 직접 깨뜨려 결과를 기록한다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-table / K09",
+          "observation": "새 입력은 공개 원본과 다른 열 이름/순서/결측 패턴을 사용한다. 누락 열과 중복·미연결 키를 직접 깨뜨려 결과를 기록한다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-table",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "5eec96a0565c6800bef6f7f7ecea2eb86043195737f0234fb5336a4a470b0142",
+      "dependency_scope_fingerprint": "757ba16ff16f3c43db05f941b340584bf8c3cab3f194ebc49d14dbb46683353c"
+    },
+    {
+      "id": "K16:W1-table",
+      "criterion_id": "K16",
+      "object_id": "W1-table",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "기록/반납함 ID와 시점 자료사전→부분집합→관측 분모 순서를 작은 표와 코드·원기록으로 오가며 점검했다. 결측과 양쪽 빈 문자열의 가짜 연결, 전체 빈 키 열의 dtype 충돌을 실제 파일에서 재시험했다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-table / K16",
+          "observation": "기록/반납함 ID와 시점 자료사전→부분집합→관측 분모 순서를 작은 표와 코드·원기록으로 오가며 점검했다. 결측과 양쪽 빈 문자열의 가짜 연결, 전체 빈 키 열의 dtype 충돌을 실제 파일에서 재시험했다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-table",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "34d3b7828c2fe95f8e51acd8a4b125aff8be5828753542999f96c2faa2a28423",
+      "dependency_scope_fingerprint": "757ba16ff16f3c43db05f941b340584bf8c3cab3f194ebc49d14dbb46683353c",
+      "subchecks": {
+        "T03": {
+          "status": "passed",
+          "artifact_locators": [
+            "cell:dictionary",
+            "cell:table-card",
+            "cell:audit-csv",
+            "cell:join-story",
+            "cell:group-story",
+            "cell:transfer-table",
+            "cell:join-key-example"
+          ],
+          "evidence": [
+            {
+              "path": "lessons/week01/week01_foundations.ipynb",
+              "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+              "locator": "cell:dictionary / cell:table-card / cell:audit-csv / cell:join-story / cell:group-story / cell:transfer-table / cell:join-key-example",
+              "observation": "R3의 오전 빈칸, R2의 관측 0과 다른 열의 실제 결측을 가리킨 뒤 transfer-table에서 이름과 순서가 다른 표의 열·시점을 다시 붙인다."
+            },
+            {
+              "path": "lessons/week01/week01_foundations_teacher.md",
+              "sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484",
+              "locator": "수첩과 원본 CSV / 새 일지 독립 과제",
+              "observation": "원본 6행·6열에서 R2·R4·R5를 고르면 하교 관측은 둘이다. 8행 새 파일의 기준 4/6, 구역별 합·분모와 미연결 실명을 키 및 독립 stdlib 계산으로 대조했다. 왼쪽/오른쪽/양쪽 전체가 빈 경우와 빈 문자열 양편+미등록 키도 실제 파일을 직렬화해 수치와 식별자를 대조했다."
+            }
+          ]
+        },
+        "T05": {
+          "status": "passed",
+          "artifact_locators": [
+            "cell:dictionary",
+            "cell:missing-error",
+            "cell:group-story",
+            "cell:transfer-faults",
+            "cell:join-key-example"
+          ],
+          "evidence": [
+            {
+              "path": "lessons/week01/week01_foundations.ipynb",
+              "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+              "locator": "cell:dictionary / cell:missing-error / cell:group-story / cell:transfer-faults / cell:join-key-example",
+              "observation": "전체 행을 한꺼번에 지우면 T6의 유효 하교권수를 잃는 반례와 키 고장 세 종류, 교사용 질문이 학생의 분모·누락 해석을 진단한다."
+            },
+            {
+              "path": "lessons/week01/week01_foundations_teacher.md",
+              "sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484",
+              "locator": "수첩과 원본 CSV / 새 일지 독립 과제",
+              "observation": "원본 6행·6열에서 R2·R4·R5를 고르면 하교 관측은 둘이다. 8행 새 파일의 기준 4/6, 구역별 합·분모와 미연결 실명을 키 및 독립 stdlib 계산으로 대조했다. 왼쪽/오른쪽/양쪽 전체가 빈 경우와 빈 문자열 양편+미등록 키도 실제 파일을 직렬화해 수치와 식별자를 대조했다."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "K02:W1-array",
+      "criterion_id": "K02",
+      "object_id": "W1-array",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "실제 직사각 배열에서 인덱싱·슬라이싱·2축 축약을 실행하며, 바뀐 입력에서 복사·브로드캐스팅·형태 변경·전치·분산·내적을 수행한다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-array / K02",
+          "observation": "실제 직사각 배열에서 인덱싱·슬라이싱·2축 축약을 실행하며, 바뀐 입력에서 복사·브로드캐스팅·형태 변경·전치·분산·내적을 수행한다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-array",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "a9891752bfa8b6d019b70dca26b9eaf81fb38a5a19a9fcfc52816cc4ffc4a067",
+      "dependency_scope_fingerprint": "3878874891e71975181d9786114be60368af5f4603874bf5a34c3f711b5d206a"
+    },
+    {
+      "id": "K04:W1-array",
+      "criterion_id": "K04",
+      "object_id": "W1-array",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "묶을 두 값과 분모를 먼저 정의하고 axis를 도입한다. (3,)와 (1,3)을 구분한 후 기록/구간을 다른 배열에 적용한다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-array / K04",
+          "observation": "묶을 두 값과 분모를 먼저 정의하고 axis를 도입한다. (3,)와 (1,3)을 구분한 후 기록/구간을 다른 배열에 적용한다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-array",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "b93ea82f2fa39ccf486b08559ee3ad691aceae92963e6ef9d5fcfed2cab56d12",
+      "dependency_scope_fingerprint": "3878874891e71975181d9786114be60368af5f4603874bf5a34c3f711b5d206a"
+    },
+    {
+      "id": "K05:W1-array",
+      "criterion_id": "K05",
+      "object_id": "W1-array",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "두 축 평균은 같은 R1/R2에서 표·합/분모·NumPy 호출로 이어진다. U/V/W에서는 모양·값·해석을 먼저 손으로 적고 대조한다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-array / K05",
+          "observation": "두 축 평균은 같은 R1/R2에서 표·합/분모·NumPy 호출로 이어진다. U/V/W에서는 모양·값·해석을 먼저 손으로 적고 대조한다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-array",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "a28061c9bbe60dced9e6bd53c5afedde695d63b9ef18cd23e512e51829a761b4",
+      "dependency_scope_fingerprint": "3878874891e71975181d9786114be60368af5f4603874bf5a34c3f711b5d206a"
+    },
+    {
+      "id": "K09:W1-array",
+      "criterion_id": "K09",
+      "object_id": "W1-array",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "U/V/W와 D/E/F는 학습용 R1/R2와 다른 형태·값이다. 남는 축과 보정 값, 같은 좌표의 다른 뜻, 계산과 오답 원인을 묻는다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-array / K09",
+          "observation": "U/V/W와 D/E/F는 학습용 R1/R2와 다른 형태·값이다. 남는 축과 보정 값, 같은 좌표의 다른 뜻, 계산과 오답 원인을 묻는다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-array",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "05aea264fe13def4c4453f73ae400849eec08879d13e06d47e1caae76d432430",
+      "dependency_scope_fingerprint": "3878874891e71975181d9786114be60368af5f4603874bf5a34c3f711b5d206a"
+    },
+    {
+      "id": "K16:W1-array",
+      "criterion_id": "K16",
+      "object_id": "W1-array",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "정의와 조건, 표시된 표, 계산 절차 및 잘못된 대안에 대한 교사용 해설을 독립 계산과 비교했다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-array / K16",
+          "observation": "정의와 조건, 표시된 표, 계산 절차 및 잘못된 대안에 대한 교사용 해설을 독립 계산과 비교했다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-array",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "8db7209c3d5c032f600e1808a6ecb9c49379da7e4234cee42d03f080f8d54bff",
+      "dependency_scope_fingerprint": "3878874891e71975181d9786114be60368af5f4603874bf5a34c3f711b5d206a",
+      "subchecks": {
+        "T01": {
+          "status": "passed",
+          "artifact_locators": [
+            "cell:axis-picture",
+            "cell:variance-bridge",
+            "cell:broadcast-concept",
+            "cell:math-concept"
+          ],
+          "evidence": [
+            {
+              "path": "lessons/week01/week01_foundations.ipynb",
+              "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+              "locator": "cell:axis-picture / cell:variance-bridge / cell:broadcast-concept / cell:math-concept",
+              "observation": "정수 권수, 양의 행/열, 비결측 실수, keepdims=False, 관측 개수와 권²·초/권 단위가 일관된다."
+            },
+            {
+              "path": "lessons/week01/week01_foundations_teacher.md",
+              "sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484",
+              "locator": "축·분산·필기 / 자습 배열과 수학",
+              "observation": "손계산 표의 [6,15]/3과 [9,9,3]/2, 행 추가 때 길이, D/E/F 보정·공유·좌표와 분산 6·2/3 및 내적 10→11을 재계산했다. 답과 오답의 원인이 기재되어 있다."
+            }
+          ]
+        },
+        "T02": {
+          "status": "passed",
+          "artifact_locators": [
+            "cell:axis-picture",
+            "cell:variance-bridge",
+            "cell:math-concept",
+            "cell:math-lab"
+          ],
+          "evidence": [
+            {
+              "path": "lessons/week01/week01_foundations.ipynb",
+              "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+              "locator": "cell:axis-picture / cell:variance-bridge / cell:math-concept / cell:math-lab",
+              "observation": "평균을 분자/분모로, 모집단 분산을 편차 제곱합/N으로, 실수 내적을 분류별 초들의 합으로 유도하고 새 사례의 값까지 점검했다."
+            },
+            {
+              "path": "lessons/week01/week01_foundations_teacher.md",
+              "sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484",
+              "locator": "축·분산·필기 / 자습 배열과 수학",
+              "observation": "손계산 표의 [6,15]/3과 [9,9,3]/2, 행 추가 때 길이, D/E/F 보정·공유·좌표와 분산 6·2/3 및 내적 10→11을 재계산했다. 답과 오답의 원인이 기재되어 있다."
+            }
+          ]
+        },
+        "T03": {
+          "status": "passed",
+          "artifact_locators": [
+            "cell:axis-picture",
+            "cell:axis-check",
+            "cell:reshape-concept"
+          ],
+          "evidence": [
+            {
+              "path": "lessons/week01/week01_foundations.ipynb",
+              "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+              "locator": "cell:axis-picture / cell:axis-check / cell:reshape-concept",
+              "observation": "열화살표/행화살표와 남는 구간/기록을 대조했다. (2,3) 전치와 reshape에 같은 [0,1]을 대입해 원래 자료를 구별한다."
+            },
+            {
+              "path": "lessons/week01/week01_foundations_teacher.md",
+              "sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484",
+              "locator": "축·분산·필기 / 자습 배열과 수학",
+              "observation": "손계산 표의 [6,15]/3과 [9,9,3]/2, 행 추가 때 길이, D/E/F 보정·공유·좌표와 분산 6·2/3 및 내적 10→11을 재계산했다. 답과 오답의 원인이 기재되어 있다."
+            }
+          ]
+        },
+        "T04": {
+          "status": "passed",
+          "artifact_locators": [
+            "cell:axis-picture",
+            "cell:reduce-period",
+            "cell:axis-check"
+          ],
+          "evidence": [
+            {
+              "path": "lessons/week01/week01_foundations.ipynb",
+              "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+              "locator": "cell:axis-picture / cell:reduce-period / cell:axis-check",
+              "observation": "개관 열은 (누적합, 개수)=(0,0)에서 (2,1), (10,2)로 바뀐다. 끝에서 멈춰 10/2=5를 얻고, 세 열로 잘못 나눈 경우와 대조한다. 문제 범위는 축 길이가 양수이고 결측이 없는 표다."
+            },
+            {
+              "path": "lessons/week01/week01_foundations_teacher.md",
+              "sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484",
+              "locator": "축·분산·필기 / 자습 배열과 수학",
+              "observation": "손계산 표의 [6,15]/3과 [9,9,3]/2, 행 추가 때 길이, D/E/F 보정·공유·좌표와 분산 6·2/3 및 내적 10→11을 재계산했다. 답과 오답의 원인이 기재되어 있다."
+            }
+          ]
+        },
+        "T05": {
+          "status": "passed",
+          "artifact_locators": [
+            "cell:axis-check",
+            "cell:array-lab",
+            "cell:math-lab"
+          ],
+          "evidence": [
+            {
+              "path": "lessons/week01/week01_foundations.ipynb",
+              "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+              "locator": "cell:axis-check / cell:array-lab / cell:math-lab",
+              "observation": "같은 길이·같은 모양인데 뜻이 다른 대상을 제시한다. 독립 과제와 별도 해설이 실패 시 원래 좌표와 분모를 다시 확인하게 한다."
+            },
+            {
+              "path": "lessons/week01/week01_foundations_teacher.md",
+              "sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484",
+              "locator": "축·분산·필기 / 자습 배열과 수학",
+              "observation": "손계산 표의 [6,15]/3과 [9,9,3]/2, 행 추가 때 길이, D/E/F 보정·공유·좌표와 분산 6·2/3 및 내적 10→11을 재계산했다. 답과 오답의 원인이 기재되어 있다."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "K02:W1-visualise",
+      "criterion_id": "K02",
+      "object_id": "W1-visualise",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "Matplotlib의 기간 막대·히스토그램과 Seaborn 구역 막대를 명시적으로 생성한다. 동일한 축 범위에서 새 조건의 결과를 다시 비교한다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-visualise / K02",
+          "observation": "Matplotlib의 기간 막대·히스토그램과 Seaborn 구역 막대를 명시적으로 생성한다. 동일한 축 범위에서 새 조건의 결과를 다시 비교한다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-visualise",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "c45f5b6e5c74452bf915fe19dbb3874a37ea0f0b3d8585d638085044dcbd7c89",
+      "dependency_scope_fingerprint": "56a8e12e497e9fff436dea5cdc7a9d6fe666d613d84d415847d86b096ab64cd6"
+    },
+    {
+      "id": "K04:W1-visualise",
+      "criterion_id": "K04",
+      "object_id": "W1-visualise",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "실제 CSV 읽기와 유효 분모 확인 후 표시한다. 기간 막대는 R1/R2의 계산값, 자습 출력은 같은 선택집단의 하교 관측값에 연결된다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-visualise / K04",
+          "observation": "실제 CSV 읽기와 유효 분모 확인 후 표시한다. 기간 막대는 R1/R2의 계산값, 자습 출력은 같은 선택집단의 하교 관측값에 연결된다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-visualise",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "3a2a2c811a6ee9a7fe1161860c4a725c87bcd18e3b8dd3f38d5efab86c5eb89a",
+      "dependency_scope_fingerprint": "56a8e12e497e9fff436dea5cdc7a9d6fe666d613d84d415847d86b096ab64cd6"
+    },
+    {
+      "id": "K05:W1-visualise",
+      "criterion_id": "K05",
+      "object_id": "W1-visualise",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "작성한 표와 구간/구역 표시의 높이를 원래 기록으로 되짚게 한다. 새 조건의 표와 그림 변화를 문장으로 설명한다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-visualise / K05",
+          "observation": "작성한 표와 구간/구역 표시의 높이를 원래 기록으로 되짚게 한다. 새 조건의 표와 그림 변화를 문장으로 설명한다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-visualise",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "7c65a891bcd418367d906da25bac3e7f8c26c5dd6d0a92a31dd533b7235720c6",
+      "dependency_scope_fingerprint": "56a8e12e497e9fff436dea5cdc7a9d6fe666d613d84d415847d86b096ab64cd6"
+    },
+    {
+      "id": "K09:W1-visualise",
+      "criterion_id": "K09",
+      "object_id": "W1-visualise",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "처음에는 바뀐 자료에서 두 표시와 단위를 스스로 고른다. 이후 조건·코드 작성 및 도움 기록과 구별해 읽었다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-visualise / K09",
+          "observation": "처음에는 바뀐 자료에서 두 표시와 단위를 스스로 고른다. 이후 조건·코드 작성 및 도움 기록과 구별해 읽었다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-visualise",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "2e820f9ebad48180527a021df214ebe6cdf0c51c77f5e15425c010256063d25c",
+      "dependency_scope_fingerprint": "56a8e12e497e9fff436dea5cdc7a9d6fe666d613d84d415847d86b096ab64cd6"
+    },
+    {
+      "id": "K16:W1-visualise",
+      "criterion_id": "K16",
+      "object_id": "W1-visualise",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "두 종류의 표시에서 x/y의 단위와 빈도·평균 통계량, 고정 구간 경계·축 범위와 관찰 해석 한계를 확인했다.",
+      "evidence": [
+        {
+          "path": "reviews/week01-depth-20261118/joined/unit-evidence.json",
+          "sha256": "dcb5e4909a9d6eef51c4441bd64ded1b0eead2f53cdc2a4f69ca1f3ac20af0d5",
+          "locator": "W1-visualise / K16",
+          "observation": "두 종류의 표시에서 x/y의 단위와 빈도·평균 통계량, 고정 구간 경계·축 범위와 관찰 해석 한계를 확인했다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/rounds/0003/reviews/joined.json",
+          "sha256": "5f3b0af647ccd35352534783aed0489b47c3e2066258b05ec82bad0cf90bf3c0",
+          "locator": "topics.W1-visualise",
+          "observation": "해당 후보의 독립 판정·기초·상한·과제 조건."
+        }
+      ],
+      "context_fingerprint": "3bd6230cb2b2b198fc601b2cc88443c4f3969f7ecfaf2e1b19b31a298ce1642d",
+      "dependency_scope_fingerprint": "56a8e12e497e9fff436dea5cdc7a9d6fe666d613d84d415847d86b096ab64cd6",
+      "subchecks": {
+        "T03": {
+          "status": "passed",
+          "artifact_locators": [
+            "cell:plot-core",
+            "cell:plot-two-questions",
+            "cell:plot-histogram",
+            "cell:plot-categories",
+            "cell:plot-read",
+            "cell:transfer-figures"
+          ],
+          "evidence": [
+            {
+              "path": "lessons/week01/week01_foundations.ipynb",
+              "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+              "locator": "cell:plot-core / cell:plot-two-questions / cell:plot-histogram / cell:plot-categories / cell:plot-read / cell:transfer-figures",
+              "observation": "T4의 관측 0은 첫 구간과 구역별 평균 분모에 들어가고, T3의 미관측은 어느 구간에도 들어가지 않는다. 실제 artist 높이와 표를 비교했다."
+            },
+            {
+              "path": "lessons/week01/week01_foundations_teacher.md",
+              "sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484",
+              "locator": "병합과 두 그림의 예시 / 새 일지 독립 과제",
+              "observation": "T4·T8은 기준 4/6 첫 구간의 두 관측이고 T6은 둘째, T1은 기준 4의 셋째다. 구역별 East=0, West=13/3→3과 유효 분모 3→2가 표·실제 그린 높이와 일치한다. 네 축의 tightbbox와 그림 외곽을 렌더러에서 측정해 글자와 눈금이 각 행 안에 들어감을 확인했다."
+            }
+          ]
+        },
+        "T05": {
+          "status": "passed",
+          "artifact_locators": [
+            "cell:plot-read",
+            "cell:transfer-figures",
+            "cell:handoff",
+            "cell:transfer-brief",
+            "cell:transfer-first-code"
+          ],
+          "evidence": [
+            {
+              "path": "lessons/week01/week01_foundations.ipynb",
+              "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+              "locator": "cell:plot-read / cell:transfer-figures / cell:handoff / cell:transfer-brief / cell:transfer-first-code",
+              "observation": "서로 다른 두 질문을 먼저 해석하고, 기준 변경으로 빠지는 T1·T3를 찾아 분자·분모와 인과 해석의 제한을 설명한다."
+            },
+            {
+              "path": "lessons/week01/week01_foundations_teacher.md",
+              "sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484",
+              "locator": "병합과 두 그림의 예시 / 새 일지 독립 과제",
+              "observation": "T4·T8은 기준 4/6 첫 구간의 두 관측이고 T6은 둘째, T1은 기준 4의 셋째다. 구역별 East=0, West=13/3→3과 유효 분모 3→2가 표·실제 그린 높이와 일치한다. 네 축의 tightbbox와 그림 외곽을 렌더러에서 측정해 글자와 눈금이 각 행 안에 들어감을 확인했다."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "K06:claim:calls",
+      "criterion_id": "K06",
+      "object_id": "claim:calls",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "조건에 따라 hits를 갱신하고 return으로 돌려준다. 기준과 같은 값은 >에서 제외되고 >=에서 포함된다.",
+      "evidence": [
+        {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:python-basics",
+          "observation": "조건에 따라 hits를 갱신하고 return으로 돌려준다. 기준과 같은 값은 >에서 제외되고 >=에서 포함된다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/joined/public-results.json",
+          "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+          "locator": "W1-python public calculations",
+          "observation": "Independent public examples, boundary and comparison output; see unit evidence for semantic interpretation."
+        }
+      ],
+      "context_fingerprint": "c30e0c56d9f9df9547b338066586100934ed3f0c060f2509d533f01282ce646b"
+    },
+    {
+      "id": "K06:claim:missing-return",
+      "criterion_id": "K06",
+      "object_id": "claim:missing-return",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "일반 함수가 아무 값도 반환하지 않고 끝나면 None으로 평가되어 여기에 1을 더하면 TypeError다.",
+      "evidence": [
+        {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:return-story",
+          "observation": "일반 함수가 아무 값도 반환하지 않고 끝나면 None으로 평가되어 여기에 1을 더하면 TypeError다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/joined/public-results.json",
+          "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+          "locator": "W1-python public calculations",
+          "observation": "Independent public examples, boundary and comparison output; see unit evidence for semantic interpretation."
+        }
+      ],
+      "context_fingerprint": "1a011a40953676071803e03e37299b4120d458525c685384e507de0931d1a94f"
+    },
+    {
+      "id": "K06:claim:trace",
+      "criterion_id": "K06",
+      "object_id": "claim:trace",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "문자열 7과 정수 기준의 비교는 TypeError를 내며 스택에서 scan_batch 호출과 count_over의 실패 연산을 찾을 수 있다. 다른 last_box 사례의 범위 밖 인덱스는 IndexError다.",
+      "evidence": [
+        {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:trace-example",
+          "observation": "문자열 7과 정수 기준의 비교는 TypeError를 내며 스택에서 scan_batch 호출과 count_over의 실패 연산을 찾을 수 있다. 다른 last_box 사례의 범위 밖 인덱스는 IndexError다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/joined/public-results.json",
+          "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+          "locator": "W1-python public calculations",
+          "observation": "Independent public examples, boundary and comparison output; see unit evidence for semantic interpretation."
+        }
+      ],
+      "context_fingerprint": "d157920c463dfc2ac22331f867170df4dbd2abb49a42774d2758a244de362c5f"
+    },
+    {
+      "id": "K06:claim:count",
+      "criterion_id": "K06",
+      "object_id": "claim:count",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "심사 시점이 같은 특성과 뒤의 목표를 구별한다. 하교 관측 0은 분모에 남고 미관측은 제외된다. 키로 결합하면 오른쪽 순서가 결과를 바꾸지 않는다.",
+      "evidence": [
+        {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:dictionary",
+          "observation": "심사 시점이 같은 특성과 뒤의 목표를 구별한다. 하교 관측 0은 분모에 남고 미관측은 제외된다. 키로 결합하면 오른쪽 순서가 결과를 바꾸지 않는다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/joined/public-results.json",
+          "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+          "locator": "W1-table public calculations",
+          "observation": "Independent public examples, boundary and comparison output; see unit evidence for semantic interpretation."
+        }
+      ],
+      "context_fingerprint": "dd1e3db41703fe296a44c03c3a1405ef5653a55e93d9872fc78f4130c5e025c5"
+    },
+    {
+      "id": "K06:claim:availability",
+      "criterion_id": "K06",
+      "object_id": "claim:availability",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "점심 수거까지 알 수 있는 세 구간과 하교 수거 뒤 정해지는 목표를 구분한다. 데이터 사전에서 정한 실제 0과 미관측을 나눈다.",
+      "evidence": [
+        {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:dictionary",
+          "observation": "점심 수거까지 알 수 있는 세 구간과 하교 수거 뒤 정해지는 목표를 구분한다. 데이터 사전에서 정한 실제 0과 미관측을 나눈다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/joined/public-results.json",
+          "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+          "locator": "W1-table public calculations",
+          "observation": "Independent public examples, boundary and comparison output; see unit evidence for semantic interpretation."
+        }
+      ],
+      "context_fingerprint": "723e80a0b419da88ae7d6446b3e00278a434af6aa81f6af8cee7d9686484d729"
+    },
+    {
+      "id": "K06:claim:join",
+      "criterion_id": "K06",
+      "object_id": "claim:join",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "하나의 반납함 키에 붙이는 오른쪽 자료는 반납함당 한 행이어야 한다. 왼쪽 병합으로 미연결 관찰 ID를 찾을 수 있다.",
+      "evidence": [
+        {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:join-story",
+          "observation": "하나의 반납함 키에 붙이는 오른쪽 자료는 반납함당 한 행이어야 한다. 왼쪽 병합으로 미연결 관찰 ID를 찾을 수 있다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/joined/public-results.json",
+          "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+          "locator": "W1-table public calculations",
+          "observation": "Independent public examples, boundary and comparison output; see unit evidence for semantic interpretation."
+        }
+      ],
+      "context_fingerprint": "dc86c5b7581ea5c13d6c720155cb26928899b4e8cd69d8b48fa0a443da6cb007"
+    },
+    {
+      "id": "K06:claim:null-merge",
+      "criterion_id": "K06",
+      "object_id": "claim:null-merge",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "pandas의 일반 병합에서는 양쪽 결측 키가 매치될 수 있다. 고유 식별 근거가 없는 키를 배제한 뒤 왼쪽 관찰 행을 보존하고 실제 미연결 기록 이름을 확인한다.",
+      "evidence": [
+        {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:join-story",
+          "observation": "pandas의 일반 병합에서는 양쪽 결측 키가 매치될 수 있다. 고유 식별 근거가 없는 키를 배제한 뒤 왼쪽 관찰 행을 보존하고 실제 미연결 기록 이름을 확인한다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/joined/public-results.json",
+          "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+          "locator": "W1-table public calculations",
+          "observation": "Independent public examples, boundary and comparison output; see unit evidence for semantic interpretation."
+        }
+      ],
+      "context_fingerprint": "81bbb9cafaabeff2bccf798d92ccaf4c5bcbe1cbdf0c752c6e6483ab449770d6"
+    },
+    {
+      "id": "K06:claim:id-schema",
+      "criterion_id": "K06",
+      "object_id": "claim:id-schema",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "문자 ID로 읽고 빈 필드만 결측으로 지정한다. 두 키의 양끝 공백과 빈 문자열을 통일해, 열 전체가 비는 경우에도 근거 없는 구역을 만들지 않고 실제 기록 이름을 보고한다.",
+      "evidence": [
+        {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:csv-open",
+          "observation": "문자 ID로 읽고 빈 필드만 결측으로 지정한다. 두 키의 양끝 공백과 빈 문자열을 통일해, 열 전체가 비는 경우에도 근거 없는 구역을 만들지 않고 실제 기록 이름을 보고한다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/joined/public-results.json",
+          "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+          "locator": "W1-table public calculations",
+          "observation": "Independent public examples, boundary and comparison output; see unit evidence for semantic interpretation."
+        }
+      ],
+      "context_fingerprint": "404c207b12207eeeb12b67f69dbe6c8b8e2b70fde36bdb86079bfb8894aa8f8a"
+    },
+    {
+      "id": "K06:claim:axis",
+      "criterion_id": "K06",
+      "object_id": "claim:axis",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "R1·R2 개관·오전·점심의 열 평균은 [5,2,5], 행 평균은 [4,4]다. 2차원 배열의 줄인 축은 keepdims=False에서 사라진다.",
+      "evidence": [
+        {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:axis-picture",
+          "observation": "R1·R2 개관·오전·점심의 열 평균은 [5,2,5], 행 평균은 [4,4]다. 2차원 배열의 줄인 축은 keepdims=False에서 사라진다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/joined/public-results.json",
+          "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+          "locator": "W1-array public calculations",
+          "observation": "Independent public examples, boundary and comparison output; see unit evidence for semantic interpretation."
+        }
+      ],
+      "context_fingerprint": "9356bc69aa3c564a2f78eced8bd6214d88988696060533a8131bf211641bdb72"
+    },
+    {
+      "id": "K06:claim:row-mean",
+      "criterion_id": "K06",
+      "object_id": "claim:row-mean",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "U·V·W의 행 합 [9,9,3]을 각 두 값으로 나누면 세 평균 [4.5,4.5,1.5]가 된다.",
+      "evidence": [
+        {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:axis-check",
+          "observation": "U·V·W의 행 합 [9,9,3]을 각 두 값으로 나누면 세 평균 [4.5,4.5,1.5]가 된다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/joined/public-results.json",
+          "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+          "locator": "W1-array public calculations",
+          "observation": "Independent public examples, boundary and comparison output; see unit evidence for semantic interpretation."
+        }
+      ],
+      "context_fingerprint": "c090008f82a943a1ee236f466fd886b19b6c9454463e907c2a60634ff2b547a4"
+    },
+    {
+      "id": "K06:claim:variance",
+      "criterion_id": "K06",
+      "object_id": "claim:variance",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "세 구간 전체를 모집단으로 볼 때 [0,3,6]과 [2,3,4]의 분산은 각각 6권², 2/3권²이다.",
+      "evidence": [
+        {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:math-lab",
+          "observation": "세 구간 전체를 모집단으로 볼 때 [0,3,6]과 [2,3,4]의 분산은 각각 6권², 2/3권²이다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/joined/public-results.json",
+          "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+          "locator": "W1-array public calculations",
+          "observation": "Independent public examples, boundary and comparison output; see unit evidence for semantic interpretation."
+        }
+      ],
+      "context_fingerprint": "15cf602d2438dc29ee04e46a97633f2fe0c12ab38d8d75308993aa0faf87414c"
+    },
+    {
+      "id": "K06:claim:dot-order",
+      "criterion_id": "K06",
+      "object_id": "claim:dot-order",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "같은 순서의 두 벡터끼리 곱해 합하면 10초이고, 시간 순서만 뒤집으면 11초다. 길이만 맞춘다고 항목이 대응되지는 않는다.",
+      "evidence": [
+        {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:math-lab",
+          "observation": "같은 순서의 두 벡터끼리 곱해 합하면 10초이고, 시간 순서만 뒤집으면 11초다. 길이만 맞춘다고 항목이 대응되지는 않는다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/joined/public-results.json",
+          "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+          "locator": "W1-array public calculations",
+          "observation": "Independent public examples, boundary and comparison output; see unit evidence for semantic interpretation."
+        }
+      ],
+      "context_fingerprint": "a3cded1f4128fdcabeea9caa9b8a3a3516408324f6720ecc7cb03f0249c42a48"
+    },
+    {
+      "id": "K06:claim:view",
+      "criterion_id": "K06",
+      "object_id": "claim:view",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "기본 열 슬라이스가 공유하는 원소를 바꾸면 원본도 바뀐다. 같은 열을 copy한 값은 보존된다.",
+      "evidence": [
+        {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:index-view",
+          "observation": "기본 열 슬라이스가 공유하는 원소를 바꾸면 원본도 바뀐다. 같은 열을 copy한 값은 보존된다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/joined/public-results.json",
+          "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+          "locator": "W1-array public calculations",
+          "observation": "Independent public examples, boundary and comparison output; see unit evidence for semantic interpretation."
+        }
+      ],
+      "context_fingerprint": "169a09456566248400f9b84a05d98303ca6e537ba8f935e1f462b44d852977dd"
+    },
+    {
+      "id": "K06:claim:broadcast",
+      "criterion_id": "K06",
+      "object_id": "claim:broadcast",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "(2,3)에 (2,)를 바로 더하면 오른쪽 3과 2가 호환되지 않는다. 행에 정렬할 (2,1) 보정량은 같은 날의 모든 구간에 더해진다.",
+      "evidence": [
+        {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:broadcast-concept",
+          "observation": "(2,3)에 (2,)를 바로 더하면 오른쪽 3과 2가 호환되지 않는다. 행에 정렬할 (2,1) 보정량은 같은 날의 모든 구간에 더해진다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/joined/public-results.json",
+          "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+          "locator": "W1-array public calculations",
+          "observation": "Independent public examples, boundary and comparison output; see unit evidence for semantic interpretation."
+        }
+      ],
+      "context_fingerprint": "6c775081cb5460913426596acf4a48b998ff3d4a2284b7b5007e77d91f990091"
+    },
+    {
+      "id": "K06:claim:reshape",
+      "criterion_id": "K06",
+      "object_id": "claim:reshape",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "기본 C 순서로 같은 개수의 원소를 새 행으로 묶는 것과 행·열 좌표를 교환하는 전치는 모양이 같아도 값이 다를 수 있다.",
+      "evidence": [
+        {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:reshape-concept",
+          "observation": "기본 C 순서로 같은 개수의 원소를 새 행으로 묶는 것과 행·열 좌표를 교환하는 전치는 모양이 같아도 값이 다를 수 있다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/joined/public-results.json",
+          "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+          "locator": "W1-array public calculations",
+          "observation": "Independent public examples, boundary and comparison output; see unit evidence for semantic interpretation."
+        }
+      ],
+      "context_fingerprint": "c7c15d6d3824b3b7c9cd9bcb3b4d8737257d515eafd1c76acc4759f23af44df2"
+    },
+    {
+      "id": "K06:claim:plot",
+      "criterion_id": "K06",
+      "object_id": "claim:plot",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "수치 히스토그램의 높이는 해당 구간의 기록 수이고, 구역별 평균 막대 높이는 관측한 하교 합을 그 구역의 관측 수로 나눈 값이다.",
+      "evidence": [
+        {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:plot-core",
+          "observation": "수치 히스토그램의 높이는 해당 구간의 기록 수이고, 구역별 평균 막대 높이는 관측한 하교 합을 그 구역의 관측 수로 나눈 값이다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/joined/public-results.json",
+          "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+          "locator": "W1-visualise public calculations",
+          "observation": "Independent public examples, boundary and comparison output; see unit evidence for semantic interpretation."
+        }
+      ],
+      "context_fingerprint": "000051556728b009e7ae3bf574bf681fd7aeedefe4bfc436644371b4568704ea"
+    },
+    {
+      "id": "K06:claim:hist-bins",
+      "criterion_id": "K06",
+      "object_id": "claim:hist-bins",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "하교 미관측을 빼고 무가중 구간 기록 수를 센다. 고정 경계의 중간 끝은 다음 구간으로, 최종 오른쪽 끝은 마지막 구간으로 들어간다.",
+      "evidence": [
+        {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:plot-two-questions",
+          "observation": "하교 미관측을 빼고 무가중 구간 기록 수를 센다. 고정 경계의 중간 끝은 다음 구간으로, 최종 오른쪽 끝은 마지막 구간으로 들어간다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/joined/public-results.json",
+          "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+          "locator": "W1-visualise public calculations",
+          "observation": "Independent public examples, boundary and comparison output; see unit evidence for semantic interpretation."
+        }
+      ],
+      "context_fingerprint": "3c27b9d1aa44988f71002335461cfb542214733d3e147166cab019147a0147c7"
+    },
+    {
+      "id": "K06:claim:range",
+      "criterion_id": "K06",
+      "object_id": "claim:range",
+      "reviewer_id": "joined-content-review",
+      "status": "passed",
+      "reason": "기준을 높이면 West의 하교 평균은 13/3에서 3권으로 바뀐다. 두 그림의 같은 범위와 대상에 기초해 설명하며 원인이나 모든 날로 일반화하지 않는다.",
+      "evidence": [
+        {
+          "path": "lessons/week01/week01_foundations.ipynb",
+          "sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+          "locator": "cell:transfer-figures",
+          "observation": "기준을 높이면 West의 하교 평균은 13/3에서 3권으로 바뀐다. 두 그림의 같은 범위와 대상에 기초해 설명하며 원인이나 모든 날로 일반화하지 않는다."
+        },
+        {
+          "path": "reviews/week01-depth-20261118/joined/public-results.json",
+          "sha256": "ca24f523d1bdfa7ea0bfdfe0743c6281c66d51b1cd0c768bbdec049b494ad1d9",
+          "locator": "W1-visualise public calculations",
+          "observation": "Independent public examples, boundary and comparison output; see unit evidence for semantic interpretation."
+        }
+      ],
+      "context_fingerprint": "5382eb39a8e0cafccafc7c32767a1dcb12c1a790486f11478f383bb78c4ce99d"
+    }
+  ],
+  "candidates": [],
+  "attempts": [],
+  "lesson_allocations": [
+    {
+      "week": 1,
+      "blocks": [
+        {
+          "id": "theory",
+          "kind": "theory",
+          "minutes": 20,
+          "written_minutes": 0
+        },
+        {
+          "id": "hand",
+          "kind": "noncoding",
+          "minutes": 10,
+          "written_minutes": 0
+        },
+        {
+          "id": "written",
+          "kind": "noncoding",
+          "minutes": 10,
+          "written_minutes": 10
+        },
+        {
+          "id": "python",
+          "kind": "coding",
+          "minutes": 20,
+          "written_minutes": 0
+        },
+        {
+          "id": "csv",
+          "kind": "coding",
+          "minutes": 40,
+          "written_minutes": 0
+        },
+        {
+          "id": "array",
+          "kind": "coding",
+          "minutes": 20,
+          "written_minutes": 0
+        }
+      ],
+      "outside_work": [
+        {
+          "id": "W1-python",
+          "required": true,
+          "minutes": 90
+        },
+        {
+          "id": "W1-table",
+          "required": true,
+          "minutes": 85
+        },
+        {
+          "id": "W1-array",
+          "required": true,
+          "minutes": 115
+        },
+        {
+          "id": "W1-visualise",
+          "required": true,
+          "minutes": 70
+        }
+      ],
+      "basis": "lessons/week01/week01_foundations_teacher.md / 수업 편성 및 고정 계약. 필기 10분은 비코딩 안에 포함. 5~7시간 범위의 6시간은 운영 추정."
+    }
+  ],
+  "discovery": {
+    "path": "reviews/week01-depth-20261118/joined/discovery.json"
+  },
+  "operator_notes": {
+    "scope": "Production of this exact Week 1 material, with iterative correction, was authorized. The four topical minima and ceilings were independently frozen before authoring. The legacy campaign-wide K14 policy fingerprint, numeric budget, no-progress limit, and a learner workload cap were not agreed.",
+    "class_and_homework": "No learner outcomes or actual completion time assessed. The upper end of the registered 5–7-hour planning range is not an individually agreed learner cap.",
+    "chain_usage": "For the class schedule gate each unit identifies a real in-class theory, prediction, code practice, and assessment anchor. Its independent end-of-unit work and outside allocation are additionally bound below."
+  }
+}

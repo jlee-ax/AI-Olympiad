@@ -1,0 +1,633 @@
+{
+  "notebook_sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+  "teacher_sha256": "c1a0e2c14b050c0fbd741cdd4dc2c21627ec3eec3509b974730dba9845bfc484",
+  "round": "0003",
+  "reviewer": "joined-content-review",
+  "read_scope": "61개의 학생 셀, 별도 교사용 해설 전체, 현재 해시의 세 공개 CSV. 등록한 이전 두 후보와 바뀐 부분도 비교했다. 공식 과제와 공개 예제는 발견 범위 내의 표본이다.",
+  "whole_notebook": {
+    "W1-python": {
+      "class_cells": [
+        "python-basics",
+        "python-example",
+        "return-story",
+        "return-example",
+        "trace-example",
+        "python-five",
+        "python-independent"
+      ],
+      "homework_cells": [
+        "independent-start",
+        "trace-independent"
+      ],
+      "observation": "변수/반복/반환 설명과 실제 > 비교, print-only None의 덧셈 실패, 다섯 진단 카드와 두 프레임 추적을 통독했다. 빈 목록, 한 숫자 0, 미관측, 경계값, 음수 기준과 새 인덱스 오류는 서로 다른 동작을 묻는다."
+    },
+    "W1-table": {
+      "class_cells": [
+        "opening",
+        "dictionary",
+        "table-card",
+        "written-card",
+        "csv-open",
+        "load-csv",
+        "inspect-table",
+        "audit-csv",
+        "select-table",
+        "select-csv",
+        "missing-error",
+        "column-error",
+        "table-independent"
+      ],
+      "homework_cells": [
+        "join-story",
+        "real-merge",
+        "join-key-example",
+        "group-story",
+        "group-example",
+        "transfer-brief",
+        "transfer-table",
+        "transfer-data-work",
+        "transfer-faults",
+        "transfer-fault-work"
+      ],
+      "observation": "처음의 반납 관찰 단위와 각 수거 간격에서 출발해 시점 필기, 실제 CSV 표, 결측·잘못된 열, 다른 키 이름 카드, 새 표와 복제·미연결·빈 결합키의 복구 및 원래 파일 재실행까지 읽었다. 문자 키의 경계만 다듬으며 수량 0은 유지한다."
+    },
+    "W1-array": {
+      "class_cells": [
+        "axis-picture",
+        "variance-bridge",
+        "axis-check",
+        "numpy-core",
+        "reduce-period"
+      ],
+      "homework_cells": [
+        "index-view",
+        "view-example",
+        "broadcast-concept",
+        "broadcast-example",
+        "reshape-concept",
+        "reshape-example",
+        "array-lab",
+        "array-independent",
+        "math-concept",
+        "math-example",
+        "math-lab",
+        "math-independent"
+      ],
+      "observation": "손 계산의 표·분산 도입·독립 축 예측에서 NumPy 코드 확인을 거쳐, 자습의 인덱스·뷰/복사→브로드캐스트→reshape/전치→수학 제약·분산·내적과 단위로 이어진다. 공개 손 계산과 다른 모양 사례로 수치를 재현했다."
+    },
+    "W1-visualise": {
+      "class_cells": [
+        "plot-core",
+        "plot-period",
+        "class-transfer",
+        "class-independent"
+      ],
+      "homework_cells": [
+        "plot-two-questions",
+        "plot-histogram",
+        "plot-categories",
+        "plot-read",
+        "transfer-first-code",
+        "transfer-figures",
+        "transfer-plot-work",
+        "handoff"
+      ],
+      "observation": "한 구간 평균 막대를 원래 두 행으로 읽고 행을 바꾸는 수업, 같은 하교 자료에서 히스토그램/구역 칸을 기록으로 설명하는 지도로 이어진다. 새 파일에서 지원 전 스케치·열·단위 선택, 두 기준과 공통 눈금, 짧은 집계 답과 해석 한계를 확인했다."
+    }
+  },
+  "first_attempt": "학생은 교사용 답을 닫고, 문제 지시·원자료와 미완성 셀만으로 첫 예상 또는 설계를 기록한다. 과거 예시를 다시 보거나 도움을 받으면 해당 시도를 표시한다. 새 표·그림 실마리는 첫 답을 저장한 다음 선택적으로 펼친다.",
+  "conditions": "정확한 주제 판단은 표·코드·설명과 다른 입력의 결과, 사용한 도움 및 오류 수정 이유를 함께 본다. 교사용 파일에 풀이와 피드백이 있다. 무도움 판단은 첫 도움 표시와 일치하는 답에만 적용한다. 학생 응답·시간은 관측하지 않았다.",
+  "units": {
+    "W1-python": {
+      "id": "W1-python",
+      "theory": "python-basics",
+      "noncoding": "python-five",
+      "coding": "python-independent",
+      "assessment": "python-independent",
+      "label": "Python 변수·조건·반복과 반환",
+      "tag": "calls",
+      "claim": "조건에 따라 hits를 갱신하고 return으로 돌려준다. 기준과 같은 값은 >에서 제외되고 >=에서 포함된다.",
+      "source": [
+        "python-return",
+        "function",
+        "exception"
+      ],
+      "problem": "sample",
+      "difference": "선택 1은 호출 사이에 변경되는 기본 리스트 상태를 읽게 한다. 여기서는 명시적 누계와 반환/화면 출력, 경계 변경을 시험한다. 공통 능력은 실행 흐름 추적으로 제한한다.",
+      "support": [
+        "python-basics",
+        "return-story",
+        "return-example",
+        "trace-example"
+      ],
+      "assessment_cells": [
+        "python-five",
+        "python-independent",
+        "independent-start",
+        "trace-independent"
+      ],
+      "key": "Python 카드",
+      "classActs": [
+        "python",
+        "python",
+        "python",
+        "python"
+      ],
+      "classAssessment": "python-five",
+      "prereqs": {
+        "PY-VARIABLES": [
+          "python-basics",
+          "python-example"
+        ],
+        "PY-CONTROL": [
+          "python-basics",
+          "python-example"
+        ],
+        "PY-FUNCTION": [
+          "python-basics",
+          "python-example"
+        ],
+        "PY-LIST": [
+          "return-story",
+          "python-five"
+        ],
+        "PY-FILE": [
+          "csv-open",
+          "load-csv"
+        ],
+        "PY-ERROR": [
+          "trace-example",
+          "python-five"
+        ]
+      },
+      "regions": {
+        "T04": [
+          "python-basics",
+          "python-example",
+          "return-example",
+          "python-five",
+          "trace-example",
+          "trace-independent"
+        ],
+        "T05": [
+          "return-story",
+          "python-five",
+          "independent-start",
+          "trace-independent"
+        ]
+      },
+      "evidence": {
+        "K02": "조건과 반복을 포함한 함수를 고쳐 재실행한다. 새 리스트와 음수 기준에서 반환값과 오류를 각각 남기는 실전 문항이다.",
+        "K04": "매개변수, 상태, 빈값, 자료형/슬라이스를 지원하고, 파일 카드 5는 CSV를 읽은 직후에 완료하는 순서를 교사용 편성에 명시한다.",
+        "K05": "기준 초과의 상태표에서 출발해 기준 포함으로 바꾼 함수로 같은 개념을 재시험한다. 값과 출력의 차이는 반환값에 1을 더해 확인한다.",
+        "K09": "학생에게는 작동하는 엄격 초과 예제, 별도 응답란과 바뀐 기준이 주어진다. 경계와 반환을 스스로 구현하고, 도움을 본 시도는 별도로 기록한다.",
+        "K16": "상태표의 각 원소와 비교 횟수·누계·반환을 예제 및 변형 코드와 대조했다. 오류 이름, 실제 호출 줄, 실패 표현식과 경계 수정을 분리했다."
+      },
+      "subtext": {
+        "T04": "0에서 시작한 hits는 네 원소의 None·동일값·초과를 순서대로 구분해 1이 된다. 응답에서는 포함 경계와 음수 오류의 결과가 바뀐다.",
+        "T05": "용어 설명과 print/return 대조, 실제 0과 미관측을 구분하는 실패 입력, 첫 답·지원·재시도 조건과 교사용 피드백이 연결된다. scan_batch/count_over에서 줄을 찾은 뒤 last_box/code_at의 다른 오류를 고친다."
+      },
+      "assessment_review": "공개 코드를 실행해 scan_batch→count_over의 books > limit TypeError와 last_box→code_at의 codes[position] IndexError를 모두 확인했다. 후자는 인덱스 2 대신 len-1을 쓰고 빈 입력을 따로 처리하는 새 과제다. 최종 28셀 실행에서 두 추적과 교사용 수정의 다른 입력 검산을 반복했다.",
+      "key_review": "수업 카드는 4회 상태 0,0,1,1 및 포함 기준 반환 2를 구분한다. 자습의 별도 코드는 len-1과 빈 목록에 None을 반환한다. 3개·1개·빈 목록과 잘못된 기준을 실행했다.",
+      "feedback": "반환값을 쓰는 다음 덧셈, [0]·[None]의 길이와 비교 횟수를 다시 확인하게 한다. 호출 줄의 번호가 실패 줄의 인덱스로 어떻게 전달되는지 다른 사례에 적는다."
+    },
+    "W1-table": {
+      "id": "W1-table",
+      "theory": "dictionary",
+      "noncoding": "table-card",
+      "coding": "select-csv",
+      "assessment": "transfer-data-work",
+      "label": "관측 단위·시점·누락·키와 집계",
+      "tag": "count",
+      "claim": "심사 시점이 같은 특성과 뒤의 목표를 구별한다. 하교 관측 0은 분모에 남고 미관측은 제외된다. 키로 결합하면 오른쪽 순서가 결과를 바꾸지 않는다.",
+      "source": [
+        "domestic",
+        "antique",
+        "count",
+        "merge",
+        "read-csv"
+      ],
+      "problem": "antique",
+      "difference": "Antique에서 0은 라벨 열의 미상 코드다. 수거 기록에서는 하교 0권이 실제 측정이고 빈칸이 미상이다. W1에서는 코드북/시점/가용성만 전이하고 지도·반지도 학습은 풀지 않는다.",
+      "support": [
+        "dictionary",
+        "table-card",
+        "join-story",
+        "real-merge",
+        "join-key-example",
+        "group-story"
+      ],
+      "assessment_cells": [
+        "transfer-brief",
+        "transfer-table",
+        "transfer-data-work",
+        "transfer-faults",
+        "transfer-fault-work"
+      ],
+      "key": "수첩과 원본 CSV / 새 일지 독립 과제",
+      "classActs": [
+        "theory",
+        "theory",
+        "csv",
+        "csv"
+      ],
+      "classAssessment": "table-independent",
+      "prereqs": {
+        "PY-FUNCTION": [
+          "python-basics",
+          "load-csv"
+        ],
+        "PY-LIST": [
+          "return-story",
+          "select-csv"
+        ],
+        "PY-FILE": [
+          "csv-open",
+          "load-csv"
+        ],
+        "PY-ERROR": [
+          "missing-error",
+          "column-error"
+        ]
+      },
+      "regions": {
+        "T03": [
+          "dictionary",
+          "table-card",
+          "audit-csv",
+          "join-story",
+          "group-story",
+          "transfer-table",
+          "join-key-example"
+        ],
+        "T05": [
+          "dictionary",
+          "missing-error",
+          "group-story",
+          "transfer-faults",
+          "join-key-example"
+        ]
+      },
+      "evidence": {
+        "K02": "3개의 실제 CSV를 이용해 필수 열/자료형/모양/결측·부분 선택을 점검하고 뒤집은 구역표를 키로 병합한다.",
+        "K04": "파일의 머리글과 첫 행은 csv-open 및 load-csv에서 함께 읽는다. 실패 원인은 파일 찾기와 이미 로드된 표의 잘못된 열에서 구별한다. 문자 식별자와 빈 필드 규약을 실제 파일 열기에 앞서 안내하고, 두 키 열을 정규화하는 작은 카드 예시 후 다른 CSV를 처리한다.",
+        "K05": "같은 행/열·시점 정의를 손으로 읽고 .loc로 선택한다. 마지막에는 열 이름과 순서만 달라져도 사전을 토대로 함수를 다시 작성하게 한다.",
+        "K09": "새 입력은 공개 원본과 다른 열 이름/순서/결측 패턴을 사용한다. 누락 열과 중복·미연결 키를 직접 깨뜨려 결과를 기록한다.",
+        "K16": "기록/반납함 ID와 시점 자료사전→부분집합→관측 분모 순서를 작은 표와 코드·원기록으로 오가며 점검했다. 결측과 양쪽 빈 문자열의 가짜 연결, 전체 빈 키 열의 dtype 충돌을 실제 파일에서 재시험했다."
+      },
+      "subtext": {
+        "T03": "R3의 오전 빈칸, R2의 관측 0과 다른 열의 실제 결측을 가리킨 뒤 transfer-table에서 이름과 순서가 다른 표의 열·시점을 다시 붙인다.",
+        "T05": "전체 행을 한꺼번에 지우면 T6의 유효 하교권수를 잃는 반례와 키 고장 세 종류, 교사용 질문이 학생의 분모·누락 해석을 진단한다."
+      },
+      "assessment_review": "최종 공개 풀이를 두 차례 독립 실행했다. 물리 CSV의 왼쪽 키 전체·오른쪽 전체·양쪽 전체가 비면 각각 T1–T8을 보고한다. 동시에 빈 문자열과 미등록 키를 넣으면 T1·T2가 정확히 나온다. 정상·뒤집은 입력과 원래 하교 0, 유효 분모도 다시 확인했다.",
+      "key_review": "원본 6행·6열에서 R2·R4·R5를 고르면 하교 관측은 둘이다. 8행 새 파일의 기준 4/6, 구역별 합·분모와 미연결 실명을 키 및 독립 stdlib 계산으로 대조했다. 왼쪽/오른쪽/양쪽 전체가 빈 경우와 빈 문자열 양편+미등록 키도 실제 파일을 직렬화해 수치와 식별자를 대조했다.",
+      "feedback": "틀린 풀이에는 조건을 충족한 행과 하교를 센 행을 따로 표시하고, 중복·미등록 키 때문에 잃거나 복제된 slip을 찾게 한다. 표 순서를 뒤집어도 원래 구역이 유지되는지 재검사한다."
+    },
+    "W1-array": {
+      "id": "W1-array",
+      "theory": "axis-picture",
+      "noncoding": "axis-check",
+      "coding": "reduce-period",
+      "assessment": "array-independent",
+      "label": "축과 보존되는 대상을 손으로 예측해 코드와 연결",
+      "tag": "axis",
+      "claim": "R1·R2 개관·오전·점심의 열 평균은 [5,2,5], 행 평균은 [4,4]다. 2차원 배열의 줄인 축은 keepdims=False에서 사라진다.",
+      "source": [
+        "mean",
+        "broadcast",
+        "views",
+        "reshape",
+        "transpose",
+        "variance",
+        "dot"
+      ],
+      "problem": "sample",
+      "difference": "선택 2는 축별 합과 메모리 주장을 점검하고 선택 6은 4차원 텐서 축 교환을 묻는다. W1은 행렬 축 평균·슬라이스·원소 좌표를 독립적으로 시험한다. 4차원 PyTorch의 전체 요구는 후속이다.",
+      "support": [
+        "axis-picture",
+        "variance-bridge",
+        "index-view",
+        "broadcast-concept",
+        "reshape-concept",
+        "math-concept"
+      ],
+      "assessment_cells": [
+        "axis-check",
+        "array-lab",
+        "array-independent",
+        "math-lab",
+        "math-independent"
+      ],
+      "key": "축·분산·필기 / 자습 배열과 수학",
+      "classActs": [
+        "theory",
+        "hand",
+        "array",
+        "hand"
+      ],
+      "classAssessment": "axis-check",
+      "prereqs": {
+        "PY-LIST": [
+          "return-story",
+          "reduce-period"
+        ],
+        "MATH-MEAN": [
+          "axis-picture",
+          "axis-picture"
+        ]
+      },
+      "regions": {
+        "T01": [
+          "axis-picture",
+          "variance-bridge",
+          "broadcast-concept",
+          "math-concept"
+        ],
+        "T02": [
+          "axis-picture",
+          "variance-bridge",
+          "math-concept",
+          "math-lab"
+        ],
+        "T03": [
+          "axis-picture",
+          "axis-check",
+          "reshape-concept"
+        ],
+        "T04": [
+          "axis-picture",
+          "reduce-period",
+          "axis-check"
+        ],
+        "T05": [
+          "axis-check",
+          "array-lab",
+          "math-lab"
+        ]
+      },
+      "evidence": {
+        "K02": "실제 직사각 배열에서 인덱싱·슬라이싱·2축 축약을 실행하며, 바뀐 입력에서 복사·브로드캐스팅·형태 변경·전치·분산·내적을 수행한다.",
+        "K04": "묶을 두 값과 분모를 먼저 정의하고 axis를 도입한다. (3,)와 (1,3)을 구분한 후 기록/구간을 다른 배열에 적용한다.",
+        "K05": "두 축 평균은 같은 R1/R2에서 표·합/분모·NumPy 호출로 이어진다. U/V/W에서는 모양·값·해석을 먼저 손으로 적고 대조한다.",
+        "K09": "U/V/W와 D/E/F는 학습용 R1/R2와 다른 형태·값이다. 남는 축과 보정 값, 같은 좌표의 다른 뜻, 계산과 오답 원인을 묻는다.",
+        "K16": "정의와 조건, 표시된 표, 계산 절차 및 잘못된 대안에 대한 교사용 해설을 독립 계산과 비교했다."
+      },
+      "subtext": {
+        "T01": "정수 권수, 양의 행/열, 비결측 실수, keepdims=False, 관측 개수와 권²·초/권 단위가 일관된다.",
+        "T02": "평균을 분자/분모로, 모집단 분산을 편차 제곱합/N으로, 실수 내적을 분류별 초들의 합으로 유도하고 새 사례의 값까지 점검했다.",
+        "T03": "열화살표/행화살표와 남는 구간/기록을 대조했다. (2,3) 전치와 reshape에 같은 [0,1]을 대입해 원래 자료를 구별한다.",
+        "T04": "개관 열은 (누적합, 개수)=(0,0)에서 (2,1), (10,2)로 바뀐다. 끝에서 멈춰 10/2=5를 얻고, 세 열로 잘못 나눈 경우와 대조한다. 문제 범위는 축 길이가 양수이고 결측이 없는 표다.",
+        "T05": "같은 길이·같은 모양인데 뜻이 다른 대상을 제시한다. 독립 과제와 별도 해설이 실패 시 원래 좌표와 분모를 다시 확인하게 한다."
+      },
+      "assessment_review": "손계산용 3×2에서 축별 [2,5], [4.5,4.5,1.5]. 다른 D/E/F에서 뷰/사본, 실패하는 길이 3과 (3,1) 보정, reshape와 전치의 [0,1] 값 4·3을 독립 재계산했다. 같은 최종 공개 입력 바이트와 변경된 교사용 파일에 대해 두 축·형태·내적 결과도 다시 계산했다.",
+      "key_review": "손계산 표의 [6,15]/3과 [9,9,3]/2, 행 추가 때 길이, D/E/F 보정·공유·좌표와 분산 6·2/3 및 내적 10→11을 재계산했다. 답과 오답의 원인이 기재되어 있다.",
+      "feedback": "분모/모양을 틀리면 결과 한 칸에 참여한 원소를 동그라미 치게 한다. 행의 보정은 오른쪽 축 길이, reshape와 전치는 값을 원래 좌표로 되짚는다."
+    },
+    "W1-visualise": {
+      "id": "W1-visualise",
+      "theory": "plot-core",
+      "noncoding": "written-card",
+      "coding": "plot-period",
+      "assessment": "transfer-plot-work",
+      "label": "측정값의 분포와 범주별 평균을 선택하고 조건별로 해석",
+      "tag": "plot",
+      "claim": "수치 히스토그램의 높이는 해당 구간의 기록 수이고, 구역별 평균 막대 높이는 관측한 하교 합을 그 구역의 관측 수로 나눈 값이다.",
+      "source": [
+        "mat-hist",
+        "bar",
+        "hist",
+        "count",
+        "sns-bar"
+      ],
+      "problem": "sample",
+      "difference": "선택 3번은 두 연속 변수의 관계와 주변 분포를 함께 나타낼 방법을 고르는 문항이다. W1의 단변량 분포 및 범주별 집계 선택에는 목적에 맞는 표시라는 공통점이 있다. 같은 출제 형식·2변량 시각화 숙달까지 주장할 수 없다.",
+      "support": [
+        "plot-core",
+        "plot-two-questions",
+        "plot-histogram",
+        "plot-categories"
+      ],
+      "assessment_cells": [
+        "class-transfer",
+        "transfer-brief",
+        "transfer-first-code",
+        "transfer-figures",
+        "transfer-plot-work",
+        "handoff"
+      ],
+      "key": "병합과 두 그림의 예시 / 새 일지 독립 과제",
+      "classActs": [
+        "array",
+        "written",
+        "array",
+        "array"
+      ],
+      "classAssessment": "class-independent",
+      "prereqs": {
+        "PY-FILE": [
+          "csv-open",
+          "plot-period"
+        ],
+        "MATH-MEAN": [
+          "axis-picture",
+          "plot-core"
+        ]
+      },
+      "regions": {
+        "T03": [
+          "plot-core",
+          "plot-two-questions",
+          "plot-histogram",
+          "plot-categories",
+          "plot-read",
+          "transfer-figures"
+        ],
+        "T05": [
+          "plot-read",
+          "transfer-figures",
+          "handoff",
+          "transfer-brief",
+          "transfer-first-code"
+        ]
+      },
+      "evidence": {
+        "K02": "Matplotlib의 기간 막대·히스토그램과 Seaborn 구역 막대를 명시적으로 생성한다. 동일한 축 범위에서 새 조건의 결과를 다시 비교한다.",
+        "K04": "실제 CSV 읽기와 유효 분모 확인 후 표시한다. 기간 막대는 R1/R2의 계산값, 자습 출력은 같은 선택집단의 하교 관측값에 연결된다.",
+        "K05": "작성한 표와 구간/구역 표시의 높이를 원래 기록으로 되짚게 한다. 새 조건의 표와 그림 변화를 문장으로 설명한다.",
+        "K09": "처음에는 바뀐 자료에서 두 표시와 단위를 스스로 고른다. 이후 조건·코드 작성 및 도움 기록과 구별해 읽었다.",
+        "K16": "두 종류의 표시에서 x/y의 단위와 빈도·평균 통계량, 고정 구간 경계·축 범위와 관찰 해석 한계를 확인했다."
+      },
+      "subtext": {
+        "T03": "T4의 관측 0은 첫 구간과 구역별 평균 분모에 들어가고, T3의 미관측은 어느 구간에도 들어가지 않는다. 실제 artist 높이와 표를 비교했다.",
+        "T05": "서로 다른 두 질문을 먼저 해석하고, 기준 변경으로 빠지는 T1·T3를 찾아 분자·분모와 인과 해석의 제한을 설명한다."
+      },
+      "assessment_review": "새 파일 경로 외 설계 답이 없는 transfer-first-code가 열 수 있는 실마리보다 앞선다. 기준 4/6 히스토그램 높이 [2,1,1,0,0]/[2,1,0,0,0]와 East 0·West 13/3 및 3을 실제 그림의 오브젝트에서 대조했다. 공개 2×2 해설 그림을 Agg로 실제 렌더링해 모든 축·레이블이 그림 안에 있고 위아래 두 행의 외곽이 겹치지 않음을 확인했다.",
+      "key_review": "T4·T8은 기준 4/6 첫 구간의 두 관측이고 T6은 둘째, T1은 기준 4의 셋째다. 구역별 East=0, West=13/3→3과 유효 분모 3→2가 표·실제 그린 높이와 일치한다. 네 축의 tightbbox와 그림 외곽을 렌더러에서 측정해 글자와 눈금이 각 행 안에 들어감을 확인했다.",
+      "feedback": "한 표시 안의 원래 기록 이름과 분자·분모를 다시 짚고, 두 조건에서 유효 표본 수와 이번 자료에서 가능한 해석을 적게 한다. 설계 전 펼친 도움도 기록한다."
+    }
+  },
+  "additional_claims": [
+    [
+      "W1-python",
+      "missing-return",
+      "return-story",
+      [
+        "python-return",
+        "function"
+      ],
+      "일반 함수가 아무 값도 반환하지 않고 끝나면 None으로 평가되어 여기에 1을 더하면 TypeError다."
+    ],
+    [
+      "W1-table",
+      "availability",
+      "dictionary",
+      [
+        "domestic",
+        "antique"
+      ],
+      "점심 수거까지 알 수 있는 세 구간과 하교 수거 뒤 정해지는 목표를 구분한다. 데이터 사전에서 정한 실제 0과 미관측을 나눈다."
+    ],
+    [
+      "W1-table",
+      "join",
+      "join-story",
+      [
+        "merge"
+      ],
+      "하나의 반납함 키에 붙이는 오른쪽 자료는 반납함당 한 행이어야 한다. 왼쪽 병합으로 미연결 관찰 ID를 찾을 수 있다."
+    ],
+    [
+      "W1-array",
+      "row-mean",
+      "axis-check",
+      [
+        "mean"
+      ],
+      "U·V·W의 행 합 [9,9,3]을 각 두 값으로 나누면 세 평균 [4.5,4.5,1.5]가 된다.",
+      {
+        "kind": "axis_mean",
+        "axis": 1,
+        "input": [
+          [
+            0,
+            9
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "expected": [
+          4.5,
+          4.5,
+          1.5
+        ]
+      }
+    ],
+    [
+      "W1-array",
+      "variance",
+      "math-lab",
+      [
+        "variance"
+      ],
+      "세 구간 전체를 모집단으로 볼 때 [0,3,6]과 [2,3,4]의 분산은 각각 6권², 2/3권²이다."
+    ],
+    [
+      "W1-array",
+      "dot-order",
+      "math-lab",
+      [
+        "dot"
+      ],
+      "같은 순서의 두 벡터끼리 곱해 합하면 10초이고, 시간 순서만 뒤집으면 11초다. 길이만 맞춘다고 항목이 대응되지는 않는다."
+    ],
+    [
+      "W1-array",
+      "view",
+      "index-view",
+      [
+        "views"
+      ],
+      "기본 열 슬라이스가 공유하는 원소를 바꾸면 원본도 바뀐다. 같은 열을 copy한 값은 보존된다."
+    ],
+    [
+      "W1-array",
+      "broadcast",
+      "broadcast-concept",
+      [
+        "broadcast"
+      ],
+      "(2,3)에 (2,)를 바로 더하면 오른쪽 3과 2가 호환되지 않는다. 행에 정렬할 (2,1) 보정량은 같은 날의 모든 구간에 더해진다."
+    ],
+    [
+      "W1-array",
+      "reshape",
+      "reshape-concept",
+      [
+        "views",
+        "reshape",
+        "transpose"
+      ],
+      "기본 C 순서로 같은 개수의 원소를 새 행으로 묶는 것과 행·열 좌표를 교환하는 전치는 모양이 같아도 값이 다를 수 있다."
+    ],
+    [
+      "W1-visualise",
+      "hist-bins",
+      "plot-two-questions",
+      [
+        "mat-hist"
+      ],
+      "하교 미관측을 빼고 무가중 구간 기록 수를 센다. 고정 경계의 중간 끝은 다음 구간으로, 최종 오른쪽 끝은 마지막 구간으로 들어간다."
+    ],
+    [
+      "W1-visualise",
+      "range",
+      "transfer-figures",
+      [
+        "bar",
+        "count",
+        "mat-hist"
+      ],
+      "기준을 높이면 West의 하교 평균은 13/3에서 3권으로 바뀐다. 두 그림의 같은 범위와 대상에 기초해 설명하며 원인이나 모든 날로 일반화하지 않는다."
+    ],
+    [
+      "W1-python",
+      "trace",
+      "trace-example",
+      [
+        "exception"
+      ],
+      "문자열 7과 정수 기준의 비교는 TypeError를 내며 스택에서 scan_batch 호출과 count_over의 실패 연산을 찾을 수 있다. 다른 last_box 사례의 범위 밖 인덱스는 IndexError다."
+    ],
+    [
+      "W1-table",
+      "null-merge",
+      "join-story",
+      [
+        "merge"
+      ],
+      "pandas의 일반 병합에서는 양쪽 결측 키가 매치될 수 있다. 고유 식별 근거가 없는 키를 배제한 뒤 왼쪽 관찰 행을 보존하고 실제 미연결 기록 이름을 확인한다."
+    ],
+    [
+      "W1-table",
+      "id-schema",
+      "csv-open",
+      [
+        "read-csv",
+        "merge"
+      ],
+      "문자 ID로 읽고 빈 필드만 결측으로 지정한다. 두 키의 양끝 공백과 빈 문자열을 통일해, 열 전체가 비는 경우에도 근거 없는 구역을 만들지 않고 실제 기록 이름을 보고한다."
+    ]
+  ],
+  "checkpoint": {
+    "at": "2026-11-18 12:35:17 UTC",
+    "since": 0,
+    "total": 40,
+    "description": "2026-11-18 12:35:17 UTC에 실제 집계 검수 진행을 기록했다. 고정 커밋 시각 11:55:05 UTC부터 40분이 지났다. 세 번의 후보 작성/검수와 외부 자료 대조·복구를 포함하는 경과 시간이다. R2의 실제 파일 경계 실패와 R3의 동일 입력 통과를 확인했다. 학습 시간과 별도이며 전체 캠페인 절대 시간 또는 예산을 뜻하지 않는다."
+  }
+}
