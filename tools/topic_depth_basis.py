@@ -1,13 +1,22 @@
-"""Git-backed depth contracts and explicit independent source refreshes."""
+"""Git-backed lesson registration, student navigation and independent source refreshes."""
+from html.parser import HTMLParser
 import hashlib
+import json
+import posixpath
 import re
 import subprocess
 from pathlib import Path
+from urllib.parse import unquote, urlsplit
 
 import quality
 
 # Routing is independent of editable notebook/bundle metadata. Other projects can use --case.
-ACTIVE = {'lessons/week01/week01_foundations.ipynb': 'reviews/week01-depth-20261118'}
+WEEK1_ENTRY = 'lessons/week01/week01_foundations.ipynb'
+FOUNDATIONS = 'reviews/week01-depth-20261118'
+CONTEST = 'reviews/week01-contest-20261118'
+R5_COMMIT = '85211bc61260e8281f90aa15f6119255e1a07f53'
+ACTIVE = {WEEK1_ENTRY: CONTEST}
+ARCHIVED = {FOUNDATIONS: WEEK1_ENTRY}
 TIERS = ('class', 'homework', 'optional')
 VERDICTS = ('pass', 'revise', 'uncertain')
 ERRORS = (ValueError, OSError, KeyError, TypeError, AttributeError, RecursionError, OverflowError)
@@ -85,11 +94,168 @@ def commits(root, start, end, *paths):
                start + '..' + end, '--', *paths).stdout.decode().splitlines()
 
 
+def stored_bytes(root, name, historical=None):
+    if historical is None:
+        return local(root, name).read_bytes()
+    path = Path(text(name, 'archived path'))
+    require(path.parts and not path.is_absolute() and '..' not in path.parts and name == path.as_posix(),
+            'Expected a canonical archived path')
+    raw = git_file(root, historical, name)
+    require(raw is not None, 'Historical file missing: ' + name)
+    return raw
+
+
+def stored_json(root, name, historical=None):
+    if historical is None:
+        return quality.load(local(root, name))
+    value = json.loads(stored_bytes(root, name, historical).decode('utf-8'), object_pairs_hook=quality._pairs)
+    quality.clean_json(value)
+    return value
+
+
+class Navigation(HTMLParser):
+    """Collect named, visible text links and landing points, optionally in a curriculum row."""
+    void = set('area base br col embed hr img input link meta param source track wbr'.split())
+
+    def __init__(self, row_id=None):
+        super().__init__()
+        self.row_id = row_id
+        self.in_row = row_id is None
+        self.in_cell = row_id is None
+        self.columns = [[]]
+        self.attrs = None
+        self.hidden = []
+        self.anchor = None
+        self.heading = None
+        self.anchors = set()
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if self.row_id and tag == 'tr':
+            self.in_row = attrs.get('id') == self.row_id
+            if self.in_row:
+                require(self.attrs is None, 'Duplicate student plan week')
+                self.attrs = attrs
+        if not self.in_row:
+            return
+        if self.hidden or tag in ('script', 'style', 'template', 'pre', 'del', 's') or (
+                'hidden' in attrs or attrs.get('aria-hidden') == 'true' or
+                re.search(r'display\s*:\s*none|visibility\s*:\s*hidden', attrs.get('style') or '', re.I)):
+            if tag not in self.void:
+                self.hidden.append(tag)
+            return
+        if self.row_id and tag in ('td', 'th'):
+            self.in_cell = True
+            self.columns.append([])
+        if not self.in_cell:
+            return
+        if tag == 'a':
+            self.anchor = [attrs.get('href'), []]
+            self.anchors.update(value for value in (attrs.get('id'), attrs.get('name')) if value)
+        elif re.fullmatch('h[1-6]', tag):
+            self.heading = []
+
+    def handle_data(self, data):
+        if self.in_row and not self.hidden:
+            if self.anchor is not None:
+                self.anchor[1].append(data)
+            if self.heading is not None:
+                self.heading.append(data)
+
+    def handle_endtag(self, tag):
+        if not self.in_row:
+            return
+        if self.hidden:
+            if self.hidden[-1] == tag:
+                self.hidden.pop()
+            return
+        if tag == 'a' and self.anchor is not None:
+            href, label = self.anchor
+            if href and ''.join(label).strip():
+                self.columns[-1].append(unquote(href))
+            self.anchor = None
+        elif re.fullmatch('h[1-6]', tag) and self.heading is not None:
+            heading = ''.join(self.heading).strip()
+            self.anchors.add(heading.replace(' ', '-'))
+            self.heading = None
+        elif self.row_id and tag in ('td', 'th'):
+            self.in_cell = False
+            self.anchor = None
+        elif self.row_id and tag == 'tr':
+            self.in_row = self.in_cell = False
+
+
+def normal_entry(root, entry, week, historical):
+    contract = stored_json(root, quality.CONTRACT, historical)
+    plan = contract['baseline']['path']
+    raw = stored_bytes(root, plan, historical)
+    require(raw is not None and sha(raw) == contract['baseline']['sha256'], 'Student plan differs from curriculum')
+    nav = Navigation('week-' + str(week))
+    nav.feed(raw.decode('utf-8'))
+    nav.close()
+    require(nav.attrs is not None, 'Missing student plan week')
+    origin = git(root, 'config', '--get', 'remote.origin.url', check=False).stdout.decode().strip()
+    match = re.fullmatch(r'(?:https://github\.com/|git@github\.com:)([^/]+/[^/]+?)(?:\.git)?/?', origin)
+    for href in nav.columns[-1]:
+        url = urlsplit(href)
+        if url.query or url.fragment:
+            continue
+        if not url.scheme and not url.netloc and posixpath.normpath(posixpath.join(posixpath.dirname(plan), url.path)) == entry:
+            proof = 'relative path in the archived plan' if historical else 'relative path in the current plan'
+            break
+        if match and (url.scheme, url.netloc) == ('https', 'github.com'):
+            prefix = '/' + match[1] + '/blob/'
+            if url.path.startswith(prefix) and url.path.endswith('/' + entry):
+                ref = url.path[len(prefix):-(len(entry) + 1)]
+                proof = advertised_ref(root, ref, entry, historical)
+                if proof:
+                    break
+    else:
+        raise ValueError('Normal student material column does not open the declared entry')
+    attrs = nav.attrs
+    class_minutes = sum(int(attrs['data-' + key + '-minutes']) for key in ('theory', 'noncoding', 'coding'))
+    hours = [int(attrs['data-self-' + key + '-hours']) for key in ('min', 'max')]
+    weeks = [w for w in contract['weeks'] if w['week'] == week]
+    require(len(weeks) == 1 and class_minutes == contract['class_minutes'] and
+            weeks[0]['required_self_study_hours'] == hours, 'Student plan workload differs from curriculum')
+    require(week != 1 or (class_minutes, hours) == (120, [5, 7]), 'Unexpected Week 1 time budget')
+    return (class_minutes, hours[0] * 60, hours[1] * 60), {'plan': plan, 'plan_sha256': sha(raw),
+                                                          'href': href, 'basis': proof}
+
+
+def advertised_ref(root, ref, entry, historical):
+    if not ref or ref.startswith('-') or git(root, 'check-ref-format', 'refs/heads/' + ref, check=False).returncode:
+        return None
+    if not historical:
+        branch = git(root, 'symbolic-ref', '-q', '--short', 'HEAD', check=False).stdout.decode().strip()
+        if branch == ref:
+            return 'link names the current working branch'
+    expected = stored_bytes(root, entry, historical)
+    known = False
+    for name in (ref, 'refs/remotes/origin/' + ref):
+        resolved = git(root, 'rev-parse', '--verify', name + '^{commit}', check=False)
+        if resolved.returncode:
+            continue
+        known = True
+        head = resolved.stdout.decode().strip()
+        revisions = [head]
+        if historical and not re.fullmatch(r'[0-9a-f]{40}', ref):
+            revisions += git(root, 'rev-list', head, '--', entry).stdout.decode().splitlines()
+        if any(git_file(root, r, entry) == expected for r in revisions):
+            return 'entry bytes verified in the advertised Git reference'
+    if historical and not known and not re.fullmatch(r'[0-9a-f]{40}', ref):
+        return 'archived curriculum plan and entry blob (old named branch unavailable locally)'
+    return None
+
+
 def registered(path):
     """Recognize an active entry or its archived candidates even if no bundle declares a gate."""
-    for lesson, case in ACTIVE.items():
-        if path == lesson or (isinstance(path, str) and
-                              re.fullmatch(re.escape(case) + r'/rounds/[0-9]{4}/candidate\.ipynb', path)):
+    if not isinstance(path, str):
+        return None
+    if path in ACTIVE:
+        return ACTIVE[path]
+    for case in (*ACTIVE.values(), *ARCHIVED):
+        if re.fullmatch(re.escape(case) + r'/rounds/[0-9]{4}/candidate\.ipynb', path):
             return case
     return None
 
@@ -115,13 +281,13 @@ def contract_topics(root, case, c):
     lesson = c['lesson_path']
     local(root, lesson)
     require(lesson.endswith('.ipynb'), 'Contract needs a student notebook')
-    for active, registered_case in ACTIVE.items():
-        require(not (case == registered_case or lesson == active) or (lesson == active and case == registered_case),
-                'Foreign contract for a registered lesson')
+    registered_lessons = {**ARCHIVED, **{case_name: path for path, case_name in ACTIVE.items()}}
+    if case in registered_lessons or lesson in registered_lessons.values():
+        require(registered_lessons.get(case) == lesson, 'Foreign contract for a registered lesson')
     text(c.get('author'), 'contract author')
     text(c.get('audience'), 'entry audience')
     require(type(c['class_minutes']) is int and c['class_minutes'] > 0, 'Invalid class limit')
-    if case in ACTIVE.values():
+    if case in registered_lessons:
         require(c['class_minutes'] == 120, 'The registered class requires 120 minutes')
     srcs = array(c['source_inputs'], 'pinned sources', True)
     for src in srcs:
@@ -147,6 +313,13 @@ def contract_topics(root, case, c):
     order = topology(topics)
     require(sum(t['minutes']['class'] for t in topics.values()) == c['class_minutes'],
             'Frozen class allocations differ from class limit')
+    if case == CONTEST:
+        require(c.get('maximum_home_minutes') == 420 and
+                sum(t['minutes']['homework'] + t['minutes']['optional'] for t in topics.values()) <= 420,
+                'Required and optional R6 workload must fit the 420-minute cap')
+        training = c['public_training']
+        require(training['path'] in companions and re.fullmatch(r'[0-9a-f]{64}', training['sha256']),
+                'Bind the exact public Antique input as a companion')
     return topics, order
 
 
@@ -196,8 +369,14 @@ def frozen(root, case):
                 set(other['topics']) == set(topics), 'Competing or pending freeze review: ' + extra.name)
         additional_freezes[extra.relative_to(root).as_posix()] = quality.file_digest(extra)
     base = c['baseline']
-    if lesson == 'lessons/week01/week01_foundations.ipynb':
-        require(base['sha256'] is None, 'The registered new entry requires proof of first authorship')
+    if case == FOUNDATIONS:
+        require(base['sha256'] is None, 'The first foundations study requires proof of original authorship')
+    if case == CONTEST:
+        require(base['commit'] == R5_COMMIT and c.get('predecessor') == {'case': FOUNDATIONS, 'round': 5},
+                'The contest study must start at the pinned R5 public commit and reviewed ordinal')
+        previous = git_file(root, R5_COMMIT, FOUNDATIONS + '/rounds/0005/candidate.ipynb')
+        require(previous is not None and base['sha256'] == sha(previous), 'Foreign predecessor notebook for R6')
+        immutable(root, R5_COMMIT, [FOUNDATIONS])
     start = base['commit']
     require(isinstance(start, str) and re.fullmatch(r'[0-9a-f]{40}|[0-9a-f]{64}', start) and
             git(root, 'cat-file', '-t', start).stdout.strip() == b'commit' and
@@ -255,7 +434,10 @@ def source_refresh(root, case, directory, previous):
     version(review)
     topics, order = contract_topics(root, case, c)
     old = previous['contract']
-    for key in ('lesson_path', 'baseline', 'companion_paths', 'class_minutes'):
+    fixed = ['lesson_path', 'baseline', 'companion_paths', 'class_minutes']
+    if case == CONTEST:
+        fixed += ['predecessor', 'public_training', 'maximum_home_minutes']
+    for key in fixed:
         require(c[key] == old[key], 'A source refresh cannot replace frozen identity or class limits: ' + key)
     srcs, old_srcs = c['source_inputs'], old['source_inputs']
     require([s['path'] for s in srcs] == [s['path'] for s in old_srcs] and topics.keys() == previous['topics'].keys(),

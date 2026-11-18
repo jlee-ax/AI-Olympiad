@@ -1,0 +1,689 @@
+{
+  "status": "passed",
+  "inputs": {
+    "reviews/week01-contest-20261118/rounds/0001/candidate.ipynb": "9f6c78997bf7e2630200abbcd28b0d6273feb57c07a04b4ec2622a226722b19a",
+    "reviews/week01-contest-20261118/rounds/0001/inputs/week01_foundations_teacher.md": "11f90c05982d735a54b374ced44349698e3d7125f81914dcef865471d8a018ec",
+    "reviews/week01-contest-20261118/rounds/0001/inputs/antique_training.csv": "99ffffc9972351e91d05a4bf80e5d3c63996aa7231a338959cd49e288c63f11a"
+  },
+  "official_public_source": "https://huggingface.co/datasets/IOAI-official/IOAI2025/blob/main/Individual-Contest/Antique/training_set/training_set.csv",
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  },
+  "normal_execution": {
+    "cell_ids": [
+      "load-paintings",
+      "practice-join",
+      "unlabeled-projection",
+      "anchor-loop",
+      "distance-array",
+      "draw-boundary",
+      "scale-model",
+      "predict-model",
+      "local-score",
+      "fold-experiment",
+      "make-practice-table",
+      "student-model",
+      "reveal-result",
+      "inspect-after-lock",
+      "student-matching",
+      "submission-writer"
+    ],
+    "rendered_figure_cells": [
+      "unlabeled-projection",
+      "draw-boundary"
+    ],
+    "provided_data_files": [
+      "antique_training.csv"
+    ],
+    "after_teacher_registration": {
+      "registered": "teacher_rule",
+      "figure_cells": [
+        "inspect-after-lock"
+      ],
+      "four_public_predictions": [
+        -1,
+        -1,
+        1,
+        -1
+      ]
+    }
+  },
+  "teacher_execution": {
+    "executed_marked_exercises": [
+      {
+        "exercise": "classifier",
+        "source_sha256": "fd94f70f01a65434a61f97c99787827838796faeee755a65e8155cca6ec5e593"
+      },
+      {
+        "exercise": "matching",
+        "source_sha256": "6c784a7273454958d4c3ff9e995af21533cfe1d017ea61bd75a280ca245e32b2"
+      }
+    ]
+  },
+  "case_count": 86,
+  "passed_count": 86,
+  "evidence": {
+    "source.known_physical_rows_excluding_header": [
+      [
+        47,
+        -1
+      ],
+      [
+        142,
+        1
+      ],
+      [
+        183,
+        1
+      ],
+      [
+        380,
+        -1
+      ]
+    ],
+    "practice.public_csv_ids_zero_missing_and_absent_note": [
+      [
+        "K7",
+        0,
+        5.0,
+        -1.0,
+        "both"
+      ],
+      [
+        "M2",
+        4,
+        null,
+        0.0,
+        "both"
+      ],
+      [
+        "P8",
+        3,
+        4.0,
+        1.0,
+        "both"
+      ],
+      [
+        "D1",
+        1,
+        2.0,
+        null,
+        "left_only"
+      ]
+    ],
+    "practice.reversed_record_lookup_preserves_painting_id": [
+      [
+        "K7",
+        0,
+        5.0,
+        -1.0,
+        "both"
+      ],
+      [
+        "M2",
+        4,
+        null,
+        0.0,
+        "both"
+      ],
+      [
+        "P8",
+        3,
+        4.0,
+        1.0,
+        "both"
+      ],
+      [
+        "D1",
+        1,
+        2.0,
+        null,
+        "left_only"
+      ]
+    ],
+    "practice.hand_table_keeps_labels_zero_features_and_row_order": {
+      "train_columns": [
+        "feature1",
+        "feature2",
+        "feature3",
+        "feature4",
+        "feature5",
+        "Authenticated"
+      ],
+      "query_columns": [
+        "feature1",
+        "feature2",
+        "feature3",
+        "feature4",
+        "feature5"
+      ],
+      "train": [
+        [
+          0.0,
+          3.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.0
+        ],
+        [
+          2.0,
+          2.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "predictions": [
+        1,
+        -1
+      ]
+    },
+    "practice.actual_sensor_exports_transpose_and_dot": {
+      "restored": [
+        [
+          0,
+          5
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "first_format": [
+        [
+          0,
+          5
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "dot": [
+        10,
+        17
+      ],
+      "distance": [
+        10.0,
+        17.0
+      ],
+      "if_transpose_omitted": [
+        9.0,
+        20.0
+      ]
+    },
+    "practice.changed_query_exposes_wrong_sensor_orientation": {
+      "correct_distances": [
+        13.0,
+        10.0
+      ],
+      "wrong_distances": [
+        10.0,
+        13.0
+      ],
+      "winners": [
+        1,
+        0
+      ]
+    },
+    "teaching_numbers.example_unit_change": {
+      "original": [
+        10.0,
+        17.0
+      ],
+      "times_ten": [
+        901.0,
+        116.0
+      ],
+      "center": [
+        2.0,
+        2.5
+      ],
+      "width": [
+        2.0,
+        2.5
+      ],
+      "scaled_d2": [
+        2.41,
+        2.8100000000000005
+      ]
+    },
+    "teaching_numbers.constant_column_with_multiplier_1": {
+      "raw": [
+        10.0,
+        2.0
+      ],
+      "scaled": [
+        4.375,
+        1.375
+      ]
+    },
+    "teaching_numbers.constant_column_with_multiplier_100": {
+      "raw": [
+        90001.0,
+        10001.0
+      ],
+      "scaled": [
+        4.375,
+        1.375
+      ]
+    },
+    "guidance.row_183_raw_and_scaled_neighbor_ids": [
+      47,
+      142
+    ],
+    "teaching_numbers.optional_cloud_hand_result": {
+      "coordinates": [
+        -0.08333333333333333,
+        1.5833333333333333,
+        1.4000000000000001
+      ],
+      "before_after_classes": [
+        -1,
+        1
+      ]
+    },
+    "plot_choice.unlabeled_vertical_feature4": {
+      "figure_rendered": true,
+      "axis": "feature4",
+      "observations": 496,
+      "coordinates_match_named_column": true
+    },
+    "scaling.training_means_population_sd_and_constant": [
+      [
+        2.0,
+        2.0,
+        2.0
+      ],
+      [
+        2.0,
+        1.0,
+        2.0
+      ]
+    ],
+    "export.independent_parser_headerless_ids_in_given_order": {
+      "submissionA.csv": [
+        -1,
+        1,
+        -1
+      ],
+      "submissionB.csv": [
+        1,
+        -1
+      ]
+    },
+    "extra.reviewer_only_two_balanced_folds_majority": {
+      "labels": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "correct": 2,
+      "evaluated": 4,
+      "accuracy": 0.5
+    },
+    "extra.reviewer_only_two_balanced_folds_raw": {
+      "labels": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "correct": 2,
+      "evaluated": 4,
+      "accuracy": 0.5
+    },
+    "extra.reviewer_only_two_balanced_folds_scaled": {
+      "labels": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "correct": 3,
+      "evaluated": 4,
+      "accuracy": 0.75
+    },
+    "official.all_496_raw_predictions_keyed_to_physical_rows": {
+      "rows": 496,
+      "negative": 245,
+      "positive": 251,
+      "ordered_row_and_prediction_sha256": "478d05b7d79e55e52635c4d6b3584d5289a28efaf1ef1fbe7962914aa8278e9e"
+    },
+    "negative_control.manhattan_gives_a_different_answer": {
+      "course": 1,
+      "wrong_L1": 0
+    },
+    "negative_control.counting_unknown_in_accuracy_changes_answer": {
+      "course": 0.6666666666666666,
+      "wrong_all_rows": 0.5
+    },
+    "negative_control.reader_rejects_truth_beside_prediction": {
+      "type": "ValueError",
+      "message": "Each required row must contain only one signed class in submissionA.csv"
+    },
+    "teacher.matching_given_original_and_reversed": [
+      12,
+      12
+    ],
+    "teacher.matching_fresh_tie_smallest_candidate_id": [
+      7,
+      7
+    ],
+    "teacher.matching_no_opposite_and_empty": [
+      null,
+      null
+    ],
+    "teacher.matching_query_and_gallery_names_are_separate": 601,
+    "teacher.matching_fresh_squared_not_manhattan": 46,
+    "teacher.given_centroids_disagree_with_nearest_anchor": {
+      "center": [
+        1
+      ],
+      "nearest": [
+        -1
+      ]
+    },
+    "teacher.fresh_class_centers_report_in_query_order_and_positive_at_exact_tie": [
+      1,
+      -1,
+      1
+    ],
+    "teacher.one_known_class_returns_that_class": [
+      -1,
+      -1,
+      -1
+    ],
+    "teacher.no_known_class": {
+      "type": "ValueError",
+      "message": "대표점을 만들 감정 그림이 없습니다."
+    },
+    "teacher.scaler_learns_only_from_training": [
+      [
+        -1
+      ],
+      [
+        -1,
+        1
+      ]
+    ],
+    "guidance.original_static_majority_answer_no_longer_printed": false,
+    "registered.printed_scores_match_four_held_out_rows": {
+      "majority": "0/4",
+      "raw": "2/4",
+      "scaled": "3/4",
+      "내 식": "3/4"
+    },
+    "registered.real_score_rows_and_baselines": {
+      "rows": [
+        47,
+        142,
+        183,
+        380
+      ],
+      "truth": [
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "majority": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "raw": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "scaled": [
+        -1,
+        -1,
+        1,
+        -1
+      ]
+    },
+    "registered.teacher_classifier_official_predictions": [
+      -1,
+      -1,
+      1,
+      -1
+    ],
+    "registered.post_lock_chart_displays_four_labeled_paintings": {
+      "plot": [
+        "inspect-after-lock"
+      ],
+      "counts": {
+        "replica": 2,
+        "authentic": 2
+      },
+      "plotted_points": 4
+    },
+    "plot_choice.registered_class_feature5": {
+      "figure_rendered": true,
+      "axis": "feature5",
+      "observations": 4,
+      "coordinates_match_named_column": true
+    },
+    "official.course_four_held_out_rows_majority": {
+      "columns": [
+        "row",
+        "truth",
+        "prediction"
+      ],
+      "row": [
+        47,
+        142,
+        183,
+        380
+      ],
+      "truth": [
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "prediction": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "accuracy": 0.0
+    },
+    "official.course_four_held_out_rows_raw": {
+      "columns": [
+        "row",
+        "truth",
+        "prediction"
+      ],
+      "row": [
+        47,
+        142,
+        183,
+        380
+      ],
+      "truth": [
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "prediction": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "accuracy": 0.5
+    },
+    "official.course_four_held_out_rows_scaled": {
+      "columns": [
+        "row",
+        "truth",
+        "prediction"
+      ],
+      "row": [
+        47,
+        142,
+        183,
+        380
+      ],
+      "truth": [
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "prediction": [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "accuracy": 0.75
+    }
+  },
+  "failures": [],
+  "scope": "Blank student answer slots were run as supplied. Course evaluation uses four held-out publicly known training rows. The two balanced folds are an additional reviewer diagnostic. The 496 unknown labels provide no accuracy denominator. Learner achievement and hidden-contest accuracy were not observed. All corrupt submissions use reviewer-made public fixtures.",
+  "checker_sha256": "6c31c047add5f65fe6cfe2c6d97cc5a64902c6c32daea995b45ee07495853919",
+  "execution_counts": {
+    "blank_student_code_cells": 16,
+    "default_figure_cells": 2,
+    "public_teacher_code_blocks": 2,
+    "student_cells_replayed_after_rule_registration": 2,
+    "figure_cells_rerun_with_a_changed_public_feature": 2
+  },
+  "passed_cases": [
+    "source.raw_sha256",
+    "source.header",
+    "source.rows_and_unknown",
+    "source.known_physical_rows_excluding_header",
+    "source.finite_numeric_measurements",
+    "notebook.blank_entry_shows_only_two_prelock_plots",
+    "notebook.blank_model_keeps_official_row_labels_and_scores_closed",
+    "notebook.unlabelled_projection_contains_exact_496_points",
+    "notebook.both_plotted_boundaries_are_equidistant_in_their_units",
+    "practice.public_csv_ids_zero_missing_and_absent_note",
+    "practice.reversed_record_lookup_preserves_painting_id",
+    "practice.hand_table_keeps_labels_zero_features_and_row_order",
+    "practice.actual_sensor_exports_transpose_and_dot",
+    "practice.changed_query_exposes_wrong_sensor_orientation",
+    "teaching_numbers.example_unit_change",
+    "teaching_numbers.constant_column_with_multiplier_1",
+    "teaching_numbers.constant_column_with_multiplier_100",
+    "guidance.row_183_raw_and_scaled_neighbor_ids",
+    "teaching_numbers.optional_cloud_hand_result",
+    "plot_choice.unlabeled_vertical_feature4",
+    "notebook.public_worked_helpers_available",
+    "distance.each_candidate_axis_and_metric",
+    "rank.unknown_exact_match_then_L2_winner",
+    "distance.axis_on_new_query",
+    "rank.strict_first_tie_uses_original_position",
+    "rank.reordering_tied_opposites_changes_label",
+    "rank.no_known_anchors",
+    "rank.empty_reference_table",
+    "distance.empty_reference_table",
+    "rank.zero_is_valid_measurement",
+    "scaling.training_means_population_sd_and_constant",
+    "batch.raw_winner_before_rescaling",
+    "batch.training_scaled_winner_and_constant_columns",
+    "batch.unseen_outlier_cannot_change_prior_prediction",
+    "batch.unknown_training_x_used_for_scale_but_not_as_anchor",
+    "batch.majority_tie_is_positive",
+    "batch.majority_ignores_unknown_and_uses_negative_class",
+    "batch.no_anchors_majority",
+    "batch.no_anchors_raw",
+    "batch.no_anchors_scaled",
+    "batch.named_feature_order_and_unsorted_query_ids",
+    "batch.permuted_query_rows_preserve_predictand_order",
+    "batch.missing_named_feature",
+    "score.only_known_truth_is_in_denominator",
+    "score.all_unknown",
+    "score.empty",
+    "score.unequal_length",
+    "score.illegal_prediction",
+    "score.illegal_true_class",
+    "export.independent_parser_headerless_ids_in_given_order",
+    "export.reject_zero_predicted_class",
+    "export.reject_missing_rows",
+    "export.reject_prediction_plus_truth_column",
+    "extra.reviewer_only_two_balanced_folds_majority",
+    "extra.reviewer_only_two_balanced_folds_raw",
+    "extra.reviewer_only_two_balanced_folds_scaled",
+    "official.all_496_raw_predictions_keyed_to_physical_rows",
+    "negative_control.manhattan_gives_a_different_answer",
+    "negative_control.counting_unknown_in_accuracy_changes_answer",
+    "negative_control.reader_rejects_truth_beside_prediction",
+    "teacher.matching_given_original_and_reversed",
+    "teacher.matching_fresh_tie_smallest_candidate_id",
+    "teacher.matching_no_opposite_and_empty",
+    "teacher.matching_query_and_gallery_names_are_separate",
+    "teacher.matching_fresh_squared_not_manhattan",
+    "teacher.given_centroids_disagree_with_nearest_anchor",
+    "teacher.fresh_class_centers_report_in_query_order_and_positive_at_exact_tie",
+    "teacher.one_known_class_returns_that_class",
+    "teacher.no_known_class",
+    "teacher.scaler_learns_only_from_training",
+    "guidance.original_static_majority_answer_no_longer_printed",
+    "notebook.archived_blank_template_has_no_saved_result_outputs",
+    "registered.printed_scores_match_four_held_out_rows",
+    "registered.real_score_rows_and_baselines",
+    "registered.teacher_classifier_official_predictions",
+    "registered.post_lock_chart_displays_four_labeled_paintings",
+    "plot_choice.registered_class_feature5",
+    "course.actual_fold_helper_available",
+    "fold.rejected_nonclass_prediction",
+    "fold.rejected_multiple_predictions",
+    "official.course_four_held_out_rows_majority",
+    "official.course_model_receives_only_permitted_rows_majority",
+    "official.course_four_held_out_rows_raw",
+    "official.course_model_receives_only_permitted_rows_raw",
+    "official.course_four_held_out_rows_scaled",
+    "official.course_model_receives_only_permitted_rows_scaled"
+  ],
+  "archive_binding": {
+    "round": 1,
+    "record": "reviews/week01-contest-20261118/rounds/0001/round.json",
+    "round_sha256": "2e66bf717b0d5e35b63a8e08c6b1c7b7c8446d26372aa8f6b4eed082f22f8747",
+    "contract_sha256": "e80c10c0b1e0f54b071a437a9ce0a8b1d81954c30c2c3e376253422964de1002",
+    "published_sources": {
+      "lessons/week01/week01_foundations.ipynb": "9f6c78997bf7e2630200abbcd28b0d6273feb57c07a04b4ec2622a226722b19a",
+      "lessons/week01/week01_foundations_teacher.md": "11f90c05982d735a54b374ced44349698e3d7125f81914dcef865471d8a018ec",
+      "lessons/week01/data/antique_training.csv": "99ffffc9972351e91d05a4bf80e5d3c63996aa7231a338959cd49e288c63f11a"
+    }
+  },
+  "wrong_policy_runs": [
+    {
+      "incorrect_policy": "last_equal_distance",
+      "exit_status": 1,
+      "detected_by": [
+        "rank.strict_first_tie_uses_original_position",
+        "rank.reordering_tied_opposites_changes_label"
+      ]
+    },
+    {
+      "incorrect_policy": "scale_fitted_on_query",
+      "exit_status": 1,
+      "detected_by": [
+        "batch.unseen_outlier_cannot_change_prior_prediction"
+      ]
+    }
+  ]
+}

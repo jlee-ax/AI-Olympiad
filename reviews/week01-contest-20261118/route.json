@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "id": "week01-contest-practice",
+  "week": 1,
+  "entry": "lessons/week01/week01_foundations.ipynb",
+  "depth": {
+    "case": "reviews/week01-contest-20261118",
+    "round": 1
+  },
+  "files": {
+    "lessons/week01/week01_foundations.ipynb": "9f6c78997bf7e2630200abbcd28b0d6273feb57c07a04b4ec2622a226722b19a",
+    "lessons/week01/week01_foundations_teacher.md": "11f90c05982d735a54b374ced44349698e3d7125f81914dcef865471d8a018ec",
+    "lessons/week01/data/antique_training.csv": "99ffffc9972351e91d05a4bf80e5d3c63996aa7231a338959cd49e288c63f11a"
+  },
+  "companions": {
+    "lessons/week01/week01_foundations.ipynb": {
+      "teacher": [
+        "lessons/week01/week01_foundations_teacher.md"
+      ],
+      "data": [
+        "lessons/week01/data/antique_training.csv"
+      ]
+    }
+  },
+  "time_basis": "교사용 계획은 수업 120분, 자습 필수 330분, 선택 45분을 모두 고르면 375분이다. 자습 구간은 독립 검토자의 주제별 추정으로 필수만 235~410분이다. 동일 과제의 순위·척도 추가 검산 10+15분과 별도 미상 이웃 탐구 20분은 선택 자습으로 한 번씩 계산한다. 실제 학생의 소요시간은 측정하지 않았다.",
+  "units": [
+    {
+      "id": "formulate",
+      "status": "required",
+      "reason": "한 행과 출력 계약을 정의하고 결측·미상·ID가 서로 다른 표의 결합을 검산한다.",
+      "path": "lessons/week01/week01_foundations.ipynb",
+      "cells": [
+        "painting-challenge",
+        "read-the-contract",
+        "load-paintings",
+        "join-data-contract",
+        "practice-join"
+      ],
+      "class_minutes": 20,
+      "homework_minutes": 45,
+      "class_range": [
+        20,
+        20
+      ],
+      "homework_range": [
+        30,
+        55
+      ]
+    },
+    {
+      "id": "rank",
+      "status": "required",
+      "reason": "후보의 자격과 동점을 손으로 추적한 뒤 새 표지판 검색 명세를 구현한다.",
+      "path": "lessons/week01/week01_foundations.ipynb",
+      "cells": [
+        "choose-anchor",
+        "anchor-loop",
+        "trace-and-ties",
+        "transfer-matching",
+        "student-matching",
+        "next-question"
+      ],
+      "class_minutes": 35,
+      "homework_minutes": 90,
+      "class_range": [
+        35,
+        35
+      ],
+      "homework_range": [
+        55,
+        100
+      ],
+      "optional_repeat": {
+        "cells": [
+          "trace-and-ties"
+        ],
+        "homework_minutes": 10,
+        "reason": "손계산한 표에서 후보 순서와 동점을 더 바꾸어 검산하려고 할 때 선택한다."
+      }
+    },
+    {
+      "id": "array",
+      "status": "required",
+      "reason": "배열의 축과 측정 단위를 검산하고 다른 배열의 복원·거리·상수열을 판단한다.",
+      "path": "lessons/week01/week01_foundations.ipynb",
+      "cells": [
+        "array-reason",
+        "distance-array",
+        "orientation-dot",
+        "unit-counterexample",
+        "decision-line",
+        "draw-boundary",
+        "scale-model",
+        "array-own"
+      ],
+      "class_minutes": 30,
+      "homework_minutes": 90,
+      "class_range": [
+        30,
+        30
+      ],
+      "homework_range": [
+        60,
+        105
+      ],
+      "optional_repeat": {
+        "cells": [
+          "unit-counterexample",
+          "array-own"
+        ],
+        "homework_minutes": 15,
+        "reason": "같은 입력의 측정 단위를 더 바꿔 두 거리 규칙의 순위를 비교하려고 할 때 선택한다."
+      }
+    },
+    {
+      "id": "evidence",
+      "status": "required",
+      "reason": "미상 자료와 가림 평가의 역할을 확인하고 직접 제안한 수식·코드·반례 및 판단을 제출한다.",
+      "path": "lessons/week01/week01_foundations.ipynb",
+      "cells": [
+        "hidden-truth",
+        "unlabeled-projection",
+        "baseline-rules",
+        "predict-model",
+        "model-vs-data",
+        "local-score",
+        "fold-experiment",
+        "lock-hypothesis",
+        "make-practice-table",
+        "student-model",
+        "reveal-result",
+        "interpret-results",
+        "inspect-after-lock"
+      ],
+      "class_minutes": 35,
+      "homework_minutes": 105,
+      "class_range": [
+        35,
+        35
+      ],
+      "homework_range": [
+        90,
+        150
+      ]
+    },
+    {
+      "id": "unlabelled-neighbors",
+      "status": "conditional",
+      "reason": "핵심 과제를 끝내고 미상 점의 위치가 판단을 뒤집는 경우를 더 탐구하려는 학생이 고른다.",
+      "path": "lessons/week01/week01_foundations.ipynb",
+      "cells": [
+        "advanced-cloud"
+      ],
+      "class_minutes": 0,
+      "homework_minutes": 20,
+      "class_range": [
+        0,
+        0
+      ],
+      "homework_range": [
+        20,
+        20
+      ]
+    },
+    {
+      "id": "format-and-sources",
+      "status": "deferred",
+      "reason": "ZIP 형식 도우미와 출처는 필요할 때 펼쳐 보는 참고다. 복사·구현 시수 또는 단원 평가 근거를 배정하지 않았다.",
+      "path": "lessons/week01/week01_foundations.ipynb",
+      "cells": [
+        "submission-reference",
+        "submission-writer",
+        "student-sources"
+      ],
+      "class_minutes": 0,
+      "homework_minutes": 0,
+      "class_range": [
+        0,
+        0
+      ],
+      "homework_range": [
+        0,
+        0
+      ]
+    }
+  ],
+  "links": [],
+  "workload_review": {
+    "path": "reviews/week01-contest-20261118/rounds/0001/reviews/joined.json",
+    "sha256": "876d21c95fa1cc7f74d2f265a8924b11bb2288d9e2e6e06b28d1e4c05f0107b0"
+  },
+  "overrun": "모든 과제에서 독립 추정의 상단이 겹치고 선택 45분을 모두 사용하면 455분이다. 자습 한도 420분까지 남은 시간 안에서 선택 활동을 고른다. 필수만의 추정 상단은 410분이다."
+}

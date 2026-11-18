@@ -5,8 +5,8 @@ import re
 from pathlib import Path
 
 import quality
-from topic_depth_basis import (ACTIVE, ERRORS, TIERS, VERDICTS, array, basis_chain, commits,
-                               excerpt, git_file, immutable, local, minutes, names, registered, require,
+from topic_depth_basis import (ACTIVE, ARCHIVED, CONTEST, ERRORS, TIERS, VERDICTS, array, basis_chain, commits,
+                               excerpt, git_file, immutable, local, minutes, names, normal_entry, registered, require,
                                sha, text, version)
 
 
@@ -33,9 +33,12 @@ def mapped_topics(freeze, record, nb, dependencies):
     owner, tiers = {}, {}
     for tid, row in maps.items():
         ledger = minutes(row['minutes'])
+        references = set(names(row.get('unassessed_reference', []), tid + ' unassessed reference cells'))
+        require(references <= set(row['optional']), 'Uncharged references must stay outside required work: ' + tid)
         for tier in TIERS:
             sequence = names(row[tier], tid + '.' + tier)
-            require(bool(sequence) == bool(ledger[tier]), 'Cells and minutes disagree: ' + tid + '.' + tier)
+            require(bool(set(sequence) - references) == bool(ledger[tier]),
+                    'Cells and minutes disagree: ' + tid + '.' + tier)
             for cid in sequence:
                 require(cid in cells and cid not in owner, 'Unidentified or multiply assigned cell: ' + cid)
                 owner[cid], tiers[cid] = tid, tier
@@ -43,6 +46,7 @@ def mapped_topics(freeze, record, nb, dependencies):
         for role in ('support', 'assessment'):
             role_cells = names(row[role], tid + '.' + role, True)
             require(all(owner.get(cid) == tid for cid in role_cells), 'Foreign ' + role + ' cell for ' + tid)
+            require(references.isdisjoint(role_cells), 'Uncharged reference cannot satisfy ' + role + ': ' + tid)
             if topics[tid]['minutes']['class'] or topics[tid]['minutes']['homework']:
                 require(any(tiers[cid] != 'optional' for cid in role_cells),
                         'Required foundation or assessment is available only as optional: ' + tid)
@@ -53,6 +57,8 @@ def mapped_topics(freeze, record, nb, dependencies):
         for task in row['assessment']:
             require(any(ranks[support] <= ranks[task] and TIERS.index(tiers[support]) <= TIERS.index(tiers[task])
                         for support in row['support']), 'Foundation must precede assessment: ' + tid)
+        require(references.isdisjoint(row['prerequisite_uses'].values()),
+                'Uncharged reference cannot be a prerequisite-use cell: ' + tid)
         require(set(row['prerequisite_uses']) == set(topics[tid]['prerequisites']),
                 'Map every prerequisite first use for ' + tid)
     require(set(owner) == set(cells), 'Unmapped student cells: ' + ', '.join(sorted(set(cells) - set(owner))))
@@ -109,6 +115,9 @@ def companions(root, case, number, freeze, record):
         require(archived and 1 <= int(archived[1]) <= number, 'Foreign companion snapshot: ' + name)
         require(quality.file_digest(local(root, name)) == row['sha256'], 'Stale companion snapshot: ' + name)
         result[row['path']] = row['sha256']
+    if case == CONTEST:
+        training = freeze['contract']['public_training']
+        require(result.get(training['path']) == training['sha256'], 'Reviewed CSV differs from the frozen public training bytes')
     return result
 
 
@@ -302,7 +311,7 @@ def inspect(root, case, *, target=None, final=True, stage=False):
     bases = basis_chain(root, case)
     freeze = bases[0]
     lesson = freeze['contract']['lesson_path']
-    result = {'status': 'blocked', 'freeze_commit': freeze['anchor'], 'contract_sha256': bases[-1]['sha256'],
+    result = {'status': 'blocked', 'case': case, 'freeze_commit': freeze['anchor'], 'contract_sha256': bases[-1]['sha256'],
               'basis_history': [{k: b[k] for k in ('sha256', 'anchor', 'after_round', 'reopen', 'review_sha256')}
                                 for b in bases], 'lesson_path': lesson, 'history': [], 'errors': [], 'ready': False,
               'scope': 'Independent material judgments and planned workload; learner outcomes unmeasured.'}
@@ -319,6 +328,10 @@ def inspect(root, case, *, target=None, final=True, stage=False):
                     (not ordinal or r['number'] == int(ordinal[1]))), None)
     result['subject_round'] = subject['number'] if subject else None
     result['subject_sha256'] = selected_sha
+    if case in ARCHIVED and target in (None, lesson) and ACTIVE.get(lesson) != case:
+        result['errors'].append('This study is archived; replay its own checkout to check the historical student entry')
+    if not subject:
+        result['errors'].append('Selected material has no reviewed iteration in this study')
     recorded = history[:subject['number']] if subject else []
     evidence = {'case': case, 'target': target or lesson, 'subject_sha256': selected_sha,
                 'basis': result['basis_history'], 'rounds': [[r['round_sha256'], r['reviews']] for r in recorded],
@@ -335,7 +348,13 @@ def inspect(root, case, *, target=None, final=True, stage=False):
         result['errors'].append('New depth basis requires independent material review: ' + ', '.join(sorted(pending)))
     if last['status'] != 'reviewed':
         result['errors'].append('Unresolved topic judgments')
-    if final:
+    active_contest = case == CONTEST and target in (None, lesson) and not stage
+    if final or active_contest:
+        if active_contest:
+            try:
+                _, result['normal_entry'] = normal_entry(root, lesson, 1, historical=None)
+            except ERRORS as error:
+                result['errors'].append(str(error))
         if ordinal and int(ordinal[1]) != last['number']:
             result['errors'].append('Historical iteration is not the current release candidate')
         if selected_sha != last['candidate_sha256']:
@@ -434,7 +453,7 @@ def main(argv=None):
             try:
                 bases = basis_chain(root, case)
                 f = bases[-1]
-                results[case] = {'status': 'frozen', 'freeze_commit': bases[0]['anchor'], 'basis_commit': f['anchor'], 'contract_sha256': f['sha256'],
+                results[case] = {'status': 'frozen', 'case': case, 'freeze_commit': bases[0]['anchor'], 'basis_commit': f['anchor'], 'contract_sha256': f['sha256'],
                                  'lesson_path': f['contract']['lesson_path'], 'topics': f['order']}
             except ERRORS as error:
                 results[case] = {'status': 'blocked', 'errors': [str(error)]}

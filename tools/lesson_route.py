@@ -2,7 +2,6 @@
 """Check a student route and replay a matched, predeclared material comparison."""
 import argparse
 from collections import defaultdict
-from html.parser import HTMLParser
 import json
 from pathlib import Path
 import posixpath
@@ -11,7 +10,8 @@ from urllib.parse import unquote, urlsplit
 
 import quality
 import topic_depth
-from topic_depth_basis import ERRORS, array, committed_inputs, commits, git, git_file, immutable, local, names, require, sha, text
+from topic_depth_basis import (ERRORS, Navigation, advertised_ref, array, committed_inputs, commits, git, git_file, immutable,
+                               local, names, normal_entry, require, sha, stored_bytes, stored_json, text)
 
 SIDES = ('candidate', 'incumbent')
 STATES = ('required', 'conditional', 'deferred')
@@ -23,25 +23,6 @@ CHECKS = {'preservation', 'prerequisites', 'execution', 'workload', 'serious_fau
 def schema(record):
     require(type(record.get('schema_version')) is int and record['schema_version'] == 1,
             'Expected lesson route schema_version 1')
-
-
-def stored_bytes(root, name, historical=None):
-    if historical is None:
-        return local(root, name).read_bytes()
-    path = Path(text(name, 'archived path'))
-    require(path.parts and not path.is_absolute() and '..' not in path.parts and name == path.as_posix(),
-            'Expected a canonical archived path')
-    raw = git_file(root, historical, name)
-    require(raw is not None, 'Historical file missing: ' + name)
-    return raw
-
-
-def stored_json(root, name, historical=None):
-    if historical is None:
-        return quality.load(local(root, name))
-    value = json.loads(stored_bytes(root, name, historical).decode('utf-8'), object_pairs_hook=quality._pairs)
-    quality.clean_json(value)
-    return value
 
 
 def pinned_files(root, mapping, label, historical=None):
@@ -58,78 +39,6 @@ def ancestor(root, commit):
     return commit
 
 
-class Navigation(HTMLParser):
-    """Collect named, visible text links and landing points, optionally in a curriculum row."""
-    void = set('area base br col embed hr img input link meta param source track wbr'.split())
-
-    def __init__(self, row_id=None):
-        super().__init__()
-        self.row_id = row_id
-        self.in_row = row_id is None
-        self.in_cell = row_id is None
-        self.columns = [[]]
-        self.attrs = None
-        self.hidden = []
-        self.anchor = None
-        self.heading = None
-        self.anchors = set()
-
-    def handle_starttag(self, tag, attrs):
-        attrs = dict(attrs)
-        if self.row_id and tag == 'tr':
-            self.in_row = attrs.get('id') == self.row_id
-            if self.in_row:
-                require(self.attrs is None, 'Duplicate student plan week')
-                self.attrs = attrs
-        if not self.in_row:
-            return
-        if self.hidden or tag in ('script', 'style', 'template', 'pre', 'del', 's') or (
-                'hidden' in attrs or attrs.get('aria-hidden') == 'true' or
-                re.search(r'display\s*:\s*none|visibility\s*:\s*hidden', attrs.get('style') or '', re.I)):
-            if tag not in self.void:
-                self.hidden.append(tag)
-            return
-        if self.row_id and tag in ('td', 'th'):
-            self.in_cell = True
-            self.columns.append([])
-        if not self.in_cell:
-            return
-        if tag == 'a':
-            self.anchor = [attrs.get('href'), []]
-            self.anchors.update(value for value in (attrs.get('id'), attrs.get('name')) if value)
-        elif re.fullmatch('h[1-6]', tag):
-            self.heading = []
-
-    def handle_data(self, data):
-        if self.in_row and not self.hidden:
-            if self.anchor is not None:
-                self.anchor[1].append(data)
-            if self.heading is not None:
-                self.heading.append(data)
-
-    def handle_endtag(self, tag):
-        if not self.in_row:
-            return
-        if self.hidden:
-            if self.hidden[-1] == tag:
-                self.hidden.pop()
-            return
-        if tag == 'a' and self.anchor is not None:
-            href, label = self.anchor
-            if href and ''.join(label).strip():
-                self.columns[-1].append(unquote(href))
-            self.anchor = None
-        elif re.fullmatch('h[1-6]', tag) and self.heading is not None:
-            heading = ''.join(self.heading).strip()
-            self.anchors.add(heading.replace(' ', '-'))
-            self.heading = None
-        elif self.row_id and tag in ('td', 'th'):
-            self.in_cell = False
-            self.anchor = None
-        elif self.row_id and tag == 'tr':
-            self.in_row = self.in_cell = False
-
-
 def markdown_navigation(cell):
     # nbconvert already uses Mistune. Its Markdown renderer excludes code, images and
     # comments from hyperlinks, including when the text looks like a literal link.
@@ -143,69 +52,6 @@ def markdown_navigation(cell):
         nav.feed(mistune.create_markdown(escape=False)(source))
         nav.close()
     return nav
-
-
-def normal_entry(root, entry, week, historical):
-    contract = stored_json(root, quality.CONTRACT, historical)
-    plan = contract['baseline']['path']
-    raw = stored_bytes(root, plan, historical)
-    require(raw is not None and sha(raw) == contract['baseline']['sha256'], 'Student plan differs from curriculum')
-    nav = Navigation('week-' + str(week))
-    nav.feed(raw.decode('utf-8'))
-    nav.close()
-    require(nav.attrs is not None, 'Missing student plan week')
-    origin = git(root, 'config', '--get', 'remote.origin.url', check=False).stdout.decode().strip()
-    match = re.fullmatch(r'(?:https://github\.com/|git@github\.com:)([^/]+/[^/]+?)(?:\.git)?/?', origin)
-    for href in nav.columns[-1]:
-        url = urlsplit(href)
-        if url.query or url.fragment:
-            continue
-        if not url.scheme and not url.netloc and posixpath.normpath(posixpath.join(posixpath.dirname(plan), url.path)) == entry:
-            proof = 'relative path in the archived plan' if historical else 'relative path in the current plan'
-            break
-        if match and (url.scheme, url.netloc) == ('https', 'github.com'):
-            prefix = '/' + match[1] + '/blob/'
-            if url.path.startswith(prefix) and url.path.endswith('/' + entry):
-                ref = url.path[len(prefix):-(len(entry) + 1)]
-                proof = advertised_ref(root, ref, entry, historical)
-                if proof:
-                    break
-    else:
-        raise ValueError('Normal student material column does not open the declared entry')
-    attrs = nav.attrs
-    class_minutes = sum(int(attrs['data-' + key + '-minutes']) for key in ('theory', 'noncoding', 'coding'))
-    hours = [int(attrs['data-self-' + key + '-hours']) for key in ('min', 'max')]
-    weeks = [w for w in contract['weeks'] if w['week'] == week]
-    require(len(weeks) == 1 and class_minutes == contract['class_minutes'] and
-            weeks[0]['required_self_study_hours'] == hours, 'Student plan workload differs from curriculum')
-    require(week != 1 or (class_minutes, hours) == (120, [5, 7]), 'Unexpected Week 1 time budget')
-    return (class_minutes, hours[0] * 60, hours[1] * 60), {'plan': plan, 'plan_sha256': sha(raw),
-                                                          'href': href, 'basis': proof}
-
-
-def advertised_ref(root, ref, entry, historical):
-    if not ref or ref.startswith('-') or git(root, 'check-ref-format', 'refs/heads/' + ref, check=False).returncode:
-        return None
-    if not historical:
-        branch = git(root, 'symbolic-ref', '-q', '--short', 'HEAD', check=False).stdout.decode().strip()
-        if branch == ref:
-            return 'link names the current working branch'
-    expected = stored_bytes(root, entry, historical)
-    known = False
-    for name in (ref, 'refs/remotes/origin/' + ref):
-        resolved = git(root, 'rev-parse', '--verify', name + '^{commit}', check=False)
-        if resolved.returncode:
-            continue
-        known = True
-        head = resolved.stdout.decode().strip()
-        revisions = [head]
-        if historical and not re.fullmatch(r'[0-9a-f]{40}', ref):
-            revisions += git(root, 'rev-list', head, '--', entry).stdout.decode().splitlines()
-        if any(git_file(root, r, entry) == expected for r in revisions):
-            return 'entry bytes verified in the advertised Git reference'
-    if historical and not known and not re.fullmatch(r'[0-9a-f]{40}', ref):
-        return 'archived curriculum plan and entry blob (old named branch unavailable locally)'
-    return None
 
 
 def study_units(root, manifest, historical):
@@ -318,6 +164,9 @@ def candidate_depth(root, manifest, units, owners):
     record = quality.load(local(root, round_path))
     required, optional = set(), set()
     for row in record['topics'].values():
+        for cid in row.get('unassessed_reference', []):
+            require(units[owners[entry, cid]]['status'] == 'deferred',
+                    'Uncharged reference must stay outside the timed student route: ' + cid)
         required.update(row['class'] + row['homework'])
         optional.update(row['optional'])
     require({cid for (path, cid) in owners if path == entry} == required | optional, 'Unmapped entry cells')
@@ -377,9 +226,26 @@ def inspect_route(root, name, *, incumbent=False):
                         and (unit['status'] != 'deferred' or interval[1] == 0), 'Invalid time range: ' + uid)
                 for i in (0, 1):
                     bounds[tier][unit['status']][i] += interval[i]
+            if 'optional_repeat' in unit:
+                repeat = unit['optional_repeat']
+                cells = names(repeat['cells'], 'optional repeat cells: ' + uid, True)
+                extra = repeat['homework_minutes']
+                text(repeat['reason'], 'optional repeat trigger: ' + uid)
+                require(unit['status'] == 'required' and set(cells) <= set(unit['cells']) and
+                        type(extra) is int and extra > 0, 'Invalid optional repeat of existing work: ' + uid)
+                totals['homework']['conditional'] += extra
+                for limit in (0, 1):
+                    bounds['homework']['conditional'][limit] += extra
             charged = unit['class_minutes'] + unit['homework_minutes']
             require((charged == 0) == (unit['status'] == 'deferred'), 'Status and charged minutes disagree: ' + uid)
         report['depth_sha256'], report['round_path'] = candidate_depth(root, manifest, units, owners)
+        if 'workload_review' in manifest:
+            receipt = manifest['workload_review']
+            review_path = Path(text(receipt['path'], 'independent workload review'))
+            require(review_path.parent == Path(report['round_path']).parent / 'reviews' and review_path.suffix == '.json',
+                    'Workload estimate must cite this iteration’s independent material review')
+            pinned_files(root, {receipt['path']: receipt['sha256']}, 'workload review')
+            report['workload_review'] = receipt
         required_class, required_home = totals['class']['required'], totals['homework']['required']
         require(required_class >= class_limit, 'Weekly required class allocation is incomplete')
         if required_home < minimum:

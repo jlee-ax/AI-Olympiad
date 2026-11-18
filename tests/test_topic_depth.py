@@ -14,8 +14,11 @@ from test_quality import ROOT, quality, workflow
 import discovery_loop
 import material_revision
 import topic_depth as depth
+import topic_depth_basis as basis
 
-LESSON, CASE = next(iter(depth.ACTIVE.items()))
+# These synthetic from-scratch histories have no relationship to the deployed R5 Git object.
+# The successor tests exercise the actual default registration and the pinned historical checkout.
+LESSON, CASE = 'lessons/week01/fixture-foundations.ipynb', 'reviews/fixture-topic-depth'
 TOPICS = ('return', 'table', 'graph', 'reading')
 KEY = 'lessons/week01/key.md'
 
@@ -123,6 +126,50 @@ def review_round(record, topics=None, reviewer='independent fixture', verdict='p
     return path
 
 
+class DeployedWeekOneSuccessor(unittest.TestCase):
+    def setUp(self):
+        self.contract = quality.load(ROOT / basis.CONTEST / 'contract.json')
+
+    def test_registered_entry_and_archives_have_distinct_owners(self):
+        self.assertEqual(depth.registered(basis.WEEK1_ENTRY), basis.CONTEST)
+        for case in (basis.FOUNDATIONS, basis.CONTEST):
+            self.assertEqual(depth.registered(case + '/rounds/0001/candidate.ipynb'), case)
+        self.assertIsNone(depth.registered(basis.CONTEST + '/rounds/01/candidate.ipynb'))
+        with self.assertRaisesRegex(ValueError, 'Foreign contract'):
+            basis.contract_topics(ROOT, 'reviews/foreign-week-one', self.contract)
+
+    def test_default_freeze_proves_public_predecessor_and_independent_successor(self):
+        result = subprocess.run([sys.executable, '-B', str(ROOT / 'tools/topic_depth.py'), 'freeze', '--root', str(ROOT)],
+                                capture_output=True, text=True, check=True)
+        freeze = json.loads(result.stdout)
+        self.assertEqual((freeze['case'], freeze['lesson_path']), (basis.CONTEST, basis.WEEK1_ENTRY))
+        self.assertEqual(freeze['contract_sha256'], quality.file_digest(ROOT / basis.CONTEST / 'contract.json'))
+        previous = self.contract['baseline']
+        self.assertEqual(previous['commit'], basis.R5_COMMIT)
+        old = basis.git_file(ROOT, basis.R5_COMMIT, basis.WEEK1_ENTRY)
+        self.assertEqual(basis.sha(old), previous['sha256'])
+        self.assertEqual(old, basis.git_file(ROOT, freeze['freeze_commit'], basis.WEEK1_ENTRY))
+
+    def test_successor_rejects_split_workload_over_the_cap(self):
+        contract = copy.deepcopy(self.contract)
+        contract['topics'][0]['minutes']['optional'] = 100
+        with self.assertRaisesRegex(ValueError, '420-minute cap'):
+            basis.contract_topics(ROOT, basis.CONTEST, contract)
+
+    def test_self_consistent_companion_snapshots_still_need_exact_public_training_bytes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            record = {'companions': []}
+            for i, path in enumerate(self.contract['companion_paths']):
+                snapshot = basis.CONTEST + '/rounds/0001/inputs/fixture-' + str(i)
+                dest = root / snapshot
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                dest.write_text('Different public fixture data.\n', encoding='utf-8')
+                record['companions'].append({'path': path, 'snapshot': snapshot, 'sha256': quality.file_digest(dest)})
+            with self.assertRaisesRegex(ValueError, 'frozen public training bytes'):
+                depth.companions(root, basis.CONTEST, 1, {'contract': self.contract}, record)
+
+
 class TopicDepth(unittest.TestCase):
     def setUp(self):
         tmp = tempfile.TemporaryDirectory()
@@ -146,7 +193,7 @@ class TopicDepth(unittest.TestCase):
 
     def cli(self, command):
         process = subprocess.run([sys.executable, '-B', str(ROOT / 'tools/topic_depth.py'), command,
-                                  '--root', str(self.root)], capture_output=True, text=True)
+                                  '--root', str(self.root), '--case', CASE], capture_output=True, text=True)
         return process.returncode, json.loads(process.stdout)
 
     def result(self):
@@ -211,6 +258,24 @@ class TopicDepth(unittest.TestCase):
         self.freeze()
         (self.root / 'source.txt').write_text('Different source bytes.')
         self.assertBlocked('Source bytes differ')
+
+    def test_optional_uncharged_reference_cannot_supply_credit_or_fill_minutes(self):
+        self.nb['cells'].append({'id': 'zip-reference', 'cell_type': 'markdown',
+                                 'metadata': {}, 'source': ['Provided formatting appendix.']})
+        row = self.maps['return']
+        row['optional'] = row['unassessed_reference'] = ['zip-reference']
+        self.freeze()
+        record = self.draft()
+        self.active(record)
+        review_round(record)
+        self.assertTrue(self.result()['ready'], self.result())
+        row['assessment'].append('zip-reference')
+        self.draft()
+        self.assertBlocked('Uncharged reference cannot satisfy assessment')
+        row['assessment'].remove('zip-reference')
+        row['minutes']['optional'] = 3
+        self.draft()
+        self.assertBlocked('Cells and minutes disagree')
 
     def test_active_direct_edit_missing_metadata_changed_key_and_unpublished_draft_fail(self):
         self.freeze()
