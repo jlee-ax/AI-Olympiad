@@ -1,0 +1,37 @@
+{
+  "command": "python -B tools/topic_depth.py check --root .",
+  "exit": 1,
+  "status": "blocked",
+  "subject_round": 3,
+  "candidate_sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+  "basis_history": [
+    {
+      "sha256": "2f69eb913f7da07cc7f0b8401906145e743ee19224c442719cc9b6ec3d19165a",
+      "anchor": "cfeb4e341650af9a9378939e1ceeaedce80372f2",
+      "after_round": 0,
+      "reopen": [],
+      "review_sha256": "09db754c017dae9fee057d4bf82db75308b12b3a4cbec24b69410e5893efa0f8"
+    },
+    {
+      "sha256": "e3b261f7c3b3be60219f8ba941e05abce18a7bfaa29475cf11b9078abb6cff90",
+      "anchor": "8e6bf19b5a5af6739533b6ae28a6a5131f2d0b8a",
+      "after_round": 3,
+      "reopen": [
+        "W1-array"
+      ],
+      "review_sha256": "6fb06916c429025c2209a69b96a077902091072020f1528a1e173143c7820ac9"
+    }
+  ],
+  "historical_round3_decisions": {
+    "W1-python": "pass",
+    "W1-table": "pass",
+    "W1-array": "pass",
+    "W1-visualise": "pass"
+  },
+  "reopened_by_basis": [
+    "W1-array"
+  ],
+  "errors": [
+    "New depth basis requires independent material review: W1-array"
+  ]
+}

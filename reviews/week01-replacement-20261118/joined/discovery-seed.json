@@ -1,0 +1,242 @@
+{
+ "schema_version": 1,
+ "seed": {
+  "schema_version": 1,
+  "synthetic": false,
+  "scope": {
+   "id": "week01-replacement",
+   "lesson_path": "lessons/week01/week01_foundations.ipynb",
+   "lesson_revision": "replacement-after-R3",
+   "readiness": "scoped_foundation",
+   "boundary": "한국 2027 중등부 첫 주의 실제 학생 경로, 직접 설명과 새로운 목적에서의 전이. 비교 우열 및 수업 성과는 별도 증거."
+  },
+  "frontier": [
+   {
+    "id": "scope-transfer",
+    "question": "공식 범위와 실제 과제 원문에서 무엇을 직접 설명해야 하며, 한 영역의 명사나 연산명을 제거한 새 목적에서도 무엇을 설계·계산·해석해야 하는가?",
+    "required_kinds": [
+     "official_scope",
+     "official_problem"
+    ]
+   }
+  ],
+  "policy": {
+   "max_events": 60,
+   "max_rounds": 8,
+   "max_no_progress": 4,
+   "max_elapsed_minutes": 180
+  }
+ },
+ "seed_sha256": "61c688ac33e047ffc0293af0c702747b922d6e8f193127af707f1c48c7a99ae1",
+ "events": [
+  {
+   "id": "find-official",
+   "op": "discover",
+   "data": {
+    "reason": "Reopened the target domestic rules/linked domestic syllabus, original international task and official sample materials before receiving edited notebooks.",
+    "frontier_id": "scope-transfer",
+    "query": "2027 KITPA rules and linked syllabus; IOAI official 2027 scope and 2025 Antique; KITPA released 2026 sample Q1–3/6",
+    "actor": "joined-content-review",
+    "outcome": "found",
+    "candidates": [
+     {
+      "id": "guide",
+      "uri": "https://kitpa.org/koai/2027",
+      "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+      "revision": "KITPA 2027 중등부",
+      "kind": "official_scope",
+      "attribution": "Independent primary-source re-read in this experiment; dated local paraphrase with exact document locator and scope limitations."
+     },
+     {
+      "id": "domestic",
+      "uri": "https://kitpa.org/koai/syllabus",
+      "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+      "revision": "KITPA 게시판의 IOAI 2026 표기",
+      "kind": "official_scope",
+      "attribution": "Independent primary-source re-read in this experiment; dated local paraphrase with exact document locator and scope limitations."
+     },
+     {
+      "id": "antique",
+      "uri": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb",
+      "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+      "revision": "IOAI Beijing 2025 individual task 5 Antique Painting Authentication",
+      "kind": "official_problem",
+      "attribution": "Independent primary-source re-read in this experiment; dated local paraphrase with exact document locator and scope limitations."
+     },
+     {
+      "id": "sample",
+      "uri": "https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf",
+      "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+      "revision": "KITPA 2026 고등부 학습 참고 공개 예시",
+      "kind": "official_problem",
+      "attribution": "Independent primary-source re-read in this experiment; dated local paraphrase with exact document locator and scope limitations."
+     },
+     {
+      "id": "ioai27",
+      "uri": "https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf",
+      "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+      "revision": "IOAI syllabus 2027",
+      "kind": "official_scope",
+      "attribution": "Independent primary-source re-read in this experiment; dated local paraphrase with exact document locator and scope limitations."
+     }
+    ]
+   },
+   "previous_sha256": "61c688ac33e047ffc0293af0c702747b922d6e8f193127af707f1c48c7a99ae1",
+   "sha256": "10007c827707e036817de6624fe2bed712f343b33df4b2d7f11bd3067f260515"
+  },
+  {
+   "id": "read-guide",
+   "op": "read",
+   "data": {
+    "reason": "Independently opened original https://kitpa.org/koai/2027 and read 중등부 일정·평가 구성, 1–4과목 및 code 작성",
+    "actor": "joined-content-review",
+    "source_id": "guide",
+    "receipt": {
+     "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+     "sha256": "feb203278e36334a7aeacba3fc4dc54ed66b721425b80a775492f9de77648ddf",
+     "start_line": 16,
+     "end_line": 22,
+     "excerpt": "      \"id\": \"guide\",\n      \"kind\": \"official_scope\",\n      \"url\": \"https://kitpa.org/koai/2027\",\n      \"revision\": \"KITPA 2027 중등부\",\n      \"locator\": \"중등부 일정·평가 구성, 1–4과목 및 code 작성\",\n      \"statement\": \"필기 3시간에 선택 80·서술 10, 코딩 3시간에 2과제. 국내 2027 중등부에는 1–4과목이 적용된다.\",\n      \"boundary\": \"주차별 수업이나 교재 우열의 요구 수준을 정하는 표는 아니다.\"\n",
+     "excerpt_sha256": "d46929e50aaba10a8063b9668c1c86086cb1c21881ad9cf484e88b8c3475e478"
+    }
+   },
+   "previous_sha256": "10007c827707e036817de6624fe2bed712f343b33df4b2d7f11bd3067f260515",
+   "sha256": "58270028ff2ee2690e0d61d600bdc579eabb0c3756388ca4b23cd1339c3fa6fc"
+  },
+  {
+   "id": "read-domestic",
+   "op": "read",
+   "data": {
+    "reason": "Independently opened original https://kitpa.org/koai/syllabus and read 1-1 프로그래밍 기초의 Python, NumPy/pandas, Matplotlib/Seaborn, tensor manipulation 행",
+    "actor": "joined-content-review",
+    "source_id": "domestic",
+    "receipt": {
+     "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+     "sha256": "feb203278e36334a7aeacba3fc4dc54ed66b721425b80a775492f9de77648ddf",
+     "start_line": 25,
+     "end_line": 31,
+     "excerpt": "      \"id\": \"domestic\",\n      \"kind\": \"official_scope\",\n      \"url\": \"https://kitpa.org/koai/syllabus\",\n      \"revision\": \"KITPA 게시판의 IOAI 2026 표기\",\n      \"locator\": \"1-1 프로그래밍 기초의 Python, NumPy/pandas, Matplotlib/Seaborn, tensor manipulation 행\",\n      \"statement\": \"이 도구들의 표시는 실전이다. 사용자가 짧은 절차·표·배열·그림을 실제로 변경해 요구에 맞는 결과를 만들어야 한다는 W1 편성 근거다.\",\n      \"boundary\": \"직접 개념을 설명하고 새 사례에서 고르는 증거를 요구하는 것은 1주차 교재 평가를 위한 과정 판단이다.\"\n",
+     "excerpt_sha256": "77afc5f72a4a5211fb94e8ee199144ea48d1c601b1c85af12e8f3cd5785ac590"
+    }
+   },
+   "previous_sha256": "58270028ff2ee2690e0d61d600bdc579eabb0c3756388ca4b23cd1339c3fa6fc",
+   "sha256": "d313bafc0356436201bed78138ce46fe094980eb422ccd140fd7f682f90e2466"
+  },
+  {
+   "id": "read-antique",
+   "op": "read",
+   "data": {
+    "reason": "Independently opened original https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb and read Task description §1, dataset §2, task/evaluation §3–5. 공식 개인전 색인 Task 5에서 원문 확인.",
+    "actor": "joined-content-review",
+    "source_id": "antique",
+    "receipt": {
+     "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+     "sha256": "feb203278e36334a7aeacba3fc4dc54ed66b721425b80a775492f9de77648ddf",
+     "start_line": 34,
+     "end_line": 40,
+     "excerpt": "      \"id\": \"antique\",\n      \"kind\": \"official_problem\",\n      \"url\": \"https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb\",\n      \"revision\": \"IOAI Beijing 2025 individual task 5 Antique Painting Authentication\",\n      \"locator\": \"Task description §1, dataset §2, task/evaluation §3–5. 공식 개인전 색인 Task 5에서 원문 확인.\",\n      \"statement\": \"훈련 여섯 열 중 다섯 특성과 라벨을 구분한다. 라벨의 0은 미상, 두 알려진 부류는 ±1이다. 검증·시험은 다섯 특성이고 요구 출력은 시료별 ±1 예측이다.\",\n      \"boundary\": \"W1의 관찰 한 건/시점/결측 의미와 출력 대상 설정에만 유추한다. 국내 중등부에서 같은 문제나 모델이 나올 것이라는 증거는 없다.\"\n",
+     "excerpt_sha256": "758a6cc78656ca33eeb673761ae6bf1bf098dc9121894aaa3afe057149120c20"
+    }
+   },
+   "previous_sha256": "d313bafc0356436201bed78138ce46fe094980eb422ccd140fd7f682f90e2466",
+   "sha256": "1269b2675242a4c2e58b3fbc33b676b9b3dc3e9c1aa8027b87f2a43d19f27e5d"
+  },
+  {
+   "id": "read-sample",
+   "op": "read",
+   "data": {
+    "reason": "Independently opened original https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf and read pp.1–2 선택 1, 2, 3, 6. 공지 https://kitpa.org/files/36",
+    "actor": "joined-content-review",
+    "source_id": "sample",
+    "receipt": {
+     "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+     "sha256": "feb203278e36334a7aeacba3fc4dc54ed66b721425b80a775492f9de77648ddf",
+     "start_line": 43,
+     "end_line": 49,
+     "excerpt": "      \"id\": \"sample\",\n      \"kind\": \"official_problem\",\n      \"url\": \"https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf\",\n      \"revision\": \"KITPA 2026 고등부 학습 참고 공개 예시\",\n      \"locator\": \"pp.1–2 선택 1, 2, 3, 6. 공지 https://kitpa.org/files/36\",\n      \"statement\": \"함수 호출 사이의 상태, 배열 축별 축약과 메모리, 두 수치형 변수 관계와 주변분포, 네 축 Tensor의 축 교환을 질문한다.\",\n      \"boundary\": \"고등부 학습 참고 예시이며 공식 정답 전체가 공개되지 않았다. 2차원 W1의 선수 개념과 출력 의미를 읽는 행동까지만 비교한다.\"\n",
+     "excerpt_sha256": "05c816c4afd69f5777798e31450de3b32ab9d7c80adb074a59ef312823aedad8"
+    }
+   },
+   "previous_sha256": "1269b2675242a4c2e58b3fbc33b676b9b3dc3e9c1aa8027b87f2a43d19f27e5d",
+   "sha256": "db6af4e0f53077b0c97210d3d6b93a4dfb4cf4dae0dc1021a3efa51de46a21d8"
+  },
+  {
+   "id": "read-ioai27",
+   "op": "read",
+   "data": {
+    "reason": "Independently opened original https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf and read pp.1–2 Programming Fundamentals, Technical Fundamentals",
+    "actor": "joined-content-review",
+    "source_id": "ioai27",
+    "receipt": {
+     "path": "reviews/week01-replacement-20261118/joined/source-basis.json",
+     "sha256": "feb203278e36334a7aeacba3fc4dc54ed66b721425b80a775492f9de77648ddf",
+     "start_line": 52,
+     "end_line": 58,
+     "excerpt": "      \"id\": \"ioai27\",\n      \"kind\": \"official_scope\",\n      \"url\": \"https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf\",\n      \"revision\": \"IOAI syllabus 2027\",\n      \"locator\": \"pp.1–2 Programming Fundamentals, Technical Fundamentals\",\n      \"statement\": \"프로그래밍·표·시각화·tensor manipulation 기초는 실전이다. 국제판은 터미널, Jupyter, Git, SSH도 기술 기초로 명시한다.\",\n      \"boundary\": \"국내 사이트의 연결 문서는 여전히 2026 표기다. 국제 추가 항목 전체를 국내 2027 첫 주 필수로 지정할 근거가 없다.\"\n",
+     "excerpt_sha256": "3e5beaa4f46caf9153304a0be6fe04eb1d3e21c99cf9e5b292ddce7a427971ca"
+    }
+   },
+   "previous_sha256": "db6af4e0f53077b0c97210d3d6b93a4dfb4cf4dae0dc1021a3efa51de46a21d8",
+   "sha256": "0c57937e22a92048db82c40304f2a9cdcc701691bb97364632e68e38ed8ec221"
+  },
+  {
+   "id": "source-linked-course-objectives",
+   "op": "trace",
+   "data": {
+    "reason": "Actual course editor wrote four source-linked requirements in the refreshed pre-authoring contract. The external comparer re-read the sources and provided a separate pre-candidate interpretation in source-basis.json.",
+    "actor": "course-editor",
+    "frontier_id": "scope-transfer",
+    "read_ids": [
+     "read-guide",
+     "read-domestic",
+     "read-antique",
+     "read-sample",
+     "read-ioai27"
+    ],
+    "rationale": "These exact objectives/minima/assessments are transcribed from refresh 0001 of the course-editor contract. Supplemental paths receive credit only if student-reachable. The by-topic scope assertions, actual source author and material comparer are kept distinct.",
+    "counterevidence": "Antique requires learned predictions, whereas W1 transfer covers claimed row, input/target, semantics and viable output; domestic 2026 examples were published for high-school learning. Neither determines middle-school placement, actual time, effectiveness or replacement utility.",
+    "uninvestigated": [],
+    "demands": [
+     {
+      "id": "W1-python",
+      "statement": "짧은 절차에서 조건·반복·반환값을 추적하고 바뀐 입력을 검사한다.",
+      "prerequisites": [
+       "변수, 리스트, 파일을 본 적 있는 중학생. 상태표와 짧은 복구 경로를 제공한다."
+      ],
+      "learning_demand": "값과 출력, 빈 목록과 0을 구별한다. 다음 상태와 반환값을 예측하고 실제 실행과 비교한다. 예외 또는 잘못된 입력 한 경우를 진단한다. 제공한 함수·반복문을 직접 수정하고 새 입력·오류 사례에서 반환값을 실행해 확인한다.",
+      "assessment_demand": "완성 답이 안 보이는 새 입력에서 반환값·실패 원인을 쓰거나 작동하는 코드를 만든다."
+     },
+     {
+      "id": "W1-table",
+      "statement": "관측 단위, 측정 시점, 특성과 목표를 구별하고 표에서 올바른 대상을 집계한다.",
+      "prerequisites": [
+       "리스트 선택, 함수 반환 및 CSV 읽기. 자료사전·단위·고유 키를 처음 사용할 때 제시한다."
+      ],
+      "learning_demand": "실제 CSV를 선택하고 결측과 0을 구별한다. 분모를 설명하고, 자습에서 열 이름이 바뀐 표와 순서가 다른 두 표를 키로 병합한다. 열 dtype, 행·열 shape와 필요한 열 선택이 바뀐 실제 자료와 맞는지 직접 출력한다.",
+      "assessment_demand": "새 파일에서 키·열·결측·시점에 근거해 표를 만든다. 누락된 필수 열이나 잘못된 대응을 발견한다."
+     },
+     {
+      "id": "W1-array",
+      "statement": "행과 열의 뜻을 유지하며 손계산, shape 예측 및 NumPy 결과를 연결한다.",
+      "prerequisites": [
+       "평균의 분자와 분모를 작은 자료로 소개한다. 행·열·관측 단위는 표 단원에서 먼저 다룬다."
+      ],
+      "learning_demand": "직사각 배열의 두 평균과 축을 손으로 예측한다. 자습에서는 모집단 분산·벡터 내적·배열 공유·우측 축 정렬·형태 변경과 전치를 짧은 유효 사례와 잘못 쓰이는 사례로 확인한다. 행·열 인덱싱 및 슬라이스가 선택한 값과 남은 shape를 코드로 대조한다. 한 사례의 명사를 빼도 배열 각 축과 좌표가 가리키는 양, 연산 전제, 무엇이 결과 한 칸 또는 한 값으로 모이는지 설명한다. 같은 모양의 입력도 질문에 따라 다른 연산이나 출력을 요구하는 반례를 다룬다.",
+      "assessment_demand": "처음 보는 비정사각 배열에서 남는 축의 의미·값을 예측하고, 바뀐 차원 또는 복사 방식의 결과를 확인한다. 가르친 예와 쓰임이 다른 자료에서 연산 이름이나 완성 풀이를 주기 전에 필요한 결과의 뜻·단위·모양을 정하고 연산을 직접 선택한다. 입력의 조건을 바꿔 선택의 이유를 다시 확인한다."
+     },
+     {
+      "id": "W1-visualise",
+      "statement": "표의 통계량을 목적에 맞는 그림으로 표시하고 단위·집계·해석 범위를 말한다.",
+      "prerequisites": [
+       "어떤 기록을 세었는지, 평균과 유효 관측 수를 앞 단원에서 확인한다."
+      ],
+      "learning_demand": "수업 Matplotlib과 자습 Seaborn으로 각각 그림을 그린다. 축과 단위·비교 집단을 쓴다. 조건이나 집계가 바뀌면 해석이 어떻게 달라지는지 근거를 댄다. 수치 분포와 범주 차이 두 질문에 알맞은 그래프를 그리며, 표시한 자료와 단위를 직접 확인한다.",
+      "assessment_demand": "새 입력으로 그래프를 선택·작성하고 집계값 및 관측 제한을 근거로 결론을 설명한다."
+     }
+    ]
+   },
+   "previous_sha256": "0c57937e22a92048db82c40304f2a9cdcc701691bb97364632e68e38ed8ec221",
+   "sha256": "0980c6b4df982aa5d6838d54dd45da2b6edc44f668e60e818ea431e4f343835d"
+  }
+ ]
+}

@@ -1,0 +1,73 @@
+{
+  "study": "Week 1 replacement, independent external and technical production verification",
+  "reviewer": "joined-content-review",
+  "recorded_at": "2026-11-18 13:14:44 UTC",
+  "pre_candidate": true,
+  "baseline_commit": "404a2b42ca69056278316bfdf2e29f721c47c0b3",
+  "prior_blank_path_commit": "607c56eb71fded982805987d74a6609aeee4c3fc",
+  "prior_registered_round": 3,
+  "prior_entry_sha256": "ef1586ee0eef669783ebeb84152883ca57cf53733660b8f17da85232ef945d0e",
+  "new_contract_sha256": "e3b261f7c3b3be60219f8ba941e05abce18a7bfaa29475cf11b9078abb6cff90",
+  "new_contract_review_sha256": "6fb06916c429025c2209a69b96a077902091072020f1528a1e173143c7820ac9",
+  "scope": "From the registered originally blank path, examine the strongest complete student-reachable Week 1 route the material can support. If the evidence justifies replacement, the decision is separate from this production audit. Actual learner performance, exam frequency and instructor time are unobserved.",
+  "official_reading": "Original URLs reopened for this experiment on 2026-11-18. These local byte receipts identify the dated reviewer paraphrases. The linked 2027 governing KITPA web page was available; an attempted separate PDF rules download failed in the web client.",
+  "sources": [
+    {
+      "id": "guide",
+      "kind": "official_scope",
+      "url": "https://kitpa.org/koai/2027",
+      "revision": "KITPA 2027 중등부",
+      "locator": "중등부 일정·평가 구성, 1–4과목 및 code 작성",
+      "statement": "필기 3시간에 선택 80·서술 10, 코딩 3시간에 2과제. 국내 2027 중등부에는 1–4과목이 적용된다.",
+      "boundary": "주차별 수업이나 교재 우열의 요구 수준을 정하는 표는 아니다."
+    },
+    {
+      "id": "domestic",
+      "kind": "official_scope",
+      "url": "https://kitpa.org/koai/syllabus",
+      "revision": "KITPA 게시판의 IOAI 2026 표기",
+      "locator": "1-1 프로그래밍 기초의 Python, NumPy/pandas, Matplotlib/Seaborn, tensor manipulation 행",
+      "statement": "이 도구들의 표시는 실전이다. 사용자가 짧은 절차·표·배열·그림을 실제로 변경해 요구에 맞는 결과를 만들어야 한다는 W1 편성 근거다.",
+      "boundary": "직접 개념을 설명하고 새 사례에서 고르는 증거를 요구하는 것은 1주차 교재 평가를 위한 과정 판단이다."
+    },
+    {
+      "id": "antique",
+      "kind": "official_problem",
+      "url": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb",
+      "revision": "IOAI Beijing 2025 individual task 5 Antique Painting Authentication",
+      "locator": "Task description §1, dataset §2, task/evaluation §3–5. 공식 개인전 색인 Task 5에서 원문 확인.",
+      "statement": "훈련 여섯 열 중 다섯 특성과 라벨을 구분한다. 라벨의 0은 미상, 두 알려진 부류는 ±1이다. 검증·시험은 다섯 특성이고 요구 출력은 시료별 ±1 예측이다.",
+      "boundary": "W1의 관찰 한 건/시점/결측 의미와 출력 대상 설정에만 유추한다. 국내 중등부에서 같은 문제나 모델이 나올 것이라는 증거는 없다."
+    },
+    {
+      "id": "sample",
+      "kind": "official_problem",
+      "url": "https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf",
+      "revision": "KITPA 2026 고등부 학습 참고 공개 예시",
+      "locator": "pp.1–2 선택 1, 2, 3, 6. 공지 https://kitpa.org/files/36",
+      "statement": "함수 호출 사이의 상태, 배열 축별 축약과 메모리, 두 수치형 변수 관계와 주변분포, 네 축 Tensor의 축 교환을 질문한다.",
+      "boundary": "고등부 학습 참고 예시이며 공식 정답 전체가 공개되지 않았다. 2차원 W1의 선수 개념과 출력 의미를 읽는 행동까지만 비교한다."
+    },
+    {
+      "id": "ioai27",
+      "kind": "official_scope",
+      "url": "https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf",
+      "revision": "IOAI syllabus 2027",
+      "locator": "pp.1–2 Programming Fundamentals, Technical Fundamentals",
+      "statement": "프로그래밍·표·시각화·tensor manipulation 기초는 실전이다. 국제판은 터미널, Jupyter, Git, SSH도 기술 기초로 명시한다.",
+      "boundary": "국내 사이트의 연결 문서는 여전히 2026 표기다. 국제 추가 항목 전체를 국내 2027 첫 주 필수로 지정할 근거가 없다."
+    }
+  ],
+  "independent_extraction": {
+    "W1-python": "문제에서 변수를 무엇으로 정의하고 초기값과 종료값이 무엇인지 설명한 뒤, 새 호출의 상태·분기·누계를 추적한다. 예와 다른 경계 또는 실패 연산을 직접 확인하고, 화면을 읽는 일과 재사용할 반환값을 구분한다. Python 언어 내부나 국제 모델 구현까지는 필요하지 않다.",
+    "W1-table": "한 행의 관찰 대상, 고유한 기록 표지와 여러 관찰이 공유하는 대상 표지, 사용 시점의 특성과 뒤의 목표를 분리한다. 작은 이종 파일에서 이름·순서가 바뀌고 결측/관측 0이 섞일 때 무엇이 남고 관측 분모가 왜 변하는지 먼저 판단한다. Antique의 0은 라벨 규약이므로 일반적인 결측 표식으로 복사할 수 없다.",
+    "W1-array": "배열 축의 이름은 코드가 정의해 주지 않는다. 입력 (n,d)의 한 좌표가 가리키는 양·단위, 출력 한 칸에 참여할 원래 좌표와 분모 또는 가중치를 설명해야 한다. 예를 들어 같은 (n,d)에서도 특성별 요약, 관찰별 비교 또는 짝지어진 항의 점수는 서로 다른 결과를 요구한다. 다른 용도의 새 자료에서 답·연산 이름 이전에 출력 대상/단위/모양과 연산을 학생이 정하는지 읽는다. 전치와 reshape의 동일 shape, 0분모와 잘못 짝지은 가중치처럼 코드가 돌아가도 뜻이 틀릴 수 있다. 고차 Tensor 증명은 제외한다.",
+    "W1-visualise": "기록 수·구간·범주별 집계의 질문부터 정의하고 축에 무엇이 한 단위인지 설명한다. 새로운 관측 조건에서 스스로 표시·열·단위·집계를 정한 첫 기록과, 도움 뒤 구현·재시도를 구별한다. 원래 구성원·분모가 바뀔 때 그림이 어떻게 달라지는지 실제 수치로 확인한다. 인과나 이변량 분석 일반 숙달은 관측에서 제외한다."
+  },
+  "route_observations": [
+    "이름을 바꾸거나 설명량만 늘리는 것을 전이로 판정하지 않는다. 의미가 다른 질문에서 무엇을 출력해야 하는지 먼저 결정하고, 이후 새 입력에서 검산하거나 변경된 조건에 답해야 한다.",
+    "학생용 진입점에서 보이는 링크를 따라 실제로 열 수 있고, 필요한 진단·보충·후속 활동과 정답 없는 평가를 적절한 순서로 만날 수 있어야 한다. 교사용 해설에서만 내용을 발견하면 학생 설명으로 세지 않는다.",
+    "필수·조건부 지원·이연 항목의 실제 위치와 각각의 시간 할당을 확인한다. 준비된 학생과 지원이 필요한 학생의 계획상 부담을 구분한다. 120분 수업 및 300–420분 주간 자습은 운영 계획이며 실제 독립 학생의 성과·소요 시간은 별도 증거를 필요로 한다."
+  ],
+  "method": "Verifier wrote these scoped analogies from the published documents plus refreshed contract before accessing the candidate or any student route. Distinct actor course-editor wrote the source-linked frozen requirements. The comparator will assess the registered exact route on release. Blind comparisons and unpublished prompts are outside this check."
+}
