@@ -6,6 +6,7 @@ import hashlib
 from html.parser import HTMLParser
 import json
 import math
+import os
 from pathlib import Path
 import re
 import sys
@@ -1101,8 +1102,16 @@ def evaluate(bundle, root=ROOT):
         discovery_ready = (discovery_report['ready_for_review'] and discovery_report['synthetic'] == bundle['synthetic']
                            and discovery_path == bundle['artifact']['path']
                            and scope.get('artifact_sha256', actual_sha) == actual_sha)
-    ready = all(check['status'] == 'passed' for check in checks) and discovery_ready
+    import topic_depth
+    canonical_path = artifact_path.relative_to(Path(root).resolve()).as_posix()
+    declared = os.path.normpath(bundle['artifact']['path'])
+    if topic_depth.registered(declared):
+        canonical_path = declared
+    depth_case = topic_depth.registered(canonical_path)
+    depth = topic_depth.checked(root, depth_case, target=canonical_path) if depth_case else None
+    ready = all(check['status'] == 'passed' for check in checks) and discovery_ready and (depth is None or depth['ready'])
     return {'schema_version': 1, 'authority': 'advisory_only', 'synthetic': bundle['synthetic'],
+            'artifact_path': canonical_path, **({'topic_depth': depth} if depth is not None else {}),
             'revision': bundle['revision'], 'bundle_sha256': digest(bundle), 'artifact_sha256': actual_sha,
             'specification_sha256': file_digest(safe_file(root, CATALOG)), 'specification_revision': catalog['revision'],
             'evaluator_sha256': file_digest(Path(__file__)),
@@ -1220,6 +1229,15 @@ def plan_work(bundle, root=ROOT, *, report=None):
             repair_ids.add(item['id'])
             ranked.append({**item, 'key': key, 'priority': 'P1', 'affected_ids': entry['affected'],
                            '_rank': (1, -len(entry['affected']), item['id'])})
+    import topic_depth
+    depth_ids = set()
+    for item in topic_depth.work_items(report):
+        key = item['key']
+        if key in previous:
+            skipped.append({'id': item['id'], 'key': key, 'reason': previous[key].get('reason', 'exact_duplicate')})
+            continue
+        depth_ids.add(item['id'])
+        ranked.append({**item, '_rank': (int(item['priority'][1]), -len(item['affected_ids']), item['id'])})
     ranked.sort(key=lambda x: x['_rank'])
     for item in ranked:
         del item['_rank']
@@ -1252,6 +1270,8 @@ def plan_work(bundle, root=ROOT, *, report=None):
         status, reason = 'pause', 'finite_budget_requires_agreement'
     elif ranked and int(ranked[0]['priority'][1]) > best_blocker:
         status, reason = 'pause', 'blocking_finding_requires_scoped_candidate'
+    elif selected and selected['id'] in depth_ids:
+        status, reason = 'continue', 'scoped_topic_depth_work'
     elif selected and selected['id'] in repair_ids:
         status, reason = 'continue', 'source_grounded_revision'
     elif bound and selected and selected.get('priority_basis') == 'computed_failed_criterion':
@@ -1266,10 +1286,11 @@ def plan_work(bundle, root=ROOT, *, report=None):
         status, reason = 'stop', 'recorded_checks_ready_for_independent_final_review'
     else:
         status, reason = 'noop', 'no_new_candidate_not_complete'
-    eligible = status == 'continue' and (reason in ('source_grounded_revision', 'confirmed_material_defect') or report['discovery_gate'] == 'recorded_ready')
+    eligible = status == 'continue' and (reason in ('source_grounded_revision', 'confirmed_material_defect', 'scoped_topic_depth_work') or report['discovery_gate'] == 'recorded_ready')
     return {'status': status, 'reason': reason, 'authority': 'advisory_only', 'synthetic': bundle['synthetic'],
             'bundle_sha256': report['bundle_sha256'], 'artifact_sha256': report['artifact_sha256'],
             'quality_status': report['status'], 'ranked': ranked, 'skipped': skipped,
+            **({'topic_depth': report['topic_depth']} if 'topic_depth' in report else {}),
             'selective_review': report['selective_review'],
             'next_candidate': selected['id'] if selected and eligible else None,
             'discovery': report['discovery'],

@@ -52,6 +52,8 @@ For real readiness, seed and maintain the [external requirement discovery loop](
 
 Compare the entire student route against external requirements, including capabilities absent from existing headings. Test both a useful addition and whether removing or merging an activity would break a prerequisite, answer key or later exercise. Review the candidate itself and its new-input results using the [material revision procedure](../../tools/material-revision.md).
 
+For beginner lesson selection or revision, use the [novice depth review](references/novice-depth.md) to fix the intended decision before editing, assess removals and compulsory additions, and verify the current recorded round.
+
 ## Examples
 
 Compare the same historical graph with two repository tools:

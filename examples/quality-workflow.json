@@ -22,8 +22,8 @@
       },
       {
         "id": "quality:bundle",
-        "revision": "synthetic-v5-material",
-        "sha256": "860734462834264ed2a67fa3946b7f0d3b5408d941ee068ef43bbaae088349c3"
+        "revision": "synthetic-v6-week01-depth",
+        "sha256": "1dbb240629de977c28104cfd66cf7e1d2eecdad87d4f4f1a0a370cb2cc30538d"
       },
       {
         "id": "quality:criteria",
@@ -33,7 +33,7 @@
       {
         "id": "quality:evaluator",
         "revision": "quality-v1",
-        "sha256": "16e46effec41e1600a8d55ec91e5002d8b0f46cda5ad25fc55d1f7c5bcf3687b"
+        "sha256": "2026ad83ad778ff78b8f6937ce50abf0b87982d98db3cfaf0c480339d7052a3a"
       }
     ],
     "skills": [
@@ -221,6 +221,46 @@
     {
       "id": "review:synthetic-material-v6",
       "context_fingerprint": "5b2b2a46a1ad549331d70df72334473f69750f708e32f67b0bd367ec32eca028",
+      "author_id": "synthetic-author",
+      "reviewer": {
+        "id": "synthetic-reviewer",
+        "model_family": "synthetic-family-b"
+      },
+      "checks": [
+        {
+          "id": "synthetic-reference-integrity",
+          "status": "passed",
+          "evidence_record_ids": [
+            "evidence:synthetic-fixture"
+          ]
+        }
+      ],
+      "conclusion": "accepted",
+      "reason": "Synthetic passing fixture for the revised plan context; not an attestation of real work."
+    },
+    {
+      "id": "review:synthetic-foundations-375966fe",
+      "context_fingerprint": "375966fe4c52a56c0a6f8c77602c669450210acd5e90d1cbfd8cd22de0449a16",
+      "author_id": "synthetic-author",
+      "reviewer": {
+        "id": "synthetic-reviewer",
+        "model_family": "synthetic-family-b"
+      },
+      "checks": [
+        {
+          "id": "synthetic-reference-integrity",
+          "status": "passed",
+          "evidence_record_ids": [
+            "evidence:synthetic-fixture"
+          ]
+        }
+      ],
+      "conclusion": "accepted",
+      "reason": "Synthetic passing fixture for the revised plan context; not an attestation of real work."
+    },
+    {
+      "id": "review:synthetic-foundations-cbbb1396",
+      "context_fingerprint": "cbbb13968e650e41bc7969fca5492929f4b5528010d880677439c50704a4e61b",
       "author_id": "synthetic-author",
       "reviewer": {
         "id": "synthetic-reviewer",

@@ -44,3 +44,5 @@ python3 tools/discovery_loop.py step discovery.json --event advance.json --root 
 - 필수 원문의 미해결 요구는 완료를 막는다. 부가 탐색은 배경 자료만 사용하는 질문에 `purpose: background`와 `scope_reason`을 명시한다. 그곳에서 실제 요구가 발견되면 해당 요구도 비교한다. 무관하다고 판단한 필수 자료는 직접 읽고 추출한 결과가 비어 있을 때 별도 검토자가 `exclude_probe`로 근거를 남긴다. 필수 자료에서 파생된 주변 질문에는 원래 읽기 근거와 별도 검토자의 범위 판단을 담은 `exclude_question`을 쓴다. 원문이 바뀌면 질문이 다시 열린다. 추출자 자신의 제외 판정이나 필수 질문의 배경 전환은 허용되지 않는다.
 
 실행 가능한 전 과정 예시는 저장소의 기능 검사에 있다. [교안 수정과 재개 검사](../tests/test_material_revision.py)
+
+등록된 새 1주차 입문 교안은 [주제별 깊이·근거와 재검토 절차](topic-depth.md)를 따른다. 직접 편집한 후보에도 같은 최종 검사가 적용된다.

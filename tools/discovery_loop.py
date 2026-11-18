@@ -291,6 +291,15 @@ def apply_event(view, event, seed):
                 or not re.fullmatch(r'[0-9a-f]{64}', receipt.get('work_key', ''))):
             raise ValueError('Advance requires verification of a separate reviewed candidate')
         path = text(data['candidate_path'], 'candidate_path')
+        from topic_depth_basis import registered
+        case = registered(old_path) or registered(path)
+        if case:
+            proof = receipt.get('topic_depth', {})
+            if (registered(old_path) != case or registered(path) != case or
+                    not re.fullmatch(re.escape(case) + r'/rounds/[0-9]{4}/candidate\.ipynb', path) or
+                    not re.fullmatch(r'[0-9a-f]{40}|[0-9a-f]{64}', proof.get('freeze_commit', '')) or
+                    not re.fullmatch(r'[0-9a-f]{64}', proof.get('round_sha256', ''))):
+                raise ValueError('Registered advances must retain their actual topic depth review and archived path')
         if path == old_path or path in {a['baseline_path'] for a in view['advances']}:
             raise ValueError('Keep each candidate and earlier baseline at separate paths')
         view['advances'].append({'event_id': event['id'], **data})
@@ -586,6 +595,13 @@ def step(state, event, root):
                 continue
             original = {k: v for k, v in old['data'].items() if k not in ('verification', 'input_sha256', 'baseline_path')}
             if old['op'] == payload['op'] and original == data:
+                from topic_depth import checked, registered
+                target = view['scope'].get('artifact_path', view['scope']['lesson_path'])
+                case = registered(target)
+                if case and target == data['candidate_path']:
+                    report = checked(root, case, target=target, stage=True)
+                    if not report['ready']:
+                        raise ValueError('Topic depth review required: ' + ', '.join(report['errors']))
                 return copy.deepcopy(state)
             raise ValueError('Event id reused for different content')
     if view['paused'] and payload['op'] not in ('resume', 'pause'):

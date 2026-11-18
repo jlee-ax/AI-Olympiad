@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": "synthetic-v5-material",
+  "revision": "synthetic-v6-week01-depth",
   "synthetic": true,
   "author_id": "synthetic-author",
   "artifact": {
@@ -262,8 +262,8 @@
     },
     {
       "id": "plan:synthetic-week1",
-      "revision": "synthetic-plan-context-v4",
-      "sha256": "c60063bf1c55b957f4b6271a0796d5301d9f209de28a91d468c0c20e72fa0133",
+      "revision": "synthetic-week01-depth-v6",
+      "sha256": "78d743c33d91c958d33dd36e994dc00507d78edecb3f30b986fed4109cc2521e",
       "path": "curriculum/student-plan.html",
       "locators": [
         "#week-1",
@@ -1923,6 +1923,570 @@
           "path": "curriculum/student-plan.html",
           "locator": "#week-1",
           "sha256": "abbae388541fe147240a427c6f7ff82ac4f09b5cb1e04f7c0ca88e8d80116670"
+        },
+        {
+          "id": "source_read:source:numpy",
+          "kind": "source_read",
+          "node_id": "source:numpy",
+          "url": "https://numpy.org/doc/stable/reference/generated/numpy.mean.html",
+          "locator": "axis parameter",
+          "sha256": "2857cc7e81eb5d937f7435ebcd848014ec04c9e84a3674c702273c56afee4b79"
+        }
+      ],
+      "dependency_scope_fingerprint": "1ab100560e79f63771ee49437071e2e4289af11ab156c3779f63429d55411bd2"
+    },
+    {
+      "id": "review:K02:synthetic-foundations-v6",
+      "criterion_id": "K02",
+      "object_id": "unit:axis",
+      "status": "passed",
+      "reviewer_id": "synthetic-independent-reviewer",
+      "evidence": [
+        {
+          "locator": "synthetic control receipt",
+          "observation": "Synthetic normal/fault control, not a learner result.",
+          "path": "examples/quality-receipt.json",
+          "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+        },
+        {
+          "path": "reviews/week02-plan-integration-20261111/synthetic-context-review.md",
+          "sha256": "fa2b9de88433e1505a1e094b77579502f5ecec9a948a3f7eb2c68a1da91e67cb",
+          "locator": "Synthetic scope impact assessment",
+          "observation": "Independent comparison finds the changed split guidance does not change the synthetic axis example; no real learner result."
+        }
+      ],
+      "reason": "Synthetic material-review control for the current scope. No actual educational review or learner observation.",
+      "context_fingerprint": "bb9f9e64bd9258ce95e9f64ef6b96f47d2ddee2818ac2daa841fff4aee3d7d0f",
+      "context_bindings": [
+        {
+          "id": "artifact:claim:axis:#week-1",
+          "kind": "artifact",
+          "object_id": "claim:axis",
+          "path": "lessons/week01/provenance/student-plan.html",
+          "locator": "#week-1",
+          "sha256": "7bb4cacb531bb70bf9d3d02fa8fbef2733778c62d5ca58e0f4ee8cd9519298e3"
+        },
+        {
+          "id": "artifact:unit:axis:#week-1",
+          "kind": "artifact",
+          "object_id": "unit:axis",
+          "path": "lessons/week01/provenance/student-plan.html",
+          "locator": "#week-1",
+          "sha256": "7bb4cacb531bb70bf9d3d02fa8fbef2733778c62d5ca58e0f4ee8cd9519298e3"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#plan-context",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#plan-context",
+          "sha256": "5fe3ec9ea9a2cd62398363901fa01f27329c0eeb125c746e2128c775f7c1fd50"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#scope-02",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#scope-02",
+          "sha256": "ce20c1b797d814cf1afe25ee037ed328f04bc333ca63b4caff0bdc76ad1c2161"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#scope-06",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#scope-06",
+          "sha256": "2f72a01636990fcf641fecff797d067b6ee8506bc59c4039c7a490f8828be08a"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#week-1",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#week-1",
+          "sha256": "1585a752f3057eee7240de6de3b0786f415d1b252b098e92554bf80ca645d4cd"
+        },
+        {
+          "id": "source_read:source:numpy",
+          "kind": "source_read",
+          "node_id": "source:numpy",
+          "url": "https://numpy.org/doc/stable/reference/generated/numpy.mean.html",
+          "locator": "axis parameter",
+          "sha256": "2857cc7e81eb5d937f7435ebcd848014ec04c9e84a3674c702273c56afee4b79"
+        }
+      ],
+      "dependency_scope_fingerprint": "1ab100560e79f63771ee49437071e2e4289af11ab156c3779f63429d55411bd2"
+    },
+    {
+      "id": "review:K05:synthetic-foundations-v6",
+      "criterion_id": "K05",
+      "object_id": "unit:axis",
+      "status": "passed",
+      "reviewer_id": "synthetic-independent-reviewer",
+      "evidence": [
+        {
+          "locator": "synthetic control receipt",
+          "observation": "Synthetic normal/fault control, not a learner result.",
+          "path": "examples/quality-receipt.json",
+          "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+        },
+        {
+          "path": "reviews/week02-plan-integration-20261111/synthetic-context-review.md",
+          "sha256": "fa2b9de88433e1505a1e094b77579502f5ecec9a948a3f7eb2c68a1da91e67cb",
+          "locator": "Synthetic scope impact assessment",
+          "observation": "Independent comparison finds the changed split guidance does not change the synthetic axis example; no real learner result."
+        }
+      ],
+      "reason": "Synthetic material-review control for the current scope. No actual educational review or learner observation.",
+      "context_fingerprint": "6531c14cbc4f195274979a405a349a8647ec083e7b885ffa91934608d8ab0c4f",
+      "context_bindings": [
+        {
+          "id": "artifact:claim:axis:#week-1",
+          "kind": "artifact",
+          "object_id": "claim:axis",
+          "path": "lessons/week01/provenance/student-plan.html",
+          "locator": "#week-1",
+          "sha256": "7bb4cacb531bb70bf9d3d02fa8fbef2733778c62d5ca58e0f4ee8cd9519298e3"
+        },
+        {
+          "id": "artifact:unit:axis:#week-1",
+          "kind": "artifact",
+          "object_id": "unit:axis",
+          "path": "lessons/week01/provenance/student-plan.html",
+          "locator": "#week-1",
+          "sha256": "7bb4cacb531bb70bf9d3d02fa8fbef2733778c62d5ca58e0f4ee8cd9519298e3"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#plan-context",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#plan-context",
+          "sha256": "5fe3ec9ea9a2cd62398363901fa01f27329c0eeb125c746e2128c775f7c1fd50"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#scope-02",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#scope-02",
+          "sha256": "ce20c1b797d814cf1afe25ee037ed328f04bc333ca63b4caff0bdc76ad1c2161"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#scope-06",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#scope-06",
+          "sha256": "2f72a01636990fcf641fecff797d067b6ee8506bc59c4039c7a490f8828be08a"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#week-1",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#week-1",
+          "sha256": "1585a752f3057eee7240de6de3b0786f415d1b252b098e92554bf80ca645d4cd"
+        },
+        {
+          "id": "source_read:source:numpy",
+          "kind": "source_read",
+          "node_id": "source:numpy",
+          "url": "https://numpy.org/doc/stable/reference/generated/numpy.mean.html",
+          "locator": "axis parameter",
+          "sha256": "2857cc7e81eb5d937f7435ebcd848014ec04c9e84a3674c702273c56afee4b79"
+        }
+      ],
+      "dependency_scope_fingerprint": "1ab100560e79f63771ee49437071e2e4289af11ab156c3779f63429d55411bd2"
+    },
+    {
+      "id": "review:K09:synthetic-foundations-v6",
+      "criterion_id": "K09",
+      "object_id": "unit:axis",
+      "status": "passed",
+      "reviewer_id": "synthetic-independent-reviewer",
+      "evidence": [
+        {
+          "locator": "synthetic control receipt",
+          "observation": "Synthetic normal/fault control, not a learner result.",
+          "path": "examples/quality-receipt.json",
+          "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+        },
+        {
+          "path": "reviews/week02-plan-integration-20261111/synthetic-context-review.md",
+          "sha256": "fa2b9de88433e1505a1e094b77579502f5ecec9a948a3f7eb2c68a1da91e67cb",
+          "locator": "Synthetic scope impact assessment",
+          "observation": "Independent comparison finds the changed split guidance does not change the synthetic axis example; no real learner result."
+        }
+      ],
+      "reason": "Synthetic material-review control for the current scope. No actual educational review or learner observation.",
+      "context_fingerprint": "c0fe69009bef9a93d80d3b59c8f5798178b9a5813dc5faf2dfbe8ec3b94e3459",
+      "context_bindings": [
+        {
+          "id": "artifact:claim:axis:#week-1",
+          "kind": "artifact",
+          "object_id": "claim:axis",
+          "path": "lessons/week01/provenance/student-plan.html",
+          "locator": "#week-1",
+          "sha256": "7bb4cacb531bb70bf9d3d02fa8fbef2733778c62d5ca58e0f4ee8cd9519298e3"
+        },
+        {
+          "id": "artifact:unit:axis:#week-1",
+          "kind": "artifact",
+          "object_id": "unit:axis",
+          "path": "lessons/week01/provenance/student-plan.html",
+          "locator": "#week-1",
+          "sha256": "7bb4cacb531bb70bf9d3d02fa8fbef2733778c62d5ca58e0f4ee8cd9519298e3"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#plan-context",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#plan-context",
+          "sha256": "5fe3ec9ea9a2cd62398363901fa01f27329c0eeb125c746e2128c775f7c1fd50"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#scope-02",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#scope-02",
+          "sha256": "ce20c1b797d814cf1afe25ee037ed328f04bc333ca63b4caff0bdc76ad1c2161"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#scope-06",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#scope-06",
+          "sha256": "2f72a01636990fcf641fecff797d067b6ee8506bc59c4039c7a490f8828be08a"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#week-1",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#week-1",
+          "sha256": "1585a752f3057eee7240de6de3b0786f415d1b252b098e92554bf80ca645d4cd"
+        },
+        {
+          "id": "source_read:source:numpy",
+          "kind": "source_read",
+          "node_id": "source:numpy",
+          "url": "https://numpy.org/doc/stable/reference/generated/numpy.mean.html",
+          "locator": "axis parameter",
+          "sha256": "2857cc7e81eb5d937f7435ebcd848014ec04c9e84a3674c702273c56afee4b79"
+        }
+      ],
+      "dependency_scope_fingerprint": "1ab100560e79f63771ee49437071e2e4289af11ab156c3779f63429d55411bd2"
+    },
+    {
+      "id": "review:K15:synthetic-foundations-v6",
+      "criterion_id": "K15",
+      "object_id": "unit:axis",
+      "status": "passed",
+      "reviewer_id": "synthetic-independent-reviewer",
+      "evidence": [
+        {
+          "locator": "synthetic control receipt",
+          "observation": "Synthetic normal/fault control, not a learner result.",
+          "path": "examples/quality-receipt.json",
+          "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+        },
+        {
+          "path": "reviews/week02-plan-integration-20261111/synthetic-context-review.md",
+          "sha256": "fa2b9de88433e1505a1e094b77579502f5ecec9a948a3f7eb2c68a1da91e67cb",
+          "locator": "Synthetic scope impact assessment",
+          "observation": "Independent comparison finds the changed split guidance does not change the synthetic axis example; no real learner result."
+        }
+      ],
+      "reason": "Synthetic scope carry-forward after separate inspection of the changed split principle; no actual learner, educator, source review or lesson outcome is asserted.",
+      "context_fingerprint": "0caa6a839852a6db9657ed6d61c428c4fab2c1e27d61a8b833263eccdfa667c1",
+      "context_bindings": [
+        {
+          "id": "artifact:claim:axis:#week-1",
+          "kind": "artifact",
+          "object_id": "claim:axis",
+          "path": "lessons/week01/provenance/student-plan.html",
+          "locator": "#week-1",
+          "sha256": "7bb4cacb531bb70bf9d3d02fa8fbef2733778c62d5ca58e0f4ee8cd9519298e3"
+        },
+        {
+          "id": "artifact:unit:axis:#week-1",
+          "kind": "artifact",
+          "object_id": "unit:axis",
+          "path": "lessons/week01/provenance/student-plan.html",
+          "locator": "#week-1",
+          "sha256": "7bb4cacb531bb70bf9d3d02fa8fbef2733778c62d5ca58e0f4ee8cd9519298e3"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#plan-context",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#plan-context",
+          "sha256": "5fe3ec9ea9a2cd62398363901fa01f27329c0eeb125c746e2128c775f7c1fd50"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#scope-02",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#scope-02",
+          "sha256": "ce20c1b797d814cf1afe25ee037ed328f04bc333ca63b4caff0bdc76ad1c2161"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#scope-06",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#scope-06",
+          "sha256": "2f72a01636990fcf641fecff797d067b6ee8506bc59c4039c7a490f8828be08a"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#week-1",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#week-1",
+          "sha256": "1585a752f3057eee7240de6de3b0786f415d1b252b098e92554bf80ca645d4cd"
+        },
+        {
+          "id": "source_read:source:numpy",
+          "kind": "source_read",
+          "node_id": "source:numpy",
+          "url": "https://numpy.org/doc/stable/reference/generated/numpy.mean.html",
+          "locator": "axis parameter",
+          "sha256": "2857cc7e81eb5d937f7435ebcd848014ec04c9e84a3674c702273c56afee4b79"
+        }
+      ],
+      "dependency_scope_fingerprint": "1ab100560e79f63771ee49437071e2e4289af11ab156c3779f63429d55411bd2"
+    },
+    {
+      "id": "review:K16:synthetic-foundations-v6",
+      "criterion_id": "K16",
+      "object_id": "unit:axis",
+      "status": "passed",
+      "reviewer_id": "synthetic-independent-reviewer",
+      "evidence": [
+        {
+          "locator": "synthetic control receipt",
+          "observation": "Synthetic normal/fault control, not a learner result.",
+          "path": "examples/quality-receipt.json",
+          "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+        },
+        {
+          "path": "reviews/week02-plan-integration-20261111/synthetic-context-review.md",
+          "sha256": "fa2b9de88433e1505a1e094b77579502f5ecec9a948a3f7eb2c68a1da91e67cb",
+          "locator": "Synthetic scope impact assessment",
+          "observation": "Independent comparison finds the changed split guidance does not change the synthetic axis example; no real learner result."
+        }
+      ],
+      "reason": "Synthetic material-review control for the current scope. No actual educational review or learner observation.",
+      "subchecks": {
+        "T01": {
+          "status": "passed",
+          "artifact_locators": [
+            "#week-1"
+          ],
+          "evidence": [
+            {
+              "locator": "synthetic control receipt",
+              "observation": "Synthetic normal/fault control, not a learner result.",
+              "path": "examples/quality-receipt.json",
+              "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+            }
+          ]
+        },
+        "T02": {
+          "status": "passed",
+          "artifact_locators": [
+            "#week-1"
+          ],
+          "evidence": [
+            {
+              "locator": "synthetic control receipt",
+              "observation": "Synthetic normal/fault control, not a learner result.",
+              "path": "examples/quality-receipt.json",
+              "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+            }
+          ]
+        },
+        "T03": {
+          "status": "passed",
+          "artifact_locators": [
+            "#week-1"
+          ],
+          "evidence": [
+            {
+              "locator": "synthetic control receipt",
+              "observation": "Synthetic normal/fault control, not a learner result.",
+              "path": "examples/quality-receipt.json",
+              "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+            }
+          ]
+        },
+        "T04": {
+          "status": "passed",
+          "artifact_locators": [
+            "#week-1"
+          ],
+          "evidence": [
+            {
+              "locator": "synthetic control receipt",
+              "observation": "Synthetic normal/fault control, not a learner result.",
+              "path": "examples/quality-receipt.json",
+              "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+            }
+          ]
+        },
+        "T05": {
+          "status": "passed",
+          "artifact_locators": [
+            "#week-1"
+          ],
+          "evidence": [
+            {
+              "locator": "synthetic control receipt",
+              "observation": "Synthetic normal/fault control, not a learner result.",
+              "path": "examples/quality-receipt.json",
+              "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+            }
+          ]
+        }
+      },
+      "context_fingerprint": "0b159167765536ebf1372c52a2a8d911caac8f67ce70dd3db11938c0c31fd9d2",
+      "context_bindings": [
+        {
+          "id": "artifact:claim:axis:#week-1",
+          "kind": "artifact",
+          "object_id": "claim:axis",
+          "path": "lessons/week01/provenance/student-plan.html",
+          "locator": "#week-1",
+          "sha256": "7bb4cacb531bb70bf9d3d02fa8fbef2733778c62d5ca58e0f4ee8cd9519298e3"
+        },
+        {
+          "id": "artifact:unit:axis:#week-1",
+          "kind": "artifact",
+          "object_id": "unit:axis",
+          "path": "lessons/week01/provenance/student-plan.html",
+          "locator": "#week-1",
+          "sha256": "7bb4cacb531bb70bf9d3d02fa8fbef2733778c62d5ca58e0f4ee8cd9519298e3"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#plan-context",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#plan-context",
+          "sha256": "5fe3ec9ea9a2cd62398363901fa01f27329c0eeb125c746e2128c775f7c1fd50"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#scope-02",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#scope-02",
+          "sha256": "ce20c1b797d814cf1afe25ee037ed328f04bc333ca63b4caff0bdc76ad1c2161"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#scope-06",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#scope-06",
+          "sha256": "2f72a01636990fcf641fecff797d067b6ee8506bc59c4039c7a490f8828be08a"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#week-1",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#week-1",
+          "sha256": "1585a752f3057eee7240de6de3b0786f415d1b252b098e92554bf80ca645d4cd"
+        },
+        {
+          "id": "source_read:source:numpy",
+          "kind": "source_read",
+          "node_id": "source:numpy",
+          "url": "https://numpy.org/doc/stable/reference/generated/numpy.mean.html",
+          "locator": "axis parameter",
+          "sha256": "2857cc7e81eb5d937f7435ebcd848014ec04c9e84a3674c702273c56afee4b79"
+        }
+      ],
+      "dependency_scope_fingerprint": "1ab100560e79f63771ee49437071e2e4289af11ab156c3779f63429d55411bd2"
+    },
+    {
+      "id": "review:K04:synthetic-foundations-v6",
+      "criterion_id": "K04",
+      "object_id": "unit:axis",
+      "status": "passed",
+      "reviewer_id": "synthetic-independent-reviewer",
+      "evidence": [
+        {
+          "locator": "synthetic control receipt",
+          "observation": "Synthetic normal/fault control, not a learner result.",
+          "path": "examples/quality-receipt.json",
+          "sha256": "b8021da49ed3495ca9867f1f0393cbd22af0dc0babde2796ebab4ed106ed6069"
+        },
+        {
+          "path": "reviews/week02-plan-integration-20261111/synthetic-context-review.md",
+          "sha256": "fa2b9de88433e1505a1e094b77579502f5ecec9a948a3f7eb2c68a1da91e67cb",
+          "locator": "Synthetic scope impact assessment",
+          "observation": "Independent comparison finds the changed split guidance does not change the synthetic axis example; no real learner result."
+        }
+      ],
+      "reason": "Synthetic material-review control for the current scope. No actual educational review or learner observation.",
+      "context_fingerprint": "3a54d5aea730c8a16ee52b631c8b70ed3394d6033df7a072f3e23db06e123848",
+      "context_bindings": [
+        {
+          "id": "artifact:claim:axis:#week-1",
+          "kind": "artifact",
+          "object_id": "claim:axis",
+          "path": "lessons/week01/provenance/student-plan.html",
+          "locator": "#week-1",
+          "sha256": "7bb4cacb531bb70bf9d3d02fa8fbef2733778c62d5ca58e0f4ee8cd9519298e3"
+        },
+        {
+          "id": "artifact:unit:axis:#week-1",
+          "kind": "artifact",
+          "object_id": "unit:axis",
+          "path": "lessons/week01/provenance/student-plan.html",
+          "locator": "#week-1",
+          "sha256": "7bb4cacb531bb70bf9d3d02fa8fbef2733778c62d5ca58e0f4ee8cd9519298e3"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#plan-context",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#plan-context",
+          "sha256": "5fe3ec9ea9a2cd62398363901fa01f27329c0eeb125c746e2128c775f7c1fd50"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#scope-02",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#scope-02",
+          "sha256": "ce20c1b797d814cf1afe25ee037ed328f04bc333ca63b4caff0bdc76ad1c2161"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#scope-06",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#scope-06",
+          "sha256": "2f72a01636990fcf641fecff797d067b6ee8506bc59c4039c7a490f8828be08a"
+        },
+        {
+          "id": "dependency:plan:synthetic-week1:#week-1",
+          "kind": "dependency",
+          "node_id": "plan:synthetic-week1",
+          "path": "curriculum/student-plan.html",
+          "locator": "#week-1",
+          "sha256": "1585a752f3057eee7240de6de3b0786f415d1b252b098e92554bf80ca645d4cd"
         },
         {
           "id": "source_read:source:numpy",

@@ -30,6 +30,28 @@ def run_gate(skill, *args):
 
 
 class CaseTests(unittest.TestCase):
+    def test_compared_arms_bundle_project_imports_of_material_revision(self):
+        import ast
+        todo = ['tools/material_revision.py']
+        seen = set()
+        while todo:
+            relative = todo.pop()
+            if relative in seen:
+                continue
+            seen.add(relative)
+            self.assertEqual(gate.COMMON.get(relative), relative)
+            tree = ast.parse((ROOT / relative).read_text())
+            dependencies = set()
+            for node in ast.walk(tree):
+                if isinstance(node, ast.Import):
+                    dependencies.update(a.name for a in node.names)
+                elif isinstance(node, ast.ImportFrom) and node.module:
+                    dependencies.add(node.module)
+            for module in dependencies:
+                local_module = 'tools/' + module.split('.')[0] + '.py'
+                if (ROOT / local_module).is_file():
+                    todo.append(local_module)
+
     def test_handoff_decisions_and_supersession(self):
         handoff = gate.strict_json(ROOT / gate.COMMON['case-inputs/handoff.json'])
         self.assertEqual(workflow.validate_state(handoff), ([], []))

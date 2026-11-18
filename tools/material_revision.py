@@ -10,6 +10,7 @@ import tempfile
 
 import discovery_loop as discovery
 import quality
+import topic_depth
 import workflow
 
 KINDS = {'add', 'deepen', 'replace', 'merge', 'remove', 'reorder', 'move', 'keep'}
@@ -231,6 +232,27 @@ def publish_candidate(path, payload):
         temporary.unlink(missing_ok=True)
 
 
+def depth_intent(root, item, report, patch):
+    """Convert the author's scoped response to an adverse external judgment into the existing typed edit."""
+    tid = item['topic']
+    intent = patch.get('intent')
+    if not isinstance(intent, dict):
+        raise ValueError('Supply patch.intent with a typed action and the route for topic ' + tid)
+    ordinal = report['topic_depth']['subject_round']
+    topic_ids = [tid, *topic_depth.names(patch.get('related_topics', []), 'related depth topics')]
+    decisions = report['topic_depth']['history'][ordinal - 1]['decisions']
+    if len(topic_ids) != len(set(topic_ids)) or any(decisions.get(t) != 'revise' for t in topic_ids):
+        raise ValueError('Related topic repairs need current independent revise judgments')
+    dimensions = [{'id': t, 'judgment': 'gap'} for t in topic_ids]
+    validate_intent(intent, {'judgment': 'gap', 'dimensions': dimensions}, dimensions)
+    case = topic_depth.registered(report['artifact_path'])
+    record = quality.load(root / case / 'rounds' / f'{ordinal:04d}' / 'round.json')
+    mapped = {cid for t in topic_ids for tier in topic_depth.TIERS for cid in record['topics'][t][tier]}
+    if any(set(action['before']) - mapped for action in intent['actions'] if action['kind'] != 'keep'):
+        raise ValueError('Depth edit exceeds the selected topic')
+    return {**item, 'work_kind': 'revise_lesson', 'intent': intent}
+
+
 def run(command, root, state, bundle, patch, output, review=None):
     report = quality.evaluate(bundle, root)
     plan = quality.plan_work(bundle, root, report=report)
@@ -238,6 +260,8 @@ def run(command, root, state, bundle, patch, output, review=None):
     if decision['reason'] != 'scoped_repair_only':
         raise ValueError('Repair unavailable: ' + decision['reason'])
     item = decision['candidate']
+    if item.get('work_kind') == 'revise_topic_depth':
+        item = depth_intent(root, item, report, patch)
     if item.get('work_kind') != 'revise_lesson':
         raise ValueError('A source-grounded typed edit needs to be selected first')
     baseline = quality.safe_file(root, bundle['artifact']['path'])
@@ -249,6 +273,9 @@ def run(command, root, state, bundle, patch, output, review=None):
     original = baseline.read_bytes()
     if hashlib.sha256(original).hexdigest() != report['artifact_sha256'] or report['artifact_sha256'] != bundle['artifact']['sha256']:
         raise ValueError('Baseline changed during planning')
+    baseline_name = baseline.relative_to(root.resolve()).as_posix()
+    output_name = path.resolve().relative_to(root.resolve()).as_posix()
+    case = topic_depth.before_revision(root.resolve(), baseline_name, output_name, report['artifact_sha256'])
     base = json.loads(original, object_pairs_hook=quality._pairs)
     result, changes = build(base, item, patch, registered_cells(bundle))
     payload = (json.dumps(result, ensure_ascii=False, indent=1, allow_nan=False) + '\n').encode()
@@ -257,7 +284,16 @@ def run(command, root, state, bundle, patch, output, review=None):
                 'candidate_sha256': quality.file_digest(path), 'release_ready': False}
     if path.read_bytes() != payload:
         raise ValueError('Candidate differs from the reviewed patch')
-    return {**review_candidate(root, path, item, review, patch['author']), 'diff': changes}
+    verified = review_candidate(root, path, item, review, patch['author'])
+    if case:
+        depth = topic_depth.checked(root, case, target=output_name, stage=True)
+        if not depth['ready']:
+            raise ValueError('Topic depth review required: ' + ', '.join(depth['errors']))
+        if depth['history'][-1]['author'] != patch['author'].strip().casefold():
+            raise ValueError('Iteration and patch must identify the same candidate author')
+        verified['topic_depth'] = {'freeze_commit': depth['freeze_commit'],
+                                   'round_sha256': depth['history'][-1]['round_sha256']}
+    return {**verified, 'diff': changes}
 
 
 def main():

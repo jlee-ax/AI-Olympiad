@@ -566,10 +566,25 @@ def decide(state, quality_report=None, discovery_report=None, *, repair_plan=Non
         if any(item not in bound_inputs for item in required_inputs):
             return finish('blocked', 'quality_context_not_bound')
         checks = quality_report['checks']
+        import topic_depth
+        depth_case = topic_depth.registered(quality_report.get('artifact_path'))
+        if discovery_report:
+            subject = discovery_report['scope']
+            depth_case = depth_case or topic_depth.registered(subject.get('artifact_path', subject.get('lesson_path')))
+        if depth_case:
+            depth = quality_report.get('topic_depth', {})
+            result['topic_depth'] = depth
+            if repair_plan is None and depth.get('ready') is not True:
+                return finish('blocked', 'topic_depth_review_required')
+            if repair_plan is not None and not depth.get('freeze_commit'):
+                return finish('blocked', 'topic_depth_freeze_required')
+            if depth.get('manifest') not in bound_inputs:
+                return finish('blocked', 'topic_depth_context_not_bound')
         if repair_plan is not None:
             result['release_ready'] = False
             if (not isinstance(repair_plan, dict) or repair_plan.get('bundle_sha256') != quality_report['bundle_sha256']
                     or repair_plan.get('artifact_sha256') != context['artifact']['sha256']
+                    or (depth_case and repair_plan.get('topic_depth') != quality_report.get('topic_depth'))
                     or not discovery_report or repair_plan.get('discovery') != discovery_report
                     or quality_report.get('discovery') != discovery_report):
                 return finish('blocked', 'repair_context_not_bound')

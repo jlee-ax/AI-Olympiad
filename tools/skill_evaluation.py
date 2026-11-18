@@ -27,7 +27,7 @@ COMMON = {path: path for path in (
     'skills/references/workflow.md', 'tools/workflow.py', 'tools/quality.py',
     'tools/validate.py', 'tools/graph_paths.py', 'tools/lesson_validation.py',
     'tools/review_preflight.py', 'tools/contest_depth.py', 'tools/discovery_loop.py',
-    'tools/material_revision.py', 'tools/material-revision.md', 'tools/README.md', 'tools/review-preflight.md', 'tools/graph-paths.md', 'tools/discovery-loop.md',
+    'tools/material_revision.py', 'tools/topic_depth.py', 'tools/topic_depth_basis.py', 'tools/topic-depth.md', 'tools/material-revision.md', 'tools/README.md', 'tools/review-preflight.md', 'tools/graph-paths.md', 'tools/discovery-loop.md',
     'tools/MANUAL-CYCLE.md', 'tests/fixtures/candidate-graph-missing-path.json',
     'examples/graph-path.json', 'examples/graph-path-source.txt',
 )}
