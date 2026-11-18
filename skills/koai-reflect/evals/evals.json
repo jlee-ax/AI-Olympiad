@@ -1,0 +1,54 @@
+{
+  "skill_name": "koai-reflect",
+  "evals": [
+    {
+      "id": "reflect-repeat-cause",
+      "expected_skill": "koai-reflect",
+      "should_trigger": true,
+      "prompt": "Two distinct replay runs R4 and R9 used a superseded source and accepted an old review. A healthy replay R8 used the current source. Record faulty_runs in input order, healthy_run, and how many distinct faulty runs support the proposal (independent_runs). Explain a narrowly targeted test. Write a JSON object with these fields to /workspace/output/answer.json. Explain your result briefly in your response. The supplied repository is /workspace/repo.",
+      "expected_output": "The output fields match {\"faulty_runs\": [\"R4\", \"R9\"], \"healthy_run\": \"R8\", \"independent_runs\": 2}.",
+      "assertions": [
+        "Proposes a stale-source control that preserves R8 and limits the conclusion to the recorded runs."
+      ],
+      "koai_control": "normal",
+      "koai_facts": {
+        "faulty_runs": [
+          "R4",
+          "R9"
+        ],
+        "healthy_run": "R8",
+        "independent_runs": 2
+      }
+    },
+    {
+      "id": "reflect-same-receipt",
+      "expected_skill": "koai-reflect",
+      "should_trigger": true,
+      "prompt": "Incident summaries A and B both refer to the single execution R3. Both blame the same validation omission; no other run is cited. Record distinct_runs, whether this establishes recurrence (recurrence), and whether an improvement has been measured (effect_measured). Write a JSON object with these fields to /workspace/output/answer.json. Explain your result briefly in your response. The supplied repository is /workspace/repo.",
+      "expected_output": "The output fields match {\"distinct_runs\": 1, \"recurrence\": false, \"effect_measured\": false}.",
+      "assertions": [
+        "Counts the underlying execution once and withholds a causal effectiveness claim."
+      ],
+      "koai_control": "fault",
+      "koai_facts": {
+        "distinct_runs": 1,
+        "recurrence": false,
+        "effect_measured": false
+      }
+    },
+    {
+      "id": "reflect-unit-conversion",
+      "expected_skill": null,
+      "should_trigger": false,
+      "prompt": "A recording lasts 3 minutes 25 seconds. Record total_seconds. Write a JSON object with these fields to /workspace/output/answer.json. Explain your result briefly in your response. The supplied repository is /workspace/repo.",
+      "expected_output": "The output fields match {\"total_seconds\": 205}.",
+      "assertions": [
+        "Returns the duration in seconds."
+      ],
+      "koai_control": "off_scope",
+      "koai_facts": {
+        "total_seconds": 205
+      }
+    }
+  ]
+}

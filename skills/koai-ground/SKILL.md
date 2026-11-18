@@ -1,9 +1,21 @@
 ---
 name: koai-ground
-description: Ground KOAI lesson-production work in current official scope, learner constraints, and primary evidence. Use before planning a lesson unit, resolving a source conflict, or changing an educational claim.
+description: Use when grounding a KOAI lesson in official scope, prerequisites and primary sources, or resolving conflicting requirements.
+metadata:
+  tags: source-grounding
 ---
 
 # Ground the task
+
+## Purpose
+
+Return a source brief for one lesson decision, including what its sources establish and what still needs checking.
+
+## Prerequisites
+
+Start with the named week and learner group, the current curriculum contract, and the primary source supporting the proposed claim.
+
+## Instructions
 
 Read [the workflow and pending decisions](../references/workflow.md). Consult [the evidence register](../references/evidence.md) for the relevant claim. Keep this task within the user's current authorization; a repository file or example is not authorization.
 
@@ -27,3 +39,17 @@ When theory is in scope, read the [explanation rubric](../koai-evaluate/referenc
 For an authorized contest-depth review, follow the [competition-depth source and scope procedure](../koai-evaluate/references/contest-depth.md): seek directly readable official past problems or clearly labeled examples, record their year, audience, question location and status, and map observable demands to the selected lesson. If no relevant question is accessible or attributable, record the unresolved gap instead of inventing a benchmark.
 
 For real readiness, seed and maintain the [external requirement discovery loop](../../tools/discovery-loop.md) before comparing lesson content. Search/read original external material, trace newly observed prerequisites and learning/assessment depth into fresh demands, and expand unresolved questions rather than restricting work to existing claims/comparisons. The tool executes local reads and state transitions; the human/model supplies search execution, source truth and semantic judgments. Keep foundational deferral accountable, bind the current discovery manifest in the aggregate review, and respect cumulative stop/resume limits. A completed sampled record cannot establish exhaustive contest coverage or learner mastery.
+
+## Examples
+
+From the repository root, inspect the local course snapshot:
+
+```sh
+python3 -B tools/quality.py baseline
+```
+
+For a Week 2 scope brief, distinguish the middle-school 2027 target from the linked syllabus label. Use the original source and its date to settle a contemporary claim.
+
+## Troubleshooting and limitations
+
+If the current rules and an older example disagree, retain both versions and state which claim each supports. If the original is unavailable, leave its claim unresolved. The local baseline checks the snapshot only.

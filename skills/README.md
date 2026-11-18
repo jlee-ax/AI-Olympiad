@@ -19,3 +19,5 @@ Use the [concrete quality specification](references/quality-specification.md) an
 Shared references contain [the workflow and pending decisions](references/workflow.md) and [research evidence](references/evidence.md). Detailed [evaluation guidance](koai-evaluate/references/evaluation.md) belongs to the evaluation skill; [state and CLI documentation](../tools/README.md) lives beside the tool. The [template](../templates/workflow.json) is inactive until configured from real decisions.
 
 Educational benefit and reduced human effort remain hypotheses. Source and license information is retained in [third-party notices](../THIRD_PARTY_NOTICES.md).
+
+To validate the five public case sets and prepare paired Harbor tasks, follow the [NVIDIA SkillEvaluator procedure](../tools/skill-evaluation.md).

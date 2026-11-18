@@ -1,9 +1,21 @@
 ---
 name: koai-evaluate
-description: Evaluate an exact KOAI artifact revision with frozen criteria and independently grounded checks. Use to review a proposed lesson change, calibrate an evaluator, or determine what a claimed improvement actually establishes.
+description: Use when reviewing a KOAI lesson revision, checking an answer or testing whether a claimed improvement has independent evidence.
+metadata:
+  tags: artifact-evaluation
 ---
 
 # Evaluate the artifact and the measurement
+
+## Purpose
+
+Return the strongest claim supported by the actual artifact, source and checks, with an explicit disposition for each unresolved claim.
+
+## Prerequisites
+
+Use a named artifact revision, frozen criteria, the baseline or comparison artifact, and access to independent evidence or a reproducible oracle.
+
+## Instructions
 
 Read [the evaluation protocol](references/evaluation.md) and [workflow contract](../../tools/README.md). Use agreed criteria; when criteria are unresolved, report the evidence needed instead of inventing a pass score.
 
@@ -37,3 +49,18 @@ Apply the supplementary [competition-depth review](references/contest-depth.md) 
 Before claiming a lesson revision is ready, enumerate the whole artifact's sections/objectives and mark the coverage actually reviewed. Do not generalize a few repaired comparisons to whole-lesson sufficiency. Run [joined review preflight](../../tools/review-preflight.md) on the actual artifact root, comparison bundle, [seven-role graph declarations](../../tools/graph-paths.md) and updated workflow state. Bind its `required_inputs` before a fresh aggregate review. Report missing paths, stale local bytes, unreviewed objectives, pending criteria and learner observations separately; do not manufacture acceptance or agreement to make the report pass. Keep older reviews and attempts as history.
 
 For real readiness, seed and maintain the [external requirement discovery loop](../../tools/discovery-loop.md) before comparing lesson content. Search/read original external material, trace newly observed prerequisites and learning/assessment depth into fresh demands, and expand unresolved questions rather than restricting work to existing claims/comparisons. The tool executes local reads and state transitions; the human/model supplies search execution, source truth and semantic judgments. Keep foundational deferral accountable, bind the current discovery manifest in the aggregate review, and respect cumulative stop/resume limits. A completed sampled record cannot establish exhaustive contest coverage or learner mastery.
+
+## Examples
+
+Compare the same historical graph with two repository tools:
+
+```sh
+python3 -B tools/validate.py tests/fixtures/candidate-graph-missing-path.json
+python3 -B tools/graph_paths.py tests/fixtures/candidate-graph-missing-path.json
+```
+
+The graph has valid nodes and edges. Its learning path remains a gap because the required teaching and assessment roles were not declared.
+
+## Troubleshooting and limitations
+
+A structural pass can coexist with a failed or missing substantive check. Record the actual outcome of each and request only the evidence needed to settle the open claim.

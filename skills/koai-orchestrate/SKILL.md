@@ -1,9 +1,21 @@
 ---
 name: koai-orchestrate
-description: Coordinate a bounded KOAI week 1–2 lesson-production unit using explicit ownership, verification, and checkpoints. Use to plan or resume authorized material work, allocate independent tasks, or decide the next work unit.
+description: Use when choosing the next bounded KOAI production step, assigning a verifier, or resuming at a budget checkpoint.
+metadata:
+  tags: workflow-coordination
 ---
 
 # Coordinate one verifiable unit
+
+## Purpose
+
+Choose one executable unit within the recorded scope and return its owner, checks, checkpoint and stop condition.
+
+## Prerequisites
+
+Use the actual state, current artifact and agreed completion condition. Production decisions also need the bound quality assessment and discovery evidence.
+
+## Instructions
 
 Read [the workflow and pending decisions](../references/workflow.md), [evaluation protocol](../koai-evaluate/references/evaluation.md), and [state contract](../../tools/README.md). Invoke koai-ground for source/scope uncertainty and koai-recall before resuming.
 
@@ -39,3 +51,18 @@ For an authorized lesson unit, include the [competition-depth comparison](../koa
 On lesson handoff or resume, run [joined review preflight](../../tools/review-preflight.md), including active-record recall and current artifact/path/bundle bindings, after the separate substantive review. Use [the manual cycle](../../tools/MANUAL-CYCLE.md) to preserve bounded work, dispositions and checkpoints. Its advisory result is not an executor; a complete declared path is not proof of correct teaching or observed independence. Queue remaining whole-artifact gaps explicitly rather than repeating already verified unaffected work.
 
 For real readiness, seed and maintain the [external requirement discovery loop](../../tools/discovery-loop.md) before comparing lesson content. Search/read original external material, trace newly observed prerequisites and learning/assessment depth into fresh demands, and expand unresolved questions rather than restricting work to existing claims/comparisons. The tool executes local reads and state transitions; the human/model supplies search execution, source truth and semantic judgments. Keep foundational deferral accountable, bind the current discovery manifest in the aggregate review, and respect cumulative stop/resume limits. A completed sampled record cannot establish exhaustive contest coverage or learner mastery.
+
+## Examples
+
+Inspect the unconfigured template from the repository root:
+
+```sh
+python3 -B tools/workflow.py validate templates/workflow.json
+python3 -B tools/workflow.py decide templates/workflow.json
+```
+
+The record is structurally valid. Its decision is `pause / operator_agreement_required`; use the reason in the handoff.
+
+## Troubleshooting and limitations
+
+A valid JSON state can still yield a pause or stop. Keep spent budget and the last completed evidence with the checkpoint. The CLI does not launch a worker.

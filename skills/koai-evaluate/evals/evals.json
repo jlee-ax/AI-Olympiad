@@ -1,0 +1,62 @@
+{
+  "skill_name": "koai-evaluate",
+  "evals": [
+    {
+      "id": "evaluate-axis-change",
+      "expected_skill": "koai-evaluate",
+      "should_trigger": true,
+      "prompt": "Use the student notebook lessons/week01/week01_integrated.ipynb as background for this fresh example. A Week 1 note uses a basic slice v = a[:,0] of the integer array a = [[2,8],[3,9]], an independent c = v.copy(), and an integer saved = int(v.sum()). After v[1] = 7, record first_column, copy_values, saved and recomputed_sum. Explain which quantities share storage. Write a JSON object with these fields to /workspace/output/answer.json. Explain your result briefly in your response. The supplied repository is /workspace/repo.",
+      "expected_output": "The output fields match {\"first_column\": [2, 7], \"copy_values\": [2, 3], \"saved\": 5, \"recomputed_sum\": 9}.",
+      "assertions": [
+        "Distinguishes the mutable slice, independent copy and previously computed scalar on this new input."
+      ],
+      "koai_control": "normal",
+      "koai_facts": {
+        "first_column": [
+          2,
+          7
+        ],
+        "copy_values": [
+          2,
+          3
+        ],
+        "saved": 5,
+        "recomputed_sum": 9
+      }
+    },
+    {
+      "id": "evaluate-temporal-center",
+      "expected_skill": "koai-evaluate",
+      "should_trigger": true,
+      "prompt": "Use the student notebook lessons/week02/week02_temporal_preprocessing.ipynb as background for this fresh example. A Week 2 example centers validation data using both chronological training readings [2,4,6] and the later validation reading 100. Return fit_mean and centered_validation for a train-only fit and mark the proposed method as leakage (leakage). Explain which data may influence fitting. Write a JSON object with these fields to /workspace/output/answer.json. Explain your result briefly in your response. The supplied repository is /workspace/repo.",
+      "expected_output": "The output fields match {\"fit_mean\": 4, \"centered_validation\": 96, \"leakage\": true}.",
+      "assertions": [
+        "Independently computes the train-only mean and identifies the future information in the proposed rule."
+      ],
+      "koai_control": "fault",
+      "koai_facts": {
+        "fit_mean": 4,
+        "centered_validation": 96,
+        "leakage": true
+      }
+    },
+    {
+      "id": "evaluate-label-order",
+      "expected_skill": null,
+      "should_trigger": false,
+      "prompt": "Sort these unique lesson labels alphabetically: pear, apple, plum. Record ordered_labels. Write a JSON object with these fields to /workspace/output/answer.json. Explain your result briefly in your response. The supplied repository is /workspace/repo.",
+      "expected_output": "The output fields match {\"ordered_labels\": [\"apple\", \"pear\", \"plum\"]}.",
+      "assertions": [
+        "Returns the three labels in lexical order."
+      ],
+      "koai_control": "off_scope",
+      "koai_facts": {
+        "ordered_labels": [
+          "apple",
+          "pear",
+          "plum"
+        ]
+      }
+    }
+  ]
+}

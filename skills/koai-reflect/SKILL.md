@@ -1,9 +1,21 @@
 ---
 name: koai-reflect
-description: Propose tested improvements to KOAI workflows from repeated, evidenced failures. Use after a bounded campaign or recurring correction to decide whether to revise a tool, existing skill, or memory policy.
+description: Use when repeated KOAI workflow failures suggest a change to a tool, skill or retrieval rule and need a measured proposal.
+metadata:
+  tags: workflow-improvement
 ---
 
 # Convert evidence into a bounded improvement proposal
+
+## Purpose
+
+Tie a proposed workflow change to a recurrent cause and a neighboring valid case that the change must preserve.
+
+## Prerequisites
+
+Start with distinct failure records, their source and artifact revisions, and the current procedure against which to compare a change.
+
+## Instructions
 
 Read [the relevant research evidence](../references/evidence.md) and [evaluation protocol](../koai-evaluate/references/evaluation.md). Work from actual scoped records; label synthetic cases. Do not treat a one-off preference or an unverified agent explanation as a general lesson.
 
@@ -25,3 +37,18 @@ Return a reviewable improvement proposal, provenance, bounded evaluation results
 Use the [criterion catalog](../references/criteria.json) to identify the exact failure mechanism and [effect-testing contract](../references/quality-specification.md#expected-effects-counterevidence-and-open-decisions). A better schema, caught fault or model review does not establish learner benefit. Compare with an equal-resource baseline, known-good/error controls, untouched related tasks, regressions and no-change outcomes. Treat priority rules, diagnostic cutoffs and calibration tolerances as explicit decisions; do not invent them from a generic age label.
 
 Include the [theory rubric](../koai-evaluate/references/theory-explanation.json) when a failure concerns explanation rather than execution. Test missing or misleading notation, unsupported derivation, diagram mapping, state tracing and comprehension prompts separately. Preserve a neighboring valid explanation and test the actual binding/selection behavior; a passed gate still does not establish learner benefit.
+
+## Examples
+
+For repeated complaints that declared graphs pass despite missing assessments, reproduce the difference on the historical case:
+
+```sh
+python3 -B tools/graph_paths.py tests/fixtures/candidate-graph-missing-path.json
+python3 -B tools/graph_paths.py examples/graph-path.json --root .
+```
+
+The first records a gap. The second records a complete fictional path and supplies a neighboring valid control.
+
+## Troubleshooting and limitations
+
+If two reports cite the same failed attempt, count one occurrence. If the healthy control also fails the proposed check, withhold the change and retain both outcomes.

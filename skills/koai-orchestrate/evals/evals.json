@@ -1,0 +1,51 @@
+{
+  "skill_name": "koai-orchestrate",
+  "evals": [
+    {
+      "id": "orchestrate-checkpoint",
+      "expected_skill": "koai-orchestrate",
+      "should_trigger": true,
+      "prompt": "In memory, use the state in case-inputs/handoff.json, set minutes_since_checkpoint to its configured checkpoint boundary, and inspect the recommended next action. Record status, reason and whether this launches a worker (launches_worker). Write a JSON object with these fields to /workspace/output/answer.json. Explain your result briefly in your response. The supplied repository is /workspace/repo.",
+      "expected_output": "The output fields match {\"status\": \"pause\", \"reason\": \"checkpoint_due\", \"launches_worker\": false}.",
+      "assertions": [
+        "Reports the checkpoint before further work and keeps the checkpoint advisory."
+      ],
+      "koai_control": "normal",
+      "koai_facts": {
+        "status": "pause",
+        "reason": "checkpoint_due",
+        "launches_worker": false
+      }
+    },
+    {
+      "id": "orchestrate-spent-budget",
+      "expected_skill": "koai-orchestrate",
+      "should_trigger": true,
+      "prompt": "A handoff proposes another iteration. Inspect an in-memory copy of case-inputs/handoff.json with iterations_used equal to max_iterations. Return status, reason and whether to reset the counter on restart (reset_counter). Write a JSON object with these fields to /workspace/output/answer.json. Explain your result briefly in your response. The supplied repository is /workspace/repo.",
+      "expected_output": "The output fields match {\"status\": \"stop\", \"reason\": \"iteration_budget_exhausted\", \"reset_counter\": false}.",
+      "assertions": [
+        "Honors cumulative limits on restart and leaves the supplied state unchanged."
+      ],
+      "koai_control": "fault",
+      "koai_facts": {
+        "status": "stop",
+        "reason": "iteration_budget_exhausted",
+        "reset_counter": false
+      }
+    },
+    {
+      "id": "orchestrate-elapsed",
+      "expected_skill": null,
+      "should_trigger": false,
+      "prompt": "A clock starts at 09:14 and the same-day interval ends at 09:31. Record elapsed_minutes. Write a JSON object with these fields to /workspace/output/answer.json. Explain your result briefly in your response. The supplied repository is /workspace/repo.",
+      "expected_output": "The output fields match {\"elapsed_minutes\": 17}.",
+      "assertions": [
+        "Computes the stated interval without interpreting it as authorization for a task."
+      ],
+      "koai_control": "off_scope",
+      "koai_facts": {
+        "elapsed_minutes": 17
+      }
+    }
+  ]
+}

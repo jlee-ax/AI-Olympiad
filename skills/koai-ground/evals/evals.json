@@ -1,0 +1,55 @@
+{
+  "skill_name": "koai-ground",
+  "evals": [
+    {
+      "id": "ground-source-scope",
+      "expected_skill": "koai-ground",
+      "should_trigger": true,
+      "prompt": "Read curriculum/contract.json and skills/references/source-readings.json in the supplied repo. Reconcile the competition target with the linked syllabus snapshot. Record target_year, syllabus_year, and whether the evidence establishes student mastery (mastery_observed). Write a JSON object with these fields to /workspace/output/answer.json. Explain your result briefly in your response. The supplied repository is /workspace/repo.",
+      "expected_output": "The output fields match {\"target_year\": 2027, \"syllabus_year\": 2026, \"mastery_observed\": false}.",
+      "assertions": [
+        "Distinguishes the rule year from the syllabus label and limits the claim to planned scope."
+      ],
+      "koai_control": "normal",
+      "koai_facts": {
+        "target_year": 2027,
+        "syllabus_year": 2026,
+        "mastery_observed": false
+      }
+    },
+    {
+      "id": "ground-written-time",
+      "expected_skill": "koai-ground",
+      "should_trigger": true,
+      "prompt": "A proposed Week 2 ledger adds the written-practice minutes to the three class blocks again. Inspect curriculum/contract.json. Record corrected total_minutes, written_minutes, and whether the written block is extra (written_is_extra). Write a JSON object with these fields to /workspace/output/answer.json. Explain your result briefly in your response. The supplied repository is /workspace/repo.",
+      "expected_output": "The output fields match {\"total_minutes\": 120, \"written_minutes\": 10, \"written_is_extra\": false}.",
+      "assertions": [
+        "Locates Week 2 and explains why its written component is inside the noncoding allocation."
+      ],
+      "koai_control": "fault",
+      "koai_facts": {
+        "total_minutes": 120,
+        "written_minutes": 10,
+        "written_is_extra": false
+      }
+    },
+    {
+      "id": "ground-number-order",
+      "expected_skill": null,
+      "should_trigger": false,
+      "prompt": "Arrange the supplied three identifiers by numeric suffix: lab-11, lab-2, lab-5. Record ordered_ids. Write a JSON object with these fields to /workspace/output/answer.json. Explain your result briefly in your response. The supplied repository is /workspace/repo.",
+      "expected_output": "The output fields match {\"ordered_ids\": [\"lab-2\", \"lab-5\", \"lab-11\"]}.",
+      "assertions": [
+        "Returns the sorted identifiers without introducing curriculum or source claims."
+      ],
+      "koai_control": "off_scope",
+      "koai_facts": {
+        "ordered_ids": [
+          "lab-2",
+          "lab-5",
+          "lab-11"
+        ]
+      }
+    }
+  ]
+}

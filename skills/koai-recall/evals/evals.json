@@ -1,0 +1,52 @@
+{
+  "skill_name": "koai-recall",
+  "evals": [
+    {
+      "id": "recall-current-record",
+      "expected_skill": "koai-recall",
+      "should_trigger": true,
+      "prompt": "Read case-inputs/handoff.json in the supplied repo. For the axis-label pilot, return the active evidence id (active_id), the record it replaced (replaced_id), and whether delayed outcomes were observed (delayed_observed). Write a JSON object with these fields to /workspace/output/answer.json. Explain your result briefly in your response. The supplied repository is /workspace/repo.",
+      "expected_output": "The output fields match {\"active_id\": \"evidence:axis-b\", \"replaced_id\": \"evidence:axis-a\", \"delayed_observed\": false}.",
+      "assertions": [
+        "Follows explicit supersession and distinguishes the separate chronological validation pilot."
+      ],
+      "koai_control": "normal",
+      "koai_facts": {
+        "active_id": "evidence:axis-b",
+        "replaced_id": "evidence:axis-a",
+        "delayed_observed": false
+      }
+    },
+    {
+      "id": "recall-obsolete-record",
+      "expected_skill": "koai-recall",
+      "should_trigger": true,
+      "prompt": "A handoff cites evidence:axis-a as the latest axis-label result. Inspect case-inputs/handoff.json. Record whether this citation is current (citation_current), the replacement_id, and whether the obsolete entry should be deleted (delete_history). Write a JSON object with these fields to /workspace/output/answer.json. Explain your result briefly in your response. The supplied repository is /workspace/repo.",
+      "expected_output": "The output fields match {\"citation_current\": false, \"replacement_id\": \"evidence:axis-b\", \"delete_history\": false}.",
+      "assertions": [
+        "Identifies the replacement and preserves the historical entry."
+      ],
+      "koai_control": "fault",
+      "koai_facts": {
+        "citation_current": false,
+        "replacement_id": "evidence:axis-b",
+        "delete_history": false
+      }
+    },
+    {
+      "id": "recall-row-count",
+      "expected_skill": null,
+      "should_trigger": false,
+      "prompt": "A roster excerpt contains exactly these rows: north, south, north, east. Record row_count and distinct_count. Write a JSON object with these fields to /workspace/output/answer.json. Explain your result briefly in your response. The supplied repository is /workspace/repo.",
+      "expected_output": "The output fields match {\"row_count\": 4, \"distinct_count\": 3}.",
+      "assertions": [
+        "Reports the two counts for the supplied rows."
+      ],
+      "koai_control": "off_scope",
+      "koai_facts": {
+        "row_count": 4,
+        "distinct_count": 3
+      }
+    }
+  ]
+}

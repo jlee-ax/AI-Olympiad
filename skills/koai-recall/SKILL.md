@@ -1,9 +1,21 @@
 ---
 name: koai-recall
-description: Recover the current KOAI task state from source-linked records and live artifacts. Use when resuming work, checking earlier decisions, avoiding redundant work, or resolving stale and superseded memories.
+description: Use when resuming KOAI work to recover current evidence, identify superseded reviews and avoid repeating the same attempt.
+metadata:
+  tags: workflow-recall
 ---
 
 # Reconstruct current state
+
+## Purpose
+
+Return a version-bound handoff for the next worker, including unresolved conflicts and previous attempts relevant to this exact input.
+
+## Prerequisites
+
+Start with the saved workflow JSON, the requested topic and access to the source files that support its active records.
+
+## Instructions
 
 Read [the workflow contract](../../tools/README.md). Scope retrieval to the requested project, topic, and period. Use the user's supplied state capsule when it is sufficient; do not mine unrelated conversations.
 
@@ -26,3 +38,17 @@ Compare supersession and fingerprint-based reuse with simpler records before exp
 Use [selective impact and duplicate-work rules](../references/quality-specification.md#selective-impact-and-duplicate-work). Run the quality impact query for changed source/claim IDs. Reuse current per-object content reviews when their actual region and relevant source meaning/version are unchanged; an access-time-only refresh is not a reason for global rewriting. Preserve rejected/no-change attempt keys. New action, hypothesis or evidence is an explicit change, not a paraphrase-based automatic merge.
 
 Quality bundles use last-appended selection per criterion/object review and per claim research cycle, while workflow records retain their separate explicit supersession rules. Report historical records without letting them veto a current replacement, and never search backward for a pass after a newer failed, abstaining or stale record. Compare actual linked theory/practice/code/assessment and explanation regions, including declared upstream content, before reusing a fingerprint.
+
+## Examples
+
+Inspect the bundled synthetic state from the repository root:
+
+```sh
+python3 -B tools/workflow.py recall examples/workflow.json --query reference
+```
+
+The matching record is `evidence:synthetic-fixture`. Its source says the fixture represents a check. A handoff must preserve that qualification.
+
+## Troubleshooting and limitations
+
+If a recalled source or artifact changed, mark the affected record stale and recheck its evidence. An empty lookup does not establish that the topic was never studied.
