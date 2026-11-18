@@ -1,0 +1,211 @@
+{
+  "scope": "offline fixture imports, including the NVIDIA verifier as standalone staged modules",
+  "tested_local_imports": [
+    "contest_depth",
+    "discovery_loop",
+    "graph_paths",
+    "lesson_validation",
+    "material_revision",
+    "quality",
+    "review_preflight",
+    "topic_depth",
+    "topic_depth_basis",
+    "validate",
+    "workflow"
+  ],
+  "python_import_dependencies": {
+    "contest_depth": {
+      "project_modules": [],
+      "third_party_imports": []
+    },
+    "discovery_loop": {
+      "project_modules": [
+        "material_revision",
+        "topic_depth",
+        "topic_depth_basis"
+      ],
+      "third_party_imports": []
+    },
+    "graph_paths": {
+      "project_modules": [
+        "validate"
+      ],
+      "third_party_imports": []
+    },
+    "lesson_validation": {
+      "project_modules": [],
+      "third_party_imports": []
+    },
+    "material_revision": {
+      "project_modules": [
+        "discovery_loop",
+        "quality",
+        "topic_depth",
+        "workflow"
+      ],
+      "third_party_imports": []
+    },
+    "quality": {
+      "project_modules": [
+        "discovery_loop",
+        "topic_depth"
+      ],
+      "third_party_imports": []
+    },
+    "review_preflight": {
+      "project_modules": [
+        "contest_depth",
+        "discovery_loop",
+        "graph_paths",
+        "quality",
+        "workflow"
+      ],
+      "third_party_imports": []
+    },
+    "topic_depth": {
+      "project_modules": [
+        "quality",
+        "topic_depth_basis"
+      ],
+      "third_party_imports": []
+    },
+    "topic_depth_basis": {
+      "project_modules": [
+        "quality"
+      ],
+      "third_party_imports": []
+    },
+    "validate": {
+      "project_modules": [],
+      "third_party_imports": []
+    },
+    "workflow": {
+      "project_modules": [
+        "discovery_loop",
+        "quality",
+        "topic_depth"
+      ],
+      "third_party_imports": []
+    }
+  },
+  "verified_NVIDIA_staged_modules_sha256": {
+    "shell_lexing": "5b4efc7bb45f03eb17306294fb227c8dedeb47f8faaf93698f03b5dc395b42f5",
+    "secret_redaction": "218f07a94dcbe10eab1527f03f407ce8b64d3728de35425e41bccb0210cf8e65",
+    "script_invocation": "3a0e0692ff91a1f13bcff15bdde68264a1963c84fa189786425a4fc93b267910",
+    "optional_reference": "922cc1dfcfcd53b92f65837ec1257abe03e08c27f632000d23ee5532112d0f09",
+    "log_converters": "77a7ecbf4d81dd38fb5f1fbb969700f77fed921755e6f07838e98e2ba9d78e41",
+    "evidence": "378cd063debbfefdd82d877d1fa2204a3fd948acc960c07f3d51c996488ad360",
+    "eval": "1c131349d88d5207c8e0de1de0c9e743fca6f28442ada5fa63e05bf86e1876d8",
+    "declarative_checks": "96f3f60db30d3489e06ad8786f1d771fa94b33558b4c85d0c5b742b4d988ed92",
+    "custom_grader_runner": "ae6ba988aa5a282f8d63a1cd86e4132d86a74e880ccb6aa8839df1274585250e",
+    "codex_tool_call_normalizer": "97341b637d0fb0d0bfe346b7a0ad2cfaa514ea8c3e75fc8e95d46edd3e8bb960",
+    "checks": "713adb9b3520d631506792c8ba85ca2e0e568858a02e26abcb51f20ad1c5ed63",
+    "character_facts": "c5ebbbe9b10b3b5340713a8d02b569cae75ff01e8db0b553529075d67172865b",
+    "atif_helpers": "4f0c851b0b147f806acd4a7212b358570300d8494c55824805f35dec403999ac"
+  },
+  "successful_cases": {
+    "with": [
+      "depth-c08",
+      "depth-c17",
+      "depth-c26",
+      "depth-c33",
+      "depth-c37",
+      "depth-c42",
+      "depth-c54",
+      "depth-c58",
+      "depth-c69",
+      "depth-c71",
+      "depth-c80",
+      "depth-c93"
+    ],
+    "without": [
+      "depth-c08",
+      "depth-c17",
+      "depth-c26",
+      "depth-c33",
+      "depth-c37",
+      "depth-c42",
+      "depth-c54",
+      "depth-c58",
+      "depth-c69",
+      "depth-c71",
+      "depth-c80",
+      "depth-c93"
+    ]
+  },
+  "linked_general_guide": {
+    "with": [
+      "depth-c08",
+      "depth-c17",
+      "depth-c26",
+      "depth-c33",
+      "depth-c37",
+      "depth-c42",
+      "depth-c54",
+      "depth-c58",
+      "depth-c69",
+      "depth-c71",
+      "depth-c80",
+      "depth-c93"
+    ],
+    "without": [
+      "depth-c08",
+      "depth-c17",
+      "depth-c26",
+      "depth-c33",
+      "depth-c37",
+      "depth-c42",
+      "depth-c54",
+      "depth-c58",
+      "depth-c69",
+      "depth-c71",
+      "depth-c80",
+      "depth-c93"
+    ]
+  },
+  "production_foundations_or_review_inputs_exposed": false,
+  "common_file_count": 41,
+  "common_file_sha256": {
+    "tools/workflow.py": "60e96ef6e9680a3f1421ac79fdd9a59e807aa2556faac1e40d74abf20eb1827a",
+    "tools/validate.py": "31ec96590de1243fbfa8ac6c47cee4e6ff0eed60aca16a78a4507b243bdb7b7a",
+    "tools/topic_depth_basis.py": "f4f12ee7ae97ddbfccbb936e7a6ac3214014a25a5ee7a77bfff13282903993b9",
+    "tools/topic_depth.py": "7185e0f31c549630ed1d6b14c63c82c137e1efbd524943fa868f76af5730db1c",
+    "tools/topic-depth.md": "b7c0d5bde94d01e45344eaa752cb9c528c2765fd0df80dc08c88d80182d5e85c",
+    "tools/review_preflight.py": "de09542da3c32f73f6f89a84709e63616fc8516f2ba6cbec08599443b5c878c5",
+    "tools/review-preflight.md": "f0b278a24d7cd49d05b3887f79bda1872da0f5afc066c9cd912be6fbafe5886f",
+    "tools/quality.py": "2026ad83ad778ff78b8f6937ce50abf0b87982d98db3cfaf0c480339d7052a3a",
+    "tools/material_revision.py": "4eae2b55c4900740b535a95c39acad9d66c3aa71e85e292e5ef279621ae36809",
+    "tools/material-revision.md": "c46e62eb97aee38e426f255622a8385cd6555a3cd5446f378be4f46ba2e9bd7b",
+    "tools/lesson_validation.py": "9304f8d8d3957d235cc9a6ea19846b10aab868afc2559823644f3df3bbc32fb8",
+    "tools/graph_paths.py": "5d1cf5961634135a7f7331c7e02f3eca3448df67fdd6b9cc7b50e8264672dc6b",
+    "tools/graph-paths.md": "b0da83933583969ffc3d62183e749536ad4d8be037ce10e7e7c36c0c78cd87f6",
+    "tools/discovery_loop.py": "1fa759356b0671e2d87fafd0546fc2e163d218f34d453858d4388d6a4a6b6f75",
+    "tools/discovery-loop.md": "1ab6f02ead02d0deec872e79d8c4b792592ece931640900e2eed4fb0ef1b67ef",
+    "tools/contest_depth.py": "7f04de3a53b2fdb028971599d7b63c37b8a12bbba9a72b3123175c1f8bf4d4f4",
+    "tools/README.md": "afb246c8f60a7262e75f7f6a696b9ea8c9391591d8ee09794954968ed7472e67",
+    "tools/MANUAL-CYCLE.md": "12e3608333fae44b081b24242443d250a522ae434784f581bcc421b45eb7c845",
+    "templates/workflow.json": "88010bdba40940a30be81dbe95d5b444efca192e0fd52fbf28e26535ff17084c",
+    "examples/workflow.json": "6854a219f63fe8a9b3e9f30124c30f21c984072e586b092c56685324ad27583e",
+    "examples/graph-path.json": "ebac8ff3696e62444c46b986340d6319753af916dd0f6c7f9afccc9ba8b53c67",
+    "examples/graph-path-source.txt": "aa2942a2b9d53732632dffb525c5a91984dcd8e718688d2bbac6c00f2c8b513d",
+    "curriculum/student-plan.html": "78d743c33d91c958d33dd36e994dc00507d78edecb3f30b986fed4109cc2521e",
+    "curriculum/contract.json": "e82a913c48dba2a7b67bee0c8b79d610b825ba47314c00d5836364e05ee0e114",
+    "case-inputs/material-blocks.ipynb": "c8e31ef57476b1e56c181d1f1ae16c392cdd96cc1129cf2cd3916eebdaa18485",
+    "case-inputs/handoff.json": "a299b5164d2a246d6ba722d89852908e42ed203e9627df21b92e571195d624de",
+    "tests/fixtures/candidate-graph-missing-path.json": "b28289fd2bee5e5255cd01a00492fe247f86b807e9f6d0b406c5b7d4cd7818a3",
+    "skills/references/workflow.md": "f2b828d5eb77597a387d4bb733cedc19907c618ad67a56e6f7e2e9f956bc5795",
+    "skills/references/source-readings.json": "4286e62768534312c6b68ab2ea183fc837959824821278317ea9bf2a138d4c8d",
+    "skills/references/quality-specification.md": "79112e3992eb7dd7651ab864b6f8fc4b7955f533ec3bd834999bd79656a60e8e",
+    "skills/references/evidence.md": "d2aa9f8f46cf59fb44dc19b4bb722a1cfcfc399168836289a1ffc2796001f2d3",
+    "skills/references/criteria.json": "64055406c2a74fdfb422e22b3f4d2d704dafe7b22fad3e9458415b67fb12003f",
+    "skills/koai-evaluate/references/unit-specifications.json": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+    "skills/koai-evaluate/references/theory-explanation.json": "eb7c7a879df8463c27d2eeb870d21fe6bfbeaf928eebad82b313cb6fd605636c",
+    "lessons/week02/week02_temporal_preprocessing.ipynb": "ea847303906a48c98ae69f80cdaaa7a008e1ab31ad197ce69b3c0b7fdf2be326",
+    "lessons/week01/week01_integrated.ipynb": "59ca974390172e4ce3339260bec23dd39a449c0b1d36e053997e2d5d8b34bb44",
+    "candidate/references/workflow.md": "f2b828d5eb77597a387d4bb733cedc19907c618ad67a56e6f7e2e9f956bc5795",
+    "candidate/references/source-readings.json": "4286e62768534312c6b68ab2ea183fc837959824821278317ea9bf2a138d4c8d",
+    "candidate/references/quality-specification.md": "79112e3992eb7dd7651ab864b6f8fc4b7955f533ec3bd834999bd79656a60e8e",
+    "candidate/references/evidence.md": "d2aa9f8f46cf59fb44dc19b4bb722a1cfcfc399168836289a1ffc2796001f2d3",
+    "candidate/references/criteria.json": "64055406c2a74fdfb422e22b3f4d2d704dafe7b22fad3e9458415b67fb12003f"
+  }
+}

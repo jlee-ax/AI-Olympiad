@@ -1,0 +1,51 @@
+{
+  "upstream_url": "https://github.com/NVIDIA/SkillEvaluator",
+  "source_revision": "e3ede733f4d57578a1630b0579ea236b8cf8a727",
+  "versions": {
+    "skillevaluator": "1.0.1",
+    "harbor": "0.25.0"
+  },
+  "python_source_sha256": "7170e3407f7c9328b2ba798b358ac1cfff4f167d70d6962624d5f1cf99751d61",
+  "python_source_files": 304,
+  "uv_lock_sha256": "c49a8340c7312a8396c34be64d0062e8a591f201202c890b7563265958e3f364",
+  "host_commands": {
+    "codex": "/opt/codex/bin/codex",
+    "docker": null,
+    "podman": null,
+    "bwrap": "/usr/bin/bwrap",
+    "ollama": null,
+    "llama-server": null,
+    "vllm": null
+  },
+  "doctor_probes_model_endpoints": false,
+  "doctors": [
+    {
+      "argv": [
+        "tier3",
+        "doctor",
+        "--env-mode",
+        "local",
+        "--agents",
+        "codex"
+      ],
+      "exit": 1,
+      "stdout": "SkillEvaluator Doctor                                                                 \n Check                 Status   Details                                                                                                               \n──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\n CLI package           pass     skillevaluator 1.0.1                                                                                                  \n Public LLM provider   fail     No provider is configured.                                                                                            \n                                                                                                                                                      \n                                For NVIDIA Build, set:                                                                                                \n                                  export SKILL_EVAL_LLM_PROVIDER=nv_build                                                                             \n                                  export NVIDIA_API_KEY='your-api-key'                                                                                \n                                  Get a key: https://build.nvidia.com                                                                                 \n                                                                                                                                                      \n                                Other SKILL_EVAL_LLM_PROVIDER values and their keys:                                                                  \n                                  openai     -> OPENAI_API_KEY                                                                                        \n                                  anthropic  -> ANTHROPIC_API_KEY                                                                                     \n                                                                                                                                                      \n                                More providers and setup options:                                                                                     \n                                  https://docs.nvidia.com/skills/skillevaluator/configuration                                                         \n Harbor agents         pass     codex                                                                                                                 \n local prerequisite    fail     Harbor local mode requires an OS-level sandbox, but none is usable: bubblewrap at /usr/bin/bwrap failed its smoke     \n                                test (bwrap: loopback: Failed to create NETLINK_ROUTE socket: Operation not permitted). Fix the host, use --env-mode  \n                                docker where a Docker daemon is available, set SKILLEVALUATOR_LOCAL_SANDBOX=prefer to continue with advisory-only     \n                                guardrails, or set SKILLEVALUATOR_LOCAL_SANDBOX=off to run without a sandbox for skills you fully trust.",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "tier3",
+        "doctor",
+        "--env-mode",
+        "docker",
+        "--agents",
+        "codex"
+      ],
+      "exit": 1,
+      "stdout": "SkillEvaluator Doctor                                                        \n Check                 Status   Details                                                                                             \n────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\n CLI package           pass     skillevaluator 1.0.1                                                                                \n Public LLM provider   fail     No provider is configured.                                                                          \n                                                                                                                                    \n                                For NVIDIA Build, set:                                                                              \n                                  export SKILL_EVAL_LLM_PROVIDER=nv_build                                                           \n                                  export NVIDIA_API_KEY='your-api-key'                                                              \n                                  Get a key: https://build.nvidia.com                                                               \n                                                                                                                                    \n                                Other SKILL_EVAL_LLM_PROVIDER values and their keys:                                                \n                                  openai     -> OPENAI_API_KEY                                                                      \n                                  anthropic  -> ANTHROPIC_API_KEY                                                                   \n                                                                                                                                    \n                                More providers and setup options:                                                                   \n                                  https://docs.nvidia.com/skills/skillevaluator/configuration                                       \n Harbor agents         pass     codex                                                                                               \n docker prerequisite   fail     Docker Compose v2 is required for Tier 3 Docker mode: [Errno 2] No such file or directory: 'docker'",
+      "stderr": ""
+    }
+  ],
+  "native_agent_trials": 0,
+  "native_judged_trials": 0
+}

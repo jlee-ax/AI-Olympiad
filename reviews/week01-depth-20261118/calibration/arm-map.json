@@ -1,0 +1,23 @@
+{
+  "blind_adjudication_sha256": "5f735e8af728ea7a7b7c94bfda18ad2ce985e309b280a8d94c814251caa7eaeb",
+  "disclosed_at": "2026-11-18T12:04:45Z",
+  "source": "conversation coordinator after the neutral adjudication was hashed",
+  "arms": {
+    "J": "without revised skill",
+    "R": "with revised skill and references/novice-depth.md"
+  },
+  "model_requested": "gpt-6.2-astra",
+  "reasoning_effort_requested": "max",
+  "forks": "no inherited conversation in either reader",
+  "shared": {
+    "course_sources": [
+      "curriculum/student-plan.html",
+      "curriculum/contract.json"
+    ],
+    "packet_sha256": "42694a4fc42235fd93438cf479bf447637b0a4796599a12b80ef83cfcbdd4e10",
+    "case_order": "same",
+    "budget": "one packet response with the same three-sentence justification allowance per case"
+  },
+  "backend_model_attestation": false,
+  "actual_token_or_latency_equality_verified": false
+}

@@ -1,0 +1,175 @@
+{
+  "mode": "generated NVIDIA custom_grader_runner.py --mode custom_only; external answer replay",
+  "project_grader_sha256": "7c153f678b7e50d24d1bc9b95cc3007ae8d39393c8ba527f09b44f4a00391b3e",
+  "native_runner_sha256": "ae6ba988aa5a282f8d63a1cd86e4132d86a74e880ccb6aa8839df1274585250e",
+  "native_default_grades": 0,
+  "native_agent_trials": 0,
+  "independently_recomputed_probes": 12,
+  "real_external_answer_replays": 24,
+  "results": [
+    {
+      "reader": "J",
+      "case": "c17",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "J",
+      "case": "c42",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "J",
+      "case": "c08",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "J",
+      "case": "c33",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "J",
+      "case": "c37",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "J",
+      "case": "c54",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "J",
+      "case": "c69",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "J",
+      "case": "c71",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "J",
+      "case": "c26",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "J",
+      "case": "c58",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "J",
+      "case": "c93",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "J",
+      "case": "c80",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "R",
+      "case": "c17",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "R",
+      "case": "c42",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "R",
+      "case": "c08",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "R",
+      "case": "c33",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "R",
+      "case": "c37",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "R",
+      "case": "c54",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "R",
+      "case": "c69",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "R",
+      "case": "c71",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "R",
+      "case": "c26",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "R",
+      "case": "c58",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "R",
+      "case": "c93",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    },
+    {
+      "reader": "R",
+      "case": "c80",
+      "koai_case_facts_correct": 1.0,
+      "complete": true
+    }
+  ],
+  "sensitivity_controls": [
+    {
+      "id": "c37",
+      "change": "wrong selection, correct probe",
+      "custom_result": 0.0,
+      "meets_complete_educational_rubric": false
+    },
+    {
+      "id": "c26",
+      "change": "missing both semantic fields, correct selection and probe",
+      "custom_result": 1.0,
+      "meets_complete_educational_rubric": false
+    },
+    {
+      "id": "c58",
+      "change": "correct selection, wrong probe",
+      "custom_result": 0.0,
+      "meets_complete_educational_rubric": false
+    }
+  ]
+}

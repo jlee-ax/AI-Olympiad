@@ -1,0 +1,250 @@
+{
+  "skill_name": "koai-evaluate",
+  "evals": [
+    {
+      "id": "depth-c17",
+      "expected_skill": "koai-evaluate",
+      "should_trigger": true,
+      "prompt": "2027 중등부를 준비하는 10주 과정이다. 매주 수업은 120분이고 Python 기초 경험을 전제하며 AI 선행은 요구하지 않는다. KOAI 2027 안내에서 연결한 실라버스는 IOAI 2026으로 표시되어 있다. 실전은 데이터를 코드로 다루고 출력을 해석하는 능력을 포함한다. 이론은 원리를 폭넓게 다룬다. 주별 목표는 학교 자체 편성이다. 공식 실라버스 https://kitpa.org/koai/syllabus · 대회 안내 https://kitpa.org/koai/2027 · 과정표 curriculum/student-plan.html.\n두 편집안이 제시한 활동을 해당 주차의 목표와 시간에 맞춰 심의하라. 그대로 채택할 수 있는 안을 A, B, both 또는 neither로 표시하라. `basis`에는 실제 자료에 근거한 판단을, `edit`에는 보존·변경할 한 가지를 쓰라. 근거와 편집은 각각 1~2문장이면 된다. 계산 또는 자료 대조 결과는 `probe`에 넣는다. 학생의 실제 달성도를 주장할 필요는 없다.\n1주. 관측소 표에 이름 붙이기\n자습에서 처음 받는 CSV 두 개를 연결한다. 읽기와 열 선택은 앞에서 했고, 이 블록은 관측 행을 보존하며 이름표를 붙이는 과정이다.\nA. 노트북이 day.csv와 rooms.csv를 읽어 합쳐진 결과를 보여 준다. 머리글과 단위를 해설하고 관측소 이름에 색을 칠한 표를 제공한다. 학생은 완성 표의 두 번째 줄을 보고 그 이름을 옮긴다. 평가 때에도 같은 표가 펼쳐져 있다.\nB. 관측소 코드가 여러 번 나올 수 있는 쪽과 이름표 쪽을 먼저 표시한다. 첫 관측 한 줄을 손으로 대응한 뒤 코드 열로 left merge한다. 다음 파일에서는 이름표 순서가 달라지고 없는 코드도 나온다. 학생이 유지할 행과 확인할 값을 정해 실행한다. 코드 칸에는 readings.merge(names, on='station', how='left')를 쓴다.\n관측 코드 순서는 T,R,T,X이고 이름표 행은 (R,West),(T,East)이다. 누락은 null로 쓴다. 원래 관측 순서의 이름 네 개를 `probe`에 배열로 제출하라.\n제출물은 /workspace/output/answer.json의 JSON 객체다. 필드는 selection, probe, basis, edit이다.",
+      "expected_output": "Explain why a keyed match retains repeated observations while the missing lookup stays visible. Reading the supplied result cannot establish this capability on the rearranged table. Keep a hand match, then a keyed operation and the unseen row-order/unmatched check. Do not promote SQL internals to a required task.",
+      "assertions": [
+        "Explain why a keyed match retains repeated observations while the missing lookup stays visible. Reading the supplied result cannot establish this capability on the rearranged table.",
+        "Explain the curricular judgment and give a justified edit or preservation decision.",
+        "Write the requested case-specific selection and fresh-input result to output/answer.json."
+      ],
+      "koai_control": "fault",
+      "koai_facts": {
+        "selection": "B",
+        "probe": [
+          "East",
+          "West",
+          "East",
+          null
+        ]
+      }
+    },
+    {
+      "id": "depth-c42",
+      "expected_skill": "koai-evaluate",
+      "should_trigger": true,
+      "prompt": "2027 중등부를 준비하는 10주 과정이다. 매주 수업은 120분이고 Python 기초 경험을 전제하며 AI 선행은 요구하지 않는다. KOAI 2027 안내에서 연결한 실라버스는 IOAI 2026으로 표시되어 있다. 실전은 데이터를 코드로 다루고 출력을 해석하는 능력을 포함한다. 이론은 원리를 폭넓게 다룬다. 주별 목표는 학교 자체 편성이다. 공식 실라버스 https://kitpa.org/koai/syllabus · 대회 안내 https://kitpa.org/koai/2027 · 과정표 curriculum/student-plan.html.\n두 편집안이 제시한 활동을 해당 주차의 목표와 시간에 맞춰 심의하라. 그대로 채택할 수 있는 안을 A, B, both 또는 neither로 표시하라. `basis`에는 실제 자료에 근거한 판단을, `edit`에는 보존·변경할 한 가지를 쓰라. 근거와 편집은 각각 1~2문장이면 된다. 계산 또는 자료 대조 결과는 `probe`에 넣는다. 학생의 실제 달성도를 주장할 필요는 없다.\n1주. 서로 다른 표본 수의 그림\n행 한 개는 그날의 관측 1회다. 두 도구를 쓰는 주간 과제에서 이번 12분 블록은 '각 그룹에서 관찰한 값의 산포'를 보여 주는 그래프 하나와 해석이다. 다른 도구를 쓰는 과제는 이미 별도로 있다.\nA. Matplotlib으로 같은 그룹의 관측마다 점 하나를 찍는다. 겹치는 점은 옆으로 조금 옮겨 표시하고 축에 cm를 적는다. 새 파일의 점들을 읽어 등급별 최솟값과 최댓값을 비교하고, 관측 1개인 그룹에 관해 어디까지 말할 수 있는지 쓴다.\nB. Seaborn stripplot에서 각 점이 어느 행인지 먼저 확인하고 cm 단위를 표시한다. 새 파일을 실행하기 전에 두 그룹 범위를 손으로 적어 둔다. 결과와 비교하고 표본이 하나이면 그 그룹의 변동성을 일반화하기 어려운 이유를 쓴다.\n새 관측은 P:[3,9,5], Q:[7] cm이다. [P의 관측 최솟값,P의 관측 최댓값,Q의 관측 개수]를 `probe`로 제출하라.\n제출물은 /workspace/output/answer.json의 JSON 객체다. 필드는 selection, probe, basis, edit이다.",
+      "expected_output": "Both plots preserve individual observations, units and observable spread. A singleton supports an observed value but no population variability conclusion. Keep either implementation with the fresh-input interpretation. No demand to implement both inside this short block.",
+      "assertions": [
+        "Both plots preserve individual observations, units and observable spread. A singleton supports an observed value but no population variability conclusion.",
+        "Explain the curricular judgment and give a justified edit or preservation decision.",
+        "Write the requested case-specific selection and fresh-input result to output/answer.json."
+      ],
+      "koai_control": "normal",
+      "koai_facts": {
+        "selection": "both",
+        "probe": [
+          3,
+          9,
+          1
+        ]
+      }
+    },
+    {
+      "id": "depth-c08",
+      "expected_skill": "koai-evaluate",
+      "should_trigger": true,
+      "prompt": "2027 중등부를 준비하는 10주 과정이다. 매주 수업은 120분이고 Python 기초 경험을 전제하며 AI 선행은 요구하지 않는다. KOAI 2027 안내에서 연결한 실라버스는 IOAI 2026으로 표시되어 있다. 실전은 데이터를 코드로 다루고 출력을 해석하는 능력을 포함한다. 이론은 원리를 폭넓게 다룬다. 주별 목표는 학교 자체 편성이다. 공식 실라버스 https://kitpa.org/koai/syllabus · 대회 안내 https://kitpa.org/koai/2027 · 과정표 curriculum/student-plan.html.\n두 편집안이 제시한 활동을 해당 주차의 목표와 시간에 맞춰 심의하라. 그대로 채택할 수 있는 안을 A, B, both 또는 neither로 표시하라. `basis`에는 실제 자료에 근거한 판단을, `edit`에는 보존·변경할 한 가지를 쓰라. 근거와 편집은 각각 1~2문장이면 된다. 계산 또는 자료 대조 결과는 `probe`에 넣는다. 학생의 실제 달성도를 주장할 필요는 없다.\n4주. 가까운 이웃의 투표\n거리는 작은 1차원 예로 접했다. 이 절의 목표는 처음 보는 질의에서 k를 바꾸면 표가 어떻게 바뀌는지 설명하고 라이브러리 출력과 비교하는 것이다.\nA. 훈련점을 이름·좌표·반으로 기록한다. 새 질의와의 절댓값 거리를 구해 점 이름과 반을 한 줄로 묶어 가까운 순으로 정렬한다. 먼저 k=1,3의 표를 손으로 세고 같은 자료로 sklearn 예측을 확인한다. 코드 노트에는 order = np.argsort(np.abs(x-q)), votes = y[order[:k]]가 이어진다.\nB. 예시의 완성된 거리표와 두 예측은 정확하다. 반복되는 설명을 줄인다며 '정렬할 때 점 이름과 반을 붙여 두기'를 뺀다. 새 문제는 거리만 적힌 정렬표와 알파벳순으로 정렬한 반 목록을 나눠 주고 원래 점과 반의 연결은 주지 않은 채 k=1,3의 표를 세게 한다.\n원래 자료는 G=(0,red), H=(4,blue), J=(6,blue), 질의는 1이다. [k=1 예측,k=3 예측]을 `probe`로 제출하라.\n제출물은 /workspace/output/answer.json의 JSON 객체다. 필드는 selection, probe, basis, edit이다.",
+      "expected_output": "Varying k means counting labels attached to the same distance-ranked neighbors. Two separately sorted lists lose that relation even if an earlier displayed answer is right. Retain a joined ID-distance-label row or equivalent index linkage before the first new vote. No extra distance proof needed.",
+      "assertions": [
+        "Varying k means counting labels attached to the same distance-ranked neighbors. Two separately sorted lists lose that relation even if an earlier displayed answer is right.",
+        "Explain the curricular judgment and give a justified edit or preservation decision.",
+        "Write the requested case-specific selection and fresh-input result to output/answer.json."
+      ],
+      "koai_control": "fault",
+      "koai_facts": {
+        "selection": "A",
+        "probe": [
+          "red",
+          "blue"
+        ]
+      }
+    },
+    {
+      "id": "depth-c33",
+      "expected_skill": "koai-evaluate",
+      "should_trigger": true,
+      "prompt": "2027 중등부를 준비하는 10주 과정이다. 매주 수업은 120분이고 Python 기초 경험을 전제하며 AI 선행은 요구하지 않는다. KOAI 2027 안내에서 연결한 실라버스는 IOAI 2026으로 표시되어 있다. 실전은 데이터를 코드로 다루고 출력을 해석하는 능력을 포함한다. 이론은 원리를 폭넓게 다룬다. 주별 목표는 학교 자체 편성이다. 공식 실라버스 https://kitpa.org/koai/syllabus · 대회 안내 https://kitpa.org/koai/2027 · 과정표 curriculum/student-plan.html.\n두 편집안이 제시한 활동을 해당 주차의 목표와 시간에 맞춰 심의하라. 그대로 채택할 수 있는 안을 A, B, both 또는 neither로 표시하라. `basis`에는 실제 자료에 근거한 판단을, `edit`에는 보존·변경할 한 가지를 쓰라. 근거와 편집은 각각 1~2문장이면 된다. 계산 또는 자료 대조 결과는 `probe`에 넣는다. 학생의 실제 달성도를 주장할 필요는 없다.\n7주. 한 변에 맞는 합성곱 창\n1주차의 축과 6주차의 텐서 모양 다음에 오는 첫 합성곱 절이다. 입력의 한 변과 유효 창 위치를 연결하고, 실제 Conv2d 출력에서 결과를 확인한다. 현재 수업 절에 15분을 쓸 수 있다.\nA. 한 변의 가능한 창 시작 위치를 그림으로 찾는다. 직사각 입력에 3×3 커널, stride 2, padding 0을 직접 적용한다. H와 W를 각각 예측하고 PyTorch로 바꾸어 본다. 가장자리에서 놓이지 않는 창 하나를 이유와 함께 설명한다.\nB. 창 그림과 Conv2d 실행 예도 넣었다. 새 크기를 확인하기 전에 커널을 블록 Toeplitz 선형변환으로 전개하고 행렬의 특이값으로 작용소 노름의 상계를 증명해야 다음 셀이 열린다. 이 증명은 15분 필수 과제의 완료 조건이다.\nH×W=6×8, 커널=3×3, stride=2, padding=0, dilation=1일 때 [출력 H,출력 W]를 `probe`로 제출하라.\n제출물은 /workspace/output/answer.json의 JSON 객체다. 필드는 selection, probe, basis, edit이다.",
+      "expected_output": "The input-window/output correspondence, stride and actual operator are sufficient. A spectral bound is neither a prerequisite to counting windows nor a stated introductory objective. Keep the small window-to-code check; move the mandatory spectral derivation off the core path.",
+      "assertions": [
+        "The input-window/output correspondence, stride and actual operator are sufficient. A spectral bound is neither a prerequisite to counting windows nor a stated introductory objective.",
+        "Explain the curricular judgment and give a justified edit or preservation decision.",
+        "Write the requested case-specific selection and fresh-input result to output/answer.json."
+      ],
+      "koai_control": "fault",
+      "koai_facts": {
+        "selection": "A",
+        "probe": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "id": "depth-c37",
+      "expected_skill": "koai-evaluate",
+      "should_trigger": true,
+      "prompt": "2027 중등부를 준비하는 10주 과정이다. 매주 수업은 120분이고 Python 기초 경험을 전제하며 AI 선행은 요구하지 않는다. KOAI 2027 안내에서 연결한 실라버스는 IOAI 2026으로 표시되어 있다. 실전은 데이터를 코드로 다루고 출력을 해석하는 능력을 포함한다. 이론은 원리를 폭넓게 다룬다. 주별 목표는 학교 자체 편성이다. 공식 실라버스 https://kitpa.org/koai/syllabus · 대회 안내 https://kitpa.org/koai/2027 · 과정표 curriculum/student-plan.html.\n두 편집안이 제시한 활동을 해당 주차의 목표와 시간에 맞춰 심의하라. 그대로 채택할 수 있는 안을 A, B, both 또는 neither로 표시하라. `basis`에는 실제 자료에 근거한 판단을, `edit`에는 보존·변경할 한 가지를 쓰라. 근거와 편집은 각각 1~2문장이면 된다. 계산 또는 자료 대조 결과는 `probe`에 넣는다. 학생의 실제 달성도를 주장할 필요는 없다.\n1주. 교실별 대기 시간 표\n이번 학생용 설문은 먼저 교실 하나를 같은 확률로 고르고, 그 교실이 기록한 방문 중 하나를 같은 확률로 고른다고 가정한다. 이때의 예상 대기 시간을 보고하라. 빈 교실·결측은 없다. 코드 셀과 새 파일 확인에 10분을 배정했다.\nA. 한 관측을 한 행으로 소개하고 X실과 Y실의 막대가 무엇을 세는지 먼저 읽는다. 다음 두 식을 실행한다. by_room = visits.groupby('room')['wait'].mean(), answer = by_room.mean(). 학생은 새 방의 관측 수를 바꾸어 전체 결과를 예측하고 비교한다.\nB. 한 관측을 한 행으로 소개하고 X실과 Y실의 막대가 무엇을 세는지 먼저 읽는다. 다음 두 식을 실행한다. total = visits['wait'].sum(), answer = total / len(visits). 학생은 새 방의 관측 수를 바꾸어 전체 결과를 예측하고 비교한다.\n새 파일에 X실 2,2,2분과 Y실 10분이 있다. X실에서 2분인 진짜 방문 한 건을 더 관측한다. [추가 전,추가 후] 이 질문이 요구하는 평균을 `probe`로 제출하라.\n제출물은 /workspace/output/answer.json의 JSON 객체다. 필드는 selection, probe, basis, edit이다.",
+      "expected_output": "The sampling unit at the first stage is room. Equal room weights give (2+10)/2=6 even after another genuine X visit of 2. The pooled visits answer a different question. Keep the two-stage aggregation and ask what happens when an additional visit leaves its room mean unchanged. No general sampling theory is required.",
+      "assertions": [
+        "The sampling unit at the first stage is room. Equal room weights give (2+10)/2=6 even after another genuine X visit of 2. The pooled visits answer a different question.",
+        "Explain the curricular judgment and give a justified edit or preservation decision.",
+        "Write the requested case-specific selection and fresh-input result to output/answer.json."
+      ],
+      "koai_control": "fault",
+      "koai_facts": {
+        "selection": "A",
+        "probe": [
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "depth-c54",
+      "expected_skill": "koai-evaluate",
+      "should_trigger": true,
+      "prompt": "2027 중등부를 준비하는 10주 과정이다. 매주 수업은 120분이고 Python 기초 경험을 전제하며 AI 선행은 요구하지 않는다. KOAI 2027 안내에서 연결한 실라버스는 IOAI 2026으로 표시되어 있다. 실전은 데이터를 코드로 다루고 출력을 해석하는 능력을 포함한다. 이론은 원리를 폭넓게 다룬다. 주별 목표는 학교 자체 편성이다. 공식 실라버스 https://kitpa.org/koai/syllabus · 대회 안내 https://kitpa.org/koai/2027 · 과정표 curriculum/student-plan.html.\n두 편집안이 제시한 활동을 해당 주차의 목표와 시간에 맞춰 심의하라. 그대로 채택할 수 있는 안을 A, B, both 또는 neither로 표시하라. `basis`에는 실제 자료에 근거한 판단을, `edit`에는 보존·변경할 한 가지를 쓰라. 근거와 편집은 각각 1~2문장이면 된다. 계산 또는 자료 대조 결과는 `probe`에 넣는다. 학생의 실제 달성도를 주장할 필요는 없다.\n2주. 같은 기기의 다음날 예측\n이미 설치한 기기의 다음날 값 예측이 목표다. 새 기기 일반화는 다른 절에서 다룬다. 이 절은 학습 시점 이후 정보와 같은 기기의 허용된 과거를 구별해 앞선 값 하나를 특징으로 만드는 입문 과제다.\nA. 빈칸을 채우는 코드는 실행된다. '기기 ID가 겹치지 않게 나누면 모든 미래 문제를 검증한다'는 규칙 하나를 외우고, 테스트 기기의 이전 관측은 날짜와 무관하게 모두 사용 금지로 표시한다. 답안은 금지 문구를 베껴 쓴다.\nB. ID·날짜·예측하는 날을 먼저 표시한다. 주민이 보듯 달력 순서에서 가림막을 옮긴다. 같은 기기의 과거 관측 중 예측 때 볼 수 있는 마지막 값을 골라 새 날짜의 한 칸을 채운 뒤 그룹별 shift(1) 결과와 대조한다.\nA 기기의 1일,2일,3일,4일 관측은 각각 3,8,20,9다. 각 날의 관측 이전에 예측한다. A의 [3일,4일] 예측에 허용되는 가장 최근 관측값 두 개를 `probe`로 제출하라.\n제출물은 /workspace/output/answer.json의 JSON 객체다. 필드는 selection, probe, basis, edit이다.",
+      "expected_output": "Known-device forecasting can use observations genuinely available before each decision. A mandatory ID-disjoint split erases the target setting and today's observed target would leak. Teach availability at each decision with past-only, per-device features and a chronological check. Do not fit preprocessing on future rows.",
+      "assertions": [
+        "Known-device forecasting can use observations genuinely available before each decision. A mandatory ID-disjoint split erases the target setting and today's observed target would leak.",
+        "Explain the curricular judgment and give a justified edit or preservation decision.",
+        "Write the requested case-specific selection and fresh-input result to output/answer.json."
+      ],
+      "koai_control": "fault",
+      "koai_facts": {
+        "selection": "B",
+        "probe": [
+          8,
+          20
+        ]
+      }
+    },
+    {
+      "id": "depth-c69",
+      "expected_skill": "koai-evaluate",
+      "should_trigger": true,
+      "prompt": "2027 중등부를 준비하는 10주 과정이다. 매주 수업은 120분이고 Python 기초 경험을 전제하며 AI 선행은 요구하지 않는다. KOAI 2027 안내에서 연결한 실라버스는 IOAI 2026으로 표시되어 있다. 실전은 데이터를 코드로 다루고 출력을 해석하는 능력을 포함한다. 이론은 원리를 폭넓게 다룬다. 주별 목표는 학교 자체 편성이다. 공식 실라버스 https://kitpa.org/koai/syllabus · 대회 안내 https://kitpa.org/koai/2027 · 과정표 curriculum/student-plan.html.\n두 편집안이 제시한 활동을 해당 주차의 목표와 시간에 맞춰 심의하라. 그대로 채택할 수 있는 안을 A, B, both 또는 neither로 표시하라. `basis`에는 실제 자료에 근거한 판단을, `edit`에는 보존·변경할 한 가지를 쓰라. 근거와 편집은 각각 1~2문장이면 된다. 계산 또는 자료 대조 결과는 `probe`에 넣는다. 학생의 실제 달성도를 주장할 필요는 없다.\n8주. 패딩을 뺀 문장 평균\n학생은 토큰 임베딩과 평균을 배웠다. 길이가 다른 문장의 padding이 결과를 바꾸는지 확인하는 15분 절이다. 실제 사전학습 인코더는 이미 같은 주의 별도 실습에서 수행한다. 자료에는 토큰 0도 실제 단어가 될 수 있다고 명시한다.\nA. 패딩으로 지정한 행과 실제 토큰 행의 예를 별도로 표시하고, 행이 적힌 표에서 유효 행만 합한 뒤 그 수로 나눈다. 처음 보는 토큰표의 결과를 직접 채우고 주어진 텐서 연산으로 검사하게 한다. 표의 순서와 mask를 이용한 예시 구현은 values[mask == 1].mean()이다.\nB. 텐서의 같은 모양에 '사용'과 '가림' 스티커를 붙인다. 두 문장을 먼저 손으로 계산한 뒤 mask를 곱한 합과 mask의 합으로 코드에 옮긴다. 패딩 벡터의 숫자만 바꾼 세 번째 문장에서 결과가 변하는지 학생이 설명한다. 예시 구현은 (values * mask).sum() / mask.sum()이다.\n한 문장의 1차원 값은 [0,4,99]이고 mask=[1,1,0]이다. 마지막 값만 -8로 바꾼다. [바꾸기 전 평균,바꾼 뒤 평균]을 `probe`로 제출하라.\n제출물은 /workspace/output/answer.json의 JSON 객체다. 필드는 selection, probe, basis, edit이다.",
+      "expected_output": "Both explicitly use the supplied validity identity and the valid count. Zero can be a valid token; padding magnitude should not affect masked pooling. Either representation serves the objective; retain the independent masking check. The full encoder is covered elsewhere.",
+      "assertions": [
+        "Both explicitly use the supplied validity identity and the valid count. Zero can be a valid token; padding magnitude should not affect masked pooling.",
+        "Explain the curricular judgment and give a justified edit or preservation decision.",
+        "Write the requested case-specific selection and fresh-input result to output/answer.json."
+      ],
+      "koai_control": "normal",
+      "koai_facts": {
+        "selection": "both",
+        "probe": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "id": "depth-c71",
+      "expected_skill": "koai-evaluate",
+      "should_trigger": true,
+      "prompt": "2027 중등부를 준비하는 10주 과정이다. 매주 수업은 120분이고 Python 기초 경험을 전제하며 AI 선행은 요구하지 않는다. KOAI 2027 안내에서 연결한 실라버스는 IOAI 2026으로 표시되어 있다. 실전은 데이터를 코드로 다루고 출력을 해석하는 능력을 포함한다. 이론은 원리를 폭넓게 다룬다. 주별 목표는 학교 자체 편성이다. 공식 실라버스 https://kitpa.org/koai/syllabus · 대회 안내 https://kitpa.org/koai/2027 · 과정표 curriculum/student-plan.html.\n두 편집안이 제시한 활동을 해당 주차의 목표와 시간에 맞춰 심의하라. 그대로 채택할 수 있는 안을 A, B, both 또는 neither로 표시하라. `basis`에는 실제 자료에 근거한 판단을, `edit`에는 보존·변경할 한 가지를 쓰라. 근거와 편집은 각각 1~2문장이면 된다. 계산 또는 자료 대조 결과는 `probe`에 넣는다. 학생의 실제 달성도를 주장할 필요는 없다.\n1주. 그래프에 개수 전달하기\nPython 조건·반복과 결과 반환을 하나의 함수에 연결한다. 기존에 변수와 리스트를 다뤘다. 이번 블록은 반별 점수 파일에서 기준을 만족하는 수를 세어 다음 셀의 그래프에 쓰는 12분 점검이다.\nA. 교사가 조건을 만족하는 수를 세는 함수를 실행한다. 학생은 화면에 나온 숫자를 그래프 입력 칸에 복사한다. 새로운 반에 함수 호출을 바꾸는 칸은 있지만 함수가 화면에 출력하는 것과 호출한 쪽이 받는 값을 구별하는 예는 없다. 함수의 마지막 줄은 print(count)뿐이다.\nB. 그래프 입력은 return count를 받는다. 참·거짓이 섞인 세 줄로 누적값을 추적한다. 새 반으로 실행하기 전 조건에 맞는 수를 예상한 뒤 함수의 반환을 그래프에 연결하고, 빈 반에도 같은 함수를 적용한다.\ncounts(xs)는 원소 중 4 이상인 개수를 반환해야 한다. [[4,2,4],[]]을 차례로 넣었을 때 그래프가 받을 두 정수를 `probe`로 제출하라.\n제출물은 /workspace/output/answer.json의 JSON 객체다. 필드는 selection, probe, basis, edit이다.",
+      "expected_output": "The required downstream value is the function return. Printing and manual copy can mask a missing return, especially when rerunning with a new class or empty input. Preserve a small state trace and directly use the returned count in the graph; test boundary equality and empty input.",
+      "assertions": [
+        "The required downstream value is the function return. Printing and manual copy can mask a missing return, especially when rerunning with a new class or empty input.",
+        "Explain the curricular judgment and give a justified edit or preservation decision.",
+        "Write the requested case-specific selection and fresh-input result to output/answer.json."
+      ],
+      "koai_control": "fault",
+      "koai_facts": {
+        "selection": "B",
+        "probe": [
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "id": "depth-c26",
+      "expected_skill": "koai-evaluate",
+      "should_trigger": true,
+      "prompt": "2027 중등부를 준비하는 10주 과정이다. 매주 수업은 120분이고 Python 기초 경험을 전제하며 AI 선행은 요구하지 않는다. KOAI 2027 안내에서 연결한 실라버스는 IOAI 2026으로 표시되어 있다. 실전은 데이터를 코드로 다루고 출력을 해석하는 능력을 포함한다. 이론은 원리를 폭넓게 다룬다. 주별 목표는 학교 자체 편성이다. 공식 실라버스 https://kitpa.org/koai/syllabus · 대회 안내 https://kitpa.org/koai/2027 · 과정표 curriculum/student-plan.html.\n두 편집안이 제시한 활동을 해당 주차의 목표와 시간에 맞춰 심의하라. 그대로 채택할 수 있는 안을 A, B, both 또는 neither로 표시하라. `basis`에는 실제 자료에 근거한 판단을, `edit`에는 보존·변경할 한 가지를 쓰라. 근거와 편집은 각각 1~2문장이면 된다. 계산 또는 자료 대조 결과는 `probe`에 넣는다. 학생의 실제 달성도를 주장할 필요는 없다.\n5주. 두 군집으로 한 번 갱신하기\n수업에서 k-means의 거리 기반 할당과 중심 갱신을 가르친다. 1차원 예로 한 번 계산한 뒤 같은 자료를 코드로 확인하고 좌표 하나를 바꿔 보는 절이다. 수렴 증명은 계획되어 있지 않다.\nA. 블록은 sklearn이 출력한 두 군집 색 이름을 범례에서 찾아 적게 한다. 수치가 다른 복사본에서도 교사가 그린 색칠 결과를 그대로 보도록 한다. 거리 비교·중심 갱신·새 점을 손으로 고르는 단계가 없다.\nB. 과제 자료에는 라이브러리 코드와 작은 점 그림이 있다. 모델 실행과 새 점 확인을 열려면 먼저 Lloyd 반복의 목적함수 감소 및 국소최적 정지 조건을 전 차원에 대해 증명해 제출해야 한다. 이론 증명이 단원의 필수 통과 조건이다.\n점 [1,3,9,11], 시작 중심 [0,10]. 한 번 최근접 중심에 배정하고 다시 평균한 뒤 [왼쪽 중심,오른쪽 중심]을 `probe`로 제출하라.\n제출물은 /workspace/output/answer.json의 JSON 객체다. 필드는 selection, probe, basis, edit이다.",
+      "expected_output": "A looks up colors without either operation. B gates introductory application on a general proof. A small assign-then-average update and a changed observation meet the available objective. Replace the chart-only answer and proof gate with hand allocation, mean update, code comparison and a shifted point. State label permutations do not change membership.",
+      "assertions": [
+        "A looks up colors without either operation. B gates introductory application on a general proof. A small assign-then-average update and a changed observation meet the available objective.",
+        "Explain the curricular judgment and give a justified edit or preservation decision.",
+        "Write the requested case-specific selection and fresh-input result to output/answer.json."
+      ],
+      "koai_control": "fault",
+      "koai_facts": {
+        "selection": "neither",
+        "probe": [
+          2,
+          10
+        ]
+      }
+    },
+    {
+      "id": "depth-c58",
+      "expected_skill": "koai-evaluate",
+      "should_trigger": true,
+      "prompt": "2027 중등부를 준비하는 10주 과정이다. 매주 수업은 120분이고 Python 기초 경험을 전제하며 AI 선행은 요구하지 않는다. KOAI 2027 안내에서 연결한 실라버스는 IOAI 2026으로 표시되어 있다. 실전은 데이터를 코드로 다루고 출력을 해석하는 능력을 포함한다. 이론은 원리를 폭넓게 다룬다. 주별 목표는 학교 자체 편성이다. 공식 실라버스 https://kitpa.org/koai/syllabus · 대회 안내 https://kitpa.org/koai/2027 · 과정표 curriculum/student-plan.html.\n두 편집안이 제시한 활동을 해당 주차의 목표와 시간에 맞춰 심의하라. 그대로 채택할 수 있는 안을 A, B, both 또는 neither로 표시하라. `basis`에는 실제 자료에 근거한 판단을, `edit`에는 보존·변경할 한 가지를 쓰라. 근거와 편집은 각각 1~2문장이면 된다. 계산 또는 자료 대조 결과는 `probe`에 넣는다. 학생의 실제 달성도를 주장할 필요는 없다.\n1주. 전체 방문의 대기 시간 표\n이번 학생용 설문은 모든 실제 방문을 모은 뒤 그중 한 방문을 같은 확률로 고른다고 가정한다. 이때의 예상 대기 시간을 보고하라. 빈 교실·결측은 없다. 코드 셀과 새 파일 확인에 10분을 배정했다.\nA. 한 관측을 한 행으로 소개하고 X실과 Y실의 막대가 무엇을 세는지 먼저 읽는다. 다음 두 식을 실행한다. by_room = visits.groupby('room')['wait'].mean(), answer = by_room.mean(). 학생은 새 방의 관측 수를 바꾸어 전체 결과를 예측하고 비교한다.\nB. 한 관측을 한 행으로 소개하고 X실과 Y실의 막대가 무엇을 세는지 먼저 읽는다. 다음 두 식을 실행한다. total = visits['wait'].sum(), answer = total / len(visits). 학생은 새 방의 관측 수를 바꾸어 전체 결과를 예측하고 비교한다.\n새 파일에 X실 2,2,2분과 Y실 10분이 있다. X실에서 2분인 진짜 방문 한 건을 더 관측한다. [추가 전,추가 후] 이 질문이 요구하는 평균을 `probe`로 제출하라.\n제출물은 /workspace/output/answer.json의 JSON 객체다. 필드는 selection, probe, basis, edit이다.",
+      "expected_output": "The sampled unit is recorded visit, so each event has weight one. 16/4=4 changes to 18/5=3.6; equal room averaging (6) loses the extra visit's weight. Keep the pooled row count and the appended-visit check. Explain why giving each room equal weight would change the question.",
+      "assertions": [
+        "The sampled unit is recorded visit, so each event has weight one. 16/4=4 changes to 18/5=3.6; equal room averaging (6) loses the extra visit's weight.",
+        "Explain the curricular judgment and give a justified edit or preservation decision.",
+        "Write the requested case-specific selection and fresh-input result to output/answer.json."
+      ],
+      "koai_control": "fault",
+      "koai_facts": {
+        "selection": "B",
+        "probe": [
+          4,
+          3.6
+        ]
+      }
+    },
+    {
+      "id": "depth-c93",
+      "expected_skill": "koai-evaluate",
+      "should_trigger": true,
+      "prompt": "2027 중등부를 준비하는 10주 과정이다. 매주 수업은 120분이고 Python 기초 경험을 전제하며 AI 선행은 요구하지 않는다. KOAI 2027 안내에서 연결한 실라버스는 IOAI 2026으로 표시되어 있다. 실전은 데이터를 코드로 다루고 출력을 해석하는 능력을 포함한다. 이론은 원리를 폭넓게 다룬다. 주별 목표는 학교 자체 편성이다. 공식 실라버스 https://kitpa.org/koai/syllabus · 대회 안내 https://kitpa.org/koai/2027 · 과정표 curriculum/student-plan.html.\n두 편집안이 제시한 활동을 해당 주차의 목표와 시간에 맞춰 심의하라. 그대로 채택할 수 있는 안을 A, B, both 또는 neither로 표시하라. `basis`에는 실제 자료에 근거한 판단을, `edit`에는 보존·변경할 한 가지를 쓰라. 근거와 편집은 각각 1~2문장이면 된다. 계산 또는 자료 대조 결과는 `probe`에 넣는다. 학생의 실제 달성도를 주장할 필요는 없다.\n3주. 큰 오차가 섞인 회귀 비교\n선형회귀를 학습할 때 MAE와 MSE가 같은 잔차를 어떻게 다르게 반영하는지 설명한다. 절 끝에서 작은 고정 검증표의 두 후보를 비교하고 손계산을 실행 결과와 대조한다.\nA. 세 개의 예측 오차를 표에 놓고 하나의 큰 실수와 고르게 난 실수를 비교한다. 각 모델의 절댓값 평균·제곱 평균을 계산하고 새 표에서 지표별 우승 모델이 달라지는 까닭을 설명한다. 마지막에 MAE와 MSE 함수를 같은 검증 행에 적용한다.\nB. 오차를 제곱하면 영향이 커진다는 설명과 예제 출력을 보여준다. 학생은 MAE·MSE 이름을 맞히고, 주어진 검증표와 관계없이 'MSE가 큰 실수를 강조한다' 문장을 그대로 입력한다. 안내문은 지표 간 순위가 달라지는지 시험하는 부분을 생략했다.\n모델 X의 절대 오차는 [0,0,5], Y는 [2,2,2]다. [더 낮은 MAE를 얻는 모델,더 낮은 MSE를 얻는 모델] 이름을 `probe`로 제출하라.\n제출물은 /workspace/output/answer.json의 JSON 객체다. 필드는 selection, probe, basis, edit이다.",
+      "expected_output": "X has MAE 5/3 versus 2, but MSE 25/3 versus 4. Learners must apply each aggregation to the same rows and explain the changed selection. Keep the fresh ranking example with a large residual and a working metric check. Label recall alone does not reveal the difference.",
+      "assertions": [
+        "X has MAE 5/3 versus 2, but MSE 25/3 versus 4. Learners must apply each aggregation to the same rows and explain the changed selection.",
+        "Explain the curricular judgment and give a justified edit or preservation decision.",
+        "Write the requested case-specific selection and fresh-input result to output/answer.json."
+      ],
+      "koai_control": "fault",
+      "koai_facts": {
+        "selection": "A",
+        "probe": [
+          "X",
+          "Y"
+        ]
+      }
+    },
+    {
+      "id": "depth-c80",
+      "expected_skill": null,
+      "should_trigger": false,
+      "prompt": "도판 색인 요청\n편집부의 현재 요청은 승인된 수업 도판의 색인만 내보내는 것이다. 원고 심의는 별도로 끝났다.\nA. 입고된 파일 ID/제목은 [(P9,거리표),(F1,그래프),(K4,마스크)]이다.\nB. 납품 양식은 파일 ID만 원래 입고 순서로 저장하는 JSON이다. 내용 심의나 교안 선택을 요청하지 않았다.\n`selection`에 `index`, `probe`에 파일 ID 배열을 적는다. `basis`에 수행한 편집 업무 한 문장을 적고 `edit`는 빈 문자열로 둔다.\n제출물은 /workspace/output/answer.json의 JSON 객체다. 필드는 selection, probe, basis, edit이다.",
+      "expected_output": "The requested operation is an ordered documentary index. No curriculum editorial verdict or new prerequisite belongs here. Copy the three incoming IDs in order; no content edit.",
+      "assertions": [
+        "The requested operation is an ordered documentary index. No curriculum editorial verdict or new prerequisite belongs here.",
+        "Export only the supplied index without a content verdict.",
+        "Write the requested case-specific selection and fresh-input result to output/answer.json."
+      ],
+      "koai_control": "off_scope",
+      "koai_facts": {
+        "selection": "index",
+        "probe": [
+          "P9",
+          "F1",
+          "K4"
+        ],
+        "edit": ""
+      }
+    }
+  ]
+}

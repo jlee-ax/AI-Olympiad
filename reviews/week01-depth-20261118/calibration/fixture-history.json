@@ -1,0 +1,10 @@
+{
+  "earlier_preparation": {
+    "fixed_shared_files_per_arm": 39,
+    "shared_context_sha256": "a68df4a130b77909ccbb77365511818c9e5cf6fcd69a0b27e92d397a4355e1fe",
+    "trials_started": 0
+  },
+  "reason": "The implementation split topic_depth_basis.py after the first preparation. The published final set binds and imports the dependency in both arms. Reader-visible course sources and revised instructions stayed identical.",
+  "final_shared_files_per_arm": 40,
+  "final_context_sha256": "fba858d640af0ec4952bc83ad41ea6d7519f4ea9793778cb87ab181b43d72388"
+}

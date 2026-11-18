@@ -1,0 +1,232 @@
+{
+  "schema_version": "1",
+  "evaluation": {
+    "dataset_id": "koai-novice-depth-finite-review",
+    "dataset_version": "1",
+    "skill_id": "koai-evaluate",
+    "skill_version": "356f74268ebf35f1d1d07b7f267534fa632e6fc1bf659798896a084f3ee41f06",
+    "agent": "Codex conversation subagent",
+    "agent_version": "unspecified",
+    "model": "gpt-6.2-astra (requested)",
+    "environment": "separate conversation sessions"
+  },
+  "provenance": {
+    "producer": "anonymous semantic adjudication and generated rule-based verifier replay",
+    "run_id": "koai-20261118-blind-depth",
+    "created_at": "2026-11-18T12:04:45Z"
+  },
+  "metric_definitions": {
+    "editorial_review_complete": {
+      "version": "1",
+      "unit": "fraction",
+      "direction": "higher_is_better",
+      "aggregation": "mean"
+    },
+    "selection_and_probe_correct": {
+      "version": "1",
+      "unit": "fraction",
+      "direction": "higher_is_better",
+      "aggregation": "mean"
+    }
+  },
+  "observations": [
+    {
+      "case_id": "c17",
+      "attempt": 1,
+      "arm": "without_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c42",
+      "attempt": 1,
+      "arm": "without_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c08",
+      "attempt": 1,
+      "arm": "without_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c33",
+      "attempt": 1,
+      "arm": "without_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c37",
+      "attempt": 1,
+      "arm": "without_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c54",
+      "attempt": 1,
+      "arm": "without_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c69",
+      "attempt": 1,
+      "arm": "without_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c71",
+      "attempt": 1,
+      "arm": "without_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c26",
+      "attempt": 1,
+      "arm": "without_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c58",
+      "attempt": 1,
+      "arm": "without_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c93",
+      "attempt": 1,
+      "arm": "without_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c17",
+      "attempt": 1,
+      "arm": "with_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c42",
+      "attempt": 1,
+      "arm": "with_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c08",
+      "attempt": 1,
+      "arm": "with_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c33",
+      "attempt": 1,
+      "arm": "with_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c37",
+      "attempt": 1,
+      "arm": "with_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c54",
+      "attempt": 1,
+      "arm": "with_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c69",
+      "attempt": 1,
+      "arm": "with_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c71",
+      "attempt": 1,
+      "arm": "with_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c26",
+      "attempt": 1,
+      "arm": "with_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c58",
+      "attempt": 1,
+      "arm": "with_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    },
+    {
+      "case_id": "c93",
+      "attempt": 1,
+      "arm": "with_skill",
+      "custom_metrics": {
+        "editorial_review_complete": 1,
+        "selection_and_probe_correct": 1.0
+      }
+    }
+  ]
+}

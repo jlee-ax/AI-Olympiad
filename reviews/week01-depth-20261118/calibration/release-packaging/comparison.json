@@ -1,0 +1,60 @@
+{
+  "purpose": "Validate release packaging using previously frozen blind inputs and responses. No new model response, reviewer, or behavioral trial.",
+  "native_agent_trials_started": 0,
+  "new_conversation_responses": 0,
+  "retained_behavioral_case_pairs": 11,
+  "clerical_pair": 1,
+  "historical_common_sha256": "fba858d640af0ec4952bc83ad41ea6d7519f4ea9793778cb87ab181b43d72388",
+  "release_common_sha256": "8dd5ef8f78ac7a6fd561944dbadf51e7d88707910fd8f2ae5fbbf2de704230a1",
+  "historical_shared_files_per_arm": 40,
+  "release_shared_files_per_arm": 41,
+  "added_common_files": [
+    "tools/topic-depth.md"
+  ],
+  "updated_common_files": [
+    "tools/discovery_loop.py",
+    "tools/material-revision.md",
+    "tools/material_revision.py",
+    "tools/quality.py",
+    "tools/topic_depth.py",
+    "tools/workflow.py"
+  ],
+  "removed_common_files": [],
+  "release_quality_file_sha256": "2026ad83ad778ff78b8f6937ce50abf0b87982d98db3cfaf0c480339d7052a3a",
+  "release_adapter_sha256": "ad0710dabb58c9e858b2a1bb07ca2d93538dd90a0b0d4ebc793b25fb5f4cba76",
+  "identical_behavioral_inputs": {
+    "unchanged_reader_course_sources": {
+      "curriculum/contract.json": "e82a913c48dba2a7b67bee0c8b79d610b825ba47314c00d5836364e05ee0e114",
+      "curriculum/student-plan.html": "78d743c33d91c958d33dd36e994dc00507d78edecb3f30b986fed4109cc2521e"
+    },
+    "target_skill_bundle_sha256": "356f74268ebf35f1d1d07b7f267534fa632e6fc1bf659798896a084f3ee41f06",
+    "study_records_sha256": {
+      "frozen-sha256.json": "05fec4f384c2cc3c333a72c4269babf22eb1b88bee4bd40f9c61b92ea2c3464c",
+      "arm-map.json": "fb1075bfcce61985c074908ef69aa8eee08329c0ccadddc8c7252743933f5500",
+      "blind-adjudication.json": "5f735e8af728ea7a7b7c94bfda18ad2ce985e309b280a8d94c814251caa7eaeb",
+      "reader-J.json": "d28852323e673d50d68b1a4d152fa91a02852fcf4b5871cd86d90227c8b807f2",
+      "reader-R.json": "c898c752e48e89db3c413b46d0c4afa6e4d7a6a9f89ee25f1aefae6580143f79",
+      "answer-key.json": "ef6c75445601584c27f1cba4360840706170861c8012d02e7b33df59faa55ed7",
+      "blind/packets.json": "42694a4fc42235fd93438cf479bf447637b0a4796599a12b80ef83cfcbdd4e10",
+      "native-suite.json": "42d2a050998dc7f86159d53429b8e302a7b2214e97b1eabeb64ec0811253edff",
+      "external/replay.json": "74e6b55f5ca90395b885a7299e9648a153ca5e14e6ddc114278b8bf397d0136a",
+      "external/external-input.json": "1556122c87150c1684fbf76ab461395d43cbcb945b51071a4ff4d2759c545fc1",
+      "external/native-import/external_metrics.json": "ebc7739da39cce69f0e7909362bbf8a9bc43c1974d8ba6e7b023dd41e7c0fb6f"
+    }
+  },
+  "native_custom_only_replay": {
+    "real_answers_again": 24,
+    "sensitivity_controls_again": 3,
+    "replay_equals_first_byte_for_byte": true,
+    "external_observations_input_equals_first_byte_for_byte": true
+  },
+  "native_external_import": {
+    "output_equal_after_removing_import_timestamp": true,
+    "original_imported_at": "2026-11-18T12:10:17.913736+00:00",
+    "release_replay_imported_at": "2026-11-18T12:29:08.655388+00:00",
+    "release_import_sha256": "8d4fa82336c6bd9b07c29e201d54bc3c7039c436fe3b7cfc59cc687330d01280",
+    "executed_by_skillevaluator": false,
+    "paired_external_educational_cases": 11
+  },
+  "NVIDIA_verifier_module_imports": "All staged sibling modules imported from the task directories. Optional remote-provider/RAGAS calls were not invoked."
+}

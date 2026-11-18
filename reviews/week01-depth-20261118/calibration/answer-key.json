@@ -1,0 +1,165 @@
+{
+  "rubric": "Each instructional case requires (1) selecting the justified alternatives, (2) obtaining the numeric or symbolic probe, (3) articulating the actual reason for at least the decisive difference or equivalence, (4) an edit/keep consistent with that reason and the stated week. The first two have an executable exact-field check. A separate reader judges meaning for the last two; accept equivalent wording and sound alternative interventions. The index control requires order, empty edit, and no unsolicited editorial opinion. A categorical decision or a successful computation alone is insufficient for a semantic case pass.",
+  "items": [
+    {
+      "id": "c17",
+      "week": 1,
+      "selection": "B",
+      "probe": [
+        "East",
+        "West",
+        "East",
+        null
+      ],
+      "control": "fault",
+      "dimension": "shallow vs minimum",
+      "basis": "Explain why a keyed match retains repeated observations while the missing lookup stays visible. Reading the supplied result cannot establish this capability on the rearranged table.",
+      "edit": "Keep a hand match, then a keyed operation and the unseen row-order/unmatched check. Do not promote SQL internals to a required task."
+    },
+    {
+      "id": "c42",
+      "week": 1,
+      "selection": "both",
+      "probe": [
+        3,
+        9,
+        1
+      ],
+      "control": "normal",
+      "dimension": "two appropriate alternatives",
+      "basis": "Both plots preserve individual observations, units and observable spread. A singleton supports an observed value but no population variability conclusion.",
+      "edit": "Keep either implementation with the fresh-input interpretation. No demand to implement both inside this short block."
+    },
+    {
+      "id": "c08",
+      "week": 4,
+      "selection": "A",
+      "probe": [
+        "red",
+        "blue"
+      ],
+      "control": "fault",
+      "dimension": "deleting necessary prerequisite",
+      "basis": "Varying k means counting labels attached to the same distance-ranked neighbors. Two separately sorted lists lose that relation even if an earlier displayed answer is right.",
+      "edit": "Retain a joined ID-distance-label row or equivalent index linkage before the first new vote. No extra distance proof needed."
+    },
+    {
+      "id": "c33",
+      "week": 7,
+      "selection": "A",
+      "probe": [
+        2,
+        3
+      ],
+      "control": "fault",
+      "dimension": "advanced requirement despite correct code",
+      "basis": "The input-window/output correspondence, stride and actual operator are sufficient. A spectral bound is neither a prerequisite to counting windows nor a stated introductory objective.",
+      "edit": "Keep the small window-to-code check; move the mandatory spectral derivation off the core path."
+    },
+    {
+      "id": "c37",
+      "week": 1,
+      "selection": "A",
+      "probe": [
+        6,
+        6
+      ],
+      "control": "fault",
+      "dimension": "objective reversal: equal rooms",
+      "basis": "The sampling unit at the first stage is room. Equal room weights give (2+10)/2=6 even after another genuine X visit of 2. The pooled visits answer a different question.",
+      "edit": "Keep the two-stage aggregation and ask what happens when an additional visit leaves its room mean unchanged. No general sampling theory is required."
+    },
+    {
+      "id": "c54",
+      "week": 2,
+      "selection": "B",
+      "probe": [
+        8,
+        20
+      ],
+      "control": "fault",
+      "dimension": "scope-specific shallow/misplaced general rule",
+      "basis": "Known-device forecasting can use observations genuinely available before each decision. A mandatory ID-disjoint split erases the target setting and today's observed target would leak.",
+      "edit": "Teach availability at each decision with past-only, per-device features and a chronological check. Do not fit preprocessing on future rows."
+    },
+    {
+      "id": "c69",
+      "week": 8,
+      "selection": "both",
+      "probe": [
+        2,
+        2
+      ],
+      "control": "normal",
+      "dimension": "two appropriate explanations of later prerequisite",
+      "basis": "Both explicitly use the supplied validity identity and the valid count. Zero can be a valid token; padding magnitude should not affect masked pooling.",
+      "edit": "Either representation serves the objective; retain the independent masking check. The full encoder is covered elsewhere."
+    },
+    {
+      "id": "c71",
+      "week": 1,
+      "selection": "B",
+      "probe": [
+        2,
+        0
+      ],
+      "control": "fault",
+      "dimension": "deleting necessary connection to downstream use",
+      "basis": "The required downstream value is the function return. Printing and manual copy can mask a missing return, especially when rerunning with a new class or empty input.",
+      "edit": "Preserve a small state trace and directly use the returned count in the graph; test boundary equality and empty input."
+    },
+    {
+      "id": "c26",
+      "week": 5,
+      "selection": "neither",
+      "probe": [
+        2,
+        10
+      ],
+      "control": "fault",
+      "dimension": "one shallow and the other excessive",
+      "basis": "A looks up colors without either operation. B gates introductory application on a general proof. A small assign-then-average update and a changed observation meet the available objective.",
+      "edit": "Replace the chart-only answer and proof gate with hand allocation, mean update, code comparison and a shifted point. State label permutations do not change membership."
+    },
+    {
+      "id": "c58",
+      "week": 1,
+      "selection": "B",
+      "probe": [
+        4,
+        3.6
+      ],
+      "control": "fault",
+      "dimension": "objective reversal: equal visits",
+      "basis": "The sampled unit is recorded visit, so each event has weight one. 16/4=4 changes to 18/5=3.6; equal room averaging (6) loses the extra visit's weight.",
+      "edit": "Keep the pooled row count and the appended-visit check. Explain why giving each room equal weight would change the question."
+    },
+    {
+      "id": "c93",
+      "week": 3,
+      "selection": "A",
+      "probe": [
+        "X",
+        "Y"
+      ],
+      "control": "fault",
+      "dimension": "definition-only vs applied reasoning",
+      "basis": "X has MAE 5/3 versus 2, but MSE 25/3 versus 4. Learners must apply each aggregation to the same rows and explain the changed selection.",
+      "edit": "Keep the fresh ranking example with a large residual and a working metric check. Label recall alone does not reveal the difference."
+    },
+    {
+      "id": "c80",
+      "week": null,
+      "selection": "index",
+      "probe": [
+        "P9",
+        "F1",
+        "K4"
+      ],
+      "control": "off_scope",
+      "dimension": "off-scope control",
+      "basis": "The requested operation is an ordered documentary index. No curriculum editorial verdict or new prerequisite belongs here.",
+      "edit": "Copy the three incoming IDs in order; no content edit."
+    }
+  ]
+}

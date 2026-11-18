@@ -1,0 +1,52 @@
+{
+  "skill": "koai-evaluate",
+  "native_strict_exit": 0,
+  "case_count": 12,
+  "live_agent_runs": 0,
+  "evidence": "paired_task_preparation",
+  "status": "provisional",
+  "skill_bundle_sha256": "356f74268ebf35f1d1d07b7f267534fa632e6fc1bf659798896a084f3ee41f06",
+  "skillevaluator_version": "1.0.1",
+  "skillevaluator_python_sha256": "7170e3407f7c9328b2ba798b358ac1cfff4f167d70d6962624d5f1cf99751d61",
+  "reference_revision": "e3ede733f4d57578a1630b0579ea236b8cf8a727",
+  "matches_reference_python": true,
+  "coverage": {
+    "case_count": 12,
+    "starter": false,
+    "positive_cases": 11,
+    "negative_cases": 1,
+    "unlabeled_trigger_cases": 0,
+    "cases_with_expected_outcome": 12,
+    "cases_with_expected_behaviors": 12,
+    "gaps": []
+  },
+  "coverage_policy": {
+    "name": "coverage",
+    "met": true,
+    "observed": {
+      "distinct_cases": 12,
+      "negative_cases": 1
+    },
+    "required": {
+      "distinct_cases": 10,
+      "negative_cases": 1
+    },
+    "reason": "Enough cases for this policy"
+  },
+  "dataset_sha256": "42d2a050998dc7f86159d53429b8e302a7b2214e97b1eabeb64ec0811253edff",
+  "grader_sha256": "7c153f678b7e50d24d1bc9b95cc3007ae8d39393c8ba527f09b44f4a00391b3e",
+  "context_sha256": "8dd5ef8f78ac7a6fd561944dbadf51e7d88707910fd8f2ae5fbbf2de704230a1",
+  "review_blockers": [
+    "The checked-in suite is public development material.",
+    "No independent review record supplied."
+  ],
+  "pairs_prepared": 12,
+  "shared_files_per_arm": 41,
+  "shared_sha256_equal": true,
+  "target_available": {
+    "with": true,
+    "without": false
+  },
+  "verifier_inputs_exposed": false,
+  "prepared_skill": "repo/candidate/koai-evaluate"
+}
