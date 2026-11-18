@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "lesson_path": "lessons/week01/week01_foundations.ipynb",
+  "baseline": {
+    "commit": "85211bc61260e8281f90aa15f6119255e1a07f53",
+    "sha256": "a4af5aba21ce921de161ba02f9edbf041cfd2f4d6b90f8fb5b7b52c9c5b41178"
+  },
+  "predecessor": {
+    "case": "reviews/week01-depth-20261118",
+    "round": 5
+  },
+  "author": "week01 contest curriculum editor",
+  "audience": "KOAI 중등부 준비생. 기본 Python의 변수·조건·반복·함수·파일 읽기를 연습했고 AI 선수 지식은 없다.",
+  "class_minutes": 120,
+  "maximum_home_minutes": 420,
+  "time_basis": "수업 이론 20분, 비코딩 20분(필기와 해설 포함), 코딩 80분. 자습 필수 계획 330분, 명시한 추가 활동 최대 45분. 독립 추정 상단과 학생 시간의 관측 여부를 구분한다.",
+  "source_inputs": [
+    {
+      "path": "curriculum/student-plan.html",
+      "sha256": "78d743c33d91c958d33dd36e994dc00507d78edecb3f30b986fed4109cc2521e",
+      "locator": "week-1의 학생 진입 링크·120분 수업·자습 범위·KOAI-01/02/03과 배열 선수"
+    },
+    {
+      "path": "skills/koai-evaluate/references/unit-specifications.json",
+      "sha256": "c603991797dd86e3b0258b8d62d5af58e23ff6726aeecd62d386506311e20e65",
+      "locator": "W1-python, W1-table, W1-array, W1-visualise"
+    },
+    {
+      "path": "reviews/week01-contest-20261118/sources.md",
+      "sha256": "c166531d66cd784067bdd67fa2293f8faf4b1cb2b2c734a8d02088b5fa434dbb",
+      "locator": "공식 Restroom / Antique 원문과 훈련 원본 식별, 현지 연습 경계, R5 보존 커밋"
+    }
+  ],
+  "companion_paths": [
+    "lessons/week01/week01_foundations_teacher.md",
+    "lessons/week01/data/antique_training.csv"
+  ],
+  "public_training": {
+    "path": "lessons/week01/data/antique_training.csv",
+    "sha256": "99ffffc9972351e91d05a4bf80e5d3c63996aa7231a338959cd49e288c63f11a"
+  },
+  "topics": [
+    {
+      "id": "W1-formulate",
+      "objective": "문장형 요구를 입력·후보 자격·반환할 ID/예측·평가 규칙으로 옮기고 손으로 예측한다.",
+      "entry": "변수·목록·조건문·함수 호출을 본 학습자. 질의, 후보, 결과 한 건을 작은 실제 표와 연결한다.",
+      "minimum": "값과 행 순서, ID, 라벨의 역할을 나눈다. 함수의 조건·반복·반환을 추적하고 바뀐 규칙으로 결과 계약을 스스로 쓴다.",
+      "ceiling": "대회 표기와 파일 형식은 이해에 필요한 범위로 소개한다. 이미지 표현 학습이나 제출 환경 구축은 뒤로 둔다.",
+      "assessment": "풀이 선택을 제시하기 전에 새 요구의 가능한 입력과 기대 출력, 제외할 후보나 실패 예를 학생이 기록한다.",
+      "prerequisites": [],
+      "minutes": {
+        "class": 20,
+        "homework": 45,
+        "optional": 0
+      },
+      "sources": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "W1-rank",
+      "objective": "후보를 걸러 거리로 순위를 매기고 동점 또는 입력 순서가 달라져도 규칙대로 ID를 반환한다.",
+      "entry": "입출력 계약과 조건·반복·함수 추적. 소수 후보에서 거리와 답을 손으로 셀 수 있다.",
+      "minimum": "선정 자격, 거리가 작은 방향, 동점과 빈 결과 규칙을 분리한다. 손계산·작동 코드·새 입력 검산을 연결하고 반례를 설명한다.",
+      "ceiling": "작은 표의 명시적 순위 규칙으로 제한한다. 실제 이미지 특징 추출 또는 인덱스 가속을 요구하지 않는다.",
+      "assessment": "변경된 자격·동점·순서 중 하나 이상이 실제로 답을 바꾸는 새 입력에서 반환할 ID와 이유를 기록하고 함수로 확인한다.",
+      "prerequisites": [
+        "W1-formulate"
+      ],
+      "minutes": {
+        "class": 35,
+        "homework": 90,
+        "optional": 10
+      },
+      "sources": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "W1-array",
+      "objective": "행과 열의 의미로 배열 차·제곱·축 축약을 선택하고 특성 단위 변화가 거리 순위에 주는 영향을 점검한다.",
+      "entry": "입력과 출력 대상을 확인할 수 있는 학습자. 작은 2차원 표에서 행/특성 대응과 한 칸의 뺄셈부터 시작한다.",
+      "minimum": "대각선이나 행 위치에 의존하지 않고 질의와 후보 특성을 맞춘다. shape·axis와 출력 한 원소를 손으로 검산한다. 단위/스케일 변경 아래 원시 거리의 한계와 동등하게 정당한 처리를 비교한다.",
+      "ceiling": "전체 최적화 이론, 딥러닝, 특정 스케일러 사용을 요구하지 않는다. 분모가 0인 상수 특성 등 실제 예외를 확인한다.",
+      "assessment": "낯선 배열 또는 한 특성 단위가 달라진 표에서 어떤 축/표현을 쓸지 먼저 정하고 수치·ID·의미를 재확인한다.",
+      "prerequisites": [
+        "W1-formulate"
+      ],
+      "minutes": {
+        "class": 30,
+        "homework": 90,
+        "optional": 15
+      },
+      "sources": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "W1-evidence",
+      "objective": "공개 Antique 표를 해석해 확인할 수 있는 주장과 한계를 가르고, 관찰 수·도표·정확도 분모로 가설을 점검한다.",
+      "entry": "문제의 입력과 정답을 구분할 수 있다. 실제 CSV의 한 행과 자료사전에서 시작해 미상 코드와 두 알려진 부류를 확인한다.",
+      "minimum": "pandas로 행·열·자료형과 라벨별 수를 확인한다. Matplotlib와 Seaborn으로 분포와 집단 차이를 실제로 그린다. 네 알려진 라벨을 이용하는 작은 진단에서 해당 답을 감추고 분모와 관측 수를 명시한다. 미상 496개의 결론과 일반화를 유보한다.",
+      "ceiling": "실제 비공개 평가·모델 우승이나 통계적인 성능 우위를 주장하지 않는다. SVM 학습, GPU 및 대형 표현 학습을 요구하지 않는다.",
+      "assessment": "새 보기 또는 행/특성 조건이 달라진 자료에서 도표·수치·분모를 학생이 선택하고, 무엇이 반례가 될지와 추가로 확인할 자료를 설명한다.",
+      "prerequisites": [
+        "W1-formulate"
+      ],
+      "minutes": {
+        "class": 35,
+        "homework": 105,
+        "optional": 20
+      },
+      "sources": [
+        0,
+        1,
+        2
+      ]
+    }
+  ]
+}
