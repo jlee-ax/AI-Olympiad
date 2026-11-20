@@ -99,10 +99,13 @@ function makeCourseRunner(core) {
           insist(ids.size>0,"No source-grounded demand");
           await save({...state,phase:"author",basis},"grounded",{demands:basis.demands.map(d=>d.id)});
         }else if(state.phase==="author"){
+          const actionInstruction=previous
+            ? "Use keep for unchanged notebooks or a revision action for changes. Compare edits to accepted_baseline."
+            : "Use create for this blank baseline, including retries after feedback.";
           const request={role:"author",worker_id:config.author,week, sources:references,prerequisites:deps,
             skills:skills.author,prerequisite_material:priorMaterial,previous:state.candidate??previous,accepted_baseline:previous,
             feedback:state.feedback??null,required:core.obligations(week),public_probes:probes,frozen_demands:state.basis.demands,schema:candidateSchema,
-            instructions:"Write Korean student materials for the entire registered week and separate teacher answers. Use the preceding notebooks and next_uses to teach the actual decision and reasoning. Explain what the representation preserves or loses, work through a small calculation or algorithm where relevant, and ask for a reasoned choice on fresh conditions. Preserve official obligations and learner time, mark adaptations. Keep hidden answers out of student work. The student's independent prompt must leave the decision to the student even when the teacher probe interface specifies an algorithm. Use direct explanations; an analogy cannot substitute for the operation and its conditions. Return one JSON candidate; use create until an accepted baseline exists. The public transfer interface is one calibration probe, not the entire lesson."};
+            instructions:"Write Korean student materials for the entire registered week and separate teacher answers. Use the preceding notebooks and next_uses to teach the actual decision and reasoning. Explain what the representation preserves or loses, work through a small calculation or algorithm where relevant, and ask for a reasoned choice on fresh conditions. Preserve official obligations and learner time, mark adaptations. Keep hidden answers out of student work. The student's independent prompt must leave the decision to the student even when the teacher probe interface specifies an algorithm. Use direct explanations; an analogy cannot substitute for the operation and its conditions. Return one JSON candidate. "+actionInstruction+" The public transfer interface is one calibration probe, not the entire lesson."};
           calls++;
           let candidate;
           if(preset){const old=await ledger.history(weekNum,preset);insist(old && old.hash===preset && previous,"Invalid restore target");candidate={...old.candidate,action:"restore",reason:"Restore previously accepted "+preset+" and independently verify again"};}

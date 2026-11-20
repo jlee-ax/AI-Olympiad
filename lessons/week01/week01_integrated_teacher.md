@@ -1,109 +1,282 @@
-# 1주 통합 경로 · 교사용 해설
+# Week 1 teacher guide · From a score row to a gallery ID
 
-이 문서에는 새 독립 문제의 예시 해설이 있습니다. 공개 저장소에서 파일을 분리해도 접근이 차단되지는 않습니다. 독립 수행 전에 교사가 적절한 권한의 별도 공간이나 방법으로 해설을 보관·배포합니다. 학생의 직접 작성·이유·받은 도움을 확인하지 않았다면 독립 수행이나 숙달로 기록하지 않습니다.
+A query asks for one gallery object. In a query-by-gallery score table, read the query's row, find the winning column under the stated rule, then use that column's header to identify the object. A student's answer should survive moving the candidate and its scores together. The same student should be able to explain why moving query rows changes the order of the answer list. [Student notebook](week01_integrated.ipynb)
 
-## 운영과 책임 범위
+## Classroom route and stopping point
 
-주 경로는 화분 한 행의 뜻과 예측 시점 → 물의 평균·분산 → 관찰의 행·열·채널 → 노란 잎이라는 수치 특성 → 실제 학습·검증 → ID와 출력 → 다른 기기 명세의 독립 수행입니다. 이미지 모델이나 국제 문제 전체를 1주에 완수했다는 뜻이 아닙니다.
+Use sections 1–8 as the main route. Move from one pot per row to one query per row, then change the data contract and ask for an ordered lookup, numerical summaries and figures. Students first write a hand prediction and reason, then run their own solution on the supplied and changed inputs. The three items to collect are the matching answer and function, the painting-ID lookup and measurement summary, and the two plots with their source counts. Section 8 includes a fresh CSV, a new array and a clean-kernel rerun as checks on those items.
 
-기존 수업 120분에 새 시간을 확보했다고 가정하지 않습니다. 학생은 아래의 기존 필수 연습도 수행해야 합니다. 이전 5~7시간 자습은 옛 범위의 추정치이며 새 통합 경로와 남은 필수 과제의 총시간·도움·이해·독립 전이는 미관찰입니다. 현재 노트북은 46셀·코드 22셀이고 원본·교량으로 이동하는 부담과 새 범주/축·2특성·독립 과제를 함께 고려해야 합니다. 셀 수와 자동 실행으로 시간 절감이나 완수를 판단할 수 없습니다. 실제 수행·도움을 기록하고 부족하면 미완료를 남겨 지원과 기간을 조정합니다.
+| Existing class allocation | Work to place in that block | Check one concrete result |
+|---|---|---|
+| 20 min, theory | Read a pot record, distinguish what is available at prediction time, and name the objects on each axis. Connect mean and variance to units. | A student identifies P03's unrecorded water, the later height, and the objects represented by the rows and columns of a score table. |
+| 20 min, noncoding | Spend 10 min calculating axis means by hand. For the 10 min written block, follow the link in integrated section 3 to section 5 of *Python and tables* (cell `71068cea`). Have students answer both selected-response items and the constructed-response item on paper, then return to section 3. | Collect each original choice or calculation and its reason before revealing the key. The answers are 13, shape `(3,)` with two values per mean, and 6 ml over two measured values. The missing third value leaves the actual three-pot mean undetermined. |
+| 20 min, Python | Follow the link in integrated section 2 to section 6 of *Python and tables* (cell `7208718e`). Have students predict all five diagnostic items before running the checks. Locate the first line that differs from the prediction, inspect the traceback and return to section 2. | Keep the first prediction and the correction. Check a returned value against printed output. The last-element repair for a nonempty list is `values[-1]`. |
+| 40 min, CSV and pandas | Read the class plant table with its dictionary. Select records, check measured zeros and missing values, then demonstrate grouping by location and a left join to one description per location. | Trace one pot ID through the join. Compare the total rows for its location with the number of measured values. Students apply the same operations independently to the fresh CSV in section 8. |
+| 20 min, NumPy and Matplotlib | Reduce a same-unit array along each axis and read a plotted mark against a source record or group. Use the section 5 score table as a short worked example of following a position to its ID. | The student identifies the source and unit of a point or bar, then follows one winning column to the gallery header. The paper exercises stay in the noncoding block. |
 
-이번 영역 응용은 기존 A에 더해지는 실제 작업입니다. 반복을 줄일 후보는 통합본에서 이미 설명한 평균·축·CSV의 완성 예제를 원본에서 다시 전부 낭독하지 않고, 필요한 준비와 의존 코드 후 원본의 다른 입력 문제로 이동하는 것입니다. 독립 풀이·함수 작성과 오류 검사는 생략하지 않으며, 전체 시간의 단축이나 기존 추정 안에 든다고 판정하지 않습니다. 통합본의 단일 평균 함수는 과제 D의 관측 개수·평균과 전부 결측 반환 정책을 대체하지 않습니다. 산점도는 과제 B의 Matplotlib·Seaborn 분포/범주 실습을, 결과 CSV는 과제 C의 새 CSV·자료형·집계·병합을 대체하지 않습니다.
+The earlier course plan sets a 120-minute class and a 5–7 hour historical self-study estimate. Its historical self-study ranges are 2–3 hours for Python/arrays, 1–1.5 hours for visualization, 1–1.5 hours for a new CSV and 1 hour for mathematics/fresh execution. Place the section 6 and 7 independent work in those categories where they exercise the same skill. Credit an existing new-input solution once after checking its reasoning and code. The class allocation is a plan. Actual student time, help needed and independent outcomes for this revision have not been observed. Record incomplete work and its next check. [Course plan](../../curriculum/student-plan.html#week-1) · [Week 1 allocation](lesson-manifest.json)
 
-## 화분 예제의 계산과 판단
+For **KOAI-01**, collect student-written code that traces the supplied order and returns the right object, including a repeated request. For **KOAI-02**, inspect the pandas selection, NumPy axis decisions and the evidence from a changed feature order. For **KOAI-03**, inspect actual Matplotlib and Seaborn figures, tick text, measured bar heights, units and the records behind them. The separate-kernel CSV and array checks below preserve the course's basic Python, plotting and data obligations. The leaf classifier, device exercise, rectangle, vector retrieval and ZIP checks have keys later in this guide for use when their specific questions arise.
 
-- 예측은 일주일의 실제 빛·물 기록과 잎 관찰을 얻은 뒤 높이를 재기 직전입니다. 심는 날에는 미래 실제 기록이 아닙니다. P03의 물은 미상이고 P01의 0은 측정된 0입니다. 전체 관측 물 0,20,40,10,50의 평균 24ml는 여섯 화분의 실제 평균이나 훈련 대체값이 아닙니다.
-- 평균 함수의 정상 입력은 길이 0~10,000인 리스트, −1,000,000~1,000,000 범위의 유한한 Python 정수·실수 또는 None/NaN이며 bool을 포함하지 않습니다. 범위 밖은 검사·보장하지 않습니다. [0,None,NaN,6]은 3, 빈 목록이나 전부 미상은 None입니다. 높이 [8,10,12]cm의 평균은 10cm, 편차는 [−2,0,2]cm, 분모 n인 분산은 8/3cm²입니다.
-- P01·P02·P04의 이틀 빛 배열에서 axis 0 평균은 [11/3,11/3]h, axis 1 평균은 [2,3,6]h입니다. reshape와 전치는 둘 다 (2,3)이지만 [0,1]이 다릅니다. (3,2)+(2,)는 열별 보정이며 길이 (3,)과는 오른쪽 축이 맞지 않습니다.
-- 각 합성 잎 관찰은 행×열×채널 (2,2,2). 채널 0은 물체 0=배경·1=잎, 채널 1은 잎의 색 0=초록·1=노랑입니다. 배경의 색은 의미가 없습니다. P02 [0,1]=[1,1], [1,0]=[1,0]입니다. 행/열 전치는 shape가 같아도 [0,1]이 [1,0]으로 달라집니다. P02의 색 코드 1은 세 칸이나 잎이면서 노랑인 칸은 한 개입니다. 배경 색만 바꿔도 유효한 개수는 1입니다. 함수는 명시된 유효 관찰만 입력으로 받으며 일반 이미지 검증기라고 주장하지 않습니다.
-- 관찰은 ID로 원래 행에 연결합니다. P01~P06의 노란 잎 수는 [0,1,2,3,2,3]입니다. 같은 shape의 이미지를 다른 ID에 붙이면 실행되더라도 다른 화분의 특성이 됩니다. 숫자로 저장된 범주가 자동으로 거리나 크기를 나타내지는 않습니다. 이미지의 위치가 바뀌어도 총개수만 같으면 이 특징은 위치를 버립니다.
-- 산점도는 P03=(5h,12cm), 각 점과 화분 ID를 대응시킵니다. 장소·물 등 다른 조건이 함께 다르므로 빛의 인과 효과나 실제 법칙을 결론 내리지 않습니다. 기존 원본 대비 P05의 물 20→10·높이 10→14, P06의 물 60→50으로 두 행의 세 값을 바꾼 별도 합성 자료입니다.
-  그래프는 한글 글꼴을 순서대로 찾고 `Noto Sans CJK JP`도 대안으로 사용합니다. 후보가 없다는 안내가 나오면 실행 환경에 한글 글꼴을 설치하고 커널을 다시 시작합니다.
-- 고정식 높이 예측은 4+L+0.1W입니다. P02는 9cm, 실제 10cm, 실제−예측 +1cm입니다. 절편이 있는 가중합이며 가중평균이라고 부르지 않습니다. 계수는 학습된 값이나 실제 효과가 아닙니다. P03의 미상 물은 근거 없이 0으로 넣지 않습니다.
-- 12cm 이상 여부를 목표로 바꾸면 훈련 y=[0,0,1,1]입니다. 훈련 관측 물 0,20,40으로 대체값 20ml를 학습합니다. 잎 수는 ID로 읽고, 물은 미리 정한 10ml 단위로 나타내 X=[[0,0],[2,1],[2,2],[4,3]]를 만듭니다. X의 행은 훈련 화분, 열은 [물/10ml, 노란 잎 수], y는 각 행에 대응하는 정답입니다.
-- 정답 0의 원래 물 [0,20]에 후보 중심 0·10·20을 쓰면 제곱편차합은 400·200·400ml²이고, 일반 후보 m에서는 2(m−10)²+200입니다. 각 클래스·열의 평균 중심은 [1,0.5]와 [3,2.5]입니다. 중심 평균이 각 클래스의 제곱편차합을 줄인다는 사실이 분류 정확도 전역 최적이나 다른 모델의 무효를 뜻하지는 않습니다. [0,4]와 [1,3]은 중심이 모두 2이고 분산은 4와 1입니다.
-- P05의 [1,2]에서 두 중심까지 제곱거리는 2.25와 4.25여서 예측 0, 나중 정답은 1입니다. P06은 예측 1, 실제도 1입니다. 검증 예측 [0,1]·실제 [1,1]·정확도 1/2는 매우 작고 두 정답이 모두 양성이라 현실 성능의 근거가 아닙니다. /10ml는 미리 정한 기준이며 데이터 기반 최적 스케일이 아닙니다. 여러 특성은 상대 척도를 바꾸면 가까운 중심이 바뀔 수 있습니다.
-- 훈련 P04의 물을 40→60으로 바꿔 대체값과 중심을 다시 학습하면 1의 중심이 [13/3,2.5]가 됩니다. 물 20ml·잎 2개에 대한 같은 질의는 원래 1, 바뀐 모델 0입니다. 이는 모델의 배운 상태가 훈련에 의존한다는 사례이지 검증으로 모델을 선택한 결과가 아닙니다.
-- 결과의 P05/P06 ID와 [0,1]을 같이 옮겨야 합니다. 같은 길이라도 예측과 ID의 연결이 깨지면 다른 결과가 됩니다. 통합본은 메모리 CSV와 임시 디스크 파일을 각각 다시 읽습니다. 합성 문제의 헤더·ID CSV이며 Antique의 두 무헤더 CSV/ZIP과 다릅니다.
+## Matching key for sections 5 and 6
 
-## 공간 경계와 원본 A 연계 · 교사용 예시
+The supplied row index selects the query. A column position starts at zero and identifies a slot in the current arrangement. The value in the slot measures this pair. The gallery ID in its header names the candidate. A row maximum returns a *value*, `argmax(axis=1)` returns *positions*, and indexing the gallery ID sequence with those positions returns the requested *IDs*. With IDs attached as column labels, `score_table.idxmax(axis="columns")` returns those labels directly. Reducing over query rows instead would ask which query scores highest for each candidate.
 
-완성 예는 8×12 합성 숫자 격자에서 `((2,4),(4,7))`의 행 2·3, 열 4·5·6을 선택합니다. crop은 `[[0,29,30],[40,41,42]]`, shape (2,3), mask와 가린 결과는 각각 (8,12)입니다. 선택 칸 6개는 96칸의 1/16이고, 원래 선택값 하나가 0이어서 crop의 비영 값은 5개뿐입니다. 면적은 값이나 색의 수가 아니라 공간 칸을 셉니다. RGB라면 이 사각형은 여전히 6픽셀이며 세 채널 값 18개와 구별합니다. RGB 구현은 필수가 아닙니다.
+| Worked query | Winning value | Zero-based column | Gallery ID |
+|---|---:|---:|---:|
+| Q4 | 0.90 | 1 | 14 |
+| Q9 | 0.80 | 0 | 81 |
 
-독립 합성 T의 한도는 **4칸**으로 별도로 정했습니다(4/6이며 공식 1/16과 다름). `((0,1),(2,3))`의 crop은 `[[4,7],[5,8]]`, 마스크는 `[[0,1,1],[0,1,1]]`, 전체 결과는 `[[0,4,7],[0,5,8]]`입니다. `((0,0),(2,2))`는 crop `[[1,4],[2,5]]`, 마스크 `[[1,1,0],[1,1,0]]`, 전체 결과 `[[1,4,0],[2,5,0]]`입니다. 두 영역 모두 면적 4, crop shape (2,2), 전체 shape (2,3)이지만 지정 위치가 다릅니다. `((1,2),(2,3))`은 끝이 H/W와 같아 유효하고 crop은 `[[8]]`입니다. `((0,0),(2,3))`은 범위 안이어도 면적 6으로 한도 초과입니다. `((1,1),(3,3))`은 명목 면적 4여도 끝 3이 H=2를 넘어 오류입니다. 검사 없이 자르면 NumPy는 `[[5,8]]`만 조용히 돌려줍니다. 시작과 끝이 같은 `((1,1),(1,2))`도 이 합성 계약에서 오류입니다.
+Move candidate 14 and its two scores to the first column. In gallery order `[14,81,57]` the winning positions are `[0,1]`. The answers remain `[14,81]` for Q4, Q9. If only the headers move, the numerical winners still occupy slots 1 and 0, which now falsely report `[81,14]`. Reading a row aloud as “Q4, score 0.90, column 1, file 14” makes the point of a mismatch visible. [Student matching example](week01_integrated.ipynb)
 
-다음은 여러 유효한 풀이 중 하나입니다. 입력은 비어 있지 않은 2차원 NumPy 숫자 배열, 참·거짓이 아닌 Python 정수 좌표 네 개와 양의 정수 한도라는 전제입니다. 함수가 **실제로 검사**하는 것은 좌표의 순서·범위와 면적 한도입니다. 전제 밖 자료형의 처리는 보장하지 않습니다. 배열을 수정하지 않고, crop을 나중에 고쳐도 입력과 분리되도록 숫자 배열을 복사합니다.
+In the independent task, A rewards larger matches and B charges a smaller editing cost. For the supplied column order `[92,17,63,41]` and query order `[Q8,Q5,Q2]` the keys are
 
+| Query | A value | A column | A ID | B cost | B column | B ID |
+|---|---:|---:|---:|---:|---:|---:|
+| Q8 | 0.65 | 2 | 63 | 0.05 | 1 | 17 |
+| Q5 | 0.92 | 2 | 63 | 0.12 | 1 | 17 |
+| Q2 | 0.80 | 1 | 17 | 0.10 | 3 | 41 |
+
+A returns `[63,63,17]`. B returns `[17,17,41]`. Reusing a gallery ID is valid because each query receives its own decision. A classifier would return a class for each query. For example, two different gallery images could share the same class but have different file IDs.
+
+Students choose their own rearrangements. The following choices give one answer key.
+
+| Change to the input | A winning columns → returned IDs | B winning columns → returned IDs |
+|---|---|---|
+| Move the four columns together in old-position order `[2,3,0,1]`. The new headers are `[63,41,92,17]`. | `[0,0,3] → [63,63,17]` | `[3,3,1] → [17,17,41]` |
+| Reverse only the original query rows to `[Q2,Q5,Q8]`, keeping their names and values together. | `[1,2,2] → [17,63,63]` | `[3,1,1] → [41,17,17]` |
+| Apply only the new headers `[63,41,92,17]` to the *original* score columns. This intentionally breaks the pairs. | `[2,2,1] → [92,92,41]` | `[1,1,3] → [41,41,17]` |
+
+In the first row, Q8's score 0.65 travels with gallery 63 from position 2 to position 0. In the second row, `Q2 → 17` under A moves to the first output slot, and Q8's own match still follows Q8. The third table has the correct shape and the wrong provenance. Accept any simultaneous candidate permutation and any query permutation that preserve these pairings. Swapping Q8 and Q5 leaves both numerical output lists identical because these two queries pick the same ID under each rule. Compare their names and score rows to see the swap. Reversing all three rows moves Q2 and visibly changes both lists. The general gallery interface assumes a unique maximum in each nonempty row of a finite rectangular table with one column per distinct ID. The separate cost question is answered using its stated objective. [Student matching exercise](week01_integrated.ipynb)
+
+## Records and plots key for sections 4 and 7
+
+**Worked plant bars.** The windowside pots are P03, P04 and P06. P04 and P06 have measured water, so the windowside numerator is 2 and the denominator is 3, or about 66.7%. Indoors, P01, P02 and P05 all have records, giving 3/3 = 100%. P01's 0 ml counts as observed. The scatterplot's point at `(5 h, 12 cm)` identifies P03. A bar groups several pots and has a percentage as its height. [Student plant plots](week01_integrated.ipynb)
+
+**Painting lookup.** Normalize the requested name and each label key by trimming ASCII whitespace and matching ASCII case. Then walk the requests in their supplied order. For `[" F8 ", "f2", "F7", "f2"]` the result is `[-1, 0, None, 0]`. F8 is a known class. F2 occurs twice and has a real label record containing the unknown code 0. F7 lacks a matching record. F9 is present in the registry but unrequested. An empty request returns `[]`. An empty registry yields one `None` per requested item. Looking up truthiness would conflate the recorded zero with an absent key. Accept a loop or a mapping-based plain Python implementation that preserves each request slot.
+
+**Measurement axes.** Only `scan_2`, `scan_1` and `scan_3` belong in the numerical array. The order of those names determines its columns. Each scan measures the same quantity in the same unit. Both an explicit null and an absent requested measurement represent missing observations. F8's `scan_1=0` is measured.
+
+| Source record | scan_2 | scan_1 | scan_3 | Row calculation |
+|---|---:|---:|---:|---|
+| F8 | 4 | 0 | missing | `(4+0)/2 = 2` |
+| F2 | missing | 8 | missing | `8/1 = 8` |
+| F7 | 2 | missing | missing | `2/1 = 2` |
+
+The shape is `[3,3]`. Row means are `[2,8,2]`. Column means are `[3,4,None]`, using measured counts `[2,2,0]`. Missing counts are `[1,1,3]`. Moving `scan_3` first, to `[scan_3,scan_2,scan_1]`, produces column means `[None,3,4]` and missing counts `[3,1,1]`. The records and their row means keep their order. Swapping only the first two features changes the column means to `[4,3,None]` while their missing counts happen to be equal. A named cell or a move of the all-missing feature exposes the change in column identity. An entirely missing row contributes `None` for that row's mean. The required record identifier and the optional measurement fields have separate presence rules.
+
+**Known-label plots.** Use the independent `label_log` for these figures. Each row of that log counts once. Repeated requests in `items` change the length of the ordered lookup and do not add observations to this log.
+
+| Display order | Known labels (−1 or 1) | All log records (including 0) | Count bar / percentage bar |
+|---|---:|---:|---|
+| B | 2 | 2 | 2 / 100% |
+| A | 3 | 5 | 3 / 60% |
+
+A has one more known label. B has a higher fraction known. For the public plotting interface, the figure's left-to-right tick text is `["B","A"]`, with x-axis `group`. The count y-axis is `known labels` with heights `[2,3]`, and the percent y-axis is `known labels (%)` with heights `[100,60]`. A signed sum of the labels, the mean of the signed labels, and dividing each group by the seven records in the entire log all answer different questions. Adding an unknown B record leaves its count at 2 and lowers its percentage to `2/3 × 100`. Inspect what the plotted bars actually encode. A table of intended numbers on its own does not verify the rendering. Accept either assignment of Matplotlib and Seaborn to the two student plots. [Student records exercise](week01_integrated.ipynb)
+
+## One fresh-data check for section 8
+
+At section 8, credit the saved section 2 Python diagnostic and section 3 paper responses from class once. If an item is unfinished, return to that item and record the correction and any help. In self-study, have the student bring their three outputs to a new kernel, open the fresh CSV with its data dictionary and trace one new record before running the code. Use the original answer key when a student needs feedback on a particular question, including return values, slicing, paths and required-column errors. [Original teacher key](teacher-notes.txt)
+
+The fresh CSV's short data dictionary should identify `sample_id` as a string naming one pot, `site` as a categorical location shared by pots and used to join the notes, and `final_height_cm` as a numeric height measured in cm. `light_hours` (h) and `water_amount_ml` (ml) are separate quantities. Q01 has measured water 0, Q02 has missing water, and the other two rows have 20 and 40 ml. The three measured values average 20 ml. `light_hours >= 4` selects Q03 and Q04 with heights 12 and 14 cm. Ask for the inferred data types, including a numeric water column that can hold missing values. A lookup for the old required height column `height_cm` fails because this CSV calls it `final_height_cm`. The contract for the painting scans explicitly allows a wholly absent named measurement.
+
+Group `new_plants` by `site` and compute the count and mean of `final_height_cm`. The indoor and windowside mean heights are 8 and 13 cm, based on two heights each. On a copy with Q02's height made missing, the indoor group still has two rows, one measured height and a mean of 7 cm. For water, the indoor and windowside measured counts are 1 and 2, out of two pots per site. A `site` left join to the two unique rows of `site_notes` keeps four pot records with their original IDs. Changing Q02 to an unlisted site leaves four rows and a missing note for Q02. On this same changed copy, duplicating the indoor lookup key makes `validate="many_to_one"` raise an error. Without the cardinality check, Q01 appears twice and the merged table grows to five rows. A height histogram with edges `[6,10,14,18]` cm has frequencies `[2,1,1]`. Use the same four heights and bin edges in Matplotlib's `ax.hist` and Seaborn's `histplot`. A bar for a named site can show its mean height. Pass the same two-row site summary to `ax.bar` and `sns.barplot`, with the same group order and vertical units (cm). The indoor bar then reads 8 and the windowside bar 13 in both plots. A histogram bar counts records in a numerical interval. Have the student identify which source records contribute to a selected bar and check the plotted values in both libraries. [Original fresh input and exercise C](week01_python_tables.ipynb)
+
+For a single new-array check, the original companion supplies `B = [[1,5,9],[3,7,11]]` cm. Mean over the two rows gives `[2,6,10]` cm. Mean over the three columns gives `[5,7]` cm. The first row's population variance is `32/3` cm². Reshaping to `(3,2)` puts 5 at `[0,1]`, while transposing puts 3 there. Adding column corrections `[10,20,30]` gives 41 at the last cell. Row corrections `[[100],[200]]` give 211 there. Using shape `(2,)` fails against the trailing dimension 3. With ordered coefficients `[1,0,2]`, the two row dot products are 19 and 25 cm. Reversing only the features of the first row gives 11 cm, revealing a wrong pairing even though dimensions match. Accept other valid student-selected arrays, corrections, units and coefficients. Have the student restart the kernel, run their saved code in dependency order, and explain any discrepancy between hand and program results.
+
+## Executable teacher references
+
+These four functions implement public interfaces on new inputs. The gallery function uses a numerical row and its current header. The label function keeps a registry keyed by normalized identifier. The feature function constructs the requested columns in pandas, then uses NumPy to identify observed entries and summarize each axis. The plotting function renders one bar per ordered group through the selected library, reads the labels and bar artists back from the axes, and closes the figure. The user-facing lesson leaves its answer cells open for the student's own implementation.
+
+### Select a gallery ID in query order
+
+<!-- teacher-cell: ref-gallery -->
 ```python
-def rectangle_region(grid, coordinates, max_cells):
-    (top, left), (bottom, right) = coordinates
-    H, W = grid.shape
-    if not (0 <= top < bottom <= H and 0 <= left < right <= W):
-        raise ValueError("비어 있거나 격자 밖인 영역입니다")
-    area = (bottom - top) * (right - left)
-    if area > max_cells:
-        raise ValueError("남길 수 있는 칸 수를 넘었습니다")
-    crop = grid[top:bottom, left:right].copy()
-    mask = np.zeros((H, W), dtype=bool)
-    mask[top:bottom, left:right] = True
-    kept = np.zeros_like(grid)
-    kept[top:bottom, left:right] = crop
-    return crop, mask, kept
+def select_gallery_ids(case):
+    gallery_ids = case["ids"]
+    selected_ids = []
+    for row in case["scores"]:
+        winning_value = max(row)
+        winning_column = row.index(winning_value)
+        selected_ids.append(gallery_ids[winning_column])
+    return selected_ids
 ```
 
-다른 검토용 합성 입력 `[[1,2,3,4],[5,0,7,8],[9,10,11,12]]`에서 `((1,1),(3,3))`, 한도 4를 넣으면 crop은 `[[0,7],[10,11]]`입니다. 선택 칸은 4개이지만 그중 비영 값은 3개입니다. 원래 (3,4) 마스크의 참인 **정확한 위치**, 남긴 결과의 선택 안팎, 원본 불변과 함께 확인합니다. 학생에게 완성 예시 답을 먼저 보여 주지 않고, 학생의 손계산·자기 코드·입력 변경 및 받은 도움을 확인합니다. 실행 가능한 예시 답은 실제 학생의 독립 수행이나 성취가 아닙니다.
+### Align painting labels to requests
 
-공식 Pixel은 224×224, 최대 6.25%=0.0625=1/16이므로 최대 3,136칸이며, 이미지 ID와 좌표를 담은 `submission.jsonl` 및 분류 정확도라는 별도 계약입니다. 전체 mask는 좌표를 검사하는 중간 표현이며, 유효한 면적만으로 유용한 영역이나 공식 대회 해결을 보장하지 않습니다. 이 예에서 빈 영역을 금지한 조건은 교육용 약속이고, 공식 주석 검증기를 숨은 채점 정책 전체라고 단정하지 않습니다. 공간 마스크는 앞의 PAD 마스크나 attention 전체와 같지 않으며 7주 비전·10주 새 명세의 선수에 그칩니다.
+<!-- teacher-cell: ref-align -->
+```python
+from string import ascii_lowercase, ascii_uppercase, whitespace
 
-## 독립 기기 문제 · 가능한 해설
 
-### 검증 정답 공개와 배열 복사 운영
+def align_painting_labels(request):
+    to_lowercase = str.maketrans(ascii_uppercase, ascii_lowercase)
 
-학생 입력 셀은 훈련 라벨과 검증 특성만 만듭니다. 교사는 학생이 특성·모델을 정하고 훈련한 뒤 검증 ID별 첫 예측과 선택을 기록했는지 확인하고, 별도 `week01_integrated_validation_labels.csv` (`unit,label`)를 전달합니다. 학생이 예측과 정답 양쪽의 누락·중복 ID를 확인하고 일대일로 맞춘 뒤 정확도를 계산하도록 합니다. 정답을 공개 저장소에 함께 둔 것은 접근 통제가 아닙니다. 독립 수행을 운영할 때는 학생에게 정답 파일과 해설을 미리 제공하지 않는 권한 제한 공간이나 방법을 사용합니다. 저장소 전체를 학생이 이미 볼 수 있다면 사전 열람을 막았다고 주장할 수 없습니다.
+    def normalized(identifier):
+        return identifier.strip(whitespace).translate(to_lowercase)
 
-첫 결과를 확인한 다음 검증은 모델·설정 선택에 사용할 수 있습니다. 같은 검증으로 선택을 반복한 점수는 별도 최종 테스트 점수가 아니며, 이 교안에는 최종 테스트가 없습니다. 선택·예측 기록과 학생의 작성·도움 이력을 확인하지 않았다면 독립 수행이라고 판정하지 않습니다.
+    labels_by_id = {}
+    for identifier, label in request["labels"]:
+        labels_by_id[normalized(identifier)] = label
+    return [labels_by_id.get(normalized(item)) for item in request["items"]]
+```
 
-각 기기의 `panel`은 고정된 원형의 값을 `ndarray.copy()`해 별도 배열로 만듭니다. 같아 보이는 값의 배열을 여러 행에 같은 참조로 넣으면 한 행의 원소 변경이 훈련·검증·새 입력의 다른 행에도 영향을 줄 수 있습니다. `DataFrame.copy(deep=True)`는 object 열 속 배열을 재귀적으로 복제하지 않습니다. 예를 들어 학생이 실험용 표의 배열까지 분리하려면 표 복사 후 `experiment["panel"] = experiment["panel"].map(lambda panel: panel.copy())`처럼 각 숫자 배열을 따로 복사합니다. 이는 이 입력의 메모리 공유를 막는 조치이지 관측의 통계적 독립성을 증명하지 않습니다. [NumPy 복사와 뷰](https://numpy.org/doc/stable/user/basics.copies.html), [pandas DataFrame.copy](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.copy.html), [scikit-learn 데이터 누수 방지](https://scikit-learn.org/stable/common_pitfalls.html)를 참고합니다.
+### Summarize measurements along both axes
 
-학생 자료의 기기 panel은 **채널 순서와 코드가 화분 관찰과 다릅니다**. 채널 0은 상태(0 꺼짐, 1 켜짐), 채널 1은 대상(0 배경, 2 센서)입니다. 배경 상태는 의미가 없고, 2라는 범주 코드의 크기를 임의의 물리적 거리로 해석하지 않습니다.
+<!-- teacher-cell: ref-axes -->
+```python
+import numpy as np
+import pandas as pd
 
-T2의 [0,1]=[1,2]는 켜진 센서, [1,0]=[0,2]는 꺼진 센서입니다. 켜진 상태만 세면 배경도 포함되므로 켜진 센서 수는 두 조건의 교집합 1입니다. 행/열 전치 전후 모두 (2,2,2)이지만 [0,1]은 [1,2]에서 [0,2]가 됩니다. 배경 상태만 고쳐도 켜진 센서 수는 같아야 합니다. 수를 특성으로 쓰면 센서가 켜진 위치 자체는 보존되지 않습니다.
 
-**T2 상태 변화 실험.** T2 원본을 복사한 실험 배열의 상태 채널을 기본 슬라이스하면 그 뷰는 실험 배열과 데이터를 공유하고, 뷰의 복사본은 별도입니다. 예를 들어 배경 `[0,0]`의 상태를 1에서 0으로 바꿔도 다시 센 켜진 센서 수는 1입니다. 다음으로 `[0,1]`의 켜진 센서 상태를 1에서 0으로 바꾸면 그 위치의 원본 T2 값은 1, 실험 배열과 뷰는 0, 변경 전 뷰 복사본은 1입니다. 변경 전에 계산해 저장한 정수는 1로 남고, 실험 배열에서 다시 계산한 정수는 0입니다. 원본 T2와 다른 기기의 패널은 그대로입니다. 배경의 다른 위치를 골라도 배경만 바꾸었다면 센서 수는 변하지 않습니다. 같은 shape만으로 데이터 공유 여부를 단정하지 않으며, 학생의 계산식과 변경 전 예상·실행 결과·받은 도움을 확인합니다. 이 결론은 이 예에서 저장한 정수에 대한 것이며 다른 특성이나 모델 전체의 갱신 방식에 대한 일반 규칙이 아닙니다.
+def summarize_feature_axes(request):
+    table = pd.DataFrame.from_records(request["rows"], columns=request["features"])
+    values = table.to_numpy(dtype=float, na_value=np.nan)
 
-이 상태 예측과 검증은 기존 기기 2번에 포함된 실제 추가 수행 요구입니다. 기존 시간 추정에 포함된다는 근거가 없으며 학생의 실제 수행·받은 도움·소요 시간·성취는 아직 관찰되지 않았습니다.
+    def measured_mean(vector):
+        measured = vector[~np.isnan(vector)]
+        if measured.size == 0:
+            return None
+        return float(measured.mean(dtype=np.longdouble))
 
-T1,T2,T3,T4만 정답이 알려졌고 T5의 ?는 미상입니다. 알려진 네 행의 관측 signal은 [0,3,9], 평균은 4입니다. T3의 빈칸에 4를 쓰고, signal 0은 관측으로 셉니다. 이 지도학습 연습의 계약에서 T5의 100을 대체값 학습에 섞으면 평균은 28이 되어 잘못됩니다. 미상 라벨 입력을 어떤 방법에서도 쓸 수 없다는 뜻은 아닙니다. 검증·새 기기의 값도 훈련 대체값 학습에 섞지 않습니다. ID는 결과 연결에 사용하고 label을 예측 시 입력에 넣지 않습니다.
+    return {
+        "shape": list(values.shape),
+        "row_means": [measured_mean(row) for row in values],
+        "column_means": [measured_mean(column) for column in values.T],
+        "missing_by_column": np.isnan(values).sum(axis=0).tolist(),
+    }
+```
 
-예를 들어 켜진 센서 수를 signal과 함께 쓰면 훈련 X는 [[0,3],[3,1],[4,2],[9,0]]입니다. 정상 중심은 [1.5,2], 점검 중심은 [6.5,1]입니다. 가까운 중심 선택 시 V9,V4,V7 예측은 정상·점검·정상, 실제는 정상·점검·점검이고 정확도는 2/3입니다. 새 입력 N3,N1,N7의 예측은 점검·정상·점검이므로 요청 순서 N7,N3,N1의 결과는 다음과 같습니다.
+### Draw and read the requested known-label plot
 
-    sample_id,prediction
-    N7,점검
-    N3,점검
-    N1,정상
+<!-- teacher-cell: ref-plot -->
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-이 중심 모델과 선택한 특성은 가능한 답 하나입니다. 예를 들어 같은 두 특성으로 깊이 2의 결정 트리를 학습하면 검증 예측이 정상·점검·점검으로 달라질 수 있으며, 다른 합리적인 패널 특성이나 분류기도 허용합니다. 예시 예측을 일률적 정답으로 강제하지 않습니다. 각 선택의 훈련 fit과 배운 상태, 올바른 시점·라벨·평균, 특성 의미와 shape, 행별 검증 계산, 출력 값·ID·요구 순서 및 도움받은 부분을 확인합니다. 기존 값 한 칸이 미상인 경우와 signal 열 자체가 없는 경우를 구분하고, 중복 ID를 알려야 합니다. 최종 테스트 정답은 없습니다.
 
-## 남은 필수 연습과 복귀
+def plot_known_labels(request):
+    groups = request["groups"]
+    totals = dict.fromkeys(groups, 0)
+    known = dict.fromkeys(groups, 0)
+    for group, label in request["rows"]:
+        totals[group] += 1
+        if label in (-1, 1):
+            known[group] += 1
 
-학생용 마지막 절은 원본 [1주 본문](week01_python_tables.ipynb)을 별도 새 커널에서 열도록 안내합니다. ‘노트북 사용하기’ 아래 준비 코드 `d2be9ce3` → ‘7. CSV를 표로 읽기’의 `eb304b96` → ‘학습 확인’의 새 입력 `5c37fc90` 순서로 준비합니다. 기존 표는 `sunlight_hours`와 원래 합성값을 쓰므로 통합본의 `light_h`와 다른 값들을 섞지 않습니다. 각 과제에 필요한 예제 코드를 실행하고 학생이 직접 작성한 뒤 통합본의 독립 문제와 미완료 목록으로 돌아옵니다. 아래 ID는 각 노트북의 셀 ID이며, 학생 화면에서는 제목과 코드 첫 문장으로 찾습니다.
+    if request["measure"] == "count":
+        heights = [known[group] for group in groups]
+        y_label = "known labels"
+    else:
+        heights = [100 * known[group] / totals[group] for group in groups]
+        y_label = "known labels (%)"
 
-| 목표 | 새 통합 노트북 | 이어서 실제로 수행할 기존 위치·산출물 |
-|---|---|---|
-| 함수·반복·진단·traceback | ‘2. 관측한 것만 세어 평균을 구하기’ `e3783955` / `d942743f` | 본문 ‘5. 필기 문제로 확인하기’ `71068cea`, ‘6. Python에서 막히는 지점 찾기’ `7208718e`, ‘함수를 고쳐 새 입력에 적용하기’ `c6d01f13`; 과제 D `depth-function-spec` / `depth-function-code`에서 관측 개수·평균·전부 미상 처리 함수를 작성 |
-| 평균·분산·단위 | ‘2. 관측한 것만 세어 평균을 구하기’와 ‘평균이 같아도 퍼짐은 다릅니다’ `0a64f981`; ‘평균은 왜 중심이 될까요?’ `28086cfc` | 본문 ‘2. 평균은 합계를 같은 몫으로 나눈 값입니다’ `409e1675`와 분산 `82e8a039`; NumPy/pandas 분모 `08bf506c` / `ea9aba74`; 과제 B `9ce91662`에서 새 분산과 단위를 계산 |
-| 표·축·reshape·broadcast·범주 | ‘3. 표의 축과 모양 바꾸기’ `a3f9c114`; 잎 관찰과 표의 행별 대응 `deep-leaf-intro` / `deep-count-intro` / `deep-count-code` | 본문 ‘학습 확인’ `d60c3acd`와 과제 A `145c6754` / `depth-reshape-compare` / `df2802a3` / `practice-broadcast-code`에서 새 배열·행/열 보정·오류를 직접 확인 |
-| 공간 경계·면적·마스크 | 완성 예 `rectangle-worked-text` / `rectangle-worked-code`; 독립 응용 `rectangle-independent-text` / `rectangle-independent-input` / `rectangle-independent-answer` | 본문 과제 A를 별도 커널에서 직접 푼 뒤 통합본 입력 `rectangle-independent-input`과 빈 답안 `rectangle-independent-answer`로 돌아와 영역 함수를 작성. 원본 A의 `T`는 커널 사이에 자동 공유되지 않음 |
-| Matplotlib·Seaborn | ‘4. 그래프의 점을 원래 행으로 찾기’ `f574b6b5` / `7591b8af` | 본문 과제 B `9ce91662`의 새 분포·Matplotlib 그림, ‘Seaborn으로도 분포와 범주를 각각 그리기’ `6a64bcb2` / `8d3421bb` / `d7b8c3d2`를 수행하고 그림의 점·집계 의미를 설명 |
-| 자료사전·새 CSV·집계·병합 | ‘1. 무엇을 언제 아나요?’ `5a7a14b7`; 결과 CSV `4bbb0c87` / `f40633df` | 본문 ‘도움 없이 해 볼 작은 변경’ `b38de2c6` / `d7c7b7c4`의 `20ml` 정리; 새 입력 `5c37fc90`; 과제 C `0fd965eb` / `02c6cde1` / `13559279`에서 자료사전·관측 개수·집계·병합과 미상/중복 키를 확인 |
-| 고정식 내적·새 세션 | ‘5. 정한 식과 배운 모델은 다릅니다’ `9529029d` / `1d316bff` | 본문 과제 E `d0ddef13`, ‘새 화분으로 혼자 확인하기’ `fixed-prediction-matrix-practice` / `fixed-prediction-matrix-practice-code`, 새 수량·단가와 재실행 `1e511556`에서 계산·순서 반례·전체 재실행을 확인 |
-| 행렬곱·검색 ID | 표·축 `a3f9c114`, 고정식 `9529029d` / `1d316bff` | [축·ID 교량](week01_axes_linear_bridge.ipynb)을 별도 커널에서 준비 `ba428b91`, ‘6. 낯선 입력으로 혼자 풀기’ `4ac3bb9a`; 필수 A 입력 `ec433d3b` / 답안 `7b96a39e`, B 입력 `07c93362` / 답안 `54646dc1`을 수행. B에서 기존 함수를 재사용하면 준비 뒤 검색 입력 `3950021e` → 정규화 `retrieval-norm-code` → 토큰 입력 `d81386f3` → 조회·평균 `sequence-mean-code` 순서로 실행하고 예제를 가린 뒤 B를 풂. stack·concatenate는 선택 |
-| 제출 형식·미상 라벨 | 결과 CSV `4bbb0c87` / `f40633df`와 독립 기기 명세 `303c6117` / 답안 `e49ac1c2` | [문제 해결 교안](week01_problem_pipeline.ipynb)의 ‘5. 다른 명세의 문제를 혼자 풀기’ `bb177697` / `f53ccb1f` / `06ceb97e`와 ZIP·오류 처리는 별도 추가 자료. 통합 사례가 국제 과제 전체를 완수한 것은 아님 |
+    fig, ax = plt.subplots()
+    try:
+        if request["library"] == "matplotlib":
+            ax.bar(range(len(groups)), heights)
+        else:
+            sns.barplot(x=groups, y=heights, order=groups, ax=ax, errorbar=None)
+        ax.set_xticks(range(len(groups)), labels=groups)
+        ax.set_xlabel("group")
+        ax.set_ylabel(y_label)
 
-보존된 미커밋 91셀 교안의 예측 시점·고정식 및 장소별 산점도와 인과 한계를 재표현했습니다. 원본 및 미커밋 변경은 수정하지 않았습니다. 교량 필수 B는 고정 어휘표에서 토큰을 조회하고 유효 위치만 평균해 질문을 만든 뒤 원시 내적·행별 L2 정규화·코사인·영벡터/동률 정책과 ID 복원을 적용합니다. PAD 행의 값과 유효 토큰의 영벡터 여부가 아닌 ID로 유효 위치를 정합니다. 이 검색의 규칙을 P01=[0,0]인 화분 분류에 적용하지 않습니다. 2주에는 열별 표준화와 훈련 전용 전처리·분할·지표, 3~5주에는 손실·거리·모델, 6주에는 텐서, 7~9주에는 실제 모달리티·검색, 10주에는 낯선 명세와 환경이 이어집니다. 선수 연결은 후속 과제의 달성 증거가 아닙니다.
+        bars = sorted(ax.patches, key=lambda bar: bar.get_x())
+        return {
+            "groups": [tick.get_text() for tick in ax.get_xticklabels()],
+            "heights": [float(bar.get_height()) for bar in bars],
+            "x_label": ax.get_xlabel(),
+            "y_label": ax.get_ylabel(),
+        }
+    finally:
+        plt.close(fig)
+```
 
-## 공식 근거와 경계
+## Worked keys for the plant example
 
-[KOAI 2027 안내](https://kitpa.org/koai/2027)가 연결하는 [출제 기준](https://kitpa.org/koai/syllabus)은 확인 당시 IOAI 2026 기준입니다. [IOAI 2025 Antique 원문](https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb)은 5특성, 1/−1/0의 진품/복제품/미상, 미상 샘플 활용, 두 무헤더 CSV가 든 ZIP을 요구합니다. 여기의 지도학습과 단일 헤더 CSV는 축소 합성 예입니다.
+**A record and its time.** One row describes one pot. The complete week's light, water and leaf observations are available just before the height measurement. On planting day the actual future records are unavailable. Height and a label derived from height become available afterward. P01 has a measured 0 ml. P03 has missing water. The six rows yield a two-feature table of shape `(6, 2)` and a height Series of shape `(6,)`. The light filter of at least 5 h selects P03, P04 and P06. The integrated example changes P05's water from 20 to 10 ml and height from 10 to 14 cm and P06's water from 60 to 50 ml relative to the original table.
 
-[IOAI 2026 Robot Chasing 원문](https://raw.githubusercontent.com/IOAI-official/IOAI-2026/e1963801aa4cf33a5a03520b39fa6620a7894c54/Individual-Contest/2_Robot_Chasing/statement.md)은 순서가 섞인 독립 스냅샷, (8,8,2) 객체·색 배열, 별도 robot_id·방향·문장 지시·carrying을 사용합니다. 이전 관측이나 행동은 주어지지 않으며 로봇별 패턴이 달라 robot_id는 유용할 수 있습니다. 채점 입력에는 정답이 없고 출력은 같은 순서의 행동 코드 JSON입니다. 국제 고등학생 대상 문제를 국내 중등부 기출이나 위 합성 예제의 해결 결과로 제시하지 않습니다. 학생 성취·실제 소요시간·일반 Jupyter/Colab과 숨은 시험은 별도 관찰이 필요합니다.
+**Averages and units.** The observed water values sum to 120 ml over five pots, giving 24 ml. The actual six-pot average depends on P03. For `observed_mean`, the stated inputs are lists of length 0–10,000 with finite Python integers or floats from −1,000,000 to 1,000,000 and missing values `None` or NaN. Booleans are outside the contract. `[0, None, NaN, 6]` has two measurements and mean 3. Empty and all-missing lists return `None`. The original table exercise D asks for *both* count and mean, with `(0, None)` for no observations. The heights `[8, 10, 12]` cm have mean 10 cm, deviations `[−2, 0, 2]` cm and population variance `8/3` cm². Three heights of 10 cm have variance 0. Use `ddof=0` in both NumPy and pandas when comparing the population calculation.
+
+**Array axes.** On the two-day table for P01, P02 and P04, reducing axis 0 yields one mean per day, `[11/3, 11/3]` h, shape `(2,)`. Reducing axis 1 yields one mean per pot, `[2, 3, 6]` h, shape `(3,)`. Reshaping the values to `(2, 3)` puts `[2, 2, 3]` in the first row. Transposing puts `[2, 3, 6]` there. Adding a vector of shape `(2,)` adjusts the two days across every pot. A vector of shape `(3,)` mismatches the trailing dimension of size two. A row average needs commensurate quantities.
+
+**Graph and fixed formula.** In the Matplotlib scatterplot P03 is the point `(5 h, 12 cm)`. Pot ID links the point to the original row. Light, location and watering vary together, so the data do not isolate the causal effect of light. The font search includes Noto Sans CJK JP. When the environment reports a missing font, install a Korean-capable font and restart that kernel. For the fixed formula `4 + L + 0.1W`, P02 gives `4 + 3 + 2 = 9` cm and the residual, measured minus predicted, is `+1` cm. The coefficients have units cm/h and cm/ml and the intercept has units cm. The formula is an assigned weighted sum with an intercept. P03 requires an explicit missing-water policy before evaluation. Model fitting and a biological causal effect are separate claims.
+
+### Optional leaf observations and fitted model
+
+Each leaf grid has shape `(2, 2, 2)` in row, column, channel order. Channel 0 is the object (0 background, 1 leaf). For a leaf, channel 1 is its color (0 green, 1 yellow). Background color is immaterial. Numerals here name categories. In P02, `[0,1] = [1,1]` and `[1,0] = [1,0]`. After transposing the spatial axes the shape is identical but the new `[0,1]` contains `[1,0]`. Three cells have color code 1. Only one has both leaf and yellow. Changing only the background colors preserves the count of one. The lesson function assumes a valid grid with this encoding.
+
+Read each grid using its pot ID. The counts in P01–P06 order are `[0, 1, 2, 3, 2, 3]`. The observation *column* is a one-dimensional Series of arrays. A single observation is three-dimensional. An array of the correct shape attached to the wrong ID describes another pot. The count discards spatial position. Basic slicing makes a view. A copied numeric grid can be changed independently. Recompute a previously stored integer to see the effect of an edit.
+
+For the separate target “height at least 12 cm,” P01–P04 have training labels `[0, 0, 1, 1]`. The training water values 0, 20 and 40 ml give an imputation mean of 20 ml. Including the validation records would change that statistic to 24 ml. In the preset 10 ml units, the training rows for `[water/10, yellow leaf count]` are `[[0,0],[2,1],[2,2],[4,3]]`. Each label belongs to the pot in that row. The class means are `[1,0.5]` and `[3,2.5]`.
+
+For class 0's water values 0 and 20 ml, trial centers 0, 10 and 20 ml yield squared-deviation sums 400, 200 and 400 ml². In general the sum is `2(m−10)²+200`, minimized at `m=10`. Dividing 200 by two gives population variance 100 ml². Within-class squared error motivates the mean center. Classification accuracy is a different objective. Groups `[0,4]` and `[1,3]` both have center 2 with variances 4 and 1.
+
+P05 is `[1,2]`. Its squared distances are 2.25 and 4.25, so it receives class 0. P06 receives class 1. Predictions `[0,1]` against `[1,1]` give 1/2. Two positive validation cases offer little information about performance, especially for class 0. The preset scale affects relative distances. Changing training P04's water to 60 ml in a copy gives a new imputation mean of `80/3` ml and class-1 center `[13/3,2.5]`. The same query `[2,2]` moves from predicted class 1 to 0. This experiment varies training data and refits both steps.
+
+Keep P05 and P06 paired with their predictions. Reordering one sequence alone can keep the right length and assign a value to the wrong pot. The integrated example reads a headered `pot_id,prediction` CSV from memory and again from a temporary disk file. That file disappears at block exit. An actual submission requires its designated destination and format.
+
+### Optional rectangle and mask
+
+The worked rectangle `((2,4),(4,7))` on the 8×12 grid keeps rows 2–3 and columns 4–6. Its crop is `[[0,29,30],[40,41,42]]`, shape `(2,3)`. Both the mask and the zeroed-out result are `(8,12)`. Six true mask cells cover 1/16 of the 96 spatial cells. Only five selected numeric values are nonzero. For RGB the region still contains six pixels, or eighteen channel values.
+
+For the separate 2×3 input `T = [[1,4,7],[2,5,8]]` the limit is four cells.
+
+| Coordinates | Crop | Boolean mask shown as 0/1 | Values in full grid |
+|---|---|---|---|
+| `((0,1),(2,3))` | `[[4,7],[5,8]]` | `[[0,1,1],[0,1,1]]` | `[[0,4,7],[0,5,8]]` |
+| `((0,0),(2,2))` | `[[1,4],[2,5]]` | `[[1,1,0],[1,1,0]]` | `[[1,4,0],[2,5,0]]` |
+| `((1,2),(2,3))` | `[[8]]` | `[[0,0,0],[0,0,1]]` | `[[0,0,0],[0,0,8]]` |
+
+Both 2×2 crops use four cells at different coordinates. The exclusive bottom/right limits may equal H/W. The fully in-bounds rectangle `((0,0),(2,3))` uses six cells and exceeds the limit. For `((1,1),(3,3))`, bottom 3 exceeds H=2. Without a bounds check, NumPy silently returns `[[5,8]]`. The equal row boundaries in `((1,1),(1,2))` create an empty region, which this exercise rejects.
+
+A reference implementation first unpacks `(top,left),(bottom,right)` and `H,W = grid.shape`. Raise `ValueError` unless `0 <= top < bottom <= H` and `0 <= left < right <= W`. Then raise `ValueError` if `(bottom-top)*(right-left) > max_cells`. Return a copy of `grid[top:bottom,left:right]`, an initially false `np.zeros((H,W), dtype=bool)` with that rectangle set true, and an initially zero `np.zeros_like(grid)` with the crop copied into that rectangle. The copy makes later crop edits independent of the original. The supplied inputs are nonempty 2-D numeric arrays, four non-boolean Python integer coordinates and a positive integer limit. The function only needs to check the geometry and the area.
+
+As a feedback example, cut `((1,1),(3,3))` out of `[[1,2,3,4],[5,0,7,8],[9,10,11,12]]` with limit four. The crop is `[[0,7],[10,11]]`. Its four exact positions include one measured zero. Inspect the full mask, the inside/outside values and the input after the call. A spatial region mask has a different role from a sequence padding mask.
+
+### Optional device classification
+
+Give the student validation features first. Have them record their features, fitted model and first prediction for each validation `unit`. Release the `unit,label` file after that record. Check that each side has one row per required ID, with no missing or unexpected IDs, before a one-to-one join. Missing truth leaves the comparison pending. Public repository files can be read in advance. When administering an independent exercise, control access to the key and record the help actually given. Subsequent validation-based choices need a separate untouched final test to estimate the chosen model's performance. This exercise supplies no final-test truth. [Validation labels](week01_integrated_validation_labels.csv)
+
+Channel 0 now gives state (0 off, 1 on). Channel 1 gives object (0 background, 2 sensor). T2 at `[0,1]` holds `[1,2]` and at `[1,0]` holds `[0,2]`. The number of on sensors is one. Lit background cells do not count. After a spatial transpose the shape stays `(2,2,2)` and the new `[0,1]` contains `[0,2]`. A count discards the location of the sensor. The numeric code 2 identifies an object class.
+
+Each `panel` starts as an `ndarray.copy()`. On a copy of T2, take the basic slice `[:, :, 0]` for a view of the state channel and make an independent copy of that view. Save the initial count as an integer. Changing background `[0,0]` from 1 to 0 keeps the recomputed count at 1. Then turn off the sensor at `[0,1]` through the view. At that position the untouched input still reads 1, the experiment and view read 0, and the saved view copy reads 1. The saved integer is 1 and the recomputed integer is 0. A pandas deep copy of a frame with an object column does not recursively copy each stored array. After copying the frame, `experiment["panel"] = experiment["panel"].map(lambda panel: panel.copy())` separates these numeric arrays. Independent storage and statistical independence are distinct properties. [NumPy copies and views](https://numpy.org/doc/stable/user/basics.copies.html) · [pandas DataFrame.copy](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.copy.html)
+
+T1–T4 carry known labels. T5 has label `?`. The observed training signals `[0,3,9]` give a fill value of 4. T3 gets 4. Including T5's signal of 100 would give 28 under this supervised exercise's policy. Fit preprocessing and the model only on the designated known training rows. Use IDs to restore the output order. The label is a target.
+
+With columns `[signal, on-sensor count]`, training inputs are `[[0,3],[3,1],[4,2],[9,0]]`. The centers for `정상` and `점검` are `[1.5,2]` and `[6.5,1]`. In V9, V4, V7 order this model predicts `[정상, 점검, 정상]` against `[정상, 점검, 점검]` for 2/3. New predictions in N3, N1, N7 order are `[점검, 정상, 점검]`. In the requested output order the CSV reads
+
+```csv
+sample_id,prediction
+N7,점검
+N3,점검
+N1,정상
+```
+
+A depth-two decision tree using these features can instead predict all three validation labels correctly. Accept a justified model or panel feature with a different output. Inspect the fitted state, available inputs, feature order, split, per-ID comparison and header/rows/allowed values after rereading the file. A missing signal cell takes the training fill value. A missing required column or duplicate ID makes the contract ambiguous and should raise an error before inference or output. Equal predictions can conceal an ID swap. [scikit-learn guidance on preprocessing and leakage](https://scikit-learn.org/stable/common_pitfalls.html)
+
+## Existing notebooks and source boundaries
+
+Open companion notebooks in separate fresh kernels. The original plant table uses `sunlight_hours` and its own values. The integrated table uses `light_h`. Running the original setup `d2be9ce3`, CSV cell `eb304b96` and fresh input `5c37fc90` restores the original `plants`, `new_plants` and numerical input. The keys below let the teacher return directly to a missed skill. [Python and tables notebook](week01_python_tables.ipynb) · [Original teacher key](teacher-notes.txt)
+
+| Need | Where to look and what to check |
+|---|---|
+| Python, mean and variance | Original `71068cea`, `7208718e`, `c6d01f13` and `depth-function-spec` contain written decisions, state, failure line and repair, and a function returning both count and mean. `409e1675`, `82e8a039`, `08bf506c` and `ea9aba74` link hand calculations, units and the variance denominator. The teacher notes give a keyed example for each. |
+| NumPy axes and broadcasting | Original A at `145c6754`, `depth-reshape-compare`, `df2802a3` and `practice-broadcast-code` checks placement at one coordinate, axis alignment and a failing rightmost dimension. A change in shape alone cannot demonstrate the intended operation. |
+| Graphs | Original B at `9ce91662`, `6a64bcb2`, `8d3421bb` and `d7b8c3d2` pairs Matplotlib with Seaborn for distributions and categories. On its source data, the histogram counts sum to six and two indoor 10 cm records overlap on the strip plot. Have the student distinguish marks, measurements, counts and group averages. |
+| Data dictionary, CSV and join | `b38de2c6`/`d7c7b7c4` cover the measured string `20ml`. Check its documented unit before converting and retain P03's missing value. Original C at `0fd965eb`, `02c6cde1` and `13559279` compares per-site means, measurement counts and left joins. Unknown keys retain the left row with a missing note. A duplicated lookup key breaks the many-to-one relationship. |
+| Dot products and a fresh run | Original E at `d0ddef13`, `fixed-prediction-matrix-practice`, `fixed-prediction-matrix-practice-code` and `1e511556` checks named feature order and the student's saved solution in a new session. Original quantities `[1,4,2]` and matching prices `[800,500,1200]` give 5,200. A mismatched supplier order gives 6,900. |
+
+For optional linear transformations and retrieval, initialize the bridge at `ba428b91` and use `4ac3bb9a` for the alternate inputs. A (`ec433d3b`, `7b96a39e`) distinguishes elementwise multiplication from matrix multiplication. B (`07c93362`, `54646dc1`) builds query vectors by token lookup and a masked mean, compares dot product and cosine, and recovers IDs. To reuse its worked functions, run `3950021e`, `retrieval-norm-code`, `d81386f3` and `sequence-mean-code` in order. PAD is determined by token ID. A valid token with a zero vector still counts in the mean. This cosine example rejects vectors of zero length and gives ties to the first current candidate. The Week 1 score-table exercise supplies unique row maxima. P01's `[0,0]` remains a valid input to the separate plant classifier. The bridge key gives exact values, reorderings, row-L2 boundaries, all-PAD handling and optional stack/concatenate cases. [Axes and retrieval notebook](week01_axes_linear_bridge.ipynb) · [Bridge teacher key](week01_axes_linear_bridge_teacher.md)
+
+For optional file validation and model work, the problem-pipeline companion gives differently encoded unknown labels, a new input at `bb177697`/`f53ccb1f` with answer space `06ceb97e`, examples of rejected files and a ZIP round trip. Its key preserves the separate output contracts. [Problem-pipeline notebook](week01_problem_pipeline.ipynb) · [Pipeline teacher key](week01_problem_pipeline_teacher.md)
+
+The national 2027 announcement links a syllabus page headed IOAI 2026. The page names Python, NumPy/pandas and Matplotlib/Seaborn as practical topics. The registered Week 1 decision is to interpret the rows and axes, then map a computed position to the identifier required by the problem. [KOAI 2027 announcement](https://kitpa.org/koai/2027) · [Linked syllabus](https://kitpa.org/koai/syllabus) · [Week 1 course specification](../../curriculum/course-harness.json)
+
+- **Restroom Icon Matching.** The international contest independently shuffles query and gallery files. A trained model must choose the opposite icon from the same restroom. Each output entry identifies a gallery image, and accuracy divides the number of correct matches by the total number of queries. The lesson supplies a score table so the student can work on the final lookup. [Official IOAI 2025 task, sections 2–5](https://github.com/IOAI-official/IOAI-2025/blob/39558e9a639d170bd92de91958fcdc915f670463/Individual-Contest/Restroom/Restroom.ipynb)
+- **Antique Painting Authentication.** Five features and labels 1 (authentic), −1 (replica), and 0 (unknown) come from the contest. Entrants use unlabeled samples as well and produce a ZIP containing two headerless CSV files. The classroom painting table isolates label lookup and missing data. The plant and device examples use their own supervised policies and headered output. [Official IOAI 2025 task, sections 2–4](https://github.com/IOAI-official/IOAI-2025/blob/39558e9a639d170bd92de91958fcdc915f670463/Individual-Contest/Antique/Antique.ipynb)
+- **Find the Order.** The numerical part of a shuffled audio filename identifies a chunk. `P[i]` gives the zero-based chronological position of that file. If the chronological file IDs are `[2,0,3,1]`, file 0 occupies position 1, file 1 position 3, file 2 position 0 and file 3 position 2. The array indexed by file ID is `[1,3,0,2]`. The lesson's matching output instead holds a gallery ID for each query. Reconstructing chronology from audio belongs to later work. [Official IOAI 2026 problem and output definition](https://github.com/IOAI-official/IOAI-2026/blob/e1963801aa4cf33a5a03520b39fa6620a7894c54/Individual-Contest/1_Find_the_Order/statement.md)
+- **Pixel Efficiency.** An official 224×224 image has 50,176 spatial cells. At most 6.25%, or 3,136 cells, may be retained. The contest submits image IDs and coordinates in `submission.jsonl` and is scored on classification accuracy. A full mask helps inspect a classroom rectangle. An admissible area alone supplies no evidence of classification value. The nonempty-rectangle rule is part of the synthetic task. [Official IOAI 2025 task](https://github.com/IOAI-official/IOAI-2025/blob/39558e9a639d170bd92de91958fcdc915f670463/Individual-Contest/Pixel/Pixel.ipynb)
+- **Robot Chasing.** The official randomly ordered independent snapshots include an `(8,8,2)` object/color array, robot ID, direction, mission and carrying. The robot ID can help because robots differ. The prediction uses the available snapshot without earlier observations or actions. It returns an action code in input order in JSON, with evaluation truth withheld. The synthetic 2×2 grids isolate axis and category reading. [Official IOAI 2026 task](https://github.com/IOAI-official/IOAI-2026/blob/e1963801aa4cf33a5a03520b39fa6620a7894c54/Individual-Contest/2_Robot_Chasing/statement.md)
+
+These are past international tasks. The classroom examples practice selected decisions for a middle-school preparatory course. Weeks 2–5 develop splits, preprocessing, evaluation, loss and model choices. Week 6 develops tensor operations. Weeks 7–9 revisit identity and axes in image, text and audio tasks, and Week 10 uses unfamiliar specifications. Evidence for those outcomes requires work in their own settings.

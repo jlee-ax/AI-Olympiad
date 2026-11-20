@@ -16,7 +16,7 @@ node tools/course.mjs history --state /private/course/state.sqlite
 
 `resume` accepts the same options as `run` and starts at the recorded phase. `--week 7` includes the prerequisites for week 7. `export` accepts the same input arguments and `--output /private/course/new-export`. It writes current, accepted student and teacher notebooks into a new external directory.
 
-Omit `--baseline` for blank generation. To use existing lessons, supply a private JSON manifest such as `{"1":{"notebooks":{"main":"lessons/week01/week01_integrated.ipynb"}}}`. The importer reads the original, normalizes legacy cell IDs and strips previous outputs in its copy. To restore a previous candidate, pass a private JSON mapping from week numbers to accepted candidate SHA-256 values with `--restore`. The restored material must pass the current assessment.
+Omit `--baseline` for blank generation. To revise an existing lesson, supply a private JSON manifest such as `{"1":{"notebooks":{"main":"lessons/week01/week01_integrated.ipynb"},"teacher":"lessons/week01/week01_integrated_teacher.md"}}`. The importer normalizes legacy cell IDs and clears saved outputs in its notebook copies. The optional `teacher` path accepts a notebook (`.ipynb`) or a UTF-8 guide (`.md`, `.markdown`, `.txt`). The importer preserves the entire guide in one Markdown cell and records the SHA-256 of its original bytes. To restore a previous candidate, pass a private JSON mapping from week numbers to accepted candidate SHA-256 values with `--restore`. The restored material must pass the current assessment.
 
 ## Configure workers and the kernel
 

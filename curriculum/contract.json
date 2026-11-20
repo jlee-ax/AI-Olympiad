@@ -1,20 +1,22 @@
 {
   "schema_version": 1,
-  "revision": "curriculum-v3-evaluation-context",
+  "revision": "curriculum-v4-week01-main-entry",
   "supersedes": {
-    "revision": "curriculum-v2-week01-integrated",
-    "contract_snapshot": "reviews/week02-plan-integration-20261111/plan-revision/contract-v2.json",
-    "plan_snapshot": "reviews/week02-plan-integration-20261111/plan-revision/student-plan-v2.html",
-    "reason": "Clarify evaluation targets and temporal context; add the Week 2 student entry and mark unmeasured workload and unprepared final test. Historical reviews are not promoted."
+    "revision": "curriculum-v3-evaluation-context",
+    "contract_snapshot": "https://github.com/jlee-ax/AI-Olympiad/blob/4b5e94fdb3fe4a98e0faf61da1bb204b6cc70757/curriculum/contract.json",
+    "contract_sha256": "a84c4fa7e363050bad0d6c204d583384e6d37474b9295dd2f3797a3272276c99",
+    "plan_snapshot": "https://github.com/jlee-ax/AI-Olympiad/blob/4b5e94fdb3fe4a98e0faf61da1bb204b6cc70757/curriculum/student-plan.html",
+    "plan_sha256": "c60063bf1c55b957f4b6271a0796d5301d9f209de28a91d468c0c20e72fa0133",
+    "reason": "Route the Week 1 notebook entry to the maintained main branch. The prior plan and its contract remain available at the recorded commit."
   },
   "competition_year": 2027,
   "division": "middle_school",
   "syllabus_label": "IOAI 2026",
   "baseline": {
     "path": "curriculum/student-plan.html",
-    "sha256": "c60063bf1c55b957f4b6271a0796d5301d9f209de28a91d468c0c20e72fa0133",
+    "sha256": "f5cd9381bfe4a8c3e6744172a634e8e5efddcf94df315ecf8b4cafdf7271fe19",
     "origin_name": "curriculum-full-scope.html",
-    "designation": "Full-scope teaching content and the Week 1 entry are retained. The evaluation principle and Weeks 2, 4 and 8 distinguish target-dependent splits; Week 2 now links its two notebooks and records unmeasured workload and the unprepared final test. Earlier versions are preserved in the supersession snapshots.",
+    "designation": "The Week 1 student entry opens the integrated notebook on main. The class and self-study allocations, topic placements and Week 2 evaluation context continue from the preceding plan.",
     "history_refs": [
       "Sentinel_c6acc22670dc8191aa79ad3e68cf0ebc",
       "Sentinel_0604c18c70608191b15e3ce55f584653"

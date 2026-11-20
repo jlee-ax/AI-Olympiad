@@ -1,8 +1,9 @@
+import { isUtf8 } from "node:buffer";
 import { createHash, randomUUID } from "node:crypto";
-import { existsSync, mkdirSync, readFileSync, realpathSync, writeFileSync, chmodSync, renameSync, openSync, fsyncSync, closeSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, realpathSync, statSync, writeFileSync, chmodSync, renameSync, openSync, fsyncSync, closeSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { mkdtemp, rm } from "node:fs/promises";
-import { dirname, join, relative, resolve, sep } from "node:path";
+import { dirname, extname, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawn } from "node:child_process";
 import { parseArgs } from "node:util";
@@ -63,7 +64,7 @@ export function loadCourse(root,designPath,contractPath,primaryPath=null) {
   return {course:core.compile(contract,design,sources,studentPlan),sources,skills,scope};
 }
 
-function loadBaselines(manifest,root){
+export function loadBaselines(manifest,root){
   if(!manifest)return {};
   const definitions=json(manifest), result={};
   for(const [number,def] of Object.entries(definitions)){
@@ -71,9 +72,18 @@ function loadBaselines(manifest,root){
     function notebook(name,path){
       const real=realpathSync(resolve(root,path));
       if(!inside(root,real))fail("Baseline path outside repository");
-      const bytes=read(real);
+      if(!statSync(real).isFile())fail("Expected a baseline file: "+path);
+      const bytes=readFileSync(real);
+      if(!isUtf8(bytes))fail("Baseline must use valid UTF-8: "+path);
       blobs[name]={path,sha256:createHash("sha256").update(bytes).digest("hex")};
-      const raw=JSON.parse(bytes);
+      const source=bytes.toString("utf8");
+      const extension=extname(path).toLowerCase();
+      if(name==="teacher" && extension!==".ipynb"){
+        if(![".md",".markdown",".txt"].includes(extension))fail("Unsupported teacher baseline format: "+path);
+        if(!source.trim() || /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f]/u.test(source))fail("Teacher guide must contain readable text: "+path);
+        return {nbformat:4,nbformat_minor:5,metadata:{},cells:[{id:"teacher-guide",cell_type:"markdown",metadata:{},source}]};
+      }
+      const raw=JSON.parse(source);
       if(raw.nbformat!==4||!Array.isArray(raw.cells)||!raw.cells.length)fail("Unsupported historical notebook");
       const seen=new Set();
       const cells=raw.cells.map((original,i)=>{

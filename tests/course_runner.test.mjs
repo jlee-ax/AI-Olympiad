@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
-import { mkdtemp, rm } from "node:fs/promises";
+import { appendFile, copyFile, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -9,7 +9,7 @@ import { courseCore } from "../tools/course_core.mjs";
 import { runCourse, publicOracles } from "../tools/course_run.mjs";
 import { prepareWeek } from "../tools/course_assess.mjs";
 import { openLedger } from "../tools/course_ledger.mjs";
-import { loadCourse } from "../tools/course.mjs";
+import { loadBaselines, loadCourse } from "../tools/course.mjs";
 
 function portableCourseTestkit(core,runner,base,hash) {
   const clone=v=>JSON.parse(JSON.stringify(v));
@@ -308,6 +308,111 @@ test("registered course runs from a blank state and fails independent controls",
   const results=await kit.runTests({prepareWeek});
   for(const name of results)t.diagnostic(name);
   assert.equal(results.length,25);
+});
+
+test("the Week 1 teacher guide reaches the author intact and a byte change reopens the week", async t => {
+  const dir=await mkdtemp(join(tmpdir(),"course-week-guide-"));
+  t.after(()=>rm(dir,{recursive:true,force:true}));
+  const manifest=join(dir,"baseline.json"), main="activity.ipynb", guide="instructor.md";
+  await copyFile(join(root,"lessons/week01/week01_integrated.ipynb"),join(dir,main));
+  const original=await readFile(join(root,"lessons/week01/week01_integrated_teacher.md"));
+  await writeFile(join(dir,guide),original);
+  await writeFile(manifest,JSON.stringify({1:{notebooks:{main},teacher:guide}}));
+  const kit=portableCourseTestkit(courseCore,{runCourse,publicOracles},contract,digest);
+  const io=kit.makeIO(), worker=io.worker;
+  io.baselines=loadBaselines(manifest,dir);
+  let request;
+  io.worker=async(who,req,id)=>{
+    const reply=await worker(who,req,id);
+    if(req.role==="author"){request=req;reply.action="revise";}
+    return reply;
+  };
+  assert.deepEqual((await runCourse(io,[1],{calls:4,attempts:1})).completed,[1]);
+  assert.match(request.instructions,/revision action/);
+  assert.doesNotMatch(request.instructions,/use create/i);
+  assert.deepEqual(request.previous,request.accepted_baseline);
+  const baseline=request.accepted_baseline;
+  assert.deepEqual(Object.keys(baseline.notebooks),["main"]);
+  assert.deepEqual(baseline.teacher,{nbformat:4,nbformat_minor:5,metadata:{},cells:[
+    {id:"teacher-guide",cell_type:"markdown",metadata:{},source:original.toString("utf8")}]});
+  assert.deepEqual(baseline.provenance.teacher,{path:guide,sha256:createHash("sha256").update(original).digest("hex")});
+  const inspect={inspect:true,calls:0,attempts:1}, originalDigest=io.baselines[1].digest;
+  await appendFile(join(dir,guide),"\n");
+  io.baselines=loadBaselines(manifest,dir);
+  assert.notEqual(io.baselines[1].digest,originalDigest);
+  assert.equal(io.baselines[1].candidate.teacher.cells[0].id,baseline.teacher.cells[0].id);
+  assert.equal((await runCourse(io,[1],inspect)).reasons[1],"not_started");
+  await writeFile(join(dir,guide),original);
+  io.baselines=loadBaselines(manifest,dir);
+  assert.equal(io.baselines[1].digest,originalDigest);
+  assert.deepEqual((await runCourse(io,[1],inspect)).completed,[1]);
+});
+
+test("teacher imports distinguish UTF-8 text guides from historical notebooks", async t => {
+  const dir=await mkdtemp(join(tmpdir(),"course-baseline-format-"));
+  t.after(()=>rm(dir,{recursive:true,force:true}));
+  const manifest=join(dir,"manifest.json"), main="worked.ipynb";
+  const legacy={nbformat:4,nbformat_minor:2,metadata:{},cells:[
+    {cell_type:"code",metadata:{},source:["print(3)\n"],execution_count:7,outputs:[{output_type:"stream",name:"stdout",text:"3\n"}]}]};
+  await writeFile(join(dir,main),JSON.stringify(legacy));
+  async function imported(teacher){
+    await writeFile(manifest,JSON.stringify({37:{notebooks:{main},teacher}}));
+    return loadBaselines(manifest,dir)[37].candidate;
+  }
+  const fromNotebook=await imported(main);
+  for(const notebook of [fromNotebook.notebooks.main,fromNotebook.teacher]){
+    assert.equal(notebook.nbformat_minor,5);
+    assert.match(notebook.cells[0].id,/^legacy-/);
+    assert.deepEqual(notebook.cells[0],{...legacy.cells[0],id:notebook.cells[0].id,outputs:[],execution_count:null});
+  }
+  assert.deepEqual(await imported(main),fromNotebook);
+  assert.deepEqual(JSON.parse(await readFile(join(dir,main),"utf8")),legacy);
+  const source="\uFEFFInstructor’s notes\r\n\r\n~~~python\r\nraise RuntimeError('literal text')\r\n~~~\r\n";
+  for(const guide of ["field-notes.TXT","field-notes.markdown"]){
+    await writeFile(join(dir,guide),source);
+    const candidate=await imported(guide);
+    assert.deepEqual(candidate.teacher.cells,[{id:"teacher-guide",cell_type:"markdown",metadata:{},source}]);
+    assert.equal(candidate.provenance.teacher.sha256,createHash("sha256").update(Buffer.from(source)).digest("hex"));
+  }
+  for(const [name,content,error] of [
+    ["notes.py","print(3)",/Unsupported teacher baseline format/],
+    ["binary.txt","Notes\u0000end",/readable text/],
+    ["invalid.md",Buffer.from([0xc3,0x28]),/valid UTF-8/],
+    ["empty.md","\r\n\t",/readable text/],
+    ["broken.ipynb","plain text",SyntaxError],
+  ]){
+    await writeFile(join(dir,name),content);
+    await assert.rejects(imported(name),error);
+  }
+  assert.equal((await imported(undefined)).teacher.cells[0].id,"missing-key");
+});
+
+test("author instructions use create on a blank retry and revision actions after acceptance", async () => {
+  const kit=portableCourseTestkit(courseCore,{runCourse,publicOracles},contract,digest);
+  const io=kit.makeIO(), worker=io.worker, requests=[];
+  io.worker=async(who,req,id)=>{
+    const reply=await worker(who,req,id);
+    if(req.role==="author"){
+      requests.push(req);
+      if(requests.length===1)reply.action="revise";
+    }
+    return reply;
+  };
+  const options={calls:6,attempts:2};
+  assert.deepEqual((await runCourse(io,[1],options)).completed,[1]);
+  assert.equal(requests.length,2);
+  assert.equal(requests[0].previous,null);
+  assert.equal(requests[1].previous.action,"revise");
+  for(const req of requests){
+    assert.equal(req.accepted_baseline,null);
+    assert.match(req.instructions,/use create/i);
+  }
+  io.suites[1].revision=2;
+  assert.deepEqual((await runCourse(io,[1],options)).completed,[1]);
+  assert.equal(requests.length,3);
+  assert.equal(requests[2].accepted_baseline.action,"create");
+  assert.match(requests[2].instructions,/revision action/);
+  assert.doesNotMatch(requests[2].instructions,/use create/i);
 });
 
 test("SQLite commits are durable, exclusive and reject stale updates",async()=>{

@@ -1,0 +1,46 @@
+name: Week 1 notebook and student handout
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'lessons/week01/**'
+      - 'curriculum/student-plan.html'
+      - 'curriculum/contract.json'
+      - 'tools/course_kernel.py'
+      - 'tools/check_week01_render.py'
+      - 'reviews/week01-main-iteration-20261120/check_transfer.py'
+      - '.github/workflows/week01-lesson.yml'
+  pull_request:
+    paths:
+      - 'lessons/week01/**'
+      - 'curriculum/student-plan.html'
+      - 'curriculum/contract.json'
+      - 'tools/course_kernel.py'
+      - 'tools/check_week01_render.py'
+      - 'reviews/week01-main-iteration-20261120/check_transfer.py'
+      - '.github/workflows/week01-lesson.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  lesson:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install the notebook kernel, scientific tools and Korean fonts
+        run: |
+          python -m pip install 'numpy==2.3.5' 'pandas==2.2.3' 'scikit-learn==1.8.0' 'matplotlib==3.10.8' 'seaborn==0.13.2' 'nbconvert==7.17.2' 'nbclient>=0.10,<1' 'nbformat>=5.10,<6' 'ipykernel>=6,<8' 'playwright>=1.50,<2'
+          python -m playwright install --with-deps --only-shell chromium
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Execute the lesson and verify its published HTML at two screen sizes
+        run: python -B tools/check_week01_render.py --output-dir "$RUNNER_TEMP/week01-render" --browser
+      - name: Verify the published transfer tasks and teacher controls
+        run: python -B reviews/week01-main-iteration-20261120/check_transfer.py

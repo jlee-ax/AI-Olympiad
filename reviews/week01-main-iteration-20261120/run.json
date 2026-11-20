@@ -1,0 +1,454 @@
+{
+  "export_scope": "Week 1 course evidence; contains no private inputs, answers or grading code",
+  "original_commit": "4b5e94fdb3fe4a98e0faf61da1bb204b6cc70757",
+  "original_student_sha256": "59ca974390172e4ce3339260bec23dd39a449c0b1d36e053997e2d5d8b34bb44",
+  "original_teacher_sha256": "01f5c3c97d89e6279008a4e4b7996373f24e2c04a3795d062188f6f2b02363d3",
+  "native_import_binding": "ebe3379e54708102d9ce6d2f45e840bfeb0e775fb02f4c18445bbb5ec9549802",
+  "primary_capture_sha256": "1b32b7327678997f8329319138f44eeff554854810b2c4d698aa9de744b7c508",
+  "course_input_overrides": {
+    "tools/course.mjs": "faadc717f8c65481ad79be00a15a67ffaac789cbacb1fa7da624781d7dd0ac85",
+    "tools/course_run.mjs": "5aa6e29f7621432383f19626de736acc8e1a8324eb180eb62a0fbe6f34025c7c",
+    "curriculum/student-plan.html": "f5cd9381bfe4a8c3e6744172a634e8e5efddcf94df315ecf8b4cafdf7271fe19",
+    "curriculum/contract.json": "2c59389502838a2c84889d2dd9b605e640cd915bf5b3084df6643f42bbfbaaaa"
+  },
+  "final_runtime_sha256": "4b4d1957be8bd1574280b91f8c9d390bf52eb0cbb75510a16f93caa2bb074f69",
+  "profile": "development",
+  "native_db": "Node built-in SQLite ledger, reserve/remember, typed edit checks and external comparison",
+  "worker_protocol": "Loopback Ollama-compatible handoff with named responses bound to exact generated requests; no paid model service called",
+  "development_kernel": "Separately launched Python process with real ipykernel.inprocess for each whole student notebook and every teacher probe. Host denied both TCP and IPC ZeroMQ socket creation. No Docker isolation is claimed.",
+  "baseline_execution": true,
+  "synthetic_kernel_transport_control": true,
+  "bank": {
+    "public_interfaces": 4,
+    "private_cases": 25,
+    "families": {
+      "normal": 4,
+      "invariant": 5,
+      "sensitive": 8,
+      "boundary": 8
+    },
+    "independent_verification_hash": "3ece511ad68c0214849a4f26c011ad31ce469191fc5bd34bd9acb5bfc863b44c",
+    "case_hash": "f1c634a995d9acc0534dfbead7461eebdfe0af56e06933fa8af13adcc029d945"
+  },
+  "roles": [
+    {
+      "role": "examiner",
+      "worker_id": "week1-examiner",
+      "authored_by": "/root/week1_frozen_exam",
+      "wire_sha256": "e763eadfda22cc051600bca77c01db1466e4921b736d30c2b283e8ef960a8ae5",
+      "task_sha256": "cbf8679ec560b1023f96fccdb1b5c4ae01baf5a4bc976e8631d7778ee73e5137",
+      "response_file_sha256": "863100f3c461b297c1732051021a62e51ad2fbf865bac3a67e43beb3545c24e9"
+    },
+    {
+      "role": "assessor",
+      "worker_id": "week1-independent-reader",
+      "authored_by": "/root/week1_content_review",
+      "wire_sha256": "bb1f339ef676c5d3dbf0053dbd56ee71d77c22cb9c9596cb4435ecea8277c18a",
+      "task_sha256": "fdf1753c1dc95471a19242289cba7e5c6db6be6abb7e6d1a527e8702b0ec3197",
+      "response_file_sha256": "7cecbc59a661e7a75914122717fc26c179bb81b18e7eea7b89fe34e97ce4e95b"
+    },
+    {
+      "role": "ground",
+      "worker_id": "week1-independent-reader",
+      "authored_by": "/root/week1_content_review",
+      "wire_sha256": "19f7f155de6325da53f8dc4c672a4c24ceb16741bbddd20cd8cb089aceb7828d",
+      "task_sha256": "2557ee74c100d672fd08e2a9b98c56b3a5fc00ccf39f352e02d59d92c3c6e669",
+      "response_file_sha256": "1e57896c6e4239a5a4be177afed85b5eb39b0bfc3144c8454f7cbcf8bf1366c5"
+    },
+    {
+      "role": "author",
+      "worker_id": "week1-author",
+      "authored_by": "/root",
+      "wire_sha256": "97e03179c88c5beba5356fcf967135badf89fa6a29c378a8bdb8539e2bf2d033",
+      "task_sha256": "cb187da6325a98365ccb8514cb1051b889bec7e0660c4fbbdf7d38db7817e33e",
+      "response_file_sha256": "3f37968c103c3078348c19d07dd540048e27619e48700e6afc34238ecade65e2"
+    },
+    {
+      "role": "reviewer",
+      "worker_id": "week1-independent-reader",
+      "authored_by": "/root/week1_content_review",
+      "wire_sha256": "2b904890b99b3d1c0a16df82d487681a9f6cec73ddf13dadf954b443583292d0",
+      "task_sha256": "f77719e094c2cfd5ee25fbd7d47a9d9fc6653d6f4917f2e272fdda014690924e",
+      "response_file_sha256": "97e9c04ab2ce811f995947a771b2d2e5e4634b7edc0152c6823f149e420fe5b9"
+    },
+    {
+      "role": "author",
+      "worker_id": "week1-author",
+      "authored_by": "/root",
+      "wire_sha256": "ef7c11eb1402a8b1403aba6624cfc405b341f87087610a778dc9bee67f3aff8b",
+      "task_sha256": "b99248fafbb4f9afde8f779e1c869c817a420b25c5cd1725dea9d95e836e8aa5",
+      "response_file_sha256": "e1bb4ef4b1cb76a59930aaa8bd0d8654251ef6059eb17ba868c3fdaffc0a5229"
+    },
+    {
+      "role": "reviewer",
+      "worker_id": "week1-independent-reader",
+      "authored_by": "/root/week1_content_review",
+      "wire_sha256": "9fa6c263598664be65ffccb0b3ab2b788c78ea6bd2a6d20e080aa96bcfc679ad",
+      "task_sha256": "053d47534eae5c2de9774605625ebb73cb05290848e43503c7322ba076751b15",
+      "response_file_sha256": "e00748259b11f7abd3dacbd5091dee0b332db39754399be618006900fed70f32"
+    },
+    {
+      "role": "author",
+      "worker_id": "week1-author",
+      "authored_by": "/root",
+      "wire_sha256": "8f9ac214aecdc49b9883d098029a20e65294be39a5721fcda03a7d996033001a",
+      "task_sha256": "f454beb122dccea9bdaa8620b83f9a7f28348b6298b451ecb384057567040fc7",
+      "response_file_sha256": "09edf105b4e04836f88ffbbff97630ce8c0862a4db6920f3e459ffcbde7d8970"
+    },
+    {
+      "role": "reviewer",
+      "worker_id": "week1-independent-reader",
+      "authored_by": "/root/week1_content_review",
+      "wire_sha256": "df557c5cb4666827eed6984de945db71f16ccfe963804c78e1bb474ce3b3e7b7",
+      "task_sha256": "0280d6570760d3eab1051640655c126c8a25470adf5423e9a3a80e9b7e5cc4e4",
+      "response_file_sha256": "923456ca95414447c962c00d71616ce07fd2bb5e94e2a5183872f5c9b62457eb"
+    }
+  ],
+  "candidates": [
+    {
+      "iteration": 1,
+      "candidate_sha256": "03eb571fcf45d5830442b76c923840a29e53f10ff84e2fda56fdda516ed57e7e",
+      "response_file_sha256": "3f37968c103c3078348c19d07dd540048e27619e48700e6afc34238ecade65e2",
+      "cleared_output_cells": {
+        "main": 0,
+        "teacher": 0
+      },
+      "class_minutes": 120,
+      "homework_minutes": 335,
+      "obligations": [
+        "KOAI-01.practical",
+        "KOAI-02.practical",
+        "KOAI-03.practical"
+      ],
+      "sources": {
+        "intent": "87af025e356a6251f3ce3b5e8ab4c89e286431c53fb13d540c4766a787120fa9",
+        "student": "b64c626840d8990f032d3bccc0688c1d75ca132d4c7446baaad1ac765d4a9381",
+        "teacher": "7665a5fa35321b0e43b8b8f9a87d18313924b14c4b9ac70c6a44f61ee7d4dc25"
+      }
+    },
+    {
+      "iteration": 2,
+      "candidate_sha256": "b94a75d9ab0cbc05b9c9db0e08f030798642a44c8d2007e67679cf6186592007",
+      "response_file_sha256": "e1bb4ef4b1cb76a59930aaa8bd0d8654251ef6059eb17ba868c3fdaffc0a5229",
+      "cleared_output_cells": {
+        "main": 0,
+        "teacher": 0
+      },
+      "class_minutes": 120,
+      "homework_minutes": 335,
+      "obligations": [
+        "KOAI-01.practical",
+        "KOAI-02.practical",
+        "KOAI-03.practical"
+      ],
+      "sources": {
+        "intent": "82e19931cc648d98853e5026758eaadd97e8c50dde29f48d0af5464045706a04",
+        "student": "92f2d8e878c09b4ad963c878c9e7eae83ff441c74009b89d425b93d0d4207d16",
+        "teacher": "66b4b277a8c5da05629d894decf01523684f6e9ff51dd52456e3eb7fd00ee383"
+      }
+    },
+    {
+      "iteration": 3,
+      "candidate_sha256": "df2efce684d45a7db0bfe5a12502bb1e6c21d9d21d640f794bea8570cb9f29ab",
+      "response_file_sha256": "09edf105b4e04836f88ffbbff97630ce8c0862a4db6920f3e459ffcbde7d8970",
+      "cleared_output_cells": {
+        "main": 0,
+        "teacher": 0
+      },
+      "class_minutes": 120,
+      "homework_minutes": 335,
+      "obligations": [
+        "KOAI-01.practical",
+        "KOAI-02.practical",
+        "KOAI-03.practical"
+      ],
+      "sources": {
+        "intent": "82e19931cc648d98853e5026758eaadd97e8c50dde29f48d0af5464045706a04",
+        "student": "98b244ca200659818891e8f1b8edb668e54181bad3c717803b8d5773c690f33e",
+        "teacher": "66b4b277a8c5da05629d894decf01523684f6e9ff51dd52456e3eb7fd00ee383"
+      }
+    }
+  ],
+  "events": [
+    {
+      "event": 1,
+      "week": 0,
+      "kind": "call_recovery",
+      "iteration": null,
+      "outcome": "absent"
+    },
+    {
+      "event": 2,
+      "week": 1,
+      "kind": "grounded",
+      "iteration": 1,
+      "public_demand_ids": [
+        "query_column_file",
+        "joint_reordering",
+        "read_record_role"
+      ]
+    },
+    {
+      "event": 3,
+      "week": 1,
+      "kind": "authored",
+      "iteration": 1,
+      "hash": "03eb571fcf45d5830442b76c923840a29e53f10ff84e2fda56fdda516ed57e7e"
+    },
+    {
+      "event": 4,
+      "week": 1,
+      "kind": "executed",
+      "iteration": 1,
+      "hash": "03eb571fcf45d5830442b76c923840a29e53f10ff84e2fda56fdda516ed57e7e",
+      "probe_count": 4,
+      "private_cases": {
+        "passed": 25,
+        "total": 25
+      },
+      "case_family_counts": {
+        "boundary": 8,
+        "invariant": 5,
+        "normal": 4,
+        "sensitive": 8
+      }
+    },
+    {
+      "event": 5,
+      "week": 0,
+      "kind": "call_recovery",
+      "iteration": null,
+      "outcome": "absent"
+    },
+    {
+      "event": 6,
+      "week": 1,
+      "kind": "rejected",
+      "iteration": 1,
+      "hash": "03eb571fcf45d5830442b76c923840a29e53f10ff84e2fda56fdda516ed57e7e",
+      "review_verdict": "revise",
+      "review_counts": {
+        "revise": 10,
+        "pass": 8
+      },
+      "nonpassing_criteria": [
+        "scope",
+        "prerequisites",
+        "independent_task",
+        "workload",
+        "downstream_use",
+        "revision_alternative",
+        "KOAI-02.practical",
+        "KOAI-03.practical",
+        "demand.joint_reordering",
+        "demand.read_record_role"
+      ]
+    },
+    {
+      "event": 7,
+      "week": 0,
+      "kind": "call_recovery",
+      "iteration": null,
+      "outcome": "absent"
+    },
+    {
+      "event": 8,
+      "week": 1,
+      "kind": "authored",
+      "iteration": 2,
+      "hash": "b94a75d9ab0cbc05b9c9db0e08f030798642a44c8d2007e67679cf6186592007"
+    },
+    {
+      "event": 9,
+      "week": 1,
+      "kind": "executed",
+      "iteration": 2,
+      "hash": "b94a75d9ab0cbc05b9c9db0e08f030798642a44c8d2007e67679cf6186592007",
+      "probe_count": 4,
+      "private_cases": {
+        "passed": 25,
+        "total": 25
+      },
+      "case_family_counts": {
+        "boundary": 8,
+        "invariant": 5,
+        "normal": 4,
+        "sensitive": 8
+      }
+    },
+    {
+      "event": 10,
+      "week": 0,
+      "kind": "call_recovery",
+      "iteration": null,
+      "outcome": "absent"
+    },
+    {
+      "event": 11,
+      "week": 1,
+      "kind": "rejected",
+      "iteration": 2,
+      "hash": "b94a75d9ab0cbc05b9c9db0e08f030798642a44c8d2007e67679cf6186592007",
+      "review_verdict": "revise",
+      "review_counts": {
+        "pass": 15,
+        "revise": 3
+      },
+      "nonpassing_criteria": [
+        "prerequisites",
+        "KOAI-02.practical",
+        "KOAI-03.practical"
+      ]
+    },
+    {
+      "event": 12,
+      "week": 1,
+      "kind": "authored",
+      "iteration": 3,
+      "hash": "df2efce684d45a7db0bfe5a12502bb1e6c21d9d21d640f794bea8570cb9f29ab"
+    },
+    {
+      "event": 13,
+      "week": 1,
+      "kind": "executed",
+      "iteration": 3,
+      "hash": "df2efce684d45a7db0bfe5a12502bb1e6c21d9d21d640f794bea8570cb9f29ab",
+      "probe_count": 4,
+      "private_cases": {
+        "passed": 25,
+        "total": 25
+      },
+      "case_family_counts": {
+        "boundary": 8,
+        "invariant": 5,
+        "normal": 4,
+        "sensitive": 8
+      }
+    },
+    {
+      "event": 14,
+      "week": 0,
+      "kind": "call_recovery",
+      "iteration": null,
+      "outcome": "absent"
+    },
+    {
+      "event": 15,
+      "week": 1,
+      "kind": "accepted",
+      "iteration": 3,
+      "hash": "df2efce684d45a7db0bfe5a12502bb1e6c21d9d21d640f794bea8570cb9f29ab",
+      "review_verdict": "pass",
+      "review_counts": {
+        "pass": 18
+      },
+      "nonpassing_criteria": []
+    }
+  ],
+  "heads": [
+    {
+      "week": 1,
+      "candidate_sha256": "df2efce684d45a7db0bfe5a12502bb1e6c21d9d21d640f794bea8570cb9f29ab",
+      "input_sha256": "c786eabf723180110c5f2ca25d37f247641cff2aa9af9eff3045cea692fb1a28",
+      "visibility": "development"
+    }
+  ],
+  "pending_external_calls": 0,
+  "known_scope": "The ledger executes the integrated artifact. Public companion notebooks, navigation, timed workload and in-class learning need separate evidence. The private container profile was unavailable on this host.",
+  "actual_counts": {
+    "logical_budgeted_final_run_phases": 12,
+    "sqlite_receipts_current_context": 15,
+    "sqlite_by_final_phase": {
+      "design": 1,
+      "blind": 1,
+      "ground": 1,
+      "author": 3,
+      "diff": 3,
+      "kernel": 3,
+      "review": 3
+    },
+    "sqlite_receipts_all_contexts": 16,
+    "receipt_count_superseded_runtime": 1,
+    "delivered_bridge_responses": 10,
+    "distinct_external_request_response_bindings": 9,
+    "explicitly_deferred_requests": 5,
+    "unserved_call_recovery_events": 5,
+    "journal_curriculum_events": 10,
+    "all_journal_events": 15,
+    "tested_private_cases_per_version": [
+      {
+        "passed": 25,
+        "total": 25
+      },
+      {
+        "passed": 25,
+        "total": 25
+      },
+      {
+        "passed": 25,
+        "total": 25
+      }
+    ],
+    "fresh_processes_per_version": 5
+  },
+  "accepted_source_parity": {
+    "native_input_sha256": "c786eabf723180110c5f2ca25d37f247641cff2aa9af9eff3045cea692fb1a28",
+    "native_candidate_sha256": "df2efce684d45a7db0bfe5a12502bb1e6c21d9d21d640f794bea8570cb9f29ab",
+    "source_matches_working_tree": true,
+    "week_and_scope_match": true,
+    "primary_and_role_skills_match": true,
+    "student_cell_ids_types_sources_match": true,
+    "student_cells": 57,
+    "student_code_cells": 28,
+    "public_teacher_guide_raw_sha256": "11a755fa878ca1899ca608b2394c539c384e0b2f45b0b676642ca526e60d7cad",
+    "teacher_guide_matches_exactly": true,
+    "public_student_notebook_raw_sha256": "9e1bfd82f3ac41327c5180114d73df3bf0828c52046693501cf8558014a80b6c"
+  },
+  "final_verifications": {
+    "resumed_calls": 0,
+    "new_sqlite_receipts_on_resume": 0,
+    "new_journal_events_on_resume": 0,
+    "inflight_after_resume": 0,
+    "completed_selected": [
+      1
+    ],
+    "verified_obligations": [
+      "KOAI-01.practical",
+      "KOAI-02.practical",
+      "KOAI-03.practical"
+    ],
+    "whole_course_status": "incomplete",
+    "eligibility": "development_or_partial",
+    "history_event_count": 15,
+    "status_calls": 0,
+    "private_export_matches_ledger": true
+  },
+  "status": {
+    "completed": [
+      1
+    ],
+    "pending": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "verified_obligations": [
+      "KOAI-01.practical",
+      "KOAI-02.practical",
+      "KOAI-03.practical"
+    ],
+    "status": "incomplete",
+    "scope": [
+      1
+    ],
+    "calls": 0,
+    "reasons": {},
+    "eligibility": "development_or_partial"
+  }
+}

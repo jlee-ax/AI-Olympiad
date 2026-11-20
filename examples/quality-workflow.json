@@ -22,8 +22,8 @@
       },
       {
         "id": "quality:bundle",
-        "revision": "synthetic-v5-material",
-        "sha256": "860734462834264ed2a67fa3946b7f0d3b5408d941ee068ef43bbaae088349c3"
+        "revision": "synthetic-v6-week01-main-entry",
+        "sha256": "0501c2c78b08245fcaae976cfde0adf7b939c309f290bf1637900fa2ee7ce09a"
       },
       {
         "id": "quality:criteria",
@@ -237,6 +237,26 @@
       ],
       "conclusion": "accepted",
       "reason": "Synthetic passing fixture for the revised plan context; not an attestation of real work."
+    },
+    {
+      "id": "review:synthetic-week01-main-entry",
+      "context_fingerprint": "00a23148845fc7c18821321d6254b319e335ee7c5460af4fbef7b356446aaf7e",
+      "author_id": "synthetic-author",
+      "reviewer": {
+        "id": "synthetic-reviewer",
+        "model_family": "synthetic-family-b"
+      },
+      "checks": [
+        {
+          "id": "synthetic-reference-integrity",
+          "status": "passed",
+          "evidence_record_ids": [
+            "evidence:synthetic-fixture"
+          ]
+        }
+      ],
+      "conclusion": "accepted",
+      "reason": "Synthetic structural control for the Week 1 main-branch entry."
     }
   ],
   "history": []

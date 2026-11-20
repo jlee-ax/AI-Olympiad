@@ -5,9 +5,9 @@
   "author_id": "unassigned",
   "artifact": {
     "id": "student-plan",
-    "revision": "full-scope-baseline-v3",
+    "revision": "full-scope-baseline-v4",
     "path": "curriculum/student-plan.html",
-    "sha256": "c60063bf1c55b957f4b6271a0796d5301d9f209de28a91d468c0c20e72fa0133"
+    "sha256": "f5cd9381bfe4a8c3e6744172a634e8e5efddcf94df315ecf8b4cafdf7271fe19"
   },
   "target": {
     "competition_year": 2027,
