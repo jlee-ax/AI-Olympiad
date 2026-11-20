@@ -1,10 +1,10 @@
 import assert from "node:assert/strict";
 import { execFile } from "node:child_process";
 import { createHash } from "node:crypto";
-import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { appendFile, copyFile, cp, mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { createServer } from "node:http";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
@@ -77,7 +77,20 @@ function fixtureReply(request) {
   throw Error("Unexpected role " + role);
 }
 
-async function runFixture(profile, image) {
+async function copyCourseInputs(target) {
+  for (const dir of ["curriculum", "skills", "tools"]) {
+    await cp(join(repo, dir), join(target, dir), {recursive: true});
+  }
+  const design = JSON.parse(await readFile(join(target, "curriculum/course-harness.json"), "utf8"));
+  for (const file of new Set(Object.values(design.sources).map(s => s.file))) {
+    if (!file.startsWith("curriculum/")) {
+      await mkdir(dirname(join(target, file)), {recursive: true});
+      await copyFile(join(repo, file), join(target, file));
+    }
+  }
+}
+
+async function runFixture(profile, image, upgradeOnly = false) {
   const scratch = await mkdtemp(join(tmpdir(), "course-cli-"));
   const roles = [];
   const server = createServer(async (req, res) => {
@@ -99,6 +112,8 @@ async function runFixture(profile, image) {
   });
   const filename = name => join(scratch, name);
   try {
+    const courseRoot = upgradeOnly ? filename("checkout") : repo;
+    if (upgradeOnly) await copyCourseInputs(courseRoot);
     await new Promise((resolve, reject) => {
       server.once("error", reject);
       server.listen(0, "127.0.0.1", resolve);
@@ -112,7 +127,7 @@ async function runFixture(profile, image) {
     const primary = Object.fromEntries(Object.entries(sources).map(([key, src]) => [key, {locator: src.locator,
       original_sha256: createHash("sha256").update(src.text).digest("hex"), text: src.text, fixture: true}]));
     await writeFile(filename("primary.json"), JSON.stringify(primary));
-    const common = ["--state", filename("journal.sqlite"), "--suite", filename("probes.json"),
+    const common = ["--root", courseRoot, "--state", filename("journal.sqlite"), "--suite", filename("probes.json"),
       "--runtime", filename("runtime.json"), "--primary", filename("primary.json")];
     const selected = profile === "private" ? ["--week", "1"] : [];
     async function call(command, args = [], expectedCode = 0) {
@@ -129,6 +144,20 @@ async function runFixture(profile, image) {
 
     const paused = await call("run", ["--week", "1", "--calls", "3"], 1);
     assert.equal(paused.reasons["1"], "author");
+    if (upgradeOnly) {
+      const beforeUpgrade = roles.length;
+      await appendFile(join(courseRoot, "tools/course_local_worker.py"), "\n# Updated worker revision.\n");
+      const reopened = await call("status", ["--week", "1"], 1);
+      assert.equal(reopened.reasons["1"], "independent assessment pending");
+      const refreshed = await call("resume", ["--week", "1", "--calls", "2"], 1);
+      assert.deepEqual(roles.slice(beforeUpgrade), ["examiner", "assessor"]);
+      assert.equal(refreshed.reasons["1"], "ground");
+      const afterRefresh = roles.length;
+      const continued = await call("resume", ["--week", "1", "--calls", "1"], 1);
+      assert.deepEqual(roles.slice(afterRefresh), ["ground"]);
+      assert.equal(continued.reasons["1"], "author");
+      return;
+    }
     const result = await call("resume", [...selected, "--calls", "80"]);
     const weeks = profile === "private" ? [1] : course.order;
     assert.deepEqual(result.completed, weeks);
@@ -166,6 +195,8 @@ async function runFixture(profile, image) {
 }
 
 test("all ten weeks through CLI, real SQLite, HTTP workers and fresh Jupyter kernels", () => runFixture("development"));
+test("a changed worker repeats both independent assessment calls before authoring", () =>
+  runFixture("development", undefined, true));
 if (process.env.COURSE_CI_KERNEL_IMAGE) {
   test("digest-pinned private Docker kernel, hidden probes and resume", () =>
     runFixture("private", process.env.COURSE_CI_KERNEL_IMAGE));

@@ -88,7 +88,7 @@ function loadBaselines(manifest,root){
     const notebooks=Object.fromEntries(Object.entries(def.notebooks).map(([name,path])=>[name,notebook(name,path)]));
     if(!notebooks.main||Object.hasOwn(notebooks,"teacher"))fail("Name the student baseline 'main'");
     const teacher=def.teacher?notebook("teacher",def.teacher):
-      {nbformat:4,nbformat_minor:5,metadata:{},cells:[{id:"missing-key",cell_type:"markdown",metadata:{},source:"기존 교사용 정답 미등록."}]};
+      {nbformat:4,nbformat_minor:5,metadata:{},cells:[{id:"missing-key",cell_type:"markdown",metadata:{},source:"No teacher answer was supplied with this baseline."}]};
     result[number]={digest:hash(blobs),candidate:{week:Number(number),notebooks,teacher,
       provenance:blobs,reason:"Imported a read-only, unverified baseline"}};
   }
@@ -179,10 +179,12 @@ export async function main(argv) {
     const frozenBasis=w=>hash({week:w,sources:Object.fromEntries(w.sources.map(k=>[k,base.sources[k]])),skills:base.skills.reviewer,config,versions});
     async function makeSuite(w){
       if(inside(root,suiteFile))fail("Assessment output must be private and external to the checkout");
-      const packet=await prepareWeek(w,base.sources,base.skills.reviewer,config,(_who,req,id)=>call(local,req,id,modelEnv),hash,live?"private":"development");
+      const binding=frozenBasis(w);
+      const assess=(_who,request,id)=>call(local,request,binding+"/"+id,modelEnv);
+      const packet=await prepareWeek(w,base.sources,base.skills.reviewer,config,assess,hash,live?"private":"development");
       const old=existsSync(suiteFile)?json(suiteFile):{};
       if(hash(old)!==hash(suites))fail("Assessment file changed concurrently");
-      packet.course_binding=frozenBasis(w);
+      packet.course_binding=binding;
       const file=suiteFile+"."+randomUUID()+".tmp";const fd=openSync(file,"wx",0o600);
       try{writeFileSync(fd,JSON.stringify({...old,[w.week]:packet},null,2));fsyncSync(fd);}finally{closeSync(fd);}
       renameSync(file,suiteFile);
