@@ -1,14 +1,14 @@
 {
-  "checked_at_utc": "2026-11-20T12:06:36.460109+00:00",
+  "checked_at_utc": "2026-11-20T12:23:59.559124+00:00",
   "validation_script_sha256": "e7a1535b19baef1ec75f5a555a21ca970be6d0df65bd8e7fb97f6237d0fc0e54",
   "source_sha256": {
     "week01_problem_pipeline.ipynb": "ef54282eaec51bccf02528c2b2b418f92d56a1d09934baa7d386a29be408d3e3",
-    "week01_problem_pipeline.html": "d029135c46681633ba71fd6798fa18d778561f5eecae1c5ef8f2ede0ec23483d",
+    "week01_problem_pipeline.html": "a610e51404a9b01294e8c3c3c341414aa8e92e42d29f533edacdb6db04c7513c",
     "week01_problem_pipeline_teacher.md": "de956f036232addf8d2529c0fd342ea90f04876f428797e6bf2479a6051fa121",
     "data/pipeline_device_validation.csv": "9939afdd0dd2d06f4ea45d564632e4b3a0740c7bd985e1d73165def043cc36bf",
     "validate_week01_problem_pipeline.py": "e7a1535b19baef1ec75f5a555a21ca970be6d0df65bd8e7fb97f6237d0fc0e54"
   },
-  "canonical_renderer_sha256": "14cd94e4143f4ecc36ecbdd488d6d32a0413312bd4012149f292d2fd7c09b70d",
+  "canonical_renderer_sha256": "e62631ee9838e8df81b41618f60af3b97371ae71dd5c5df51a0f7050b4487894",
   "render_validation": {
     "notebook": "week01_problem_pipeline",
     "authored_cells_sha256": "8640298033591f3e5359fd41c9c4770c39684d887dddf56a6d1aa7488e19c55f",
@@ -20,8 +20,7 @@
     "local_resources": [
       "../week02/week02_prediction_evaluation.ipynb",
       "data/pipeline_device_validation.csv",
-      "week01_integrated.html",
-      "week01_problem_pipeline.ipynb"
+      "week01_integrated.html"
     ]
   },
   "python": "3.12.14",

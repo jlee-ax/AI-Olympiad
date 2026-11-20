@@ -2,7 +2,7 @@
   "format_version": 1,
   "revision": "week01-whole-20261120",
   "date": "2026-11-20",
-  "bundle_sha256": "ac0b3b2a7a8a997c2d20a61388dcecdf0191d4d7b5834d7644304106d2b4f5ff",
+  "bundle_sha256": "2534628189f1f4cd4a11722ea13bff1d24411fb403ba73ceb9d0721c2b2ebaff",
   "coverage": {
     "members": [
       "integrated",
@@ -20,26 +20,26 @@
     {
       "kind": "independent_material_review",
       "path": "reviews/week01-whole-20261120/independent-receipt.json",
-      "sha256": "d5ff932f8b3cf0eac8af743abc4005d0b0f26916bf53f29cfa37e272119c6fdf"
+      "sha256": "929346b594cebc651fd341af2fc8497c925e65ce671d0035ad47115f5fc93bbf"
     },
     {
       "kind": "functional_execution",
       "member": "tables",
       "validator": "lessons/week01/validate_week01.py",
       "path": "lessons/week01/validation.json",
-      "sha256": "30d6b36ed4e3efa57f98f8a50d216d429823dcb92762d26015e8d42ed91caec9"
+      "sha256": "35b15d2d32b4f0704310ffce10bddb4c7c51d97e66b7f52d00605dd47b2ba846"
     },
     {
       "kind": "functional_execution",
       "member": "pipeline",
       "validator": "lessons/week01/validate_week01_problem_pipeline.py",
       "path": "lessons/week01/week01_problem_pipeline_validation.json",
-      "sha256": "31d225292aae86ffd76f3755ed1602d9d808e29383b82065782c012decfdbaa5"
+      "sha256": "343ed3ea9b8ec2d6ecb94b1827c78874c82ff4d9391c1b35aa2c7ee7ebb0a9b6"
     },
     {
       "kind": "physical_delivery",
       "path": "reviews/week01-whole-20261120/delivery.md",
-      "sha256": "567e2454a8339e2bf3e2f225945a140d75db42c875a6b5cd8c2508e9c88e8c64"
+      "sha256": "f0648ae492891ab019a13e1b339afdc29854824510cb01d26b3b367c53460459"
     }
   ],
   "native_baseline_control": {
@@ -65,7 +65,7 @@
       },
       "eligibility": "development_or_partial"
     },
-    "native_import_sha256": "00e401c1f73a9f62c936e61afef3a708912d7aa0d823d989254b167c970154f1",
+    "native_import_sha256": "c69c682e6f8004879285ccf529c58e45f19baf7296099abc4b71a931dda145a5",
     "books": {
       "main": {
         "cells": 57,
@@ -93,43 +93,77 @@
     "method": "Read-only status on a SQLite backup of the earlier run. Four losslessly projected teacher guides and the current release digest are held only in the external technical baseline. This proves input invalidation and does not issue an independent curriculum review."
   },
   "native_mutation_controls": {
-    "original_and_restored_native_import_sha256": "00e401c1f73a9f62c936e61afef3a708912d7aa0d823d989254b167c970154f1",
+    "original_and_restored_native_import_sha256": "c69c682e6f8004879285ccf529c58e45f19baf7296099abc4b71a931dda145a5",
     "registered_material_files_checked": 27,
     "each_changed_native_import_is_distinct_from_control": true,
     "mutated_native_import_sha256": {
-      ".github/workflows/week01-lesson.yml": "b32115c2ca073ea54f4f1615001bfa1ef4c0cc10b96f9e38e6eb51e91a3c69cf",
-      "lessons/week01/data/pipeline_device_validation.csv": "ad8eb6ce8344d4061785313a9cfdcea966c43a5e3390a3b788371c705556f859",
-      "lessons/week01/data/week1_plants.csv": "c12f93ceaf6bf76f3085db185d34f5843b5e4f06d151a79dd60de11ed4dc44a7",
-      "lessons/week01/data/week1_plants_new.csv": "e5359a20fa17a7dbe1d2ead45a90b5bf80bee8a0ea24712f537e4dfa1a90526c",
-      "lessons/week01/teacher-notes.txt": "30caeb4c34673d34875a5432b28cc93f0dc757671cef1e630911c365445f4d43",
-      "lessons/week01/validate_bundle.py": "b02709ffa92b43bd70704b455e0c60338e0b9d2d17e9edad6a5d13451e960c97",
-      "lessons/week01/validate_week01.py": "6ca14bb69f5f5902bd7d0cfa23de42cd6e0009b301ea6e234b20525d4c19b5c3",
-      "lessons/week01/validate_week01_problem_pipeline.py": "960e53e4217764afaa9d168679fca9e6e12c5a0e556d8fdb22d7f8c23886256c",
-      "lessons/week01/week01_axes_linear_bridge.html": "e9e74fa8a3a96bbed52e95a25808f2957453db640c32a1129e25d8fd10b9de7c",
-      "lessons/week01/week01_axes_linear_bridge.ipynb": "90352bf3d11d13931b719b54c46f006daf69b3acd27ca6a5db8de435534a2644",
-      "lessons/week01/week01_axes_linear_bridge_teacher.md": "b9bc5ddf77c318c9a30875053c0ed28a653545d56a042e5c8b97b428a502c4fb",
-      "lessons/week01/week01_integrated.html": "094934a2bcfa0827199ab21053ddb3be447e435d1c2a2e7ff9f7f2b6f328f1e6",
-      "lessons/week01/week01_integrated.ipynb": "2c9cf85357ed927e327dd30afa6f4a416ff7997e3b42d10165fdb26704094f72",
-      "lessons/week01/week01_integrated_teacher.md": "543293c763917e2d23457c0135c8325cb1da5be965c1b859a4f942522b64becf",
-      "lessons/week01/week01_integrated_validation_labels.csv": "1798fa5aed0e549e4f9422b19e2cb11952c22fd683022c1af3c08f3d735eddbe",
-      "lessons/week01/week01_problem_pipeline.html": "26a5ddd5598c3fe6ad6a7f1bb5af90e1ea04df7589e9691587d99e927200387d",
-      "lessons/week01/week01_problem_pipeline.ipynb": "2dc82397c188a9534b91c14b5d5e2a7947d71850a89d7dc8933d11db554bf4e2",
-      "lessons/week01/week01_problem_pipeline_teacher.md": "7ef0c068bd4ccb0d878b641d13d5884bf4b43f0e074f148204bd96241e02b3e4",
-      "lessons/week01/week01_python_tables.html": "308680ebf5be820f4417a12ff85e19429dc2a22ca057a171c1f61824a3bf8478",
-      "lessons/week01/week01_python_tables.ipynb": "a1ae0b4dac3efea3057144cef9e89679e47c6583d00595e060054522cf626011",
-      "reviews/week01-main-iteration-20261120/check_transfer.py": "1ab12f38f21f2f9d2983b647b46648882c776e0a7d2d1db50798a6677b137e83",
-      "reviews/week01-whole-20261120/check_routes.py": "a165c091a6f00711c5fa4819c9125b99d7fd8d3e8cace0698c6503d34e8d0a5d",
-      "reviews/week01-whole-20261120/test_axes.py": "90c4dc8809e41f2efc276bfdf02da2fbf8349650e1ff639a5af2c30c9c3f3b51",
-      "reviews/week01-whole-20261120/test_bundle.py": "b5942e34164dd089d7896cbf2104424f7f367bd1f7e35c27cce6ea1a81c32b25",
-      "reviews/week01-whole-20261120/test_delivery.py": "97f008a462fafc996ddab0fe4bcb7770c39c3d44093440f8e244e20cb63fc831",
-      "reviews/week01-whole-20261120/test_tables.py": "44723432bc9ae9faefe180fe67cc497b373885a31dad85c3c559a7e35a5d06a6",
-      "tools/check_week01_render.py": "3f126bd584bb30a20504e121257f25cb520a2cc8bf33d3f011689a3f335f2b2a"
+      ".github/workflows/week01-lesson.yml": "40dc37b925f1bd698c6ac0a92f9f0ffb2d0bdc26e1f7ac15428c425dd44b37cb",
+      "lessons/week01/data/pipeline_device_validation.csv": "badea2abb3c0c189a36bfa08ab8d6ee63aa5dee51b38ef9c79432f4562afbfd1",
+      "lessons/week01/data/week1_plants.csv": "58ac219023fcfff75dc0944e4e4a5ea4c896b507da857d1f6419389c7f262b68",
+      "lessons/week01/data/week1_plants_new.csv": "07fd3d7a0f4d45ed3b9bbfc98f4aacc2678928c87fe50df46602968257324235",
+      "lessons/week01/teacher-notes.txt": "d842b0f3511b09277618024be30f092114de035dc93193c977cdc819d08011b9",
+      "lessons/week01/validate_bundle.py": "5e6cce76e87a08c97d95a22db47c285f6e856aa8aa7ebfe4c29de80fd131b47f",
+      "lessons/week01/validate_week01.py": "e25cf7ec9d316a97c0673a137293551b4f8ff12d88408f17d6bc0145f51ad025",
+      "lessons/week01/validate_week01_problem_pipeline.py": "0c912d304d066187cb7030da7d665a0aa183678cb0a96e5645aeeac429918169",
+      "lessons/week01/week01_axes_linear_bridge.html": "79f20b14c16fe9d909401547157dd4b89b91736b94d0edc66c9fdb0dea3c66f8",
+      "lessons/week01/week01_axes_linear_bridge.ipynb": "87d0dc5076b25e8da4931523bf91d3e46b6c6963b0981513d080b62ba99b8acb",
+      "lessons/week01/week01_axes_linear_bridge_teacher.md": "98b7617a13b849628dff6e9701aa9f4344696d3a25057c143617232672150e98",
+      "lessons/week01/week01_integrated.html": "9ddb1a8e5f2a7a137816fa52a87a8f87116e7abf5124bd13af1f083c8177227b",
+      "lessons/week01/week01_integrated.ipynb": "41c0109ff849001f23b7c81b0083349f54b1b3fd777465aca9fdcf8bd03edcfb",
+      "lessons/week01/week01_integrated_teacher.md": "d8319fc11732b88a909a314c1fea30a117978cbea0452951ff6adc3c47afe4d7",
+      "lessons/week01/week01_integrated_validation_labels.csv": "020aefc841311bb686ed184ca699374ac81d4349e9ecc64b4f1f7e9da56e392c",
+      "lessons/week01/week01_problem_pipeline.html": "8f6c0549f0f331a8104154180a344e6c39949e94c03002d9a2d7e404d3fcde60",
+      "lessons/week01/week01_problem_pipeline.ipynb": "5ab377502ba86e6db9314bd722808a6dbca195d50379180175a6c5cac0ba9e26",
+      "lessons/week01/week01_problem_pipeline_teacher.md": "b452229ae548df8a0c7b99f702ddbf324185a89098c5ae338e57a7c8d510053c",
+      "lessons/week01/week01_python_tables.html": "cbb9682ae41b02911ca1dbb601f4f2dada810dd7b5935b6a8dcfba0aa73ba7d4",
+      "lessons/week01/week01_python_tables.ipynb": "9ca866ffdb8c94dbf5d8fd3c69cb5ae7e583c1392f96795dacd24dcf1f83add1",
+      "reviews/week01-main-iteration-20261120/check_transfer.py": "b206905edd76fb106800aa22f97c8ec83499276a9b0e0ef060685000c3fe7d2a",
+      "reviews/week01-whole-20261120/check_routes.py": "eefa3ab5a2926685612c1b32c021384fd4623b7971100a791aef34085d5ef5b5",
+      "reviews/week01-whole-20261120/test_axes.py": "bf2918cda923ebd1f2180934fc7257eb9ba2aefda1a74ae6fd1f9c4ec72cfdcc",
+      "reviews/week01-whole-20261120/test_bundle.py": "8805a481cc4d118a28d647b6ac5c50189ca536d2f1348b7540ea1f08b69cb77d",
+      "reviews/week01-whole-20261120/test_delivery.py": "b4951212c6310d2f21b62fb4dfd796b660e232425c54ace36ff235dfdbfb58f2",
+      "reviews/week01-whole-20261120/test_tables.py": "ecd6babaa77175f4acf10782b3a27df8180a7138082ddc05ada137579eef3b42",
+      "tools/check_week01_render.py": "9c6a15e4d5c6d9999df15786eeedb46143ea9dd0149c884a5d0c5aacce3dad41"
     }
   },
   "scope": "The whole-bundle independent review, functional execution receipts and offline delivery evidence concern the material. The native input control replays the earlier SQLite journal solely to demonstrate stale input rejection. A digest checks file integrity. Reviewer identity is established by the submission and repository review.",
+  "verified_embedded_notebooks": {
+    "integrated": {
+      "suggested_filename": "week01_integrated.ipynb",
+      "payload_sha256": "f11eb1463bef51367c9faacd176cd5eec3a987455391cc404817bf0cc785f167",
+      "payload_byte_count": 138348,
+      "mime_type": "application/octet-stream"
+    },
+    "tables": {
+      "suggested_filename": "week01_python_tables.ipynb",
+      "payload_sha256": "424835eaff778235f086f3f79e6a8c0d92b43f0cf1a6add7e094b8fd81d379c0",
+      "payload_byte_count": 478083,
+      "mime_type": "application/octet-stream"
+    },
+    "axes": {
+      "suggested_filename": "week01_axes_linear_bridge.ipynb",
+      "payload_sha256": "dc476a122fc1eb6c4902b95583a699c69a8cb92bf39055a5b1825905a3fea321",
+      "payload_byte_count": 45316,
+      "mime_type": "application/octet-stream"
+    },
+    "pipeline": {
+      "suggested_filename": "week01_problem_pipeline.ipynb",
+      "payload_sha256": "ef54282eaec51bccf02528c2b2b418f92d56a1d09934baa7d386a29be408d3e3",
+      "payload_byte_count": 52560,
+      "mime_type": "application/octet-stream"
+    }
+  },
+  "reopened_publication": {
+    "previous_commit": "43736d34abc51e84397680409408afb7e5911fac",
+    "previous_bundle_sha256": "ac0b3b2a7a8a997c2d20a61388dcecdf0191d4d7b5834d7644304106d2b4f5ff",
+    "previous_checkpoint_sha256": "392bc88cf038aa6f3d057a1d7c2da66e8586b7ab822b148f4875c248ddde6c0b",
+    "hosted_job": "https://github.com/jlee-ax/AI-Olympiad/actions/runs/44733965949/job/136280551091",
+    "observed_result": "Chromium opened the handout from a local file. Playwright timed out after 30 seconds waiting for the clicked notebook link to emit a download event.",
+    "change_scope": "All four student notebooks, the teacher guides and the lesson data retain their previous exact bytes. The publication, its automated checks and the independently examined handout fingerprints were renewed."
+  },
   "superseded_delivery_control": {
-    "prior_independent_receipt_sha256": "ff834a20824825f08583b0eb32c8a1752b4d8f228a89ce3042e2e6982be3f035",
-    "current_independent_receipt_sha256": "d5ff932f8b3cf0eac8af743abc4005d0b0f26916bf53f29cfa37e272119c6fdf",
+    "prior_independent_receipt_sha256": "d5ff932f8b3cf0eac8af743abc4005d0b0f26916bf53f29cfa37e272119c6fdf",
+    "current_independent_receipt_sha256": "929346b594cebc651fd341af2fc8497c925e65ce671d0035ad47115f5fc93bbf",
     "status": "stale",
     "different_html_bindings": [
       "lessons/week01/week01_axes_linear_bridge.html",
@@ -137,6 +171,6 @@
       "lessons/week01/week01_problem_pipeline.html",
       "lessons/week01/week01_python_tables.html"
     ],
-    "method": "Replaced only the independently submitted receipt in a copy with the genuine pre-mobile handout receipt and recomputed its evidence-file digest. The untouched final publications were still rejected."
+    "method": "Replaced only the independently submitted receipt in a copy with the genuine receipt from the release that failed the hosted notebook-download check and recomputed its evidence-file digest. The untouched final publications were still rejected."
   }
 }

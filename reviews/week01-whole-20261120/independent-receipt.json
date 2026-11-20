@@ -21,7 +21,7 @@
       "guide_path": "lessons/week01/week01_integrated_teacher.md",
       "guide_sha256": "4d6e795f019dd67119c36f655b0c19586a29c5d7369246eaafaa3f70a3dfcdf6",
       "published_notebook_sha256": "f11eb1463bef51367c9faacd176cd5eec3a987455391cc404817bf0cc785f167",
-      "html_sha256": "e0ae9aac8ec025a90f1a7613db1d6163311029928c67b2ed489703707c2836ac",
+      "html_sha256": "14e7633a9c651a52f895ace8c55cb10773db548d1ce03e7bcfc2a5d256e2f6f9",
       "role": "Main course route and registered interface",
       "cells": [
         "ed72400c",
@@ -38,7 +38,14 @@
       "original": "The original already assessed per-query maxima, a lower-cost interpretation, two kinds of permutation, repeated winners, normalized lookup, actual missing measurements, and count versus percentage. Its four-step fresh CSV route ran. Its worked plant split depended on physical row position. Companion entries and different plant datasets needed clearer boundaries.",
       "changed": "The main now names the source of P05's differing measurements, identifies the required stops and directs local help to anchored sections. The worked split selects declared plant IDs. The file step preserves the declared output order even after the working validation table is reordered.",
       "practical": "I ran the 28 authored code cells and exercised all four executable teacher references on novel data. Candidate-column permutations retained gallery ID, query permutations changed output slots, an unaccompanied header permutation failed and swapping equal winners could be invisible. Mark heights and axes matched recomputed counts and rates under both plotting libraries. The named plant split survived reordered rows, reordered columns and an extra extreme plant. Missing or duplicated named IDs were rejected. A live-frame reorder exposed an intermediate output-order defect, then the corrected code restored the declared ID/value associations.",
-      "published_html_sha256": "e0ae9aac8ec025a90f1a7613db1d6163311029928c67b2ed489703707c2836ac"
+      "published_html_sha256": "14e7633a9c651a52f895ace8c55cb10773db548d1ce03e7bcfc2a5d256e2f6f9",
+      "download": {
+        "suggested_filename": "week01_integrated.ipynb",
+        "payload_byte_count": 138348,
+        "payload_sha256": "f11eb1463bef51367c9faacd176cd5eec3a987455391cc404817bf0cc785f167",
+        "mime_type": "application/octet-stream",
+        "comparison": "Exact equality with the installed runnable notebook."
+      }
     },
     "week01_python_tables.ipynb": {
       "verdict": "pass",
@@ -47,7 +54,7 @@
       "guide_path": "lessons/week01/teacher-notes.txt",
       "guide_sha256": "3e138e3dd00c5f97a166a4a0e51965e9b542d067b4d144bf9109ab21765f8f3b",
       "published_notebook_sha256": "424835eaff778235f086f3f79e6a8c0d92b43f0cf1a6add7e094b8fd81d379c0",
-      "html_sha256": "c873afd32820ce74a2bb5f6736d8eb1ffcb372e616a60776cd3fb06f59e1a9d2",
+      "html_sha256": "10f6a1e701aca7ecc0bcafdb902d5bfd969d96b313c7409923a0c44b0d1b7a59",
       "role": "Python, measurement tables, named arrays, joins and plots",
       "cells": [
         "71068cea",
@@ -69,7 +76,14 @@
       "original": "The original used a real CSV and contained sound error diagnosis, zero-versus-missing treatment and join-cardinality practice. Its worked model reconstructed a constant matrix and retained the old prediction after a changed source measurement. A requested source heading could resolve to multiple columns. Distribution and scatter examples did not require reasoning about samples with identical marginal distributions and changed pairings.",
       "changed": "Rows and features now come from the named table. The independent task changes a measurement and both row and column order while retaining IDs and a missing-input row. The helper explains and rejects both repeated requests and ambiguous source headings. The paired plots ask what two separate sorted columns or a univariate histogram lose. The four-cell CSV exercise joins and plots the same source data. The separate introductory, integrated-visit and optional routes identify existing evidence that can be reused.",
       "practical": "I ran all 33 authored code cells, the one-cell named-data landing, the two plain-Python diagnostic check cells, and the four-cell fresh-CSV route in independent namespaces. Row and column permutations together with a changed measurement distinguished the live calculation from a static or position-only answer. The public guide's prediction function preserved novel IDs, uncertainty and observed zero. Rendered scatter positions, unchanged marginal heights, changed site mean, histogram bins, grouped marks and both plotting libraries matched the raw rows. Unmatched left keys were retained and a duplicate right key was rejected.",
-      "published_html_sha256": "c873afd32820ce74a2bb5f6736d8eb1ffcb372e616a60776cd3fb06f59e1a9d2"
+      "published_html_sha256": "10f6a1e701aca7ecc0bcafdb902d5bfd969d96b313c7409923a0c44b0d1b7a59",
+      "download": {
+        "suggested_filename": "week01_python_tables.ipynb",
+        "payload_byte_count": 478083,
+        "payload_sha256": "424835eaff778235f086f3f79e6a8c0d92b43f0cf1a6add7e094b8fd81d379c0",
+        "mime_type": "application/octet-stream",
+        "comparison": "Exact equality with the installed runnable notebook."
+      }
     },
     "week01_axes_linear_bridge.ipynb": {
       "verdict": "pass",
@@ -78,7 +92,7 @@
       "guide_path": "lessons/week01/week01_axes_linear_bridge_teacher.md",
       "guide_sha256": "54d13d015511632475cdf8067f44e42faf4b9af966c6bfbd2cbbaf9773117b4b",
       "published_notebook_sha256": "dc476a122fc1eb6c4902b95583a699c69a8cb92bf39055a5b1825905a3fea321",
-      "html_sha256": "3f8a815b8b2b4de09037574f2352dbd2a77a1960c259041a5e28cb48d8c69aa7",
+      "html_sha256": "b0b72f87d003bdde921ce0e4ec49f61aee940df10094e998bd74572716038d84",
       "role": "Named linear operations and information kept by a representation",
       "cells": [
         "06c67cfc",
@@ -98,7 +112,14 @@
       "original": "The original correctly handled equal-size matrix operations, gallery identifiers, valid zero embeddings, all-PAD input and masked pooling. It presented the sequence-order collision as worked commentary. Its local opening also designated retrieval and task B as required despite the main route making them conditional.",
       "changed": "The guide and learner now choose a specific detour. Exercise A requires named kit alignment and a shape-preserving wrong result. Exercise B requires selecting between the specified cosine and raw dot score, respecting requested ID order and the six-decimal tie rule, and constructing distinct sequences whose mean cannot answer an order/count request. The original same-room/opposite-sign objective is treated separately from scoring a supplied vector.",
       "practical": "All 16 authored code cells ran. I also started directly at the axes, scores and stacking sections and at the separate A and B input cells. The two published teacher functions passed unseen equal-dimensional coefficient permutations and failed the intentionally stale pairing. Distinct orders collided under masked pooling while their position vectors differed. A valid zero counted and all PAD was rejected. A near-collinear control distinguished cosine from negative angular distance after rounding. The final assignment specifies the numerical convention and the tie resolution preserved the lower ID under candidate reorder.",
-      "published_html_sha256": "3f8a815b8b2b4de09037574f2352dbd2a77a1960c259041a5e28cb48d8c69aa7"
+      "published_html_sha256": "b0b72f87d003bdde921ce0e4ec49f61aee940df10094e998bd74572716038d84",
+      "download": {
+        "suggested_filename": "week01_axes_linear_bridge.ipynb",
+        "payload_byte_count": 45316,
+        "payload_sha256": "dc476a122fc1eb6c4902b95583a699c69a8cb92bf39055a5b1825905a3fea321",
+        "mime_type": "application/octet-stream",
+        "comparison": "Exact equality with the installed runnable notebook."
+      }
     },
     "week01_problem_pipeline.ipynb": {
       "verdict": "pass",
@@ -107,7 +128,7 @@
       "guide_path": "lessons/week01/week01_problem_pipeline_teacher.md",
       "guide_sha256": "de956f036232addf8d2529c0fd342ea90f04876f428797e6bf2479a6051fa121",
       "published_notebook_sha256": "ef54282eaec51bccf02528c2b2b418f92d56a1d09934baa7d386a29be408d3e3",
-      "html_sha256": "d029135c46681633ba71fd6798fa18d778561f5eecae1c5ef8f2ede0ec23483d",
+      "html_sha256": "a610e51404a9b01294e8c3c3c341414aa8e92e42d29f533edacdb6db04c7513c",
       "role": "Unfamiliar problem specification, data availability, held-out evaluation and filing",
       "cells": [
         "cb044aa9",
@@ -127,7 +148,14 @@
       "original": "The original had a useful training perturbation, a correct train-only transform and an explanation that a label-only file cannot verify its upstream ID mapping. Its direct submission-order entry raised NameError in a fresh namespace. Its nominally independent exercise included validation truth in the student input cell before predictions.",
       "changed": "The order detour runs independently with three recorded predictions. The device challenge separates features, future-only receipt, training labels, first predictions and the shuffled scoring file. The procedure preserves a first prediction table across retries within one kernel. The original Antique and Potato comparison elicits what can actually be learned or checked from their different data. The optional archive and new headered device file use visibly different contracts.",
       "practical": "All 16 authored code cells ran. Separate fresh entries at sections 4 and 5 worked. The unchanged student answer left the external key unopened and produced no device score. I exercised the actual guide model and file writer, a future-only field, unknown-label and evaluation perturbations, and a deliberately leaked transform. The scoring key matched by ID, preserved an initial prediction across a missing-file retry and rejected a changed first prediction. An intermediate file checker accepted physically malformed CSV. The final guide rejects extra fields, blank/missing records, malformed label text and a same-shape ID/value swap while accepting quoted and leading-zero IDs. Identical serialized labels remain insufficient evidence of row identity.",
-      "published_html_sha256": "d029135c46681633ba71fd6798fa18d778561f5eecae1c5ef8f2ede0ec23483d"
+      "published_html_sha256": "a610e51404a9b01294e8c3c3c341414aa8e92e42d29f533edacdb6db04c7513c",
+      "download": {
+        "suggested_filename": "week01_problem_pipeline.ipynb",
+        "payload_byte_count": 52560,
+        "payload_sha256": "ef54282eaec51bccf02528c2b2b418f92d56a1d09934baa7d386a29be408d3e3",
+        "mime_type": "application/octet-stream",
+        "comparison": "Exact equality with the installed runnable notebook."
+      }
     }
   },
   "original_bindings": {
@@ -244,7 +272,7 @@
     "whole_book_execution": "The four current authored documents contain 224 cells. All 93 source code cells completed in separate, initially clean IPython namespaces. Student blank cells remained blank. I compared published raw guides and canonical notebook cell projections with the copies I exercised after the final render.",
     "classroom": "The main route remains sections 1–8. Its written detour has two selected-response items and one independently worked response. The Python detour has five diagnosis prompts. The fresh CSV requires four specified setup/input cells, and the new tables and retrieval anchors now run directly in fresh namespaces. The class, standalone and optional instructions specify destinations, prerequisites, evidence to carry back and how to credit the same work once.",
     "changed_routes": "Both added direct anchors initially raised NameError on their first code cell. The corrected Tables landing imports NumPy and pandas itself. The corrected Bridge score landing imports NumPy and defines its own tables. Section 4 of the pipeline now starts with plain Python. Bridge's separate A/B input and stacking entries also ran from clean namespaces.",
-    "published_html": "I reread the four installed HTML handouts after the mobile display revision, rechecked the exact notebook and guide bytes, and followed all 22 occurrences of explicit local Week 1 fragment links. The integrated handout reaches seven distinct cross-book targets and every inspected anchor resolves. Each handout links to its runnable notebook. The nine embedded PNGs and their nonempty alternative text are identical to those reviewed previously.",
+    "published_html": "I reread the four installed standalone handouts after the download repair. Each contains its own runnable notebook. All 22 explicit local Week 1 fragment links still resolve, covering seven distinct cross-book destinations from the integrated handout. The four complete rendered exercise areas, nine embedded figures with alternative text, and mobile figure styles match the preceding verified editions. I compared the four raw notebooks, authored-cell projections, guides and distributed data again.",
     "book_necessity": "Use the four existing roles. The observed gaps concern routing, named records and axes, representational loss and submission or evaluation contracts. Each now has a concrete home and a learner decision in an existing book. No further Week 1 notebook is warranted by these checks.",
     "limits": [
       "This is a material and executable-behavior review. Learning gains, unaided student performance, contest scores and actual classroom or self-study times have not been measured.",
@@ -257,8 +285,17 @@
       "method": "I inspected the native checkbox and label associations, focusable named scroll regions, embedded PNGs and shipped CSS. I independently rendered the installed rules at 390 and 1280 CSS pixels, with compact and checked layouts at 390. I also inspected the compact and expanded phone images of the paired scatterplot.",
       "observations": "At 390 pixels each of the nine controls was visible. Compact figures occupied 323 or 348 pixels. Checked figures expanded to their native widths of 460–1,657 pixels inside the same bounded, horizontally scrollable regions. The paired scatterplot expanded from 348 to 1,011 pixels. At 1,280 pixels all nine controls were hidden and the images fit their display regions. The bridge and pipeline handouts contain no raster figures.",
       "limits": "The local Chromium process could not create its Unix singleton socket. I verified the HTML semantics, keyboard-focusable controls and layout states with an in-process renderer. Live pointer, keyboard and screen-reader interaction remain unverified in this review.",
-      "geometry_receipt_sha256": "7f3942c5f1ce8b62676e2c0610014e2e128946e83ab9dc1f50d7c1e0011b3477"
+      "geometry_receipt_sha256": "7f3942c5f1ce8b62676e2c0610014e2e128946e83ab9dc1f50d7c1e0011b3477",
+      "evidence_continuity": "On the offline-download revision I reconfirmed that the complete student exercise markup, embedded PNGs and mobile figure CSS match the geometry-tested edition."
+    },
+    "offline_notebook_downloads": {
+      "verdict": "pass",
+      "previous_result": "The previous four reading pages used a relative file URL pointing to a sibling notebook. A standalone handout contained zero notebook payload bytes. Hosted offline Chromium failed its download check on that revision.",
+      "previous_hosted_job": "https://github.com/jlee-ax/AI-Olympiad/actions/runs/44733965949/job/136280551091",
+      "current_result": "Each installed HTML has one clearly labeled download link with the exact corresponding .ipynb filename and an embedded Base64 data URL. I decoded the link first with strict Base64 validation, then with the standard in-process data-URI handler. Both returned the exact installed notebook bytes in every case. Each payload parsed as an nbformat v4 notebook. I tested wrong filenames and truncated payloads as failure controls.",
+      "scope": "The pass covers the actual distributed bytes, filenames, format, links and authored exercises. Local Chromium could not create its required socket in this environment. I did not observe a browser-generated download event for this corrected revision. The hosted offline Chromium check supplies that separate end-to-end observation when it runs.",
+      "probe_sha256": "e508b5dd1c872a5164654e1ad28746095245ec14f834f3a72d459f192445fdc5"
     }
   },
-  "supersedes_receipt_sha256": "ff834a20824825f08583b0eb32c8a1752b4d8f228a89ce3042e2e6982be3f035"
+  "supersedes_receipt_sha256": "d5ff932f8b3cf0eac8af743abc4005d0b0f26916bf53f29cfa37e272119c6fdf"
 }

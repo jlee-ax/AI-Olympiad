@@ -28,6 +28,63 @@ def picture(book, cell_id):
 
 
 class DeliveryFaults(unittest.TestCase):
+    def test_every_published_download_contains_the_exact_named_file(self):
+        for stem, html in delivery.registered_handouts(delivery.LESSON).items():
+            with self.subTest(stem=stem):
+                filename = stem + ".ipynb"
+                page = BeautifulSoup((delivery.LESSON / html).read_text(), "html.parser")
+                link, = page.select(".week01-navigation a[download]")
+                self.assertEqual(link["download"], filename)
+                media, encoded = link["href"].split(",", 1)
+                self.assertEqual(media, "data:application/octet-stream;base64")
+                self.assertEqual(base64.b64decode(encoded, validate=True), (delivery.LESSON / filename).read_bytes())
+
+    def test_download_detects_the_relative_link_wrong_filename_and_corrupt_bytes(self):
+        filename = "week01_integrated.ipynb"
+        page = BeautifulSoup((delivery.LESSON / "week01_integrated.html").read_text(), "html.parser")
+        link = page.select_one(".week01-navigation a[download]")
+        raw = (delivery.LESSON / filename).read_bytes()
+        other = (delivery.LESSON / "week01_problem_pipeline.ipynb").read_bytes()
+        url = delivery.NOTEBOOK_DATA_URL
+        for title, href, name, error in [
+            ("sibling file", filename, filename, "must embed"),
+            ("wrong name", link["href"], "another.ipynb", "incorrect filename"),
+            ("damaged encoding", url + "invalid!!", filename, "invalid embedded"),
+            ("wrong real book", url + base64.b64encode(other).decode(), filename, "bytes differ"),
+            ("same parsed notebook, missing final newline", url + base64.b64encode(raw.rstrip()).decode(),
+             filename, "bytes differ"),
+        ]:
+            with self.subTest(title=title):
+                link["href"], link["download"] = href, name
+                with self.assertRaisesRegex(ValueError, error):
+                    delivery.verify_download(page, filename, raw)
+
+    def test_render_preserves_original_file_bytes_and_stages_the_actual_fresh_capture(self):
+        stem = "week01_problem_pipeline"
+        filename = stem + ".ipynb"
+        saved = notebook(stem)
+        differently_formatted = (json.dumps(json.loads((delivery.LESSON / filename).read_bytes()),
+                                            ensure_ascii=False, indent=3) + "\n").encode()
+        page = delivery.render(saved, stem=stem, download_bytes=differently_formatted)
+        delivery.verify_download(page, filename, differently_formatted)
+        fresh = copy.deepcopy(saved)
+        stdout = next(o for cell in fresh.cells for o in cell.get("outputs", []) if o.get("name") == "stdout")
+        stdout.text += "changed output in this staged execution\n"
+        with self.assertRaisesRegex(ValueError, "displayed notebook differ"):
+            delivery.render(fresh, stem=stem, download_bytes=differently_formatted)
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            shutil.copyfile(delivery.LESSON / "lesson-manifest.json", output / "lesson-manifest.json")
+            (output / filename).write_bytes(differently_formatted)
+            original = delivery.render(saved, stem=stem, lesson=output)
+            delivery.verify_download(original, filename, differently_formatted)
+            delivery.write_fresh_edition(fresh, stem, output)
+            fresh_bytes = (output / filename).read_bytes()
+            self.assertEqual(nbformat.reads(fresh_bytes.decode(), as_version=4), fresh)
+            self.assertNotEqual(fresh_bytes, (delivery.LESSON / filename).read_bytes())
+            page = BeautifulSoup((output / (stem + ".html")).read_text(), "html.parser")
+            delivery.verify_download(page, filename, fresh_bytes)
+
     def test_new_registered_companion_uses_its_declared_handout_and_remains_reachable(self):
         with tempfile.TemporaryDirectory() as folder:
             lesson = Path(folder)

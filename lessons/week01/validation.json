@@ -1,13 +1,13 @@
 {
-  "canonical_renderer_sha256": "14cd94e4143f4ecc36ecbdd488d6d32a0413312bd4012149f292d2fd7c09b70d",
-  "checked_at_utc": "2026-11-20T12:06:43.035922+00:00",
+  "canonical_renderer_sha256": "e62631ee9838e8df81b41618f60af3b97371ae71dd5c5df51a0f7050b4487894",
+  "checked_at_utc": "2026-11-20T12:24:07.008255+00:00",
   "notebook": "week01_python_tables.ipynb",
   "revision": "week01-whole-20261120",
   "historical_tables_revision": "week1-independent-transfer-v2",
   "source_sha256": {
     "week01_python_tables.ipynb": "424835eaff778235f086f3f79e6a8c0d92b43f0cf1a6add7e094b8fd81d379c0",
     "teacher-notes.txt": "3e138e3dd00c5f97a166a4a0e51965e9b542d067b4d144bf9109ab21765f8f3b",
-    "week01_python_tables.html": "c873afd32820ce74a2bb5f6736d8eb1ffcb372e616a60776cd3fb06f59e1a9d2",
+    "week01_python_tables.html": "10f6a1e701aca7ecc0bcafdb902d5bfd969d96b313c7409923a0c44b0d1b7a59",
     "data/week1_plants.csv": "fece0473e50b097afa7c2b3e2647c9a6e623bd3d8e009e6ef620151887227639",
     "data/week1_plants_new.csv": "869db97ef7c5f6ccf1020bc435fe831f180e9b9548d722c41c91b63af44d7290",
     "validate_week01.py": "3de21d0034e105b39457d36011b2b803b7330f62977db492dfaf0aca7de56360"
@@ -21,8 +21,7 @@
     "math": 107,
     "attached_diagrams": 2,
     "local_resources": [
-      "week01_integrated.html",
-      "week01_python_tables.ipynb"
+      "week01_integrated.html"
     ]
   },
   "input_files_unchanged": true,
@@ -31,7 +30,7 @@
   "nbformat_validation": "passed",
   "top_to_bottom_execution": "passed",
   "execution_method": "fresh IPython InProcessKernelManager per run",
-  "execution_seconds": 4.213,
+  "execution_seconds": 4.334,
   "cells": 98,
   "code_cells": 33,
   "executed_code_cells": 33,
@@ -81,7 +80,7 @@
   },
   "notebook_sha256": "424835eaff778235f086f3f79e6a8c0d92b43f0cf1a6add7e094b8fd81d379c0",
   "persisted_notebook": "unchanged; executed copy held in memory",
-  "html_sha256": "c873afd32820ce74a2bb5f6736d8eb1ffcb372e616a60776cd3fb06f59e1a9d2",
+  "html_sha256": "10f6a1e701aca7ecc0bcafdb902d5bfd969d96b313c7409923a0c44b0d1b7a59",
   "source_attachment_projection_sha256": "64bbcda5f1c3e631cece0108ff2b73138ea0f0c35d807e1843a0be2d50e1c709",
   "source_projection_unchanged_by_execution": true,
   "schedules_created": false

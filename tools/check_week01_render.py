@@ -1,10 +1,11 @@
 """Execute the registered Week 1 notebooks and verify their downloadable and offline-reading editions."""
 import argparse
 import base64
+import binascii
 import copy
 import hashlib
 import json
-from io import BytesIO
+from io import BytesIO, StringIO
 import os
 import shutil
 import struct
@@ -28,6 +29,7 @@ from nbconvert.filters.markdown_mistune import IPythonRenderer, MarkdownWithMath
 ROOT = Path(__file__).resolve().parents[1]
 LESSON = ROOT / "lessons/week01"
 STEM = "week01_integrated"
+NOTEBOOK_DATA_URL = "data:application/octet-stream;base64,"
 # Each worked-code ID identifies its notebook even when an external validator supplies an in-memory copy.
 REQUIRED_PROFILES = {
     STEM: ("484f22ba", 2, 5),
@@ -101,7 +103,7 @@ def check_reachability(lesson, registry):
             continue
         visited.add(name)
         page = BeautifulSoup((lesson / name).read_text(encoding="utf-8"), "html.parser")
-        for a in page.select("main a[href], .week01-navigation a[href]"):
+        for a in page.select("main a[href], .week01-navigation a[href]:not([download])"):
             href = urlsplit(a["href"])
             if not href.scheme and not href.netloc and href.path in registered:
                 pending.append(href.path)
@@ -148,7 +150,28 @@ class OfflineExporter(HTMLExporter):
         return MarkdownWithMath(renderer=renderer).render(source)
 
 
-def render(notebook, *, stem=None, lesson=LESSON):
+def serialized_notebook(notebook):
+    stream = StringIO()
+    nbformat.write(notebook, stream)
+    return stream.getvalue().encode("utf-8")
+
+
+def verify_download(page, filename, expected_bytes):
+    links = page.select(".week01-navigation a[download]")
+    if len(links) != 1 or links[0].get("download") != filename:
+        raise ValueError(f"{filename}: missing executable notebook download or incorrect filename")
+    href = links[0].get("href", "")
+    if not href.startswith(NOTEBOOK_DATA_URL):
+        raise ValueError(f"{filename}: an offline download must embed the executable notebook")
+    try:
+        payload = base64.b64decode(href[len(NOTEBOOK_DATA_URL):], validate=True)
+    except (binascii.Error, ValueError) as exc:
+        raise ValueError(f"{filename}: invalid embedded notebook data") from exc
+    if payload != expected_bytes:
+        raise ValueError(f"{filename}: downloaded bytes differ from the distributed notebook")
+
+
+def render(notebook, *, stem=None, lesson=LESSON, download_bytes=None):
     registry = registered_handouts(lesson)
     if stem is None:
         ids = {cell.id for cell in notebook.cells}
@@ -177,7 +200,18 @@ def render(notebook, *, stem=None, lesson=LESSON):
         home = doc.new_tag("a", href=registry[STEM])
         home.string = "1주차 통합 교안으로"
         navigation.append(home)
-    download = doc.new_tag("a", href=stem + ".ipynb", download=stem + ".ipynb")
+    if download_bytes is None:
+        original = lesson / (stem + ".ipynb")
+        if original.is_file():
+            raw = original.read_bytes()
+            if nbformat.reads(raw.decode("utf-8"), as_version=4) == notebook:
+                download_bytes = raw
+        if download_bytes is None:
+            download_bytes = serialized_notebook(notebook)
+    elif nbformat.reads(download_bytes.decode("utf-8"), as_version=4) != notebook:
+        raise ValueError(f"{stem}: the download and displayed notebook differ")
+    payload = base64.b64encode(download_bytes).decode("ascii")
+    download = doc.new_tag("a", href=NOTEBOOK_DATA_URL + payload, download=stem + ".ipynb")
     download.string = "실행용 노트북 내려받기 (.ipynb)"
     navigation.append(download)
     doc.main.insert_before(navigation)
@@ -279,7 +313,7 @@ def has_anchor(doc, fragment):
 def check_links(doc, lesson):
     local = set()
     targets = {}
-    for anchor in doc.select(".week01-navigation a[href], main a[href]"):
+    for anchor in doc.select(".week01-navigation a[href]:not([download]), main a[href]"):
         href = urlsplit(anchor["href"])
         if href.scheme or href.netloc:
             continue
@@ -323,9 +357,6 @@ def verify(source, fresh, published, *, stem=STEM, lesson=LESSON):
     doc = render(fresh, stem=stem, lesson=lesson)
     committed = BeautifulSoup(published, "html.parser")
     for page in (doc, committed):
-        download = page.select_one(".week01-navigation a[download]")
-        if not download or download.get("href") != stem + ".ipynb" or download.get("download") != stem + ".ipynb":
-            raise ValueError(f"{stem}: missing executable notebook download")
         if page.select("script[src], link[rel=stylesheet][href]"):
             raise ValueError(f"{stem}: offline handout requires an external script or stylesheet")
         for picture in page.select("main img"):
@@ -347,6 +378,8 @@ def verify(source, fresh, published, *, stem=STEM, lesson=LESSON):
     if visible_cells(doc, image_bytes=False) != visible_cells(committed, image_bytes=False):
         raise ValueError("Fresh execution differs from the published cells, text, tables or figure descriptions")
     check_plot_correspondence(source, fresh)
+    notebook_path = lesson / (stem + ".ipynb")
+    verify_download(committed, notebook_path.name, notebook_path.read_bytes())
     figures = doc.select(".jp-OutputArea-output img")
     tables = doc.select(".jp-OutputArea-output table")
     _, minimum_figures, minimum_tables = REQUIRED_PROFILES.get(stem, (None, 0, 0))
@@ -356,7 +389,7 @@ def verify(source, fresh, published, *, stem=STEM, lesson=LESSON):
     if len(doc.select(".jp-MarkdownOutput img")) < attached:
         raise ValueError(f"{stem}: an attached lesson diagram is missing")
     links = check_links(committed, lesson)
-    nav = [a["href"] for a in committed.select(".week01-navigation a[href]")]
+    nav = [a["href"] for a in committed.select(".week01-navigation a[href]:not([download])")]
     if stem != STEM and registry[STEM] not in nav:
         raise ValueError("A companion handout has no route back to the integrated lesson")
     if stem == STEM:
@@ -382,7 +415,7 @@ def browser_check(path, executable):
         browser = pw.chromium.launch(executable_path=executable or None)
         directions = set()
         for width in (1280, 390):
-            page = browser.new_page(viewport={"width": width, "height": 850})
+            page = browser.new_page(viewport={"width": width, "height": 850}, accept_downloads=True)
             page.route("http://**/*", lambda route: route.abort())
             page.route("https://**/*", lambda route: route.abort())
             page.goto(path.resolve().as_uri(), wait_until="load")
@@ -431,13 +464,17 @@ def browser_check(path, executable):
             if (download.suggested_filename != notebook.name or download.failure()
                     or Path(download.path()).read_bytes() != notebook.read_bytes()):
                 raise ValueError(f"{path.name}: the executable download does not match the notebook")
-            urls = page.locator(".week01-navigation a[href], main a[href]").evaluate_all(
+            urls = page.locator(".week01-navigation a[href]:not([download]), main a[href]").evaluate_all(
                 "anchors => anchors.map(a => a.getAttribute('href'))")
             for url in dict.fromkeys(urls):
                 target = urlsplit(url)
                 if target.path not in registry.values():
                     continue
                 page.locator(f"a[href={json.dumps(url, ensure_ascii=False)}]").first.click()
+                expected_url = (path.parent.resolve() / target.path).as_uri()
+                if target.fragment:
+                    expected_url += "#" + target.fragment
+                page.wait_for_url(expected_url, wait_until="load")
                 arrived = urlsplit(page.url)
                 if (Path(unquote(arrived.path)) != path.parent.resolve() / target.path
                         or unquote(arrived.fragment) != unquote(target.fragment)):
@@ -451,6 +488,16 @@ def browser_check(path, executable):
             page.close()
         browser.close()
     return sorted(directions)
+
+
+def write_fresh_edition(notebook, stem, output_dir, *, lesson=LESSON):
+    html = registered_handouts(lesson)[stem]
+    filename = stem + ".ipynb"
+    raw = serialized_notebook(notebook)
+    page = render(notebook, stem=stem, lesson=lesson, download_bytes=raw)
+    (output_dir / filename).write_bytes(raw)
+    (output_dir / html).write_text(str(page), encoding="utf-8")
+    verify_download(page, filename, (output_dir / filename).read_bytes())
 
 
 def checked_execution(stem, output_dir, browser):
@@ -482,8 +529,7 @@ def checked_execution(stem, output_dir, browser):
     html = LESSON / registered_handouts(LESSON)[stem]
     receipt = verify(source, fresh, html.read_text(encoding="utf-8"), stem=stem)
     if output_dir:
-        nbformat.write(fresh, output_dir / path.name)
-        (output_dir / html.name).write_text(str(render(fresh, stem=stem)), encoding="utf-8")
+        write_fresh_edition(fresh, stem, output_dir)
     if browser is not None:
         receipt["browser_directions"] = browser_check(html, browser)
         receipt["browser_widths"] = [1280, 390]
