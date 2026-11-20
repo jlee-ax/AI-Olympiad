@@ -20,7 +20,7 @@ Omit `--baseline` for blank generation. To use existing lessons, supply a privat
 
 ## Configure workers and the kernel
 
-Point the controller at a loopback Ollama or Chat Completions endpoint. Supply the actual served model versions and a digest-pinned Docker image containing Jupyter, a Python kernel and the course libraries. The example uses placeholders for locally provisioned resources. Author, examiner and reviewer requests use separate identities and stateless conversations. Record shared model families when interpreting independent judgments.
+Point the controller at a loopback Ollama or Chat Completions endpoint. Supply the actual served model versions and a digest-pinned Docker image containing Jupyter, a Python kernel and the course libraries. Use a registry manifest digest (`registry/image@sha256:…`) or the immutable local image ID returned by `docker image inspect --format '{{.Id}}' IMAGE`. The example uses placeholders for locally provisioned resources. Author, examiner and reviewer requests use separate identities and stateless conversations. Each request carries the same language instructions for Korean student materials and English documentation, including teacher-only notes and decision records. Record shared model families when interpreting independent judgments.
 
 ```json
 {

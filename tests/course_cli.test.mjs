@@ -59,8 +59,8 @@ function fixtureReply(request) {
       assert.deepEqual(Object.keys(p).sort(), ["entrypoint", "spec"]);
       definitions.push("def " + p.entrypoint + "(row):\n    return max(zip(row['scores'], row['ids']))[1]");
     }
-    const student = notebook([cell("principle", "A column is a position. Track its corresponding ID."),
-      cell("question", "Which result survives a consistent permutation of IDs and columns?"),
+    const student = notebook([cell("principle", "열 번호는 위치를 나타냅니다. 각 열에 대응하는 ID를 확인하세요."),
+      cell("question", "열과 ID의 순서를 함께 바꿨을 때 어떤 결과가 유지될까요?"),
       cell("work", "assert len([11, 90]) == 2", true)]);
     return {week: week.week, action: "create", reason: "Exercise the blank-generation entry point.",
       notebooks: {main: student}, teacher: notebook([cell("reference", definitions.join("\n\n"), true)]),
@@ -85,6 +85,9 @@ async function runFixture(profile, image) {
       const chunks = [];
       for await (const chunk of req) chunks.push(chunk);
       const body = JSON.parse(Buffer.concat(chunks).toString("utf8"));
+      const instructions = body.messages.find(message => message.role === "system").content;
+      assert.match(instructions, /student-facing lessons and exercises in Korean/);
+      assert.match(instructions, /all other documentation in English/);
       const task = JSON.parse(body.messages.at(-1).content);
       roles.push(task.role);
       const ret = fixtureReply(task);

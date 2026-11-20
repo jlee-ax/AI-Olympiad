@@ -7,6 +7,15 @@ from urllib.parse import urlsplit
 from urllib.request import HTTPRedirectHandler, ProxyHandler, Request, build_opener
 
 
+ROLE_INSTRUCTIONS = (
+    "Use the supplied KOAI role and evidence. Return one JSON object following the requested schema. "
+    "Write student-facing lessons and exercises in Korean. Write all other documentation in English, "
+    "including teacher-only notes, source summaries, review findings and reasons for changes. "
+    "Preserve original source titles and quotations, identifiers and executable code when required. "
+    "You have no filesystem or tools."
+)
+
+
 class NoRedirect(HTTPRedirectHandler):
     def redirect_request(self, *args, **kwargs):
         return None
@@ -24,7 +33,7 @@ def main():
     body = {
         "model": model, "stream": False, "format": "json",
         "messages": [
-            {"role": "system", "content": "Use the supplied KOAI role and evidence. Return one JSON object following the requested schema. You have no filesystem or tools."},
+            {"role": "system", "content": ROLE_INSTRUCTIONS},
             {"role": "user", "content": json.dumps(task, ensure_ascii=False)},
         ],
     }
