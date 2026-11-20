@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="ko">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>1주차 보충 · 표에서 점수와 ID까지</title>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7292,458 +7292,10 @@ a.anchor-link {
 }
 </style>
 <!-- Load mathjax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+
 <!-- MathJax configuration -->
-<script type="text/x-mathjax-config">
-    init_mathjax = function() {
-        if (window.MathJax) {
-        // MathJax loaded
-            MathJax.Hub.Config({
-                TeX: {
-                    equationNumbers: {
-                    autoNumber: "AMS",
-                    useLabelIds: true
-                    }
-                },
-                tex2jax: {
-                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-                    processEscapes: true,
-                    processEnvironments: true
-                },
-                displayAlign: 'center',
-                messageStyle: 'none',
-                CommonHTML: {
-                    linebreaks: {
-                    automatic: true
-                    }
-                }
-            });
 
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        }
-    }
-    init_mathjax();
-    </script>
-<!-- End of mathjax configuration --><script type="module">
-  document.addEventListener("DOMContentLoaded", async () => {
-    const diagrams = document.querySelectorAll(".jp-Mermaid > pre.mermaid");
-    // do not load mermaidjs if not needed
-    if (!diagrams.length) {
-      return;
-    }
-    const mermaid = (await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.0/mermaid.esm.min.mjs")).default;
-    const elkUrl = "https://cdnjs.cloudflare.com/ajax/libs/mermaid-layout-elk/0.1.9/mermaid-layout-elk.esm.min.mjs";
-    if(elkUrl) {
-      const elkLayouts = (await import(elkUrl)).default;
-      mermaid.registerLayoutLoaders(elkLayouts);
-    }
-    const parser = new DOMParser();
-
-    mermaid.initialize({
-      maxTextSize: 100000,
-      maxEdges: 100000,
-      startOnLoad: false,
-      fontFamily: window
-        .getComputedStyle(document.body)
-        .getPropertyValue("--jp-ui-font-family"),
-      theme: document.querySelector("body[data-jp-theme-light='true']")
-        ? "default"
-        : "dark",
-    });
-
-    let _nextMermaidId = 0;
-
-    function makeMermaidImage(svg) {
-      const img = document.createElement("img");
-      const doc = parser.parseFromString(svg, "image/svg+xml");
-      const svgEl = doc.querySelector("svg");
-      const { maxWidth } = svgEl?.style || {};
-      const firstTitle = doc.querySelector("title");
-      const firstDesc = doc.querySelector("desc");
-
-      img.setAttribute("src", `data:image/svg+xml,${encodeURIComponent(svg)}`);
-      if (maxWidth) {
-        img.width = parseInt(maxWidth);
-      }
-      if (firstTitle) {
-        img.setAttribute("alt", firstTitle.textContent);
-      }
-      if (firstDesc) {
-        const caption = document.createElement("figcaption");
-        caption.className = "sr-only";
-        caption.textContent = firstDesc.textContent;
-        return [img, caption];
-      }
-      return [img];
-    }
-
-    async function makeMermaidError(text) {
-      let errorMessage = "";
-      try {
-        await mermaid.parse(text);
-      } catch (err) {
-        errorMessage = `${err}`;
-      }
-
-      const result = document.createElement("details");
-      result.className = 'jp-RenderedMermaid-Details';
-      const summary = document.createElement("summary");
-      summary.className = 'jp-RenderedMermaid-Summary';
-      const pre = document.createElement("pre");
-      const code = document.createElement("code");
-      code.innerText = text;
-      pre.appendChild(code);
-      summary.appendChild(pre);
-      result.appendChild(summary);
-
-      const warning = document.createElement("pre");
-      warning.innerText = errorMessage;
-      result.appendChild(warning);
-      return [result];
-    }
-
-    async function renderOneMarmaid(src) {
-      const id = `jp-mermaid-${_nextMermaidId++}`;
-      const parent = src.parentNode;
-      let raw = src.textContent.trim();
-      const el = document.createElement("div");
-      el.style.visibility = "hidden";
-      document.body.appendChild(el);
-      let results = null;
-      let output = null;
-      try {
-        let { svg } = await mermaid.render(id, raw, el);
-        svg = cleanMermaidSvg(svg);
-        results = makeMermaidImage(svg);
-        output = document.createElement("figure");
-        results.map(output.appendChild, output);
-      } catch (err) {
-        parent.classList.add("jp-mod-warning");
-        results = await makeMermaidError(raw);
-        output = results[0];
-      } finally {
-        el.remove();
-      }
-      parent.classList.add("jp-RenderedMermaid");
-      parent.appendChild(output);
-    }
-
-
-    /**
-     * Post-process to ensure mermaid diagrams contain only valid SVG and XHTML.
-     */
-    function cleanMermaidSvg(svg) {
-      svg = svg.replace(RE_VOID_ELEMENT, replaceVoidElement);
-      return `${SVG_XML_HEADER}${svg}`;
-    }
-
-
-    /**
-     * A regular expression for all void elements, which may include attributes and
-     * a slash.
-     *
-     * @see https://developer.mozilla.org/en-US/docs/Glossary/Void_element
-     *
-     * Of these, only `<br>` is generated by Mermaid in place of `\n`,
-     * but _any_ "malformed" tag will break the SVG rendering entirely.
-     */
-    const RE_VOID_ELEMENT =
-      /<\s*(area|base|br|col|embed|hr|img|input|link|meta|param|source|track|wbr)\s*([^>]*?)\s*>/gi;
-
-    /**
-     * Ensure a void element is closed with a slash, preserving any attributes.
-     */
-    function replaceVoidElement(match, tag, rest) {
-      rest = rest.trim();
-      if (!rest.endsWith('/')) {
-        rest = `${rest} /`;
-      }
-      return `<${tag} ${rest}>`;
-    }
-
-
-  /**
-   * Named HTML entities with their decimal equivalent codes.
-   *
-   * @see https://www.w3.org/TR/WD-html40-970708/sgml/entities.html
-   * */
-  const HTML_ENTITIES = `<!ENTITY Aacute "&#193;">
-<!ENTITY aacute "&#225;">
-<!ENTITY Acirc "&#194;">
-<!ENTITY acirc "&#226;">
-<!ENTITY acute "&#180;">
-<!ENTITY AElig "&#198;">
-<!ENTITY aelig "&#230;">
-<!ENTITY Agrave "&#192;">
-<!ENTITY agrave "&#224;">
-<!ENTITY alefsym "&#8501;">
-<!ENTITY Alpha "&#913;">
-<!ENTITY alpha "&#945;">
-<!ENTITY amp "&#38;">
-<!ENTITY and "&#8869;">
-<!ENTITY ang "&#8736;">
-<!ENTITY Aring "&#197;">
-<!ENTITY aring "&#229;">
-<!ENTITY asymp "&#8776;">
-<!ENTITY Atilde "&#195;">
-<!ENTITY atilde "&#227;">
-<!ENTITY Auml "&#196;">
-<!ENTITY auml "&#228;">
-<!ENTITY bdquo "&#8222;">
-<!ENTITY Beta "&#914;">
-<!ENTITY beta "&#946;">
-<!ENTITY brvbar "&#166;">
-<!ENTITY bull "&#8226;">
-<!ENTITY cap "&#8745;">
-<!ENTITY Ccedil "&#199;">
-<!ENTITY ccedil "&#231;">
-<!ENTITY cedil "&#184;">
-<!ENTITY cent "&#162;">
-<!ENTITY Chi "&#935;">
-<!ENTITY chi "&#967;">
-<!ENTITY circ "&#710;">
-<!ENTITY clubs "&#9827;">
-<!ENTITY cong "&#8773;">
-<!ENTITY copy "&#169;">
-<!ENTITY crarr "&#8629;">
-<!ENTITY cup "&#8746;">
-<!ENTITY curren "&#164;">
-<!ENTITY dagger "&#8224;">
-<!ENTITY Dagger "&#8225;">
-<!ENTITY darr "&#8595;">
-<!ENTITY dArr "&#8659;">
-<!ENTITY deg "&#176;">
-<!ENTITY Delta "&#916;">
-<!ENTITY delta "&#948;">
-<!ENTITY diams "&#9830;">
-<!ENTITY divide "&#247;">
-<!ENTITY Eacute "&#201;">
-<!ENTITY eacute "&#233;">
-<!ENTITY Ecirc "&#202;">
-<!ENTITY ecirc "&#234;">
-<!ENTITY Egrave "&#200;">
-<!ENTITY egrave "&#232;">
-<!ENTITY empty "&#8709;">
-<!ENTITY emsp "&#8195;">
-<!ENTITY ensp "&#8194;">
-<!ENTITY epsilon "&#949;">
-<!ENTITY Epsilon "&#917;">
-<!ENTITY equiv "&#8801;">
-<!ENTITY Eta "&#919;">
-<!ENTITY eta "&#951;">
-<!ENTITY ETH "&#208;">
-<!ENTITY eth "&#240;">
-<!ENTITY Euml "&#203;">
-<!ENTITY euml "&#235;">
-<!ENTITY exist "&#8707;">
-<!ENTITY fnof "&#402;">
-<!ENTITY forall "&#8704;">
-<!ENTITY frac12 "&#189;">
-<!ENTITY frac14 "&#188;">
-<!ENTITY frac34 "&#190;">
-<!ENTITY frasl "&#8260;">
-<!ENTITY Gamma "&#915;">
-<!ENTITY gamma "&#947;">
-<!ENTITY ge "&#8805;">
-<!ENTITY gt "&#62;">
-<!ENTITY harr "&#8596;">
-<!ENTITY hArr "&#8660;">
-<!ENTITY hearts "&#9829;">
-<!ENTITY hellip "&#8230;">
-<!ENTITY Iacute "&#205;">
-<!ENTITY iacute "&#237;">
-<!ENTITY Icirc "&#206;">
-<!ENTITY icirc "&#238;">
-<!ENTITY iexcl "&#161;">
-<!ENTITY Igrave "&#204;">
-<!ENTITY igrave "&#236;">
-<!ENTITY image "&#8465;">
-<!ENTITY infin "&#8734;">
-<!ENTITY int "&#8747;">
-<!ENTITY Iota "&#921;">
-<!ENTITY iota "&#953;">
-<!ENTITY iquest "&#191;">
-<!ENTITY isin "&#8712;">
-<!ENTITY Iuml "&#207;">
-<!ENTITY iuml "&#239;">
-<!ENTITY Kappa "&#922;">
-<!ENTITY kappa "&#954;">
-<!ENTITY Lambda "&#923;">
-<!ENTITY lambda "&#955;">
-<!ENTITY lang "&#9001;">
-<!ENTITY laquo "&#171;">
-<!ENTITY larr "&#8592;">
-<!ENTITY lArr "&#8656;">
-<!ENTITY lceil "&#8968;">
-<!ENTITY ldquo "&#8220;">
-<!ENTITY le "&#8804;">
-<!ENTITY lfloor "&#8970;">
-<!ENTITY lowast "&#8727;">
-<!ENTITY loz "&#9674;">
-<!ENTITY lrm "&#8206;">
-<!ENTITY lsaquo "&#8249;">
-<!ENTITY lsquo "&#8216;">
-<!ENTITY lt "&#60;">
-<!ENTITY macr "&#175;">
-<!ENTITY mdash "&#8212;">
-<!ENTITY micro "&#181;">
-<!ENTITY middot "&#183;">
-<!ENTITY minus "&#8722;">
-<!ENTITY Mu "&#924;">
-<!ENTITY mu "&#956;">
-<!ENTITY nabla "&#8711;">
-<!ENTITY nbsp "&#160;">
-<!ENTITY ndash "&#8211;">
-<!ENTITY ne "&#8800;">
-<!ENTITY ni "&#8715;">
-<!ENTITY not "&#172;">
-<!ENTITY notin "&#8713;">
-<!ENTITY nsub "&#8836;">
-<!ENTITY Ntilde "&#209;">
-<!ENTITY ntilde "&#241;">
-<!ENTITY Nu "&#925;">
-<!ENTITY nu "&#957;">
-<!ENTITY Oacute "&#211;">
-<!ENTITY oacute "&#243;">
-<!ENTITY Ocirc "&#212;">
-<!ENTITY ocirc "&#244;">
-<!ENTITY OElig "&#338;">
-<!ENTITY oelig "&#339;">
-<!ENTITY Ograve "&#210;">
-<!ENTITY ograve "&#242;">
-<!ENTITY oline "&#8254;">
-<!ENTITY Omega "&#937;">
-<!ENTITY omega "&#969;">
-<!ENTITY Omicron "&#927;">
-<!ENTITY omicron "&#959;">
-<!ENTITY oplus "&#8853;">
-<!ENTITY or "&#8870;">
-<!ENTITY ordf "&#170;">
-<!ENTITY ordm "&#186;">
-<!ENTITY Oslash "&#216;">
-<!ENTITY oslash "&#248;">
-<!ENTITY Otilde "&#213;">
-<!ENTITY otilde "&#245;">
-<!ENTITY otimes "&#8855;">
-<!ENTITY Ouml "&#214;">
-<!ENTITY ouml "&#246;">
-<!ENTITY para "&#182;">
-<!ENTITY part "&#8706;">
-<!ENTITY permil "&#8240;">
-<!ENTITY perp "&#8869;">
-<!ENTITY Phi "&#934;">
-<!ENTITY phi "&#966;">
-<!ENTITY Pi "&#928;">
-<!ENTITY pi "&#960;">
-<!ENTITY piv "&#982;">
-<!ENTITY plusmn "&#177;">
-<!ENTITY pound "&#163;">
-<!ENTITY prime "&#8242;">
-<!ENTITY Prime "&#8243;">
-<!ENTITY prod "&#8719;">
-<!ENTITY prop "&#8733;">
-<!ENTITY Psi "&#936;">
-<!ENTITY psi "&#968;">
-<!ENTITY quot "&#34;">
-<!ENTITY radic "&#8730;">
-<!ENTITY rang "&#9002;">
-<!ENTITY raquo "&#187;">
-<!ENTITY rarr "&#8594;">
-<!ENTITY rArr "&#8658;">
-<!ENTITY rceil "&#8969;">
-<!ENTITY rdquo "&#8221;">
-<!ENTITY real "&#8476;">
-<!ENTITY reg "&#174;">
-<!ENTITY rfloor "&#8971;">
-<!ENTITY Rho "&#929;">
-<!ENTITY rho "&#961;">
-<!ENTITY rlm "&#8207;">
-<!ENTITY rsaquo "&#8250;">
-<!ENTITY rsquo "&#8217;">
-<!ENTITY sbquo "&#8218;">
-<!ENTITY Scaron "&#352;">
-<!ENTITY scaron "&#353;">
-<!ENTITY sdot "&#8901;">
-<!ENTITY sect "&#167;">
-<!ENTITY shy "&#173;">
-<!ENTITY Sigma "&#931;">
-<!ENTITY sigma "&#963;">
-<!ENTITY sigmaf "&#962;">
-<!ENTITY sim "&#8764;">
-<!ENTITY spades "&#9824;">
-<!ENTITY sub "&#8834;">
-<!ENTITY sube "&#8838;">
-<!ENTITY sum "&#8721;">
-<!ENTITY sup "&#8835;">
-<!ENTITY sup1 "&#185;">
-<!ENTITY sup2 "&#178;">
-<!ENTITY sup3 "&#179;">
-<!ENTITY supe "&#8839;">
-<!ENTITY szlig "&#223;">
-<!ENTITY Tau "&#932;">
-<!ENTITY tau "&#964;">
-<!ENTITY there4 "&#8756;">
-<!ENTITY Theta "&#920;">
-<!ENTITY theta "&#952;">
-<!ENTITY thetasym "&#977;">
-<!ENTITY thinsp "&#8201;">
-<!ENTITY THORN "&#222;">
-<!ENTITY thorn "&#254;">
-<!ENTITY tilde "&#732;">
-<!ENTITY times "&#215;">
-<!ENTITY trade "&#8482;">
-<!ENTITY Uacute "&#218;">
-<!ENTITY uacute "&#250;">
-<!ENTITY uarr "&#8593;">
-<!ENTITY uArr "&#8657;">
-<!ENTITY Ucirc "&#219;">
-<!ENTITY ucirc "&#251;">
-<!ENTITY Ugrave "&#217;">
-<!ENTITY ugrave "&#249;">
-<!ENTITY uml "&#168;">
-<!ENTITY upsih "&#978;">
-<!ENTITY Upsilon "&#933;">
-<!ENTITY upsilon "&#965;">
-<!ENTITY Uuml "&#220;">
-<!ENTITY uuml "&#252;">
-<!ENTITY weierp "&#8472;">
-<!ENTITY Xi "&#926;">
-<!ENTITY xi "&#958;">
-<!ENTITY Yacute "&#221;">
-<!ENTITY yacute "&#253;">
-<!ENTITY yen "&#165;">
-<!ENTITY Yuml "&#376;">
-<!ENTITY yuml "&#255;">
-<!ENTITY Zeta "&#918;">
-<!ENTITY zeta "&#950;">
-<!ENTITY zwj "&#8205;">
-<!ENTITY zwnj "&#8204;">`.replace(/\n/g, ' ');
-
-  /**
-   * A reasonably strict xml declaration.
-   */
-  const XML_DECL = '<?xml version="1.0" standalone="no"?>';
-
-  /**
-   * The beginning of the XML doctype declaration.
-   */
-  const DOCTYPE_START = `<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [`;
-
-  /**
-   * The end of the XML docype declaration.
-   */
-  const DOCTYPE_END = ']>';
-
-  /**
-   * A full header for an SVG XML document.
-   */
-  const SVG_XML_HEADER = `${XML_DECL}
-    ${DOCTYPE_START}${HTML_ENTITIES}${DOCTYPE_END}`;
-
-    void Promise.all([...diagrams].map(renderOneMarmaid));
-  });
-</script>
+<!-- End of mathjax configuration -->
 <style>
   .jp-Mermaid:not(.jp-RenderedMermaid) {
     display: none;
@@ -7793,19 +7345,74 @@ a.anchor-link {
     white-space: normal;
   }
 </style>
-<!-- End of mermaid configuration --></head>
+<!-- End of mermaid configuration --><meta content="fa8a1154a136c1b46c7ba12c761eeb61b860dd77f532700691dba584a0d8109b" name="koai-notebook-source-sha256"/><style id="week01-reading-layout">
+.week01-navigation {
+  display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 8px 16px 12px;
+  font: 15px/1.5 "Noto Sans CJK KR", "Noto Sans CJK JP", sans-serif;
+}
+.week01-figure-view, .week01-figure-scroll { display: block; max-width: 100%; }
+.week01-figure-scroll { overflow-x: auto; }
+.week01-figure-toggle, .week01-figure-label { display: none; }
+.jp-RenderedMarkdown math[display="block"] { max-width: 100%; overflow-x: auto; }
+body.jp-Notebook {
+  --jp-content-font-family: "Noto Sans CJK KR", "Noto Sans CJK JP", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+.jp-MarkdownCell .jp-Cell-inputWrapper { display: block; padding-left: var(--jp-cell-prompt-width); }
+.jp-MarkdownCell .jp-InputArea { display: block; width: auto; }
+.jp-MarkdownCell .jp-InputArea-prompt { display: none; }
+.jp-MarkdownCell .jp-RenderedMarkdown { display: block; box-sizing: border-box; max-width: 100%; overflow-x: auto; }
+@media (max-width: 600px) {
+  body.jp-Notebook { padding: 8px; }
+  .jp-MarkdownCell .jp-Cell-inputWrapper { padding-left: 0; }
+  .jp-Cell .jp-Cell-inputWrapper, .jp-Cell .jp-Cell-outputWrapper,
+  .jp-Cell .jp-InputArea, .jp-Cell .jp-OutputArea-child { display: block; }
+  .jp-Cell .jp-InputArea-prompt, .jp-Cell .jp-OutputArea-prompt { display: none; }
+  .jp-Cell .jp-InputArea-editor, .jp-Cell .jp-OutputArea-output,
+  .jp-Cell .jp-RenderedMarkdown {
+    display: block; box-sizing: border-box; min-width: 0; max-width: 100%; overflow-x: auto;
+  }
+  .jp-Cell img { max-width: 100%; height: auto; }
+  .week01-figure-toggle, .week01-figure-label { display: inline-block; }
+  .week01-figure-label { cursor: pointer; margin: 4px 0 6px 4px; font: 14px/1.5 sans-serif; }
+  .week01-figure-toggle:checked ~ .week01-figure-scroll img { width: auto; max-width: none; }
+}
+</style></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<main>
+<nav aria-label="1주차 학습 자료" class="week01-navigation"><a href="week01_integrated.html">1주차 통합 교안으로</a><a download="week01_axes_linear_bridge.ipynb" href="week01_axes_linear_bridge.ipynb">실행용 노트북 내려받기 (.ipynb)</a></nav><main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=06c67cfc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="1%EC%A3%BC%EC%B0%A8-%EB%B3%B4%EC%B6%A9-%C2%B7-%ED%91%9C%EC%97%90%EC%84%9C-%EC%A0%90%EC%88%98%EC%99%80-ID%EA%B9%8C%EC%A7%80">1주차 보충 · 표에서 점수와 ID까지<a class="anchor-link" href="#1%EC%A3%BC%EC%B0%A8-%EB%B3%B4%EC%B6%A9-%C2%B7-%ED%91%9C%EC%97%90%EC%84%9C-%EC%A0%90%EC%88%98%EC%99%80-ID%EA%B9%8C%EC%A7%80">¶</a></h1><h2 id="%EB%AA%A9%ED%91%9C%EC%99%80-%EC%9D%B4%EC%9A%A9-%EB%B0%A9%EB%B2%95">목표와 이용 방법<a class="anchor-link" href="#%EB%AA%A9%ED%91%9C%EC%99%80-%EC%9D%B4%EC%9A%A9-%EB%B0%A9%EB%B2%95">¶</a></h2><p>표의 행과 열에서 출발해 <strong>같은 뜻의 값을 곱해 더하는 이유</strong>, 행렬곱의 모양과 축, 결과 위치를 실제 ID로 바꾸는 방법을 연습합니다. 모든 숫자는 설명을 위해 만든 합성 자료입니다.</p>
-<p>본 교안의 행·열, shape, 전치, 내적을 먼저 접한 뒤 사용합니다. 변수·리스트·함수를 써 보았다고 가정합니다. 먼저 예상과 이유를 적고 코드로 확인하며, 다르게 예상했다면 첫 단계부터 살펴보세요. Python 3와 NumPy만 필요합니다. Jupyter에서 위에서 아래로 Shift+Enter를 누르고 저장하세요.</p>
-<p><strong>우선:</strong> 1~3절, 5절의 검색·조회와 유효 위치 평균, 6절 필수 문항. <strong>선택 교량:</strong> 4절의 stack·concatenate와 6절 선택 문항은 관련 후속 단원 전에 다시 써도 됩니다. 후속 공식 범위의 필수 학습을 면제한다는 뜻은 아닙니다.</p>
-<p>본 교안을 익힌 뒤 배열 A·내적 E와 연결해 이 보충을 학습합니다.</p>
+<h1 id="1%EC%A3%BC%EC%B0%A8-%EB%B3%B4%EC%B6%A9-%C2%B7-%ED%91%9C%EC%97%90%EC%84%9C-%EC%A0%90%EC%88%98%EC%99%80-ID%EA%B9%8C%EC%A7%80">1주차 보충 · 표에서 점수와 ID까지<a class="anchor-link" href="#1%EC%A3%BC%EC%B0%A8-%EB%B3%B4%EC%B6%A9-%C2%B7-%ED%91%9C%EC%97%90%EC%84%9C-%EC%A0%90%EC%88%98%EC%99%80-ID%EA%B9%8C%EC%A7%80">¶</a></h1><p>통합 교안에서는 이미 만들어진 점수표를 읽었습니다. 여기서는 <strong>그 점수표 한 칸을 무엇으로 계산할지</strong> 결정합니다. 화분마다 찍을 사진 수를 구할 때와 질의에 어울리는 후보를 고를 때, 숫자를 짝짓는 기준은 어떻게 달라질까요?</p>
+<table>
+<thead>
+<tr>
+<th>풀고 싶은 질문</th>
+<th>읽고 해 볼 곳</th>
+<th>돌아갈 곳</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>어느 행과 어느 열을 곱해야 할까?</td>
+<td>1–3절에서 화분 하나의 계산을 따라갑니다. 새 표에서도 해 보려면 6절 A를 풉니다.</td>
+<td><a href="week01_integrated.html#week01-axes">통합 교안 3절 · 표의 축</a></td>
+</tr>
+<tr>
+<td>벡터 둘로 짝을 고를 때 무엇을 점수로 쓸까?</td>
+<td>5절에서 점수와 단어 벡터를 다룬 뒤 6절 B에서 두 가지 요청을 풉니다.</td>
+<td><a href="week01_integrated.html#week01-match">통합 교안 6절 · 두 요청</a></td>
+</tr>
+<tr>
+<td>같은 모양의 배열 두 개를 어떻게 합칠까?</td>
+<td>4절과 6절 C를 필요할 때 엽니다.</td>
+<td><a href="week01_integrated.html#week01-check">통합 교안 8절 · 내 결과</a></td>
+</tr>
+</tbody>
+</table>
+<p>1절, 4절, 5절은 각각 첫 코드 셀에서 NumPy를 불러옵니다. 새 커널에서 고른 절만 펼쳐 그 안의 코드 셀을 위부터 실행하세요. 6절 A·B는 입력 셀부터 따로 실행해 직접 풀 수도 있습니다. 예측과 이유를 종이에 먼저 쓰고, 독립 문제를 풀 때는 완성 예제를 접어 둡니다. 모든 수치는 연습용입니다.</p>
 </div>
 </div>
 </div>
@@ -7816,12 +7423,14 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1.-%ED%91%9C%EB%A5%BC-%EC%88%AB%EC%9E%90-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%98%AE%EA%B8%B0%EA%B8%B0">1. 표를 숫자 배열로 옮기기<a class="anchor-link" href="#1.-%ED%91%9C%EB%A5%BC-%EC%88%AB%EC%9E%90-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EC%98%AE%EA%B8%B0%EA%B8%B0">¶</a></h2><table>
+<p><a id="bridge-axes"></a></p>
+<h2 id="1.-%ED%99%94%EB%B6%84%EB%B3%84-%EC%B4%AC%EC%98%81%ED%91%9C%EC%97%90%EC%84%9C-%ED%95%9C-%ED%96%89-%EC%9D%BD%EA%B8%B0">1. 화분별 촬영표에서 한 행 읽기<a class="anchor-link" href="#1.-%ED%99%94%EB%B6%84%EB%B3%84-%EC%B4%AC%EC%98%81%ED%91%9C%EC%97%90%EC%84%9C-%ED%95%9C-%ED%96%89-%EC%9D%BD%EA%B8%B0">¶</a></h2><p>과학반은 화분마다 작은 잎은 앞면만, 큰 잎은 앞뒤를 찍습니다. 한 면에 사진 한 장입니다.</p>
+<table>
 <thead>
 <tr>
 <th>화분 ID</th>
-<th style="text-align:right">빛 점수</th>
-<th style="text-align:right">물 점수</th>
+<th style="text-align:right">작은 잎 수(장)</th>
+<th style="text-align:right">큰 잎 수(장)</th>
 </tr>
 </thead>
 <tbody>
@@ -7842,8 +7451,7 @@ a.anchor-link {
 </tr>
 </tbody>
 </table>
-<p>두 점수는 예제를 위한 단위 없는 숫자입니다. 한 <strong>행</strong>은 화분 한 개, 한 <strong>열</strong>은 정해진 특성 하나입니다. 숫자만 꺼낸 X에서 두 축은 각각 화분과 특성을 뜻합니다. ID는 숫자 특성이 아니라 행을 찾는 이름으로 따로 둡니다.</p>
-<p><strong>먼저 예상:</strong> X의 shape와 첫 행을 쓰세요. P24는 Python에서 몇 번째 위치의 행인가요? 특성 순서를 바꾸고도 원래 이름을 붙이면 어떤 문제가 생길까요?</p>
+<p>숫자 배열 <code>X</code>의 한 행은 화분 하나, 열은 잎의 종류 하나입니다. ID는 행을 찾는 이름으로 따로 둡니다. P24는 0부터 세어 몇 번째 행일까요? <code>X[1, 0]</code>이 가리키는 화분, 잎의 종류, 장수를 말해 보세요. P24의 사진은 몇 장 필요할까요?</p>
 </div>
 </div>
 </div>
@@ -7893,10 +7501,9 @@ shape: (3, 2) / 첫 행: [2 1]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>첫 축 길이 3은 화분 수, 둘째 축 길이 2는 특성 수입니다. <code>X[1]</code>은 두 번째 화분 P24의 벡터 <code>[1, 3]</code>입니다. Python 위치는 0부터 셉니다. shape가 같아도 ‘빛, 물’ 순서가 ‘물, 빛’으로 바뀌면 같은 의미가 아닙니다.</p>
-<h3 id="%EB%91%90-%EB%B2%A1%ED%84%B0%EC%9D%98-%EB%82%B4%EC%A0%81">두 벡터의 내적<a class="anchor-link" href="#%EB%91%90-%EB%B2%A1%ED%84%B0%EC%9D%98-%EB%82%B4%EC%A0%81">¶</a></h3><p>첫 화분의 벡터 <code>[2, 1]</code>에 가중치 <code>[1, 2]</code>를 적용합니다. 첫 값은 빛에, 둘째 값은 물에 대응합니다. 같은 뜻끼리 곱해 더하면 <code>2×1 + 1×2 = 4</code>입니다. 일반적으로 길이 d인 u, w의 내적은 다음과 같습니다.</p>
-<p><strong>u · w = u[0]×w[0] + … + u[d−1]×w[d−1]</strong></p>
-<p>길이와 위치별 뜻이 모두 맞아야 합니다. 원소별 곱은 각 곱을 남기고, 내적은 그 곱들의 합 하나를 만듭니다.</p>
+<p><code>X.shape == (3, 2)</code>는 화분 세 개에 잎의 종류가 둘이라는 뜻입니다. <code>X[1, 0]</code>은 P24의 작은 잎 한 장입니다. 행을 뒤집으면 화분 ID도 같이 옮겨야 이 짝이 맞습니다.</p>
+<h3 id="%EB%91%90-%EB%B2%A1%ED%84%B0%EC%9D%98-%EB%82%B4%EC%A0%81">두 벡터의 내적<a class="anchor-link" href="#%EB%91%90-%EB%B2%A1%ED%84%B0%EC%9D%98-%EB%82%B4%EC%A0%81">¶</a></h3><p>P11의 잎 수는 <code>[2, 1]</code>, 잎 한 장마다 찍을 사진 수는 <code>[1, 2]</code>입니다. 첫 곱 <code>2×1</code>은 작은 잎에서 찍을 사진 수, 둘째 곱 <code>1×2</code>는 큰 잎에서 찍을 사진 수입니다. 더하면 사진 네 장입니다. 곱하기 전에 양쪽에서 ‘작은 잎’이 같은 자리에 있는지 확인합니다.</p>
+<p>두 배열 <code>u</code>, <code>w</code>에 값이 각각 d개 있을 때 <strong>내적</strong>은 <code>u[0]×w[0] + … + u[d−1]×w[d−1]</code>입니다. <code>*</code>는 각 곱을 남기므로 잎 종류별 사진 수를 볼 수 있고, <code>@</code>는 그 곱들을 더해 화분 하나의 총사진 수를 줍니다.</p>
 </div>
 </div>
 </div>
@@ -7939,60 +7546,60 @@ shape: (3, 2) / 첫 행: [2 1]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.-%ED%95%9C-%ED%96%89%EC%9D%98-%EB%82%B4%EC%A0%81%EC%9D%84-%EC%97%AC%EB%9F%AC-%ED%96%89%EA%B3%BC-%EC%97%AC%EB%9F%AC-%EC%B6%9C%EB%A0%A5%EC%9C%BC%EB%A1%9C">2. 한 행의 내적을 여러 행과 여러 출력으로<a class="anchor-link" href="#2.-%ED%95%9C-%ED%96%89%EC%9D%98-%EB%82%B4%EC%A0%81%EC%9D%84-%EC%97%AC%EB%9F%AC-%ED%96%89%EA%B3%BC-%EC%97%AC%EB%9F%AC-%EC%B6%9C%EB%A0%A5%EC%9C%BC%EB%A1%9C">¶</a></h2><p>다음 변환은 학습된 모델이 아닙니다. 입력은 ‘빛, 물’ 순서이며 세 출력은 차례로 ‘빛’, ‘물’, ‘빛 + 물의 두 배’라는 계산 규칙입니다.</p>
+<h2 id="2.-%EC%B4%AC%EC%98%81%ED%91%9C%EC%97%90-%EC%84%B8-%EA%B2%B0%EA%B3%BC%EB%A5%BC-%ED%95%A8%EA%BB%98-%EA%B8%B0%EB%A1%9D%ED%95%98%EA%B8%B0">2. 촬영표에 세 결과를 함께 기록하기<a class="anchor-link" href="#2.-%EC%B4%AC%EC%98%81%ED%91%9C%EC%97%90-%EC%84%B8-%EA%B2%B0%EA%B3%BC%EB%A5%BC-%ED%95%A8%EA%BB%98-%EA%B8%B0%EB%A1%9D%ED%95%98%EA%B8%B0">¶</a></h2><p>함께 기록할 값은 <strong>작은 잎 수, 큰 잎 수, 총사진 수</strong>입니다. 작은 잎 한 장이 늘면 첫 기록이 1, 둘째가 0, 셋째가 1만큼 늘어납니다. 큰 잎 한 장이 늘 때는 어떻게 될까요? 이 증가량을 행으로 적으면 다음 표 W가 됩니다.</p>
 <table>
 <thead>
 <tr>
-<th>W의 행</th>
-<th style="text-align:right">출력 1</th>
-<th style="text-align:right">출력 2</th>
-<th style="text-align:right">출력 3</th>
+<th>잎 한 장을 더할 때</th>
+<th style="text-align:right">작은 잎 수(장)</th>
+<th style="text-align:right">큰 잎 수(장)</th>
+<th style="text-align:right">총사진 수(장)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>빛에 곱할 값</td>
+<td>작은 잎</td>
 <td style="text-align:right">1</td>
 <td style="text-align:right">0</td>
 <td style="text-align:right">1</td>
 </tr>
 <tr>
-<td>물에 곱할 값</td>
+<td>큰 잎</td>
 <td style="text-align:right">0</td>
 <td style="text-align:right">1</td>
 <td style="text-align:right">2</td>
 </tr>
 </tbody>
 </table>
-<p>W의 한 <strong>열</strong>이 출력 하나에 쓸 가중치 벡터입니다. P11의 세 번째 출력은 X의 첫 행과 W의 셋째 열의 내적 <code>2×1 + 1×2 = 4</code>입니다. P24의 세 번째 출력도 직접 계산해 보세요.</p>
+<p>W의 <strong>한 열</strong>을 읽으면 원하는 결과 하나를 계산하는 두 계수가 나옵니다. P11에서 셋째 열을 쓰면 사진은 <code>2×1 + 1×2 = 4</code>장입니다. P24의 사진 수를 같은 열로 계산하고 잎 수와 함께 한 줄에 적어 보세요.</p>
 <table>
 <thead>
 <tr>
 <th>배열</th>
 <th>shape</th>
-<th>축의 뜻</th>
+<th>행과 열</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>X</td>
 <td>(3, 2)</td>
-<td>화분, 입력 특성(빛·물)</td>
+<td>화분 × 잎 종류</td>
 </tr>
 <tr>
 <td>W</td>
 <td>(2, 3)</td>
-<td>입력 특성(빛·물), 출력 규칙</td>
+<td>잎 종류 × 기록 항목</td>
 </tr>
 <tr>
 <td>Y = X @ W</td>
 <td>(3, 3)</td>
-<td>화분, 출력 규칙</td>
+<td>화분 × 기록 항목</td>
 </tr>
 </tbody>
 </table>
-<p>일반적으로 <code>(n, d) @ (d, m) → (n, m)</code>입니다. 가운데 두 길이 d가 같아야 같은 입력 특성을 하나씩 짝지어 곱하고 <strong>그 축을 따라 더할</strong> 수 있습니다. 왼쪽 행 축 n과 오른쪽 열 축 m은 결과에 남습니다. 식은 <code>Y[i, j] = Σ(k=0…d−1) X[i, k] × W[k, j]</code>입니다. i는 화분 위치, j는 출력 규칙 위치, k는 더할 입력 특성 위치입니다.</p>
-<p>이 예제는 편향 없이 가중합으로 입력 벡터를 새 출력 벡터로 옮기는 <strong>선형 변환</strong>입니다. 같은 입력 특성 순서가 전제입니다. 가중치를 배우는 방법이나 결과의 타당성은 여기서 확인하지 않습니다.</p>
+<p>결과 한 칸에서는 화분 i와 기록 항목 j를 고정하고, 잎 종류 k를 바꿔 가며 곱을 더합니다. 따라서 **<code>Y[i, j] = Σₖ X[i, k] × W[k, j]</code>**입니다. Σₖ는 각 k에서 얻은 수를 모두 더한다는 기호입니다. 두 표에서 같은 잎 종류를 같은 순서로 짝지어야 합니다. 더하고 나면 화분과 기록 항목 두 축이 남습니다. 이 계산을 여러 행·열에 한꺼번에 적용한 <strong>행렬곱</strong>의 모양은 <code>(n, d) @ (d, m) → (n, m)</code>입니다.</p>
+<p>이처럼 각 출력을 입력의 가중합으로 만드는 계산을 <strong>선형 변환</strong>이라고 합니다. 여기서 계수는 촬영 방법이 정해 줍니다. 학습 모델에서는 자료를 이용해 계수를 정하기도 합니다.</p>
 </div>
 </div>
 </div>
@@ -8040,7 +7647,7 @@ P24의 세 번째 출력: 7
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%EB%AA%A8%EC%96%91-%EC%98%A4%EB%A5%98%EC%99%80-%EB%9C%BB-%EC%98%A4%EB%A5%98%EB%8A%94-%EB%8B%A4%EB%A6%85%EB%8B%88%EB%8B%A4">모양 오류와 뜻 오류는 다릅니다<a class="anchor-link" href="#%EB%AA%A8%EC%96%91-%EC%98%A4%EB%A5%98%EC%99%80-%EB%9C%BB-%EC%98%A4%EB%A5%98%EB%8A%94-%EB%8B%A4%EB%A6%85%EB%8B%88%EB%8B%A4">¶</a></h3><p><code>W @ X</code>의 가운데 길이는 3과 3이어서 계산은 되지만 결과 행은 화분 행이 아닙니다. 가능하다는 것만으로 원하는 변환이 되지는 않습니다. 반면 <code>X @ X</code>는 <code>(3, 2) @ (3, 2)</code>에서 가운데 2와 3이 달라 실행할 수 없습니다. 예제는 오류를 잡아 이름만 출력하므로 전체 실행은 멈추지 않습니다.</p>
+<h3 id="%EA%B8%B8%EC%9D%B4%EB%8A%94-%EB%A7%9E%EC%95%84%EB%8F%84-%EC%A7%9D%EC%9D%B4-%EC%96%B4%EA%B8%8B%EB%82%A0-%EC%88%98-%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4">길이는 맞아도 짝이 어긋날 수 있습니다<a class="anchor-link" href="#%EA%B8%B8%EC%9D%B4%EB%8A%94-%EB%A7%9E%EC%95%84%EB%8F%84-%EC%A7%9D%EC%9D%B4-%EC%96%B4%EA%B8%8B%EB%82%A0-%EC%88%98-%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4">¶</a></h3><p><code>W @ X</code>도 가운데 길이가 3과 3이라 실행됩니다. 그런데 그 세 자리는 한쪽에서는 <strong>기록 항목</strong>, 다른 쪽에서는 <strong>화분</strong>입니다. 예를 들어 첫 곱은 W의 ‘작은 잎 수’ 열을 우연히 첫 행에 놓인 P11에 붙입니다. 이 결과 한 칸은 어느 화분의 사진 수도 뜻하지 않습니다. <code>X @ X</code>의 경우에는 가운데 길이 2와 3부터 다릅니다. 두 식에서 각각 무엇을 짝지으려 했는지 실행 전에 말해 보세요.</p>
 </div>
 </div>
 </div>
@@ -8083,7 +7690,7 @@ X @ X: ValueError — 가운데 길이 2와 3이 다릅니다.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.-*%EC%99%80-@%EB%8A%94-%EB%8B%A4%EB%A5%B8-%EC%A7%88%EB%AC%B8%EC%9E%85%EB%8B%88%EB%8B%A4">3. <code>*</code>와 <code>@</code>는 다른 질문입니다<a class="anchor-link" href="#3.-*%EC%99%80-@%EB%8A%94-%EB%8B%A4%EB%A5%B8-%EC%A7%88%EB%AC%B8%EC%9E%85%EB%8B%88%EB%8B%A4">¶</a></h2><p>아래 두 입력은 모두 shape가 <code>(2, 2)</code>입니다. 먼저 두 결과의 왼쪽 위와 오른쪽 아래 값을 예상하세요. <code>*</code>는 같은 위치끼리 곱합니다. <code>@</code>는 왼쪽 행과 오른쪽 열의 짝별 곱을 더합니다. 결과 shape까지 같아도 값과 의미가 다릅니다.</p>
+<h2 id="3.-%EA%B0%99%EC%9D%80-%EB%AA%A8%EC%96%91%EC%9D%98-%EC%B6%9C%EB%A0%A5%EC%97%90%EC%84%9C-%EC%97%B0%EC%82%B0%EC%9D%84-%EA%B5%AC%EB%B3%84%ED%95%98%EA%B8%B0">3. 같은 모양의 출력에서 연산을 구별하기<a class="anchor-link" href="#3.-%EA%B0%99%EC%9D%80-%EB%AA%A8%EC%96%91%EC%9D%98-%EC%B6%9C%EB%A0%A5%EC%97%90%EC%84%9C-%EC%97%B0%EC%82%B0%EC%9D%84-%EA%B5%AC%EB%B3%84%ED%95%98%EA%B8%B0">¶</a></h2><p>아래 <code>A</code>에는 처음 두 화분의 잎 수가 있습니다. 오른쪽 행렬은 작은 잎 수와 큰 잎 수를 각각 그대로 기록하도록 만든 계수표입니다. 두 결과에서 <strong>두 번째 화분의 작은 잎 수</strong>, 즉 <code>[1, 0]</code>을 먼저 예상하세요. 그다음 대각선 위 두 칸만 확인했을 때에도 <code>*</code>와 <code>@</code>를 구별할 수 있을지 생각해 보세요.</p>
 </div>
 </div>
 </div>
@@ -8097,10 +7704,13 @@ X @ X: ValueError — 가운데 길이 2와 3이 다릅니다.
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
 <span class="n">identity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"원소별 A * identity =</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">A</span> <span class="o">*</span> <span class="n">identity</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"행렬곱 A @ identity =</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">A</span> <span class="o">@</span> <span class="n">identity</span><span class="p">)</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="n">identity</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">A</span> <span class="o">@</span> <span class="n">identity</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="k">assert</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="n">identity</span><span class="p">,</span> <span class="n">A</span> <span class="o">@</span> <span class="n">identity</span><span class="p">)</span>
+<span class="n">by_position</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">identity</span>
+<span class="n">by_rule</span> <span class="o">=</span> <span class="n">A</span> <span class="o">@</span> <span class="n">identity</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"원소별 A * identity =</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">by_position</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"행렬곱 A @ identity =</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">by_rule</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"둘째 화분, 작은 잎:"</span><span class="p">,</span> <span class="n">by_position</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">by_rule</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="k">assert</span> <span class="n">by_position</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="n">by_rule</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">by_position</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">by_rule</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
@@ -8119,6 +7729,7 @@ X @ X: ValueError — 가운데 길이 2와 3이 다릅니다.
 행렬곱 A @ identity =
  [[2 1]
  [1 3]]
+둘째 화분, 작은 잎: 0 1
 </pre>
 </div>
 </div>
@@ -8131,14 +7742,34 @@ X @ X: ValueError — 가운데 길이 2와 3이 다릅니다.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4.-%EC%84%A0%ED%83%9D-%EA%B5%90%EB%9F%89-%C2%B7-%EB%AC%B6%EC%9D%8C%EC%9D%84-%EC%83%88%EB%A1%9C-%EB%A7%8C%EB%93%A4%EA%B9%8C,-%EA%B8%B0%EC%A1%B4-%EC%B6%95%EC%97%90-%EC%9D%B4%EC%9D%84%EA%B9%8C?">4. 선택 교량 · 묶음을 새로 만들까, 기존 축에 이을까?<a class="anchor-link" href="#4.-%EC%84%A0%ED%83%9D-%EA%B5%90%EB%9F%89-%C2%B7-%EB%AC%B6%EC%9D%8C%EC%9D%84-%EC%83%88%EB%A1%9C-%EB%A7%8C%EB%93%A4%EA%B9%8C,-%EA%B8%B0%EC%A1%B4-%EC%B6%95%EC%97%90-%EC%9D%B4%EC%9D%84%EA%B9%8C?">¶</a></h2><p>이 절은 배열 축을 편하게 다룰 때 먼저 시도합니다. <code>stack</code>이 대회에서 항상 필수라는 뜻은 아닙니다.</p>
-<p>first와 second는 각각 <code>(2, 3)</code>입니다. 행은 후보 하나, 열은 특성 세 개입니다. 이 예에서는 first의 후보 ID가 순서대로 F1, F2이고 second는 다른 후보 S1, S2라고 가정합니다.</p>
-<ul>
-<li><code>stack([first, second], axis=0)</code>: 앞에 <strong>새 묶음 축</strong>, <code>(2, 2, 3)</code>. 묶음 × 후보 × 특성.</li>
-<li><code>concatenate([first, second], axis=0)</code>: 기존 후보 행 축을 이어 <code>(4, 3)</code>.</li>
-<li><code>concatenate([first, second], axis=1)</code>: 기존 열 축을 이어 <code>(2, 6)</code>. 위치상 F1과 S1, F2와 S2가 각각 한 행에 묶입니다. 여기서는 서로 다른 후보를 인위적으로 짝지은 모양 비교일 뿐 한 후보의 여섯 특성이 아닙니다. 같은 대상의 특성을 늘리려면 두 입력의 각 행이 같은 ID를 같은 순서로 가리키고 각 열의 뜻도 맞아야 합니다.</li>
-</ul>
-<p>세 shape와 축 이름을 먼저 쓰세요. stack은 입력 shape가 모두 같아야 합니다. concatenate는 잇는 축을 제외한 나머지 축 길이가 같아야 합니다.</p>
+<h2 id="4.-%EC%83%88-%EC%B6%95%EC%97%90-%EB%AC%B6%EC%9D%84%EA%B9%8C,-%EA%B8%B0%EC%A1%B4-%EC%B6%95%EC%97%90-%EC%9D%B4%EC%9D%84%EA%B9%8C?">4. 새 축에 묶을까, 기존 축에 이을까?<a class="anchor-link" href="#4.-%EC%83%88-%EC%B6%95%EC%97%90-%EB%AC%B6%EC%9D%84%EA%B9%8C,-%EA%B8%B0%EC%A1%B4-%EC%B6%95%EC%97%90-%EC%9D%B4%EC%9D%84%EA%B9%8C?">¶</a></h2><p>후보 벡터를 두 번에 나누어 받았습니다. 첫 배열의 행은 F1, F2이고, 둘째 배열의 행은 S1, S2입니다. 각 후보는 같은 순서의 특성 세 개를 가집니다. 두 입력의 shape는 모두 <code>(2, 3)</code>입니다.</p>
+<table>
+<thead>
+<tr>
+<th>기록하려는 것</th>
+<th>연산</th>
+<th>결과에서 한 칸을 찾는 순서</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>어느 입력 묶음에서 왔는지도 남긴다</td>
+<td><code>stack(..., axis=0)</code></td>
+<td>묶음, 묶음 안 후보, 특성 → (2, 2, 3)</td>
+</tr>
+<tr>
+<td>네 후보를 세로로 이어 한 목록에 둔다</td>
+<td><code>concatenate(..., axis=0)</code></td>
+<td>후보, 특성 → (4, 3)</td>
+</tr>
+<tr>
+<td>각 배열의 같은 위치에 놓인 두 후보를 옆에 둔다</td>
+<td><code>concatenate(..., axis=1)</code></td>
+<td>짝의 위치, 이어진 값 → (2, 6)</td>
+</tr>
+</tbody>
+</table>
+<p>마지막 방법의 첫 행에는 F1과 S1의 값이 함께 들어갑니다. 한 후보에 대한 특성을 늘리려면 두 표에서 먼저 같은 후보의 행을 찾아 나란히 놓아야 합니다. <code>stack</code>은 같은 모양의 배열에 축 하나를 새로 만듭니다. <code>concatenate</code>는 기존 축을 늘리므로 이을 축 이외의 길이가 같아야 합니다.</p>
 </div>
 </div>
 </div>
@@ -8150,7 +7781,9 @@ X @ X: ValueError — 가운데 길이 2와 3이 다릅니다.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">first</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
 <span class="n">second</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
 <span class="n">bundled</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">joined_rows</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -8198,41 +7831,42 @@ X @ X: ValueError — 가운데 길이 2와 3이 다릅니다.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5.-%EC%A7%88%EB%AC%B8%EA%B3%BC-%ED%9B%84%EB%B3%B4%EC%9D%98-%EB%B2%A1%ED%84%B0%EB%A5%BC-%EB%B9%84%EA%B5%90%ED%95%98%EA%B3%A0-%EC%8B%A4%EC%A0%9C-ID-%EC%B0%BE%EA%B8%B0">5. 질문과 후보의 벡터를 비교하고 실제 ID 찾기<a class="anchor-link" href="#5.-%EC%A7%88%EB%AC%B8%EA%B3%BC-%ED%9B%84%EB%B3%B4%EC%9D%98-%EB%B2%A1%ED%84%B0%EB%A5%BC-%EB%B9%84%EA%B5%90%ED%95%98%EA%B3%A0-%EC%8B%A4%EC%A0%9C-ID-%EC%B0%BE%EA%B8%B0">¶</a></h2><p>두 질문과 네 후보는 각각 같은 순서의 두 특성으로 이미 표현되었다고 가정합니다. 각 행은 하나의 대상, 각 열은 그 대상의 같은 특성입니다. 이것은 합성 숫자이며 이미지 인코더를 학습하거나 실제 대회 문제를 해결한 것은 아닙니다.</p>
+<p><a id="bridge-scores"></a></p>
+<h2 id="5.-%EB%91%90-%EB%B2%A1%ED%84%B0%EC%97%90%EC%84%9C-%ED%95%9C-%EC%8C%8D%EC%9D%98-%EC%A0%90%EC%88%98-%EB%A7%8C%EB%93%A4%EA%B8%B0">5. 두 벡터에서 한 쌍의 점수 만들기<a class="anchor-link" href="#5.-%EB%91%90-%EB%B2%A1%ED%84%B0%EC%97%90%EC%84%9C-%ED%95%9C-%EC%8C%8D%EC%9D%98-%EC%A0%90%EC%88%98-%EB%A7%8C%EB%93%A4%EA%B8%B0">¶</a></h2><p>새 커널에서 이 절부터 시작할 수 있습니다. 아래 첫 코드 셀이 NumPy와 두 입력 표를 준비합니다.</p>
+<p>통합 교안의 점수표에는 이미 질의 한 건과 후보 한 개의 점수가 있었습니다. 여기서는 <strong>좌표의 뜻과 순서를 맞춘</strong> 질의·후보 벡터를 받아 그 점수를 계산합니다. 예를 들어 첫 좌표가 밝기라면 양쪽 모두 첫 좌표에 밝기를 두어야 합니다. 학습한 인코더는 이미지 같은 원자료를 수치 벡터로 바꾸는 모델입니다. 이 연습은 같은 기준으로 표시한 벡터를 <strong>입력으로 제공</strong>합니다.</p>
 <table>
 <thead>
 <tr>
 <th>배열</th>
 <th>shape</th>
-<th>축의 뜻</th>
+<th>행과 열</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Q</td>
 <td>(2, 2)</td>
-<td>질문, 두 특성</td>
+<td>질의 × 좌표</td>
 </tr>
 <tr>
 <td>G</td>
 <td>(4, 2)</td>
-<td>후보, 두 특성</td>
+<td>후보 × 같은 좌표</td>
 </tr>
 <tr>
 <td>G.T</td>
 <td>(2, 4)</td>
-<td>두 특성, 후보</td>
+<td>같은 좌표 × 후보</td>
 </tr>
 <tr>
 <td>Q @ G.T</td>
 <td>(2, 4)</td>
-<td>질문, 후보</td>
+<td>질의 × 후보</td>
 </tr>
 </tbody>
 </table>
-<p>원시 내적을 크게 하는 규칙도 문제에서 그렇게 요구한다면 유효합니다. 첫 질문 [1,0]과 후보 42 [3,4], 후보 19 [2,0]의 내적은 3과 2라서 이 규칙에서는 42가 앞섭니다. 그런데 후보 42는 길이가 5이고 후보 19는 길이가 2입니다. <strong>방향</strong>을 비교하는 규칙이라면 결과가 달라질까요?</p>
-<p>벡터 v의 L2 길이는 **||v|| = √(v[0]² + … + v[d−1]²)**입니다. 후보 [3,4]의 길이는 √(3²+4²)=5이고 [2,0]의 길이는 2입니다. 길이가 0이 아닌 벡터를 자기 길이로 나누면 같은 방향의 길이 1인 벡터가 됩니다. 손으로 [3,4]와 [2,0]을 각각 나눠 보세요.</p>
-<p>앞의 화분 분류는 <strong>제곱거리의 최솟값</strong>을 골랐습니다. 이 절의 원시 내적과 다음 코사인 유사도는 각각 <strong>최댓값</strong>을 고릅니다. 다른 질문이므로 항상 같은 후보를 고르지는 않습니다. 실제로 첫 질문 [1,0]에서 후보 42·19·35까지의 제곱거리는 각각 20·1·0.25이므로 최소는 35입니다.</p>
+<p>후보 하나는 G에서 한 <strong>행</strong>입니다. 그 행을 질의 한 행과 내적하려고 G를 전치합니다. 점수표 <code>[i, j]</code>에서는 두 행 <code>Q[i]</code>와 <code>G[j]</code>의 같은 좌표끼리 곱해 더합니다. 왼쪽에 질의가 둘, 위에 후보가 넷이라 표에는 여덟 쌍이 들어갑니다.</p>
+<p>첫 질의는 [1,0]입니다. 후보 42=[3,4], 19=[2,0], 35=[1,0.5] 중 <strong>원시 내적이 가장 큰</strong> 후보를 손으로 고르세요. 이번에는 <strong>좌표 사이의 거리가 가장 작은</strong> 후보를 고르면 어떨까요? 거리의 제곱은 두 좌표 차이의 제곱을 더한 값입니다. 세 후보까지 각각 20, 1, 0.25입니다. 통합 교안의 화분 분류 보충에서도 가장 가까운 중심을 이 방법으로 찾습니다. 다음에는 <strong>방향</strong>이 가장 잘 맞는 후보를 골라 봅니다.</p>
 </div>
 </div>
 </div>
@@ -8244,7 +7878,9 @@ X @ X: ValueError — 가운데 길이 2와 3이 다릅니다.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">query_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">103</span><span class="p">,</span> <span class="mi">109</span><span class="p">])</span>
+<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">query_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">103</span><span class="p">,</span> <span class="mi">109</span><span class="p">])</span>
 <span class="n">candidate_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">42</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">35</span><span class="p">])</span>
 <span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
 <span class="n">G</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]])</span>
@@ -8285,11 +7921,9 @@ X @ X: ValueError — 가운데 길이 2와 3이 다릅니다.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%EA%B8%B8%EC%9D%B4%EB%A1%9C-%EB%82%98%EB%88%88-%EB%92%A4-%EB%82%B4%EC%A0%81%ED%95%98%EA%B8%B0">길이로 나눈 뒤 내적하기<a class="anchor-link" href="#%EA%B8%B8%EC%9D%B4%EB%A1%9C-%EB%82%98%EB%88%88-%EB%92%A4-%EB%82%B4%EC%A0%81%ED%95%98%EA%B8%B0">¶</a></h3><p>길이가 0이 아닌 두 벡터의 <strong>코사인 유사도</strong>는 다음과 같습니다.</p>
-<p><strong>cos(q,g) = (q · g) ÷ (||q|| × ||g||)</strong></p>
-<p>즉 두 벡터를 각각 자기 길이로 나눈 뒤 내적해도 됩니다. 첫 질문 [1,0]과 후보 42 [3,4]의 코사인은 3÷(1×5)=0.6, 후보 19 [2,0]은 2÷(1×2)=1입니다. 방향이 같은 후보 19가 더 큽니다. 이것이 항상 더 좋은 검색 규칙이거나 확률이라는 뜻은 아닙니다.</p>
-<p>아래 함수의 연습 범위는 <strong>비어 있지 않은 2차원 숫자 배열</strong>, 한 행이 한 대상, 공통 열이 같은 순서의 특성인 유한한 실수입니다. 각 행의 길이가 계산 가능한 양수여야 합니다. 0벡터의 수학적 코사인은 분모가 0이므로 정의되지 않습니다. 이 합성 명세는 0·NaN·무한대·계산할 수 없는 길이를 입력 오류로 알립니다. 다른 문제나 API는 무효 표시나 별도 0/epsilon 관례를 정할 수 있으며, 그 출력이 0벡터를 단위 벡터로 바꾸는 것은 아닙니다.</p>
-<p>행의 길이는 <strong>특성 축 axis=1</strong>에서 구합니다. Q는 길이 분모가 (2,1), G는 (4,1)입니다. <code>keepdims=True</code>로 열 자리를 남겨 각 행을 그 행의 길이로 나눕니다. 정규화된 Q와 G의 행렬곱은 여전히 질문×후보 (2,4)입니다.</p>
+<h3 id="%EB%B2%A1%ED%84%B0%EC%9D%98-%EA%B8%B8%EC%9D%B4%EB%A5%BC-%EC%A7%80%EC%9A%B0%EA%B3%A0-%EB%B0%A9%ED%96%A5-%EB%B9%84%EA%B5%90%ED%95%98%EA%B8%B0">벡터의 길이를 지우고 방향 비교하기<a class="anchor-link" href="#%EB%B2%A1%ED%84%B0%EC%9D%98-%EA%B8%B8%EC%9D%B4%EB%A5%BC-%EC%A7%80%EC%9A%B0%EA%B3%A0-%EB%B0%A9%ED%96%A5-%EB%B9%84%EA%B5%90%ED%95%98%EA%B8%B0">¶</a></h3><p>[3,4]의 길이는 <code>√(3² + 4²) = 5</code>입니다. 각 좌표를 5로 나누면 [3/5, 4/5]가 됩니다. 원래와 방향이 같고 길이가 1입니다. 같은 방법으로 [2,0]을 길이 1로 만들어 보세요.</p>
+<p>두 벡터 q와 g를 각각 길이 1로 만든 뒤 내적한 값이 <strong>코사인 유사도</strong>입니다. 식으로 쓰면 **<code>cos(q,g) = (q · g) / (||q|| × ||g||)</code>**이고, <code>||v||</code>는 v 각 좌표의 제곱합에 제곱근을 씌운 길이입니다. 질의 [1,0]과 후보 42=[3,4]의 점수는 3/5, 후보 19=[2,0]의 점수는 1입니다. 원시 내적에서 뒤에 있던 19가 방향 비교에서는 앞섭니다.</p>
+<p>각 대상을 자기 길이로 나누므로 <strong>한 행 안의 좌표</strong>를 모아 길이 하나를 구합니다. <code>axis=1, keepdims=True</code>는 Q의 길이를 (2,1), G의 길이를 (4,1)로 남겨 각 행의 분모가 그 행의 모든 좌표에 적용되게 합니다. 0벡터는 방향이 없고 식의 분모도 0입니다. 아래 함수는 작은 유한 실수의 2차원 배열을 받아 계산하며, 길이가 0이거나 수치로 계산할 수 없으면 오류를 냅니다.</p>
 </div>
 </div>
 </div>
@@ -8302,12 +7936,13 @@ X @ X: ValueError — 가운데 길이 2와 3이 다릅니다.
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">normalize_rows</span><span class="p">(</span><span class="n">vectors</span><span class="p">):</span>
-    <span class="n">rows</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">vectors</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">vectors</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">rows</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">2</span> <span class="ow">or</span> <span class="mi">0</span> <span class="ow">in</span> <span class="n">rows</span><span class="o">.</span><span class="n">shape</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"비어 있지 않은 2차원 배열이 필요합니다"</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"각 값은 유한해야 합니다"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">rows</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s2">"iuf"</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"좌표는 유한한 정수 또는 실수여야 합니다"</span><span class="p">)</span>
     <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">over</span><span class="o">=</span><span class="s2">"ignore"</span><span class="p">,</span> <span class="n">under</span><span class="o">=</span><span class="s2">"ignore"</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s2">"ignore"</span><span class="p">):</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="n">rows</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
         <span class="n">lengths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="ow">or</span> <span class="p">(</span><span class="n">lengths</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"각 행의 길이는 계산 가능한 양수여야 합니다"</span><span class="p">)</span>
@@ -8362,9 +7997,9 @@ X @ X: ValueError — 가운데 길이 2와 3이 다릅니다.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%EB%B0%B0%EC%9C%A8,-%EC%B6%95%EA%B3%BC-%EA%B2%BD%EA%B3%84-%ED%99%95%EC%9D%B8">배율, 축과 경계 확인<a class="anchor-link" href="#%EB%B0%B0%EC%9C%A8,-%EC%B6%95%EA%B3%BC-%EA%B2%BD%EA%B3%84-%ED%99%95%EC%9D%B8">¶</a></h3><p>벡터 <strong>전체에 양수</strong>를 곱하면 길이도 같은 양수 배로 바뀌므로 방향과 코사인은 같습니다. 한 벡터에 음수를 곱하면 방향이 뒤집혀 코사인의 부호가 바뀝니다. 음수를 곱했다고 모든 문제의 최댓값 ID가 반드시 바뀐다는 뜻은 아닙니다. 벡터의 열마다 서로 다른 배율을 적용하거나 평균을 빼는 것은 이 규칙과 다릅니다.</p>
-<p>2주차의 열별 표준화는 훈련 <strong>각 특성 열</strong>의 평균·표준편차로 값을 바꿉니다. 여기서는 <strong>각 대상 행</strong>을 그 행의 길이로 나눕니다. 서로 다른 목적과 축이므로 바꿔 쓸 수 없습니다. 특히 본문의 화분 분류 입력 P01은 [0,0]인 유효한 관측입니다. 이 검색의 0벡터 오류 규칙을 그 분류에 적용하지 않습니다.</p>
-<p>이 예에서는 점수가 정확히 같으면 현재 후보 순서에서 <strong>첫 위치</strong>를 선택합니다. 따라서 동률 후보를 같이 재정렬할 때 첫 위치의 ID가 바뀔 수 있습니다. 다른 문제의 동률 정책이 주어지면 그 정책을 따릅니다. 아래의 잘못된 열별 나눗셈과 올바른 행별 나눗셈은 shape가 같아도 각 행의 길이가 다릅니다.</p>
+<h3 id="%EB%B0%B0%EC%9C%A8,-%EC%B6%95%EA%B3%BC-%EB%8F%99%EC%A0%90%EC%9D%B4-%EB%8B%B5%EC%9D%84-%EB%B0%94%EA%BE%B8%EB%8A%94-%EA%B2%BD%EC%9A%B0">배율, 축과 동점이 답을 바꾸는 경우<a class="anchor-link" href="#%EB%B0%B0%EC%9C%A8,-%EC%B6%95%EA%B3%BC-%EB%8F%99%EC%A0%90%EC%9D%B4-%EB%8B%B5%EC%9D%84-%EB%B0%94%EA%BE%B8%EB%8A%94-%EA%B2%BD%EC%9A%B0">¶</a></h3><p>후보 벡터 전체에 양수를 곱하면 분자와 길이가 같은 비율로 커져 코사인이 같습니다. 한 벡터에 음수를 곱하면 길이는 양수로 남고 내적의 부호가 바뀝니다. 행의 두 좌표에 <strong>서로 다른</strong> 수를 곱하면 방향도 바뀔 수 있습니다.</p>
+<p>특성 열마다 값을 모아 나누면 각 <strong>후보 한 개</strong>의 길이는 1이 된다는 보장이 없습니다. 같은 모양으로 실행되는 두 계산을 아래 출력에서 비교해 보세요. 뒤에서 배우는 열별 표준화는 각 특성의 훈련 평균과 표준편차를 기준으로 삼는 별도 연산입니다. 화분 표에서 실제 측정값 0은 그대로 유효합니다.</p>
+<p><strong>이 예의 동점 규칙</strong>은 현재 후보 순서에서 첫 번째를 고르는 것입니다. 아래 두 후보는 같은 방향입니다. 두 행과 ID를 함께 뒤집으면 둘 중 어느 ID가 앞설까요? 어떤 규칙으로 동점을 가를지는 문제마다 다시 읽습니다.</p>
 </div>
 </div>
 </div>
@@ -8410,8 +8045,8 @@ X @ X: ValueError — 가운데 길이 2와 3이 다릅니다.
 동률 점수 / 현재 첫 ID: [1. 1.] 19
 동률 행·ID를 함께 뒤집은 첫 ID: 8
 입력 거부: 각 행의 길이는 계산 가능한 양수여야 합니다
-입력 거부: 각 값은 유한해야 합니다
-입력 거부: 각 값은 유한해야 합니다
+입력 거부: 좌표는 유한한 정수 또는 실수여야 합니다
+입력 거부: 좌표는 유한한 정수 또는 실수여야 합니다
 </pre>
 </div>
 </div>
@@ -8477,52 +8112,34 @@ ID를 그대로 둔 오류: [42 35]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>행과 ID는 항상 같은 순서로 옮기고, 제출할 때 요구된 질문 ID 순서도 확인합니다. <code>위치 + 1</code>이 실제 ID라는 규칙은 따로 주어졌을 때만 쓸 수 있습니다.</p>
-<h3 id="%ED%86%A0%ED%81%B0-%EC%A1%B0%ED%9A%8C%EC%99%80-%EC%9C%A0%ED%9A%A8-%EC%9C%84%EC%B9%98-%ED%8F%89%EA%B7%A0">토큰 조회와 유효 위치 평균<a class="anchor-link" href="#%ED%86%A0%ED%81%B0-%EC%A1%B0%ED%9A%8C%EC%99%80-%EC%9C%A0%ED%9A%A8-%EC%9C%84%EC%B9%98-%ED%8F%89%EA%B7%A0">¶</a></h3><p>아래는 설명용으로 <strong>이미 주어진 고정 숫자표</strong>입니다. 각 어휘 ID가 표의 어느 행을 가리키는지만 다룹니다. 실제 토크나이저나 학습된 언어 모델을 실행하는 것은 아닙니다.</p>
+<h3 id="%EB%8B%A8%EC%96%B4-ID%EC%97%90%EC%84%9C-%EB%B2%A1%ED%84%B0%EB%A1%9C">단어 ID에서 벡터로<a class="anchor-link" href="#%EB%8B%A8%EC%96%B4-ID%EC%97%90%EC%84%9C-%EB%B2%A1%ED%84%B0%EB%A1%9C">¶</a></h3><p>문장을 검색하려면 질의 벡터는 어디에서 올까요? 여기서는 문장을 작은 단위인 <strong>토큰</strong>들의 목록으로 받고, 각 토큰에 수치 벡터 하나를 대응시킨 <strong>임베딩 표</strong>를 제공합니다. 표에 넣은 수는 연습을 위해 정했습니다. 실제 과제는 이미 계산한 벡터를 주기도 하고, 학습 자료로 벡터를 만드는 모델을 준비하게 하기도 합니다. 표를 조회하는 계산은 어느 경우에도 그 값을 학습하는 과정과 구별할 수 있습니다.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:right">ID</th>
-<th>표시</th>
-<th>한 행의 뜻</th>
+<th>표 행 번호</th>
+<th style="text-align:right">0</th>
+<th style="text-align:right">1</th>
+<th style="text-align:right">2</th>
+<th style="text-align:right">3</th>
+<th style="text-align:right">4</th>
+<th style="text-align:right">5</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:right">0</td>
-<td>PAD</td>
-<td>빈 자리를 채우는 약속된 표시</td>
-</tr>
-<tr>
-<td style="text-align:right">1</td>
-<td>봄</td>
-<td>실제 토큰</td>
-</tr>
-<tr>
-<td style="text-align:right">2</td>
-<td>비</td>
-<td>실제 토큰</td>
-</tr>
-<tr>
-<td style="text-align:right">3</td>
-<td>나무</td>
-<td>실제 토큰</td>
-</tr>
-<tr>
-<td style="text-align:right">4</td>
-<td>해</td>
-<td>실제 토큰</td>
-</tr>
-<tr>
-<td style="text-align:right">5</td>
-<td>쉼</td>
-<td>실제 토큰, 제공된 벡터가 우연히 [0,0,0]</td>
+<td>표시</td>
+<td style="text-align:right">PAD</td>
+<td style="text-align:right">봄</td>
+<td style="text-align:right">비</td>
+<td style="text-align:right">나무</td>
+<td style="text-align:right">해</td>
+<td style="text-align:right">쉼</td>
 </tr>
 </tbody>
 </table>
-<p>한 문장의 토큰 수가 달라도 함께 배열에 담으려고 빈자리에 PAD를 넣습니다. 이 <strong>합성 명세에서만</strong> 0이 PAD이며, 표의 PAD 행은 일부러 [8,8,8]로 두었습니다. 벡터의 값이 0인지가 아니라 <strong>토큰 ID가 PAD인지</strong>로 유효 위치를 구별합니다. 실제 토큰 ID 5는 벡터가 0이어도 개수에 포함합니다.</p>
-<p>표 E의 shape는 (V,d), 토큰 ID I는 (B,T), 조회 결과 H는 (B,T,d)입니다. V는 어휘 행 수, T는 문장의 저장 위치 수, d는 벡터 좌표 수, B는 문장 수입니다. 한 위치의 조회는 **H[b,t,j] = E[I[b,t],j]**입니다. 여기서는 V=6, T=4, d=3, B=2입니다. ID는 곱할 숫자가 아니라 표 행을 고르는 이름입니다.</p>
-<p><strong>먼저 예상:</strong> 둘째 문장의 ID 3은 몇 번 나타나고 어느 벡터를 찾나요? ID 5의 [0,0,0]은 문장의 길이에 들어가나요? ID -1을 그대로 NumPy에서 조회하면 왜 의도하지 않은 행이 나올 수 있나요?</p>
+<p>짧은 문장은 빈자리에 <strong>PAD</strong>를 넣어 배열 길이를 맞춥니다. 여기서는 ID 0만 PAD입니다. 표의 PAD 행에는 일부러 [8,8,8]을 넣고, 실제 단어 ‘쉼’의 행에는 [0,0,0]을 넣었습니다. 어느 위치를 세야 하는지 <strong>토큰 ID</strong>로 판단합니다.</p>
+<p>표 E가 <code>(어휘 수 V, 좌표 수 d)</code>, ID 배열 I가 <code>(문장 수 B, 저장한 자리 수 T)</code>이면, 찾은 벡터 H는 <code>(B,T,d)</code>입니다. **<code>H[b,t,j] = E[I[b,t],j]</code>**에서 I[b,t]는 b번째 문장 t번째 자리에 있는 <strong>표 행 번호</strong>입니다. 다른 파일의 ID 41을 이 표에서 쓰려면 먼저 ‘41은 이 표의 3번 행’처럼 대응을 알아야 합니다.</p>
+<p>아래 둘째 문장에서 같은 토큰이 두 번 가리키는 행을 찾으세요. ‘쉼’이 적힌 자리는 문장 길이에 들어갈까요? 표에 없는 ID −1을 그대로 NumPy에 주면 마지막 행을 가리킬 수 있습니다.</p>
 </div>
 </div>
 </div>
@@ -8585,13 +8202,10 @@ ID를 그대로 둔 오류: [42 35]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%EB%B9%88-%EC%9C%84%EC%B9%98%EB%A5%BC-%EB%B9%BC%EA%B3%A0-%EA%B0%81-%EB%AC%B8%EC%9E%A5%EC%9D%98-%ED%8F%89%EA%B7%A0-%EA%B5%AC%ED%95%98%EA%B8%B0">빈 위치를 빼고 각 문장의 평균 구하기<a class="anchor-link" href="#%EB%B9%88-%EC%9C%84%EC%B9%98%EB%A5%BC-%EB%B9%BC%EA%B3%A0-%EA%B0%81-%EB%AC%B8%EC%9E%A5%EC%9D%98-%ED%8F%89%EA%B7%A0-%EA%B5%AC%ED%95%98%EA%B8%B0">¶</a></h3><p>m[b,t]를 실제 토큰이면 1, PAD이면 0이라고 합시다. 각 문장의 유효 개수와 좌표별 평균은</p>
-<p><strong>count[b] = Σ_t m[b,t]</strong><br/>
-<strong>mean[b,j] = Σ_t (m[b,t] × H[b,t,j]) ÷ count[b]</strong> (count가 0보다 클 때)</p>
-<p>첫 문장은 [2,0,1]과 [0,2,1] 두 벡터의 합 [2,2,2]를 2로 나눠 [1,1,1]입니다. 둘째 문장은 ID 3이 두 번, ID 5가 한 번이므로 합 [4,4,0]을 <strong>3</strong>으로 나눕니다. 같은 토큰이 반복돼도 위치마다 셉니다.</p>
-<p>m은 (B,T)이고 각 벡터의 좌표에 같은 참·거짓을 적용하려고 <code>m[:,:,None]</code>으로 (B,T,1)을 만듭니다. 위치 축 T를 더하면 합과 평균은 (B,d), 개수 분모는 (B,1)입니다. 아래 함수는 이 예에서 <strong>0을 PAD ID로 약속</strong>합니다. 작은 유한 실수 표와 비어 있지 않은 정수 ID 배열만 받으며, 음수나 표의 행 수 이상인 ID 및 전부 PAD인 문장은 오류로 알립니다. NumPy의 -1은 오류 없이 마지막 행을 가리킬 수 있기 때문에 <strong>조회 전</strong>에 검사합니다.</p>
-<p>전부 PAD이면 분모가 0이라 이 평균은 없습니다. 반면 ID 5 하나는 유효 개수 1에 평균 [0,0,0]인 정상 사례입니다. 그 영벡터를 나중에 코사인 검색에 넣을 수 있는지는 앞에서 정한 <strong>별도의 검색 경계</strong>입니다.</p>
-<p><strong>코드 읽기:</strong> <code>valid = ids != 0</code>은 각 위치가 유효한지 참·거짓으로 표시합니다. <code>np.where(valid[:,:,None], vectors, 0)</code>은 참인 위치의 조회 벡터를 남기고 거짓인 위치를 0으로 바꿉니다. <code>sum(axis=1)</code>으로 위치 축을 더한 뒤 <code>counts</code>로 나누는 부분이 위 평균 수식입니다. 그 밖의 표·ID 크기와 종류·범위 및 계산 결과 검사는 안전 확인입니다. <code>dtype=object</code>는 참·거짓이 정수로 바뀌기 전에 종류를 확인하기 위한 것이고, <code>errstate</code>는 계산 중 경고를 조절한 뒤 결과가 유한한지 검사하기 위한 보조 설정입니다. 둘은 평균의 중심 계산이 아닙니다.</p>
+<h3 id="%EB%B9%88-%EC%9C%84%EC%B9%98%EB%A5%BC-%EB%B9%BC%EA%B3%A0-%EB%AC%B8%EC%9E%A5%EC%9D%98-%ED%8F%89%EA%B7%A0-%EA%B5%AC%ED%95%98%EA%B8%B0">빈 위치를 빼고 문장의 평균 구하기<a class="anchor-link" href="#%EB%B9%88-%EC%9C%84%EC%B9%98%EB%A5%BC-%EB%B9%BC%EA%B3%A0-%EB%AC%B8%EC%9E%A5%EC%9D%98-%ED%8F%89%EA%B7%A0-%EA%B5%AC%ED%95%98%EA%B8%B0">¶</a></h3><p>첫 문장의 실제 토큰 두 개는 [2,0,1], [0,2,1]입니다. 합 [2,2,2]를 2로 나누면 [1,1,1]입니다. 둘째 문장에서는 ID 3이 두 번, ID 5가 한 번 나옵니다. 합 [4,4,0]을 몇으로 나눌지 먼저 결정하세요.</p>
+<p>유효 위치를 <code>m[b,t]</code>에 참(1) 또는 거짓(0)으로 기록합니다. 문장 b의 유효 개수는 <code>Σₜ m[b,t]</code>입니다. 좌표 j의 평균은 <code>Σₜ (m[b,t] × H[b,t,j]) / 유효 개수</code>입니다. <strong>토큰 자리 t</strong>를 따라 더하고 <strong>문장 b와 좌표 j</strong>는 남깁니다.</p>
+<p>함수에서 <code>valid = ids != 0</code>이 유효 위치 (B,T)를 만듭니다. <code>valid[:, :, None]</code>은 (B,T,1)이라서 같은 위치의 모든 좌표에 적용됩니다. <code>np.where</code>로 PAD 위치의 값을 0으로 바꾼 뒤 자리 축을 더합니다. 합과 평균은 (B,d), 개수는 (B,1)입니다.</p>
+<p>함수 앞부분은 비어 있는 배열과 정수가 아닌 ID, 음수·범위 밖 ID를 조회 전에 가려냅니다. 모든 위치가 PAD이면 평균의 분모가 0입니다. 반면 ‘쉼’ 하나는 개수 1이고 평균이 [0,0,0]입니다. 두 경우를 구별해야 다음 검색 방식도 고를 수 있습니다.</p>
 </div>
 </div>
 </div>
@@ -8681,8 +8295,8 @@ ID를 그대로 둔 오류: [42 35]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>고정된 각 위치의 벡터를 <strong>그냥 합해 평균</strong>하면 위치 순서를 잃습니다. 위에서는 토큰 순서를 바꾸어 조회한 자리별 결과가 달라도 평균은 같습니다. 대화 조각의 시간 순서가 중요한 문제를 이 평균만으로 구별할 수는 없습니다. 위치나 문맥을 다른 방식으로 반영하는 모델 전체에도 반드시 순서 정보가 없다는 뜻은 아닙니다.</p>
-<p>유효 위치를 가려 평균하는 이 연습은 attention 계산이나 언어 모델 학습이 아닙니다. 실제 모델의 PAD ID·마스크 규약과 빈 입력 처리는 그 명세를 읽어야 합니다. <a href="https://raw.githubusercontent.com/IOAI-official/IOAI-2026/e1963801aa4cf33a5a03520b39fa6620a7894c54/Individual-Contest/3_Potato/statement.md">IOAI 2026 Potato</a>는 어휘의 각 행에 공개 벡터를 대응시키지만, 심판의 비공개 표현과 상호작용을 포함합니다. 이 작은 고정표 연습은 그 국제 과제를 푼 것이 아닙니다. <a href="https://raw.githubusercontent.com/IOAI-official/IOAI-2026/e1963801aa4cf33a5a03520b39fa6620a7894c54/Individual-Contest/1_Find_the_Order/statement.md">Find the Order</a>의 시간 순위도 별도 과제입니다.</p>
+<p>‘봄, 비’의 순서를 ‘비, 봄’으로 바꾸면 첫 자리에서 찾은 벡터는 달라집니다. 두 벡터를 더할 때는 더하는 순서가 결과에 영향을 주지 않으므로 평균은 같습니다. 이렇게 평균 하나만 저장하면 <strong>어느 단어가 먼저였는지</strong>는 되찾을 수 없습니다. 자리별 벡터와 순서를 같이 보관하면 첫 단어를 따로 확인할 수 있습니다.</p>
+<p>IOAI 2026 <em>Potato</em>는 공개 어휘의 i번째 단어에 수치표의 i번째 행을 대응시킵니다. 심판은 별도의 비공개 표현으로 단어들을 비교합니다. <em>Find the Order</em>는 각 음성 조각이 시간상 몇 번째인지 요구합니다. 여기서 한 고정표 조회와 평균만으로 그 순서를 추론할 근거는 없습니다. <a href="https://github.com/IOAI-official/IOAI-2026/blob/e1963801aa4cf33a5a03520b39fa6620a7894c54/Individual-Contest/3_Potato/statement.md#dataset">Potato의 데이터 명세</a> · <a href="https://github.com/IOAI-official/IOAI-2026/blob/e1963801aa4cf33a5a03520b39fa6620a7894c54/Individual-Contest/1_Find_the_Order/statement.md#output">Find the Order의 출력 명세</a></p>
 </div>
 </div>
 </div>
@@ -8693,13 +8307,33 @@ ID를 그대로 둔 오류: [42 35]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6.-%EB%82%AF%EC%84%A0-%EC%9E%85%EB%A0%A5%EC%9C%BC%EB%A1%9C-%ED%98%BC%EC%9E%90-%ED%92%80%EA%B8%B0">6. 낯선 입력으로 혼자 풀기<a class="anchor-link" href="#6.-%EB%82%AF%EC%84%A0-%EC%9E%85%EB%A0%A5%EC%9C%BC%EB%A1%9C-%ED%98%BC%EC%9E%90-%ED%92%80%EA%B8%B0">¶</a></h2><p><strong>먼저 앞의 완성 예제와 별도 교사용 해설을 가리세요.</strong> 아래 자료는 새 합성 입력입니다. 답을 적은 뒤 코드 셀에 직접 작성하고 실행하세요. 답을 복사하거나 빈 셀을 실행한 것은 독립 수행이 아닙니다.</p>
-<h3 id="%ED%95%84%EC%88%98-A-%C2%B7-%EC%83%88-%EC%84%A0%ED%98%95-%EB%B3%80%ED%99%98">필수 A · 새 선형 변환<a class="anchor-link" href="#%ED%95%84%EC%88%98-A-%C2%B7-%EC%83%88-%EC%84%A0%ED%98%95-%EB%B3%80%ED%99%98">¶</a></h3><p>행은 세 학생의 활동 점수 a, b입니다. W_new의 두 열은 각각 새 점수 규칙입니다.</p>
+<h2 id="6.-%EB%82%AF%EC%84%A0-%EC%9E%85%EB%A0%A5%EC%9C%BC%EB%A1%9C-%ED%98%BC%EC%9E%90-%ED%92%80%EA%B8%B0">6. 낯선 입력으로 혼자 풀기<a class="anchor-link" href="#6.-%EB%82%AF%EC%84%A0-%EC%9E%85%EB%A0%A5%EC%9C%BC%EB%A1%9C-%ED%98%BC%EC%9E%90-%ED%92%80%EA%B8%B0">¶</a></h2><p>고른 문제의 입력과 요청만 펼치세요. 먼저 손으로 예측하고 아래 빈 셀에 직접 코드를 씁니다. 다시 열어 본 예제가 있다면 어느 판단에서 도움이 필요했는지 답 옆에 적으세요.</p>
+<h3 id="A-%C2%B7-%EC%A3%BC%EB%AC%B8%EC%84%9C%EB%A1%9C-%EB%B0%B0%EC%86%A1%ED%95%A0-%EB%AC%BC%ED%92%88-%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0">A · 주문서로 배송할 물품 수 구하기<a class="anchor-link" href="#A-%C2%B7-%EC%A3%BC%EB%AC%B8%EC%84%9C%EB%A1%9C-%EB%B0%B0%EC%86%A1%ED%95%A0-%EB%AC%BC%ED%92%88-%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0">¶</a></h3><p>과학반 세 곳이 <strong>기본 키트</strong>와 <strong>확장 키트</strong>를 주문했습니다. 제조사가 보낸 표는 한 키트에 들어 있는 물품 수입니다. 배송 담당자는 <strong>주문서의 반 순서</strong>대로 반 이름, **유리판 수(장), 시험관 수(개)**를 받으려 합니다.</p>
+<table>
+<thead>
+<tr>
+<th>키트</th>
+<th style="text-align:right">시험관(개/키트)</th>
+<th style="text-align:right">유리판(장/키트)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>확장</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td>기본</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">2</td>
+</tr>
+</tbody>
+</table>
 <ol>
-<li>X_new와 W_new 및 <code>X_new @ W_new</code>의 shape와 각 축의 뜻을 적으세요. 모든 결과를 손으로 구하고, 두 번째 행 첫 점수에 어떤 곱을 더했는지 쓰세요.</li>
-<li><code>X_new[:2] * W_new</code>와 <code>X_new[:2] @ W_new</code>는 둘 다 <code>(2, 2)</code>입니다. 각각의 값을 구해 왜 다른지 설명하세요.</li>
-<li><code>X_new @ bad_W</code>는 왜 안 되나요? <code>X_new[:, ::-1] @ W_new</code>는 실행되더라도 첫 행 첫 결과가 왜 달라지나요? a, b 순서를 가중치와 연결해 설명하세요.</li>
-<li>아래 빈 코드 셀에 두 연산과 shape를 직접 작성해 손계산을 확인하세요. 오류는 이유를 먼저 쓴 뒤 필요하면 예제처럼 잡아서 확인하세요.</li>
+<li>한 반의 주문을 골라 물품 하나를 손으로 계산하세요. 각 곱의 단위와 더한 결과가 무엇인지 쓰세요. 세 반의 배송표를 만드는 방법은 직접 정합니다. 계산에 쓴 두 표와 결과에서 행·열이 무엇인지 표시하세요.</li>
+<li>다른 주문 파일은 두 키트 <strong>열 전체를 열 이름과 함께</strong> 뒤집어 보냅니다. 제조사는 명세서의 두 줄 순서를 바꾸기도 합니다. 같은 주문의 배송량을 다시 계산할 수 있게 코드를 쓰세요.</li>
+<li>숫자 배열의 모양이 맞는데도 틀린 배송량이 나오는 파일을 하나 만드세요. 어떤 이름에 어떤 수량이 잘못 붙었나요? 정상 파일과 다른 한 칸을 찾아 보이세요. 제조사 표에 새로운 종류의 키트가 빠져 있다면 어떤 정보를 더 받아야 할지도 적으세요.</li>
 </ol>
 </div>
 </div>
@@ -8712,10 +8346,16 @@ ID를 그대로 둔 오류: [42 35]
 <div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># 독립 문제 입력: 각 행은 학생 한 명, 열 순서는 a, b입니다.</span>
+<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">class_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"솔반"</span><span class="p">,</span> <span class="s2">"별반"</span><span class="p">,</span> <span class="s2">"달반"</span><span class="p">]</span>
+<span class="n">order_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"기본"</span><span class="p">,</span> <span class="s2">"확장"</span><span class="p">]</span>
 <span class="n">X_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
-<span class="n">W_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
-<span class="n">bad_W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">recipe_rows</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">"확장"</span><span class="p">,</span> <span class="p">{</span><span class="s2">"시험관"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"유리판"</span><span class="p">:</span> <span class="mi">1</span><span class="p">}),</span>
+    <span class="p">(</span><span class="s2">"기본"</span><span class="p">,</span> <span class="p">{</span><span class="s2">"시험관"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"유리판"</span><span class="p">:</span> <span class="mi">2</span><span class="p">}),</span>
+<span class="p">]</span>
+<span class="n">shipping_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"유리판"</span><span class="p">,</span> <span class="s2">"시험관"</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -8728,13 +8368,13 @@ ID를 그대로 둔 오류: [42 35]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>내 예상·계산과 축의 뜻:</p>
-<p>모양 오류와 순서 오류를 구분한 이유:</p>
-<p>실행 뒤 달라진 생각 / 받은 도움(없음·힌트·예시·직접 설명):</p>
+<p>손계산한 배송량과 각 곱의 단위</p>
+<p>머리글을 맞춘 방법, 잘못 붙인 경우 달라진 한 칸</p>
+<p>실행 뒤 고친 생각과 받은 도움</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7b96a39e">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student-code" id="cell-id=7b96a39e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8742,7 +8382,7 @@ ID를 그대로 둔 오류: [42 35]
 <div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># 필수 A: 자신의 확인 코드를 작성하세요.</span>
+<div class="highlight hl-python"><pre><span></span><span class="c1"># A. 손계산과 대조할 코드, 열 순서를 바꾼 확인 코드를 작성하세요.</span>
 </pre></div>
 </div>
 </div>
@@ -8755,16 +8395,33 @@ ID를 그대로 둔 오류: [42 35]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%ED%95%84%EC%88%98-B-%C2%B7-%ED%86%A0%ED%81%B0%EC%97%90%EC%84%9C-%EC%A7%88%EB%AC%B8%EC%9D%84-%EB%A7%8C%EB%93%A4%EA%B3%A0-%EA%B2%80%EC%83%89%ED%95%98%EA%B8%B0">필수 B · 토큰에서 질문을 만들고 검색하기<a class="anchor-link" href="#%ED%95%84%EC%88%98-B-%C2%B7-%ED%86%A0%ED%81%B0%EC%97%90%EC%84%9C-%EC%A7%88%EB%AC%B8%EC%9D%84-%EB%A7%8C%EB%93%A4%EA%B3%A0-%EA%B2%80%EC%83%89%ED%95%98%EA%B8%B0">¶</a></h3><p>새 입력의 고정 어휘표 행은 토큰 ID, 열은 벡터 좌표입니다. 0만 PAD이고 <strong>ID 4는 실제 토큰</strong>입니다. PAD 행은 일부러 0이 아니며 실제 ID 4의 벡터는 0입니다. 두 질문의 ID는 문장을 찾는 이름이고, 각 문장 안 토큰 ID와 다릅니다. 후보 행은 같은 순서의 두 벡터 특성으로 주어집니다.</p>
+<h3 id="B-%C2%B7-%EB%91%90-%EA%B2%80%EC%83%89-%EC%9A%94%EC%B2%AD%EC%97%90-%EC%9D%91%EB%8B%B5%ED%95%98%EA%B8%B0">B · 두 검색 요청에 응답하기<a class="anchor-link" href="#B-%C2%B7-%EB%91%90-%EA%B2%80%EC%83%89-%EC%9A%94%EC%B2%AD%EC%97%90-%EC%9D%91%EB%8B%B5%ED%95%98%EA%B8%B0">¶</a></h3><p>검색기는 각 질의에 맞는 후보 ID 하나를 반환합니다. 토큰 표와 후보는 <strong>같은 두 좌표</strong>를 씁니다. 질의 벡터는 실제 토큰 벡터들의 좌표별 평균입니다. 토큰이 반복되면 나온 횟수만큼 셉니다. ID 0은 PAD입니다. ID 4는 실제 토큰입니다.</p>
+<p>이 검색기가 계산하는 점수는 5절에서 배운 <strong>원시 내적</strong>과 <strong>코사인 유사도</strong> 두 가지입니다. 아래 두 요청에 어떤 점수를 써야 하는지 직접 정하세요.</p>
+<table>
+<thead>
+<tr>
+<th>요청</th>
+<th>점수 계산 규칙</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>방향 검색</td>
+<td>원점에서 본 두 벡터의 방향이 가까울수록 높습니다. 어느 한 벡터 전체를 양수 배로 키워도 같은 점수입니다.</td>
+</tr>
+<tr>
+<td>강도 검색</td>
+<td>대응하는 좌표끼리 곱한 값들의 합이 클수록 높습니다. 후보가 가진 특성의 세기도 반영합니다.</td>
+</tr>
+</tbody>
+</table>
+<p>이 검색기는 점수를 <strong>소수점 아래 여섯 자리로 반올림</strong>해 기록합니다. 그 값이 같으면 <strong>더 작은 후보 ID</strong>를 고릅니다. 답안은 요청서의 질의 ID 순서로 후보 ID 하나씩을 담은 목록입니다.</p>
 <ol>
-<li>새 표·ID·조회 결과의 shape와 각 축을 쓰세요. 각 위치의 벡터, PAD를 제외한 위치, 유효 개수와 좌표별 합을 손으로 구하세요. 토큰이 반복되면 어떻게 세나요?</li>
-<li>유효 합을 각 문장의 유효 개수로 나누어 <code>query_new</code>를 직접 만드세요. 벡터 값이 0인 실제 ID 4를 분모에서 빼면 안 되는 이유를 설명하세요. 잘못 모든 저장 위치 4개로 나눈 값과 비교하세요.</li>
-<li>각 질문과 후보의 원시 내적 점수표·최댓값 위치·후보 ID를 구하세요. 이어 각 행의 길이로 정규화해 코사인 점수표·위치·ID를 구하고, 두 규칙이 첫 질문에서 왜 다른 후보를 고르는지 설명하세요.</li>
-<li>후보 행과 ID를 함께 <code>[2,0,3,1]</code> 순서로 옮긴 뒤 코사인 최댓값의 새 위치와 실제 ID를 적으세요. 행만 옮기면 어떤 ID가 잘못 붙나요?</li>
-<li>예제 표의 PAD 행만 [0,0]으로 바꾸고 <strong>틀리게 네 칸 전부로 나누어도</strong>, 각 잘못된 질문이 올바른 질문의 양의 배수가 됩니다. 이 경우 코사인과 최종 ID만 확인하면 분모 오류를 찾을 수 있나요? 유효 개수와 각 평균 좌표도 검사하세요.</li>
-<li>ID -1·어휘 행 수 이상, 전부 PAD인 문장은 어떻게 알릴까요? 유효 토큰 하나가 영벡터인 정상 평균과 그 벡터를 코사인 검색에 쓰는 별도 경계를 구분하세요. 정규화 동률·음수 배율의 정책도 설명하세요.</li>
+<li>두 요청에 보낼 답을 먼저 손으로 결정하고, 입력에서 답안 한 칸까지 추적한 계산을 보여 주세요. 두 문구의 유효 토큰 개수·합·평균과 각 점수표의 축도 남기세요. 아래 빈 코드 셀에 같은 일을 새 입력에서도 할 수 있는 코드를 쓰세요.</li>
+<li>후보표 맨 뒤에 후보 ID <strong>6</strong>, 벡터 **[0.5, 0.5]**인 행을 추가합니다. 이번에는 두 요청에서 무엇이 달라질까요? 후보표의 모든 행을 ID와 함께 뒤집어도 자신의 답을 설명할 수 있는지 확인하세요.</li>
+<li>나중에 검색 기록에서 <strong>첫 실제 토큰 ID와 실제 토큰 개수</strong>도 읽어야 합니다. 지금 저장한 것은 질의마다 평균 두 좌표뿐입니다. 요청에 언제나 답할 수 있는지 판단하고, 이 표로 만든 서로 다른 문구 두 개로 근거를 보이세요. 필요한 기록을 고르세요.</li>
 </ol>
-<p>아래 빈 코드 셀에 직접 계산·확인하는 코드를 작성하고 손계산과 비교하세요. 앞의 함수를 활용할 수 있지만 각 축과 분모의 뜻도 설명해야 합니다.</p>
+<p>경계도 한 번 시험하세요. 문구에 ID 4만 있는 경우와 PAD만 있는 경우에는 어느 단계까지 값이 정해지나요? 방향 검색과 강도 검색의 규칙으로 각각 판단하세요.</p>
 </div>
 </div>
 </div>
@@ -8776,12 +8433,14 @@ ID를 그대로 둔 오류: [42 35]
 <div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">q_ids_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">61</span><span class="p">,</span> <span class="mi">22</span><span class="p">])</span>        <span class="c1"># 질문 문장의 ID</span>
-<span class="n">g_ids_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">90</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">17</span><span class="p">])</span>  <span class="c1"># 후보의 ID</span>
+<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">q_ids_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">61</span><span class="p">,</span> <span class="mi">22</span><span class="p">])</span>         <span class="c1"># 문구가 저장된 행의 질의 ID</span>
+<span class="n">requested_query_ids</span> <span class="o">=</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">61</span><span class="p">]</span>         <span class="c1"># 요청서의 답안 순서</span>
+<span class="n">g_ids_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">90</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">17</span><span class="p">])</span>  <span class="c1"># 후보표의 행에 붙은 ID</span>
 <span class="n">token_table_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
 <span class="n">query_tokens_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
 <span class="n">gallery_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
-<span class="c1"># query_new는 유효 위치의 평균으로 직접 만드세요.</span>
 </pre></div>
 </div>
 </div>
@@ -8794,14 +8453,14 @@ ID를 그대로 둔 오류: [42 35]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>조회 값·유효 개수·합·평균과 각 축의 뜻:</p>
-<p>내적과 코사인의 점수표·위치·ID 및 다른 이유:</p>
-<p>PAD·유효 영벡터·오류 정책과 평균이 잃는 순서:</p>
-<p>실행 뒤 달라진 생각 / 받은 도움(없음·힌트·예시·직접 설명):</p>
+<p>두 요청에 보낼 후보 ID와 한 칸의 계산 근거</p>
+<p>후보표가 바뀐 경우의 예측과 실제 결과</p>
+<p>보관 요청에 대한 판단과 직접 만든 문구, 경계에서 결정할 수 있는 값</p>
+<p>받은 도움과 그 뒤 다시 확인한 입력</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=54646dc1">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student-code" id="cell-id=54646dc1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8809,7 +8468,7 @@ ID를 그대로 둔 오류: [42 35]
 <div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># 필수 B: 자신의 확인 코드를 작성하세요.</span>
+<div class="highlight hl-python"><pre><span></span><span class="c1"># B. 두 요청에 답하는 코드와 변경한 입력에서의 확인 코드를 작성하세요.</span>
 </pre></div>
 </div>
 </div>
@@ -8822,17 +8481,45 @@ ID를 그대로 둔 오류: [42 35]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%EC%84%A0%ED%83%9D-C-%C2%B7-%EB%AC%B6%EC%9D%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0">선택 C · 묶음 만들기<a class="anchor-link" href="#%EC%84%A0%ED%83%9D-C-%C2%B7-%EB%AC%B6%EC%9D%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0">¶</a></h3><p><code>gallery_new[:2]</code>와 <code>gallery_new[2:]</code>로 stack(axis=0), concatenate(axis=0), concatenate(axis=1)을 실행하기 전에 결과 shape와 축의 뜻을 적으세요. 열 연결의 각 행이 같은 후보의 특성 확장인지 후보 ID를 대조해 설명하세요. <code>gallery_new[:1]</code>과 <code>gallery_new[1:]</code>은 어떤 연산이 실패하고 어떤 행 연결이 가능한지도 이유와 함께 예측하세요. 별도 코드 셀을 만들어 확인합니다.</p>
-<h2 id="%EB%8B%A4%EC%9D%8C-%EB%8B%A8%EA%B3%84">다음 단계<a class="anchor-link" href="#%EB%8B%A4%EC%9D%8C-%EB%8B%A8%EA%B3%84">¶</a></h2><p><a href="week01_problem_pipeline.ipynb">문제 명세에서 모델 학습과 제출까지</a>에서 입력·정답·ID를 예측과 제출 형식으로 이어 보세요.</p>
-<p>10주차 새 문제에서는 입력·출력·평가 규칙을 다시 읽고 열과 ID의 의미를 먼저 적습니다. 이 자료의 1주차 선수는 3주차 가중합, 6주차 층별 shape, 7~9주차 인코더 표현·검색, 10주차 낯선 입력 해석으로 이어집니다. 후속 모델 구현, 분할·학습·평가, 대회 문제 해결을 이 노트북 하나로 완료했다고 볼 수는 없습니다.</p>
-<h2 id="%EC%9E%90%EB%A3%8C%EC%99%80-%EB%B2%94%EC%9C%84">자료와 범위<a class="anchor-link" href="#%EC%9E%90%EB%A3%8C%EC%99%80-%EB%B2%94%EC%9C%84">¶</a></h2><ul>
-<li><a href="week01_python_tables.ipynb">1주차 본 교안</a>: 표·axis, 전치, 내적. <a href="../../curriculum/student-plan.html">10주 학습 계획</a>: 주차별 학습 내용.</li>
-<li><a href="https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Restroom/Restroom.ipynb">IOAI 2025 Restroom 공식 문제와 baseline</a>은 후보 번호·순서와 벡터 점수를 검토하는 계기입니다. 실제 baseline은 이미지 인코더 출력 연결·정규화와 별도의 선택 규칙을 사용합니다. 이 단순 합성 내적의 최댓값 규칙은 공식 정답이나 대회 해결법이 아닙니다.</li>
-<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.matmul.html">NumPy matmul</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.stack.html">stack</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.concatenate.html">concatenate</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.argmax.html">argmax</a>, <a href="https://docs.pytorch.org/docs/2.15/generated/torch.nn.Embedding.html">PyTorch Embedding</a>.</li>
-<li><a href="https://kitpa.org/koai/2027">KOAI 2027 안내</a>에 연결된 <a href="https://kitpa.org/koai/syllabus">국내 실라버스</a>는 조사 당시 IOAI 2026 기준 표기였습니다. 별도 <a href="https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf">IOAI 2027 원문</a>의 국제 항목을 국내 2027 확정 범위나 1주차 필수로 자동 취급하지 않습니다. 확인 기록: <a href="../../reviews/discovery-loop-20261111/source-research.md">source-research.md</a>, 2026-11-11. 최신 공지를 다시 확인하세요.</li>
+<h3 id="C-%C2%B7-%EB%91%90-%ED%9B%84%EB%B3%B4-%EB%B0%B0%EC%97%B4%EC%9D%84-%ED%95%A9%EC%B9%98%EB%8A%94-%EB%B0%A9%EB%B2%95-%EA%B3%A0%EB%A5%B4%EA%B8%B0">C · 두 후보 배열을 합치는 방법 고르기<a class="anchor-link" href="#C-%C2%B7-%EB%91%90-%ED%9B%84%EB%B3%B4-%EB%B0%B0%EC%97%B4%EC%9D%84-%ED%95%A9%EC%B9%98%EB%8A%94-%EB%B0%A9%EB%B2%95-%EA%B3%A0%EB%A5%B4%EA%B8%B0">¶</a></h3><p>첫 배열에는 후보 90=[2,1]과 8=[0,3], 둘째 배열에는 53=[1,1]과 17=[2,0]이 있습니다. 입력 묶음을 구별하려는 요청, 모든 후보를 한 표에 싣는 요청에 각각 어떤 배열이 맞을까요? 열을 옆으로 이어 붙인 경우 첫 행이 누구의 어떤 수치를 담는지도 적으세요. 첫 배열에 후보 한 개, 둘째 배열에 세 개가 있는 경우까지 생각하고 코드를 새 셀에 써서 확인하세요.</p>
+<h2 id="%EC%9B%90%EB%AC%B8%EC%9D%98-%EC%A7%9D-%EC%A1%B0%EA%B1%B4-%EC%9D%BD%EA%B8%B0">원문의 짝 조건 읽기<a class="anchor-link" href="#%EC%9B%90%EB%AC%B8%EC%9D%98-%EC%A7%9D-%EC%A1%B0%EA%B1%B4-%EC%9D%BD%EA%B8%B0">¶</a></h2><p>IOAI 2025 <em>Restroom Icon Matching</em>에서는 질의가 가리키는 화장실과 <strong>같은 장소</strong>의 짝 표지를 찾습니다. 남성용 표지에는 그 장소의 여성용 표지를, 여성용 표지에는 그 장소의 남성용 표지를 대응시킵니다. 짝 조건을 살펴보려고 사람이 붙인 메모와 임의의 벡터 점수를 담은 작은 표를 만들었습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">후보 ID</th>
+<th>장소</th>
+<th>표지</th>
+<th style="text-align:right">벡터 점수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">73</td>
+<td>A</td>
+<td>남성용</td>
+<td style="text-align:right">0.99</td>
+</tr>
+<tr>
+<td style="text-align:right">18</td>
+<td>B</td>
+<td>여성용</td>
+<td style="text-align:right">0.97</td>
+</tr>
+<tr>
+<td style="text-align:right">40</td>
+<td>A</td>
+<td>여성용</td>
+<td style="text-align:right">0.86</td>
+</tr>
+</tbody>
+</table>
+<p>질의가 <strong>A 장소의 남성용 표지</strong>일 때 제출할 후보 ID는 무엇인가요? 점수와 ID만 남긴다면 두 조건을 모두 확인할 수 있을까요? 실제 과제에서는 위의 메모가 제공되지 않으므로 <strong>이미지로부터</strong> 짝을 추정해 질의 순서대로 후보 이미지 ID를 제출합니다. 공식 baseline이 만든 점수와 원문이 요구한 짝의 조건을 각각 찾아보세요. <a href="https://github.com/IOAI-official/IOAI-2025/blob/39558e9a639d170bd92de91958fcdc915f670463/Individual-Contest/Restroom/Restroom.ipynb">IOAI 2025 공식 문제 2–6절</a></p>
+<h2 id="%EB%8F%8C%EC%95%84%EA%B0%88-%EA%B3%B3%EA%B3%BC-%EC%B0%B8%EA%B3%A0-%EC%9E%90%EB%A3%8C">돌아갈 곳과 참고 자료<a class="anchor-link" href="#%EB%8F%8C%EC%95%84%EA%B0%88-%EA%B3%B3%EA%B3%BC-%EC%B0%B8%EA%B3%A0-%EC%9E%90%EB%A3%8C">¶</a></h2><p>축이나 검색 중 자신이 고른 문제에서 손계산, 코드, 달라진 입력의 설명이 맞으면 <a href="week01_integrated.html#week01-check">통합 교안 8절</a>로 돌아갑니다. 예측을 다른 파일의 ID 순서로 제출하는 과정까지 확인하고 싶으면 <a href="week01_problem_pipeline.html">문제 명세와 제출 형식</a>을 엽니다. Python의 배열과 내적은 <a href="week01_python_tables.html">Python과 표 데이터의 과제 A·E</a>에서 선택해 다시 볼 수 있습니다.</p>
+<ul>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.matmul.html">NumPy의 행렬곱</a> · <a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html">벡터 길이</a> · <a href="https://numpy.org/doc/stable/reference/generated/numpy.argmax.html">최댓값 위치</a></li>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.stack.html">NumPy의 stack</a> · <a href="https://numpy.org/doc/stable/reference/generated/numpy.concatenate.html">concatenate</a> · <a href="https://docs.pytorch.org/docs/2.15/generated/torch.nn.Embedding.html">PyTorch의 임베딩 표</a></li>
+<li>국내 중등부 출제 범위는 국내 공고에 연결된 기준을 따릅니다. 2026년 11월 20일 확인한 국내 출제 기준에는 IOAI 2026이라고 적혀 있습니다. <a href="https://kitpa.org/koai/2027">KOAI 2027 안내</a> · <a href="https://kitpa.org/koai/syllabus">국내 출제 기준</a> · <a href="https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf">국제 IOAI 2027 실라버스</a> · <a href="../../curriculum/student-plan.html">10주 학습 계획</a></li>
 </ul>
-<p>교안의 숫자와 문제는 자체 제작 자료입니다.</p>
-<p><a href="https://raw.githubusercontent.com/IOAI-official/IOAI-2026/e1963801aa4cf33a5a03520b39fa6620a7894c54/Individual-Contest/1_Find_the_Order/statement.md">IOAI 2026 Find the Order 원문</a>의 각 조각별 시간 순위는 여기서 배운 최댓값 위치→ID와 <strong>다른 출력 계약</strong>입니다. 이 교량은 그 역순위 변환이나 오디오 모델을 완수하지 않습니다.</p>
 </div>
 </div>
 </div>

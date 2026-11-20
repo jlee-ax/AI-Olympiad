@@ -1,67 +1,107 @@
-# 교사용 해설 · 1주차 축·선형 변환·ID 교량
+# Week 1 teacher guide · From aligned columns to a gallery ID
 
-학생용 파일은 week01_axes_linear_bridge.ipynb입니다. 독립 과제 전에 이 파일과 학생용 완성 예제를 가립니다. 학생이 작성한 이유·코드·받은 도움을 살펴본 뒤 공개합니다. 이 해설은 정답 예시이며 실제 학생 답안이나 성취 기록이 아닙니다.
+The bridge is a return visit for a student who can already read one record and its ID. The choice in sections 1–3 is which inner dimension has the same meaning in two arrays. The choice in section 5 is which information a score should preserve. Use the relevant exercise in section 6 to see whether the student can make that choice on new data. [Student notebook](week01_axes_linear_bridge.ipynb)
 
-## 편성 및 우선순위
+## Where to enter and when to return
 
-기존 120분은 이론 20분, 비코딩 20분, Python 20분, CSV 40분, NumPy·Matplotlib 20분입니다. 이 보충으로 수업 시간을 늘리거나 마지막 블록에 모든 설명을 추가하지 않습니다. 자습의 배열 과제 A와 내적 E를 마친 뒤 이 자료의 1~3·5절과 필수 A·B를 우선 연결합니다. 기존 검색 B의 질문을 토큰 조회와 유효 위치 평균으로 만들고 원시 내적과 코사인을 비교합니다. lookup과 유효 평균은 이제 B의 필수 선수입니다. 4절의 stack·concatenate와 선택 C는 관련 후속 단원 전에 다뤄도 되는 선택 교량입니다. 공식 범위의 후속 필수 학습까지 선택이라는 뜻이 아닙니다.
+| Starting question | Route in a fresh kernel | Student evidence and exit |
+|---|---|---|
+| Which feature goes with each coefficient? | Start with section 1's first code cell and work through sections 1–3. Use 6A when a new example is needed. | Take one named result and its units through the student's calculation, including a changed column order. Return to [integrated section 3](week01_integrated.ipynb#week01-axes). |
+| Where could a query-by-gallery score table come from? | Start at section 5's first code cell and work through that section in order. Then reveal only 6B and its input. | Collect the two ordered ID lists, a joint candidate permutation and the response to the archive request. Return to [integrated section 6](week01_integrated.ipynb#week01-match). |
+| When does combining arrays preserve an identity? | Start at section 4's first code cell. Section 6C supplies its own data. | Check the meaning of one concatenated row and the unequal-batch example. Return to [integrated section 8](week01_integrated.ipynb#week01-check). |
 
-현재 계획의 1주차 필수 자습 5~7시간은 이전 범위의 추정치입니다. 중복 예제를 교사가 조정하더라도 그래프·새 CSV·함수·기존 필수 결과물은 생략하지 않습니다. 보충을 포함한 실제 시간과 가능성은 측정되지 않았으므로 부족하면 미완료·지원·필요한 시간과 범위를 기록하고 진도를 조정합니다. 시간 내 완료나 숙달을 판정하지 마세요.
+For a direct section 5 helper replay in a fresh kernel, run `3950021e` (NumPy and query/gallery data), `retrieval-norm-code` (row normalization and cosine), `d81386f3` (lookup data) and `sequence-mean-code` (masked mean). Section 6A's `ec433d3b` and section 6B's `07c93362` are self-contained data cells that import NumPy. They allow a fresh attempt with the worked helpers closed. Keep the worked examples and this key closed while the student makes the first predictions. Read the student's explanation, code, changed input and any help received before attributing a result to independent work.
 
-## 필수 A 해설
+The registered middle-school Week 1 plan has a 120-minute class and an earlier estimate of 5–7 hours of required independent work. The integrated route already includes the Python diagnosis, written work, array practice, actual CSV and plotting tasks. Credit a student’s existing evidence once. Choose a bridge question within the applicable practice or support route. Time spent, amount of help and transfer to an unaided examination have yet to be observed. [Week 1 plan](../../curriculum/student-plan.html#week-1) · [Integrated guide](week01_integrated_teacher.md)
 
-- X_new는 (3, 2): 학생 × 입력 특성(a,b), W_new는 (2, 2): 입력 특성 × 출력 규칙, 결과는 (3, 2): 학생 × 출력 규칙입니다.
-- X_new @ W_new는 [[6,12],[5,3],[3,9]]. 둘째 행의 첫 값은 2×2+1×1=5입니다. X_new[:2] * W_new는 [[2,0],[2,3]]; X_new[:2] @ W_new는 [[6,12],[5,3]]입니다. 둘 다 (2,2)지만 같은 위치끼리 곱하는지 행·열 내적을 구하는지가 다릅니다.
-- X_new @ bad_W는 (3,2) @ (3,2)이므로 가운데 2와 3이 달라 불가능합니다. X_new[:, ::-1] @ W_new는 크기가 맞아도 a,b 위치가 바뀐 배열에 원래 가중치를 곱합니다. 첫 행 첫 값은 정상 1×2+4×1=6, 뒤집은 값은 4×2+1×1=9입니다. 의미는 shape만으로 확인할 수 없습니다.
+## Sections 1–3 · What one matrix entry counts
 
-교사용 확인 예:
+The photography rule supplies the coefficients. A small leaf is photographed on one side, a large leaf on both sides. In P24's record `[1,3]`, multiply leaves by photos per leaf to obtain photos. The third column of W gives `1×1 + 3×2 = 7` photos. The columns of `X @ W` are small-leaf count, large-leaf count and photos. Its rows are `[2,1,4]`, `[1,3,7]` and `[3,2,7]` in P11, P24, P38 order. The first two output columns count leaves and the third counts photos. A row sum across all three has no requested physical interpretation.
 
-    Y_new = X_new @ W_new
-    print(Y_new.shape, Y_new)
-    print(X_new[:2] * W_new)
-    print(X_new[:2] @ W_new)
-    print((X_new[:, ::-1] @ W_new)[0, 0])
+If a student says only that the inner dimensions match, label one shared leaf type on both tables. In `(n,d) @ (d,m)`, one multiplication counts the contribution of feature k to output j on row i. Summing across the d aligned features leaves n objects and m requested outputs. In `W @ X`, output categories happen to be as numerous as pots, so NumPy can perform the operation. Reassigning the first pot to the first output category has no basis in the recording rule. `X @ X` fails the size check as well.
 
-## 검색의 원리와 필수 B 해설
+The identity-matrix example makes a particularly short diagnostic. With A=`[[2,1],[1,3]]`, the two diagonal entries are 2 and 3 under both operations. At `[1,0]`, the elementwise product gives 0 and the requested small-leaf count under matrix multiplication is 1. Ask the student to pick a cell whose value can disprove the proposed operation. [NumPy matrix multiplication](https://numpy.org/doc/stable/reference/generated/numpy.matmul.html)
 
-원시 내적, 코사인 유사도, 제곱거리는 서로 다른 질문입니다. 명세가 원시 내적의 최댓값을 요구하면 그 결과가 유효합니다. 합성 검색의 첫 질문 [1,0]에서 후보 42=[3,4], 19=[2,0], 35=[1,0.5]의 원시 내적은 3,2,1이므로 42가 최대입니다. 길이는 각각 5,2,√5/2이고 코사인은 3/5,1,2/√5이므로 19가 최대입니다. 해당 질문에서 세 후보까지 제곱거리는 20,1,0.25로 35가 최소입니다. 본문의 가까운 중심 분류에 쓰인 것은 마지막처럼 **제곱거리 최소**이며, 코사인이나 내적 최댓값과 같다고 가정하지 않습니다.
+## Exercise A · From the order sheet to the packing quantities
 
-정규화는 (n,d)의 각 행을 그 행의 L2 길이로 나눕니다. 길이 (n,1)을 사용해 행마다 올바른 분모가 broadcast되며 질의 (q,d), 후보 (g,d)에서 코사인 점수는 (q,g)입니다. 실제 교안 함수 normalize_rows와 cosine_scores는 비어 있지 않은 유한 2차원 배열을 받고 0벡터 및 계산할 수 없는 길이를 거부합니다. 벡터의 양수 배율은 코사인을 보존하고 한 벡터의 음수 배율은 부호를 뒤집습니다. 2주 열별 훈련 통계 표준화와는 축·목적이 다릅니다. 이 합성 검색의 정책을 화분 분류에 적용하지 않습니다. P01의 [0,0]은 분류 입력으로 유효합니다. 일부 API의 zero/epsilon 관례를 수학적으로 정의된 코사인이나 길이 1로 부르지 않습니다.
+Rows of `X_new` are classes, columns are kits. For each kit, look up its recipe by name, then its per-kit quantities in the packing slip’s requested item order. With order columns `["기본","확장"]` and output columns `["유리판","시험관"]` the resulting W is `[[2,0],[1,3]]`. The product has shape `(3,2)`. Its named rows are
 
-동률일 때 이 예의 np.argmax는 **현재 후보 순서의 첫 위치**를 고릅니다. 그래서 동률인 후보와 ID를 함께 재배열하면 선택 ID가 바뀔 수 있으며, 동률 규칙이 다른 명세라면 그것을 따릅니다. 유일한 최댓값만 공동 재배열 후에도 같은 ID를 요구합니다. 수치 규모가 극단적인 모든 유한 입력의 정확성은 이 입문 예제에서 보장하지 않습니다.
+| Class | Glass plates | Test tubes |
+|---|---:|---:|
+| 솔반 | 6 | 12 |
+| 별반 | 5 | 3 |
+| 달반 | 3 | 9 |
 
-- 필수 B의 새 표는 V=5, d=2이고 두 질문의 토큰 ID는 (2,4)입니다. 조회 벡터는 (2,4,2), 유효 mask는 (2,4), broadcast용 mask는 (2,4,1)입니다. 첫 질문은 ID [1,1,2]의 합 [6,9]를 3으로, 둘째는 ID [3,4]의 합 [6,4]를 2로 나눠 Q=[[2,3],[3,2]]입니다. ID1은 두 번 세고, 실제 ID4의 영벡터는 개수에 포함합니다. PAD ID0의 [7,11]은 빼야 합니다.
-- 원시 내적 점수표는 [[7,9,5,4],[8,6,5,6]], shape (2,4), 최댓값 위치 [1,0], 후보 ID [8,90]입니다.
-- 두 질문의 길이는 √13이고 후보 길이는 [√5,3,√2,2]입니다. 코사인 첫 행은 [7/√65,3/√13,5/√26,2/√13], 둘째 행은 [8/√65,2/√13,5/√26,3/√13]입니다. 최댓값 위치는 [2,0], 후보 ID는 [53,90]입니다.
-- 후보와 ID를 함께 [2,0,3,1]로 옮기면 ID 순서 [53,90,17,8], 코사인 최댓값의 새 위치 [0,1], 실제 ID [53,90]입니다. 후보만 옮기고 기존 ID를 붙이면 잘못된 ID는 [90,8]입니다.
-- PAD 행을 0으로 바꾸고 잘못 네 저장 위치로 나누면 [[1.5,2.25],[1.5,1]]입니다. 각 행이 옳은 Q의 양의 배수이므로 코사인 점수와 최종 ID가 우연히 같습니다. 유효 개수·합·평균의 각 좌표를 직접 확인해야 합니다. 원래 비영 PAD를 포함해 네 칸으로 나누면 [[3.25,5],[5,6.5]]이고 코사인 ID는 [53,53]으로 달라집니다.
-- 앞의 함수나 직접 구현 등 명세에 맞는 여러 해법을 허용합니다. 실제 학생의 코드·이유·도움을 확인하고 함수 실행만으로 성취를 기록하지 않습니다.
+For 별반, `2 basic kits × 2 plates/basic kit + 1 extension kit × 1 plate/extension kit = 5 plates`. Reversing the named order columns makes the first row `[4,1]` and the two matching coefficient rows `[[1,3],[2,0]]`. The slip still says 6 plates and 12 tubes. Reversing just the values and leaving the old names gives 9 plates and 3 tubes for 솔반. Both products have shape `(3,2)`. Reordering the recipe records themselves also preserves the answer. An ordered lookup for an unfamiliar kit needs its item quantities, including any explicit measured zero. The task gives one recipe per kit and one order row per class.
 
-교사용 확인 예:
+The earlier square-array check remains available with these numbers. `X_new[:2] * W` yields `[[2,0],[2,3]]`, whereas the two packing rows are `[[6,12],[5,3]]`. A coefficient array with three rows cannot multiply this two-kit order matrix. Ask which object or unit is lost in the first error before discussing shape in the second. A loop that matches the labels and sums item quantities earns the same mathematical credit as matrix multiplication.
 
-    vectors, valid, sums, counts, query_new = lookup_and_masked_mean(
-        token_table_new, query_tokens_new)
-    raw = query_new @ gallery_new.T
-    cosine = cosine_scores(query_new, gallery_new)
-    order = np.array([2, 0, 3, 1])
-    positions = np.argmax(cosine, axis=1)
-    positions2 = np.argmax(cosine_scores(query_new, gallery_new[order]), axis=1)
-    print(valid, sums, counts, query_new)
-    print(raw, cosine, g_ids_new[positions])
-    print(positions2, g_ids_new[order][positions2], g_ids_new[positions2])
+```python
+def shipping_manifest(class_ids, order_columns, orders, recipe_rows, item_columns):
+    recipe = dict(recipe_rows)
+    coefficients = np.array([
+        [recipe[kit][item] for item in item_columns]
+        for kit in order_columns
+    ])
+    packed = np.asarray(orders) @ coefficients
+    return [(class_id, *row.tolist()) for class_id, row in zip(class_ids, packed)]
+```
 
-## 선택 C 해설과 피드백
+## Section 5 · Scores, positions and stored representations
 
-두 입력 (2,2)를 stack axis 0하면 (2,2,2)인 묶음×후보×특성, 행 연결은 (4,2) 후보×특성, 열 연결은 (2,4)인 기존 행×이어진 값입니다. 선택 C의 열 연결은 서로 다른 후보 90과 53, 8과 17을 위치상 인위적으로 짝지으므로 한 후보의 특성을 늘렸다고 해석하지 않습니다. 같은 대상의 특성 확장으로 해석하려면 두 입력에서 각 행의 ID와 순서 및 열의 뜻이 맞아야 합니다. (1,2)와 (3,2)는 shape가 같지 않아 stack이 실패하지만 두 입력의 열 길이가 같아 행 연결은 가능하고 결과는 (4,2)입니다.
+In the first worked query `[1,0]`, gallery items 42, 19 and 35 have raw dots 3, 2 and 1. Their cosines are `3/5`, 1 and `2/√5`. Their squared distances from the query are 20, 1 and 0.25. The fourth candidate, ID 7, has raw dot 0, cosine 0 and squared distance 5. The winning IDs across the entire gallery are therefore 42 by raw dot, 19 by direction and 35 by distance. For the two worked queries, first-maximum cosine positions `[2,1]` map to `[19,7]`. Jointly reordering candidates and IDs to `[19,42,35,7]` produces positions `[0,3]` and the same IDs. The stale header would attach `[42,35]`. `argmax` on the complete score table without an axis instead selects a single flattened position. [NumPy argmax](https://numpy.org/doc/stable/reference/generated/numpy.argmax.html)
 
-완성 lookup의 표는 (6,3), ID는 (2,4), 결과는 (2,4,3)입니다. PAD ID0의 벡터 [8,8,8]은 값이 0이 아니어도 제외하고, 실제 ID5의 [0,0,0]은 개수에 포함합니다. 두 문장의 유효 개수 [2,3], 유효 합 [[2,2,2],[4,4,0]], 평균 [[1,1,1],[4/3,4/3,0]]입니다. 순서를 바꾸면 lookup의 각 자리는 달라지지만 고정 벡터의 평균은 같아, 이 표현만으로 순서를 복원할 수 없습니다. 이는 attention이나 학습된 텍스트 모델의 전반적 성질이 아닙니다.
+A length denominator has shape `(number of rows,1)`. One positive scalar per whole row preserves its direction. Negating one row changes the sign of all its cosines. An arbitrary change of scale for each feature can change direction, and a columnwise denominator can broadcast successfully while scaling the wrong objects. The worked cosine helper rejects zero-length rows, nonfinite coordinates and unsupported array types. The arithmetic is designed for small finite real data whose norms can be computed in the running floating-point format. A measured zero in the plant classification exercise has its ordinary meaning. In the worked tie fixture the first current maximum wins, as NumPy specifies. Section 6B introduces its own ID-based tie rule. [NumPy norm and keepdims](https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html)
 
-이 합성 명세의 lookup_and_masked_mean은 0을 PAD로 정하고, 범위 밖·음수·비정수 ID를 조회 전에 거부합니다. all-PAD 문장은 평균이 없으므로 오류입니다. 유효 ID5 하나의 평균은 영벡터로 정의되지만, 이를 코사인 검색에 넣는 것은 방향이 없어 별도 오류가 됩니다. 다른 API의 PAD 규약과 빈 입력 처리는 각 명세를 따릅니다.
+The section 5 token array has shapes `(V,d)=(6,3)`, `(B,T)=(2,4)` and lookup shape `(2,4,3)`. Token ID 0 supplies the PAD convention even though the PAD table row is `[8,8,8]`. ID 5 supplies an actual zero vector and counts as a real token. The counts are `[2,3]`, sums `[[2,2,2],[4,4,0]]` and means `[[1,1,1],[4/3,4/3,0]]`. The locationwise lookup changes if token order changes, while these fixed-vector means survive the reordering. In `d81386f3`, the external ID 41 requires an explicit map to the table's row 3. A negative NumPy index can silently select the last row, so the helper validates IDs before indexing. Empty token arrays, out-of-range and noninteger IDs, and any all-PAD query are rejected by this classroom contract. [PyTorch embedding table and row indices](https://docs.pytorch.org/docs/2.15/generated/torch.nn.Embedding.html)
 
-한 점수에 포함된 두 곱, 곱해 더하는 축과 남는 축, 원소별 곱과 내적의 차이, 결과 위치→ID 대응, 순서 변경 시 쌍으로 이동하는 이유를 각각 학생 말과 코드로 확인합니다. 틀리면 결과 한 칸의 행과 열을 표시하거나 ID를 적은 카드를 옮기도록 돕고 다른 입력에서 다시 묻습니다. 점수 하나나 실행 성공만으로 숙달했다고 표시하지 않습니다.
+## Exercise B · What each retrieval request measures
 
-## 자료와 한계
+Here `(B,T,d)=(2,4,2)` and the five table rows include PAD. The mask has shape `(2,4)`, the broadcast mask `(2,4,1)`, the sums and means `(2,2)` and the counts `(2,1)`. For query 61, real IDs `[1,1,2]` give sum `[6,9]` and mean `[2,3]`. For query 22, real IDs `[3,4]` give sum `[6,4]` and mean `[3,2]`. Count ID 4 despite its zero vector. The two query and gallery coordinate systems are shared in this exercise.
 
-교량은 [1주차 본 교안](week01_python_tables.ipynb)의 축·전치·벡터 내적에서 출발하여 3주차 가중합, 6주차 층별 shape, 7~9주차 인코더·검색, 10주차 낯선 입력·출력 명세 해석으로 연결하는 설계입니다. 10주차 전체 전범위, 모델 학습과 실제 이미지 매칭을 완성하지 않습니다.
+| Stored query | Raw dots in gallery order 90, 8, 53, 17 | Cosines in that order, to six places | Raw winner | Direction winner |
+|---|---|---|---:|---:|
+| 61 | 7, 9, 5, 4 | 0.868243, 0.832050, 0.980581, 0.554700 | 8 | 53 |
+| 22 | 8, 6, 5, 6 | 0.992278, 0.554700, 0.980581, 0.832050 | 90 | 90 |
 
-원문 및 적용 근거: [조사 기록](../../reviews/discovery-loop-20261111/source-research.md), [IOAI 2025 Restroom 공식 문제·baseline](https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Restroom/Restroom.ipynb), [KOAI 2027 안내](https://kitpa.org/koai/2027), [국내 실라버스](https://kitpa.org/koai/syllabus), [IOAI 2027 실라버스](https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf). 조사 당시 국내 연결 실라버스는 IOAI 2026 기준으로 표기되었고 국제 2027 항목의 국내 적용성은 별도 확인 대상입니다. 실제 Restroom은 이미지 인코더·정규화와 같은 장소·반대 성별이라는 별도 선택 조건, 실제 제출 파일 계약을 사용하므로 합성 코사인 최대화가 대회의 정답이라고 일반화하지 않습니다. 고정 lookup과 산술 평균은 attention·실제 언어모델 학습이 아닙니다. Potato의 공개 벡터·비공개 심판과 Find the Order의 조각별 역순위도 이 교량이 완수하지 않은 별도 과제입니다. 2026-11-11 연구 기록은 제한된 표본이며 학습 효과의 증거가 아닙니다.
+The axes on each `(2,4)` score table are stored query rows and current candidate positions. For query 61, column 1 is ID 8, whose long vertical vector contributes 9 in the raw score. Column 2 is ID 53, whose more closely aligned direction wins on the normalized calculation. The integer to submit is the candidate ID. The independent request names query 22 before 61, so the returned direction list is **`[90,53]`** and the strength list is **`[90,8]`**.
+
+Appending ID 6 with `[0.5,0.5]` leaves each raw dot for the new item at 2.5. It exactly shares the direction of ID 53. After six-decimal score recording, the smaller ID wins their tie for query 61. The new direction and strength outputs are **`[90,6]`** and **`[90,8]`**. Reversing the complete five-row gallery preserves both answers. A first-position tie break chooses 53 before the reversal, which exposes a direct copy of the worked rule. Section 6B names the two numeric score functions from section 5 and asks the student to match them to the requests. Use the cosine value for direction and the raw dot product for strength before rounding. Using negative angle would give an equivalent ordering on unrounded nonzero vectors, but six-place recording can produce different ties.
+
+```python
+def match_requests(table, token_ids, query_ids, gallery, gallery_ids, requested_ids, rule):
+    _, _, _, _, queries = lookup_and_masked_mean(table, token_ids)
+    gallery = np.asarray(gallery)
+    gallery_ids = np.asarray(gallery_ids)
+    if rule == "direction":
+        scores = cosine_scores(queries, gallery)
+    elif rule == "strength":
+        scores = queries @ gallery.T
+    else:
+        raise ValueError("unknown search request")
+
+    recorded = np.round(scores, 6)
+    selected = {}
+    for query_id, row in zip(query_ids, recorded):
+        tied_ids = gallery_ids[row == row.max()]
+        selected[query_id] = int(tied_ids.min())
+    return [selected[query_id] for query_id in requested_ids]
+```
+
+These two teacher references use the data contract in the handout. The ID lists are unique names of the supplied rows, and the requested queries and items exist. The score function reuses the student's worked section 5 helpers. A named-table or scalar-loop solution is equally admissible. The acceptance evidence is the named result under each rule, a sum and denominator trace, and the response to the changed data.
+
+If the student checks only a winner, compare the means. Zeroing the PAD *vectors* but dividing by all four slots gives `[[1.5,2.25],[1.5,1]]`. Each row is a positive multiple of its correct mean, so cosine cannot expose the denominator error. Using the actual nonzero PAD and dividing by four gives `[[3.25,5],[5,6.5]]`, which would choose ID 53 for both original queries by direction. Looking at the intermediate counts and the actual coordinates distinguishes the three calculations. For the original gallery a single real ID 4 has count 1, sum and mean `[0,0]`. Strength yields four exact zeros and selects ID 8. Direction has no defined cosine. An all-PAD input has count 0 and neither request has a mean to compare. A teacher can check these two rows in separate calls to a helper that rejects an entire invalid batch.
+
+For the archive request, `[1,2,0,0]` and `[2,1,2,1]` both average to `[2,4.5]`. The first real tokens are 1 and 2 and the valid lengths are 2 and 4. A lookup by the mean would receive identical input for either record and would have to return two different correct answers. Saving first real ID and count is sufficient for this request. Saving the sequence and the PAD convention would also suffice. If a student supplies a pair that changes only the length or only the first token, ask whether one can construct a pair that defeats both requested fields. Future contextual representations may include position or neighboring tokens in the vectors before any pooling.
+
+## Exercise C and the final sign question
+
+Stacking the two input arrays of shape `(2,2)` produces `(2,2,2)` with axes input batch, within-batch position, feature. Row concatenation produces `(4,2)` with four candidate rows. Column concatenation produces `(2,4)`. Its first row joins ID 90's values to ID 53's values, so interpreting it as four features of a single candidate would misidentify two coordinates. With one and three rows, stack fails, row concatenation produces `(4,2)`, and column concatenation cannot match the row counts. A feature join for the same candidate would need matching IDs and a shared row order. [NumPy stack](https://numpy.org/doc/stable/reference/generated/numpy.stack.html) · [NumPy concatenate](https://numpy.org/doc/stable/reference/generated/numpy.concatenate.html)
+
+In the small sign example, ID 73 is a male sign at the correct location, ID 18 is a female sign at a different location, and **40** satisfies both conditions. No numeric threshold or choice of the top two enforces either condition. The notes supply facts about locations and the type of sign that a table of numerical scores can discard. The international *Restroom Icon Matching* statement requires the opposite sign from the same restroom, independent query/gallery numbering, a trained model and an output ID per query. Its baseline encodes images, concatenates batches, normalizes each embedding, forms a matrix of pair scores, then uses the second of its ranked candidates and a one-based numeric filename convention. Those last choices are properties of that baseline and file layout. The actual statement defines correctness by the true partner. [IOAI 2025 Restroom, §§2–6 and baseline](https://github.com/IOAI-official/IOAI-2025/blob/39558e9a639d170bd92de91958fcdc915f670463/Individual-Contest/Restroom/Restroom.ipynb)
+
+## Course and source boundaries
+
+The national announcement checked on 2026-11-20 includes written and coding examinations across sections 1–4 for the middle-school division. Its linked domestic syllabus still carries the IOAI 2026 label. Section 1-1 includes NumPy/pandas and array manipulation, and the broader syllabus includes preprocessing, embeddings and pooling. Week 1 uses small supplied vectors to practise named axes, representations and one returned ID. Image encoding, training, and full text or audio models have their own later course placements. The separate international 2027 syllabus establishes its own scope. [National 2027 announcement](https://kitpa.org/koai/2027) · [Linked domestic syllabus](https://kitpa.org/koai/syllabus) · [International 2027 syllabus](https://ioai-official.org/wp-content/uploads/2026/11/IOAI_Syllabus.pdf) · [Registered Week 1 decision](../../curriculum/course-harness.json)
+
+*Potato* supplies one public embedding row per vocabulary word and uses a different private representation for the interactive judge. These exercises supply their own fixed numbers. *Find the Order* asks for the chronological rank of each shuffled audio chunk indexed by that chunk's ID. This motivates retaining order when the output depends on it. The public task uses audio and requires a full permutation. Locally checking the arithmetic, representation collision and file-ID conventions establishes those prerequisites on particular inputs. Actual performance on either contest problem and student outcomes require separate evidence. [IOAI 2026 Potato dataset](https://github.com/IOAI-official/IOAI-2026/blob/e1963801aa4cf33a5a03520b39fa6620a7894c54/Individual-Contest/3_Potato/statement.md#dataset) · [IOAI 2026 Find the Order output](https://github.com/IOAI-official/IOAI-2026/blob/e1963801aa4cf33a5a03520b39fa6620a7894c54/Individual-Contest/1_Find_the_Order/statement.md#output) · [Earlier retrieval evidence](../../reviews/week01-retrieval-20261111/source-prioritization.md) · [Earlier sequence evidence](../../reviews/week01-sequence-20261111/source-prioritization.md)

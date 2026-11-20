@@ -1,21 +1,40 @@
 {
-  "checked_at_utc": "2026-11-11T09:13:53.496191+00:00",
-  "validation_script_sha256": "54322e12794c4370604a9eee5505c4d19b18d029a59114eed1616986cb3765c5",
+  "checked_at_utc": "2026-11-20T12:06:36.460109+00:00",
+  "validation_script_sha256": "e7a1535b19baef1ec75f5a555a21ca970be6d0df65bd8e7fb97f6237d0fc0e54",
   "source_sha256": {
-    "week01_problem_pipeline.ipynb": "f64a54c8f8eeb995fa8b85fc565836c5e66a97249f97177644cb15ad8f88997a",
-    "week01_problem_pipeline.html": "28308deb024292977cd22a2931801ff242f010e5b6e8b4de01fa4e01e3a4bfd3",
-    "week01_problem_pipeline_teacher.md": "646c9e4bbd6b631864f2e802b3cfb9f38da39ee6b7db79cef6a431ee6a7eb589"
+    "week01_problem_pipeline.ipynb": "ef54282eaec51bccf02528c2b2b418f92d56a1d09934baa7d386a29be408d3e3",
+    "week01_problem_pipeline.html": "d029135c46681633ba71fd6798fa18d778561f5eecae1c5ef8f2ede0ec23483d",
+    "week01_problem_pipeline_teacher.md": "de956f036232addf8d2529c0fd342ea90f04876f428797e6bf2479a6051fa121",
+    "data/pipeline_device_validation.csv": "9939afdd0dd2d06f4ea45d564632e4b3a0740c7bd985e1d73165def043cc36bf",
+    "validate_week01_problem_pipeline.py": "e7a1535b19baef1ec75f5a555a21ca970be6d0df65bd8e7fb97f6237d0fc0e54"
+  },
+  "canonical_renderer_sha256": "14cd94e4143f4ecc36ecbdd488d6d32a0413312bd4012149f292d2fd7c09b70d",
+  "render_validation": {
+    "notebook": "week01_problem_pipeline",
+    "authored_cells_sha256": "8640298033591f3e5359fd41c9c4770c39684d887dddf56a6d1aa7488e19c55f",
+    "code_cells": 16,
+    "figures": 0,
+    "output_tables": 6,
+    "math": 0,
+    "attached_diagrams": 0,
+    "local_resources": [
+      "../week02/week02_prediction_evaluation.ipynb",
+      "data/pipeline_device_validation.csv",
+      "week01_integrated.html",
+      "week01_problem_pipeline.ipynb"
+    ]
   },
   "python": "3.12.14",
-  "numpy": "2.5.4",
-  "pandas": "3.1.1",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
   "scikit_learn": "1.8.0",
   "execution": "fresh InProcessKernelManager; all code cells sequentially; saved outputs compared",
-  "total_cells": 27,
-  "code_cells_executed": 12,
+  "total_cells": 34,
+  "code_cells_executed": 16,
   "normal_and_error_checks": [
     "fresh_inprocess_sequential_execution_and_saved_outputs",
     "student_answer_cell_is_empty",
+    "section_4_ordering_works_with_an_empty_namespace",
     "known_targets_and_train_only_imputer_and_centroids",
     "train_feature_and_target_perturbations_change_fit_and_prediction",
     "unknown_training_row_not_relabelled_or_fitted_in_this_demo",
@@ -27,7 +46,9 @@
     "same_length_order_header_missing_row_bad_label_extra_column_rejected",
     "independent_new_schema_mean_and_optional_centroid_answer",
     "independent_alternative_tree_is_valid_and_not_forced_to_centroid",
-    "label_mapping_student_scope_and_teacher_workload_boundary",
+    "blank_learner_answer_and_feature_only_device_inputs",
+    "first_predictions_before_key_id_order_freezing_and_invalid_tables",
+    "real_teacher_csv_changed_order_changed_inputs_and_reversed_predictions",
     "source_files_unchanged_by_validation"
   ],
   "observed_example": {
@@ -76,7 +97,7 @@
     "finite synthetic examples; no official Antique data or submission executed",
     "student independent work, actual learning and workload unobserved",
     "ordinary socket Jupyter and Colab not verified",
-    "HTML regenerated and compared; full browser visual rendering not inspected",
+    "Canonical HTML compared; browser and figure checks have a separate delivery receipt",
     "a CSV without IDs cannot by itself prove the ID-to-prediction mapping is correct"
   ]
 }

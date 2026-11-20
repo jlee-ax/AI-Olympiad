@@ -1,15 +1,40 @@
 {
-  "checked_at_utc": "2026-11-12T03:11:37.094871+00:00",
+  "canonical_renderer_sha256": "14cd94e4143f4ecc36ecbdd488d6d32a0413312bd4012149f292d2fd7c09b70d",
+  "checked_at_utc": "2026-11-20T12:06:43.035922+00:00",
   "notebook": "week01_python_tables.ipynb",
-  "revision": "week1-independent-transfer-v2",
+  "revision": "week01-whole-20261120",
+  "historical_tables_revision": "week1-independent-transfer-v2",
+  "source_sha256": {
+    "week01_python_tables.ipynb": "424835eaff778235f086f3f79e6a8c0d92b43f0cf1a6add7e094b8fd81d379c0",
+    "teacher-notes.txt": "3e138e3dd00c5f97a166a4a0e51965e9b542d067b4d144bf9109ab21765f8f3b",
+    "week01_python_tables.html": "c873afd32820ce74a2bb5f6736d8eb1ffcb372e616a60776cd3fb06f59e1a9d2",
+    "data/week1_plants.csv": "fece0473e50b097afa7c2b3e2647c9a6e623bd3d8e009e6ef620151887227639",
+    "data/week1_plants_new.csv": "869db97ef7c5f6ccf1020bc435fe831f180e9b9548d722c41c91b63af44d7290",
+    "validate_week01.py": "3de21d0034e105b39457d36011b2b803b7330f62977db492dfaf0aca7de56360"
+  },
+  "render_validation": {
+    "notebook": "week01_python_tables",
+    "authored_cells_sha256": "92733ac5d4cde048110c898b311a608af697a56d743f4d8ec497ce578e5f5aa3",
+    "code_cells": 33,
+    "figures": 5,
+    "output_tables": 12,
+    "math": 107,
+    "attached_diagrams": 2,
+    "local_resources": [
+      "week01_integrated.html",
+      "week01_python_tables.ipynb"
+    ]
+  },
+  "input_files_unchanged": true,
+  "distinct_interpreters_for_physical_and_fallback_runs": true,
   "skills_reference_commit": "c3579c47c7c64ac7d0919410e665a917db4cdeab",
   "nbformat_validation": "passed",
   "top_to_bottom_execution": "passed",
   "execution_method": "fresh IPython InProcessKernelManager per run",
-  "execution_seconds": 4.373,
-  "cells": 96,
-  "code_cells": 31,
-  "executed_code_cells": 31,
+  "execution_seconds": 4.213,
+  "cells": 98,
+  "code_cells": 33,
+  "executed_code_cells": 33,
   "error_outputs": 0,
   "actual_function_and_state_assertions": "passed",
   "teacher_modification_key_tests": "passed",
@@ -40,6 +65,8 @@
   ],
   "revised_homework_time": "not_estimated_or_observed",
   "standalone_without_csv_files": "passed",
+  "changed_csv_rejected_without_rewrite": true,
+  "allocation_scope": "The class blocks and baseline homework range come from the retained historical tables plan.",
   "visual_inspection": "not_performed_by_script",
   "browser_preview": "not_performed_by_script",
   "packages": {
@@ -52,10 +79,10 @@
     "nbformat": "5.11.1",
     "ipykernel": "7.4.0"
   },
-  "notebook_sha256": "b239479f4572a01f0e2848043078b45f3cda6f60e02369da091a4f4a63651880",
+  "notebook_sha256": "424835eaff778235f086f3f79e6a8c0d92b43f0cf1a6add7e094b8fd81d379c0",
   "persisted_notebook": "unchanged; executed copy held in memory",
-  "html_sha256": "3a0588710c0b5ec8d6649a31d41eb7a000fc0af2855aefcaac2a89fca972f546",
-  "source_attachment_projection_sha256": "36d7f98bab9719245102e9a2f770919758411cb71f0b8ddd656fb5df3d022475",
+  "html_sha256": "c873afd32820ce74a2bb5f6736d8eb1ffcb372e616a60776cd3fb06f59e1a9d2",
+  "source_attachment_projection_sha256": "64bbcda5f1c3e631cece0108ff2b73138ea0f0c35d807e1843a0be2d50e1c709",
   "source_projection_unchanged_by_execution": true,
   "schedules_created": false
 }

@@ -1,4 +1,105 @@
 {
+  "current_release": {
+    "format_version": 1,
+    "revision": "week01-whole-20261120",
+    "entry": "integrated",
+    "members": {
+      "integrated": {
+        "student": "lessons/week01/week01_integrated.ipynb",
+        "teacher": "lessons/week01/week01_integrated_teacher.md",
+        "html": "lessons/week01/week01_integrated.html",
+        "data": [
+          "lessons/week01/week01_integrated_validation_labels.csv",
+          "lessons/week01/data/week1_plants.csv"
+        ],
+        "assessments": [
+          "reviews/week01-main-iteration-20261120/check_transfer.py",
+          "reviews/week01-whole-20261120/check_routes.py"
+        ]
+      },
+      "tables": {
+        "student": "lessons/week01/week01_python_tables.ipynb",
+        "teacher": "lessons/week01/teacher-notes.txt",
+        "html": "lessons/week01/week01_python_tables.html",
+        "data": [
+          "lessons/week01/data/week1_plants.csv",
+          "lessons/week01/data/week1_plants_new.csv"
+        ],
+        "assessments": [
+          "lessons/week01/validate_week01.py",
+          "reviews/week01-whole-20261120/test_tables.py"
+        ]
+      },
+      "axes": {
+        "student": "lessons/week01/week01_axes_linear_bridge.ipynb",
+        "teacher": "lessons/week01/week01_axes_linear_bridge_teacher.md",
+        "html": "lessons/week01/week01_axes_linear_bridge.html",
+        "data": [],
+        "assessments": [
+          "reviews/week01-whole-20261120/test_axes.py"
+        ]
+      },
+      "pipeline": {
+        "student": "lessons/week01/week01_problem_pipeline.ipynb",
+        "teacher": "lessons/week01/week01_problem_pipeline_teacher.md",
+        "html": "lessons/week01/week01_problem_pipeline.html",
+        "data": [
+          "lessons/week01/data/pipeline_device_validation.csv"
+        ],
+        "assessments": [
+          "lessons/week01/validate_week01_problem_pipeline.py"
+        ]
+      }
+    },
+    "shared_assessments": [
+      "lessons/week01/validate_bundle.py",
+      "tools/check_week01_render.py",
+      "reviews/week01-whole-20261120/test_bundle.py",
+      "reviews/week01-whole-20261120/test_delivery.py",
+      ".github/workflows/week01-lesson.yml"
+    ],
+    "files": {
+      ".github/workflows/week01-lesson.yml": "4813a0d3bbefec2f79f63da401c053887413736b9bfacfe0ca85dfd014b88c80",
+      "lessons/week01/data/pipeline_device_validation.csv": "9939afdd0dd2d06f4ea45d564632e4b3a0740c7bd985e1d73165def043cc36bf",
+      "lessons/week01/data/week1_plants.csv": "fece0473e50b097afa7c2b3e2647c9a6e623bd3d8e009e6ef620151887227639",
+      "lessons/week01/data/week1_plants_new.csv": "869db97ef7c5f6ccf1020bc435fe831f180e9b9548d722c41c91b63af44d7290",
+      "lessons/week01/teacher-notes.txt": "3e138e3dd00c5f97a166a4a0e51965e9b542d067b4d144bf9109ab21765f8f3b",
+      "lessons/week01/validate_bundle.py": "5c5e2a0d5f5f43bc1985e2ef7ab7259ee2236573126233d5fb57a065c58241d5",
+      "lessons/week01/validate_week01.py": "3de21d0034e105b39457d36011b2b803b7330f62977db492dfaf0aca7de56360",
+      "lessons/week01/validate_week01_problem_pipeline.py": "e7a1535b19baef1ec75f5a555a21ca970be6d0df65bd8e7fb97f6237d0fc0e54",
+      "lessons/week01/week01_axes_linear_bridge.html": "3f8a815b8b2b4de09037574f2352dbd2a77a1960c259041a5e28cb48d8c69aa7",
+      "lessons/week01/week01_axes_linear_bridge.ipynb": "dc476a122fc1eb6c4902b95583a699c69a8cb92bf39055a5b1825905a3fea321",
+      "lessons/week01/week01_axes_linear_bridge_teacher.md": "54d13d015511632475cdf8067f44e42faf4b9af966c6bfbd2cbbaf9773117b4b",
+      "lessons/week01/week01_integrated.html": "e0ae9aac8ec025a90f1a7613db1d6163311029928c67b2ed489703707c2836ac",
+      "lessons/week01/week01_integrated.ipynb": "f11eb1463bef51367c9faacd176cd5eec3a987455391cc404817bf0cc785f167",
+      "lessons/week01/week01_integrated_teacher.md": "4d6e795f019dd67119c36f655b0c19586a29c5d7369246eaafaa3f70a3dfcdf6",
+      "lessons/week01/week01_integrated_validation_labels.csv": "eeda4512bdc920d3101c65fb8d594c9bc074c810bfea1d48f854ea3a8be3b6a6",
+      "lessons/week01/week01_problem_pipeline.html": "d029135c46681633ba71fd6798fa18d778561f5eecae1c5ef8f2ede0ec23483d",
+      "lessons/week01/week01_problem_pipeline.ipynb": "ef54282eaec51bccf02528c2b2b418f92d56a1d09934baa7d386a29be408d3e3",
+      "lessons/week01/week01_problem_pipeline_teacher.md": "de956f036232addf8d2529c0fd342ea90f04876f428797e6bf2479a6051fa121",
+      "lessons/week01/week01_python_tables.html": "c873afd32820ce74a2bb5f6736d8eb1ffcb372e616a60776cd3fb06f59e1a9d2",
+      "lessons/week01/week01_python_tables.ipynb": "424835eaff778235f086f3f79e6a8c0d92b43f0cf1a6add7e094b8fd81d379c0",
+      "reviews/week01-main-iteration-20261120/check_transfer.py": "058e25539d6dc16000e5013149b2e03075076a3dc993974ff639d6d986e091bf",
+      "reviews/week01-whole-20261120/check_routes.py": "7bd0a31b609ba090e83f0a0c9f3618c497ad17c236f6d8a66c0bb369ec2a947f",
+      "reviews/week01-whole-20261120/test_axes.py": "579b9661a85102645e877acc666b363985523c6b04e5c0abd6a94fa50b886f43",
+      "reviews/week01-whole-20261120/test_bundle.py": "0490502efbdf718ae92d868c2a0ff4ffa2749afa65e4eec0d0c135a50552cfb1",
+      "reviews/week01-whole-20261120/test_delivery.py": "851221fa02029c0acbdead412b8a66c20a1abc4fc624c59a8dd41389e1077c0e",
+      "reviews/week01-whole-20261120/test_tables.py": "9971c1f9a9073428f2f92672d77b72e450e7485720b7ca9bcc9882bb40c5c0dc",
+      "tools/check_week01_render.py": "14cd94e4143f4ecc36ecbdd488d6d32a0413312bd4012149f292d2fd7c09b70d"
+    },
+    "course_scope": {
+      "curriculum/student-plan.html#week-1": "8fa8c919a57abbf0215dc69c63b3045746ac670134246493a2e02b47ae803d17",
+      "curriculum/contract.json#week-1": "f0178c5a435cce0ff6efff8e6a3b997094ff2a577d6cd53c0ec459157c2bb5df"
+    },
+    "bundle_sha256": "ac0b3b2a7a8a997c2d20a61388dcecdf0191d4d7b5834d7644304106d2b4f5ff"
+  },
+  "lineage": {
+    "scope": "The other top-level fields document the earlier Python-tables revision. Its branch link, baseline hours and allocations describe that snapshot. The active entry is current_release.members.integrated.student.",
+    "commit": "80033e4e3c83114a408c6e701113a879c632394d",
+    "prior_manifest_sha256": "188028f489df650554bddbd21a08771aa809e6aa01c97e499eaad445ee7d877c",
+    "prior_tables_receipt_sha256": "13c5e81ae430b4ffdd4b238834e6cddc5426e9e57e58cc99e7d8254774aca84f",
+    "prior_pipeline_receipt_sha256": "b4c110a4537871496a83f7d3a2de3f0a08b2f8e0bff3436248f2d1fa7c33bfd9"
+  },
   "base_commit": "434fe5ad5d2300dba741c755bca8928177a2e098",
   "baseline_sha256": "96deb5e5e781bf39cc6bb5effe34d6d04a01ac65e13a3811c37f5a825714f7a9",
   "class_blocks": [

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="ko">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>1주차 보충 · 낯선 문제를 읽고 예측까지</title>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7292,458 +7292,10 @@ a.anchor-link {
 }
 </style>
 <!-- Load mathjax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+
 <!-- MathJax configuration -->
-<script type="text/x-mathjax-config">
-    init_mathjax = function() {
-        if (window.MathJax) {
-        // MathJax loaded
-            MathJax.Hub.Config({
-                TeX: {
-                    equationNumbers: {
-                    autoNumber: "AMS",
-                    useLabelIds: true
-                    }
-                },
-                tex2jax: {
-                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-                    processEscapes: true,
-                    processEnvironments: true
-                },
-                displayAlign: 'center',
-                messageStyle: 'none',
-                CommonHTML: {
-                    linebreaks: {
-                    automatic: true
-                    }
-                }
-            });
 
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        }
-    }
-    init_mathjax();
-    </script>
-<!-- End of mathjax configuration --><script type="module">
-  document.addEventListener("DOMContentLoaded", async () => {
-    const diagrams = document.querySelectorAll(".jp-Mermaid > pre.mermaid");
-    // do not load mermaidjs if not needed
-    if (!diagrams.length) {
-      return;
-    }
-    const mermaid = (await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.0/mermaid.esm.min.mjs")).default;
-    const elkUrl = "https://cdnjs.cloudflare.com/ajax/libs/mermaid-layout-elk/0.1.9/mermaid-layout-elk.esm.min.mjs";
-    if(elkUrl) {
-      const elkLayouts = (await import(elkUrl)).default;
-      mermaid.registerLayoutLoaders(elkLayouts);
-    }
-    const parser = new DOMParser();
-
-    mermaid.initialize({
-      maxTextSize: 100000,
-      maxEdges: 100000,
-      startOnLoad: false,
-      fontFamily: window
-        .getComputedStyle(document.body)
-        .getPropertyValue("--jp-ui-font-family"),
-      theme: document.querySelector("body[data-jp-theme-light='true']")
-        ? "default"
-        : "dark",
-    });
-
-    let _nextMermaidId = 0;
-
-    function makeMermaidImage(svg) {
-      const img = document.createElement("img");
-      const doc = parser.parseFromString(svg, "image/svg+xml");
-      const svgEl = doc.querySelector("svg");
-      const { maxWidth } = svgEl?.style || {};
-      const firstTitle = doc.querySelector("title");
-      const firstDesc = doc.querySelector("desc");
-
-      img.setAttribute("src", `data:image/svg+xml,${encodeURIComponent(svg)}`);
-      if (maxWidth) {
-        img.width = parseInt(maxWidth);
-      }
-      if (firstTitle) {
-        img.setAttribute("alt", firstTitle.textContent);
-      }
-      if (firstDesc) {
-        const caption = document.createElement("figcaption");
-        caption.className = "sr-only";
-        caption.textContent = firstDesc.textContent;
-        return [img, caption];
-      }
-      return [img];
-    }
-
-    async function makeMermaidError(text) {
-      let errorMessage = "";
-      try {
-        await mermaid.parse(text);
-      } catch (err) {
-        errorMessage = `${err}`;
-      }
-
-      const result = document.createElement("details");
-      result.className = 'jp-RenderedMermaid-Details';
-      const summary = document.createElement("summary");
-      summary.className = 'jp-RenderedMermaid-Summary';
-      const pre = document.createElement("pre");
-      const code = document.createElement("code");
-      code.innerText = text;
-      pre.appendChild(code);
-      summary.appendChild(pre);
-      result.appendChild(summary);
-
-      const warning = document.createElement("pre");
-      warning.innerText = errorMessage;
-      result.appendChild(warning);
-      return [result];
-    }
-
-    async function renderOneMarmaid(src) {
-      const id = `jp-mermaid-${_nextMermaidId++}`;
-      const parent = src.parentNode;
-      let raw = src.textContent.trim();
-      const el = document.createElement("div");
-      el.style.visibility = "hidden";
-      document.body.appendChild(el);
-      let results = null;
-      let output = null;
-      try {
-        let { svg } = await mermaid.render(id, raw, el);
-        svg = cleanMermaidSvg(svg);
-        results = makeMermaidImage(svg);
-        output = document.createElement("figure");
-        results.map(output.appendChild, output);
-      } catch (err) {
-        parent.classList.add("jp-mod-warning");
-        results = await makeMermaidError(raw);
-        output = results[0];
-      } finally {
-        el.remove();
-      }
-      parent.classList.add("jp-RenderedMermaid");
-      parent.appendChild(output);
-    }
-
-
-    /**
-     * Post-process to ensure mermaid diagrams contain only valid SVG and XHTML.
-     */
-    function cleanMermaidSvg(svg) {
-      svg = svg.replace(RE_VOID_ELEMENT, replaceVoidElement);
-      return `${SVG_XML_HEADER}${svg}`;
-    }
-
-
-    /**
-     * A regular expression for all void elements, which may include attributes and
-     * a slash.
-     *
-     * @see https://developer.mozilla.org/en-US/docs/Glossary/Void_element
-     *
-     * Of these, only `<br>` is generated by Mermaid in place of `\n`,
-     * but _any_ "malformed" tag will break the SVG rendering entirely.
-     */
-    const RE_VOID_ELEMENT =
-      /<\s*(area|base|br|col|embed|hr|img|input|link|meta|param|source|track|wbr)\s*([^>]*?)\s*>/gi;
-
-    /**
-     * Ensure a void element is closed with a slash, preserving any attributes.
-     */
-    function replaceVoidElement(match, tag, rest) {
-      rest = rest.trim();
-      if (!rest.endsWith('/')) {
-        rest = `${rest} /`;
-      }
-      return `<${tag} ${rest}>`;
-    }
-
-
-  /**
-   * Named HTML entities with their decimal equivalent codes.
-   *
-   * @see https://www.w3.org/TR/WD-html40-970708/sgml/entities.html
-   * */
-  const HTML_ENTITIES = `<!ENTITY Aacute "&#193;">
-<!ENTITY aacute "&#225;">
-<!ENTITY Acirc "&#194;">
-<!ENTITY acirc "&#226;">
-<!ENTITY acute "&#180;">
-<!ENTITY AElig "&#198;">
-<!ENTITY aelig "&#230;">
-<!ENTITY Agrave "&#192;">
-<!ENTITY agrave "&#224;">
-<!ENTITY alefsym "&#8501;">
-<!ENTITY Alpha "&#913;">
-<!ENTITY alpha "&#945;">
-<!ENTITY amp "&#38;">
-<!ENTITY and "&#8869;">
-<!ENTITY ang "&#8736;">
-<!ENTITY Aring "&#197;">
-<!ENTITY aring "&#229;">
-<!ENTITY asymp "&#8776;">
-<!ENTITY Atilde "&#195;">
-<!ENTITY atilde "&#227;">
-<!ENTITY Auml "&#196;">
-<!ENTITY auml "&#228;">
-<!ENTITY bdquo "&#8222;">
-<!ENTITY Beta "&#914;">
-<!ENTITY beta "&#946;">
-<!ENTITY brvbar "&#166;">
-<!ENTITY bull "&#8226;">
-<!ENTITY cap "&#8745;">
-<!ENTITY Ccedil "&#199;">
-<!ENTITY ccedil "&#231;">
-<!ENTITY cedil "&#184;">
-<!ENTITY cent "&#162;">
-<!ENTITY Chi "&#935;">
-<!ENTITY chi "&#967;">
-<!ENTITY circ "&#710;">
-<!ENTITY clubs "&#9827;">
-<!ENTITY cong "&#8773;">
-<!ENTITY copy "&#169;">
-<!ENTITY crarr "&#8629;">
-<!ENTITY cup "&#8746;">
-<!ENTITY curren "&#164;">
-<!ENTITY dagger "&#8224;">
-<!ENTITY Dagger "&#8225;">
-<!ENTITY darr "&#8595;">
-<!ENTITY dArr "&#8659;">
-<!ENTITY deg "&#176;">
-<!ENTITY Delta "&#916;">
-<!ENTITY delta "&#948;">
-<!ENTITY diams "&#9830;">
-<!ENTITY divide "&#247;">
-<!ENTITY Eacute "&#201;">
-<!ENTITY eacute "&#233;">
-<!ENTITY Ecirc "&#202;">
-<!ENTITY ecirc "&#234;">
-<!ENTITY Egrave "&#200;">
-<!ENTITY egrave "&#232;">
-<!ENTITY empty "&#8709;">
-<!ENTITY emsp "&#8195;">
-<!ENTITY ensp "&#8194;">
-<!ENTITY epsilon "&#949;">
-<!ENTITY Epsilon "&#917;">
-<!ENTITY equiv "&#8801;">
-<!ENTITY Eta "&#919;">
-<!ENTITY eta "&#951;">
-<!ENTITY ETH "&#208;">
-<!ENTITY eth "&#240;">
-<!ENTITY Euml "&#203;">
-<!ENTITY euml "&#235;">
-<!ENTITY exist "&#8707;">
-<!ENTITY fnof "&#402;">
-<!ENTITY forall "&#8704;">
-<!ENTITY frac12 "&#189;">
-<!ENTITY frac14 "&#188;">
-<!ENTITY frac34 "&#190;">
-<!ENTITY frasl "&#8260;">
-<!ENTITY Gamma "&#915;">
-<!ENTITY gamma "&#947;">
-<!ENTITY ge "&#8805;">
-<!ENTITY gt "&#62;">
-<!ENTITY harr "&#8596;">
-<!ENTITY hArr "&#8660;">
-<!ENTITY hearts "&#9829;">
-<!ENTITY hellip "&#8230;">
-<!ENTITY Iacute "&#205;">
-<!ENTITY iacute "&#237;">
-<!ENTITY Icirc "&#206;">
-<!ENTITY icirc "&#238;">
-<!ENTITY iexcl "&#161;">
-<!ENTITY Igrave "&#204;">
-<!ENTITY igrave "&#236;">
-<!ENTITY image "&#8465;">
-<!ENTITY infin "&#8734;">
-<!ENTITY int "&#8747;">
-<!ENTITY Iota "&#921;">
-<!ENTITY iota "&#953;">
-<!ENTITY iquest "&#191;">
-<!ENTITY isin "&#8712;">
-<!ENTITY Iuml "&#207;">
-<!ENTITY iuml "&#239;">
-<!ENTITY Kappa "&#922;">
-<!ENTITY kappa "&#954;">
-<!ENTITY Lambda "&#923;">
-<!ENTITY lambda "&#955;">
-<!ENTITY lang "&#9001;">
-<!ENTITY laquo "&#171;">
-<!ENTITY larr "&#8592;">
-<!ENTITY lArr "&#8656;">
-<!ENTITY lceil "&#8968;">
-<!ENTITY ldquo "&#8220;">
-<!ENTITY le "&#8804;">
-<!ENTITY lfloor "&#8970;">
-<!ENTITY lowast "&#8727;">
-<!ENTITY loz "&#9674;">
-<!ENTITY lrm "&#8206;">
-<!ENTITY lsaquo "&#8249;">
-<!ENTITY lsquo "&#8216;">
-<!ENTITY lt "&#60;">
-<!ENTITY macr "&#175;">
-<!ENTITY mdash "&#8212;">
-<!ENTITY micro "&#181;">
-<!ENTITY middot "&#183;">
-<!ENTITY minus "&#8722;">
-<!ENTITY Mu "&#924;">
-<!ENTITY mu "&#956;">
-<!ENTITY nabla "&#8711;">
-<!ENTITY nbsp "&#160;">
-<!ENTITY ndash "&#8211;">
-<!ENTITY ne "&#8800;">
-<!ENTITY ni "&#8715;">
-<!ENTITY not "&#172;">
-<!ENTITY notin "&#8713;">
-<!ENTITY nsub "&#8836;">
-<!ENTITY Ntilde "&#209;">
-<!ENTITY ntilde "&#241;">
-<!ENTITY Nu "&#925;">
-<!ENTITY nu "&#957;">
-<!ENTITY Oacute "&#211;">
-<!ENTITY oacute "&#243;">
-<!ENTITY Ocirc "&#212;">
-<!ENTITY ocirc "&#244;">
-<!ENTITY OElig "&#338;">
-<!ENTITY oelig "&#339;">
-<!ENTITY Ograve "&#210;">
-<!ENTITY ograve "&#242;">
-<!ENTITY oline "&#8254;">
-<!ENTITY Omega "&#937;">
-<!ENTITY omega "&#969;">
-<!ENTITY Omicron "&#927;">
-<!ENTITY omicron "&#959;">
-<!ENTITY oplus "&#8853;">
-<!ENTITY or "&#8870;">
-<!ENTITY ordf "&#170;">
-<!ENTITY ordm "&#186;">
-<!ENTITY Oslash "&#216;">
-<!ENTITY oslash "&#248;">
-<!ENTITY Otilde "&#213;">
-<!ENTITY otilde "&#245;">
-<!ENTITY otimes "&#8855;">
-<!ENTITY Ouml "&#214;">
-<!ENTITY ouml "&#246;">
-<!ENTITY para "&#182;">
-<!ENTITY part "&#8706;">
-<!ENTITY permil "&#8240;">
-<!ENTITY perp "&#8869;">
-<!ENTITY Phi "&#934;">
-<!ENTITY phi "&#966;">
-<!ENTITY Pi "&#928;">
-<!ENTITY pi "&#960;">
-<!ENTITY piv "&#982;">
-<!ENTITY plusmn "&#177;">
-<!ENTITY pound "&#163;">
-<!ENTITY prime "&#8242;">
-<!ENTITY Prime "&#8243;">
-<!ENTITY prod "&#8719;">
-<!ENTITY prop "&#8733;">
-<!ENTITY Psi "&#936;">
-<!ENTITY psi "&#968;">
-<!ENTITY quot "&#34;">
-<!ENTITY radic "&#8730;">
-<!ENTITY rang "&#9002;">
-<!ENTITY raquo "&#187;">
-<!ENTITY rarr "&#8594;">
-<!ENTITY rArr "&#8658;">
-<!ENTITY rceil "&#8969;">
-<!ENTITY rdquo "&#8221;">
-<!ENTITY real "&#8476;">
-<!ENTITY reg "&#174;">
-<!ENTITY rfloor "&#8971;">
-<!ENTITY Rho "&#929;">
-<!ENTITY rho "&#961;">
-<!ENTITY rlm "&#8207;">
-<!ENTITY rsaquo "&#8250;">
-<!ENTITY rsquo "&#8217;">
-<!ENTITY sbquo "&#8218;">
-<!ENTITY Scaron "&#352;">
-<!ENTITY scaron "&#353;">
-<!ENTITY sdot "&#8901;">
-<!ENTITY sect "&#167;">
-<!ENTITY shy "&#173;">
-<!ENTITY Sigma "&#931;">
-<!ENTITY sigma "&#963;">
-<!ENTITY sigmaf "&#962;">
-<!ENTITY sim "&#8764;">
-<!ENTITY spades "&#9824;">
-<!ENTITY sub "&#8834;">
-<!ENTITY sube "&#8838;">
-<!ENTITY sum "&#8721;">
-<!ENTITY sup "&#8835;">
-<!ENTITY sup1 "&#185;">
-<!ENTITY sup2 "&#178;">
-<!ENTITY sup3 "&#179;">
-<!ENTITY supe "&#8839;">
-<!ENTITY szlig "&#223;">
-<!ENTITY Tau "&#932;">
-<!ENTITY tau "&#964;">
-<!ENTITY there4 "&#8756;">
-<!ENTITY Theta "&#920;">
-<!ENTITY theta "&#952;">
-<!ENTITY thetasym "&#977;">
-<!ENTITY thinsp "&#8201;">
-<!ENTITY THORN "&#222;">
-<!ENTITY thorn "&#254;">
-<!ENTITY tilde "&#732;">
-<!ENTITY times "&#215;">
-<!ENTITY trade "&#8482;">
-<!ENTITY Uacute "&#218;">
-<!ENTITY uacute "&#250;">
-<!ENTITY uarr "&#8593;">
-<!ENTITY uArr "&#8657;">
-<!ENTITY Ucirc "&#219;">
-<!ENTITY ucirc "&#251;">
-<!ENTITY Ugrave "&#217;">
-<!ENTITY ugrave "&#249;">
-<!ENTITY uml "&#168;">
-<!ENTITY upsih "&#978;">
-<!ENTITY Upsilon "&#933;">
-<!ENTITY upsilon "&#965;">
-<!ENTITY Uuml "&#220;">
-<!ENTITY uuml "&#252;">
-<!ENTITY weierp "&#8472;">
-<!ENTITY Xi "&#926;">
-<!ENTITY xi "&#958;">
-<!ENTITY Yacute "&#221;">
-<!ENTITY yacute "&#253;">
-<!ENTITY yen "&#165;">
-<!ENTITY Yuml "&#376;">
-<!ENTITY yuml "&#255;">
-<!ENTITY Zeta "&#918;">
-<!ENTITY zeta "&#950;">
-<!ENTITY zwj "&#8205;">
-<!ENTITY zwnj "&#8204;">`.replace(/\n/g, ' ');
-
-  /**
-   * A reasonably strict xml declaration.
-   */
-  const XML_DECL = '<?xml version="1.0" standalone="no"?>';
-
-  /**
-   * The beginning of the XML doctype declaration.
-   */
-  const DOCTYPE_START = `<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [`;
-
-  /**
-   * The end of the XML docype declaration.
-   */
-  const DOCTYPE_END = ']>';
-
-  /**
-   * A full header for an SVG XML document.
-   */
-  const SVG_XML_HEADER = `${XML_DECL}
-    ${DOCTYPE_START}${HTML_ENTITIES}${DOCTYPE_END}`;
-
-    void Promise.all([...diagrams].map(renderOneMarmaid));
-  });
-</script>
+<!-- End of mathjax configuration -->
 <style>
   .jp-Mermaid:not(.jp-RenderedMermaid) {
     display: none;
@@ -7793,17 +7345,53 @@ a.anchor-link {
     white-space: normal;
   }
 </style>
-<!-- End of mermaid configuration --></head>
+<!-- End of mermaid configuration --><meta content="8640298033591f3e5359fd41c9c4770c39684d887dddf56a6d1aa7488e19c55f" name="koai-notebook-source-sha256"/><style id="week01-reading-layout">
+.week01-navigation {
+  display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 8px 16px 12px;
+  font: 15px/1.5 "Noto Sans CJK KR", "Noto Sans CJK JP", sans-serif;
+}
+.week01-figure-view, .week01-figure-scroll { display: block; max-width: 100%; }
+.week01-figure-scroll { overflow-x: auto; }
+.week01-figure-toggle, .week01-figure-label { display: none; }
+.jp-RenderedMarkdown math[display="block"] { max-width: 100%; overflow-x: auto; }
+body.jp-Notebook {
+  --jp-content-font-family: "Noto Sans CJK KR", "Noto Sans CJK JP", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+.jp-MarkdownCell .jp-Cell-inputWrapper { display: block; padding-left: var(--jp-cell-prompt-width); }
+.jp-MarkdownCell .jp-InputArea { display: block; width: auto; }
+.jp-MarkdownCell .jp-InputArea-prompt { display: none; }
+.jp-MarkdownCell .jp-RenderedMarkdown { display: block; box-sizing: border-box; max-width: 100%; overflow-x: auto; }
+@media (max-width: 600px) {
+  body.jp-Notebook { padding: 8px; }
+  .jp-MarkdownCell .jp-Cell-inputWrapper { padding-left: 0; }
+  .jp-Cell .jp-Cell-inputWrapper, .jp-Cell .jp-Cell-outputWrapper,
+  .jp-Cell .jp-InputArea, .jp-Cell .jp-OutputArea-child { display: block; }
+  .jp-Cell .jp-InputArea-prompt, .jp-Cell .jp-OutputArea-prompt { display: none; }
+  .jp-Cell .jp-InputArea-editor, .jp-Cell .jp-OutputArea-output,
+  .jp-Cell .jp-RenderedMarkdown {
+    display: block; box-sizing: border-box; min-width: 0; max-width: 100%; overflow-x: auto;
+  }
+  .jp-Cell img { max-width: 100%; height: auto; }
+  .week01-figure-toggle, .week01-figure-label { display: inline-block; }
+  .week01-figure-label { cursor: pointer; margin: 4px 0 6px 4px; font: 14px/1.5 sans-serif; }
+  .week01-figure-toggle:checked ~ .week01-figure-scroll img { width: auto; max-width: none; }
+}
+</style></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<main>
+<nav aria-label="1주차 학습 자료" class="week01-navigation"><a href="week01_integrated.html">1주차 통합 교안으로</a><a download="week01_problem_pipeline.ipynb" href="week01_problem_pipeline.ipynb">실행용 노트북 내려받기 (.ipynb)</a></nav><main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1845680d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="1%EC%A3%BC%EC%B0%A8-%EB%B3%B4%EC%B6%A9-%C2%B7-%EB%82%AF%EC%84%A0-%EB%AC%B8%EC%A0%9C%EB%A5%BC-%EC%9D%BD%EA%B3%A0-%EC%98%88%EC%B8%A1%EA%B9%8C%EC%A7%80">1주차 보충 · 낯선 문제를 읽고 예측까지<a class="anchor-link" href="#1%EC%A3%BC%EC%B0%A8-%EB%B3%B4%EC%B6%A9-%C2%B7-%EB%82%AF%EC%84%A0-%EB%AC%B8%EC%A0%9C%EB%A5%BC-%EC%9D%BD%EA%B3%A0-%EC%98%88%EC%B8%A1%EA%B9%8C%EC%A7%80">¶</a></h1><h2 id="%EB%AC%B4%EC%97%87%EC%9D%84-%ED%95%A0%EA%B9%8C%EC%9A%94?">무엇을 할까요?<a class="anchor-link" href="#%EB%AC%B4%EC%97%87%EC%9D%84-%ED%95%A0%EA%B9%8C%EC%9A%94?">¶</a></h2><p>문제에서 <strong>입력·출력·허용 조건</strong>을 찾고, 숫자 표에서 특성과 정답을 구분합니다. 훈련 자료로 결측 처리와 작은 분류 모델을 실제로 배우고, 별도 검증에서 예측을 점검한 뒤 요구된 순서의 제출 형식을 확인합니다. 모든 표와 숫자는 이 교안을 위해 만든 합성 자료입니다.</p>
-<p>본 교안의 표·평균·Python 기초와 <a href="week01_axes_linear_bridge.ipynb">표에서 점수와 ID까지</a>의 행과 ID 대응 설명을 먼저 확인하세요. 행렬곱·stack·lookup은 이 자료의 필수 선수가 아닙니다. Python 3, NumPy, pandas, scikit-learn과 Jupyter가 필요합니다. 위에서 아래로 Shift+Enter를 누릅니다. <strong>실행 전에 예측과 이유를 적고</strong>, 출력과 다른 첫 단계를 찾아보세요. 뒤의 빈 셀에는 자신의 코드를 작성하고 받은 도움을 기록합니다.</p>
+<h1 id="1%EC%A3%BC%EC%B0%A8-%EB%B3%B4%EC%B6%A9-%C2%B7-%EB%82%AF%EC%84%A0-%EB%AC%B8%EC%A0%9C%EB%A5%BC-%EC%9D%BD%EA%B3%A0-%EC%98%88%EC%B8%A1%EA%B9%8C%EC%A7%80">1주차 보충 · 낯선 문제를 읽고 예측까지<a class="anchor-link" href="#1%EC%A3%BC%EC%B0%A8-%EB%B3%B4%EC%B6%A9-%C2%B7-%EB%82%AF%EC%84%A0-%EB%AC%B8%EC%A0%9C%EB%A5%BC-%EC%9D%BD%EA%B3%A0-%EC%98%88%EC%B8%A1%EA%B9%8C%EC%A7%80">¶</a></h1><p>진품임을 아직 모르는 그림과 복제품이라고 확인한 그림을 같은 무리에 넣어도 될까요? 새 문제를 받으면 먼저 <strong>한 행이 누구인지, 어느 순간 무엇을 아는지, 답 한 줄에 무엇을 쓰는지</strong> 정해 봅시다.</p>
+<ul>
+<li>처음이라면 1–3절에서 감정 기록을 읽고 훈련 자료로 짧은 분류 규칙을 배웁니다. 표에서 한 행을 고르고 빈칸을 뺀 평균을 구할 수 있으면 시작할 수 있습니다. <a href="week01_integrated.html">표와 평균 다시 보기</a></li>
+<li>통합 교재에서 제출 순서를 확인하러 왔다면 <a href="#pipeline-submit">4절의 세 작품</a>만 풀고 돌아가세요. 이 예제는 앞의 코드를 실행하지 않아도 됩니다.</li>
+<li>모델을 써 본 적이 있다면 <a href="#pipeline-device">5절의 새 기기 문제</a>에서 바로 자기 답을 만들 수 있습니다. 실제 ZIP의 내부가 궁금할 때는 맨 뒤의 <a href="#pipeline-files">파일 실험</a>을 보세요.</li>
+</ul>
+<p>코드 실습에는 Python, pandas, NumPy와 scikit-learn을 사용합니다. 표의 숫자는 이 연습을 위해 만든 값입니다.</p>
 </div>
 </div>
 </div>
@@ -7814,9 +7402,32 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1.-%EC%9B%90%EB%AC%B8%EA%B3%BC-%EC%9E%91%EC%9D%80-%EC%97%B0%EC%8A%B5%EC%9D%84-%EA%B5%AC%EB%B6%84%ED%95%98%EA%B8%B0">1. 원문과 작은 연습을 구분하기<a class="anchor-link" href="#1.-%EC%9B%90%EB%AC%B8%EA%B3%BC-%EC%9E%91%EC%9D%80-%EC%97%B0%EC%8A%B5%EC%9D%84-%EA%B5%AC%EB%B6%84%ED%95%98%EA%B8%B0">¶</a></h2><p><a href="https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb">IOAI 2025 Antique 공식 문제</a>는 옛 그림의 진품 여부를 맞히는 과거 국제 대회 문제입니다. 공식 명세에서 훈련 행의 <strong>앞 5개 열은 특성</strong>, 여섯째 열의 라벨은 진품 1, 복제품 −1, 미상 0입니다. 원문은 훈련·검증·테스트 각각 500개의 독립 표본을 설명합니다. 검증과 테스트에는 라벨 열이 없고 대회 중 직접 접근할 수 없으며, 미상 라벨 표본을 포함한 자료도 활용하도록 요구합니다. 정확도를 채점합니다.</p>
-<p>원문은 <code>submission.ipynb</code>가 <code>submission.zip</code>을 만들고 그 안에 <code>submissionA.csv</code>와 <code>submissionB.csv</code>를 넣도록 합니다. 각 CSV는 <strong>헤더 없이 한 행에 예측 −1 또는 1 하나</strong>입니다. 각 입력 행에 대응하는 예측 순서를 지켜야 합니다. 파일명, 행 수, 값, 포맷도 결과의 일부입니다.</p>
-<p>아래는 <strong>별도로 만든 2특성 연습</strong>입니다. 진품 사진도, 공식 데이터도 아닙니다. 알려진 훈련 라벨만 이용하는 지도학습 입문이므로 공식 문제의 미상 표본 활용 요구를 만족하거나 Antique 전체를 해결했다고 볼 수 없습니다. 원문의 검증·테스트 자료와 아래 연습용 검증·A/B 입력을 혼동하지 마세요. 대회 문제의 모든 조건은 원문을 다시 읽어야 합니다.</p>
+<p><a id="pipeline-contract"></a></p>
+<h2 id="1.-%EB%AC%B8%EC%A0%9C%EC%A7%80%EC%97%90%EC%84%9C-%ED%95%9C-%ED%96%89%EA%B3%BC-%EB%8B%B5-%ED%95%9C-%EC%A4%84-%EC%B0%BE%EA%B8%B0">1. 문제지에서 한 행과 답 한 줄 찾기<a class="anchor-link" href="#1.-%EB%AC%B8%EC%A0%9C%EC%A7%80%EC%97%90%EC%84%9C-%ED%95%9C-%ED%96%89%EA%B3%BC-%EB%8B%B5-%ED%95%9C-%EC%A4%84-%EC%B0%BE%EA%B8%B0">¶</a></h2><p>국제 대회의 <em>Antique Painting Authentication</em>에서 그림 한 점의 디지털 측정값 다섯 개가 주어집니다. 훈련 파일의 여섯째 값은 1이면 진품, −1이면 복제품, 0이면 감정 결과 미상입니다. 문제는 미상인 그림의 측정값까지 활용해 진품과 복제품을 분류하라고 합니다. 다음 세 줄을 문제지처럼 읽어 보세요. <a href="https://github.com/IOAI-official/IOAI-2025/blob/39558e9a639d170bd92de91958fcdc915f670463/Individual-Contest/Antique/Antique.ipynb">IOAI 2025 개인전 원문 1–5절</a></p>
+<table>
+<thead>
+<tr>
+<th>받은 조건</th>
+<th>무엇을 결정하나요?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>훈련·검증·테스트에는 각각 500점이 있다. 대회 중에는 훈련 자료를 직접 볼 수 있다. 채점 환경에서 실행되는 코드가 검증·테스트의 측정값을 읽는다.</td>
+<td>참가자가 훈련할 때 볼 수 있는 것과 채점 시 코드가 받는 것을 나눠 보세요.</td>
+</tr>
+<tr>
+<td>제출할 <code>submission.ipynb</code>는 <code>submission.zip</code> 안에 검증용 <code>submissionA.csv</code>와 테스트용 <code>submissionB.csv</code>를 만든다. 두 파일 모두 헤더 없이 그림마다 −1 또는 1 하나를 쓴다.</td>
+<td>입력 세 번째 그림의 예측은 어느 줄에 올까요? 훈련에서 본 0도 답으로 쓸 수 있을까요?</td>
+</tr>
+<tr>
+<td>각 파일에서 올바르게 분류한 작품 수를 그 파일의 전체 작품 수로 나눈다.</td>
+<td>채점에서 한 번을 세는 대상은 측정값 하나일까요, 그림 한 점일까요?</td>
+</tr>
+</tbody>
+</table>
+<p>검증·테스트 입력에는 라벨 열이 없습니다. 해당 파일의 세 번째 그림에 대한 예측 한 개가 제출 파일의 세 번째 줄에 옵니다. 훈련의 ‘미상’은 감정 결과를 아직 모른다는 뜻입니다.</p>
+<p><strong>다른 문제지를 받으면.</strong> <em>Potato</em>에서는 심판이 두 단어 중 어느 쪽이 숨은 단어에 더 가까운지 알려 주고, 참가자의 코드는 다음 단어 하나를 제안합니다. 훈련 묶음은 없고 자가 채점용 공개 게임의 정답만 주어집니다. 순위에 쓰는 게임의 정답은 숨겨져 있습니다. 친구가 “두 문제 모두 공개 정답 행으로 분류기부터 학습하자”고 합니다. Antique에서는 무엇으로 학습할 수 있고, Potato에서는 어떤 자료로 제안 방법을 점검할 수 있을까요? 두 문제지에서 각각 근거를 한 가지씩 찾으세요. <a href="https://github.com/IOAI-official/IOAI-2026/blob/e1963801aa4cf33a5a03520b39fa6620a7894c54/Individual-Contest/3_Potato/statement.md">IOAI 2026 Potato 원문의 Task·Dataset·Output</a></p>
 </div>
 </div>
 </div>
@@ -7827,35 +7438,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%EB%B3%84%EB%8F%84-%ED%95%A9%EC%84%B1-%EB%AC%B8%EC%A0%9C%EC%9D%98-%EA%B3%84%EC%95%BD">별도 합성 문제의 계약<a class="anchor-link" href="#%EB%B3%84%EB%8F%84-%ED%95%A9%EC%84%B1-%EB%AC%B8%EC%A0%9C%EC%9D%98-%EA%B3%84%EC%95%BD">¶</a></h3><p>한 행은 수집품 하나입니다. 새 수집품에 대한 예측 <strong>시점에</strong> 다음이 주어집니다.</p>
-<table>
-<thead>
-<tr>
-<th>항목</th>
-<th>역할과 허용 범위</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>row_id</td>
-<td>입력과 출력의 대응을 찾는 이름. 모델 특성은 아님</td>
-</tr>
-<tr>
-<td>texture, color</td>
-<td>두 숫자 특성. 예측 시점에 알려지며 한 값은 결측일 수 있음. 비교를 쉽게 하려고 같은 척도의 합성 점수로 둠</td>
-</tr>
-<tr>
-<td>label</td>
-<td>훈련에서 −1 또는 1이면 알려진 정답, 0이면 정답 미상. 예측 이후에만 얻는 정답이므로 특성으로 넣지 않음</td>
-</tr>
-<tr>
-<td>나중 검사 결과</td>
-<td>예측 시점에는 알 수 없음. 답을 그대로 알려 줄 수 있어 입력으로 쓰면 누수</td>
-</tr>
-</tbody>
-</table>
-<p>훈련과 검증의 행은 서로 다른 수집품이라고 가정합니다. 이 자료의 A/B 입력에는 정답이 없습니다. <strong>계획:</strong> 훈련에서만 대체값과 모델을 배우고, 검증 정답은 선택한 절차를 확인하는 데 사용합니다. 모델·설정 선택 후에만 별도로 보관된 최종 테스트 정답을 열어 평가합니다. 이 노트북에는 그 최종 정답이 없습니다.</p>
-<p>질문: 예측할 때 row_id, 두 특성, label, 나중 검사 중 무엇을 모델에 넣을 수 있나요? label 0을 −1로 바꾸면 무엇을 새로 안다고 가정하는 셈인가요?</p>
+<h3 id="%EA%B0%99%EC%9D%80-%EC%A7%88%EB%AC%B8%EC%9D%84-%EC%9E%91%EC%9D%80-%ED%91%9C%EC%97%90-%EC%98%AE%EA%B8%B0%EA%B8%B0">같은 질문을 작은 표에 옮기기<a class="anchor-link" href="#%EA%B0%99%EC%9D%80-%EC%A7%88%EB%AC%B8%EC%9D%84-%EC%9E%91%EC%9D%80-%ED%91%9C%EC%97%90-%EC%98%AE%EA%B8%B0%EA%B8%B0">¶</a></h3><p>아래 수집품은 가상의 두 점수 <code>texture</code>와 <code>color</code>를 감정 전에 같은 척도로 측정합니다. <code>row_id</code>는 수집품에 붙은 번호표입니다. 감정 후 기록하는 <code>label</code>은 원문과 같이 −1, 1, 0을 사용합니다.</p>
+<p>이번 규칙은 <strong>정답이 확인된 훈련 수집품</strong>으로만 두 무리의 중심을 배웁니다. 어느 열을 숫자 계산에 쓰고 어느 열을 나중에 결과를 찾는 데 쓸까요? 정답이 없는 T5의 측정값까지 활용하라는 원문의 요구는 이 규칙에서 어디가 남을까요?</p>
 </div>
 </div>
 </div>
@@ -7867,10 +7451,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">zipfile</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.impute</span><span class="w"> </span><span class="kn">import</span> <span class="n">SimpleImputer</span>
@@ -7879,18 +7460,12 @@ a.anchor-link {
 
 <span class="n">feature_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"texture"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">]</span>
 <span class="n">training</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
-    <span class="p">(</span><span class="s2">"T1"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"T2"</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"T3"</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"T4"</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"T5"</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"T1"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">"T2"</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">"T3"</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"T4"</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">"T5"</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
 <span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"row_id"</span><span class="p">,</span> <span class="s2">"texture"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">])</span>
 <span class="n">known_train</span> <span class="o">=</span> <span class="n">training</span><span class="p">[</span><span class="n">training</span><span class="p">[</span><span class="s2">"label"</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"훈련 행과 미상 표시"</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">training</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"이번 지도학습 fit에 쓰는 ID:"</span><span class="p">,</span> <span class="n">known_train</span><span class="p">[</span><span class="s2">"row_id"</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"라벨 미상으로 목표에서 제외한 ID:"</span><span class="p">,</span>
-      <span class="n">training</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">training</span><span class="p">[</span><span class="s2">"label"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"row_id"</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"이 예에서 정답을 기준으로 묶을 수 있는 작품:"</span><span class="p">,</span> <span class="n">known_train</span><span class="p">[</span><span class="s2">"row_id"</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -7900,13 +7475,6 @@ a.anchor-link {
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>훈련 행과 미상 표시
-</pre>
-</div>
-</div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
@@ -7978,8 +7546,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>이번 지도학습 fit에 쓰는 ID: ['T1', 'T2', 'T3', 'T4']
-라벨 미상으로 목표에서 제외한 ID: ['T5']
+<pre>이 예에서 정답을 기준으로 묶을 수 있는 작품: ['T1', 'T2', 'T3', 'T4']
 </pre>
 </div>
 </div>
@@ -7992,10 +7559,9 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EA%B7%9C%EC%B9%99%EC%9D%84-%EC%86%90%EC%9C%BC%EB%A1%9C-%EC%98%88%EC%B8%A1%ED%95%98%EA%B8%B0">2. 배우는 규칙을 손으로 예측하기<a class="anchor-link" href="#2.-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EA%B7%9C%EC%B9%99%EC%9D%84-%EC%86%90%EC%9C%BC%EB%A1%9C-%EC%98%88%EC%B8%A1%ED%95%98%EA%B8%B0">¶</a></h2><p><code>fit</code>은 훈련 자료를 읽고 나중에 사용할 값을 저장합니다. 먼저 <strong>알려진 라벨 훈련 행만</strong> 사용한다고 약속합니다. 결측인 T2의 color를 채우기 위한 평균은 (1+3+5)÷3 = <strong>3</strong>입니다. texture 평균은 (1+3+7+9)÷4 = <strong>5</strong>입니다. T5는 정답이 미상이므로 이 단순 예제의 대체값과 모델 학습에서 제외합니다.</p>
-<p>이번에는 설명이 쉬운 <strong>가까운 중심 분류</strong>를 씁니다. 결측을 훈련 평균으로 채운 뒤, 각 라벨에 속하는 벡터들의 열별 평균을 중심으로 둡니다. −1의 중심은 [2,2], 1의 중심은 [8,4]입니다. 새 벡터가 어느 중심에 가까운지 비교합니다.</p>
-<p>예를 들어 x=[6,3]에 대해 각 거리의 <strong>제곱</strong>은 (6−2)²+(3−2)²=17, (6−8)²+(3−4)²=5입니다. 양수 17과 5의 제곱근을 취해도 더 작은 쪽은 같으므로 이 예측은 1입니다. 동점 처리나 다른 단위·척도라면 규칙을 먼저 확인해야 합니다.</p>
-<p>이 모델은 하나의 예시입니다. 문제와 검증 조건에 맞는 다른 분류기를 쓸 수도 있습니다. 중심 거리는 열의 척도에 영향을 받으며, 작은 합성 자료의 결과를 현실 성능으로 일반화할 수 없습니다.</p>
+<h2 id="2.-%EB%AA%A8%EB%8D%B8%EC%9D%B4-%EC%8B%A4%EC%A0%9C%EB%A1%9C-%EB%B0%B0%EC%9A%B4-%EB%91%90-%EC%A0%90-%EC%B0%BE%EA%B8%B0">2. 모델이 실제로 배운 두 점 찾기<a class="anchor-link" href="#2.-%EB%AA%A8%EB%8D%B8%EC%9D%B4-%EC%8B%A4%EC%A0%9C%EB%A1%9C-%EB%B0%B0%EC%9A%B4-%EB%91%90-%EC%A0%90-%EC%B0%BE%EA%B8%B0">¶</a></h2><p><code>fit</code>은 훈련 자료로부터 다음 예측에 쓸 값을 구합니다. T2의 색 점수가 비어서, 알려진 훈련 작품 중 색을 관측한 세 점의 평균 (1+3+5)÷3=3으로 채웁니다. 조직감 점수의 평균은 (1+3+7+9)÷4=5입니다. T5의 정답은 미상이므로 이 예에서는 대체값을 구하거나 어느 무리의 중심을 정할 때도 쓰지 않습니다.</p>
+<p>같은 라벨끼리 모아 열마다 평균을 내면 그 무리의 <strong>중심</strong>입니다. −1 무리의 두 점 [1,1]과 [3,3]을 대표하는 중심은 [2,2]입니다. +1 무리의 두 점에서 나머지 중심을 직접 구해 보세요.</p>
+<p>새 작품 [6,3]과 −1 중심 사이의 <strong>제곱거리</strong>는 (6−2)²+(3−2)²=17입니다. +1 중심까지도 같은 계산을 하고 두 수 중 작은 쪽의 라벨을 적으세요. 제곱근을 취해도 두 거리의 크기 순서가 같아 여기서는 합까지만 계산합니다. 두 특성을 같은 척도로 둔 이유도 생각해 보세요.</p>
 </div>
 </div>
 </div>
@@ -8008,23 +7574,17 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">new_model</span><span class="p">():</span>
-    <span class="c1"># 순서: 훈련에서 평균 대체값 학습 → 대체된 벡터로 두 중심 학습</span>
     <span class="k">return</span> <span class="n">Pipeline</span><span class="p">([(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">"mean"</span><span class="p">)),</span>
                      <span class="p">(</span><span class="s2">"classifier"</span><span class="p">,</span> <span class="n">NearestCentroid</span><span class="p">())])</span>
 
-<span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">known_train</span><span class="p">[</span><span class="s2">"label"</span><span class="p">])</span> <span class="o">==</span> <span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
-<span class="k">assert</span> <span class="ow">not</span> <span class="n">known_train</span><span class="p">[</span><span class="n">feature_cols</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">new_model</span><span class="p">()</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">known_train</span><span class="p">[</span><span class="n">feature_cols</span><span class="p">],</span> <span class="n">known_train</span><span class="p">[</span><span class="s2">"label"</span><span class="p">])</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">new_model</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">known_train</span><span class="p">[</span><span class="n">feature_cols</span><span class="p">],</span> <span class="n">known_train</span><span class="p">[</span><span class="s2">"label"</span><span class="p">])</span>
 <span class="n">fill_values</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s2">"fill"</span><span class="p">]</span><span class="o">.</span><span class="n">statistics_</span>
 <span class="n">centers</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s2">"classifier"</span><span class="p">]</span><span class="o">.</span><span class="n">centroids_</span>
 <span class="n">class_names</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s2">"classifier"</span><span class="p">]</span><span class="o">.</span><span class="n">classes_</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"훈련에서 배운 대체값:"</span><span class="p">,</span> <span class="n">fill_values</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"중심의 라벨 순서:"</span><span class="p">,</span> <span class="n">class_names</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"라벨별 중심:</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">centers</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">fill_values</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">class_names</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">centers</span><span class="p">,</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">center</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">class_names</span><span class="p">,</span> <span class="n">centers</span><span class="p">):</span>
+    <span class="n">distance_squared</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="o">-</span> <span class="n">center</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"라벨 </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">의 중심 </span><span class="si">{</span><span class="n">center</span><span class="si">}</span><span class="s2">, 새 작품까지 제곱거리 </span><span class="si">{</span><span class="n">distance_squared</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8038,10 +7598,8 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>훈련에서 배운 대체값: [5. 3.]
-중심의 라벨 순서: [-1  1]
-라벨별 중심:
- [[2. 2.]
- [8. 4.]]
+라벨 -1의 중심 [2. 2.], 새 작품까지 제곱거리 17
+라벨 1의 중심 [8. 4.], 새 작품까지 제곱거리 5
 </pre>
 </div>
 </div>
@@ -8054,7 +7612,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%ED%9B%88%EB%A0%A8-%EC%9E%90%EB%A3%8C%EA%B0%80-%EB%B0%94%EB%80%8C%EB%A9%B4-%EB%AC%B4%EC%97%87%EC%9D%84-%EB%B0%B0%EC%9A%B8%EA%B9%8C%EC%9A%94?">훈련 자료가 바뀌면 무엇을 배울까요?<a class="anchor-link" href="#%ED%9B%88%EB%A0%A8-%EC%9E%90%EB%A3%8C%EA%B0%80-%EB%B0%94%EB%80%8C%EB%A9%B4-%EB%AC%B4%EC%97%87%EC%9D%84-%EB%B0%B0%EC%9A%B8%EA%B9%8C%EC%9A%94?">¶</a></h3><p>아래는 <strong>비교용 훈련 사본</strong>만 바꿔 별도 모델을 fit합니다. T4의 texture를 9에서 11로 바꾸면 정답 1의 texture 중심은 (7+11)÷2=9입니다. 비교용 새 입력 [5.25, 3]에서 예측도 달라지는지 확인합니다. 실제 사용할 모델은 처음 만든 <code>model</code>로 유지합니다. 검증 결과를 보고 두 모델 중 고르는 실험이 아닙니다.</p>
+<h3 id="%ED%9B%88%EB%A0%A8%EA%B0%92-%ED%95%98%EB%82%98%EB%A5%BC-%EB%B0%94%EA%BF%94-%EB%B3%B4%EA%B8%B0">훈련값 하나를 바꿔 보기<a class="anchor-link" href="#%ED%9B%88%EB%A0%A8%EA%B0%92-%ED%95%98%EB%82%98%EB%A5%BC-%EB%B0%94%EA%BF%94-%EB%B3%B4%EA%B8%B0">¶</a></h3><p>T4의 조직감 점수를 9에서 11로 바꾼 사본에 새 모델을 학습하면 어느 중심이 어디로 움직일까요? 바뀐 중심에 가까웠던 경계 부근의 새 점 [5.25,3]도 같은 라벨을 받을지 먼저 예상하세요. 처음 학습한 모델은 그대로 두고 두 모델에 같은 점을 보여 줍니다.</p>
 </div>
 </div>
 </div>
@@ -8109,7 +7667,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.-%EA%B2%80%EC%A6%9D%EC%9C%BC%EB%A1%9C-%ED%99%95%EC%9D%B8%ED%95%98%EA%B3%A0-%EC%B5%9C%EC%A2%85-%EC%A0%95%EB%8B%B5%EC%9D%80-%EB%B3%B4%EB%A5%98%ED%95%98%EA%B8%B0">3. 검증으로 확인하고 최종 정답은 보류하기<a class="anchor-link" href="#3.-%EA%B2%80%EC%A6%9D%EC%9C%BC%EB%A1%9C-%ED%99%95%EC%9D%B8%ED%95%98%EA%B3%A0-%EC%B5%9C%EC%A2%85-%EC%A0%95%EB%8B%B5%EC%9D%80-%EB%B3%B4%EB%A5%98%ED%95%98%EA%B8%B0">¶</a></h2><p>아래 V는 훈련과 다른 수집품이고, 교육용으로 검증 정답을 보여 줍니다. 예측 전에 모델과 입력 열을 이미 정했습니다. V3의 실제 라벨은 −1이지만 앞에서 손으로 계산한 예측은 1입니다. 네 개 중 몇 개가 맞을까요?</p>
+<h2 id="3.-%EC%98%88%EC%B8%A1%EC%9D%84-%EC%A0%80%EC%9E%A5%ED%95%9C-%EB%92%A4-%EA%B2%80%EC%A6%9D-%EC%A0%95%EB%8B%B5-%EC%97%B4%EA%B8%B0">3. 예측을 저장한 뒤 검증 정답 열기<a class="anchor-link" href="#3.-%EC%98%88%EC%B8%A1%EC%9D%84-%EC%A0%80%EC%9E%A5%ED%95%9C-%EB%92%A4-%EA%B2%80%EC%A6%9D-%EC%A0%95%EB%8B%B5-%EC%97%B4%EA%B8%B0">¶</a></h2><p>검증용 V1~V4는 훈련 작품과 겹치지 않습니다. V3의 점수는 [6,3]이고 V4에는 조직감 점수가 없습니다. V4에 무슨 값을 넣을지, 그 값을 <strong>어느 작품들에서</strong> 배웠는지 말해 보세요. 새 모델을 학습하면 지금 점검하려던 규칙이 달라집니다.</p>
 </div>
 </div>
 </div>
@@ -8122,18 +7680,12 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">validation</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
-    <span class="p">(</span><span class="s2">"V1"</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">"V2"</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"V3"</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">"V4"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-<span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"row_id"</span><span class="p">,</span> <span class="s2">"texture"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">])</span>
+    <span class="p">(</span><span class="s2">"V1"</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s2">"V2"</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s2">"V3"</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s2">"V4"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+<span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"row_id"</span><span class="p">,</span> <span class="s2">"texture"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">])</span>
 <span class="n">val_predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">validation</span><span class="p">[</span><span class="n">feature_cols</span><span class="p">])</span>
-<span class="n">val_view</span> <span class="o">=</span> <span class="n">validation</span><span class="p">[[</span><span class="s2">"row_id"</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">val_view</span><span class="p">[</span><span class="s2">"prediction"</span><span class="p">]</span> <span class="o">=</span> <span class="n">val_predictions</span>
-<span class="n">val_view</span><span class="p">[</span><span class="s2">"correct"</span><span class="p">]</span> <span class="o">=</span> <span class="n">val_view</span><span class="p">[</span><span class="s2">"label"</span><span class="p">]</span> <span class="o">==</span> <span class="n">val_view</span><span class="p">[</span><span class="s2">"prediction"</span><span class="p">]</span>
-<span class="n">display</span><span class="p">(</span><span class="n">val_view</span><span class="p">)</span>
-<span class="n">accuracy</span> <span class="o">=</span> <span class="n">val_view</span><span class="p">[</span><span class="s2">"correct"</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">val_view</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"검증 정확도:"</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">val_predictions</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">==</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="k">assert</span> <span class="n">accuracy</span> <span class="o">==</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span>
+<span class="n">worked_first</span> <span class="o">=</span> <span class="n">validation</span><span class="p">[[</span><span class="s2">"row_id"</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">worked_first</span><span class="p">[</span><span class="s2">"prediction"</span><span class="p">]</span> <span class="o">=</span> <span class="n">val_predictions</span>
+<span class="n">display</span><span class="p">(</span><span class="n">worked_first</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8165,8 +7717,98 @@ a.anchor-link {
 <tr style="text-align: right;">
 <th></th>
 <th>row_id</th>
-<th>label</th>
 <th>prediction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>V1</td>
+<td>-1</td>
+</tr>
+<tr>
+<th>1</th>
+<td>V2</td>
+<td>1</td>
+</tr>
+<tr>
+<th>2</th>
+<td>V3</td>
+<td>1</td>
+</tr>
+<tr>
+<th>3</th>
+<td>V4</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=edd0bdb3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>이제 네 작품의 감정 결과를 엽니다. 감정소에서 돌려준 줄은 입력 순서와 다를 수 있습니다. <strong>같은 ID의 첫 예측과 감정 결과가 맞는지</strong> 비교하세요. 4개 중 몇 개가 맞았고 어느 작품에서 틀렸나요?</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=worked-score">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">worked_validation_key</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
+    <span class="p">(</span><span class="s2">"V4"</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">"V1"</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">"V3"</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">"V2"</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"row_id"</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">])</span>
+<span class="n">val_view</span> <span class="o">=</span> <span class="n">worked_first</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">worked_validation_key</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">"row_id"</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="s2">"one_to_one"</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">val_view</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">worked_first</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">worked_validation_key</span><span class="p">)</span>
+<span class="n">val_view</span><span class="p">[</span><span class="s2">"correct"</span><span class="p">]</span> <span class="o">=</span> <span class="n">val_view</span><span class="p">[</span><span class="s2">"prediction"</span><span class="p">]</span> <span class="o">==</span> <span class="n">val_view</span><span class="p">[</span><span class="s2">"label"</span><span class="p">]</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">val_view</span><span class="p">[</span><span class="s2">"correct"</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">val_view</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">val_view</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"맞은 작품 / 평가한 작품:"</span><span class="p">,</span> <span class="n">val_view</span><span class="p">[</span><span class="s2">"correct"</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="s2">"/"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">val_view</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>row_id</th>
+<th>prediction</th>
+<th>label</th>
 <th>correct</th>
 </tr>
 </thead>
@@ -8188,8 +7830,8 @@ a.anchor-link {
 <tr>
 <th>2</th>
 <td>V3</td>
-<td>-1</td>
 <td>1</td>
+<td>-1</td>
 <td>False</td>
 </tr>
 <tr>
@@ -8207,21 +7849,21 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>검증 정확도: 0.75
+<pre>맞은 작품 / 평가한 작품: 3 / 4
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=edd0bdb3">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=worked-holdout">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>정확도는 <code>맞은 수 ÷ 평가한 전체 수 = 3/4</code>입니다. V3의 오류도 한 행씩 볼 수 있습니다. 이 네 행은 설명용이므로 3/4로 실제 성능을 추정할 수 없습니다. 검증 결과는 모델 선택에 쓸 수 있지만, 같은 검증을 반복해서 보고 고르면 검증에도 맞춰질 수 있습니다. 최종 테스트로 설정을 고르거나 그 정답을 전처리에 섞으면 마지막 평가가 오염됩니다.</p>
-<p>V4의 texture는 훈련에서 배운 평균 5로 채웁니다. 검증에는 새 평균을 배우는 <code>fit</code>이 아니라 저장된 규칙을 적용하는 <code>predict</code>만 합니다. 다음 실험은 검증값만 크게 바꾸어도 훈련에서 배운 숫자는 유지되는지 확인합니다.</p>
+<p>3/4은 지금 본 네 작품의 정확도입니다. V3에서는 계산한 예측과 실제 감정 결과가 달랐습니다. 검증으로 방법을 고를 수 있지만, 같은 정답을 보면서 계속 고치면 그 네 작품에만 맞을 수도 있습니다. 마지막 성능을 확인할 새 테스트의 정답은 여기서 제공하지 않습니다.</p>
+<p>훈련 T4를 바꾼 앞 실험과 이번 실험의 차이를 보세요. 아래에서는 검증 행만 바꾸고 이미 배운 모델의 <code>predict</code>를 호출합니다. 대체값이나 중심도 바뀔까요?</p>
 </div>
 </div>
 </div>
@@ -8230,7 +7872,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">before_fill</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s2">"fill"</span><span class="p">]</span><span class="o">.</span><span class="n">statistics_</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -8270,8 +7912,497 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4.-%EC%98%88%EC%B8%A1%EC%9D%84-ID%EC%99%80-%EB%AC%B6%EC%96%B4%EC%84%9C-%EC%A0%9C%EC%B6%9C-%EC%88%9C%EC%84%9C%EB%A1%9C-%EC%98%AE%EA%B8%B0%EA%B8%B0">4. 예측을 ID와 묶어서 제출 순서로 옮기기<a class="anchor-link" href="#4.-%EC%98%88%EC%B8%A1%EC%9D%84-ID%EC%99%80-%EB%AC%B6%EC%96%B4%EC%84%9C-%EC%A0%9C%EC%B6%9C-%EC%88%9C%EC%84%9C%EB%A1%9C-%EC%98%AE%EA%B8%B0%EA%B8%B0">¶</a></h2><p>이 합성 연습의 A/B는 각기 새로운 입력입니다. 편의를 위해 원하는 출력 순서를 별도 ID 목록으로 줍니다. 실제 명세가 <strong>입력 파일의 원래 순서</strong>를 요구하면 읽은 직후 정렬·변형하기 전에 원래 ID 순서를 보관합니다. 공식 Antique의 출력 CSV에는 ID 열을 넣지 않습니다.</p>
-<p>아래 함수는 필요한 특성 열이 빠졌거나 ID가 없거나 중복되면 조용히 행을 버리지 않고 오류를 냅니다. 값 한 칸의 결측은 앞에서 배운 대체 규칙으로 처리합니다. <code>feature_cols</code>만 모델에 넣으므로 정답이나 나중 검사 열은 입력에 끼어들지 않습니다.</p>
+<p><a id="pipeline-submit"></a></p>
+<h2 id="4.-%EC%84%B8-%EC%9E%91%ED%92%88%EC%9D%98-%EB%8B%B5%EC%9D%84-%EC%96%B4%EB%8A%90-%EC%A4%84%EC%97%90-%EC%A0%81%EC%9D%84%EA%B9%8C?">4. 세 작품의 답을 어느 줄에 적을까?<a class="anchor-link" href="#4.-%EC%84%B8-%EC%9E%91%ED%92%88%EC%9D%98-%EB%8B%B5%EC%9D%84-%EC%96%B4%EB%8A%90-%EC%A4%84%EC%97%90-%EC%A0%81%EC%9D%84%EA%B9%8C?">¶</a></h2><p>예측을 만든 사람이 다음 표를 건넸습니다. <strong>이 표만으로 풀 수 있습니다.</strong> 이 작은 문제에서는 담당자가 요구하는 순서가 입력과 다릅니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">예측할 때의 입력 순서</th>
+<th>작품 ID</th>
+<th style="text-align:right">모델의 예측</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td>A08</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td>A02</td>
+<td style="text-align:right">−1</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td>A05</td>
+<td style="text-align:right">−1</td>
+</tr>
+</tbody>
+</table>
+<p>담당자가 적어 준 순서는 <strong>A05, A08, A02</strong>입니다. 헤더 없는 세 줄에 쓸 값을 위에서 아래로 적으세요. 동료가 입력 표의 마지막 열을 그대로 복사했습니다. 줄 수도, 허용된 값도 맞는데 어느 작품에 다른 예측이 붙을까요?</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=order-by-hand">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">predicted_rows</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"A08"</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">"A02"</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">"A05"</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">requested_rows</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"A05"</span><span class="p">,</span> <span class="s2">"A08"</span><span class="p">,</span> <span class="s2">"A02"</span><span class="p">]</span>
+<span class="n">by_id</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">predicted_rows</span><span class="p">)</span>  <span class="c1"># 이 표에서는 ID마다 예측이 하나입니다.</span>
+<span class="k">for</span> <span class="n">row_id</span> <span class="ow">in</span> <span class="n">requested_rows</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row_id</span><span class="p">,</span> <span class="s2">"→"</span><span class="p">,</span> <span class="n">by_id</span><span class="p">[</span><span class="n">row_id</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>A05 → -1
+A08 → 1
+A02 → -1
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3d1ecace">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>요구 순서에서는 −1, 1, −1입니다. 원래 값 1, −1, −1을 그대로 보내면 A05와 A08의 자리에 다른 값이 갑니다. 이것은 <strong>저장할 때 고른 작품이 틀린 것</strong>입니다. A의 참 라벨은 모르므로 이 비교를 모델의 정확도라고 부를 수 없습니다.</p>
+<p>실제 Antique에는 별도 요구 ID 목록이나 출력 ID 열이 없습니다. 원래 입력 파일 순서로 예측을 쓰므로, 읽은 행을 섞었다면 읽을 때 보관한 자리를 따라 되돌립니다. 이름순으로 다시 정렬하라는 뜻도 아닙니다.</p>
+<p>통합 교재에서 왔다면 ‘질의마다 무엇을 한 칸에 쓰는지’를 다시 답해 보세요. <a href="week01_integrated.html#week01-match">통합 교재의 점수표로 돌아가기</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bb177697">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a id="pipeline-device"></a></p>
+<h2 id="5.-%ED%98%BC%EC%9E%90-%ED%92%80%EA%B8%B0-%C2%B7-%EA%B8%B0%EA%B8%B0-%EC%A0%90%EA%B2%80-%EC%9D%98%EB%A2%B0%EC%84%9C">5. 혼자 풀기 · 기기 점검 의뢰서<a class="anchor-link" href="#5.-%ED%98%BC%EC%9E%90-%ED%92%80%EA%B8%B0-%C2%B7-%EA%B8%B0%EA%B8%B0-%EC%A0%90%EA%B2%80-%EC%9D%98%EB%A2%B0%EC%84%9C">¶</a></h2><p><strong>정비소의 부탁.</strong> 기기 한 대가 들어올 때 직원은 번호표 <code>item</code>을 붙입니다. 센서는 그 자리에서 진동(<code>vibration</code>), 소리(<code>sound</code>), 열(<code>heat</code>)을 같은 척도의 점수로 기록합니다. 이때 점검이 필요할지 알려 주세요. 예전 장부에서 <code>label</code>은 다음 날 기술자가 확인한 결과로 0=정상, 1=점검, −1=미확인입니다. <code>after_service</code>에는 그 뒤에야 정비 영수증 번호가 들어갑니다. 미확인 기기는 지금 배우는 지도학습의 두 무리에서 제외합니다. 센서 한 칸이 비면 <strong>정답이 확인된 훈련 기기</strong>에서 그 센서가 기록된 값들의 평균을 씁니다.</p>
+<p>정비소는 새 기기를 <strong>받은 순서대로</strong> 알려 달라고 했습니다. 파일 이름은 <code>audit.csv</code>이고, 첫 줄은 <code>item,signal</code>입니다. 나머지 줄에는 기기 번호표와 0 또는 1을 씁니다. 검증에서는 기술자가 확인한 기기 한 대마다 예측 한 번을 셉니다.</p>
+<ol>
+<li>완성 예제를 덮고, 담당자에게 설명하듯 <strong>한 행의 뜻, 예측할 순간, 쓸 열과 제외할 열, 낼 답 한 줄</strong>을 적으세요. 예전 장부에서 영수증 번호로 정답을 잘 맞히더라도 왜 새 기기에서는 그 방법을 쓸 수 없을까요?</li>
+<li>아래 표의 열 순서를 살펴보세요. 훈련에 사용할 ID와 빼는 ID를 고르고 대체 평균을 손계산하세요. 원하는 분류기를 이 훈련 자료에 새로 학습하고, 모델이 배운 값 한 가지를 손계산이나 원래 자료와 비교하세요.</li>
+<li>검증 정답을 열기 전에 세 기기의 첫 예측을 <code>first_device_predictions</code>라는 표에 <code>item,prediction</code> 두 열로 기록하세요. 새 기기의 <code>audit.csv</code>는 직접 쓰고 다시 열어 열 이름, 줄 수, ID 순서와 <strong>기기별 예측값</strong>이 맞는지 확인하세요. 새 기기의 <strong>행 순서를 한 번 더 바꿔</strong> 파일을 만들면 어느 줄이 움직이고 어느 값이 같은 기기에 남아야 할까요?</li>
+</ol>
+<p>이 절의 데이터 셀부터 실행해도 됩니다. 분류기를 쓰려면 필요한 라이브러리를 직접 불러오세요.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f53ccb1f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span>
+
+<span class="n">exercise_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
+    <span class="p">(</span><span class="s2">"R1"</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>     <span class="mi">0</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="s2">"R2"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"R3"</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>     <span class="mi">1</span><span class="p">,</span> <span class="mi">803</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="s2">"R4"</span><span class="p">,</span>      <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">804</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"R5"</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>    <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+<span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"item"</span><span class="p">,</span> <span class="s2">"sound"</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">,</span> <span class="s2">"after_service"</span><span class="p">,</span> <span class="s2">"heat"</span><span class="p">,</span> <span class="s2">"vibration"</span><span class="p">])</span>
+<span class="n">exercise_validation</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"V1"</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">"V2"</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"V3"</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+<span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"heat"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="s2">"vibration"</span><span class="p">,</span> <span class="s2">"sound"</span><span class="p">])</span>
+<span class="n">exercise_input</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
+    <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">"J3"</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"J1"</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"J2"</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"sound"</span><span class="p">,</span> <span class="s2">"vibration"</span><span class="p">,</span> <span class="s2">"item"</span><span class="p">,</span> <span class="s2">"heat"</span><span class="p">])</span>
+
+<span class="c1"># 데이터 셀을 다시 실행해도 이미 기록한 첫 예측을 지우지 않습니다.</span>
+<span class="k">if</span> <span class="s2">"first_device_predictions"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">():</span>
+    <span class="n">first_device_predictions</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">if</span> <span class="s2">"recorded_device_predictions"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">():</span>
+    <span class="n">recorded_device_predictions</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">device_key_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"data/pipeline_device_validation.csv"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"예전 장부"</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">exercise_train</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"검증 입력"</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">exercise_validation</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"정비소에서 새로 받은 순서"</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">exercise_input</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>예전 장부
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>item</th>
+<th>sound</th>
+<th>label</th>
+<th>after_service</th>
+<th>heat</th>
+<th>vibration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>R1</td>
+<td>2.0</td>
+<td>0</td>
+<td>101.0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<th>1</th>
+<td>R2</td>
+<td>NaN</td>
+<td>0</td>
+<td>102.0</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<th>2</th>
+<td>R3</td>
+<td>4.0</td>
+<td>1</td>
+<td>803.0</td>
+<td>2</td>
+<td>6</td>
+</tr>
+<tr>
+<th>3</th>
+<td>R4</td>
+<td>6.0</td>
+<td>1</td>
+<td>804.0</td>
+<td>4</td>
+<td>8</td>
+</tr>
+<tr>
+<th>4</th>
+<td>R5</td>
+<td>5.0</td>
+<td>-1</td>
+<td>NaN</td>
+<td>2</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>검증 입력
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>heat</th>
+<th>item</th>
+<th>vibration</th>
+<th>sound</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>1</td>
+<td>V1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<th>1</th>
+<td>3</td>
+<td>V2</td>
+<td>6</td>
+<td>5</td>
+</tr>
+<tr>
+<th>2</th>
+<td>1</td>
+<td>V3</td>
+<td>5</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>정비소에서 새로 받은 순서
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>sound</th>
+<th>vibration</th>
+<th>item</th>
+<th>heat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>5.0</td>
+<td>7</td>
+<td>J3</td>
+<td>3</td>
+</tr>
+<tr>
+<th>1</th>
+<td>3.0</td>
+<td>1</td>
+<td>J1</td>
+<td>1</td>
+</tr>
+<tr>
+<th>2</th>
+<td>NaN</td>
+<td>2</td>
+<td>J2</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d6195f91">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>내가 읽은 예측 시점·열·미상 규칙과 출력 한 줄의 뜻은 …</p>
+<p>훈련 ID와 손계산, 선택한 모델과 그 모델이 배운 값은 …</p>
+<p><code>audit.csv</code>를 다시 읽고, 입력 순서를 바꾸어 대조한 두 기기의 번호표와 값은 …</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student-code" id="cell-id=06ceb97e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="c1"># 새 명세에 맞는 학습, 첫 검증 예측, audit.csv 작성과 확인을 직접 적으세요.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=device-feedback">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="%EC%B2%AB-%EC%98%88%EC%B8%A1%EC%9D%84-%EC%A0%95%EB%8B%B5%EA%B3%BC-%EB%8C%80%EC%A1%B0%ED%95%98%EA%B8%B0">첫 예측을 정답과 대조하기<a class="anchor-link" href="#%EC%B2%AB-%EC%98%88%EC%B8%A1%EC%9D%84-%EC%A0%95%EB%8B%B5%EA%B3%BC-%EB%8C%80%EC%A1%B0%ED%95%98%EA%B8%B0">¶</a></h3><p>첫 예측의 ID와 값이 모두 정해졌으면 아래 확인 셀을 실행하세요. 파일이 따로 있다면 <code>device_key_path</code>에 그 경로를 넣으세요. 자습할 때에는 첫 예측을 기록한 뒤에 <a href="data/pipeline_device_validation.csv">검증용 정답 CSV</a>를 내려받아 <code>data</code> 폴더에 놓을 수 있습니다. 이 파일은 공개되어 있습니다. 이미 정답을 보았다면 받은 도움에 그렇게 적으세요. 정답 파일의 줄 순서는 달라도 됩니다. 새 기기 J의 정답은 주어지지 않습니다.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=device-score-release">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">device_values_by_item</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">value_column</span><span class="p">,</span> <span class="n">expected_items</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="ow">or</span> <span class="n">table</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">!=</span> <span class="p">[</span><span class="s2">"item"</span><span class="p">,</span> <span class="n">value_column</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"필요한 두 열: item, </span><span class="si">{</span><span class="n">value_column</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">expected_items</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">expected_items</span><span class="p">)</span>
+    <span class="n">received_items</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="s2">"item"</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">items</span> <span class="ow">in</span> <span class="p">(</span><span class="n">expected_items</span><span class="p">,</span> <span class="n">received_items</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">item</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"비어 있지 않은 기기 번호표가 필요합니다."</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"같은 번호표가 두 번 있습니다."</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">set</span><span class="p">(</span><span class="n">received_items</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">set</span><span class="p">(</span><span class="n">expected_items</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"검증 기기의 번호표를 빠짐없이 한 번씩 써 주세요."</span><span class="p">)</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"item"</span><span class="p">)[</span><span class="n">value_column</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+        <span class="n">integer</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">))</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">bool</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">bool_</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">integer</span> <span class="ow">or</span> <span class="n">value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"정수 0 또는 1을 써 주세요."</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">((</span><span class="n">item</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">values</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">item</span><span class="p">]))</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">expected_items</span><span class="p">)</span>
+
+<span class="n">device_comparison</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">if</span> <span class="n">first_device_predictions</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"아직 첫 예측표가 없습니다. 위 답안에서 세 기기의 예측을 만들면 정답을 대조할 수 있습니다."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">first_rows</span> <span class="o">=</span> <span class="n">device_values_by_item</span><span class="p">(</span><span class="n">first_device_predictions</span><span class="p">,</span> <span class="s2">"prediction"</span><span class="p">,</span> <span class="n">exercise_validation</span><span class="p">[</span><span class="s2">"item"</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">recorded_device_predictions</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">recorded_device_predictions</span> <span class="o">=</span> <span class="n">first_rows</span>
+    <span class="k">elif</span> <span class="nb">dict</span><span class="p">(</span><span class="n">first_rows</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">recorded_device_predictions</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"보관한 첫 예측과 값이 다릅니다. 바꾼 예측은 별도로 비교하세요."</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">Path</span><span class="p">(</span><span class="n">device_key_path</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="n">key_rows</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">device_key_path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"item"</span><span class="p">:</span> <span class="nb">str</span><span class="p">})</span>
+        <span class="n">key_by_item</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">device_values_by_item</span><span class="p">(</span><span class="n">key_rows</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">,</span> <span class="n">exercise_validation</span><span class="p">[</span><span class="s2">"item"</span><span class="p">]))</span>
+        <span class="n">device_comparison</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">recorded_device_predictions</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"item"</span><span class="p">,</span> <span class="s2">"prediction"</span><span class="p">])</span>
+        <span class="n">device_comparison</span><span class="p">[</span><span class="s2">"label"</span><span class="p">]</span> <span class="o">=</span> <span class="n">device_comparison</span><span class="p">[</span><span class="s2">"item"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">key_by_item</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">device_comparison</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"첫 예측을 보관했습니다. 정답 파일을 받은 뒤 device_key_path를 확인하고 다시 실행하세요."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>아직 첫 예측표가 없습니다. 위 답안에서 세 기기의 예측을 만들면 정답을 대조할 수 있습니다.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=device-reflect">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>대조한 표에서 <strong>맞은 기기 수 / 평가한 기기 수</strong>와 첫 예측이 어긋난 ID를 직접 적으세요. 모두 맞았다면 그렇게 기록하세요. 이 표를 보고 설정을 고쳤다면 어느 결과가 첫 시도였는지도 남기세요. 센서 값 한 칸이 빈 경우와 열 자체가 없어진 경우, 또는 번호표가 중복된 경우에 같은 코드를 그대로 써도 될까요?</p>
+<p>처음 생각과 달라진 점 / 받은 도움(없음·힌트·예제·설명) …</p>
+<p><a href="week01_integrated.html#week01-check">통합 교재의 내 결과 확인으로 돌아가기</a> · <a href="../week02/week02_prediction_evaluation.ipynb">2주차 분할·전처리·평가</a></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_student-code" id="cell-id=device-score-work">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="c1"># 첫 예측을 대조하여 맞은 개수, 전체 개수, 그리고 틀린 기기 번호표를 구하세요.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=12269b20">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a id="pipeline-files"></a></p>
+<h2 id="%EB%8D%94-%ED%95%B4-%EB%B3%B4%EA%B8%B0-%C2%B7-A/B-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EC%8B%A4%EC%A0%9C%EB%A1%9C-%EC%97%B4%EC%96%B4-%EB%B3%B4%EA%B8%B0">더 해 보기 · A/B 파일을 실제로 열어 보기<a class="anchor-link" href="#%EB%8D%94-%ED%95%B4-%EB%B3%B4%EA%B8%B0-%C2%B7-A/B-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EC%8B%A4%EC%A0%9C%EB%A1%9C-%EC%97%B4%EC%96%B4-%EB%B3%B4%EA%B8%B0">¶</a></h2><p>4절의 A 표를 모델의 예측에서 직접 만들고 B 표도 하나 더 만들어 봅니다. 이 실험을 하려면 1–3절의 예제 코드를 먼저 실행합니다. 새 기기 문제와 다른 약속을 사용합니다. <strong>각 CSV에는 ID나 헤더 없이 −1 또는 1만</strong> 적습니다.</p>
+<p>아래 도구는 한 셀의 결측에는 훈련 평균을 쓰고, 필요한 열 전체가 없거나 번호표가 빠지거나 겹치면 멈춥니다. A 입력의 열 순서를 바꾸거나 나중 감정 열을 덧붙여도 모델이 사용하는 열 이름은 그대로입니다.</p>
 </div>
 </div>
 </div>
@@ -8280,7 +8411,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_missing_id</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
@@ -8330,23 +8461,12 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3d1ecace">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%EA%B8%B8%EC%9D%B4%EA%B0%80-%EA%B0%99%EC%95%84%EB%8F%84-%ED%96%89%EC%9D%B4-%EB%92%A4%EB%B0%94%EB%80%94-%EC%88%98-%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4">길이가 같아도 행이 뒤바뀔 수 있습니다<a class="anchor-link" href="#%EA%B8%B8%EC%9D%B4%EA%B0%80-%EA%B0%99%EC%95%84%EB%8F%84-%ED%96%89%EC%9D%B4-%EB%92%A4%EB%B0%94%EB%80%94-%EC%88%98-%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4">¶</a></h3><p><code>pairs_A</code>는 예측을 만든 행의 ID를 함께 보유합니다. 요구된 순서의 각 ID로 다시 찾아야 합니다. 아래에서 순서만 바꾼 값과 ID를 기준으로 정렬한 값을 비교하세요. 또한 중복·누락·불법 예측값을 확인합니다. 값에 0은 허용하지 않는 <strong>이 연습의 출력 계약</strong>입니다.</p>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=50753714">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">align_predictions</span><span class="p">(</span><span class="n">expected_ids</span><span class="p">,</span> <span class="n">pairs</span><span class="p">):</span>
@@ -8401,26 +8521,29 @@ B 요구 ID 순서로 재배열한 값: [-1, 1]
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=12269b20">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8373b05e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="ZIP-%EC%95%88%EC%9D%98-%EC%8B%A4%EC%A0%9C-CSV%EB%A5%BC-%EC%97%B4%EC%96%B4-%EA%B2%80%EC%82%AC%ED%95%98%EA%B8%B0">ZIP 안의 실제 CSV를 열어 검사하기<a class="anchor-link" href="#ZIP-%EC%95%88%EC%9D%98-%EC%8B%A4%EC%A0%9C-CSV%EB%A5%BC-%EC%97%B4%EC%96%B4-%EA%B2%80%EC%82%AC%ED%95%98%EA%B8%B0">¶</a></h3><p>아래는 메모리 안에 실제 ZIP과 CSV 바이트를 만들고 다시 엽니다. 연습용이므로 파일을 서버에 제출하지 않습니다. 두 CSV의 파일명, 각 행의 열 수·라벨·개수와, 앞에서 ID에 묶은 예측대로 배치됐는지를 검사합니다. 헤더나 ID 열을 넣으면 이 형식에서는 오류입니다.</p>
-<p>ID가 없는 CSV 자체만 보면 어느 수집품의 예측인지 알 수 없습니다. 아래 순서 검사는 따로 보관한 <strong>ID→예측 대응표</strong>에 대조하는 것입니다. 대응표 자체가 잘못 만들어졌다면 CSV 형식 검사만으로는 발견할 수 없으므로, 예측할 때 행과 ID를 함께 옮기는지와 순서 변경 전후 결과도 확인해야 합니다.</p>
+<h3 id="%EB%91%90-CSV%EB%A5%BC-%EB%8B%B4%EC%9D%80-ZIP-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0">두 CSV를 담은 ZIP 확인하기<a class="anchor-link" href="#%EB%91%90-CSV%EB%A5%BC-%EB%8B%B4%EC%9D%80-ZIP-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0">¶</a></h3><p>조건을 하나씩 검사해 봅시다. 두 파일의 이름이 맞아도 행이 빠질 수 있고, 줄 수가 맞아도 A05의 자리에 A08의 예측이 들어갈 수 있습니다. ZIP을 다시 읽을 때는 예측을 만든 순간의 <strong>ID와 값의 짝</strong>에 대조합니다. 같은 값을 받은 두 작품을 맞바꾸면 CSV의 숫자만으로는 구별할 수 없습니다.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8433e657">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8433e657">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">csv_text</span><span class="p">(</span><span class="n">labels</span><span class="p">):</span>
+<div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">zipfile</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">csv_text</span><span class="p">(</span><span class="n">labels</span><span class="p">):</span>
     <span class="n">stream</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">newline</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
     <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">lineterminator</span><span class="o">=</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
     <span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">([[</span><span class="n">value</span><span class="p">]</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">])</span>
@@ -8459,36 +8582,8 @@ B 요구 ID 순서로 재배열한 값: [-1, 1]
     <span class="k">return</span> <span class="n">actual</span>
 
 <span class="n">archive_bytes</span> <span class="o">=</span> <span class="n">make_archive</span><span class="p">(</span><span class="n">order_A</span><span class="p">,</span> <span class="n">pairs_A</span><span class="p">,</span> <span class="n">order_B</span><span class="p">,</span> <span class="n">pairs_B</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"ZIP 검사 결과:"</span><span class="p">,</span> <span class="n">inspect_archive</span><span class="p">(</span><span class="n">archive_bytes</span><span class="p">,</span> <span class="n">order_A</span><span class="p">,</span> <span class="n">pairs_A</span><span class="p">,</span> <span class="n">order_B</span><span class="p">,</span> <span class="n">pairs_B</span><span class="p">))</span>
-<span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">archive_bytes</span><span class="p">))</span> <span class="k">as</span> <span class="n">archive</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"A CSV 원문:"</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">archive</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">"submissionA.csv"</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">)))</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>ZIP 검사 결과: {'submissionA.csv': [-1, 1, -1], 'submissionB.csv': [-1, 1]}
-A CSV 원문: '-1\n1\n-1\n'
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8373b05e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%EC%8B%A4%EC%A0%9C-%EC%97%B0%EC%8A%B5-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EC%93%B0%EA%B3%A0-%EB%8B%A4%EC%8B%9C-%EC%97%B4%EA%B8%B0">실제 연습 파일을 쓰고 다시 열기<a class="anchor-link" href="#%EC%8B%A4%EC%A0%9C-%EC%97%B0%EC%8A%B5-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EC%93%B0%EA%B3%A0-%EB%8B%A4%EC%8B%9C-%EC%97%B4%EA%B8%B0">¶</a></h3><p>이번에는 같은 합성 바이트를 임시 작업 폴더의 <code>submission.zip</code>에 씁니다. 디스크의 파일을 다시 읽어 ZIP 구조와 CSV 값을 검사하고, 작업이 끝나면 임시 폴더와 파일을 자동으로 지웁니다. 이 노트북은 연습용입니다. 실제 공식 제출에서는 원문이 요구한 <code>submission.ipynb</code>와 지정된 작업 디렉터리·<code>submission.zip</code> 파일명을 따르며, 공식 데이터로 정확한 전체 계약을 따로 확인해야 합니다.</p>
 </div>
 </div>
 </div>
@@ -8497,7 +8592,7 @@ A CSV 원문: '-1\n1\n-1\n'
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
@@ -8510,6 +8605,8 @@ A CSV 원문: '-1\n1\n-1\n'
     <span class="n">verified</span> <span class="o">=</span> <span class="n">inspect_archive</span><span class="p">(</span><span class="n">read_back</span><span class="p">,</span> <span class="n">order_A</span><span class="p">,</span> <span class="n">pairs_A</span><span class="p">,</span> <span class="n">order_B</span><span class="p">,</span> <span class="n">pairs_B</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"임시 작업 폴더에 저장한 파일:"</span><span class="p">,</span> <span class="n">practice_zip</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"파일을 다시 열어 확인한 두 CSV:"</span><span class="p">,</span> <span class="n">verified</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">practice_zip</span><span class="p">)</span> <span class="k">as</span> <span class="n">archive</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"A CSV 세 줄:"</span><span class="p">,</span> <span class="n">archive</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">"submissionA.csv"</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">)</span><span class="o">.</span><span class="n">splitlines</span><span class="p">())</span>
     <span class="k">assert</span> <span class="n">read_back</span> <span class="o">==</span> <span class="n">archive_bytes</span>
 <span class="c1"># 블록이 끝나면 임시 파일은 삭제됩니다.</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"임시 파일 정리:"</span><span class="p">,</span> <span class="ow">not</span> <span class="n">practice_zip</span><span class="o">.</span><span class="n">exists</span><span class="p">())</span>
@@ -8528,6 +8625,7 @@ A CSV 원문: '-1\n1\n-1\n'
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>임시 작업 폴더에 저장한 파일: submission.zip
 파일을 다시 열어 확인한 두 CSV: {'submissionA.csv': [-1, 1, -1], 'submissionB.csv': [-1, 1]}
+A CSV 세 줄: ['-1', '1', '-1']
 임시 파일 정리: True
 </pre>
 </div>
@@ -8541,7 +8639,7 @@ A CSV 원문: '-1\n1\n-1\n'
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%EC%8B%A4%EC%88%98%ED%95%9C-%EC%9E%85%EB%A0%A5%EC%9D%84-%EC%A7%81%EC%A0%91-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0">실수한 입력을 직접 확인하기<a class="anchor-link" href="#%EC%8B%A4%EC%88%98%ED%95%9C-%EC%9E%85%EB%A0%A5%EC%9D%84-%EC%A7%81%EC%A0%91-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0">¶</a></h3><p>어떤 조건이 깨지는지 먼저 예상하세요. 다음 셀은 오류를 잡아 이름을 보여 주므로 이후에도 실행할 수 있습니다. 값이 결측인 행과 열 자체가 없는 경우, 순서가 다른 값과 개수가 다른 경우를 구별하세요.</p>
+<p>임시 폴더에 쓴 <code>submission.zip</code>은 다시 열어 확인한 뒤 지웠습니다. 다음 중 어떤 실수는 줄 수만 세어도 찾을 수 있고, 어떤 실수는 예측 ID 기록을 함께 봐야 찾을 수 있을까요? 아래 검사는 조건을 어긴 경우의 오류를 보여 줍니다.</p>
 </div>
 </div>
 </div>
@@ -8550,7 +8648,7 @@ A CSV 원문: '-1\n1\n-1\n'
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">show_rejected</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
@@ -8601,92 +8699,14 @@ A CSV 원문: '-1\n1\n-1\n'
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bb177697">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5.-%EB%8B%A4%EB%A5%B8-%EB%AA%85%EC%84%B8%EC%9D%98-%EB%AC%B8%EC%A0%9C%EB%A5%BC-%ED%98%BC%EC%9E%90-%ED%92%80%EA%B8%B0">5. 다른 명세의 문제를 혼자 풀기<a class="anchor-link" href="#5.-%EB%8B%A4%EB%A5%B8-%EB%AA%85%EC%84%B8%EC%9D%98-%EB%AC%B8%EC%A0%9C%EB%A5%BC-%ED%98%BC%EC%9E%90-%ED%92%80%EA%B8%B0">¶</a></h2><p><strong>위 완성 예제와 별도 교사용 해설을 가리고</strong> 입력·출력·정답 규칙부터 다시 적으세요.</p>
-<h3 id="%EC%83%88-%ED%95%A9%EC%84%B1-%EB%AA%85%EC%84%B8-%C2%B7-%EC%84%B8-%ED%8A%B9%EC%84%B1%EC%9D%98-%EA%B8%B0%EA%B8%B0-%EC%A0%90%EA%B2%80">새 합성 명세 · 세 특성의 기기 점검<a class="anchor-link" href="#%EC%83%88-%ED%95%A9%EC%84%B1-%EB%AA%85%EC%84%B8-%C2%B7-%EC%84%B8-%ED%8A%B9%EC%84%B1%EC%9D%98-%EA%B8%B0%EA%B8%B0-%EC%A0%90%EA%B2%80">¶</a></h3><p>행은 기기 하나입니다. 예측 시점에 주어지는 수치 특성은 <code>vibration, sound, heat</code> 세 개이며 단위 없는 같은 척도 점수입니다. 이 문제의 훈련 라벨은 <strong>0=정상, 1=점검, −1=미상</strong>입니다. 앞 문제와 0, −1의 뜻이 바뀌었습니다. 미상 행을 정상이나 점검으로 바꾸지 않습니다. 검증의 정답은 모델을 정한 다음 확인합니다.</p>
-<p>이 문제의 출력은 ZIP이 아닌 <code>audit.csv</code> 한 개입니다. 첫 줄은 정확히 <code>item,signal</code>이고 그 뒤 각 행은 <strong>제시한 입력 순서</strong>의 item ID와 0 또는 1 예측입니다. 세 특성 중 값 한 칸이 비면 라벨이 알려진 훈련 행에서 배운 각 열의 평균으로 채웁니다.</p>
-<ol>
-<li>훈련에서 쓸 ID, 제외할 미상 ID, 모델 입력 열과 사용할 수 없는 정답을 나누세요. 정답과 나중 검사 결과가 예측용 입력이 아닌 이유도 설명하세요.</li>
-<li>알려진 훈련 행으로 각 특성의 대체 평균을 손계산하세요. 타당한 학습 분류기를 하나 선택해 이 데이터에 새로 fit하고, 모델이 무엇을 배웠는지 값으로 확인·설명하세요. 예를 들어 가까운 중심 분류기를 선택했다면 라벨별 중심을 손계산해 비교할 수 있습니다. 다른 분류기를 선택했다면 그 모델에 맞는 학습 결과를 확인하세요.</li>
-<li>별도 검증 세 행의 예측과 정확도를 계산하세요. 최종 테스트 정답은 없고 선택 후까지 보류한다는 뜻을 설명하세요.</li>
-<li>새로운 입력의 ID를 그대로 유지해 헤더가 있는 CSV를 작성하고 다시 읽어 행 수·열 이름·ID 순서·허용값을 검사하세요. 입력 열 누락과 ID 중복을 각각 발견하면 어떻게 할지도 코드와 말로 보여 주세요. 완성 예제를 그대로 복사하지 말고 이 명세에 맞게 바꿉니다.</li>
-<li><code>label=-1</code>을 진짜 정답 −1로 학습하거나, 예측만 거꾸로 정렬하고 ID를 그대로 두면 무엇이 잘못되나요? 값 한 칸의 결측과 열 전체 누락도 구분하세요.</li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f53ccb1f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">exercise_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
-    <span class="p">(</span><span class="s2">"R1"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="s2">"R2"</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"R3"</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">"R4"</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"R5"</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span>
-<span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"item"</span><span class="p">,</span> <span class="s2">"vibration"</span><span class="p">,</span> <span class="s2">"sound"</span><span class="p">,</span> <span class="s2">"heat"</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">])</span>
-<span class="n">exercise_validation</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
-    <span class="p">(</span><span class="s2">"V1"</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="s2">"V2"</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"V3"</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-<span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"item"</span><span class="p">,</span> <span class="s2">"vibration"</span><span class="p">,</span> <span class="s2">"sound"</span><span class="p">,</span> <span class="s2">"heat"</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">])</span>
-<span class="n">exercise_input</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
-    <span class="p">(</span><span class="s2">"J3"</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s2">"J1"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">"J2"</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-<span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"item"</span><span class="p">,</span> <span class="s2">"vibration"</span><span class="p">,</span> <span class="s2">"sound"</span><span class="p">,</span> <span class="s2">"heat"</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d6195f91">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>내가 읽은 입력·출력·미상 규칙:</p>
-<p>손계산한 훈련 평균 / 선택한 모델의 배운 값과 검증 예측·정확도:</p>
-<p>작성한 CSV의 확인과 오류 처리:</p>
-<p>달라진 생각 / 받은 도움(없음·힌트·예시·직접 설명):</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=06ceb97e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># 새 명세에 맞는 코드와 검증을 직접 작성하세요.</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1c7edeca">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="%EB%8B%A4%EC%9D%8C%EC%97%90-%EC%97%B0%EA%B2%B0%ED%95%98%EA%B8%B0">다음에 연결하기<a class="anchor-link" href="#%EB%8B%A4%EC%9D%8C%EC%97%90-%EC%97%B0%EA%B2%B0%ED%95%98%EA%B8%B0">¶</a></h2><p>미상 데이터를 활용하는 모델은 나중에 배웁니다. 같은 숫자라도 도구의 약속이 다를 수 있습니다. 예를 들어 scikit-learn의 LabelSpreading/LabelPropagation에서 −1은 <strong>미상</strong>으로 쓰입니다. Antique의 −1은 <strong>복제품</strong>, 0은 미상이므로 원문 라벨을 그대로 넣으면 뜻이 뒤바뀝니다. 사용할 때는 예를 들어 복제품 −1→0, 진품 1→1, 미상 0→−1로 바꾸고, 결과의 0→−1, 1→1로 되돌리는 대응을 명시해야 합니다. 이 예시는 라벨 대응만 설명하며 반지도 학습이나 공식 문제를 풀지 않습니다.</p>
-<p><a href="../week02/week02_prediction_evaluation.ipynb">2주차 예측과 평가</a>에서는 예측 시점, 분할, 학습형 전처리와 평가지표를 더 다룹니다. 10주차에는 처음 보는 자료에서 그 문제의 입력·출력과 검증 조건을 다시 읽고 코드를 작성합니다.</p>
-<h2 id="%EC%B0%B8%EA%B3%A0-%EC%9B%90%EB%AC%B8%EA%B3%BC-%EB%B2%94%EC%9C%84">참고 원문과 범위<a class="anchor-link" href="#%EC%B0%B8%EA%B3%A0-%EC%9B%90%EB%AC%B8%EA%B3%BC-%EB%B2%94%EC%9C%84">¶</a></h2><ul>
-<li><a href="https://kitpa.org/koai/2027">KOAI 2027 안내</a>는 국내 대회 안내이고, 이 안내가 연결한 <a href="https://kitpa.org/koai/syllabus">KOAI/IOAI 실라버스</a>는 확인 당시 IOAI 2026 기준으로 표시됐습니다.</li>
-<li><a href="https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb">IOAI 2025 Antique 문제와 baseline</a>은 과거 국제 개인전 원문입니다. KOAI 2027 중등부의 실제 문제나 위 합성 문제의 정답이 아닙니다. 공식 문제는 5특성과 미상 표본 활용을 요구합니다.</li>
-<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestCentroid.html">scikit-learn 가까운 중심 분류기</a>, <a href="https://scikit-learn.org/stable/common_pitfalls.html">데이터 누수 방지</a>, <a href="https://scikit-learn.org/stable/modules/semi_supervised.html">반지도 라벨 표기</a>에서 도구의 조건을 확인하세요. 공식 페이지와 GitHub main은 달라질 수 있으므로 사용 시 다시 확인합니다.</li>
-</ul>
+<h3 id="%EB%AF%B8%EC%83%81-%ED%91%9C%EC%8B%9C%EB%A5%BC-%EB%8B%A4%EB%A5%B8-%EB%8F%84%EA%B5%AC%EB%A1%9C-%EC%98%AE%EA%B8%B0%EB%A9%B4">미상 표시를 다른 도구로 옮기면<a class="anchor-link" href="#%EB%AF%B8%EC%83%81-%ED%91%9C%EC%8B%9C%EB%A5%BC-%EB%8B%A4%EB%A5%B8-%EB%8F%84%EA%B5%AC%EB%A1%9C-%EC%98%AE%EA%B8%B0%EB%A9%B4">¶</a></h3><p>Antique에서는 복제품이 −1이고 미상이 0입니다. scikit-learn의 반지도 학습 도구는 −1을 미상으로 읽습니다. 그대로 넣으면 어떤 확인된 그림을 놓치고, 어느 그림을 확인된 무리로 잘못 넣을까요? 뜻을 유지하는 한 가지 대응은 <strong>복제품 −1→0, 진품 1→1, 미상 0→−1</strong>입니다. 제출할 때는 예측한 0을 −1로, 1을 1로 되돌립니다. 이 대응은 기호를 맞추는 일이고, 미상 그림의 측정값에서 어떻게 배울지는 따로 풀어야 합니다. <a href="https://scikit-learn.org/stable/modules/semi_supervised.html">scikit-learn의 미상 표시</a></p>
+<p>국내 중등부의 준비 범위는 KOAI 안내가 정하며, 위 그림 문제는 과거 국제 개인전입니다. 현재 연결된 출제 기준의 표제는 IOAI 2026입니다. <a href="https://kitpa.org/koai/2027">KOAI 2027 안내</a> · <a href="https://kitpa.org/koai/syllabus">공식 출제 기준</a></p>
 </div>
 </div>
 </div>

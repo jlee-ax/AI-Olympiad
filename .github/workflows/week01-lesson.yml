@@ -1,4 +1,4 @@
-name: Week 1 notebook and student handout
+name: Week 1 notebooks and student handouts
 
 on:
   push:
@@ -7,18 +7,18 @@ on:
       - 'lessons/week01/**'
       - 'curriculum/student-plan.html'
       - 'curriculum/contract.json'
-      - 'tools/course_kernel.py'
       - 'tools/check_week01_render.py'
       - 'reviews/week01-main-iteration-20261120/check_transfer.py'
+      - 'reviews/week01-whole-20261120/**'
       - '.github/workflows/week01-lesson.yml'
   pull_request:
     paths:
       - 'lessons/week01/**'
       - 'curriculum/student-plan.html'
       - 'curriculum/contract.json'
-      - 'tools/course_kernel.py'
       - 'tools/check_week01_render.py'
       - 'reviews/week01-main-iteration-20261120/check_transfer.py'
+      - 'reviews/week01-whole-20261120/**'
       - '.github/workflows/week01-lesson.yml'
 
 permissions:
@@ -37,10 +37,20 @@ jobs:
           python-version: '3.12'
       - name: Install the notebook kernel, scientific tools and Korean fonts
         run: |
-          python -m pip install 'numpy==2.3.5' 'pandas==2.2.3' 'scikit-learn==1.8.0' 'matplotlib==3.10.8' 'seaborn==0.13.2' 'nbconvert==7.17.2' 'nbclient>=0.10,<1' 'nbformat>=5.10,<6' 'ipykernel>=6,<8' 'playwright>=1.50,<2'
+          python -m pip install 'numpy==2.3.5' 'pandas==2.2.3' 'scikit-learn==1.8.0' 'matplotlib==3.10.8' 'seaborn==0.13.2' 'nbconvert==7.17.2' 'latex2mathml==3.81.1' 'nbclient>=0.10,<1' 'nbformat>=5.10,<6' 'ipykernel>=6,<8' 'playwright>=1.50,<2'
           python -m playwright install --with-deps --only-shell chromium
           sudo apt-get install -y fonts-noto-cjk
-      - name: Execute the lesson and verify its published HTML at two screen sizes
+      - name: Verify the published Week 1 bundle and evidence bindings
+        run: python -B lessons/week01/validate_bundle.py
+      - name: Execute the registered notebooks in isolated kernels and open the offline handouts at two screen sizes
         run: python -B tools/check_week01_render.py --output-dir "$RUNNER_TEMP/week01-render" --browser
+      - name: Run the tables notebook, standalone fallback and published teacher checks
+        run: python -B lessons/week01/validate_week01.py --inprocess --write "$RUNNER_TEMP/week01-tables-validation.json"
+      - name: Run the submission pipeline, ZIP and independent teacher CSV checks
+        run: python -B lessons/week01/validate_week01_problem_pipeline.py --write "$RUNNER_TEMP/week01-pipeline-validation.json"
       - name: Verify the published transfer tasks and teacher controls
         run: python -B reviews/week01-main-iteration-20261120/check_transfer.py
+      - name: Follow the cross-notebook student routes
+        run: python -B reviews/week01-whole-20261120/check_routes.py
+      - name: Run the source-bound companion regressions
+        run: python -B -m unittest discover -s reviews/week01-whole-20261120 -p 'test_*.py' -v
