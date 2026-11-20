@@ -18,13 +18,13 @@ The contest supplies training, validation and test sets of 500 distinct samples 
 
 ## Working through the theory
 
-**Complete the training vectors.** The two-coordinate teaching table is synthetic. T, V, A and B label groups of classroom records. A row ID identifies the same painting when row order changes. In this supervised example, fit the mean imputer and classifier only on T1–T4. T2's missing second feature becomes (1+3+5)/3=3. The first-feature imputation value is (1+3+7+9)/4=5. T5 has both features but its target is unknown.
+**Complete the training vectors.** The two-coordinate teaching table is synthetic. T, V, A and B label groups of classroom records. A row ID identifies the same painting when row order changes. In this supervised example, use T1–T4 to calculate the observed mean in each feature column. Fill missing values with those means before averaging the completed rows of each class. T2's missing second feature becomes (1+3+5)/3=3. The first-feature imputation value is (1+3+7+9)/4=5. T5 has both features but its target is unknown.
 
 **Derive the center.** The replica vectors [1,1], [3,3] average to [2,2]. The authentic vectors [7,3], [9,5] average to [8,4]. In one dimension the sum of squared distances from 1 and 3 to any representative a is 2(a−2)²+2. For arbitrary training values with mean m, expanding (xᵢ−m+m−a)² and summing cancels the cross term because Σ(xᵢ−m)=0. The sum for representative a equals the sum for m plus n(m−a)². Each coordinate contributes its own sum, so choosing the mean in each coordinate minimizes the total within that class. Ask the learner to identify which term changes when a changes. This is a statement about squared distances inside a group. Classification errors still depend on how the two groups overlap.
 
-**Predict and examine the boundary.** For the new vector [6,3], squared distances to replica and authentic centers are 17 and 5. Predict +1. For a general [x,y], subtracting the authentic squared distance from the replica squared distance gives 12x+4y−72. Thus 3x+y=18 at a tie. The example [5.25,3] has squared distances 11.5625 and 8.5625. After refitting a separate model with T4's first feature changed from 9 to 11, the authentic center moves to [9,4], its distance becomes 15.0625, and the prediction switches from +1 to −1. The original model's center remains [8,4]. Multiplying one feature by 10 multiplies its squared-difference contribution by 100, so the assumption about feature scales matters. None of the specified predictions is tied.
+**Predict and examine the boundary.** For the new vector [6,3], squared distances to replica and authentic centers are 17 and 5. Predict +1. For a general [x,y], subtracting the authentic squared distance from the replica squared distance gives 12x+4y−72. Thus 3x+y=18 at a tie. The example [5.25,3] has squared distances 11.5625 and 8.5625. After recomputing the training averages with T4's first feature changed from 9 to 11, the authentic center moves to [9,4], its distance becomes 15.0625, and the prediction switches from +1 to −1. The original training table still gives [8,4]. Multiplying one feature by 10 multiplies its squared-difference contribution by 100, so the assumption about feature scales matters. If a point is on the boundary, both classes are equally close. The classroom code orders the center rows by label and chooses the smaller label at a tie; the distances alone cannot resolve it.
 
-**Evaluate with unseen labels.** At `f265b556`, the four synthetic validation rows contain only identifiers and features. V4 receives the training mean 5 for its missing first feature. Predictions for V1,V2,V3,V4 are −1,+1,+1,+1. At `worked-score` the separately ordered key is joined by ID. V3 is the only error, so accuracy is 3/4. Changing a validation feature and calling `predict` leaves training means and centers intact. Including held-out records in the imputation mean leaks information even when their labels are omitted. The worked output is visible. Use Section 4 to collect a student's first independent response.
+**Evaluate with unseen labels.** At `f265b556`, the four synthetic validation rows contain only identifiers and features. V4 receives the training mean 5 for its missing first feature. Predictions for V1,V2,V3,V4 are −1,+1,+1,+1. At `worked-score` the separately ordered key is joined by ID. V3 is the only error, so accuracy is 3/4. Changing V1's first feature from 2 to 2000 changes its prediction from −1 to +1. Recomputing its distances uses the original training means and centers. Including held-out records in the imputation mean leaks information even when their labels are omitted. The worked output is visible. Use Section 4 to collect a student's first independent response.
 
 ## Independent three-feature classification
 
@@ -32,24 +32,29 @@ Start at `bb177697` and run `f53ccb1f`. This is a second synthetic table of pain
 
 Use R1–R4. R5 remains unconfirmed and supplies neither targets nor learned preprocessing under this exercise's stated supervised policy. With columns ordered 1,2,3 the imputation means are [4,4,2]. The second-feature mean uses three observed values, (2+4+6)/3=4. After imputation the two replica vectors [0,2,0] and [2,4,2] have center [1,3,1]. The two authentic vectors [6,4,2] and [8,6,4] have center [7,5,3]. V3 is [5,4,1]. Its squared distances are (5−1)²+(4−3)²+(1−1)²=17 and (5−7)²+(4−5)²+(1−3)²=9. Predict 1 before opening the key. The validation label later identifies it as a replica. Mark the derivation and the diagnosis separately. A classification error on V3 is compatible with a correct centroid calculation.
 
-First validation predictions are V1→0, V2→1, V3→1. The key is intentionally ordered V3→0, V1→0, V2→1. Comparing by ID gives 2/3 and identifies V3 as the error. Comparing by position happens to give the same fraction but incorrectly blames V2. Ask for the error ID as well as the fraction. An alternative trained classifier can be tested as an extension after the student has derived and evaluated the specified nearest-centroid result.
+First validation predictions are V1→0, V2→1, V3→1. The key is intentionally ordered V3→0, V1→0, V2→1. Comparing by ID gives 2/3 and identifies V3 as the error. Comparing by position happens to give the same fraction but incorrectly blames V2. Ask for the error ID as well as the fraction. For optional comparison, measure distances to individual training examples instead of the class means. A different rule can give a different prediction on the same input. Collect the requested class centers and both squared distances when assessing the independent exercise.
 
-### Reference code for fitting and prediction
+### Reference calculation with the three feature columns
 
 The first block runs after the Section 4 setup and before opening any validation key. Use a separate working directory for these teacher examples.
 
 ```python
 from pathlib import Path
+import numpy as np
 import pandas as pd
-from sklearn.impute import SimpleImputer
-from sklearn.neighbors import NearestCentroid
-from sklearn.pipeline import Pipeline
 
 feature_columns = ["feature1", "feature2", "feature3"]
 known_paintings = exercise_train.loc[exercise_train["label"].isin([0, 1])]
-exercise_model = Pipeline([("fill", SimpleImputer(strategy="mean")),
-                         ("classifier", NearestCentroid())])
-exercise_model.fit(known_paintings[feature_columns], known_paintings["label"])
+measurements = known_paintings[feature_columns]
+if known_paintings["label"].nunique() < 2:
+    raise ValueError("Both classes need a labeled training example")
+if np.isinf(measurements.to_numpy(dtype=float)).any():
+    raise ValueError("Observed training features must be finite")
+training_means = measurements.mean()
+if training_means.isna().any():
+    raise ValueError("Every feature needs an observed training value")
+completed_training = measurements.fillna(training_means)
+class_centers = completed_training.groupby(known_paintings["label"], sort=True).mean()
 
 def predict_paintings(table, value_column):
     required = ["item"] + feature_columns
@@ -59,8 +64,14 @@ def predict_paintings(table, value_column):
     ids = table["item"]
     if not all(isinstance(item, str) and item.strip() for item in ids) or ids.duplicated().any():
         raise ValueError("Each painting needs one distinct, nonempty item ID")
-    values = exercise_model.predict(table[feature_columns])
-    return pd.DataFrame({"item": ids.to_numpy(), value_column: values})
+    values = table[feature_columns].apply(pd.to_numeric, errors="raise").fillna(training_means)
+    if not np.isfinite(values.to_numpy(dtype=float)).all():
+        raise ValueError("Features must have finite values after filling missing cells")
+    squared = {}
+    for label, center in class_centers.iterrows():
+        squared[label] = ((values - center) ** 2).sum(axis=1)
+    nearest = pd.DataFrame(squared, index=table.index).idxmin(axis=1)
+    return pd.DataFrame({"item": ids.to_numpy(), value_column: nearest.to_numpy()})
 
 first_predictions = predict_paintings(exercise_validation, "prediction")
 audit_rows = predict_paintings(exercise_input, "signal")
@@ -70,7 +81,7 @@ audit_rows = predict_paintings(exercise_input, "signal")
 
 In Antique's actual submission each headerless CSV contains one binary label per original input position. The classroom ordering example adds IDs to show how predictions stay attached to paintings. It can be read and run in isolation at `pipeline-submit` / `order-by-hand`. Original A order is A05,A08,A02. Computation order A08,A02,A05 yields +1,−1,−1, which restores to −1,+1,−1. The B file restores to −1,+1. Swapping unequal predictions changes which painting receives which result, even if every label is legitimate and the row count is correct. Two equal numeric predictions alone cannot reveal that their corresponding rows were exchanged.
 
-The independent exercise uses a **separate classroom format** with a header and two columns. The fitted model gives J3→1, J1→0, J2→0. Row order J1,J2,J3 gives 0,0,1. Changing J1's feature vector to [7,5,3] changes its predicted label to 1. A missing cell uses a training mean. A missing required feature column or duplicated ID is an input error. Use the following second block to write and reopen `audit.csv` in a separate directory. Checking the CSV's records also detects an extra field on every line, an empty record, a missing header, or a valid label assigned to the wrong painting. Quoted IDs and leading zeros are preserved.
+The independent exercise uses a **separate classroom format** with a header and two columns. The distance comparison gives J3→1, J1→0, J2→0. Row order J1,J2,J3 gives 0,0,1. Changing J1's feature vector to [7,5,3] changes its predicted label to 1. A missing cell uses a training mean. A missing required feature column or duplicated ID is an input error. Use the following second block to write and reopen `audit.csv` in a separate directory. Checking the CSV's records also detects an extra field on every line, an empty record, a missing header, or a valid label assigned to the wrong painting. Quoted IDs and leading zeros are preserved.
 
 ```python
 import csv
@@ -130,10 +141,8 @@ The public key has columns `item,label`. It contains only the three independent 
 
 ## Place in the course
 
-A learner who can average a short list and read two columns can enter at Section 1. For new classifiers work through the two-coordinate derivation and held-out error before assigning Section 4. A learner already familiar with fitting a classifier may enter directly at the independent exercise. Use the optional filing section only when row correspondence needs practice. A three-feature exercise cannot replace the core array, function, new CSV, merge or plotting tasks.
+A learner who can average a short list and read two columns can enter at Section 1. For new classifiers work through the two-coordinate derivation and held-out error before assigning Section 4. A learner who can calculate the two training centers and predict by squared distance may enter directly at the independent exercise. Use the optional filing section only when row correspondence needs practice. A three-feature exercise cannot replace the core array, function, new CSV, merge or plotting tasks.
 
 The plan allocates 20 minutes of theory, 20 minutes of noncoding work including 10 written minutes, and 80 minutes of coding in Week 1. Its required outside-work estimate is 5–7 hours. Treat the worked classifier or independent transfer as selected practice. Assigning every route increases workload. Additional time for new notation, programming help and feedback, and real learner outcomes are unmeasured. Week 2 develops splits, preprocessing and evaluation more fully, Week 4 develops classification and model selection, and Week 10 applies these skills to an unfamiliar problem. [Ten-week plan](../../curriculum/student-plan.html) · [Course contract](../../curriculum/contract.json)
 
-KOAI 2027 covers sections 1–4 of the linked syllabus, labeled IOAI 2026, for both divisions. The 2025 Antique and 2026 Potato tasks are past international individual problems. The source review on 2026-11-20 establishes their published constraints. [Official 2027 rules, §§11–12](https://kitpa.org/storage/6df0e67a-48d7-4255-ba4f-7d86b2bd2824.pdf) · [Official syllabus](https://kitpa.org/koai/syllabus)
-
-Scikit-learn's semi-supervised interface uses −1 for unknown targets. Encoding Antique replica −1→0, authentic 1→1 and unknown 0→−1 avoids the collision. The predicted class codes must be decoded for the competition file. Actually learning from the unlabeled feature distribution is a separate modeling task. [Semi-supervised learning](https://scikit-learn.org/stable/modules/semi_supervised.html) · [NearestCentroid](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestCentroid.html) · [Train-only preprocessing](https://scikit-learn.org/stable/common_pitfalls.html)
+The KOAI 2027 rules set the domestic competition scope. The current linked syllabus lists machine learning with scikit-learn as a practical topic in section 1-1. The course schedules that topic for Weeks 2–5. In Week 1 the student can do the class-mean and distance calculations using the planned table and array operations. The 2025 Antique and 2026 Potato tasks are international examples. [Official 2027 rules, §§11–12](https://kitpa.org/storage/6df0e67a-48d7-4255-ba4f-7d86b2bd2824.pdf) · [Official syllabus](https://kitpa.org/koai/syllabus)
