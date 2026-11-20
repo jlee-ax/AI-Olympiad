@@ -110,37 +110,64 @@ def check(lesson):
     np.testing.assert_allclose(arithmetic["dot_scores"], [[4, 2, 2], [0, 1, 2]])
     np.testing.assert_allclose(arithmetic["cosine_scores"], [[2**-0.5, 1, 2**-0.5], [0, 2**-0.5, 1]])
 
-    def fit(frame):
+    def run_training(frame):
         ns = {**prepared, "source_table": frame.copy()}
         run_cell("4d60619c", ns)
         run_cell("ae89f4b6", ns)
         return ns
 
-    baseline = fit(table)
+    baseline = run_training(table)
     changed_input = table.copy()
     changed_input.loc[21, names] = [14, 12]
     extra = table.iloc[[0]].copy()
     extra.index = pd.Index([9001], name=table.index.name)
     extra.loc[9001, names] = [1, 16]
-    reordered = fit(pd.concat([extra, table.iloc[::-1]]))
-    for candidate in (baseline, reordered, fit(changed_input)):
+    reordered = run_training(pd.concat([extra, table.iloc[::-1]]))
+    changed = run_training(changed_input)
+    for candidate in (baseline, reordered, changed):
         assert candidate["training"].index.tolist() == [0, 1, 10, 11]
         assert candidate["validation"].index.tolist() == [21, 70, 72]
-        np.testing.assert_allclose(candidate["fill"].statistics_, [6, 9.25])
-        np.testing.assert_allclose(candidate["model"].centroids_, [[10.5, 12], [1.5, 6.5]])
+        np.testing.assert_allclose(candidate["training_means"].loc[names], [6, 9.25])
+        np.testing.assert_array_equal(candidate["classes"], [0, 1])
+        np.testing.assert_allclose(candidate["centers"], [[10.5, 12], [1.5, 6.5]])
+    run_cell("8e809e64", changed)
+    assert changed["predictions"][0] == 0
     run_cell("8e809e64", reordered)
     keys = ["image_index", "prediction"]
     assert reordered["result"][keys].values.tolist() == [[21, 1], [70, 0], [72, 0]]
     assert reordered["result"]["correct"].tolist() == [True, False, True]
     changed_label = table.copy()
     changed_label.loc[70, "digit"] = 0
-    relabeled = fit(changed_label)
+    relabeled = run_training(changed_label)
     run_cell("8e809e64", relabeled)
     np.testing.assert_array_equal(relabeled["predictions"], reordered["predictions"])
     assert relabeled["result"]["correct"].all()
+    masked_input = table.copy()
+    masked_input.loc[21, names] = [np.nan, 0]
+    masked = run_training(masked_input)
+    run_cell("8e809e64", masked)
+    np.testing.assert_allclose(masked["x_validation"][0], [6, 0])
+    no_observations = table.copy()
+    no_observations.loc[baseline["training_ids"], names[0]] = np.nan
+    try:
+        run_training(no_observations)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("A column with no observed training values has no mean for imputation")
+
     run_cell("3512f7de", reordered)
-    assert reordered["model"].predict([[7, 9]]).item() == 0
-    assert reordered["changed_model"].predict([[7, 9]]).item() == 1
+    nearest = reordered["nearest_class"]
+    assert nearest([7, 9], reordered["classes"], reordered["centers"]) == 0
+    assert nearest([7, 9], reordered["changed_classes"], reordered["changed_centers"]) == 1
+    # Distinct label values expose accidentally returning a center position; the midpoint tests the declared tie rule.
+    fresh_features = [[-3, 6], [4, 0], [-1, 6], [4, 2]]
+    fresh_labels = [12, -4, 12, -4]
+    classes, centers = reordered["class_means"](fresh_features, fresh_labels)
+    np.testing.assert_array_equal(classes, [-4, 12])
+    np.testing.assert_allclose(centers, [[4, 1], [-2, 6]])
+    assert nearest([-2, 5], classes, centers) == 12
+    assert nearest([1, 3.5], classes, centers) == -4
     # Reordering either working table must preserve the published image/prediction pairs.
     reordered["validation"] = reordered["validation"].iloc[::-1]
     reordered["result"] = reordered["result"].iloc[::-1]
@@ -158,7 +185,7 @@ def check(lesson):
     for invalid, error in ((table.drop(index=10), KeyError),
                            (pd.concat([table, table.loc[[1]]]), ValueError)):
         try:
-            fit(invalid)
+            run_training(invalid)
         except error:
             continue
         raise AssertionError(f"Expected {error.__name__} before model fitting")
@@ -167,7 +194,10 @@ def check(lesson):
             "equal_two_features_different_labels": [10, 26],
             "full_feature_squared_distance": 1756,
             "training_means_after_independent_changes": [6, 9.25],
-            "trained_centers": reordered["model"].centroids_.tolist(),
+            "trained_centers": reordered["centers"].tolist(),
+            "held_out_missing_value_and_measured_zero": masked["x_validation"][0].tolist(),
+            "unobserved_training_column": "rejected",
+            "equidistant_new_input_class": int(nearest([1, 3.5], classes, centers)),
             "export_after_two_working_tables_move": exported,
             "invalid_data_and_prediction_identity": "rejected",
             "changing_held_out_label": "predictions fixed, measured accuracy changed",

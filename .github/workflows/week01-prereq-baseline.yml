@@ -1,0 +1,46 @@
+name: Replay the accepted curriculum baseline
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/week01-prereq-baseline.yml'
+      - 'reviews/week01-whole-20261120/e3e00a4-author-route.json'
+permissions:
+  contents: read
+jobs:
+  baseline:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'codex/course-generation-harness-prereq-20261120'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Reproduce the accepted edition and identify the required study path
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, subprocess
+          history = 'e3e00a4aae2c4e9169ae4f66f9f9ec5cb0db2352'
+          tree = subprocess.check_output(['git','rev-parse',history+'^{tree}'],text=True).strip()
+          assert tree == '10f58b4f196f81eede17c5e730475285bd7196d5'
+          before = pathlib.Path(os.environ['RUNNER_TEMP']) / 'prior-course'
+          subprocess.run(['git','worktree','add','--quiet','--detach',str(before),history],check=True)
+          def observe(cmd):
+              return subprocess.run(cmd,cwd=before,text=True,capture_output=True)
+          report = observe(['python3','-B','lessons/week01/validate_bundle.py'])
+          report.check_returncode()
+          assert json.loads(report.stdout)['status'] == 'current'
+          previous = json.loads((before / 'reviews/week01-whole-20261120/native-textbook-review.json').read_text())
+          route = pathlib.Path('reviews/week01-whole-20261120/e3e00a4-author-route.json').read_bytes()
+          assert hashlib.sha256(route).hexdigest() == previous['route_file_sha256']
+          relevant = [unit for unit in json.loads(route)['route']['units'] if 'pipeline/1566ce2a' in unit['cells']]
+          assert len(relevant)==1 and relevant[0]['tier']=='homework' and relevant[0]['minutes']==50
+          print('Verified accepted baseline, exact route, and required 50-minute classification segment:',history,tree)
+          state='reviews/week01/final-followup/workflow.json'
+          for cmd in (['validate',state],['decide',state],['recall',state,'--query','prerequisites']):
+              out=observe(['python3','-B','tools/workflow.py',*cmd])
+              print(cmd[0],out.returncode,(out.stdout or out.stderr)[:1500])
+          PY

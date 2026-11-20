@@ -1,0 +1,446 @@
+{
+  "week": 1,
+  "action": "keep",
+  "reason": "Evaluate the four genuinely rewritten student books and corresponding teacher solutions exactly as observed under the new educational standard. The previous public release has an independent negative decision. A technical render pass alone cannot settle the content.",
+  "route": {
+    "units": [
+      {
+        "tier": "class",
+        "minutes": 20,
+        "cells": [
+          "main/ed72400c",
+          "main/5a7a14b7",
+          "main/484f22ba",
+          "main/bde02238",
+          "main/a4f8e26d",
+          "main/e3783955",
+          "main/d942743f",
+          "main/0a64f981",
+          "main/a7f428a6"
+        ]
+      },
+      {
+        "tier": "class",
+        "minutes": 20,
+        "cells": [
+          "main/a3f9c114",
+          "main/9d537595",
+          "main/38fa5085",
+          "main/32ed7e09",
+          "tables/71068cea",
+          "tables/500342ab"
+        ]
+      },
+      {
+        "tier": "class",
+        "minutes": 20,
+        "cells": [
+          "tables/7208718e",
+          "tables/ab8d9d90",
+          "tables/0d557f44",
+          "tables/e2a6be88",
+          "tables/92534730",
+          "tables/d96a754b",
+          "tables/81129230",
+          "tables/c6d01f13",
+          "tables/modify-mean-function",
+          "tables/d07b488e"
+        ]
+      },
+      {
+        "tier": "class",
+        "minutes": 40,
+        "cells": [
+          "tables/876b91b7",
+          "tables/digits-csv-roundtrip",
+          "tables/digits-csv-task",
+          "tables/digits-practice-csv",
+          "tables/digits-csv-work",
+          "main/records-principle"
+        ]
+      },
+      {
+        "tier": "class",
+        "minutes": 20,
+        "cells": [
+          "main/f574b6b5",
+          "main/7591b8af",
+          "main/catalog-reading",
+          "main/catalog-reading-code",
+          "main/9529029d",
+          "main/1d316bff"
+        ]
+      },
+      {
+        "tier": "homework",
+        "minutes": 60,
+        "cells": [
+          "main/gallery-principle",
+          "main/gallery-example",
+          "main/similarity-matrix-theory",
+          "main/similarity-matrix-code",
+          "main/gallery-challenge",
+          "main/gallery-challenge-input",
+          "main/gallery-challenge-work"
+        ]
+      },
+      {
+        "tier": "homework",
+        "minutes": 80,
+        "cells": [
+          "main/records-challenge",
+          "main/records-input",
+          "main/records-work",
+          "main/4042bdda",
+          "main/summary-exercise-work",
+          "main/rectangle-followup-tail"
+        ]
+      },
+      {
+        "tier": "homework",
+        "minutes": 50,
+        "cells": [
+          "tables/145c6754",
+          "tables/5d42933c",
+          "tables/depth-reshape-compare",
+          "tables/depth-reshape-code",
+          "tables/depth-reshape-response",
+          "tables/0caaa0ca",
+          "tables/053a193f",
+          "tables/df2802a3",
+          "tables/practice-broadcast-code",
+          "tables/9ce91662",
+          "tables/variance-independent-response",
+          "tables/c6ef56e6"
+        ]
+      },
+      {
+        "tier": "homework",
+        "minutes": 60,
+        "cells": [
+          "tables/fa10c459",
+          "tables/48d931b0",
+          "tables/b5362bd2",
+          "tables/5d9473df",
+          "tables/d60c3acd",
+          "tables/array-check-input",
+          "tables/dff8752b",
+          "tables/3aea0e50",
+          "tables/5973e123",
+          "tables/model-link-practice",
+          "tables/model-link-response"
+        ]
+      },
+      {
+        "tier": "homework",
+        "minutes": 50,
+        "cells": [
+          "pipeline/1845680d",
+          "pipeline/cb044aa9",
+          "pipeline/e8e25947",
+          "pipeline/622155d2",
+          "pipeline/2bed1d84",
+          "pipeline/nearest-rule",
+          "pipeline/1566ce2a",
+          "pipeline/29a11f88",
+          "pipeline/33667a04",
+          "pipeline/67ef140d",
+          "pipeline/f265b556",
+          "pipeline/edd0bdb3",
+          "pipeline/worked-score",
+          "pipeline/worked-holdout",
+          "pipeline/5c8fe7f9"
+        ]
+      },
+      {
+        "tier": "conditional",
+        "minutes": 32,
+        "cells": [
+          "main/deep-leaf-intro",
+          "main/deep-leaf-grid",
+          "main/deep-count-intro",
+          "main/deep-count-code",
+          "main/ce3f374d",
+          "main/4d60619c",
+          "main/28086cfc",
+          "main/ae89f4b6",
+          "main/5ba7e603",
+          "main/8e809e64",
+          "main/683a7ca2",
+          "main/3512f7de",
+          "main/4bbb0c87",
+          "main/f40633df",
+          "main/f9e7d348",
+          "main/213dcc44"
+        ],
+        "trigger": "A classification needs a feature choice, two class means and an individual error explained on source images.",
+        "returns": "main/4042bdda"
+      },
+      {
+        "tier": "conditional",
+        "minutes": 40,
+        "cells": [
+          "main/303c6117",
+          "main/9462ed76",
+          "main/97f45dbb",
+          "main/e49ac1c2",
+          "main/exercise-validation-release",
+          "main/exercise-validation-answer"
+        ],
+        "trigger": "A learner wants to construct numerical features from an image and a validity mask.",
+        "returns": "main/4042bdda"
+      },
+      {
+        "tier": "conditional",
+        "minutes": 30,
+        "cells": [
+          "main/rectangle-worked-text",
+          "main/rectangle-worked-code",
+          "main/rectangle-independent-text",
+          "main/rectangle-independent-input",
+          "main/rectangle-independent-answer"
+        ],
+        "trigger": "A problem selects spatial coordinates with an area constraint.",
+        "returns": "main/4042bdda"
+      },
+      {
+        "tier": "conditional",
+        "minutes": 32,
+        "cells": [
+          "tables/8f7fc067",
+          "tables/897a9433",
+          "tables/a32f2b8b",
+          "tables/d2be9ce3",
+          "tables/1ab9cd79",
+          "tables/digits-public-input",
+          "tables/409e1675",
+          "tables/82e8a039",
+          "tables/mean-variance-mapping",
+          "tables/b17df2fe",
+          "tables/e594ea69",
+          "tables/b9a324f5",
+          "tables/ebbfd3db",
+          "tables/ffb294df",
+          "tables/51ad9a59"
+        ],
+        "trigger": "If a student needs an additional explanation of the source feature table, sample index or statistical reduction.",
+        "returns": "main/a3f9c114"
+      },
+      {
+        "tier": "conditional",
+        "minutes": 18,
+        "cells": [
+          "tables/ea9460e8",
+          "tables/3468f4e4",
+          "tables/08bf506c",
+          "tables/ea9aba74"
+        ],
+        "trigger": "If a learner wants to trace a pixel from the source image into an array before trying the reduction again.",
+        "returns": "main/a3f9c114"
+      },
+      {
+        "tier": "conditional",
+        "minutes": 45,
+        "cells": [
+          "tables/b428c6f1",
+          "tables/0eaa5024",
+          "tables/30a2a103",
+          "tables/7dc679ba",
+          "tables/b6788dc5",
+          "tables/9b766e3e",
+          "tables/08e374f4",
+          "tables/57f21a0f",
+          "tables/fb78da30",
+          "tables/14425637",
+          "tables/b7675d2b",
+          "tables/27bb4bea",
+          "tables/b38de2c6",
+          "tables/d7c7b7c4",
+          "tables/f6a8af19",
+          "tables/777a590f",
+          "tables/33384c16",
+          "tables/6a64bcb2",
+          "tables/8d3421bb",
+          "tables/d7b8c3d2",
+          "tables/6075b8e8",
+          "tables/611d5b74",
+          "tables/depth-function-spec",
+          "tables/depth-function-code",
+          "tables/depth-function-response",
+          "tables/d0ddef13",
+          "tables/8e3a1c92",
+          "tables/fixed-prediction-matrix-explanation",
+          "tables/fixed-prediction-matrix-example",
+          "tables/fixed-prediction-matrix-practice",
+          "tables/fixed-prediction-matrix-practice-code",
+          "tables/tables-prediction-work",
+          "tables/1e511556",
+          "tables/abcf305f",
+          "tables/guided-feedback-and-support",
+          "tables/4c54c0a5",
+          "tables/0fd965eb",
+          "tables/eb304b96",
+          "tables/5c37fc90",
+          "tables/02c6cde1",
+          "tables/tables-csv-work",
+          "tables/13559279"
+        ],
+        "trigger": "Use only the relevant additional named-column, graphing or file exercise when the corresponding core operation needs more practice.",
+        "returns": "main/4042bdda"
+      },
+      {
+        "tier": "conditional",
+        "minutes": 25,
+        "cells": [
+          "axes/06c67cfc",
+          "axes/09b00247",
+          "axes/ba428b91",
+          "axes/e81d6244",
+          "axes/5ebb633b",
+          "axes/39e31964",
+          "axes/ae4dc17f",
+          "axes/bf96efdf",
+          "axes/cb88ba54",
+          "axes/25e2b1ff",
+          "axes/e9bd32e9",
+          "axes/d033f80f",
+          "axes/51e17d9e"
+        ],
+        "trigger": "The learner cannot distinguish axis order, elementwise product, matrix multiplication or stacking on a fresh array.",
+        "returns": "main/similarity-matrix-theory"
+      },
+      {
+        "tier": "conditional",
+        "minutes": 25,
+        "cells": [
+          "axes/bbd63f75",
+          "axes/3950021e",
+          "axes/retrieval-norm-text",
+          "axes/retrieval-norm-code",
+          "axes/retrieval-limits-text",
+          "axes/retrieval-limits-code",
+          "axes/2449ef26",
+          "axes/ff882ec6",
+          "axes/36acbf6f",
+          "axes/d81386f3",
+          "axes/sequence-mean-text",
+          "axes/sequence-mean-code",
+          "axes/5cd8c35a"
+        ],
+        "trigger": "The score geometry, normalization or information lost through pooling needs a worked explanation.",
+        "returns": "main/gallery-challenge"
+      },
+      {
+        "tier": "conditional",
+        "minutes": 30,
+        "cells": [
+          "axes/4ac3bb9a",
+          "axes/ec433d3b",
+          "axes/f2068453",
+          "axes/7b96a39e",
+          "axes/2442117e",
+          "axes/07c93362",
+          "axes/619d5445",
+          "axes/54646dc1",
+          "axes/2882691e"
+        ],
+        "trigger": "The learner needs another independent transfer after the basic derivation.",
+        "returns": "main/4042bdda"
+      },
+      {
+        "tier": "conditional",
+        "minutes": 30,
+        "cells": [
+          "pipeline/bb177697",
+          "pipeline/f53ccb1f",
+          "pipeline/d6195f91",
+          "pipeline/06ceb97e",
+          "pipeline/device-feedback",
+          "pipeline/device-score-release",
+          "pipeline/device-reflect",
+          "pipeline/device-score-work",
+          "pipeline/1c7edeca"
+        ],
+        "trigger": "A learner needs a fresh hand-derived three-feature partial-label classification.",
+        "returns": "main/4042bdda"
+      },
+      {
+        "tier": "conditional",
+        "minutes": 20,
+        "cells": [
+          "pipeline/ecb6bc7a",
+          "pipeline/order-by-hand",
+          "pipeline/3d1ecace",
+          "pipeline/12269b20",
+          "pipeline/d5a85a2f",
+          "pipeline/50753714",
+          "pipeline/8373b05e",
+          "pipeline/8433e657",
+          "pipeline/c0b62e3b",
+          "pipeline/ca2adc3d",
+          "pipeline/f7c76622"
+        ],
+        "trigger": "The numerical prediction is correct but writing the format required by the original exercise needs practice.",
+        "returns": "main/4042bdda"
+      }
+    ]
+  },
+  "transfer": {
+    "principle": "main/f574b6b5",
+    "prompt": "main/4042bdda",
+    "solution": "teacher/ref-projection",
+    "rationale": "Decide whether the selected columns can distinguish samples of different classes. Justify a collision using actual values and reason about what an additional coordinate can change."
+  },
+  "coverage": [
+    {
+      "obligation": "KOAI-01.practical",
+      "teaching": [
+        "main/d942743f",
+        "main/records-principle"
+      ],
+      "assessment": [
+        "main/records-challenge",
+        "main/records-work"
+      ],
+      "solution": "teacher/ref-digit-lookup",
+      "sources": [
+        "koai",
+        "syllabus",
+        "antique"
+      ]
+    },
+    {
+      "obligation": "KOAI-02.practical",
+      "teaching": [
+        "main/a3f9c114",
+        "main/9d537595"
+      ],
+      "assessment": [
+        "main/records-challenge",
+        "main/records-work"
+      ],
+      "solution": "teacher/ref-named-means",
+      "sources": [
+        "koai",
+        "syllabus"
+      ]
+    },
+    {
+      "obligation": "KOAI-03.practical",
+      "teaching": [
+        "main/f574b6b5",
+        "main/catalog-reading",
+        "main/catalog-reading-code"
+      ],
+      "assessment": [
+        "main/records-challenge",
+        "main/records-work"
+      ],
+      "solution": "teacher/ref-pixel-plot",
+      "sources": [
+        "koai",
+        "syllabus"
+      ]
+    }
+  ]
+}
