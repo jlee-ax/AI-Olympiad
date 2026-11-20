@@ -26,12 +26,7 @@ os.environ.setdefault("PYTHONDONTWRITEBYTECODE", "1")
 import nbformat
 import numpy as np
 import pandas as pd
-import sklearn
 from ipykernel.inprocess.manager import InProcessKernelManager
-from sklearn.impute import SimpleImputer
-from sklearn.neighbors import NearestCentroid
-from sklearn.pipeline import Pipeline
-from sklearn.tree import DecisionTreeClassifier
 
 ROOT = Path(__file__).resolve().parent
 NB = ROOT / "week01_problem_pipeline.ipynb"
@@ -66,9 +61,30 @@ def visible_outputs(cell):
     return result
 
 
-def make_model():
-    return Pipeline([("fill", SimpleImputer(strategy="mean")),
-                     ("classifier", NearestCentroid())])
+def check_unseen_distances(training_averages, squared_distances):
+    """Class centers, individual samples and a decision-boundary tie give distinct controls."""
+    training = pd.DataFrame({"x": [0, 18, 4, 6], "y": [2, np.nan, 2, 2],
+                             "label": [-1, -1, 1, 1]})
+    queries = pd.DataFrame({"x": [1, np.nan, 10], "y": [2, 2, 2]}, index=[4, 2, 6])
+    for order in itertools.permutations(range(len(training))):
+        shuffled = training.iloc[list(order)]
+        for features in (["x", "y"], ["y", "x"]):
+            means, centers = training_averages(shuffled, features)
+            assert means.index.tolist() == features
+            assert means.to_dict() == {"x": 7.0, "y": 2.0}
+            assert centers.loc[-1, "x"] == 9 and centers.loc[1, "x"] == 5
+            distances = squared_distances(queries, means, centers)
+            assert distances.index.tolist() == [4, 2, 6]
+            assert distances.columns.tolist() == [-1, 1]
+            assert distances.to_numpy().tolist() == [[64, 16], [4, 4], [1, 25]]
+            assert distances.idxmin(axis=1).tolist() == [1, -1, -1]
+    # For x=1 the closest training sample has x=0 and label -1. Its class mean is farther away.
+    nearest_example = training.iloc[(training["x"] - 1).abs().argmin()]
+    assert nearest_example["label"] == -1 and distances.idxmin(axis=1).iloc[0] == 1
+    must_reject(lambda: training_averages(training.assign(y=np.nan), ["x", "y"]))
+    must_reject(lambda: training_averages(training.assign(label=-1), ["x", "y"]))
+    must_reject(lambda: training_averages(training.assign(y=np.inf), ["x", "y"]))
+    must_reject(lambda: squared_distances(queries.assign(x=np.inf), means, centers))
 
 
 def check_prediction_gate(source, student, directory):
@@ -147,6 +163,20 @@ def check_teacher_audit(guide, student, directory):
         must_reject(lambda: namespace["predict_paintings"](pd.concat([unknown,unknown.iloc[:1]]),"signal"))
         validation = namespace["first_predictions"].merge(pd.read_csv(VALIDATION_KEY), on="item", validate="one_to_one")
         assert validation.loc[validation["prediction"]!=validation["label"],"item"].tolist() == ["V3"]
+
+        tie_input = pd.DataFrame([("Z", np.nan, np.nan, np.nan)], columns=["item", *namespace["feature_columns"]])
+        assert namespace["predict_paintings"](tie_input, "prediction").at[0, "prediction"] == 0
+        must_reject(lambda: namespace["predict_paintings"](tie_input.assign(feature3=np.inf), "prediction"))
+
+        # Re-run the published teacher solution on a changed training feature, without loading the held-out key.
+        changed = {name: student[name].copy(deep=True) for name in ("exercise_train", "exercise_validation", "exercise_input")}
+        changed["exercise_train"].loc[changed["exercise_train"]["item"] == "R4", "feature1"] = 20
+        changed["exercise_train"].loc[changed["exercise_train"]["item"] == "R5", "feature2"] = 3000
+        with patch.object(pd, "read_csv", side_effect=AssertionError("Teacher fit read a held-out key")):
+            exec(compile(blocks[0], "<teacher arithmetic: changed training>", "exec"), changed)
+        assert changed["training_means"].tolist() == [7, 4, 2]
+        assert changed["class_centers"].to_numpy().tolist() == [[1, 3, 1], [13, 5, 3]]
+        assert changed["first_predictions"].set_index("item").at["V3", "prediction"] == 0
 
 
 # Recompute these three rounded records from the pinned official CSV, counting after its header.
@@ -243,54 +273,58 @@ def main():
 
             train = ns["training"]
             known = ns["known_train"]
-            model = ns["model"]
+            summarize = ns["training_averages"]
+            distances = ns["squared_distances"]
+            means = ns["fill_values"]
+            centers = ns["centers"]
             features = ns["feature_cols"]
             assert known["row_id"].tolist() == ["T1", "T2", "T3", "T4"]
             assert train.loc[train["row_id"] == "T5", "label"].item() == 0
-            assert features == ["feature1", "feature2"]
-            assert set(known["label"]) == {-1, 1}
-            assert np.allclose(model["fill"].statistics_, [5, 3])
-            assert np.allclose(model["classifier"].centroids_, [[2, 2], [8, 4]])
-            passed("known_targets_and_train_only_imputer_and_centroids")
+            assert features == ["feature1", "feature2"] and centers.index.tolist() == [-1, 1]
+            assert np.allclose(means, [5, 3])
+            assert np.allclose(centers, [[2, 2], [8, 4]])
+            assert ns["example_distances"].iloc[0].to_dict() == {-1: 17.0, 1: 5.0}
+            passed("observed_training_means_labeled_class_centers_and_both_squared_distances")
+            check_unseen_distances(summarize, distances)
+            passed("new_class_geometry_tie_missing_column_one_class_and_nonfinite_boundaries")
 
-            original_probe = int(model.predict(pd.DataFrame([[5.25, 3]], columns=features))[0])
+            probe = pd.DataFrame([[5.25, 3]], columns=features)
             x_changed = known.copy()
             x_changed.loc[x_changed["row_id"] == "T4", "feature1"] = 11
-            model_x = make_model().fit(x_changed[features], x_changed["label"])
-            assert np.allclose(model_x["classifier"].centroids_[1], [9, 4])
-            assert int(model_x.predict(pd.DataFrame([[5.25, 3]], columns=features))[0]) == -1
-            assert original_probe == 1
+            means_x, centers_x = summarize(x_changed, features)
+            assert np.allclose(centers_x.loc[1], [9, 4])
+            assert distances(probe, means_x, centers_x).idxmin(axis=1).iloc[0] == -1
+            assert distances(probe, means, centers).idxmin(axis=1).iloc[0] == 1
             y_changed = known.copy()
             y_changed.loc[y_changed["row_id"] == "T3", "label"] = -1
-            model_y = make_model().fit(y_changed[features], y_changed["label"])
-            assert not np.allclose(model_y["classifier"].centroids_, model["classifier"].centroids_)
-            assert int(model_y.predict(pd.DataFrame([[5.25, 3]], columns=features))[0]) == -1
-            passed("train_feature_and_target_perturbations_change_fit_and_prediction")
+            means_y, centers_y = summarize(y_changed, features)
+            assert not centers_y.equals(centers)
+            assert distances(probe, means_y, centers_y).idxmin(axis=1).iloc[0] == -1
+            passed("train_feature_and_target_perturbations_change_class_centers_and_prediction")
 
             altered_unknown = train.copy()
-            altered_unknown.loc[altered_unknown["row_id"] == "T5", ["feature1", "feature2"]] = [1000, 1000]
+            altered_unknown.loc[altered_unknown["row_id"] == "T5", features] = [1000, 1000]
             known_again = altered_unknown[altered_unknown["label"].isin([-1, 1])]
-            only_known = make_model().fit(known_again[features], known_again["label"])
-            assert np.allclose(only_known["fill"].statistics_, model["fill"].statistics_)
-            assert np.allclose(only_known["classifier"].centroids_, model["classifier"].centroids_)
-            passed("unknown_training_row_not_relabelled_or_fitted_in_this_demo")
+            means_again, centers_again = summarize(known_again, features)
+            assert means_again.equals(means) and centers_again.equals(centers)
+            passed("unconfirmed_training_row_does_not_change_either_training_summary")
 
             valid = ns["validation"]
-            assert model.predict(valid[features]).tolist() == [-1, 1, 1, 1]
+            assert distances(valid, means, centers).idxmin(axis=1).tolist() == [-1, 1, 1, 1]
             assert ns["accuracy"] == 3 / 4
             assert ns["worked_first"].columns.tolist() == ["row_id","prediction"]
             assert ns["val_view"].loc[~ns["val_view"]["correct"],"row_id"].tolist() == ["V3"]
-            stats = model["fill"].statistics_.copy()
-            centers = model["classifier"].centroids_.copy()
+            original_means, original_centers = means.copy(), centers.copy()
             valid_mutant = valid.copy()
             valid_mutant.loc[0, "feature1"] = 2000
             assert "label" not in valid_mutant
-            model.predict(valid_mutant[features])
-            assert np.array_equal(stats, model["fill"].statistics_)
-            assert np.array_equal(centers, model["classifier"].centroids_)
-            passed("validation_changes_do_not_refit_training_state")
+            assert distances(valid_mutant, means, centers).idxmin(axis=1).tolist() == [1, 1, 1, 1]
+            assert means.equals(original_means) and centers.equals(original_centers)
+            passed("heldout_change_alters_its_prediction_but_preserves_training_summaries")
 
-            predict_pairs = ns["predict_pairs"]
+            def pairs_for(frame):
+                return ns["predict_pairs"](frame, means, centers)
+
             align = ns["align_predictions"]
             inspect = ns["inspect_archive"]
             archive_texts = ns["archive_texts"]
@@ -302,24 +336,24 @@ def main():
             expected_B = [-1, 1]
             for permutation in itertools.permutations(range(len(A))):
                 shuffled = A.iloc[list(permutation)].copy()
-                assert align(ids_A, predict_pairs(model, shuffled)) == expected_A
+                assert align(ids_A, pairs_for(shuffled)) == expected_A
             swapped_columns = A[["row_id", "feature2", "feature1"]].copy()
-            assert predict_pairs(model, swapped_columns) == pairs_A
-            assert predict_pairs(model, A.assign(later_report=[1, 1, 1])) == pairs_A
-            assert predict_pairs(model, A.assign(later_report=[-1, -1, -1])) == pairs_A
+            assert pairs_for(swapped_columns) == pairs_A
+            assert pairs_for(A.assign(later_report=[1, 1, 1])) == pairs_A
+            assert pairs_for(A.assign(later_report=[-1, -1, -1])) == pairs_A
             passed("all_six_input_row_permutations_recover_same_id_predictions")
             passed("named_feature_order_and_future_extra_column")
 
-            must_reject(lambda: predict_pairs(model, A.drop(columns=["feature2"])))
+            must_reject(lambda: pairs_for(A.drop(columns=["feature2"])))
             duplicate = pd.concat([A, A.iloc[[0]]], ignore_index=True)
-            must_reject(lambda: predict_pairs(model, duplicate))
+            must_reject(lambda: pairs_for(duplicate))
             missing_id = A.copy()
             missing_id.loc[0, "row_id"] = None
-            must_reject(lambda: predict_pairs(model, missing_id))
+            must_reject(lambda: pairs_for(missing_id))
             infinite = A.copy()
             infinite["feature1"] = infinite["feature1"].astype(float)
             infinite.loc[0, "feature1"] = np.inf
-            must_reject(lambda: predict_pairs(model, infinite))
+            must_reject(lambda: pairs_for(infinite))
             assert align(["A"], [("A", 1)]) == [1]
             assert align([11], [(11, -1)]) == [-1]
             for absent in (None, np.nan, pd.NA, "", "  "):
@@ -329,7 +363,7 @@ def main():
                 missing_row_id = A.copy()
                 missing_row_id["row_id"] = missing_row_id["row_id"].astype(object)
                 missing_row_id.loc[0, "row_id"] = absent
-                must_reject(lambda missing_row_id=missing_row_id: predict_pairs(model, missing_row_id))
+                must_reject(lambda missing_row_id=missing_row_id: pairs_for(missing_row_id))
             must_reject(lambda: align(ids_A, pairs_A + [pairs_A[0]]))
             must_reject(lambda: align(ids_A, pairs_A[:-1]))
             must_reject(lambda: align(ids_A, [("A05", 0), ("A08", 1), ("A02", -1)]))
@@ -353,7 +387,7 @@ def main():
             passed("actual_temporary_zip_reopened_validated_and_removed")
             passed("same_length_order_header_missing_row_bad_label_extra_column_rejected")
 
-            # Independent task: one valid model is checked as an example, not a required choice.
+            # The specified two class centers and the two squared distances are independently checkable.
             ex_train = ns["exercise_train"]
             ex_valid = ns["exercise_validation"]
             ex_input = ns["exercise_input"]
@@ -361,22 +395,20 @@ def main():
             assert set(ex_cols) <= set(ex_train.columns)
             assert "verified_label" in ex_train and "verified_label" not in ex_input and "verified_label" not in ex_valid
             ex_known = ex_train[ex_train["label"].isin([0, 1])].copy()
-            ex = make_model().fit(ex_known[ex_cols], ex_known["label"])
+            ex_means, ex_centers = summarize(ex_known, ex_cols)
             assert ex_known["item"].tolist() == ["R1", "R2", "R3", "R4"]
             assert ex_train.loc[ex_train["item"] == "R5", "label"].item() == -1
-            assert np.allclose(ex["fill"].statistics_, [4, 4, 2])
-            assert np.allclose(ex["classifier"].centroids_, [[1, 3, 1], [7, 5, 3]])
-            assert ex.predict(ex_valid[ex_cols]).tolist() == [0, 1, 1]
-            assert ex.predict(ex_input[ex_cols]).tolist() == [1, 0, 0]
-            output = pd.DataFrame({"item": ex_input["item"], "signal": ex.predict(ex_input[ex_cols])})
+            assert np.allclose(ex_means, [4, 4, 2])
+            assert np.allclose(ex_centers, [[1, 3, 1], [7, 5, 3]])
+            ex_valid_distances = distances(ex_valid, ex_means, ex_centers)
+            assert ex_valid_distances.loc[ex_valid["item"] == "V3"].to_numpy().tolist() == [[17, 9]]
+            assert ex_valid_distances.idxmin(axis=1).tolist() == [0, 1, 1]
+            ex_signals = distances(ex_input, ex_means, ex_centers).idxmin(axis=1)
+            assert ex_signals.tolist() == [1, 0, 0]
+            output = pd.DataFrame({"item": ex_input["item"], "signal": ex_signals})
             text = output.to_csv(index=False, lineterminator="\n")
             assert text == "item,signal\nJ3,1\nJ1,0\nJ2,0\n"
-            other = Pipeline([("fill", SimpleImputer(strategy="mean")),
-                              ("classifier", DecisionTreeClassifier(max_depth=1, random_state=0))])
-            other.fit(ex_known[ex_cols], ex_known["label"])
-            assert set(other.predict(ex_input[ex_cols])).issubset({0, 1})
-            passed("independent_new_schema_mean_and_optional_centroid_answer")
-            passed("independent_alternative_tree_is_valid_and_not_forced_to_centroid")
+            passed("independent_three_features_and_two_distances_before_opening_the_answer")
 
             assert "label" not in ex_valid and "label" not in ex_input
             assert ns["first_predictions"] is None and ns["recorded_first_predictions"] is None
@@ -405,7 +437,6 @@ def main():
         "python": sys.version.split()[0],
         "numpy": np.__version__,
         "pandas": pd.__version__,
-        "scikit_learn": sklearn.__version__,
         "execution": "fresh InProcessKernelManager; all code cells sequentially; saved outputs compared",
         "total_cells": len(book.cells),
         "code_cells_executed": len(executed),
@@ -416,17 +447,17 @@ def main():
                                     "rows_after_header": sorted(ANTIQUE_ROWS),
                                     "total_rows":500,"counts_by_Authenticated":{"-1":2,"0":496,"1":2}},
         "observed_example": {
-            "train_imputer": [5, 3], "class_centers": [[2, 2], [8, 4]],
+            "observed_training_column_means": [5, 3], "class_centers": [[2, 2], [8, 4]],
             "training_change_probe": {"input": [5.25, 3], "original": 1, "changed": -1},
             "validation_predictions": [-1, 1, 1, 1], "validation_accuracy": 0.75,
             "ordered_submission_A": [-1, 1, -1], "ordered_submission_B": [-1, 1],
             "temporary_submission_zip_removed": True
         },
-        "independent_answer_is_centroid_example_not_required_model": True,
+        "required_calculation": "training column means, class means, both squared distances and predicted label",
         "limits": [
             "The three source rows are checked against the pinned official CSV. Model training and ZIP execution use small synthetic examples.",
             "student independent work, actual learning and workload unobserved",
-            "ordinary socket Jupyter and Colab not verified",
+            "This specialized run uses an in-process kernel; other execution profiles have separate checks",
             "Canonical HTML compared; browser and figure checks have a separate delivery receipt",
             "a CSV without IDs cannot by itself prove the ID-to-prediction mapping is correct"
         ]

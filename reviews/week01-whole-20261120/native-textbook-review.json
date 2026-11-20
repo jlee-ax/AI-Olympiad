@@ -1,15 +1,313 @@
 {
-  "schema": "week01_native_textbook_review_v1",
-  "date": "2026-11-20",
+  "schema": "week01_native_prerequisite_review_v2",
   "week": 1,
+  "date": "2026-11-20",
   "decision": "accepted",
   "profile": "development",
   "eligibility": "development_or_partial",
   "native_program": "tools/course.mjs",
-  "previous_teaching_edition": "95abb1b930d0d6c07a6b27d3e040b8632bbdcbf1",
+  "previous_teaching_edition": "e3e00a4aae2c4e9169ae4f66f9f9ec5cb0db2352",
   "action": "revise",
-  "method": "The first author submission retained the four imported, newly written manuscripts. The independent reviewer requested a revision because the prescribed projection exercise was described as optional. The author revised two integrated student cells and one instructor guide cell. The CLI validated that typed edit, reran the four student notebooks and the four teacher functions, and requested a fresh independent review. The four named executable teacher cells copy the actual functions in the integrated guide.",
-  "first_candidate_sha256": "17a6ca8041937761cbb2c607bc5b1077128d7078471a9030819f7efe98a82af3",
+  "method": "Run and resume in the normal CLI using four actual learner notebooks, all four teacher guides and four copied, executable teacher solutions. The original submitted notebooks used the exact previously published route. The corrected author response was admitted after its recorded rejection and was then executed and independently reviewed.",
+  "source_scope": "Repository-registered primary-source readings and externally reviewed active official sources as recorded in the dated ground and educational review. The controller did not fetch a new all-course original-document packet.",
+  "physical_execution": "The unmodified repository course kernel used four distinct conventional Jupyter student sessions and one new teacher session for each probe. No external model was hosted in CI. The loopback transport verified external curriculum decisions bound to this candidate, with separately authored executable exam generation and blind scoring.",
+  "randomized_inputs": "Fresh numeric cases generated using operating-system entropy remained in temporary runner storage. Only totals and digests are retained. Repeating the procedure draws new inputs. The public specifications and methods were known; realized inputs and expected answers were withheld from lesson authors.",
+  "assessment_file_sha256": "69d1b2bc2f1199618a6a3c333c6e87015b8361f0fe2a2ca8b888caa0954a63be",
+  "blind_verification": {
+    "reviewer": "week1-independent-curriculum-reader",
+    "answer_hash": "ab305f08187809fa7fbee14bbefde64281890f22b722a03969a0097a337bf49a",
+    "case_hash": "7ff46dbf9fc8dcf12669e986831cf6a6123402c923f178fd5328fc96f05a4f27"
+  },
+  "role_source_sha256": {
+    "ground.json": "29f13facb247b394e599aa9d41ce388457c91d153f6343abb62a8702c6e2cf3c",
+    "examiner.py": "62358da09679a08d0905a47591f67e36d0427bde3950398e86a8c4cf7b2cc6f6",
+    "blind_solver.py": "aeb0f4e53f98b0820647a2662355804afcf467c224c42de219ab5cd7d4855525",
+    "reviewer.json": "5e00d9f6ec96bb79189e43f83d078c4a1046ef50df992a6a6ce225e9a44f90c3",
+    "author-approval.json": "a51bf3e96f715d577d0e9d5d470b07bbe72a7d36323f597b1266e9cdb140d230",
+    "assemble.mjs": "d42dcbca63f2eca71188dbb78cbc91e7f99074b5355b23d55310dfbeb3017803",
+    "native.py": "5866dec69e691d0c179a9a9c17d0d1861356116839449684b302c72de252c14e"
+  },
+  "named_external_responses": [
+    {
+      "role": "examiner",
+      "worker_id": "week1-independent-prerequisite-examiner",
+      "request_sha256": "98ca75f8d3eb3847f84b05a9a6355b2af1248b86425e361a7933a6e932fb803d",
+      "response_sha256": "636e49343d3a11aea8209a49448363c7571d53be16a6633a29607893a78d92c4"
+    },
+    {
+      "role": "assessor",
+      "worker_id": "week1-independent-curriculum-reader",
+      "request_sha256": "9745cbe9c80281c918bbf1f6a831402b39338bd500e35de5dee9e56b049822a1",
+      "response_sha256": "a07c0b36eb7e63c110ce5c959fa826e4d3ab57832bbb140fc89970d820f3460a"
+    },
+    {
+      "role": "ground",
+      "worker_id": "week1-independent-curriculum-reader",
+      "request_sha256": "4d2f6566074960c58a989eb6a22c911839420a92453f961bce6226b038fac70e",
+      "response_sha256": "976882de7538e0899d9d07f834f667c270c78efc933a3d32036c0cea97a0b8c9"
+    },
+    {
+      "role": "author",
+      "worker_id": "week1-curriculum-author",
+      "request_sha256": "ae74f880ba0ede8506593c6f0846118c5bc5d77f425324a6a357f713b9ae09fb",
+      "response_sha256": "6421e70f74a7ed822a5f757d1f48992d218b5e1cdd6743f95c099027f514cd12"
+    },
+    {
+      "role": "author",
+      "worker_id": "week1-curriculum-author",
+      "request_sha256": "dafec6975b7effc3057d40e6225df83c2730e0389a76e2a736c353bd413ec79e",
+      "response_sha256": "5a0b6f46d7b57de534f9bec8e721e206c02748776ac325a15299ce2af9a91070"
+    },
+    {
+      "role": "reviewer",
+      "worker_id": "week1-independent-curriculum-reader",
+      "request_sha256": "b4f4eb57400f85e2e3fb2a8e39937f8e48137c8e05d9bea74cd80bb801883695",
+      "response_sha256": "671085d794a23a40a30013db076da8b00c9ec5aec21c896ae07a1d49476ef18e"
+    }
+  ],
+  "program_sha256": {
+    "tools/course.mjs": "ceebb1ee102f4b6cd6d823fb03ba7bdf8b70aa8cfe57851756327f483d3f976b",
+    "tools/course_core.mjs": "8193462c283c50d70f5d24ea08dba3818e26632e5f459cc0089ec5cc28fc30d4",
+    "tools/course_assess.mjs": "3deb277bc30acaacf9d6e73baf0b7436621e7cc08b1cafc1922421bf0ab2a4b2",
+    "tools/course_run.mjs": "fd34b8ca29f9ef30dfdc6711925edee16d0a7b70461d874e1f1299ececcffefa",
+    "tools/course_ledger.mjs": "b305b6816c180c17bb9aa38328aace3d5ce71f003893bc2e3dda3970178997ab",
+    "tools/course_kernel.py": "35b5069763f4c1bd3408a7d72f080ce7c27f85a38a1872a7f4fa7c2aa1bd400f",
+    "tools/course_diff.py": "61d5bcd02bf70f1bdb9839b26322efd91678fc3c62556d33fd44bd4ae9aa199a",
+    "tools/material_revision.py": "8df6cc482fd1677d7ce5da0e086161e288c4d5c2df1b63388137685ddfdae9a2",
+    "tools/course_tool_prerequisites.py": "46e9a273c482cd50e12cbd0ea06fdf7c75645b71703fdb6ed18ff705512f4455",
+    "tools/course_tool_prerequisites.mjs": "69c9266716e3d1f6949374dca03af2242fcd4d87dd787671b797036aed10ecee",
+    "skills/koai-evaluate/SKILL.md": "8d272fc2c7326136b4b071ca62e9367aeb0d1953c064578b2da3d0d3baa8ddaa"
+  },
+  "route_file_sha256": "27963df19c04077883a4b50d211902b312d08d73929359d43f590ae6dedd34fc",
+  "route_class_minutes": 120,
+  "route_homework_minutes": 300,
+  "previous_candidate_sha256": "6421e70f74a7ed822a5f757d1f48992d218b5e1cdd6743f95c099027f514cd12",
+  "native_import_sha256": "b6773c1098b7430c21f2d9a9a9e31fb8525e3fdd1d1cc88c9204514a97a6b960",
+  "candidate_sha256": "5a0b6f46d7b57de534f9bec8e721e206c02748776ac325a15299ce2af9a91070",
+  "governing_week_one_sha256": "b25ea7575c560f3c37065d3a4723a6c99432d89472effd754004bb65dfc018e9",
+  "course_scope": {
+    "curriculum/student-plan.html#week-1": "8fa8c919a57abbf0215dc69c63b3045746ac670134246493a2e02b47ae803d17",
+    "curriculum/contract.json#week-1": "f0178c5a435cce0ff6efff8e6a3b997094ff2a577d6cd53c0ec459157c2bb5df",
+    "curriculum/course-harness.json#week-1": "b25ea7575c560f3c37065d3a4723a6c99432d89472effd754004bb65dfc018e9"
+  },
+  "tool_prerequisites": {
+    "rules": [
+      {
+        "topic": "KOAI-04",
+        "modules": [
+          "sklearn"
+        ],
+        "data_only": [
+          "sklearn.datasets.fetch_*",
+          "sklearn.datasets.load_*"
+        ],
+        "mentions": [
+          "NearestCentroid",
+          "Pipeline",
+          "SimpleImputer",
+          "fit_transform"
+        ],
+        "introduced_in": [
+          2
+        ],
+        "available": false
+      },
+      {
+        "topic": "KOAI-05",
+        "modules": [
+          "torch"
+        ],
+        "data_only": [],
+        "mentions": [
+          "torch.nn",
+          "torch.optim"
+        ],
+        "introduced_in": [
+          6
+        ],
+        "available": false
+      },
+      {
+        "topic": "KOAI-08",
+        "modules": [
+          "sklearn.linear_model.LinearRegression"
+        ],
+        "data_only": [],
+        "mentions": [
+          "LinearRegression"
+        ],
+        "introduced_in": [
+          3
+        ],
+        "available": false
+      },
+      {
+        "topic": "KOAI-11",
+        "modules": [
+          "sklearn.neighbors.KNeighborsClassifier",
+          "sklearn.neighbors.KNeighborsRegressor"
+        ],
+        "data_only": [],
+        "mentions": [
+          "KNeighborsClassifier",
+          "KNeighborsRegressor"
+        ],
+        "introduced_in": [
+          4
+        ],
+        "available": false
+      },
+      {
+        "topic": "KOAI-15",
+        "modules": [
+          "sklearn.cluster.KMeans"
+        ],
+        "data_only": [],
+        "mentions": [
+          "KMeans"
+        ],
+        "introduced_in": [
+          5
+        ],
+        "available": false
+      },
+      {
+        "topic": "KOAI-16",
+        "modules": [
+          "sklearn.decomposition.PCA"
+        ],
+        "data_only": [],
+        "mentions": [
+          "sklearn.decomposition.PCA"
+        ],
+        "introduced_in": [
+          5
+        ],
+        "available": false
+      }
+    ],
+    "assessment": {
+      "findings": [
+        {
+          "cell": "main/484f22ba",
+          "topic": "KOAI-04",
+          "api": "sklearn.datasets.load_digits",
+          "kind": "data_only",
+          "tier": "class",
+          "line": 7,
+          "origin": "main/484f22ba"
+        },
+        {
+          "cell": "tables/3468f4e4",
+          "topic": "KOAI-04",
+          "api": "sklearn.datasets.load_digits",
+          "kind": "data_only",
+          "tier": "conditional",
+          "line": 5,
+          "origin": "tables/3468f4e4"
+        },
+        {
+          "cell": "tables/48d931b0",
+          "topic": "KOAI-04",
+          "api": "sklearn.datasets.load_digits",
+          "kind": "data_only",
+          "tier": "homework",
+          "line": 5,
+          "origin": "tables/48d931b0"
+        },
+        {
+          "cell": "tables/8e3a1c92",
+          "topic": "KOAI-04",
+          "api": "sklearn.datasets.load_digits",
+          "kind": "data_only",
+          "tier": "conditional",
+          "line": 4,
+          "origin": "tables/8e3a1c92"
+        },
+        {
+          "cell": "tables/digits-csv-roundtrip",
+          "topic": "KOAI-04",
+          "api": "sklearn.datasets.load_digits",
+          "kind": "data_only",
+          "tier": "class",
+          "line": 6,
+          "origin": "tables/digits-csv-roundtrip"
+        },
+        {
+          "cell": "tables/digits-practice-csv",
+          "topic": "KOAI-04",
+          "api": "sklearn.datasets.load_digits",
+          "kind": "data_only",
+          "tier": "class",
+          "line": 7,
+          "origin": "tables/digits-practice-csv"
+        },
+        {
+          "cell": "tables/digits-public-input",
+          "topic": "KOAI-04",
+          "api": "sklearn.datasets.load_digits",
+          "kind": "data_only",
+          "tier": "conditional",
+          "line": 5,
+          "origin": "tables/digits-public-input"
+        }
+      ],
+      "blocked": [],
+      "review_cells": []
+    },
+    "historical_refusal": "Premature required tool dependency KOAI-04: sklearn.impute.SimpleImputer at pipeline/1566ce2a line 5. Use an introduced method or move the dependent work.",
+    "judgment": {
+      "verdict": "pass",
+      "cells": [
+        "main/f574b6b5",
+        "main/4042bdda",
+        "main/d942743f",
+        "main/9d537595",
+        "main/catalog-reading-code",
+        "tables/digits-practice-csv",
+        "pipeline/622155d2",
+        "pipeline/1566ce2a",
+        "pipeline/f265b556",
+        "pipeline/5c8fe7f9",
+        "main/8e809e64"
+      ],
+      "finding": "With sklearn estimator/imputer construction denied, the former compulsory companion first failed in cell 1566ce2a. The corrected student route reads UCI digits with load_digits, uses named table/array operations for the class centers, then uses squared differences, argmin and an ID-aligned comparison to reproduce the worked 3/4. The different-row projection task is solvable with loops and indexing; conditional integrated modeling is also arithmetically explicit. The installed data loader is an environment dependency; students need no estimator interface for these outcomes."
+    }
+  },
+  "material_bindings": {
+    "integrated": {
+      "published_notebook_sha256": "0db53506ef32c84b18b26357db8a74a1ded34a0385ffeffaddb934878a454afb",
+      "guide_sha256": "6eb36f863a5b63e1bd5defefa3e90d0b2412ecc9235ea404cd46e3c9cd672b13",
+      "normalized_native_cells_sha256": "a5846d47060045211401fbb03c56f6ce538466b1cee5cecd56445581652ccb5a",
+      "cells": 60,
+      "code_cells": 30,
+      "authored_cells_sha256": "26e492deb6595e9ea84ac053e1df82bc9636bfc97f3fa2833d9261e4945f3d2a"
+    },
+    "tables": {
+      "published_notebook_sha256": "f06880f1a9a20ed4f8fbdc838495817cdbc407c28300f85a7aad40b5fd9dd298",
+      "guide_sha256": "a140e5bf4c960f1ca192068b0cf479db7d963e504349c6b6a4c3afff721c165e",
+      "normalized_native_cells_sha256": "e42d0f63dd20a986415a36e83854c440fcd8876ee2dc6d030816b515f0fad2fe",
+      "cells": 101,
+      "code_cells": 36,
+      "authored_cells_sha256": "02d13b3a50e87fee8264015be57858de858e1f479c1954bd4746d181ccdecd16"
+    },
+    "axes": {
+      "published_notebook_sha256": "6e1fd7c838d2c959beba3475de75c5bda90cd4d80cd2a03f42f8ca8ed4a4d986",
+      "guide_sha256": "a6037da0d1e4e7bf1409376f444e06c24c6c5ee719d87a4f01848a43089e8d3b",
+      "normalized_native_cells_sha256": "0d445488f86b27cb52354ab958bd080f03a78cbb1427693180633cd622e8af7d",
+      "cells": 35,
+      "code_cells": 16,
+      "authored_cells_sha256": "20b973b2a908122d34352b747f4a739c79d472f046cae7ee404c1178dbfed5e0"
+    },
+    "pipeline": {
+      "published_notebook_sha256": "45ff37ffed2ecb5b231a0ebbe9b23bd8a730aef4a27639a090bc6313fa0a778e",
+      "guide_sha256": "a41879251df46605b5208d1131a0b59b90d070803cf6bba672340f2e9a3cef68",
+      "normalized_native_cells_sha256": "b20c5b8f0c31a5a62f7f99b8cfff370f5ef4d816dd0a2a04187b10aba097f645",
+      "cells": 35,
+      "code_cells": 16,
+      "authored_cells_sha256": "be28ed43121a69393edce5edcee008cfe7b03b085a22d888241cd5e5a1e15996"
+    }
+  },
   "typed_edit": {
     "ok": true,
     "changes": {
@@ -17,268 +315,954 @@
         "added": [],
         "removed": [],
         "modified": [
-          "4042bdda",
-          "summary-exercise-work"
+          "ce3f374d",
+          "4d60619c",
+          "28086cfc",
+          "ae89f4b6",
+          "5ba7e603",
+          "8e809e64",
+          "3512f7de"
         ],
         "moved": [],
         "routes_checked": [
-          "required-projection"
+          "manual-training-and-distance"
+        ]
+      },
+      "pipeline": {
+        "added": [],
+        "removed": [],
+        "modified": [
+          "622155d2",
+          "nearest-rule",
+          "1566ce2a",
+          "29a11f88",
+          "33667a04",
+          "67ef140d",
+          "f265b556",
+          "5c8fe7f9",
+          "bb177697",
+          "06ceb97e",
+          "1c7edeca",
+          "12269b20",
+          "d5a85a2f"
+        ],
+        "moved": [],
+        "routes_checked": [
+          "known-class-numerical-rule"
         ]
       },
       "teacher": {
         "added": [],
         "removed": [],
         "modified": [
-          "guide-integrated"
+          "guide-integrated",
+          "guide-pipeline"
         ],
         "moved": [],
         "routes_checked": [
-          "required-projection"
+          "align-numerical-guide-and-classroom-answers"
         ]
       }
     }
   },
-  "source_frozen_before_final_manuscripts": "The source-only grounding was issued once on the preliminary import and repeated on the four revised manuscripts with an identical bound request. All student execution, author proposals and educational reviews below identify the four-book candidate to which they apply.",
-  "program_sha256": {
-    "course.mjs": "faadc717f8c65481ad79be00a15a67ffaac789cbacb1fa7da624781d7dd0ac85",
-    "course_core.mjs": "853ee066f101ddcead1a15c374f205ad9f1748974c3e45dd97fb05fe462fdba6",
-    "course_run.mjs": "5aa6e29f7621432383f19626de736acc8e1a8324eb180eb62a0fbe6f34025c7c",
-    "course_ledger.mjs": "b305b6816c180c17bb9aa38328aace3d5ce71f003893bc2e3dda3970178997ab",
-    "course_diff.py": "61d5bcd02bf70f1bdb9839b26322efd91678fc3c62556d33fd44bd4ae9aa199a",
-    "material_revision.py": "8df6cc482fd1677d7ce5da0e086161e288c4d5c2df1b63388137685ddfdae9a2"
-  },
-  "task_workers": "The examiner had technical delivery duties. The blind solver received only the question inputs and public interfaces. The independent reader also issued the source-grounding and teaching judgments. The author supplied the complete proposed curriculum and explicitly endorsed each captured public author response by digest. All roles were performed outside the HTTP handoff adapter.",
-  "physical_execution": "One fresh separately launched Python process with real socket-free ipykernel per student notebook and teacher probe. The current runtime is the development profile.",
-  "material_bindings": {
-    "integrated": {
-      "published_notebook_sha256": "184316822761ae0e25c23ea6e3fc8fe5b3d99267b059a34df36196282ae7df12",
-      "guide_sha256": "a06b9f270333f5b29ec4e22bfe0a35bf9ca64037584bcc6eb0099f226cb1b308",
-      "authored_cells_sha256": "05abcd8ae271054e0895b63bb04989728c47f6d5545325080147a7e181759697",
-      "original_import_source_sha256": "20176e98555078cb86e2930e3dd83cc76a7c4fb96beb2a9d854637212d8036e4",
-      "authored_manuscript_sha256": "367af91ab07d9a52068312ffaaa826e2351f5f39358c5592cb80fd4be2b71f6d"
-    },
-    "tables": {
-      "published_notebook_sha256": "f06880f1a9a20ed4f8fbdc838495817cdbc407c28300f85a7aad40b5fd9dd298",
-      "authored_cells_sha256": "02d13b3a50e87fee8264015be57858de858e1f479c1954bd4746d181ccdecd16",
-      "guide_sha256": "a140e5bf4c960f1ca192068b0cf479db7d963e504349c6b6a4c3afff721c165e",
-      "original_import_source_sha256": "f2cab40f6baa91a41b044ec4bdaf415d5adb0313e9bb165766fdca517f20d639",
-      "authored_manuscript_sha256": "f2cab40f6baa91a41b044ec4bdaf415d5adb0313e9bb165766fdca517f20d639"
-    },
-    "axes": {
-      "published_notebook_sha256": "6e1fd7c838d2c959beba3475de75c5bda90cd4d80cd2a03f42f8ca8ed4a4d986",
-      "authored_cells_sha256": "20b973b2a908122d34352b747f4a739c79d472f046cae7ee404c1178dbfed5e0",
-      "guide_sha256": "a6037da0d1e4e7bf1409376f444e06c24c6c5ee719d87a4f01848a43089e8d3b",
-      "original_import_source_sha256": "3fdbfa1685573eae1c3eb70e782d575ae95ab5c2d68f2e044423efc86a4bf560",
-      "authored_manuscript_sha256": "3fdbfa1685573eae1c3eb70e782d575ae95ab5c2d68f2e044423efc86a4bf560"
-    },
-    "pipeline": {
-      "published_notebook_sha256": "f09ffd3643a26795e35bc8905472f0cc697fed2cce4b700ff8f4dc660316c879",
-      "authored_cells_sha256": "14fd5ad8ebc87d48dee8a9282ba7a7136f8f79e105e9e48155fd6ebe2caaaa79",
-      "guide_sha256": "62dc02c77f5f0f70b98212c831dbebecf7997d3dd9c1a95415826b146266cafa",
-      "original_import_source_sha256": "f09ffd3643a26795e35bc8905472f0cc697fed2cce4b700ff8f4dc660316c879",
-      "authored_manuscript_sha256": "f09ffd3643a26795e35bc8905472f0cc697fed2cce4b700ff8f4dc660316c879"
-    }
-  },
-  "source_of_teacher_functions": "lessons/week01/week01_integrated_teacher.md",
-  "native_import_sha256": "233005f4f855eaeafa69ee9b6057e93f2beb59a832ec53d765b23a9b14c2dbef",
-  "candidate_sha256": "594de3c20a90b79d826317361dcfc19124939f85fda80d948d524f59228dab9f",
-  "native_context_sha256": "f2585d37d371e138ca3baf4ff1f2c9b4136bfa3f7d3a438f23a877faf372ee76",
-  "raw_author_response_sha256": "f876d6e17c15ac347aa830f6ce30b462cec4e8d64b8770113794bf2ebe151343",
-  "route_file_sha256": "27963df19c04077883a4b50d211902b312d08d73929359d43f590ae6dedd34fc",
-  "route_class_minutes": 120,
-  "route_homework_minutes": 300,
-  "governing_week_one_sha256": "d2ef80f81bff23fe02819fb70c9c07b55a5075fa1b7ec6d3fa53cbefd4dd3298",
-  "official_primary_capture_sha256": "1b32b7327678997f8329319138f44eeff554854810b2c4d698aa9de744b7c508",
-  "visibility_of_grading_cases": "The questions, answers and complete journal were kept in private scratch. This report contains only identifiers, counts and digests.",
-  "assessment_file_sha256": "0700d1679571b1a6d1558f3410b1296ca15ddebe091ab127db7fd4795b2cf5a6",
-  "runtime_sha256": "4bf916b9f173677ea45209484f5291b1404b8f530d7d4c2be6399b44a6e24b44",
-  "named_external_responses": [
-    {
-      "role": "assessor",
-      "worker_id": "week1-independent-reader",
-      "authored_by": "week1-independent-reader",
-      "request_sha256": "a102f015ffcac7f7718c3f6abeb951ced875f77cd9d74d4345e3cb0589c7c046",
-      "response_file_sha256": "8f91493b39b0712d33e69626a1487a6b7c5f54ac02cc35dca6a5388dbcc892ae"
-    },
-    {
-      "role": "author",
-      "worker_id": "week1-author",
-      "authored_by": "week1-textbook-author",
-      "request_sha256": "1605841eb3854b35fda81cdb4bb9f163e605c378e4540c0f2349f23742e0fd72",
-      "response_file_sha256": "962cb66d961d6011f900f4b6e24d71bdd0338b7ace550e2260004701c2937b69"
-    },
-    {
-      "role": "author",
-      "worker_id": "week1-author",
-      "authored_by": "week1-textbook-author",
-      "request_sha256": "c4532132901d011c9eaf67efb082c7106994be7ce0487f599683a02b8c068977",
-      "response_file_sha256": "f876d6e17c15ac347aa830f6ce30b462cec4e8d64b8770113794bf2ebe151343"
-    },
-    {
-      "role": "examiner",
-      "worker_id": "week1-separate-examiner",
-      "authored_by": "week1-separate-examiner",
-      "request_sha256": "c79f6873adb03d3f9361d4cedef17803d871117029bd7ba27eaab1f1cfc18ddc",
-      "response_file_sha256": "663a176a716d62d9b198e091515be23d4a42dd78a8add3d8e8abb43e03756d16"
-    },
-    {
-      "role": "ground",
-      "worker_id": "week1-independent-reader",
-      "authored_by": "week1-independent-reader",
-      "request_sha256": "fb8a90b1b232e4a350e78c582629aa20766965b7cb8abd43ccb6d03f8c3062b5",
-      "response_file_sha256": "d9a3f9b0aa941e2ca949366a2d2c3c5db57fd070e1a0ec1380c03a5321b644b6"
-    },
-    {
-      "role": "reviewer",
-      "worker_id": "week1-independent-reader",
-      "authored_by": "week1-independent-reader",
-      "request_sha256": "2efdbcc7df94a754484f58beaa05b97cbacd7dfa9ddc1d1aab4f323adb9b0608",
-      "response_file_sha256": "e7082a45346602e15510c57293a9bf56ec670906a7ffed2299a013250f8f6759"
-    },
-    {
-      "role": "reviewer",
-      "worker_id": "week1-independent-reader",
-      "authored_by": "week1-independent-reader",
-      "request_sha256": "553ecdee0f5edbeccef016349ad9b8aea5fd104e85e6fe35d280e11a54823a16",
-      "response_file_sha256": "d4578c93cfc981fa67ec1a523bb9f8e44cb772d3e1d119d1f0f399b0f1f60329"
-    }
-  ],
   "native_phases": [
     {
-      "id": 2,
-      "kind": "grounded",
+      "id": 1,
+      "native_context_sha256": "2ff9c5f5bfdaefce48eb32229bf0a647ac428bc5b6b00143df47d749cf500950",
       "attempt": 1,
-      "native_context_sha256": "61ef3654f8125fa1552bf4eaf9ec5f9cdaa31d2f87b09a3f4ee1d9a1c59714ef",
+      "kind": "grounded",
       "demands": [
         "representation_decision",
         "summaries_and_units",
         "fitted_rule_and_distance",
         "alignment_and_comparison"
+      ]
+    },
+    {
+      "id": 2,
+      "native_context_sha256": "2ff9c5f5bfdaefce48eb32229bf0a647ac428bc5b6b00143df47d749cf500950",
+      "attempt": 1,
+      "kind": "invalid_candidate",
+      "candidate_sha256": "6421e70f74a7ed822a5f757d1f48992d218b5e1cdd6743f95c099027f514cd12",
+      "reason": "Premature required tool dependency KOAI-04: sklearn.impute.SimpleImputer at pipeline/1566ce2a line 5. Use an introduced method or move the dependent work.",
+      "blocked_tool_findings": [
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 5,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 6,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 7,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 8,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 9,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 10,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 11,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 12,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 5,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 6,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 7,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 8,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 9,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 10,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 11,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 12,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 5,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 6,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 7,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 8,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 9,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 10,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 11,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/1566ce2a",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 12,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 3,
+          "origin": "pipeline/33667a04"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 4,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 5,
+          "origin": "pipeline/33667a04"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 7,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 9,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 10,
+          "origin": "pipeline/33667a04"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 11,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 11,
+          "origin": "pipeline/33667a04"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 13,
+          "origin": "pipeline/33667a04"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 14,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 15,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 15,
+          "origin": "pipeline/33667a04"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 3,
+          "origin": "pipeline/33667a04"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 4,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 5,
+          "origin": "pipeline/33667a04"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 7,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 9,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 10,
+          "origin": "pipeline/33667a04"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 11,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 11,
+          "origin": "pipeline/33667a04"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 13,
+          "origin": "pipeline/33667a04"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 14,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 15,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 15,
+          "origin": "pipeline/33667a04"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 3,
+          "origin": "pipeline/33667a04"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 4,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 5,
+          "origin": "pipeline/33667a04"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 7,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 9,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 10,
+          "origin": "pipeline/33667a04"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 11,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 11,
+          "origin": "pipeline/33667a04"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 13,
+          "origin": "pipeline/33667a04"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 14,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 15,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/33667a04",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 15,
+          "origin": "pipeline/33667a04"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 1,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 2,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 5,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 6,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 7,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 8,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 9,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 1,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 2,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 5,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 6,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 7,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 8,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 9,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 1,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 2,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 5,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 6,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 7,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 8,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/5c8fe7f9",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 9,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/f265b556",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 4,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/f265b556",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 6,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/f265b556",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 7,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/f265b556",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 4,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/f265b556",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 6,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/f265b556",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 7,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/f265b556",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 4,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/f265b556",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 6,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/f265b556",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 7,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/worked-score",
+          "topic": "KOAI-04",
+          "api": "sklearn.impute.SimpleImputer",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 5,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/worked-score",
+          "topic": "KOAI-04",
+          "api": "sklearn.neighbors.NearestCentroid",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 5,
+          "origin": "pipeline/1566ce2a"
+        },
+        {
+          "cell": "pipeline/worked-score",
+          "topic": "KOAI-04",
+          "api": "sklearn.pipeline.Pipeline",
+          "kind": "premature",
+          "tier": "homework",
+          "line": 5,
+          "origin": "pipeline/1566ce2a"
+        }
       ]
     },
     {
       "id": 3,
-      "kind": "grounded",
-      "attempt": 1,
-      "native_context_sha256": "f2585d37d371e138ca3baf4ff1f2c9b4136bfa3f7d3a438f23a877faf372ee76",
-      "demands": [
-        "representation_decision",
-        "summaries_and_units",
-        "fitted_rule_and_distance",
-        "alignment_and_comparison"
-      ]
+      "native_context_sha256": "2ff9c5f5bfdaefce48eb32229bf0a647ac428bc5b6b00143df47d749cf500950",
+      "attempt": 2,
+      "kind": "authored",
+      "candidate_sha256": "5a0b6f46d7b57de534f9bec8e721e206c02748776ac325a15299ce2af9a91070"
     },
     {
       "id": 4,
-      "kind": "authored",
-      "attempt": 1,
-      "native_context_sha256": "f2585d37d371e138ca3baf4ff1f2c9b4136bfa3f7d3a438f23a877faf372ee76",
-      "candidate_sha256": "17a6ca8041937761cbb2c607bc5b1077128d7078471a9030819f7efe98a82af3"
+      "native_context_sha256": "2ff9c5f5bfdaefce48eb32229bf0a647ac428bc5b6b00143df47d749cf500950",
+      "attempt": 2,
+      "kind": "executed",
+      "candidate_sha256": "5a0b6f46d7b57de534f9bec8e721e206c02748776ac325a15299ce2af9a91070",
+      "probes": {
+        "transfer": {
+          "passed": 6,
+          "total": 6
+        },
+        "KOAI-01.practical": {
+          "passed": 5,
+          "total": 5
+        },
+        "KOAI-02.practical": {
+          "passed": 6,
+          "total": 6
+        },
+        "KOAI-03.practical": {
+          "passed": 7,
+          "total": 7
+        }
+      }
     },
     {
       "id": 5,
-      "kind": "executed",
-      "attempt": 1,
-      "native_context_sha256": "f2585d37d371e138ca3baf4ff1f2c9b4136bfa3f7d3a438f23a877faf372ee76",
-      "candidate_sha256": "17a6ca8041937761cbb2c607bc5b1077128d7078471a9030819f7efe98a82af3",
-      "probes": {
-        "transfer": {
-          "passed": 6,
-          "total": 6
-        },
-        "KOAI-01.practical": {
-          "passed": 5,
-          "total": 5
-        },
-        "KOAI-02.practical": {
-          "passed": 6,
-          "total": 6
-        },
-        "KOAI-03.practical": {
-          "passed": 7,
-          "total": 7
-        }
-      },
-      "case_families": {
-        "normal": 5,
-        "invariant": 5,
-        "sensitive": 4,
-        "boundary": 10
-      }
-    },
-    {
-      "id": 7,
-      "kind": "rejected",
-      "attempt": 1,
-      "native_context_sha256": "f2585d37d371e138ca3baf4ff1f2c9b4136bfa3f7d3a438f23a877faf372ee76",
-      "candidate_sha256": "17a6ca8041937761cbb2c607bc5b1077128d7078471a9030819f7efe98a82af3",
-      "verdict": "revise",
-      "review_checks": {
-        "scope": "pass",
-        "prerequisites": "pass",
-        "explanation": "pass",
-        "independent_task": "revise",
-        "alternative_solution": "pass",
-        "workload": "pass",
-        "answer_visibility": "pass",
-        "representation": "pass",
-        "depth_floor": "revise",
-        "depth_ceiling": "pass",
-        "downstream_use": "pass",
-        "revision_alternative": "revise",
-        "KOAI-01.practical": "pass",
-        "KOAI-02.practical": "pass",
-        "KOAI-03.practical": "pass",
-        "demand.representation_decision": "revise",
-        "demand.summaries_and_units": "pass",
-        "demand.fitted_rule_and_distance": "pass",
-        "demand.alignment_and_comparison": "pass"
-      }
-    },
-    {
-      "id": 8,
-      "kind": "authored",
+      "native_context_sha256": "2ff9c5f5bfdaefce48eb32229bf0a647ac428bc5b6b00143df47d749cf500950",
       "attempt": 2,
-      "native_context_sha256": "f2585d37d371e138ca3baf4ff1f2c9b4136bfa3f7d3a438f23a877faf372ee76",
-      "candidate_sha256": "594de3c20a90b79d826317361dcfc19124939f85fda80d948d524f59228dab9f"
-    },
-    {
-      "id": 9,
-      "kind": "executed",
-      "attempt": 2,
-      "native_context_sha256": "f2585d37d371e138ca3baf4ff1f2c9b4136bfa3f7d3a438f23a877faf372ee76",
-      "candidate_sha256": "594de3c20a90b79d826317361dcfc19124939f85fda80d948d524f59228dab9f",
-      "probes": {
-        "transfer": {
-          "passed": 6,
-          "total": 6
-        },
-        "KOAI-01.practical": {
-          "passed": 5,
-          "total": 5
-        },
-        "KOAI-02.practical": {
-          "passed": 6,
-          "total": 6
-        },
-        "KOAI-03.practical": {
-          "passed": 7,
-          "total": 7
-        }
-      },
-      "case_families": {
-        "normal": 5,
-        "invariant": 5,
-        "sensitive": 4,
-        "boundary": 10
-      }
-    },
-    {
-      "id": 10,
       "kind": "accepted",
-      "attempt": 2,
-      "native_context_sha256": "f2585d37d371e138ca3baf4ff1f2c9b4136bfa3f7d3a438f23a877faf372ee76",
-      "candidate_sha256": "594de3c20a90b79d826317361dcfc19124939f85fda80d948d524f59228dab9f",
+      "candidate_sha256": "5a0b6f46d7b57de534f9bec8e721e206c02748776ac325a15299ce2af9a91070",
       "verdict": "pass",
       "review_checks": {
         "scope": "pass",
@@ -293,6 +1277,7 @@
         "depth_ceiling": "pass",
         "downstream_use": "pass",
         "revision_alternative": "pass",
+        "tool_prerequisites": "pass",
         "KOAI-01.practical": "pass",
         "KOAI-02.practical": "pass",
         "KOAI-03.practical": "pass",
@@ -301,113 +1286,6 @@
         "demand.fitted_rule_and_distance": "pass",
         "demand.alignment_and_comparison": "pass"
       }
-    }
-  ],
-  "sqlite_phase_counts": {
-    "blind": 1,
-    "design": 1,
-    "ground": 2,
-    "author": 2,
-    "kernel": 2,
-    "review": 2,
-    "diff": 1
-  },
-  "fresh_kernel_processes": [
-    {
-      "work": "student-0",
-      "returncode": 0,
-      "cells": 60,
-      "code_cells": 30
-    },
-    {
-      "work": "student-1",
-      "returncode": 0,
-      "cells": 101,
-      "code_cells": 36
-    },
-    {
-      "work": "student-2",
-      "returncode": 0,
-      "cells": 35,
-      "code_cells": 16
-    },
-    {
-      "work": "student-3",
-      "returncode": 0,
-      "cells": 35,
-      "code_cells": 16
-    },
-    {
-      "work": "probe-0",
-      "returncode": 0,
-      "cells": 9,
-      "code_cells": 5
-    },
-    {
-      "work": "probe-1",
-      "returncode": 0,
-      "cells": 9,
-      "code_cells": 5
-    },
-    {
-      "work": "probe-2",
-      "returncode": 0,
-      "cells": 9,
-      "code_cells": 5
-    },
-    {
-      "work": "probe-3",
-      "returncode": 0,
-      "cells": 9,
-      "code_cells": 5
-    },
-    {
-      "work": "student-0",
-      "returncode": 0,
-      "cells": 60,
-      "code_cells": 30
-    },
-    {
-      "work": "student-1",
-      "returncode": 0,
-      "cells": 101,
-      "code_cells": 36
-    },
-    {
-      "work": "student-2",
-      "returncode": 0,
-      "cells": 35,
-      "code_cells": 16
-    },
-    {
-      "work": "student-3",
-      "returncode": 0,
-      "cells": 35,
-      "code_cells": 16
-    },
-    {
-      "work": "probe-0",
-      "returncode": 0,
-      "cells": 9,
-      "code_cells": 5
-    },
-    {
-      "work": "probe-1",
-      "returncode": 0,
-      "cells": 9,
-      "code_cells": 5
-    },
-    {
-      "work": "probe-2",
-      "returncode": 0,
-      "cells": 9,
-      "code_cells": 5
-    },
-    {
-      "work": "probe-3",
-      "returncode": 0,
-      "cells": 9,
-      "code_cells": 5
     }
   ],
   "final_probe_totals": {
@@ -428,7 +1306,7 @@
       "total": 7
     }
   },
-  "final_review_check_count": 19,
+  "final_review_check_count": 20,
   "resume": {
     "scope": [
       1
@@ -449,5 +1327,9 @@
     "calls": 0,
     "eligibility": "development_or_partial"
   },
-  "first_review_finding": "The central task to find all different-class collisions under a feature projection was presented as an additional exercise. The author made it the fourth required problem and revised its learner answer cell and instructor note."
+  "workflow": {
+    "repository": "jlee-ax/AI-Olympiad",
+    "run": "44764066221",
+    "commit": "4e0f761c39d42bdaf54715f252612599c4bece1a"
+  }
 }

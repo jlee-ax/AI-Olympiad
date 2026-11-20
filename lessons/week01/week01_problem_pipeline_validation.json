@@ -1,17 +1,17 @@
 {
-  "checked_at_utc": "2026-11-20T13:25:57.092793+00:00",
-  "validation_script_sha256": "f8a63134e838f77d8bd0abc72960347f46bc057e11e92fbffd215ce1d4c25762",
+  "checked_at_utc": "2026-11-20T14:48:51.559923+00:00",
+  "validation_script_sha256": "420f0841a03fca001fa24d195e8d4feb1503d4d9130140c669ce6b6aaf91624c",
   "source_sha256": {
-    "week01_problem_pipeline.ipynb": "f09ffd3643a26795e35bc8905472f0cc697fed2cce4b700ff8f4dc660316c879",
-    "week01_problem_pipeline.html": "3c7448c098c674186a9cd7c9d2a41629a8b014ea9b40a34e61a38c0f44076d85",
-    "week01_problem_pipeline_teacher.md": "62dc02c77f5f0f70b98212c831dbebecf7997d3dd9c1a95415826b146266cafa",
+    "week01_problem_pipeline.ipynb": "45ff37ffed2ecb5b231a0ebbe9b23bd8a730aef4a27639a090bc6313fa0a778e",
+    "week01_problem_pipeline.html": "8d6b21205444ab7b835bb339148639dcdd2914fafec37c1bb3dc6bd81f1c848b",
+    "week01_problem_pipeline_teacher.md": "a41879251df46605b5208d1131a0b59b90d070803cf6bba672340f2e9a3cef68",
     "data/pipeline_device_validation.csv": "9939afdd0dd2d06f4ea45d564632e4b3a0740c7bd985e1d73165def043cc36bf",
-    "validate_week01_problem_pipeline.py": "f8a63134e838f77d8bd0abc72960347f46bc057e11e92fbffd215ce1d4c25762"
+    "validate_week01_problem_pipeline.py": "420f0841a03fca001fa24d195e8d4feb1503d4d9130140c669ce6b6aaf91624c"
   },
   "canonical_renderer_sha256": "7812f594db8638f41e4dedcc72bb4c714c8a4b9ee2317518b669e33223007cff",
   "render_validation": {
     "notebook": "week01_problem_pipeline",
-    "authored_cells_sha256": "14fd5ad8ebc87d48dee8a9282ba7a7136f8f79e105e9e48155fd6ebe2caaaa79",
+    "authored_cells_sha256": "be28ed43121a69393edce5edcee008cfe7b03b085a22d888241cd5e5a1e15996",
     "code_cells": 16,
     "figures": 0,
     "output_tables": 6,
@@ -23,10 +23,9 @@
       "week01_integrated.html"
     ]
   },
-  "python": "3.12.14",
+  "python": "3.12.16",
   "numpy": "2.3.5",
   "pandas": "2.2.3",
-  "scikit_learn": "1.8.0",
   "execution": "fresh InProcessKernelManager; all code cells sequentially; saved outputs compared",
   "total_cells": 35,
   "code_cells_executed": 16,
@@ -35,17 +34,17 @@
     "fresh_inprocess_sequential_execution_and_saved_outputs",
     "student_answer_cell_is_empty",
     "section_4_ordering_works_with_an_empty_namespace",
-    "known_targets_and_train_only_imputer_and_centroids",
-    "train_feature_and_target_perturbations_change_fit_and_prediction",
-    "unknown_training_row_not_relabelled_or_fitted_in_this_demo",
-    "validation_changes_do_not_refit_training_state",
+    "observed_training_means_labeled_class_centers_and_both_squared_distances",
+    "new_class_geometry_tie_missing_column_one_class_and_nonfinite_boundaries",
+    "train_feature_and_target_perturbations_change_class_centers_and_prediction",
+    "unconfirmed_training_row_does_not_change_either_training_summary",
+    "heldout_change_alters_its_prediction_but_preserves_training_summaries",
     "all_six_input_row_permutations_recover_same_id_predictions",
     "named_feature_order_and_future_extra_column",
     "missing_feature_duplicate_missing_id_inf_bad_label_and_missing_pair_rejected",
     "actual_temporary_zip_reopened_validated_and_removed",
     "same_length_order_header_missing_row_bad_label_extra_column_rejected",
-    "independent_new_schema_mean_and_optional_centroid_answer",
-    "independent_alternative_tree_is_valid_and_not_forced_to_centroid",
+    "independent_three_features_and_two_distances_before_opening_the_answer",
     "blank_learner_answer_and_feature_only_validation_inputs",
     "first_predictions_before_key_id_order_freezing_and_invalid_tables",
     "real_teacher_csv_changed_order_changed_inputs_and_reversed_predictions",
@@ -68,7 +67,7 @@
     }
   },
   "observed_example": {
-    "train_imputer": [
+    "observed_training_column_means": [
       5,
       3
     ],
@@ -108,11 +107,11 @@
     ],
     "temporary_submission_zip_removed": true
   },
-  "independent_answer_is_centroid_example_not_required_model": true,
+  "required_calculation": "training column means, class means, both squared distances and predicted label",
   "limits": [
     "The three source rows are checked against the pinned official CSV. Model training and ZIP execution use small synthetic examples.",
     "student independent work, actual learning and workload unobserved",
-    "ordinary socket Jupyter and Colab not verified",
+    "This specialized run uses an in-process kernel; other execution profiles have separate checks",
     "Canonical HTML compared; browser and figure checks have a separate delivery receipt",
     "a CSV without IDs cannot by itself prove the ID-to-prediction mapping is correct"
   ]

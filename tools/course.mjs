@@ -135,7 +135,7 @@ export async function main(argv) {
   const command=positionals[0],root=realpathSync(v.root);
   if(!["plan","run","resume","status","history","pending-calls","resolve-call","export"].includes(command)||positionals.length!==1)fail("Use plan, run, resume, status, history, pending-calls, resolve-call or export");
   const load=()=>loadCourse(root,v.design,v.contract,v.primary),base=load();
-  if(command==="plan")return {scope:base.scope.year,weeks:base.course.order.map(w=>({week:w,prerequisites:base.course.weeks[w].prerequisites,decision:base.course.weeks[w].decision,assess:core.obligations(base.course.weeks[w])}))};
+  if(command==="plan")return {scope:base.scope.year,weeks:base.course.order.map(w=>({week:w,prerequisites:base.course.weeks[w].prerequisites,decision:base.course.weeks[w].decision,assess:core.obligations(base.course.weeks[w]),...(base.course.weeks[w].tool_prerequisites ? {tool_prerequisites:base.course.weeks[w].tool_prerequisites} : {})}))};
   if(!v.state)fail("Specify an external state database");
   const state=resolve(v.state), dir=realpathSync(dirname(state));
   if(inside(root,dir)||existsSync(state)&&inside(root,realpathSync(state)))fail("State must be outside the repository");
@@ -166,7 +166,7 @@ export async function main(argv) {
       db.acquire();locked=true;
       timer=setInterval(()=>{try{db.renew();}catch{clearInterval(timer);}},30000);
     }
-    const readVersions=()=>["course_core.mjs","course_assess.mjs","course_run.mjs","course_ledger.mjs","course.mjs","course_kernel.py","course_local_worker.py","course_diff.py","material_revision.py"].map(p=>hash(read(join(root,"tools",p))));
+    const readVersions=()=>["course_core.mjs","course_tool_prerequisites.mjs","course_tool_prerequisites.py","course_assess.mjs","course_run.mjs","course_ledger.mjs","course.mjs","course_kernel.py","course_local_worker.py","course_diff.py","material_revision.py"].map(p=>hash(read(join(root,"tools",p))));
     const versions=readVersions();
     const python=config.python??"python3", local=[python,"-I",join(root,"tools/course_local_worker.py")];
     const kernel=live?["docker","run","--rm","-i","--network=none","--read-only","--cap-drop=ALL","--security-opt=no-new-privileges",

@@ -1,6 +1,19 @@
 # Week 1 student notebooks and offline handouts
 
-## Current edition using the handwritten digits dataset
+## Executed Week 1 classification revision
+
+All four distributed books executed in separate, fresh Jupyter kernels. The 231 student cells include 98 code cells. Desktop (1280 px) and mobile (390 px) Chromium opened each offline handout and retrieved a byte-identical copy of its notebook. The two revised books retained their original cell IDs and source-linked exercises. [Executable result and full file digests](../week01-prerequisites-20261120/delivery.json) · [Hosted Jupyter and browser job](https://github.com/jlee-ax/AI-Olympiad/actions/runs/44756756318/job/136358386730)
+
+| Student material | Executed code cells | Executed notebook SHA-256 prefix | HTML SHA-256 prefix |
+| --- | ---: | --- | --- |
+| Integrated lesson | 30 | `0db53506ef32` | `a8f5fd602f35` |
+| Python and tables | 36 | `f06880f1a9a2` | `0dd86153efe7` |
+| Arrays and axes | 16 | `6e1fd7c838d2` | `854337ada891` |
+| Classification and submission | 16 | `45ff37ffed2e` | `8d6b21205444` |
+
+An independent execution disabled later scikit-learn model operations. The old compulsory classification example and the old optional integrated example both stopped on their model calls. The revised books completed with the restriction in place. A deliberate model call immediately following each run still triggered the guard. Separate numerical cases changed training observations and held-out labels, covered missing observations and equal squared distances, and preserved the authentic digits data loader. These observations establish the published examples' behavior. Student learning and actual completion time require separate evidence. [Independent numerical check](check_model_prerequisites.py) · [Educational review](independent-receipt.json)
+
+## Previous edition at e3e00a4 using the handwritten digits dataset
 
 Four separate fresh Jupyter processes executed all 98 code cells in the 231 student cells. Each process began with cleared output, copied the distributed CSVs into its own working directory and captured the complete worked output. All 17 independent answer cells remained blank. Every student notebook matched its frozen manuscript after removing only code output and execution counts. The input files were unchanged after each run. The pipeline created its real two-member submission archive in temporary storage and cleaned it up. All four notebooks ran without cell errors or cell stderr. The local Jupyter process reported the host’s denied network-interface probe during startup and an IOPub cancellation during pipeline-kernel cleanup.
 

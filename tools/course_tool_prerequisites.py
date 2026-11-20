@@ -1,0 +1,395 @@
+"""Trace registered Python tools in a student's routed notebooks without executing them."""
+import ast
+from dataclasses import dataclass
+from fnmatch import fnmatchcase
+import json
+import re
+import sys
+
+
+@dataclass(frozen=True)
+class Symbol:
+    path: str
+
+
+@dataclass(frozen=True)
+class Storage:
+    """Identify the local object whose fields are stored in the current environment."""
+    site: ast.AST
+
+
+@dataclass(frozen=True)
+class Dependency:
+    topic: str
+    api: str
+    cell: str
+
+
+@dataclass(frozen=True)
+class Function:
+    node: ast.AST
+    cell: str
+    defaults: tuple
+
+
+def values(items):
+    return set().union(*items)
+
+
+def dependencies(items):
+    return {v for v in items if isinstance(v, Dependency)}
+
+
+def matches(path, module):
+    return path == module or path.startswith(module + ".")
+
+
+class Reader:
+    """Each full notebook and its compulsory route start with a fresh name table."""
+
+    def __init__(self, rules, tiers):
+        self.rules = rules
+        self.tiers = tiers
+        self.findings = set()
+        self.cell = None
+        self.line = 1
+        self.active = set()
+        self.returns = set()
+        self.deferred = False
+
+    def note(self, topic, api, kind, origin=None):
+        if self.deferred:
+            if kind == "use":
+                kind = "definition"
+            elif kind != "unresolved":
+                return
+        self.findings.add((self.cell, topic, api, kind, self.tiers[self.cell],
+                           self.line, origin or self.cell))
+
+    def dynamic(self, name, modules=None):
+        for rule in self.rules:
+            relevant = modules is None or any(matches(path, mod) or matches(mod, path)
+                                              for path in modules for mod in rule["modules"])
+            if relevant and not rule["available"]:
+                self.note(rule["topic"], name, "unresolved")
+
+    def rule_use(self, api):
+        result = set()
+        for rule in self.rules:
+            if not any(matches(api, mod) for mod in rule["modules"]):
+                continue
+            if any(fnmatchcase(api, pattern) for pattern in rule["data_only"]):
+                self.note(rule["topic"], api, "data_only")
+            elif rule["available"]:
+                self.note(rule["topic"], api, "scheduled")
+            else:
+                result.add(Dependency(rule["topic"], api, self.cell))
+        return result
+
+    def mark(self, result):
+        for dep in dependencies(result):
+            self.note(dep.topic, dep.api, "use", dep.cell)
+
+    @staticmethod
+    def slot(node):
+        if isinstance(node, ast.Attribute):
+            return ("attribute", node.attr)
+        if isinstance(node.slice, ast.Constant) and isinstance(node.slice.value, (str, int)):
+            return ("key", node.slice.value)
+        return None
+
+    def read_slot(self, node, env):
+        owners = self.expr(node.value, env)
+        slot = self.slot(node)
+        selected = set()
+        if isinstance(node, ast.Subscript):
+            selected.update(dependencies(self.expr(node.slice, env)))
+        for owner in owners:
+            if isinstance(owner, Storage):
+                fields = env.get(owner, {})
+                if slot is not None:
+                    selected.update(fields.get(slot, set()))
+                # A computed key can reach several alternatives. A person must decide
+                # when one alternative is a future tool; there is no known direct call.
+                uncertain = [items for key, items in fields.items() if slot is None or key is None]
+                alternatives = values(uncertain)
+                names = [v.path for v in alternatives if isinstance(v, Symbol)]
+                names.extend(v.api for v in dependencies(alternatives))
+                if names:
+                    self.dynamic("computed container key", names)
+                elif any(isinstance(v, Function) for v in alternatives):
+                    self.dynamic("computed local callback")
+            elif isinstance(node, ast.Attribute) and isinstance(owner, Symbol):
+                selected.add(Symbol(owner.path + "." + node.attr))
+            else:
+                selected.add(owner)
+        return selected
+
+    def content_dependencies(self, items, env, visited=None):
+        result = dependencies(items)
+        visited = set() if visited is None else visited
+        for store in (v for v in items if isinstance(v, Storage) and v not in visited):
+            visited.add(store)
+            fields = env.get(store, {})
+            result.update(self.content_dependencies(values(fields.values()), env, visited))
+        return result
+
+    def expr(self, node, env):
+        if node is None:
+            return set()
+        if isinstance(node, ast.Name):
+            return env.get(node.id, set())
+        if isinstance(node, (ast.Attribute, ast.Subscript)):
+            return self.read_slot(node, env)
+        if isinstance(node, ast.Dict):
+            owner = Storage(node)
+            fields = {}
+            for key, value in zip(node.keys, node.values):
+                self.mark(self.expr(key, env))
+                member = self.expr(value, env)
+                slot = ("key", key.value) if isinstance(key, ast.Constant) and isinstance(key.value, (str, int)) else None
+                if slot is None:
+                    member = fields.get(slot, set()) | member
+                fields[slot] = member
+            env[owner] = fields
+            return {owner}
+        if isinstance(node, ast.Lambda):
+            return {self.function(node, env)}
+        if isinstance(node, ast.NamedExpr):
+            result = self.expr(node.value, env)
+            self.bind(node.target, result, env)
+            return result
+        if not isinstance(node, ast.Call):
+            return values(self.expr(child, env) for child in ast.iter_child_nodes(node))
+        targets = self.expr(node.func, env)
+        positional = [self.expr(arg, env) for arg in node.args]
+        keywords = {arg.arg: self.expr(arg.value, env) for arg in node.keywords}
+        args = values([*positional, *keywords.values()])
+        result = dependencies(targets | args)
+        if not any(isinstance(value, Function) for value in targets):
+            result.update(self.content_dependencies(args, env))
+        if isinstance(node.func, ast.Name) and node.func.id not in env:
+            if node.func.id in {"__import__", "getattr", "eval", "exec"}:
+                targets = {Symbol("builtins." + node.func.id)}
+        for target in targets:
+            if isinstance(target, Function):
+                result.update(self.call_function(target, positional, keywords, env))
+            elif isinstance(target, Symbol):
+                if target.path in {"builtins.__import__", "importlib.import_module"}:
+                    if node.args and isinstance(node.args[0], ast.Constant) and isinstance(node.args[0].value, str):
+                        result.add(Symbol(node.args[0].value))
+                    else:
+                        self.dynamic(target.path)
+                elif target.path == "builtins.getattr" and len(node.args) >= 2:
+                    name = node.args[1]
+                    modules = [v for v in positional[0] if isinstance(v, Symbol)]
+                    if isinstance(name, ast.Constant) and isinstance(name.value, str):
+                        result.update(Symbol(v.path + "." + name.value) for v in modules)
+                    elif modules:
+                        self.dynamic("getattr with a computed name", [v.path for v in modules])
+                elif target.path in {"builtins.eval", "builtins.exec"}:
+                    self.dynamic(target.path)
+                else:
+                    result.update(self.rule_use(target.path))
+        self.mark(result)
+        return result
+
+    def function(self, node, env):
+        args = node.args
+        defaults = {}
+        pos = args.posonlyargs + args.args
+        for arg, default in zip(reversed(pos), reversed(args.defaults)):
+            defaults[arg.arg] = frozenset(self.expr(default, env))
+        for arg, default in zip(args.kwonlyargs, args.kw_defaults):
+            if default is not None:
+                defaults[arg.arg] = frozenset(self.expr(default, env))
+        return Function(node, self.cell, tuple(defaults.items()))
+
+    def call_function(self, fun, positional, keywords, caller):
+        node = fun.node
+        if fun in self.active:
+            return dependencies(values([*positional, *keywords.values()]))
+        local = caller.copy()
+        params = [arg.arg for arg in node.args.posonlyargs + node.args.args]
+        defaults = dict(fun.defaults)
+        for name in params + [arg.arg for arg in node.args.kwonlyargs]:
+            local[name] = defaults.get(name, set())
+        for name, value in zip(params, positional):
+            local[name] = value
+        local.update({k: v for k, v in keywords.items() if k is not None})
+        if node.args.vararg:
+            local[node.args.vararg.arg] = values(positional[len(params):])
+        if node.args.kwarg:
+            local[node.args.kwarg.arg] = values(keywords.values())
+        self.active.add(fun)
+        previous = self.returns
+        self.returns = set()
+        # Attribute the dependency to the learner cell that invokes this helper.
+        if isinstance(node, ast.Lambda):
+            self.returns.update(self.expr(node.body, local))
+        else:
+            for statement in node.body:
+                self.statement(statement, local, in_call=True)
+        result = self.returns
+        self.returns = previous
+        self.active.remove(fun)
+        return result
+
+    def bind(self, target, result, env):
+        if isinstance(target, ast.Name):
+            env[target.id] = result
+        elif isinstance(target, (ast.Tuple, ast.List)):
+            for item in target.elts:
+                self.bind(item, result, env)
+        elif isinstance(target, (ast.Attribute, ast.Subscript)):
+            base = target.value
+            owners = self.expr(base, env)
+            stores = {v for v in owners if isinstance(v, Storage)}
+            if not stores and isinstance(base, ast.Name):
+                stores = {Storage(base)}
+                env[base.id] = owners | stores
+            slot = self.slot(target)
+            for store in stores:
+                fields = dict(env.get(store, {}))
+                fields[slot] = result if slot is not None else fields.get(slot, set()) | result
+                env[store] = fields
+
+    def statement(self, node, env, in_call=False):
+        if not in_call:
+            self.line = node.lineno
+        if isinstance(node, (ast.Import, ast.ImportFrom)):
+            for alias in node.names:
+                if alias.name == "*":
+                    self.dynamic("wildcard import from " + str(node.module), [node.module] if node.module else None)
+                    continue
+                if isinstance(node, ast.Import):
+                    name = alias.asname or alias.name.split(".")[0]
+                    path = alias.name if alias.asname else name
+                else:
+                    name = alias.asname or alias.name
+                    path = ".".join(filter(None, (node.module, alias.name)))
+                env[name] = {Symbol(path)}
+            return
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+            fun = self.function(node, env)
+            env[node.name] = {fun}
+            for decorator in node.decorator_list:
+                self.mark(self.expr(decorator, env))
+            # A student may be asked to *write* a function that no worked cell calls.
+            # Its body supplies evidence for the reader, not proof of an executed call.
+            if not in_call and self.tiers[self.cell] != "conditional":
+                self.deferred = True
+                self.call_function(fun, [], {}, env)
+                self.deferred = False
+            return
+        if isinstance(node, (ast.Assign, ast.AnnAssign, ast.AugAssign)):
+            result = self.expr(node.value, env)
+            self.mark(result)
+            for target in node.targets if isinstance(node, ast.Assign) else [node.target]:
+                if isinstance(node, ast.AugAssign):
+                    result |= self.expr(target, env)
+                self.bind(target, result, env)
+            return
+        if isinstance(node, ast.Return):
+            result = self.expr(node.value, env)
+            self.mark(result)
+            self.returns.update(result)
+            return
+        if isinstance(node, ast.If):
+            self.mark(self.expr(node.test, env))
+            branches = []
+            for statements in [node.body, node.orelse]:
+                branch = env.copy()
+                for statement in statements:
+                    self.statement(statement, branch, in_call)
+                branches.append(branch)
+            for name in branches[0].keys() | branches[1].keys():
+                if isinstance(name, Storage):
+                    first, second = (branch.get(name, {}) for branch in branches)
+                    env[name] = {slot: first.get(slot, set()) | second.get(slot, set())
+                                 for slot in first.keys() | second.keys()}
+                else:
+                    env[name] = branches[0].get(name, set()) | branches[1].get(name, set())
+            return
+        if isinstance(node, (ast.For, ast.AsyncFor)):
+            self.bind(node.target, self.expr(node.iter, env), env)
+        for child in ast.iter_child_nodes(node):
+            if isinstance(child, ast.stmt):
+                self.statement(child, env, in_call)
+            else:
+                self.mark(self.expr(child, env))
+
+    def scan(self, entries):
+        env = {}
+        for self.cell, source in entries:
+            # This terminal IPython display directive selects a rendering backend.
+            # Leave its line in place and parse every other Python statement normally.
+            # A cell magic or a different line magic still requires an independent decision.
+            python = re.sub(r"(?m)^[ \t]*%matplotlib[ \t]+inline[ \t]*(?:#[^\n]*)?$", "", source)
+            try:
+                tree = ast.parse(python)
+            except (SyntaxError, ValueError) as error:
+                self.line = getattr(error, "lineno", None) or 1
+                self.dynamic("unparsed notebook cell")
+                continue
+            for statement in tree.body:
+                self.statement(statement, env)
+
+    def prose(self, ref, source):
+        self.cell = ref
+        for number, line in enumerate(source.splitlines(), 1):
+            self.line = number
+            # A documentation URL is not an instruction to use its API.
+            visible = re.sub(r"https?://[^\s)>]+", "", line)
+            for rule in self.rules:
+                if rule["available"]:
+                    continue
+                for name in rule["mentions"]:
+                    if re.search(r"(?<![A-Za-z_0-9])" + re.escape(name) + r"(?![A-Za-z_0-9])", visible):
+                        self.note(rule["topic"], name, "mention")
+
+
+def inspect(packet):
+    rules, route = packet["rules"], packet["route"]
+    tiers = {ref: unit["tier"] for unit in route["units"] for ref in unit["cells"]}
+    provided = {entry["cell"]: entry["alternative"] for entry in route.get("provided_examples", [])}
+    reader = Reader(rules, tiers)
+    for book, notebook in packet["notebooks"].items():
+        code = {}
+        for entry in notebook["cells"]:
+            ref = book + "/" + entry["id"]
+            if ref not in tiers:
+                raise ValueError("Student cell is absent from the route: " + ref)
+            source = "".join(entry["source"])
+            if entry["cell_type"] == "code":
+                code[ref] = source
+            elif entry["cell_type"] == "markdown":
+                reader.prose(ref, source)
+        # A full Run All, the planned order, and a student skipping all optional units
+        # can expose different bindings. Keep the file's kernel separate from every other book.
+        orders = [tuple(code), tuple(ref for ref in tiers if ref in code),
+                  tuple(ref for ref, tier in tiers.items() if tier != "conditional" and ref in code)]
+        for order in dict.fromkeys(orders):
+            reader.scan((ref, code[ref]) for ref in order)
+
+    findings, blocked, review_cells = [], [], set()
+    for cell, topic, api, kind, tier, line, origin in sorted(reader.findings):
+        if kind == "use":
+            if tier == "conditional":
+                kind = "conditional"
+            elif cell in provided and cell == origin:
+                kind = "provided"
+                review_cells.update((cell, provided[cell]))
+            else:
+                kind = "premature"
+        item = dict(cell=cell, topic=topic, api=api, kind=kind, tier=tier, line=line, origin=origin)
+        findings.append(item)
+        if kind == "premature":
+            blocked.append(item)
+        if tier != "conditional" and kind in {"definition", "mention", "unresolved"}:
+            review_cells.add(cell)
+    return {"findings": findings, "blocked": blocked, "review_cells": sorted(review_cells)}
+
+
+if __name__ == "__main__":
+    print(json.dumps(inspect(json.load(sys.stdin)), ensure_ascii=False))

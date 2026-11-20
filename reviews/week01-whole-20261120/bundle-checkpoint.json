@@ -1,8 +1,8 @@
 {
   "format_version": 1,
   "date": "2026-11-20",
-  "revision": "week01-textbook-20261120",
-  "bundle_sha256": "3b9d56a88ee08dd0262d4b26f0993eebaaecabb16bcf62f7ecad5b8bb354d7c9",
+  "revision": "week01-tool-prerequisites-20261120",
+  "bundle_sha256": "93f85c84c4823ec28e7b3a7efb049b4fa3ecb8bef301aad4037d3231bb0e6dae",
   "coverage": {
     "members": [
       "integrated",
@@ -10,7 +10,7 @@
       "axes",
       "pipeline"
     ],
-    "registered_raw_files": 27,
+    "registered_raw_files": 37,
     "week_one_curriculum_inputs": [
       "curriculum/student-plan.html#week-1",
       "curriculum/contract.json#week-1",
@@ -21,7 +21,7 @@
     {
       "kind": "independent_material_review",
       "path": "reviews/week01-whole-20261120/independent-receipt.json",
-      "sha256": "150fe9e11d574af7f8a661422c066c6375155ecea946fe790d15e71935fc1d57"
+      "sha256": "9752cc23e6628ac08e64eee86cf19dc8addfe42e57473305c97d273e89da1244"
     },
     {
       "kind": "independent_rejected_baseline",
@@ -40,19 +40,43 @@
       "member": "pipeline",
       "validator": "lessons/week01/validate_week01_problem_pipeline.py",
       "path": "lessons/week01/week01_problem_pipeline_validation.json",
-      "sha256": "aaca9f07177746662a296edc3c87ac88e326063a452b7f8d3a11ad25c9cb18fb"
+      "sha256": "82830b9800330e6edd8570911e12bbbc92a299641d9b642bb0fa1a2396251b24"
     },
     {
       "kind": "physical_delivery",
       "path": "reviews/week01-whole-20261120/delivery.md",
-      "sha256": "9b29cd8582c99421925e3038f80ef020cf401db096006bd7d6f2711cb7d94c29"
+      "sha256": "ae535fc308f91f8d50b77587beb8c2271f5d9cd0187a28d8497948d8fedf6b14"
     },
     {
       "kind": "native_course_review",
       "path": "reviews/week01-whole-20261120/native-textbook-review.json",
-      "sha256": "3e48b0824372b0d65376e9687e3b5fc1a3a9b682890a80917958453cc04839b4"
+      "sha256": "eb27138788482395bd895235b31f1ea0726abcc7b1ebb3e66c131a9c88642f42"
+    },
+    {
+      "kind": "native_author_route",
+      "path": "reviews/week01-whole-20261120/e3e00a4-author-route.json",
+      "sha256": "27963df19c04077883a4b50d211902b312d08d73929359d43f590ae6dedd34fc"
+    },
+    {
+      "kind": "independent_review_criteria",
+      "path": "reviews/week01-whole-20261120/prerequisite-review-criteria.json",
+      "sha256": "2058643287ee8037f5a1032d885c642dc0ce110506c5e8ecc233f6f80ca5906b"
+    },
+    {
+      "kind": "executed_distribution",
+      "path": "reviews/week01-prerequisites-20261120/delivery.json",
+      "sha256": "00214e9a96e455a167ebc49ac298b92563a4e14ce1af653d60eb04674ee5c5e4"
     }
   ],
+  "superseded_technical_release": {
+    "commit": "e3e00a4aae2c4e9169ae4f66f9f9ec5cb0db2352",
+    "bundle_sha256": "3b9d56a88ee08dd0262d4b26f0993eebaaecabb16bcf62f7ecad5b8bb354d7c9",
+    "checkpoint_sha256": "4bec6ddf0c419dbd50b23865d1df1bdae08554f721300e44c5f23cb3127fb065",
+    "archived_evidence": {
+      "independent_material_review": "150fe9e11d574af7f8a661422c066c6375155ecea946fe790d15e71935fc1d57",
+      "native_course_review": "3e48b0824372b0d65376e9687e3b5fc1a3a9b682890a80917958453cc04839b4"
+    }
+  },
   "rejected_predecessor_control": {
     "commit": "95abb1b930d0d6c07a6b27d3e040b8632bbdcbf1",
     "previous_technical_state": "current",
@@ -81,100 +105,115 @@
     "independent_negative_receipt_sha256": "70cd1898f9d112f002036d218b7fd58c718cd041f6b7c7501d64e58a7be72d09",
     "method": "Ran the original release checker from the previous commit on its original material and passing receipts. Used the revised checker on those same original teaching and assessment files in a copy, supplying the independently reviewed rejection and recalculating technical hashes to isolate the subject-review decision."
   },
-  "superseded_technical_release": {
-    "commit": "95abb1b930d0d6c07a6b27d3e040b8632bbdcbf1",
-    "bundle_sha256": "2534628189f1f4cd4a11722ea13bff1d24411fb403ba73ceb9d0721c2b2ebaff",
-    "checkpoint_sha256": "b18a881204277a0dde215081433c1ec88e51ddf04630e7e9617ff99c358417e6"
-  },
-  "native_baseline_control": {
-    "original_integrated_only_ledger_status": {
-      "scope": [
-        1
+  "current_prerequisite_control": {
+    "original_commit": "e3e00a4aae2c4e9169ae4f66f9f9ec5cb0db2352",
+    "original_route_sha256": "27963df19c04077883a4b50d211902b312d08d73929359d43f590ae6dedd34fc",
+    "original_candidate_sha256": "6421e70f74a7ed822a5f757d1f48992d218b5e1cdd6743f95c099027f514cd12",
+    "original_disposition": "invalid_candidate",
+    "original_required_dependency": "Premature required tool dependency KOAI-04: sklearn.impute.SimpleImputer at pipeline/1566ce2a line 5. Use an introduced method or move the dependent work.",
+    "corrected_candidate_sha256": "5a0b6f46d7b57de534f9bec8e721e206c02748776ac325a15299ce2af9a91070",
+    "changed_student_books": [
+      "integrated",
+      "pipeline"
+    ],
+    "unchanged_student_books": [
+      "axes",
+      "tables"
+    ],
+    "four_book_findings": {
+      "findings": [
+        {
+          "cell": "main/484f22ba",
+          "topic": "KOAI-04",
+          "api": "sklearn.datasets.load_digits",
+          "kind": "data_only",
+          "tier": "class",
+          "line": 7,
+          "origin": "main/484f22ba"
+        },
+        {
+          "cell": "tables/3468f4e4",
+          "topic": "KOAI-04",
+          "api": "sklearn.datasets.load_digits",
+          "kind": "data_only",
+          "tier": "conditional",
+          "line": 5,
+          "origin": "tables/3468f4e4"
+        },
+        {
+          "cell": "tables/48d931b0",
+          "topic": "KOAI-04",
+          "api": "sklearn.datasets.load_digits",
+          "kind": "data_only",
+          "tier": "homework",
+          "line": 5,
+          "origin": "tables/48d931b0"
+        },
+        {
+          "cell": "tables/8e3a1c92",
+          "topic": "KOAI-04",
+          "api": "sklearn.datasets.load_digits",
+          "kind": "data_only",
+          "tier": "conditional",
+          "line": 4,
+          "origin": "tables/8e3a1c92"
+        },
+        {
+          "cell": "tables/digits-csv-roundtrip",
+          "topic": "KOAI-04",
+          "api": "sklearn.datasets.load_digits",
+          "kind": "data_only",
+          "tier": "class",
+          "line": 6,
+          "origin": "tables/digits-csv-roundtrip"
+        },
+        {
+          "cell": "tables/digits-practice-csv",
+          "topic": "KOAI-04",
+          "api": "sklearn.datasets.load_digits",
+          "kind": "data_only",
+          "tier": "class",
+          "line": 7,
+          "origin": "tables/digits-practice-csv"
+        },
+        {
+          "cell": "tables/digits-public-input",
+          "topic": "KOAI-04",
+          "api": "sklearn.datasets.load_digits",
+          "kind": "data_only",
+          "tier": "conditional",
+          "line": 5,
+          "origin": "tables/digits-public-input"
+        }
       ],
-      "completed": [
-        1
-      ],
-      "calls": 0,
-      "reasons": {},
-      "eligibility": "development_or_partial"
+      "blocked": [],
+      "review_cells": []
     },
-    "new_four_notebook_status_against_same_ledger": {
-      "scope": [
-        1
-      ],
-      "completed": [],
-      "calls": 0,
-      "reasons": {
-        "1": "independent assessment pending"
+    "native_review_checks": 20,
+    "executed_independent_probes": {
+      "transfer": {
+        "passed": 6,
+        "total": 6
       },
-      "eligibility": "development_or_partial"
-    },
-    "native_import_sha256": "23b2e55de00b7895aac3247019242bda709e204b1a85a47698cf049e09b35b9f",
-    "books": {
-      "main": {
-        "cells": 60,
-        "code": 30,
-        "outputs_removed": true
+      "KOAI-01.practical": {
+        "passed": 5,
+        "total": 5
       },
-      "tables": {
-        "cells": 101,
-        "code": 36,
-        "outputs_removed": true
+      "KOAI-02.practical": {
+        "passed": 6,
+        "total": 6
       },
-      "axes": {
-        "cells": 35,
-        "code": 16,
-        "outputs_removed": true
-      },
-      "pipeline": {
-        "cells": 35,
-        "code": 16,
-        "outputs_removed": true
+      "KOAI-03.practical": {
+        "passed": 7,
+        "total": 7
       }
-    },
-    "private_projected_teacher_cells": 4,
-    "all_teacher_guides_roundtrip_exactly": true,
-    "method": "Read-only status on a SQLite backup of the earlier run. Four losslessly projected teacher guides and the current release digest are held only in the external technical baseline. This proves input invalidation and does not issue an independent curriculum review."
-  },
-  "native_mutation_controls": {
-    "original_and_restored_native_import_sha256": "23b2e55de00b7895aac3247019242bda709e204b1a85a47698cf049e09b35b9f",
-    "registered_material_files_checked": 27,
-    "each_changed_native_import_is_distinct_from_control": true,
-    "mutated_native_import_sha256": {
-      ".github/workflows/week01-lesson.yml": "18fb5d5d8af8d5a006e94ec7fe361e44ee552f555f42204296a126a7ff6bff45",
-      "lessons/week01/data/pipeline_device_validation.csv": "d94db3a6b1c11de9bd51f8ef472b1d1c7d81951d49d234cb21d4f146bfc3af5b",
-      "lessons/week01/data/week1_plants.csv": "c01a02a4dbea7156bb894b8faaa25e8e3310a64fc3ab43e1d6d7f4d350d859d7",
-      "lessons/week01/data/week1_plants_new.csv": "ee04ee776dda6347b8f3cf9ae3e87a673f042413906b2d6669e43867a22d8e28",
-      "lessons/week01/teacher-notes.txt": "cb0dbdac0f12397f18b7fa7bec1dc60ffd27606a339813aa719ddf72583ed0f2",
-      "lessons/week01/validate_bundle.py": "6287164cc8ac33619638aeb397f7dc077984f8cca94bd05c2724083dc2ec82e3",
-      "lessons/week01/validate_week01.py": "ba76ddfcf2d463b7ad019341f70e901ee82201bc2fc2ffde6dee1f4d470eec8a",
-      "lessons/week01/validate_week01_problem_pipeline.py": "73b2fb74c5c4c365804141b4d966dd9ebf4c1263fb2bcc009e87f13cce4236dd",
-      "lessons/week01/week01_axes_linear_bridge.html": "4d975b68910919ebf120100399e7f1d677f7ce434d78d1a1178adecc4861944e",
-      "lessons/week01/week01_axes_linear_bridge.ipynb": "5a87d8a3322766a87a06b513257f927559777853cb7e0198e23fbc6f7370bd96",
-      "lessons/week01/week01_axes_linear_bridge_teacher.md": "122e72deef2cba5165a1d68ad7db7e2b6cd12aba8cdac503616474dea098999e",
-      "lessons/week01/week01_integrated.html": "d09898e3b8d7be12af764b6ca6cdc693878ce6724778ee6824bd1ce42f62a669",
-      "lessons/week01/week01_integrated.ipynb": "bece3f045f13b8b059d2ce379eefbb245ab16603682afb4c92c9389656836e94",
-      "lessons/week01/week01_integrated_teacher.md": "6343cecb11278a009dd86ecb43f6ba372b29d16a413ec79fad71a141e0c76f36",
-      "lessons/week01/week01_integrated_validation_labels.csv": "025854fb362fdbd5919bd6374aedd95bb1f16be8e949510f23a23960ce707a62",
-      "lessons/week01/week01_problem_pipeline.html": "32dca59ba71880abee249ba6b4914564bb4a8f888bd0be8242049c084cbc8cc0",
-      "lessons/week01/week01_problem_pipeline.ipynb": "ed23b9f30ba146d2022cc08f119ba0939888edffa5b703d31bb380aef40083bb",
-      "lessons/week01/week01_problem_pipeline_teacher.md": "715c73c801793cef635dfc990ece13508027b538b25578bac12b324fbfb2931a",
-      "lessons/week01/week01_python_tables.html": "6a484be81ced0925ec133ac29fe756c0497441f76399e24cd2458237ee2f9c46",
-      "lessons/week01/week01_python_tables.ipynb": "38e8ed4aa98f10bcd70d8fe51901d3c61fee651ab9b8faa128b39d278b05e168",
-      "reviews/week01-main-iteration-20261120/check_transfer.py": "ee69323d0292e7425720171412967c2ffd6ab3cb29f22fbc4c9c9fa68c6de8d0",
-      "reviews/week01-whole-20261120/check_routes.py": "dc8513d9c728e84fc341c3b10f63158d4b054b224ba2a3bed25c5fa52365e688",
-      "reviews/week01-whole-20261120/test_axes.py": "b9990345a0506a17dc5c974275dd3f05bb80acfd409ee3ddb57e196e4205a924",
-      "reviews/week01-whole-20261120/test_bundle.py": "90576a6167c0a585db7dc553688d9525bca3781f8f16b65825bc8d01aec91f67",
-      "reviews/week01-whole-20261120/test_delivery.py": "eddddd3510d5951f7a386dc7773679bb7a2178a451f183632b0304ebc143e7d6",
-      "reviews/week01-whole-20261120/test_tables.py": "b7ecfab9aa5a480abdc81953d0246c77ecc085e40d57c0b2717a15029f321e6d",
-      "tools/check_week01_render.py": "20e9c718638a579e4a52fa6ddf658b8e19e4695e4abaf14cdc5d6e1dcb92b03d"
     }
   },
   "verified_embedded_notebooks": {
     "integrated": {
       "suggested_filename": "week01_integrated.ipynb",
-      "payload_byte_count": 157003,
-      "payload_sha256": "184316822761ae0e25c23ea6e3fc8fe5b3d99267b059a34df36196282ae7df12"
+      "payload_byte_count": 158942,
+      "payload_sha256": "0db53506ef32c84b18b26357db8a74a1ded34a0385ffeffaddb934878a454afb"
     },
     "tables": {
       "suggested_filename": "week01_python_tables.ipynb",
@@ -188,55 +227,58 @@
     },
     "pipeline": {
       "suggested_filename": "week01_problem_pipeline.ipynb",
-      "payload_byte_count": 52725,
-      "payload_sha256": "f09ffd3643a26795e35bc8905472f0cc697fed2cce4b700ff8f4dc660316c879"
+      "payload_byte_count": 55120,
+      "payload_sha256": "45ff37ffed2ecb5b231a0ebbe9b23bd8a730aef4a27639a090bc6313fa0a778e"
     }
   },
-  "primary_teaching_data": {
-    "foundation": {
-      "loader": "sklearn.datasets.load_digits",
-      "images": 1797,
-      "pixels": 64,
-      "packaged_csv_gz_sha256": "09f66e6debdee2cd2b5ae59e0d6abbb73fc2b0e0185d2e1957e9ebb51e23aa22",
-      "source_rows": [
-        7,
-        2,
-        11
-      ],
-      "class_labels": [
-        7,
-        2,
-        1
-      ],
-      "worked_features": [
-        "pixel_2_3",
-        "pixel_4_4"
-      ],
-      "fresh_rows": [
-        47,
-        10,
-        56,
-        30,
-        21,
-        36
-      ]
-    },
-    "antique": {
-      "repository_commit": "39558e9a639d170bd92de91958fcdc915f670463",
-      "path": "Individual-Contest/Antique/training_set/training_set.csv",
-      "raw_sha256": "99ffffc9972351e91d05a4bf80e5d3c63996aa7231a338959cd49e288c63f11a",
-      "rows_after_header": [
-        1,
-        47,
-        142
-      ],
-      "total_rows": 500,
-      "counts_by_Authenticated": {
-        "-1": 2,
-        "0": 496,
-        "1": 2
+  "teaching_data_provenance_at_previous_commit": {
+    "commit": "e3e00a4aae2c4e9169ae4f66f9f9ec5cb0db2352",
+    "records": {
+      "foundation": {
+        "loader": "sklearn.datasets.load_digits",
+        "images": 1797,
+        "pixels": 64,
+        "packaged_csv_gz_sha256": "09f66e6debdee2cd2b5ae59e0d6abbb73fc2b0e0185d2e1957e9ebb51e23aa22",
+        "source_rows": [
+          7,
+          2,
+          11
+        ],
+        "class_labels": [
+          7,
+          2,
+          1
+        ],
+        "worked_features": [
+          "pixel_2_3",
+          "pixel_4_4"
+        ],
+        "fresh_rows": [
+          47,
+          10,
+          56,
+          30,
+          21,
+          36
+        ]
+      },
+      "antique": {
+        "repository_commit": "39558e9a639d170bd92de91958fcdc915f670463",
+        "path": "Individual-Contest/Antique/training_set/training_set.csv",
+        "raw_sha256": "99ffffc9972351e91d05a4bf80e5d3c63996aa7231a338959cd49e288c63f11a",
+        "rows_after_header": [
+          1,
+          47,
+          142
+        ],
+        "total_rows": 500,
+        "counts_by_Authenticated": {
+          "-1": 2,
+          "0": 496,
+          "1": 2
+        }
       }
     }
   },
-  "scope": "New independent review of the four textbook explanations and unseen applications. The separate native receipt covers the submitted assessment route and reports its development profile. Classroom performance and time were not observed. SHA-256 identifies the evidence submitted; its instructional judgment comes from independent review."
+  "scope": "Four teaching resources and their actual required and optional route were independently checked. The controller tests exercise a fresh sample from each declared task. Completion time, student learning and undisclosed exam requirements remain unobserved."
 }

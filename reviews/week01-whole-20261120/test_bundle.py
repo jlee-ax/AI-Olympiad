@@ -169,6 +169,42 @@ class WeekOneBindingTests(unittest.TestCase):
             contract_path.write_bytes(original_contract)
             self.assertEqual(bundle.status(copy)["status"], "current")
 
+    def test_week_one_tool_policy_and_placement_change_while_unrelated_topics_remain_current(self):
+        with tempfile.TemporaryDirectory(prefix="week01-tool-policy-") as directory:
+            copy = Path(directory)
+            snapshot(copy)
+            contract_path = copy / bundle.COURSE_FILES[1]
+            design_path = copy / bundle.COURSE_FILES[2]
+            contract_raw = contract_path.read_bytes()
+            design_raw = design_path.read_bytes()
+            rules = json.loads(design_raw)["tool_prerequisites"]
+            monitored = {rule["topic"] for rule in rules}
+            for relevant in (True, False):
+                contract = json.loads(contract_raw)
+                topic = next(row for row in contract["topics"]
+                             if (row["id"] in monitored) == relevant and 1 not in row["scheduled_weeks"])
+                topic["scheduled_weeks"] = [2] if topic["scheduled_weeks"] != [2] else [3]
+                contract_path.write_text(json.dumps(contract), encoding="utf-8")
+                result = bundle.status(copy)
+                self.assertEqual(result["status"], "stale" if relevant else "current")
+                if relevant:
+                    self.assertEqual(result["changed_course_scope"], [bundle.COURSE_FILES[2] + "#week-1"])
+            contract_path.write_bytes(contract_raw)
+            design = json.loads(design_raw)
+            design["tool_prerequisites"][0]["data_only"].append("example.another_loader")
+            design_path.write_text(json.dumps(design), encoding="utf-8")
+            self.assertEqual(bundle.status(copy)["status"], "stale")
+            design_path.write_bytes(design_raw)
+            self.assertEqual(bundle.status(copy)["status"], "current")
+            # Multiple placements of sklearn normally descend from Week 2. Moving a placement
+            # to an independent branch changes its set of entry weeks and the recorded review.
+            design = json.loads(design_raw)
+            next(row for row in design["weeks"] if row["week"] == 3)["prerequisites"] = [1]
+            design_path.write_text(json.dumps(design), encoding="utf-8")
+            self.assertEqual(bundle.status(copy)["changed_course_scope"], [bundle.COURSE_FILES[2] + "#week-1"])
+            design_path.write_bytes(design_raw)
+            self.assertEqual(bundle.status(copy)["status"], "current")
+
     def test_other_week_design_does_not_change_week_one_minimum(self):
         with tempfile.TemporaryDirectory(prefix="week01-design-") as directory:
             copy = Path(directory)
@@ -227,7 +263,8 @@ class WeekOneBindingTests(unittest.TestCase):
             snapshot(copy)
             checkpoint_path = copy / bundle.CHECKPOINT
             original_checkpoint = checkpoint_path.read_bytes()
-            for change in ("missing", "rejected_candidate", "different_guide"):
+            for change in ("missing", "rejected_candidate", "missing_tool_review", "blocked_tool_use",
+                           "unresolved_tool_use", "different_program", "different_route", "different_guide"):
                 with self.subTest(change=change):
                     checkpoint = json.loads(original_checkpoint)
                     entry = next(e for e in checkpoint["evidence"] if e["kind"] == "native_course_review")
@@ -237,9 +274,27 @@ class WeekOneBindingTests(unittest.TestCase):
                     if change == "missing":
                         checkpoint["evidence"].remove(entry)
                     elif change == "rejected_candidate":
-                        prior = next(p for p in native["native_phases"] if p["kind"] == "rejected")
-                        self.assertEqual(prior["verdict"], "revise")
+                        prior = next(p for p in native["native_phases"] if p["kind"] in {"rejected", "invalid_candidate"})
+                        self.assertNotEqual(prior["candidate_sha256"], native["candidate_sha256"])
+                        if prior["kind"] == "rejected":
+                            self.assertEqual(prior["verdict"], "revise")
+                        else:
+                            self.assertTrue(prior["blocked_tool_findings"])
                         native["candidate_sha256"] = prior["candidate_sha256"]
+                    elif change == "missing_tool_review":
+                        native["native_phases"][-1]["review_checks"].pop("tool_prerequisites")
+                    elif change == "blocked_tool_use":
+                        native["tool_prerequisites"]["assessment"]["blocked"].append({"kind": "premature"})
+                    elif change == "unresolved_tool_use":
+                        assessed = native["tool_prerequisites"]
+                        source = "pipeline/1566ce2a"
+                        assessed["assessment"]["review_cells"] = [source]
+                        assessed["judgment"]["cells"].append(source)
+                        assessed["judgment"]["decisions"] = {source: {"disposition": "unresolved", "reason": "Ungrounded method"}}
+                    elif change == "different_program":
+                        native["program_sha256"]["tools/course_tool_prerequisites.mjs"] = "0" * 64
+                    elif change == "different_route":
+                        native["route_file_sha256"] = "0" * 64
                     else:
                         native["material_bindings"]["axes"]["guide_sha256"] = "0" * 64
                     if change != "missing":
@@ -248,7 +303,8 @@ class WeekOneBindingTests(unittest.TestCase):
                     checkpoint_path.write_text(json.dumps(checkpoint), encoding="utf-8")
                     result = bundle.status(copy)
                     self.assertEqual(result["changed_files"], [])
-                    self.assertEqual(result["status"], "stale" if change == "different_guide" else "review_blocked")
+                    stale = change in {"different_program", "different_route", "different_guide"}
+                    self.assertEqual(result["status"], "stale" if stale else "review_blocked")
                     path.write_bytes(original_native)
                     checkpoint_path.write_bytes(original_checkpoint)
             self.assertEqual(bundle.status(copy)["status"], "current")

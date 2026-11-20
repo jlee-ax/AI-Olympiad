@@ -1,0 +1,252 @@
+{
+  "schema": 1,
+  "tested_head": "3b152a649bdfb8c685a81bdf257d7f4bc7f914f2",
+  "previous_head": "e3e00a4aae2c4e9169ae4f66f9f9ec5cb0db2352",
+  "run": "44756756318",
+  "attempt": "1",
+  "standard_jupyter_browser": [
+    {
+      "notebook": "week01_integrated",
+      "authored_cells_sha256": "26e492deb6595e9ea84ac053e1df82bc9636bfc97f3fa2833d9261e4945f3d2a",
+      "code_cells": 30,
+      "figures": 3,
+      "output_tables": 9,
+      "math": 119,
+      "attached_diagrams": 0,
+      "local_resources": [
+        "week01_axes_linear_bridge.html",
+        "week01_integrated_validation_labels.csv",
+        "week01_problem_pipeline.html",
+        "week01_python_tables.html"
+      ],
+      "browser_directions": [
+        "week01_axes_linear_bridge.html#bridge-axes",
+        "week01_axes_linear_bridge.html#bridge-scores",
+        "week01_problem_pipeline.html#pipeline-contract",
+        "week01_problem_pipeline.html#pipeline-submit",
+        "week01_python_tables.html#tables-csv",
+        "week01_python_tables.html#tables-features",
+        "week01_python_tables.html#tables-paper",
+        "week01_python_tables.html#tables-python"
+      ],
+      "browser_widths": [
+        1280,
+        390
+      ]
+    },
+    {
+      "notebook": "week01_python_tables",
+      "authored_cells_sha256": "02d13b3a50e87fee8264015be57858de858e1f479c1954bd4746d181ccdecd16",
+      "code_cells": 36,
+      "figures": 5,
+      "output_tables": 14,
+      "math": 59,
+      "attached_diagrams": 2,
+      "local_resources": [
+        "week01_integrated.html"
+      ],
+      "browser_directions": [
+        "week01_integrated.html",
+        "week01_integrated.html#week01-axes",
+        "week01_integrated.html#week01-check",
+        "week01_integrated.html#week01-mean"
+      ],
+      "browser_widths": [
+        1280,
+        390
+      ]
+    },
+    {
+      "notebook": "week01_axes_linear_bridge",
+      "authored_cells_sha256": "20b973b2a908122d34352b747f4a739c79d472f046cae7ee404c1178dbfed5e0",
+      "code_cells": 16,
+      "figures": 0,
+      "output_tables": 0,
+      "math": 0,
+      "attached_diagrams": 0,
+      "local_resources": [
+        "../../curriculum/student-plan.html",
+        "week01_integrated.html",
+        "week01_problem_pipeline.html",
+        "week01_python_tables.html"
+      ],
+      "browser_directions": [
+        "week01_integrated.html",
+        "week01_integrated.html#week01-axes",
+        "week01_integrated.html#week01-check",
+        "week01_integrated.html#week01-match",
+        "week01_problem_pipeline.html#pipeline-contract",
+        "week01_python_tables.html"
+      ],
+      "browser_widths": [
+        1280,
+        390
+      ]
+    },
+    {
+      "notebook": "week01_problem_pipeline",
+      "authored_cells_sha256": "be28ed43121a69393edce5edcee008cfe7b03b085a22d888241cd5e5a1e15996",
+      "code_cells": 16,
+      "figures": 0,
+      "output_tables": 6,
+      "math": 0,
+      "attached_diagrams": 0,
+      "local_resources": [
+        "../week02/week02_prediction_evaluation.ipynb",
+        "data/pipeline_device_validation.csv",
+        "week01_integrated.html"
+      ],
+      "browser_directions": [
+        "week01_integrated.html",
+        "week01_integrated.html#week01-check",
+        "week01_integrated.html#week01-match"
+      ],
+      "browser_widths": [
+        1280,
+        390
+      ]
+    }
+  ],
+  "publications": {
+    "week01_integrated": {
+      "notebook_sha256": "0db53506ef32c84b18b26357db8a74a1ded34a0385ffeffaddb934878a454afb",
+      "html_sha256": "a8f5fd602f3557fccc8f40b6470abfd177ad70241cbabb78bf30bf40d1a5e320",
+      "authored_sha256": "26e492deb6595e9ea84ac053e1df82bc9636bfc97f3fa2833d9261e4945f3d2a"
+    },
+    "week01_python_tables": {
+      "notebook_sha256": "f06880f1a9a20ed4f8fbdc838495817cdbc407c28300f85a7aad40b5fd9dd298",
+      "html_sha256": "0dd86153efe7d316ff0f5a679fc85a59ca0776862ad82ed4a735b6e8e7b80bfb",
+      "authored_sha256": "02d13b3a50e87fee8264015be57858de858e1f479c1954bd4746d181ccdecd16"
+    },
+    "week01_axes_linear_bridge": {
+      "notebook_sha256": "6e1fd7c838d2c959beba3475de75c5bda90cd4d80cd2a03f42f8ca8ed4a4d986",
+      "html_sha256": "854337ada8916595058eec92753eef32167cf049301e4e7c335e4b2f632e167b",
+      "authored_sha256": "20b973b2a908122d34352b747f4a739c79d472f046cae7ee404c1178dbfed5e0"
+    },
+    "week01_problem_pipeline": {
+      "notebook_sha256": "45ff37ffed2ecb5b231a0ebbe9b23bd8a730aef4a27639a090bc6313fa0a778e",
+      "html_sha256": "8d6b21205444ab7b835bb339148639dcdd2914fafec37c1bb3dc6bd81f1c848b",
+      "authored_sha256": "be28ed43121a69393edce5edcee008cfe7b03b085a22d888241cd5e5a1e15996"
+    }
+  },
+  "bootstrap": {
+    "week01_integrated": {
+      "incoming_notebook_sha256": "9949106551361cd101dab1902846cf93de2db7a16c5d347684b8eba40f864032",
+      "authored_sha256": "26e492deb6595e9ea84ac053e1df82bc9636bfc97f3fa2833d9261e4945f3d2a",
+      "installed_from": "fresh cleared kernel"
+    },
+    "week01_problem_pipeline": {
+      "incoming_notebook_sha256": "f5d560b4833cc1dc69bb207bab8223b2a81c80b006672990a6ba8fcb034d6c16",
+      "authored_sha256": "be28ed43121a69393edce5edcee008cfe7b03b085a22d888241cd5e5a1e15996",
+      "installed_from": "fresh cleared kernel"
+    }
+  },
+  "runtime_estimator_controls": {
+    "week01_integrated": {
+      "previous": {
+        "disposition": "blocked",
+        "cell": "4d60619c",
+        "operation": "SimpleImputer.fit_transform"
+      },
+      "current": {
+        "disposition": "passed",
+        "negative_control_after_student_cells": "blocked"
+      },
+      "changed_manuscript": true
+    },
+    "week01_problem_pipeline": {
+      "previous": {
+        "disposition": "blocked",
+        "cell": "1566ce2a",
+        "operation": "Pipeline.fit"
+      },
+      "current": {
+        "disposition": "passed",
+        "negative_control_after_student_cells": "blocked"
+      },
+      "changed_manuscript": true
+    }
+  },
+  "independent_required_route": {
+    "current_required_worked_accuracy": 0.75,
+    "new_independent_input": {
+      "centers_in_label_order_minus3_then_0": [
+        [
+          8.0,
+          6.0
+        ],
+        [
+          2.0,
+          6.0
+        ]
+      ],
+      "changed_training_last_prediction": 0,
+      "distances": [
+        [
+          9.0,
+          9.0
+        ],
+        [
+          1.0,
+          25.0
+        ],
+        [
+          6.25,
+          12.25
+        ]
+      ],
+      "heldout_key_only_correct_counts": [
+        3,
+        2
+      ],
+      "predictions": [
+        -3,
+        -3,
+        -3
+      ],
+      "training_means": [
+        5.0,
+        6.0
+      ]
+    },
+    "old_required_model_call": "1566ce2a",
+    "original_digits_feature_landing": [
+      [
+        0,
+        15
+      ],
+      [
+        13,
+        15
+      ],
+      [
+        14,
+        16
+      ]
+    ]
+  },
+  "source_bound_tables_checks": 36,
+  "source_bound_pipeline_checks": [
+    "official_csv_records_match_the_student_and_teacher_source_examples",
+    "fresh_inprocess_sequential_execution_and_saved_outputs",
+    "student_answer_cell_is_empty",
+    "section_4_ordering_works_with_an_empty_namespace",
+    "observed_training_means_labeled_class_centers_and_both_squared_distances",
+    "new_class_geometry_tie_missing_column_one_class_and_nonfinite_boundaries",
+    "train_feature_and_target_perturbations_change_class_centers_and_prediction",
+    "unconfirmed_training_row_does_not_change_either_training_summary",
+    "heldout_change_alters_its_prediction_but_preserves_training_summaries",
+    "all_six_input_row_permutations_recover_same_id_predictions",
+    "named_feature_order_and_future_extra_column",
+    "missing_feature_duplicate_missing_id_inf_bad_label_and_missing_pair_rejected",
+    "actual_temporary_zip_reopened_validated_and_removed",
+    "same_length_order_header_missing_row_bad_label_extra_column_rejected",
+    "independent_three_features_and_two_distances_before_opening_the_answer",
+    "blank_learner_answer_and_feature_only_validation_inputs",
+    "first_predictions_before_key_id_order_freezing_and_invalid_tables",
+    "real_teacher_csv_changed_order_changed_inputs_and_reversed_predictions",
+    "source_files_unchanged_by_validation"
+  ],
+  "distribution": "Each download was verified byte-for-byte in offline Chromium at both widths.",
+  "guard_scope": "An additional live profile blocks sklearn BaseEstimator training, transform, prediction or scoring calls in both changed books. It permits the real load_digits dependency. Unexecuted paths and unrelated third-party implementations are outside this experiment."
+}

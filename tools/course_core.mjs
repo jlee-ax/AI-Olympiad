@@ -1,3 +1,5 @@
+import {compileToolPrerequisites, inspectToolPrerequisites, checkToolReview} from "./course_tool_prerequisites.mjs";
+
 function makeCourseCore() {
   "use strict";
   const modes = ["theory", "practical"];
@@ -65,6 +67,7 @@ function makeCourseCore() {
       }
     }
     for(const id of Object.keys(design.assess_at || {})) requireValue(contract.topics.some(t=>t.id===id), "Unknown assessment override " + id);
+    compileToolPrerequisites(contract, design, entries, order);
     return {order, weeks:Object.fromEntries(entries)};
   }
 
@@ -136,15 +139,22 @@ function makeCourseCore() {
       if(candidate.action==="supplement")requireValue(Object.keys(candidate.notebooks).some(n=>!Object.hasOwn(previous.notebooks,n)&&
         candidate.route.units.some(u=>u.tier==="conditional"&&u.cells.some(ref=>ref.startsWith(n+"/")))), "No new conditional notebook");
     }
-    return {cells:[...blocks.keys()],obligations:wanted,class_minutes:classMinutes,homework_minutes:homework};
+    const validation = {cells:[...blocks.keys()],obligations:wanted,class_minutes:classMinutes,homework_minutes:homework};
+    if (week.tool_prerequisites?.length) {
+      validation.tool_prerequisites = inspectToolPrerequisites(week, candidate, blocks, mandatory);
+    }
+    return validation;
   }
 
   const requiredReview=["scope","prerequisites","explanation","independent_task","alternative_solution","workload","answer_visibility","representation","depth_floor","depth_ceiling","downstream_use","revision_alternative"];
-  function checkReview(week,candidate,report,hash,readers,demands=[]) {
+  function reviewKeys(week) {
+    return week.tool_prerequisites?.length ? [...requiredReview, "tool_prerequisites"] : requiredReview;
+  }
+  function checkReview(week,candidate,report,hash,readers,demands=[],toolEvidence=null) {
     requireValue(report?.candidate_hash===hash && nonempty(report.reviewer) && report.reviewer!==readers.author &&
       report.reviewer===readers.reviewer && ["pass","revise","uncertain"].includes(report.verdict), "Stale or non-independent review");
     const blocks=blockIndex(candidate);
-    const keys=[...requiredReview,...obligations(week),...demands];
+    const keys=[...reviewKeys(week),...obligations(week),...demands];
     requireValue(record(report.checks) && same(Object.keys(report.checks).sort(),keys.sort()),"Incomplete review criteria");
     for(const [k,c] of Object.entries(report.checks)) {
       requireValue(["pass","revise","uncertain"].includes(c.verdict) && nonempty(c.finding) &&
@@ -153,6 +163,11 @@ function makeCourseCore() {
       if(["representation","independent_task","depth_floor"].includes(k) && c.verdict==="pass")requireValue(c.cells.includes(candidate.transfer.principle) && c.cells.includes(candidate.transfer.prompt),"Review missed the principle or independent task for " + k);
       const claim=candidate.coverage.find(row=>row.obligation===k);
       if(claim)requireValue(c.cells.some(ref=>claim.teaching.includes(ref)) && c.cells.some(ref=>claim.assessment.includes(ref)),"Review missed obligation evidence " + k);
+    }
+    if (week.tool_prerequisites?.length) {
+      const mandatory = new Set(candidate.route.units.filter(u => u.tier !== "conditional").flatMap(u => u.cells));
+      const evidence = toolEvidence ?? inspectToolPrerequisites(week,candidate,blocks,mandatory);
+      checkToolReview(candidate,report.checks.tool_prerequisites,evidence);
     }
     const values=Object.values(report.checks);
     const verdict=values.some(c=>c.verdict==="revise")?"revise":values.some(c=>c.verdict==="uncertain")?"uncertain":"pass";
@@ -201,7 +216,7 @@ function makeCourseCore() {
     }
     return {completed,pending,verified_obligations:[...coverage].sort(),status:pending.length?"incomplete":"complete"};
   }
-  return {compile,stable,obligations,validateCandidate,checkReview,evaluateCases,reportCourse,requiredReview};
+  return {compile,stable,obligations,validateCandidate,checkReview,evaluateCases,reportCourse,requiredReview,reviewKeys};
 }
 
 export const courseCore = makeCourseCore();

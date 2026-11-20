@@ -1,0 +1,45 @@
+{
+  "schema": "week01-prerequisite-review/1",
+  "baseline_commit": "e3e00a4aae2c4e9169ae4f66f9f9ec5cb0db2352",
+  "scope": "Four existing Week 1 books and guides; the two titles using model APIs require substantive reexamination. Preserve the earlier decisions for the previous edition.",
+  "official_basis": "KOAI/IOAI 2027 Section 1-1 includes scikit-learn for practical work. The domestic rules and syllabus do not prescribe this local teaching week. Course topic KOAI-04 is allocated to weeks 2, 3, 4 and 5. Week 1 explicitly assesses Python, NumPy/pandas and visualization; feature selection and distance provide mathematical prerequisites.",
+  "criteria": [
+    {
+      "key": "required_dependency",
+      "test": "Follow both class and required homework cell by cell. Identify what a beginner must know or do for the assessed answer. Block premature estimator, fit/predict, learned transformation or pipeline use that the learner must reproduce or interpret, including indirection through a helper, alias or precomputed result used to supply the answer. Resolve vague descriptions by checking the actual response cell.",
+      "control": "Loading a fixed public dataset and already taught NumPy/pandas are legitimate. An optional later-tool demonstration must have a real independent route, visible optional status, an entry/return condition and no contribution to mandatory student answers."
+    },
+    {
+      "key": "manual_depth",
+      "test": "Require a worked calculation and a materially different exercise. Students must be able to describe training-only fill, class-wise centers and predictions using squared distance on the retained features. A disguised estimator API, precomputed center or final sklearn prediction leaves the teaching gap intact.",
+      "control": "A short transparent NumPy function is legitimate when its inputs, output, axes and arithmetic are explicit. A hand calculation and a novel numeric case must agree."
+    },
+    {
+      "key": "data_and_leakage",
+      "test": "Separate unknown labels from labels denoting a real class, zero measurements from missing values, and held-out targets from fitting. Alter a training observation and separately alter a held-out label. Check row/feature consistency and the distance comparison including a scale or tie case when the stated contract needs it.",
+      "control": "The source Antique dataset has anonymous features and 2/2 verified labels; local examples must not add physical meanings or assert contest performance."
+    },
+    {
+      "key": "transfer_and_progression",
+      "test": "Preserve the required unfamiliar feature projection problem with hand solution, general code, feature-addition argument and the limitations of a finite sample. Distinguish what using fewer features loses from rearranging rows or axes. Check that later formal use of scikit-learn remains scheduled.",
+      "control": "An observed absence of conflicts is no generalization proof. Re-running a fixed demonstration cannot discharge the independent task."
+    },
+    {
+      "key": "generic_harness",
+      "test": "Inspect the production entry and an actual old candidate. Exercise a premature required use, legitimate data-only use, genuine optional use, crossing an optional boundary through a helper, alternative module aliases, allowed earlier teaching, another topic/week and stale prerequisites or missing evidence. Record areas outside static detection rather than claiming unrestricted language analysis.",
+      "control": "A superficial module import or an identical method name on an unrelated local object should not establish that a student needs to know the later tool."
+    },
+    {
+      "key": "physical_binding",
+      "test": "Match the revised manuscript and guide, executed notebook, HTML/download, curriculum design and dated regression evidence for each member. Check genuinely unchanged companions against their previous exact bytes. Review visible-required instructions and blank answer; separately attribute automated kernel/browser work to its actual executor.",
+      "control": "No human learner observations, completion times, educational effect or universal syllabus coverage are inferred."
+    }
+  ],
+  "negative_baseline": {
+    "integrated": "Conditional advanced A uses SimpleImputer/NearestCentroid in 4d60619c, ae89f4b6, 8e809e64 and 3512f7de. This fact alone cannot establish a required W1 model-API dependency.",
+    "pipeline": "1566ce2a calls Pipeline, SimpleImputer, NearestCentroid and .fit on known_train; 33667a04, f265b556 and 5c8fe7f9 depend on the estimated model and predict. A required route through these cells would require an unscheduled tool. The public class example uses that object directly.",
+    "tables": "Only the data loader is used; six direct imports of sklearn.datasets.load_digits. No model call discovered.",
+    "axes": "No sklearn student API calls.",
+    "native": "Both review rounds passed scope, prerequisites, workload, and depth ceiling; dedicated practical checks were KOAI-01/02/03 and transfer."
+  }
+}
