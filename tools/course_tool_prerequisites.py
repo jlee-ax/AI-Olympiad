@@ -13,6 +13,12 @@ class Symbol:
 
 
 @dataclass(frozen=True)
+class Storage:
+    """Identify the local object whose fields are stored in the current environment."""
+    site: ast.AST
+
+
+@dataclass(frozen=True)
 class Dependency:
     topic: str
     api: str
@@ -84,14 +90,69 @@ class Reader:
         for dep in dependencies(result):
             self.note(dep.topic, dep.api, "use", dep.cell)
 
+    @staticmethod
+    def slot(node):
+        if isinstance(node, ast.Attribute):
+            return ("attribute", node.attr)
+        if isinstance(node.slice, ast.Constant) and isinstance(node.slice.value, (str, int)):
+            return ("key", node.slice.value)
+        return None
+
+    def read_slot(self, node, env):
+        owners = self.expr(node.value, env)
+        slot = self.slot(node)
+        selected = set()
+        if isinstance(node, ast.Subscript):
+            selected.update(dependencies(self.expr(node.slice, env)))
+        for owner in owners:
+            if isinstance(owner, Storage):
+                fields = env.get(owner, {})
+                if slot is not None:
+                    selected.update(fields.get(slot, set()))
+                # A computed key can reach several alternatives. A person must decide
+                # when one alternative is a future tool; there is no known direct call.
+                uncertain = [items for key, items in fields.items() if slot is None or key is None]
+                alternatives = values(uncertain)
+                names = [v.path for v in alternatives if isinstance(v, Symbol)]
+                names.extend(v.api for v in dependencies(alternatives))
+                if names:
+                    self.dynamic("computed container key", names)
+                elif any(isinstance(v, Function) for v in alternatives):
+                    self.dynamic("computed local callback")
+            elif isinstance(node, ast.Attribute) and isinstance(owner, Symbol):
+                selected.add(Symbol(owner.path + "." + node.attr))
+            else:
+                selected.add(owner)
+        return selected
+
+    def content_dependencies(self, items, env, visited=None):
+        result = dependencies(items)
+        visited = set() if visited is None else visited
+        for store in (v for v in items if isinstance(v, Storage) and v not in visited):
+            visited.add(store)
+            fields = env.get(store, {})
+            result.update(self.content_dependencies(values(fields.values()), env, visited))
+        return result
+
     def expr(self, node, env):
         if node is None:
             return set()
         if isinstance(node, ast.Name):
             return env.get(node.id, set())
-        if isinstance(node, ast.Attribute):
-            return {Symbol(v.path + "." + node.attr) if isinstance(v, Symbol) else v
-                    for v in self.expr(node.value, env)}
+        if isinstance(node, (ast.Attribute, ast.Subscript)):
+            return self.read_slot(node, env)
+        if isinstance(node, ast.Dict):
+            owner = Storage(node)
+            fields = {}
+            for key, value in zip(node.keys, node.values):
+                self.mark(self.expr(key, env))
+                member = self.expr(value, env)
+                slot = ("key", key.value) if isinstance(key, ast.Constant) and isinstance(key.value, (str, int)) else None
+                if slot is None:
+                    member = fields.get(slot, set()) | member
+                fields[slot] = member
+            env[owner] = fields
+            return {owner}
         if isinstance(node, ast.Lambda):
             return {self.function(node, env)}
         if isinstance(node, ast.NamedExpr):
@@ -105,6 +166,8 @@ class Reader:
         keywords = {arg.arg: self.expr(arg.value, env) for arg in node.keywords}
         args = values([*positional, *keywords.values()])
         result = dependencies(targets | args)
+        if not any(isinstance(value, Function) for value in targets):
+            result.update(self.content_dependencies(args, env))
         if isinstance(node.func, ast.Name) and node.func.id not in env:
             if node.func.id in {"__import__", "getattr", "eval", "exec"}:
                 targets = {Symbol("builtins." + node.func.id)}
@@ -172,19 +235,24 @@ class Reader:
         self.active.remove(fun)
         return result
 
-    @staticmethod
-    def bind(target, result, env):
+    def bind(self, target, result, env):
         if isinstance(target, ast.Name):
             env[target.id] = result
         elif isinstance(target, (ast.Tuple, ast.List)):
             for item in target.elts:
-                Reader.bind(item, result, env)
+                self.bind(item, result, env)
         elif isinstance(target, (ast.Attribute, ast.Subscript)):
             base = target.value
-            while isinstance(base, (ast.Attribute, ast.Subscript)):
-                base = base.value
-            if isinstance(base, ast.Name):
-                env[base.id] = env.get(base.id, set()) | dependencies(result)
+            owners = self.expr(base, env)
+            stores = {v for v in owners if isinstance(v, Storage)}
+            if not stores and isinstance(base, ast.Name):
+                stores = {Storage(base)}
+                env[base.id] = owners | stores
+            slot = self.slot(target)
+            for store in stores:
+                fields = dict(env.get(store, {}))
+                fields[slot] = result if slot is not None else fields.get(slot, set()) | result
+                env[store] = fields
 
     def statement(self, node, env, in_call=False):
         if not in_call:
@@ -236,7 +304,12 @@ class Reader:
                     self.statement(statement, branch, in_call)
                 branches.append(branch)
             for name in branches[0].keys() | branches[1].keys():
-                env[name] = branches[0].get(name, set()) | branches[1].get(name, set())
+                if isinstance(name, Storage):
+                    first, second = (branch.get(name, {}) for branch in branches)
+                    env[name] = {slot: first.get(slot, set()) | second.get(slot, set())
+                                 for slot in first.keys() | second.keys()}
+                else:
+                    env[name] = branches[0].get(name, set()) | branches[1].get(name, set())
             return
         if isinstance(node, (ast.For, ast.AsyncFor)):
             self.bind(node.target, self.expr(node.iter, env), env)

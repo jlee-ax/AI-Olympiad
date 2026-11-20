@@ -119,16 +119,26 @@ def course_scope(root):
         # the concept behind it. Other weeks' lesson prose and time budgets stay separate.
         source_weeks = {rule["topic"]: sorted(topics[rule["topic"]]["scheduled_weeks"]) for rule in policies}
         graph = {row["week"]: row["prerequisites"] for row in designs["weeks"]}
-        reachable = set()
-        remaining = [1]
-        while remaining:
-            number = remaining.pop()
-            if number not in reachable:
-                reachable.add(number)
-                remaining.extend(graph[number])
+        def ancestors(number):
+            reachable = set()
+            remaining = list(graph[number])
+            while remaining:
+                current = remaining.pop()
+                if current not in reachable:
+                    reachable.add(current)
+                    remaining.extend(graph[current])
+            return reachable
+
+        # The compiled teaching order distinguishes independent entry points for a tool.
+        # A later prerequisite edit matters here only if it changes the week named for introduction.
+        earliest = {
+            topic: [week for week in placements if not set(placements).intersection(ancestors(week))]
+            for topic, placements in source_weeks.items()
+        }
+        current_sequence = ancestors(1) | {1}
         local_design["tool_prerequisites"] = {
-            "rules": policies, "scheduled_weeks": source_weeks,
-            "dependencies": [[number, sorted(graph[number])] for number in sorted(reachable)],
+            "rules": policies, "scheduled_weeks": source_weeks, "introduced_in": earliest,
+            "dependencies": [[number, sorted(graph[number])] for number in sorted(current_sequence)],
         }
     return {COURSE_FILES[0] + "#week-1": digest(rows[0].encode()),
             COURSE_FILES[1] + "#week-1": fingerprint(scope),

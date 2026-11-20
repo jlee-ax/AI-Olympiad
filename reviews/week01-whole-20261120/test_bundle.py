@@ -196,6 +196,14 @@ class WeekOneBindingTests(unittest.TestCase):
             self.assertEqual(bundle.status(copy)["status"], "stale")
             design_path.write_bytes(design_raw)
             self.assertEqual(bundle.status(copy)["status"], "current")
+            # Multiple placements of sklearn normally descend from Week 2. Moving a placement
+            # to an independent branch changes its set of entry weeks and the recorded review.
+            design = json.loads(design_raw)
+            next(row for row in design["weeks"] if row["week"] == 3)["prerequisites"] = [1]
+            design_path.write_text(json.dumps(design), encoding="utf-8")
+            self.assertEqual(bundle.status(copy)["changed_course_scope"], [bundle.COURSE_FILES[2] + "#week-1"])
+            design_path.write_bytes(design_raw)
+            self.assertEqual(bundle.status(copy)["status"], "current")
 
     def test_other_week_design_does_not_change_week_one_minimum(self):
         with tempfile.TemporaryDirectory(prefix="week01-design-") as directory:

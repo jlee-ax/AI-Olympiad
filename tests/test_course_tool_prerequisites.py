@@ -38,6 +38,40 @@ class RoutedTools(unittest.TestCase):
         sample=examine(inputs + [("exercise","code","scores = model.predict([[1], [2]])", "homework")])
         self.assertTrue(any(r["cell"] == "main/exercise" and r["origin"] == "main/example" for r in sample["blocked"]))
 
+    def test_stored_factories_are_traced_without_charging_other_fields(self):
+        setup = ("examples", "code", """from drawing.features import FeatureModel
+from types import SimpleNamespace
+registry = {}
+choice = registry
+registry['factory'] = FeatureModel
+registry['ordinary'] = lambda values: sum(values)
+holder = SimpleNamespace()
+holder.factory = FeatureModel
+holder.ordinary = lambda values: sum(values)""", "conditional")
+        for expression in ("choice['factory']()", "holder.factory()"):
+            case = examine([setup, ("work", "code", "answer = " + expression, "homework")])
+            self.assertEqual([(item["cell"], item["api"]) for item in case["blocked"]],
+                             [("main/work", "drawing.features.FeatureModel")])
+        for expression in ("choice['ordinary']([1, 2])", "holder.ordinary([1, 2])"):
+            case = examine([setup, ("work", "code", "answer = " + expression, "class")])
+            self.assertEqual(case["blocked"], [])
+            self.assertEqual(case["review_cells"], [])
+        changed = ("reset", "code", "registry['factory'] = lambda: 0", "class")
+        self.assertEqual(examine([setup, changed, ("work", "code", "choice['factory']()", "class")])["blocked"], [])
+        unknown = examine([setup, ("work", "code", "choice[selected_name]()", "class")])
+        self.assertEqual(unknown["blocked"], [])
+        self.assertEqual(unknown["review_cells"], ["main/work"])
+
+    def test_literal_fields_keep_selected_values_and_stored_results_separate(self):
+        given = ("worked", "code", """from drawing.features import FeatureModel
+given = {'prediction': FeatureModel().predict([[2]]), 'counts': [1, 2]}""", "conditional")
+        counts = examine([given, ("work", "code", "sum(given['counts'])", "class")])
+        self.assertEqual(counts["blocked"], [])
+        selected = examine([given, ("work", "code", "print(given['prediction'])", "class")])
+        self.assertTrue(any(item["origin"] == "main/worked" for item in selected["blocked"]))
+        whole = examine([given, ("work", "code", "print(given)", "class")])
+        self.assertTrue(whole["blocked"])
+
     def test_route_can_call_a_helper_printed_later_in_the_book(self):
         task=("work","code","answer = make_model()", "class")
         helper=("setup","code","import drawing.features as features\ndef make_model():\n    return features.FeatureModel()", "conditional")

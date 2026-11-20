@@ -1,33 +1,105 @@
 {
   "schema": "week01-independent-material-review/1",
-  "reviewer": "week1-independent-reader",
+  "reviewer": "week1-independent-curriculum-reader",
   "review_date": "2026-11-20",
-  "baseline_commit": "95abb1b930d0d6c07a6b27d3e040b8632bbdcbf1",
-  "supersedes_receipt_sha256": "929346b594cebc651fd341af2fc8497c925e65ce671d0035ad47115f5fc93bbf",
+  "baseline_commit": "e3e00a4aae2c4e9169ae4f66f9f9ec5cb0db2352",
+  "supersedes_receipt_sha256": "150fe9e11d574af7f8a661422c066c6375155ecea946fe790d15e71935fc1d57",
   "rejected_baseline_sha256": "70cd1898f9d112f002036d218b7fd58c718cd041f6b7c7501d64e58a7be72d09",
   "verdict": "pass",
-  "scope": "Independent review of the complete four Korean learner notebooks, four English teaching keys, Week 1 course contract, distributed data and four standalone HTML handouts. Each book passes for its defined Week 1 teaching role after the substantive rewrite and the required-assignment correction. The domestic 2027 middle-school scope, the 2026 high-school-level reference examples and the original international tasks have separate roles. The examples below use public or independently chosen data.",
-  "independence": {
-    "criteria_sha256": "890970836d8271d7adf991ba317b860c7281b87f4d048273f927f6703f1925f3",
-    "baseline_findings_sha256": "70cd1898f9d112f002036d218b7fd58c718cd041f6b7c7501d64e58a7be72d09",
-    "method": "I set the seven textbook questions from the sources and rejected edition before reading the rewritten student material. I reviewed the full Korean text and guides, checked named scientific facts and real data, solved fresh problems, ran the public code in separate namespaces, and deliberately tried plausible wrong methods. I neither wrote the lessons nor selected the examiner’s private answers. I furnished a separate blind response before I saw the source-grounding or final native reviewer request."
+  "scope": "The four Week 1 student notebooks, their English teacher guides, data and distributed HTML. The accepted purpose is the registered Week 1 material and its demonstrated downstream prerequisites.",
+  "independence": "The reviewer froze the criteria before reading the candidate manuscripts, inspected the student route and teacher guides, and authored an independent numerical test and public-interface solver. Different authors changed the lessons. A separate examiner controls the native test cases and answer keys. A delivery agent ran kernels and a browser in GitHub Actions. The reviewer retrieved its exact artifact bytes from that completed job, checked each chunked file against its manifest, and decoded all four HTML download links against the notebook bytes. The existing, byte-identical handouts were fetched from the registered Git edition.",
+  "fingerprint_method": "raw_notebook_sha256 identifies the exact reviewed author file, including outputs if they were already present. published_notebook_sha256 and both HTML hashes identify the actual distributed bytes. authored_cells_sha256 uses the bundle validator's canonical nbformat cell list, omitting output, execution_count and execution timing. Each guide and distributed CSV is hashed as UTF-8 bytes.",
+  "criteria": {
+    "path": "reviews/week01-whole-20261120/prerequisite-review-criteria.json",
+    "sha256": "2058643287ee8037f5a1032d885c642dc0ce110506c5e8ecc233f6f80ca5906b",
+    "baseline_commit": "e3e00a4aae2c4e9169ae4f66f9f9ec5cb0db2352"
   },
-  "fingerprint_method": "Raw notebook SHA-256 identifies the author manuscript tested. Published notebook and HTML SHA-256 identify the actual distributed bytes. The authored-cell projection retains every nbformat v4 cell in display order, removes outputs, execution_count and metadata.execution, and hashes sorted-key UTF-8 Python JSON with ensure_ascii=False and default separators. All four native learner sources matched those cells and each English guide was present in the final native teacher packet.",
+  "predecessor_prerequisite": {
+    "original_route_path": "reviews/week01-whole-20261120/e3e00a4-author-route.json",
+    "published_prior_route_sha256": "27963df19c04077883a4b50d211902b312d08d73929359d43f590ae6dedd34fc",
+    "reviewed_verdict": "revise",
+    "compulsory_unit": "50-minute homework covering pipeline sections 1–3",
+    "required_model_cells": [
+      "pipeline/1566ce2a",
+      "pipeline/33667a04",
+      "pipeline/f265b556",
+      "pipeline/5c8fe7f9"
+    ],
+    "old_runtime_first_denied_cell": "pipeline/1566ce2a",
+    "finding": "The original native and material receipts accepted e3e00a4 after assessing the three registered Week 1 practical outcomes and projection transfer. They missed reliance on Pipeline, SimpleImputer, NearestCentroid and fitted predictions in these required companion cells. The integrated estimator cells were conditional in the authentic route. The two unchanged teaching resources had separate, sound roles."
+  },
+  "official_sources": [
+    {
+      "source": "KOAI 2027 middle-school rules",
+      "url": "https://kitpa.org/koai/2027",
+      "finding": "Both divisions' written and coding papers cover subjects 1–5 in the current notice. The written and coding components each last three hours."
+    },
+    {
+      "source": "Current official KOAI/IOAI 2027 syllabus, section 1-1",
+      "url": "https://kitpa.org/koai/syllabus",
+      "finding": "Lists practical Python, NumPy/pandas, Matplotlib/Seaborn and machine learning with scikit-learn. The organizer does not assign these to local teaching weeks. The in-repository course plan schedules the estimator interface starting in Week 2."
+    },
+    {
+      "source": "2026 KOAI example notice",
+      "url": "https://kitpa.org/files/36",
+      "finding": "The organizer calls these high-school-level study examples and withholds official answers. Their level cannot establish middle-school item difficulty."
+    },
+    {
+      "source": "UCI Optical Recognition of Handwritten Digits",
+      "url": "https://archive.ics.uci.edu/dataset/80/optical+recognition+of+handwritten+digits",
+      "finding": "Each of 64 numeric features counts foreground pixels in a nonoverlapping 4×4 block of a 32×32 binary image."
+    },
+    {
+      "source": "scikit-learn load_digits",
+      "url": "https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html",
+      "finding": "The bundled subset has 1,797 observations, 64 features with values from 0 to 16, ten classes and an 8×8 representation."
+    },
+    {
+      "source": "IOAI 2025 Restroom Icon Matching, official notebook",
+      "url": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/39558e9a639d170bd92de91958fcdc915f670463/Individual-Contest/Restroom/Restroom.ipynb",
+      "finding": "Retrieve the opposite sign at the same restroom. The original query and candidate collections and output IDs differ from synthetic vector-scoring examples."
+    },
+    {
+      "source": "IOAI 2025 Antique Painting Authentication, original statement and CSV",
+      "url": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/39558e9a639d170bd92de91958fcdc915f670463/Individual-Contest/Antique/Antique.ipynb",
+      "finding": "The five numeric features precede the class field. In the public training CSV I independently counted 496 unknown targets, two replicas and two authentic works and matched the three printed data records. The statement asks for use of unlabeled training records. A supervised classroom center model addresses only part of that task.",
+      "related_url": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/39558e9a639d170bd92de91958fcdc915f670463/Individual-Contest/Antique/training_set/training_set.csv"
+    },
+    {
+      "source": "IOAI 2026 Find the Order",
+      "url": "https://raw.githubusercontent.com/IOAI-official/IOAI-2026/e1963801aa4cf33a5a03520b39fa6620a7894c54/Individual-Contest/1_Find_the_Order/statement.md",
+      "finding": "For each input audio chunk the prediction is its chronological rank. A list of chunks in chronological order encodes the inverse relation."
+    }
+  ],
+  "course_bounds": {
+    "registered_week": 1,
+    "compulsory_class_minutes": 120,
+    "compulsory_homework_minutes": 300,
+    "compulsory_pipeline_minutes": 50,
+    "conditional": "The integrated deep model, axes supplement and extended file/independent device activities can be taken as conditional branches. The core projection exercise and first three companion sections remain required.",
+    "later_progression": "Hands-on scikit-learn remains a practical course topic beginning in Week 2. This edition makes Week 1 decisions visible with already introduced table/array tools."
+  },
+  "data_bindings": {
+    "lessons/week01/data/pipeline_device_validation.csv": "9939afdd0dd2d06f4ea45d564632e4b3a0740c7bd985e1d73165def043cc36bf",
+    "lessons/week01/data/week1_plants.csv": "fece0473e50b097afa7c2b3e2647c9a6e623bd3d8e009e6ef620151887227639",
+    "lessons/week01/data/week1_plants_new.csv": "869db97ef7c5f6ccf1020bc435fe831f180e9b9548d722c41c91b63af44d7290",
+    "lessons/week01/week01_integrated_validation_labels.csv": "4e590540a02190a8f7c3ea1c83be2b058ad6e3b94583f3e4342bf0639069d82e"
+  },
   "bindings": {
     "week01_integrated.ipynb": {
-      "raw_notebook_sha256": "367af91ab07d9a52068312ffaaa826e2351f5f39358c5592cb80fd4be2b71f6d",
-      "authored_cells_sha256": "05abcd8ae271054e0895b63bb04989728c47f6d5545325080147a7e181759697",
+      "raw_notebook_sha256": "9949106551361cd101dab1902846cf93de2db7a16c5d347684b8eba40f864032",
+      "authored_cells_sha256": "26e492deb6595e9ea84ac053e1df82bc9636bfc97f3fa2833d9261e4945f3d2a",
       "guide_path": "lessons/week01/week01_integrated_teacher.md",
-      "guide_sha256": "a06b9f270333f5b29ec4e22bfe0a35bf9ca64037584bcc6eb0099f226cb1b308",
-      "published_notebook_sha256": "184316822761ae0e25c23ea6e3fc8fe5b3d99267b059a34df36196282ae7df12",
-      "html_sha256": "df7d7a713fe856c40b00346bf9921cdc34088ff60c9233081b107bb22fa8075c",
-      "published_html_sha256": "df7d7a713fe856c40b00346bf9921cdc34088ff60c9233081b107bb22fa8075c",
+      "guide_sha256": "6eb36f863a5b63e1bd5defefa3e90d0b2412ecc9235ea404cd46e3c9cd672b13",
+      "published_notebook_sha256": "0db53506ef32c84b18b26357db8a74a1ded34a0385ffeffaddb934878a454afb",
+      "html_sha256": "a8f5fd602f3557fccc8f40b6470abfd177ad70241cbabb78bf30bf40d1a5e320",
+      "published_html_sha256": "a8f5fd602f3557fccc8f40b6470abfd177ad70241cbabb78bf30bf40d1a5e320",
       "download": {
         "suggested_filename": "week01_integrated.ipynb",
-        "payload_sha256": "184316822761ae0e25c23ea6e3fc8fe5b3d99267b059a34df36196282ae7df12",
-        "payload_byte_count": 157003,
+        "payload_sha256": "0db53506ef32c84b18b26357db8a74a1ded34a0385ffeffaddb934878a454afb",
+        "payload_byte_count": 158942,
         "mime_type": "application/octet-stream",
-        "comparison": "Native data URI decoded by both strict Base64 and a standard URI reader. Each byte equalled the installed executable notebook."
+        "comparison": "Decoded the named embedded base64 link from the delivered HTML and compared the complete UTF-8 payload with the installed notebook."
       },
       "source_cells": 60,
       "code_cells": 30,
@@ -48,51 +120,54 @@
         "9462ed76"
       ],
       "verdict": "pass",
-      "role": "Data representation, descriptive statistics and required transfer",
+      "role": "Named features and coordinate selection; conditional class-center calculation",
       "cells": [
         "5a7a14b7",
-        "0a64f981",
+        "bde02238",
         "f574b6b5",
-        "9529029d",
-        "4042bdda",
+        "deep-leaf-grid",
+        "ce3f374d",
+        "4d60619c",
         "28086cfc",
-        "records-challenge"
+        "ae89f4b6",
+        "5ba7e603",
+        "8e809e64",
+        "4042bdda",
+        "summary-exercise-work",
+        "683a7ca2",
+        "3512f7de"
       ],
-      "original": "The title frames the subject as extracting an answer row. The main example alternately identifies the plant pot, the record and the plotted mark as the observational unit. Its introductory use of ID does not explain what the identifier distinguishes or why it differs from a position. The variance paragraph describes subtraction from the mean in the wrong direction. The displayed signs actually require value minus mean. The code and printed variance still agree because squaring erases that error.",
-      "changed": "A real hand-written digit supplies the object, feature measurements and class. Signed deviations, observed denominators and the information lost by a projection now have worked reasons. Four required integrative problems include a hand proof and a general implementation on changed inputs.",
       "subject_review": {
         "teaching": {
           "cells": [
             "5a7a14b7",
             "bde02238",
-            "0a64f981",
             "f574b6b5",
-            "9529029d",
-            "28086cfc"
+            "deep-leaf-grid",
+            "ce3f374d",
+            "4d60619c",
+            "28086cfc",
+            "ae89f4b6",
+            "5ba7e603",
+            "8e809e64"
           ],
-          "finding": "The digit example distinguishes one image, a 4×4 block's foreground-pixel count, a flattened feature index and a digit class. Fixed-order flattening preserves the 8×8 array; counting pixels within a block loses locations. The book now defines deviation as value minus mean, its descriptive variance and its standard deviation as the square root in the original unit, then separates the registered value of zero from a deliberately masked copy. A real same-coordinate/different-label collision supplies a counterexample to perfect classification with two features. The optional center derivation completes the square and explains why the cross term vanishes."
+          "finding": "A foreground count is defined for one 4×4 image block. Flattening in fixed order preserves the block counts; selecting two coordinates can lose distinctions between classes. The optional classifier now implements the mathematics on labeled rows. It derives the center coordinate by minimizing squared deviations, adds squared coordinate differences, and maps the minimum distance back to the class label. In the printed new-image example (4,3), the squared distances are 123.25 and 18.5, yielding digit 1."
         },
         "application": {
           "cells": [
-            "f574b6b5",
-            "catalog-reading",
-            "records-challenge",
             "4042bdda",
+            "summary-exercise-work",
             "683a7ca2",
-            "summary-exercise-work"
+            "3512f7de",
+            "8e809e64"
           ],
-          "case": "Use a class collision on genuine digits outside the worked pair, add a feature on a new matrix, and check class-wise plotting and missing named columns on a changed dataset.",
-          "observed": "Source images 4 and 81 have true classes 4 and 7 but both map to (1,16) at the two chosen positions. Their full 64-dimensional squared distance is 2,904. In a separate fresh table, adding a coordinate eliminated four projection conflicts; it could not create a new one. In independent checks actual Matplotlib and Seaborn bars agreed under the declared group denominators, and an all-missing feature returned no mean while an observed zero contributed to its count. These finite cases support the stated impossibility and its limits. In the corrected required fourth problem the single-column hand calculation gives pair [0,1]; retaining both printed columns eliminates the conflict. Independently grouping projected feature tuples agreed with the public teacher function on 3,510 retained-column choices across 585 small binary tables, including repeated and reordered features. The reader must also explain why equality on the longer tuple implies equality on the original tuple."
+          "case": "Solve the independent conflicting-projection exercise and then change the class labels, one training observation, and one held-out class separately in a fresh two-coordinate problem.",
+          "observed": "With the single first coordinate of the three printed rows, [0,1] is a conflicting pair. Adding the second coordinate removes it. Equality on the fuller set implies equality on the smaller set. A finite absence of conflicts gives no guarantee for unseen images. In my independently authored hosted test on the new manuscript, the training means were [5,6]. The two centers, sorted by label −3 then 0, were [8,6] and [2,6]. The squared distances for a tied row were [9,9], selecting label −3. Moving one training value flipped a different row from −3 to 0; changing only the validation answer changed three correct to two with all predictions fixed."
         }
-      },
-      "independent_execution": {
-        "source_code_cells": 30,
-        "result": "completed in an initially clean IPython namespace",
-        "evidence_sha256": "7af1fbca04a28334f51965c5491b1fdc990854dc44c2ecf794e822c6ae3e505c"
       }
     },
     "week01_python_tables.ipynb": {
-      "raw_notebook_sha256": "f2cab40f6baa91a41b044ec4bdaf415d5adb0313e9bb165766fdca517f20d639",
+      "raw_notebook_sha256": "f06880f1a9a20ed4f8fbdc838495817cdbc407c28300f85a7aad40b5fd9dd298",
       "authored_cells_sha256": "02d13b3a50e87fee8264015be57858de858e1f479c1954bd4746d181ccdecd16",
       "guide_path": "lessons/week01/teacher-notes.txt",
       "guide_sha256": "a140e5bf4c960f1ca192068b0cf479db7d963e504349c6b6a4c3afff721c165e",
@@ -104,13 +179,11 @@
         "payload_sha256": "f06880f1a9a20ed4f8fbdc838495817cdbc407c28300f85a7aad40b5fd9dd298",
         "payload_byte_count": 472108,
         "mime_type": "application/octet-stream",
-        "comparison": "Native data URI decoded by both strict Base64 and a standard URI reader. Each byte equalled the installed executable notebook."
+        "comparison": "Decoded the named embedded base64 link from the delivered HTML and compared the complete UTF-8 payload with the installed notebook."
       },
       "source_cells": 101,
       "code_cells": 36,
       "accessible_figure_cells": [
-        "mean-variance-mapping",
-        "b9a324f5",
         "48d931b0",
         "c6ef56e6",
         "33384c16",
@@ -134,51 +207,41 @@
         "02c6cde1"
       ],
       "verdict": "pass",
-      "role": "Python, named tabular features, descriptive statistics and graph reading",
+      "role": "Python, named tables, grouped statistics and plotting",
       "cells": [
         "1ab9cd79",
-        "409e1675",
         "82e8a039",
-        "ffb294df",
-        "ea9460e8",
-        "fa10c459",
-        "b5362bd2",
+        "08e374f4",
+        "48d931b0",
         "digits-csv-task",
-        "fixed-prediction-matrix-practice"
+        "b5362bd2",
+        "digits-practice-csv"
       ],
-      "original": "The opening sends learners from reading a table cell to an answer. It introduces averaging by combining physical rods, uses vague dispersion wording, and makes the unconditional claim that a scatterplot point is one pot. This hides the distinction between each record contributing a coordinate pair and the number of distinct visible marks. The derivation of descriptive variance, explicit units and conditional observed-water mean later in the book are mathematically usable.",
-      "changed": "Genuine digit data lead the core, with new named-array, join, moment and plot work. Counterfactual examples identify which measurements were exchanged while preserving both marginal lists. The artificial CSV is separately optional and includes its measurement period and units.",
       "subject_review": {
         "teaching": {
           "cells": [
             "1ab9cd79",
             "82e8a039",
             "08e374f4",
-            "fa10c459",
-            "9ce91662"
+            "48d931b0",
+            "digits-csv-task"
           ],
-          "finding": "The opening distinguishes a machine-learning example (one digit image), a row position, its numeric class and the statistical sample used for inference. The length example gives the signs, squared units, n denominator and nonnegative square root; the optional n−1 estimator is limited to a different question. A zero observed pixel count, a zero class label and a removed measurement are separated. The scatterplot defines paired coordinates and explains overlapping marks. The synthetic plant CSV has its own optional appendix with an explicit simulated object, time period and units."
+          "finding": "The public digits data are loaded and inspected as a table. The student distinguishes row position, digit class, observed zero and missing measurement. The scatterplot depends on pairing two features on the same image; a histogram of either column alone loses the pairing. The CSV exercise requires a join by sample index, a within-class mean, plotting the same units in both libraries, and checking a genuinely missing and duplicate label."
         },
         "application": {
           "cells": [
-            "ffb294df",
-            "3468f4e4",
+            "48d931b0",
             "b5362bd2",
             "digits-csv-task",
-            "fixed-prediction-matrix-practice"
+            "digits-practice-csv"
           ],
-          "case": "Reorder named rows and features, check different genuine digit images where two measurements are exchanged, and reconstruct the two requested graph types from independently joined measurement and target CSVs.",
-          "observed": "The paper and executable arrays identify source index 2, feature 19, and its value 13 separately from digit label 2. In the lesson's counterfactual the digit-0 mean moves from 9 to 13/3 without changing either univariate list. In another six-image selection the same kind of exchange changed the two class means from (16,13) to (14,15), again preserving the marginals. The new CSV task yielded histogram counts [1,2,3] in both plotting systems; an omitted label stayed missing and a duplicated lookup key was rejected. The explanations apply to those selected records."
+          "case": "Select four source indices from the shipped, independently ordered UCI measurement and label CSVs, align their labels by index, and exchange a numeric feature between two images across the classes.",
+          "observed": "Indices 47,56,30,36 have pixel_2_3 values 14,16,2,10. The original class-0 and class-1 means are 6 and 15. Exchanging only the values of 47 and 30 preserves the entire sorted marginal [2,10,14,16] and changes the class means to 12 and 9. This numerical recheck uses the distributed saved UCI rows. The hosted diagnostic separately executed the genuine load_digits foundation path with the model/imputer factories denied."
         }
-      },
-      "independent_execution": {
-        "source_code_cells": 36,
-        "result": "completed in an initially clean IPython namespace",
-        "evidence_sha256": "1d97a78c22ecae474c902042a418434b7a311d113128586d6f0a9ba0ee2240f3"
       }
     },
     "week01_axes_linear_bridge.ipynb": {
-      "raw_notebook_sha256": "3fdbfa1685573eae1c3eb70e782d575ae95ab5c2d68f2e044423efc86a4bf560",
+      "raw_notebook_sha256": "6e1fd7c838d2c959beba3475de75c5bda90cd4d80cd2a03f42f8ca8ed4a4d986",
       "authored_cells_sha256": "20b973b2a908122d34352b747f4a739c79d472f046cae7ee404c1178dbfed5e0",
       "guide_path": "lessons/week01/week01_axes_linear_bridge_teacher.md",
       "guide_sha256": "a6037da0d1e4e7bf1409376f444e06c24c6c5ee719d87a4f01848a43089e8d3b",
@@ -190,68 +253,62 @@
         "payload_sha256": "6e1fd7c838d2c959beba3475de75c5bda90cd4d80cd2a03f42f8ca8ed4a4d986",
         "payload_byte_count": 45608,
         "mime_type": "application/octet-stream",
-        "comparison": "Native data URI decoded by both strict Base64 and a standard URI reader. Each byte equalled the installed executable notebook."
+        "comparison": "Decoded the named embedded base64 link from the delivered HTML and compared the complete UTF-8 payload with the installed notebook."
       },
       "source_cells": 35,
       "code_cells": 16,
       "accessible_figure_cells": [],
       "rich_table_cells": [],
       "verdict": "pass",
-      "role": "Array axes, matrix products, vector similarity and information lost in aggregation",
+      "role": "Matrix products, named axes, vector similarity and limits of aggregation",
       "cells": [
         "09b00247",
-        "e81d6244",
         "39e31964",
+        "ae4dc17f",
         "bbd63f75",
-        "retrieval-norm-text",
+        "retrieval-norm-code",
         "sequence-mean-text",
+        "4ac3bb9a",
         "2442117e"
       ],
-      "original": "The bridge opens with a fictional plant photography schedule and an unexplained ID. Its literal reading of X[1,0] equates the numeric count 1 with a physical leaf. An array entry is a feature measurement; the data never identify that individual leaf. The story and output names precede the actual vector/matrix argument and therefore obscure what a weighted sum retains. The later index-contraction check and cosine normalization do teach valid mathematics.",
-      "changed": "Actual array elements are grayscale or RGB measurement codes. The revised order leads from named axes to signed linear combinations, similarity or cost decisions, and an explicit failure of temporal pooling to recover order. Direct entry defines the identifiers used there.",
       "subject_review": {
         "teaching": {
           "cells": [
             "09b00247",
             "39e31964",
+            "ae4dc17f",
             "bbd63f75",
-            "retrieval-norm-text",
+            "retrieval-norm-code",
             "sequence-mean-text"
           ],
-          "finding": "The opening specifies two 8-bit grayscale codes and defines the image identifier separately from its array position. The input axes have names. The mean and signed difference determine different columns of the coefficient matrix; matching the input-feature index derives each output scalar and the real-vector linearity claim. A cold start at the search section defines query, candidate, ID, dot product and row normalization. The masked token mean states which axis disappears, why measured zero counts and why padding does not."
+          "finding": "Named input columns index rows of the coefficient matrix. The two outputs in the worked transform are a mean and right-minus-left contrast. The book defines how output IDs follow score matrix columns; row normalization changes the dependence on vector length. RGB and masked-token tasks require the learner to reason about unchanged and lost quantities."
         },
         "application": {
           "cells": [
+            "ae4dc17f",
             "4ac3bb9a",
-            "ec433d3b",
-            "2442117e",
-            "07c93362",
-            "5cd8c35a"
+            "retrieval-norm-code",
+            "2442117e"
           ],
-          "case": "Choose an RGB channel order with a red value below blue, transpose the named inputs, and compare a query with a longer sequence having a different first token and the same pooled vector. Exercise the signed score, rounding/tie rule and a genuine zero token.",
-          "observed": "The independently recomputed contrast was −248 even with an unsigned input array. Jointly permuting names and values preserved it. A stale label order changed the contrast while leaving the mean within floating-point precision. Valid sequence lengths 2 and 4 with different first tokens both yielded [3,1.5], preventing recovery of either requested field from the mean. The guide code preserved the requested gallery IDs under permutation and its stated tie rule. A real all-zero token counted as one; an all-padding input had an undefined mean."
+          "case": "Apply the printed coefficient matrix to independent inputs (11,1), (0,12), (4,4); permute the input columns with and without their coefficient rows. Compare raw and cosine ranking for query (1,2) against (0,6) and (1,2).",
+          "observed": "The results are (6,−10), (6,12), (4,0). Permuting both factors preserves all three. Permuting only inputs reverses both nonzero contrasts while preserving every mean. The candidate dot products are 12 and 5; cosines are 2/√5 and 1. This independent recomputation checks sign, feature correspondence, and a different ranking under a changed scoring definition. The matrix and unit-vector functions are ordinary NumPy."
         }
-      },
-      "independent_execution": {
-        "source_code_cells": 16,
-        "result": "completed in an initially clean IPython namespace",
-        "evidence_sha256": "0da3efc8b24fa9ff480898231a5331f85d9f27bfecd72d6371ce12b99ecdeae0"
       }
     },
     "week01_problem_pipeline.ipynb": {
-      "raw_notebook_sha256": "f09ffd3643a26795e35bc8905472f0cc697fed2cce4b700ff8f4dc660316c879",
-      "authored_cells_sha256": "14fd5ad8ebc87d48dee8a9282ba7a7136f8f79e105e9e48155fd6ebe2caaaa79",
+      "raw_notebook_sha256": "f5d560b4833cc1dc69bb207bab8223b2a81c80b006672990a6ba8fcb034d6c16",
+      "authored_cells_sha256": "be28ed43121a69393edce5edcee008cfe7b03b085a22d888241cd5e5a1e15996",
       "guide_path": "lessons/week01/week01_problem_pipeline_teacher.md",
-      "guide_sha256": "62dc02c77f5f0f70b98212c831dbebecf7997d3dd9c1a95415826b146266cafa",
-      "published_notebook_sha256": "f09ffd3643a26795e35bc8905472f0cc697fed2cce4b700ff8f4dc660316c879",
-      "html_sha256": "3c7448c098c674186a9cd7c9d2a41629a8b014ea9b40a34e61a38c0f44076d85",
-      "published_html_sha256": "3c7448c098c674186a9cd7c9d2a41629a8b014ea9b40a34e61a38c0f44076d85",
+      "guide_sha256": "a41879251df46605b5208d1131a0b59b90d070803cf6bba672340f2e9a3cef68",
+      "published_notebook_sha256": "45ff37ffed2ecb5b231a0ebbe9b23bd8a730aef4a27639a090bc6313fa0a778e",
+      "html_sha256": "8d6b21205444ab7b835bb339148639dcdd2914fafec37c1bb3dc6bd81f1c848b",
+      "published_html_sha256": "8d6b21205444ab7b835bb339148639dcdd2914fafec37c1bb3dc6bd81f1c848b",
       "download": {
         "suggested_filename": "week01_problem_pipeline.ipynb",
-        "payload_sha256": "f09ffd3643a26795e35bc8905472f0cc697fed2cce4b700ff8f4dc660316c879",
-        "payload_byte_count": 52725,
+        "payload_sha256": "45ff37ffed2ecb5b231a0ebbe9b23bd8a730aef4a27639a090bc6313fa0a778e",
+        "payload_byte_count": 55120,
         "mime_type": "application/octet-stream",
-        "comparison": "Native data URI decoded by both strict Base64 and a standard URI reader. Each byte equalled the installed executable notebook."
+        "comparison": "Decoded the named embedded base64 link from the delivered HTML and compared the complete UTF-8 payload with the installed notebook."
       },
       "source_cells": 35,
       "code_cells": 16,
@@ -260,275 +317,176 @@
         "622155d2",
         "f265b556",
         "worked-score",
-        "f53ccb1f",
-        "f53ccb1f",
         "f53ccb1f"
       ],
       "verdict": "pass",
-      "role": "Partially labeled supervised classification and held-out evaluation",
+      "role": "Partly labeled training, nearest class means, held-out evaluation and an independent new task",
       "cells": [
         "cb044aa9",
-        "e8e25947",
+        "622155d2",
         "2bed1d84",
         "nearest-rule",
+        "1566ce2a",
         "29a11f88",
-        "bb177697",
-        "d6195f91"
+        "f265b556",
+        "worked-holdout",
+        "33667a04",
+        "5c8fe7f9",
+        "d6195f91",
+        "06ceb97e",
+        "device-feedback"
       ],
-      "original": "The headings ask whose row, what answer line, which two points the model learned, and which three artworks go on which lines. An unknown label, a missing measured feature, an individual example, the training-derived fill value and a class centroid have different mathematical roles, but the opening directions substitute ‘known works’ and ‘learned value’ for several of these. The solution misnames a prediction-to-record permutation error as an error in which artwork was selected. The worked square distances and the warnings about validation reuse are sound.",
-      "changed": "The original official CSV establishes what is known in partially labeled training. Worked examples then separate unknown class, missing measurement, imputer, class center, prediction and later evaluation. The guide supplies a numerical derivation and a three-feature application. The output-file exercise is optional.",
       "subject_review": {
         "teaching": {
           "cells": [
             "cb044aa9",
+            "622155d2",
             "2bed1d84",
             "nearest-rule",
+            "1566ce2a",
             "29a11f88",
+            "f265b556",
             "worked-holdout"
           ],
-          "finding": "The three displayed rows and the count of 496 unidentified, two replica and two authentic paintings match the official 500-row training CSV. The text identifies the five numerical coordinates and makes clear that the source omits their physical meanings. The synthetic calculation labels its different data and policy. It derives the class center from the sum of squared deviations, interprets a two-coordinate decision boundary, and shows why a held-out evaluation can disagree with a correctly computed predicted class. Submission mechanics are an optional application after the supervised problem."
+          "finding": "The official Antique features have no published physical meaning. Its unknown target 0 is excluded from supervised means. In the separate classroom data the replacement values [5,3] come only from known training rows. Within-class means give [2,2] and [8,4]. The worked problem derives the squared-distance criterion from those values; the score is computed only after the keyed validation comparison. Student code uses named columns, mean, fillna, groupby and explicit squared differences instead of estimator objects."
         },
         "application": {
           "cells": [
-            "nearest-rule",
-            "29a11f88",
-            "bb177697",
+            "1566ce2a",
+            "33667a04",
+            "f265b556",
+            "5c8fe7f9",
             "d6195f91",
+            "06ceb97e",
             "device-feedback"
           ],
-          "case": "Use a new point where the nearest known individual and nearest class center disagree. Independently solve the three-feature exercise with its changed label encoding, then change a held-out label and test the file round trip with nonnumeric-looking IDs.",
-          "observed": "On the independent numerical problem the class-center squared distances were 64 and 16, choosing the other class from the nearest training example. Replacing an evaluation label changed no fitted mean or predicted class. On the new three-feature learner task the independent class centers were [1,3,1] and [7,5,3]; its requested validation point had squared distances 17 and 9. Comparison by ID identifies V3 as the error (two of three correct). A quoted or leading-zero ID survived a physical CSV round trip and an extra CSV field failed the verifier."
+          "case": "Reproduce the pre-revision failure using the real required route. Re-run revised required sections with model/imputer construction denied. Use different feature order, class labels −3/0, observed zero and missing entries to see which changes can affect centers, predictions and held-out accuracy.",
+          "observed": "At e3e00a4 the first required construction failed in 1566ce2a. The corrected first three sections completed and reproduced three correct of four in their original example. On my independent input the three squared-distance rows were [9,9], [1,25], [6.25,12.25] and predictions were [−3,−3,−3]. After moving one training point, the affected center moved from [8,6] to [10,6] and the last predicted class became 0. Swapping only one evaluation key changed the score without changing the predicted classes. Rows reordered with names intact preserved the results. The transfer exercise asks for a three-feature supervised solution before releasing a separate key."
         }
-      },
-      "independent_execution": {
-        "source_code_cells": 16,
-        "result": "completed in an initially clean IPython namespace",
-        "evidence_sha256": "4ed342b90199a1c8ade47abfdb58025f3be247b001d8977d1f1e22f59a4124d9"
       }
     }
-  },
-  "original_bindings": {
-    "week01_integrated.ipynb": {
-      "verdict": "revise",
-      "raw_notebook_sha256": "f11eb1463bef51367c9faacd176cd5eec3a987455391cc404817bf0cc785f167",
-      "authored_cells_sha256": "1b8dd2d8d703a96f9844a194aac56ea850f72fb726c3048de76ae5b69a51984e",
-      "guide_path": "lessons/week01/week01_integrated_teacher.md",
-      "guide_sha256": "4d6e795f019dd67119c36f655b0c19586a29c5d7369246eaafaa3f70a3dfcdf6",
-      "student_cell_count": 57
-    },
-    "week01_python_tables.ipynb": {
-      "verdict": "revise",
-      "raw_notebook_sha256": "424835eaff778235f086f3f79e6a8c0d92b43f0cf1a6add7e094b8fd81d379c0",
-      "authored_cells_sha256": "92733ac5d4cde048110c898b311a608af697a56d743f4d8ec497ce578e5f5aa3",
-      "guide_path": "lessons/week01/teacher-notes.txt",
-      "guide_sha256": "3e138e3dd00c5f97a166a4a0e51965e9b542d067b4d144bf9109ab21765f8f3b",
-      "student_cell_count": 98
-    },
-    "week01_axes_linear_bridge.ipynb": {
-      "verdict": "revise",
-      "raw_notebook_sha256": "dc476a122fc1eb6c4902b95583a699c69a8cb92bf39055a5b1825905a3fea321",
-      "authored_cells_sha256": "fa8a1154a136c1b46c7ba12c761eeb61b860dd77f532700691dba584a0d8109b",
-      "guide_path": "lessons/week01/week01_axes_linear_bridge_teacher.md",
-      "guide_sha256": "54d13d015511632475cdf8067f44e42faf4b9af966c6bfbd2cbbaf9773117b4b",
-      "student_cell_count": 35
-    },
-    "week01_problem_pipeline.ipynb": {
-      "verdict": "revise",
-      "raw_notebook_sha256": "ef54282eaec51bccf02528c2b2b418f92d56a1d09934baa7d386a29be408d3e3",
-      "authored_cells_sha256": "8640298033591f3e5359fd41c9c4770c39684d887dddf56a6d1aa7488e19c55f",
-      "guide_path": "lessons/week01/week01_problem_pipeline_teacher.md",
-      "guide_sha256": "de956f036232addf8d2529c0fd342ea90f04876f428797e6bf2479a6051fa121",
-      "student_cell_count": 34
-    }
-  },
-  "official_sources": [
-    {
-      "source": "2027 Korean middle-school competition rules",
-      "url": "https://kitpa.org/koai/2027",
-      "finding": "The organizer lists subjects 1–4. The first period is a three-hour written exam and the second is a three-hour coding exam. International selection eligibility is separately described."
-    },
-    {
-      "source": "Official scope linked by the Korean organizer",
-      "url": "https://kitpa.org/koai/syllabus",
-      "finding": "The organizer's published scope identifies its IOAI 2026 basis and includes practical Python, array/table work, and visualization. This four-book review covers the stated Week 1 subset."
-    },
-    {
-      "source": "2026 reference-question notice",
-      "url": "https://kitpa.org/files/36",
-      "finding": "The prior reference paper was prepared at a high-school reference level and does not provide an official answer key. It is not a released 2027 middle-school exam."
-    },
-    {
-      "source": "2026 reference questions, selected-response items 2–3 and 6",
-      "url": "https://kitpa.org/storage/c4016751-0e2c-4548-ab70-ecec994e8f8d.pdf",
-      "finding": "The concrete decisions about axes, joint versus marginal representations and transposition informed the independent probes."
-    },
-    {
-      "source": "UCI Optical Recognition of Handwritten Digits",
-      "url": "https://archive.ics.uci.edu/dataset/80/optical+recognition+of+handwritten+digits",
-      "finding": "Each of 64 numeric features counts foreground pixels in a nonoverlapping 4×4 block of a 32×32 binary image."
-    },
-    {
-      "source": "scikit-learn load_digits",
-      "url": "https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html",
-      "finding": "The bundled subset has 1,797 observations, 64 features with values from 0 to 16, ten classes and an 8×8 representation."
-    },
-    {
-      "source": "NumPy variance and standard deviation",
-      "url": "https://numpy.org/doc/stable/reference/generated/numpy.var.html",
-      "finding": "Variance uses squared deviations and denominator N−ddof; the descriptive and inferential uses are separate.",
-      "related_url": "https://numpy.org/doc/stable/reference/generated/numpy.std.html"
-    },
-    {
-      "source": "NIST/SEMATECH scatterplot definition",
-      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/scatterp.htm",
-      "finding": "A scatterplot pairs two variables for corresponding observations. Marginal values alone do not recover those pairings."
-    },
-    {
-      "source": "Nearest-centroid classifier",
-      "url": "https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestCentroid.html",
-      "finding": "The Euclidean class representative is the arithmetic mean and a new observation is assigned to the closest representative under the stated classroom rule."
-    },
-    {
-      "source": "IOAI 2025 Restroom Icon Matching, official notebook",
-      "url": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/39558e9a639d170bd92de91958fcdc915f670463/Individual-Contest/Restroom/Restroom.ipynb",
-      "finding": "Retrieve the opposite sign at the same restroom. The original query and candidate collections and output IDs differ from synthetic vector-scoring examples."
-    },
-    {
-      "source": "IOAI 2025 Antique Painting Authentication, original statement and CSV",
-      "url": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/39558e9a639d170bd92de91958fcdc915f670463/Individual-Contest/Antique/Antique.ipynb",
-      "finding": "The five numeric features precede the class field. In the public training CSV I independently counted 496 unknown targets, two replicas and two authentic works and matched the three printed data records. The statement asks for use of unlabeled training records. A supervised classroom center model addresses only part of that task.",
-      "related_url": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/39558e9a639d170bd92de91958fcdc915f670463/Individual-Contest/Antique/training_set/training_set.csv"
-    },
-    {
-      "source": "IOAI 2026 Find the Order",
-      "url": "https://raw.githubusercontent.com/IOAI-official/IOAI-2026/e1963801aa4cf33a5a03520b39fa6620a7894c54/Individual-Contest/1_Find_the_Order/statement.md",
-      "finding": "For each input audio chunk the prediction is its chronological rank. A list of chunks in chronological order encodes the inverse relation."
-    },
-    {
-      "source": "IOAI 2026 Potato",
-      "url": "https://raw.githubusercontent.com/IOAI-official/IOAI-2026/e1963801aa4cf33a5a03520b39fa6620a7894c54/Individual-Contest/3_Potato/statement.md",
-      "finding": "The original supplies 1,602 vocabulary entries and public vectors of length 2,560, without a labeled training split. It includes public games and evaluates with a hidden representation."
-    },
-    {
-      "source": "IOAI 2025 Pixel Efficiency",
-      "url": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/39558e9a639d170bd92de91958fcdc915f670463/Individual-Contest/Pixel/Pixel.ipynb",
-      "finding": "The bounded coordinate exercise illustrates part of the 224×224 image area budget, not the competition's model-performance objective."
-    }
-  ],
-  "course_bounds": {
-    "registered_skill": "On unfamiliar labeled vectors, determine whether selected features distinguish the required outcomes. Find every different-class pair with equal retained coordinates, explain the effect of another observation, and distinguish a finite collision from generalization. A separate new input checks class-center or similarity reasoning. Retrieval preserves its original candidate identifiers.",
-    "class_minutes": {
-      "theory": 20,
-      "noncoding": 20,
-      "written_within_noncoding": 10,
-      "coding": 80
-    },
-    "routed_minutes": {
-      "class": 120,
-      "homework": 300
-    },
-    "registered_homework_range_hours": [
-      5,
-      7
-    ],
-    "bound": "The five class blocks total two hours. The registered homework route totals five hours within the historical five-to-seven-hour planning range. The axes bridge, extra array transformations and extended file practice have conditional routes. Foundation joins and plots carry across the alternatives. The instructional estimates have no observed completion-time data."
-  },
-  "data_bindings": {
-    "lessons/week01/data/pipeline_device_validation.csv": "9939afdd0dd2d06f4ea45d564632e4b3a0740c7bd985e1d73165def043cc36bf",
-    "lessons/week01/data/week1_plants.csv": "fece0473e50b097afa7c2b3e2647c9a6e623bd3d8e009e6ef620151887227639",
-    "lessons/week01/data/week1_plants_new.csv": "869db97ef7c5f6ccf1020bc435fe831f180e9b9548d722c41c91b63af44d7290",
-    "lessons/week01/week01_integrated_validation_labels.csv": "4e590540a02190a8f7c3ea1c83be2b058ad6e3b94583f3e4342bf0639069d82e"
   },
   "routes_and_verification": {
-    "whole_book_execution": "All 98 authored code cells across 231 learner cells completed in four initially clean IPython namespaces. I checked the actual public guide functions with independent examples after executing the student code. Worked cells, intentionally unfilled answer cells and separately supplied self-checks retain distinct purposes.",
-    "standalone_entry": {
-      "tables-csv": {
-        "book": "week01_python_tables.ipynb",
-        "executed_cells": [
-          "eb304b96",
-          "5c37fc90",
-          "02c6cde1"
-        ]
-      },
-      "tables-features": {
-        "book": "week01_python_tables.ipynb",
-        "executed_cells": [
-          "3468f4e4"
-        ]
-      },
-      "tables-python": {
-        "book": "week01_python_tables.ipynb",
-        "executed_cells": [
-          "e2a6be88",
-          "92534730"
-        ]
-      },
-      "bridge-axes": {
-        "book": "week01_axes_linear_bridge.ipynb",
-        "executed_cells": [
-          "ba428b91",
-          "5ebb633b",
-          "ae4dc17f"
-        ]
-      },
-      "bridge-scores": {
-        "book": "week01_axes_linear_bridge.ipynb",
-        "executed_cells": [
-          "3950021e",
-          "retrieval-norm-code",
-          "retrieval-limits-code",
-          "ff882ec6",
-          "d81386f3",
-          "sequence-mean-code"
-        ]
-      },
-      "pipeline-contract": {
-        "book": "week01_problem_pipeline.ipynb",
-        "executed_cells": [
-          "622155d2",
-          "1566ce2a"
-        ]
-      },
-      "pipeline-device": {
-        "book": "week01_problem_pipeline.ipynb",
-        "executed_cells": [
-          "f53ccb1f",
-          "device-score-release"
-        ]
-      },
-      "pipeline-submit": {
-        "book": "week01_problem_pipeline.ipynb",
-        "executed_cells": [
-          "order-by-hand"
-        ]
-      }
-    },
-    "written_entry": "The separate tables-paper section contains two selected-response questions and one written item. I worked the retained-axis and denominator decisions from the supplied inputs.",
-    "published_html": {
-      "verified_week_fragment_occurrences": 22,
-      "distinct_destinations_from_main": 8,
-      "figures": 10,
-      "rendered_data_tables": 29,
-      "result": "The four handouts contained all ordered student cells. Visible code matched each notebook. Saved table headers, row/column order and values matched every rich DataFrame in each HTML. All embedded PNGs matched their source bytes and authored alternative text. Every local reading link and fragment resolved. The integrated handout routes to eight distinct sections of its companion books.",
-      "download_verification": "I checked the visible native named download link on every installed handout, decoded each payload using strict Base64 and a standard offline URI reader, and compared all bytes with the installed notebook. The verifier rejected a wrong suggested filename, a truncated payload and a relative file link.",
-      "evidence_sha256": "a4d3b686360105bc4d30503a111f7dc822f40f1b358241e8e33c058b3766aa78"
-    },
-    "mobile_figures": {
-      "viewports_css_px": [
-        390,
-        1280
-      ],
-      "full_size_controls": 10,
-      "result": "I verified checkbox and label associations and named, focusable scroll regions. Using the shipped styles I measured the ten images in compact and expanded states at 390 pixels and in desktop layout at 1280 pixels. Expanded mobile figures reached their intrinsic widths, and the scroll regions stayed inside the viewport.",
-      "execution_limit": "The local independent measurements use WeasyPrint and static HTML. This reviewer could not start a local Chromium singleton socket. Actual keyboard, pointer and assistive-technology interactions were unobserved here.",
-      "evidence_sha256": "1a7804b6f2b65e39c82682dd0a414dca83cd971dd0a042ca2fb95b89db6c1090"
-    },
-    "book_necessity": "I found a distinct, assessed use for each existing book: the integrated representation problem, the foundation’s named tables and plotted data, the bridge’s linear maps and pooled information, and the pipeline’s fitted rule and held-out evaluation. The class route uses selected sections. The gaps in the rejected baseline have been addressed within these roles. A fifth Week 1 notebook is unwarranted on the reviewed evidence.",
+    "independent_source_program_sha256": "50a2e82054499d0fed822f6cdba9febf6eb6dc7240a0803828c7f5ad35e52242",
+    "hosted_delivery": "https://github.com/jlee-ax/AI-Olympiad/actions/runs/44756756318/job/136358386730",
+    "physical_receipt": "reviews/week01-prerequisites-20261120/delivery.json",
+    "physical_receipt_sha256": "00214e9a96e455a167ebc49ac298b92563a4e14ce1af653d60eb04674ee5c5e4",
+    "book_necessity": "The integrated core provides the mandatory projection problem. The tables book supplies source data joins, plotting and group interpretation. The axes book supplies optional geometric and information-loss transfer. The partly labeled companion gives an observed training/score separation on a new problem. These roles fit in the existing four books.",
     "limits": [
-      "This review measures the teaching material and observed software behavior. No Korean students took part. Learning, performance under supervision, contest scores, accessibility with assistive technology and actual completion times remain unmeasured.",
-      "Released notebooks, worked answers and public validation files support practice. A proctored judgment of independent student work would require collecting first answers on fresh material.",
-      "The numerical tasks cover Week 1 prerequisites. They do not demonstrate full contest-level image recognition, semi-supervised training, audio ordering, all other domestic topics or prediction for the next cohort."
-    ]
+      "All performance findings concern the reviewed materials and finite numerical tests. Actual completion time, novice comprehension, student attainment, contest scores and future performance were not observed.",
+      "Public answer files can be opened directly. Separating answer release within the notebook supports self-study and does not supply exam security.",
+      "The supervised classroom rule uses known training labels. The original Antique task also calls for using training samples whose labels are unknown. Week 1 does not solve the entire original task or cover the whole current official syllabus."
+    ],
+    "kernel_and_browser": {
+      "tested_commit": "3b152a649bdfb8c685a81bdf257d7f4bc7f914f2",
+      "student_cells": 231,
+      "code_cells": 98,
+      "installed_edited_manuscripts": [
+        "week01_integrated",
+        "week01_problem_pipeline"
+      ],
+      "tested_handouts": [
+        {
+          "stem": "week01_integrated",
+          "code_cells": 30,
+          "figures": 3,
+          "rich_tables": 9,
+          "browser_widths_css_px": [
+            1280,
+            390
+          ]
+        },
+        {
+          "stem": "week01_python_tables",
+          "code_cells": 36,
+          "figures": 5,
+          "rich_tables": 14,
+          "browser_widths_css_px": [
+            1280,
+            390
+          ]
+        },
+        {
+          "stem": "week01_axes_linear_bridge",
+          "code_cells": 16,
+          "figures": 0,
+          "rich_tables": 0,
+          "browser_widths_css_px": [
+            1280,
+            390
+          ]
+        },
+        {
+          "stem": "week01_problem_pipeline",
+          "code_cells": 16,
+          "figures": 0,
+          "rich_tables": 6,
+          "browser_widths_css_px": [
+            1280,
+            390
+          ]
+        }
+      ],
+      "interpretation": "The hosted workflow completed each real notebook in a clean Jupyter kernel, audited the handouts at the reported browser widths and ran the existing source-bound checks. The independent reviewer checked the output bindings, visible assigned work, all four embedded notebooks, and the observed arithmetic. Browser interaction was performed by the workflow."
+    },
+    "independent_required_route": {
+      "current_required_worked_accuracy": 0.75,
+      "new_independent_input": {
+        "centers_in_label_order_minus3_then_0": [
+          [
+            8,
+            6
+          ],
+          [
+            2,
+            6
+          ]
+        ],
+        "changed_training_last_prediction": 0,
+        "distances": [
+          [
+            9,
+            9
+          ],
+          [
+            1,
+            25
+          ],
+          [
+            6.25,
+            12.25
+          ]
+        ],
+        "heldout_key_only_correct_counts": [
+          3,
+          2
+        ],
+        "predictions": [
+          -3,
+          -3,
+          -3
+        ],
+        "training_means": [
+          5,
+          6
+        ]
+      },
+      "old_required_model_call": "1566ce2a",
+      "original_digits_feature_landing": [
+        [
+          0,
+          15
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          14,
+          16
+        ]
+      ]
+    }
   },
   "revision_history": [
     {
@@ -556,12 +514,25 @@
       "reviewed_verdict": "pass",
       "review_checks": 19,
       "reason": "I compared the new student and teacher cells directly with the first rewritten edition and the physical files. Section 8 explicitly assigns four numbered problems. Problem 4 requires the hand calculation, a general function on unfamiliar inputs, and a reason for the effect of feature addition. The teacher collects all three in the named response cell. Other sections and the three companion manuscripts retained their previously checked content."
+    },
+    {
+      "stage": "Prerequisite audit of the last published edition",
+      "commit": "e3e00a4aae2c4e9169ae4f66f9f9ec5cb0db2352",
+      "material_receipt_sha256": "150fe9e11d574af7f8a661422c066c6375155ecea946fe790d15e71935fc1d57",
+      "reviewed_verdict": "revise",
+      "reason": "The compulsory 50-minute pipeline route used a scheduled-later modeling API. Previous scope, prerequisite, workload and depth checks did not test this dependency. Historical educational findings and the two unaffected companions keep their original scope."
+    },
+    {
+      "stage": "Current corrected Week 1 edition",
+      "reviewed_verdict": "pass",
+      "reviewed_manuscripts_at": "3b152a649bdfb8c685a81bdf257d7f4bc7f914f2",
+      "reason": "The worked and independent feature and classification activities still require mathematical decisions. The required companion and the optional integrated section now expose training-only means, class grouping, squared distances, true label IDs and held-out evaluation with the first week's Python/NumPy/pandas. The old failure and fresh counterfactual were independently executed in the hosted run."
     }
   ],
   "independent_native_roles": {
-    "blind_assessment_response_sha256": "8f91493b39b0712d33e69626a1487a6b7c5f54ac02cc35dca6a5388dbcc892ae",
-    "source_grounding_response_sha256": "d9a3f9b0aa941e2ca949366a2d2c3c5db57fd070e1a0ec1380c03a5321b644b6",
-    "final_reviewer_response_sha256": "d4578c93cfc981fa67ec1a523bb9f8e44cb772d3e1d119d1f0f399b0f1f60329",
-    "private_content": "Private examiner examples and answers are withheld from this public receipt."
+    "grounding_response_sha256": "29f13facb247b394e599aa9d41ce388457c91d153f6343abb62a8702c6e2cf3c",
+    "blind_solver_source_sha256": "aeb0f4e53f98b0820647a2662355804afcf467c224c42de219ab5cd7d4855525",
+    "decision_reference": "reviews/week01-whole-20261120/native-textbook-review.json",
+    "scope": "The independent examiner's native criterion grades and execution proof are registered separately. The private questions and expected answers are withheld."
   }
 }
