@@ -1,5 +1,42 @@
 {
   "schema": 1,
+  "tool_prerequisites": [
+    {
+      "topic": "KOAI-04",
+      "modules": [
+        "sklearn"
+      ],
+      "data_only": [
+        "sklearn.datasets.load_*",
+        "sklearn.datasets.fetch_*"
+      ],
+      "mentions": [
+        "SimpleImputer",
+        "NearestCentroid",
+        "Pipeline",
+        "fit_transform"
+      ]
+    },
+    {
+      "topic": "KOAI-05",
+      "modules": [
+        "torch"
+      ],
+      "mentions": [
+        "torch.nn",
+        "torch.optim"
+      ]
+    },
+    {
+      "topic": "KOAI-16",
+      "modules": [
+        "sklearn.decomposition.PCA"
+      ],
+      "mentions": [
+        "sklearn.decomposition.PCA"
+      ]
+    }
+  ],
   "sources": {
     "koai": {
       "file": "reviews/course-reconstruction-20261111/independent-ten-week-source-audit.md",

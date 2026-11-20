@@ -1,0 +1,50 @@
+name: Week 1 source-bound native prerequisite review
+on:
+  push:
+    branches: ['codex/course-generation-harness-prereq-20261120']
+    paths:
+      - '.course-review-ci/**'
+      - '.github/workflows/week01-native-prerequisite-ci.yml'
+      - 'tools/course*.mjs'
+      - 'tools/course*.py'
+      - 'lessons/week01/**'
+      - 'curriculum/course-harness.json'
+      - 'curriculum/contract.json'
+      - 'reviews/week01-whole-20261120/**'
+permissions:
+  contents: read
+jobs:
+  native:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read the selected evidence phase
+        id: mode
+        shell: bash
+        run: |
+          set -eu
+          phase=waiting
+          if test -f .course-review-ci/phase; then phase="$(cat .course-review-ci/phase)"; fi
+          case "$phase" in prepare|run|seal|waiting) ;; *) exit 1 ;; esac
+          echo "phase=$phase" >> "$GITHUB_OUTPUT"
+          echo "Requested native evidence phase $phase"
+      - name: Install the ordinary notebook kernel and course packages
+        if: steps.mode.outputs.phase == 'run'
+        run: |
+          python -m pip install 'numpy==2.3.5' 'pandas==2.2.3' 'scikit-learn==1.8.0' 'matplotlib==3.10.8' 'seaborn==0.13.2' 'nbclient>=0.10,<1' 'nbformat>=5.10,<6' 'ipykernel>=6,<8'
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Verify and export only the declared public receipt
+        if: steps.mode.outputs.phase != 'waiting'
+        env:
+          NATIVE_PHASE: ${{ steps.mode.outputs.phase }}
+        run: python -B .course-review-ci/native.py "$NATIVE_PHASE"

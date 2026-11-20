@@ -1,0 +1,56 @@
+{
+  "verdict": "ready",
+  "demands": [
+    {
+      "id": "representation_decision",
+      "sources": [
+        "syllabus",
+        "icons",
+        "antique"
+      ],
+      "decision": "Decide whether the available representation actually separates the outcomes the problem asks for. Trace the observation, retained coordinates and expected label on unfamiliar rows.",
+      "minimum": "Provide different-class inputs whose observed coordinates coincide, explain why one deterministic rule cannot give both answers, find all such pairs on new data and reason about adding a coordinate.",
+      "ceiling": "Do not require a learned image encoder or a demonstration of generalization from a finite table in this week.",
+      "counterexample": "Identifying the largest entry of a supplied score row alone can succeed without representing either input. A chosen two-coordinate projection can collapse labels that the original images distinguish.",
+      "later_use": "Week 2 feature selection and evaluation require checking which information is available when predicting; later classification and retrieval need a feature representation matched to the objective."
+    },
+    {
+      "id": "summaries_and_units",
+      "sources": [
+        "koai",
+        "syllabus",
+        "order"
+      ],
+      "decision": "Choose a row, column, observed denominator or ordered summary according to the data and the requested output.",
+      "minimum": "Explain one axis reduction by name and units, distinguish observed zero from missing, and compare class- or group-specific counts or percentages on a changed example.",
+      "ceiling": "No estimate of population performance is required from a few rows. The original audio task does not turn signal reconstruction into a Week 1 requirement.",
+      "counterexample": "Different sequences can have the same mean, and a group with fewer matching cases can have a higher within-group rate.",
+      "later_use": "Week 2 requires an appropriate scoring denominator and preprocessing; later time-series and attention topics use structure beyond simple means."
+    },
+    {
+      "id": "fitted_rule_and_distance",
+      "sources": [
+        "syllabus",
+        "antique"
+      ],
+      "decision": "Connect a visible training-derived quantity to a prediction and to its held-out evaluation using explicitly available features.",
+      "minimum": "Calculate class centers from labeled training values and compare squared distances on a fresh sample. Distinguish an unknown class from a missing feature or true zero. Explain why changing a held-out answer can change the measured score while leaving the prediction fixed.",
+      "ceiling": "Retain these mathematical decisions using first-week operations. Course topic KOAI-04 practical estimator interfaces are taught beginning Week 2. Do not require a student to follow fit/predict, a learned imputer or pipeline as a prerequisite for the first-week answer. The competition's semi-supervised task is a later extension.",
+      "counterexample": "A correct call to a provided estimator may produce the target labels without identifying a training mean, a distance or the training-only boundary. Treating Antique unknown zero as the replica class changes the training problem.",
+      "later_use": "Week 2 introduces split-dependent transformations, and later weeks automate fitted models using scikit-learn. The first-week calculation supplies an interpretable check of that automation."
+    },
+    {
+      "id": "alignment_and_comparison",
+      "sources": [
+        "icons",
+        "antique",
+        "order"
+      ],
+      "decision": "Identify which object each feature row and returned answer refer to, and use the comparison warranted by the problem.",
+      "minimum": "On a fresh input keep rows, feature names, predictions and original request order aligned. Explain when a dot product and length-normalized score can choose different candidates.",
+      "ceiling": "Do not require the original full contest training strategy or packaging procedure to demonstrate the representation principle.",
+      "counterexample": "Reordering only the label identifiers while retaining the old scores or features changes the meaning of an apparently valid numeric answer.",
+      "later_use": "Weeks 4 and 10 compare predictions with the correct examples and preserve the delivery order prescribed by an unfamiliar task."
+    }
+  ]
+}

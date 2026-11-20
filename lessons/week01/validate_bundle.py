@@ -112,6 +112,24 @@ def course_scope(root):
     if len(selected) != 1:
         raise ValueError("Week 1 needs a single course decision and transfer interface")
     local_design = {"week": selected[0], "sources": {key: designs["sources"][key] for key in selected[0]["sources"]}}
+    policies = designs.get("tool_prerequisites", [])
+    if policies:
+        topics = {topic["id"]: topic for topic in contract["topics"]}
+        # Week 1 availability depends on both the rule and the curriculum placement of
+        # the concept behind it. Other weeks' lesson prose and time budgets stay separate.
+        source_weeks = {rule["topic"]: sorted(topics[rule["topic"]]["scheduled_weeks"]) for rule in policies}
+        graph = {row["week"]: row["prerequisites"] for row in designs["weeks"]}
+        reachable = set()
+        remaining = [1]
+        while remaining:
+            number = remaining.pop()
+            if number not in reachable:
+                reachable.add(number)
+                remaining.extend(graph[number])
+        local_design["tool_prerequisites"] = {
+            "rules": policies, "scheduled_weeks": source_weeks,
+            "dependencies": [[number, sorted(graph[number])] for number in sorted(reachable)],
+        }
     return {COURSE_FILES[0] + "#week-1": digest(rows[0].encode()),
             COURSE_FILES[1] + "#week-1": fingerprint(scope),
             COURSE_FILES[2] + "#week-1": fingerprint(local_design)}
@@ -204,6 +222,21 @@ def native_decision(root, release, evidence, current, errors, unresolved):
     design = COURSE_FILES[2] + "#week-1"
     if report.get("governing_week_one_sha256") != release["course_scope"][design]:
         errors.append("The native decision used a different Week 1 course design")
+    governed = read_json(file_at(root, COURSE_FILES[2])).get("tool_prerequisites", [])
+    if governed:
+        scan = report.get("tool_prerequisites", {})
+        assessment = scan.get("assessment", {})
+        if (checks.get("tool_prerequisites") != "pass"
+                or scan.get("judgment", {}).get("verdict") != "pass"
+                or not isinstance(assessment, dict)
+                or assessment.get("blocked") != []
+                or not isinstance(assessment.get("review_cells"), list)):
+            unresolved.append("The required route needs a current tool-prerequisite inspection and an independent decision")
+        elif set(assessment["review_cells"]) - set(scan.get("judgment", {}).get("cells", [])):
+            unresolved.append("The native reviewer did not address every unresolved student tool dependency")
+        for path in ("tools/course_core.mjs", "tools/course_run.mjs", "tools/course_tool_prerequisites.py"):
+            if path not in current or report.get("program_sha256", {}).get(path) != current[path]:
+                errors.append("The native prerequisite decision used a different course program: " + path)
     reviewed = report.get("material_bindings", {})
     if set(reviewed) != set(release["members"]):
         unresolved.append("The native course decision must cover every registered Week 1 member")
