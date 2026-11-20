@@ -191,6 +191,7 @@ def inventory():
         "standard_jupyter_browser": render, "publications": publications,
         "bootstrap": read_json(BASE / "bootstrap.json"),
         "runtime_estimator_controls": read_json(BASE / "estimator-controls.json"),
+        "independent_required_route": read_json(BASE / "independent-material.json"),
         "source_bound_tables_checks": tables["executed_code_cells"],
         "source_bound_pipeline_checks": pipeline["normal_and_error_checks"],
         "distribution": "Each download was verified byte-for-byte in offline Chromium at both widths.",

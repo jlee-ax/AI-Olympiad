@@ -1,0 +1,74 @@
+name: Week 1 prerequisite repair delivery
+
+on:
+  push:
+    branches: [codex/course-generation-harness-prereq-20261120]
+    paths:
+      - '.github/workflows/week01-prereq-verification.yml'
+      - '.course-delivery-ci/**'
+      - '.course-review-ci/independent_material_checks.py'
+      - 'lessons/week01/**'
+      - 'tools/check_week01_render.py'
+      - 'reviews/week01-whole-20261120/**'
+      - 'reviews/week01-main-iteration-20261120/check_transfer.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  artifacts:
+    if: >-
+      github.repository == 'jlee-ax/AI-Olympiad' &&
+      github.ref_name == 'codex/course-generation-harness-prereq-20261120'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      LOKY_MAX_CPU_COUNT: '1'
+      PYDEVD_DISABLE_FILE_VALIDATION: '1'
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install the lesson runtime
+        run: |
+          python -m pip install 'numpy==2.3.5' 'pandas==2.2.3' 'scikit-learn==1.8.0' 'matplotlib==3.10.8' 'seaborn==0.13.2' 'nbconvert==7.17.2' 'latex2mathml==3.81.1' 'nbclient>=0.10,<1' 'nbformat>=5.10,<6' 'ipykernel>=6,<8' 'playwright>=1.50,<2'
+          python -m playwright install --with-deps --only-shell chromium
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Install the two executed manuscripts and their offline handouts
+        run: python -B .course-delivery-ci/produce.py prepare
+      - name: Run all four delivered notebooks in fresh Jupyter kernels and check both Chromium widths
+        run: |
+          set -o pipefail
+          python -B tools/check_week01_render.py --browser | tee "$RUNNER_TEMP/week01-prerequisite-proof/four-books.json"
+      - name: Exercise the original estimator dependency and the revised learning route
+        run: python -B .course-delivery-ci/produce.py controls
+      - name: Verify physical teaching data, changed inputs, routes and submission checks
+        run: |
+          python -B lessons/week01/validate_week01.py --inprocess --write "$RUNNER_TEMP/week01-prerequisite-proof/tables-validation.json"
+          python -B lessons/week01/validate_week01_problem_pipeline.py --write "$RUNNER_TEMP/week01-prerequisite-proof/pipeline-validation.json"
+          python -B reviews/week01-main-iteration-20261120/check_transfer.py
+          python -B reviews/week01-whole-20261120/check_routes.py
+          python -B -m unittest discover -s reviews/week01-whole-20261120 -p 'test_delivery.py' -v
+          python -B -m unittest discover -s reviews/week01-whole-20261120 -p 'test_axes.py' -v
+          python -B -m unittest discover -s reviews/week01-whole-20261120 -p 'test_tables.py' -v
+      - name: Test the independent required route and changed numerical inputs
+        run: |
+          set -o pipefail
+          python -B .course-review-ci/independent_material_checks.py | tee "$RUNNER_TEMP/week01-prerequisite-proof/independent-material.json"
+      - name: Record the verified public files and their exact byte digests
+        run: python -B .course-delivery-ci/produce.py inventory
+      - uses: actions/upload-artifact@v4
+        with:
+          name: week01-public-editions-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/week01-prerequisite-proof/public/
+          retention-days: 3
+          if-no-files-found: error
+      - name: Return only the declared public artifacts
+        run: python -B .course-delivery-ci/produce.py relay
