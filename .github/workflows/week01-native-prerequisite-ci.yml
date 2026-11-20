@@ -13,7 +13,6 @@ on:
       - 'reviews/week01-whole-20261120/**'
 permissions:
   contents: read
-  actions: read
 jobs:
   native:
     runs-on: ubuntu-latest
@@ -39,50 +38,20 @@ jobs:
           case "$phase" in prepare|run|seal|waiting) ;; *) exit 1 ;; esac
           echo "phase=$phase" >> "$GITHUB_OUTPUT"
           echo "Requested native evidence phase $phase"
-      - name: Install the ordinary notebook kernel and course packages
+      - name: Install the tested notebook runtime
         if: steps.mode.outputs.phase == 'run'
         run: |
-          python -m pip install 'numpy==2.3.5' 'pandas==2.2.3' 'scikit-learn==1.8.0' 'matplotlib==3.10.8' 'seaborn==0.13.2' 'nbclient>=0.10,<1' 'nbformat>=5.10,<6' 'ipykernel>=6,<8'
-          sudo apt-get install -y fonts-noto-cjk
-      - name: Retrieve the previously executed public notebooks
+          python -m pip install --timeout 30 --retries 2 'numpy==2.3.5' 'pandas==2.2.3' 'scikit-learn==1.8.0' 'matplotlib==3.10.8' 'seaborn==0.13.2' 'nbclient==0.11.0' 'nbformat==5.11.1' 'ipykernel==7.4.0'
+      - name: Install the fonts used by the distributed notebooks
         if: steps.mode.outputs.phase == 'run'
-        uses: actions/download-artifact@v4
-        with:
-          name: week01-public-editions-44756756318-1
-          run-id: '44756756318'
-          github-token: ${{ github.token }}
-          path: ${{ runner.temp }}/verified-week01-editions
-      - name: Check both executed files against the checked-out student manuscripts
-        if: steps.mode.outputs.phase == 'run'
-        env:
-          EDITIONS: ${{ runner.temp }}/verified-week01-editions
         run: |
-          python - <<'PY'
-          import hashlib
-          import json
-          import os
-          from pathlib import Path
-
-          from_file = Path(os.environ["EDITIONS"])
-          expected = {
-              "week01_integrated": "0db53506ef32c84b18b26357db8a74a1ded34a0385ffeffaddb934878a454afb",
-              "week01_problem_pipeline": "45ff37ffed2ecb5b231a0ebbe9b23bd8a730aef4a27639a090bc6313fa0a778e",
-          }
-
-          def authored_cells(raw):
-              return [(cell["id"], cell["cell_type"], "".join(cell["source"]))
-                      for cell in json.loads(raw)["cells"]]
-
-          for stem, digest in expected.items():
-              path = Path("lessons/week01") / (stem + ".ipynb")
-              checked_out = path.read_bytes()
-              executed = (from_file / path).read_bytes()
-              assert hashlib.sha256(executed).hexdigest() == digest, stem
-              assert authored_cells(checked_out) == authored_cells(executed), stem
-              if checked_out != executed:
-                  path.write_bytes(executed)
-              print(stem, digest)
-          PY
+          sudo apt-get -o Acquire::Retries=1 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 update -q
+          sudo apt-get -o Acquire::Retries=1 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 install -y fonts-noto-cjk
+      - name: Verify the two checked-in student notebooks against the executed release
+        if: steps.mode.outputs.phase == 'run'
+        run: |
+          echo '0db53506ef32c84b18b26357db8a74a1ded34a0385ffeffaddb934878a454afb  lessons/week01/week01_integrated.ipynb' | sha256sum --check
+          echo '45ff37ffed2ecb5b231a0ebbe9b23bd8a730aef4a27639a090bc6313fa0a778e  lessons/week01/week01_problem_pipeline.ipynb' | sha256sum --check
       - name: Verify and export only the declared public receipt
         if: steps.mode.outputs.phase != 'waiting'
         env:
