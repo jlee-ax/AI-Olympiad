@@ -14,6 +14,7 @@ on:
       - 'skills/koai-evaluate/SKILL.md'
       - 'reviews/week01-main-iteration-20261120/check_transfer.py'
       - 'reviews/week01-whole-20261120/**'
+      - 'reviews/week01-prerequisites-20261120/delivery.json'
       - '.github/workflows/week01-lesson.yml'
   pull_request:
     paths:
@@ -27,6 +28,7 @@ on:
       - 'skills/koai-evaluate/SKILL.md'
       - 'reviews/week01-main-iteration-20261120/check_transfer.py'
       - 'reviews/week01-whole-20261120/**'
+      - 'reviews/week01-prerequisites-20261120/delivery.json'
       - '.github/workflows/week01-lesson.yml'
 
 permissions:

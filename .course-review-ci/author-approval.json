@@ -1,0 +1,6 @@
+{
+  "original_candidate_sha256": "6421e70f74a7ed822a5f757d1f48992d218b5e1cdd6743f95c099027f514cd12",
+  "candidate_sha256": "5a0b6f46d7b57de534f9bec8e721e206c02748776ac325a15299ce2af9a91070",
+  "historical_route_sha256": "27963df19c04077883a4b50d211902b312d08d73929359d43f590ae6dedd34fc",
+  "reason": "I approve replaying the actual earlier candidate with its exact archived route and submitting the corrected Week 1 manuscript after its recorded refusal. I checked the original and revised cell correspondence, the independent numerical examples and the downstream introduction of the required tools. Required homework keeps the classification reasoning and computes it from the training table with NumPy and pandas."
+}

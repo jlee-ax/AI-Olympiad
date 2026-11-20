@@ -1,0 +1,230 @@
+{
+  "candidate_hash": "5a0b6f46d7b57de534f9bec8e721e206c02748776ac325a15299ce2af9a91070",
+  "reviewer": "week1-independent-curriculum-reader",
+  "verdict": "pass",
+  "checks": {
+    "scope": {
+      "verdict": "pass",
+      "cells": [
+        "main/5a7a14b7",
+        "main/4042bdda",
+        "pipeline/cb044aa9"
+      ],
+      "finding": "The course assigns practical Python, named arrays/tables and plots to Week 1. The main problem tests information lost by choosing coordinates. The companion identifies the five original Antique descriptors and unknown targets, then narrows the student calculation to a supervised, fully worked subproblem. KOAI's scope includes practical scikit-learn across the course; this weekly judgment concerns when its API is needed."
+    },
+    "prerequisites": {
+      "verdict": "pass",
+      "cells": [
+        "main/a3f9c114",
+        "main/9d537595",
+        "main/records-principle",
+        "pipeline/2bed1d84",
+        "pipeline/1566ce2a"
+      ],
+      "finding": "Students first see what a feature row, a named column and an axis mean. The required companion then averages training coordinates, groups rows by known class and sums squared coordinate differences. A learner can reconstruct each operation from table selection, arithmetic and NumPy indexing. No library estimator or imputer has to be known to reach the held-out example."
+    },
+    "explanation": {
+      "verdict": "pass",
+      "cells": [
+        "main/bde02238",
+        "main/0a64f981",
+        "pipeline/2bed1d84",
+        "pipeline/nearest-rule",
+        "pipeline/1566ce2a",
+        "pipeline/29a11f88"
+      ],
+      "finding": "The opening relates a real image, its 4×4 foreground count and a coordinate in the flattened array. Descriptive variance and standard deviation explain both denominator and units. The supervised companion defines each class center by its separate training coordinates, derives its squared-distance rule and recomputes a decision boundary after a training value changes."
+    },
+    "independent_task": {
+      "verdict": "pass",
+      "cells": [
+        "main/f574b6b5",
+        "main/4042bdda",
+        "main/summary-exercise-work",
+        "pipeline/d6195f91",
+        "pipeline/06ceb97e"
+      ],
+      "finding": "The required fourth problem supplies unseen rows and selected columns, asks for every equal-projection/different-class pair and a justification for what one extra coordinate can change. Its answer cell is empty. The optional three-feature companion task changes label meanings and asks the learner to produce predictions before opening its validation key."
+    },
+    "alternative_solution": {
+      "verdict": "pass",
+      "cells": [
+        "main/4042bdda",
+        "main/summary-exercise-work",
+        "main/records-challenge",
+        "pipeline/nearest-rule"
+      ],
+      "finding": "Comparing projected rows pairwise and building groups of identical projected tuples both satisfy the stated task. With no retained coordinates, every differing-label pair qualifies. Class scoring may compare squared or Euclidean distances since square root is increasing. The lessons specify observable answers without requiring a particular library estimator."
+    },
+    "workload": {
+      "verdict": "pass",
+      "cells": [
+        "main/ed72400c",
+        "main/4042bdda",
+        "main/deep-leaf-intro",
+        "axes/4ac3bb9a",
+        "pipeline/1845680d",
+        "pipeline/bb177697"
+      ],
+      "finding": "The recovered route assigns 120 class minutes and 300 homework minutes, including 50 minutes of required pipeline sections 1–3. The integrated deep section, axes bridge and device/file extensions are conditional. Class/required allocations and all 231 cell IDs were retained; the arithmetic replaces the estimator within the same unit. Actual learner completion time is unknown."
+    },
+    "answer_visibility": {
+      "verdict": "pass",
+      "cells": [
+        "main/4042bdda",
+        "main/summary-exercise-work",
+        "pipeline/f265b556",
+        "pipeline/worked-score",
+        "pipeline/06ceb97e",
+        "pipeline/device-score-release"
+      ],
+      "finding": "The projection problem gives no implementation or expected answer in its work cell. The pipeline worked example saves predictions first, releases keyed validation answers afterward, and models an error explicitly. In the independent device task the separate key release runs only after the learner provides their predictions. Public teacher materials enable self-study; first attempts by real students were not observed."
+    },
+    "representation": {
+      "verdict": "pass",
+      "cells": [
+        "main/bde02238",
+        "main/f574b6b5",
+        "main/4042bdda",
+        "main/summary-exercise-work"
+      ],
+      "finding": "A two-column projection can merge two images from different classes. The independent task asks for all such row pairs and for the monotonicity argument: rows equal in an enlarged selection were equal on the smaller selection. Full-row evidence versus a new independent population is distinguished. This is an IOAI-relevant representation choice with an elementary Week 1 realization."
+    },
+    "depth_floor": {
+      "verdict": "pass",
+      "cells": [
+        "main/f574b6b5",
+        "main/4042bdda",
+        "main/records-challenge",
+        "pipeline/nearest-rule",
+        "pipeline/1566ce2a"
+      ],
+      "finding": "A learner must calculate a counterexample on new rows and explain an information limit, then apply feature names, missing observations and group denominators. The companion adds a fitted representation whose class labels and squared distances can be reproduced coordinate by coordinate. Correctly running a saved demonstration alone would not satisfy the assigned work."
+    },
+    "depth_ceiling": {
+      "verdict": "pass",
+      "cells": [
+        "main/deep-leaf-intro",
+        "main/28086cfc",
+        "axes/bbd63f75",
+        "pipeline/cb044aa9",
+        "pipeline/2bed1d84"
+      ],
+      "finding": "The course positions estimator interfaces, neural training and advanced recognition later. The class-center rule in the required companion has a finite numerical justification; its exposed formulas create no prerequisite for an optimization framework. The international Antique goal of using unlabeled training records is bounded explicitly. Additional retrieval and geometric derivations are optional."
+    },
+    "downstream_use": {
+      "verdict": "pass",
+      "cells": [
+        "main/records-principle",
+        "main/gallery-principle",
+        "main/4042bdda",
+        "pipeline/67ef140d",
+        "pipeline/worked-holdout"
+      ],
+      "finding": "Matching predictions by identifier and preserving query/candidate order support later original-task evaluation. Selecting available features, fitting from training rows and comparing fixed predictions with held-out truths are prerequisites for later preprocessing, scikit-learn estimator use, evaluation and retrieval. No later-week performance claim follows from this material review."
+    },
+    "revision_alternative": {
+      "verdict": "pass",
+      "cells": [
+        "main/deep-leaf-grid",
+        "main/8e809e64",
+        "pipeline/1566ce2a",
+        "pipeline/f265b556",
+        "pipeline/5c8fe7f9"
+      ],
+      "finding": "Two sources required changes. Keeping the original worked estimator would leave the compulsory pipeline factory outside its assigned week. Dropping modeling altogether would lose the train/test and representation decision. The revision retains the hand calculation and feedback in the existing two sections; the foundation loader and the optional axes book already met their purposes."
+    },
+    "tool_prerequisites": {
+      "verdict": "pass",
+      "cells": [
+        "main/f574b6b5",
+        "main/4042bdda",
+        "main/d942743f",
+        "main/9d537595",
+        "main/catalog-reading-code",
+        "tables/digits-practice-csv",
+        "pipeline/622155d2",
+        "pipeline/1566ce2a",
+        "pipeline/f265b556",
+        "pipeline/5c8fe7f9",
+        "main/8e809e64"
+      ],
+      "finding": "With sklearn estimator/imputer construction denied, the former compulsory companion first failed in cell 1566ce2a. The corrected student route reads UCI digits with load_digits, uses named table/array operations for the class centers, then uses squared differences, argmin and an ID-aligned comparison to reproduce the worked 3/4. The different-row projection task is solvable with loops and indexing; conditional integrated modeling is also arithmetically explicit. The installed data loader is an environment dependency; students need no estimator interface for these outcomes."
+    },
+    "KOAI-01.practical": {
+      "verdict": "pass",
+      "cells": [
+        "main/d942743f",
+        "main/records-principle",
+        "main/records-challenge",
+        "main/records-work"
+      ],
+      "finding": "The worked lookup separates an absent key from a zero class. The independent written and coding prompts vary repeated requests, absent records and normalization rules and ask explicitly how to change for a case-sensitive digit table. A dict and ordered output loop suffice."
+    },
+    "KOAI-02.practical": {
+      "verdict": "pass",
+      "cells": [
+        "main/a3f9c114",
+        "main/9d537595",
+        "main/records-challenge",
+        "main/records-work"
+      ],
+      "finding": "Named columns control selection and order; axis reductions remove different named dimensions. The independent assignment asks for observed counts and per-row/per-feature means, retaining order and representing a wholly missing feature as undefined. A measured zero counts."
+    },
+    "KOAI-03.practical": {
+      "verdict": "pass",
+      "cells": [
+        "main/f574b6b5",
+        "main/catalog-reading",
+        "main/catalog-reading-code",
+        "main/records-challenge",
+        "main/records-work"
+      ],
+      "finding": "Students see frequency and within-group relative frequency, then draw both from a changed group order in Matplotlib and Seaborn and check their units against hand arithmetic. The denominator includes all observed group records. A group having no records can display zero for count; its within-group percentage is undefined."
+    },
+    "demand.representation_decision": {
+      "verdict": "pass",
+      "cells": [
+        "main/bde02238",
+        "main/f574b6b5",
+        "main/4042bdda",
+        "main/summary-exercise-work"
+      ],
+      "finding": "The real two-feature digit collision motivates why a deterministic rule using only those coordinates cannot get both labels right. The independent task requires constructing the conflicting pairs on different values and reasoning about exactly what adding a feature can or cannot change."
+    },
+    "demand.summaries_and_units": {
+      "verdict": "pass",
+      "cells": [
+        "main/e3783955",
+        "main/0a64f981",
+        "main/catalog-reading",
+        "main/records-challenge",
+        "tables/b5362bd2"
+      ],
+      "finding": "The main book distinguishes zero, a missing entry, the number observed, and the scale of a spread measure. The group exercise requires count and percentage, a denominator from the specified population and the two libraries' bars. On real digit rows I preserved one feature's marginal values and changed both class-conditional means by reassigning two rows."
+    },
+    "demand.fitted_rule_and_distance": {
+      "verdict": "pass",
+      "cells": [
+        "pipeline/2bed1d84",
+        "pipeline/nearest-rule",
+        "pipeline/1566ce2a",
+        "pipeline/5c8fe7f9",
+        "pipeline/d6195f91",
+        "pipeline/06ceb97e"
+      ],
+      "finding": "The required pipeline and optional new three-coordinate task separate class membership, missing input, training-only means, prediction, then held-out scoring. My independent program changed one training value and saw a decision flip, while changing only a held-out key left every prediction unchanged and changed the number scored correct. This is a supervised subproblem of the source."
+    },
+    "demand.alignment_and_comparison": {
+      "verdict": "pass",
+      "cells": [
+        "main/gallery-principle",
+        "main/gallery-challenge",
+        "main/records-principle",
+        "axes/retrieval-norm-code",
+        "axes/2442117e"
+      ],
+      "finding": "Requests, class labels, row positions and candidate IDs have different roles. The required gallery exercise changes order, compares increasing similarity with decreasing cost and asks when dot product and cosine disagree. On an independent new vector pair I found raw scores 12 and 5, while cosine favored the second candidate."
+    }
+  }
+}
