@@ -1,24 +1,24 @@
 {
-  "canonical_renderer_sha256": "e62631ee9838e8df81b41618f60af3b97371ae71dd5c5df51a0f7050b4487894",
-  "checked_at_utc": "2026-11-20T12:24:07.008255+00:00",
+  "canonical_renderer_sha256": "7812f594db8638f41e4dedcc72bb4c714c8a4b9ee2317518b669e33223007cff",
+  "checked_at_utc": "2026-11-20T13:26:05.666206+00:00",
   "notebook": "week01_python_tables.ipynb",
-  "revision": "week01-whole-20261120",
+  "revision": "week01-textbook-20261120",
   "historical_tables_revision": "week1-independent-transfer-v2",
   "source_sha256": {
-    "week01_python_tables.ipynb": "424835eaff778235f086f3f79e6a8c0d92b43f0cf1a6add7e094b8fd81d379c0",
-    "teacher-notes.txt": "3e138e3dd00c5f97a166a4a0e51965e9b542d067b4d144bf9109ab21765f8f3b",
-    "week01_python_tables.html": "10f6a1e701aca7ecc0bcafdb902d5bfd969d96b313c7409923a0c44b0d1b7a59",
+    "week01_python_tables.ipynb": "f06880f1a9a20ed4f8fbdc838495817cdbc407c28300f85a7aad40b5fd9dd298",
+    "teacher-notes.txt": "a140e5bf4c960f1ca192068b0cf479db7d963e504349c6b6a4c3afff721c165e",
+    "week01_python_tables.html": "0dd86153efe7d316ff0f5a679fc85a59ca0776862ad82ed4a735b6e8e7b80bfb",
     "data/week1_plants.csv": "fece0473e50b097afa7c2b3e2647c9a6e623bd3d8e009e6ef620151887227639",
     "data/week1_plants_new.csv": "869db97ef7c5f6ccf1020bc435fe831f180e9b9548d722c41c91b63af44d7290",
-    "validate_week01.py": "3de21d0034e105b39457d36011b2b803b7330f62977db492dfaf0aca7de56360"
+    "validate_week01.py": "ed29553bb9493e37f6680a597748fa003bd095b5be14de17417e551daddbcbf5"
   },
   "render_validation": {
     "notebook": "week01_python_tables",
-    "authored_cells_sha256": "92733ac5d4cde048110c898b311a608af697a56d743f4d8ec497ce578e5f5aa3",
-    "code_cells": 33,
+    "authored_cells_sha256": "02d13b3a50e87fee8264015be57858de858e1f479c1954bd4746d181ccdecd16",
+    "code_cells": 36,
     "figures": 5,
-    "output_tables": 12,
-    "math": 107,
+    "output_tables": 14,
+    "math": 59,
     "attached_diagrams": 2,
     "local_resources": [
       "week01_integrated.html"
@@ -30,25 +30,25 @@
   "nbformat_validation": "passed",
   "top_to_bottom_execution": "passed",
   "execution_method": "fresh IPython InProcessKernelManager per run",
-  "execution_seconds": 4.334,
-  "cells": 98,
-  "code_cells": 33,
-  "executed_code_cells": 33,
+  "execution_seconds": 4.779,
+  "cells": 101,
+  "code_cells": 36,
+  "executed_code_cells": 36,
   "error_outputs": 0,
   "actual_function_and_state_assertions": "passed",
   "teacher_modification_key_tests": "passed",
   "independent_fraction_arithmetic": "passed",
   "csv_mask_shape_missing_and_merge_checks": "passed",
   "plot_output_cells": [
-    50,
-    71,
+    49,
+    70,
+    72,
     74,
-    76,
-    77
+    75
   ],
   "plot_output_count": 5,
   "embedded_diagrams": 2,
-  "student_text_meta_removal": "passed",
+  "digits_source_sample_axes_and_data_join": "passed",
   "student_answers": "blank_not_assessed",
   "student_mastery": "not_observed",
   "classroom_timing": "estimated_not_observed",
@@ -68,9 +68,38 @@
   "allocation_scope": "The class blocks and baseline homework range come from the retained historical tables plan.",
   "visual_inspection": "not_performed_by_script",
   "browser_preview": "not_performed_by_script",
+  "digits_dataset": {
+    "loader": "sklearn.datasets.load_digits",
+    "images": 1797,
+    "pixels": 64,
+    "packaged_csv_gz_sha256": "09f66e6debdee2cd2b5ae59e0d6abbb73fc2b0e0185d2e1957e9ebb51e23aa22",
+    "source_rows": [
+      7,
+      2,
+      11
+    ],
+    "class_labels": [
+      7,
+      2,
+      1
+    ],
+    "worked_features": [
+      "pixel_2_3",
+      "pixel_4_4"
+    ],
+    "fresh_rows": [
+      47,
+      10,
+      56,
+      30,
+      21,
+      36
+    ]
+  },
   "packages": {
     "numpy": "2.3.5",
     "pandas": "2.2.3",
+    "scikit-learn": "1.8.0",
     "matplotlib": "3.10.8",
     "seaborn": "0.13.2",
     "jupyterlab": "not installed",
@@ -78,10 +107,10 @@
     "nbformat": "5.11.1",
     "ipykernel": "7.4.0"
   },
-  "notebook_sha256": "424835eaff778235f086f3f79e6a8c0d92b43f0cf1a6add7e094b8fd81d379c0",
+  "notebook_sha256": "f06880f1a9a20ed4f8fbdc838495817cdbc407c28300f85a7aad40b5fd9dd298",
   "persisted_notebook": "unchanged; executed copy held in memory",
-  "html_sha256": "10f6a1e701aca7ecc0bcafdb902d5bfd969d96b313c7409923a0c44b0d1b7a59",
-  "source_attachment_projection_sha256": "64bbcda5f1c3e631cece0108ff2b73138ea0f0c35d807e1843a0be2d50e1c709",
+  "html_sha256": "0dd86153efe7d316ff0f5a679fc85a59ca0776862ad82ed4a735b6e8e7b80bfb",
+  "source_attachment_projection_sha256": "fd83ace90b32564d1c084079c0c276e67cd3fe9b4b4ba5e6d9470d946a792dfe",
   "source_projection_unchanged_by_execution": true,
   "schedules_created": false
 }

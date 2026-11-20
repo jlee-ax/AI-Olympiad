@@ -124,6 +124,26 @@ class DeliveryFaults(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Missing destination anchor"):
             delivery.check_links(page, delivery.LESSON)
 
+    def test_tables_feature_landing_displays_the_actual_named_digit_rows(self):
+        from sklearn.datasets import load_digits
+
+        page = BeautifulSoup((delivery.LESSON / "week01_python_tables.html").read_text(), "html.parser")
+        landing = page.find(id="cell-id=3468f4e4")
+        self.assertIsNotNone(landing)
+        table = landing.select_one(".jp-OutputArea-output table")
+        self.assertIsNotNone(table, "The direct feature lesson must display the digit rows as a table.")
+        fields = ["pixel_4_4", "pixel_2_3", "target"]
+        self.assertEqual([c.get_text(strip=True) for c in table.select("thead tr:first-child th")],
+                         ["", *fields])
+        observed = []
+        for row in table.select("tbody tr"):
+            index = row.find("th", recursive=False)
+            self.assertIsNotNone(index, "A row header must identify the original digit sample.")
+            observed.append((int(index.get_text()), [float(c.get_text()) for c in row.find_all("td", recursive=False)]))
+        digits = load_digits(as_frame=True).frame
+        expected = [(i, digits.loc[i, fields].tolist()) for i in [7, 2, 11]]
+        self.assertEqual(observed, expected)
+
     def test_tables_rejects_a_real_histogram_substituted_for_the_scatter_plot(self):
         stem = "week01_python_tables"
         fresh = notebook(stem)
@@ -133,6 +153,24 @@ class DeliveryFaults(unittest.TestCase):
         page = str(delivery.render(stale, stem=stem))
         with self.assertRaisesRegex(ValueError, "freshly rendered data marks differ"):
             delivery.verify(stale, fresh, page, stem=stem)
+
+    def test_tables_rejects_a_real_wrong_title_with_unchanged_colored_marks(self):
+        fresh = notebook("week01_python_tables")
+        stale = copy.deepcopy(fresh)
+        target = picture(stale, "48d931b0")
+        original = Image.open(BytesIO(base64.b64decode(target["image/png"]))).convert("RGB")
+        other = Image.open(BytesIO(base64.b64decode(picture(fresh, "8d3421bb")["image/png"]))).convert("L")
+        # The worked histogram supplies a real but incorrect headline for the paired scatterplot.
+        title = other.crop((0, 0, other.width, round(other.height * 0.06)))
+        wrong = original.copy()
+        wrong.paste(title.resize((wrong.width, round(wrong.height * 0.06)), Image.Resampling.LANCZOS), (0, 0))
+        self.assertEqual(original.convert("HSV").getchannel("S").tobytes(),
+                         wrong.convert("HSV").getchannel("S").tobytes())
+        output = BytesIO()
+        wrong.save(output, format="PNG")
+        target["image/png"] = base64.b64encode(output.getvalue()).decode("ascii")
+        with self.assertRaisesRegex(ValueError, "title or axis labels differ"):
+            delivery.check_plot_correspondence(stale, fresh)
 
     def test_tables_accepts_a_small_renderer_shift(self):
         saved = notebook("week01_python_tables")

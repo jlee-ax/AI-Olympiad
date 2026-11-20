@@ -1,0 +1,453 @@
+{
+  "schema": "week01_native_textbook_review_v1",
+  "date": "2026-11-20",
+  "week": 1,
+  "decision": "accepted",
+  "profile": "development",
+  "eligibility": "development_or_partial",
+  "native_program": "tools/course.mjs",
+  "previous_teaching_edition": "95abb1b930d0d6c07a6b27d3e040b8632bbdcbf1",
+  "action": "revise",
+  "method": "The first author submission retained the four imported, newly written manuscripts. The independent reviewer requested a revision because the prescribed projection exercise was described as optional. The author revised two integrated student cells and one instructor guide cell. The CLI validated that typed edit, reran the four student notebooks and the four teacher functions, and requested a fresh independent review. The four named executable teacher cells copy the actual functions in the integrated guide.",
+  "first_candidate_sha256": "17a6ca8041937761cbb2c607bc5b1077128d7078471a9030819f7efe98a82af3",
+  "typed_edit": {
+    "ok": true,
+    "changes": {
+      "main": {
+        "added": [],
+        "removed": [],
+        "modified": [
+          "4042bdda",
+          "summary-exercise-work"
+        ],
+        "moved": [],
+        "routes_checked": [
+          "required-projection"
+        ]
+      },
+      "teacher": {
+        "added": [],
+        "removed": [],
+        "modified": [
+          "guide-integrated"
+        ],
+        "moved": [],
+        "routes_checked": [
+          "required-projection"
+        ]
+      }
+    }
+  },
+  "source_frozen_before_final_manuscripts": "The source-only grounding was issued once on the preliminary import and repeated on the four revised manuscripts with an identical bound request. All student execution, author proposals and educational reviews below identify the four-book candidate to which they apply.",
+  "program_sha256": {
+    "course.mjs": "faadc717f8c65481ad79be00a15a67ffaac789cbacb1fa7da624781d7dd0ac85",
+    "course_core.mjs": "853ee066f101ddcead1a15c374f205ad9f1748974c3e45dd97fb05fe462fdba6",
+    "course_run.mjs": "5aa6e29f7621432383f19626de736acc8e1a8324eb180eb62a0fbe6f34025c7c",
+    "course_ledger.mjs": "b305b6816c180c17bb9aa38328aace3d5ce71f003893bc2e3dda3970178997ab",
+    "course_diff.py": "61d5bcd02bf70f1bdb9839b26322efd91678fc3c62556d33fd44bd4ae9aa199a",
+    "material_revision.py": "8df6cc482fd1677d7ce5da0e086161e288c4d5c2df1b63388137685ddfdae9a2"
+  },
+  "task_workers": "The examiner had technical delivery duties. The blind solver received only the question inputs and public interfaces. The independent reader also issued the source-grounding and teaching judgments. The author supplied the complete proposed curriculum and explicitly endorsed each captured public author response by digest. All roles were performed outside the HTTP handoff adapter.",
+  "physical_execution": "One fresh separately launched Python process with real socket-free ipykernel per student notebook and teacher probe. The current runtime is the development profile.",
+  "material_bindings": {
+    "integrated": {
+      "published_notebook_sha256": "184316822761ae0e25c23ea6e3fc8fe5b3d99267b059a34df36196282ae7df12",
+      "guide_sha256": "a06b9f270333f5b29ec4e22bfe0a35bf9ca64037584bcc6eb0099f226cb1b308",
+      "authored_cells_sha256": "05abcd8ae271054e0895b63bb04989728c47f6d5545325080147a7e181759697",
+      "original_import_source_sha256": "20176e98555078cb86e2930e3dd83cc76a7c4fb96beb2a9d854637212d8036e4",
+      "authored_manuscript_sha256": "367af91ab07d9a52068312ffaaa826e2351f5f39358c5592cb80fd4be2b71f6d"
+    },
+    "tables": {
+      "published_notebook_sha256": "f06880f1a9a20ed4f8fbdc838495817cdbc407c28300f85a7aad40b5fd9dd298",
+      "authored_cells_sha256": "02d13b3a50e87fee8264015be57858de858e1f479c1954bd4746d181ccdecd16",
+      "guide_sha256": "a140e5bf4c960f1ca192068b0cf479db7d963e504349c6b6a4c3afff721c165e",
+      "original_import_source_sha256": "f2cab40f6baa91a41b044ec4bdaf415d5adb0313e9bb165766fdca517f20d639",
+      "authored_manuscript_sha256": "f2cab40f6baa91a41b044ec4bdaf415d5adb0313e9bb165766fdca517f20d639"
+    },
+    "axes": {
+      "published_notebook_sha256": "6e1fd7c838d2c959beba3475de75c5bda90cd4d80cd2a03f42f8ca8ed4a4d986",
+      "authored_cells_sha256": "20b973b2a908122d34352b747f4a739c79d472f046cae7ee404c1178dbfed5e0",
+      "guide_sha256": "a6037da0d1e4e7bf1409376f444e06c24c6c5ee719d87a4f01848a43089e8d3b",
+      "original_import_source_sha256": "3fdbfa1685573eae1c3eb70e782d575ae95ab5c2d68f2e044423efc86a4bf560",
+      "authored_manuscript_sha256": "3fdbfa1685573eae1c3eb70e782d575ae95ab5c2d68f2e044423efc86a4bf560"
+    },
+    "pipeline": {
+      "published_notebook_sha256": "f09ffd3643a26795e35bc8905472f0cc697fed2cce4b700ff8f4dc660316c879",
+      "authored_cells_sha256": "14fd5ad8ebc87d48dee8a9282ba7a7136f8f79e105e9e48155fd6ebe2caaaa79",
+      "guide_sha256": "62dc02c77f5f0f70b98212c831dbebecf7997d3dd9c1a95415826b146266cafa",
+      "original_import_source_sha256": "f09ffd3643a26795e35bc8905472f0cc697fed2cce4b700ff8f4dc660316c879",
+      "authored_manuscript_sha256": "f09ffd3643a26795e35bc8905472f0cc697fed2cce4b700ff8f4dc660316c879"
+    }
+  },
+  "source_of_teacher_functions": "lessons/week01/week01_integrated_teacher.md",
+  "native_import_sha256": "233005f4f855eaeafa69ee9b6057e93f2beb59a832ec53d765b23a9b14c2dbef",
+  "candidate_sha256": "594de3c20a90b79d826317361dcfc19124939f85fda80d948d524f59228dab9f",
+  "native_context_sha256": "f2585d37d371e138ca3baf4ff1f2c9b4136bfa3f7d3a438f23a877faf372ee76",
+  "raw_author_response_sha256": "f876d6e17c15ac347aa830f6ce30b462cec4e8d64b8770113794bf2ebe151343",
+  "route_file_sha256": "27963df19c04077883a4b50d211902b312d08d73929359d43f590ae6dedd34fc",
+  "route_class_minutes": 120,
+  "route_homework_minutes": 300,
+  "governing_week_one_sha256": "d2ef80f81bff23fe02819fb70c9c07b55a5075fa1b7ec6d3fa53cbefd4dd3298",
+  "official_primary_capture_sha256": "1b32b7327678997f8329319138f44eeff554854810b2c4d698aa9de744b7c508",
+  "visibility_of_grading_cases": "The questions, answers and complete journal were kept in private scratch. This report contains only identifiers, counts and digests.",
+  "assessment_file_sha256": "0700d1679571b1a6d1558f3410b1296ca15ddebe091ab127db7fd4795b2cf5a6",
+  "runtime_sha256": "4bf916b9f173677ea45209484f5291b1404b8f530d7d4c2be6399b44a6e24b44",
+  "named_external_responses": [
+    {
+      "role": "assessor",
+      "worker_id": "week1-independent-reader",
+      "authored_by": "week1-independent-reader",
+      "request_sha256": "a102f015ffcac7f7718c3f6abeb951ced875f77cd9d74d4345e3cb0589c7c046",
+      "response_file_sha256": "8f91493b39b0712d33e69626a1487a6b7c5f54ac02cc35dca6a5388dbcc892ae"
+    },
+    {
+      "role": "author",
+      "worker_id": "week1-author",
+      "authored_by": "week1-textbook-author",
+      "request_sha256": "1605841eb3854b35fda81cdb4bb9f163e605c378e4540c0f2349f23742e0fd72",
+      "response_file_sha256": "962cb66d961d6011f900f4b6e24d71bdd0338b7ace550e2260004701c2937b69"
+    },
+    {
+      "role": "author",
+      "worker_id": "week1-author",
+      "authored_by": "week1-textbook-author",
+      "request_sha256": "c4532132901d011c9eaf67efb082c7106994be7ce0487f599683a02b8c068977",
+      "response_file_sha256": "f876d6e17c15ac347aa830f6ce30b462cec4e8d64b8770113794bf2ebe151343"
+    },
+    {
+      "role": "examiner",
+      "worker_id": "week1-separate-examiner",
+      "authored_by": "week1-separate-examiner",
+      "request_sha256": "c79f6873adb03d3f9361d4cedef17803d871117029bd7ba27eaab1f1cfc18ddc",
+      "response_file_sha256": "663a176a716d62d9b198e091515be23d4a42dd78a8add3d8e8abb43e03756d16"
+    },
+    {
+      "role": "ground",
+      "worker_id": "week1-independent-reader",
+      "authored_by": "week1-independent-reader",
+      "request_sha256": "fb8a90b1b232e4a350e78c582629aa20766965b7cb8abd43ccb6d03f8c3062b5",
+      "response_file_sha256": "d9a3f9b0aa941e2ca949366a2d2c3c5db57fd070e1a0ec1380c03a5321b644b6"
+    },
+    {
+      "role": "reviewer",
+      "worker_id": "week1-independent-reader",
+      "authored_by": "week1-independent-reader",
+      "request_sha256": "2efdbcc7df94a754484f58beaa05b97cbacd7dfa9ddc1d1aab4f323adb9b0608",
+      "response_file_sha256": "e7082a45346602e15510c57293a9bf56ec670906a7ffed2299a013250f8f6759"
+    },
+    {
+      "role": "reviewer",
+      "worker_id": "week1-independent-reader",
+      "authored_by": "week1-independent-reader",
+      "request_sha256": "553ecdee0f5edbeccef016349ad9b8aea5fd104e85e6fe35d280e11a54823a16",
+      "response_file_sha256": "d4578c93cfc981fa67ec1a523bb9f8e44cb772d3e1d119d1f0f399b0f1f60329"
+    }
+  ],
+  "native_phases": [
+    {
+      "id": 2,
+      "kind": "grounded",
+      "attempt": 1,
+      "native_context_sha256": "61ef3654f8125fa1552bf4eaf9ec5f9cdaa31d2f87b09a3f4ee1d9a1c59714ef",
+      "demands": [
+        "representation_decision",
+        "summaries_and_units",
+        "fitted_rule_and_distance",
+        "alignment_and_comparison"
+      ]
+    },
+    {
+      "id": 3,
+      "kind": "grounded",
+      "attempt": 1,
+      "native_context_sha256": "f2585d37d371e138ca3baf4ff1f2c9b4136bfa3f7d3a438f23a877faf372ee76",
+      "demands": [
+        "representation_decision",
+        "summaries_and_units",
+        "fitted_rule_and_distance",
+        "alignment_and_comparison"
+      ]
+    },
+    {
+      "id": 4,
+      "kind": "authored",
+      "attempt": 1,
+      "native_context_sha256": "f2585d37d371e138ca3baf4ff1f2c9b4136bfa3f7d3a438f23a877faf372ee76",
+      "candidate_sha256": "17a6ca8041937761cbb2c607bc5b1077128d7078471a9030819f7efe98a82af3"
+    },
+    {
+      "id": 5,
+      "kind": "executed",
+      "attempt": 1,
+      "native_context_sha256": "f2585d37d371e138ca3baf4ff1f2c9b4136bfa3f7d3a438f23a877faf372ee76",
+      "candidate_sha256": "17a6ca8041937761cbb2c607bc5b1077128d7078471a9030819f7efe98a82af3",
+      "probes": {
+        "transfer": {
+          "passed": 6,
+          "total": 6
+        },
+        "KOAI-01.practical": {
+          "passed": 5,
+          "total": 5
+        },
+        "KOAI-02.practical": {
+          "passed": 6,
+          "total": 6
+        },
+        "KOAI-03.practical": {
+          "passed": 7,
+          "total": 7
+        }
+      },
+      "case_families": {
+        "normal": 5,
+        "invariant": 5,
+        "sensitive": 4,
+        "boundary": 10
+      }
+    },
+    {
+      "id": 7,
+      "kind": "rejected",
+      "attempt": 1,
+      "native_context_sha256": "f2585d37d371e138ca3baf4ff1f2c9b4136bfa3f7d3a438f23a877faf372ee76",
+      "candidate_sha256": "17a6ca8041937761cbb2c607bc5b1077128d7078471a9030819f7efe98a82af3",
+      "verdict": "revise",
+      "review_checks": {
+        "scope": "pass",
+        "prerequisites": "pass",
+        "explanation": "pass",
+        "independent_task": "revise",
+        "alternative_solution": "pass",
+        "workload": "pass",
+        "answer_visibility": "pass",
+        "representation": "pass",
+        "depth_floor": "revise",
+        "depth_ceiling": "pass",
+        "downstream_use": "pass",
+        "revision_alternative": "revise",
+        "KOAI-01.practical": "pass",
+        "KOAI-02.practical": "pass",
+        "KOAI-03.practical": "pass",
+        "demand.representation_decision": "revise",
+        "demand.summaries_and_units": "pass",
+        "demand.fitted_rule_and_distance": "pass",
+        "demand.alignment_and_comparison": "pass"
+      }
+    },
+    {
+      "id": 8,
+      "kind": "authored",
+      "attempt": 2,
+      "native_context_sha256": "f2585d37d371e138ca3baf4ff1f2c9b4136bfa3f7d3a438f23a877faf372ee76",
+      "candidate_sha256": "594de3c20a90b79d826317361dcfc19124939f85fda80d948d524f59228dab9f"
+    },
+    {
+      "id": 9,
+      "kind": "executed",
+      "attempt": 2,
+      "native_context_sha256": "f2585d37d371e138ca3baf4ff1f2c9b4136bfa3f7d3a438f23a877faf372ee76",
+      "candidate_sha256": "594de3c20a90b79d826317361dcfc19124939f85fda80d948d524f59228dab9f",
+      "probes": {
+        "transfer": {
+          "passed": 6,
+          "total": 6
+        },
+        "KOAI-01.practical": {
+          "passed": 5,
+          "total": 5
+        },
+        "KOAI-02.practical": {
+          "passed": 6,
+          "total": 6
+        },
+        "KOAI-03.practical": {
+          "passed": 7,
+          "total": 7
+        }
+      },
+      "case_families": {
+        "normal": 5,
+        "invariant": 5,
+        "sensitive": 4,
+        "boundary": 10
+      }
+    },
+    {
+      "id": 10,
+      "kind": "accepted",
+      "attempt": 2,
+      "native_context_sha256": "f2585d37d371e138ca3baf4ff1f2c9b4136bfa3f7d3a438f23a877faf372ee76",
+      "candidate_sha256": "594de3c20a90b79d826317361dcfc19124939f85fda80d948d524f59228dab9f",
+      "verdict": "pass",
+      "review_checks": {
+        "scope": "pass",
+        "prerequisites": "pass",
+        "explanation": "pass",
+        "independent_task": "pass",
+        "alternative_solution": "pass",
+        "workload": "pass",
+        "answer_visibility": "pass",
+        "representation": "pass",
+        "depth_floor": "pass",
+        "depth_ceiling": "pass",
+        "downstream_use": "pass",
+        "revision_alternative": "pass",
+        "KOAI-01.practical": "pass",
+        "KOAI-02.practical": "pass",
+        "KOAI-03.practical": "pass",
+        "demand.representation_decision": "pass",
+        "demand.summaries_and_units": "pass",
+        "demand.fitted_rule_and_distance": "pass",
+        "demand.alignment_and_comparison": "pass"
+      }
+    }
+  ],
+  "sqlite_phase_counts": {
+    "blind": 1,
+    "design": 1,
+    "ground": 2,
+    "author": 2,
+    "kernel": 2,
+    "review": 2,
+    "diff": 1
+  },
+  "fresh_kernel_processes": [
+    {
+      "work": "student-0",
+      "returncode": 0,
+      "cells": 60,
+      "code_cells": 30
+    },
+    {
+      "work": "student-1",
+      "returncode": 0,
+      "cells": 101,
+      "code_cells": 36
+    },
+    {
+      "work": "student-2",
+      "returncode": 0,
+      "cells": 35,
+      "code_cells": 16
+    },
+    {
+      "work": "student-3",
+      "returncode": 0,
+      "cells": 35,
+      "code_cells": 16
+    },
+    {
+      "work": "probe-0",
+      "returncode": 0,
+      "cells": 9,
+      "code_cells": 5
+    },
+    {
+      "work": "probe-1",
+      "returncode": 0,
+      "cells": 9,
+      "code_cells": 5
+    },
+    {
+      "work": "probe-2",
+      "returncode": 0,
+      "cells": 9,
+      "code_cells": 5
+    },
+    {
+      "work": "probe-3",
+      "returncode": 0,
+      "cells": 9,
+      "code_cells": 5
+    },
+    {
+      "work": "student-0",
+      "returncode": 0,
+      "cells": 60,
+      "code_cells": 30
+    },
+    {
+      "work": "student-1",
+      "returncode": 0,
+      "cells": 101,
+      "code_cells": 36
+    },
+    {
+      "work": "student-2",
+      "returncode": 0,
+      "cells": 35,
+      "code_cells": 16
+    },
+    {
+      "work": "student-3",
+      "returncode": 0,
+      "cells": 35,
+      "code_cells": 16
+    },
+    {
+      "work": "probe-0",
+      "returncode": 0,
+      "cells": 9,
+      "code_cells": 5
+    },
+    {
+      "work": "probe-1",
+      "returncode": 0,
+      "cells": 9,
+      "code_cells": 5
+    },
+    {
+      "work": "probe-2",
+      "returncode": 0,
+      "cells": 9,
+      "code_cells": 5
+    },
+    {
+      "work": "probe-3",
+      "returncode": 0,
+      "cells": 9,
+      "code_cells": 5
+    }
+  ],
+  "final_probe_totals": {
+    "transfer": {
+      "passed": 6,
+      "total": 6
+    },
+    "KOAI-01.practical": {
+      "passed": 5,
+      "total": 5
+    },
+    "KOAI-02.practical": {
+      "passed": 6,
+      "total": 6
+    },
+    "KOAI-03.practical": {
+      "passed": 7,
+      "total": 7
+    }
+  },
+  "final_review_check_count": 19,
+  "resume": {
+    "scope": [
+      1
+    ],
+    "completed": [
+      1
+    ],
+    "calls": 0,
+    "eligibility": "development_or_partial"
+  },
+  "status": {
+    "scope": [
+      1
+    ],
+    "completed": [
+      1
+    ],
+    "calls": 0,
+    "eligibility": "development_or_partial"
+  },
+  "first_review_finding": "The central task to find all different-class collisions under a feature projection was presented as an additional exercise. The author made it the fourth required problem and revised its learner answer cell and instructor note."
+}

@@ -1,0 +1,152 @@
+{
+  "schema": "independent-week01-korean-textbook-rejection-v1",
+  "reviewer": "week1-independent-reader",
+  "review_date": "2026-11-20",
+  "baseline_commit": "95abb1b930d0d6c07a6b27d3e040b8632bbdcbf1",
+  "verdict": "revise",
+  "predecessor_receipt_sha256": "929346b594cebc651fd341af2fc8497c925e65ce671d0035ad47115f5fc93bbf",
+  "frozen_criteria_sha256": "890970836d8271d7adf991ba317b860c7281b87f4d048273f927f6703f1925f3",
+  "scope": "English independent review of the four Korean learner manuscripts and their four teaching keys at the rejected technical predecessor. The examples below were solved by the reviewer and compared with passages in that revision. Earlier file execution, hashing and worked technical checks do not establish textbook readability or coverage of the requested central reasoning. Each member requires editorial or subject revision. No learner performance or classroom experience was observed.",
+  "bindings": {
+    "week01_integrated.ipynb": {
+      "verdict": "revise",
+      "authored_cells_sha256": "1b8dd2d8d703a96f9844a194aac56ea850f72fb726c3048de76ae5b69a51984e",
+      "raw_notebook_sha256": "f11eb1463bef51367c9faacd176cd5eec3a987455391cc404817bf0cc785f167",
+      "guide_path": "lessons/week01/week01_integrated_teacher.md",
+      "guide_sha256": "4d6e795f019dd67119c36f655b0c19586a29c5d7369246eaafaa3f70a3dfcdf6",
+      "student_cell_count": 57,
+      "subject_review": {
+        "teaching": {
+          "cells": [
+            "ed72400c",
+            "5a7a14b7",
+            "0a64f981",
+            "f574b6b5"
+          ],
+          "finding": "The title frames the subject as extracting an answer row. The main example alternately identifies the plant pot, the record and the plotted mark as the observational unit. Its introductory use of ID does not explain what the identifier distinguishes or why it differs from a position. The variance paragraph describes subtraction from the mean in the wrong direction. The displayed signs actually require value minus mean. The code and printed variance still agree because squaring erases that error."
+        },
+        "application": {
+          "cells": [
+            "0a64f981",
+            "gallery-challenge",
+            "4042bdda"
+          ],
+          "case": "For the independent sequence 2,4,6, compute both signed deviations and variance from the prose. Then determine whether a row mean can identify which of the two locations is larger in several two-location observations with the same total.",
+          "observed": "The two possible subtractions produce [-2,0,2] and [2,0,-2] with the same variance 8/3. Following the paragraph literally reverses the displayed signs. All of (2,6), (4,4), (6,2) have mean 4 while the last alone satisfies first coordinate greater than second. The core gallery function can return every correct ID without exposing this insufficiency. The optional plant model does contain a valid information-loss example. The required route and exit task did not test the representation question as their central purpose."
+        }
+      }
+    },
+    "week01_python_tables.ipynb": {
+      "verdict": "revise",
+      "authored_cells_sha256": "92733ac5d4cde048110c898b311a608af697a56d743f4d8ec497ce578e5f5aa3",
+      "raw_notebook_sha256": "424835eaff778235f086f3f79e6a8c0d92b43f0cf1a6add7e094b8fd81d379c0",
+      "guide_path": "lessons/week01/teacher-notes.txt",
+      "guide_sha256": "3e138e3dd00c5f97a166a4a0e51965e9b542d067b4d144bf9109ab21765f8f3b",
+      "student_cell_count": 98,
+      "subject_review": {
+        "teaching": {
+          "cells": [
+            "8f7fc067",
+            "409e1675",
+            "82e8a039",
+            "fa10c459",
+            "9ce91662"
+          ],
+          "finding": "The opening sends learners from reading a table cell to an answer. It introduces averaging by combining physical rods, uses vague dispersion wording, and makes the unconditional claim that a scatterplot point is one pot. This hides the distinction between each record contributing a coordinate pair and the number of distinct visible marks. The derivation of descriptive variance, explicit units and conditional observed-water mean later in the book are mathematically usable."
+        },
+        "application": {
+          "cells": [
+            "fa10c459",
+            "5d9473df",
+            "6075b8e8",
+            "08e374f4"
+          ],
+          "case": "Plot the three independent ordered measurement pairs (2,10), (4,10), (2,10), then explain what one can recover from the chart alone. Separately compare a known-value mean with the full mean when one measurement is unavailable.",
+          "observed": "The three rows occupy exactly two coordinates. Two equal second coordinates need not overlap unless their first coordinates also agree. The introductory scatter example's one-pot wording does not answer this. A much later group strip plot correctly describes a categorical overlap. The missing-data section correctly says the complete six-row mean is undetermined and is retained as a positive control; it does not justify treating a convenience collection as a population sample."
+        }
+      }
+    },
+    "week01_axes_linear_bridge.ipynb": {
+      "verdict": "revise",
+      "authored_cells_sha256": "fa8a1154a136c1b46c7ba12c761eeb61b860dd77f532700691dba584a0d8109b",
+      "raw_notebook_sha256": "dc476a122fc1eb6c4902b95583a699c69a8cb92bf39055a5b1825905a3fea321",
+      "guide_path": "lessons/week01/week01_axes_linear_bridge_teacher.md",
+      "guide_sha256": "54d13d015511632475cdf8067f44e42faf4b9af966c6bfbd2cbbaf9773117b4b",
+      "student_cell_count": 35,
+      "subject_review": {
+        "teaching": {
+          "cells": [
+            "06c67cfc",
+            "09b00247",
+            "e81d6244",
+            "39e31964"
+          ],
+          "finding": "The bridge opens with a fictional plant photography schedule and an unexplained ID. Its literal reading of X[1,0] equates the numeric count 1 with a physical leaf. An array entry is a feature measurement; the data never identify that individual leaf. The story and output names precede the actual vector/matrix argument and therefore obscure what a weighted sum retains. The later index-contraction check and cosine normalization do teach valid mathematics."
+        },
+        "application": {
+          "cells": [
+            "e81d6244",
+            "39e31964",
+            "bf96efdf",
+            "retrieval-norm-text"
+          ],
+          "case": "Apply coefficients (1,2) to alternative count vectors (1,2) and (3,1), then determine from the score alone how many of the first type are present and which physical item was counted.",
+          "observed": "Both weighted sums are 5 although the first components differ, and neither input identifies any individual item. The stated image-per-leaf convention predicts a numerical score but does not support the literal physical interpretation of X[1,0]. The later normalization section supplies a sound, separate demonstration of how vector length changes raw versus cosine scores; the defect is in the first teaching explanation and its reason for introducing matrix products."
+        }
+      }
+    },
+    "week01_problem_pipeline.ipynb": {
+      "verdict": "revise",
+      "authored_cells_sha256": "8640298033591f3e5359fd41c9c4770c39684d887dddf56a6d1aa7488e19c55f",
+      "raw_notebook_sha256": "ef54282eaec51bccf02528c2b2b418f92d56a1d09934baa7d386a29be408d3e3",
+      "guide_path": "lessons/week01/week01_problem_pipeline_teacher.md",
+      "guide_sha256": "de956f036232addf8d2529c0fd342ea90f04876f428797e6bf2479a6051fa121",
+      "student_cell_count": 34,
+      "subject_review": {
+        "teaching": {
+          "cells": [
+            "1845680d",
+            "cb044aa9",
+            "2bed1d84",
+            "29a11f88",
+            "ecb6bc7a",
+            "3d1ecace"
+          ],
+          "finding": "The headings ask whose row, what answer line, which two points the model learned, and which three artworks go on which lines. An unknown label, a missing measured feature, an individual example, the training-derived fill value and a class centroid have different mathematical roles, but the opening directions substitute ‘known works’ and ‘learned value’ for several of these. The solution misnames a prediction-to-record permutation error as an error in which artwork was selected. The worked square distances and the warnings about validation reuse are sound."
+        },
+        "application": {
+          "cells": [
+            "2bed1d84",
+            "67ef140d",
+            "bb177697",
+            "d6195f91"
+          ],
+          "case": "Compare two one-dimensional classes with observations (0,18) and (4,6). For a new value 1 decide whether nearest-example and nearest-centroid rules agree, and explain why the class mean is the representative for squared error.",
+          "observed": "The class centers are 9 and 5; their squared distances to 1 are 64 and 16, so the second class is selected. The nearest individual observation is 0 in the first class. A right answer requires specifying which fitted representative and loss are in use. The worked lesson shows the arithmetic for a different dataset but the independent prompt accepts ‘one thing the model learned’ for any model and does not pose or settle the squared-error reason. Its file-permutation section cannot distinguish a correct mathematical explanation from successful formatting."
+        }
+      }
+    }
+  },
+  "source_basis": [
+    {
+      "url": "https://kitpa.org/koai/2027",
+      "scope": "Current Korean organizer's middle-school scope; not the full international syllabus."
+    },
+    {
+      "url": "https://kitpa.org/files/36",
+      "scope": "The 2026 high-school reference sample is reference material and has no published answer key."
+    },
+    {
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/scatterp.htm",
+      "scope": "Paired as-recorded variables form a bivariate scatterplot."
+    },
+    {
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.var.html",
+      "scope": "Squared differences from the mean and the descriptive denominator."
+    },
+    {
+      "url": "https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestCentroid.html",
+      "scope": "A fitted class representative differs from an individual training observation."
+    }
+  ]
+}

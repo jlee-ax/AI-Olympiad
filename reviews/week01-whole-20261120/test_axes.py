@@ -2,6 +2,7 @@
 
 import contextlib
 import io
+from itertools import permutations
 import json
 from pathlib import Path
 import re
@@ -23,7 +24,7 @@ class AxesBridgeTests(unittest.TestCase):
         cls.ns = {"np": np}
         with contextlib.redirect_stdout(io.StringIO()):
             for cell_id in (
-                "ba428b91", "e9bd32e9", "3950021e", "retrieval-norm-code",
+                "ba428b91", "5ebb633b", "ae4dc17f", "cb88ba54", "e9bd32e9", "3950021e", "retrieval-norm-code",
                 "d81386f3", "sequence-mean-code", "ec433d3b", "07c93362",
             ):
                 exec(compile(cls.source[cell_id], cell_id, "exec"), cls.ns)
@@ -44,8 +45,9 @@ class AxesBridgeTests(unittest.TestCase):
                     if cell["cell_type"] == "code":
                         exec(compile(source, cell["id"], "exec"), fresh)
                 if anchor == "bridge-axes":
-                    self.assertEqual(fresh["X"][1, 0], 1)
-                    self.assertEqual(fresh["one_plant"] @ fresh["weight"], 4)
+                    self.assertEqual(fresh["image_ids"][1], 52)
+                    self.assertEqual(fresh["X"][1, 0], 60)
+                    self.assertEqual(fresh["first_image"] @ fresh["average_weights"], 50)
                 else:
                     self.assertEqual(fresh["matched_ids"].tolist(), [19, 7])
                     self.assertEqual(fresh["counts"].ravel().tolist(), [2, 3])
@@ -61,24 +63,48 @@ class AxesBridgeTests(unittest.TestCase):
         by_rule = self.ns["by_rule"]
         np.testing.assert_array_equal(np.diag(by_element), np.diag(by_rule))
         self.assertIn("[1, 0]", self.source["25e2b1ff"])
-        self.assertEqual((by_element[1, 0], by_rule[1, 0]), (0, 1))
+        self.assertEqual((by_element[1, 0], by_rule[1, 0]), (0, 60))
 
-    def test_packing_follows_kit_and_item_names(self):
-        pack = self.ns["shipping_manifest"]
-        names, kits, orders, recipes, items = (
-            self.ns[key] for key in
-            ("class_ids", "order_columns", "X_new", "recipe_rows", "shipping_columns")
-        )
-        expected = [("솔반", 6, 12), ("별반", 5, 3), ("달반", 3, 9)]
-        self.assertEqual(pack(names, kits, orders, recipes, items), expected)
-        self.assertEqual(pack(names, kits[::-1], orders[:, ::-1], recipes[::-1], items), expected)
-        self.assertEqual(pack(names, kits, orders[:, ::-1], recipes, items)[0], ("솔반", 9, 3))
+    def test_grayscale_matrix_uses_named_axes_and_signed_contrast(self):
+        image_ids, x, w, y = (self.ns[name] for name in ("image_ids", "X", "W", "Y"))
+        np.testing.assert_array_equal(image_ids, [17, 52, 8])
+        np.testing.assert_array_equal(x[:, 0], [20, 60, 40])
+        np.testing.assert_array_equal(w, [[.5, -1], [.5, 1]])
+        np.testing.assert_array_equal(y, [[50, 60], [45, -30], [80, 80]])
+        # Equal means alone cannot reveal reversed input columns.
+        wrong = x[:, ::-1] @ w
+        np.testing.assert_array_equal(wrong[:, 0], y[:, 0])
+        np.testing.assert_array_equal(wrong[:, 1], -y[:, 1])
+        np.testing.assert_array_equal(x[:, ::-1] @ w[::-1], y)
+        with self.assertRaises(ValueError):
+            x @ x
 
-        # Three input features and two requested outputs prevent a square-only solution.
-        fresh = [("B", {"glass": 3, "tube": 0}), ("A", {"glass": 1, "tube": 2}),
-                 ("C", {"glass": 2, "tube": 4})]
-        self.assertEqual(pack(["Q9"], ["C", "A", "B"], [[2, 1, 3]], fresh,
-                              ["tube", "glass"]), [("Q9", 10, 14)])
+    def test_rgb_outputs_follow_the_named_channels_and_image_ids(self):
+        transform = self.ns["image_features"]
+        ids, names, x = (self.ns[k] for k in ("image_ids_new", "channel_names", "X_new"))
+        self.assertEqual(x.dtype, np.uint8)
+        expected = [[12, 8], [-9, 7], [5, 5]]
+        for order in permutations(range(3)):
+            ordered = list(order)
+            result = transform(ids, [names[i] for i in ordered], x[:, ordered])
+            self.assertEqual([r[0] for r in result], [31, 7, 19])
+            np.testing.assert_allclose([r[1:] for r in result], expected)
+        reversed_rows = transform(ids[::-1], names, x[::-1])
+        np.testing.assert_allclose(reversed_rows, [[19, 5, 5], [7, -9, 7], [31, 12, 8]])
+        # Headers kept while the numeric columns move.
+        stale = transform(ids, names, x[:, ::-1])
+        self.assertAlmostEqual(stale[0][1], 6)
+        self.assertAlmostEqual(stale[0][2], 8)
+
+    def test_zero_channel_unsigned_subtraction_and_missing_channel(self):
+        transform = self.ns["image_features"]
+        fresh = np.array([[0, 0, 255], [1, 3, 0]], dtype=np.uint8)
+        result = transform([2, 71], ["G", "R", "B"], fresh)
+        np.testing.assert_allclose(result, [[2, -255, 85], [71, 3, 4 / 3]])
+        for labels, values in ((["R", "B"], [[0, 255]]),
+                               (["R", "B", "B"], [[0, 2, 255]])):
+            with self.subTest(labels=labels), self.assertRaises(ValueError):
+                transform([2], labels, values)
 
     def search(self, rule, *, gallery=None, gallery_ids=None, tokens=None,
                stored=None, requested=None):
@@ -92,10 +118,10 @@ class AxesBridgeTests(unittest.TestCase):
         )
 
     def test_score_contract_and_external_query_order(self):
-        self.assertEqual(self.search("direction"), [90, 53])
-        self.assertEqual(self.search("strength"), [90, 8])
-        self.assertEqual(self.search("direction", requested=[61, 22]), [53, 90])
-        self.assertEqual(self.search("strength", tokens=self.ns["query_tokens_new"][::-1],
+        self.assertEqual(self.search("cosine"), [90, 53])
+        self.assertEqual(self.search("dot"), [90, 8])
+        self.assertEqual(self.search("cosine", requested=[61, 22]), [53, 90])
+        self.assertEqual(self.search("dot", tokens=self.ns["query_tokens_new"][::-1],
                                      stored=self.ns["q_ids_new"][::-1]), [90, 8])
 
         # Read the change students actually see in 6B.
@@ -106,9 +132,9 @@ class AxesBridgeTests(unittest.TestCase):
         ids = np.append(self.ns["g_ids_new"], ident)
         gallery = np.vstack((self.ns["gallery_new"], coords))
         for order in (list(range(len(ids))), list(reversed(range(len(ids))))):
-            self.assertEqual(self.search("direction", gallery=gallery[order], gallery_ids=ids[order]),
+            self.assertEqual(self.search("cosine", gallery=gallery[order], gallery_ids=ids[order]),
                              [90, 6])
-            self.assertEqual(self.search("strength", gallery=gallery[order], gallery_ids=ids[order]),
+            self.assertEqual(self.search("dot", gallery=gallery[order], gallery_ids=ids[order]),
                              [90, 8])
 
     def test_read_the_declared_score_precision_before_breaking_a_tie(self):
@@ -116,8 +142,8 @@ class AxesBridgeTests(unittest.TestCase):
         self.assertIn("원시 내적", specification)
         self.assertIn("코사인 유사도", specification)
         args = {"tokens": [[1]], "stored": [31], "requested": [31], "gallery_ids": [70, 5]}
-        self.assertEqual(self.search("direction", gallery=[[1, 0], [1, .0002]], **args), [5])
-        self.assertEqual(self.search("direction", gallery=[[1, 0], [1, .002]], **args), [70])
+        self.assertEqual(self.search("cosine", gallery=[[1, 0], [1, .0002]], **args), [5])
+        self.assertEqual(self.search("cosine", gallery=[[1, 0], [1, .002]], **args), [70])
 
     def test_lookup_counts_and_the_average_collision(self):
         pool = self.ns["lookup_and_masked_mean"]
@@ -136,9 +162,9 @@ class AxesBridgeTests(unittest.TestCase):
 
     def test_zero_at_lookup_and_at_search_has_different_consequences(self):
         only_zero = {"tokens": [[4]], "stored": [12], "requested": [12]}
-        self.assertEqual(self.search("strength", **only_zero), [8])
+        self.assertEqual(self.search("dot", **only_zero), [8])
         with self.assertRaises(ValueError):
-            self.search("direction", **only_zero)
+            self.search("cosine", **only_zero)
         for bad_ids in ([[0, 0]], [[-1]], [[5]], [[True, 1]]):
             with self.subTest(bad_ids=bad_ids), self.assertRaises(ValueError):
                 self.ns["lookup_and_masked_mean"](self.ns["token_table_new"], bad_ids)

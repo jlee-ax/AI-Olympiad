@@ -1,17 +1,17 @@
 {
-  "checked_at_utc": "2026-11-20T12:23:59.559124+00:00",
-  "validation_script_sha256": "e7a1535b19baef1ec75f5a555a21ca970be6d0df65bd8e7fb97f6237d0fc0e54",
+  "checked_at_utc": "2026-11-20T13:25:57.092793+00:00",
+  "validation_script_sha256": "f8a63134e838f77d8bd0abc72960347f46bc057e11e92fbffd215ce1d4c25762",
   "source_sha256": {
-    "week01_problem_pipeline.ipynb": "ef54282eaec51bccf02528c2b2b418f92d56a1d09934baa7d386a29be408d3e3",
-    "week01_problem_pipeline.html": "a610e51404a9b01294e8c3c3c341414aa8e92e42d29f533edacdb6db04c7513c",
-    "week01_problem_pipeline_teacher.md": "de956f036232addf8d2529c0fd342ea90f04876f428797e6bf2479a6051fa121",
+    "week01_problem_pipeline.ipynb": "f09ffd3643a26795e35bc8905472f0cc697fed2cce4b700ff8f4dc660316c879",
+    "week01_problem_pipeline.html": "3c7448c098c674186a9cd7c9d2a41629a8b014ea9b40a34e61a38c0f44076d85",
+    "week01_problem_pipeline_teacher.md": "62dc02c77f5f0f70b98212c831dbebecf7997d3dd9c1a95415826b146266cafa",
     "data/pipeline_device_validation.csv": "9939afdd0dd2d06f4ea45d564632e4b3a0740c7bd985e1d73165def043cc36bf",
-    "validate_week01_problem_pipeline.py": "e7a1535b19baef1ec75f5a555a21ca970be6d0df65bd8e7fb97f6237d0fc0e54"
+    "validate_week01_problem_pipeline.py": "f8a63134e838f77d8bd0abc72960347f46bc057e11e92fbffd215ce1d4c25762"
   },
-  "canonical_renderer_sha256": "e62631ee9838e8df81b41618f60af3b97371ae71dd5c5df51a0f7050b4487894",
+  "canonical_renderer_sha256": "7812f594db8638f41e4dedcc72bb4c714c8a4b9ee2317518b669e33223007cff",
   "render_validation": {
     "notebook": "week01_problem_pipeline",
-    "authored_cells_sha256": "8640298033591f3e5359fd41c9c4770c39684d887dddf56a6d1aa7488e19c55f",
+    "authored_cells_sha256": "14fd5ad8ebc87d48dee8a9282ba7a7136f8f79e105e9e48155fd6ebe2caaaa79",
     "code_cells": 16,
     "figures": 0,
     "output_tables": 6,
@@ -28,9 +28,10 @@
   "pandas": "2.2.3",
   "scikit_learn": "1.8.0",
   "execution": "fresh InProcessKernelManager; all code cells sequentially; saved outputs compared",
-  "total_cells": 34,
+  "total_cells": 35,
   "code_cells_executed": 16,
   "normal_and_error_checks": [
+    "official_csv_records_match_the_student_and_teacher_source_examples",
     "fresh_inprocess_sequential_execution_and_saved_outputs",
     "student_answer_cell_is_empty",
     "section_4_ordering_works_with_an_empty_namespace",
@@ -45,11 +46,27 @@
     "same_length_order_header_missing_row_bad_label_extra_column_rejected",
     "independent_new_schema_mean_and_optional_centroid_answer",
     "independent_alternative_tree_is_valid_and_not_forced_to_centroid",
-    "blank_learner_answer_and_feature_only_device_inputs",
+    "blank_learner_answer_and_feature_only_validation_inputs",
     "first_predictions_before_key_id_order_freezing_and_invalid_tables",
     "real_teacher_csv_changed_order_changed_inputs_and_reversed_predictions",
     "source_files_unchanged_by_validation"
   ],
+  "official_source_excerpt": {
+    "repository_commit": "39558e9a639d170bd92de91958fcdc915f670463",
+    "path": "Individual-Contest/Antique/training_set/training_set.csv",
+    "raw_sha256": "99ffffc9972351e91d05a4bf80e5d3c63996aa7231a338959cd49e288c63f11a",
+    "rows_after_header": [
+      1,
+      47,
+      142
+    ],
+    "total_rows": 500,
+    "counts_by_Authenticated": {
+      "-1": 2,
+      "0": 496,
+      "1": 2
+    }
+  },
   "observed_example": {
     "train_imputer": [
       5,
@@ -93,7 +110,7 @@
   },
   "independent_answer_is_centroid_example_not_required_model": true,
   "limits": [
-    "finite synthetic examples; no official Antique data or submission executed",
+    "The three source rows are checked against the pinned official CSV. Model training and ZIP execution use small synthetic examples.",
     "student independent work, actual learning and workload unobserved",
     "ordinary socket Jupyter and Colab not verified",
     "Canonical HTML compared; browser and figure checks have a separate delivery receipt",

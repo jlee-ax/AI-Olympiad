@@ -5,6 +5,7 @@ import io
 import json
 from pathlib import Path
 import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -168,6 +169,136 @@ class WeekOneBindingTests(unittest.TestCase):
             contract_path.write_bytes(original_contract)
             self.assertEqual(bundle.status(copy)["status"], "current")
 
+    def test_other_week_design_does_not_change_week_one_minimum(self):
+        with tempfile.TemporaryDirectory(prefix="week01-design-") as directory:
+            copy = Path(directory)
+            snapshot(copy)
+            path = copy / bundle.COURSE_FILES[2]
+            original = path.read_bytes()
+            for week, expected in ((2, "current"), (1, "stale")):
+                course = json.loads(original)
+                next(row for row in course["weeks"] if row["week"] == week)["minimum"] = "Only reorder row IDs"
+                path.write_text(json.dumps(course), encoding="utf-8")
+                result = bundle.status(copy)
+                self.assertEqual(result["status"], expected)
+                if week == 1:
+                    self.assertEqual(result["changed_course_scope"], [bundle.COURSE_FILES[2] + "#week-1"])
+            path.write_bytes(original)
+
+    def test_pass_without_observed_teaching_and_transfer_is_unresolved(self):
+        with tempfile.TemporaryDirectory(prefix="week01-meaning-") as directory:
+            copy = Path(directory)
+            snapshot(copy)
+            checkpoint_path = copy / bundle.CHECKPOINT
+            frozen = checkpoint_path.read_bytes()
+            for change in ("missing", "unobserved", "uncited", "bare_verdict", "different_predecessor"):
+                with self.subTest(change=change):
+                    checkpoint = json.loads(frozen)
+                    item = next(e for e in checkpoint["evidence"] if e["kind"] == "independent_material_review")
+                    path = copy / item["path"]
+                    original = path.read_bytes()
+                    report = json.loads(original)
+                    entry = next(iter(report["bindings"].values()))
+                    if change == "missing":
+                        entry.pop("subject_review")
+                    elif change == "unobserved":
+                        entry["subject_review"]["application"]["observed"] = ""
+                    elif change == "uncited":
+                        entry["subject_review"]["teaching"]["cells"] = ["no-such-teaching-cell"]
+                    elif change == "bare_verdict":
+                        entry["subject_review"]["teaching"]["finding"] = "pass"
+                        entry["subject_review"]["application"].update(case="pass", observed="pass")
+                    else:
+                        report["rejected_baseline_sha256"] = "0" * 64
+                    path.write_text(json.dumps(report), encoding="utf-8")
+                    item["sha256"] = bundle.digest(path.read_bytes())
+                    checkpoint_path.write_text(json.dumps(checkpoint), encoding="utf-8")
+                    result = bundle.status(copy)
+                    self.assertEqual(result["changed_files"], [])
+                    self.assertEqual(result["review_verdicts"]["overall"], "pass")
+                    self.assertEqual(result["status"], "review_blocked")
+                    path.write_bytes(original)
+                    checkpoint_path.write_bytes(frozen)
+            self.assertEqual(bundle.status(copy)["status"], "current")
+
+    def test_missing_rejected_or_misbound_native_decision_cannot_release(self):
+        with tempfile.TemporaryDirectory(prefix="week01-native-review-") as directory:
+            copy = Path(directory)
+            snapshot(copy)
+            checkpoint_path = copy / bundle.CHECKPOINT
+            original_checkpoint = checkpoint_path.read_bytes()
+            for change in ("missing", "rejected_candidate", "different_guide"):
+                with self.subTest(change=change):
+                    checkpoint = json.loads(original_checkpoint)
+                    entry = next(e for e in checkpoint["evidence"] if e["kind"] == "native_course_review")
+                    path = copy / entry["path"]
+                    original_native = path.read_bytes()
+                    native = json.loads(original_native)
+                    if change == "missing":
+                        checkpoint["evidence"].remove(entry)
+                    elif change == "rejected_candidate":
+                        prior = next(p for p in native["native_phases"] if p["kind"] == "rejected")
+                        self.assertEqual(prior["verdict"], "revise")
+                        native["candidate_sha256"] = prior["candidate_sha256"]
+                    else:
+                        native["material_bindings"]["axes"]["guide_sha256"] = "0" * 64
+                    if change != "missing":
+                        path.write_text(json.dumps(native), encoding="utf-8")
+                        entry["sha256"] = bundle.digest(path.read_bytes())
+                    checkpoint_path.write_text(json.dumps(checkpoint), encoding="utf-8")
+                    result = bundle.status(copy)
+                    self.assertEqual(result["changed_files"], [])
+                    self.assertEqual(result["status"], "stale" if change == "different_guide" else "review_blocked")
+                    path.write_bytes(original_native)
+                    checkpoint_path.write_bytes(original_checkpoint)
+            self.assertEqual(bundle.status(copy)["status"], "current")
+
+    def test_real_predecessor_and_its_passing_technical_receipt_require_new_review(self):
+        with tempfile.TemporaryDirectory(prefix="week01-rejected-commit-") as directory:
+            copy = Path(directory)
+            current = snapshot(copy)
+            policy = current["subject_review"]
+            commit = policy["previous_commit"]
+            def at_commit(name):
+                return subprocess.check_output(["git", "show", commit + ":" + name], cwd=ROOT)
+            technical = json.loads(at_commit(bundle.CHECKPOINT))
+            old_manifest = json.loads(at_commit(bundle.MANIFEST))
+            old = old_manifest["current_release"]
+            names = {*old["files"], *bundle.COURSE_FILES, *(item["path"] for item in technical["evidence"])}
+            for name in names:
+                dest = copy / name
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                dest.write_bytes(at_commit(name))
+            # Use the newly reviewed negative control and actual previously accepted records.
+            # Refresh only the temporary registration so a mere stale hash cannot explain the result.
+            published = bundle.read_json(ROOT / bundle.CHECKPOINT)
+            rejected = next(e for e in published["evidence"] if e["kind"] == "independent_rejected_baseline")
+            technical["evidence"].append(rejected.copy())
+            negative = bundle.read_json(copy / rejected["path"])
+            before = next(e for e in technical["evidence"] if e["kind"] == "independent_material_review")
+            self.assertEqual(negative["predecessor_receipt_sha256"], before["sha256"])
+            self.assertEqual(bundle.read_json(copy / before["path"])["verdict"], "pass")
+            for name, item in negative["bindings"].items():
+                notebook = copy / bundle.LESSON / name
+                self.assertEqual(bundle.digest(notebook.read_bytes()), item["raw_notebook_sha256"])
+                self.assertEqual(bundle.authored_cells_sha256(notebook), item["authored_cells_sha256"])
+                self.assertEqual(bundle.digest((copy / item["guide_path"]).read_bytes()), item["guide_sha256"])
+                ids = {cell["id"] for cell in bundle.read_json(notebook)["cells"]}
+                self.assertTrue(bundle.has_subject_evidence(item["subject_review"], ids))
+            old["subject_review"] = policy
+            _, files, identity = bundle.measure(copy, old)
+            old.update(files=files, course_scope=bundle.course_scope(copy), bundle_sha256=identity)
+            technical["bundle_sha256"] = identity
+            (copy / bundle.MANIFEST).write_text(json.dumps(old_manifest), encoding="utf-8")
+            (copy / bundle.CHECKPOINT).write_text(json.dumps(technical), encoding="utf-8")
+            result = bundle.status(copy)
+            self.assertEqual(result["changed_files"], [])
+            self.assertEqual(result["changed_course_scope"], [])
+            self.assertEqual(result["review_verdicts"]["overall"], "pass")
+            self.assertEqual(result["status"], "review_blocked")
+            for name in negative["bindings"]:
+                self.assertIn("The previously rejected student material was resubmitted unchanged: " + name, result["errors"])
+
     def test_concurrent_checkouts_change_and_restore_independently(self):
         with tempfile.TemporaryDirectory(prefix="week01-branches-") as tmp:
             left, right = (Path(tmp) / part for part in ("left", "right"))
@@ -267,9 +398,24 @@ class WeekOneBindingTests(unittest.TestCase):
             report = bundle.read_json(report_path)
             report["bindings"][student.name] = {"verdict":"pass","raw_notebook_sha256":bundle.digest(student.read_bytes()),
                 "authored_cells_sha256":bundle.authored_cells_sha256(student),"guide_path":group["teacher"],
-                "guide_sha256":bundle.digest(guide.read_bytes())}
+                "guide_sha256":bundle.digest(guide.read_bytes()), "subject_review":{
+                    "teaching":{"cells":["example"],"finding":"The fixture introduces summation."},
+                    "application":{"cells":["example"],"case":"Apply the rule to 2 and 3.","observed":"Their sum is 5."}}}
             report_path.write_text(json.dumps(report), encoding="utf-8")
             evidence["sha256"] = bundle.digest(report_path.read_bytes())
+            checkpoint_path.write_text(json.dumps(checkpoint), encoding="utf-8")
+            self.assertEqual(bundle.status(copy)["status"], "review_blocked")
+            # Extend the fixture's native decision to cover its new member as well.
+            course_entry = next(e for e in checkpoint["evidence"] if e["kind"] == "native_course_review")
+            course_path = copy / course_entry["path"]
+            native = bundle.read_json(course_path)
+            native["material_bindings"][name] = {
+                "published_notebook_sha256": bundle.digest(student.read_bytes()),
+                "authored_cells_sha256": bundle.authored_cells_sha256(student),
+                "guide_sha256": bundle.digest(guide.read_bytes()),
+            }
+            course_path.write_text(json.dumps(native), encoding="utf-8")
+            course_entry["sha256"] = bundle.digest(course_path.read_bytes())
             checkpoint_path.write_text(json.dumps(checkpoint), encoding="utf-8")
             self.assertEqual(bundle.status(copy)["status"], "current")
 

@@ -1,59 +1,61 @@
-# Week 1 teacher guide · From aligned columns to a gallery ID
+# Week 1 teacher guide · Array axes, matrix products and retrieval
 
-The bridge is a return visit for a student who can already read one record and its ID. The choice in sections 1–3 is which inner dimension has the same meaning in two arrays. The choice in section 5 is which information a score should preserve. Use the relevant exercise in section 6 to see whether the student can make that choice on new data. [Student notebook](week01_axes_linear_bridge.ipynb)
+Students read an indexed numerical array, derive a matrix product from two specified expressions and map a score-table column to a gallery ID. The opening grayscale and independent RGB data are small, synthetic numerical examples. The source task in section 5 is IOAI 2025 *Restroom Icon Matching*. Its original inputs are images. The accompanying exercises supply their own vectors, tokens and scoring rules. [Student notebook](week01_axes_linear_bridge.ipynb)
 
-## Where to enter and when to return
+## Routes and prerequisites
 
-| Starting question | Route in a fresh kernel | Student evidence and exit |
+| Student need | Start in a fresh kernel | Evidence to collect |
 |---|---|---|
-| Which feature goes with each coefficient? | Start with section 1's first code cell and work through sections 1–3. Use 6A when a new example is needed. | Take one named result and its units through the student's calculation, including a changed column order. Return to [integrated section 3](week01_integrated.ipynb#week01-axes). |
-| Where could a query-by-gallery score table come from? | Start at section 5's first code cell and work through that section in order. Then reveal only 6B and its input. | Collect the two ordered ID lists, a joint candidate permutation and the response to the archive request. Return to [integrated section 6](week01_integrated.ipynb#week01-match). |
-| When does combining arrays preserve an identity? | Start at section 4's first code cell. Section 6C supplies its own data. | Check the meaning of one concatenated row and the unequal-batch example. Return to [integrated section 8](week01_integrated.ipynb#week01-check). |
+| Identify a row, a column and a coefficient | Start section 1 at `ba428b91` and continue through sections 2–3. Exercise A has its own setup in `ec433d3b`. | Derive one signed output, check a row and feature reordering and distinguish an observed zero from a missing channel. Return to [integrated section 3](week01_integrated.ipynb#week01-axes). |
+| Build a query-by-gallery score matrix | Start section 5 at `3950021e`. Open exercise B once the student has worked through row normalization and lookup. | Compare both scoring requests, follow a winning column to its ID, and construct two different token sequences with the same stored mean. Return to [integrated section 6](week01_integrated.ipynb#week01-match). |
+| Choose between a new batch dimension and concatenation | Start section 4 at `51e17d9e`. Exercise C supplies its own data. | Describe one output entry by its source vector and ID, including a case of unequal batch sizes. Return to [integrated section 8](week01_integrated.ipynb#week01-check). |
 
-For a direct section 5 helper replay in a fresh kernel, run `3950021e` (NumPy and query/gallery data), `retrieval-norm-code` (row normalization and cosine), `d81386f3` (lookup data) and `sequence-mean-code` (masked mean). Section 6A's `ec433d3b` and section 6B's `07c93362` are self-contained data cells that import NumPy. They allow a fresh attempt with the worked helpers closed. Keep the worked examples and this key closed while the student makes the first predictions. Read the student's explanation, code, changed input and any help received before attributing a result to independent work.
+For a short section 5 helper replay, run `3950021e` (NumPy and query/gallery input), `retrieval-norm-code` (row normalization and cosine), `d81386f3` (lookup data) and `sequence-mean-code` (masked mean). Independent data cells `ec433d3b` and `07c93362` import NumPy. Leave the answer cells empty when distributing the student notebook. Students can use NumPy or scalar loops after giving a hand prediction. For A, ask to see the coefficient matrix even if the student's implementation uses named columns directly.
 
-The registered middle-school Week 1 plan has a 120-minute class and an earlier estimate of 5–7 hours of required independent work. The integrated route already includes the Python diagnosis, written work, array practice, actual CSV and plotting tasks. Credit a student’s existing evidence once. Choose a bridge question within the applicable practice or support route. Time spent, amount of help and transfer to an unaided examination have yet to be observed. [Week 1 plan](../../curriculum/student-plan.html#week-1) · [Integrated guide](week01_integrated_teacher.md)
+The course allocates a 120-minute Week 1 class and historically estimated 5–7 hours of required self-study. The bridge supplements the relevant part of the integrated class or individual practice. The main route also includes written work, CSV operations and visualization. Count an existing successful new-input demonstration once. Neither time on this revision nor learner performance has been measured. [Week 1 plan](../../curriculum/student-plan.html#week-1) · [Integrated guide](week01_integrated_teacher.md)
 
-## Sections 1–3 · What one matrix entry counts
+## Sections 1–3 · Hand calculations for the grayscale array
 
-The photography rule supplies the coefficients. A small leaf is photographed on one side, a large leaf on both sides. In P24's record `[1,3]`, multiply leaves by photos per leaf to obtain photos. The third column of W gives `1×1 + 3×2 = 7` photos. The columns of `X @ W` are small-leaf count, large-leaf count and photos. Its rows are `[2,1,4]`, `[1,3,7]` and `[3,2,7]` in P11, P24, P38 order. The first two output columns count leaves and the third counts photos. A row sum across all three has no requested physical interpretation.
+An identifier is a persistent name for a particular item in this data contract. The row index is its current position after any sort or reordering. The ID list is `[17,52,8]`. In the separately constructed data matrix `X` of shape `(3,2)`, axis 0 indexes images and axis 1 indexes pixel position in a two-pixel row. `X[1,:]` returns `[60,30]` for ID 52. `X[:,0]` returns the left brightness values `[20,60,40]` in image order. A new order of image rows must carry their IDs. The entries are grayscale codes between 0 and 255.
 
-If a student says only that the inner dimensions match, label one shared leaf type on both tables. In `(n,d) @ (d,m)`, one multiplication counts the contribution of feature k to output j on row i. Summing across the d aligned features leaves n objects and m requested outputs. In `W @ X`, output categories happen to be as numerous as pots, so NumPy can perform the operation. Reassigning the first pot to the first output category has no basis in the recording rule. `X @ X` fails the size check as well.
+The mean and signed contrast are defined as `(L+R)/2` and `R−L`. Write each expression's coefficients down its column to obtain `W=[[0.5,-1],[0.5,1]]`. The two rows of W correspond to X's left and right feature columns. In an `(n,d) @ (d,m)` product, fix one input row and one output column and sum the d matched products. In particular `Y[1,1]=60×(−1)+30×1=−30`. The negative value indicates a darker right pixel. The map defined by W acts on real vectors. The grayscale codes supply a bounded set of examples of its inputs. It gives a linear transformation because distributing the products over a sum gives T(u+v)=T(u)+T(v), and factoring a scalar from all terms gives T(au)=aT(u). `Y` has shape `(3,2)` and rows `[50,60]`, `[45,−30]` and `[80,80]`.
 
-The identity-matrix example makes a particularly short diagnostic. With A=`[[2,1],[1,3]]`, the two diagonal entries are 2 and 3 under both operations. At `[1,0]`, the elementwise product gives 0 and the requested small-leaf count under matrix multiplication is 1. Ask the student to pick a cell whose value can disprove the proposed operation. [NumPy matrix multiplication](https://numpy.org/doc/stable/reference/generated/numpy.matmul.html)
+`X @ X` fails because the inner lengths are 2 and 3. Reversing X's two columns and leaving W unchanged yields `[50,−60]` instead of `[50,60]` on the first image. The unchanged mean hides that error. Reversing the matching rows of W restores all three outputs. To diagnose elementwise multiplication, take the top two rows as `A=[[20,80],[60,30]]`. Both `A*I` and `A@I` produce the same diagonal entries 20 and 30. Only the latter retains the off-diagonal entry `[1,0]=60`. The former sets it to zero. [NumPy matrix multiplication](https://numpy.org/doc/stable/reference/generated/numpy.matmul.html)
 
-## Exercise A · From the order sheet to the packing quantities
+## Exercise A · Select RGB columns by name
 
-Rows of `X_new` are classes, columns are kits. For each kit, look up its recipe by name, then its per-kit quantities in the packing slip’s requested item order. With order columns `["기본","확장"]` and output columns `["유리판","시험관"]` the resulting W is `[[2,0],[1,3]]`. The product has shape `(3,2)`. Its named rows are
+The output has two columns, red minus blue and the arithmetic mean of all three channels. These are the exercise's explicitly defined features. The mean is an unweighted code-value mean. All input values lie between 0 and 255, while the signed difference ranges from −255 to 255. For the supplied input order B, R, G, the coefficient rows are `[−1,1/3]`, `[1,1/3]` and `[0,1/3]`. The shapes are `(3,3) @ (3,2) → (3,2)`.
 
-| Class | Glass plates | Test tubes |
-|---|---:|---:|
-| 솔반 | 6 | 12 |
-| 별반 | 5 | 3 |
-| 달반 | 3 | 9 |
+| Image ID | B, R, G | R − B | Channel mean |
+|---:|---|---:|---:|
+| 31 | 2, 14, 8 | 12 | 8 |
+| 7 | 12, 3, 6 | −9 | 7 |
+| 19 | 4, 9, 2 | 5 | 5 |
 
-For 별반, `2 basic kits × 2 plates/basic kit + 1 extension kit × 1 plate/extension kit = 5 plates`. Reversing the named order columns makes the first row `[4,1]` and the two matching coefficient rows `[[1,3],[2,0]]`. The slip still says 6 plates and 12 tubes. Reversing just the values and leaving the old names gives 9 plates and 3 tubes for 솔반. Both products have shape `(3,2)`. Reordering the recipe records themselves also preserves the answer. An ordered lookup for an unfamiliar kit needs its item quantities, including any explicit measured zero. The task gives one recipe per kit and one order row per class.
+For ID 7, red is at index 1 and blue is at index 0. The signed difference is `3−12=−9`. Arithmetic on unsigned bytes can wrap around during subtraction. Convert values to a signed or floating type **before** subtracting, or use real coefficients in the product. A physically missing G column and a G value of zero carry different information. With G absent one can still compute red minus blue from R and B, but the requested fixed three-channel mean is unknown. With G present at zero both outputs are defined and the denominator is three. A duplicated channel name leaves the mapping ambiguous.
 
-The earlier square-array check remains available with these numbers. `X_new[:2] * W` yields `[[2,0],[2,3]]`, whereas the two packing rows are `[[6,12],[5,3]]`. A coefficient array with three rows cannot multiply this two-kit order matrix. Ask which object or unit is lost in the first error before discussing shape in the second. A loop that matches the labels and sums item quantities earns the same mathematical credit as matrix multiplication.
+Reverse both the headings and data to G, R, B. Each image retains its two features. Reverse only the numeric columns, retain the old B, R, G headings, and ID 31 falsely gets `14−8=6`. Its reported mean remains 8. That observed value distinguishes a check that inspects only symmetric summaries from a check that inspects the actual channel correspondence. Reordering whole image rows and IDs carries the outputs into that same order.
 
 ```python
-def shipping_manifest(class_ids, order_columns, orders, recipe_rows, item_columns):
-    recipe = dict(recipe_rows)
-    coefficients = np.array([
-        [recipe[kit][item] for item in item_columns]
-        for kit in order_columns
-    ])
-    packed = np.asarray(orders) @ coefficients
-    return [(class_id, *row.tolist()) for class_id, row in zip(class_ids, packed)]
+def image_features(image_ids, channel_names, pixels):
+    weights = {"R": (1, 1 / 3), "G": (0, 1 / 3), "B": (-1, 1 / 3)}
+    if len(channel_names) != 3 or set(channel_names) != set(weights):
+        raise ValueError("Expected R, G and B once each")
+    values = np.asarray(pixels, dtype=float)
+    if values.shape != (len(image_ids), len(channel_names)):
+        raise ValueError("Image IDs and channel names must match the pixel array")
+    coefficients = np.array([weights[name] for name in channel_names])
+    results = values @ coefficients
+    return [(image_id, *row.tolist()) for image_id, row in zip(image_ids, results)]
 ```
 
 ## Section 5 · Scores, positions and stored representations
 
-In the first worked query `[1,0]`, gallery items 42, 19 and 35 have raw dots 3, 2 and 1. Their cosines are `3/5`, 1 and `2/√5`. Their squared distances from the query are 20, 1 and 0.25. The fourth candidate, ID 7, has raw dot 0, cosine 0 and squared distance 5. The winning IDs across the entire gallery are therefore 42 by raw dot, 19 by direction and 35 by distance. For the two worked queries, first-maximum cosine positions `[2,1]` map to `[19,7]`. Jointly reordering candidates and IDs to `[19,42,35,7]` produces positions `[0,3]` and the same IDs. The stale header would attach `[42,35]`. `argmax` on the complete score table without an axis instead selects a single flattened position. [NumPy argmax](https://numpy.org/doc/stable/reference/generated/numpy.argmax.html)
+A query is the input seeking a match. A gallery item is an eligible object to choose by its ID. A raw dot product is evaluated on the two original coordinate vectors before any length normalization. In the first worked query `[1,0]`, gallery items 42, 19 and 35 have raw dots 3, 2 and 1. Their cosines are `3/5`, 1 and `2/√5`. Their squared distances from the query are 20, 1 and 0.25. The fourth candidate, ID 7, has raw dot 0, cosine 0 and squared distance 5. The winning IDs across the entire gallery are therefore 42 by raw dot, 19 by direction and 35 by distance. For the two worked queries, first-maximum cosine positions `[2,1]` map to `[19,7]`. Jointly reordering candidates and IDs to `[19,42,35,7]` produces positions `[0,3]` and the same IDs. The stale header would attach `[42,35]`. `argmax` on the complete score table without an axis instead selects a single flattened position. [NumPy argmax](https://numpy.org/doc/stable/reference/generated/numpy.argmax.html)
 
-A length denominator has shape `(number of rows,1)`. One positive scalar per whole row preserves its direction. Negating one row changes the sign of all its cosines. An arbitrary change of scale for each feature can change direction, and a columnwise denominator can broadcast successfully while scaling the wrong objects. The worked cosine helper rejects zero-length rows, nonfinite coordinates and unsupported array types. The arithmetic is designed for small finite real data whose norms can be computed in the running floating-point format. A measured zero in the plant classification exercise has its ordinary meaning. In the worked tie fixture the first current maximum wins, as NumPy specifies. Section 6B introduces its own ID-based tie rule. [NumPy norm and keepdims](https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html)
+A length denominator has shape `(number of rows,1)`. One positive scalar per whole row preserves its direction. Negating one row changes the sign of all its cosines. An arbitrary change of scale for each feature can change direction, and a columnwise denominator can broadcast successfully while scaling the wrong objects. The worked cosine helper rejects zero-length rows, nonfinite coordinates and unsupported array types. The arithmetic is designed for small finite real data whose norms can be computed in the running floating-point format. A zero component is valid whenever the vector as a whole has positive length. In the worked tie fixture the first current maximum wins, as NumPy specifies. Section 6B introduces its own ID-based tie rule. [NumPy norm and keepdims](https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html)
 
-The section 5 token array has shapes `(V,d)=(6,3)`, `(B,T)=(2,4)` and lookup shape `(2,4,3)`. Token ID 0 supplies the PAD convention even though the PAD table row is `[8,8,8]`. ID 5 supplies an actual zero vector and counts as a real token. The counts are `[2,3]`, sums `[[2,2,2],[4,4,0]]` and means `[[1,1,1],[4/3,4/3,0]]`. The locationwise lookup changes if token order changes, while these fixed-vector means survive the reordering. In `d81386f3`, the external ID 41 requires an explicit map to the table's row 3. A negative NumPy index can silently select the last row, so the helper validates IDs before indexing. Empty token arrays, out-of-range and noninteger IDs, and any all-PAD query are rejected by this classroom contract. [PyTorch embedding table and row indices](https://docs.pytorch.org/docs/2.15/generated/torch.nn.Embedding.html)
+The classroom section 5 token array has shapes `(V,d)=(6,3)`, `(B,T)=(2,4)` and lookup shape `(2,4,3)`. Token ID 0 supplies the PAD convention even though the PAD table row is `[8,8,8]`. ID 5 supplies an actual zero vector and counts as a real token. The counts are `[2,3]`, sums `[[2,2,2],[4,4,0]]` and means `[[1,1,1],[4/3,4/3,0]]`. The locationwise lookup changes if token order changes, while these fixed-vector means survive the reordering. In `d81386f3`, the external ID 41 requires an explicit map to the table's row 3. A negative NumPy index can silently select the last row, so the helper validates IDs before indexing. Empty token arrays, out-of-range and noninteger IDs, and any all-PAD query are rejected by this classroom contract. [PyTorch embedding table and row indices](https://docs.pytorch.org/docs/2.15/generated/torch.nn.Embedding.html)
 
 ## Exercise B · What each retrieval request measures
 
@@ -64,18 +66,18 @@ Here `(B,T,d)=(2,4,2)` and the five table rows include PAD. The mask has shape `
 | 61 | 7, 9, 5, 4 | 0.868243, 0.832050, 0.980581, 0.554700 | 8 | 53 |
 | 22 | 8, 6, 5, 6 | 0.992278, 0.554700, 0.980581, 0.832050 | 90 | 90 |
 
-The axes on each `(2,4)` score table are stored query rows and current candidate positions. For query 61, column 1 is ID 8, whose long vertical vector contributes 9 in the raw score. Column 2 is ID 53, whose more closely aligned direction wins on the normalized calculation. The integer to submit is the candidate ID. The independent request names query 22 before 61, so the returned direction list is **`[90,53]`** and the strength list is **`[90,8]`**.
+The axes on each `(2,4)` score table are stored query rows and current candidate positions. For query 61, column 1 is ID 8, whose long vertical vector contributes 9 in the raw score. Column 2 is ID 53, whose more closely aligned direction wins on the normalized calculation. The integer to submit is the candidate ID. The independent request names query 22 before 61, so the returned cosine list is **`[90,53]`** and the raw-dot list is **`[90,8]`**.
 
-Appending ID 6 with `[0.5,0.5]` leaves each raw dot for the new item at 2.5. It exactly shares the direction of ID 53. After six-decimal score recording, the smaller ID wins their tie for query 61. The new direction and strength outputs are **`[90,6]`** and **`[90,8]`**. Reversing the complete five-row gallery preserves both answers. A first-position tie break chooses 53 before the reversal, which exposes a direct copy of the worked rule. Section 6B names the two numeric score functions from section 5 and asks the student to match them to the requests. Use the cosine value for direction and the raw dot product for strength before rounding. Using negative angle would give an equivalent ordering on unrounded nonzero vectors, but six-place recording can produce different ties.
+Appending ID 6 with `[0.5,0.5]` leaves each raw dot for the new item at 2.5. It exactly shares the direction of ID 53. After six-decimal score recording, the smaller ID wins their tie for query 61. The new cosine and dot-product outputs are **`[90,6]`** and **`[90,8]`**. Reversing the complete five-row gallery preserves both answers. A first-position tie break chooses 53 before the reversal, which exposes a direct copy of the worked rule. Section 6B names the two numeric score functions from section 5 and asks the student to match them to the requests. Use cosine for condition ① and the raw dot product for ② before rounding. Using negative angle would give an equivalent ordering on unrounded nonzero vectors, but six-place recording can produce different ties.
 
 ```python
 def match_requests(table, token_ids, query_ids, gallery, gallery_ids, requested_ids, rule):
     _, _, _, _, queries = lookup_and_masked_mean(table, token_ids)
     gallery = np.asarray(gallery)
     gallery_ids = np.asarray(gallery_ids)
-    if rule == "direction":
+    if rule == "cosine":
         scores = cosine_scores(queries, gallery)
-    elif rule == "strength":
+    elif rule == "dot":
         scores = queries @ gallery.T
     else:
         raise ValueError("unknown search request")
@@ -88,7 +90,7 @@ def match_requests(table, token_ids, query_ids, gallery, gallery_ids, requested_
     return [selected[query_id] for query_id in requested_ids]
 ```
 
-These two teacher references use the data contract in the handout. The ID lists are unique names of the supplied rows, and the requested queries and items exist. The score function reuses the student's worked section 5 helpers. A named-table or scalar-loop solution is equally admissible. The acceptance evidence is the named result under each rule, a sum and denominator trace, and the response to the changed data.
+The references assume the input contracts in the handout. The query and gallery ID lists each name unique rows, and each requested query exists. The score function reuses the student's worked section 5 helpers. A named-table or scalar-loop solution is equally admissible. The acceptance evidence is the named result under each rule, a sum and denominator trace, and the response to the changed data.
 
 If the student checks only a winner, compare the means. Zeroing the PAD *vectors* but dividing by all four slots gives `[[1.5,2.25],[1.5,1]]`. Each row is a positive multiple of its correct mean, so cosine cannot expose the denominator error. Using the actual nonzero PAD and dividing by four gives `[[3.25,5],[5,6.5]]`, which would choose ID 53 for both original queries by direction. Looking at the intermediate counts and the actual coordinates distinguishes the three calculations. For the original gallery a single real ID 4 has count 1, sum and mean `[0,0]`. Strength yields four exact zeros and selects ID 8. Direction has no defined cosine. An all-PAD input has count 0 and neither request has a mean to compare. A teacher can check these two rows in separate calls to a helper that rejects an entire invalid batch.
 

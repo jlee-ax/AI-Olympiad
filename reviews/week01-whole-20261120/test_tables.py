@@ -12,6 +12,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from sklearn.datasets import load_digits
 
 
 WEEK = Path(__file__).resolve().parents[2] / "lessons" / "week01"
@@ -25,8 +26,7 @@ class FoundationExamples(unittest.TestCase):
                     if cell["cell_type"] == "code"}
 
     def setUp(self):
-        self.plants = pd.read_csv(WEEK / "data" / "week1_plants.csv")
-        self.namespace = {"pd": pd, "np": np, "plt": plt, "plants": self.plants,
+        self.namespace = {"pd": pd, "np": np, "plt": plt,
                           "display": lambda *objects: None}
         self.addCleanup(plt.close, "all")
 
@@ -38,13 +38,33 @@ class FoundationExamples(unittest.TestCase):
         self.namespace = {}
         self.run_cell("3468f4e4")
         namespace = self.namespace
-        self.assertEqual(namespace["pot_ids"], ["K8", "K2", "K5"])
-        self.assertEqual(namespace["day_columns"], ["mon_cm", "fri_cm"])
-        heights = namespace["H"]
-        source_row = namespace["height_days"].set_index("pot_id").loc["K2"]
-        self.assertEqual(heights[1, 0], source_row["mon_cm"])
-        np.testing.assert_allclose(heights.mean(axis=0), [4, 11])
-        np.testing.assert_allclose(heights.mean(axis=1), [6, 9, 7.5])
+        source = load_digits(as_frame=True)
+        indices = [7, 2, 11]
+        names = ["pixel_2_3", "pixel_4_4"]
+        expected = source.data.loc[indices, names].to_numpy()
+        self.assertEqual(namespace["sample_indices"], indices)
+        self.assertEqual(namespace["pixel_features"], names)
+        self.assertEqual(namespace["sample_targets"], source.target.loc[indices].tolist())
+        np.testing.assert_array_equal(namespace["H"], expected)
+        self.assertEqual(namespace["H"][1, 0], source.images[2, 2, 3])
+        np.testing.assert_allclose(expected.mean(axis=0), [9, 46/3])
+        np.testing.assert_allclose(expected.mean(axis=1), [7.5, 14, 15])
+
+    def test_public_csv_inputs_keep_measured_features_and_shuffled_labels(self):
+        self.namespace = {}
+        self.run_cell("digits-practice-csv")
+        source = load_digits(as_frame=True)
+        left = pd.read_csv(StringIO(self.namespace["measure_csv"])).set_index("sample_index")
+        labels = pd.read_csv(StringIO(self.namespace["labels_csv"])).set_index("sample_index")
+        self.assertEqual(left.index.tolist(), [47, 10, 56, 30, 21, 36])
+        self.assertEqual(labels.index.tolist(), left.index.tolist()[::-1])
+        np.testing.assert_array_equal(left, source.data.loc[left.index, left.columns])
+        np.testing.assert_array_equal(labels["digit"], source.target.loc[labels.index])
+        joined = left.join(labels, validate="one_to_one")
+        self.assertNotEqual(labels["digit"].tolist(), joined["digit"].tolist())
+        np.testing.assert_allclose(joined.groupby("digit")["pixel_2_3"].mean(), [22/3, 14])
+        np.testing.assert_array_equal(np.histogram(left["pixel_2_3"], [0, 8, 12, 16])[0],
+                                      [1, 2, 3])
 
     def test_selection_rejects_ambiguous_source_and_request(self):
         self.run_cell("14425637")
@@ -60,22 +80,21 @@ class FoundationExamples(unittest.TestCase):
         with self.assertRaisesRegex(KeyError, "missing"):
             select(repeated, ["missing"])
 
-    def test_predictions_follow_the_source_rows_columns_and_measurements(self):
+    def test_feature_contrasts_follow_named_inputs_and_source_indices(self):
         self.run_cell("14425637")
-        source = self.plants.iloc[::-1, ::-1].copy()
-        source.loc[source.pot_id == "P02", "water_ml"] = 50.0
-        source.loc[source.pot_id == "P01", "sunlight_hours"] = np.nan
-        source["height_cm"] = 999.0
-        for table in (self.plants, source):
-            with self.subTest(ids=table["pot_id"].tolist()):
-                self.namespace["plants"] = table
-                self.run_cell("fixed-prediction-matrix-example")
-                rows = [row for row in table.itertuples()
-                        if row.pot_id in {"P01", "P02", "P04"}]
-                expected = [4.0 + row.sunlight_hours + 0.1 * row.water_ml for row in rows]
-                self.assertEqual(self.namespace["model_ids"], [row.pot_id for row in rows])
-                np.testing.assert_allclose(self.namespace["fixed_predictions"],
-                                           expected, equal_nan=True)
+        self.run_cell("8e3a1c92")
+        self.run_cell("fixed-prediction-matrix-example")
+        calculate = self.namespace["pixel_contrasts"]
+        source = load_digits(as_frame=True).frame.loc[[14, 0, 7]].copy()
+        changed = source.iloc[::-1, ::-1].copy()
+        changed.loc[14, "pixel_4_4"] = np.nan
+        changed.loc[0, "pixel_2_3"] += 3
+        changed["target"] = 99
+        for table in (source, changed):
+            result = calculate(table)
+            self.assertEqual(result.index.tolist(), table.index.tolist())
+            expected = table["pixel_2_3"] - table["pixel_4_4"]
+            np.testing.assert_allclose(result, expected, equal_nan=True)
 
     def test_scatterplots_show_correct_pairs_and_equal_marginals(self):
         self.run_cell("48d931b0")
@@ -88,8 +107,9 @@ class FoundationExamples(unittest.TestCase):
             self.assertEqual(plotted, Counter(by_id.values()))
             panels.append(by_id)
         original, alternative = panels
-        expected = {row.pot_id: (row.sunlight_hours, row.height_cm)
-                    for row in self.plants.itertuples()}
+        source = load_digits(as_frame=True)
+        expected = {f"i={i}": (source.images[i, 2, 3], source.images[i, 3, 5])
+                    for i in (0, 20, 48, 1, 11, 42)}
         self.assertEqual(original, expected)
         self.assertEqual(original.keys(), alternative.keys())
         self.assertEqual({key: point[0] for key, point in original.items()},
@@ -97,7 +117,7 @@ class FoundationExamples(unittest.TestCase):
         self.assertEqual(Counter(point[1] for point in original.values()),
                          Counter(point[1] for point in alternative.values()))
         self.assertEqual({key for key in original if original[key] != alternative[key]},
-                         {"P01", "P06"})
+                         {"i=20", "i=1"})
         self.assertEqual(first.get_xlim(), second.get_xlim())
         self.assertEqual(first.get_ylim(), second.get_ylim())
 

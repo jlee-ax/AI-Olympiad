@@ -1,4 +1,4 @@
-"""Test the material's two plant tables and replay the published training cells on changed rows."""
+"""Follow the integrated textbook, measure its source data and replay numerical decisions on changed inputs."""
 import argparse
 import contextlib
 import io
@@ -17,6 +17,7 @@ DEFAULT_LESSON = Path(__file__).resolve().parents[2] / "lessons" / "week01"
 # Follow the published link up to the first worked decision at each landing.
 LANDINGS = {
     "tables-paper": None,
+    "tables-csv": "02c6cde1",
     "tables-python": "81129230",
     "tables-features": "3468f4e4",
     "bridge-axes": "5ebb633b",
@@ -85,68 +86,92 @@ def check(lesson):
     prepared = {}
     run_cell("484f22ba", prepared)
     run_cell("deep-leaf-grid", prepared)
-    run_cell("deep-count-code", prepared)
-    plants = prepared["plants"]
-    file_plants = pd.read_csv(lesson / "data" / "week1_plants.csv")
-    core_table = plants.set_index("pot_id", verify_integrity=True)
-    companion_table = file_plants.set_index("pot_id", verify_integrity=True)
-    assert set(core_table.index) == set(companion_table.index)
-    assert core_table.loc["P05", ["water_ml", "height_cm"]].tolist() == [10, 14]
-    assert companion_table.loc["P05", ["water_ml", "height_cm"]].tolist() == [20, 10]
-    # A shape/ID-only check would accept both and change P05's example class.
-    assert bool(core_table.at["P05", "height_cm"] >= 12) != bool(companion_table.at["P05", "height_cm"] >= 12)
+    table = prepared["source_table"]
+    names = prepared["feature_names"]
+    digits = prepared["digits"]
+    assert digits.data.shape == (1797, 64)
+    assert (digits.images[:, 2, 2] == table[names[0]]).all()
+    assert (digits.images[:, 4, 2] == table[names[1]]).all()
+    assert digits.data.iloc[0, 18] == digits.images[0, 2, 2] == 15
+    assert table.loc[[10, 20, 26], names].to_numpy().tolist() == [[16, 16]] * 3
+    assert table.loc[[10, 20, 26], "digit"].tolist() == [0, 0, 6]
+    assert np.sum((digits.images[10] - digits.images[26]) ** 2) == 1756
+
+    arithmetic = prepared.copy()
+    run_cell("d942743f", arithmetic)
+    average = arithmetic["observed_mean"]
+    assert average([0, None, -2, 8, np.nan]) == 2 and average([None]) is None
+    assert table.loc[10, names[0]] == 16
+    run_cell("9d537595", arithmetic)
+    run_cell("32ed7e09", arithmetic)
+    assert arithmetic["reshaped"][0].tolist() == [15, 8, 3]
+    assert arithmetic["transposed"][0].tolist() == [15, 3, 0]
+    run_cell("similarity-matrix-code", arithmetic)
+    np.testing.assert_allclose(arithmetic["dot_scores"], [[4, 2, 2], [0, 1, 2]])
+    np.testing.assert_allclose(arithmetic["cosine_scores"], [[2**-0.5, 1, 2**-0.5], [0, 2**-0.5, 1]])
 
     def fit(frame):
-        ns = {**prepared, "plants": frame.copy()}
+        ns = {**prepared, "source_table": frame.copy()}
         run_cell("4d60619c", ns)
         run_cell("ae89f4b6", ns)
         return ns
 
-    baseline = fit(plants)
-    nonpositional = plants.iloc[[5, 1, 4, 3, 2, 0]]
-    reordered = fit(nonpositional)
-    unlisted = plants.iloc[[0]].assign(pot_id="P99", water_ml=700, height_cm=200)
-    with_extra = fit(pd.concat([unlisted, nonpositional], ignore_index=True))
-    changed_held_out = plants.copy()
-    changed_held_out.loc[changed_held_out["pot_id"] == "P05", "water_ml"] = 800
-    for candidate in (baseline, reordered, with_extra, fit(changed_held_out)):
-        assert candidate["training"]["pot_id"].tolist() == ["P01", "P02", "P03", "P04"]
-        assert candidate["validation"]["pot_id"].tolist() == ["P05", "P06"]
-        np.testing.assert_allclose(candidate["fill"].statistics_, [20])
-        np.testing.assert_allclose(candidate["model"].centroids_, [[1, 0.5], [3, 2.5]])
+    baseline = fit(table)
+    changed_input = table.copy()
+    changed_input.loc[21, names] = [14, 12]
+    extra = table.iloc[[0]].copy()
+    extra.index = pd.Index([9001], name=table.index.name)
+    extra.loc[9001, names] = [1, 16]
+    reordered = fit(pd.concat([extra, table.iloc[::-1]]))
+    for candidate in (baseline, reordered, fit(changed_input)):
+        assert candidate["training"].index.tolist() == [0, 1, 10, 11]
+        assert candidate["validation"].index.tolist() == [21, 70, 72]
+        np.testing.assert_allclose(candidate["fill"].statistics_, [6, 9.25])
+        np.testing.assert_allclose(candidate["model"].centroids_, [[10.5, 12], [1.5, 6.5]])
     run_cell("8e809e64", reordered)
-    assert reordered["result"][["pot_id", "prediction"]].values.tolist() == [["P05", 0], ["P06", 1]]
-    # The statement's output order survives subsequent changes to either working table.
-    reordered["validation"] = reordered["validation"].iloc[::-1].reset_index(drop=True)
-    reordered["result"] = reordered["result"].iloc[::-1].reset_index(drop=True)
+    keys = ["image_index", "prediction"]
+    assert reordered["result"][keys].values.tolist() == [[21, 1], [70, 0], [72, 0]]
+    assert reordered["result"]["correct"].tolist() == [True, False, True]
+    changed_label = table.copy()
+    changed_label.loc[70, "digit"] = 0
+    relabeled = fit(changed_label)
+    run_cell("8e809e64", relabeled)
+    np.testing.assert_array_equal(relabeled["predictions"], reordered["predictions"])
+    assert relabeled["result"]["correct"].all()
+    run_cell("3512f7de", reordered)
+    assert reordered["model"].predict([[7, 9]]).item() == 0
+    assert reordered["changed_model"].predict([[7, 9]]).item() == 1
+    # Reordering either working table must preserve the published image/prediction pairs.
+    reordered["validation"] = reordered["validation"].iloc[::-1]
+    reordered["result"] = reordered["result"].iloc[::-1]
     run_cell("f40633df", reordered)
-    exported = reordered["checked"][["pot_id", "prediction"]].values.tolist()
-    assert exported == [["P05", 0], ["P06", 1]], f"The exported ID order or pairing changed: {exported}"
-    predictions = reordered["result"]
-    for invalid in (predictions.iloc[:1], pd.concat([predictions, predictions.iloc[:1]]),
-                    predictions.assign(pot_id=["P99", "P05"])):
+    exported = reordered["checked"][keys].values.tolist()
+    assert exported == [[21, 1], [70, 0], [72, 0]]
+    predicted = reordered["result"]
+    for invalid in (predicted.iloc[:1], pd.concat([predicted, predicted.iloc[:1]]),
+                    predicted.assign(image_index=[72, 70, 9001])):
         try:
             run_cell("f40633df", {**reordered, "result": invalid})
         except ValueError:
             continue
-        raise AssertionError("The export accepted a missing, repeated or unregistered prediction ID")
-    for invalid, expected in (
-        (plants[plants["pot_id"] != "P03"], KeyError),
-        (pd.concat([plants, plants[plants["pot_id"] == "P02"]]), ValueError),
-    ):
+        raise AssertionError("The export accepted a missing, repeated or foreign image index")
+    for invalid, error in ((table.drop(index=10), KeyError),
+                           (pd.concat([table, table.loc[[1]]]), ValueError)):
         try:
             fit(invalid)
-        except expected:
+        except error:
             continue
-        raise AssertionError(f"Expected {expected.__name__} before model fitting")
+        raise AssertionError(f"Expected {error.__name__} before model fitting")
     return {"direct_student_entries": check_landings(lesson, raw),
-            "data_sources": ["integrated plant literal", "data/week1_plants.csv"],
-            "shared_pot_ids": len(core_table), "P05_classes_at_12_cm": [1, 0],
+            "real_digits_rows_and_features": list(digits.data.shape),
+            "equal_two_features_different_labels": [10, 26],
+            "full_feature_squared_distance": 1756,
+            "training_means_after_independent_changes": [6, 9.25],
+            "trained_centers": reordered["model"].centroids_.tolist(),
             "export_after_two_working_tables_move": exported,
-            "missing_duplicate_or_foreign_prediction_id": "rejected",
-            "training_water_fill_ml": float(reordered["fill"].statistics_[0]),
-            "missing_training_id": "rejected", "duplicate_pot_id": "rejected",
-            "unlisted_row_and_changed_validation_reading": "training parameters preserved"}
+            "invalid_data_and_prediction_identity": "rejected",
+            "changing_held_out_label": "predictions fixed, measured accuracy changed",
+            "training_counterfactual_probe": [0, 1]}
 
 
 if __name__ == "__main__":

@@ -32,15 +32,15 @@ STEM = "week01_integrated"
 NOTEBOOK_DATA_URL = "data:application/octet-stream;base64,"
 # Each worked-code ID identifies its notebook even when an external validator supplies an in-memory copy.
 REQUIRED_PROFILES = {
-    STEM: ("484f22ba", 2, 5),
+    STEM: ("484f22ba", 3, 5),
     "week01_python_tables": ("d2be9ce3", 5, 11),
     "week01_axes_linear_bridge": ("ba428b91", 0, 0),
     "week01_problem_pipeline": ("622155d2", 0, 2),
 }
 ANSWERS = {
-    STEM: {"gallery-challenge-work", "records-work", "e49ac1c2", "exercise-validation-answer", "rectangle-independent-answer"},
+    STEM: {"gallery-challenge-work", "records-work", "summary-exercise-work", "e49ac1c2", "exercise-validation-answer", "rectangle-independent-answer"},
     "week01_python_tables": {"modify-mean-function", "depth-reshape-code", "practice-broadcast-code",
-                            "depth-function-code", "tables-csv-work", "tables-prediction-work"},
+                            "depth-function-code", "tables-csv-work", "digits-csv-work", "tables-prediction-work"},
     "week01_axes_linear_bridge": {"7b96a39e", "54646dc1"},
     "week01_problem_pipeline": {"06ceb97e", "device-score-work"},
 }
@@ -272,14 +272,17 @@ def visible_cells(doc, *, image_bytes):
 
 
 def check_plot_correspondence(saved, fresh):
-    """Compare the colored plotting marks while allowing small font and renderer shifts."""
+    """Check the painted data and the caption/axis text while tolerating small renderer shifts."""
     def marks(encoded):
         with Image.open(BytesIO(base64.b64decode(encoded))) as picture:
-            resized = picture.convert("RGB").resize((240, 160), Image.Resampling.LANCZOS)
+            image = picture.convert("RGB")
+            resized = image.resize((240, 160), Image.Resampling.LANCZOS)
             rgb = np.asarray(resized, dtype=int)
             hue = np.asarray(resized.convert("HSV"), dtype=int)[:, :, 0] * 12 // 256
-        # Nearly gray axes and glyphs can vary with fonts. Worked plots use colored data marks.
-        return rgb.max(axis=2) - rgb.min(axis=2) > 24, hue
+            text = np.asarray(image.resize((500, 300), Image.Resampling.LANCZOS), dtype=int)
+        # Most text and axes are neutral. Keep the title and label bands separate from colored data marks.
+        ink = (text.max(axis=2) < 150) & (text.max(axis=2) - text.min(axis=2) < 20)
+        return rgb.max(axis=2) - rgb.min(axis=2) > 24, hue, (ink[:20], ink[-22:], ink[:, :23], ink[:, -23:])
 
     def unmatched(mask, hue, reference, ref_hue):
         matched = np.zeros_like(mask)
@@ -289,6 +292,18 @@ def check_plot_correspondence(saved, fresh):
             matched |= (hue == band) & (np.asarray(close) > 0)
         return (mask & ~matched).sum() / mask.sum()
 
+    def label_band_changed(left, right):
+        counts = [int(band.sum()) for band in (left, right)]
+        if max(counts) < 64:
+            return False
+        if min(counts) < 0.45 * max(counts):
+            return True
+        for candidate, reference in ((left, right), (right, left)):
+            nearby = Image.fromarray(reference.astype(np.uint8) * 255).filter(ImageFilter.MaxFilter(5))
+            if (candidate & (np.asarray(nearby) == 0)).sum() > 0.55 * candidate.sum():
+                return True
+        return False
+
     for old, new in zip(saved.cells, fresh.cells):
         old_images = [o.data["image/png"] for o in old.get("outputs", []) if "image/png" in o.get("data", {})]
         new_images = [o.data["image/png"] for o in new.get("outputs", []) if "image/png" in o.get("data", {})]
@@ -297,13 +312,15 @@ def check_plot_correspondence(saved, fresh):
         for left, right in zip(old_images, new_images):
             if left == right:
                 continue
-            (a, a_hue), (b, b_hue) = marks(left), marks(right)
+            (a, a_hue, a_labels), (b, b_hue, b_labels) = marks(left), marks(right)
             if not a.any() or not b.any():
                 raise ValueError(f"{old.id}: the fresh or saved plot lost its colored data marks")
             # A small spatial and hue tolerance accommodates differences in tight bounding boxes and antialiasing.
             mismatch = max(unmatched(a, a_hue, b, b_hue), unmatched(b, b_hue, a, a_hue))
             if mismatch > 0.08 or abs(int(a.sum()) - int(b.sum())) / max(a.sum(), b.sum()) > 0.15:
                 raise ValueError(f"{old.id}: freshly rendered data marks differ from the saved plot")
+            if any(label_band_changed(x, y) for x, y in zip(a_labels, b_labels)):
+                raise ValueError(f"{old.id}: freshly rendered title or axis labels differ from the saved plot")
 
 
 def has_anchor(doc, fragment):

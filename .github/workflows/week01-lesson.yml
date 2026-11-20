@@ -7,6 +7,7 @@ on:
       - 'lessons/week01/**'
       - 'curriculum/student-plan.html'
       - 'curriculum/contract.json'
+      - 'curriculum/course-harness.json'
       - 'tools/check_week01_render.py'
       - 'reviews/week01-main-iteration-20261120/check_transfer.py'
       - 'reviews/week01-whole-20261120/**'
@@ -16,6 +17,7 @@ on:
       - 'lessons/week01/**'
       - 'curriculum/student-plan.html'
       - 'curriculum/contract.json'
+      - 'curriculum/course-harness.json'
       - 'tools/check_week01_render.py'
       - 'reviews/week01-main-iteration-20261120/check_transfer.py'
       - 'reviews/week01-whole-20261120/**'
@@ -31,6 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:

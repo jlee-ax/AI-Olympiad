@@ -1,4 +1,4 @@
-unit,label
-V9,정상
-V4,점검
-V7,점검
+sample_id,label
+V9,0
+V4,1
+V7,1

@@ -119,11 +119,11 @@
         "antique",
         "order"
       ],
-      "decision": "Use the problem statement to identify the objects represented by table rows, array axes and file IDs. Map model outputs back to the expected IDs.",
-      "minimum": "Distinguish a row index from a persistent ID and map one row of candidate scores to a gallery ID.",
+      "decision": "Decide what an image or table representation preserves, what information is lost, and which comparisons can support a classification or retrieval decision.",
+      "minimum": "Explain sample, feature and class using actual data. Derive one reduction and one comparison from their inputs. Show with concrete source values how different classes can have identical selected features, why no deterministic classifier of those features can distinguish that pair, and why absence of such pairs in a sample does not prove generalization. A position-to-identifier lookup by itself does not meet this minimum.",
       "ceiling": "Leave learned image representations and semi-supervised optimization for later weeks.",
-      "transfer": "Select the same match after reordering the candidates and their columns. Explain which identifiers stay meaningful.",
-      "interface": "Input: {ids: integer[], scores: number[][]}. Each score row has a unique maximum. Return the selected gallery IDs in query-row order."
+      "transfer": "On unfamiliar labeled vectors, choose a subset of features, find differently labeled inputs that become identical and reason about how adding or removing a feature changes the ambiguity. Check class means or similarity decisions on a separate new input. Retain ID alignment in the retrieval exercise.",
+      "interface": "Input: {features: integer[][], labels: integer[], keep: integer[]}. Each row has the same width, one label per row, and keep contains distinct valid zero-based feature indices. Return all [i,j] with i < j whose labels differ but whose values agree on every selected column, in lexicographic order. An empty selection compares empty tuples. With fewer than two rows return []."
     },
     {
       "week": 2,
