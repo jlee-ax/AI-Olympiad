@@ -1,7 +1,7 @@
 {
   "current_release": {
     "format_version": 1,
-    "revision": "week01-textbook-20261120",
+    "revision": "week01-tool-prerequisites-20261120",
     "entry": "integrated",
     "members": {
       "integrated": {
@@ -56,7 +56,17 @@
       "tools/check_week01_render.py",
       "reviews/week01-whole-20261120/test_bundle.py",
       "reviews/week01-whole-20261120/test_delivery.py",
-      ".github/workflows/week01-lesson.yml"
+      ".github/workflows/week01-lesson.yml",
+      "tools/course.mjs",
+      "tools/course_core.mjs",
+      "tools/course_run.mjs",
+      "tools/course_tool_prerequisites.mjs",
+      "tools/course_tool_prerequisites.py",
+      "skills/koai-evaluate/SKILL.md",
+      "reviews/week01-whole-20261120/test_tool_placement.py",
+      "reviews/week01-whole-20261120/check_model_prerequisites.py",
+      "reviews/week01-whole-20261120/e3e00a4-author-route.json",
+      "reviews/week01-whole-20261120/prerequisite-review-criteria.json"
     ],
     "subject_review": {
       "native_course_review": "required",
@@ -64,40 +74,50 @@
       "rejected_baseline_sha256": "70cd1898f9d112f002036d218b7fd58c718cd041f6b7c7501d64e58a7be72d09"
     },
     "files": {
-      ".github/workflows/week01-lesson.yml": "d47339d4c3d01edf902613786116231573a2c65e63fdbaccad5a22d22ac303dc",
+      ".github/workflows/week01-lesson.yml": "90a0cae22e0a5294a8683722bd3a0d79240fd103a64147b8d4b5c0a5463edc80",
       "lessons/week01/data/pipeline_device_validation.csv": "9939afdd0dd2d06f4ea45d564632e4b3a0740c7bd985e1d73165def043cc36bf",
       "lessons/week01/data/week1_plants.csv": "fece0473e50b097afa7c2b3e2647c9a6e623bd3d8e009e6ef620151887227639",
       "lessons/week01/data/week1_plants_new.csv": "869db97ef7c5f6ccf1020bc435fe831f180e9b9548d722c41c91b63af44d7290",
       "lessons/week01/teacher-notes.txt": "a140e5bf4c960f1ca192068b0cf479db7d963e504349c6b6a4c3afff721c165e",
-      "lessons/week01/validate_bundle.py": "15ed66d56724802f5a1bc02f32d32e60b170a94a9fc6894449c7980d3c67e035",
+      "lessons/week01/validate_bundle.py": "b3f845377f610b2e9becae876bfd6717fa5bc7e7b6bbee0449ab26152a9f5044",
       "lessons/week01/validate_week01.py": "ed29553bb9493e37f6680a597748fa003bd095b5be14de17417e551daddbcbf5",
-      "lessons/week01/validate_week01_problem_pipeline.py": "f8a63134e838f77d8bd0abc72960347f46bc057e11e92fbffd215ce1d4c25762",
+      "lessons/week01/validate_week01_problem_pipeline.py": "420f0841a03fca001fa24d195e8d4feb1503d4d9130140c669ce6b6aaf91624c",
       "lessons/week01/week01_axes_linear_bridge.html": "854337ada8916595058eec92753eef32167cf049301e4e7c335e4b2f632e167b",
       "lessons/week01/week01_axes_linear_bridge.ipynb": "6e1fd7c838d2c959beba3475de75c5bda90cd4d80cd2a03f42f8ca8ed4a4d986",
       "lessons/week01/week01_axes_linear_bridge_teacher.md": "a6037da0d1e4e7bf1409376f444e06c24c6c5ee719d87a4f01848a43089e8d3b",
-      "lessons/week01/week01_integrated.html": "df7d7a713fe856c40b00346bf9921cdc34088ff60c9233081b107bb22fa8075c",
-      "lessons/week01/week01_integrated.ipynb": "184316822761ae0e25c23ea6e3fc8fe5b3d99267b059a34df36196282ae7df12",
-      "lessons/week01/week01_integrated_teacher.md": "a06b9f270333f5b29ec4e22bfe0a35bf9ca64037584bcc6eb0099f226cb1b308",
+      "lessons/week01/week01_integrated.html": "a8f5fd602f3557fccc8f40b6470abfd177ad70241cbabb78bf30bf40d1a5e320",
+      "lessons/week01/week01_integrated.ipynb": "0db53506ef32c84b18b26357db8a74a1ded34a0385ffeffaddb934878a454afb",
+      "lessons/week01/week01_integrated_teacher.md": "6eb36f863a5b63e1bd5defefa3e90d0b2412ecc9235ea404cd46e3c9cd672b13",
       "lessons/week01/week01_integrated_validation_labels.csv": "4e590540a02190a8f7c3ea1c83be2b058ad6e3b94583f3e4342bf0639069d82e",
-      "lessons/week01/week01_problem_pipeline.html": "3c7448c098c674186a9cd7c9d2a41629a8b014ea9b40a34e61a38c0f44076d85",
-      "lessons/week01/week01_problem_pipeline.ipynb": "f09ffd3643a26795e35bc8905472f0cc697fed2cce4b700ff8f4dc660316c879",
-      "lessons/week01/week01_problem_pipeline_teacher.md": "62dc02c77f5f0f70b98212c831dbebecf7997d3dd9c1a95415826b146266cafa",
+      "lessons/week01/week01_problem_pipeline.html": "8d6b21205444ab7b835bb339148639dcdd2914fafec37c1bb3dc6bd81f1c848b",
+      "lessons/week01/week01_problem_pipeline.ipynb": "45ff37ffed2ecb5b231a0ebbe9b23bd8a730aef4a27639a090bc6313fa0a778e",
+      "lessons/week01/week01_problem_pipeline_teacher.md": "a41879251df46605b5208d1131a0b59b90d070803cf6bba672340f2e9a3cef68",
       "lessons/week01/week01_python_tables.html": "0dd86153efe7d316ff0f5a679fc85a59ca0776862ad82ed4a735b6e8e7b80bfb",
       "lessons/week01/week01_python_tables.ipynb": "f06880f1a9a20ed4f8fbdc838495817cdbc407c28300f85a7aad40b5fd9dd298",
       "reviews/week01-main-iteration-20261120/check_transfer.py": "7650bd0be0d74a1bd59a2307ea3828ba84c37e054e3d7ae87e042c256ad1d4fb",
-      "reviews/week01-whole-20261120/check_routes.py": "5ab444272443fd164143dd88b4698e398e778c0a8edf702e2c3cd874e4d6d91a",
+      "reviews/week01-whole-20261120/check_model_prerequisites.py": "50a2e82054499d0fed822f6cdba9febf6eb6dc7240a0803828c7f5ad35e52242",
+      "reviews/week01-whole-20261120/check_routes.py": "509b396245d2cc11c40dc2e445a7146080540faad24136f39e6d516323806fed",
+      "reviews/week01-whole-20261120/e3e00a4-author-route.json": "27963df19c04077883a4b50d211902b312d08d73929359d43f590ae6dedd34fc",
+      "reviews/week01-whole-20261120/prerequisite-review-criteria.json": "2058643287ee8037f5a1032d885c642dc0ce110506c5e8ecc233f6f80ca5906b",
       "reviews/week01-whole-20261120/test_axes.py": "67a97e03cb850bafb1030dd09b458c2019ebdd4e78e7731503742e47425ad38d",
-      "reviews/week01-whole-20261120/test_bundle.py": "d43e157cc893b89eb147d8292553f55d494196dff768af4f7516987cbb834fde",
+      "reviews/week01-whole-20261120/test_bundle.py": "1ccb9d7e3519e5b11c6fe64b15bc4e109a306c5a2cb9a7db6caf635a5084b090",
       "reviews/week01-whole-20261120/test_delivery.py": "5cf8aed5e8779a7632d168047f7bddc6f87fb25da26270f6bc781af0dceb9cd6",
       "reviews/week01-whole-20261120/test_tables.py": "6001ad3bb2429016e5f901cf52ad2b6110418661bb8ea0ad4c74d06708960c92",
-      "tools/check_week01_render.py": "7812f594db8638f41e4dedcc72bb4c714c8a4b9ee2317518b669e33223007cff"
+      "reviews/week01-whole-20261120/test_tool_placement.py": "e88609b1d64362cc67f81fafc0a23302a62e09e5bce23863b8ce740715b86bdf",
+      "skills/koai-evaluate/SKILL.md": "8d272fc2c7326136b4b071ca62e9367aeb0d1953c064578b2da3d0d3baa8ddaa",
+      "tools/check_week01_render.py": "7812f594db8638f41e4dedcc72bb4c714c8a4b9ee2317518b669e33223007cff",
+      "tools/course.mjs": "ceebb1ee102f4b6cd6d823fb03ba7bdf8b70aa8cfe57851756327f483d3f976b",
+      "tools/course_core.mjs": "8193462c283c50d70f5d24ea08dba3818e26632e5f459cc0089ec5cc28fc30d4",
+      "tools/course_run.mjs": "fd34b8ca29f9ef30dfdc6711925edee16d0a7b70461d874e1f1299ececcffefa",
+      "tools/course_tool_prerequisites.mjs": "69c9266716e3d1f6949374dca03af2242fcd4d87dd787671b797036aed10ecee",
+      "tools/course_tool_prerequisites.py": "46e9a273c482cd50e12cbd0ea06fdf7c75645b71703fdb6ed18ff705512f4455"
     },
     "course_scope": {
       "curriculum/student-plan.html#week-1": "8fa8c919a57abbf0215dc69c63b3045746ac670134246493a2e02b47ae803d17",
       "curriculum/contract.json#week-1": "f0178c5a435cce0ff6efff8e6a3b997094ff2a577d6cd53c0ec459157c2bb5df",
-      "curriculum/course-harness.json#week-1": "d2ef80f81bff23fe02819fb70c9c07b55a5075fa1b7ec6d3fa53cbefd4dd3298"
+      "curriculum/course-harness.json#week-1": "b25ea7575c560f3c37065d3a4723a6c99432d89472effd754004bb65dfc018e9"
     },
-    "bundle_sha256": "3b9d56a88ee08dd0262d4b26f0993eebaaecabb16bcf62f7ecad5b8bb354d7c9"
+    "bundle_sha256": "93f85c84c4823ec28e7b3a7efb049b4fa3ecb8bef301aad4037d3231bb0e6dae"
   },
   "lineage": {
     "scope": "The other top-level fields document the earlier Python-tables revision. Its branch link, baseline hours and allocations describe that snapshot. The active entry is current_release.members.integrated.student.",
