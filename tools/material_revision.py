@@ -23,8 +23,7 @@ def ids(value, label, required=False):
     return result
 
 
-def validate_intent(intent, comparison, dimensions):
-    actions = intent.get('actions')
+def validate_actions(actions):
     if not isinstance(actions, list) or not actions:
         raise ValueError('An edit needs at least one action')
     kinds = set()
@@ -41,6 +40,11 @@ def validate_intent(intent, comparison, dimensions):
                 or (kind in ('keep', 'deepen', 'move', 'reorder') and set(before) != set(after))
                 or (kind == 'merge' and len(before) <= len(after))):
             raise ValueError('Cell disposition contradicts action ' + kind)
+    return kinds
+
+
+def validate_intent(intent, comparison, dimensions):
+    kinds = validate_actions(intent.get('actions'))
     if comparison.get('judgment') not in ('covered', 'gap'):
         raise ValueError('A revision requires a settled content comparison')
     findings = {item['id']: item['judgment'] for item in comparison['dimensions']}

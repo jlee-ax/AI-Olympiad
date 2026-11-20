@@ -68,3 +68,7 @@ The record is structurally valid. Its decision is `pause / operator_agreement_re
 ## Troubleshooting and limitations
 
 A valid JSON state can still yield a pause or stop. Keep spent budget and the last completed evidence with the checkpoint. The CLI does not launch a worker.
+
+## Whole-course material production
+
+The course controller follows the prerequisite graph and supplies each role with its registered source and skill text. Start from a blank candidate or a read-only baseline. After a rejection, compare keeping, revising, moving, merging, removing and offering a conditional supplement. A supplement needs an entry condition, an estimated load and a return to the required student path. Stop on unresolved evidence, repetition or budget exhaustion; resume the saved phase as appropriate. See the [course controller](../../tools/course-generation.md).

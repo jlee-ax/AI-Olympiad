@@ -52,3 +52,7 @@ The first records a gap. The second records a complete fictional path and suppli
 ## Troubleshooting and limitations
 
 If two reports cite the same failed attempt, count one occurrence. If the healthy control also fails the proposed check, withhold the change and retain both outcomes.
+
+## Whole-course material production
+
+Log the material action, alternative, expected change, accepted input and candidate identity, independent outcome, and any affected later week. Compare the next attempt with the prior artifact and preserve a known-good reference so an erroneous removal can be restored and rechecked. Track false removals and false content additions on healthy examples. Keep learning outcomes and measured classroom time outside automatic material grading.

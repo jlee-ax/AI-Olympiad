@@ -53,3 +53,7 @@ For a Week 2 scope brief, distinguish the middle-school 2027 target from the lin
 ## Troubleshooting and limitations
 
 If the current rules and an older example disagree, retain both versions and state which claim each supports. If the original is unavailable, leave its claim unresolved. The local baseline checks the snapshot only.
+
+## Whole-course material production
+
+Before opening any candidate notebook, read the registered domestic scope, the original competition task, and the decisions of the later weeks that use this material. Freeze the learner decision, smallest sufficient explanation, a counterexample, the upper depth limit, and the later use. Identify what a change of representation preserves or discards. Record a new source-backed demand when the lesson omits it. Label an international problem or a classroom simplification with its actual status.

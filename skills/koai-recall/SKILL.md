@@ -52,3 +52,7 @@ The matching record is `evidence:synthetic-fixture`. Its source says the fixture
 ## Troubleshooting and limitations
 
 If a recalled source or artifact changed, mark the affected record stale and recheck its evidence. An empty lookup does not establish that the topic was never studied.
+
+## Whole-course material production
+
+For a course run, retrieve the exact previously accepted notebook, its basis, rejection history and actual prerequisite material. Compare both the artifact digest and the evidence revision. Return the earlier course decision and recorded alternative when available. An accepted version under an old prerequisite, source or assessment needs a fresh decision on the affected path. Preserve prior versions.

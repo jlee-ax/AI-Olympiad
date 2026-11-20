@@ -1,0 +1,10 @@
+{
+  "icons": {
+    "locator": "https://github.com/IOAI-official/IOAI-2025/blob/39558e9a639d170bd92de91958fcdc915f670463/Individual-Contest/Restroom/Restroom.ipynb",
+    "text": "IOAI 2025 individual contest, Restroom Icon Matching, sections 2–5. Evaluation query files and gallery files are shuffled independently. Each query must identify the gallery image with the opposite sign for the same restroom. Each query contributes one match to the score. The numerical-vector exercise provides the features and tests a prerequisite decision."
+  },
+  "concepts": {
+    "locator": "https://github.com/IOAI-official/IOAI-2025/blob/39558e9a639d170bd92de91958fcdc915f670463/Individual-Contest/Concepts/Concepts.ipynb",
+    "text": "IOAI 2025 individual contest, Concepts, sections 3–5. Submit ordered clues made from allowed marker IDs. The guesser's ranked predictions determine the score for the target keyword. The classroom exercise defines a small deterministic vector guesser to isolate the effect of order."
+  }
+}

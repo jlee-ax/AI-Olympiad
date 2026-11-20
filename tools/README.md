@@ -289,4 +289,4 @@ current reviews; K11 reports the object's `context_error`, and K13 reports
 repair/investigation target. These are blocked/uncertain evidence states, never
 substitute review fingerprints or permission to execute a change.
 
-Use [교안 내용 수정과 재검수](material-revision.md) for the repair-phase decision, guarded notebook edits, evidence-bound verification, and discovery handoff.
+Use [Revise and recheck lesson content](material-revision.md) for the repair decision, guarded notebook edits, evidence-bound verification and discovery handoff.

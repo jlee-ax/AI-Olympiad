@@ -1,0 +1,305 @@
+{
+  "schema": 1,
+  "sources": {
+    "koai": {
+      "file": "reviews/course-reconstruction-20261111/independent-ten-week-source-audit.md",
+      "starts": "- [KOAI 2027 안내]",
+      "locator": "https://kitpa.org/koai/2027",
+      "provenance": "archived_reading"
+    },
+    "antique": {
+      "file": "reviews/course-reconstruction-20261111/independent-ten-week-source-audit.md",
+      "starts": "| [IOAI 2025 Antique]",
+      "locator": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb",
+      "provenance": "archived_reading"
+    },
+    "chicken": {
+      "file": "reviews/course-reconstruction-20261111/independent-ten-week-source-audit.md",
+      "starts": "| [IOAI 2025 Chicken Counting]",
+      "locator": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Chicken_Counting/Chicken_Counting.ipynb",
+      "provenance": "archived_reading"
+    },
+    "pixel": {
+      "file": "reviews/course-reconstruction-20261111/independent-ten-week-source-audit.md",
+      "starts": "| [IOAI 2025 Pixel Efficiency]",
+      "locator": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Pixel/Pixel.ipynb",
+      "provenance": "archived_reading"
+    },
+    "order": {
+      "file": "reviews/course-reconstruction-20261111/independent-ten-week-source-audit.md",
+      "starts": "| [IOAI 2026 Find the Order]",
+      "locator": "https://raw.githubusercontent.com/IOAI-official/IOAI-2026/main/Individual-Contest/1_Find_the_Order/statement.md",
+      "provenance": "archived_reading"
+    },
+    "ghost": {
+      "file": "reviews/course-reconstruction-20261111/independent-ten-week-source-audit.md",
+      "starts": "| [IOAI 2026 Ghost of the Machine]",
+      "locator": "https://raw.githubusercontent.com/IOAI-official/IOAI-2026/main/Individual-Contest/5_Ghost_of_Machine/statement.md",
+      "provenance": "archived_reading"
+    },
+    "field": {
+      "file": "reviews/course-reconstruction-20261111/independent-ten-week-source-audit.md",
+      "starts": "| [IOAI 2026 Field]",
+      "locator": "https://raw.githubusercontent.com/IOAI-official/IOAI-2026/main/Individual-Contest/6_IOAI_Field/statement.md",
+      "provenance": "archived_reading"
+    },
+    "kmeans": {
+      "file": "reviews/course-reconstruction-20261111/independent-ten-week-source-audit.md",
+      "starts": "| [Stanford CS229 2026 강의노트]",
+      "locator": "https://cs229.stanford.edu/main_notes.pdf",
+      "provenance": "archived_reading",
+      "primary_pages": [
+        [
+          148,
+          150
+        ],
+        [
+          168,
+          172
+        ]
+      ]
+    },
+    "linear": {
+      "file": "reviews/course-reconstruction-20261111/independent-ten-week-source-audit.md",
+      "starts": "| [Stanford CS229 2020 지도학습 노트]",
+      "locator": "https://cs229.stanford.edu/notes2020spring/cs229-notes1.pdf",
+      "provenance": "archived_reading",
+      "primary_pages": [
+        [
+          14,
+          15
+        ]
+      ]
+    },
+    "val": {
+      "file": "reviews/course-reconstruction-20261111/independent-ten-week-source-audit.md",
+      "starts": "| [scikit-learn 교차검증]",
+      "locator": "https://scikit-learn.org/stable/modules/cross_validation.html",
+      "provenance": "archived_reading"
+    },
+    "metrics": {
+      "file": "reviews/course-reconstruction-20261111/independent-ten-week-source-audit.md",
+      "starts": "| [scikit-learn 분류 지표]",
+      "locator": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_recall_fscore_support.html",
+      "provenance": "archived_reading"
+    },
+    "hyper": {
+      "file": "reviews/course-reconstruction-20261111/independent-ten-week-source-audit.md",
+      "starts": "[IOAI 2024 공식 대회 안내]",
+      "locator": "https://raw.githubusercontent.com/IOAI-official/IOAI-2024/main/On-Site-Round/Lost_in_Hyperspace/Lost_in_Hyperspace.ipynb",
+      "provenance": "archived_reading"
+    },
+    "icons": {
+      "file": "curriculum/course-task-readings.json",
+      "key": "icons",
+      "locator": "https://github.com/IOAI-official/IOAI-2025/blob/39558e9a639d170bd92de91958fcdc915f670463/Individual-Contest/Restroom/Restroom.ipynb",
+      "provenance": "primary_reading_note"
+    },
+    "concepts": {
+      "file": "curriculum/course-task-readings.json",
+      "key": "concepts",
+      "locator": "https://github.com/IOAI-official/IOAI-2025/blob/39558e9a639d170bd92de91958fcdc915f670463/Individual-Contest/Concepts/Concepts.ipynb",
+      "provenance": "primary_reading_note"
+    },
+    "syllabus": {
+      "file": "reviews/course-reconstruction-20261111/independent-ten-week-source-audit.md",
+      "starts": "- [KOAI 2027 안내]",
+      "locator": "https://kitpa.org/koai/syllabus",
+      "provenance": "archived_reading"
+    }
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "prerequisites": [],
+      "sources": [
+        "koai",
+        "syllabus",
+        "icons",
+        "antique",
+        "order"
+      ],
+      "decision": "Use the problem statement to identify the objects represented by table rows, array axes and file IDs. Map model outputs back to the expected IDs.",
+      "minimum": "Distinguish a row index from a persistent ID and map one row of candidate scores to a gallery ID.",
+      "ceiling": "Leave learned image representations and semi-supervised optimization for later weeks.",
+      "transfer": "Select the same match after reordering the candidates and their columns. Explain which identifiers stay meaningful.",
+      "interface": "Input: {ids: integer[], scores: number[][]}. Each score row has a unique maximum. Return the selected gallery IDs in query-row order."
+    },
+    {
+      "week": 2,
+      "prerequisites": [
+        1
+      ],
+      "sources": [
+        "koai",
+        "syllabus",
+        "antique",
+        "val",
+        "metrics",
+        "icons"
+      ],
+      "decision": "Choose the split, preprocessing and scoring denominator from the prediction target and the information available at prediction time.",
+      "minimum": "Identify leakage and compute the requested score when the sample-weighted and equally group-weighted accuracies differ.",
+      "ceiling": "Choose a split and metric for the stated objective; other objectives may need different choices.",
+      "transfer": "Use the same correctness table to explain a change in score when the unit of evaluation changes.",
+      "interface": "Input: {rows: [[groupID, truth, prediction]], unit: 'sample'|'group'}. Return a number from 0 to 1 for nonempty data. Average correctness over rows for sample, or average the per-group accuracies equally for group."
+    },
+    {
+      "week": 3,
+      "prerequisites": [
+        1,
+        2
+      ],
+      "sources": [
+        "koai",
+        "syllabus",
+        "chicken",
+        "field",
+        "linear"
+      ],
+      "decision": "Use the units and costs of errors to choose a regression loss and evaluation objective.",
+      "minimum": "Calculate a ranking reversal between MAE and MSE on fresh data and explain why it occurs.",
+      "ceiling": "Connect the loss to weight updates. Leave general optimization proofs for later work.",
+      "transfer": "Reconsider the choice between two models when their residual distributions or the scoring rule change.",
+      "interface": "Input: {truth: number[], models: {name: number[]}, metric: 'mae'|'mse'}. Return all names attaining the minimum mean loss in lexicographic order."
+    },
+    {
+      "week": 4,
+      "prerequisites": [
+        2,
+        3
+      ],
+      "sources": [
+        "koai",
+        "syllabus",
+        "icons",
+        "val",
+        "linear",
+        "antique"
+      ],
+      "decision": "Compare models and feature representations under the same validation conditions.",
+      "minimum": "Check distance, eligibility of neighbors, availability of inputs and tie rules. Reproduce the decision on different samples.",
+      "ceiling": "Place the required model families in the main route or assigned independent work. A full proof of kernel optimization is beyond this week.",
+      "transfer": "Distinguish gallery position, gallery ID and eligibility when new candidates are presented.",
+      "interface": "Input: {queries: [[id,variant,vector]], gallery: [[id,variant,vector]]}. For each query return the ID of the closest eligible gallery item by squared Euclidean distance. Eligible items have a different variant. Break ties by smaller numeric ID. Gallery items may be reused."
+    },
+    {
+      "week": 5,
+      "prerequisites": [
+        1,
+        4
+      ],
+      "sources": [
+        "koai",
+        "syllabus",
+        "kmeans",
+        "hyper"
+      ],
+      "decision": "Identify which properties distances and projections preserve in unlabeled data.",
+      "minimum": "Perform one cluster assignment and center update by hand and in code. Distinguish a cluster number from a class label.",
+      "ceiling": "Retain the planned PCA and clustering concepts and practical work. A complete eigenvector proof is optional.",
+      "transfer": "Explain which results change after reordering the initial centers or moving a point.",
+      "interface": "Input: {points: number[][], centers: [{id: integer,x: number[]}]}. Return the nearest center ID for each point in order by squared distance. Break ties by smaller ID."
+    },
+    {
+      "week": 6,
+      "prerequisites": [
+        1,
+        2,
+        3
+      ],
+      "sources": [
+        "koai",
+        "syllabus",
+        "field",
+        "linear"
+      ],
+      "decision": "Check that the forward pass, loss, backward pass and update implement the same objective.",
+      "minimum": "Compute the batch gradient from a shared pre-update weight. Track what changes during training and during evaluation.",
+      "ceiling": "Connect the small calculation to library-based training. Full derivations of every optimizer are beyond this unit.",
+      "transfer": "Use changes in learning rate and batch composition to predict the size and direction of an update and test the implementation.",
+      "interface": "Input: {x: number[], y: number[], w: number, lr: number}. Return the weight after one simultaneous batch gradient step on mean squared error for a model without an intercept."
+    },
+    {
+      "week": 7,
+      "prerequisites": [
+        1,
+        6
+      ],
+      "sources": [
+        "koai",
+        "syllabus",
+        "chicken",
+        "pixel",
+        "icons"
+      ],
+      "decision": "Determine whether the image problem asks for a count, a class, a position or a region. Choose which quantity a spatial operation must preserve.",
+      "minimum": "Relate the sum of a density map to its count. Check pooling at the image boundary.",
+      "ceiling": "State when summing density applies and where classification pooling has a different objective.",
+      "transfer": "For an odd-sized map with distributed density, decide which quantity must survive downsampling.",
+      "interface": "Classroom interface: {maps: nonnegative 2D maps, truth: positive counts}. Form non-overlapping 2x2 block sums with stride 2 and zero-padding on the bottom and right. Return {pooled,counts,mean_relative_error,score}, with score = exp(-mean_relative_error). The official contest takes images and requires predicted density maps."
+    },
+    {
+      "week": 8,
+      "prerequisites": [
+        2,
+        6
+      ],
+      "sources": [
+        "koai",
+        "syllabus",
+        "concepts",
+        "ghost",
+        "order"
+      ],
+      "decision": "Distinguish token IDs, positions and vector representations. Trace the effect of ordering and masks on the model input.",
+      "minimum": "Look up actual vectors from marker IDs and interpret a small representation that depends on order.",
+      "ceiling": "Limit this simulation to the specified deterministic guesser. Transformer training is handled separately.",
+      "transfer": "Accept equivalent clues when marker order changes the rank of the target.",
+      "interface": "Input: {target: ASCII name, candidates: {name: vector}, markers: {integerID: vector}}. Return any optimal ordered clue of one or two distinct permitted IDs. The clue vector is 2*m1+m2 (zero for an absent second marker). Rank by descending dot product, breaking ties by ASCII name. Minimize the target rank."
+    },
+    {
+      "week": 9,
+      "prerequisites": [
+        5,
+        7,
+        8
+      ],
+      "sources": [
+        "koai",
+        "syllabus",
+        "order",
+        "pixel",
+        "ghost"
+      ],
+      "decision": "Trace an audio, image or text output back to the original object and time position it represents.",
+      "minimum": "Convert both ways between audio chunk IDs, playback order and ranks by file, and identify any lost ordering information.",
+      "ceiling": "Report end-to-end order reconstruction separately from the smaller submission and scoring calculation.",
+      "transfer": "With changed file IDs and storage order, recover each chunk's time position and the unit of evaluation.",
+      "interface": "Input: {file_ids: distinct integer IDs, chronology: the same IDs in time order}. Return the zero-based chronological rank of each ID in file_ids order."
+    },
+    {
+      "week": 10,
+      "prerequisites": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "sources": [
+        "koai",
+        "syllabus",
+        "order",
+        "icons",
+        "field"
+      ],
+      "decision": "Read an unfamiliar specification and connect information available at inference time, the prediction unit, submission format and scoring unit.",
+      "minimum": "Choose an output and validation method for two different specifications, explain the choices and give a counterexample.",
+      "ceiling": "Reserve independent mock tasks distinct from the public examples used during authoring.",
+      "transfer": "Distinguish query matching and dialogue ordering when both return arrays of integers.",
+      "interface": "Input: {task: 'match'|'order', truth: integer[], prediction: integer[]}. Match returns the fraction of correct IDs. Order returns pairwise chronological agreement over file ranks (at least two files). Return zero for unequal lengths or an invalid permutation in an order task."
+    }
+  ]
+}

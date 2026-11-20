@@ -1,5 +1,6 @@
 """Check KOAI cases and prepare paired tasks with NVIDIA SkillEvaluator (see skill-evaluation.md)."""
 import argparse
+from contextlib import redirect_stdout
 from hashlib import sha256
 from importlib.metadata import version
 from importlib.util import find_spec
@@ -144,8 +145,10 @@ def review_blockers(receipt, source, public, entries, hashes):
     return reasons
 
 
-def common_sources(skill):
+def common_sources(skill, course_context=False):
     files = dict(COMMON)
+    if course_context:
+        files['case-inputs/course-public-inputs.json'] = 'benchmarks/skill-evaluation/course-public-inputs.json'
     # Keep the repository tools' canonical curriculum paths usable in both arms.
     # The evaluated role's procedural guides are treatment-owned when testing it.
     references = ROOT / 'skills/koai-evaluate/references'
@@ -160,7 +163,7 @@ def common_sources(skill):
     return files
 
 
-def snapshot(repo, skill):
+def snapshot(repo, skill, course_context=False):
     folder = 'candidate' if skill == 'koai-evaluate' else 'skills'
     target = repo / folder / skill
     original = ROOT / 'skills' / skill
@@ -168,14 +171,14 @@ def snapshot(repo, skill):
     for folder in ('agents', 'references'):
         if (original / folder).is_dir():
             shutil.copytree(original / folder, target / folder)
-    for relative, source in common_sources(skill).items():
+    for relative, source in common_sources(skill, course_context).items():
         copy_file(ROOT / source, repo / relative)
     # The native adapter finds the full-context root by looking for a Git root.
     subprocess.run(['git', 'init', '-q', str(repo)], check=True)
     return target
 
 
-def assess(target, source, public, receipt):
+def assess(target, source, public, receipt, course_context=False):
     from skillevaluator.tier3.dataset_coverage import summarize_dataset
     from skillevaluator.tier3.dataset_sufficiency import assess_dataset_sufficiency
     from skillevaluator.tier3.dataset_utils import find_eval_file
@@ -206,7 +209,7 @@ def assess(target, source, public, receipt):
                                             pass_rate_interval=None, paired_cases=None)
         size = next(check for check in policy['checks'] if check['name'] == 'coverage')
         hashes = {'dataset_sha256': digest(selected), 'grader_sha256': digest(GRADER),
-                  'context_sha256': fingerprint({key: digest(target.parents[1] / key) for key in common_sources(target.name)})}
+                  'context_sha256': fingerprint({key: digest(target.parents[1] / key) for key in common_sources(target.name, course_context)})}
         blockers = review_blockers(receipt, source, public, entries, hashes)
     except (OSError, ValueError, TypeError, KeyError, RecursionError) as exc:
         report['errors'] = [str(exc)]
@@ -279,11 +282,12 @@ def run(args):
         dest.mkdir(mode=0o700)
     with tempfile.TemporaryDirectory(prefix='koai-skill-check-') as temporary:
         work = dest if dest else Path(temporary)
-        target = snapshot(work / 'repo', args.skill)
-        report, entries = assess(target, source, public, args.review)
+        course_context = getattr(args, 'course_context', False)
+        target = snapshot(work / 'repo', args.skill, course_context)
+        report, entries = assess(target, source, public, args.review, course_context)
         allowed = bool(entries) and (report['status'] == 'reviewed_inputs' or args.pilot)
         if dest and allowed:
-            common = {key: digest(work / 'repo' / key) for key in common_sources(args.skill)}
+            common = {key: digest(work / 'repo' / key) for key in common_sources(args.skill, course_context)}
             for arm, enabled in [('with', True), ('without', False)]:
                 paths = generate_harbor_tasks(target, work / arm, with_skill=enabled, copy_repo=True,
                                               grading_mode='default_plus_custom')
@@ -306,13 +310,18 @@ def main():
         action.add_argument('skill', choices=SKILLS)
         action.add_argument('--suite', type=Path, help='An external KOAI Agent Skills JSON dataset.')
         action.add_argument('--review', type=Path, help='Independent review of these exact inputs.')
+        action.add_argument('--course-context', action='store_true',
+                            help='Include the shared public specifications of five official competition tasks in both arms.')
         action.add_argument('--pilot', action='store_true', help='Allow provisional inputs for a technical check.')
         if command == 'prepare':
             action.add_argument('destination', type=Path)
         else:
             action.set_defaults(destination=None)
     try:
-        report, code = run(parser.parse_args())
+        args = parser.parse_args()
+        # Upstream setup and scanners can print diagnostics before the JSON report.
+        with redirect_stdout(sys.stderr):
+            report, code = run(args)
     except (ImportError, OSError, ValueError, TypeError, KeyError, RuntimeError, subprocess.SubprocessError) as exc:
         report, code = {'status': 'error', 'error': str(exc), 'live_agent_runs': 0}, 1
     print(json.dumps(report, indent=2, ensure_ascii=False))

@@ -66,3 +66,7 @@ The graph has valid nodes and edges. Its learning path remains a gap because the
 ## Troubleshooting and limitations
 
 A structural pass can coexist with a failed or missing substantive check. Record the actual outcome of each and request only the evidence needed to settle the open claim.
+
+## Whole-course material production
+
+Read the source, actual student cells, separate teacher key and the direct uses in later weeks. For the principal transfer task cite both the explanatory cell and the independent prompt. Check that a student has to select a representation or operation, identify what it preserves, and explain a changed decision on fresh conditions. Test the simplest sufficient theory and a boundary beyond which theory belongs later. A correct reference implementation can accompany a leading or artificial exercise. Record those outcomes separately and return concrete revision evidence.

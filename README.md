@@ -13,6 +13,7 @@ The [current Korean student plan](curriculum/student-plan.html) and its [curricu
 ## Start here
 
 - Choose a [skill](skills/README.md).
+- To generate and verify candidates across the ten-week curriculum, use the [course controller and evidence boundaries](tools/course-generation.md).
 - Read the [concrete specification](skills/references/quality-specification.md) and relevant entries in the [16-criterion catalog](skills/references/criteria.json).
 - Review theory with the [notation, derivation, diagram, algorithm and comprehension rubric](skills/koai-evaluate/references/theory-explanation.json).
 - Use the [eight week 1–2 unit specifications](skills/koai-evaluate/references/unit-specifications.json) for prerequisite tasks, theory/noncoding/coding/assessment behaviors and existing time placement.
@@ -39,8 +40,8 @@ The default quality bundle lacks lesson execution, semantic reviews and an agree
 
 ## Evidence and operating limits
 
-A current source/review record is an accountable claim, not authenticated truth. Semantic correctness, educational suitability and learning effectiveness need their own evidence. The implementation does not run Jupyter, browse sources automatically, execute a worker or schedule another invocation. A 30-minute checkpoint is a reported review condition, not a running timer.
+A current source/review record is an accountable claim, not authenticated truth. Semantic correctness, educational suitability and learning effectiveness need their own evidence. The original inspection commands operate on supplied records. The separate course controller can invoke configured author and review workers and an isolated Jupyter kernel. A 30-minute checkpoint is a reported review condition, not a running timer.
 
-Current work implements specifications and checks. Actual lesson production and recurring execution require their concrete criteria and applicable authorization. No locally measured teaching gain is claimed. Material review checks planned workload and current evidence. Evaluator qualification is reusable by version and domain. For a located gap, follow the [notebook revision and verification workflow](tools/material-revision.md).
+The course controller writes candidates and evidence to a private run directory. It uses an explicit invocation and the configured workload and attempt budgets. No locally measured teaching gain is claimed. Material review checks planned workload and current evidence. Evaluator qualification is reusable by version and domain. For a located gap, follow the [notebook revision and verification workflow](tools/material-revision.md).
 
 The earlier graph validator and illustrative graph/run/review files remain available for compatibility. They cannot justify a verified educational claim. See [third-party notices](THIRD_PARTY_NOTICES.md) for retained source/license information.

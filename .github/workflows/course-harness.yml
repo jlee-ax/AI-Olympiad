@@ -1,0 +1,56 @@
+name: Course harness regression
+
+on:
+  push:
+    branches: [main, 'codex/course-generation-harness-*']
+    paths: ['tools/**', 'skills/**', 'curriculum/**', 'benchmarks/skill-evaluation/**', 'tests/**', '.github/workflows/course-harness.yml']
+  pull_request:
+    paths: ['tools/**', 'skills/**', 'curriculum/**', 'benchmarks/skill-evaluation/**', 'tests/**', '.github/workflows/course-harness.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  course:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install the pinned upstream NVIDIA package and notebook dependencies
+        run: |
+          python -m pip install 'uv>=0.9,<1'
+          git init -q "$RUNNER_TEMP/skillevaluator"
+          git -C "$RUNNER_TEMP/skillevaluator" fetch -q --depth=1 https://github.com/NVIDIA/SkillEvaluator.git e3ede733f4d57578a1630b0579ea236b8cf8a727
+          git -C "$RUNNER_TEMP/skillevaluator" checkout -q --detach FETCH_HEAD
+          uv sync --project "$RUNNER_TEMP/skillevaluator" --frozen --no-dev --no-editable --extra all
+          bindir="$RUNNER_TEMP/skillevaluator/.venv/bin"
+          uv pip freeze --python "$bindir/python" > "$RUNNER_TEMP/native-constraints.txt"
+          uv pip install --python "$bindir/python" -c "$RUNNER_TEMP/native-constraints.txt" 'nbclient>=0.10,<1' 'nbformat>=5.10,<6' 'ipykernel>=6,<8' 'numpy>=1.26,<3'
+          echo "$bindir" >> "$GITHUB_PATH"
+          echo "COURSE_TEST_PYTHON=$bindir/python" >> "$GITHUB_ENV"
+      - name: Check native prerequisites and compile all ten weeks
+        run: |
+          python -c 'import nbclient, nbformat, ipykernel, skillevaluator'
+          node tools/course.mjs plan
+          node --test tests/course_runner.test.mjs
+      - name: Run the complete Python regression suite
+        run: python -B -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Build the isolated notebook test kernel
+        run: |
+          mkdir "$RUNNER_TEMP/course-image"
+          cat > "$RUNNER_TEMP/course-image/Dockerfile" <<'DOCKERFILE'
+          FROM python:3.12-slim
+          RUN python -m pip install --no-cache-dir 'nbclient>=0.10,<1' 'nbformat>=5.10,<6' 'ipykernel>=6,<8'
+          DOCKERFILE
+          docker build -q -t koai-ci-kernel "$RUNNER_TEMP/course-image"
+          echo "COURSE_CI_KERNEL_IMAGE=$(docker image inspect --format '{{.Id}}' koai-ci-kernel)" >> "$GITHUB_ENV"
+      - name: Exercise the complete CLI and the isolated private profile
+        run: node --test tests/course_cli.test.mjs

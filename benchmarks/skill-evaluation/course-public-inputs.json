@@ -1,0 +1,46 @@
+{
+  "kind": "shared_problem_statements",
+  "purpose": "Common public competition context, equally visible in both native treatment arms. Each row describes the mathematical object being submitted. Classroom answers, rubric keys and held-out inputs stay outside this file.",
+  "tasks": [
+    {
+      "event": "IOAI 2025",
+      "task": "Restroom",
+      "locator": "https://github.com/IOAI-official/IOAI-2025/blob/39558e9a639d170bd92de91958fcdc915f670463/Individual-Contest/Restroom/Restroom.ipynb",
+      "public_input": "Cropped sign and gallery of original signs.",
+      "requested_output": "One corresponding original image ID per query.",
+      "scoring_unit": "Matches are counted per query against the correct gallery image."
+    },
+    {
+      "event": "IOAI 2025",
+      "task": "Concepts",
+      "locator": "https://github.com/IOAI-official/IOAI-2025/blob/39558e9a639d170bd92de91958fcdc915f670463/Individual-Contest/Concepts/Concepts.ipynb",
+      "public_input": "A target concept, candidate concepts and available markers.",
+      "requested_output": "Ordered marker clues for the candidate keywords in two JSONL files, evaluated through the guesser's ranked predictions.",
+      "scoring_unit": "The guesser's rank for each secret keyword determines Hits@10 and NDCG@10."
+    },
+    {
+      "event": "IOAI 2025",
+      "task": "Chicken Counting",
+      "locator": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Chicken_Counting/Chicken_Counting.ipynb",
+      "public_input": "Chicken images and training data for counting.",
+      "requested_output": "Nonnegative predicted density maps for both held-out splits.",
+      "scoring_unit": "Sum the map per image. The raw score uses mean relative error of the resulting counts."
+    },
+    {
+      "event": "IOAI 2025",
+      "task": "Antique",
+      "locator": "https://raw.githubusercontent.com/IOAI-official/IOAI-2025/main/Individual-Contest/Antique/Antique.ipynb",
+      "public_input": "Five digital features; training labels encode authentic, replica and an unknown annotation.",
+      "requested_output": "Two headerless one-column CSV files with a prediction of -1 or +1 per evaluation sample, one file for each split.",
+      "scoring_unit": "One correct or incorrect authenticity prediction per evaluated sample."
+    },
+    {
+      "event": "IOAI 2026",
+      "task": "Find the Order",
+      "locator": "https://raw.githubusercontent.com/IOAI-official/IOAI-2026/main/Individual-Contest/1_Find_the_Order/statement.md",
+      "public_input": "Audio pieces identified by files.",
+      "requested_output": "For each dialogue, one permutation giving the predicted chronological position at each shuffled file index.",
+      "scoring_unit": "Each pair of turns is evaluated for chronological agreement within a dialogue."
+    }
+  ]
+}
