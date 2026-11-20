@@ -28,6 +28,35 @@
       ]
     },
     {
+      "topic": "KOAI-08",
+      "modules": [
+        "sklearn.linear_model.LinearRegression"
+      ],
+      "mentions": [
+        "LinearRegression"
+      ]
+    },
+    {
+      "topic": "KOAI-11",
+      "modules": [
+        "sklearn.neighbors.KNeighborsClassifier",
+        "sklearn.neighbors.KNeighborsRegressor"
+      ],
+      "mentions": [
+        "KNeighborsClassifier",
+        "KNeighborsRegressor"
+      ]
+    },
+    {
+      "topic": "KOAI-15",
+      "modules": [
+        "sklearn.cluster.KMeans"
+      ],
+      "mentions": [
+        "KMeans"
+      ]
+    },
+    {
       "topic": "KOAI-16",
       "modules": [
         "sklearn.decomposition.PCA"

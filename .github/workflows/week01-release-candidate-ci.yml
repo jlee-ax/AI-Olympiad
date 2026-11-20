@@ -1,0 +1,46 @@
+name: Verify the complete Week 1 release candidate
+on:
+  push:
+    branches: [codex/course-generation-harness-prereq-20261120]
+    paths: ['.course-delivery-ci/release-ready']
+
+permissions:
+  contents: read
+
+jobs:
+  lesson:
+    if: github.repository == 'jlee-ax/AI-Olympiad'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install the notebook kernel, scientific tools and Korean fonts
+        run: |
+          python -m pip install 'numpy==2.3.5' 'pandas==2.2.3' 'scikit-learn==1.8.0' 'matplotlib==3.10.8' 'seaborn==0.13.2' 'nbconvert==7.17.2' 'latex2mathml==3.81.1' 'nbclient>=0.10,<1' 'nbformat>=5.10,<6' 'ipykernel>=6,<8' 'playwright>=1.50,<2'
+          python -m playwright install --with-deps --only-shell chromium
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Verify the published Week 1 bundle and evidence bindings
+        run: python -B lessons/week01/validate_bundle.py
+      - name: Execute the registered notebooks in isolated kernels and open the offline handouts at two screen sizes
+        run: python -B tools/check_week01_render.py --output-dir "$RUNNER_TEMP/week01-render" --browser
+      - name: Run the tables notebook, standalone fallback and published teacher checks
+        run: python -B lessons/week01/validate_week01.py --inprocess --write "$RUNNER_TEMP/week01-tables-validation.json"
+      - name: Run the submission pipeline, ZIP and independent teacher CSV checks
+        run: python -B lessons/week01/validate_week01_problem_pipeline.py --write "$RUNNER_TEMP/week01-pipeline-validation.json"
+      - name: Verify the published transfer tasks and teacher controls
+        run: python -B reviews/week01-main-iteration-20261120/check_transfer.py
+      - name: Follow the cross-notebook student routes
+        run: python -B reviews/week01-whole-20261120/check_routes.py
+      - name: Check the actual Week 1 arithmetic with later model calls disabled
+        run: python -B reviews/week01-whole-20261120/check_model_prerequisites.py
+      - name: Run the source-bound companion regressions
+        run: python -B -m unittest discover -s reviews/week01-whole-20261120 -p 'test_*.py' -v

@@ -23,6 +23,7 @@ class Dependency:
 class Function:
     node: ast.AST
     cell: str
+    defaults: tuple
 
 
 def values(items):
@@ -48,14 +49,22 @@ class Reader:
         self.line = 1
         self.active = set()
         self.returns = set()
+        self.deferred = False
 
     def note(self, topic, api, kind, origin=None):
+        if self.deferred:
+            if kind == "use":
+                kind = "definition"
+            elif kind != "unresolved":
+                return
         self.findings.add((self.cell, topic, api, kind, self.tiers[self.cell],
                            self.line, origin or self.cell))
 
-    def dynamic(self, name):
+    def dynamic(self, name, modules=None):
         for rule in self.rules:
-            if not rule["available"]:
+            relevant = modules is None or any(matches(path, mod) or matches(mod, path)
+                                              for path in modules for mod in rule["modules"])
+            if relevant and not rule["available"]:
                 self.note(rule["topic"], name, "unresolved")
 
     def rule_use(self, api):
@@ -83,6 +92,8 @@ class Reader:
         if isinstance(node, ast.Attribute):
             return {Symbol(v.path + "." + node.attr) if isinstance(v, Symbol) else v
                     for v in self.expr(node.value, env)}
+        if isinstance(node, ast.Lambda):
+            return {self.function(node, env)}
         if isinstance(node, ast.NamedExpr):
             result = self.expr(node.value, env)
             self.bind(node.target, result, env)
@@ -112,7 +123,7 @@ class Reader:
                     if isinstance(name, ast.Constant) and isinstance(name.value, str):
                         result.update(Symbol(v.path + "." + name.value) for v in modules)
                     elif modules:
-                        self.dynamic("getattr with a computed name")
+                        self.dynamic("getattr with a computed name", [v.path for v in modules])
                 elif target.path in {"builtins.eval", "builtins.exec"}:
                     self.dynamic(target.path)
                 else:
@@ -120,14 +131,26 @@ class Reader:
         self.mark(result)
         return result
 
+    def function(self, node, env):
+        args = node.args
+        defaults = {}
+        pos = args.posonlyargs + args.args
+        for arg, default in zip(reversed(pos), reversed(args.defaults)):
+            defaults[arg.arg] = frozenset(self.expr(default, env))
+        for arg, default in zip(args.kwonlyargs, args.kw_defaults):
+            if default is not None:
+                defaults[arg.arg] = frozenset(self.expr(default, env))
+        return Function(node, self.cell, tuple(defaults.items()))
+
     def call_function(self, fun, positional, keywords, caller):
         node = fun.node
         if fun in self.active:
             return dependencies(values([*positional, *keywords.values()]))
         local = caller.copy()
         params = [arg.arg for arg in node.args.posonlyargs + node.args.args]
+        defaults = dict(fun.defaults)
         for name in params + [arg.arg for arg in node.args.kwonlyargs]:
-            local[name] = set()
+            local[name] = defaults.get(name, set())
         for name, value in zip(params, positional):
             local[name] = value
         local.update({k: v for k, v in keywords.items() if k is not None})
@@ -139,8 +162,11 @@ class Reader:
         previous = self.returns
         self.returns = set()
         # Attribute the dependency to the learner cell that invokes this helper.
-        for statement in node.body:
-            self.statement(statement, local, in_call=True)
+        if isinstance(node, ast.Lambda):
+            self.returns.update(self.expr(node.body, local))
+        else:
+            for statement in node.body:
+                self.statement(statement, local, in_call=True)
         result = self.returns
         self.returns = previous
         self.active.remove(fun)
@@ -166,7 +192,7 @@ class Reader:
         if isinstance(node, (ast.Import, ast.ImportFrom)):
             for alias in node.names:
                 if alias.name == "*":
-                    self.dynamic("wildcard import from " + str(node.module))
+                    self.dynamic("wildcard import from " + str(node.module), [node.module] if node.module else None)
                     continue
                 if isinstance(node, ast.Import):
                     name = alias.asname or alias.name.split(".")[0]
@@ -177,9 +203,16 @@ class Reader:
                 env[name] = {Symbol(path)}
             return
         if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
-            env[node.name] = {Function(node, self.cell)}
-            for default in [*node.args.defaults, *node.args.kw_defaults, *node.decorator_list]:
-                self.mark(self.expr(default, env))
+            fun = self.function(node, env)
+            env[node.name] = {fun}
+            for decorator in node.decorator_list:
+                self.mark(self.expr(decorator, env))
+            # A student may be asked to *write* a function that no worked cell calls.
+            # Its body supplies evidence for the reader, not proof of an executed call.
+            if not in_call and self.tiers[self.cell] != "conditional":
+                self.deferred = True
+                self.call_function(fun, [], {}, env)
+                self.deferred = False
             return
         if isinstance(node, (ast.Assign, ast.AnnAssign, ast.AugAssign)):
             result = self.expr(node.value, env)
@@ -216,8 +249,12 @@ class Reader:
     def scan(self, entries):
         env = {}
         for self.cell, source in entries:
+            # This terminal IPython display directive selects a rendering backend.
+            # Leave its line in place and parse every other Python statement normally.
+            # A cell magic or a different line magic still requires an independent decision.
+            python = re.sub(r"(?m)^[ \t]*%matplotlib[ \t]+inline[ \t]*(?:#[^\n]*)?$", "", source)
             try:
-                tree = ast.parse(source)
+                tree = ast.parse(python)
             except (SyntaxError, ValueError) as error:
                 self.line = getattr(error, "lineno", None) or 1
                 self.dynamic("unparsed notebook cell")
@@ -276,7 +313,7 @@ def inspect(packet):
         findings.append(item)
         if kind == "premature":
             blocked.append(item)
-        if tier != "conditional" and kind in {"mention", "unresolved"}:
+        if tier != "conditional" and kind in {"definition", "mention", "unresolved"}:
             review_cells.add(cell)
     return {"findings": findings, "blocked": blocked, "review_cells": sorted(review_cells)}
 

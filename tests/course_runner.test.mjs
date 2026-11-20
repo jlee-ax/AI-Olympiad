@@ -134,7 +134,7 @@ function portableCourseTestkit(core,runner,base,hash) {
     });
     await check("review requires an independent actor, exact version and located evidence",()=>{
       const w=base.course.weeks[first],cand=sample(w,core.obligations(w),w.sources),h=hash(cand);
-      const ref={candidate_hash:h,worker_id:"reader",required_checks:[...core.requiredReview,...core.obligations(w)]};
+      const ref={candidate_hash:h,worker_id:"reader",required_checks:[...core.reviewKeys(w),...core.obligations(w)]};
       const r=makeReview(ref),roles={author:"writer",reviewer:"reader"};
       core.checkReview(w,cand,r,h,roles);
       fail(()=>core.checkReview(w,cand,r,h+"!",roles),/Stale/,"stale review");
@@ -448,4 +448,124 @@ test("SQLite commits are durable, exclusive and reject stale updates",async()=>{
     assert.deepEqual(again.reserve("interrupted","fingerprint"),{recorded:true,response:{value:8}});
     assert.equal(again.pending().length,0);
   }finally{for(const db of [one,two,again])if(db)db.close();await rm(dir,{recursive:true,force:true});}
+});
+
+
+test("the normal author gate reopens a pre-policy week and preserves the premature-use rejection", async () => {
+  const kit = portableCourseTestkit(courseCore, {runCourse, publicOracles}, contract, digest);
+  const io = kit.makeIO();
+  const worker = io.worker, current = io.course.weeks[1];
+  io.course.weeks[1] = structuredClone(current);
+  delete io.course.weeks[1].tool_prerequisites;
+  let correct = false;
+  io.worker = async (identity, request, id) => {
+    const reply = await worker(identity, request, id);
+    if (request.role === "author") {
+      reply.notebooks.main.cells[2].source = correct
+        ? "from sklearn.datasets import load_digits as examples\nvalues = examples().data"
+        : "from sklearn.neighbors import NearestCentroid as Classifier\nmodel = Classifier()";
+      if (correct && request.accepted_baseline) reply.action = "revise";
+    }
+    return reply;
+  };
+  const options = {calls:4, attempts:3};
+  assert.deepEqual((await runCourse(io,[1],options)).completed,[1]);
+  const former = io.ledger.head(1), kernelCalls = io.calls.filter(c => c[0] === "kernel").length;
+  io.course.weeks[1] = current;
+  assert.equal((await runCourse(io,[1],{calls:0,attempts:3,inspect:true})).reasons[1],"not_started");
+  await runCourse(io,[1],{calls:2,attempts:3});
+  assert.equal(io.calls.filter(c => c[0] === "kernel").length, kernelCalls);
+  const rejection = io.ledger.events.findLast(e => e.kind === "invalid_candidate");
+  assert.ok(rejection.tool_prerequisites.blocked.some(r => r.topic === "KOAI-04" && r.cell === "main/work"));
+  assert.equal(io.ledger.head(1).hash, former.hash);
+  correct = true;
+  assert.deepEqual((await runCourse(io,[1],options)).completed,[1]);
+  const accepted = io.ledger.head(1);
+  assert.notEqual(accepted.hash, former.hash);
+  assert.ok(io.ledger.history(1,former.hash));
+  assert.equal((await runCourse(io,[1],options)).calls,0);
+
+  io.course.weeks[8].budget.coding_minutes += 1;
+  assert.deepEqual((await runCourse(io,[1],{calls:0,attempts:3,inspect:true})).completed,[1]);
+  io.course.weeks[1] = {...current,tool_prerequisites:current.tool_prerequisites.map(
+    r => r.topic === "KOAI-04" ? {...r,introduced_in:[3]} : r)};
+  assert.equal((await runCourse(io,[1],{calls:0,attempts:3,inspect:true})).reasons[1],"not_started");
+  io.course.weeks[1] = current;
+  io.version = "new static analyzer version";
+  assert.equal((await runCourse(io,[1],{calls:0,attempts:3,inspect:true})).reasons[1],"not_started");
+});
+
+test("registrations follow prerequisite reachability and individual methods within an available library", () => {
+  const kit = portableCourseTestkit(courseCore, {runCourse, publicOracles}, contract, digest);
+  const source = {original:{locator:"local unit",text:"A course registration for testing."}};
+  const rules = [{topic:"curves",modules:["matrix_lab.curves"],data_only:["matrix_lab.curves.read_*"],mentions:["Curve"]}];
+  const weeks = [[50,[]],[20,[50]],[35,[20]],[81,[50]]].map(([week,prerequisites]) => ({
+    week,prerequisites,sources:["original"],decision:"Select a representation.",minimum:"Compare two original inputs.",
+    ceiling:"Use methods already introduced.",transfer:"Compare changed inputs.",interface:"matrix → decision"
+  }));
+  const course = {weeks,tool_prerequisites:rules};
+  const budget = {theory_minutes:20,noncoding_minutes:20,coding_minutes:80,required_self_study_hours:[1,2]};
+  const syllabus = {class_minutes:120,weeks:weeks.map(({week})=>({week,...budget})),topics:[
+    {id:"curves",name:"Curve methods",theory:false,practical:true,scheduled_weeks:[20,35]}]};
+  const plan = Object.fromEntries(weeks.map(({week})=>[week,"Published student plan."]));
+  const compile = config => courseCore.compile(syllabus,config,source,plan);
+  const compiled = compile(course);
+  for (const week of [50,20,35,81]) {
+    const packet = compiled.weeks[week], rule = packet.tool_prerequisites[0];
+    assert.deepEqual(rule.introduced_in,[20]);
+    assert.equal(rule.available,[20,35].includes(week));
+    const sample = kit.sample(packet,courseCore.obligations(packet),["original"]);
+    sample.notebooks.main.cells[2].source = "from matrix_lab.curves import Curve as C\nmake_curve = C\ncurve = make_curve()";
+    if (rule.available) courseCore.validateCandidate(packet,sample,null);
+    else assert.throws(()=>courseCore.validateCandidate(packet,sample,null),/Premature required tool dependency curves/);
+  }
+  for (const bad of [
+    [{topic:"absent", modules:["matrix_lab"]}],
+    [...rules,...rules],
+    [{...rules[0],modules:["matrix_lab.*"]}],
+    [{...rules[0],data_only:["other.read"]}],
+    [{...rules[0],modules:["matrix_lab","matrix_lab"]}]
+  ]) assert.throws(()=>compile({...course,tool_prerequisites:bad}),/Invalid or ambiguous/);
+  for (const [topic, module, name, teachingWeek] of [
+    ["KOAI-08","sklearn.linear_model","LinearRegression",3],
+    ["KOAI-11","sklearn.neighbors","KNeighborsClassifier",4],
+    ["KOAI-11","sklearn.neighbors","KNeighborsRegressor",4],
+    ["KOAI-15","sklearn.cluster","KMeans",5],
+    ["KOAI-16","sklearn.decomposition","PCA",5]
+  ]) {
+    const second = contract.course.weeks[2], scheduled = contract.course.weeks[teachingWeek];
+    for (const packet of [second, scheduled]) {
+      const sample = kit.sample(packet,courseCore.obligations(packet),packet.sources);
+      sample.notebooks.main.cells[2].source = "from "+module+" import "+name+" as Operation\nOperation()";
+      if (packet === scheduled) courseCore.validateCandidate(packet,sample,null);
+      else assert.throws(()=>courseCore.validateCandidate(packet,sample,null),new RegExp(topic));
+    }
+  }
+});
+
+test("provided examples require a separate compulsory alternative and an independent cell decision", () => {
+  const kit=portableCourseTestkit(courseCore,{runCourse,publicOracles},contract,digest);
+  const week=contract.course.weeks[1], roles={author:"writer",reviewer:"reader"};
+  const sample=kit.sample(week,courseCore.obligations(week),week.sources);
+  sample.notebooks.main.cells.unshift(kit.cell("example","from sklearn.neighbors import NearestCentroid\nexample = NearestCentroid()",true));
+  sample.route.units[0].cells.unshift("main/example");
+  sample.route.provided_examples=[{cell:"main/example",alternative:"main/work",reason:"The independent table exercise can be solved using the given numbers."}];
+  let evidence=courseCore.validateCandidate(week,sample,null).tool_prerequisites;
+  assert.deepEqual(evidence.review_cells,["main/example","main/work"]);
+  const h=digest(sample);
+  const review=kit.makeReview({candidate_hash:h,worker_id:"reader",required_checks:[...courseCore.reviewKeys(week),...courseCore.obligations(week)]});
+  assert.throws(()=>courseCore.checkReview(week,sample,review,h,roles),/missed/);
+  review.checks.tool_prerequisites.cells.push("main/example");
+  assert.throws(()=>courseCore.checkReview(week,sample,review,h,roles),/Resolve/);
+  review.checks.tool_prerequisites.decisions = {
+    "main/example":{disposition:"example_only",reason:"The supplied construction has no output consumed in the student work."},
+    "main/work":{disposition:"uses_prior_only",reason:"The independent route uses its own input and does not use the example variable."}
+  };
+  assert.equal(courseCore.checkReview(week,sample,review,h,roles),"pass");
+  review.checks.tool_prerequisites.decisions["main/work"].disposition="unresolved";
+  assert.throws(()=>courseCore.checkReview(week,sample,review,h,roles),/inconsistent/);
+  sample.notebooks.main.cells.at(-1).source="predictions = example.predict([[2,3]])";
+  assert.throws(()=>courseCore.validateCandidate(week,sample,null),/Premature.*main\/work/);
+  sample.route.provided_examples[0].cell="main/work";
+  assert.throws(()=>courseCore.validateCandidate(week,sample,null),/Invalid provided/);
 });

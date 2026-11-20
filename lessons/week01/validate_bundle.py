@@ -232,9 +232,23 @@ def native_decision(root, release, evidence, current, errors, unresolved):
                 or assessment.get("blocked") != []
                 or not isinstance(assessment.get("review_cells"), list)):
             unresolved.append("The required route needs a current tool-prerequisite inspection and an independent decision")
-        elif set(assessment["review_cells"]) - set(scan.get("judgment", {}).get("cells", [])):
-            unresolved.append("The native reviewer did not address every unresolved student tool dependency")
-        for path in ("tools/course_core.mjs", "tools/course_run.mjs", "tools/course_tool_prerequisites.py"):
+        else:
+            needed = set(assessment["review_cells"])
+            judgment = scan["judgment"]
+            decisions = judgment.get("decisions", {})
+            if (not isinstance(decisions, dict) or set(decisions) != needed
+                    or not needed <= set(judgment.get("cells", []))
+                    or any(not isinstance(item, dict)
+                           or item.get("disposition") not in {"uses_prior_only", "example_only"}
+                           or not str(item.get("reason", "")).strip() for item in decisions.values())):
+                unresolved.append("The native reviewer did not resolve every flagged student tool dependency")
+        routes = [item.get("path") for item in evidence if item["kind"] == "native_author_route"]
+        if (len(routes) != 1 or routes[0] not in current
+                or report.get("route_file_sha256") != current[routes[0]]):
+            errors.append("The native review used a different allocation of required and optional work")
+        for path in ("tools/course.mjs", "tools/course_core.mjs", "tools/course_run.mjs",
+                     "tools/course_tool_prerequisites.mjs", "tools/course_tool_prerequisites.py",
+                     "skills/koai-evaluate/SKILL.md"):
             if path not in current or report.get("program_sha256", {}).get(path) != current[path]:
                 errors.append("The native prerequisite decision used a different course program: " + path)
     reviewed = report.get("material_bindings", {})
